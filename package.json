@@ -1,0 +1,41 @@
+{
+  "name": "@cloudinary/base",
+  "version": "1.0.0-alpha.0",
+  "description": "",
+  "main": "dist/base.esm.js",
+  "scripts": {
+    "test": "jest",
+    "test:unit": "jest __TESTS__/unit --coverage",
+    "test:integration": "jest __TESTS__/integration --coverage",
+    "test:tdd": "jest --watch",
+    "build": "eslint src --color && npm run build:types && rollup -c && npm run build:docs",
+    "build:docs": "jsdoc --configure jsdoc.config.json --verbose",
+    "build:types": "tsc",
+    "start": "rollup -c rollup.dev.config.js -w",
+    "bundlewatch": "bundlewatch --config ./bundlewatch.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "bundlewatch": "^0.2.6",
+    "eslint": "^6.8.0",
+    "foodoc": "0.0.9",
+    "jest": "^25.2.7",
+    "jsdoc": "^3.6.4",
+    "rollup": "^2.3.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-serve": "^1.0.1",
+    "typescript": "^3.8.3"
+  },
+  "files": [
+    "dist",
+    "types"
+  ],
+  "types": "./types/index.d.ts",
+  "dependencies": {}
+}

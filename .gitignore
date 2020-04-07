@@ -1,0 +1,6 @@
+consumer
+node_modules
+.idea
+dist
+coverage
+docs

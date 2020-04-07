@@ -1,0 +1,17 @@
+{
+  "exclude": [
+    "test/**/*.js"
+  ],
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "declaration": true,
+    "noEmit": false,
+    "emitDeclarationOnly": true,
+    "allowJs": true,
+    "outDir": "types",
+    "checkJs": true
+  },
+  "include": [
+    "src"
+  ]
+}
