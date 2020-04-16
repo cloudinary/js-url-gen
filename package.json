@@ -6,12 +6,13 @@
   "scripts": {
     "test": "jest --coverage",
     "test:unit": "jest __TESTS__/unit",
-    "test:unit:watch" : "jest __TESTS__/unit --watch",
+    "test:unit:watch": "jest __TESTS__/unit --watch",
     "test:integration": "jest __TESTS__/integration",
     "test:integration:watch": "jest __TESTS__/integration --watch",
-    "build": "eslint src --color && npm run build:types && rollup -c && npm run build:docs",
+    "build": "npm run lint && npm run build:types && rollup -c && npm run build:docs",
     "build:docs": "jsdoc --configure jsdoc.config.json --verbose",
     "build:types": "tsc",
+    "lint": "eslint src __TESTS__ --color",
     "start": "rollup -c rollup.dev.config.js -w",
     "bundlewatch": "bundlewatch --config ./bundlewatch.config.js"
   },
@@ -23,6 +24,7 @@
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "@rollup/plugin-node-resolve": "^7.1.1",
+    "@types/jest": "^25.2.1",
     "bundlewatch": "^0.2.6",
     "eslint": "^6.8.0",
     "foodoc": "0.0.9",
