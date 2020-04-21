@@ -4,8 +4,10 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
+  "ignorePatterns": ["dist", "docs", "node_modules", "dev/*.esm*"],
   "env": {
-    "browser": true
+    "browser": true,
+    "jest": true
   },
   "rules": {
     "require-jsdoc": "error",

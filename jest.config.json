@@ -3,6 +3,9 @@
   "collectCoverageFrom": [
     "src/**/*.js"
   ],
+  "modulePaths": [
+    "<rootDir>/src"
+  ],
   "coverageThreshold": {
     "global": {
       "branches": 95,
