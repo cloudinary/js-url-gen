@@ -1,25 +1,28 @@
-console.log('Side effect');
-
-/**
- * @description - Placeholder
- */
 class Transformation {
   constructor() {
-    console.log('Transformation! - within constructor');
+    /** @type {IAction[]} */
+    this.actions = [];
   }
 
   /**
-   * @return {Transformation}
+   * @param {IAction} action
    */
-  chain() {
+  addAction(action) {
+    this.actions.push(action);
     return this;
   }
 
   /**
-   * @return {Transformation}
+   * @return {string}
    */
-  addAction() {
-    return this;
+  toString() {
+    let str = '';
+
+    this.actions.forEach((action) => {
+      str += action.toString()
+    });
+
+    return str;
   }
 }
 

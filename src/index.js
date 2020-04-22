@@ -1,18 +1,20 @@
-import cloudinaryURL from "./url/cloudinaryURL";
+// Transformations
 import Transformation from "./transformation/Transformation";
-import Resize from './actions/Resize';
+import cloudinaryURL from "./url/cloudinaryURL";
+
+import TransformableImage from "./transformation/TransformableImage";
+// Actions
+import Actions from './actions/Actions';
+import Resize, {crop} from './actions/resize/Resize';
+
+
 
 /**
  * @description a class
  */
 class Base {
   constructor() {
-    console.log("TADAAAAA, now you see me now don't");
-    console.log('More magic');
   }
 }
 
-let obj = {};
-// let foo = {...obj}
-
-export {cloudinaryURL, Transformation, Base, Resize};
+export {cloudinaryURL, Transformation, Base};

@@ -2,12 +2,14 @@ import Transformation from '../transformation/Transformation';
 
 /**
  *
- * @param {string} publicID
+ * @description Creates a fully qualified CloudinaryURL
+ * @param {Object} config
+ * @param {Object} descriptor
  * @param {Transformation} transformation
  */
-function cloudinaryURL(publicID, transformation) {
-    console.log('Cloudinary URL!', transformation);
-    return publicID;
+function createCloudinaryURL(config, descriptor, transformation) {
+    // Currently not implemented
+    return '';
 }
 
-export default cloudinaryURL;
+export default createCloudinaryURL;
