@@ -24,7 +24,7 @@ Feel free to visit our more mature SDKs:
 Below is the progress made on the project, the list will be modified and extended as the project progresses
 
 
-### Theoretical syntax
+### Proposed syntax
 ```javascript
 let tImage = new TransformableImage()
   .addAction(
