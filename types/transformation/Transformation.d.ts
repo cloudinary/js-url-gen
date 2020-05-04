@@ -1,14 +1,13 @@
 export default Transformation;
-/**
- * @description - Placeholder
- */
 declare class Transformation {
+    /** @type {IAction[]} */
+    actions: IAction[];
     /**
-     * @return {Transformation}
+     * @param {IAction} action
      */
-    chain(): Transformation;
+    addAction(action: IAction): Transformation;
     /**
-     * @return {Transformation}
+     * @return {string}
      */
-    addAction(): Transformation;
+    toString(): string;
 }

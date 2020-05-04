@@ -1,6 +1,7 @@
 {
   "exclude": [
-    "test/**/*.js"
+    "test/**/*.js",
+    "src/wip.js"
   ],
   "compilerOptions": {
     "noImplicitAny": true,

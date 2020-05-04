@@ -1,8 +1,10 @@
-export default cloudinaryURL;
+export default createCloudinaryURL;
 /**
  *
- * @param {string} publicID
+ * @description Creates a fully qualified CloudinaryURL
+ * @param {Object} config
+ * @param {Object} descriptor
  * @param {Transformation} transformation
  */
-declare function cloudinaryURL(publicID: string, transformation: Transformation): string;
+declare function createCloudinaryURL(config: Object, descriptor: Object, transformation: Transformation): string;
 import Transformation from "../transformation/Transformation";

@@ -5,5 +5,4 @@ import Transformation from "./transformation/Transformation";
  */
 export class Base {
 }
-import Resize from "./actions/Resize";
-export { cloudinaryURL, Transformation, Resize };
+export { cloudinaryURL, Transformation };
