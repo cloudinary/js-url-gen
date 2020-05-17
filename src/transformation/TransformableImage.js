@@ -31,7 +31,7 @@ class TransformableImage extends Transformation {
     return this;
   }
 
-  setImageID() {
+  setPublicID() {
     return this;
   }
 
