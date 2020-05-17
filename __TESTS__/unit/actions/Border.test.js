@@ -8,8 +8,10 @@ describe('Tests for Transformation Action -- Border', () => {
 
   it('Is accepted as an action to TransformableImage', () => {
     let tImage = new TransformableImage();
-    tImage.addAction(solid().width(50).color('green'));
-    expect(Border.solid).toEqual(solid);
+    // Ensures it compiles and doesn't throw
+    expect(
+      tImage.addAction(solid().width(50).color('green'))
+    ).toEqual(tImage);
   });
 
   it('Ensure the "solid" methods are chainable', () => {
