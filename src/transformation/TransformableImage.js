@@ -23,6 +23,13 @@ class TransformableImage extends Transformation {
   }
 
   /**
+   * @param {IAction} borderAction
+   */
+  border(borderAction) {
+    return this.addAction(borderAction);
+  }
+
+  /**
    * for current instance
    * @param {*} transformableImageConfig
    */
