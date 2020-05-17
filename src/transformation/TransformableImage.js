@@ -30,6 +30,13 @@ class TransformableImage extends Transformation {
   }
 
   /**
+   * @param {IAction} roundCornersAction
+   */
+  roundCorners(roundCornersAction) {
+    return this.addAction(roundCornersAction);
+  }
+
+  /**
    * for current instance
    * @param {*} transformableImageConfig
    */
