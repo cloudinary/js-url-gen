@@ -1,6 +1,8 @@
 import crop from './crop';
+import minimumPad from './minimumPad';
 
-export {crop}
+export {crop, minimumPad}
 export default {
-  crop
+  crop,
+  minimumPad
 }
