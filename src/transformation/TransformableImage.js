@@ -44,6 +44,14 @@ class TransformableImage extends Transformation {
   }
 
   /**
+   * @param {IAction} colorAction
+   * @return {TransformableImage}
+   */
+  color(colorAction) {
+    return this.addAction(colorAction);
+  }
+
+  /**
    * for current instance
    * @param {*} transformableImageConfig
    */
