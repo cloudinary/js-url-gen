@@ -37,13 +37,6 @@ class TransformableImage extends Transformation {
   }
 
   /**
-   * @param {IAction} cropAction
-   */
-  crop(cropAction) {
-    return this.addAction(cropAction);
-  }
-
-  /**
    * @param {IAction} roundCornersAction
    */
   roundCorners(roundCornersAction) {
