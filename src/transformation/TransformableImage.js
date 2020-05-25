@@ -37,6 +37,13 @@ class TransformableImage extends Transformation {
   }
 
   /**
+   * @param {IAction} scaleAction
+   */
+  scale(scaleAction) {
+    return this.addAction(scaleAction);
+  }
+
+  /**
    * @param {IAction} roundCornersAction
    */
   roundCorners(roundCornersAction) {
