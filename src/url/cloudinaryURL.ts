@@ -7,7 +7,7 @@ import Transformation from '../transformation/Transformation';
  * @param {Object} descriptor
  * @param {Transformation} transformation
  */
-function createCloudinaryURL(config, descriptor, transformation) {
+function createCloudinaryURL(config:object, descriptor:object, transformation:object) {
     // Currently not implemented
     return '';
 }

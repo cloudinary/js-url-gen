@@ -5,7 +5,6 @@ import '../../interfaces/IAction';
  */
 class Crop {
   constructor() {
-    this.name = 'Crop'
   }
 }
 

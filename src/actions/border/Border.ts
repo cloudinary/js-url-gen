@@ -1,6 +1,4 @@
 import solid from './solid';
 
 export {solid}
-export default {
-  solid
-}
+export default {solid}

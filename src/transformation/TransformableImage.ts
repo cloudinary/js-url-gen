@@ -1,4 +1,7 @@
 import Transformation from "./Transformation";
+import {IBorderAction} from "../actions/border/IBorderAction";
+import {IResizeAction} from "../actions/resize/IResizeAction";
+import {IRoundCornersAction} from "../actions/roundCorners/IResizeAction";
 
 /**
  * PSEUDO IMPLEMENTATION
@@ -6,7 +9,7 @@ import Transformation from "./Transformation";
  * @param {{}} transformation
  * @param {{}} assetDescriptor
  */
-function cloudinaryURL(config, transformation, assetDescriptor) {
+function cloudinaryURL(config: object, transformation: string, assetDescriptor: object) {
   return '';
 }
 
@@ -14,32 +17,33 @@ function cloudinaryURL(config, transformation, assetDescriptor) {
  * @augments Transformation
  */
 class TransformableImage extends Transformation {
+  config: object;
   /**
    * once for all future instances
    * @param {*} transformableImageConfig
    */
-  static setConfig(transformableImageConfig) {
+  static setConfig(transformableImageConfig: object) {
 
   }
 
   /**
-   * @param {IAction} borderAction
+   * @param {IBorderAction} borderAction
    */
-  border(borderAction) {
+  border(borderAction: IBorderAction) {
     return this.addAction(borderAction);
   }
 
   /**
-   * @param {IAction} resizeAction
+   * @param {IResizeAction} resizeAction
    */
-  resize(resizeAction) {
+  resize(resizeAction: IResizeAction) {
     return this.addAction(resizeAction);
   }
 
   /**
-   * @param {IAction} roundCornersAction
+   * @param {IRoundCornersAction} roundCornersAction
    */
-  roundCorners(roundCornersAction) {
+  roundCorners(roundCornersAction: IRoundCornersAction) {
     return this.addAction(roundCornersAction);
   }
 
@@ -47,7 +51,7 @@ class TransformableImage extends Transformation {
    * for current instance
    * @param {*} transformableImageConfig
    */
-  setConfig(transformableImageConfig) {
+  setConfig(transformableImageConfig: object) {
     this.config = transformableImageConfig;
     return this;
   }
@@ -65,10 +69,10 @@ class TransformableImage extends Transformation {
    * @param {string} publicID
    * @return {string}
    */
-  getUrlForImage(publicID) {
+  getUrlForImage(publicID: string) {
     // transformationString
     // TODO We can cache this per instance, this way the user can create 10000 URLS with the same transformation for free
-    let transformation = this.toString(); // Get transformation string, since this is a transformation instance
+    let transformation:string = this.toString(); // Get transformation string, since this is a transformation instance
 
     return cloudinaryURL(this.config, transformation, {
       publicID: publicID,

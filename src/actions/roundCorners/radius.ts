@@ -7,7 +7,7 @@ class Radius {
   /**
    * @param {number} num
    */
-  constructor(num) {
+  constructor(num: number) {
   }
 }
 
@@ -15,7 +15,7 @@ class Radius {
  * @param {number} num;
  * @return {Radius}
  */
-function radius(num) {
+function radius(num:number ) {
   return new Radius(num)
 }
 

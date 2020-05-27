@@ -5,9 +5,6 @@ import cloudinaryURL from "./url/cloudinaryURL";
 import TransformableImage from "./transformation/TransformableImage";
 // Actions
 import Actions from './actions/Actions';
-import Resize, {crop} from './actions/resize/Resize';
-
-
 
 /**
  * @description a class
@@ -17,4 +14,5 @@ class Base {
   }
 }
 
-export {cloudinaryURL, Transformation, Base};
+export {cloudinaryURL, Transformation, Base, Actions};
+export default {cloudinaryURL, Transformation, Base, Actions};

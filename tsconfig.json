@@ -1,16 +1,12 @@
 {
-  "exclude": [
-    "test/**/*.js",
-    "src/wip.js"
-  ],
   "compilerOptions": {
     "noImplicitAny": true,
+    "outDir": "./dist/esm",
+    "target": "ES5",
+    "declarationDir": "dist/types",
     "declaration": true,
-    "noEmit": false,
-    "emitDeclarationOnly": true,
-    "allowJs": true,
-    "outDir": "types",
-    "checkJs": true
+    "module": "ES2015",
+    "moduleResolution": "node"
   },
   "include": [
     "src"

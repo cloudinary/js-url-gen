@@ -1,13 +1,17 @@
-class Transformation {
+import {IAction} from "../interfaces/IAction";
+
+class Transformation{
+  actions: IAction[];
+
   constructor() {
-    /** @type {IAction[]} */
     this.actions = [];
   }
 
   /**
+   *
    * @param {IAction} action
    */
-  addAction(action) {
+  addAction(action: IAction) {
     this.actions.push(action);
     return this;
   }

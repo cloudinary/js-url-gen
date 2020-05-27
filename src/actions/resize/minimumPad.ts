@@ -9,7 +9,7 @@ class MinimumPad {
    * @param {number} padWidth
    * @param {number} padHeight
    */
-  constructor(padWidth, padHeight) {
+  constructor(padWidth: number, padHeight:number) {
   }
 }
 
@@ -18,7 +18,7 @@ class MinimumPad {
  * @param {number} padHeight
  * @return {MinimumPad}
  */
-function minimumPad(padWidth, padHeight) {
+function minimumPad(padWidth:number, padHeight:number) {
   return new MinimumPad(padWidth, padHeight)
 }
 

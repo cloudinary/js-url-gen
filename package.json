@@ -2,16 +2,16 @@
   "name": "@cloudinary/base",
   "version": "1.0.0-alpha.0",
   "description": "",
-  "main": "dist/base.esm.js",
   "scripts": {
     "test": "jest --coverage",
     "test:unit": "jest __TESTS__/unit",
     "test:unit:watch": "jest __TESTS__/unit --watch",
     "test:integration": "jest __TESTS__/integration",
     "test:integration:watch": "jest __TESTS__/integration --watch",
-    "build": "npm run lint && npm run build:types && rollup -c && npm run build:docs",
+    "build": "rimraf ./dist && npm run build:ESM && npm run build:UMD && npm run build:docs && node ./createEntryPoints.js",
+    "build:ESM": "tsc --project ./tsconfig.json",
+    "build:UMD": "rollup -c",
     "build:docs": "jsdoc --configure jsdoc.config.json --verbose",
-    "build:types": "tsc",
     "lint": "eslint src __TESTS__ --color",
     "start": "rollup -c rollup.dev.config.js -w",
     "bundlewatch": "bundlewatch --config ./bundlewatch.config.js"
@@ -30,15 +30,14 @@
     "foodoc": "0.0.9",
     "jest": "^25.2.7",
     "jsdoc": "^3.6.4",
+    "rimraf": "^3.0.2",
     "rollup": "^2.3.2",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-serve": "^1.0.1",
-    "typescript": "^3.8.3"
+    "rollup-plugin-typescript": "^1.0.1",
+    "tslib": "^2.0.0",
+    "typescript": "^3.9.3"
   },
-  "files": [
-    "dist",
-    "types"
-  ],
   "types": "./types/index.d.ts",
   "dependencies": {}
 }

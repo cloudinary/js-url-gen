@@ -1,18 +1,15 @@
-import '../../interfaces/IAction';
+import {IBorderAction} from "./IBorderAction";
 
-/**
- * @implements IAction
- */
-class Solid {
+class Solid implements IBorderAction {
   constructor() {
-    this.name = 'Crop'
+
   }
 
   /**
    *
    * @param {number} num
    */
-  width(num) {
+  width(num: number) {
     return this;
   }
 
@@ -20,7 +17,7 @@ class Solid {
    *
    * @param {string} color
    */
-  color(color) {
+  color(color: string) {
     return this;
   }
 }
