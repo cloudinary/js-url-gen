@@ -1,18 +1,20 @@
 import resolve from '@rollup/plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
 import serve from 'rollup-plugin-serve'
+import typescript from "rollup-plugin-typescript";
 
 export default {
-  input: 'src',
+  input: 'src/index.ts',
   output: [
     {
-      file: 'dev/base.esm.js',
+      file: 'playground/base.esm.js',
       format: 'esm'
     }
   ],
   plugins: [
+    typescript(),
     serve({
-      contentBase: 'dev'
+      contentBase: 'playground'
     }),
     resolve(),
     babel({
@@ -20,4 +22,3 @@ export default {
     })
   ]
 };
-

@@ -12,7 +12,7 @@ class Crop {
  * @return {Crop}
  */
 function crop() {
-  return new Crop()
+  return new Crop();
 }
 
 export default crop;

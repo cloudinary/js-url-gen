@@ -7,7 +7,7 @@ describe('Tests for Transformation Action -- Border', () => {
   });
 
   it('Is accepted as an action to TransformableImage', () => {
-    let tImage = new TransformableImage();
+    const tImage = new TransformableImage();
     // Ensures it compiles and doesn't throw
     expect(
       tImage.border(solid().width(50).color('green'))
@@ -15,7 +15,7 @@ describe('Tests for Transformation Action -- Border', () => {
   });
 
   it('Ensure the "solid" methods are chainable', () => {
-    let borderActionInstance = solid();
+    const borderActionInstance = solid();
 
     expect(borderActionInstance.width(50)).toEqual(borderActionInstance);
     expect(borderActionInstance.color('red')).toEqual(borderActionInstance);

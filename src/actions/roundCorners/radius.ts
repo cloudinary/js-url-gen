@@ -16,7 +16,7 @@ class Radius {
  * @return {Radius}
  */
 function radius(num:number ) {
-  return new Radius(num)
+  return new Radius(num);
 }
 
 export default radius;

@@ -6,7 +6,8 @@
     "declarationDir": "dist/types",
     "declaration": true,
     "module": "ES2015",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "baseUrl": "src"
   },
   "include": [
     "src"

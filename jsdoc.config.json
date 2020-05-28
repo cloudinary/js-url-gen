@@ -5,12 +5,16 @@
   },
   "source": {
     "include": ["src"],
-    "includePattern": ".+\\.js(doc|x)?$",
+    "includePattern": ".+\\.ts(doc|x)?$",
     "excludePattern": "(^|\\/|\\\\)_"
   },
   "plugins": [
-    "plugins/markdown"
+    "plugins/markdown",
+    "jsdoc-plugin-typescript"
   ],
+  "typescript": {
+    "moduleRoot": "src"
+  },
   "templates": {
     "cleverLinks": true,
     "monospaceLinks": true,

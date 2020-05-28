@@ -9,7 +9,7 @@ import {IRoundCornersAction} from "../actions/roundCorners/IResizeAction";
  * @param {{}} transformation
  * @param {{}} assetDescriptor
  */
-function cloudinaryURL(config: object, transformation: string, assetDescriptor: object) {
+function cloudinaryURL(config: unknown, transformation: string, assetDescriptor: unknown) {
   return '';
 }
 
@@ -17,12 +17,12 @@ function cloudinaryURL(config: object, transformation: string, assetDescriptor: 
  * @augments Transformation
  */
 class TransformableImage extends Transformation {
-  config: object;
+  config: unknown;
   /**
    * once for all future instances
    * @param {*} transformableImageConfig
    */
-  static setConfig(transformableImageConfig: object) {
+  static setConfig(transformableImageConfig: unknown) {
 
   }
 
@@ -51,7 +51,7 @@ class TransformableImage extends Transformation {
    * for current instance
    * @param {*} transformableImageConfig
    */
-  setConfig(transformableImageConfig: object) {
+  setConfig(transformableImageConfig: unknown) {
     this.config = transformableImageConfig;
     return this;
   }
@@ -72,7 +72,7 @@ class TransformableImage extends Transformation {
   getUrlForImage(publicID: string) {
     // transformationString
     // TODO We can cache this per instance, this way the user can create 10000 URLS with the same transformation for free
-    let transformation:string = this.toString(); // Get transformation string, since this is a transformation instance
+    const transformation:string = this.toString(); // Get transformation string, since this is a transformation instance
 
     return cloudinaryURL(this.config, transformation, {
       publicID: publicID,

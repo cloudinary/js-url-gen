@@ -23,7 +23,7 @@ class Transformation{
     let str = '';
 
     this.actions.forEach((action) => {
-      str += action.toString()
+      str += action.toString();
     });
 
     return str;

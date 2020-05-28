@@ -11,7 +11,7 @@ class Max {
  * @return {Max}
  */
 function max() {
-  return new Max()
+  return new Max();
 }
 
 export default max;

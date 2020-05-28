@@ -26,7 +26,7 @@ class Solid implements IBorderAction {
  * @return {Solid}
  */
 function solid() {
-  return new Solid()
+  return new Solid();
 }
 
 export default solid;

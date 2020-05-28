@@ -19,7 +19,7 @@ class MinimumPad {
  * @return {MinimumPad}
  */
 function minimumPad(padWidth:number, padHeight:number) {
-  return new MinimumPad(padWidth, padHeight)
+  return new MinimumPad(padWidth, padHeight);
 }
 
 export default minimumPad;

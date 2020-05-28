@@ -7,7 +7,7 @@ describe('Tests for Transformation Action -- Resize', () => {
   });
 
   it('Ensures minimumPad Is accepted as an action to TransformableImage', () => {
-    let tImage = new TransformableImage();
+    const tImage = new TransformableImage();
     // Ensures it compiles and doesn't throw
     expect(
       tImage.resize(minimumPad(250, 250))

@@ -11,7 +11,7 @@ describe('Tests for Transformation Action -- RoundCorners', () => {
   });
 
   it('Is accepted as an action to TransformableImage', () => {
-    let tImage = new TransformableImage();
+    const tImage = new TransformableImage();
     // Ensures it compiles and doesn't throw
     expect(
       tImage.roundCorners(radius(10))
