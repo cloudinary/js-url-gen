@@ -2,6 +2,6 @@
 node_modules
 # don't lint build output (make sure it's set to your correct build folder name)
 dist
-playground
+playground/base.esm.js
 # don't lint nyc coverage output
 coverage
