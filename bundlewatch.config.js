@@ -1,11 +1,7 @@
 const bundlewatchConfig = {
   files: [
     {
-      path: './dist/base.esm.js',
-      maxSize: '10kb'
-    },
-    {
-      path: './dist/base.umd.js',
+      path: './dist/bundles/umd/base.js',
       maxSize: '10kb'
     }
   ],
