@@ -8,7 +8,7 @@
     "test:unit:watch": "jest __TESTS__/unit --watch",
     "test:integration": "jest __TESTS__/integration",
     "test:integration:watch": "jest __TESTS__/integration --watch",
-    "build": "npm run lint && rimraf ./dist && npm run build:ESM && npm run build:UMD && node ./scripts/createEntryPoints.js",
+    "build": "bash ./scripts/build.sh",
     "build:ESM": "tsc --project ./tsconfig.json",
     "build:UMD": "rollup -c",
     "build:docs": "jsdoc --configure jsdoc.config.json --verbose",

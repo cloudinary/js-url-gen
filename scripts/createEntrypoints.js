@@ -24,19 +24,28 @@ function createActionsEntryPoints() {
   files.forEach((name) => {
     const stat = fs.lstatSync(`${dir}/${name}`);
 
+
     if (stat.isDirectory()) {
       fs.mkdirSync(`dist/actions/${name}`);
+
+      const hasTypes = fs.existsSync(`./dist/types/actions/${name}/${capitalize(name)}.d.ts`);
+      const hasFile = fs.existsSync(`./dist/bundles/esm/actions/${name}/${capitalize(name)}.js`);
+
+      if (!hasFile || !hasTypes) {
+        throw '\n***\nBUILD ERROR - Invalid folder structure detected, action must have a directory name and a capitalized file name: resize/Resize.js\n***\n';
+      }
+
       fs.writeFileSync(`dist/actions/${name}/package.json`, JSON.stringify({
         "types": `../../types/actions/${name}/${capitalize(name)}.d.ts`,
-        "main": `../../esm/actions/${name}/${capitalize(name)}.js`,
-      }, '\t'))
+        "main": `../../bundles/esm/actions/${name}/${capitalize(name)}.js`
+      }, null, '\t'));
     }
   });
 
   // create umd
   fs.writeFileSync(`dist/bundles/umd/package.json`, JSON.stringify({
     "types": `../../types/index.d.ts`,
-    "main": `./base.js`,
+    "main": `./base.js`
   }, null, '\t'));
 }
 
@@ -48,9 +57,8 @@ function createActionsEntryPoints() {
 function createMainEntryPoint() {
   const projectJson = JSON.parse(fs.readFileSync('./package.json', 'utf-8'));
   delete projectJson.scripts;
-  delete projectJson.dependencies;
   delete projectJson.devDependencies;
-  projectJson.main = './esm/index.js';
+  projectJson.main = './bundles/esm/index.js';
   fs.writeFileSync('./dist/package.json', JSON.stringify(projectJson, null, '\t'));
 }
 
