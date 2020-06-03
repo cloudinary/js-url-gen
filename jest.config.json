@@ -20,5 +20,9 @@
     "ts-jest": {
       "diagnostics": false
     }
-  }
+  },
+  "reporters": [
+    "default",
+    "jest-html-reporters"
+  ]
 }

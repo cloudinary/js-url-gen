@@ -3,7 +3,7 @@
   "version": "1.0.0-alpha.0",
   "description": "",
   "scripts": {
-    "test": "jest --coverage",
+    "test": "node ./scripts/updateCompliationTests.js && jest --coverage",
     "test:unit": "jest __TESTS__/unit",
     "test:unit:watch": "jest __TESTS__/unit --watch",
     "test:integration": "jest __TESTS__/integration",
@@ -31,6 +31,7 @@
     "eslint": "^6.8.0",
     "foodoc": "0.0.9",
     "jest": "^26.0.1",
+    "jest-html-reporters": "^1.2.1",
     "jsdoc": "^3.6.4",
     "jsdoc-plugin-typescript": "^2.0.5",
     "rimraf": "^3.0.2",
