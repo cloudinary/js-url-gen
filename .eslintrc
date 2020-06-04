@@ -1,5 +1,13 @@
 {
-  "extends": "eslint:recommended",
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module"
@@ -11,6 +19,27 @@
   },
   "rules": {
     "require-jsdoc": "error",
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "indent" : ["error", 2],
+    "dot-notation" : "error",
+    "no-param-reassign" : "error",
+    "no-unreachable" : "error",
+    "arrow-parens" : "error",
+    "one-var-declaration-per-line" : "error",
+    "curly": "error",
+    "semi": "error",
+    "prefer-const": "error",
+    "vars-on-top" : "error",
+    "no-cond-assign": "error",
+    "no-console" : "warn",
+    "comma-dangle" : "error",
+    "comma-spacing" : "error",
+    "no-multi-spaces" : "error",
+    "prefer-template" : "error",
+    "max-nested-callbacks" : ["error",{
+      "max": 3
+    }],
+    "@typescript-eslint/no-empty-interface": 0,
+    "@typescript-eslint/no-empty-function": 0
   }
 }
