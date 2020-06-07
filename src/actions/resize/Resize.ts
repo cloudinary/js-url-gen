@@ -1,10 +1,13 @@
 import crop from './crop';
-import minimumPad from './minimumPad';
+import scale from './scale';
 import fill from './fill';
+import minimumPad from './minimumPad';
 
-export {crop, minimumPad, fill};
+export {crop, scale, fill, minimumPad};
+
 export default {
   crop,
-  minimumPad,
-  fill
+  scale,
+  fill,
+  minimumPad
 };

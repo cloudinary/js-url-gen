@@ -18,7 +18,7 @@ class Crop {
  * @param {number} cropHeight
  * @return {Crop}
  */
-function crop(cropWidth:number, cropHeight:number) {
+function crop(cropWidth:number, cropHeight:number):Crop {
   return new Crop(cropWidth, cropHeight);
 }
 
