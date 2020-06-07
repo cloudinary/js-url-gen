@@ -3,7 +3,7 @@
   "testEnvironment": "node",
   "bail": true,
   "collectCoverageFrom": [
-    "src/**/*.ts"
+    "<rootDir>/src/**/*.ts"
   ],
   "modulePaths": [
     "<rootDir>/src"
