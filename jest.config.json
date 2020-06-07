@@ -1,7 +1,9 @@
 {
+  "preset": "ts-jest",
+  "testEnvironment": "node",
   "bail": true,
   "collectCoverageFrom": [
-    "src/**/*.js"
+    "<rootDir>/src/**/*.ts"
   ],
   "modulePaths": [
     "<rootDir>/src"
@@ -13,5 +15,14 @@
       "lines": 95,
       "statements": 95
     }
-  }
+  },
+  "globals": {
+    "ts-jest": {
+      "diagnostics": false
+    }
+  },
+  "reporters": [
+    "default",
+    "jest-html-reporters"
+  ]
 }

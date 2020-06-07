@@ -4,3 +4,7 @@ node_modules
 dist
 coverage
 docs
+playground/base.esm.js
+scripts/tmp.sh
+jest_html_reporters.html
+__TESTS__/compilation.test.ts

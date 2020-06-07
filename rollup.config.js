@@ -1,23 +1,18 @@
 import resolve from '@rollup/plugin-node-resolve';
-import babel from 'rollup-plugin-babel';
+import typescript from 'rollup-plugin-typescript';
 
-export default {
-  input: 'src',
+export default [{
+  input: 'src/index.ts',
   output: [
     {
-      file: 'dist/base.esm.js',
-      format: 'esm'
-    },
-    {
-      file: 'dist/base.umd.js',
+      file: 'dist/bundles/umd/base.js',
       format: 'umd',
       name:'cloudinaryBase'
     },
   ],
   plugins: [
     resolve(),
-    babel({
-      exclude: 'node_modules/**' // only transpile our source code
-    })
+    typescript()
   ]
-};
+}];
+
