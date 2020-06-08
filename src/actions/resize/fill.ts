@@ -1,14 +1,16 @@
 import '../../interfaces/IAction';
+import Action from "../Action";
 
 /**
  * @implements IAction
  */
-class Fill {
+class Fill extends Action implements IAction {
   /**
    * @param {number} fillWidth
    * @param {number} fillHeight
    */
   constructor(fillWidth: number, fillHeight: number) {
+    super();
   }
 }
 

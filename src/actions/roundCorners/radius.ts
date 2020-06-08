@@ -1,13 +1,16 @@
 import '../../interfaces/IAction';
+import Action from "../Action";
+import {IAction} from "../../interfaces/IAction";
 
 /**
  * @implements IAction
  */
-class Radius {
+class Radius extends Action implements IAction {
   /**
    * @param {number} num
    */
   constructor(num: number) {
+    super();
   }
 }
 

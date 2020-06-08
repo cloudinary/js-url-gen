@@ -1,8 +1,9 @@
 import {IBorderAction} from "./IBorderAction";
+import Action from "../Action";
 
-class Solid implements IBorderAction {
+class Solid extends Action implements IBorderAction{
   constructor() {
-
+    super();
   }
 
   /**

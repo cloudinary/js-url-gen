@@ -1,14 +1,17 @@
 import '../../interfaces/IAction';
+import Action from "../Action";
+import {IAction} from "../../interfaces/IAction";
 
 /**
  * @implements IAction
  */
-class Scale {
+class Scale extends Action implements IAction {
   /**
    * @param {number} scaleWidth
    * @param {number} scaleHeight
    */
   constructor(scaleWidth: number, scaleHeight:number) {
+    super();
   }
 }
 

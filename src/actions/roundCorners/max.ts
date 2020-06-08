@@ -1,9 +1,8 @@
 import '../../interfaces/IAction';
+import Action from "../Action";
+import {IAction} from "../../interfaces/IAction";
 
-/**
- * @implements IAction
- */
-class Max {
+class Max extends Action implements IAction {
 
 }
 
