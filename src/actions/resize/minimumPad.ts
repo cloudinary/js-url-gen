@@ -3,13 +3,24 @@ import '../../interfaces/IAction';
 /**
  * @implements IAction
  */
-class MinimumPad {
+class MinimumPad{
+  private padHeight: number;
+  private padWidth: number;
   /**
    *
    * @param {number} padWidth
    * @param {number} padHeight
    */
   constructor(padWidth: number, padHeight:number) {
+    this.padWidth = padWidth;
+    this.padHeight = padHeight;
+  }
+
+  /**
+   * @return {string}
+   */
+  toString(): string {
+    return `c_mpad,w_${this.padWidth},h_${this.padWidth}`;
   }
 }
 

@@ -4,11 +4,23 @@ import '../../interfaces/IAction';
  * @implements IAction
  */
 class Scale {
+  private scaleWidth: number;
+  private scaleHeight: number;
+
   /**
    * @param {number} scaleWidth
    * @param {number} scaleHeight
    */
   constructor(scaleWidth: number, scaleHeight:number) {
+    this.scaleWidth = scaleWidth;
+    this.scaleHeight = scaleHeight;
+  }
+
+  /**
+   * @return {string}
+   */
+  toString(): string {
+    return `c_scale,w_${this.scaleWidth},h_${this.scaleHeight}`;
   }
 }
 
