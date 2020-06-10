@@ -18,7 +18,7 @@ describe('Tests for CloudinaryConfiguration', () => {
         provisioning_api_key: 'key',
         provisioning_api_secret: 'secret',
         account_id: 'abc'
-      },
+      }
     });
 
     expect(conf.account.provisioning_api_key).toBe('key');
