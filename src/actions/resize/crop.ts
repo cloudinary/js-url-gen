@@ -1,9 +1,11 @@
 import '../../interfaces/IAction';
+import Action from "../Action";
+import {IAction} from "../../interfaces/IAction";
 
 /**
  * @implements IAction
  */
-class Crop {
+class Crop extends Action implements IAction {
   private cropWidth: number;
   private cropHeight: number;
   /**
@@ -12,6 +14,7 @@ class Crop {
    * @param {number} cropHeight
    */
   constructor(cropWidth:number, cropHeight:number) {
+    super();
     this.cropWidth = cropWidth;
     this.cropHeight = cropHeight;
   }

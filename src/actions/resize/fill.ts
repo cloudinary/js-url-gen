@@ -1,9 +1,11 @@
 import '../../interfaces/IAction';
+import Action from "../Action";
+import {IAction} from "../../interfaces/IAction";
 
 /**
  * @implements IAction
  */
-class Fill {
+class Fill extends Action implements IAction {
   private fillWidth: number;
   private fillHeight: number;
   /**
@@ -11,6 +13,7 @@ class Fill {
    * @param {number} fillHeight
    */
   constructor(fillWidth: number, fillHeight: number) {
+    super();
     this.fillWidth = fillWidth;
     this.fillHeight = fillHeight;
   }
