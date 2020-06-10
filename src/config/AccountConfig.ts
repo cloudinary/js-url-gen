@@ -1,6 +1,6 @@
 import IAccountConfig from "../interfaces/Config/IAccountConfig";
 import {ALLOWED_ACCOUNT_CONFIG, INVALID_TYPE_MESSAGE} from "../constants";
-import Config from "./BaseConfig.js";
+import Config from "./BaseConfig";
 
 class AccountConfig extends Config implements IAccountConfig {
   provisioning_api_key?: string;

@@ -1,6 +1,6 @@
 import ICloudConfig from "../interfaces/Config/ICloudConfig";
 import {ALLOWED_CLOUD_CONFIG, INVALID_TYPE_MESSAGE} from "../constants";
-import Config from "./BaseConfig.js";
+import Config from "./BaseConfig";
 
 class CloudConfig extends Config implements ICloudConfig {
   cloud_name?: string;

@@ -1,5 +1,5 @@
 import IURLConfig from "../interfaces/Config/IURLConfig";
-import Config from "./BaseConfig.js";
+import Config from "./BaseConfig";
 import {ALLOWED_URL_CONFIG, INVALID_TYPE_MESSAGE} from "../constants";
 import IAuthTokenConfig from "../interfaces/Config/IAuthTokenConfig";
 
