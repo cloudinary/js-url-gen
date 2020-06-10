@@ -1,15 +1,17 @@
 import '../../interfaces/IAction';
+import Action from "../Action";
 
 /**
  * @implements IAction
  */
-class MinimumPad {
+class MinimumPad extends Action implements IAction {
   /**
    *
    * @param {number} padWidth
    * @param {number} padHeight
    */
   constructor(padWidth: number, padHeight:number) {
+    super();
   }
 }
 
