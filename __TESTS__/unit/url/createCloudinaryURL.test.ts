@@ -14,6 +14,11 @@ describe('Tests for TransformableImage', () => {
       .toBe('http://res.cloudinary.com/demo/video/upload/dog');
   });
 
+  it ('Creates a private cloudinaryURL', () => {
+    expect(createCloudinaryURL({publicId: 'dog', cloudName:'demo'}, {type: 'private'}))
+      .toBe('http://res.cloudinary.com/demo/image/private/dog');
+  });
+
   it ('Creates a cloudinaryURL with minimumPad', () => {
     const tImage = new TransformableImage();
     tImage.resize(minimumPad(250, 250));
