@@ -1,6 +1,6 @@
 import {IAction} from "../interfaces/IAction";
 
-class Transformation{
+class Transformation {
   actions: IAction[];
 
   constructor() {

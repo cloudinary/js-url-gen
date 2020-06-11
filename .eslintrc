@@ -31,7 +31,6 @@
     "prefer-const": "error",
     "vars-on-top" : "error",
     "no-cond-assign": "error",
-    "no-console" : "warn",
     "comma-dangle" : "error",
     "comma-spacing" : "error",
     "no-multi-spaces" : "error",

@@ -2,28 +2,29 @@ import Transformation from "./Transformation";
 import {IBorderAction} from "../actions/border/IBorderAction";
 import {IResizeAction} from "../actions/resize/IResizeAction";
 import {IRoundCornersAction} from "../actions/roundCorners/IResizeAction";
+import createCloudinaryURL from "../url/cloudinaryURL";
+import CloudinaryConfig from "../config/CloudinaryConfig";
+import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigurations";
+import {IDescriptor} from "../interfaces/IDescriptor";
 
-/**
- * PSEUDO IMPLEMENTATION
- * @param {{}} config
- * @param {{}} transformation
- * @param {{}} assetDescriptor
- */
-function cloudinaryURL(config: unknown, transformation: string, assetDescriptor: unknown) {
-  return '';
-}
 
 /**
  * @augments Transformation
  */
 class TransformableImage extends Transformation {
-  config: unknown;
-  /**
-   * once for all future instances
-   * @param {*} transformableImageConfig
-   */
-  static setConfig(transformableImageConfig: unknown) {
+  config: CloudinaryConfig;
+  asset: IDescriptor;
+  private static config: ICloudinaryConfigurations;
 
+  /**
+   *
+   * @param publicID
+   */
+  constructor(publicID?: string) {
+    super();
+    this.asset = {
+      publicID
+    };
   }
 
   /**
@@ -36,27 +37,28 @@ class TransformableImage extends Transformation {
   /**
    * @param {IResizeAction} resizeAction
    */
-  resize(resizeAction: IResizeAction) {
+  resize(resizeAction: IResizeAction): TransformableImage {
     return this.addAction(resizeAction);
   }
 
   /**
    * @param {IRoundCornersAction} roundCornersAction
    */
-  roundCorners(roundCornersAction: IRoundCornersAction) {
+  roundCorners(roundCornersAction: IRoundCornersAction): TransformableImage {
     return this.addAction(roundCornersAction);
   }
 
   /**
    * for current instance
-   * @param {*} transformableImageConfig
+   * @param {ICloudinaryConfigurations} cloudinaryConfig
    */
-  setConfig(transformableImageConfig: unknown) {
-    this.config = transformableImageConfig;
+  setConfig(cloudinaryConfig: ICloudinaryConfigurations): TransformableImage {
+    this.config = new CloudinaryConfig(cloudinaryConfig);
     return this;
   }
 
-  setPublicID() {
+  setPublicID(publicID: string): TransformableImage {
+    this.asset.publicID = publicID;
     return this;
   }
 
@@ -64,20 +66,16 @@ class TransformableImage extends Transformation {
     return this;
   }
 
-  /**
-   *
-   * @param {string} publicID
-   * @return {string}
-   */
-  getUrlForImage(publicID: string) {
-    // transformationString
-    // TODO We can cache this per instance, this way the user can create 10000 URLS with the same transformation for free
-    const transformation:string = this.toString(); // Get transformation string, since this is a transformation instance
+  describeAsset(assetDescriptor: IDescriptor): TransformableImage {
+    Object.assign(this.asset, assetDescriptor);
+    return this;
+  }
 
-    return cloudinaryURL(this.config, transformation, {
-      publicID: publicID,
-      deliveryType: 'upload/image' // hardcoded in this class, user doesn't need to know
-    });
+  toURL(): string {
+    return createCloudinaryURL(this.config, Object.assign({
+      resourceType: 'image',
+      type: 'upload'
+    }, this.asset), this);
   }
 }
 

@@ -1,6 +1,6 @@
 import Transformation from '../transformation/Transformation';
-import {Config} from '../interfaces/Config';
-import {Descriptor} from '../interfaces/Descriptor';
+import {IDescriptor} from '../interfaces/IDescriptor';
+import CloudinaryConfig from "../config/CloudinaryConfig";
 
 /**
  *
@@ -9,14 +9,14 @@ import {Descriptor} from '../interfaces/Descriptor';
  * @param {Object} descriptor
  * @param {Transformation} transformation
  */
-function createCloudinaryURL(config: Config, descriptor?: Descriptor, transformation?: Transformation) {
-  const prefix = getUrlPrefix(config.cloudName);
+function createCloudinaryURL(config: CloudinaryConfig, descriptor?: IDescriptor, transformation?: Transformation) {
+  const prefix = getUrlPrefix(config.cloud.cloudName);
   const resourceType = handleResourceType(descriptor);
   const type = handleType(descriptor);
   const transformationString = transformation ? transformation.toString() : '';
-  const publicId = config.publicId;
+  const publicID = descriptor.publicID;
 
-  const url = [prefix, resourceType, type, transformationString, publicId]
+  const url = [prefix, resourceType, type, transformationString, publicID]
     .join('/')
     .replace(/([^:])\/+/g, '$1/') // replace '///' with '//'
     .replace(' ', '%20');
@@ -43,7 +43,7 @@ function getUrlPrefix(cloudName: string) {
  *
  * @param descriptor
  */
-function handleResourceType(descriptor: Descriptor) {
+function handleResourceType(descriptor: IDescriptor) {
   //default to image
   if(!descriptor || !descriptor.resourceType) {
     return 'image';
@@ -56,7 +56,7 @@ function handleResourceType(descriptor: Descriptor) {
  *
  * @param descriptor
  */
-function handleType(descriptor: Descriptor) {
+function handleType(descriptor: IDescriptor) {
   //default to upload
   if(!descriptor || !descriptor.type) {
     return 'upload';

@@ -7,20 +7,12 @@ describe('Tests for TransformableImage', () => {
     tImage = new TransformableImage();
   });
 
-  it('Has a static setConfig function that should not return anything', () => {
-    expect(TransformableImage.setConfig({})).toBeUndefined();
-  });
-
   it('Instantiates a transformableImage', () => {
     expect(tImage).toBeDefined();
   });
 
-  it('Has a method to create cloudinaryURL', () => {
-    expect(tImage.getUrlForImage('sample')).toBeDefined();
-  });
-
   it('setPublicID should be chainable', () => {
-    expect(tImage.setPublicID()).toBe(tImage);
+    expect(tImage.setPublicID('sample')).toBe(tImage);
   });
 
   it('Sign shoudl be chainable', () => {
