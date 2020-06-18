@@ -10,8 +10,6 @@ interface IURLConfig {
   useRootPath?: boolean;
   secure?: boolean;
   forceVersion?: boolean;
-
-  [other:string] : unknown;
 }
 
 export default IURLConfig;
