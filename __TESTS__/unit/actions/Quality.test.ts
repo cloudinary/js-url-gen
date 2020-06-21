@@ -91,7 +91,7 @@ describe('Tests for Transformation Action -- Quality', () => {
       .toURL();
 
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/q_auto:low/sample');
-  })
+  });
 
   it('Creates a cloudinaryURL with quality level', () => {
     const url = new TransformableImage()
