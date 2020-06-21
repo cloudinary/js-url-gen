@@ -6,6 +6,7 @@ import createCloudinaryURL from "../url/cloudinaryURL";
 import CloudinaryConfig from "../config/CloudinaryConfig";
 import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigurations";
 import {IDescriptor} from "../interfaces/IDescriptor";
+import {IQualityAction} from "../actions/quality/IQualityAction";
 
 
 /**
@@ -39,6 +40,13 @@ class TransformableImage extends Transformation {
    */
   resize(resizeAction: IResizeAction): TransformableImage {
     return this.addAction(resizeAction);
+  }
+
+  /**
+   * @param {IQualityAction} qualityAction
+   */
+  quality(qualityAction: IQualityAction): TransformableImage {
+    return this.addAction(qualityAction);
   }
 
   /**
