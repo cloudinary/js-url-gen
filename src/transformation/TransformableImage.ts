@@ -6,6 +6,7 @@ import createCloudinaryURL from "../url/cloudinaryURL";
 import CloudinaryConfig from "../config/CloudinaryConfig";
 import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigurations";
 import {IDescriptor} from "../interfaces/IDescriptor";
+import {IEffectAction} from "../actions/effect/IEffectAction";
 
 
 /**
@@ -46,6 +47,13 @@ class TransformableImage extends Transformation {
    */
   roundCorners(roundCornersAction: IRoundCornersAction): TransformableImage {
     return this.addAction(roundCornersAction);
+  }
+
+  /**
+   * @param {IEffectAction} effectAction
+   */
+  effect(effectAction: IEffectAction): TransformableImage {
+    return this.addAction(effectAction);
   }
 
   /**
