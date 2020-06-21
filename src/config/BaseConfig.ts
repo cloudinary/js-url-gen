@@ -1,26 +1,31 @@
-import ICloudConfig from "../interfaces/Config/ICloudConfig";
-import {INVALID_TYPE_MESSAGE} from "../constants";
+/**
+ *
+ * @param a
+ */
+function isObject(a: unknown): boolean {
+  if (typeof a !== 'object' || a instanceof Array) {
+    return false;
+  } else {
+    return true;
+  }
+}
 
 class Config {
-  /**
-   * Type guard for user config input
-   * @param {any} object User provided input of unknown shape
-   * @param {string[]} validKeys Array of valid configuration keys
-   * @return {boolean} Whether an object is a valid configuration object
-   */
-  isValidConfig(object:unknown, validKeys:string[]): object is ICloudConfig {
-    if (typeof object !== 'object' || object instanceof Array) {
-      return false;
+  filterOutNonSupportedKeys <T> (userProvidedConfig: T, validKeys:string[]): T {
+    const obj:T = Object.create({});
+
+    if (isObject(userProvidedConfig)) {
+      (Object.keys(userProvidedConfig) as Array<keyof T>).forEach((key) => {
+        if (validKeys.indexOf(key as string) >= 0) {
+          obj[key] = userProvidedConfig[key];
+        } else {
+          console.warn('Warning - unsupported key provided to configuration: ', key);
+        }
+      });
+      return obj;
+    } else {
+      return Object.create({});
     }
-
-    Object.keys(object).forEach((key) => {
-      if (validKeys.indexOf(key) === -1) {
-        console.error(`${INVALID_TYPE_MESSAGE}: ${key}`);
-      }
-    });
-
-    // the type-guard always returns true, but it helps with hinting in the IDE
-    return true;
   }
 }
 

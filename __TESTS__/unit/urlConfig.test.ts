@@ -22,9 +22,6 @@ describe('It tests a combination of Cloudianry URL and Configuration', () => {
       .setConfig(DEMO_CONFIG)
       .resize(Resize.fill(100, 100))
       .setPublicID('sample')
-      .describeAsset({
-        // has sane defaults for image/upload
-      })
       .toURL();
 
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/c_fill,w_100,h_100/sample');
@@ -63,7 +60,7 @@ describe('It tests a combination of Cloudianry URL and Configuration', () => {
      */
     const url = myInstance.image('sample')
       .resize(Resize.fill(100, 100))
-      .describeAsset({ // In PHP, thi
+      .describeAsset({
         type:'fetch', // defaults to "upload"
         resourceType: 'avatar' // Defaults to image
       })

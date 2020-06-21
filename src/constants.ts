@@ -1,4 +1,3 @@
-export const ALLOWED_ACCOUNT_CONFIG = ['provisioningApiKey', 'provisioningApiSecret', 'accountID'];
 export const ALLOWED_URL_CONFIG = [
   'cdnSubdomain',
   'secureCdnSubdomain',
@@ -12,10 +11,12 @@ export const ALLOWED_URL_CONFIG = [
   'secure',
   'forceVersion'
 ];
+
 export const ALLOWED_CLOUD_CONFIG = [
   'cloudName',
   'apiKey',
-  'apiSecret'
+  'apiSecret',
+  'authToken'
 ];
 
 

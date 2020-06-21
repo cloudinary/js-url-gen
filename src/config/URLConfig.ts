@@ -1,7 +1,6 @@
 import IURLConfig from "../interfaces/Config/IURLConfig";
 import Config from "./BaseConfig";
-import {ALLOWED_URL_CONFIG, INVALID_TYPE_MESSAGE} from "../constants";
-import IAuthTokenConfig from "../interfaces/Config/IAuthTokenConfig";
+import {ALLOWED_URL_CONFIG} from "../constants";
 import ICloudConfig from "../interfaces/Config/ICloudConfig";
 
 class URLConfig extends Config implements IURLConfig {
@@ -17,27 +16,18 @@ class URLConfig extends Config implements IURLConfig {
   secure?: boolean;
   forceVersion?: boolean;
 
-  [other:string] : unknown;
-
   /**
-   * @param {IURLConfig} urlConfig
+   * @param {IURLConfig} userURLConfig
    */
-  constructor(urlConfig: IURLConfig | unknown) {
+  constructor(userURLConfig: IURLConfig | unknown) {
     super();
-    if (this.isUrlConfigTypeGuard(urlConfig)) {
-      Object.assign(this, urlConfig);
-    } else {
-      console.error(INVALID_TYPE_MESSAGE);
-    }
+    const urlConfig = this.filterOutNonSupportedKeys(userURLConfig, ALLOWED_URL_CONFIG);
+    Object.assign(this, urlConfig);
   }
 
-  extend(urlConfig: ICloudConfig | unknown): URLConfig {
-    this.isUrlConfigTypeGuard(urlConfig);
+  extend(userURLConfig: ICloudConfig | unknown): URLConfig {
+    const urlConfig = this.filterOutNonSupportedKeys(userURLConfig, ALLOWED_URL_CONFIG);
     return new URLConfig(Object.assign({}, this, urlConfig));
-  }
-
-  isUrlConfigTypeGuard(urlConfig:unknown): urlConfig is IURLConfig {
-    return this.isValidConfig(urlConfig, ALLOWED_URL_CONFIG);
   }
 }
 

@@ -2,34 +2,27 @@ import ICloudConfig from "../interfaces/Config/ICloudConfig";
 import {ALLOWED_CLOUD_CONFIG, INVALID_TYPE_MESSAGE} from "../constants";
 import Config from "./BaseConfig";
 
-
-
 class CloudConfig extends Config implements ICloudConfig {
   cloudName?: string;
   apiKey?: string;
   apiSecret?: string;
 
-  [other:string]: unknown;
-
   /**
-   * @param {ICloudConfig} cloudConfig
+   * @param {ICloudConfig} userCloudConfig
    */
-  constructor(cloudConfig: ICloudConfig | unknown) {
+  constructor(userCloudConfig: ICloudConfig) {
     super();
-    if (this.isCloudConfigTypeGuard(cloudConfig)) {
-      Object.assign(this, cloudConfig);
-    } else {
-      console.error(INVALID_TYPE_MESSAGE);
+    const cloudConfig = this.filterOutNonSupportedKeys(userCloudConfig, ALLOWED_CLOUD_CONFIG);
+    Object.assign(this, cloudConfig);
+
+    if (!this.cloudName) {
+      throw 'Missing mandatory field cloudName';
     }
   }
 
-  extend(cloudConfig: ICloudConfig | unknown): CloudConfig {
-    this.isCloudConfigTypeGuard(cloudConfig);
+  extend(userCloudConfig: ICloudConfig): CloudConfig {
+    const cloudConfig = this.filterOutNonSupportedKeys(userCloudConfig, ALLOWED_CLOUD_CONFIG);
     return new CloudConfig(Object.assign({}, this, cloudConfig));
-  }
-
-  isCloudConfigTypeGuard(cloudConfig:unknown): cloudConfig is ICloudConfig {
-    return this.isValidConfig(cloudConfig, ALLOWED_CLOUD_CONFIG);
   }
 }
 
