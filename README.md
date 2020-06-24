@@ -3,7 +3,7 @@
 This repository is a work in in progress in a pre-alpha state.
 Needless to say it's not stable.
 
-Feel free to peak around and play with our new API.
+Feel free to peek around and play with our new API.
 
 ### Interested in Cloudinary?
 
