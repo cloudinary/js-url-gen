@@ -5,6 +5,8 @@ import {IAction} from "../../interfaces/IAction";
  * @implements IAction
  */
 class Crop extends Action implements IAction {
+  private cropWidth: number;
+  private cropHeight: number;
   /**
    *
    * @param {number} cropWidth
@@ -12,6 +14,15 @@ class Crop extends Action implements IAction {
    */
   constructor(cropWidth:number, cropHeight:number) {
     super();
+    this.cropWidth = cropWidth;
+    this.cropHeight = cropHeight;
+  }
+
+  /**
+   * @return {string}
+   */
+  toString(): string {
+    return `c_crop,w_${this.cropWidth},h_${this.cropHeight}`;
   }
 }
 

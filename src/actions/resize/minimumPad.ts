@@ -5,6 +5,8 @@ import {IAction} from "../../interfaces/IAction";
  * @implements IAction
  */
 class MinimumPad extends Action implements IAction {
+  private padHeight: number;
+  private padWidth: number;
   /**
    *
    * @param {number} padWidth
@@ -12,6 +14,15 @@ class MinimumPad extends Action implements IAction {
    */
   constructor(padWidth: number, padHeight:number) {
     super();
+    this.padWidth = padWidth;
+    this.padHeight = padHeight;
+  }
+
+  /**
+   * @return {string}
+   */
+  toString(): string {
+    return `c_mpad,w_${this.padWidth},h_${this.padWidth}`;
   }
 }
 

@@ -1,6 +1,6 @@
 import {IAction} from "../interfaces/IAction";
 
-class Transformation{
+class Transformation {
   actions: IAction[];
 
   constructor() {
@@ -8,10 +8,9 @@ class Transformation{
   }
 
   /**
-   *
    * @param {IAction} action
    */
-  addAction(action: IAction) {
+  addAction(action: IAction): this {
     this.actions.push(action);
     return this;
   }
@@ -19,7 +18,7 @@ class Transformation{
   /**
    * @return {string}
    */
-  toString() {
+  toString(): string {
     let str = '';
 
     this.actions.forEach((action) => {

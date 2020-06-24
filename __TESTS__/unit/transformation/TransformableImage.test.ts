@@ -7,28 +7,39 @@ describe('Tests for TransformableImage', () => {
     tImage = new TransformableImage();
   });
 
-  it('Has a static setConfig function that should not return anything', () => {
-    expect(TransformableImage.setConfig({})).toBeUndefined();
-  });
-
   it('Instantiates a transformableImage', () => {
     expect(tImage).toBeDefined();
   });
 
-  it('Has a method to create cloudinaryURL', () => {
-    expect(tImage.getUrlForImage('sample')).toBeDefined();
-  });
-
   it('setPublicID should be chainable', () => {
-    expect(tImage.setPublicID()).toBe(tImage);
-  });
-
-  it('Sign shoudl be chainable', () => {
-    expect(tImage.sign()).toBe(tImage);
+    expect(tImage.setPublicID('sample')).toBe(tImage);
   });
 
   it('Sign should be chainable', () => {
-    expect(tImage.setConfig({})).toBe(tImage);
+    expect(tImage.sign()).toBe(tImage);
+  });
+
+  it('setConfig should be chainable', () => {
+    expect(tImage.setConfig({
+      cloud: {
+        cloudName:'foo'
+      }
+    })).toBe(tImage);
+  });
+
+  it('Can use the asset descriptor methods without breaking (Internals not yet implemented)', () => {
+    expect(tImage
+      .setConfig({
+        cloud: {
+          cloudName:'demo'
+        }
+      })
+      .setType('fetch')
+      .setResourceType('avatar')
+      .setVersion(1234)
+      .setPublicID('sample')
+      .toURL()
+    ).toBe('http://res.cloudinary.com/demo/avatar/fetch/sample');
   });
 
   it('When providing actions with a toString method, should concat all child strings', () => {

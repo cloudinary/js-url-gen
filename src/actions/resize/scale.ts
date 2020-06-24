@@ -1,4 +1,3 @@
-import '../../interfaces/IAction';
 import Action from "../Action";
 import {IAction} from "../../interfaces/IAction";
 
@@ -6,12 +5,24 @@ import {IAction} from "../../interfaces/IAction";
  * @implements IAction
  */
 class Scale extends Action implements IAction {
+  private scaleWidth: number;
+  private scaleHeight: number;
+
   /**
    * @param {number} scaleWidth
    * @param {number} scaleHeight
    */
   constructor(scaleWidth: number, scaleHeight:number) {
     super();
+    this.scaleWidth = scaleWidth;
+    this.scaleHeight = scaleHeight;
+  }
+
+  /**
+   * @return {string}
+   */
+  toString(): string {
+    return `c_scale,w_${this.scaleWidth},h_${this.scaleHeight}`;
   }
 }
 
