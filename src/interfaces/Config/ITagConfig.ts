@@ -1,8 +1,4 @@
 interface ITagConfig {
-  responsive?: boolean;
-  responsiveClass?: string;
-  responsiveWidth?: boolean;
-  responsivePlaceholder?: string;
   hiDpi?: boolean;
   clientHints?: boolean;
   unsignedUpload?: boolean;
@@ -11,6 +7,12 @@ interface ITagConfig {
   videoPosterFormat?: string;
   quotesType?: string;
   contentDelimiter: string;
+  responsive: {
+    isResponsive: boolean;
+    responsiveClass?: string;
+    responsiveWidth?: boolean;
+    responsivePlaceholder?: string;
+  }
 }
 
 export default ITagConfig;

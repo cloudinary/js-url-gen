@@ -6,6 +6,7 @@ import createCloudinaryURL from "../url/cloudinaryURL";
 import CloudinaryConfig from "../config/CloudinaryConfig";
 import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigurations";
 import {IDescriptor} from "../interfaces/IDescriptor";
+import {IEffectAction} from "../actions/effect/IEffectAction";
 import {IQualityAction} from "../actions/quality/IQualityAction";
 
 
@@ -27,6 +28,28 @@ class TransformableImage extends Transformation {
       publicID
     };
   }
+
+  setVersion(version:number): this {
+    this.describeAsset({
+      version
+    });
+    return this;
+  }
+
+  setResourceType(resourceType: string): this {
+    this.describeAsset({
+      resourceType
+    });
+    return this;
+  }
+
+  setType(type: string): this {
+    this.describeAsset({
+      type
+    });
+    return this;
+  }
+
 
   /**
    * @param {IBorderAction} borderAction
@@ -54,6 +77,13 @@ class TransformableImage extends Transformation {
    */
   roundCorners(roundCornersAction: IRoundCornersAction): TransformableImage {
     return this.addAction(roundCornersAction);
+  }
+
+  /**
+   * @param {IEffectAction} effectAction
+   */
+  effect(effectAction: IEffectAction): TransformableImage {
+    return this.addAction(effectAction);
   }
 
   /**

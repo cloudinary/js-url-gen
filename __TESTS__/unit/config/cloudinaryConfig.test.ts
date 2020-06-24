@@ -1,29 +1,19 @@
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import AccountConfig from "../../../src/config/AccountConfig";
 import URLConfig from "../../../src/config/URLConfig";
 import CloudConfig from "../../../src/config/CloudConfig";
 
 describe('Tests for CloudinaryConfiguration', () => {
   it('Creates a CloudinaryConfig with defaults', () => {
-    const conf = new CloudinaryConfig({});
-
-    expect(conf.account).toEqual({});
-    expect(conf.cloud).toEqual({});
-    expect(conf.url).toEqual({});
-  });
-
-  it('Will populate the account configuration', () => {
     const conf = new CloudinaryConfig({
-      account: {
-        provisioningApiKey: 'key',
-        provisioningApiSecret: 'secret',
-        accountID: 'abc'
+      cloud: {
+        cloudName:'foo'
       }
     });
 
-    expect(conf.account.provisioningApiKey).toBe('key');
-    expect(conf.account.provisioningApiSecret).toBe('secret');
-    expect(conf.account.accountID).toBe('abc');
+    expect(conf.cloud).toEqual({
+      cloudName:'foo'
+    });
+    expect(conf.url).toEqual({});
   });
 
   it('Will populate cloud configuration', () => {
@@ -42,6 +32,9 @@ describe('Tests for CloudinaryConfiguration', () => {
 
   it('Will populate URL configuration', () => {
     const conf = new CloudinaryConfig({
+      cloud: {
+        cloudName: 'foo'
+      },
       url: {
         forceVersion: true,
         shorten: true,
@@ -72,59 +65,59 @@ describe('Tests for CloudinaryConfiguration', () => {
   });
 
   it('Will log errors when invalid properties are passed as configuration', () => {
-    const error = console.error;
+    const error = console.warn;
     // mute the errors for the test
-    console.error = () => {};
-    const mockedFunction = jest.spyOn(console, 'error');
-
+    console.warn = () => {};
+    const mockedFunction = jest.spyOn(console, 'warn');
 
     new CloudinaryConfig({
       cloud:{
-        'fakeKey': true
+        'fakeKey': true,
+        cloudName:'foo'
       },
       url: {
-        'fakeKey': true
-      },
-      account: {
         'fakeKey': true
       }
     });
 
     // ensure expected result
-    expect(mockedFunction).toHaveBeenCalledTimes(3);
+    expect(mockedFunction).toHaveBeenCalledTimes(2);
 
     // Restore the globals
     mockedFunction.mockRestore();
-    console.error = error;
+    console.warn = error;
   });
 
   it('Will log errors when called directly with invalid types', () => {
-    const error = console.error;
+    const error = console.warn;
     // mute the errors for the test
-    console.error = () => {};
-    const mockedFunction = jest.spyOn(console, 'error');
+    console.warn = () => {};
+    const mockedFunction = jest.spyOn(console, 'warn');
 
 
-    // Configs expect objects as input, anything else will log an error
-    new AccountConfig('foo');
-    new CloudConfig('foo');
-    new URLConfig('foo');
+    // Configs expect objects as input, but we allow invalid types without throwing
+    expect(() => {
+      new CloudConfig('foo');
+    }).toThrow();
+    expect(new URLConfig('foo')).toEqual({});
 
-    new AccountConfig([]);
-    new CloudConfig([]);
-    new URLConfig([]);
+    expect(() => {
+      new CloudConfig([]);
+    }).toThrow();
+    expect(new URLConfig([])).toEqual({});
 
-    // ensure expected result
-    expect(mockedFunction).toHaveBeenCalledTimes(6);
+    // Expect no warnings at all
+    expect(mockedFunction).toHaveBeenCalledTimes(0);
 
     // Restore the globals
     mockedFunction.mockRestore();
-    console.error = error;
+    console.warn = error;
   });
 
   it('Can extend the configuration', () => {
     const conf = new CloudinaryConfig({
       cloud:{
+        cloudName:'foo',
         apiSecret: 'abc'
       }
     });
@@ -133,7 +126,8 @@ describe('Tests for CloudinaryConfiguration', () => {
 
     const newConf = conf.extend({
       cloud: {
-        apiKey: 'xyz'
+        apiKey: 'xyz',
+        cloudName:'foo'
       }
     });
 

@@ -15,12 +15,31 @@ describe('Tests for TransformableImage', () => {
     expect(tImage.setPublicID('sample')).toBe(tImage);
   });
 
-  it('Sign shoudl be chainable', () => {
+  it('Sign should be chainable', () => {
     expect(tImage.sign()).toBe(tImage);
   });
 
-  it('Sign should be chainable', () => {
-    expect(tImage.setConfig({})).toBe(tImage);
+  it('setConfig should be chainable', () => {
+    expect(tImage.setConfig({
+      cloud: {
+        cloudName:'foo'
+      }
+    })).toBe(tImage);
+  });
+
+  it('Can use the asset descriptor methods without breaking (Internals not yet implemented)', () => {
+    expect(tImage
+      .setConfig({
+        cloud: {
+          cloudName:'demo'
+        }
+      })
+      .setType('fetch')
+      .setResourceType('avatar')
+      .setVersion(1234)
+      .setPublicID('sample')
+      .toURL()
+    ).toBe('http://res.cloudinary.com/demo/avatar/fetch/sample');
   });
 
   it('When providing actions with a toString method, should concat all child strings', () => {
