@@ -28,6 +28,28 @@ class TransformableImage extends Transformation {
     };
   }
 
+  setVersion(version:number): this {
+    this.describeAsset({
+      version
+    });
+    return this;
+  }
+
+  setResourceType(resourceType: string): this {
+    this.describeAsset({
+      resourceType
+    });
+    return this;
+  }
+
+  setType(type: string): this {
+    this.describeAsset({
+      type
+    });
+    return this;
+  }
+
+
   /**
    * @param {IBorderAction} borderAction
    */
