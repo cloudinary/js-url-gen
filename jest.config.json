@@ -3,7 +3,9 @@
   "testEnvironment": "node",
   "bail": true,
   "collectCoverageFrom": [
-    "<rootDir>/src/**/*.ts"
+    "<rootDir>/src/**/*.ts",
+    "<rootDir>/scripts/**/*.ts",
+    "!<rootDir>/scripts/createEntrypoints.ts"
   ],
   "modulePaths": [
     "<rootDir>/src"
