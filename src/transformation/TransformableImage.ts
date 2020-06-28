@@ -108,14 +108,22 @@ class TransformableImage extends Transformation {
     Object.assign(this.asset, assetDescriptor);
     return this;
   }
-
   toURL(): string {
-    return createCloudinaryURL(this.config, Object.assign({
-      resourceType: 'image',
-      type: 'upload'
-    }, this.asset), this);
+    return createCloudinaryURL(this.config, this.consolidateDescriptor(), this);
   }
-}
 
+  consolidateDescriptor() {
+    const descriptor = {
+      publicID: this.asset.publicID,
+      resourceType: this.asset.resourceType === '' ? 'image' : this.asset.resourceType,
+      type: this.asset.type === '' ? 'upload' : this.asset.type,
+      forceVersion: this.asset.forceVersion || true,
+      version: this.asset.version
+    };
+
+    return descriptor;
+  }
+
+}
 
 export default TransformableImage;
