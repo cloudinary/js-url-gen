@@ -19,6 +19,7 @@ describe('Tests for createEntryPoints', () => {
 
     expect(entryPointPackageJSON.types).toBe('../../types/actions/border/Border.d.ts');
     expect(entryPointPackageJSON.main).toBe('../../bundles/esm/actions/border/Border.js');
+    expect(entryPointPackageJSON.sideEffects).toBe(false);
   });
 
   it ('Works on extremely nested inputs', () => {
@@ -27,6 +28,7 @@ describe('Tests for createEntryPoints', () => {
 
     expect(entryPointPackageJSON.types).toBe('../../../../../../types/deep/nested/entryPoint1/EntryPoint1.d.ts');
     expect(entryPointPackageJSON.main).toBe('../../../../../../bundles/esm/deep/nested/entryPoint1/EntryPoint1.js');
+    expect(entryPointPackageJSON.sideEffects).toBe(false);
   });
 
   it ('Creates the main entrypoint to the project', () => {
@@ -37,6 +39,7 @@ describe('Tests for createEntryPoints', () => {
     expect(mainPackageJson.main).toBe('./bundles/esm/index.js');
     // Expect not to delete existing values
     expect(mainPackageJson.fieldA).toBe('foobar');
+    expect(mainPackageJson.sideEffects).toBe(false);
   });
 
   it ('Creates a UMD Bundle Entrypoint', () => {
@@ -47,6 +50,7 @@ describe('Tests for createEntryPoints', () => {
     expect(umdBundlePackageJson.main).toBe('./base.js');
     // Expect not to delete existing values
     expect(umdBundlePackageJson.types).toBe('../../types/index.d.ts');
+    expect(umdBundlePackageJson.sideEffects).toBe(false);
   });
 
   it('Fails if it cannot find a d.ts file', () => {

@@ -1,6 +1,10 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const fs = require('fs');
 
+const commonPackageProperties = {
+  sideEffects:false
+};
+
 /**
  * @description Utlity - Capitalize the first character of a string
  * @param str
@@ -70,10 +74,16 @@ function createEntryPointFromESMPath(pathInESMBundle: string, entryPointInDist: 
         throw `\n***\nBUILD ERROR - Invalid folder structure detected \n\n${msg} \n***\n`;
       }
 
-      fs.writeFileSync(`${FULL_ENTRY_POINT_PATH}/${name}/package.json`, JSON.stringify({
+
+      const packageJson = Object.assign({
         "types": `${rootPathToDist}/types/${pathInESMBundle}/${name}/${capitalize(name)}.d.ts`,
         "main": `${rootPathToDist}/bundles/esm/${pathInESMBundle}/${name}/${capitalize(name)}.js`
-      }, null, '\t'));
+      }, commonPackageProperties);
+
+      fs.writeFileSync(
+        `${FULL_ENTRY_POINT_PATH}/${name}/package.json`,
+        JSON.stringify(packageJson,null, '\t')
+      );
     }
   });
 }
@@ -84,11 +94,16 @@ function createEntryPointFromESMPath(pathInESMBundle: string, entryPointInDist: 
  * Allows users to import from '@base/bundles/umd'
  */
 function createUMDBundleEntryPoint() {
-  // create umd
-  fs.writeFileSync(`dist/bundles/umd/package.json`, JSON.stringify({
+  const packageJson = Object.assign({
     "types": `../../types/index.d.ts`,
     "main": `./base.js`
-  }, null, '\t'));
+  }, commonPackageProperties);
+
+  // create umd
+  fs.writeFileSync(
+    `dist/bundles/umd/package.json`,
+    JSON.stringify(packageJson, null, '\t')
+  );
 }
 
 
@@ -101,6 +116,8 @@ function createMainEntryPoint() {
   delete projectJson.scripts;
   delete projectJson.devDependencies;
   projectJson.main = './bundles/esm/index.js';
+
+  Object.assign(projectJson, commonPackageProperties);
   fs.writeFileSync('./dist/package.json', JSON.stringify(projectJson, null, '\t'));
 }
 
