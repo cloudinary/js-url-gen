@@ -3,4 +3,5 @@ export interface IDescriptor {
   resourceType?: string;
   version?: number;
   publicID?: string;
+  forceVersion?: boolean;
 }

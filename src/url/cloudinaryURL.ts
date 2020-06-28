@@ -1,6 +1,9 @@
 import Transformation from '../transformation/Transformation';
 import {IDescriptor} from '../interfaces/IDescriptor';
 import CloudinaryConfig from "../config/CloudinaryConfig";
+import isFolder from './urlUtils/isFolder';
+import publicIDContainsVersion from './urlUtils/publicIDContainsVersion';
+import isUrl from "./urlUtils/isUrl";
 
 /**
  *
@@ -14,9 +17,10 @@ function createCloudinaryURL(config: CloudinaryConfig, descriptor?: IDescriptor,
   const resourceType = handleResourceType(descriptor);
   const type = handleType(descriptor);
   const transformationString = transformation ? transformation.toString() : '';
+  const version = getUrlVersion(descriptor);
   const publicID = descriptor.publicID;
 
-  const url = [prefix, resourceType, type, transformationString, publicID]
+  const url = [prefix, resourceType, type, transformationString, version, publicID]
     .join('/')
     .replace(/([^:])\/+/g, '$1/') // replace '///' with '//'
     .replace(' ', '%20');
@@ -63,6 +67,26 @@ function handleType(descriptor: IDescriptor) {
   }
 
   return descriptor.type;
+}
+
+/**
+ *
+ * @param descriptor
+ */
+function getUrlVersion(descriptor: IDescriptor) {
+
+  const shouldForceVersion = descriptor.forceVersion || typeof descriptor.forceVersion === 'undefined';
+  const shouldVersionExist = isFolder(descriptor.publicID) ||
+    publicIDContainsVersion(descriptor.publicID) ||
+    isUrl(descriptor.publicID) ||
+    descriptor.version;
+
+  let version = descriptor.version;
+  if (shouldForceVersion && !shouldVersionExist) {
+    version = 1;
+  }
+
+  return version ? `v${version}` : '';
 }
 
 export default createCloudinaryURL;
