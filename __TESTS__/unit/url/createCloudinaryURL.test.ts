@@ -20,14 +20,14 @@ describe('Tests for TransformableImage', () => {
   it('Creates a video cloudinaryURL', () => {
     expect(createCloudinaryURL(CONFIG_INSTANCE, {
       publicID: 'dog',
-      resourceType: 'video'
+      assetType: 'video'
     }))
       .toBe('http://res.cloudinary.com/demo/video/upload/dog');
   });
 
   it('Creates a private cloudinaryURL', () => {
     expect(createCloudinaryURL(CONFIG_INSTANCE, {
-      type: 'private',
+      storageType: 'private',
       publicID: 'dog'
     }))
       .toBe('http://res.cloudinary.com/demo/image/private/dog');
@@ -63,7 +63,7 @@ describe('Tests for TransformableImage', () => {
   });
 
   it( 'Adds version to cloudinaryURL when forceVrsion is set to true', () => {
-    expect(createCloudinaryURL(CONFIG_INSTANCE, { publicID: 'sample', forceVersion: true, version: 1234}))
+    expect(createCloudinaryURL(Object.assign({}, CONFIG_INSTANCE, { url: {forceVersion: false}}), { publicID: 'sample', version: 1234}))
       .toBe('http://res.cloudinary.com/demo/image/upload/v1234/sample');
   });
 
@@ -71,12 +71,7 @@ describe('Tests for TransformableImage', () => {
     expect(createCloudinaryURL(CONFIG_INSTANCE, { publicID: 'folder/sample'}))
       .toBe('http://res.cloudinary.com/demo/image/upload/v1/folder/sample');
 
-    expect(createCloudinaryURL(CONFIG_INSTANCE, { publicID: 'folder/sample', version: 123,
-      forceVersion: false}))
-      .toBe('http://res.cloudinary.com/demo/image/upload/v123/folder/sample');
-
-    expect(createCloudinaryURL(CONFIG_INSTANCE, { publicID: 'folder/sample', version: 123,
-      forceVersion: false}))
+    expect(createCloudinaryURL(Object.assign({}, CONFIG_INSTANCE, { url: {forceVersion: false}}), { publicID: 'folder/sample', version: 123}))
       .toBe('http://res.cloudinary.com/demo/image/upload/v123/folder/sample');
   });
 
@@ -86,9 +81,11 @@ describe('Tests for TransformableImage', () => {
   });
 
   it( 'Should not set default version v1 to resources stored in folders if forceVersion is set to false', () => {
-    expect(createCloudinaryURL(CONFIG_INSTANCE, { publicID: 'folder/sample', forceVersion: false}))
+    expect(createCloudinaryURL(Object.assign({}, CONFIG_INSTANCE, { url: {forceVersion: false}}), { publicID: 'folder/sample'}))
       .toBe('http://res.cloudinary.com/demo/image/upload/folder/sample');
+  });
 
+  it( 'Should set default version v1 to resources stored in folders if forceVersion is set to false', () => {
     expect(createCloudinaryURL(CONFIG_INSTANCE, { publicID: 'folder/sample'}))
       .toBe('http://res.cloudinary.com/demo/image/upload/v1/folder/sample');
   });
@@ -97,5 +94,4 @@ describe('Tests for TransformableImage', () => {
     expect(createCloudinaryURL(CONFIG_INSTANCE, { publicID: 'http://test_url.com'}))
       .toBe('http://res.cloudinary.com/demo/image/upload/http://test_url.com');
   });
-
 });

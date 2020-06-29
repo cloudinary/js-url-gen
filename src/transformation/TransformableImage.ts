@@ -36,16 +36,16 @@ class TransformableImage extends Transformation {
     return this;
   }
 
-  setResourceType(resourceType: string): this {
+  setAssetType(assetType: string): this {
     this.describeAsset({
-      resourceType
+      assetType
     });
     return this;
   }
 
-  setType(type: string): this {
+  setStorageType(storageType: string): this {
     this.describeAsset({
-      type
+      storageType
     });
     return this;
   }
@@ -109,21 +109,11 @@ class TransformableImage extends Transformation {
     return this;
   }
   toURL(): string {
-    return createCloudinaryURL(this.config, this.consolidateDescriptor(), this);
+    return createCloudinaryURL(this.config, Object.assign({
+      assetType: 'image',
+      storageType: 'upload'
+    }, this.asset), this);
   }
-
-  consolidateDescriptor() {
-    const descriptor = {
-      publicID: this.asset.publicID,
-      resourceType: this.asset.resourceType === '' ? 'image' : this.asset.resourceType,
-      type: this.asset.type === '' ? 'upload' : this.asset.type,
-      forceVersion: this.asset.forceVersion || true,
-      version: this.asset.version
-    };
-
-    return descriptor;
-  }
-
 }
 
 export default TransformableImage;

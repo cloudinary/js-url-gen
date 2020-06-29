@@ -1,9 +1,10 @@
 import Transformation from '../transformation/Transformation';
 import {IDescriptor} from '../interfaces/IDescriptor';
 import CloudinaryConfig from "../config/CloudinaryConfig";
-import isFolder from './urlUtils/isFolder';
+import isFileName from './urlUtils/isFileName';
 import publicIDContainsVersion from './urlUtils/publicIDContainsVersion';
 import isUrl from "./urlUtils/isUrl";
+import IURLConfig from "../interfaces/Config/IURLConfig";
 
 /**
  *
@@ -14,13 +15,13 @@ import isUrl from "./urlUtils/isUrl";
  */
 function createCloudinaryURL(config: CloudinaryConfig, descriptor?: IDescriptor, transformation?: Transformation) {
   const prefix = getUrlPrefix(config.cloud.cloudName);
-  const resourceType = handleResourceType(descriptor);
-  const type = handleType(descriptor);
+  const assetType = handleAssetType(descriptor);
+  const storageType = handleStorageType(descriptor);
   const transformationString = transformation ? transformation.toString() : '';
-  const version = getUrlVersion(descriptor);
+  const version = getUrlVersion(config.url, descriptor);
   const publicID = descriptor.publicID;
 
-  const url = [prefix, resourceType, type, transformationString, version, publicID]
+  const url = [prefix, assetType, storageType, transformationString, version, publicID]
     .join('/')
     .replace(/([^:])\/+/g, '$1/') // replace '///' with '//'
     .replace(' ', '%20');
@@ -47,46 +48,45 @@ function getUrlPrefix(cloudName: string) {
  *
  * @param descriptor
  */
-function handleResourceType(descriptor: IDescriptor) {
+function handleAssetType(descriptor: IDescriptor) {
   //default to image
-  if(!descriptor || !descriptor.resourceType) {
+  if(!descriptor || !descriptor.assetType) {
     return 'image';
   }
 
-  return descriptor.resourceType;
+  return descriptor.assetType;
 }
 
 /**
  *
  * @param descriptor
  */
-function handleType(descriptor: IDescriptor) {
+function handleStorageType(descriptor: IDescriptor) {
   //default to upload
-  if(!descriptor || !descriptor.type) {
+  if(!descriptor || !descriptor.storageType) {
     return 'upload';
   }
 
-  return descriptor.type;
+  return descriptor.storageType;
 }
 
 /**
  *
  * @param descriptor
  */
-function getUrlVersion(descriptor: IDescriptor) {
+function getUrlVersion(urlConfig:IURLConfig, descriptor: IDescriptor) {
+  const shouldForceVersion = urlConfig.forceVersion !== false;
 
-  const shouldForceVersion = descriptor.forceVersion || typeof descriptor.forceVersion === 'undefined';
-  const shouldVersionExist = isFolder(descriptor.publicID) ||
-    publicIDContainsVersion(descriptor.publicID) ||
-    isUrl(descriptor.publicID) ||
-    descriptor.version;
-
-  let version = descriptor.version;
-  if (shouldForceVersion && !shouldVersionExist) {
-    version = 1;
+  if (descriptor.version) {
+    return `v${descriptor.version}`;
   }
 
-  return version ? `v${version}` : '';
+  // In all these conditions we never force a version
+  if (publicIDContainsVersion(descriptor.publicID) || isUrl(descriptor.publicID) || isFileName(descriptor.publicID)) {
+    return '';
+  }
+
+  return shouldForceVersion ? 'v1' : '';
 }
 
 export default createCloudinaryURL;

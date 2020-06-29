@@ -34,8 +34,8 @@ describe('Tests for TransformableImage', () => {
           cloudName:'demo'
         }
       })
-      .setType('fetch')
-      .setResourceType('avatar')
+      .setStorageType('fetch')
+      .setAssetType('avatar')
       .setVersion(1234)
       .setPublicID('sample')
       .toURL()
