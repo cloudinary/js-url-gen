@@ -1,5 +1,5 @@
-import Border, {solid} from 'actions/border/Border';
-import TransformableImage from 'transformation/TransformableImage';
+import Border, {solid} from '../../../src/actions/border/Border';
+import TransformableImage from '../../../src/transformation/TransformableImage';
 
 describe('Tests for Transformation Action -- Border', () => {
   it('Ensures "solid" is exported in the Border namespace', () => {
