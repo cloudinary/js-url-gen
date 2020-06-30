@@ -1,4 +1,4 @@
-import Flag from '../../../src/parameters/flag';
+import Flag from '../../../src/parameters/Flag';
 
 describe('Tests for Flag', () => {
   it('Creates a Flag', () => {

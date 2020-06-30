@@ -1,6 +1,6 @@
-import Action from '../../../src/actions/action';
-import Param from '../../../src/parameters/param';
-import Flag from '../../../src/parameters/flag';
+import Action from '../../../src/actions/Action';
+import Param from '../../../src/parameters/Param';
+import Flag from '../../../src/parameters/Flag';
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 
