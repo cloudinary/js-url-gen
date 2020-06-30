@@ -44,7 +44,7 @@ describe('Tests for TransformableImage', () => {
     const tImage = new TransformableImage();
     tImage.resize(crop(250, 250));
     expect(createCloudinaryURL(CONFIG_INSTANCE, { publicID: 'sample'}, tImage))
-      .toBe('http://res.cloudinary.com/demo/image/upload/c_crop,w_250,h_250/sample');
+      .toBe('http://res.cloudinary.com/demo/image/upload/c_crop,h_250,w_250/sample');
   });
 
   it('Creates a cloudinaryURL with fill', () => {
