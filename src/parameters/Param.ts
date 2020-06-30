@@ -2,7 +2,7 @@ import ParamValue from './ParamValue';
 
 class Param {
   paramValue: ParamValue;
-  delimiter: string = '_'; // {key}{delimiter}{paramValue}
+  delimiter = '_'; // {key}{delimiter}{paramValue}
   key: string;
 
   constructor(key: string, paramValue?: ParamValue | ParamValue[] | number | number[] | string | string[]) {

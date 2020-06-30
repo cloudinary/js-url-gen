@@ -6,7 +6,7 @@ class Action implements IAction {
   // We're using map, to overwrite existing keys. for example:
   // addParam(w_100).addParam(w_200) should result in w_200. and not w_100,w_200
   params: Map<string, Param> = new Map();
-  delimiter: string = ',' // {param}{delimiter}{param} for example: `${'w_100'}${','}${'c_fill'}`
+  delimiter = ',' // {param}{delimiter}{param} for example: `${'w_100'}${','}${'c_fill'}`
 
   toString() {
     return Array.from(this.params.values()).join(this.delimiter);

@@ -1,6 +1,6 @@
 class ParamValue {
   values: any[] = [];
-  delimiter: string = '.'; // {value}{delimiter}{value}...
+  delimiter = '.'; // {value}{delimiter}{value}...
 
   toString() {
     return this.values.join(this.delimiter);
