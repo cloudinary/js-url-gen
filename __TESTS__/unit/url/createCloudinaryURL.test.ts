@@ -95,17 +95,8 @@ describe('Tests for TransformableImage', () => {
       .toBe('http://res.cloudinary.com/demo/image/upload/http://test_url.com');
   });
 
-  it( 'Should well form invalid signature', () => {
-    expect(createCloudinaryURL(CONFIG_INSTANCE, { publicID: 'sample', signature: '1234--'}))
-      .toBe('http://res.cloudinary.com/demo/image/upload/s--1234--/sample');
-
+  it( 'Should append signature', () => {
     expect(createCloudinaryURL(CONFIG_INSTANCE, { publicID: 'sample', signature: 's--1234--'}))
-      .toBe('http://res.cloudinary.com/demo/image/upload/s--1234--/sample');
-
-    expect(createCloudinaryURL(CONFIG_INSTANCE, { publicID: 'sample', signature: 's--1234'}))
-      .toBe('http://res.cloudinary.com/demo/image/upload/s--1234--/sample');
-
-    expect(createCloudinaryURL(CONFIG_INSTANCE, { publicID: 'sample', signature: '1234'}))
       .toBe('http://res.cloudinary.com/demo/image/upload/s--1234--/sample');
   });
 });

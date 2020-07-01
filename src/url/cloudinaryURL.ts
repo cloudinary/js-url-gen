@@ -17,7 +17,7 @@ function createCloudinaryURL(config: CloudinaryConfig, descriptor?: IDescriptor,
   const prefix = getUrlPrefix(config.cloud.cloudName);
   const assetType = handleAssetType(descriptor);
   const storageType = handleStorageType(descriptor);
-  const signature = getFormatedSignature(descriptor.signature);
+  const signature = descriptor.signature;
   const transformationString = transformation ? transformation.toString() : '';
   const version = getUrlVersion(config.url, descriptor);
   const publicID = descriptor.publicID;
@@ -88,27 +88,6 @@ function getUrlVersion(urlConfig:IURLConfig, descriptor: IDescriptor) {
   }
 
   return shouldForceVersion ? 'v1' : '';
-}
-
-/**
- *
- * @param signature
- */
-function getFormatedSignature(signature: string) {
-  const isFormatted = !signature || (signature.startsWith('s--') && signature.endsWith('--'));
-  let formattedSignature = signature;
-
-  if(isFormatted) {
-    return signature;
-  }
-  if(!signature.startsWith('s--')) {
-    formattedSignature = `s--${formattedSignature}`;
-  }
-  if(!signature.endsWith('--')) {
-    formattedSignature = `${formattedSignature}--`;
-  }
-
-  return formattedSignature;
 }
 
 export default createCloudinaryURL;
