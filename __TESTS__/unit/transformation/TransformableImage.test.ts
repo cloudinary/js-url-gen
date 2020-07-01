@@ -34,12 +34,12 @@ describe('Tests for TransformableImage', () => {
           cloudName:'demo'
         }
       })
-      .setType('fetch')
-      .setResourceType('avatar')
+      .setStorageType('fetch')
+      .setAssetType('avatar')
       .setVersion(1234)
       .setPublicID('sample')
       .toURL()
-    ).toBe('http://res.cloudinary.com/demo/avatar/fetch/sample');
+    ).toBe('http://res.cloudinary.com/demo/avatar/fetch/v1234/sample');
   });
 
   it('When providing actions with a toString method, should concat all child strings', () => {

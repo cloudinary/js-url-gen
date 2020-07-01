@@ -1,6 +1,10 @@
 import Transformation from '../transformation/Transformation';
 import {IDescriptor} from '../interfaces/IDescriptor';
 import CloudinaryConfig from "../config/CloudinaryConfig";
+import isFileName from './urlUtils/isFileName';
+import publicIDContainsVersion from './urlUtils/publicIDContainsVersion';
+import isUrl from "./urlUtils/isUrl";
+import IURLConfig from "../interfaces/Config/IURLConfig";
 
 /**
  *
@@ -11,12 +15,13 @@ import CloudinaryConfig from "../config/CloudinaryConfig";
  */
 function createCloudinaryURL(config: CloudinaryConfig, descriptor?: IDescriptor, transformation?: Transformation) {
   const prefix = getUrlPrefix(config.cloud.cloudName);
-  const resourceType = handleResourceType(descriptor);
-  const type = handleType(descriptor);
+  const assetType = handleAssetType(descriptor);
+  const storageType = handleStorageType(descriptor);
   const transformationString = transformation ? transformation.toString() : '';
+  const version = getUrlVersion(config.url, descriptor);
   const publicID = descriptor.publicID;
 
-  const url = [prefix, resourceType, type, transformationString, publicID]
+  const url = [prefix, assetType, storageType, transformationString, version, publicID]
     .join('/')
     .replace(/([^:])\/+/g, '$1/') // replace '///' with '//'
     .replace(' ', '%20');
@@ -43,26 +48,45 @@ function getUrlPrefix(cloudName: string) {
  *
  * @param descriptor
  */
-function handleResourceType(descriptor: IDescriptor) {
+function handleAssetType(descriptor: IDescriptor) {
   //default to image
-  if(!descriptor || !descriptor.resourceType) {
+  if(!descriptor || !descriptor.assetType) {
     return 'image';
   }
 
-  return descriptor.resourceType;
+  return descriptor.assetType;
 }
 
 /**
  *
  * @param descriptor
  */
-function handleType(descriptor: IDescriptor) {
+function handleStorageType(descriptor: IDescriptor) {
   //default to upload
-  if(!descriptor || !descriptor.type) {
+  if(!descriptor || !descriptor.storageType) {
     return 'upload';
   }
 
-  return descriptor.type;
+  return descriptor.storageType;
+}
+
+/**
+ *
+ * @param descriptor
+ */
+function getUrlVersion(urlConfig:IURLConfig, descriptor: IDescriptor) {
+  const shouldForceVersion = urlConfig.forceVersion !== false;
+
+  if (descriptor.version) {
+    return `v${descriptor.version}`;
+  }
+
+  // In all these conditions we never force a version
+  if (publicIDContainsVersion(descriptor.publicID) || isUrl(descriptor.publicID) || isFileName(descriptor.publicID)) {
+    return '';
+  }
+
+  return shouldForceVersion ? 'v1' : '';
 }
 
 export default createCloudinaryURL;

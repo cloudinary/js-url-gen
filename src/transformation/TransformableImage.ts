@@ -36,16 +36,16 @@ class TransformableImage extends Transformation {
     return this;
   }
 
-  setResourceType(resourceType: string): this {
+  setAssetType(assetType: string): this {
     this.describeAsset({
-      resourceType
+      assetType
     });
     return this;
   }
 
-  setType(type: string): this {
+  setStorageType(storageType: string): this {
     this.describeAsset({
-      type
+      storageType
     });
     return this;
   }
@@ -108,14 +108,12 @@ class TransformableImage extends Transformation {
     Object.assign(this.asset, assetDescriptor);
     return this;
   }
-
   toURL(): string {
     return createCloudinaryURL(this.config, Object.assign({
-      resourceType: 'image',
-      type: 'upload'
+      assetType: 'image',
+      storageType: 'upload'
     }, this.asset), this);
   }
 }
-
 
 export default TransformableImage;

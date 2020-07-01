@@ -61,8 +61,8 @@ describe('It tests a combination of Cloudianry URL and Configuration', () => {
     const url = myInstance.image('sample')
       .resize(Resize.fill(100, 100))
       .describeAsset({
-        type:'fetch', // defaults to "upload"
-        resourceType: 'avatar' // Defaults to image
+        storageType:'fetch', // defaults to "upload"
+        assetType: 'avatar' // Defaults to image
       })
       .toURL();
 
