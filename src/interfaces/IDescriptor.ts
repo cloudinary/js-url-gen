@@ -7,4 +7,5 @@ export interface IDescriptor {
   suffix ?: string;
   filename?: string;
   location?: string;
+  signature?: string;
 }
