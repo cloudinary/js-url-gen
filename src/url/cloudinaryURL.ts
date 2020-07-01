@@ -17,7 +17,7 @@ function createCloudinaryURL(config: CloudinaryConfig, descriptor?: IDescriptor,
   const prefix = getUrlPrefix(config.cloud.cloudName);
   const assetType = handleAssetType(descriptor);
   const storageType = handleStorageType(descriptor);
-  const signature = getFormatedSignature(descriptor.signature)
+  const signature = getFormatedSignature(descriptor.signature);
   const transformationString = transformation ? transformation.toString() : '';
   const version = getUrlVersion(config.url, descriptor);
   const publicID = descriptor.publicID;
