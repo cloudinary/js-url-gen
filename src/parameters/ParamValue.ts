@@ -21,7 +21,7 @@ class ParamValue {
     }
 
     //remove empty values
-    this.values = this.values.filter(v => v != null);
+    this.values = this.values.filter((v) => v != null);
 
     return this;
   }
