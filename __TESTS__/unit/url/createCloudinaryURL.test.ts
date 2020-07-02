@@ -94,4 +94,9 @@ describe('Tests for TransformableImage', () => {
     expect(createCloudinaryURL(CONFIG_INSTANCE, { publicID: 'http://test_url.com'}))
       .toBe('http://res.cloudinary.com/demo/image/upload/http://test_url.com');
   });
+
+  it( 'Should append signature', () => {
+    expect(createCloudinaryURL(CONFIG_INSTANCE, { publicID: 'sample', signature: 's--1234--'}))
+      .toBe('http://res.cloudinary.com/demo/image/upload/s--1234--/sample');
+  });
 });

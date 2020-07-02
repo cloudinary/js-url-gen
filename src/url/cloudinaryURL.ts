@@ -17,13 +17,14 @@ function createCloudinaryURL(config: CloudinaryConfig, descriptor?: IDescriptor,
   const prefix = getUrlPrefix(config.cloud.cloudName);
   const assetType = handleAssetType(descriptor);
   const storageType = handleStorageType(descriptor);
+  const signature = descriptor.signature;
   const transformationString = transformation ? transformation.toString() : '';
   const version = getUrlVersion(config.url, descriptor);
   const publicID = descriptor.publicID;
 
-  const url = [prefix, assetType, storageType, transformationString, version, publicID]
+  const url = [prefix, assetType, storageType, signature, transformationString, version, publicID]
+    .filter((a) => a)
     .join('/')
-    .replace(/([^:])\/+/g, '$1/') // replace '///' with '//'
     .replace(' ', '%20');
 
   return url;
