@@ -28,6 +28,12 @@ class Action implements IAction {
 
     return this;
   }
+
+  protected mergeParam(parameter: Param): this {
+    this.params.get(parameter.key).addValue(parameter.paramValue);
+
+    return this;
+  }
 }
 
 export default Action;
