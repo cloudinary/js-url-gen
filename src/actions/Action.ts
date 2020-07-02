@@ -10,13 +10,9 @@ class Action implements IAction {
 
   getSortedParams(): Param[] {
     return (Array.from(this.params.values()) as Param[]).sort((param1, param2) => {
-      if (param1.key < param2.key) {
-        return -1;
-      } else if (param1.key > param2.key) {
-        return 1;
-      } else {
-        return 0;
-      }
+      // No need to check for equality because params is a map.
+      // Also, returning 0 will be unreachable code that will break code coverage.
+      return (param1.key > param2.key) ? 1 : -1;
     });
   }
 

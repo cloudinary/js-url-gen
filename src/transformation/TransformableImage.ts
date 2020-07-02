@@ -8,6 +8,7 @@ import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigura
 import {IDescriptor} from "../interfaces/IDescriptor";
 import {IEffectAction} from "../actions/effect/IEffectAction";
 import {IQualityAction} from "../actions/quality/IQualityAction";
+import {IRotateAction} from "../actions/rotate/IRotateAction";
 
 
 /**
@@ -77,6 +78,13 @@ class TransformableImage extends Transformation {
    */
   roundCorners(roundCornersAction: IRoundCornersAction): TransformableImage {
     return this.addAction(roundCornersAction);
+  }
+
+  /**
+   * @param {IRotateAction} rotateAction
+   */
+  rotate(rotateAction: IRotateAction): TransformableImage {
+    return this.addAction(rotateAction);
   }
 
   /**
