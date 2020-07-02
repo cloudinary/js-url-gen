@@ -13,7 +13,7 @@ describe('Tests for Param', () => {
   it('Creates a ParamValue with multiple values', () => {
     const paramValue = new ParamValue().addValue(90).addValue(80);
 
-    expect(paramValue.toString()).toBe('90.80');
+    expect(paramValue.toString()).toBe('90:80');
   });
 
 });

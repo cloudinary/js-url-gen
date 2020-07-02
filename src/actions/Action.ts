@@ -7,6 +7,7 @@ class Action implements IAction {
   // addParam(w_100).addParam(w_200) should result in w_200. and not w_100,w_200
   params: Map<string, Param> = new Map();
   delimiter = ','; // {param}{delimiter}{param} for example: `${'w_100'}${','}${'c_fill'}`
+  prepareParam() {}
 
   getSortedParams(): Param[] {
     return (Array.from(this.params.values()) as Param[]).sort((param1, param2) => {
@@ -21,6 +22,7 @@ class Action implements IAction {
   }
 
   toString(): string {
+    this.prepareParam();
     return this.getSortedParams().join(this.delimiter);
   }
 
@@ -32,8 +34,9 @@ class Action implements IAction {
   addFlag(flag: Flag): this {
     const existingFlag = this.params.get('fl_');
     if (existingFlag){
-      existingFlag.addValue(flag.paramValue);
+      existingFlag.addValue(flag.paramValue.setDelimiter('.'));
     } else{
+      flag.paramValue.setDelimiter('.');
       this.params.set('fl_', flag);
     }
 
