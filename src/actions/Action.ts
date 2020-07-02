@@ -1,6 +1,7 @@
 import Param from "../parameters/Param";
 import Flag from "../parameters/Flag";
 import {IAction} from "../interfaces/IAction";
+import {sortMapByKey} from "../utils/Utils";
 
 class Action implements IAction {
   // We're using map, to overwrite existing keys. for example:
@@ -8,16 +9,8 @@ class Action implements IAction {
   params: Map<string, Param> = new Map();
   delimiter = ','; // {param}{delimiter}{param} for example: `${'w_100'}${','}${'c_fill'}`
 
-  getSortedParams(): Param[] {
-    return (Array.from(this.params.values()) as Param[]).sort((param1, param2) => {
-      // No need to check for equality because params is a map.
-      // Also, returning 0 will be unreachable code that will break code coverage.
-      return (param1.key > param2.key) ? 1 : -1;
-    });
-  }
-
   toString(): string {
-    return this.getSortedParams().join(this.delimiter);
+    return sortMapByKey(this.params).join(this.delimiter);
   }
 
   addParam(parameter: Param): this {

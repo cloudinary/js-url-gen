@@ -13,15 +13,15 @@ class ParamValue {
   }
 
   addValue(value: unknown) {
-    //Append values or array of values
+    // Append value or array of values
     if (Array.isArray(value)) {
       this.values = this.values.concat(value);
     } else {
       this.values.push(value);
     }
 
-    //remove empty values
-    this.values = this.values.filter((v) => v != null);
+    // Remove falsy values
+    this.values = this.values.filter((v) => v);
 
     return this;
   }
