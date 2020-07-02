@@ -1,7 +1,7 @@
 import Param from "../parameters/Param";
 import Flag from "../parameters/Flag";
 import {IAction} from "../interfaces/IAction";
-import {sortMapByKey} from "../utils/Utils";
+import {sortMapByKey} from "../utils/dataStructureUtils";
 
 class Action implements IAction {
   // We're using map, to overwrite existing keys. for example:
@@ -20,9 +20,9 @@ class Action implements IAction {
 
   addFlag(flag: Flag): this {
     const existingFlag = this.params.get('fl_');
-    if (existingFlag){
+    if (existingFlag) {
       existingFlag.addValue(flag.paramValue);
-    } else{
+    } else {
       this.params.set('fl_', flag);
     }
 

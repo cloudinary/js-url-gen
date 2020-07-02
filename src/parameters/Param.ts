@@ -1,7 +1,6 @@
 import ParamValue from './ParamValue';
-import {IKeyObject} from "../interfaces/IKeyObject";
 
-class Param implements IKeyObject{
+class Param {
   key: string;
   paramValue: ParamValue;
   delimiter = '_'; // {key}{delimiter}{paramValue}
