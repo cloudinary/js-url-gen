@@ -23,8 +23,8 @@ function createCloudinaryURL(config: CloudinaryConfig, descriptor?: IDescriptor,
   const publicID = descriptor.publicID;
 
   const url = [prefix, assetType, storageType, signature, transformationString, version, publicID]
+    .filter((a) => a)
     .join('/')
-    .replace(/([^:])\/+/g, '$1/') // replace '///' with '//'
     .replace(' ', '%20');
 
   return url;
