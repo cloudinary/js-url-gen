@@ -1,12 +1,31 @@
 /**
  * Sort a map by key
- * @param map <string, { key: unknown }>
- * @Return sorted map
+ * @param map <string, unknown>
+ * @Return array of map's values sorted by key
  */
-function sortMapByKey(map: Map<string, { key: unknown }>) {
-  return (Array.from(map.values())).sort((obj1, obj2) => (obj1.key > obj2.key ? 1 : -1));
+function mapToSortedArray(map: Map<string, unknown>) {
+  const array = Array.from(map.entries()).sort();
+
+  return array.map((v) => v[1]);
+}
+
+/**
+ * Checks if `value` is classified as a `String` primitive or object.
+ * Based on lodash/isString
+ * @param {*} value The value to check.
+ * @returns {boolean} `true` if `value` is a string, else `false`.
+ */
+function isString(value: unknown) {
+  const type = typeof value;
+  return type === 'string' || (
+    type === 'object'
+    && value != null
+    && !Array.isArray(value)
+    && Object.prototype.toString.call(value) == '[object String]'
+  );
 }
 
 export {
-  sortMapByKey
+  isString,
+  mapToSortedArray
 };

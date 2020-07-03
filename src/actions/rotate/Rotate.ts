@@ -2,13 +2,13 @@ import horizontalFlip from "./horizontalFlip";
 import verticalFlip from "./verticalFlip";
 import angle from "./angle";
 import Action from "../Action";
-import {IAction} from "../../interfaces/IAction";
 import Param from "../../parameters/Param";
+import {IRotateAction} from "./IRotateAction";
 const HORIZONTAL_FLIP = 'hflip';
 const VERTICAL_FLIP = 'vflip';
 const PARAM_KEY = 'a';
 
-class Rotate extends Action implements IAction {
+class Rotate extends Action implements IRotateAction {
   constructor(angle?: number) {
     super();
     this.addParam(new Param(PARAM_KEY, angle));
