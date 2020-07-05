@@ -18,21 +18,21 @@ class Rotate extends Action implements IAction {
    * @return {Rotate}
    */
   horizontalFlip(): Rotate {
-    return this.mergeParam(new Param(PARAM_KEY, HORIZONTAL_FLIP));
+    return this.addValueToParam(PARAM_KEY, HORIZONTAL_FLIP);
   }
 
   /**
    * @return {Rotate}
    */
   verticalFlip(): Rotate {
-    return this.mergeParam(new Param(PARAM_KEY, VERTICAL_FLIP));
+    return this.addValueToParam(PARAM_KEY, VERTICAL_FLIP);
   }
 
   /**
    * @return {Rotate}
    */
   angle(value: number): Rotate {
-    return this.mergeParam(new Param(PARAM_KEY, value));
+    return this.addValueToParam(PARAM_KEY, value);
   }
 }
 

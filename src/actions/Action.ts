@@ -29,8 +29,8 @@ class Action implements IAction {
     return this;
   }
 
-  protected mergeParam(parameter: Param): this {
-    this.params.get(parameter.key).addValue(parameter.paramValue);
+  protected addValueToParam(paramKey: string, paramValue: unknown){
+    this.params.get(paramKey).addValue(paramValue);
 
     return this;
   }
