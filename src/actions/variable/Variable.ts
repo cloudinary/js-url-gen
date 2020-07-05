@@ -6,6 +6,7 @@ import {isString} from "../../utils/dataStructureUtils";
 // TODO: when spec for $award_ctx:!First! is ready, implement it
 // TODO: when spec for $award_ref:!First! is ready, implement it
 // TODO: when spec for to_i & to_f is ready, implement it
+// TODO: when spec for list_!b:b:b! is ready, implement it
 
 class Variable extends Action implements IVariableAction {
   constructor(key: string, value: number | string) {
