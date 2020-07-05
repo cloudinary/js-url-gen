@@ -33,10 +33,11 @@ class Action implements IAction {
 
   addFlag(flag: Flag): this {
     const existingFlag = this.params.get('fl_');
+    flag.paramValue.setDelimiter('.');
+
     if (existingFlag){
-      existingFlag.addValue(flag.paramValue.setDelimiter('.'));
+      existingFlag.addValue(flag.paramValue);
     } else{
-      flag.paramValue.setDelimiter('.');
       this.params.set('fl_', flag);
     }
 
