@@ -39,7 +39,7 @@ describe('Tests for Transformation Action -- Rotate', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$a_!bbb/sample');
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$a_!bbb!/sample');
   });
   it('Creates a cloudinaryURL with variable', () => {
     const url = new TransformableImage()
@@ -57,6 +57,6 @@ describe('Tests for Transformation Action -- Rotate', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$a_!bbb/sample');
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$a_!bbb!/sample');
   });
 });

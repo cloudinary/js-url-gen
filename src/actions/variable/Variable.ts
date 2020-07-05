@@ -11,7 +11,7 @@ class Variable extends Action implements IVariableAction {
   constructor(key: string, value: number | string) {
     super();
     const paramKey = `$${key}`;
-    const paramValue = isString(value) ? `!${value}` : value;
+    const paramValue = isString(value) ? `!${value}!` : value;
     this.addParam(new Param(paramKey, paramValue));
   }
 }
