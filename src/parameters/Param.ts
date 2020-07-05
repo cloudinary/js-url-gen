@@ -1,9 +1,9 @@
 import ParamValue from './ParamValue';
 
 class Param {
+  key: string;
   paramValue: ParamValue;
   delimiter = '_'; // {key}{delimiter}{paramValue}
-  key: string;
 
   constructor(key: string, paramValue?: ParamValue | ParamValue[] | number | number[] | string | string[]) {
     this.key = key;

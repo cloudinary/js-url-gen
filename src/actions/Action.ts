@@ -1,6 +1,7 @@
 import Param from "../parameters/Param";
 import Flag from "../parameters/Flag";
 import {IAction} from "../interfaces/IAction";
+import {sortMapByKey} from "../utils/dataStructureUtils";
 
 class Action implements IAction {
   // We're using map, to overwrite existing keys. for example:
@@ -9,21 +10,9 @@ class Action implements IAction {
   delimiter = ','; // {param}{delimiter}{param} for example: `${'w_100'}${','}${'c_fill'}`
   prepareParam() {}
 
-  getSortedParams(): Param[] {
-    return (Array.from(this.params.values()) as Param[]).sort((param1, param2) => {
-      if (param1.key < param2.key) {
-        return -1;
-      } else if (param1.key > param2.key) {
-        return 1;
-      } else {
-        return 0;
-      }
-    });
-  }
-
   toString(): string {
     this.prepareParam();
-    return this.getSortedParams().join(this.delimiter);
+    return sortMapByKey(this.params).join(this.delimiter);
   }
 
   addParam(parameter: Param): this {
@@ -37,7 +26,7 @@ class Action implements IAction {
 
     if (existingFlag){
       existingFlag.addValue(flag.paramValue);
-    } else{
+    } else {
       this.params.set('fl_', flag);
     }
 
