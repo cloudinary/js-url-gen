@@ -1,32 +1,43 @@
 import {IBorderAction} from "./IBorderAction";
 import Action from "../Action";
+import Param from "../../parameters/Param";
+import ParamValue from "../../parameters/ParamValue";
 
 class Solid extends Action implements IBorderAction{
+  private borderWidth: number;
+  private borderColor: string;
   constructor() {
     super();
   }
 
   /**
    *
-   * @param {number} num
+   * @param borderWidth
    */
-  width(num: number) {
+  width(borderWidth: number) {
+    this.borderWidth = borderWidth;
     return this;
   }
 
   /**
    *
-   * @param {string} color
+   * @param borderColor
    */
-  color(color: string) {
+  color(borderColor: string) {
+    this.borderColor = borderColor;
     return this;
+  }
+
+  prepareParam() : void {
+    const paramValue = new ParamValue([`${this.borderWidth}px`, 'solid', `${this.borderColor}`]).setDelimiter('_');
+    this.addParam(new Param('bo', paramValue));
   }
 }
 
 /**
  * @return {Solid}
  */
-function solid() {
+function solid(): Solid {
   return new Solid();
 }
 

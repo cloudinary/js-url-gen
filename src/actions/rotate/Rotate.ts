@@ -2,13 +2,13 @@ import horizontalFlip from "./horizontalFlip";
 import verticalFlip from "./verticalFlip";
 import angle from "./angle";
 import Action from "../Action";
+import {IAction} from "../../interfaces/IAction";
 import Param from "../../parameters/Param";
-import {IRotateAction} from "./IRotateAction";
 const HORIZONTAL_FLIP = 'hflip';
 const VERTICAL_FLIP = 'vflip';
 const PARAM_KEY = 'a';
 
-class Rotate extends Action implements IRotateAction {
+class Rotate extends Action implements IAction {
   constructor(angle?: number) {
     super();
     this.addParam(new Param(PARAM_KEY, angle));
@@ -18,28 +18,21 @@ class Rotate extends Action implements IRotateAction {
    * @return {Rotate}
    */
   horizontalFlip(): Rotate {
-    return this.addValue(HORIZONTAL_FLIP);
+    return this.addValueToParam(PARAM_KEY, HORIZONTAL_FLIP);
   }
 
   /**
    * @return {Rotate}
    */
   verticalFlip(): Rotate {
-    return this.addValue(VERTICAL_FLIP);
+    return this.addValueToParam(PARAM_KEY, VERTICAL_FLIP);
   }
 
   /**
    * @return {Rotate}
    */
   angle(value: number): Rotate {
-    return this.addValue(value);
-  }
-
-  private addValue(value?: number | string): Rotate {
-    if (value != null) {
-      this.params.get(PARAM_KEY).addValue(value);
-    }
-    return this;
+    return this.addValueToParam(PARAM_KEY, value);
   }
 }
 

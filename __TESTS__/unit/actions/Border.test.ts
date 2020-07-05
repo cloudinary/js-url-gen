@@ -1,5 +1,12 @@
 import Border, {solid} from '../../../src/actions/border/Border';
 import TransformableImage from '../../../src/transformation/TransformableImage';
+import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
+
+const CONFIG_INSTANCE = new CloudinaryConfig({
+  cloud: {
+    cloudName: 'demo'
+  }
+});
 
 describe('Tests for Transformation Action -- Border', () => {
   it('Ensures "solid" is exported in the Border namespace', () => {
@@ -19,5 +26,17 @@ describe('Tests for Transformation Action -- Border', () => {
 
     expect(borderActionInstance.width(50)).toEqual(borderActionInstance);
     expect(borderActionInstance.color('red')).toEqual(borderActionInstance);
+  });
+
+  it('Creates a cloudinaryURL with border', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .border(Border.solid()
+        .width(7)
+        .color('red'))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/bo_7px_solid_red/sample');
   });
 });

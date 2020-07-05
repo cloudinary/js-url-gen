@@ -7,7 +7,7 @@ describe('Tests for Param', () => {
     expect(param.toString()).toBe('a_90');
   });
   it('Creates a Param with multiple values', () => {
-    const param = new Param("a", [90, 80]);
+    const param = new Param("a", new ParamValue([90, 80]).setDelimiter('.'));
 
     expect(param.toString()).toBe('a_90.80');
   });
