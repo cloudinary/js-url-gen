@@ -8,8 +8,10 @@ class Action implements IAction {
   // addParam(w_100).addParam(w_200) should result in w_200. and not w_100,w_200
   params: Map<string, Param> = new Map();
   delimiter = ','; // {param}{delimiter}{param} for example: `${'w_100'}${','}${'c_fill'}`
+  prepareParam() {}
 
   toString(): string {
+    this.prepareParam();
     return sortMapByKey(this.params).join(this.delimiter);
   }
 
@@ -20,7 +22,9 @@ class Action implements IAction {
 
   addFlag(flag: Flag): this {
     const existingFlag = this.params.get('fl_');
-    if (existingFlag) {
+    flag.paramValue.setDelimiter('.');
+
+    if (existingFlag){
       existingFlag.addValue(flag.paramValue);
     } else {
       this.params.set('fl_', flag);

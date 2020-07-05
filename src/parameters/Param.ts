@@ -11,7 +11,7 @@ class Param {
       this.paramValue = paramValue;
     } else {
       this.paramValue = new ParamValue();
-      this.paramValue.addValue(paramValue);
+      this.paramValue.addValue(paramValue).setDelimiter('.');
     }
   }
 
