@@ -55,6 +55,6 @@ describe('Tests for TransformableImage', () => {
         }
       });
 
-    expect(tImage.toString()).toBe('aabb');
+    expect(tImage.toString()).toBe('aa/bb');
   });
 });
