@@ -3,6 +3,7 @@ import Param from '../../../src/parameters/Param';
 import Flag from '../../../src/parameters/Flag';
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
+import ParamValue from "../../../src/parameters/ParamValue";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -23,7 +24,7 @@ describe('Tests for Transformation Action', () => {
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/a_90/sample');
   });
   it('Creates a cloudinaryURL with new action while passing an array to addParam()', () => {
-    const action = new Action().addParam(new Param('a', [90, 80]));
+    const action = new Action().addParam(new Param('a', new ParamValue([90, 80]).setDelimiter('.')));
 
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
@@ -34,7 +35,7 @@ describe('Tests for Transformation Action', () => {
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/a_90.80/sample');
   });
   it('Creates a cloudinaryURL with new action using addValue()', () => {
-    const action = new Action().addParam(new Param('a', [90, 80]).addValue(70));
+    const action = new Action().addParam(new Param('a', new ParamValue([90, 80]).setDelimiter('.')).addValue(70));
 
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
