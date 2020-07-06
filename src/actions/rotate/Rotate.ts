@@ -8,7 +8,7 @@ const HORIZONTAL_FLIP = 'hflip';
 const VERTICAL_FLIP = 'vflip';
 const PARAM_KEY = 'a';
 
-class Rotate extends Action implements IAction {
+class RotateAction extends Action implements IAction {
   constructor(angle?: number) {
     super();
     this.addParam(new Param(PARAM_KEY, angle));
@@ -17,24 +17,24 @@ class Rotate extends Action implements IAction {
   /**
    * @return {Rotate}
    */
-  horizontalFlip(): Rotate {
+  horizontalFlip(): this {
     return this.addValueToParam(PARAM_KEY, HORIZONTAL_FLIP);
   }
 
   /**
    * @return {Rotate}
    */
-  verticalFlip(): Rotate {
+  verticalFlip(): this {
     return this.addValueToParam(PARAM_KEY, VERTICAL_FLIP);
   }
 
   /**
    * @return {Rotate}
    */
-  angle(value: number): Rotate {
+  angle(value: number): this {
     return this.addValueToParam(PARAM_KEY, value);
   }
 }
 
-export {angle, horizontalFlip, verticalFlip};
-export default Rotate;
+export {angle, horizontalFlip, verticalFlip, RotateAction};
+export default {angle, horizontalFlip, verticalFlip, RotateAction};

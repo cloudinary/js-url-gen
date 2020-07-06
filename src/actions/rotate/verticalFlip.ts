@@ -1,11 +1,11 @@
-import Rotate from "./Rotate";
+import {RotateAction} from "./Rotate";
 import {IRotateAction} from "./IRotateAction";
 
 /**
  * Create a new Rotate action with vertical flip
  */
 function verticalFlip() :IRotateAction {
-  return new Rotate().verticalFlip();
+  return new RotateAction().verticalFlip();
 }
 
 export default verticalFlip;
