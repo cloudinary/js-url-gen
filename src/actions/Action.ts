@@ -1,7 +1,7 @@
 import Param from "../parameters/Param";
 import Flag from "../parameters/Flag";
 import {IAction} from "../interfaces/IAction";
-import {sortMapByKey} from "../utils/dataStructureUtils";
+import {mapToSortedArray} from "../utils/dataStructureUtils";
 
 class Action implements IAction {
   // We're using map, to overwrite existing keys. for example:
@@ -12,7 +12,7 @@ class Action implements IAction {
 
   toString(): string {
     this.prepareParam();
-    return sortMapByKey(this.params).join(this.delimiter);
+    return mapToSortedArray(this.params).join(this.delimiter);
   }
 
   addParam(parameter: Param): this {

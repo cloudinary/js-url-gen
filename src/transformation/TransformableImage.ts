@@ -9,6 +9,7 @@ import {IDescriptor} from "../interfaces/IDescriptor";
 import {IEffectAction} from "../actions/effect/IEffectAction";
 import {IQualityAction} from "../actions/quality/IQualityAction";
 import {IRotateAction} from "../actions/rotate/IRotateAction";
+import {IVariableAction} from "../actions/variable/IVariableAction";
 
 
 /**
@@ -85,6 +86,13 @@ class TransformableImage extends Transformation {
    */
   rotate(rotateAction: IRotateAction): TransformableImage {
     return this.addAction(rotateAction);
+  }
+
+  /**
+   * @param {IVariableAction} variableAction
+   */
+  variable(variableAction: IVariableAction): TransformableImage {
+    return this.addAction(variableAction);
   }
 
   /**
