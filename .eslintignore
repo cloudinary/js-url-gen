@@ -5,3 +5,5 @@ dist
 playground/base.esm.js
 # don't lint nyc coverage output
 coverage
+# don't lint the compilation tests
+compilation.test.ts
