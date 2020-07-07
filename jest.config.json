@@ -25,6 +25,12 @@
   },
   "reporters": [
     "default",
-    "jest-html-reporters"
+    ["jest-html-reporters", {
+      "publicPath" : "./public/progress/",
+      "filename": "cloudinary-base-progress-report.html",
+      "pageTitle": "Cloudianry JS 2.0 Progress Report",
+      "logoImgPath": "./__DOC_RESOURCES__/cloudinary-logo.png",
+      "expand": true
+    }]
   ]
 }

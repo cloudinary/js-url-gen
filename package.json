@@ -3,8 +3,9 @@
   "version": "1.0.0-alpha.0",
   "description": "",
   "scripts": {
-    "test": "node ./scripts/updateCompliationTests.js && jest --coverage",
-    "test:unit": "jest __TESTS__/unit",
+    "test": "jest --coverage --reporters default",
+    "test:comp": "node ./scripts/updateCompliationTests.js && jest __TESTS__/compilation.test.ts  --coverage",
+    "test:unit": "jest __TESTS__/unit --reporters default",
     "test:unit:watch": "jest __TESTS__/unit --watch",
     "test:integration": "jest __TESTS__/integration",
     "test:integration:watch": "jest __TESTS__/integration --watch",
