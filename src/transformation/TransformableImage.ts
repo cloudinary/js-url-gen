@@ -9,8 +9,8 @@ import {IDescriptor} from "../interfaces/IDescriptor";
 import {IEffectAction} from "../actions/effect/IEffectAction";
 import {IQualityAction} from "../actions/quality/IQualityAction";
 import {IRotateAction} from "../actions/rotate/IRotateAction";
+import {IVariableAction} from "../actions/variable/IVariableAction";
 import {ILayerAction} from "../actions/layers/ILayerAction";
-
 
 /**
  * @augments Transformation
@@ -86,6 +86,13 @@ class TransformableImage extends Transformation {
    */
   overlay(overlayAction: ILayerAction) {
     return this.addAction(overlayAction);
+  }
+
+  /**
+   * @param {IVariableAction} variableAction
+   */
+  variable(variableAction: IVariableAction): TransformableImage {
+    return this.addAction(variableAction);
   }
 
   /**
