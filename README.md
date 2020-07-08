@@ -21,9 +21,9 @@ Feel free to visit our more mature SDKs:
 
 
 ### What is this project for?
-This project comes to replace and modernize our existing JS offering, and it's a part of a larger effort in Cloudinary. 
+This project comes to replace and modernize our existing JS offering, and it's part of a larger effort in Cloudinary. 
 
-You can read more here:
+You can read more about the project here:
 - <a href="https://cloudinary.com/blog/cloudinary_s_next_generation_developers_sdks">Cloudinary's Next Generation SDKs</a>
 - <a href="https://cloudinary.com/blog/get_ready_for_cloudinary_s_next_generation_javascript_sdks">Cloudinary's next generation JS SDKs</a>
 
