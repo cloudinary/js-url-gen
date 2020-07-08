@@ -1,7 +1,7 @@
 ### Hey there!
 
-This repository is a work in in progress in a pre-alpha state.
-Needless to say it's not stable, all APIs and Syntax are subject to change.
+This repository is a work in progress in a pre-alpha state.
+Needless to say it's not stable, all APIs and syntax are subject to change.
 
 Feel free to peek around and play with our new API.
 
@@ -30,7 +30,7 @@ You can read more about the project here:
 
 
 ### Key Features
-- ESM packages, import only what you need.
+- ESM packages, import only what you need
 - Declarative Syntax 
 - Fully typed for excellent IDE support
 - Easy to write, easy to read.
@@ -58,6 +58,6 @@ let url = tImage.toURL()
 ### Progress report
 We're currently working on implementing all the wide range of features and possible transformations.  
 
-We've created a progress report that visualizes our efforts  
+We've created a progress report that visualizes our efforts: 
 
 https://cloudinary.github.io/cloudinary-js-base/public/progress/cloudinary-base-progress-report.html
