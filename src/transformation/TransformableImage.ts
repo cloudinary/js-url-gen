@@ -9,6 +9,7 @@ import {IDescriptor} from "../interfaces/IDescriptor";
 import {IEffectAction} from "../actions/effect/IEffectAction";
 import {IQualityAction} from "../actions/quality/IQualityAction";
 import {IRotateAction} from "../actions/rotate/IRotateAction";
+import {IColorAction} from "../actions/color/IColorAction";
 
 
 /**
@@ -92,6 +93,13 @@ class TransformableImage extends Transformation {
    */
   effect(effectAction: IEffectAction): TransformableImage {
     return this.addAction(effectAction);
+  }
+
+  /**
+   * @param {IColorAction} colorAction
+   */
+  color(colorAction: IColorAction): TransformableImage {
+    return this.addAction(colorAction);
   }
 
   /**
