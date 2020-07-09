@@ -11,6 +11,7 @@ import {IQualityAction} from "../actions/quality/IQualityAction";
 import {IRotateAction} from "../actions/rotate/IRotateAction";
 import {IVariableAction} from "../actions/variable/IVariableAction";
 import {ILayerAction} from "../actions/layers/ILayerAction";
+import {IAspectRatioAction} from "../actions/aspectRatio/IAspectRatioAction";
 
 /**
  * @augments Transformation
