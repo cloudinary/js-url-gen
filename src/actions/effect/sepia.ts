@@ -1,19 +1,15 @@
 import Action from "../Action";
 import {IAction} from "../../interfaces/IAction";
+import {prepareEffect} from "./prepareEffect";
 
 /**
  * @implements IAction
  */
 class Sepia extends Action implements IAction {
-  constructor() {
+  constructor(sepiaLevel?: number) {
     super();
-  }
-
-  /**
-   * @return {string}
-   */
-  toString(): string {
-    return `e_sepia`;
+    const paramEffect = prepareEffect('sepia', sepiaLevel);
+    this.addParam(paramEffect);
   }
 }
 

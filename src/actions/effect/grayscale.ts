@@ -1,19 +1,15 @@
 import Action from "../Action";
 import {IAction} from "../../interfaces/IAction";
+import {prepareEffect} from "./prepareEffect";
 
 /**
  * @implements IAction
  */
 class Grayscale extends Action implements IAction {
-  constructor() {
+  constructor(grayscaleLevel?: number) {
     super();
-  }
-
-  /**
-   * @return {string}
-   */
-  toString(): string {
-    return `e_grayscale`;
+    const paramEffect = prepareEffect('grayscale', grayscaleLevel);
+    this.addParam(paramEffect);
   }
 }
 
