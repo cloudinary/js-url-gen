@@ -1,27 +1,12 @@
-import Action from "../Action";
-import {IAction} from "../../interfaces/IAction";
-import {prepareEffect} from "./prepareEffect";
+import EffectAction from "./EffectAction";
+import {IEffectAction} from "./IEffectAction";
+
 
 /**
- * @implements IAction
+ * @param blurLevel
  */
-class PixelateFaces extends Action implements IAction {
-
-  /**
-   * @param pixelateLevel
-   */
-  constructor(pixelateLevel: number) {
-    super();
-    const paramEffect = prepareEffect('pixelate_faces', pixelateLevel);
-    this.addParam(paramEffect);
-  }
-}
-
-/**
- * @param pixelateLevel
- */
-function pixelateFaces(pixelateLevel?: number):PixelateFaces {
-  return new PixelateFaces(pixelateLevel);
+function pixelateFaces(blurLevel?: number):IEffectAction {
+  return new EffectAction('pixelate_faces', blurLevel);
 }
 
 export default pixelateFaces;

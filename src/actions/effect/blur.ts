@@ -1,26 +1,12 @@
-import Action from "../Action";
-import {IAction} from "../../interfaces/IAction";
-import {prepareEffect} from "./prepareEffect";
+import EffectAction from "./EffectAction";
+import {IEffectAction} from "./IEffectAction";
 
-/**
- * @implements IAction
- */
-class Blur extends Action implements IAction {
-  /**
-   * @param BlurLevel
-   */
-  constructor(BlurLevel: number) {
-    super();
-    const paramEffect = prepareEffect('blur', BlurLevel);
-    this.addParam(paramEffect);
-  }
-}
 
 /**
  * @param blurLevel
  */
-function blur(blurLevel?: number):Blur {
-  return new Blur(blurLevel);
+function blur(blurLevel?: number):IEffectAction {
+  return new EffectAction('blur', blurLevel);
 }
 
 export default blur;

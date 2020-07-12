@@ -1,23 +1,12 @@
-import Action from "../Action";
-import {IAction} from "../../interfaces/IAction";
-import {prepareEffect} from "./prepareEffect";
+import EffectAction from "./EffectAction";
+import {IEffectAction} from "./IEffectAction";
+
 
 /**
- * @implements IAction
+ * @param blurLevel
  */
-class Grayscale extends Action implements IAction {
-  constructor(grayscaleLevel?: number) {
-    super();
-    const paramEffect = prepareEffect('grayscale', grayscaleLevel);
-    this.addParam(paramEffect);
-  }
-}
-
-/**
- * @return {Grayscale}
- */
-function grayscale():Grayscale {
-  return new Grayscale();
+function grayscale(blurLevel?: number):IEffectAction {
+  return new EffectAction('grayscale', blurLevel);
 }
 
 export default grayscale;
