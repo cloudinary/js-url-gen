@@ -1,28 +1,11 @@
-import Action from "../Action";
-import {IAction} from "../../interfaces/IAction";
+import EffectAction from "./EffectAction";
+import {IEffectAction} from "./IEffectAction";
 
 /**
- * @implements IAction
+ * @param blurLevel
  */
-class Grayscale extends Action implements IAction {
-  constructor() {
-    super();
-  }
-
-  /**
-   * @return {string}
-   */
-  toString(): string {
-    return `e_grayscale`;
-  }
-}
-
-/**
- * @memberOf Effect
- * @return {Grayscale}
- */
-function grayscale():Grayscale {
-  return new Grayscale();
+function grayscale(blurLevel?: number):IEffectAction {
+  return new EffectAction('grayscale', blurLevel);
 }
 
 export default grayscale;

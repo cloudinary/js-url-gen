@@ -1,27 +1,12 @@
-import Action from "../Action";
-import {IAction} from "../../interfaces/IAction";
+import EffectAction from "./EffectAction";
+import {IEffectAction} from "./IEffectAction";
+
 
 /**
- * @implements IAction
+ * @param blurLevel
  */
-class Sepia extends Action implements IAction {
-  constructor() {
-    super();
-  }
-
-  /**
-   * @return {string}
-   */
-  toString(): string {
-    return `e_sepia`;
-  }
-}
-
-/**
- * @return {Sepia}
- */
-function sepia():Sepia {
-  return new Sepia();
+function sepia(blurLevel?: number):IEffectAction {
+  return new EffectAction('sepia', blurLevel);
 }
 
 export default sepia;
