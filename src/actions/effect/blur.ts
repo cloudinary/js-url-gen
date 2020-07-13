@@ -3,6 +3,7 @@ import {IEffectAction} from "./IEffectAction";
 
 
 /**
+ * @memberOf Effect
  * @param blurLevel
  */
 function blur(blurLevel?: number):IEffectAction {

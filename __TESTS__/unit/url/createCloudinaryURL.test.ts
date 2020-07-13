@@ -37,7 +37,7 @@ describe('Tests for TransformableImage', () => {
     const tImage = new TransformableImage();
     tImage.resize(minimumPad(250, 250));
     expect(createCloudinaryURL(CONFIG_INSTANCE, { publicID: 'sample' }, tImage))
-      .toBe('http://res.cloudinary.com/demo/image/upload/c_mpad,w_250,h_250/sample');
+      .toBe('http://res.cloudinary.com/demo/image/upload/c_mpad,h_250,w_250/sample');
   });
 
   it('Creates a cloudinaryURL with crop', () => {
@@ -51,7 +51,7 @@ describe('Tests for TransformableImage', () => {
     const tImage = new TransformableImage();
     tImage.resize(fill(250, 250));
     expect(createCloudinaryURL(CONFIG_INSTANCE, { publicID: 'sample'}, tImage))
-      .toBe('http://res.cloudinary.com/demo/image/upload/c_fill,w_250,h_250/sample');
+      .toBe('http://res.cloudinary.com/demo/image/upload/c_fill,h_250,w_250/sample');
   });
 
   it('Creates a cloudinaryURL with scale', () => {
@@ -59,7 +59,7 @@ describe('Tests for TransformableImage', () => {
     tImage.resize(scale(250, 250));
 
     expect(createCloudinaryURL(CONFIG_INSTANCE, {publicID: 'sample'}, tImage))
-      .toBe('http://res.cloudinary.com/demo/image/upload/c_scale,w_250,h_250/sample');
+      .toBe('http://res.cloudinary.com/demo/image/upload/c_scale,h_250,w_250/sample');
   });
 
   it( 'Adds version to cloudinaryURL when forceVrsion is set to true', () => {

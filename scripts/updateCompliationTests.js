@@ -18,8 +18,9 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 
 const bashScript = ` 
-  cd ${CODE_GENERATOR_PATH}
-  source ~/.rvm/scripts/rvm && rvm use ${ENV_RUBY_VER} && rspec ${CODE_GENERATOR_PATH}
+  cd ${CODE_GENERATOR_PATH};
+  # NOTE - We pipe the response of rspec to prevent the script from exiting in case the rspec command fails
+  source ~/.rvm/scripts/rvm && rvm use ${ENV_RUBY_VER} && rspec ${CODE_GENERATOR_PATH}  | grep 'ok'
 `;
 
 // Create the bash script

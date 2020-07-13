@@ -8,7 +8,7 @@ import {isString} from "../../utils/dataStructureUtils";
 // TODO: when spec for to_i & to_f is ready, implement it
 // TODO: when spec for list_!b:b:b! is ready, implement it
 
-class Variable extends Action implements IVariableAction {
+class VariableAction extends Action implements IVariableAction {
   constructor(key: string, value: number | string) {
     super();
     const paramKey = `$${key}`;
@@ -22,9 +22,9 @@ class Variable extends Action implements IVariableAction {
  * @param {string} key
  * @param {number | string} value
  */
-function variable(key: string, value: number | string) {
-  return new Variable(key, value);
+function variable(key: string, value: number | string): VariableAction {
+  return new VariableAction(key, value);
 }
 
 export {variable};
-export default Variable;
+export default {variable};

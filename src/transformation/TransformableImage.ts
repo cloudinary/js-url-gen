@@ -11,6 +11,8 @@ import {IQualityAction} from "../actions/quality/IQualityAction";
 import {IRotateAction} from "../actions/rotate/IRotateAction";
 import {IVariableAction} from "../actions/variable/IVariableAction";
 import {ILayerAction} from "../actions/layers/ILayerAction";
+import {INamedTransformationAction} from "../actions/namedTransformation/INamedTransformationAction";
+import {IColorAction} from "../actions/color/IColorAction";
 
 /**
  * @augments Transformation
@@ -103,10 +105,24 @@ class TransformableImage extends Transformation {
   }
 
   /**
+   * @param {IColorAction} colorAction
+   */
+  color(colorAction: IColorAction): TransformableImage {
+    return this.addAction(colorAction);
+  }
+
+  /**
    * @param {IRotateAction} rotateAction
    */
   rotate(rotateAction: IRotateAction): TransformableImage {
     return this.addAction(rotateAction);
+  }
+
+  /**
+   * @param {INamedTransformationAction} namedTransformation
+   */
+  namedTransformation(namedTransformation:INamedTransformationAction ) {
+    return this.addAction(namedTransformation);
   }
 
   /**

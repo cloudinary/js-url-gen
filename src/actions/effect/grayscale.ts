@@ -1,7 +1,6 @@
 import EffectAction from "./EffectAction";
 import {IEffectAction} from "./IEffectAction";
 
-
 /**
  * @param blurLevel
  */
