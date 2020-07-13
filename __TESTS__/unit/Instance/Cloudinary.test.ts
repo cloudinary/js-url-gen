@@ -15,6 +15,6 @@ describe('Tests for Cloudinary instance', () => {
 
     tImage.resize(fill(10, 10));
 
-    expect(tImage.toURL()).toBe('http://res.cloudinary.com/demoInInstance/image/upload/c_fill,w_10,h_10/sample');
+    expect(tImage.toURL()).toBe('http://res.cloudinary.com/demoInInstance/image/upload/c_fill,h_10,w_10/sample');
   });
 });

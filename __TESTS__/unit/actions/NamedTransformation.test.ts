@@ -44,6 +44,6 @@ describe('Tests for Transformation Action -- NamedTransformation', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/c_scale,w_100,h_100/t_foobar/sample');
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/c_scale,h_100,w_100/t_foobar/sample');
   });
 });

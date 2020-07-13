@@ -14,7 +14,6 @@ import {ILayerAction} from "../actions/layers/ILayerAction";
 import {INamedTransformationAction} from "../actions/namedTransformation/INamedTransformationAction";
 import {IColorAction} from "../actions/color/IColorAction";
 
-
 /**
  * @augments Transformation
  */

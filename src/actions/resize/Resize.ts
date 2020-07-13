@@ -1,13 +1,10 @@
+import aspectRatio from './aspectRatio';
 import crop from './crop';
-import scale from './scale';
 import fill from './fill';
+import scale from './scale';
 import minimumPad from './minimumPad';
+import ResizeAction from './ResizeAction';
 
-export {crop, scale, fill, minimumPad};
+export {aspectRatio, crop, fill, scale, minimumPad, ResizeAction};
 
-export default {
-  crop,
-  scale,
-  fill,
-  minimumPad
-};
+export default {aspectRatio, crop, fill, scale, minimumPad, ResizeAction};
