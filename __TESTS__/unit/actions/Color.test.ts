@@ -2,7 +2,7 @@ import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import {Color} from "../../../src/actions/Actions";
 import * as Colors from '../../../src/constants/colors/Colors';
-import {AQUA} from "../../../src/constants/colors/Colors";
+import {AQUAMARINE1} from "../../../src/constants/colors/Colors";
 import {rgb, namedColor} from "../../../src/actions/color/Color";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
@@ -63,10 +63,10 @@ describe('Tests for Transformation Action -- Color', () => {
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/co_red/sample');
   });
 
-  it('Creates a cloudinaryURL with namedColor and single import of AQUA', () => {
+  it('Creates a cloudinaryURL with namedColor and single import of AQUAMARINE1', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .color(Color.namedColor(AQUA))
+      .color(Color.namedColor(AQUAMARINE1))
       .setPublicID('sample')
       .toURL();
 
