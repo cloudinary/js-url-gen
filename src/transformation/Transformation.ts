@@ -19,13 +19,9 @@ class Transformation {
    * @return {string}
    */
   toString(): string {
-    let str = '';
-
-    this.actions.forEach((action) => {
-      str += action.toString();
-    });
-
-    return str;
+    return this.actions.map((action) => {
+      return action.toString();
+    }).join('/');
   }
 }
 

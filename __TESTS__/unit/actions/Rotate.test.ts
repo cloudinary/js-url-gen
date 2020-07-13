@@ -1,4 +1,4 @@
-import Rotate, {angle, horizontalFlip, verticalFlip} from '../../../src/actions/rotate/Rotate';
+import {angle, horizontalFlip, verticalFlip, RotateAction} from '../../../src/actions/rotate/Rotate';
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 
@@ -9,11 +9,11 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 });
 
 describe('Tests for Transformation Action -- Rotate', () => {
-  it('Ensures new Rotate is accepted as an action to TransformableImage', () => {
+  it('Ensures new RotateAction is accepted as an action to TransformableImage', () => {
     const tImage = new TransformableImage();
     // Ensures it compiles and doesn't throw
     expect(
-      tImage.rotate(new Rotate())
+      tImage.rotate(new RotateAction())
     ).toEqual(tImage);
   });
   it('Ensures angle is accepted as an action to TransformableImage', () => {
@@ -53,7 +53,7 @@ describe('Tests for Transformation Action -- Rotate', () => {
   it('Creates a cloudinaryURL with Rotate', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .rotate(new Rotate().verticalFlip().angle(40).horizontalFlip())
+      .rotate(new RotateAction().verticalFlip().angle(40).horizontalFlip())
       .setPublicID('sample')
       .toURL();
 
@@ -62,7 +62,7 @@ describe('Tests for Transformation Action -- Rotate', () => {
   it('Creates a cloudinaryURL with Rotate, passing value to constructor', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .rotate(new Rotate(30).verticalFlip().angle(40).horizontalFlip())
+      .rotate(new RotateAction(30).verticalFlip().angle(40).horizontalFlip())
       .setPublicID('sample')
       .toURL();
 

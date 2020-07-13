@@ -4,6 +4,9 @@ import pixelateFaces from "./pixelateFaces";
 import grayscale from "./grayscale";
 import sepia from "./sepia";
 
+/**
+ * @namespace Effect
+ */
 export {blur, blurFaces, pixelateFaces, grayscale, sepia};
 
 export default {blur, blurFaces, pixelateFaces, grayscale, sepia};

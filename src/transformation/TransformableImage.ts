@@ -9,6 +9,9 @@ import {IDescriptor} from "../interfaces/IDescriptor";
 import {IEffectAction} from "../actions/effect/IEffectAction";
 import {IQualityAction} from "../actions/quality/IQualityAction";
 import {IRotateAction} from "../actions/rotate/IRotateAction";
+import {IVariableAction} from "../actions/variable/IVariableAction";
+import {ILayerAction} from "../actions/layers/ILayerAction";
+import {INamedTransformationAction} from "../actions/namedTransformation/INamedTransformationAction";
 import {IColorAction} from "../actions/color/IColorAction";
 
 
@@ -82,10 +85,17 @@ class TransformableImage extends Transformation {
   }
 
   /**
-   * @param {IRotateAction} rotateAction
+   * @param overlayAction
    */
-  rotate(rotateAction: IRotateAction): TransformableImage {
-    return this.addAction(rotateAction);
+  overlay(overlayAction: ILayerAction) {
+    return this.addAction(overlayAction);
+  }
+
+  /**
+   * @param {IVariableAction} variableAction
+   */
+  variable(variableAction: IVariableAction): TransformableImage {
+    return this.addAction(variableAction);
   }
 
   /**
@@ -100,6 +110,20 @@ class TransformableImage extends Transformation {
    */
   color(colorAction: IColorAction): TransformableImage {
     return this.addAction(colorAction);
+  }
+
+  /**
+   * @param {IRotateAction} rotateAction
+   */
+  rotate(rotateAction: IRotateAction): TransformableImage {
+    return this.addAction(rotateAction);
+  }
+
+  /**
+   * @param {INamedTransformationAction} namedTransformation
+   */
+  namedTransformation(namedTransformation:INamedTransformationAction ) {
+    return this.addAction(namedTransformation);
   }
 
   /**

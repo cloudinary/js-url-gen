@@ -3,8 +3,8 @@ node_modules
 .idea
 dist
 coverage
-docs
+public
 playground/base.esm.js
 scripts/tmp.sh
-jest_html_reporters.html
 __TESTS__/compilation.test.ts
+pcakage-lock.json

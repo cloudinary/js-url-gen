@@ -1,12 +1,24 @@
 /**
  * Sort a map by key
- * @param map <string, { key: unknown }>
- * @Return sorted map
+ * @param map <string, unknown>
+ * @Return array of map's values sorted by key
  */
-function sortMapByKey(map: Map<string, { key: unknown }>) {
-  return (Array.from(map.values())).sort((obj1, obj2) => (obj1.key > obj2.key ? 1 : -1));
+function mapToSortedArray(map: Map<string, unknown>) {
+  const array = Array.from(map.entries()).sort();
+
+  return array.map((v) => v[1]);
+}
+
+/**
+ * Checks if `value` is a string.
+ * @param {*} value The value to check.
+ * @returns {boolean} `true` if `value` is a string, else `false`.
+ */
+function isString(value: unknown) {
+  return (typeof value === 'string' || value instanceof String);
 }
 
 export {
-  sortMapByKey
+  isString,
+  mapToSortedArray
 };

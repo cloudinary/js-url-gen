@@ -1,7 +1,7 @@
 ### Hey there!
 
-This repository is a work in in progress in a pre-alpha state.
-Needless to say it's not stable.
+This repository is a work in progress in a pre-alpha state.
+Needless to say it's not stable, all APIs and syntax are subject to change.
 
 Feel free to peek around and play with our new API.
 
@@ -17,85 +17,47 @@ Feel free to visit our more mature SDKs:
 
   
   
-
-
 ----
 
-Below is the progress made on the project, the list will be modified and extended as the project progresses
+
+### What is this project for?
+This project comes to replace and modernize our existing JS offering, and it's part of a larger effort in Cloudinary. 
+
+You can read more about the project here:
+- <a href="https://cloudinary.com/blog/cloudinary_s_next_generation_developers_sdks">Cloudinary's Next Generation SDKs</a>
+- <a href="https://cloudinary.com/blog/get_ready_for_cloudinary_s_next_generation_javascript_sdks">Cloudinary's next generation JS SDKs</a>
 
 
-### Proposed syntax
+
+### Key Features
+- ESM packages, import only what you need
+- Declarative Syntax 
+- Fully typed for excellent IDE support
+- Easy to write, easy to read.
+
+
+
+### Example Syntax
 ```javascript
-let tImage = new TransformableImage()
-  .addAction(
-    scale()
-      .height(100)
-      .width(100)
-  )
-  .setConfig(configOptions)
+import {TransformableImage} from '@cloudinary/base';
+import {scale} from '@cloudinary/base/actions/resize';
+let tImage = new TransformableImage('sample')
+  .setConfig({
+    cloud: {
+      cloudName:'demo'    
+    }  
+  })
+  .resize(scale(100, 100))
+ 
+let url = tImage.toURL()
 
-let url = imgtImage.getURLForImage('cat.jpg')
-
-// results in the following URL (assuming your cloud is 'demo')
-// https://res.cloudinary.com/demo/image/upload/c_scale,h_100,w_100/cat.jpg
-
+// The above results in the following URL
+// https://res.cloudinary.com/demo/image/upload/c_scale,h_100,w_100/sample
 ```
 
-Files of interest
-- `src/final.js` - Anything here is agreed upon syntax, import and structure
-- `src/wip.js` - Anything here will be changed to play around with ideas
-- `readme.md` - This file - to update status
+### Progress report
+We're currently working on implementing all the wide range of features and possible transformations.  
 
+We've created a progress report that visualizes our efforts: 
 
-- [ ] Actions 
-    - [ ] Resize (Group)
-        - [ ] Resize (action)
-        - [ ] Crop
-        - [ ] Fill
-        - [ ] Pad
-        - [ ] FillPad
-        - [ ] Trim
-        - [ ] Thumb
-        - [ ] DPR
-    - [ ] Adjust
-        - [ ] Brightness
-        - [ ] Contrast
-        - [ ] ReplaceColor
-        - [ ] ReColor
-        - [ ] Red,Green Blue (?)
-        - [ ] Opacity
-        - [ ] ViesusCorrect
-        - [ ] Improve (?)
-    - [ ] Effect
-        - [ ] MiscEffect (?) (art, cartoonify, oil_paint, redeye, adv_redeye, vectorize, outline)
-        - [ ] PixelEffect (?) (blur_faces, blue_region, pixelate.. and more)
-        - [ ] Blur
-        - [ ] Tint
-        - [ ] AssistColorBlind
-        - [ ] ColorEffect
-        - [ ] SimulateColorBlind
-        - [ ] Vectorize
-        - [ ] Displace
-    - [ ] Overlay
-        - [ ] ImageLayer
-        - [ ] TextLayer
-        - [ ] Layer
-        - [ ] (In PHP there are many, many more here)
-    - [ ] Direct
-        - [ ] Outline
-        - [ ] Border
-        - [ ] Shadow
-        - [ ] Corners
-    - [ ] Delivery
-        - [ ] DPR
-        - [ ] Format
-        - [ ] Attachment
-        - [ ] setDensity (DPI, not DPR, for PDF)
-        - [ ] keepAttribution
-        - [ ] keepAll
-    
-- [ ] Classes/Concepts
-    - [ ] TransformableImage
-    
-- [ ] Open issues
-    - [ ] JSDoc and typescript have missing features (like extending objects)
+https://cloudinary.github.io/cloudinary-js-base/public/progress/cloudinary-base-progress-report.html

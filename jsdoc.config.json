@@ -10,7 +10,7 @@
   },
   "plugins": [
     "plugins/markdown",
-    "jsdoc-plugin-typescript"
+    "node_modules/better-docs/typescript"
   ],
   "typescript": {
     "moduleRoot": "src"
@@ -26,7 +26,7 @@
     "copyright": "Copyright © 2020 Cloudinary.com"
   },
   "opts": {
-    "destination": "docs",
+    "destination": "public/docs",
     "recurse": true,
     "readme": "README.md",
     "template": "./node_modules/foodoc/template"
