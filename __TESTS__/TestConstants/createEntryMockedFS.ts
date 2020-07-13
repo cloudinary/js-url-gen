@@ -12,6 +12,11 @@ const TEST_FILE_STRUCTURE = {
           'Border.d.ts' : '// Some content'
         }
       },
+      constants: {
+        colors: {
+          'Colors.d.ts' : '// Some content'
+        }
+      },
       deep: { // We'll show we can create even deeper entry points
         nested: {
           entryPoint1: {
@@ -40,6 +45,12 @@ const TEST_FILE_STRUCTURE = {
           notADir: '// Some content',
           border: {
             'Border.js' : '// Some content'
+          }
+        },
+        constants: {
+          notADir: '// Some content',
+          colors: {
+            'Colors.js' : '// Some content'
           }
         },
         deep: { // We'll show we can create even deeper entry points

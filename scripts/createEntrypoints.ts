@@ -10,6 +10,9 @@ const {
 // Create an Entry Point from everything under bundles/esm/actions -> dist/actions
 createEntryPointFromESMPath('actions', 'actions');
 
+// Create an Entry Point from everything under bundles/esm/colors -> dist/colors
+createEntryPointFromESMPath('colors', 'colors');
+
 // Allows import from '@base' (With types)
 createMainEntryPoint();
 
