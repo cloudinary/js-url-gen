@@ -111,11 +111,11 @@ describe('Tests for Transformation Action -- Resize', () => {
   it('Creates a cloudinaryURL with fill and aspectRatio', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .resize(fill(100)
+      .resize(fill(100, 100)
         .aspectRatio('4:3'))
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/ar_4:3,c_fill,w_100/sample');
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/ar_4:3,c_fill,h_100,w_100/sample');
   });
 });
