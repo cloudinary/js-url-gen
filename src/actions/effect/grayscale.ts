@@ -18,6 +18,7 @@ class Grayscale extends Action implements IAction {
 }
 
 /**
+ * @memberOf Effect
  * @return {Grayscale}
  */
 function grayscale():Grayscale {

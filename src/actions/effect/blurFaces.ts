@@ -24,6 +24,7 @@ class BlurFaces extends Action implements IAction {
 }
 
 /**
+ * @memberOf Effect
  * @param blurLevel
  */
 function blurFaces(blurLevel?: number):BlurFaces {

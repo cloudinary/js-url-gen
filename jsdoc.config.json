@@ -10,7 +10,7 @@
   },
   "plugins": [
     "plugins/markdown",
-    "jsdoc-plugin-typescript"
+    "node_modules/better-docs/typescript"
   ],
   "typescript": {
     "moduleRoot": "src"
