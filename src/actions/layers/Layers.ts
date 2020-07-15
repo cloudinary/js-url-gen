@@ -5,8 +5,7 @@ import Source, {ImageSource} from "./Source";
 
 
 class Layer extends Action implements ILayerAction {
-  source: ImageSource; // TODO this should not be any
-  // TODO this needs to accept other types of sources
+  source: ImageSource; // TODO this needs to accept other types of sources
   constructor(transformable: ImageSource) {
     super();
     this.source = transformable;
