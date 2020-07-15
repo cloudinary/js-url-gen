@@ -1,6 +1,7 @@
 import Border, {solid} from '../../../src/actions/border/Border';
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
+import * as Colors from "../../../src/constants/colors/Colors";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -25,18 +26,30 @@ describe('Tests for Transformation Action -- Border', () => {
     const borderActionInstance = solid();
 
     expect(borderActionInstance.width(50)).toEqual(borderActionInstance);
-    expect(borderActionInstance.color('red')).toEqual(borderActionInstance);
+    expect(borderActionInstance.color(Colors.RED)).toEqual(borderActionInstance);
   });
 
-  it('Creates a cloudinaryURL with border', () => {
+  it('Creates a cloudinaryURL with border and color', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
       .border(Border.solid()
         .width(7)
-        .color('red'))
+        .color(Colors.RED))
       .setPublicID('sample')
       .toURL();
 
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/bo_7px_solid_red/sample');
+  });
+
+  it('Creates a cloudinaryURL with border and rgb', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .border(Border.solid()
+        .width(7)
+        .color('#0000ff'))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/bo_7px_solid_rgb:0000ff/sample');
   });
 });

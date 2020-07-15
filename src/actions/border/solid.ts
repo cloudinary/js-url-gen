@@ -20,12 +20,19 @@ class Solid extends Action implements IBorderAction{
   }
 
   /**
-   *
    * @param borderColor
    */
   color(borderColor: string) {
-    this.borderColor = borderColor;
+    this.borderColor = this.prepareColor(borderColor);
     return this;
+  }
+
+  /**
+   * Returns RGB or Color
+   * @param color
+   */
+  prepareColor(color: string){
+    return color.match(/^#[0-9A-F]{6}$/i) ? `rgb:${color.substr(1)}` : color;
   }
 
   prepareParam() : void {
