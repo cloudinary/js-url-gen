@@ -1,7 +1,7 @@
 import {fill} from "../../../src/actions/resize/Resize";
-import {overlayLayer} from "../../../src/actions/layers/Layers";
-import {imageSource} from "../../../src/actions/layers/Sources";
+import {imageLayer, Source} from "../../../src/actions/layers/Layers";
 import TransformableImage from "../../../src/transformation/TransformableImage";
+const {image} = Source;
 
 describe('Tests for overlay actions', () => {
   it('Parses an overlay with an imageSource', () => {
@@ -14,12 +14,12 @@ describe('Tests for overlay actions', () => {
       })
       .resize(fill(1000, 1000))
       .overlay(
-        overlayLayer(
-          imageSource('sample')
+        imageLayer(
+          image('sample')
             .resize(fill(500, 500))
             .overlay(
-              overlayLayer(
-                imageSource('sample')
+              imageLayer(
+                image('sample')
                   .resize(fill(200, 200)
                   )
               )
