@@ -1,28 +1,12 @@
-import Action from "../Action";
-import {IAction} from "../../interfaces/IAction";
+import QualityAction from "./QualityAction";
+import {IQualityAction} from "./IQualityAction";
+
 
 /**
- * @implements IAction
+ * @memberOf Quality
  */
-class JpegMini extends Action implements IAction {
-
-  constructor() {
-    super();
-  }
-
-  /**
-   * @return {string}
-   */
-  toString(): string {
-    return `q_jpegmini`;
-  }
-}
-
-/**
- * @return {JpegMini}
- */
-function jpegMini():JpegMini {
-  return new JpegMini();
+function jpegMini():IQualityAction {
+  return new QualityAction('jpegmini');
 }
 
 export default jpegMini;

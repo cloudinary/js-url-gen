@@ -43,6 +43,30 @@ describe('Tests for Transformation Action -- Quality', () => {
     ).toEqual(tImage);
   });
 
+  it('Ensures best is accepted as an action to TransformableImage', () => {
+    const tImage = new TransformableImage();
+    // Ensures it compiles and doesn't throw
+    expect(
+      tImage.quality(best())
+    ).toEqual(tImage);
+  });
+
+  it('Ensures low is accepted as an action to TransformableImage', () => {
+    const tImage = new TransformableImage();
+    // Ensures it compiles and doesn't throw
+    expect(
+      tImage.quality(low())
+    ).toEqual(tImage);
+  });
+
+  it('Ensures eco is accepted as an action to TransformableImage', () => {
+    const tImage = new TransformableImage();
+    // Ensures it compiles and doesn't throw
+    expect(
+      tImage.quality(eco())
+    ).toEqual(tImage);
+  });
+
   it('Creates a cloudinaryURL with quality', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
@@ -93,16 +117,6 @@ describe('Tests for Transformation Action -- Quality', () => {
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/q_auto:low/sample');
   });
 
-  it('Creates a cloudinaryURL with quality level', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .quality(level(35))
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/q_35/sample');
-  });
-
   it('Creates a cloudinaryURL with jpegmini', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
@@ -111,5 +125,15 @@ describe('Tests for Transformation Action -- Quality', () => {
       .toURL();
 
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/q_jpegmini/sample');
+  });
+
+  it('Creates a cloudinaryURL with level', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .quality(Quality.level(75))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/q_75/sample');
   });
 });
