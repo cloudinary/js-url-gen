@@ -13,6 +13,7 @@ import {IVariableAction} from "../actions/variable/IVariableAction";
 import {ILayerAction} from "../actions/layers/ILayerAction";
 import {INamedTransformationAction} from "../actions/namedTransformation/INamedTransformationAction";
 import {IColorAction} from "../actions/color/IColorAction";
+import {IAction} from "../interfaces/IAction";
 
 /**
  * @augments Transformation
@@ -109,6 +110,14 @@ class TransformableImage extends Transformation {
    */
   color(colorAction: IColorAction): TransformableImage {
     return this.addAction(colorAction);
+  }
+
+
+  /**
+   * @param action
+   */
+  adjust(action: IAction) {
+    return this.addAction(action);
   }
 
   /**

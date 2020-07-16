@@ -1,33 +1,12 @@
-import Action from "../Action";
-import {IAction} from "../../interfaces/IAction";
+import QualityAction from "./QualityAction";
+import {IQualityAction} from "./IQualityAction";
+
 
 /**
- * @implements IAction
+ * @memberOf Quality
  */
-class Level extends Action implements IAction {
-  private qualityLevel: number;
-
-  /**
-   * @param qualityLevel
-   */
-  constructor(qualityLevel: number) {
-    super();
-    this.qualityLevel = qualityLevel;
-  }
-
-  /**
-   * @return {string}
-   */
-  toString(): string {
-    return `q_${this.qualityLevel}`;
-  }
-}
-
-/**
- * @param qualityLevel
- */
-function level(qualityLevel: number):Level {
-  return new Level(qualityLevel);
+function level(qualityLevell: number):IQualityAction {
+  return new QualityAction(qualityLevell.toString());
 }
 
 export default level;

@@ -1,27 +1,12 @@
-import Action from "../Action";
-import {IAction} from "../../interfaces/IAction";
+import QualityAction from "./QualityAction";
+import {IQualityAction} from "./IQualityAction";
+
 
 /**
- * @implements IAction
+ * @memberOf Quality
  */
-class Best extends Action implements IAction {
-  constructor() {
-    super();
-  }
-
-  /**
-   * @return {string}
-   */
-  toString(): string {
-    return `q_auto:best`;
-  }
-}
-
-/**
- * @return {Best}
- */
-function best():Best {
-  return new Best();
+function best():IQualityAction {
+  return new QualityAction('auto:best');
 }
 
 export default best;

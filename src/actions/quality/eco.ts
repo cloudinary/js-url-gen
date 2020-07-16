@@ -1,27 +1,12 @@
-import Action from "../Action";
-import {IAction} from "../../interfaces/IAction";
+import QualityAction from "./QualityAction";
+import {IQualityAction} from "./IQualityAction";
+
 
 /**
- * @implements IAction
+ * @memberOf Quality
  */
-class Eco extends Action implements IAction {
-  constructor() {
-    super();
-  }
-
-  /**
-   * @return {string}
-   */
-  toString(): string {
-    return `q_auto:eco`;
-  }
-}
-
-/**
- * @return {Eco}
- */
-function eco():Eco {
-  return new Eco();
+function eco():IQualityAction {
+  return new QualityAction('auto:eco');
 }
 
 export default eco;

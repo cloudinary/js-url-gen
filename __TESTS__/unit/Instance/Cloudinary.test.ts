@@ -17,4 +17,16 @@ describe('Tests for Cloudinary instance', () => {
 
     expect(tImage.toURL()).toBe('http://res.cloudinary.com/demoInInstance/image/upload/c_fill,h_10,w_10/sample');
   });
+  it ('throw error when useImage() is not called', () => {
+    expect(()=> {
+      const cloudinary = new Cloudinary(new CloudinaryConfig({
+        cloud: {
+          cloudName:'demoInInstance'
+        }
+      }));
+      const tImage = cloudinary.image('sample');
+
+      tImage.resize(fill(10, 10));
+    }).toThrow();
+  });
 });

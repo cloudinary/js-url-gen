@@ -17,6 +17,12 @@ describe('It tests a combination of Cloudianry URL and Configuration', () => {
 
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/my_image');
   });
+  it ('Throw error when config is invalid', () => {
+    expect(() => {
+      new TransformableImage('my_image')
+        .setConfig({});
+    }).toThrow();
+  });
   it ('Generates a URL with transforamtions', () => {
     const url = new TransformableImage()
       .setConfig(DEMO_CONFIG)
