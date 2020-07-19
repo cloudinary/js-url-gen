@@ -32,7 +32,7 @@ class Solid extends Action implements IBorderAction{
    * @param color
    */
   prepareColor(color: string){
-    return color.match(/^#[0-9A-F]{6}$/i) ? `rgb:${color.substr(1)}` : color;
+    return color.match(/^#/) ? `rgb:${color.substr(1)}` : color;
   }
 
   prepareParam() : void {

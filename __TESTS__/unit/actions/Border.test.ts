@@ -41,7 +41,7 @@ describe('Tests for Transformation Action -- Border', () => {
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/bo_7px_solid_red/sample');
   });
 
-  it('Creates a cloudinaryURL with border and rgb', () => {
+  it('Creates a cloudinaryURL with border and rgb #0000ff', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
       .border(Border.solid()
@@ -51,5 +51,29 @@ describe('Tests for Transformation Action -- Border', () => {
       .toURL();
 
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/bo_7px_solid_rgb:0000ff/sample');
+  });
+
+  it('Creates a cloudinaryURL with border and rgb #FFF', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .border(Border.solid()
+        .width(7)
+        .color('#FFF'))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/bo_7px_solid_rgb:FFF/sample');
+  });
+
+  it('Creates a cloudinaryURL with border and rgb #FFFFFFFF', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .border(Border.solid()
+        .width(7)
+        .color('#FFFFFFFF'))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/bo_7px_solid_rgb:FFFFFFFF/sample');
   });
 });
