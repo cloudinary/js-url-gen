@@ -6,6 +6,7 @@ import Quality from "./quality/Quality";
 import Rotate from "./rotate/Rotate";
 import Color from "./color/Color";
 import Adjust from "./adjust/Adjust";
+import Layers from "./layers/Layers";
 
-export {Resize, Border, RoundCorners, Effect, Quality, Rotate, Color, Adjust};
-export default {Resize, Border, RoundCorners, Effect, Quality, Rotate, Color, Adjust};
+export {Resize, Border, RoundCorners, Effect, Quality, Rotate, Color, Adjust, Layers};
+export default {Resize, Border, RoundCorners, Effect, Quality, Rotate, Color, Adjust, Layers};

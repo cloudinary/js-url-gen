@@ -1,10 +1,11 @@
 import {ILayerAction} from "./ILayerAction";
 import Action from "../Action";
-import {ImageSource} from "./Sources";
+// TODO - BundleSize Warning - we include all the Sources code within Layers.
+import Source, {ImageSource} from "./Source";
+
 
 class Layer extends Action implements ILayerAction {
-  source: ImageSource;
-  // TODO this needs to accept other types of sources
+  source: ImageSource; // TODO this needs to accept other types of sources
   constructor(transformable: ImageSource) {
     super();
     this.source = transformable;
@@ -21,11 +22,12 @@ class Layer extends Action implements ILayerAction {
  * @param BlendMode
  * @return {Layer}
  */
-function overlayLayer(imageSource: ImageSource, Position?:any, BlendMode?:any): Layer {
+function imageLayer(imageSource: ImageSource, Position?:any, BlendMode?:any): Layer {
   // TODO this needs to accept other types of sources
   return new Layer(imageSource);
 }
 
-export {
-  overlayLayer
-};
+
+export {imageLayer, Source};
+export default {imageLayer, Source};
+
