@@ -2,6 +2,7 @@ import {IBorderAction} from "./IBorderAction";
 import Action from "../Action";
 import Param from "../../parameters/Param";
 import ParamValue from "../../parameters/ParamValue";
+import {prepareColor} from "../../utils/prepareColor";
 
 class Solid extends Action implements IBorderAction{
   private borderWidth: number;
@@ -23,16 +24,8 @@ class Solid extends Action implements IBorderAction{
    * @param borderColor
    */
   color(borderColor: string) {
-    this.borderColor = this.prepareColor(borderColor);
+    this.borderColor = prepareColor(borderColor);
     return this;
-  }
-
-  /**
-   * Returns RGB or Color
-   * @param color
-   */
-  prepareColor(color: string){
-    return color.match(/^#/) ? `rgb:${color.substr(1)}` : color;
   }
 
   prepareParam() : void {
