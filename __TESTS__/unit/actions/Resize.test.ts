@@ -1,7 +1,7 @@
 import Resize, {minimumPad, crop, fill, scale} from '../../../src/actions/resize/Resize';
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import Gravity from "../../../src/params/Gravity/Gravity";
+import Gravity from "../../../src/params/gravity/Gravity";
 import * as GravityObjects from "../../../src/constants/gravityObjects/GravityObjects";
 import {AutoGravity} from "../../../src/constants/gravityObjects/GravityObjects";
 
