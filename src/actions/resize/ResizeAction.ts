@@ -1,6 +1,7 @@
 import Action from "../Action";
 import {IAction} from "../../interfaces/IAction";
 import Param from "../../parameters/Param";
+import {GravityParam} from "../../params/gravity/Gravity";
 
 class ResizeAction extends Action implements IAction {
   constructor(cropType?: string, cropWidth?: number, cropHeight?: number) {
@@ -18,6 +19,9 @@ class ResizeAction extends Action implements IAction {
     return this.addParam(new Param('ar', ratio));
   }
 
+  gravity(gravityParam: GravityParam): this {
+    return this.addParam(gravityParam);
+  }
 }
 
 export default ResizeAction;

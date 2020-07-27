@@ -1,6 +1,9 @@
 import Resize, {minimumPad, crop, fill, scale} from '../../../src/actions/resize/Resize';
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
+import Gravity from "../../../src/params/Gravity/Gravity";
+import * as GravityObjects from "../../../src/constants/gravityObjects/GravityObjects";
+import {AutoGravity} from "../../../src/constants/gravityObjects/GravityObjects";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -117,5 +120,43 @@ describe('Tests for Transformation Action -- Resize', () => {
       .toURL();
 
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/ar_4:3,c_fill,h_100,w_100/sample');
+  });
+
+  it('Works with Gravity', function () {
+    const url = new TransformableImage('sample')
+      .setConfig(CONFIG_INSTANCE)
+      .resize(
+        fill(400)
+          .aspectRatio(0.8)
+          .gravity(Gravity.auto()))
+      .toURL();
+
+    expect(url).toContain('ar_0.8,c_fill,g_auto,w_400');
+  });
+
+  it('Works with gravity objects', function () {
+    const url = new TransformableImage('sample')
+      .setConfig(CONFIG_INSTANCE)
+      .resize(
+        fill(400)
+          .aspectRatio(0.8)
+          .gravity(Gravity.object(GravityObjects.BIRD))
+      )
+      .toURL();
+
+    expect(url).toContain('ar_0.8,c_fill,g_bird,w_400');
+  });
+
+  it('Works with gravity objects', function () {
+    const url = new TransformableImage('sample')
+      .setConfig(CONFIG_INSTANCE)
+      .resize(
+        fill(400)
+          .aspectRatio(0.8)
+          .gravity(Gravity.auto(AutoGravity.object(GravityObjects.CAT)))
+      )
+      .toURL();
+
+    expect(url).toContain('ar_0.8,c_fill,g_auto:cat,w_400');
   });
 });
