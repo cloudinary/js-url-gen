@@ -59,7 +59,7 @@ describe('Tests for ValidatePackageFiles', () => {
     }, './dist');
   });
 
-  it('Will not throw when a level is provided a key to ignore ', () => {
+  it('Will not throw when a a flag is passed and there are missing files in tree', () => {
     validatePackageFiles({
       $suppressNonRequiredFilesError: true,
       foo: 'file'

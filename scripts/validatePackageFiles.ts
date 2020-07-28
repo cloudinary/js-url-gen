@@ -16,7 +16,7 @@ interface IFlatFileStructureLevel {
 
 /**
  *
- * @description This function accepts a flag tree (No nesting, key value object) that represents a file system, and a path
+ * @description This function accepts a flat tree (No nesting, key value object) that represents a file system, and a path
  *              The function will ensure that all files that exist in the file system also exist in the tree
  *              If a file in the tree is equal to false, we skip the validation of this function
  * @param tree
