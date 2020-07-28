@@ -32,6 +32,10 @@ function capitalize(str: string) {
  * @param {string} entryPointInDist The desired importable entrypoint: import foo from '@base/${entryPointInDist}'
  */
 function createEntryPointFromESMPath(pathInESMBundle: string, entryPointInDist: string) {
+  const expectedFileSystem:Record<string, any> = {};
+
+  expectedFileSystem[entryPointInDist] = {};
+
   const FULL_SOURCE_PATH = `./dist/bundles/esm/${pathInESMBundle}`;
   const FULL_SOURCE_PATH_TYPES = `./dist/types/${pathInESMBundle}`;
   const FULL_ENTRY_POINT_PATH = `./dist/${entryPointInDist}`;
@@ -51,7 +55,7 @@ function createEntryPointFromESMPath(pathInESMBundle: string, entryPointInDist: 
     const isDir = fs.lstatSync(`${FULL_SOURCE_PATH}/${name}`).isDirectory();
 
     if (isDir) {
-      fs.mkdirSync(`${FULL_ENTRY_POINT_PATH}/${name}`);
+      fs.mkdirSync(`${FULL_ENTRY_POINT_PATH}/${name}`, {recursive: true});
 
       const FULL_TYPES_PATH = `${FULL_SOURCE_PATH_TYPES}/${name}/${capitalize(name)}.d.ts`;
       const FULL_JS_PATH = `${FULL_SOURCE_PATH}/${name}/${capitalize(name)}.js`;
@@ -80,12 +84,15 @@ function createEntryPointFromESMPath(pathInESMBundle: string, entryPointInDist: 
         "main": `${rootPathToDist}/bundles/esm/${pathInESMBundle}/${name}/${capitalize(name)}.js`
       }, commonPackageProperties);
 
+      expectedFileSystem[entryPointInDist][name] = {'package.json': 'file'};
       fs.writeFileSync(
         `${FULL_ENTRY_POINT_PATH}/${name}/package.json`,
         JSON.stringify(packageJson,null, '\t')
       );
     }
   });
+
+  return expectedFileSystem;
 }
 
 

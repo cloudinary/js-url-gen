@@ -53,6 +53,13 @@ describe('Tests for createEntryPoints', () => {
     expect(umdBundlePackageJson.sideEffects).toBe(false);
   });
 
+  it ('Returns the expected file structure from createEntryPointFromESMPath', () => {
+    const expectedFileSystem = createEntryPoints.createEntryPointFromESMPath('actions', `actions`);
+    // This is the expected file structure that is created in dist
+    // we expect /dist/actions/border/package.json to be a file
+    expect(expectedFileSystem.actions.border['package.json']).toBe('file');
+  });
+
   it('Fails if it cannot find a d.ts file', () => {
     try {
       createEntryPoints.createEntryPointFromESMPath('onlyESM', `onlyESM`);

@@ -17,6 +17,25 @@ describe('Tests for Cloudinary instance', () => {
 
     expect(tImage.toURL()).toBe('http://res.cloudinary.com/demoInInstance/image/upload/c_fill,h_10,w_10/sample');
   });
+
+
+  it ('Can pass config in runtime instead of in creation', () => {
+    const cloudinary = new Cloudinary();
+
+    cloudinary.setConfig(new CloudinaryConfig({
+      cloud: {
+        cloudName:'demoInInstance'
+      }
+    }));
+
+    cloudinary.useImage(TransformableImage);
+    const tImage = cloudinary.image('sample');
+
+    tImage.resize(fill(10, 10));
+
+    expect(tImage.toURL()).toBe('http://res.cloudinary.com/demoInInstance/image/upload/c_fill,h_10,w_10/sample');
+  });
+
   it ('throw error when useImage() is not called', () => {
     expect(()=> {
       const cloudinary = new Cloudinary(new CloudinaryConfig({
