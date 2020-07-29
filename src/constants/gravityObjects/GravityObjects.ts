@@ -11,19 +11,37 @@ export class GravityObject {
 
 export class AutoGravity {
   readonly gravityObject:GravityObject;
-  private weight:number;
-  constructor(gravityObject:GravityObject, weight?: number) {
+  private readonly weight?:number | string;
+  private shouldAvoid:boolean;
+
+  constructor(gravityObject:GravityObject, weight?: number | string) {
     this.weight = weight;
     this.gravityObject = gravityObject;
+    this.shouldAvoid = false;
+  }
+
+  private shouldAddWeight() {
+    return typeof this.weight === 'number' || typeof this.weight === 'string' || this.shouldAvoid;
+  }
+
+  getName():string {
+    return this.gravityObject.name;
+  }
+
+  getWeight():number|string {
+    if (this.shouldAvoid) {
+      return 'avoid';
+    } else {
+      return this.weight;
+    }
   }
 
   toString():string {
-    if(this.weight) {
-      const avoidStr = this.weight <=-100 ? 'avoid' : this.weight;
-
-      return `${this.gravityObject.name}_${avoidStr}`;
+    // Future proofing, in case we'd like to support some custom string in the future, or if data is coming from a DB
+    if(this.shouldAddWeight()) {
+      return `${this.getName()}_${this.getWeight()}`;
     } else {
-      return this.gravityObject.name;
+      return this.getName();
     }
   }
 
@@ -42,7 +60,7 @@ export class AutoGravity {
   }
 
   avoid(): AutoGravity {
-    this.weight = -100;
+    this.shouldAvoid = true;
     return this;
   }
 }

@@ -65,6 +65,6 @@ describe('Gravity Param', () => {
   });
 
   it('Tests Gravity.auto() with AutoGravity with object weighed', () => {
-    expect(Gravity.auto(AutoGravity.object(GravityObjects.CAT, 50)).toString()).toBe('g_auto:cat_50');
+    expect(Gravity.auto(AutoGravity.object(GravityObjects.CAT, -100)).toString()).toBe('g_auto:cat_-100');
   });
 });
