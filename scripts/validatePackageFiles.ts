@@ -1,18 +1,12 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+
+// Since interfaces are not real objects, we can't use require, but instead we use import
+import {IFileStructureLevel, IFlatFileStructureLevel} from "./lib/interfaces/IFileStructure";
+
 const fs = require('fs');
 const path = require('path');
 const MissingRequiredFile = require('./errors/MissingRequiredFile');
 const FoundNonRequiredFile = require('./errors/FoundNonRequiredFile');
-
-interface IFileStructureLevel{
-  $suppressNonRequiredFilesError?: boolean;
-  [key:string]: string | boolean | IFileStructureLevel;
-}
-
-interface IFlatFileStructureLevel {
-  [key:string]: string | boolean;
-}
-
 
 /**
  *
