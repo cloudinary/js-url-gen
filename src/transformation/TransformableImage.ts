@@ -13,6 +13,7 @@ import {IVariableAction} from "../actions/variable/IVariableAction";
 import {ILayerAction} from "../actions/layers/ILayerAction";
 import {INamedTransformationAction} from "../actions/namedTransformation/INamedTransformationAction";
 import {IColorAction} from "../actions/color/IColorAction";
+import {IDeliveryAction} from "../actions/delivery/IDeliveryAction";
 import {IAction} from "../interfaces/IAction";
 
 /**
@@ -68,6 +69,13 @@ class TransformableImage extends Transformation {
    */
   resize(resizeAction: IResizeAction): TransformableImage {
     return this.addAction(resizeAction);
+  }
+
+  /**
+   * @param deliveryAction
+   */
+  delivery(deliveryAction: IDeliveryAction): TransformableImage {
+    return this.addAction(deliveryAction);
   }
 
   /**
