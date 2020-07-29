@@ -1,6 +1,11 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+/* eslint-disable @typescript-eslint/no-var-requires */
+/**
+ * This file contains utility functions related to creating ./dist entry-points (such as @base/actions/adjust)
+ */
+
 const fs = require('fs');
 
+// All of our package.jsons need to contain this property to allow tree shaking
 const commonPackageProperties = {
   sideEffects:false
 };
@@ -21,7 +26,7 @@ function capitalize(str: string) {
  *              Assuming actions has a file structure of dist/actions/dir/Dir.js
  *              And calling createEntryPointFromESMPath('actions', 'my/entry/point');
  *
- *              The function will generate an importable entrypoint in our npm package.
+ *              The function will generate an importable entry-point in our npm package.
  *              import Foo from '@base/my/entry/point/dir' will now be possible
  *
  * @param {string} pathInESMBundle A path to a folder that exists within dist/ (Has to be a folder)
@@ -97,7 +102,7 @@ function createEntryPointFromESMPath(pathInESMBundle: string, entryPointInDist: 
 
 
 /**
- * Creates the npm entrypoint for the UMD Bundle
+ * Creates the npm entry-point for the UMD Bundle
  * Allows users to import from '@base/bundles/umd'
  */
 function createUMDBundleEntryPoint() {
