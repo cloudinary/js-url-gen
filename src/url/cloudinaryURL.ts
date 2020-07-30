@@ -1,10 +1,10 @@
 import Transformation from '../transformation/Transformation';
 import {IDescriptor} from '../interfaces/IDescriptor';
-import CloudinaryConfig from "../config/CloudinaryConfig";
 import isFileName from './urlUtils/isFileName';
 import publicIDContainsVersion from './urlUtils/publicIDContainsVersion';
 import isUrl from "./urlUtils/isUrl";
 import IURLConfig from "../interfaces/Config/IURLConfig";
+import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigurations";
 
 /**
  *
@@ -12,8 +12,9 @@ import IURLConfig from "../interfaces/Config/IURLConfig";
  * @param {Object} config
  * @param {Object} descriptor
  * @param {Transformation} transformation
+ * @return {string} CloudianryURL
  */
-function createCloudinaryURL(config: CloudinaryConfig, descriptor?: IDescriptor, transformation?: Transformation) {
+function createCloudinaryURL(config: ICloudinaryConfigurations, descriptor?: IDescriptor, transformation?: Transformation): string {
   const prefix = getUrlPrefix(config.cloud.cloudName);
   const assetType = handleAssetType(descriptor);
   const storageType = handleStorageType(descriptor);
