@@ -1,5 +1,7 @@
 import {IAction} from "../../interfaces/IAction";
+import {GravityParam} from "../../params/gravity/Gravity";
 
 export interface IResizeAction extends IAction{
-  aspectRatio(ratio:string | number):IResizeAction
+  aspectRatio(ratio:string | number):IResizeAction;
+  gravity(type:GravityParam):IResizeAction;
 }
