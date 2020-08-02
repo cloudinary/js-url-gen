@@ -80,6 +80,22 @@ function northWest(): GravityParam {
  * @description Creates a GravityParam
  * @return {GravityParam} GravityParam
  */
+function northEast(): GravityParam {
+  return new GravityParam('north_east');
+}
+
+/**
+ * @description Creates a GravityParam
+ * @return {GravityParam} GravityParam
+ */
+function southWest(): GravityParam {
+  return new GravityParam('south_west');
+}
+
+/**
+ * @description Creates a GravityParam
+ * @return {GravityParam} GravityParam
+ */
 function southEast(): GravityParam {
   return new GravityParam('south_east');
 }
@@ -148,7 +164,9 @@ export {
   faces,
   object,
   ocrText,
-  southEast
+  southEast,
+  southWest,
+  northEast
 };
 
 export default {
@@ -167,5 +185,7 @@ export default {
   object,
   ocrText,
   southEast,
+  northEast,
+  southWest,
   GravityParam
 };
