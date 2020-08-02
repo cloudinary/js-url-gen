@@ -27,9 +27,6 @@ const expectedConstantsFiles = createEntryPointFromESMPath('constants', 'constan
 // Create an Entry Point from everything under bundles/esm/params -> dist/params
 createEntryPointFromESMPath('params', 'params');
 
-// Create an Entry Point from everything under bundles/esm/params -> dist/params
-createEntryPointFromESMPath('params', 'params');
-
 // Allows import from '@base' (With types)
 createMainEntryPoint();
 
