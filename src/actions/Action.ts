@@ -33,7 +33,7 @@ class Action implements IAction {
     return this;
   }
 
-  protected addValueToParam(paramKey: string, paramValue: unknown){
+  protected addValueToParam(paramKey: string, paramValue: unknown): this{
     this.params.get(paramKey).addValue(paramValue);
 
     return this;
