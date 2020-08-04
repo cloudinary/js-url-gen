@@ -15,6 +15,6 @@ import imaggaScale from './imaggaScale';
 
 import ResizeAction from './ResizeAction';
 
-export {imaggaScale, imaggaCrop, crop, fill, scale, minimumPad, fit, pad, limitFit,thumbnail, limitFill, minimumFit, limitPad,fillPad, ResizeAction};
+export {imaggaScale, imaggaCrop, crop, fill, scale, minimumPad, fit, pad, limitFit, thumbnail, limitFill, minimumFit, limitPad, fillPad, ResizeAction};
 
-export default {imaggaScale, imaggaCrop, crop, fill, scale, minimumPad, fit, pad, limitFit,thumbnail, limitFill, minimumFit, limitPad,fillPad, ResizeAction};
+export default {imaggaScale, imaggaCrop, crop, fill, scale, minimumPad, fit, pad, limitFit, thumbnail, limitFill, minimumFit, limitPad, fillPad, ResizeAction};
