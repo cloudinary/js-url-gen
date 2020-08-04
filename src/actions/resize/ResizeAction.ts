@@ -15,6 +15,14 @@ class ResizeAction extends Action implements IAction {
     this.addParam(new Param('c', cropType));
   }
 
+  height(x:number):this {
+    return this.addParam(new Param('h', x));
+  }
+
+  width(x:number):this {
+    return this.addParam(new Param('w', x));
+  }
+
   aspectRatio(ratio: string | number): this {
     return this.addParam(new Param('ar', ratio));
   }

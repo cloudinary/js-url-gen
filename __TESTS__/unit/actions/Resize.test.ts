@@ -1,9 +1,10 @@
-import Resize, {minimumPad, crop, fill, scale} from '../../../src/actions/resize/Resize';
+import Resize, * as ResizeESM from '../../../src/actions/resize/Resize';
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import Gravity from "../../../src/params/gravity/Gravity";
-import * as GravityObjects from "../../../src/constants/gravityObjects/GravityObjects";
 import {AutoGravity} from "../../../src/constants/gravityObjects/GravityObjects";
+import Gravity from "../../../src/params/gravity/Gravity";
+import * as GravityObjects from '../../../src/constants/gravityObjects/GravityObjects';
+import {IResizeAction} from "../../../src/actions/resize/IResizeAction";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -11,122 +12,153 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
   }
 });
 
+
+/**
+ * Utility function for resize image tests
+ * @param resizeAction
+ * @param type
+ */
+function getImageWithResize(resizeAction: IResizeAction, type:'url' | 'image') {
+  const img = new TransformableImage('sample')
+    .setConfig(CONFIG_INSTANCE)
+    .resize(resizeAction);
+
+  if (type === 'image') {
+    return img;
+  }
+
+  if (type === 'url') {
+    return img.toURL();
+  }
+}
+
+
 describe('Tests for Transformation Action -- Resize', () => {
-  it('Ensure namespace is correctly populated', () => {
-    expect(Resize.minimumPad).toEqual(minimumPad);
-    expect(Resize.crop).toEqual(crop);
-    expect(Resize.fill).toEqual(fill);
-    expect(Resize.scale).toEqual(scale);
+
+  it('Ensure ESM and Default export the same thing', () => {
+    (Object.keys(ResizeESM) as Array<keyof typeof ResizeESM>).forEach((funcName) => {
+      if (typeof ResizeESM[funcName] === 'function') {
+        // Ensure function exists on both objects
+        expect(ResizeESM[funcName]).toEqual((Resize as any)[funcName]);
+
+        // sanity, ensure the result is a function at all (and not an accidental undefined)
+        expect(typeof ResizeESM[funcName]).toBe('function');
+      }
+    });
   });
 
-  it('Ensures minimumPad is accepted as an action to TransformableImage', () => {
-    const tImage = new TransformableImage();
-    // Ensures it compiles and doesn't throw
-    expect(
-      tImage.resize(minimumPad(250, 250))
-    ).toEqual(tImage);
+  it('Ensures MinimumPad generates the right URL', () => {
+    const url = getImageWithResize(Resize.minimumPad(250, 250), 'url');
+    expect(url).toContain('c_mpad');
   });
 
-  it('Ensures crop is accepted as an action to TransformableImage', () => {
-    const tImage = new TransformableImage();
-    // Ensures it compiles and doesn't throw
-    expect(
-      tImage.resize(crop(250, 250))
-    ).toEqual(tImage);
+  it('Ensures Crop pad generates the right URL', () => {
+    const url = getImageWithResize(Resize.crop(250, 250), 'url');
+    expect(url).toContain('c_crop');
   });
 
-  it('Ensures fill is accepted as an action to TransformableImage', () => {
-    const tImage = new TransformableImage();
-    // Ensures it compiles and doesn't throw
-    expect(
-      tImage.resize(fill(250, 250))
-    ).toEqual(tImage);
+  it('Ensures Crop pad generates the right URL', () => {
+    const url = getImageWithResize(Resize.crop(100, 100), 'url');
+    expect(url).toContain('c_crop,h_100,w_100');
   });
 
-  it('Ensures scale is accepted as an action to TransformableImage', () => {
-    const tImage = new TransformableImage();
-    // Ensures it compiles and doesn't throw
-    expect(
-      tImage.resize(scale(250, 250))
-    ).toEqual(tImage);
+  it('Ensures crop generates the right URL with only width', () => {
+    const url = getImageWithResize(Resize.crop(100), 'url');
+    expect(url).toContain('c_crop,w_100');
   });
 
-  it('Creates a cloudinaryURL with crop and dimensions', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .resize(crop(100, 100))
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/c_crop,h_100,w_100/sample');
+  it('Ensures Fill generates the right URL with width and height', () => {
+    const url = getImageWithResize(Resize.fill(250, 250), 'url');
+    expect(url).toContain('c_fill');
   });
 
-  it('Creates a cloudinaryURL with crop and single dimension', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .resize(crop(100))
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/c_crop,w_100/sample');
+  it('Ensures Fill generates the right URL with only width', () => {
+    const url = getImageWithResize(Resize.fill(100), 'url');
+    expect(url).toContain('c_fill,w_100');
   });
 
-  it('Creates a cloudinaryURL with fill', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .resize(fill(100))
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/c_fill,w_100/sample');
+  it('Ensures Scale generates the right URL', () => {
+    const url = getImageWithResize(Resize.scale(250, 250), 'url');
+    expect(url).toContain('c_scale');
   });
 
-  it('Creates a cloudinaryURL with scale', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .resize(scale(100))
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/c_scale,w_100/sample');
+  it('Ensures Scale generates the right URL', () => {
+    const url = getImageWithResize(Resize.scale(100), 'url');
+    expect(url).toContain('c_scale,w_100');
   });
 
-  it('Creates a cloudinaryURL with minimumPad', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .resize(minimumPad(100))
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/c_mpad,w_100/sample');
+  it('Ensures minimumPad generates the right URL', () => {
+    const url = getImageWithResize(Resize.minimumPad(100), 'url');
+    expect(url).toContain('c_mpad,w_100');
   });
 
-  it('Creates a cloudinaryURL with minimumPad', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .resize(minimumPad(100))
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/c_mpad,w_100/sample');
+  it('Ensures imaggaCrop generates the right URL', () => {
+    const url = getImageWithResize(Resize.imaggaCrop(100), 'url');
+    expect(url).toContain('c_imagga_crop,w_100');
   });
 
-  it('Creates a cloudinaryURL with fill and aspectRatio', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .resize(fill(100, 100)
-        .aspectRatio('4:3'))
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/ar_4:3,c_fill,h_100,w_100/sample');
+  it('Ensures imaggaScale generates the right URL', () => {
+    const url = getImageWithResize(Resize.imaggaScale(100), 'url');
+    expect(url).toContain('c_imagga_scale,w_100');
   });
 
-  it('Works with Gravity', function () {
+  it('Ensures aspectRatio generates the right URL', () => {
+    const url = getImageWithResize(Resize.scale(100).aspectRatio(0.5), 'url');
+    expect(url).toContain('ar_0.5,c_scale,w_100');
+  });
+
+  it('Ensures fit generates the right URL', () => {
+    const url = getImageWithResize(Resize.fit(100), 'url');
+    expect(url).toContain('c_fit,w_100');
+  });
+
+  it('Ensures limitFill generates the right URL', () => {
+    const url = getImageWithResize(Resize.limitFill(100), 'url');
+    expect(url).toContain('c_lfill,w_100');
+  });
+
+  it('Ensures limitFit generates the right URL', () => {
+    const url = getImageWithResize(Resize.limitFit(100), 'url');
+    expect(url).toContain('c_limit,w_100');
+  });
+
+  it('Ensures limitPad generates the right URL', () => {
+    const url = getImageWithResize(Resize.limitPad(100), 'url');
+    expect(url).toContain('c_lpad,w_100');
+  });
+
+  it('Ensures minimumFit generates the right URL', () => {
+    const url = getImageWithResize(Resize.minimumFit(100), 'url');
+    expect(url).toContain('c_mfit,w_100');
+  });
+
+  it('Ensures pad generates the right URL', () => {
+    const url = getImageWithResize(Resize.pad(100), 'url');
+    expect(url).toContain('c_pad,w_100');
+  });
+
+  it('Ensures thumbnail generates the right URL', () => {
+    const url = getImageWithResize(Resize.thumbnail(100), 'url');
+    expect(url).toContain('c_thumb,w_100');
+  });
+
+  it('Ensures FillPad generates the right URL', () => {
     const url = new TransformableImage('sample')
       .setConfig(CONFIG_INSTANCE)
       .resize(
-        fill(400)
+        Resize.fillPad(400)
+      )
+      .toURL();
+
+    expect(url).toContain('c_fill_pad,w_400');
+  });
+
+
+  it('Ensures Gravity generates the right URL', () => {
+    const url = new TransformableImage('sample')
+      .setConfig(CONFIG_INSTANCE)
+      .resize(
+        Resize.fill(400)
           .aspectRatio(0.8)
           .gravity(Gravity.auto()))
       .toURL();
@@ -134,11 +166,11 @@ describe('Tests for Transformation Action -- Resize', () => {
     expect(url).toContain('ar_0.8,c_fill,g_auto,w_400');
   });
 
-  it('Works with gravity objects', function () {
+  it('Ensures Gravity generates the right URL - with object', () => {
     const url = new TransformableImage('sample')
       .setConfig(CONFIG_INSTANCE)
       .resize(
-        fill(400)
+        Resize.fill(400)
           .aspectRatio(0.8)
           .gravity(Gravity.object(GravityObjects.BIRD))
       )
@@ -147,11 +179,11 @@ describe('Tests for Transformation Action -- Resize', () => {
     expect(url).toContain('ar_0.8,c_fill,g_bird,w_400');
   });
 
-  it('Works with gravity objects', function () {
+  it('Ensures Gravity generates the right URL - with objects', () => {
     const url = new TransformableImage('sample')
       .setConfig(CONFIG_INSTANCE)
       .resize(
-        fill(400)
+        Resize.fill(400)
           .aspectRatio(0.8)
           .gravity(Gravity.auto(AutoGravity.object(GravityObjects.CAT)))
       )

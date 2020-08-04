@@ -5,7 +5,7 @@ import {IResizeAction} from "./IResizeAction";
  * @param {number} scaleWidth
  * @param {number} scaleHeight
  */
-function scale(scaleWidth:number, scaleHeight?:number) :IResizeAction {
+function scale(scaleWidth?:number, scaleHeight?:number) :IResizeAction {
   return new ResizeAction('scale', scaleWidth, scaleHeight);
 }
 
