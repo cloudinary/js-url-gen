@@ -6,7 +6,7 @@ import TransformableImage from "./transformation/TransformableImage";
 // Actions
 import Actions from './actions/Actions';
 
-import * as Colors from './constants/colors/Colors';
+import * as Color from './constants/colors/Colors';
 import * as ObjectGravity from './constants/gravityObjects/GravityObjects';
 
 /**
@@ -17,5 +17,5 @@ class Base {
   }
 }
 
-export {cloudinaryURL, Transformation, TransformableImage, Base, Actions, Colors, ObjectGravity};
-export default {cloudinaryURL, Transformation, Base, Actions, Colors, ObjectGravity};
+export {cloudinaryURL, Transformation, TransformableImage, Base, Actions, Color, ObjectGravity};
+export default {cloudinaryURL, Transformation, Base, Actions, Color, ObjectGravity};
