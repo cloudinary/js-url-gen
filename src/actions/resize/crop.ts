@@ -1,4 +1,4 @@
-import {ResizeAction} from "./Resize";
+import ResizeAction from "./ResizeAction";
 import {IResizeAction} from "./IResizeAction";
 
 /**

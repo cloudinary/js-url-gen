@@ -2,7 +2,7 @@ class ParamValue {
   values: any[] = [];
   delimiter = ':'; // {value}{delimiter}{value}...
 
-  constructor(paramValue?: ParamValue | ParamValue[] | number | number[] | string | string[]) {
+  constructor(paramValue?: ParamValue | ParamValue[] | unknown[] | string | number) {
     if (paramValue) {
       this.addValue(paramValue);
     }

@@ -1,6 +1,11 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+/* eslint-disable @typescript-eslint/no-var-requires */
+/**
+ * This file contains utility functions related to creating ./dist entry-points (such as @base/actions/adjust)
+ */
+
 const fs = require('fs');
 
+// All of our package.jsons need to contain this property to allow tree shaking
 const commonPackageProperties = {
   sideEffects:false
 };
@@ -21,7 +26,7 @@ function capitalize(str: string) {
  *              Assuming actions has a file structure of dist/actions/dir/Dir.js
  *              And calling createEntryPointFromESMPath('actions', 'my/entry/point');
  *
- *              The function will generate an importable entrypoint in our npm package.
+ *              The function will generate an importable entry-point in our npm package.
  *              import Foo from '@base/my/entry/point/dir' will now be possible
  *
  * @param {string} pathInESMBundle A path to a folder that exists within dist/ (Has to be a folder)
@@ -32,6 +37,10 @@ function capitalize(str: string) {
  * @param {string} entryPointInDist The desired importable entrypoint: import foo from '@base/${entryPointInDist}'
  */
 function createEntryPointFromESMPath(pathInESMBundle: string, entryPointInDist: string) {
+  const expectedFileSystem:Record<string, any> = {};
+
+  expectedFileSystem[entryPointInDist] = {};
+
   const FULL_SOURCE_PATH = `./dist/bundles/esm/${pathInESMBundle}`;
   const FULL_SOURCE_PATH_TYPES = `./dist/types/${pathInESMBundle}`;
   const FULL_ENTRY_POINT_PATH = `./dist/${entryPointInDist}`;
@@ -51,7 +60,7 @@ function createEntryPointFromESMPath(pathInESMBundle: string, entryPointInDist: 
     const isDir = fs.lstatSync(`${FULL_SOURCE_PATH}/${name}`).isDirectory();
 
     if (isDir) {
-      fs.mkdirSync(`${FULL_ENTRY_POINT_PATH}/${name}`);
+      fs.mkdirSync(`${FULL_ENTRY_POINT_PATH}/${name}`, {recursive: true});
 
       const FULL_TYPES_PATH = `${FULL_SOURCE_PATH_TYPES}/${name}/${capitalize(name)}.d.ts`;
       const FULL_JS_PATH = `${FULL_SOURCE_PATH}/${name}/${capitalize(name)}.js`;
@@ -80,17 +89,20 @@ function createEntryPointFromESMPath(pathInESMBundle: string, entryPointInDist: 
         "main": `${rootPathToDist}/bundles/esm/${pathInESMBundle}/${name}/${capitalize(name)}.js`
       }, commonPackageProperties);
 
+      expectedFileSystem[entryPointInDist][name] = {'package.json': 'file'};
       fs.writeFileSync(
         `${FULL_ENTRY_POINT_PATH}/${name}/package.json`,
         JSON.stringify(packageJson,null, '\t')
       );
     }
   });
+
+  return expectedFileSystem;
 }
 
 
 /**
- * Creates the npm entrypoint for the UMD Bundle
+ * Creates the npm entry-point for the UMD Bundle
  * Allows users to import from '@base/bundles/umd'
  */
 function createUMDBundleEntryPoint() {
