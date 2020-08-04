@@ -7,6 +7,7 @@ import {ILayerAction} from "../actions/layers/ILayerAction";
 import {IVariableAction} from "../actions/variable/IVariableAction";
 import {IEffectAction} from "../actions/effect/IEffectAction";
 import {IRotateAction} from "../actions/rotate/IRotateAction";
+import {IDeliveryAction} from "../actions/delivery/IDeliveryAction";
 import {INamedTransformationAction} from "../actions/namedTransformation/INamedTransformationAction";
 import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigurations";
 import CloudinaryConfig from "../config/CloudinaryConfig";
@@ -137,6 +138,13 @@ class Transformation {
    */
   namedTransformation(namedTransformation:INamedTransformationAction ) {
     return this.addAction(namedTransformation);
+  }
+
+  /**
+   * @param deliveryAction
+   */
+  delivery(deliveryAction: IDeliveryAction): this {
+    return this.addAction(deliveryAction);
   }
 
   /**
