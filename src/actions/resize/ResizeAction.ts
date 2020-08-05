@@ -4,7 +4,7 @@ import Param from "../../parameters/Param";
 import {GravityParam} from "../../params/gravity/Gravity";
 
 class ResizeAction extends Action implements IAction {
-  constructor(cropType?: string, cropWidth?: number, cropHeight?: number) {
+  constructor(cropType?: string, cropWidth?: number|string, cropHeight?: number|string) {
     super();
     if(cropWidth) {
       this.addParam(new Param('w', cropWidth));
@@ -15,7 +15,15 @@ class ResizeAction extends Action implements IAction {
     this.addParam(new Param('c', cropType));
   }
 
-  aspectRatio(ratio: string | number): this {
+  height(x:number|string):this {
+    return this.addParam(new Param('h', x));
+  }
+
+  width(x:number|string):this {
+    return this.addParam(new Param('w', x));
+  }
+
+  aspectRatio(ratio:number|string): this {
     return this.addParam(new Param('ar', ratio));
   }
 
