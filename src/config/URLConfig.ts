@@ -1,6 +1,6 @@
 import IURLConfig from "../interfaces/Config/IURLConfig";
 import Config from "./BaseConfig";
-import {ALLOWED_URL_CONFIG} from "../constants";
+import {ALLOWED_URL_CONFIG} from "../internalConstants";
 import ICloudConfig from "../interfaces/Config/ICloudConfig";
 
 class URLConfig extends Config implements IURLConfig {

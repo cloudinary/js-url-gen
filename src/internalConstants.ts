@@ -1,3 +1,8 @@
+/**
+ * This file is for internal constants only.
+ * It is not intended for public use and is not part of the public API
+ */
+
 export const ALLOWED_URL_CONFIG = [
   'cdnSubdomain',
   'secureCdnSubdomain',
