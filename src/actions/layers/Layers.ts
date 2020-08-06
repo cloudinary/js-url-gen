@@ -77,7 +77,7 @@ function imageLayer(imageSource: ImageSource, position?:Position, blendMode?:Ble
   return new Layer(imageSource, position, blendMode);
 }
 
-//
-// export {imageLayer, Source};
-// export default {imageLayer, Source};
-//
+
+export {imageLayer, Source};
+export default {imageLayer, Source};
+
