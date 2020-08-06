@@ -7,9 +7,11 @@ class Max extends Action implements IAction {
 }
 
 /**
+ * @memberOf Actions.RoundCorners
+ * @description Generates an asset with a circular crop using the 'max' radius value.
  * @return {Max}
  */
-function max() {
+function max():Max {
   return new Max();
 }
 

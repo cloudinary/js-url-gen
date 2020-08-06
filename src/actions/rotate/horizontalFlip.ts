@@ -2,7 +2,9 @@ import {RotateAction} from "./Rotate";
 import {IRotateAction} from "./IRotateAction";
 
 /**
- * Create a new Rotate action with horizontal flip
+ * @memberOf Actions.Rotate
+ * @description Horizontal mirror flip of the image.
+ * @returns {RotateAction}
  */
 function horizontalFlip() :IRotateAction {
   return new RotateAction().horizontalFlip();

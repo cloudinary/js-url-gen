@@ -3,6 +3,13 @@ import {GravityParam} from "../gravity/Gravity";
 import Param from "../../parameters/Param";
 
 /**
+ * @description Defines the focal gravity for overlays
+ * @namespace Position
+ * @memberOf Params
+ */
+
+
+/**
  * Even though Position is technically an actionParam, it implements exactly the same functionality as an action.
  * This is true because Position is actually multiParam
  */
@@ -21,9 +28,9 @@ class Position extends Action {
   }
 }
 
-
 /**
- * @description Creates a Position
+ * @memberOf Params.Position
+ * @description South center part (bottom center).
  * @return {Position} Position
  */
 function south():Position {
@@ -31,7 +38,8 @@ function south():Position {
 }
 
 /**
- * @description Creates a Position
+ * @memberOf Params.Position
+ * @description North center part (top center).
  * @return {Position} Position
  */
 function north():Position {
@@ -39,7 +47,8 @@ function north():Position {
 }
 
 /**
- * @description Creates a Position
+ * @memberOf Params.Position
+ * @description Middle east part (right).
  * @return {Position} Position
  */
 function east():Position {
@@ -47,7 +56,8 @@ function east():Position {
 }
 
 /**
- * @description Creates a Position
+ * @memberOf Params.Position
+ * @description Middle west part (left).
  * @return {Position} Position
  */
 function west():Position {
@@ -55,93 +65,105 @@ function west():Position {
 }
 
 /**
- * @description Creates a Position
+ * @memberOf Params.Position
+ * @description Detects the largest face in an image with the Advanced Facial Attribute Detection add-on and makes it the focus of the transformation.
  * @return {Position} Position
  */
-function advancedFace(): Position {
+function advancedFace():Position {
   return new Position('adv_face');
 }
 
 /**
- * @description Creates a Position
+ * @memberOf Params.Position
+ * @description Detects all faces in an image with the Advanced Facial Attribute Detection add-on and makes them the focus of the transformation.
  * @return {Position} Position
  */
-function advancedFaces(): Position {
+function advancedFaces():Position {
   return new Position('adv_faces');
 }
 
 /**
- * @description Creates a Position
+ * @memberOf Params.Position
+ * @description Detects all eyes in an image with the Advanced Facial Attribute Detection add-on and makes them the focus of the transformation.
  * @return {Position} Position
  */
-function advancedEyes(): Position {
+function advancedEyes():Position {
   return new Position('adv_eyes');
 }
 
 /**
- * @description Creates a Position
+ * @memberOf Params.Position
+ * @description North west corner (top left).
  * @return {Position} Position
  */
-function northWest(): Position {
+function northWest():Position {
   return new Position('north_west');
 }
 
 /**
- * @description Creates a Position
+ * @memberOf Params.Position
+ * @description North east corner (top right).
  * @return {Position} Position
  */
-function northEast(): Position {
+function northEast():Position {
   return new Position('north_east');
 }
 
 /**
- * @description Creates a Position
+ * @memberOf Params.Position
+ * @description South west corner (bottom left).
  * @return {Position} Position
  */
-function southWest(): Position {
+function southWest():Position {
+  return new Position('south_west');
+}
+
+/**
+ * @memberOf Params.Position
+ * @description South east corner (bottom right).
+ * @return {Position} Position
+ */
+function southEast():Position {
   return new Position('south_east');
 }
 
 /**
- * @description Creates a Position
+ * @memberOf Params.Position
+ * @description
+ * Detects all text elements in an image using the OCR Text Detection and Extraction add-on</br>
+ * and uses the detected bounding box coordinates as the focus of the transformation.
  * @return {Position} Position
  */
-function southEast(): Position {
-  return new Position('south_east');
-}
-
-/**
- * @description Creates a Position
- * @return {Position} Position
- */
-function ocrText(): Position {
+function ocrText():Position {
   return new Position('ocr_text');
 }
 
 /**
- * @description Creates a Position
+ * @memberOf Params.Position
+ * @description Detects the largest face in the asset and makes it the focus of the transformation.
  * @return {Position} Position
  */
-function face(): Position {
+function face():Position {
   return new Position('face');
 }
 
 /**
- * @description Creates a Position
+ * @memberOf Params.Position
+ * @description Detects all the faces in the asset and makes them the focus of the transformation.
  * @return {Position} Position
  */
-function faces(): Position {
+function faces():Position {
   return new Position('faces');
 }
 
 /**
- * @description Creates a Position
+ * @memberOf Params.Position
+ * @description The center of the image.
  * @return {Position} Position
  */
-function center(): Position {
+function center():Position {
   return new Position('center');
 }
-
 
 export {
   north,

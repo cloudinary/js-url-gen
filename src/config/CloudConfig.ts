@@ -8,7 +8,8 @@ class CloudConfig extends Config implements ICloudConfig {
   apiSecret?: string;
 
   /**
-   * @param {ICloudConfig} userCloudConfig
+   * @param {ICloudConfig} cloudConfig {@link ICloudConfig}
+   *
    */
   constructor(userCloudConfig: ICloudConfig) {
     super();

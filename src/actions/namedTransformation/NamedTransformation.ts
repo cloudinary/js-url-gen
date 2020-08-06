@@ -1,3 +1,9 @@
+/**
+ * Applies a pre-defined named transformation of the given name.
+ * @memberOf Actions
+ * @namespace NamedTransformation
+ */
+
 import Action from "../Action";
 import Param from "../../parameters/Param";
 import {INamedTransformationAction} from "./INamedTransformationAction";
@@ -10,7 +16,9 @@ class NamedTransformationAction extends Action implements INamedTransformationAc
 }
 
 /**
- *
+ * @description Applies a pre-defined named transformation of the given name.
+ * @param {string} name Transformation name
+ * @memberOf Actions.NamedTransformation
  */
 function name(name:string): NamedTransformationAction {
   return new NamedTransformationAction(name);

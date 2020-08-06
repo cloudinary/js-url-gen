@@ -3,6 +3,9 @@ import {IAction} from "../../interfaces/IAction";
 import Param from "../../parameters/Param";
 import {GravityParam} from "../../params/gravity/Gravity";
 
+
+
+
 class ResizeAction extends Action implements IAction {
   constructor(cropType?: string, cropWidth?: number|string, cropHeight?: number|string) {
     super();

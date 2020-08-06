@@ -3,7 +3,8 @@ import {IQualityAction} from "./IQualityAction";
 
 
 /**
- * @memberOf Quality
+ * @description Quality jpegmini.
+ * @memberOf Actions.Quality
  */
 function jpegMini():IQualityAction {
   return new QualityAction('jpegmini');

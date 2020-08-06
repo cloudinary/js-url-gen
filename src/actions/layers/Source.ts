@@ -5,6 +5,7 @@ class ImageSource extends TransformableImage {
 }
 
 /**
+ * @memberOf Sources
  * @param publicID
  */
 function image(publicID: string): ImageSource {

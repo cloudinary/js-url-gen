@@ -1,3 +1,9 @@
+/**
+ * Defines an new user variable.
+ * @memberOf Actions
+ * @namespace Variable
+ */
+
 import Action from "../Action";
 import Param from "../../parameters/Param";
 import {IVariableAction} from "./IVariableAction";
@@ -18,7 +24,8 @@ class VariableAction extends Action implements IVariableAction {
 }
 
 /**
- * Build new Variable
+ * @description Defines an new user variable.
+ * @memberOf Actions.Variable
  * @param {string} key
  * @param {number | string} value
  */

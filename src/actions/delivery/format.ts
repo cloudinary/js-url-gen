@@ -3,7 +3,8 @@ import {IDeliveryAction} from "./IDeliveryAction";
 import {FormatType} from "../../params/formats/ImageFormats";
 
 /**
- * @param format
+ * @memberOf Actions.Delivery
+ * @param {string} format
  */
 function format(format:string | FormatType) :IDeliveryAction {
   return new DeliveryAction('f', format);

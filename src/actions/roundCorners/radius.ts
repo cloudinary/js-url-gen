@@ -15,10 +15,12 @@ class Radius extends Action implements IAction {
 }
 
 /**
+ * @memberOf Actions.RoundCorners
+ * @description Rounds the specified corners of an image by specifying 1-4 pixel values as follows:
  * @param {number} num;
  * @return {Radius}
  */
-function radius(num:number ) {
+function radius(num:number ):Radius {
   return new Radius(num);
 }
 

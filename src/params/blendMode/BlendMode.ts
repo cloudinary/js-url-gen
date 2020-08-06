@@ -2,6 +2,14 @@ import Action from "../../actions/Action";
 import Param from "../../parameters/Param";
 import ParamValue from "../../parameters/ParamValue";
 
+
+/**
+ * @description Defines the mode of blending to use when overlaying an image.
+ * @namespace BlendMode
+ * @memberOf Params
+ */
+
+
 /**
  * Even though Position is technically an actionParam, it implements exactly the same functionality as an action.
  * This is true because Position is actually multiParam
@@ -15,6 +23,7 @@ class BlendMode extends Action {
 
 
 /**
+ * @memberOf Params.BlendMode
  * @description Add an overlay image blended using the 'multiply' blend mode.
  */
 function multiply():BlendMode {
@@ -22,6 +31,7 @@ function multiply():BlendMode {
 }
 
 /**
+ * @memberOf Params.BlendMode
  * @description Add an overlay image blended using the 'screen' blend mode.
  */
 function screen():BlendMode {
@@ -29,6 +39,7 @@ function screen():BlendMode {
 }
 
 /**
+ * @memberOf Params.BlendMode
  * @description Add an overlay image blended using the 'overlay' blend mode.
  */
 function overlay():BlendMode {

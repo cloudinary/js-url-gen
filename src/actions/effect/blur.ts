@@ -3,7 +3,8 @@ import {IEffectAction} from "./IEffectAction";
 
 
 /**
- * @memberOf Effect
+ * @description Applies a blurring filter to the asset.
+ * @memberOf Actions.Effect
  * @param blurLevel
  */
 function blur(blurLevel?: number):IEffectAction {

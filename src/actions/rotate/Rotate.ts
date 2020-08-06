@@ -1,12 +1,22 @@
+/**
+ * Rotates or flips an image or video by the specified number of degrees, or automatically (images only) according to its orientation or available metadata.
+ * @memberOf Actions
+ * @namespace Rotate
+ */
+
+
 import horizontalFlip from "./horizontalFlip";
 import verticalFlip from "./verticalFlip";
 import angle from "./angle";
-import Action from "../Action";
+
 import {IAction} from "../../interfaces/IAction";
+import Action from "../Action";
 import Param from "../../parameters/Param";
+
 const HORIZONTAL_FLIP = 'hflip';
 const VERTICAL_FLIP = 'vflip';
 const PARAM_KEY = 'a';
+
 
 class RotateAction extends Action implements IAction {
   constructor(angle?: number) {

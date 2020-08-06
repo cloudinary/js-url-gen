@@ -3,7 +3,8 @@ import {IQualityAction} from "./IQualityAction";
 
 
 /**
- * @memberOf Quality
+ * @description Quality low
+ * @memberOf Actions.Quality
  */
 function low():IQualityAction {
   return new QualityAction('auto:low');
