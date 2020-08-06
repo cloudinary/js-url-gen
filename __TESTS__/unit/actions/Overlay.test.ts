@@ -2,18 +2,22 @@ import {fill} from "../../../src/actions/resize/Resize";
 import {imageLayer, Source} from "../../../src/actions/layers/Layers";
 import TransformableImage from "../../../src/transformation/TransformableImage";
 import * as Position from "../../../src/params/position/Position";
+import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
+import BlendMode from "../../../src/params/blendMode/BlendMode";
 const {image} = Source;
 
+
+const CONFIG_INSTANCE = new CloudinaryConfig({
+  cloud: {
+    cloudName: 'demo'
+  }
+});
 
 describe('Tests for overlay actions', () => {
   it('Parses an overlay with an imageSource', () => {
     const tImage = new TransformableImage('sample');
     tImage
-      .setConfig({
-        cloud: {
-          cloudName: 'demo'
-        }
-      })
+      .setConfig(CONFIG_INSTANCE)
       .resize(fill(1000, 1000))
       .overlay(
         imageLayer(
@@ -37,11 +41,7 @@ describe('Tests for overlay actions', () => {
   it('Adds an overlay with position', () => {
     const tImage = new TransformableImage('sample');
     tImage
-      .setConfig({
-        cloud: {
-          cloudName: 'demo'
-        }
-      })
+      .setConfig(CONFIG_INSTANCE)
       .overlay(
         imageLayer(
           image('sample'),
@@ -54,11 +54,7 @@ describe('Tests for overlay actions', () => {
   it('Adds an overlay with position', () => {
     const tImage = new TransformableImage('sample');
     tImage
-      .setConfig({
-        cloud: {
-          cloudName: 'demo'
-        }
-      })
+      .setConfig(CONFIG_INSTANCE)
       .overlay(
         imageLayer(
           image('sample'),
@@ -68,5 +64,15 @@ describe('Tests for overlay actions', () => {
         )
       );
     expect(tImage.toURL()).toContain('l_sample/fl_layer_apply,g_center,x_50,y_100/sample');
+  });
+
+  it('Adds an overlay without position and with a blendMode', () => {
+    const tImage = new TransformableImage('sample');
+    tImage
+      .setConfig(CONFIG_INSTANCE)
+      .overlay(
+        imageLayer(image('sample'), null, BlendMode.screen())
+      );
+    expect(tImage.toURL()).toContain('l_sample/e_screen,fl_layer_apply/sample');
   });
 });

@@ -4,15 +4,18 @@ import Action from "../Action";
 import Source, {ImageSource} from "./Source";
 import {Position} from "../../params/position/Position";
 import Param from "../../parameters/Param";
+import {BlendMode} from "../../params/blendMode/BlendMode";
 
 
 class Layer extends Action implements ILayerAction {
   source: ImageSource; // TODO this needs to accept other types of sources
   position:Position;
-  constructor(transformable: ImageSource, position:Position) {
+  blendMode: BlendMode;
+  constructor(transformable: ImageSource, position:Position, blendMode: BlendMode) {
     super();
     this.source = transformable;
     this.position = position;
+    this.blendMode = blendMode;
   }
 
   /**
@@ -41,6 +44,10 @@ class Layer extends Action implements ILayerAction {
     this.position?.params.forEach((param) => {
       bit.addParam(param);
     });
+
+    this.blendMode?.params.forEach((param) => {
+      bit.addParam(param);
+    });
     return bit;
   }
 
@@ -55,12 +62,12 @@ class Layer extends Action implements ILayerAction {
  *
  * @param imageSource
  * @param position
- * @param BlendMode
+ * @param blendMode
  * return {Layer}
  */
-function imageLayer(imageSource: ImageSource, position?:Position, BlendMode?:any): Layer {
+function imageLayer(imageSource: ImageSource, position?:Position, blendMode?:BlendMode): Layer {
   // TODO this needs to accept other types of sources
-  return new Layer(imageSource, position);
+  return new Layer(imageSource, position, blendMode);
 }
 
 
