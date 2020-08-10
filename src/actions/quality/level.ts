@@ -3,10 +3,11 @@ import {IQualityAction} from "./IQualityAction";
 
 
 /**
- * @memberOf Quality
+ * @description Sets the quality level.
+ * @memberOf Actions.Quality
  */
-function level(qualityLevell: number):IQualityAction {
-  return new QualityAction(qualityLevell.toString());
+function level(qualityLevel: number):IQualityAction {
+  return new QualityAction(qualityLevel.toString());
 }
 
 export default level;

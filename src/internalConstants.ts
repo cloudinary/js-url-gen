@@ -3,6 +3,9 @@
  * It is not intended for public use and is not part of the public API
  */
 
+/**
+ * @private
+ */
 export const ALLOWED_URL_CONFIG = [
   'cdnSubdomain',
   'secureCdnSubdomain',
@@ -17,6 +20,9 @@ export const ALLOWED_URL_CONFIG = [
   'forceVersion'
 ];
 
+/**
+ * @private
+ */
 export const ALLOWED_CLOUD_CONFIG = [
   'cloudName',
   'apiKey',
@@ -24,5 +30,7 @@ export const ALLOWED_CLOUD_CONFIG = [
   'authToken'
 ];
 
-
+/**
+ * @private
+ */
 export const INVALID_TYPE_MESSAGE = 'Invalid Type or key received';

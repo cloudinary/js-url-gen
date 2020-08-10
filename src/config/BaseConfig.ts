@@ -1,5 +1,6 @@
 /**
  *
+ * @private
  * @param a
  */
 function isObject(a: unknown): boolean {

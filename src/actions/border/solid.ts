@@ -4,6 +4,9 @@ import Param from "../../parameters/Param";
 import ParamValue from "../../parameters/ParamValue";
 import {prepareColor} from "../../utils/prepareColor";
 
+/**
+ * @memberOf Actions.Border
+ */
 class Solid extends Action implements IBorderAction{
   private borderWidth: number;
   private borderColor: string;
@@ -34,8 +37,11 @@ class Solid extends Action implements IBorderAction{
   }
 }
 
+
 /**
- * @return {Solid}
+ * @memberOf Actions.Border
+ * @description Adds a solid border around an image or video.
+ * @return {@link Solid} (SolidBorder instance)
  */
 function solid(): Solid {
   return new Solid();

@@ -33,6 +33,7 @@ function createCloudinaryURL(config: ICloudinaryConfigurations, descriptor?: IDe
 
 /**
  * Create the URL prefix for Cloudinary resources.
+ * @private
  * @param cloudName
  */
 function getUrlPrefix(cloudName: string) {
@@ -47,7 +48,7 @@ function getUrlPrefix(cloudName: string) {
 }
 
 /**
- *
+ * @private
  * @param descriptor
  */
 function handleAssetType(descriptor: IDescriptor) {
@@ -60,7 +61,7 @@ function handleAssetType(descriptor: IDescriptor) {
 }
 
 /**
- *
+ * @private
  * @param descriptor
  */
 function handleStorageType(descriptor: IDescriptor) {
@@ -73,7 +74,7 @@ function handleStorageType(descriptor: IDescriptor) {
 }
 
 /**
- *
+ * @private
  * @param descriptor
  */
 function getUrlVersion(urlConfig:IURLConfig, descriptor: IDescriptor) {

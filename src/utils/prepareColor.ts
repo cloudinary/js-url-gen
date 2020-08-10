@@ -1,5 +1,6 @@
 /**
  * Returns RGB or Color
+ * @private
  * @param color
  */
 export function prepareColor(color: string){

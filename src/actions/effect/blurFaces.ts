@@ -3,7 +3,8 @@ import {IEffectAction} from "./IEffectAction";
 
 
 /**
- * @memberOf Effect
+ * @description Blurs all detected faces in the image.
+ * @memberOf Actions.Effect
  * @param blurLevel
  */
 function blurFaces(blurLevel?: number):IEffectAction {

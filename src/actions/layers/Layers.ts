@@ -1,3 +1,10 @@
+/**
+ * Determines how to crop, scale, and/or zoom the delivered asset according to the requested dimensions.
+ * @memberOf Actions
+ * @namespace Layers
+ */
+
+
 import {ILayerAction} from "./ILayerAction";
 import Action from "../Action";
 // TODO - BundleSize Warning - we include all the Sources code within Layers.
@@ -59,11 +66,11 @@ class Layer extends Action implements ILayerAction {
 
 
 /**
- *
  * @param imageSource
  * @param position
  * @param blendMode
- * return {Layer}
+ * @memberOf Actions.Layers
+ * @return {Layer}
  */
 function imageLayer(imageSource: ImageSource, position?:Position, blendMode?:BlendMode): Layer {
   // TODO this needs to accept other types of sources

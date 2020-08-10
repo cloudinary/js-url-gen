@@ -2,7 +2,10 @@ import {RotateAction} from "./Rotate";
 import {IRotateAction} from "./IRotateAction";
 
 /**
- * @param angle
+ * @memberOf Actions.Rotate
+ * @description Rotate an image by the given degrees.
+ * @param {number} angle
+ * @returns {RotateAction}
  */
 function angle(angle: number) :IRotateAction {
   return new RotateAction(angle);

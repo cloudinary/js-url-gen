@@ -1,3 +1,9 @@
+/**
+ * Determines how to crop, scale, and/or zoom the delivered asset according to the requested dimensions.
+ * @memberOf Actions
+ * @namespace Resize
+ */
+
 import crop from './crop';
 import fill from './fill';
 import scale from './scale';

@@ -1,3 +1,9 @@
+/**
+ * Controls the quality of the delivered image or video.
+ * @memberOf Actions
+ * @namespace Quality
+ */
+
 import auto from './auto';
 import level from './level';
 import jpegMini from './jpegmini';
