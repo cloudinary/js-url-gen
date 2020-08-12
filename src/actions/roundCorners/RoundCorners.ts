@@ -4,11 +4,11 @@
  * @namespace RoundCorners
  */
 
-import radius from './radius';
+import byRadius from './byRadius';
 import max from './max';
 
-export {radius, max};
+export {byRadius, max};
 export default {
-  radius,
+  byRadius,
   max
 };

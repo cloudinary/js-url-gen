@@ -2,7 +2,6 @@ import {IAction} from "../interfaces/IAction";
 import {IBorderAction} from "../actions/border/IBorderAction";
 import {IResizeAction} from "../actions/resize/IResizeAction";
 import {IQualityAction} from "../actions/quality/IQualityAction";
-import {IRoundCornersAction} from "../actions/roundCorners/IResizeAction";
 import {ILayerAction} from "../actions/layers/ILayerAction";
 import {IVariableAction} from "../actions/variable/IVariableAction";
 import {IEffectAction} from "../actions/effect/IEffectAction";
@@ -13,6 +12,7 @@ import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigura
 import CloudinaryConfig from "../config/CloudinaryConfig";
 import {IDescriptor} from "../interfaces/IDescriptor";
 import createCloudinaryURL from "../url/cloudinaryURL";
+import RoundCorners from "../actions/roundCorners/RoundCorners";
 
 class Transformation {
   actions: IAction[];
@@ -91,10 +91,7 @@ class Transformation {
     return this.addAction(qualityAction);
   }
 
-  /**
-   * @param {IRoundCornersAction} roundCornersAction
-   */
-  roundCorners(roundCornersAction: IRoundCornersAction): this {
+  roundCorners(roundCornersAction: typeof RoundCorners): this {
     return this.addAction(roundCornersAction);
   }
 
