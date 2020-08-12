@@ -1,4 +1,4 @@
-import {RotateAction} from "./Rotate";
+import {RotateAction} from "./RotateAction";
 import {IRotateAction} from "./IRotateAction";
 
 /**
@@ -7,8 +7,9 @@ import {IRotateAction} from "./IRotateAction";
  * @param {number} angle
  * @returns {RotateAction}
  */
-function angle(angle: number) :IRotateAction {
+function byAngle(angle: number) :IRotateAction {
   return new RotateAction(angle);
 }
 
-export default angle;
+
+export default byAngle;
