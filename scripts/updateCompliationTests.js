@@ -8,6 +8,8 @@
  * 4. npm run test will run this script first, it will not update if the env variables are not set
  */
 const CODE_GENERATOR_PATH = process.argv[3] || process.env.CODE_GENERATOR_PATH;
+const COMPILATION_TESTS_LOCAL_PATH = './__TESTS__/compilation.test.ts';
+const CYAN_COLOR = '\x1b[36m%s\x1b[0m';
 
 if (!CODE_GENERATOR_PATH) {
   console.log('SKIP - Cannot update compilation tests - do you have an env variable set?');
@@ -17,10 +19,11 @@ const ENV_RUBY_VER = process.argv[4] || process.env.ENV_RUBY_VER || '2.7.1';
 const { execSync } = require('child_process');
 const fs = require('fs');
 
+const addKeyEnvVar = process.env.KEY ? `KEY=${process.env.KEY}` : ''
 const bashScript = ` 
   cd ${CODE_GENERATOR_PATH};
   # NOTE - We pipe the response of rspec to prevent the script from exiting in case the rspec command fails
-  source ~/.rvm/scripts/rvm && rvm use ${ENV_RUBY_VER} && rspec ${CODE_GENERATOR_PATH}  | grep 'ok'
+  source ~/.rvm/scripts/rvm && rvm use ${ENV_RUBY_VER} && ${addKeyEnvVar} rspec ${CODE_GENERATOR_PATH}  | grep 'ok'
 `;
 
 // Create the bash script
@@ -35,7 +38,32 @@ if (!fs.existsSync(TEST_FILE_PATH)) {
 }
 
 const file = fs.readFileSync(TEST_FILE_PATH, 'utf-8');
-fs.writeFileSync('./__TESTS__/compilation.test.ts', file);
+
+// Delete existing file
+fs.unlinkSync(COMPILATION_TESTS_LOCAL_PATH);
+
+// Create new file
+fs.writeFileSync(COMPILATION_TESTS_LOCAL_PATH, file);
 
 // delete temporary script
 fs.unlinkSync('./scripts/tmp.sh');
+
+
+// If this entire process was successful, lets add some proper logs
+if (fs.existsSync(COMPILATION_TESTS_LOCAL_PATH)) {
+  // Reset terminal, clean junk
+  process.stdout.write('\033c');
+
+  // Add some buffer
+  console.log('\n\n');
+
+  console.log(CYAN_COLOR, '* Compilation tests generated successfully');
+  if (process.env.KEY) {
+    console.log(CYAN_COLOR, `* Compilation test contains only "${process.env.KEY}_" qualifier`)
+  } else {
+    console.log(CYAN_COLOR, `* Compilation test contains all qualifiers`)
+  }
+  // Add some buffer
+  console.log('\n\n');
+}
+
