@@ -3,7 +3,7 @@ import {IRotateAction} from "./IRotateAction";
 
 /**
  * @memberOf Actions.Rotate
- * @description Rotate an image by a rotationMode
+ * @description Rotate an image by using a rotationMode
  * @param {string} rotationMode
  * @returns {RotateAction}
  */
