@@ -1,6 +1,9 @@
-import {angle, horizontalFlip, verticalFlip, RotateAction} from '../../../src/actions/rotate/Rotate';
+import Rotate from '../../../src/actions/rotate/Rotate';
+import * as RotateESM from '../../../src/actions/rotate/Rotate';
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
+import * as RotationModes from "../../../src/params/rotate/Rotate";
+import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -9,63 +12,22 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 });
 
 describe('Tests for Transformation Action -- Rotate', () => {
-  it('Ensures new RotateAction is accepted as an action to TransformableImage', () => {
-    const tImage = new TransformableImage();
-    // Ensures it compiles and doesn't throw
-    expect(
-      tImage.rotate(new RotateAction())
-    ).toEqual(tImage);
+  it('Expects ESM to match Default', () => {
+    expectESMToMatchDefault(RotateESM, Rotate);
   });
-  it('Ensures angle is accepted as an action to TransformableImage', () => {
-    const tImage = new TransformableImage();
-    // Ensures it compiles and doesn't throw
-    expect(
-      tImage.rotate(angle(30))
-    ).toEqual(tImage);
-  });
-  it('Creates a cloudinaryURL with angle', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .rotate(angle(30).verticalFlip())
-      .setPublicID('sample')
-      .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/a_30.vflip/sample');
-  });
-  it('Creates a cloudinaryURL with horizontalFlip', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .rotate(horizontalFlip().angle(30))
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/a_hflip.30/sample');
-  });
-  it('Creates a cloudinaryURL with verticalFlip', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .rotate(verticalFlip().angle(30))
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/a_vflip.30/sample');
-  });
   it('Creates a cloudinaryURL with Rotate', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .rotate(new RotateAction().verticalFlip().angle(40).horizontalFlip())
+      .rotate(Rotate.byMode(RotationModes.VERTICAL_FLIP))
+      .rotate(Rotate.byMode(RotationModes.HORIZONTAL_FLIP))
+      .rotate(Rotate.byMode(RotationModes.AUTO_RIGHT))
+      .rotate(Rotate.byMode(RotationModes.AUTO_LEFT))
+      .rotate(Rotate.byMode(RotationModes.IGNORE))
+      .rotate(Rotate.byAngle(40))
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/a_vflip.40.hflip/sample');
-  });
-  it('Creates a cloudinaryURL with Rotate, passing value to constructor', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .rotate(new RotateAction(30).verticalFlip().angle(40).horizontalFlip())
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/a_30.vflip.40.hflip/sample');
+    expect(url).toContain('/a_vflip/a_hflip/a_auto_right/a_auto_left/a_ignore/a_40/');
   });
 });
