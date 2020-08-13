@@ -19,6 +19,8 @@ const ENV_RUBY_VER = process.argv[4] || process.env.ENV_RUBY_VER || '2.7.1';
 const { execSync } = require('child_process');
 const fs = require('fs');
 
+// Enable passing a key to the code generator.
+// This enables us to create compiation tests based on a specific qualifier (like `a_` or `c_`)
 const addKeyEnvVar = process.env.KEY ? `KEY=${process.env.KEY}` : ''
 const bashScript = ` 
   cd ${CODE_GENERATOR_PATH};
