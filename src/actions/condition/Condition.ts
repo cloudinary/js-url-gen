@@ -30,7 +30,7 @@ class ConditionAction extends Action implements IConditionAction {
     const resultExpression = expression
       .split(' ')
       .map((val) => CONDITIONAL_OPERATORS[val] || val)
-      .join('_')
+      .join('_');
 
 
     return resultExpression;
