@@ -1,8 +1,6 @@
-import TransformableImage from "../../transformation/TransformableImage";
+import TextSource from "./sources/TextSource";
+import ImageSource from "./sources/ImageSource";
 
-class ImageSource extends TransformableImage {
-
-}
 
 /**
  * @memberOf Sources
@@ -12,5 +10,14 @@ function image(publicID: string): ImageSource {
   return new ImageSource(publicID);
 }
 
-export default {ImageSource, image};
-export {ImageSource, image};
+
+/**
+ * @memberOf Sources
+ * @param someText {string}
+ */
+function text(someText: string): TextSource {
+  return new TextSource(someText);
+}
+
+export default {ImageSource, TextSource, image, text};
+export {ImageSource, TextSource, image, text};
