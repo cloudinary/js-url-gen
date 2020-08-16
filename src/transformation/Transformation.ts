@@ -13,6 +13,8 @@ import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigura
 import CloudinaryConfig from "../config/CloudinaryConfig";
 import {IDescriptor} from "../interfaces/IDescriptor";
 import createCloudinaryURL from "../url/cloudinaryURL";
+import {IConditionAction} from "../actions/condition/IConditionAction";
+import Param from "../parameters/Param";
 
 class Transformation {
   actions: IAction[];
@@ -110,6 +112,21 @@ class Transformation {
    */
   variable(variableAction: IVariableAction): this {
     return this.addAction(variableAction);
+  }
+
+  /**
+   * @param {IConditionAction} conditionAction
+   */
+  ifCondition(conditionAction: IConditionAction): this {
+    return this.addAction(conditionAction);
+  }
+
+  ifElse(): this {
+    return this.addAction(new Param('if', 'else'));
+  }
+
+  endIfCondition(): this {
+    return this.addAction(new Param('if', 'end'));
   }
 
   /**
