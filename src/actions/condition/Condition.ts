@@ -22,11 +22,16 @@ class ConditionAction extends Action implements IConditionAction {
   constructor(expression: string) {
     super();
 
-    this.addParam(new Param('if', this.replaceExpression(expression)));
+    this.addParam(new Param('if', this.normalizeExpression(expression)));
 
   }
 
-  replaceExpression(expression: string) {
+  /**
+   * Normalizes expression from user representation to URL form.
+   * @param {string} expression The expression to normalize.
+   * @return {string} The normalized expression.
+   */
+  normalizeExpression(expression: string) {
     const resultExpression = expression
       .split(' ')
       .map((val) => CONDITIONAL_OPERATORS[val] || val)
@@ -38,9 +43,9 @@ class ConditionAction extends Action implements IConditionAction {
 }
 
 /**
- * @param key
+ * @param expression
  */
-function fromString(expression: string) {
+function fromString(expression: string): ConditionAction {
   return new ConditionAction(expression);
 
 }
