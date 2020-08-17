@@ -21,7 +21,7 @@ import {
   WDP,
   WEBM,
   WEBP
-} from "../../../src/params/formats/ImageFormats";
+} from "../../../src/params/formats/Formats";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {

@@ -1,6 +1,6 @@
 import DeliveryAction from "./DeliveryAction";
 import {IDeliveryAction} from "./IDeliveryAction";
-import {FormatType} from "../../params/formats/ImageFormats";
+import {FormatType} from "../../params/formats/Formats";
 
 /**
  * @memberOf Actions.Delivery
