@@ -42,7 +42,9 @@ if (!fs.existsSync(TEST_FILE_PATH)) {
 const file = fs.readFileSync(TEST_FILE_PATH, 'utf-8');
 
 // Delete existing file
-fs.unlinkSync(COMPILATION_TESTS_LOCAL_PATH);
+if (fs.existsSync(COMPILATION_TESTS_LOCAL_PATH)) {
+  fs.unlinkSync(COMPILATION_TESTS_LOCAL_PATH);
+}
 
 // Create new file
 fs.writeFileSync(COMPILATION_TESTS_LOCAL_PATH, file);
