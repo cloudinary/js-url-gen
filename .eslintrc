@@ -20,7 +20,7 @@
   "rules": {
     "require-jsdoc": "error",
     "no-unused-vars": "warn",
-    "indent" : ["error", 2],
+    "indent" : ["error", 2, { "SwitchCase": 1 }],
     "dot-notation" : "error",
     "no-param-reassign" : "error",
     "no-unreachable" : "error",
