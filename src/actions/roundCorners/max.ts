@@ -1,18 +1,14 @@
 import '../../interfaces/IAction';
-import Action from "../Action";
-import {IAction} from "../../interfaces/IAction";
+import RoundCornersAction from "./RoundCornersAction";
 
-class Max extends Action implements IAction {
-
-}
 
 /**
  * @memberOf Actions.RoundCorners
  * @description Generates an asset with a circular crop using the 'max' radius value.
- * @return {Max}
+ * @return {RoundCornersAction}
  */
-function max():Max {
-  return new Max();
+function max():RoundCornersAction {
+  return new RoundCornersAction().max();
 }
 
 export default max;

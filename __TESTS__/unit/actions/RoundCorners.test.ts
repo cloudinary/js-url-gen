@@ -1,24 +1,59 @@
-import RoundCorners, {radius, max} from 'actions/roundCorners/RoundCorners';
+import RoundCorners, {byRadius, max} from 'actions/roundCorners/RoundCorners';
+import * as RoundCornersESM from 'actions/roundCorners/RoundCorners';
 import TransformableImage from 'transformation/TransformableImage';
+import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
+import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
+
+
+const CONFIG_INSTANCE = new CloudinaryConfig({
+  cloud: {
+    cloudName: 'demo'
+  }
+});
+
 
 describe('Tests for Transformation Action -- RoundCorners', () => {
-  it('Ensures "radius" is exported in the RoundCorners namespace', () => {
-    expect(RoundCorners.radius).toEqual(radius);
+  it ('Ensures ESM Matches Default', () => {
+    expectESMToMatchDefault(RoundCornersESM, RoundCorners);
   });
 
-  it('Ensures "max" is exported in the RoundCorners namespace', () => {
-    expect(RoundCorners.max).toEqual(max);
+  it('Ensure roundCorners accepts 1 radius', () => {
+    const url = new TransformableImage('sample')
+      .setConfig(CONFIG_INSTANCE)
+      .roundCorners(byRadius(25))
+      .toURL();
+    expect(url).toContain('r_25');
   });
 
-  it('Is accepted as an action to TransformableImage', () => {
-    const tImage = new TransformableImage();
-    // Ensures it compiles and doesn't throw
-    expect(
-      tImage.roundCorners(radius(10))
-    ).toEqual(tImage);
+  it('Ensure roundCorners accepts 2 radius', () => {
+    const url = new TransformableImage('sample')
+      .setConfig(CONFIG_INSTANCE)
+      .roundCorners(byRadius(25, 20))
+      .toURL();
+    expect(url).toContain('r_25:20');
+  });
 
-    expect(
-      tImage.roundCorners(max())
-    ).toEqual(tImage);
+  it('Ensure roundCorners accepts 3 radius', () => {
+    const url = new TransformableImage('sample')
+      .setConfig(CONFIG_INSTANCE)
+      .roundCorners(byRadius(25, 20, 15))
+      .toURL();
+    expect(url).toContain('r_25:20:15');
+  });
+
+  it('Ensure roundCorners accepts 4 radius', () => {
+    const url = new TransformableImage('sample')
+      .setConfig(CONFIG_INSTANCE)
+      .roundCorners(byRadius(25, 20, 15, 10))
+      .toURL();
+    expect(url).toContain('r_25:20:15:10');
+  });
+
+  it('Ensure roundCorners accepts max radius', () => {
+    const url = new TransformableImage('sample')
+      .setConfig(CONFIG_INSTANCE)
+      .roundCorners(max())
+      .toURL();
+    expect(url).toContain('r_max');
   });
 });
