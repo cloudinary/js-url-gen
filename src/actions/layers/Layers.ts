@@ -8,17 +8,18 @@
 import {ILayerAction} from "./ILayerAction";
 import Action from "../Action";
 // TODO - BundleSize Warning - we include all the Sources code within Layers.
-import Source, {ImageSource} from "./Source";
+import Source, {ImageSource, TextSource} from "./Source";
 import {Position} from "../../params/position/Position";
 import Param from "../../parameters/Param";
 import {BlendMode} from "../../params/blendMode/BlendMode";
+import {ISource} from "./ISource";
 
 
 class Layer extends Action implements ILayerAction {
-  source: ImageSource; // TODO this needs to accept other types of sources
+  source: ISource;
   position:Position;
   blendMode: BlendMode;
-  constructor(transformable: ImageSource, position:Position, blendMode: BlendMode) {
+  constructor(transformable: ISource, position:Position, blendMode: BlendMode) {
     super();
     this.source = transformable;
     this.position = position;
@@ -30,7 +31,7 @@ class Layer extends Action implements ILayerAction {
    * The opening of a layer
    */
   openLayer() {
-    return `l_${this.source.asset.publicID}`;
+    return `l_${this.source.getSource()}`;
   }
 
   /**
@@ -38,7 +39,7 @@ class Layer extends Action implements ILayerAction {
    * Transformations conducted on the image in the layer
    */
   layerTransformation() {
-    return this.source.toString();
+    return this.source.getTransformationString();
   }
 
   /**
@@ -73,11 +74,19 @@ class Layer extends Action implements ILayerAction {
  * @return {Layer}
  */
 function imageLayer(imageSource: ImageSource, position?:Position, blendMode?:BlendMode): Layer {
-  // TODO this needs to accept other types of sources
   return new Layer(imageSource, position, blendMode);
 }
 
+/**
+ * @param textSource
+ * @param position
+ * @param blendMode
+ * @memberOf Actions.Layers
+ * @return {Layer}
+ */
+function textLayer(textSource: TextSource, position?:Position, blendMode?:BlendMode): Layer {
+  return new Layer(textSource, position, blendMode);
+}
 
-export {imageLayer, Source};
-export default {imageLayer, Source};
-
+export {imageLayer, textLayer, Source};
+export default {imageLayer, textLayer, Source};
