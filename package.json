@@ -3,7 +3,7 @@
   "version": "1.0.0-alpha.0",
   "description": "",
   "scripts": {
-    "test": "jest --coverage --reporters default",
+    "test": "npm run build && jest --coverage --reporters default",
     "test:comp": "node ./scripts/updateCompliationTests.js && jest __TESTS__/compilation.test.ts  --coverage",
     "test:unit": "jest __TESTS__/unit --reporters default",
     "test:unit:watch": "jest __TESTS__/unit --watch",
@@ -13,7 +13,7 @@
     "build:ESM": "tsc --project ./tsconfig.json",
     "build:UMD": "rollup -c",
     "build:docs": "jsdoc --configure jsdoc.config.json --verbose",
-    "build:entryPoints": "ts-node ./scripts/createEntryPoints.ts",
+    "build:entryPoints": "ts-node ./scripts/createEntrypoints.ts",
     "lint": "eslint src __TESTS__ --color --ext .ts",
     "start": "rollup -c rollup.dev.config.js -w",
     "bundlewatch": "bundlewatch --config ./bundlewatch.config.js"

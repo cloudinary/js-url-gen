@@ -25,7 +25,7 @@ const expectedActionsFiles = createEntryPointFromESMPath('actions', 'actions');
 const expectedConstantsFiles = createEntryPointFromESMPath('constants', 'constants');
 
 // Create an Entry Point from everything under bundles/esm/params -> dist/params
-createEntryPointFromESMPath('params', 'params');
+const expectedParamsFiles = createEntryPointFromESMPath('params', 'params');
 
 // Allows import from '@base' (With types)
 createMainEntryPoint();
@@ -38,6 +38,7 @@ console.log('Created ./dist entrypoints');
 validatePackageFiles({
   ...expectedActionsFiles,
   ...expectedConstantsFiles,
+  ...expectedParamsFiles,
   types: false, // Exclude from *all* checks, we don't want to test Typescript
   bundles: {
     // For any level, we ensure that we don't have unwanted files
