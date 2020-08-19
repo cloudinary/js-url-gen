@@ -3,7 +3,7 @@ import {IEffectAction} from "./IEffectAction";
 
 
 /**
- * @description Applies a oilPaint filter to the asset.
+ * @description Applies an oilPaint filter to the asset.
  * @memberOf Actions.Effect
  * @param oilPaintLevel
  */
