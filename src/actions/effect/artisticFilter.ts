@@ -3,7 +3,7 @@ import {IEffectAction} from "./IEffectAction";
 
 
 /**
- * @description Applies a artistic filter to the asset.
+ * @description Applies an artistic filter to the asset.
  * @memberOf Actions.Effect
  * @param artisticFilterType
  */
