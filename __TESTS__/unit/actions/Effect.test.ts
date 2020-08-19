@@ -1,4 +1,4 @@
-import Effect, {blur, blurFaces, pixelateFaces, grayscale, sepia} from '../../../src/actions/effect/Effect';
+import Effect, {blur, blurFaces, pixelateFaces, grayscale, sepia, shadow} from '../../../src/actions/effect/Effect';
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as ArtisticFilter from "../../../src/constants/artisticFilters/ArtisticFilters";
@@ -17,6 +17,7 @@ describe('Tests for Transformation Action -- Effect', () => {
     expect(Effect.pixelateFaces).toEqual(pixelateFaces);
     expect(Effect.grayscale).toEqual(grayscale);
     expect(Effect.sepia).toEqual(sepia);
+    expect(Effect.shadow).toEqual(shadow);
   });
 
   it('Ensures blur is accepted as an action to TransformableImage', () => {
@@ -137,6 +138,66 @@ describe('Tests for Transformation Action -- Effect', () => {
       .toURL();
 
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_sepia/sample');
+  });
+
+  it('Creates a cloudinaryURL with effect shadow', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .effect(Effect.shadow())
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_shadow/sample');
+  });
+
+  it('Creates a cloudinaryURL with effect shadow:level', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .effect(Effect.shadow(50))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_shadow:50/sample');
+  });
+
+  it('Creates a cloudinaryURL with effect colorize', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .effect(Effect.colorize())
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_colorize/sample');
+  });
+
+  it('Creates a cloudinaryURL with effect colorize:level', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .effect(Effect.colorize(50))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_colorize:50/sample');
+  });
+
+  it('Creates a cloudinaryURL with effect oilPaint', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .effect(Effect.oilPaint())
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_oilPaint/sample');
+  });
+
+  it('Creates a cloudinaryURL with effect oilPaint:level', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .effect(Effect.oilPaint(50))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_oilPaint:50/sample');
   });
 
   it('Creates a cloudinaryURL with effect artisticFilter', () => {
