@@ -15,6 +15,7 @@ import createCloudinaryURL from "../url/cloudinaryURL";
 import RoundCorners from "../actions/roundCorners/RoundCorners";
 import {IConditionAction} from "../actions/condition/IConditionAction";
 import Param from "../parameters/Param";
+import {IFlagAction} from "../actions/flag/IFlagAction";
 
 class Transformation {
   actions: IAction[];
@@ -159,6 +160,13 @@ class Transformation {
    */
   delivery(deliveryAction: IDeliveryAction): this {
     return this.addAction(deliveryAction);
+  }
+
+  /**
+   * @param {IFlagAction} flagAction
+   */
+  addFlag(flagAction: IFlagAction): this {
+    return this.addAction(flagAction);
   }
 
   /**
