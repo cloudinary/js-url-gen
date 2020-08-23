@@ -1,15 +1,16 @@
 import ResizeAction from "./ResizeAction";
-import {IResizeAction} from "./IResizeAction";
+import {resizeActionFactory} from "./IResizeTypes";
 
 /**
  * @memberOf Actions.Resize
+ * @type Types.resizeActionFactory
  * @description
  * Generates a smartly scaled image that perfectly fits the requested dimensions.
- * @param {number} imaggaWidth
- * @param {number} imaggaHeight
+ * @param {number|string} imaggaWidth
+ * @param {number|string} imaggaHeight
  */
-function imaggaScale(imaggaWidth?:number, imaggaHeight?:number) :IResizeAction {
+const imaggaScale:resizeActionFactory = function(imaggaWidth, imaggaHeight) :ResizeAction {
   return new ResizeAction('imagga_scale', imaggaWidth, imaggaHeight);
-}
+};
 
 export default imaggaScale;

@@ -4,7 +4,7 @@ import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import {AutoGravity} from "../../../src/constants/gravityObjects/GravityObjects";
 import Gravity from "../../../src/params/gravity/Gravity";
 import * as GravityObjects from '../../../src/constants/gravityObjects/GravityObjects';
-import {IResizeAction} from "../../../src/actions/resize/IResizeAction";
+import {IResizeAction} from "../../../src/actions/resize/IResizeTypes";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
