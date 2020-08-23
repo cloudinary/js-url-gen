@@ -5,6 +5,7 @@ import {AutoGravity} from "../../../src/constants/gravityObjects/GravityObjects"
 import Gravity from "../../../src/params/gravity/Gravity";
 import * as GravityObjects from '../../../src/constants/gravityObjects/GravityObjects';
 import {IResizeAction} from "../../../src/actions/resize/IResizeAction";
+import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -34,17 +35,8 @@ function getImageWithResize(resizeAction: IResizeAction, type:'url' | 'image') {
 
 
 describe('Tests for Transformation Action -- Resize', () => {
-
   it('Ensure ESM and Default export the same thing', () => {
-    (Object.keys(ResizeESM) as Array<keyof typeof ResizeESM>).forEach((funcName) => {
-      if (typeof ResizeESM[funcName] === 'function') {
-        // Ensure function exists on both objects
-        expect(ResizeESM[funcName]).toEqual((Resize as any)[funcName]);
-
-        // sanity, ensure the result is a function at all (and not an accidental undefined)
-        expect(typeof ResizeESM[funcName]).toBe('function');
-      }
-    });
+    expectESMToMatchDefault(ResizeESM, Resize);
   });
 
   it('Ensures MinimumPad generates the right URL', () => {

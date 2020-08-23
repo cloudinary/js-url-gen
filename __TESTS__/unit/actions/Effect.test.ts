@@ -1,8 +1,11 @@
-import Effect, {blur, blurFaces, pixelateFaces, grayscale, sepia, shadow} from '../../../src/actions/effect/Effect';
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as ArtisticFilter from "../../../src/constants/artisticFilters/ArtisticFilters";
+import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
+import * as EffectESM from "../../../src/actions/effect/Effect";
+import Effect from "../../../src/actions/effect/Effect";
 
+const {blur, blurFaces, pixelateFaces, grayscale, sepia, shadow} = Effect;
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -11,13 +14,8 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 });
 
 describe('Tests for Transformation Action -- Effect', () => {
-  it('Ensure namespace is correctly populated', () => {
-    expect(Effect.blur).toEqual(blur);
-    expect(Effect.blurFaces).toEqual(blurFaces);
-    expect(Effect.pixelateFaces).toEqual(pixelateFaces);
-    expect(Effect.grayscale).toEqual(grayscale);
-    expect(Effect.sepia).toEqual(sepia);
-    expect(Effect.shadow).toEqual(shadow);
+  it('Expects ESM to match Default', () => {
+    expectESMToMatchDefault(EffectESM, Effect);
   });
 
   it('Ensures blur is accepted as an action to TransformableImage', () => {
