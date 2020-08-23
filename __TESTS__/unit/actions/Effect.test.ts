@@ -217,6 +217,6 @@ describe('Tests for Transformation Action -- Effect', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_cartoonify:level/sample');
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_cartoonify:50/sample');
   });
 });
