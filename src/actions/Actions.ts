@@ -13,6 +13,7 @@ import Layers from "./layers/Layers";
 import Variable from "./variable/Variable";
 import NamedTransformation from './namedTransformation/NamedTransformation';
 import Delivery from "./delivery/Delivery";
+import Background from "./background/Background";
 
-export {Resize, Border, RoundCorners, Effect, Quality, Rotate, Adjust, Layers, Variable, NamedTransformation, Delivery};
-export default {Resize, Border, RoundCorners, Effect, Quality, Rotate, Adjust, Layers, Variable, NamedTransformation, Delivery};
+export {Resize, Border, RoundCorners, Effect, Quality, Rotate, Adjust, Layers, Variable, NamedTransformation, Delivery, Background};
+export default {Resize, Border, RoundCorners, Effect, Quality, Rotate, Adjust, Layers, Variable, NamedTransformation, Delivery, Background};
