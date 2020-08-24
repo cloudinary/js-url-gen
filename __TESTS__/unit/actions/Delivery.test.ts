@@ -1,4 +1,3 @@
-import Delivery, {format} from '../../../src/actions/delivery/Delivery';
 import TransformableImage from '..         /../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as Dpr from "../../../src/constants/dpr/Dpr";
@@ -23,6 +22,9 @@ import {
   WEBM,
   WEBP
 } from "../../../src/params/formats/Formats";
+import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
+import * as DeliveryESM from "../../../src/actions/delivery/Delivery";
+import Delivery from "../../../src/actions/delivery/Delivery";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -30,7 +32,13 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
   }
 });
 
+const {format} = Delivery;
+
 describe('Tests for Transformation Action -- Delivery', () => {
+  it('Expects ESM to match Default', () => {
+    expectESMToMatchDefault(DeliveryESM, Delivery);
+  });
+
   it('Ensure namespace is correctly populated', () => {
     expect(Delivery.format).toEqual(format);
   });

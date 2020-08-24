@@ -1,7 +1,9 @@
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import NamedTransformation, {name} from "../../../src/actions/namedTransformation/NamedTransformation";
-import Resize, {scale} from "../../../src/actions/resize/Resize";
+import * as NamedTransformationESM from "../../../src/actions/namedTransformation/NamedTransformation";
+import {scale} from "../../../src/actions/resize/Resize";
+import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -10,6 +12,10 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 });
 
 describe('Tests for Transformation Action -- NamedTransformation', () => {
+  it('Expects ESM to match Default', () => {
+    expectESMToMatchDefault(NamedTransformationESM, NamedTransformation);
+  });
+
   it('Ensures NamedTransformation is accepted as an action to TransformableImage', () => {
     const tImage = new TransformableImage();
     // Ensures it compiles and doesn't throw

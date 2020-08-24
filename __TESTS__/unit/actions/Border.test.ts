@@ -1,7 +1,11 @@
-import Border, {solid} from '../../../src/actions/border/Border';
+import Border from '../../../src/actions/border/Border';
+import * as BorderESM from '../../../src/actions/border/Border';
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as Colors from "../../../src/constants/colors/Colors";
+import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
+
+const {solid} = Border;
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -10,8 +14,8 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 });
 
 describe('Tests for Transformation Action -- Border', () => {
-  it('Ensures "solid" is exported in the Border namespace', () => {
-    expect(Border.solid).toEqual(solid);
+  it('Expects ESM to match Default', () => {
+    expectESMToMatchDefault(BorderESM, Border);
   });
 
   it('Is accepted as an action to TransformableImage', () => {
