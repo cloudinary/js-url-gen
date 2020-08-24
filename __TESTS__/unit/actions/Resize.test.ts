@@ -4,7 +4,7 @@ import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import {AutoGravity} from "../../../src/constants/gravityObjects/GravityObjects";
 import Gravity from "../../../src/params/gravity/Gravity";
 import * as GravityObjects from '../../../src/constants/gravityObjects/GravityObjects';
-import {IResizeAction} from "../../../src/actions/resize/IResizeTypes";
+import ResizeAction from "../../../src/actions/resize/ResizeAction";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -18,7 +18,7 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
  * @param resizeAction
  * @param type
  */
-function getImageWithResize(resizeAction: IResizeAction, type:'url' | 'image') {
+function getImageWithResize(resizeAction: ResizeAction, type:'url' | 'image') {
   const img = new TransformableImage('sample')
     .setConfig(CONFIG_INSTANCE)
     .resize(resizeAction);
