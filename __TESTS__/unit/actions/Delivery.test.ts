@@ -1,5 +1,6 @@
 import TransformableImage from '..         /../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
+import * as Dpr from "../../../src/constants/dpr/Dpr";
 import {
   AI,
   AUTO,
@@ -251,5 +252,25 @@ describe('Tests for Transformation Action -- Delivery', () => {
       .toURL();
 
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/f_jp2/sample');
+  });
+
+  it('Creates a cloudinaryURL with Delivery.dpr', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .delivery(Delivery.dpr('2.0'))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/dpr_2.0/sample');
+  });
+
+  it('Creates a cloudinaryURL with Delivery.dpr', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .delivery(Delivery.dpr(Dpr.AUTO))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/dpr_auto/sample');
   });
 });
