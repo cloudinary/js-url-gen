@@ -50,7 +50,7 @@ class TextSource implements ISource {
 
   /**
    *
-   * @param style
+   * @param {FontStyle} style
    * @returns {this}
    */
   fontStyle(style:keyof typeof FontStyle):this {
@@ -60,7 +60,7 @@ class TextSource implements ISource {
 
   /**
    *
-   * @param textColor
+   * @param {string} textColor
    * @returns {this}
    */
   color(textColor: string):this {
