@@ -5,7 +5,7 @@ import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 import * as EffectESM from "../../../src/actions/effect/Effect";
 import Effect from "../../../src/actions/effect/Effect";
 
-const {blur, blurFaces, pixelateFaces, grayscale, sepia, shadow} = Effect;
+const {blur, blurFaces, pixelateFaces, grayscale, sepia, shadow, cartoonify} = Effect;
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -206,5 +206,15 @@ describe('Tests for Transformation Action -- Effect', () => {
       .toURL();
 
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_peacock/sample');
+  });
+
+  it('Creates a cloudinaryURL with effect cartoonify:50', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .effect(Effect.cartoonify(50))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_cartoonify:50/sample');
   });
 });
