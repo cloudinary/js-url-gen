@@ -1,10 +1,11 @@
-import {ISource} from "../ISource";
-import {FontStyle, FontWeight} from "../../../params/fonts/Fonts";
-import {prepareColor} from "../../../utils/prepareColor";
-import ParamValue from "../../../parameters/ParamValue";
+import {ISource} from "./ISource";
+import {FontStyle, FontWeight} from "../fonts/Fonts";
+import {prepareColor} from "../../utils/prepareColor";
+import ParamValue from "../../parameters/ParamValue";
 
 /**
- * @private
+ * @implements {ISource}
+ * @memberOf Params.Sources
  */
 class TextSource implements ISource {
   private fFamily: string;
@@ -17,31 +18,59 @@ class TextSource implements ISource {
     this.innerText = someText;
   }
 
+  /**
+   *
+   * @param {string} fontFam
+   * @returns {this}
+   */
   fontFamily(fontFam:string):this {
     this.fFamily = fontFam;
     return this;
   }
 
+  /**
+   *
+   * @param {number} size
+   * @returns {this}
+   */
   fontSize(size:number):this {
     this.fSize = size;
     return this;
   }
 
+  /**
+   *
+   * @param {FontWeight} weight
+   * @returns {this}
+   */
   fontWeight(weight: keyof typeof FontWeight):this {
     this.fWeight = weight;
     return this;
   }
 
+  /**
+   *
+   * @param style
+   * @returns {this}
+   */
   fontStyle(style:keyof typeof FontStyle):this {
     this.fStyle = style;
     return this;
   }
 
+  /**
+   *
+   * @param textColor
+   * @returns {this}
+   */
   color(textColor: string):this {
     this.textColor = textColor;
     return this;
   }
 
+  /**
+   * @returns {string}
+   */
   getColor():string {
     if (this.textColor) {
       return `co_${prepareColor(this.textColor)}`;
@@ -50,6 +79,9 @@ class TextSource implements ISource {
     }
   }
 
+  /**
+   * @returns {string}
+   */
   getSource():string {
     const fontValue = new ParamValue([this.fFamily, this.fSize, this.fWeight, this.fStyle])
       .setDelimiter('_')

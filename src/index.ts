@@ -4,12 +4,6 @@
  * @namespace Params
  */
 
-/**
- * A namespace for all Sources</br>
- * TODO This needs a proper file, maybe in a future ./Sources.ts?
- * @namespace Sources
- */
-
 // Transformations
 import Transformation from "./transformation/Transformation";
 import cloudinaryURL from "./url/cloudinaryURL";
