@@ -1,6 +1,5 @@
 import {IAction} from "../interfaces/IAction";
 import {IBorderAction} from "../actions/border/IBorderAction";
-import {IResizeAction} from "../actions/resize/IResizeAction";
 import {IQualityAction} from "../actions/quality/IQualityAction";
 import {ILayerAction} from "../actions/layers/ILayerAction";
 import {IVariableAction} from "../actions/variable/IVariableAction";
@@ -15,6 +14,7 @@ import createCloudinaryURL from "../url/cloudinaryURL";
 import {IConditionAction} from "../actions/condition/IConditionAction";
 import Param from "../parameters/Param";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
+import {ResizeAction} from "../actions/resize/Resize";
 
 class Transformation {
   actions: IAction[];
@@ -80,9 +80,9 @@ class Transformation {
   }
 
   /**
-   * @param {IResizeAction} resizeAction
+   * @param {Resize} resizeAction
    */
-  resize(resizeAction: IResizeAction): this {
+  resize(resizeAction: ResizeAction): this {
     return this.addAction(resizeAction);
   }
 

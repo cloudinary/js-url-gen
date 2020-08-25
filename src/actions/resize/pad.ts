@@ -1,15 +1,16 @@
 import ResizeAction from "./ResizeAction";
-import {IResizeAction} from "./IResizeAction";
+import {resizeActionFactory} from "./IResizeTypes";
 
 /**
  * @memberOf Actions.Resize
+ * @type Types.resizeActionFactory
  * @description
  * Resizes the image to fill the given width and height while retaining the original aspect ratio and with all of the original image visible.
- * @param {number} padWidth
- * @param {number} padHeight
+ * @param {number|string} padWidth
+ * @param {number|string} padHeight
  */
-function pad(padWidth?:number, padHeight?:number) :IResizeAction {
+const pad:resizeActionFactory = function(padWidth, padHeight) :ResizeAction {
   return new ResizeAction('pad', padWidth, padHeight);
-}
+};
 
 export default pad;
