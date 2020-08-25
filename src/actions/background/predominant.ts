@@ -1,12 +1,10 @@
 import BackgroundAction from "./BackgroundAction";
-import {IBackgroundAction} from "./IBackgroundAction";
 
 /**
- * Selects the predominant color while taking all pixels in the image into account.
- *
- * @return BackgroundAction
+ * @memberOf Actions.Background
+ * @description Selects the predominant color while taking all pixels in the image into account.
  */
-function predominant(): IBackgroundAction{
+function predominant(): BackgroundAction{
   return new BackgroundAction('auto:predominant');
 }
 

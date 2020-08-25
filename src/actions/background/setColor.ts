@@ -1,12 +1,13 @@
 import BackgroundAction from "./BackgroundAction";
-import {IBackgroundAction} from "./IBackgroundAction";
 import {prepareColor} from "../../utils/prepareColor";
 
 
 /**
- * Applies background color.
+ * @memberOf Actions.Background
+ * @description Applies background color.
+ * @param {string} color
  */
-function setColor(color: string): IBackgroundAction{
+function setColor(color: string): BackgroundAction{
   return new BackgroundAction(prepareColor(color));
 
 }

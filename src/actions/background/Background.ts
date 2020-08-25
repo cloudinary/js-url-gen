@@ -1,13 +1,7 @@
 /**
  * Defines the background color to use instead of transparent background areas or when resizing with padding.
- *
- * **Learn more**:
- * <a href="https://cloudinary.com/documentation/image_transformations#setting_background_color" target="_blank">
- * Setting background for images</a> |
- * <a href="https://cloudinary.com/documentation/video_manipulation_and_delivery#background_color" target="_blank">
- * Setting background for videos</a>
- *
- * @api
+ * @memberOf Actions
+ * @namespace Background
  */
 import auto from "./auto";
 import setColor from "./setColor";

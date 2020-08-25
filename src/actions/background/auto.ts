@@ -1,10 +1,10 @@
 import BackgroundAction from "./BackgroundAction";
-import {IBackgroundAction} from "./IBackgroundAction";
 
 /**
- * Applies background color automatically.
+ * @memberOf Actions.Background
+ * @description Applies background color automatically.
  */
-function auto(): IBackgroundAction{
+function auto(): BackgroundAction{
   return new BackgroundAction('auto');
 }
 

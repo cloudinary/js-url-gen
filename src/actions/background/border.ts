@@ -1,12 +1,10 @@
 import BackgroundAction from "./BackgroundAction";
-import {IBackgroundAction} from "./IBackgroundAction";
 
 /**
- * Selects the predominant color while taking only the image border pixels into account.
- *
- * @return BackgroundAction
+ * @memberOf Actions.Background
+ * @description Selects the predominant color while taking only the image border pixels into account.
  */
-function border(): IBackgroundAction{
+function border(): BackgroundAction{
   return new BackgroundAction('auto:border');
 }
 

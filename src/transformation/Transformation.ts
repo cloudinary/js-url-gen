@@ -15,7 +15,7 @@ import createCloudinaryURL from "../url/cloudinaryURL";
 import {IConditionAction} from "../actions/condition/IConditionAction";
 import Param from "../parameters/Param";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
-import {IBackgroundAction} from "../actions/background/IBackgroundAction";
+import BackgroundAction from "../actions/background/BackgroundAction";
 
 class Transformation {
   actions: IAction[];
@@ -163,9 +163,9 @@ class Transformation {
   }
 
   /**
-   * @param {IBackgroundAction} backgroundAction
+   * @param {BackgroundAction} backgroundAction
    */
-  background(backgroundAction: IBackgroundAction): this {
+  background(backgroundAction: BackgroundAction): this {
     return this.addAction(backgroundAction);
   }
 
