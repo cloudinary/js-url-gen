@@ -3,7 +3,8 @@
   "version": "1.0.0-alpha.0",
   "description": "",
   "scripts": {
-    "test": "npm run build && jest --coverage --reporters default",
+    "test": "npm run build && jest --coverage --reporters default &&  npm run test:size",
+    "test:size": "ts-node -O '{\"module\":\"CommonJS\"}' __TESTS_BUNDLE_SIZE__/bin/bin.ts",
     "test:comp": "node ./scripts/updateCompliationTests.js && jest __TESTS__/compilation.test.ts  --coverage",
     "test:unit": "jest __TESTS__/unit --reporters default",
     "test:unit:watch": "jest __TESTS__/unit --watch",
@@ -28,6 +29,7 @@
     "@rollup/plugin-node-resolve": "^7.1.1",
     "@types/jest": "^25.2.3",
     "@types/mock-fs": "^4.10.0",
+    "@types/webpack": "^4.41.21",
     "@typescript-eslint/eslint-plugin": "^3.0.2",
     "@typescript-eslint/parser": "^3.0.2",
     "better-docs": "^2.3.0",
@@ -48,7 +50,8 @@
     "ts-node": "^8.10.2",
     "tslib": "^2.0.0",
     "typedoc": "^0.17.8",
-    "typescript": "^3.9.3"
+    "typescript": "^3.9.3",
+    "webpack": "^4.44.1"
   },
   "types": "./types/index.d.ts",
   "dependencies": {}
