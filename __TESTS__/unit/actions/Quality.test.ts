@@ -1,7 +1,10 @@
-import Quality, {auto, level, jpegMini, best, eco, good, low} from '../../../src/actions/quality/Quality';
+import Quality from '../../../src/actions/quality/Quality';
+import * as QualityESM from '../../../src/actions/quality/Quality';
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
+import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 
+const {auto, level, jpegMini, best, eco, good, low} = Quality;
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
     cloudName: 'demo'
@@ -9,14 +12,8 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 });
 
 describe('Tests for Transformation Action -- Quality', () => {
-  it('Ensure namespace is correctly populated', () => {
-    expect(Quality.auto).toEqual(auto);
-    expect(Quality.level).toEqual(level);
-    expect(Quality.jpegMini).toEqual(jpegMini);
-    expect(Quality.best).toEqual(best);
-    expect(Quality.eco).toEqual(eco);
-    expect(Quality.good).toEqual(good);
-    expect(Quality.low).toEqual(low);
+  it('Expects ESM to match Default', () => {
+    expectESMToMatchDefault(QualityESM, Quality);
   });
 
   it('Ensures auto is accepted as an action to TransformableImage', () => {
