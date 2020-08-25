@@ -27,6 +27,7 @@ import TransformableImage from "./transformation/TransformableImage";
 import Actions from './actions/Actions';
 
 import * as Color from './constants/colors/Colors';
+import * as Dpr from './constants/dpr/Dpr';
 import * as ArtisticFilter from './constants/artisticFilters/ArtisticFilters';
 import * as ObjectGravity from './constants/gravityObjects/GravityObjects';
 
@@ -38,5 +39,5 @@ class Base {
   }
 }
 
-export {cloudinaryURL, Transformation, TransformableImage, Base, Actions, Color, ObjectGravity, ArtisticFilter};
-export default {cloudinaryURL, Transformation, Base, Actions, Color, ObjectGravity, ArtisticFilter};
+export {cloudinaryURL, Transformation, TransformableImage, Base, Actions, Color, Dpr, ObjectGravity, ArtisticFilter};
+export default {cloudinaryURL, Transformation, Base, Actions, Color, Dpr, ObjectGravity, ArtisticFilter};

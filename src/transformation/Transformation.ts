@@ -11,9 +11,9 @@ import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigura
 import CloudinaryConfig from "../config/CloudinaryConfig";
 import {IDescriptor} from "../interfaces/IDescriptor";
 import createCloudinaryURL from "../url/cloudinaryURL";
-import RoundCorners from "../actions/roundCorners/RoundCorners";
 import {IConditionAction} from "../actions/condition/IConditionAction";
 import Param from "../parameters/Param";
+import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
 import {ResizeAction} from "../actions/resize/Resize";
 
 class Transformation {
@@ -93,7 +93,7 @@ class Transformation {
     return this.addAction(qualityAction);
   }
 
-  roundCorners(roundCornersAction: typeof RoundCorners): this {
+  roundCorners(roundCornersAction: RoundCornersAction): this {
     return this.addAction(roundCornersAction);
   }
 

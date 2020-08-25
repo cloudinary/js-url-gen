@@ -1,8 +1,10 @@
-import {ISource} from "../ISource";
-import TransformableImage from "../../../transformation/TransformableImage";
+import {ISource} from "./ISource";
+import TransformableImage from "../../transformation/TransformableImage";
 
 /**
- * @private
+ * @extends {TransformableImage}
+ * @implements {ISource}
+ * @memberOf Params.Sources
  */
 class ImageSource extends TransformableImage implements ISource {
   getSource():string {
