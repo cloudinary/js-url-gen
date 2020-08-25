@@ -14,8 +14,8 @@ class TextSource implements ISource {
   private textColor: string;
   private innerText: string;
   private fStyle: string;
-  constructor(someText:string) {
-    this.innerText = someText;
+  constructor(text:string) {
+    this.innerText = text;
   }
 
   /**
