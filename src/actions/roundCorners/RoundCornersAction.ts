@@ -1,5 +1,4 @@
 import Action from "../Action";
-import {IAction} from "../../interfaces/IAction";
 import Param from "../../parameters/Param";
 import ParamValue from "../../parameters/ParamValue";
 

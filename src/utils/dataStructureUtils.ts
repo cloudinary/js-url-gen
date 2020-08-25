@@ -4,9 +4,10 @@
  * @param map <string, unknown>
  * @Return array of map's values sorted by key
  */
-function mapToSortedArray(map: Map<string, unknown>) {
+function mapToSortedArray<T>(map: Map<string, T>): T[] {
   const array = Array.from(map.entries()).sort();
 
+  console.log(array);
   return array.map((v) => v[1]);
 }
 
@@ -16,7 +17,7 @@ function mapToSortedArray(map: Map<string, unknown>) {
  * @param {*} value The value to check.
  * @returns {boolean} `true` if `value` is a string, else `false`.
  */
-function isString(value: unknown) {
+function isString(value: unknown): boolean {
   return (typeof value === 'string' || value instanceof String);
 }
 

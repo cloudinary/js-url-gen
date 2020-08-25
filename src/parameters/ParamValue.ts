@@ -1,5 +1,5 @@
 class ParamValue {
-  values: any[] = [];
+  values: unknown[] = [];
   delimiter = ':'; // {value}{delimiter}{value}...
 
   constructor(paramValue?: ParamValue | ParamValue[] | unknown[] | string | number) {

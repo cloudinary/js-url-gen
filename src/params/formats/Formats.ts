@@ -9,7 +9,7 @@ export class FormatType extends ParamValue{
 }
 
 export class LossyFormatType extends FormatType {
-  lossy() {
+  lossy(): this {
     return this.addValue('fl_lossy').setDelimiter(',');
   }
 }

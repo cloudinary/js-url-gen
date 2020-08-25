@@ -2,6 +2,6 @@
  *
  * @param publicID
  */
-export default function isUrl(publicID: string) {
+export default function isUrl(publicID: string): RegExpMatchArray {
   return publicID.match(/^https?:\//);
 }

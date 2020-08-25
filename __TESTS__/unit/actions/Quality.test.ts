@@ -97,7 +97,7 @@ describe('Tests for Transformation Action -- Quality', () => {
   it('Creates a cloudinaryURL with quality:good', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .quality(Quality.good())
+      .quality(good())
       .setPublicID('sample')
       .toURL();
 

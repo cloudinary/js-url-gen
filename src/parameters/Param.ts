@@ -15,13 +15,13 @@ class Param {
     }
   }
 
-  toString() {
+  toString(): string {
     const {key, delimiter, paramValue} = this;
 
     return `${key}${delimiter}${paramValue.toString()}`;
   }
 
-  addValue(value: unknown) {
+  addValue(value: unknown): this {
     this.paramValue.addValue(value);
 
     return this;
