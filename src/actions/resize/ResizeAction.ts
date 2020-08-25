@@ -22,6 +22,18 @@ class ResizeAction extends Action implements IAction {
     return this.addParam(new Param('h', x));
   }
 
+  x(x:number): this {
+    return this.addParam(new Param('x', x));
+  }
+
+  zoom(z:number): this {
+    return this.addParam(new Param('z', z));
+  }
+
+  y(y:number): this {
+    return this.addParam(new Param('y', y));
+  }
+
   width(x:number|string):this {
     return this.addParam(new Param('w', x));
   }

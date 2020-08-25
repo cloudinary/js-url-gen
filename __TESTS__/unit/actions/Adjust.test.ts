@@ -30,7 +30,7 @@ describe('Tests for Transformation Action -- Adjust', () => {
 
   it('Ensures viesusCorrect, opacity, brightness are accepted as an action to TransformableImage', () => {
     const tImage = new TransformableImage();
-    const TEST_URL_TO_CREATE = 'http://res.cloudinary.com/demo/image/upload/e_viesus_correct/o_50/e_brightness:200/e_shapren/e_shapren/e_red:20/e_saturation:50/e_tint:equalize:80:red:blue:yellow/sample';
+    const TEST_URL_TO_CREATE = 'http://res.cloudinary.com/demo/image/upload/e_viesus_correct/o_50/e_brightness:200/e_sharpen/e_sharpen/e_red:20/e_saturation:50/e_tint:equalize:80:red:blue:yellow/sample';
 
     expect(
       tImage
