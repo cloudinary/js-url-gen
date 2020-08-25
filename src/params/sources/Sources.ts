@@ -20,12 +20,12 @@ function image(publicID: string): ImageSource {
 
 /**
  * @memberOf Params.Sources
- * @param someText {string}
+ * @param text {string}
  * @description Returns an instance of a TextSource
  * @returns {Params.Sources.TextSource}
  */
-function text(someText: string): TextSource {
-  return new TextSource(someText);
+function text(text: string): TextSource {
+  return new TextSource(text);
 }
 
 export default {ImageSource, TextSource, image, text};
