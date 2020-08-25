@@ -14,7 +14,8 @@ class TextSource implements ISource {
   private textColor: string;
   private innerText: string;
   private fStyle: string;
-  constructor(text:string) {
+
+  constructor(text: string) {
     this.innerText = text;
   }
 
@@ -23,7 +24,7 @@ class TextSource implements ISource {
    * @param {string} fontFam
    * @returns {this}
    */
-  fontFamily(fontFam:string):this {
+  fontFamily(fontFam: string): this {
     this.fFamily = fontFam;
     return this;
   }
@@ -33,7 +34,7 @@ class TextSource implements ISource {
    * @param {number} size
    * @returns {this}
    */
-  fontSize(size:number):this {
+  fontSize(size: number): this {
     this.fSize = size;
     return this;
   }
@@ -43,7 +44,7 @@ class TextSource implements ISource {
    * @param {FontWeight} weight
    * @returns {this}
    */
-  fontWeight(weight: keyof typeof FontWeight):this {
+  fontWeight(weight: keyof typeof FontWeight): this {
     this.fWeight = weight;
     return this;
   }
@@ -53,7 +54,7 @@ class TextSource implements ISource {
    * @param {FontStyle} style
    * @returns {this}
    */
-  fontStyle(style:keyof typeof FontStyle):this {
+  fontStyle(style: keyof typeof FontStyle): this {
     this.fStyle = style;
     return this;
   }
@@ -63,7 +64,7 @@ class TextSource implements ISource {
    * @param {string} textColor
    * @returns {this}
    */
-  color(textColor: string):this {
+  color(textColor: string): this {
     this.textColor = textColor;
     return this;
   }
@@ -71,7 +72,7 @@ class TextSource implements ISource {
   /**
    * @returns {string}
    */
-  getColor():string {
+  getColor(): string {
     if (this.textColor) {
       return `co_${prepareColor(this.textColor)}`;
     } else {
@@ -82,7 +83,7 @@ class TextSource implements ISource {
   /**
    * @returns {string}
    */
-  getSource():string {
+  getSource(): string {
     const fontValue = new ParamValue([this.fFamily, this.fSize, this.fWeight, this.fStyle])
       .setDelimiter('_')
       .toString();
@@ -97,7 +98,7 @@ class TextSource implements ISource {
     return `${final}`;
   }
 
-  getTransformationString():string {
+  getTransformationString(): string {
     return '';
   }
 }
