@@ -1,9 +1,25 @@
+/**
+ * @memberOf Params
+ * @namespace Fonts
+ */
+
+
+/**
+ * @memberOf Params.Fonts
+ * @name FontStyle
+ * @descirption Map of FontWEights
+ */
 export const FontStyle:Record<string, string> = {
   NORMAL: 'normal',
   ITALIC: 'italic'
 };
 
 
+/**
+ * @memberOf Params.Fonts
+ * @name FontWeight
+ * @descirption Map of FontWEights
+ */
 export const FontWeight:Record<string, string> = {
   THIN: 'thin',
   EXTRA_LIGHT: 'extralight',

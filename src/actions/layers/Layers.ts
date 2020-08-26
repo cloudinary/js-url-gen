@@ -8,11 +8,11 @@
 import {ILayerAction} from "./ILayerAction";
 import Action from "../Action";
 // TODO - BundleSize Warning - we include all the Sources code within Layers.
-import Source, {ImageSource, TextSource} from "./Source";
+import Source, {ImageSource, TextSource} from "../../params/sources/Sources";
 import {Position} from "../../params/position/Position";
 import Param from "../../parameters/Param";
 import {BlendMode} from "../../params/blendMode/BlendMode";
-import {ISource} from "./ISource";
+import {ISource} from "../../params/sources/ISource";
 
 
 class Layer extends Action implements ILayerAction {
