@@ -1,11 +1,20 @@
-import {fill} from "../../../src/actions/resize/Resize";
-import {imageLayer, Source} from "../../../src/actions/layers/Layers";
-import TransformableImage from "../../../src/transformation/TransformableImage";
-import * as Position from "../../../src/params/position/Position";
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import BlendMode from "../../../src/params/blendMode/BlendMode";
-const {image} = Source;
+import TransformableImage from "../../../src/transformation/TransformableImage";
 
+import {fill} from "../../../src/actions/resize/Resize";
+
+import Layers from "../../../src/actions/layers/Layers";
+import * as LayersESM from "../../../src/actions/layers/Layers";
+
+import Position from "../../../src/params/position/Position";
+import BlendMode from "../../../src/params/blendMode/BlendMode";
+import * as PositionESM from "../../../src/params/position/Position";
+import * as BlendModeESM from "../../../src/params/blendMode/BlendMode";
+
+import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
+
+const {imageLayer} = Layers;
+const {image} = Layers.Source;
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -14,6 +23,12 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 });
 
 describe('Tests for overlay actions', () => {
+  it('Expects ESM to match Default', () => {
+    expectESMToMatchDefault(PositionESM, Position);
+    expectESMToMatchDefault(BlendModeESM, BlendMode);
+    expectESMToMatchDefault(LayersESM, Layers);
+  });
+
   it('Parses an overlay with an imageSource', () => {
     const tImage = new TransformableImage('sample');
     tImage

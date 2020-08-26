@@ -1,16 +1,17 @@
 import ResizeAction from "./ResizeAction";
-import {IResizeAction} from "./IResizeAction";
+import {resizeActionFactory} from "./IResizeTypes";
 
 /**
  * @memberOf Actions.Resize
+ * @type Types.resizeActionFactory
  * @description
  * Tries to prevent a "bad crop" by first attempting to use the fill mode,</br>
  * but adding padding if it is determined that more of the original image needs to be included in the final image.
- * @param {number} imaggaWidth
- * @param {number} imaggaHeight
+ * @param {number|string} imaggaWidth
+ * @param {number|string} imaggaHeight
  */
-function imaggaCrop(imaggaWidth?:number, imaggaHeight?:number) :IResizeAction {
+const imaggaCrop:resizeActionFactory = function(imaggaWidth, imaggaHeight) :ResizeAction {
   return new ResizeAction('imagga_crop', imaggaWidth, imaggaHeight);
-}
+};
 
 export default imaggaCrop;

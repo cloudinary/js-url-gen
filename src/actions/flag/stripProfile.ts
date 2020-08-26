@@ -1,12 +1,10 @@
 import FlagAction from "./FlagAction";
-import {IFlagAction} from "./IFlagAction";
 
 /**
- * Instructs Cloudinary to clear all ICC color profile data included with the image.
- *
- * @return FlagAction
+ * @memberOf Actions.Flag
+ * @description Instructs Cloudinary to clear all ICC color profile data included with the image.
  */
-function stripProfile(): IFlagAction{
+function stripProfile(): FlagAction{
   return new FlagAction('strip_profile');
 }
 

@@ -1,14 +1,11 @@
 import FlagAction from "./FlagAction";
-import {IFlagAction} from "./IFlagAction";
 
 /**
- * Instructs Cloudinary to clear all image meta-data (IPTC, Exif and XMP) while applying an incoming transformation.
- *
- * @return static
- *
- * @see Flag::forceStrip
+ * @memberOf Actions.Flag
+ * @description Instructs Cloudinary to clear all image meta-data (IPTC, Exif and XMP) while applying an incoming
+ * transformation.
  */
-function forceStrip(): IFlagAction{
+function forceStrip(): FlagAction{
   return new FlagAction('force_strip');
 }
 

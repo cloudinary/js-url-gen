@@ -1,13 +1,11 @@
 import FlagAction from "./FlagAction";
-import {IFlagAction} from "./IFlagAction";
 
 /**
- * Trims pixels according to a clipping path included in the original image
+ * @memberOf Actions.Flag
+ * @description Trims pixels according to a clipping path included in the original image
  * (e.g., manually created using PhotoShop).
- *
- * @return FlagParameter
  */
-function clip(): IFlagAction{
+function clip(): FlagAction{
   return new FlagAction('clip');
 }
 

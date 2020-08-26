@@ -4,7 +4,8 @@ import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import {AutoGravity} from "../../../src/constants/gravityObjects/GravityObjects";
 import Gravity from "../../../src/params/gravity/Gravity";
 import * as GravityObjects from '../../../src/constants/gravityObjects/GravityObjects';
-import {IResizeAction} from "../../../src/actions/resize/IResizeAction";
+import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
+import ResizeAction from "../../../src/actions/resize/ResizeAction";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -18,7 +19,7 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
  * @param resizeAction
  * @param type
  */
-function getImageWithResize(resizeAction: IResizeAction, type:'url' | 'image') {
+function getImageWithResize(resizeAction: ResizeAction, type:'url' | 'image') {
   const img = new TransformableImage('sample')
     .setConfig(CONFIG_INSTANCE)
     .resize(resizeAction);
@@ -34,17 +35,8 @@ function getImageWithResize(resizeAction: IResizeAction, type:'url' | 'image') {
 
 
 describe('Tests for Transformation Action -- Resize', () => {
-
   it('Ensure ESM and Default export the same thing', () => {
-    (Object.keys(ResizeESM) as Array<keyof typeof ResizeESM>).forEach((funcName) => {
-      if (typeof ResizeESM[funcName] === 'function') {
-        // Ensure function exists on both objects
-        expect(ResizeESM[funcName]).toEqual((Resize as any)[funcName]);
-
-        // sanity, ensure the result is a function at all (and not an accidental undefined)
-        expect(typeof ResizeESM[funcName]).toBe('function');
-      }
-    });
+    expectESMToMatchDefault(ResizeESM, Resize);
   });
 
   it('Ensures MinimumPad generates the right URL', () => {

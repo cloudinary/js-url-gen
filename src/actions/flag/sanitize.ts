@@ -1,12 +1,10 @@
 import FlagAction from "./FlagAction";
-import {IFlagAction} from "./IFlagAction";
 
 /**
- * Instructs Cloudinary to run a sanitizer on the image (relevant only for the SVG format).
- *
- * @return FlagAction
+ * @memberOf Actions.Flag
+ * @description Instructs Cloudinary to run a sanitizer on the image (relevant only for the SVG format).
  */
-function sanitize(): IFlagAction{
+function sanitize(): FlagAction{
   return new FlagAction('sanitize');
 }
 

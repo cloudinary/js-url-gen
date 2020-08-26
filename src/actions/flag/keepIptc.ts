@@ -1,14 +1,10 @@
 import FlagAction from "./FlagAction";
-import {IFlagAction} from "./IFlagAction";
 
 /**
- * Keeps all meta-data.
- *
- * @return static
- *
- * @see Flag::keepIptc
+ * @memberOf Actions.Flag
+ * @description Keeps all meta-data.
  */
-function keepIptc(): IFlagAction{
+function keepIptc(): FlagAction{
   return new FlagAction('keep_iptc');
 }
 

@@ -6,7 +6,8 @@
 
 import DeliveryAction from "./DeliveryAction";
 import format from "./format";
+import dpr from "./dpr";
 
-export {DeliveryAction, format};
+export {DeliveryAction, format, dpr};
 
-export default {DeliveryAction, format};
+export default {DeliveryAction, format, dpr};

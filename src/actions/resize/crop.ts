@@ -1,14 +1,17 @@
 import ResizeAction from "./ResizeAction";
-import {IResizeAction} from "./IResizeAction";
+import {resizeActionFactory} from "./IResizeTypes";
+
 
 /**
  * @memberOf Actions.Resize
+ * @type Types.resizeActionFactory
  * @description Extracts a region of the given width and height out of the original image.
- * @param {number} cropWidth
- * @param {number} cropHeight
+ * @param {number|string} cropWidth
+ * @param {number|string} cropHeight
  */
-function crop(cropWidth?:number, cropHeight?:number) :IResizeAction {
+
+const crop:resizeActionFactory = function (cropWidth, cropHeight) :ResizeAction {
   return new ResizeAction('crop', cropWidth, cropHeight);
-}
+};
 
 export default crop;

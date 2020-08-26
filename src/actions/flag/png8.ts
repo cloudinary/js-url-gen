@@ -1,12 +1,10 @@
 import FlagAction from "./FlagAction";
-import {IFlagAction} from "./IFlagAction";
 
 /**
- * Generate PNG images in the PNG8 format.
- *
- * @return FlagAction
+ * @memberOf Actions.Flag
+ * @description Generate PNG images in the PNG8 format.
  */
-function png8(): IFlagAction{
+function png8(): FlagAction{
   return new FlagAction('png8');
 }
 

@@ -1,6 +1,5 @@
 import {IAction} from "../interfaces/IAction";
 import {IBorderAction} from "../actions/border/IBorderAction";
-import {IResizeAction} from "../actions/resize/IResizeAction";
 import {IQualityAction} from "../actions/quality/IQualityAction";
 import {ILayerAction} from "../actions/layers/ILayerAction";
 import {IVariableAction} from "../actions/variable/IVariableAction";
@@ -12,10 +11,12 @@ import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigura
 import CloudinaryConfig from "../config/CloudinaryConfig";
 import {IDescriptor} from "../interfaces/IDescriptor";
 import createCloudinaryURL from "../url/cloudinaryURL";
-import RoundCorners from "../actions/roundCorners/RoundCorners";
 import {IConditionAction} from "../actions/condition/IConditionAction";
 import Param from "../parameters/Param";
-import {IFlagAction} from "../actions/flag/IFlagAction";
+import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
+import {ResizeAction} from "../actions/resize/Resize";
+import BackgroundAction from "../actions/background/BackgroundAction";
+import FlagAction from "../actions/flag/FlagAction";
 
 class Transformation {
   actions: IAction[];
@@ -81,9 +82,9 @@ class Transformation {
   }
 
   /**
-   * @param {IResizeAction} resizeAction
+   * @param {Resize} resizeAction
    */
-  resize(resizeAction: IResizeAction): this {
+  resize(resizeAction: ResizeAction): this {
     return this.addAction(resizeAction);
   }
 
@@ -94,7 +95,7 @@ class Transformation {
     return this.addAction(qualityAction);
   }
 
-  roundCorners(roundCornersAction: typeof RoundCorners): this {
+  roundCorners(roundCornersAction: RoundCornersAction): this {
     return this.addAction(roundCornersAction);
   }
 
@@ -163,9 +164,16 @@ class Transformation {
   }
 
   /**
-   * @param {IFlagAction} flagAction
+   * @param {BackgroundAction} backgroundAction
    */
-  addFlag(flagAction: IFlagAction): this {
+  background(backgroundAction: BackgroundAction): this {
+    return this.addAction(backgroundAction);
+  }
+
+  /**
+   * @param {FlagAction} flagAction
+   */
+  addFlag(flagAction: FlagAction): this {
     return this.addAction(flagAction);
   }
 

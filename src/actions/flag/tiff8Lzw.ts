@@ -1,12 +1,9 @@
 import FlagAction from "./FlagAction";
-import {IFlagAction} from "./IFlagAction";
-
 /**
- * Generates TIFF images using LZW compression and in the TIFF8 format.
- *
- * @return FlagParameter
+ * @memberOf Actions.Flag
+ * @description Generates TIFF images using LZW compression and in the TIFF8 format.
  */
-function tiff8Lzw(): IFlagAction{
+function tiff8Lzw(): FlagAction{
   return new FlagAction('tiff8_lzw');
 }
 

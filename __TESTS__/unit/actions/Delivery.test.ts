@@ -1,6 +1,6 @@
-import Delivery, {format} from '../../../src/actions/delivery/Delivery';
 import TransformableImage from '..         /../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
+import * as Dpr from "../../../src/constants/dpr/Dpr";
 import {
   AI,
   AUTO,
@@ -22,6 +22,9 @@ import {
   WEBM,
   WEBP
 } from "../../../src/params/formats/Formats";
+import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
+import * as DeliveryESM from "../../../src/actions/delivery/Delivery";
+import Delivery from "../../../src/actions/delivery/Delivery";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -29,7 +32,13 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
   }
 });
 
+const {format} = Delivery;
+
 describe('Tests for Transformation Action -- Delivery', () => {
+  it('Expects ESM to match Default', () => {
+    expectESMToMatchDefault(DeliveryESM, Delivery);
+  });
+
   it('Ensure namespace is correctly populated', () => {
     expect(Delivery.format).toEqual(format);
   });
@@ -243,5 +252,25 @@ describe('Tests for Transformation Action -- Delivery', () => {
       .toURL();
 
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/f_jp2/sample');
+  });
+
+  it('Creates a cloudinaryURL with Delivery.dpr', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .delivery(Delivery.dpr('2.0'))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/dpr_2.0/sample');
+  });
+
+  it('Creates a cloudinaryURL with Delivery.dpr', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .delivery(Delivery.dpr(Dpr.AUTO))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/dpr_auto/sample');
   });
 });

@@ -1,6 +1,12 @@
-import Effect, {blur, blurFaces, pixelateFaces, grayscale, sepia, shadow} from '../../../src/actions/effect/Effect';
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
+import * as ArtisticFilter from "../../../src/constants/artisticFilters/ArtisticFilters";
+import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
+import * as EffectESM from "../../../src/actions/effect/Effect";
+import Effect from "../../../src/actions/effect/Effect";
+import * as Outline from "../../../src/constants/outline/Outline";
+
+const {blur, blurFaces, pixelateFaces, grayscale, sepia, shadow, cartoonify} = Effect;
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -9,13 +15,8 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 });
 
 describe('Tests for Transformation Action -- Effect', () => {
-  it('Ensure namespace is correctly populated', () => {
-    expect(Effect.blur).toEqual(blur);
-    expect(Effect.blurFaces).toEqual(blurFaces);
-    expect(Effect.pixelateFaces).toEqual(pixelateFaces);
-    expect(Effect.grayscale).toEqual(grayscale);
-    expect(Effect.sepia).toEqual(sepia);
-    expect(Effect.shadow).toEqual(shadow);
+  it('Expects ESM to match Default', () => {
+    expectESMToMatchDefault(EffectESM, Effect);
   });
 
   it('Ensures blur is accepted as an action to TransformableImage', () => {
@@ -148,7 +149,7 @@ describe('Tests for Transformation Action -- Effect', () => {
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_shadow/sample');
   });
 
-  it('Creates a cloudinaryURL with effect shadow:level', () => {
+  it('Creates a cloudinaryURL with effect shadow:50', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
       .effect(Effect.shadow(50))
@@ -196,5 +197,67 @@ describe('Tests for Transformation Action -- Effect', () => {
       .toURL();
 
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_oilPaint:50/sample');
+  });
+
+  it('Creates a cloudinaryURL with effect artisticFilter', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .effect(Effect.artisticFilter(ArtisticFilter.PEACOCK))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_peacock/sample');
+  });
+
+  it('Creates a cloudinaryURL with effect cartoonify:50', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .effect(Effect.cartoonify(50))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_cartoonify:50/sample');
+  });
+
+  it('Creates a cloudinaryURL with effect outline:15:200', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .effect(Effect.outline(15, 200))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_outline:15:200/sample');
+  });
+
+  it('Creates a cloudinaryURL with effect outline:1', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .effect(Effect.outline(1))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_outline:1/sample');
+  });
+
+  it('Creates a cloudinaryURL with effect outline:mode.fill', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .effect(Effect.outline()
+        .mode(Outline.FILL))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_outline:fill/sample');
+  });
+
+  it('Creates a cloudinaryURL with effect outline:mode', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .effect(Effect.outline(20, 200)
+        .mode(Outline.OUTER))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_outline:outer:20:200/sample');
   });
 });

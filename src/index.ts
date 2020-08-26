@@ -10,6 +10,14 @@
  * @namespace Sources
  */
 
+/**
+ * A namespace for all Types</br>
+ * This namespace contains all non primitive types used in the SDK.
+ * Types are not concrete implementations, but rather instructions for acceptable input
+ * TODO This needs a proper file
+ * @namespace Types
+ */
+
 // Transformations
 import Transformation from "./transformation/Transformation";
 import cloudinaryURL from "./url/cloudinaryURL";
@@ -19,6 +27,9 @@ import TransformableImage from "./transformation/TransformableImage";
 import Actions from './actions/Actions';
 
 import * as Color from './constants/colors/Colors';
+import * as Outline from './constants/outline/Outline';
+import * as Dpr from './constants/dpr/Dpr';
+import * as ArtisticFilter from './constants/artisticFilters/ArtisticFilters';
 import * as ObjectGravity from './constants/gravityObjects/GravityObjects';
 
 /**
@@ -29,5 +40,5 @@ class Base {
   }
 }
 
-export {cloudinaryURL, Transformation, TransformableImage, Base, Actions, Color, ObjectGravity};
-export default {cloudinaryURL, Transformation, Base, Actions, Color, ObjectGravity};
+export {cloudinaryURL, Transformation, TransformableImage, Base, Actions, Color, Dpr, ObjectGravity, ArtisticFilter};
+export default {cloudinaryURL, Transformation, Base, Actions, Color, Dpr, ObjectGravity, ArtisticFilter};

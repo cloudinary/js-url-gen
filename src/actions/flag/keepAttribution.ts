@@ -1,14 +1,10 @@
 import FlagAction from "./FlagAction";
-import {IFlagAction} from "./IFlagAction";
 
 /**
- * Keeps the copyright related fields when stripping meta-data.
- *
- * @return static
- *
- * @see Flag::keepAttribution
+ * @memberOf Actions.Flag
+ * @description Keeps the copyright related fields when stripping meta-data.
  */
-function keepAttribution(): IFlagAction{
+function keepAttribution(): FlagAction{
   return new FlagAction('keep_attribution');
 }
 

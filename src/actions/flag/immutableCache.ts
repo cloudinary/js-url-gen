@@ -1,14 +1,10 @@
 import FlagAction from "./FlagAction";
-import {IFlagAction} from "./IFlagAction";
 
 /**
- * Sets the cache-control to immutable for the asset.
- *
- * @return static
- *
- * @see Flag::immutableCache
+ * @memberOf Actions.Flag
+ * @description Sets the cache-control to immutable for the asset.
  */
-function immutableCache(): IFlagAction{
+function immutableCache(): FlagAction{
   return new FlagAction('immutable_cache');
 }
 
