@@ -2,6 +2,6 @@
  *
  * @param publicID
  */
-export default function isFileName(publicID: string) {
+export default function isFileName(publicID: string): boolean {
   return publicID.indexOf('/') < 0;
 }

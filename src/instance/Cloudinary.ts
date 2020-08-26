@@ -11,22 +11,22 @@ class Cloudinary {
     }
   }
 
-  useImage(TImage: typeof TransformableImage) {
+  useImage(TImage: typeof TransformableImage):void {
     this.TransformableImage = TImage;
   }
 
-  image(publicID: string) {
+  image(publicID: string): TransformableImage {
     if (!this.TransformableImage) {
       throw 'You cannot use image without first invoking useImage()';
     }
     return new this.TransformableImage(publicID).setConfig(this.cloudinaryConfig);
   }
 
-  setConfig(cloudinaryConfig: ICloudinaryConfigurations) {
+  setConfig(cloudinaryConfig: ICloudinaryConfigurations):void {
     this.cloudinaryConfig = cloudinaryConfig;
   }
 
-  extendConfig(cloudinaryConfig: ICloudinaryConfigurations) {
+  extendConfig():void {
     // Future implementation
   }
 }

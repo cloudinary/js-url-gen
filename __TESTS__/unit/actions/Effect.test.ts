@@ -142,7 +142,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   it('Creates a cloudinaryURL with effect shadow', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .effect(Effect.shadow())
+      .effect(shadow())
       .setPublicID('sample')
       .toURL();
 
@@ -212,7 +212,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   it('Creates a cloudinaryURL with effect cartoonify:50', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .effect(Effect.cartoonify(50))
+      .effect(cartoonify(50))
       .setPublicID('sample')
       .toURL();
 
