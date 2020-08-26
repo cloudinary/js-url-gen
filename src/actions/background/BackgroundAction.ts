@@ -7,10 +7,6 @@ class BackgroundAction extends Param implements IAction {
     super('b', new ParamValue(backgroundType).setDelimiter('_'));
   }
 
-  /**
-   * @memberOf Actions.Background
-   * @description TBD.
-   */
   contrast():this {
     return this.addValue('contrast');
 
