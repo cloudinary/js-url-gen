@@ -27,6 +27,7 @@ import TransformableImage from "./transformation/TransformableImage";
 import Actions from './actions/Actions';
 
 import * as Color from './constants/colors/Colors';
+import * as Outline from './constants/outline/Outline';
 import * as Dpr from './constants/dpr/Dpr';
 import * as ArtisticFilter from './constants/artisticFilters/ArtisticFilters';
 import * as ObjectGravity from './constants/gravityObjects/GravityObjects';
