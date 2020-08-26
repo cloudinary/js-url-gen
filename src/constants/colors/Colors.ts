@@ -562,6 +562,7 @@ export const FRACTAL = 'fractal';
 export const GRAY50 = 'gray50';
 export const GREY50 = 'grey50';
 export const GRAY = 'gray';
+export const GREY = 'grey';
 export const GRAY49 = 'gray49';
 export const GREY49 = 'grey49';
 export const GRAY48 = 'gray48';

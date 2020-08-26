@@ -51,7 +51,7 @@ function red(level:number): EffectAction {
  * @description Applies a sharpening filter to the image.
  */
 function sharpen(): EffectAction {
-  return new EffectAction('shapren');
+  return new EffectAction('sharpen');
 }
 
 /**
@@ -60,7 +60,7 @@ function sharpen(): EffectAction {
  * @param {number} level
  */
 function improve(level?: number): EffectAction {
-  return new EffectAction('shapren', level);
+  return new EffectAction('sharpen', level);
 }
 
 

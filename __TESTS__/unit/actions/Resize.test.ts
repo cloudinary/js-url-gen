@@ -183,4 +183,9 @@ describe('Tests for Transformation Action -- Resize', () => {
 
     expect(url).toContain('ar_0.8,c_fill,g_auto:cat,w_400');
   });
+
+  it('Accepts x y and z', () => {
+    const url = getImageWithResize(Resize.scale(100).x(1).y(2).zoom(3), 'url');
+    expect(url).toContain('c_scale,w_100,x_1,y_2,z_3');
+  });
 });
