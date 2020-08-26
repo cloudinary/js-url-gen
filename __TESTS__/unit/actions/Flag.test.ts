@@ -1,21 +1,9 @@
-import Flag, {
-  animated,
-  anyFormat,
-  animatedPng,
-  animatedWebP,
-  clip,
-  clipEvenOdd,
-  lossy,
-  preserveTransparency,
-  png8,
-  png24,
-  progressive,
-  rasterize
-} from '../../../src/actions/flag/Flag';
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import {format} from "../../../src/actions/delivery/Delivery";
-import {AUTO, GIF} from "../../../src/params/formats/Formats";
+import Flag, {animated} from "../../../src/actions/flag/Flag";
+import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
+import * as FlagESM from "../../../src/actions/flag/Flag";
+
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -24,19 +12,12 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 });
 
 describe('Tests for Transformation Action -- Flag', () => {
+  it('Expects ESM to match Default', () => {
+    expectESMToMatchDefault(FlagESM, Flag);
+  });
+
   it('Ensure namespace is correctly populated', () => {
     expect(Flag.animated).toEqual(animated);
-    expect(Flag.anyFormat).toEqual(anyFormat);
-    expect(Flag.animatedPng).toEqual(animatedPng);
-    expect(Flag.animatedWebP).toEqual(animatedWebP);
-    expect(Flag.clip).toEqual(clip);
-    expect(Flag.clipEvenOdd).toEqual(clipEvenOdd);
-    expect(Flag.lossy).toEqual(lossy);
-    expect(Flag.preserveTransparency).toEqual(preserveTransparency);
-    expect(Flag.png8).toEqual(png8);
-    expect(Flag.png24).toEqual(png24);
-    expect(Flag.progressive).toEqual(progressive);
-    expect(Flag.rasterize).toEqual(rasterize);
   });
 
   it('Creates a cloudinaryURL with Flag animated', () => {
