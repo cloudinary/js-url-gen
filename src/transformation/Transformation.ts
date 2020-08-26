@@ -15,6 +15,7 @@ import {IConditionAction} from "../actions/condition/IConditionAction";
 import Param from "../parameters/Param";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
 import {ResizeAction} from "../actions/resize/Resize";
+import BackgroundAction from "../actions/background/BackgroundAction";
 
 class Transformation {
   actions: IAction[];
@@ -159,6 +160,13 @@ class Transformation {
    */
   delivery(deliveryAction: IDeliveryAction): this {
     return this.addAction(deliveryAction);
+  }
+
+  /**
+   * @param {BackgroundAction} backgroundAction
+   */
+  background(backgroundAction: BackgroundAction): this {
+    return this.addAction(backgroundAction);
   }
 
   /**

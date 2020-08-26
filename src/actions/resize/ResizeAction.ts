@@ -2,6 +2,7 @@ import Action from "../Action";
 import {IAction} from "../../interfaces/IAction";
 import Param from "../../parameters/Param";
 import {GravityParam} from "../../params/gravity/Gravity";
+import BackgroundAction from "../background/BackgroundAction";
 
 
 
@@ -32,6 +33,10 @@ class ResizeAction extends Action implements IAction {
 
   gravity(gravityParam: GravityParam): this {
     return this.addParam(gravityParam);
+  }
+
+  background(backgroundAction: BackgroundAction): this {
+    return this.addParam(backgroundAction);
   }
 }
 
