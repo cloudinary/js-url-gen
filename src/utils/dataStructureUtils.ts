@@ -7,7 +7,6 @@
 function mapToSortedArray<T>(map: Map<string, T>): T[] {
   const array = Array.from(map.entries()).sort();
 
-  console.log(array);
   return array.map((v) => v[1]);
 }
 
