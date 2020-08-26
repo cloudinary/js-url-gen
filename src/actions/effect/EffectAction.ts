@@ -11,7 +11,7 @@ class EffectAction extends Action implements IAction {
     this.addParam(paramEffect);
   }
 
-  createEffectParam(effectType: string, level?: number|string) {
+  createEffectParam(effectType: string, level?: number|string):Param {
     let paramValue;
     if(level) {
       paramValue = new ParamValue([effectType, `${level}`]).setDelimiter(':');

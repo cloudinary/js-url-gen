@@ -1,5 +1,5 @@
 import ICloudConfig from "../interfaces/Config/ICloudConfig";
-import {ALLOWED_CLOUD_CONFIG, INVALID_TYPE_MESSAGE} from "../internalConstants";
+import {ALLOWED_CLOUD_CONFIG} from "../internalConstants";
 import Config from "./BaseConfig";
 
 class CloudConfig extends Config implements ICloudConfig {
@@ -8,7 +8,7 @@ class CloudConfig extends Config implements ICloudConfig {
   apiSecret?: string;
 
   /**
-   * @param {ICloudConfig} cloudConfig {@link ICloudConfig}
+   * @param {ICloudConfig} userCloudConfig {@link ICloudConfig}
    *
    */
   constructor(userCloudConfig: ICloudConfig) {

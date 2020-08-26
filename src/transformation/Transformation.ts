@@ -77,7 +77,7 @@ class Transformation {
   /**
    * @param {IBorderAction} borderAction
    */
-  border(borderAction: IBorderAction) {
+  border(borderAction: IBorderAction): this{
     return this.addAction(borderAction);
   }
 
@@ -102,7 +102,7 @@ class Transformation {
   /**
    * @param overlayAction
    */
-  overlay(overlayAction: ILayerAction) {
+  overlay(overlayAction: ILayerAction): this {
     return this.addAction(overlayAction);
   }
 
@@ -138,7 +138,7 @@ class Transformation {
   /**
    * @param action
    */
-  adjust(action: IAction) {
+  adjust(action: IAction): this {
     return this.addAction(action);
   }
 
@@ -152,7 +152,7 @@ class Transformation {
   /**
    * @param {INamedTransformationAction} namedTransformation
    */
-  namedTransformation(namedTransformation:INamedTransformationAction ) {
+  namedTransformation(namedTransformation:INamedTransformationAction ): this {
     return this.addAction(namedTransformation);
   }
 
@@ -191,7 +191,7 @@ class Transformation {
     return this;
   }
 
-  sign() {
+  sign(): this {
     return this;
   }
 
