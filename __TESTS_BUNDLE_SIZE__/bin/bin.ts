@@ -26,7 +26,9 @@ createTestFolders();
 bundleSizeTestRunner()
   .then(() => {
     // if we're in debug, we do not delete ${TMP_FOLDER}
-    testCleanUp();
+    if (!process.env.DEBUG) {
+      testCleanUp();
+    }
   })
   .catch((err) => {
     // Catch the exception thrown
