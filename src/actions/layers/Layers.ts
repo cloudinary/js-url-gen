@@ -5,7 +5,6 @@
  */
 
 
-import {ILayerAction} from "./ILayerAction";
 import Action from "../Action";
 // TODO - BundleSize Warning - we include all the Sources code within Layers.
 import Source, {ImageSource, TextSource} from "../../params/sources/Sources";
@@ -15,10 +14,11 @@ import {BlendMode} from "../../params/blendMode/BlendMode";
 import {ISource} from "../../params/sources/ISource";
 
 
-class Layer extends Action implements ILayerAction {
+class Layer extends Action{
   source: ISource;
   position:Position;
   blendMode: BlendMode;
+  layerType: string;
   constructor(transformable: ISource, position:Position, blendMode: BlendMode) {
     super();
     this.source = transformable;
@@ -27,11 +27,19 @@ class Layer extends Action implements ILayerAction {
   }
 
   /**
+   * Sets the layerType with u | l depending if underlay or overlay
+   * @param type
+   */
+  setLayerType(type: string){
+    this.layerType = type;
+  }
+
+  /**
    * Layers are built using three bits -> /Open/Transform/Close
    * The opening of a layer
    */
   openLayer() {
-    return `l_${this.source.getSource()}`;
+    return `${this.layerType}_${this.source.getSource()}`;
   }
 
   /**
@@ -88,5 +96,5 @@ function textLayer(textSource: TextSource, position?:Position, blendMode?:BlendM
   return new Layer(textSource, position, blendMode);
 }
 
-export {imageLayer, textLayer, Source};
-export default {imageLayer, textLayer, Source};
+export {imageLayer, textLayer, Source, Layer};
+export default {imageLayer, textLayer, Source, Layer};
