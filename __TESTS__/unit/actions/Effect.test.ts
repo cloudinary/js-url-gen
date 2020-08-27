@@ -5,6 +5,7 @@ import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 import * as EffectESM from "../../../src/actions/effect/Effect";
 import Effect from "../../../src/actions/effect/Effect";
 import * as Outline from "../../../src/constants/outline/Outline";
+import {image} from "../../../src/params/sources/Sources";
 
 const {blur, blurFaces, pixelateFaces, grayscale, sepia, shadow, cartoonify} = Effect;
 
@@ -259,5 +260,38 @@ describe('Tests for Transformation Action -- Effect', () => {
       .toURL();
 
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_outline:outer:20:200/sample');
+  });
+
+  it('Creates a cloudinaryURL with effect style_transfer', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .effect(Effect.styleTransfer(image('woman')))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toContain('l_woman/e_style_transfer,fl_layer_apply/sample');
+  });
+
+  it('Creates a cloudinaryURL with effect style_transfer:strength', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .effect(Effect.styleTransfer(image('woman')).strength(15))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toContain('l_woman/e_style_transfer:15,fl_layer_apply/sample');
+  });
+
+  it('Creates a cloudinaryURL with effect style_transfer:preserve_color:strength', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .effect(Effect.styleTransfer(image('woman'))
+        .strength(15)
+        .preserveColor()
+      )
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toContain('l_woman/e_style_transfer:preserve_color:15,fl_layer_apply/sample');
   });
 });

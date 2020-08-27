@@ -15,7 +15,8 @@ import oilPaint from "./oilPaint";
 import artisticFilter from "./artisticFilter";
 import cartoonify from "./cartoonify";
 import outline from "./outline";
+import styleTransfer from "./styleTransfer";
 
-export {blur, blurFaces, pixelateFaces, grayscale, sepia, shadow, colorize, oilPaint, artisticFilter, cartoonify, outline};
+export {blur, blurFaces, pixelateFaces, grayscale, sepia, shadow, colorize, oilPaint, artisticFilter, cartoonify, outline, styleTransfer};
 
-export default {blur, blurFaces, pixelateFaces, grayscale, sepia, shadow, colorize, oilPaint, artisticFilter, cartoonify, outline};
+export default {blur, blurFaces, pixelateFaces, grayscale, sepia, shadow, colorize, oilPaint, artisticFilter, cartoonify, outline, styleTransfer};
