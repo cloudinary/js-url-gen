@@ -7,7 +7,7 @@
     "test:size": "ts-node -O '{\"module\":\"CommonJS\"}' __TESTS_BUNDLE_SIZE__/bin/bin.ts",
     "test:comp": "node ./scripts/updateCompliationTests.js && jest __TESTS__/compilation.test.ts  --coverage",
     "test:unit": "jest __TESTS__/unit --reporters default",
-    "test:unit:watch": "jest __TESTS__/unit --watch",
+    "test:unit:watch": "jest __TESTS__/unit --watch --reporters default",
     "test:integration": "jest __TESTS__/integration",
     "test:integration:watch": "jest __TESTS__/integration --watch",
     "build": "bash ./scripts/build.sh",
