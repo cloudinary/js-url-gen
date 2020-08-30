@@ -6,6 +6,7 @@ import * as EffectESM from "../../../src/actions/effect/Effect";
 import Effect from "../../../src/actions/effect/Effect";
 import * as Outline from "../../../src/constants/outline/Outline";
 import {image} from "../../../src/params/sources/Sources";
+import scale from "../../../src/actions/resize/scale";
 
 const {blur, blurFaces, pixelateFaces, grayscale, sepia, shadow, cartoonify} = Effect;
 
@@ -293,5 +294,18 @@ describe('Tests for Transformation Action -- Effect', () => {
       .toURL();
 
     expect(url).toContain('l_woman/e_style_transfer:preserve_color:15,fl_layer_apply/sample');
+  });
+
+  it('Creates a cloudinaryURL with effect style_transfer:preserve_color:strength with a transformation', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .effect(Effect.styleTransfer(image('woman').resize(scale(100, 100)))
+        .strength(15)
+        .preserveColor()
+      )
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toContain('l_woman/c_scale,h_100,w_100/e_style_transfer:preserve_color:15,fl_layer_apply/sample');
   });
 });
