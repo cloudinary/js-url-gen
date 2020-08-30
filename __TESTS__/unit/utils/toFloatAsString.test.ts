@@ -2,8 +2,10 @@ import {toFloatAsString} from "../../../src/utils/toFloatAsString";
 
 describe('Tests for toFloatAsString', () => {
   it('Test string input', () => {
+    expect(toFloatAsString('0')).toBe('0.0');
+    expect(toFloatAsString('-1')).toBe('-1.0');
     expect(toFloatAsString('1')).toBe('1.0');
-    expect(toFloatAsString('5')).toBe('5.0');
+    expect(toFloatAsString('1.2')).toBe('1.2');
   });
 
   it('Test number input', () => {
