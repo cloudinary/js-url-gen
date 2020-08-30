@@ -6,6 +6,7 @@ import Gravity from "../../../src/params/gravity/Gravity";
 import * as GravityObjects from '../../../src/constants/gravityObjects/GravityObjects';
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 import ResizeAction from "../../../src/actions/resize/ResizeAction";
+import ResizeMode from "../../../src/params/resizeMode/ResizeMode";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -199,5 +200,16 @@ describe('Tests for Transformation Action -- Resize', () => {
       .toURL();
 
     expect(url).toContain('ar_1.0');
+  });
+
+
+  it('Resize with a resize mode - relative', () => {
+    const url = getImageWithResize(Resize.scale(100).resizeMode(ResizeMode.relative()), 'url');
+    expect(url).toContain('c_scale,fl_relative,w_100');
+  });
+
+  it('Resize with a resize mode - region_relative', () => {
+    const url = getImageWithResize(Resize.scale(100).resizeMode(ResizeMode.regionRelative()), 'url');
+    expect(url).toContain('c_scale,fl_region_relative,w_100');
   });
 });
