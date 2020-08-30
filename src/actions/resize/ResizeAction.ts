@@ -39,7 +39,13 @@ class ResizeAction extends Action implements IAction {
   }
 
   aspectRatio(ratio:number|string): this {
-    return this.addParam(new Param('ar', ratio));
+    let usedRatio = ratio;
+
+    // if we're given a number(such as 1.0), we turn to string (1) and then add the decimal manually
+    if (usedRatio.toString().indexOf('.') === -1) {
+      usedRatio = `${usedRatio}.0`;
+    }
+    return this.addParam(new Param('ar', usedRatio));
   }
 
   gravity(gravityParam: GravityParam): this {

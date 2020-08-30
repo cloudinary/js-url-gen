@@ -190,6 +190,18 @@ describe('Tests for Transformation Action -- Resize', () => {
     expect(url).toContain('c_scale,w_100,x_1,y_2,z_3');
   });
 
+  it('Test aspect ratio of 1.0', () => {
+    const url = new TransformableImage('sample')
+      .setConfig(CONFIG_INSTANCE)
+      .resize(
+        Resize.fill(400)
+          .aspectRatio(1.0)
+      )
+      .toURL();
+
+    expect(url).toContain('ar_1.0');
+  });
+
 
   it('Resize with a resize mode - relative', () => {
     const url = getImageWithResize(Resize.scale(100).resizeMode(ResizeMode.relative()), 'url');
