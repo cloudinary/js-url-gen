@@ -3,8 +3,7 @@ import {IAction} from "../../interfaces/IAction";
 import Param from "../../parameters/Param";
 import {GravityParam} from "../../params/gravity/Gravity";
 import BackgroundAction from "../background/BackgroundAction";
-
-
+import Flag from "../../parameters/Flag";
 
 
 class ResizeAction extends Action implements IAction {
@@ -55,6 +54,12 @@ class ResizeAction extends Action implements IAction {
 
   background(backgroundAction: BackgroundAction): this {
     return this.addParam(backgroundAction);
+  }
+
+  resizeMode(modeType:string): this {
+    this.addFlag(new Flag(modeType));
+
+    return this;
   }
 }
 
