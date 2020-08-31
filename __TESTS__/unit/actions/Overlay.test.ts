@@ -9,13 +9,12 @@ import * as LayersESM from "../../../src/actions/layers/Layers";
 
 import Position from "../../../src/params/position/Position";
 import BlendMode from "../../../src/params/blendMode/BlendMode";
-import VideoRange from "../../../src/params/video/VideoRange";
+import {VideoRange, VideoOffset} from "../../../src/params/video/Video";
 import * as PositionESM from "../../../src/params/position/Position";
 import * as BlendModeESM from "../../../src/params/blendMode/BlendMode";
 
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 import format from "../../../src/actions/delivery/format";
-import VideoOffset from "../../../src/params/video/VideoOffset";
 
 const {imageLayer, videoLayer} = Layers;
 const {image, video} = Layers.Source;
@@ -99,7 +98,7 @@ describe('Tests for overlay actions', () => {
     tVideo
       .setConfig(CONFIG_INSTANCE)
       .overlay(
-        videoLayer(video('dog'), null, new VideoRange(7))
+        videoLayer(video('dog'), null, new VideoRange(new VideoOffset(7)))
       );
     //TODO: update this dummy test to be a real test when spec is ready
     expect(tVideo.toURL()).toContain('l_dog');
