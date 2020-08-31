@@ -18,7 +18,7 @@ import {ResizeAction} from "../actions/resize/Resize";
 import BackgroundAction from "../actions/background/BackgroundAction";
 import {TrimAction} from "../actions/trim/TrimAction";
 import {VideoLayerAction} from "../actions/layers/VideoLayerAction";
-import {VideoCutterAction} from "../actions/layers/VideoCutterAction";
+import {CutterAction} from "../actions/layers/CutterAction";
 import {SubtitlesAction} from "../actions/layers/SubtitlesAction";
 import {VideoConcatenateAction} from "../actions/layers/VideoConcatenateAction";
 import {TranscodeAction} from "../actions/transcode/TranscodeAction";
@@ -222,19 +222,10 @@ class Transformation {
   trim(trimAction: TrimAction): this {
     return this.addAction(trimAction);
   }
-
-  /**
-   * Adds another video, text or image as an overlay over the container video.
-   * @param {IVideoLayerAction} videoLayerAction
-   * @return this TransformableVideo with the added action
-   */
-  videoOverlay(videoLayerAction: VideoLayerAction): this {
-    return this.addAction(videoLayerAction);
-  }
-
+  
   /**
    * Concatenates another video or image.
-   * @param {IVideoConcatenateAction} videoConcatenateAction
+   * @param {VideoConcatenateAction} videoConcatenateAction
    * @return this TransformableVideo with the added action
    */
   concatenate(videoConcatenateAction: VideoConcatenateAction): this {
@@ -243,16 +234,16 @@ class Transformation {
 
   /**
    * Applies the video as a cutter for the main video.
-   * @param {IVideoCutterAction} videoCutterAction
+   * @param {CutterAction} ctterAction
    * @return this TransformableVideo with the added action
    */
-  cutter(videoCutterAction: VideoCutterAction): this {
-    return this.addAction(videoCutterAction);
+  cutter(cutterAction: CutterAction): this {
+    return this.addAction(cutterAction);
   }
 
   /**
    * Adds subtitles to the video.
-   * @param {ISubtitlesAction} subtitlesAction
+   * @param {SubtitlesAction} subtitlesAction
    * @return this TransformableVideo with the added action
    */
   addSubtitles(subtitlesAction: SubtitlesAction): this {
@@ -261,7 +252,7 @@ class Transformation {
 
   /**
    * Transcodes the video (or audio) to another format.
-   * @param {ITranscodeAction} transcodeAction
+   * @param {TranscodeAction} transcodeAction
    * @return this TransformableVideo with the added action
    */
   transcode(transcodeAction: TranscodeAction): this {
@@ -272,7 +263,7 @@ class Transformation {
   /**
    * Controls the range of acceptable FPS (Frames Per Second) to ensure that video (even when optimized)
    * is delivered with an expected fps level (helps with sync to audio).
-   * @param {IFPSAction} fpsAction
+   * @param {FPSAction} fpsAction
    * @return this TransformableVideo with the added action
    */
   fps(fpsAction: FPSAction): this {
@@ -281,7 +272,7 @@ class Transformation {
 
   /**
    * Explicitly sets the keyframe interval of the delivered video.
-   * @param {keyframeIntervalAction} keyframeIntervalAction
+   * @param {KeyframeIntervalAction} keyframeIntervalAction
    * @return this TransformableVideo with the added action
    */
   keyframeInterval(keyframeIntervalAction: KeyframeIntervalAction): this {
@@ -290,7 +281,7 @@ class Transformation {
 
   /**
    * Controls the video bitrate.
-   * @param {IBitRateAction} bitRateAction
+   * @param {BitRateAction} bitRateAction
    * @return this TransformableVideo with the added action
    */
   bitRate(bitRateAction: BitRateAction): this {
@@ -299,7 +290,7 @@ class Transformation {
 
   /**
    * Sets the streaming profile to apply to an HLS or MPEG-DASH adaptive bitrate streaming video.
-   * @param {IStreamingProfileAction} streamingProfileAction
+   * @param {StreamingProfileAction} streamingProfileAction
    * @return this TransformableVideo with the added action
    */
   streamingProfile(streamingProfileAction: StreamingProfileAction): this {
@@ -314,7 +305,7 @@ class Transformation {
    * animated image is the same as the duration of the video, no matter how many frames are sampled from the original
    * video (use the delay parameter to adjust the amount of time between frames).
    *
-   * @param {IVideoSamplingAction} videoSamplingAction
+   * @param {VideoSamplingAction} videoSamplingAction
    * @return this TransformableVideo with the added action
    */
   videoSampling(videoSamplingAction: VideoSamplingAction): this {
