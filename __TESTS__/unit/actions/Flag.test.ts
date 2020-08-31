@@ -1,8 +1,10 @@
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import Flag, {animated} from "../../../src/actions/flag/Flag";
+import Flag from "../../../src/params/flag/Flag";
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
-import * as FlagESM from "../../../src/actions/flag/Flag";
+import * as FlagESM from "../../../src/params/flag/Flag";
+import Resize from "../../../src/actions/resize/Resize";
+
 
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
@@ -15,21 +17,6 @@ describe('Tests for Transformation Action -- Flag', () => {
   it('Expects ESM to match Default', () => {
     expectESMToMatchDefault(FlagESM, Flag);
   });
-
-  it('Ensure namespace is correctly populated', () => {
-    expect(Flag.animated).toEqual(animated);
-  });
-
-  it('Creates a cloudinaryURL with Flag animated', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .addFlag(Flag.animated())
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/fl_animated/sample');
-  });
-
   it('Creates a cloudinaryURL with Flag anyFormat', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
@@ -228,5 +215,20 @@ describe('Tests for Transformation Action -- Flag', () => {
       .toURL();
 
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/fl_keep_iptc/sample');
+  });
+
+  it('Creates a cloudinaryURL with multiple flags', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .resize(
+        Resize.fill(400)
+          .aspectRatio(1.0)
+          .addFlag(Flag.keepIptc())
+          .addFlag(Flag.keepAttribution())
+      )
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/ar_1.0,c_fill,fl_keep_iptc.keep_attribution,w_400/sample');
   });
 });

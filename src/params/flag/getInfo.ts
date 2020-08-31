@@ -1,12 +1,12 @@
-import FlagAction from "./FlagAction";
+import {Flag} from './Flag';
 
 /**
- * @memberOf Actions.Flag
+ * @memberOf Params.Flag
  * @description Returns metadata of the input asset and of the transformed output asset in JSON instead of the
  * transformed image.
  */
-function getInfo(): FlagAction{
-  return new FlagAction('getinfo');
+function getInfo(): Flag{
+  return new Flag('getinfo');
 }
 
 export default getInfo;

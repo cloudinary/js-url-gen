@@ -1,6 +1,6 @@
 import Action from '../../../src/actions/Action';
 import Param from '../../../src/parameters/Param';
-import Flag from '../../../src/parameters/Flag';
+import {Flag} from '../../../src/params/flag/Flag';
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import ParamValue from "../../../src/parameters/ParamValue";

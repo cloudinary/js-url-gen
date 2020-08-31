@@ -1,17 +1,10 @@
 import Position from "../../../src/params/position/Position";
 import * as PositionESM from "../../../src/params/position/Position";
+import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 
 describe('Position Param', () => {
   it('Ensure ESM and Default export the same thing', () => {
-    (Object.keys(PositionESM) as Array<keyof typeof PositionESM>) .forEach((funcName) => {
-      if (typeof PositionESM[funcName] === 'function') {
-        // Ensure function exists on both objects
-        expect(PositionESM[funcName]).toEqual( (Position as any)[funcName]);
-
-        // sanity, ensure the result is a function at all (and not an accidental undefined)
-        expect(typeof PositionESM[funcName]).toBe('function');
-      }
-    });
+    expectESMToMatchDefault(PositionESM, Position);
   });
 
   it('Tests simple gravitation', () => {

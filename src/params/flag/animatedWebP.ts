@@ -1,7 +1,7 @@
-import FlagAction from "./FlagAction";
+import {Flag} from './Flag';
 
 /**
- * @memberOf Actions.Flag
+ * @memberOf Params.Flag
  * @description When converting animated images to WebP format, generate an animated WebP from all the frames in the
  * original
  * animated file instead of only from the first still frame.
@@ -9,8 +9,8 @@ import FlagAction from "./FlagAction";
  * Note that animated WebPs are not supported in all browsers and versions.
  *
  */
-function animatedWebP(): FlagAction{
-  return new FlagAction('awebp');
+function animatedWebP(): Flag{
+  return new Flag('awebp');
 }
 
 export default animatedWebP;

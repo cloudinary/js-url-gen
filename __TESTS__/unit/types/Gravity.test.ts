@@ -3,20 +3,13 @@ import * as GravityESM from "../../../src/params/gravity/Gravity";
 
 import * as GravityObjects from "../../../src/constants/gravityObjects/GravityObjects";
 import {AutoGravity} from "../../../src/constants/gravityObjects/GravityObjects";
+import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 
 
 
 describe('Gravity Param', () => {
   it('Ensure ESM and Default export the same thing', () => {
-    (Object.keys(GravityESM) as Array<keyof typeof GravityESM>) .forEach((funcName) => {
-      if (typeof GravityESM[funcName] === 'function') {
-        // Ensure function exists on both objects
-        expect(GravityESM[funcName]).toEqual( (Gravity as any)[funcName]);
-
-        // sanity, ensure the result is a function at all (and not an accidental undefined)
-        expect(typeof GravityESM[funcName]).toBe('function');
-      }
-    });
+    expectESMToMatchDefault(GravityESM, Gravity);
   });
 
   it('Tests simple gravitation', () => {

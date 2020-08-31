@@ -1,7 +1,7 @@
-import FlagAction from "./FlagAction";
+import {Flag} from './Flag';
 
 /**
- * @memberOf Actions.Flag
+ * @memberOf Params.Flag
  * @description Generates a JPG image using the progressive (interlaced) JPG format.
  *
  * This format allows the browser to quickly show a low-quality rendering of the image until the full-quality
@@ -15,8 +15,8 @@ import FlagAction from "./FlagAction";
  * * none  - Use this to deliver a non-progressive image. This is the default mode when setting
  *           a specific value for quality.
  */
-function progressive(mode?: string): FlagAction{
-  return new FlagAction('progressive', mode);
+function progressive(mode?: string): Flag{
+  return new Flag('progressive', mode);
 }
 
 export default progressive;

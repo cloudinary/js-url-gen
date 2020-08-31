@@ -1,17 +1,5 @@
-/**
- * Defines flags that you can use to alter the default transformation behavior.
- *
- * **Learn more**:
- * <a href="https://cloudinary.com/documentation/transformation_flags" target="_blank">
- * Image transformation flags</a> |
- * <a href="https://cloudinary.com/documentation/video_transformation_reference#video_transformation_flags"
- * target="_blank">Video transformation flags</a>
- *
- * @memberOf Actions
- * @namespace Flag
- */
-
-import FlagAction from "./FlagAction";
+import Param from '../../parameters/Param';
+import ParamValue from "../../parameters/ParamValue";
 import animated from "./animated";
 import anyFormat from "./anyFormat";
 import animatedPng from "./animatedPng";
@@ -36,12 +24,30 @@ import immutableCache from "./immutableCache";
 import keepAttribution from "./keepAttribution";
 import keepIptc from "./keepIptc";
 
-export {FlagAction, animated, anyFormat, animatedPng, animatedWebP, clip,
+/**
+ * @description Defines flags that you can use to alter the default transformation behavior.
+ * @namespace Flag
+ * @memberOf Params
+ */
+class Flag extends Param {
+  constructor(flagType?: ParamValue | ParamValue[] | number | number[] | string | string[], flagValue?: string) {
+    let paramValue;
+    if(flagValue) {
+      paramValue = new ParamValue([flagType, `${flagValue}`]).setDelimiter(':');
+    }else {
+      paramValue = flagType;
+    }
+    super('fl', paramValue);
+  }
+}
+
+
+export {Flag, animated, anyFormat, animatedPng, animatedWebP, clip,
   clipEvenOdd, lossy, preserveTransparency, png8, png24, png32, progressive, rasterize,
   sanitize, stripProfile, tiff8Lzw, attachment, forceIcc, forceStrip, getInfo, immutableCache,
   keepAttribution, keepIptc};
 
-export default {FlagAction, animated, anyFormat, animatedPng, animatedWebP, clip,
+export default {Flag, animated, anyFormat, animatedPng, animatedWebP, clip,
   clipEvenOdd, lossy, preserveTransparency, png8, png24, png32, progressive, rasterize,
   sanitize, stripProfile, tiff8Lzw, attachment, forceIcc, forceStrip, getInfo, immutableCache,
   keepAttribution, keepIptc};
