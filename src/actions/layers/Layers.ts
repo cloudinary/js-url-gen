@@ -67,6 +67,7 @@ class Layer extends Action implements ILayerAction {
     });
 
     if (this.timeLinePosition){
+      // TODO: This is just for testing. remove this after implementing VideoRange
       bit.addParam(new Param("so", 7));
     }
 
