@@ -31,7 +31,7 @@ class Solid extends Action implements IBorderAction{
     return this;
   }
 
-  prepareParam() : void {
+  protected prepareParam() : void {
     const paramValue = new ParamValue([`${this.borderWidth}px`, 'solid', `${this.borderColor}`]).setDelimiter('_');
     this.addParam(new Param('bo', paramValue));
   }
