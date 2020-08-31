@@ -15,6 +15,7 @@ import Param from "../parameters/Param";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
 import {ResizeAction} from "../actions/resize/Resize";
 import BackgroundAction from "../actions/background/BackgroundAction";
+import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction";
 import {Layer} from "../actions/layers/Layers";
 
 class Transformation {
@@ -176,6 +177,13 @@ class Transformation {
    */
   background(backgroundAction: BackgroundAction): this {
     return this.addAction(backgroundAction);
+  }
+
+  /**
+   *
+   */
+  customFunction(customFunction: CustomFunctionAction) {
+    return this.addAction(customFunction);
   }
 
   /**

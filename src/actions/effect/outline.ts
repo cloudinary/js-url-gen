@@ -27,7 +27,7 @@ class Outline extends Action {
     return blur ? `${width}:${blur}` : width;
   }
 
-  prepareParam() : void {
+  protected prepareParam() : void {
     let paramValue;
     if(this.outlineParam && this.modeType){
       paramValue = new ParamValue(['outline', `${this.modeType}`, `${this.outlineParam}`]).setDelimiter(':');
