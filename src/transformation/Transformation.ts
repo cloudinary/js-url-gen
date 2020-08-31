@@ -222,7 +222,7 @@ class Transformation {
   trim(trimAction: TrimAction): this {
     return this.addAction(trimAction);
   }
-  
+
   /**
    * Concatenates another video or image.
    * @param {VideoConcatenateAction} videoConcatenateAction

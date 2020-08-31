@@ -1,4 +1,4 @@
-import EffectAction from "../effect/EffectAction";
+  import EffectAction from "../effect/EffectAction";
 import Action from "../Action";
 import Param from "../../parameters/Param";
 
