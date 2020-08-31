@@ -1,7 +1,7 @@
 /**
  * Edit Video.
  * @memberOf Actions
- * @namespace Transcode
+ * @namespace VideoEdit
  */
 
 

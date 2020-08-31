@@ -1,4 +1,4 @@
-import VideoEdit, {TrimAction} from '../../../src/actions/VideoEdit/VideoEdit';
+import VideoEdit, {TrimAction} from '../../../src/actions/videoEdit/VideoEdit';
 import * as VideoEditESM from '../../../src/actions/videoEdit/VideoEdit';
 import TransformableVideo from '../../../src/transformation/TransformableVideo';
 // import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
