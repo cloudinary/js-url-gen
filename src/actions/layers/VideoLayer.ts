@@ -1,5 +1,5 @@
 /**
- * Determines how to crop, scale, and/or zoom the delivered asset according to the requested dimensions.
+ * Video Layer used in Overlays/Underlays
  * @memberOf Actions
  * @namespace Layers
  */
@@ -8,26 +8,23 @@
 import {ILayerAction} from "./ILayerAction";
 import Action from "../Action";
 // TODO - BundleSize Warning - we include all the Sources code within Layers.
-import Source, {ImageSource, TextSource, VideoSource} from "../../params/sources/Sources";
+import Source, {ImageSource, TextSource} from "../../params/sources/Sources";
 import {Position} from "../../params/position/Position";
 import Param from "../../parameters/Param";
 import {BlendMode} from "../../params/blendMode/BlendMode";
-import {VideoRange} from "../../params/video/VideoRange"
 import {ISource} from "../../params/sources/ISource";
 
 
-class Layer extends Action implements ILayerAction {
+class VideoLayer extends Action implements ILayerAction {
   source: ISource;
   position:Position;
   blendMode: BlendMode;
-  timeLinePosition: VideoRange;
   modifications: Action; // Appends modifications to the layer, such as e_style_transfer
-  constructor(transformable: ISource, position:Position, blendMode: BlendMode|null=null, timeLinePosition: VideoRange|null=null) {
+  constructor(transformable: ISource, position:Position, blendMode: BlendMode) {
     super();
     this.source = transformable;
     this.position = position;
     this.blendMode = blendMode;
-    this.timeLinePosition = timeLinePosition;
     this.modifications = new Action();
   }
 
@@ -61,14 +58,6 @@ class Layer extends Action implements ILayerAction {
     this.blendMode?.params.forEach((param) => {
       bit.addParam(param);
     });
-
-    this.timeLinePosition?.params.forEach((param) => {
-      bit.addParam(param);
-    });
-
-    if (this.timeLinePosition){
-      bit.addParam(new Param("so", 7));
-    }
 
     this.modifications?.params.forEach((param) => {
       bit.addParam(param);
@@ -106,16 +95,5 @@ function textLayer(textSource: TextSource, position?:Position, blendMode?:BlendM
   return new Layer(textSource, position, blendMode);
 }
 
-/**
- * @param videoSource
- * @param position
- * @param timeLinePosition
- * @memberOf Actions.Layers
- * @return {Layer}
- */
-function videoLayer(videoSource: VideoSource, position?:Position, timeLinePosition?:VideoRange): Layer {
-  return new Layer(videoSource, position, null, timeLinePosition);
-}
-
-export {imageLayer, textLayer, videoLayer, Source, Layer};
-export default {imageLayer, textLayer, videoLayer, Source, Layer};
+export {imageLayer, textLayer, Source, Layer};
+export default {imageLayer, textLayer, Source, Layer};
