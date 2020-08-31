@@ -1,7 +1,6 @@
 import {IAction} from "../interfaces/IAction";
 import {IBorderAction} from "../actions/border/IBorderAction";
 import {IQualityAction} from "../actions/quality/IQualityAction";
-import {ILayerAction} from "../actions/layers/ILayerAction";
 import {IVariableAction} from "../actions/variable/IVariableAction";
 import {IEffectAction} from "../actions/effect/IEffectAction";
 import {IRotateAction} from "../actions/rotate/IRotateAction";
@@ -17,6 +16,7 @@ import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
 import {ResizeAction} from "../actions/resize/Resize";
 import BackgroundAction from "../actions/background/BackgroundAction";
 import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction";
+import {Layer} from "../actions/layers/Layers";
 
 class Transformation {
   actions: IAction[];
@@ -102,8 +102,17 @@ class Transformation {
   /**
    * @param overlayAction
    */
-  overlay(overlayAction: ILayerAction): this {
+  overlay(overlayAction: Layer): this {
+    overlayAction.setLayerType('l');
     return this.addAction(overlayAction);
+  }
+
+  /**
+   * @param underlayAction
+   */
+  underlay(underlayAction: Layer): this {
+    underlayAction.setLayerType('u');
+    return this.addAction(underlayAction);
   }
 
   /**

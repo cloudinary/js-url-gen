@@ -65,6 +65,7 @@ class StyleTransfer implements IAction {
 
 
     this.imgLayer.modifications.addParam(new Param('e', effectValue));
+    this.imgLayer.setLayerType('l');
     return this.imgLayer.toString();
   }
 }
