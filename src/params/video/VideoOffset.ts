@@ -13,20 +13,22 @@ import Param from "../../parameters/Param";
  */
 class VideoOffset extends Action {
 
-  constructor() {
+  constructor(offset:number=null) {
     super();
+    if (offset) {
+      this.startOffset(offset);
+    }
   }
 
-  startOffset(startOffset: VideoOffset): this {
-    //TODO: add StartOffset
-    return this.addParam(new Param("so", startOffset.toString()));
+  //TODO: consider changing type of startOffset to be VideoOffset, like in php2
+  startOffset(startOffset: VideoOffset|number): this {
+    return this.addParam(new Param("so", `${startOffset}`));
   }
 
-  endOffset(endOffset: VideoOffset): this {
+  endOffset(endOffset: VideoOffset|number): this {
     //TODO: add EndOffset
-    return this.addParam(new Param("eo", endOffset.toString()));
+    return this.addParam(new Param("eo", `${endOffset}`));
   }
-
 }
 
 export {
