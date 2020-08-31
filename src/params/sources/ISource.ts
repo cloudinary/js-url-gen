@@ -3,5 +3,5 @@
  */
 export interface ISource {
   getSource():string,
-  getTransformationString():void
+  getTransformationString():string
 }
