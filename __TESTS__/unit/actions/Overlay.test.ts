@@ -109,7 +109,7 @@ describe('Tests for overlay actions', () => {
       .overlay(
         videoLayer(video('dog'), null, new VideoRange(7))
       )
-      .delivery(format('jpg'))
+      .delivery(format('jpg'));
     expect(tVideo.toURL()).toContain('l_dog/fl_layer_apply,so_7/f_jpg/dog');
   });
 });

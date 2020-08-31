@@ -12,7 +12,7 @@ import Source, {ImageSource, TextSource, VideoSource} from "../../params/sources
 import {Position} from "../../params/position/Position";
 import Param from "../../parameters/Param";
 import {BlendMode} from "../../params/blendMode/BlendMode";
-import {VideoRange} from "../../params/video/VideoRange"
+import {VideoRange} from "../../params/video/VideoRange";
 import {ISource} from "../../params/sources/ISource";
 
 

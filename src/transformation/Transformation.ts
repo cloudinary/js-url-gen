@@ -16,18 +16,21 @@ import Param from "../parameters/Param";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
 import {ResizeAction} from "../actions/resize/Resize";
 import BackgroundAction from "../actions/background/BackgroundAction";
-import {TrimAction} from "../actions/trim/TrimAction";
-import {VideoLayerAction} from "../actions/layers/VideoLayerAction";
+import {TrimAction} from "../actions/videoEdit/TrimAction";
+import {TranscodeAction} from "../actions/transcode/TranscodeAction";
+import {FPSAction} from "../actions/transcode/FPSAction";
+
+// TODO: add these video actions:
+/*
 import {CutterAction} from "../actions/layers/CutterAction";
 import {SubtitlesAction} from "../actions/layers/SubtitlesAction";
 import {VideoConcatenateAction} from "../actions/layers/VideoConcatenateAction";
-import {TranscodeAction} from "../actions/transcode/TranscodeAction";
-import {FPSAction} from "../actions/transcode/FPSAction";
 import {KeyframeIntervalAction} from "../actions/transcode/KeyframeIntervalAction";
 import {BitRateAction} from "../actions/transcode/BitRateAction";
 import {StreamingProfileAction} from "../actions/transcode/StreamingProfileAction";
 import {VideoSamplingAction} from "../actions/transcode/VideoSamplingAction";
 import {VideoEditAction} from "../actions/transcode/VideoEditAction";
+*/
 
 class Transformation {
   actions: IAction[];
@@ -228,27 +231,33 @@ class Transformation {
    * @param {VideoConcatenateAction} videoConcatenateAction
    * @return this TransformableVideo with the added action
    */
+  /*
   concatenate(videoConcatenateAction: VideoConcatenateAction): this {
     return this.addAction(videoConcatenateAction);
   }
+   */
 
   /**
    * Applies the video as a cutter for the main video.
    * @param {CutterAction} ctterAction
    * @return this TransformableVideo with the added action
    */
+  /*
   cutter(cutterAction: CutterAction): this {
     return this.addAction(cutterAction);
   }
+   */
 
   /**
    * Adds subtitles to the video.
    * @param {SubtitlesAction} subtitlesAction
    * @return this TransformableVideo with the added action
    */
+  /*
   addSubtitles(subtitlesAction: SubtitlesAction): this {
     return this.addAction(subtitlesAction);
   }
+   */
 
   /**
    * Transcodes the video (or audio) to another format.
@@ -275,27 +284,33 @@ class Transformation {
    * @param {KeyframeIntervalAction} keyframeIntervalAction
    * @return this TransformableVideo with the added action
    */
+  /*
   keyframeInterval(keyframeIntervalAction: KeyframeIntervalAction): this {
     return this.addAction(keyframeIntervalAction);
   }
+   */
 
   /**
    * Controls the video bitrate.
    * @param {BitRateAction} bitRateAction
    * @return this TransformableVideo with the added action
    */
+  /*
   bitRate(bitRateAction: BitRateAction): this {
     return this.addAction(bitRateAction);
   }
+   */
 
   /**
    * Sets the streaming profile to apply to an HLS or MPEG-DASH adaptive bitrate streaming video.
    * @param {StreamingProfileAction} streamingProfileAction
    * @return this TransformableVideo with the added action
    */
+  /*
   streamingProfile(streamingProfileAction: StreamingProfileAction): this {
     return this.addAction(streamingProfileAction);
   }
+   */
 
   /**
    * Sets the total number of frames to sample from the original video.
@@ -308,9 +323,11 @@ class Transformation {
    * @param {VideoSamplingAction} videoSamplingAction
    * @return this TransformableVideo with the added action
    */
+  /*
   videoSampling(videoSamplingAction: VideoSamplingAction): this {
     return this.addAction(videoSamplingAction);
   }
+   */
 
   /**
    * Applies the specified video edit action.
@@ -318,9 +335,11 @@ class Transformation {
    * @param {IVideoEditAction} videoEditAction
    * @return this TransformableVideo with the added action
    */
+  /*
   videoEdit(videoEditAction: VideoEditAction): this {
     return this.addAction(videoEditAction);
   }
+   */
 }
 
 export default Transformation;

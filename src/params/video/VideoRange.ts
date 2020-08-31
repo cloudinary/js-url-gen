@@ -1,7 +1,5 @@
 import Action from "../../actions/Action";
 import VideoOffset from "./VideoOffset";
-import Duration from "./Duration";
-import {mapToSortedArray} from "../../utils/dataStructureUtils";
 import Param from "../../parameters/Param";
 import ParamValue from "../../parameters/ParamValue";
 
@@ -16,7 +14,7 @@ import ParamValue from "../../parameters/ParamValue";
  * VideoRange
  */
 class VideoRange extends Action {
-  constructor(startOffset: VideoOffset|any = null, endOffset: VideoOffset|any = null, duration: Duration|any = null) {
+  constructor(startOffset: VideoOffset = null, endOffset: VideoOffset = null, duration: number = null) {
     super();
     this.offset((new VideoOffset()).startOffset(startOffset).endOffset(endOffset));
     this.duration(duration);
@@ -26,7 +24,7 @@ class VideoRange extends Action {
    * @param action
    */
   offset(offset: VideoOffset): this {
-    offset.params.forEach(p=>{
+    offset.params.forEach((p)=>{
       this.addParam(p);
     });
     return this;

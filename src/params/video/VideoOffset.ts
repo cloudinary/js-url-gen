@@ -1,4 +1,5 @@
 import Action from "../../actions/Action";
+import Param from "../../parameters/Param";
 
 /**
  * @description Defines a video range using startOffset, endOffset, duration.
@@ -18,14 +19,12 @@ class VideoOffset extends Action {
 
   startOffset(startOffset: VideoOffset): this {
     //TODO: add StartOffset
-    //this.startOffset = new StartOffset(startOffset);
-    return this;
+    return this.addParam(new Param("so", startOffset.toString()));
   }
 
   endOffset(endOffset: VideoOffset): this {
     //TODO: add EndOffset
-    //this.endOffset = new EndOffset(endOffset);
-    return this;
+    return this.addParam(new Param("eo", endOffset.toString()));
   }
 
 }
