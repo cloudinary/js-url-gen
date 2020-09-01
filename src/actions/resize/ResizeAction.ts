@@ -4,6 +4,8 @@ import Param from "../../parameters/Param";
 import {GravityParam} from "../../params/gravity/Gravity";
 import BackgroundAction from "../background/BackgroundAction";
 import {Flag} from "../../params/flag/Flag";
+import DeliveryAction from "../delivery/DeliveryAction";
+import {toFloatAsString} from "../../utils/toFloatAsString";
 
 
 class ResizeAction extends Action implements IAction {
@@ -39,13 +41,8 @@ class ResizeAction extends Action implements IAction {
   }
 
   aspectRatio(ratio:number|string): this {
-    let usedRatio = ratio;
-
-    // if we're given a number(such as 1.0), we turn to string (1) and then add the decimal manually
-    if (usedRatio.toString().indexOf('.') === -1) {
-      usedRatio = `${usedRatio}.0`;
-    }
-    return this.addParam(new Param('ar', usedRatio));
+    // toFloatAsString is used to ensure 1 turns into 1.0
+    return this.addParam(new Param('ar', toFloatAsString(ratio)));
   }
 
   gravity(gravityParam: GravityParam): this {

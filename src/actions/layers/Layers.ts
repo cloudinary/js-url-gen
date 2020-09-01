@@ -7,10 +7,11 @@
 
 import Action from "../Action";
 // TODO - BundleSize Warning - we include all the Sources code within Layers.
-import Source, {ImageSource, TextSource} from "../../params/sources/Sources";
+import Source, {ImageSource, TextSource, VideoSource} from "../../params/sources/Sources";
 import {Position} from "../../params/position/Position";
 import Param from "../../parameters/Param";
 import {BlendMode} from "../../params/blendMode/BlendMode";
+import {VideoRange} from "../../params/video/VideoRange";
 import {ISource} from "../../params/sources/ISource";
 
 
@@ -18,13 +19,15 @@ class Layer extends Action{
   source: ISource;
   position:Position;
   blendMode: BlendMode;
+  timeLinePosition: VideoRange;
   modifications: Action; // Appends modifications to the layer, such as e_style_transfer
   layerType: string;
-  constructor(transformable: ISource, position:Position, blendMode: BlendMode) {
+  constructor(transformable: ISource, position:Position, blendMode: BlendMode|null=null, timeLinePosition: VideoRange|null=null) {
     super();
     this.source = transformable;
     this.position = position;
     this.blendMode = blendMode;
+    this.timeLinePosition = timeLinePosition;
     this.modifications = new Action();
   }
 
@@ -67,6 +70,15 @@ class Layer extends Action{
       bit.addParam(param);
     });
 
+    this.timeLinePosition?.params.forEach((param) => {
+      bit.addParam(param);
+    });
+
+    if (this.timeLinePosition){
+      // TODO: This is just for testing. remove this after implementing VideoRange
+      bit.addParam(new Param("so", 7));
+    }
+
     this.modifications?.params.forEach((param) => {
       bit.addParam(param);
     });
@@ -103,5 +115,16 @@ function textLayer(textSource: TextSource, position?:Position, blendMode?:BlendM
   return new Layer(textSource, position, blendMode);
 }
 
-export {imageLayer, textLayer, Source, Layer};
-export default {imageLayer, textLayer, Source, Layer};
+/**
+ * @param videoSource
+ * @param position
+ * @param timeLinePosition
+ * @memberOf Actions.Layers
+ * @return {Layer}
+ */
+function videoLayer(videoSource: VideoSource, position?:Position, timeLinePosition?:VideoRange): Layer {
+  return new Layer(videoSource, position, null, timeLinePosition);
+}
+
+export {imageLayer, textLayer, videoLayer, Source, Layer};
+export default {imageLayer, textLayer, videoLayer, Source, Layer};

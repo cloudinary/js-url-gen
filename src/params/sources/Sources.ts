@@ -1,5 +1,6 @@
 import TextSource from "./TextSource";
 import ImageSource from "./ImageSource";
+import VideoSource from "./VideoSource";
 
 /**
  * @memberOf Params
@@ -28,5 +29,15 @@ function text(text: string): TextSource {
   return new TextSource(text);
 }
 
-export default {ImageSource, TextSource, image, text};
-export {ImageSource, TextSource, image, text};
+/**
+ * @memberOf Params.Sources
+ * @param {string} publicID
+ * @description Returns an instance of an VideoSource
+ * @returns {Params.Sources.VideoSource}
+ */
+function video(publicID: string): VideoSource {
+  return new VideoSource(publicID);
+}
+
+export default {ImageSource, TextSource, VideoSource, image, text, video};
+export {ImageSource, TextSource, VideoSource, image, text, video};
