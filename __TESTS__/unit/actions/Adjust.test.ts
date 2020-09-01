@@ -48,4 +48,94 @@ describe('Tests for Transformation Action -- Adjust', () => {
 
     expect(tImage.toURL()).toBe(TEST_URL_TO_CREATE);
   });
+
+  it('Creates a cloudinaryURL with contrast', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .adjust(Adjust.contrast(-100))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_contrast:-100/sample');
+  });
+
+  it('Creates a cloudinaryURL with gamma', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .adjust(Adjust.gamma(-100))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_gamma:-100/sample');
+  });
+
+  it('Creates a cloudinaryURL with brightnessHSB', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .adjust(Adjust.brightnessHSB(-99))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_brightness_hsb:-99/sample');
+  });
+
+  it('Creates a cloudinaryURL with hue', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .adjust(Adjust.hue(100))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_hue:100/sample');
+  });
+
+  it('Creates a cloudinaryURL with autoBrightness', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .adjust(Adjust.autoBrightness(100))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_auto_brightness:100/sample');
+  });
+
+  it('Creates a cloudinaryURL with autoColor', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .adjust(Adjust.autoColor(100))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_auto_color:100/sample');
+  });
+
+  it('Creates a cloudinaryURL with vibrance', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .adjust(Adjust.vibrance())
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_vibrance/sample');
+  });
+
+  it('Creates a cloudinaryURL with unsharpMask', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .adjust(Adjust.unsharpMask(1500))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_unsharp_mask:1500/sample');
+  });
+
+  it('Creates a cloudinaryURL with opacityThreshold', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .adjust(Adjust.opacityThreshold(50))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_opacity_threshold:50/sample');
+  });
 });
