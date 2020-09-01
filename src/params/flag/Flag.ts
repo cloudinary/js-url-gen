@@ -23,24 +23,7 @@ import getInfo from "./getInfo";
 import immutableCache from "./immutableCache";
 import keepAttribution from "./keepAttribution";
 import keepIptc from "./keepIptc";
-
-/**
- * @description Defines flags that you can use to alter the default transformation behavior.
- * @namespace Flag
- * @memberOf Params
- */
-class Flag extends Param {
-  constructor(flagType?: ParamValue | ParamValue[] | number | number[] | string | string[], flagValue?: string) {
-    let paramValue;
-    if(flagValue) {
-      paramValue = new ParamValue([flagType, `${flagValue}`]).setDelimiter(':');
-    }else {
-      paramValue = flagType;
-    }
-    super('fl', paramValue);
-  }
-}
-
+import Flag from "./FlagParam";
 
 export {Flag, animated, anyFormat, animatedPng, animatedWebP, clip,
   clipEvenOdd, lossy, preserveTransparency, png8, png24, png32, progressive, rasterize,
