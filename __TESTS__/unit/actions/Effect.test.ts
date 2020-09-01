@@ -208,7 +208,7 @@ describe('Tests for Transformation Action -- Effect', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_peacock/sample');
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_art:peacock/sample');
   });
 
   it('Creates a cloudinaryURL with effect cartoonify:50', () => {

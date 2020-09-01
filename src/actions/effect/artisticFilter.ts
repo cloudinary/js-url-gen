@@ -8,7 +8,7 @@ import {IEffectAction} from "./IEffectAction";
  * @param artisticFilterType
  */
 function artisticFilter(artisticFilterType: string):IEffectAction {
-  return new EffectAction(artisticFilterType);
+  return new EffectAction('art', artisticFilterType);
 }
 
 export default artisticFilter;
