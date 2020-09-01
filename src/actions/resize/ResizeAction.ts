@@ -3,9 +3,9 @@ import {IAction} from "../../interfaces/IAction";
 import Param from "../../parameters/Param";
 import {GravityParam} from "../../params/gravity/Gravity";
 import BackgroundAction from "../background/BackgroundAction";
+import {Flag} from "../../params/flag/Flag";
 import DeliveryAction from "../delivery/DeliveryAction";
 import {toFloatAsString} from "../../utils/toFloatAsString";
-import Flag from "../../parameters/Flag";
 
 
 class ResizeAction extends Action implements IAction {

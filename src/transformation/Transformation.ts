@@ -17,6 +17,8 @@ import {ResizeAction} from "../actions/resize/Resize";
 import BackgroundAction from "../actions/background/BackgroundAction";
 import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction";
 import {Layer} from "../actions/layers/Layers";
+import {Flag} from "../params/flag/Flag";
+import Action from "../actions/Action";
 import {TrimAction} from "../actions/videoEdit/TrimAction";
 import {TranscodeAction} from "../actions/transcode/TranscodeAction";
 import {FPSAction} from "../actions/transcode/FPSAction";
@@ -192,6 +194,15 @@ class Transformation {
    */
   background(backgroundAction: BackgroundAction): this {
     return this.addAction(backgroundAction);
+  }
+
+  /**
+   * @param flagParam
+   */
+  addFlag(flagParam: Flag): this {
+    const action = new Action();
+    action.addParam(flagParam);
+    return this.addAction(action);
   }
 
   /**

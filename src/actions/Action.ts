@@ -1,5 +1,5 @@
 import Param from "../parameters/Param";
-import Flag from "../parameters/Flag";
+import {Flag} from "../params/flag/Flag";
 import {IAction} from "../interfaces/IAction";
 import {mapToSortedArray} from "../utils/dataStructureUtils";
 
