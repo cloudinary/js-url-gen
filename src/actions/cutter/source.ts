@@ -3,6 +3,8 @@ import CutterAction from "./CutterAction";
 
 /**
  *
+ * @description Trims pixels according to the transparency levels of a given overlay image.
+ * @memberOf Actions.Cutter
  * @param {ImageSource} source
  */
 function source(source: ImageSource): CutterAction {
