@@ -1,7 +1,6 @@
 import {IAction} from "../interfaces/IAction";
 import {IBorderAction} from "../actions/border/IBorderAction";
 import {IQualityAction} from "../actions/quality/IQualityAction";
-import {IVariableAction} from "../actions/variable/IVariableAction";
 import {IEffectAction} from "../actions/effect/IEffectAction";
 import {IRotateAction} from "../actions/rotate/IRotateAction";
 import {IDeliveryAction} from "../actions/delivery/IDeliveryAction";
@@ -22,6 +21,7 @@ import Action from "../actions/Action";
 import {TrimAction} from "../actions/videoEdit/TrimAction";
 import {TranscodeAction} from "../actions/transcode/TranscodeAction";
 import {FPSAction} from "../actions/transcode/FPSAction";
+import VariableAction from "../actions/variable/VariableAction";
 
 // TODO: add these video actions:
 /*
@@ -133,9 +133,9 @@ class Transformation {
   }
 
   /**
-   * @param {IVariableAction} variableAction
+   * @param {VariableAction} variableAction
    */
-  variable(variableAction: IVariableAction): this {
+  addVariable(variableAction: VariableAction): this {
     return this.addAction(variableAction);
   }
 
