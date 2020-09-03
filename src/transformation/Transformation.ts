@@ -22,6 +22,7 @@ import Action from "../actions/Action";
 import {TrimAction} from "../actions/videoEdit/TrimAction";
 import {TranscodeAction} from "../actions/transcode/TranscodeAction";
 import {FPSAction} from "../actions/transcode/FPSAction";
+import BlurredBackgroundAction from "../actions/background/BlurredBackgroundAction";
 
 // TODO: add these video actions:
 /*
@@ -192,7 +193,7 @@ class Transformation {
   /**
    * @param {BackgroundAction} backgroundAction
    */
-  background(backgroundAction: BackgroundAction): this {
+  background(backgroundAction: BackgroundAction | BlurredBackgroundAction): this {
     return this.addAction(backgroundAction);
   }
 
