@@ -19,11 +19,11 @@ describe('Tests for Transformation Action -- Rotate', () => {
   it('Creates a cloudinaryURL with Rotate', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .rotate(Rotate.byMode(RotationModes.VERTICAL_FLIP))
-      .rotate(Rotate.byMode(RotationModes.HORIZONTAL_FLIP))
-      .rotate(Rotate.byMode(RotationModes.AUTO_RIGHT))
-      .rotate(Rotate.byMode(RotationModes.AUTO_LEFT))
-      .rotate(Rotate.byMode(RotationModes.IGNORE))
+      .rotate(Rotate.mode(RotationModes.VERTICAL_FLIP))
+      .rotate(Rotate.mode(RotationModes.HORIZONTAL_FLIP))
+      .rotate(Rotate.mode(RotationModes.AUTO_RIGHT))
+      .rotate(Rotate.mode(RotationModes.AUTO_LEFT))
+      .rotate(Rotate.mode(RotationModes.IGNORE))
       .rotate(Rotate.byAngle(40))
       .setPublicID('sample')
       .toURL();

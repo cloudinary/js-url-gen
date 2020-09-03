@@ -7,8 +7,8 @@ import {IRotateAction} from "./IRotateAction";
  * @param {string} rotationMode
  * @returns {RotateAction}
  */
-function byMode(rotationMode: string) :IRotateAction {
+function mode(rotationMode: string) :IRotateAction {
   return new RotateAction().mode(rotationMode);
 }
 
-export default byMode;
+export default mode;
