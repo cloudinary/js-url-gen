@@ -36,7 +36,7 @@ class ReplaceColorAction extends Action {
 
   protected prepareParam(): this {
     // e_replace_color:red:30:blue
-    const paramValue = new ParamValue(['replace_color',this.targetColor, this.toleranceLevel, this.baseColor]);
+    const paramValue = new ParamValue(['replace_color', this.targetColor, this.toleranceLevel, this.baseColor]);
     this.addParam(new Param('e', paramValue));
     return this;
   }
