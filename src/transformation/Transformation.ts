@@ -146,10 +146,19 @@ class Transformation {
     return this.addAction(conditionAction);
   }
 
+  /**
+   * @memberOf Actions.Condition
+   * @description Specifies a transformation that is applied in the case that the initial condition is evaluated as
+   * false.
+   */
   ifElse(): this {
     return this.addAction(new Param('if', 'else'));
   }
 
+  /**
+   * @memberOf Actions.Condition
+   * @description Finishes the conditional transformation.
+   */
   endIfCondition(): this {
     return this.addAction(new Param('if', 'end'));
   }
