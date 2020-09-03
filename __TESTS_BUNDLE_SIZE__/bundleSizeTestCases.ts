@@ -22,8 +22,8 @@ const bundleSizeTestCases:ITestCase[] = [
     ]
   },
   {
-    name: 'Tests a transformable image with Resize and just',
-    sizeLimitInKB: 11,
+    name: 'Tests a transformable image with Resize and ajust',
+    sizeLimitInKB: 16,
     importsArray: [
       importFromBase('TransformableImage'),
       importFromDist('actions/resize'),
@@ -32,7 +32,7 @@ const bundleSizeTestCases:ITestCase[] = [
   },
   {
     name: 'Tests a transformable image with Resize, adjust and border',
-    sizeLimitInKB: 12,
+    sizeLimitInKB: 16,
     importsArray: [
       importFromBase('TransformableImage'),
       importFromDist('actions/resize'),
@@ -42,7 +42,7 @@ const bundleSizeTestCases:ITestCase[] = [
   },
   {
     name: 'Tests a transformable image with Resize, adjust and quality',
-    sizeLimitInKB: 12,
+    sizeLimitInKB: 16,
     importsArray: [
       importFromBase('TransformableImage'),
       importFromDist('actions/resize'),
