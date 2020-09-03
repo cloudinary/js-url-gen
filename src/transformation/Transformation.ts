@@ -1,5 +1,4 @@
 import {IAction} from "../interfaces/IAction";
-import {IBorderAction} from "../actions/border/IBorderAction";
 import {IQualityAction} from "../actions/quality/IQualityAction";
 import {IVariableAction} from "../actions/variable/IVariableAction";
 import {IEffectAction} from "../actions/effect/IEffectAction";
@@ -22,6 +21,7 @@ import Action from "../actions/Action";
 import {TrimAction} from "../actions/videoEdit/TrimAction";
 import {TranscodeAction} from "../actions/transcode/TranscodeAction";
 import {FPSAction} from "../actions/transcode/FPSAction";
+import BorderAction from "../actions/border/BorderAction";
 
 // TODO: add these video actions:
 /*
@@ -92,9 +92,9 @@ class Transformation {
 
 
   /**
-   * @param {IBorderAction} borderAction
+   * @param {BorderAction} borderAction
    */
-  border(borderAction: IBorderAction): this{
+  border(borderAction: BorderAction): this{
     return this.addAction(borderAction);
   }
 
