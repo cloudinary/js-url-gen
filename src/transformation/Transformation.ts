@@ -22,6 +22,7 @@ import Action from "../actions/Action";
 import {TrimAction} from "../actions/videoEdit/TrimAction";
 import {TranscodeAction} from "../actions/transcode/TranscodeAction";
 import {FPSAction} from "../actions/transcode/FPSAction";
+import CutterAction from "../actions/cutter/CutterAction";
 
 // TODO: add these video actions:
 /*
@@ -96,6 +97,11 @@ class Transformation {
    */
   border(borderAction: IBorderAction): this{
     return this.addAction(borderAction);
+  }
+
+
+  cutter(cutterAction: CutterAction): this {
+    return this.addAction(cutterAction);
   }
 
   /**

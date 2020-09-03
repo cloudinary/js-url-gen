@@ -13,6 +13,7 @@ import Param from "../../parameters/Param";
 import {BlendMode} from "../../params/blendMode/BlendMode";
 import {VideoRange} from "../../params/video/VideoRange";
 import {ISource} from "../../params/sources/ISource";
+import {Flag} from "../../params/flag/Flag";
 
 
 class Layer extends Action{
@@ -35,8 +36,9 @@ class Layer extends Action{
    * Sets the layerType with u | l depending if underlay or overlay
    * @param type
    */
-  setLayerType(type: 'u' | 'l'){
+  setLayerType(type: 'u' | 'l') {
     this.layerType = type;
+    return this;
   }
 
   /**
@@ -60,7 +62,7 @@ class Layer extends Action{
    * Closing of the layer, includes Position as well
    */
   closeLayer():Action {
-    const bit = new Action().addParam(new Param('fl', 'layer_apply'));
+    const bit = new Action().addFlag(new Flag('layer_apply'));
 
     this.position?.params.forEach((param) => {
       bit.addParam(param);
@@ -74,7 +76,7 @@ class Layer extends Action{
       bit.addParam(param);
     });
 
-    if (this.timeLinePosition){
+    if (this.timeLinePosition) {
       // TODO: This is just for testing. remove this after implementing VideoRange
       bit.addParam(new Param("so", 7));
     }
