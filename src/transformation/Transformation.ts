@@ -8,7 +8,6 @@ import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigura
 import CloudinaryConfig from "../config/CloudinaryConfig";
 import {IDescriptor} from "../interfaces/IDescriptor";
 import createCloudinaryURL from "../url/cloudinaryURL";
-import {IConditionAction} from "../actions/condition/IConditionAction";
 import Param from "../parameters/Param";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
 import {ResizeAction} from "../actions/resize/Resize";
@@ -21,6 +20,7 @@ import {TrimAction} from "../actions/videoEdit/TrimAction";
 import {TranscodeAction} from "../actions/transcode/TranscodeAction";
 import {FPSAction} from "../actions/transcode/FPSAction";
 import {DeliveryAction} from "../actions/delivery/Delivery";
+import {ConditionAction} from "../actions/condition/Condition";
 
 // TODO: add these video actions:
 /*
@@ -139,9 +139,9 @@ class Transformation {
   }
 
   /**
-   * @param {IConditionAction} conditionAction
+   * @param {ConditionAction} conditionAction
    */
-  ifCondition(conditionAction: IConditionAction): this {
+  ifCondition(conditionAction: ConditionAction): this {
     return this.addAction(conditionAction);
   }
 
