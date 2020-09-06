@@ -276,4 +276,24 @@ describe('Tests for Transformation Action -- Delivery', () => {
 
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/q_auto/sample');
   });
+
+  it('Creates a cloudinaryURL with Delivery.density', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .delivery(Delivery.density(150))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/dn_150/sample');
+  });
+
+  it.skip('Creates a cloudinaryURL with Delivery.colorspace', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .delivery(Delivery.colorSpace(ColorSpace.mode(ColorSpaceValue.NO_CYMK)))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/dn_150/sample');
+  });
 });

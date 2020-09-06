@@ -4,7 +4,7 @@ import Param from "../../parameters/Param";
 import Flag from "../../params/flag/Flag";
 
 class DeliveryAction extends Action implements IAction {
-  constructor(deliveryKey?: string, deliveryType?: string) {
+  constructor(deliveryKey?: string, deliveryType?: string|number) {
     super();
     this.addParam(new Param(deliveryKey, deliveryType));
   }
