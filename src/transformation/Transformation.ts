@@ -1,10 +1,8 @@
 import {IAction} from "../interfaces/IAction";
 import {IBorderAction} from "../actions/border/IBorderAction";
-import {IQualityAction} from "../actions/quality/IQualityAction";
 import {IVariableAction} from "../actions/variable/IVariableAction";
 import {IEffectAction} from "../actions/effect/IEffectAction";
 import {IRotateAction} from "../actions/rotate/IRotateAction";
-import {IDeliveryAction} from "../actions/delivery/IDeliveryAction";
 import {INamedTransformationAction} from "../actions/namedTransformation/INamedTransformationAction";
 import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigurations";
 import CloudinaryConfig from "../config/CloudinaryConfig";
@@ -22,6 +20,7 @@ import Action from "../actions/Action";
 import {TrimAction} from "../actions/videoEdit/TrimAction";
 import {TranscodeAction} from "../actions/transcode/TranscodeAction";
 import {FPSAction} from "../actions/transcode/FPSAction";
+import {DeliveryAction} from "../actions/delivery/Delivery";
 
 // TODO: add these video actions:
 /*
@@ -106,10 +105,10 @@ class Transformation {
   }
 
   /**
-   * @param {IQualityAction} qualityAction
+   * @param {DeliveryAction} quality
    */
-  quality(qualityAction: IQualityAction): this {
-    return this.addAction(qualityAction);
+  quality(quality: DeliveryAction): this {
+    return this.addAction(quality);
   }
 
   roundCorners(roundCornersAction: RoundCornersAction): this {
@@ -194,7 +193,7 @@ class Transformation {
   /**
    * @param deliveryAction
    */
-  delivery(deliveryAction: IDeliveryAction): this {
+  delivery(deliveryAction: DeliveryAction): this {
     return this.addAction(deliveryAction);
   }
 

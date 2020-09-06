@@ -31,6 +31,8 @@ import * as Outline from './constants/outline/Outline';
 import * as Dpr from './constants/dpr/Dpr';
 import * as ArtisticFilter from './constants/artisticFilters/ArtisticFilters';
 import * as ObjectGravity from './constants/gravityObjects/GravityObjects';
+import * as Format from './constants/formats/Formats';
+import * as Quality from './constants/quality/Quality';
 
 /**
  * @description a class
@@ -40,5 +42,5 @@ class Base {
   }
 }
 
-export {cloudinaryURL, Transformation, TransformableImage, Base, Actions, Color, Dpr, ObjectGravity, ArtisticFilter};
-export default {cloudinaryURL, Transformation, Base, Actions, Color, Dpr, ObjectGravity, ArtisticFilter};
+export {cloudinaryURL, Transformation, TransformableImage, Base, Actions, Color, Dpr, ObjectGravity, ArtisticFilter, Format, Quality};
+export default {cloudinaryURL, Transformation, Base, Actions, Color, Dpr, ObjectGravity, ArtisticFilter, Format, Quality};
