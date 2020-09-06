@@ -4,9 +4,10 @@
  * @namespace Background
  */
 import auto from "./auto";
-import setColor from "./setColor";
+import color from "./color"; // done, though color is a strange name
 import predominant from "./predominant";
 import border from "./border";
+import blurred from "./blurred";
 
-export {auto, setColor, predominant, border};
-export default {auto, setColor, predominant, border};
+export {auto, color, predominant, border, blurred};
+export default {auto, color, predominant, border, blurred};
