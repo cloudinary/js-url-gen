@@ -1,5 +1,4 @@
 import DeliveryAction from "./DeliveryAction";
-import {IDeliveryAction} from "./IDeliveryAction";
 import {toFloatAsString} from "../../utils/toFloatAsString";
 
 /**
@@ -7,7 +6,7 @@ import {toFloatAsString} from "../../utils/toFloatAsString";
  * @memberOf Actions.Delivery
  * @param {string} dpr
  */
-function dpr(dpr: string|number):IDeliveryAction {
+function dpr(dpr: string|number):DeliveryAction {
   // toFloatAsString is used to ensure 1 turns into 1.0
   return new DeliveryAction('dpr', toFloatAsString(dpr));
 }

@@ -7,9 +7,8 @@ import {prepareColor} from "../../utils/prepareColor";
  * @description Applies background color.
  * @param {string} color
  */
-function setColor(color: string): BackgroundAction{
+function color(color: string): BackgroundAction {
   return new BackgroundAction(prepareColor(color));
-
 }
 
-export default setColor;
+export default color;

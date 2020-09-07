@@ -30,7 +30,7 @@ describe('Tests for Transformation Action -- Background', () => {
   it('Creates a cloudinaryURL with Background.Color', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .background(Background.setColor(Color.RED))
+      .background(Background.color(Color.RED))
       .setPublicID('sample')
       .toURL();
 
@@ -40,7 +40,7 @@ describe('Tests for Transformation Action -- Background', () => {
   it('Creates a cloudinaryURL with Background.Color rgb', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .background(Background.setColor('#331a00'))
+      .background(Background.color('#331a00'))
       .setPublicID('sample')
       .toURL();
 
@@ -51,7 +51,7 @@ describe('Tests for Transformation Action -- Background', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
       .resize(Resize.pad(250, 250)
-        .background(Background.setColor('#331a00')))
+        .background(Background.color('#331a00')))
       .setPublicID('sample')
       .toURL();
 
@@ -92,5 +92,35 @@ describe('Tests for Transformation Action -- Background', () => {
       .toURL();
 
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/b_auto:predominant_contrast,c_pad,h_200,w_200/sample');
+  });
+
+  it('Test blurred background', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .background(Background.blurred())
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toContain('b_blurred');
+  });
+
+  it('Test blurred background with one qualifiers', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .background(Background.blurred().intensity(100))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toContain('b_blurred:100');
+  });
+
+  it('Test blurred background with two qualifiers', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .background(Background.blurred().intensity(100).brightness(50))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toContain('b_blurred:100:50');
   });
 });
