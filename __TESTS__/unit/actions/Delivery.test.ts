@@ -1,30 +1,13 @@
 import TransformableImage from '..         /../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as Dpr from "../../../src/constants/dpr/Dpr";
-import {
-  AI,
-  AUTO,
-  BMP,
-  EPS,
-  FLIF,
-  GIF,
-  HEIC,
-  ICO,
-  JP2,
-  JPC,
-  JPG,
-  PDF,
-  PNG,
-  PSD,
-  SVG,
-  TIFF,
-  WDP,
-  WEBM,
-  WEBP
-} from "../../../src/params/formats/Formats";
+import * as Format from "../../../src/constants/formats/Formats";
+import * as Quality from "../../../src/constants/quality/Quality";
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 import * as DeliveryESM from "../../../src/actions/delivery/Delivery";
 import Delivery from "../../../src/actions/delivery/Delivery";
+
+
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -53,10 +36,10 @@ describe('Tests for Transformation Action -- Delivery', () => {
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/f_auto/sample');
   });
 
-  it('Creates a cloudinaryURL with formatType object', () => {
+  it('Creates a cloudinaryURL with Format', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(format(GIF))
+      .delivery(format(Format.GIF))
       .setPublicID('sample')
       .toURL();
 
@@ -66,7 +49,7 @@ describe('Tests for Transformation Action -- Delivery', () => {
   it('Creates a cloudinaryURL with gif.lossy()', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(format(GIF.lossy()))
+      .delivery(format(Format.GIF).lossy())
       .setPublicID('sample')
       .toURL();
 
@@ -76,7 +59,7 @@ describe('Tests for Transformation Action -- Delivery', () => {
   it('Creates a cloudinaryURL with auto.lossy()', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(format(AUTO.lossy()))
+      .delivery(format(Format.AUTO).lossy())
       .setPublicID('sample')
       .toURL();
 
@@ -86,7 +69,7 @@ describe('Tests for Transformation Action -- Delivery', () => {
   it('Creates a cloudinaryURL with jpg.progressive()', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(format(JPG.progressive()))
+      .delivery(format(Format.JPG).progressive())
       .setPublicID('sample')
       .toURL();
 
@@ -96,7 +79,7 @@ describe('Tests for Transformation Action -- Delivery', () => {
   it('Creates a cloudinaryURL with png', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(format(PNG))
+      .delivery(format(Format.PNG))
       .setPublicID('sample')
       .toURL();
 
@@ -106,7 +89,7 @@ describe('Tests for Transformation Action -- Delivery', () => {
   it('Creates a cloudinaryURL with bmp', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(format(BMP))
+      .delivery(format(Format.BMP))
       .setPublicID('sample')
       .toURL();
 
@@ -116,7 +99,7 @@ describe('Tests for Transformation Action -- Delivery', () => {
   it('Creates a cloudinaryURL with ico', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(format(ICO))
+      .delivery(format(Format.ICO))
       .setPublicID('sample')
       .toURL();
 
@@ -126,7 +109,7 @@ describe('Tests for Transformation Action -- Delivery', () => {
   it('Creates a cloudinaryURL with pdf', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(format(PDF))
+      .delivery(format(Format.PDF))
       .setPublicID('sample')
       .toURL();
 
@@ -136,7 +119,7 @@ describe('Tests for Transformation Action -- Delivery', () => {
   it('Creates a cloudinaryURL with eps', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(format(EPS))
+      .delivery(format(Format.EPS))
       .setPublicID('sample')
       .toURL();
 
@@ -146,7 +129,7 @@ describe('Tests for Transformation Action -- Delivery', () => {
   it('Creates a cloudinaryURL with tiff', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(format(TIFF))
+      .delivery(format(Format.TIFF))
       .setPublicID('sample')
       .toURL();
 
@@ -156,7 +139,7 @@ describe('Tests for Transformation Action -- Delivery', () => {
   it('Creates a cloudinaryURL with webp', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(format(WEBP))
+      .delivery(format(Format.WEBP))
       .setPublicID('sample')
       .toURL();
 
@@ -166,7 +149,7 @@ describe('Tests for Transformation Action -- Delivery', () => {
   it('Creates a cloudinaryURL with psd', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(format(PSD))
+      .delivery(format(Format.PSD))
       .setPublicID('sample')
       .toURL();
 
@@ -176,7 +159,7 @@ describe('Tests for Transformation Action -- Delivery', () => {
   it('Creates a cloudinaryURL with jpc', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(format(JPC))
+      .delivery(format(Format.JPC))
       .setPublicID('sample')
       .toURL();
 
@@ -186,7 +169,7 @@ describe('Tests for Transformation Action -- Delivery', () => {
   it('Creates a cloudinaryURL with wdp', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(format(WDP))
+      .delivery(format(Format.WDP))
       .setPublicID('sample')
       .toURL();
 
@@ -196,7 +179,7 @@ describe('Tests for Transformation Action -- Delivery', () => {
   it('Creates a cloudinaryURL with webm', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(format(WEBM))
+      .delivery(format(Format.WEBM))
       .setPublicID('sample')
       .toURL();
 
@@ -207,7 +190,7 @@ describe('Tests for Transformation Action -- Delivery', () => {
   it('Creates a cloudinaryURL with svg', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(format(SVG))
+      .delivery(format(Format.SVG))
       .setPublicID('sample')
       .toURL();
 
@@ -217,7 +200,7 @@ describe('Tests for Transformation Action -- Delivery', () => {
   it('Creates a cloudinaryURL with heic', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(format(HEIC))
+      .delivery(format(Format.HEIC))
       .setPublicID('sample')
       .toURL();
 
@@ -227,7 +210,7 @@ describe('Tests for Transformation Action -- Delivery', () => {
   it('Creates a cloudinaryURL with flif', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(format(FLIF))
+      .delivery(format(Format.FLIF))
       .setPublicID('sample')
       .toURL();
 
@@ -237,7 +220,7 @@ describe('Tests for Transformation Action -- Delivery', () => {
   it('Creates a cloudinaryURL with ai', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(format(AI))
+      .delivery(format(Format.AI))
       .setPublicID('sample')
       .toURL();
 
@@ -247,7 +230,7 @@ describe('Tests for Transformation Action -- Delivery', () => {
   it('Creates a cloudinaryURL with jp2', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(format(JP2))
+      .delivery(format(Format.JP2))
       .setPublicID('sample')
       .toURL();
 
@@ -272,5 +255,45 @@ describe('Tests for Transformation Action -- Delivery', () => {
       .toURL();
 
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/dpr_auto/sample');
+  });
+
+  it('Creates a cloudinaryURL with Delivery.quality', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .delivery(Delivery.quality('80'))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/q_80/sample');
+  });
+
+  it('Creates a cloudinaryURL with Delivery.quality.auto()', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .delivery(Delivery.quality(Quality.AUTO))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/q_auto/sample');
+  });
+
+  it('Creates a cloudinaryURL with Delivery.density', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .delivery(Delivery.density(150))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/dn_150/sample');
+  });
+
+  it.skip('Creates a cloudinaryURL with Delivery.colorspace', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .delivery(Delivery.colorSpace(ColorSpace.mode(ColorSpaceValue.NO_CYMK)))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/dn_150/sample');
   });
 });

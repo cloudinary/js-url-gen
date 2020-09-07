@@ -6,7 +6,6 @@ import RoundCorners from "./roundCorners/RoundCorners";
 import Resize from "./resize/Resize";
 import Border from "./border/Border";
 import Effect from "./effect/Effect";
-import Quality from "./quality/Quality";
 import Rotate from "./rotate/Rotate";
 import Adjust from "./adjust/Adjust";
 import Layers from "./layers/Layers";
@@ -17,5 +16,5 @@ import Background from "./background/Background";
 import CustomFunction from './customFunction/CustomFunction';
 import Flag from "../params/flag/Flag";
 
-export {Resize, Border, RoundCorners, Effect, Quality, Rotate, Adjust, Layers, Variable, NamedTransformation, Delivery, Background, CustomFunction, Flag};
-export default {Resize, Border, RoundCorners, Effect, Quality, Rotate, Adjust, Layers, Variable, NamedTransformation, Delivery, Background, CustomFunction, Flag};
+export {Resize, Border, RoundCorners, Effect, Rotate, Adjust, Layers, Variable, NamedTransformation, Delivery, Background, CustomFunction, Flag};
+export default {Resize, Border, RoundCorners, Effect, Rotate, Adjust, Layers, Variable, NamedTransformation, Delivery, Background, CustomFunction, Flag};

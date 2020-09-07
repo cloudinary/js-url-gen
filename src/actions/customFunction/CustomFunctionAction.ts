@@ -15,7 +15,11 @@ class CustomFunctionAction extends Action {
   }
 
   private encodeCustomFunctionString(fn:string):string {
-    return base64Encode(fn);
+    const encodedSource = base64Encode(fn)
+      .replace(/\+/g, '-') // Convert '+' to '-'
+      .replace(/\//g, '_') // Convert '/' to '_'
+      .replace(/=+$/, ''); // Remove ending '='
+    return encodedSource;
   }
 
   asWasm(): this {
@@ -38,7 +42,6 @@ class CustomFunctionAction extends Action {
     if (this.mode === 'remote') {
       this.encodedFn = this.encodeCustomFunctionString(this.fn);
     }
-
     return this.addParam(new Param('fn', new ParamValue([this.pre, this.mode, this.encodedFn])));
   }
 }
