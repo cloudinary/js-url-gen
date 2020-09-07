@@ -1,5 +1,4 @@
 import {IAction} from "../interfaces/IAction";
-import {IBorderAction} from "../actions/border/IBorderAction";
 import {IEffectAction} from "../actions/effect/IEffectAction";
 import {IRotateAction} from "../actions/rotate/IRotateAction";
 import {INamedTransformationAction} from "../actions/namedTransformation/INamedTransformationAction";
@@ -23,6 +22,7 @@ import {DeliveryAction} from "../actions/delivery/Delivery";
 import BlurredBackgroundAction from "../actions/background/BlurredBackgroundAction";
 import VariableAction from "../actions/variable/VariableAction";
 import CutterAction from "../actions/cutter/CutterAction";
+import BorderAction from "../actions/border/BorderAction";
 
 // TODO: add these video actions:
 /*
@@ -92,9 +92,9 @@ class Transformation {
 
 
   /**
-   * @param {IBorderAction} borderAction
+   * @param {BorderAction} borderAction
    */
-  border(borderAction: IBorderAction): this{
+  border(borderAction: BorderAction): this{
     return this.addAction(borderAction);
   }
 
