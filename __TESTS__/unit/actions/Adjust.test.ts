@@ -3,8 +3,9 @@ import Adjust from '../../../src/actions/adjust/Adjust';
 import * as AdjustESM from '../../../src/actions/adjust/Adjust';
 import {TransformableImage} from "../../../src";
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
+import * as ImproveMode from "../../../src/params/improveMode/ImproveMode";
 
-const {opacity, viesusCorrect, brightness, sharpen, improve, red, saturation, tint} = Adjust;
+const {opacity, viesusCorrect, brightness, sharpen, improve, red, saturation} = Adjust;
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -25,12 +26,11 @@ describe('Tests for Transformation Action -- Adjust', () => {
     expect(Adjust.improve).toEqual(improve);
     expect(Adjust.red).toEqual(red);
     expect(Adjust.saturation).toEqual(saturation);
-    expect(Adjust.tint).toEqual(tint);
   });
 
   it('Ensures viesusCorrect, opacity, brightness are accepted as an action to TransformableImage', () => {
     const tImage = new TransformableImage();
-    const TEST_URL_TO_CREATE = 'http://res.cloudinary.com/demo/image/upload/e_viesus_correct/o_50/e_brightness:200/e_sharpen/e_sharpen/e_red:20/e_saturation:50/e_tint:equalize:80:red:blue:yellow/sample';
+    const TEST_URL_TO_CREATE = 'http://res.cloudinary.com/demo/image/upload/e_viesus_correct/o_50/e_brightness:200/e_sharpen/e_improve/e_red:20/e_saturation:50/sample';
 
     expect(
       tImage
@@ -42,7 +42,6 @@ describe('Tests for Transformation Action -- Adjust', () => {
         .adjust(improve())
         .adjust(red(20))
         .adjust(saturation(50))
-        .adjust(tint('equalize:80:red:blue:yellow'))
         .setPublicID('sample')
     ).toEqual(tImage);
 
@@ -137,5 +136,58 @@ describe('Tests for Transformation Action -- Adjust', () => {
       .toURL();
 
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_opacity_threshold:50/sample');
+  });
+
+  it('tests replaceColor', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .adjust(Adjust
+        .replaceColor('red')
+        .tolerance(30)
+        .fromColor('blue'))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toContain('e_replace_color:red:30:blue');
+  });
+
+  it('tests replaceColor - without fromColor', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .adjust(Adjust.replaceColor('red'))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toContain('e_replace_color:red');
+  });
+
+  it('tests recolor matrix', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .adjust(Adjust.recolor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6], [0.7, 0.8, 0.9]]))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toContain('e_recolor:0.1:0.2:0.3:0.4:0.5:0.6:0.7:0.8:0.9');
+  });
+
+  it('tests fillLight', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .adjust(Adjust.fillLight().level(0).bias(0))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toContain('e_fill_light:0:0');
+  });
+
+  it('tests improve', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .adjust(Adjust.improve().mode(ImproveMode.OUTDOOR).blend(0))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toContain('e_improve:outdoor:0');
   });
 });
