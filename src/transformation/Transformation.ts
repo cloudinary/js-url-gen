@@ -1,6 +1,5 @@
 import {IAction} from "../interfaces/IAction";
 import {IEffectAction} from "../actions/effect/IEffectAction";
-import {IRotateAction} from "../actions/rotate/IRotateAction";
 import {INamedTransformationAction} from "../actions/namedTransformation/INamedTransformationAction";
 import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigurations";
 import CloudinaryConfig from "../config/CloudinaryConfig";
@@ -23,6 +22,7 @@ import BlurredBackgroundAction from "../actions/background/BlurredBackgroundActi
 import VariableAction from "../actions/variable/VariableAction";
 import CutterAction from "../actions/cutter/CutterAction";
 import BorderAction from "../actions/border/BorderAction";
+import RotateAction from "../actions/rotate/RotateAction";
 
 // TODO: add these video actions:
 /*
@@ -183,9 +183,9 @@ class Transformation {
   }
 
   /**
-   * @param {IRotateAction} rotateAction
+   * @param {RotateAction} rotateAction
    */
-  rotate(rotateAction: IRotateAction): this {
+  rotate(rotateAction: RotateAction): this {
     return this.addAction(rotateAction);
   }
 

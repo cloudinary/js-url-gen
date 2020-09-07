@@ -1,5 +1,4 @@
 import {RotateAction} from "./RotateAction";
-import {IRotateAction} from "./IRotateAction";
 
 /**
  * @memberOf Actions.Rotate
@@ -7,7 +6,7 @@ import {IRotateAction} from "./IRotateAction";
  * @param {string} rotationMode
  * @returns {RotateAction}
  */
-function mode(rotationMode: string) :IRotateAction {
+function mode(rotationMode: string) :RotateAction {
   return new RotateAction().mode(rotationMode);
 }
 
