@@ -42,7 +42,7 @@ const bundleSizeTestCases:ITestCase[] = [
   },
   {
     name: 'Tests a transformable image with Resize, adjust and delivery',
-    sizeLimitInKB: 13,
+    sizeLimitInKB: 14,
     importsArray: [
       importFromBase('TransformableImage'),
       importFromDist('actions/resize'),

@@ -22,10 +22,10 @@ import {FPSAction} from "../actions/transcode/FPSAction";
 import {DeliveryAction} from "../actions/delivery/Delivery";
 import BlurredBackgroundAction from "../actions/background/BlurredBackgroundAction";
 import VariableAction from "../actions/variable/VariableAction";
+import CutterAction from "../actions/cutter/CutterAction";
 
 // TODO: add these video actions:
 /*
-import {CutterAction} from "../actions/layers/CutterAction";
 import {SubtitlesAction} from "../actions/layers/SubtitlesAction";
 import {VideoConcatenateAction} from "../actions/layers/VideoConcatenateAction";
 import {KeyframeIntervalAction} from "../actions/transcode/KeyframeIntervalAction";
@@ -96,6 +96,11 @@ class Transformation {
    */
   border(borderAction: IBorderAction): this{
     return this.addAction(borderAction);
+  }
+
+
+  cutter(cutterAction: CutterAction): this {
+    return this.addAction(cutterAction);
   }
 
   /**
