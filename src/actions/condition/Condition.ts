@@ -18,6 +18,11 @@ const CONDITIONAL_OPERATORS: Record<string, string> = {
   "^": "pow"
 };
 
+/**
+ * Sets up a conditional transformation.
+ * @memberOf Actions
+ * @namespace Condition
+ */
 class ConditionAction extends Action implements IConditionAction {
   constructor(expression: string) {
     super();
@@ -27,6 +32,7 @@ class ConditionAction extends Action implements IConditionAction {
   }
 
   /**
+   * @private
    * Normalizes expression from user representation to URL form.
    * @param {string} expression The expression to normalize.
    * @return {string} The normalized expression.
@@ -43,7 +49,10 @@ class ConditionAction extends Action implements IConditionAction {
 }
 
 /**
- * @param expression
+ * @memberOf Actions.Condition
+ * @description Sets up a conditional transformation with expression.
+ * @param {string} expression The condition to meet in order to apply the transformation. </br>
+ * Learn more: {@link https://cloudinary.com/documentation/conditional_transformations | Conditional transformations}
  */
 function fromString(expression: string): ConditionAction {
   return new ConditionAction(expression);

@@ -5,7 +5,7 @@ class Param {
   paramValue: ParamValue;
   delimiter = '_'; // {key}{delimiter}{paramValue}
 
-  constructor(key: string, paramValue?: ParamValue | ParamValue[] | number | number[] | string | string[]) {
+  constructor(key: string, paramValue?: ParamValue | ParamValue[] | number | string | (string | number)[]) {
     this.key = key;
     if (paramValue instanceof ParamValue) {
       this.paramValue = paramValue;

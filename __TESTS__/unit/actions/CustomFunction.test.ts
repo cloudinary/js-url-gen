@@ -28,7 +28,7 @@ describe('Tests for Transformation Action -- NamedTransformation', () => {
       .setConfig(CONFIG_INSTANCE)
       .customFunction(remote('https://my.preprocess.custom/function')).toURL();
 
-    expect(url).toContain('fn_remote:aHR0cHM6Ly9teS5wcmVwcm9jZXNzLmN1c3RvbS9mdW5jdGlvbg==');
+    expect(url).toContain('fn_remote:aHR0cHM6Ly9teS5wcmVwcm9jZXNzLmN1c3RvbS9mdW5jdGlvbg');
   });
 
   it ('Works with remote preprocessed', () => {
@@ -36,10 +36,10 @@ describe('Tests for Transformation Action -- NamedTransformation', () => {
       .setConfig(CONFIG_INSTANCE)
       .customFunction(remote('https://my.preprocess.custom/function').preprocess()).toURL();
 
-    expect(url).toContain('fn_pre:remote:aHR0cHM6Ly9teS5wcmVwcm9jZXNzLmN1c3RvbS9mdW5jdGlvbg==');
+    expect(url).toContain('fn_pre:remote:aHR0cHM6Ly9teS5wcmVwcm9jZXNzLmN1c3RvbS9mdW5jdGlvbg');
   });
 
-  it.skip('tests url safe base64 encoding', () => {
+  it('tests url safe base64 encoding', () => {
     const url = new TransformableImage('sample')
       .setConfig(CONFIG_INSTANCE)
       .customFunction(remote('https://opengraphimg.com/.netlify/functions/generate-opengraph?author=opengraphimg&title=Hey%20Chris%20this%20is%20working').preprocess()).toURL();

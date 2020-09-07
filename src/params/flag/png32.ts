@@ -1,4 +1,4 @@
-import {Flag} from './Flag';
+import Flag from './FlagParam';
 
 /**
  * @memberOf Params.Flag

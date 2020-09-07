@@ -1,10 +1,6 @@
 import {IAction} from "../interfaces/IAction";
-import {IBorderAction} from "../actions/border/IBorderAction";
-import {IQualityAction} from "../actions/quality/IQualityAction";
-import {IVariableAction} from "../actions/variable/IVariableAction";
 import {IEffectAction} from "../actions/effect/IEffectAction";
 import {IRotateAction} from "../actions/rotate/IRotateAction";
-import {IDeliveryAction} from "../actions/delivery/IDeliveryAction";
 import {INamedTransformationAction} from "../actions/namedTransformation/INamedTransformationAction";
 import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigurations";
 import CloudinaryConfig from "../config/CloudinaryConfig";
@@ -22,10 +18,14 @@ import Action from "../actions/Action";
 import {TrimAction} from "../actions/videoEdit/TrimAction";
 import {TranscodeAction} from "../actions/transcode/TranscodeAction";
 import {FPSAction} from "../actions/transcode/FPSAction";
+import {DeliveryAction} from "../actions/delivery/Delivery";
+import BlurredBackgroundAction from "../actions/background/BlurredBackgroundAction";
+import VariableAction from "../actions/variable/VariableAction";
+import CutterAction from "../actions/cutter/CutterAction";
+import BorderAction from "../actions/border/BorderAction";
 
 // TODO: add these video actions:
 /*
-import {CutterAction} from "../actions/layers/CutterAction";
 import {SubtitlesAction} from "../actions/layers/SubtitlesAction";
 import {VideoConcatenateAction} from "../actions/layers/VideoConcatenateAction";
 import {KeyframeIntervalAction} from "../actions/transcode/KeyframeIntervalAction";
@@ -92,10 +92,15 @@ class Transformation {
 
 
   /**
-   * @param {IBorderAction} borderAction
+   * @param {BorderAction} borderAction
    */
-  border(borderAction: IBorderAction): this{
+  border(borderAction: BorderAction): this{
     return this.addAction(borderAction);
+  }
+
+
+  cutter(cutterAction: CutterAction): this {
+    return this.addAction(cutterAction);
   }
 
   /**
@@ -106,10 +111,10 @@ class Transformation {
   }
 
   /**
-   * @param {IQualityAction} qualityAction
+   * @param {DeliveryAction} quality
    */
-  quality(qualityAction: IQualityAction): this {
-    return this.addAction(qualityAction);
+  quality(quality: DeliveryAction): this {
+    return this.addAction(quality);
   }
 
   roundCorners(roundCornersAction: RoundCornersAction): this {
@@ -133,9 +138,9 @@ class Transformation {
   }
 
   /**
-   * @param {IVariableAction} variableAction
+   * @param {VariableAction} variableAction
    */
-  variable(variableAction: IVariableAction): this {
+  addVariable(variableAction: VariableAction): this {
     return this.addAction(variableAction);
   }
 
@@ -146,10 +151,19 @@ class Transformation {
     return this.addAction(conditionAction);
   }
 
+  /**
+   * @memberOf Actions.Condition
+   * @description Specifies a transformation that is applied in the case that the initial condition is evaluated as
+   * false.
+   */
   ifElse(): this {
     return this.addAction(new Param('if', 'else'));
   }
 
+  /**
+   * @memberOf Actions.Condition
+   * @description Finishes the conditional transformation.
+   */
   endIfCondition(): this {
     return this.addAction(new Param('if', 'end'));
   }
@@ -185,14 +199,14 @@ class Transformation {
   /**
    * @param deliveryAction
    */
-  delivery(deliveryAction: IDeliveryAction): this {
+  delivery(deliveryAction: DeliveryAction): this {
     return this.addAction(deliveryAction);
   }
 
   /**
    * @param {BackgroundAction} backgroundAction
    */
-  background(backgroundAction: BackgroundAction): this {
+  background(backgroundAction: BackgroundAction | BlurredBackgroundAction): this {
     return this.addAction(backgroundAction);
   }
 
