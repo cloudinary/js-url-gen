@@ -1,12 +1,11 @@
 import DeliveryAction from "./DeliveryAction";
-import {IDeliveryAction} from "./IDeliveryAction";
-import {FormatType} from "../../params/formats/Formats";
 
 /**
+ * @description Sets file format.
  * @memberOf Actions.Delivery
  * @param {string} format
  */
-function format(format:string | FormatType) :IDeliveryAction {
+function format(format:string) :DeliveryAction {
   return new DeliveryAction('f', format);
 }
 

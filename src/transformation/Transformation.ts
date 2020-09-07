@@ -1,9 +1,7 @@
 import {IAction} from "../interfaces/IAction";
 import {IBorderAction} from "../actions/border/IBorderAction";
-import {IQualityAction} from "../actions/quality/IQualityAction";
 import {IEffectAction} from "../actions/effect/IEffectAction";
 import {IRotateAction} from "../actions/rotate/IRotateAction";
-import {IDeliveryAction} from "../actions/delivery/IDeliveryAction";
 import {INamedTransformationAction} from "../actions/namedTransformation/INamedTransformationAction";
 import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigurations";
 import CloudinaryConfig from "../config/CloudinaryConfig";
@@ -21,6 +19,7 @@ import Action from "../actions/Action";
 import {TrimAction} from "../actions/videoEdit/TrimAction";
 import {TranscodeAction} from "../actions/transcode/TranscodeAction";
 import {FPSAction} from "../actions/transcode/FPSAction";
+import {DeliveryAction} from "../actions/delivery/Delivery";
 import VariableAction from "../actions/variable/VariableAction";
 
 // TODO: add these video actions:
@@ -106,10 +105,10 @@ class Transformation {
   }
 
   /**
-   * @param {IQualityAction} qualityAction
+   * @param {DeliveryAction} quality
    */
-  quality(qualityAction: IQualityAction): this {
-    return this.addAction(qualityAction);
+  quality(quality: DeliveryAction): this {
+    return this.addAction(quality);
   }
 
   roundCorners(roundCornersAction: RoundCornersAction): this {
@@ -146,10 +145,19 @@ class Transformation {
     return this.addAction(conditionAction);
   }
 
+  /**
+   * @memberOf Actions.Condition
+   * @description Specifies a transformation that is applied in the case that the initial condition is evaluated as
+   * false.
+   */
   ifElse(): this {
     return this.addAction(new Param('if', 'else'));
   }
 
+  /**
+   * @memberOf Actions.Condition
+   * @description Finishes the conditional transformation.
+   */
   endIfCondition(): this {
     return this.addAction(new Param('if', 'end'));
   }
@@ -185,7 +193,7 @@ class Transformation {
   /**
    * @param deliveryAction
    */
-  delivery(deliveryAction: IDeliveryAction): this {
+  delivery(deliveryAction: DeliveryAction): this {
     return this.addAction(deliveryAction);
   }
 
