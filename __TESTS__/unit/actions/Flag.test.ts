@@ -229,6 +229,16 @@ describe('Tests for Transformation Action -- Flag', () => {
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/fl_myFlag/sample');
   });
 
+  it('Creates a cloudinaryURL with flag layer', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .addFlag(Flag.layerApply())
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/fl_layer_apply/sample');
+  });
+
   it('Creates a cloudinaryURL with Flag hlsv3', () => {
     const url = new TransformableVideo()
       .setConfig(CONFIG_INSTANCE)
@@ -293,6 +303,17 @@ describe('Tests for Transformation Action -- Flag', () => {
       .toURL();
 
     expect(url).toBe('http://res.cloudinary.com/demo/video/upload/fl_waveform/sample');
+  });
+
+  it('Creates a cloudinaryURL with Flag streamingAttachment', () => {
+    const url = new TransformableVideo()
+      .setConfig(CONFIG_INSTANCE)
+      .setAssetType('video')
+      .addFlag(Flag.streamingAttachment('file_name'))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/fl_streaming_attachment:file_name/sample');
   });
 
   it('Creates a cloudinaryURL with multiple flags', () => {

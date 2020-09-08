@@ -15,7 +15,7 @@ import Flag from './FlagParam';
  *
  * @param {string} filename The attachment's filename
  */
-function streamingAttachment(filename?: string): Flag{
+function streamingAttachment(filename: string): Flag{
   return new Flag('streaming_attachment', filename);
 }
 
