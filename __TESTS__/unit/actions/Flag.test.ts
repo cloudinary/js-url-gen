@@ -4,6 +4,7 @@ import Flag from "../../../src/params/flag/Flag";
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 import * as FlagESM from "../../../src/params/flag/Flag";
 import Resize from "../../../src/actions/resize/Resize";
+import TransformableVideo from "../../../src/transformation/TransformableVideo";
 
 
 
@@ -38,13 +39,14 @@ describe('Tests for Transformation Action -- Flag', () => {
   });
 
   it('Creates a cloudinaryURL with Flag animatedWebP', () => {
-    const url = new TransformableImage()
+    const url = new TransformableVideo()
       .setConfig(CONFIG_INSTANCE)
+      .setAssetType('video')
       .addFlag(Flag.animatedWebP())
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/fl_awebp/sample');
+    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/fl_awebp/sample');
   });
 
   it('Creates a cloudinaryURL with Flag clip', () => {
@@ -215,6 +217,82 @@ describe('Tests for Transformation Action -- Flag', () => {
       .toURL();
 
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/fl_keep_iptc/sample');
+  });
+
+  it('Creates a cloudinaryURL with custom flag', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .addFlag(Flag.custom('myFlag'))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/fl_myFlag/sample');
+  });
+
+  it('Creates a cloudinaryURL with Flag hlsv3', () => {
+    const url = new TransformableVideo()
+      .setConfig(CONFIG_INSTANCE)
+      .setAssetType('video')
+      .addFlag(Flag.hlsv3())
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/fl_hlsv3/sample');
+  });
+
+  it('Creates a cloudinaryURL with Flag keepDar', () => {
+    const url = new TransformableVideo()
+      .setConfig(CONFIG_INSTANCE)
+      .setAssetType('video')
+      .addFlag(Flag.keepDar())
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/fl_keep_dar/sample');
+  });
+
+  it('Creates a cloudinaryURL with Flag noStream', () => {
+    const url = new TransformableVideo()
+      .setConfig(CONFIG_INSTANCE)
+      .setAssetType('video')
+      .addFlag(Flag.noStream())
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/fl_no_stream/sample');
+  });
+
+  it('Creates a cloudinaryURL with Flag mono', () => {
+    const url = new TransformableVideo()
+      .setConfig(CONFIG_INSTANCE)
+      .setAssetType('video')
+      .addFlag(Flag.mono())
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/fl_mono/sample');
+  });
+
+  it('Creates a cloudinaryURL with Flag splice', () => {
+    const url = new TransformableVideo()
+      .setConfig(CONFIG_INSTANCE)
+      .setAssetType('video')
+      .addFlag(Flag.splice())
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/fl_splice/sample');
+  });
+
+  it('Creates a cloudinaryURL with Flag waveform', () => {
+    const url = new TransformableVideo()
+      .setConfig(CONFIG_INSTANCE)
+      .setAssetType('video')
+      .addFlag(Flag.waveform())
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/fl_waveform/sample');
   });
 
   it('Creates a cloudinaryURL with multiple flags', () => {
