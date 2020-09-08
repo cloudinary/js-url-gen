@@ -23,6 +23,7 @@ import {DeliveryAction} from "../actions/delivery/Delivery";
 import BlurredBackgroundAction from "../actions/background/BlurredBackgroundAction";
 import VariableAction from "../actions/variable/VariableAction";
 import CutterAction from "../actions/cutter/CutterAction";
+import SmartObject from "../actions/getSmartObject/getSmartObjectAction";
 
 // TODO: add these video actions:
 /*
@@ -208,6 +209,13 @@ class Transformation {
    */
   background(backgroundAction: BackgroundAction | BlurredBackgroundAction): this {
     return this.addAction(backgroundAction);
+  }
+
+  /**
+   * @param {SmartObject} smartObject
+   */
+  getSmartObject(smartObject: SmartObject): this {
+    return this.addAction(smartObject);
   }
 
   /**
