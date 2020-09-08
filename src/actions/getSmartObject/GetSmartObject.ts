@@ -1,4 +1,4 @@
-import SmartObject from "./getSmartObjectAction";
+import SmartObject from "./GetSmartObjectAction";
 import byIndex from "./byIndex";
 import byFileName from "./byFileName";
 

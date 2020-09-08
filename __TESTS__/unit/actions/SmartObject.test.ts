@@ -1,5 +1,5 @@
-import SmartObject from "../../../src/actions/getSmartObject/getSmartObject";
-import * as SmartObjectESM from '../../../src/actions/getSmartObject/getSmartObject';
+import SmartObject from "../../../src/actions/getSmartObject/GetSmartObject";
+import * as SmartObjectESM from '../../../src/actions/getSmartObject/GetSmartObject';
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";

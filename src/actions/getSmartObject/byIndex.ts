@@ -1,4 +1,4 @@
-import SmartObject from "./getSmartObjectAction";
+import SmartObject from "./GetSmartObjectAction";
 
 /**
  * @description  Creates a new instance using the specified index.
