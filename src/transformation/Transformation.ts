@@ -1,6 +1,4 @@
 import {IAction} from "../interfaces/IAction";
-import {IBorderAction} from "../actions/border/IBorderAction";
-import {IVariableAction} from "../actions/variable/IVariableAction";
 import {IEffectAction} from "../actions/effect/IEffectAction";
 import {IRotateAction} from "../actions/rotate/IRotateAction";
 import {INamedTransformationAction} from "../actions/namedTransformation/INamedTransformationAction";
@@ -21,11 +19,13 @@ import {TranscodeAction} from "../actions/transcode/TranscodeAction";
 import {FPSAction} from "../actions/transcode/FPSAction";
 import {DeliveryAction} from "../actions/delivery/Delivery";
 import BlurredBackgroundAction from "../actions/background/BlurredBackgroundAction";
+import VariableAction from "../actions/variable/VariableAction";
+import CutterAction from "../actions/cutter/CutterAction";
+import BorderAction from "../actions/border/BorderAction";
 import {ConditionAction} from "../actions/condition/Condition";
 
 // TODO: add these video actions:
 /*
-import {CutterAction} from "../actions/layers/CutterAction";
 import {SubtitlesAction} from "../actions/layers/SubtitlesAction";
 import {VideoConcatenateAction} from "../actions/layers/VideoConcatenateAction";
 import {KeyframeIntervalAction} from "../actions/transcode/KeyframeIntervalAction";
@@ -92,10 +92,15 @@ class Transformation {
 
 
   /**
-   * @param {IBorderAction} borderAction
+   * @param {BorderAction} borderAction
    */
-  border(borderAction: IBorderAction): this{
+  border(borderAction: BorderAction): this{
     return this.addAction(borderAction);
+  }
+
+
+  cutter(cutterAction: CutterAction): this {
+    return this.addAction(cutterAction);
   }
 
   /**
@@ -133,9 +138,9 @@ class Transformation {
   }
 
   /**
-   * @param {IVariableAction} variableAction
+   * @param {VariableAction} variableAction
    */
-  variable(variableAction: IVariableAction): this {
+  addVariable(variableAction: VariableAction): this {
     return this.addAction(variableAction);
   }
 

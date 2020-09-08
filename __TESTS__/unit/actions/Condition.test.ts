@@ -1,6 +1,6 @@
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import TransformableImage from "../../../src/transformation/TransformableImage";
-import {variable} from "../../../src/actions/variable/Variable";
+import {set} from "../../../src/actions/variable/Variable";
 import Resize from "../../../src/actions/resize/Resize";
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 import * as ConditionESM from "../../../src/actions/condition/Condition";
@@ -94,7 +94,7 @@ describe('Tests for Transformation Action -- Condition', () => {
   it('Creates a cloudinaryURL with condition ar > 0.65 and w > 1000', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .variable(variable('a', 30))
+      .addVariable(set('a', 30))
       .ifCondition(Condition.fromExpression('ar > 0.65 and w > 1000'))
       .endIfCondition()
       .setPublicID('sample')
