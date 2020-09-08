@@ -1,6 +1,10 @@
 import EffectAction from "../effect/EffectAction";
 import Action from "../Action";
 import Param from "../../parameters/Param";
+import FillLightAction from "./FillLightAction";
+import RecolorAction from "./RecolorAction";
+import ImproveAction from "./ImproveAction";
+import ReplaceColorAction from "./ReplaceColorAction";
 
 
 /**
@@ -102,11 +106,11 @@ function unsharpMask(strength?:number): EffectAction {
 
 /**
  * @memberOf Actions.Adjust
- * @description Adjusts the image colors, contrast and brightness.
- * @param {number} level
+ * @description Defines how to improve an image by automatically adjusting image colors, contrast and brightness.</br>
+ * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#image_improvement_effects | Image improvement effects}
  */
-function improve(level?:number): EffectAction {
-  return new EffectAction('sharpen', level);
+function improve(): ImproveAction {
+  return new ImproveAction();
 }
 
 /**
@@ -116,17 +120,6 @@ function improve(level?:number): EffectAction {
  */
 function saturation(level?:number): EffectAction {
   return new EffectAction('saturation', level);
-}
-
-/**
- * @memberOf Actions.Adjust
- * @description
- * Blends the image with one or more tint colors at the intensity specified.</br>
- * Optional - equalize colors before tinting, specify gradient blend positioning per color.
- * @param {number} level
- */
-function tint(level: string): EffectAction {
-  return new EffectAction('tint', level);
 }
 
 /**
@@ -215,10 +208,37 @@ function vibrance(strength?:number): EffectAction {
   return new EffectAction('vibrance', strength);
 }
 
-export default {brightness, viesusCorrect, opacity, red, sharpen, improve, saturation,
-  tint, contrast, gamma, green, blue, brightnessHSB, hue, autoBrightness, autoColor,
-  autoContrast, vibrance, unsharpMask, opacityThreshold};
 
-export {brightness, viesusCorrect, opacity, red, sharpen, improve, saturation, tint,
+/**
+ * Maps an input color and those similar to the input color to corresponding shades of a specified output color, taking luminosity and chroma into account, in order to recolor an object in a natural way.</br>
+ * More highly saturated input colors usually give the best results. It is recommended to avoid input colors approaching white, black, or gray.
+ * @param {string} toColor
+ */
+function replaceColor(toColor:string): ReplaceColorAction {
+  return new ReplaceColorAction(toColor);
+}
+
+/**
+ * @description Converts the colors of every pixel in an image based on the supplied color matrix, in which the value of each color channel is calculated based on the values from all other channels (e.g. a 3x3 matrix for RGB, a 4x4 matrix for RGBA or CMYK, etc).</br>
+ * For every pixel in the image, take each color channel and adjust its value by the specified values of the matrix to get a new value.
+ * @param {number[][]} matrix
+ */
+function recolor(matrix:number[][]): RecolorAction {
+  return new RecolorAction(matrix);
+}
+
+/**
+ * @description Adjusts the fill light and blends the result with the original image.
+ */
+function fillLight(): FillLightAction {
+  return new FillLightAction();
+}
+
+
+export default {brightness, viesusCorrect, opacity, red, sharpen, improve, saturation,
   contrast, gamma, green, blue, brightnessHSB, hue, autoBrightness, autoColor,
-  autoContrast, vibrance, unsharpMask, opacityThreshold};
+  autoContrast, vibrance, unsharpMask, opacityThreshold, replaceColor, recolor, fillLight};
+
+export {brightness, viesusCorrect, opacity, red, sharpen, improve, saturation,
+  contrast, gamma, green, blue, brightnessHSB, hue, autoBrightness, autoColor,
+  autoContrast, vibrance, unsharpMask, opacityThreshold, replaceColor, recolor, fillLight};
