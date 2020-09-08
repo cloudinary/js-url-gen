@@ -6,7 +6,6 @@ import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigura
 import CloudinaryConfig from "../config/CloudinaryConfig";
 import {IDescriptor} from "../interfaces/IDescriptor";
 import createCloudinaryURL from "../url/cloudinaryURL";
-import {IConditionAction} from "../actions/condition/IConditionAction";
 import Param from "../parameters/Param";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
 import {ResizeAction} from "../actions/resize/Resize";
@@ -23,6 +22,7 @@ import BlurredBackgroundAction from "../actions/background/BlurredBackgroundActi
 import VariableAction from "../actions/variable/VariableAction";
 import CutterAction from "../actions/cutter/CutterAction";
 import BorderAction from "../actions/border/BorderAction";
+import {ConditionAction} from "../actions/condition/Condition";
 
 // TODO: add these video actions:
 /*
@@ -145,9 +145,9 @@ class Transformation {
   }
 
   /**
-   * @param {IConditionAction} conditionAction
+   * @param {ConditionAction} conditionAction
    */
-  ifCondition(conditionAction: IConditionAction): this {
+  ifCondition(conditionAction: ConditionAction): this {
     return this.addAction(conditionAction);
   }
 
