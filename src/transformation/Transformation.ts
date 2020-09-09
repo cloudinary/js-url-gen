@@ -23,6 +23,7 @@ import BorderAction from "../actions/border/BorderAction";
 import {ConditionAction} from "../actions/condition/Condition";
 import ResizeSimpleAction from "../actions/resize/ResizeActions/ResizeSimpleAction";
 import RotateAction from "../actions/rotate/RotateAction";
+import SmartObject from "../actions/getSmartObject/GetSmartObjectAction";
 
 // TODO: add these video actions:
 /*
@@ -208,6 +209,13 @@ class Transformation {
    */
   background(backgroundAction: BackgroundAction | BlurredBackgroundAction): this {
     return this.addAction(backgroundAction);
+  }
+
+  /**
+   * @param {SmartObject} smartObject
+   */
+  getSmartObject(smartObject: SmartObject): this {
+    return this.addAction(smartObject);
   }
 
   /**
