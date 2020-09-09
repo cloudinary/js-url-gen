@@ -3,12 +3,11 @@ import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as ArtisticFilter from "../../../src/constants/artisticFilters/ArtisticFilters";
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 import * as EffectESM from "../../../src/actions/effect/Effect";
-import Effect from "../../../src/actions/effect/Effect";
+import Effect, {shadow} from "../../../src/actions/effect/Effect";
 import * as Outline from "../../../src/constants/outline/Outline";
 import {image} from "../../../src/params/sources/Sources";
 import scale from "../../../src/actions/resize/ResizeActions/ScaleAction";
-
-const {blur, blurFaces, pixelateFaces, grayscale, sepia, shadow, cartoonify} = Effect;
+import cartoonify from "../../../src/actions/effect/cartoonify";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -21,125 +20,78 @@ describe('Tests for Transformation Action -- Effect', () => {
     expectESMToMatchDefault(EffectESM, Effect);
   });
 
-  it('Ensures blur is accepted as an action to TransformableImage', () => {
-    const tImage = new TransformableImage();
-    // Ensures it compiles and doesn't throw
-    expect(
-      tImage.effect(blur())
-    ).toEqual(tImage);
-  });
-
-  it('Creates a cloudinaryURL with effect blur', () => {
+  it('Creates a cloudinaryURL with Simple and Levelled effects', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .effect(Effect.blur())
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_blur/sample');
-  });
-
-  it('Creates a cloudinaryURL with effect blur:50', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .effect(Effect.blur(50))
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_blur:50/sample');
-  });
-
-  it('Ensures blurFaces is accepted as an action to TransformableImage', () => {
-    const tImage = new TransformableImage();
-    // Ensures it compiles and doesn't throw
-    expect(
-      tImage.effect(blurFaces())
-    ).toEqual(tImage);
-  });
-
-  it('Creates a cloudinaryURL with effect blurFaces', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
+      .effect(Effect.advancedRedEye())
+      .effect(Effect.accelerate())
+      .effect(Effect.accelerate(100))
+      .effect(Effect.boomerang())
+      .effect(Effect.blackWhite())
       .effect(Effect.blurFaces())
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_blur_faces/sample');
-  });
-
-  it('Creates a cloudinaryURL with effect blur_faces:50', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .effect(Effect.blurFaces(50))
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_blur_faces:50/sample');
-  });
-
-  it('Ensures pixelateFaces is accepted as an action to TransformableImage', () => {
-    const tImage = new TransformableImage();
-    // Ensures it compiles and doesn't throw
-    expect(
-      tImage.effect(pixelateFaces())
-    ).toEqual(tImage);
-  });
-
-  it('Creates a cloudinaryURL with effect pixelateFaces', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .effect(Effect.pixelateFaces())
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_pixelate_faces/sample');
-  });
-
-  it('Creates a cloudinaryURL with effect pixelate_faces:50', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .effect(Effect.pixelateFaces(50))
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_pixelate_faces:50/sample');
-  });
-
-  it('Ensures grayscale is accepted as an action to TransformableImage', () => {
-    const tImage = new TransformableImage();
-    // Ensures it compiles and doesn't throw
-    expect(
-      tImage.effect(grayscale())
-    ).toEqual(tImage);
-  });
-
-  it('Creates a cloudinaryURL with effect grayscale', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
+      .effect(Effect.blurFaces(100))
+      .effect(Effect.blur())
+      .effect(Effect.blur(100))
+      .effect(Effect.fadeIn(100))
+      .effect(Effect.fadeOut(100))
       .effect(Effect.grayscale())
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_grayscale/sample');
-  });
-
-  it('Ensures sepia is accepted as an action to TransformableImage', () => {
-    const tImage = new TransformableImage();
-    // Ensures it compiles and doesn't throw
-    expect(
-      tImage.effect(sepia())
-    ).toEqual(tImage);
-  });
-
-  it('Creates a cloudinaryURL with effect sepia', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
+      .effect(Effect.loop())
+      .effect(Effect.loop(100))
+      .effect(Effect.makeTransparent())
+      .effect(Effect.makeTransparent(100))
+      .effect(Effect.noise())
+      .effect(Effect.noise(100))
+      .effect(Effect.negate())
+      .effect(Effect.pixelate())
+      .effect(Effect.pixelate(100))
+      .effect(Effect.pixelateFaces())
+      .effect(Effect.pixelateFaces(100))
+      .effect(Effect.reverse())
+      .effect(Effect.redEye())
       .effect(Effect.sepia())
+      .effect(Effect.sepia(100))
+      .effect(Effect.vignette())
+      .effect(Effect.vignette(100))
+
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_sepia/sample');
+    const expectedToContain = [
+      'e_adv_redeye',
+      'e_accelerate',
+      'e_accelerate:100',
+      'e_boomerang',
+      'e_blackwhite',
+      'e_blur_faces',
+      'e_blur_faces:100',
+      'e_blur',
+      'e_blur:100',
+      'e_fade:100',
+      'e_fade:-100',
+      'e_grayscale',
+      'e_loop',
+      'e_loop:100',
+      'e_make_transparent',
+      'e_make_transparent:100',
+      'e_noise',
+      'e_noise:100',
+      'e_negate',
+      'e_pixelate',
+      'e_pixelate:100',
+      'e_pixelate_faces',
+      'e_pixelate_faces:100',
+      'e_reverse',
+      'e_redeye',
+      'e_sepia',
+      'e_sepia:100',
+      'e_vignette',
+      'e_vignette:100'
+    ].join('/');
+
+    expect(url).toBe(`http://res.cloudinary.com/demo/image/upload/${expectedToContain}/sample`);
   });
+
+
 
   it('Creates a cloudinaryURL with effect shadow', () => {
     const url = new TransformableImage()
@@ -188,7 +140,7 @@ describe('Tests for Transformation Action -- Effect', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_oilPaint/sample');
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_oil_paint/sample');
   });
 
   it('Creates a cloudinaryURL with effect oilPaint:level', () => {
@@ -198,7 +150,7 @@ describe('Tests for Transformation Action -- Effect', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_oilPaint:50/sample');
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_oil_paint:50/sample');
   });
 
   it('Creates a cloudinaryURL with effect artisticFilter', () => {
