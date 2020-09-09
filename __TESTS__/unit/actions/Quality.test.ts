@@ -78,6 +78,36 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/q_jpegmini/sample');
   });
 
+  it('Creates a cloudinaryURL with jpegmini HIGH', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .delivery(Delivery.quality(Quality.JPEGMINI_HIGH))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/q_jpegmini:1/sample');
+  });
+
+  it('Creates a cloudinaryURL with jpegmini MEDIUM', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .delivery(Delivery.quality(Quality.JPEGMINI_MEDIUM))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/q_jpegmini:2/sample');
+  });
+
+  it('Creates a cloudinaryURL with jpegmini BEST', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .delivery(Delivery.quality(Quality.JPEGMINI_BEST))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/q_jpegmini:0/sample');
+  });
+
   it('Creates a cloudinaryURL with level', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
