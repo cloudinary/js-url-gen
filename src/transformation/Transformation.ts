@@ -8,7 +8,6 @@ import {IDescriptor} from "../interfaces/IDescriptor";
 import createCloudinaryURL from "../url/cloudinaryURL";
 import Param from "../parameters/Param";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
-import {ResizeAction} from "../actions/resize/Resize";
 import BackgroundAction from "../actions/background/BackgroundAction";
 import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction";
 import {Layer} from "../actions/layers/Layers";
@@ -23,6 +22,7 @@ import VariableAction from "../actions/variable/VariableAction";
 import CutterAction from "../actions/cutter/CutterAction";
 import BorderAction from "../actions/border/BorderAction";
 import {ConditionAction} from "../actions/condition/Condition";
+import ResizeSimpleAction from "../actions/resize/ResizeActions/ResizeSimpleAction";
 
 // TODO: add these video actions:
 /*
@@ -104,9 +104,9 @@ class Transformation {
   }
 
   /**
-   * @param {Resize} resizeAction
+   * @param {ResizeSimpleAction} resizeAction
    */
-  resize(resizeAction: ResizeAction): this {
+  resize(resizeAction: ResizeSimpleAction): this {
     return this.addAction(resizeAction);
   }
 
