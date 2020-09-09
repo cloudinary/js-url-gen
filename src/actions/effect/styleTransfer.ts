@@ -1,5 +1,5 @@
 import ImageSource from '../../params/sources/ImageSource';
-import {imageLayer, Layer} from "../layers/Layers";
+import {imageLayer, Layer} from "../overlay/Overlay";
 import Param from "../../parameters/Param";
 import ParamValue from "../../parameters/ParamValue";
 import {IAction} from "../../interfaces/IAction";

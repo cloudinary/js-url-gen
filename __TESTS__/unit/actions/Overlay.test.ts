@@ -4,8 +4,8 @@ import TransformableVideo from "../../../src/transformation/TransformableImage";
 
 import {fill} from "../../../src/actions/resize/Resize";
 
-import Layers from "../../../src/actions/layers/Layers";
-import * as LayersESM from "../../../src/actions/layers/Layers";
+import Layers from "../../../src/actions/overlay/Overlay";
+import * as LayersESM from "../../../src/actions/overlay/Overlay";
 
 import Position from "../../../src/params/position/Position";
 import BlendMode from "../../../src/params/blendMode/BlendMode";

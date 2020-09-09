@@ -1,12 +1,11 @@
 /**
- * Determines how to crop, scale, and/or zoom the delivered asset according to the requested dimensions.
+ * Adds another video, text or image as an underlay over the container video.
  * @memberOf Actions
  * @namespace Layers
  */
 
 
 import Action from "../Action";
-// TODO - BundleSize Warning - we include all the Sources code within Layers.
 import Source, {ImageSource, TextSource, VideoSource} from "../../params/sources/Sources";
 import {Position} from "../../params/position/Position";
 import Param from "../../parameters/Param";
@@ -36,7 +35,7 @@ class Layer extends Action{
    * Sets the layerType with u | l depending if underlay or overlay
    * @param type
    */
-  setLayerType(type: 'u' | 'l') {
+  setLayerType(type: 'u' | 'l'): this {
     this.layerType = type;
     return this;
   }
@@ -45,7 +44,7 @@ class Layer extends Action{
    * Layers are built using three bits -> /Open/Transform/Close
    * The opening of a layer
    */
-  openLayer() {
+  openLayer(): string {
     return `${this.layerType}_${this.source.getSource()}`;
   }
 

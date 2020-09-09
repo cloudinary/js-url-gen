@@ -1,12 +1,15 @@
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import TransformableImage from "../../../src/transformation/TransformableImage";
 import {fill} from "../../../src/actions/resize/Resize";
-import Layers from "../../../src/actions/layers/Layers";
+import Underlay from "../../../src/actions/underlay/Underlay";
 import Position from "../../../src/params/position/Position";
 import BlendMode from "../../../src/params/blendMode/BlendMode";
 
-const {imageLayer} = Layers;
-const {image} = Layers.Source;
+import * as UnderlayESM from "../../../src/actions/underlay/Underlay";
+import * as OverlayESM from "../../../src/actions/overlay/Overlay";
+
+const {imageLayer} = Underlay;
+const {image} = Underlay.Source;
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -15,6 +18,9 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 });
 
 describe('Tests for underlay actions', () => {
+  it ('Expect underlay to be alias of overlay', () => {
+    expect(UnderlayESM).toEqual(OverlayESM);
+  });
   it('Parses an underlay with an imageSource', () => {
     const tImage = new TransformableImage('sample');
     tImage
