@@ -9,7 +9,7 @@ import Param from "../parameters/Param";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
 import BackgroundAction from "../actions/background/BackgroundAction";
 import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction";
-import {Layer} from "../actions/layers/Layers";
+import {Layer} from "../actions/overlay/Overlay";
 import {Flag} from "../params/flag/Flag";
 import Action from "../actions/Action";
 import {TrimAction} from "../actions/videoEdit/TrimAction";

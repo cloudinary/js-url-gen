@@ -1,4 +1,4 @@
-import {Source, textLayer} from "../../../src/actions/layers/Layers";
+import {Source, textLayer} from "../../../src/actions/overlay/Overlay";
 import TransformableImage from "../../../src/transformation/TransformableImage";
 import {Position, center} from "../../../src/params/position/Position";
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
