@@ -1,6 +1,6 @@
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import TransformableImage from "../../../src/transformation/TransformableImage";
-import {variable} from "../../../src/actions/variable/Variable";
+import {set} from "../../../src/actions/variable/Variable";
 import Resize from "../../../src/actions/resize/Resize";
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 import * as ConditionESM from "../../../src/actions/condition/Condition";
@@ -21,14 +21,14 @@ describe('Tests for Transformation Action -- Condition', () => {
     const tImage = new TransformableImage();
     // Ensures it compiles and doesn't throw
     expect(
-      tImage.ifCondition(Condition.fromString('ar >= 1.0'))
+      tImage.ifCondition(Condition.fromExpression('ar >= 1.0'))
     ).toEqual(tImage);
   });
 
   it('Creates a cloudinaryURL with condition =', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .ifCondition(Condition.fromString('ar = 1.0'))
+      .ifCondition(Condition.fromExpression('ar = 1.0'))
       .endIfCondition()
       .setPublicID('sample')
       .toURL();
@@ -39,7 +39,7 @@ describe('Tests for Transformation Action -- Condition', () => {
   it('Creates a cloudinaryURL with condition !=', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .ifCondition(Condition.fromString('ar != 1.0'))
+      .ifCondition(Condition.fromExpression('ar != 1.0'))
       .endIfCondition()
       .setPublicID('sample')
       .toURL();
@@ -50,7 +50,7 @@ describe('Tests for Transformation Action -- Condition', () => {
   it('Creates a cloudinaryURL with condition <', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .ifCondition(Condition.fromString('ar < 1.0'))
+      .ifCondition(Condition.fromExpression('ar < 1.0'))
       .endIfCondition()
       .setPublicID('sample')
       .toURL();
@@ -61,7 +61,7 @@ describe('Tests for Transformation Action -- Condition', () => {
   it('Creates a cloudinaryURL with condition >', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .ifCondition(Condition.fromString('ar > 1.0'))
+      .ifCondition(Condition.fromExpression('ar > 1.0'))
       .endIfCondition()
       .setPublicID('sample')
       .toURL();
@@ -72,7 +72,7 @@ describe('Tests for Transformation Action -- Condition', () => {
   it('Creates a cloudinaryURL with condition <=', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .ifCondition(Condition.fromString('ar <= 1.0'))
+      .ifCondition(Condition.fromExpression('ar <= 1.0'))
       .endIfCondition()
       .setPublicID('sample')
       .toURL();
@@ -83,7 +83,7 @@ describe('Tests for Transformation Action -- Condition', () => {
   it('Creates a cloudinaryURL with condition >=', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .ifCondition(Condition.fromString('ar >= 1.0'))
+      .ifCondition(Condition.fromExpression('ar >= 1.0'))
       .endIfCondition()
       .setPublicID('sample')
       .toURL();
@@ -94,8 +94,8 @@ describe('Tests for Transformation Action -- Condition', () => {
   it('Creates a cloudinaryURL with condition ar > 0.65 and w > 1000', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .variable(variable('a', 30))
-      .ifCondition(Condition.fromString('ar > 0.65 and w > 1000'))
+      .addVariable(set('a', 30))
+      .ifCondition(Condition.fromExpression('ar > 0.65 and w > 1000'))
       .endIfCondition()
       .setPublicID('sample')
       .toURL();
@@ -106,7 +106,7 @@ describe('Tests for Transformation Action -- Condition', () => {
   it('Creates a cloudinaryURL with elseIf', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .ifCondition(Condition.fromString('w <= 500'))
+      .ifCondition(Condition.fromExpression('w <= 500'))
       .resize(Resize.crop(400))
       .ifElse()
       .resize(Resize.crop(500))

@@ -6,7 +6,7 @@ import * as EffectESM from "../../../src/actions/effect/Effect";
 import Effect from "../../../src/actions/effect/Effect";
 import * as Outline from "../../../src/constants/outline/Outline";
 import {image} from "../../../src/params/sources/Sources";
-import scale from "../../../src/actions/resize/scale";
+import scale from "../../../src/actions/resize/ResizeActions/ScaleAction";
 
 const {blur, blurFaces, pixelateFaces, grayscale, sepia, shadow, cartoonify} = Effect;
 

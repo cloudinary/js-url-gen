@@ -1,17 +1,12 @@
 import {IAction} from "../interfaces/IAction";
-import {IBorderAction} from "../actions/border/IBorderAction";
-import {IVariableAction} from "../actions/variable/IVariableAction";
 import {IEffectAction} from "../actions/effect/IEffectAction";
-import {IRotateAction} from "../actions/rotate/IRotateAction";
 import {INamedTransformationAction} from "../actions/namedTransformation/INamedTransformationAction";
 import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigurations";
 import CloudinaryConfig from "../config/CloudinaryConfig";
 import {IDescriptor} from "../interfaces/IDescriptor";
 import createCloudinaryURL from "../url/cloudinaryURL";
-import {IConditionAction} from "../actions/condition/IConditionAction";
 import Param from "../parameters/Param";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
-import {ResizeAction} from "../actions/resize/Resize";
 import BackgroundAction from "../actions/background/BackgroundAction";
 import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction";
 import {Layer} from "../actions/overlay/Overlay";
@@ -21,10 +16,16 @@ import {TrimAction} from "../actions/videoEdit/TrimAction";
 import {TranscodeAction} from "../actions/transcode/TranscodeAction";
 import {FPSAction} from "../actions/transcode/FPSAction";
 import {DeliveryAction} from "../actions/delivery/Delivery";
+import BlurredBackgroundAction from "../actions/background/BlurredBackgroundAction";
+import VariableAction from "../actions/variable/VariableAction";
+import CutterAction from "../actions/cutter/CutterAction";
+import BorderAction from "../actions/border/BorderAction";
+import {ConditionAction} from "../actions/condition/Condition";
+import ResizeSimpleAction from "../actions/resize/ResizeActions/ResizeSimpleAction";
+import RotateAction from "../actions/rotate/RotateAction";
 
 // TODO: add these video actions:
 /*
-import {CutterAction} from "../actions/layers/CutterAction";
 import {SubtitlesAction} from "../actions/layers/SubtitlesAction";
 import {VideoConcatenateAction} from "../actions/layers/VideoConcatenateAction";
 import {KeyframeIntervalAction} from "../actions/transcode/KeyframeIntervalAction";
@@ -91,16 +92,21 @@ class Transformation {
 
 
   /**
-   * @param {IBorderAction} borderAction
+   * @param {BorderAction} borderAction
    */
-  border(borderAction: IBorderAction): this{
+  border(borderAction: BorderAction): this{
     return this.addAction(borderAction);
   }
 
+
+  cutter(cutterAction: CutterAction): this {
+    return this.addAction(cutterAction);
+  }
+
   /**
-   * @param {Resize} resizeAction
+   * @param {ResizeSimpleAction} resizeAction
    */
-  resize(resizeAction: ResizeAction): this {
+  resize(resizeAction: ResizeSimpleAction): this {
     return this.addAction(resizeAction);
   }
 
@@ -132,16 +138,16 @@ class Transformation {
   }
 
   /**
-   * @param {IVariableAction} variableAction
+   * @param {VariableAction} variableAction
    */
-  variable(variableAction: IVariableAction): this {
+  addVariable(variableAction: VariableAction): this {
     return this.addAction(variableAction);
   }
 
   /**
-   * @param {IConditionAction} conditionAction
+   * @param {ConditionAction} conditionAction
    */
-  ifCondition(conditionAction: IConditionAction): this {
+  ifCondition(conditionAction: ConditionAction): this {
     return this.addAction(conditionAction);
   }
 
@@ -177,9 +183,9 @@ class Transformation {
   }
 
   /**
-   * @param {IRotateAction} rotateAction
+   * @param {RotateAction} rotateAction
    */
-  rotate(rotateAction: IRotateAction): this {
+  rotate(rotateAction: RotateAction): this {
     return this.addAction(rotateAction);
   }
 
@@ -200,7 +206,7 @@ class Transformation {
   /**
    * @param {BackgroundAction} backgroundAction
    */
-  background(backgroundAction: BackgroundAction): this {
+  background(backgroundAction: BackgroundAction | BlurredBackgroundAction): this {
     return this.addAction(backgroundAction);
   }
 

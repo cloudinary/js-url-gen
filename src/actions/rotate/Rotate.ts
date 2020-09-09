@@ -6,9 +6,9 @@
 
 
 import byAngle from "./byAngle";
-import byMode from "./byMode";
+import mode from "./mode";
 
 
 
-export {byAngle, byMode};
-export default {byAngle, byMode};
+export {byAngle, mode};
+export default {byAngle, mode};
