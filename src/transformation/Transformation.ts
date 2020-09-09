@@ -1,5 +1,4 @@
 import {IAction} from "../interfaces/IAction";
-import {IEffectAction} from "../actions/effect/IEffectAction";
 import {INamedTransformationAction} from "../actions/namedTransformation/INamedTransformationAction";
 import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigurations";
 import CloudinaryConfig from "../config/CloudinaryConfig";
@@ -23,6 +22,7 @@ import BorderAction from "../actions/border/BorderAction";
 import {ConditionAction} from "../actions/condition/Condition";
 import ResizeSimpleAction from "../actions/resize/ResizeActions/ResizeSimpleAction";
 import RotateAction from "../actions/rotate/RotateAction";
+import EffectAction from "../actions/effect/EffectAction";
 
 // TODO: add these video actions:
 /*
@@ -169,9 +169,9 @@ class Transformation {
   }
 
   /**
-   * @param {IEffectAction} effectAction
+   * @param {EffectAction} effectAction
    */
-  effect(effectAction: IEffectAction): this {
+  effect(effectAction: Action): this {
     return this.addAction(effectAction);
   }
 

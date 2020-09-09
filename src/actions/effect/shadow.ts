@@ -1,5 +1,4 @@
 import EffectAction from "./EffectAction";
-import {IEffectAction} from "./IEffectAction";
 
 
 /**
@@ -7,7 +6,7 @@ import {IEffectAction} from "./IEffectAction";
  * @memberOf Actions.Effect
  * @param shadowLevel
  */
-function shadow(shadowLevel?: number):IEffectAction {
+function shadow(shadowLevel?: number):EffectAction {
   return new EffectAction('shadow', shadowLevel);
 }
 

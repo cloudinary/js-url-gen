@@ -3,6 +3,7 @@ import {imageLayer, Layer} from "../overlay/Overlay";
 import Param from "../../parameters/Param";
 import ParamValue from "../../parameters/ParamValue";
 import {IAction} from "../../interfaces/IAction";
+import Action from "../Action";
 
 
 /**
@@ -14,7 +15,7 @@ import {IAction} from "../../interfaces/IAction";
  *                are applied to the instance, and toString() is responsible to combining them into the right result.
  *
  */
-class StyleTransfer implements IAction {
+class StyleTransfer extends Action implements IAction {
   // This action is actually a layer.
   private imgLayer: Layer;
   // This action is built from effectStrength and preserve
@@ -30,6 +31,7 @@ class StyleTransfer implements IAction {
    * @param {ImageSource} imageSource
    */
   constructor(imageSource: ImageSource) {
+    super();
     this.imgLayer = imageLayer(imageSource);
   }
 
