@@ -4,7 +4,8 @@ import ParamValue from "../../parameters/ParamValue";
 
 /**
  * @description  Extracts the original content of an embedded object of a Photoshop image.
- * @memberOf Actions.SmartObject
+ * @memberOf Actions
+ * @namespace SmartObject
  */
 class SmartObject extends Action {
   private smartObjectValue: string | number;
