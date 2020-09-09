@@ -1,5 +1,4 @@
 import Action from "../Action";
-import {IConditionAction} from "./IConditionAction";
 import Param from "../../parameters/Param";
 
 const CONDITIONAL_OPERATORS: Record<string, string> = {
@@ -23,7 +22,7 @@ const CONDITIONAL_OPERATORS: Record<string, string> = {
  * @memberOf Actions
  * @namespace Condition
  */
-class ConditionAction extends Action implements IConditionAction {
+class ConditionAction extends Action{
   constructor(expression: string) {
     super();
 
@@ -54,10 +53,10 @@ class ConditionAction extends Action implements IConditionAction {
  * @param {string} expression The condition to meet in order to apply the transformation. </br>
  * Learn more: {@link https://cloudinary.com/documentation/conditional_transformations | Conditional transformations}
  */
-function fromString(expression: string): ConditionAction {
+function fromExpression(expression: string): ConditionAction {
   return new ConditionAction(expression);
 
 }
 
-export {fromString};
-export default {fromString};
+export {fromExpression, ConditionAction};
+export default {fromExpression, ConditionAction};
