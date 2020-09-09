@@ -4,6 +4,6 @@ export const ECO = 'auto:eco';
 export const GOOD = 'auto:good';
 export const JPEGMINI = 'jpegmini';
 export const LOW = 'auto:low';
-export const JPEGMINI_HIGH = 'jpegmini:1'
+export const JPEGMINI_HIGH = 'jpegmini:1';
 export const JPEGMINI_MEDIUM = 'jpegmini:2';
 export const JPEGMINI_BEST = 'jpegmini:0';
