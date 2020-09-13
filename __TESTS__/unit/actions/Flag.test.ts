@@ -98,13 +98,11 @@ describe('Tests for Transformation Action -- Flag', () => {
       'fl_mono',
       'fl_splice',
       'fl_waveform',
-      'fl_streaming_attachment:file_name',
+      'fl_streaming_attachment:file_name'
     ].join('/');
 
     expect(url).toBe(`http://res.cloudinary.com/demo/video/upload/${expectedToContain}/sample`);
   });
- });
-
 
   it('Creates a cloudinaryURL with multiple flags', () => {
     const url = new TransformableImage()
