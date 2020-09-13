@@ -1,4 +1,4 @@
-import EffectAction from "../EffectAction";
+import EffectActionWithLength from "../EffectActions/EffectActionWithLength";
 
 
 /**
@@ -8,8 +8,8 @@ import EffectAction from "../EffectAction";
  * @memberOf Actions.Effect
  * @param {number} fadeLength The time in ms for the fade to occur. (Server default: 2000)
  */
-function fadeIn(fadeLength?: number):EffectAction {
-  return new EffectAction('fade', fadeLength);
+function fadeIn(fadeLength?: number):EffectActionWithLength {
+  return new EffectActionWithLength('fade', fadeLength);
 }
 
 export default fadeIn;

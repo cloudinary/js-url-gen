@@ -20,38 +20,50 @@ describe('Tests for Transformation Action -- Effect', () => {
     expectESMToMatchDefault(EffectESM, Effect);
   });
 
-  it('Creates a cloudinaryURL with Simple and Levelled effects', () => {
+  it('Creates a cloudinaryURL with Simple and Leveled effects', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
       .effect(Effect.advancedRedEye())
       .effect(Effect.accelerate())
       .effect(Effect.accelerate(100))
+      .effect(Effect.accelerate().rate(5))
       .effect(Effect.boomerang())
       .effect(Effect.blackWhite())
       .effect(Effect.blurFaces())
       .effect(Effect.blurFaces(100))
+      .effect(Effect.blurFaces().level(5))
       .effect(Effect.blur())
       .effect(Effect.blur(100))
+      .effect(Effect.blur().level(5))
       .effect(Effect.fadeIn(100))
+      .effect(Effect.fadeIn().length(5))
       .effect(Effect.fadeOut(100))
+      .effect(Effect.fadeOut().length(5))
       .effect(Effect.grayscale())
       .effect(Effect.loop())
       .effect(Effect.loop(100))
+      .effect(Effect.loop().iterations(5))
       .effect(Effect.makeTransparent())
       .effect(Effect.makeTransparent(100))
+      .effect(Effect.makeTransparent().tolerance(5))
       .effect(Effect.noise())
       .effect(Effect.noise(100))
+      .effect(Effect.noise().level(5))
       .effect(Effect.negate())
       .effect(Effect.pixelate())
       .effect(Effect.pixelate(100))
+      .effect(Effect.pixelate().level(5))
       .effect(Effect.pixelateFaces())
       .effect(Effect.pixelateFaces(100))
+      .effect(Effect.pixelateFaces().level(5))
       .effect(Effect.reverse())
       .effect(Effect.redEye())
       .effect(Effect.sepia())
       .effect(Effect.sepia(100))
+      .effect(Effect.sepia().level(5))
       .effect(Effect.vignette())
       .effect(Effect.vignette(100))
+      .effect(Effect.vignette().level(5))
 
       .setPublicID('sample')
       .toURL();
@@ -60,38 +72,48 @@ describe('Tests for Transformation Action -- Effect', () => {
       'e_adv_redeye',
       'e_accelerate',
       'e_accelerate:100',
+      'e_accelerate:5',
       'e_boomerang',
       'e_blackwhite',
       'e_blur_faces',
       'e_blur_faces:100',
+      'e_blur_faces:5',
       'e_blur',
       'e_blur:100',
+      'e_blur:5',
       'e_fade:100',
+      'e_fade:5',
       'e_fade:-100',
+      'e_fade:-5',
       'e_grayscale',
       'e_loop',
       'e_loop:100',
+      'e_loop:5',
       'e_make_transparent',
       'e_make_transparent:100',
+      'e_make_transparent:5',
       'e_noise',
       'e_noise:100',
+      'e_noise:5',
       'e_negate',
       'e_pixelate',
       'e_pixelate:100',
+      'e_pixelate:5',
       'e_pixelate_faces',
       'e_pixelate_faces:100',
+      'e_pixelate_faces:5',
       'e_reverse',
       'e_redeye',
       'e_sepia',
       'e_sepia:100',
+      'e_sepia:5',
       'e_vignette',
-      'e_vignette:100'
+      'e_vignette:100',
+      'e_vignette:5'
     ].join('/');
 
     expect(url).toBe(`http://res.cloudinary.com/demo/image/upload/${expectedToContain}/sample`);
   });
-
-
 
   it('Creates a cloudinaryURL with effect shadow', () => {
     const url = new TransformableImage()

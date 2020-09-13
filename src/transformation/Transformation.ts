@@ -23,7 +23,7 @@ import {ConditionAction} from "../actions/condition/Condition";
 import ResizeSimpleAction from "../actions/resize/ResizeActions/ResizeSimpleAction";
 import RotateAction from "../actions/rotate/RotateAction";
 import SmartObject from "../actions/getSmartObject/GetSmartObjectAction";
-import EffectAction from "../actions/effect/EffectAction";
+import SimpleEffectAction from "../actions/effect/EffectActions/SimpleEffectAction";
 
 // TODO: add these video actions:
 /*
@@ -170,7 +170,7 @@ class Transformation {
   }
 
   /**
-   * @param {EffectAction} effectAction
+   * @param {SimpleEffectAction} effectAction
    */
   effect(effectAction: Action): this {
     return this.addAction(effectAction);

@@ -1,4 +1,4 @@
-import EffectAction from "../EffectAction";
+import SimpleEffectAction from "../EffectActions/SimpleEffectAction";
 
 /**
  * @description
@@ -6,8 +6,8 @@ import EffectAction from "../EffectAction";
  * For details, see the Advanced Facial Attribute Detection add-on documentation.
  * @memberOf Actions.Effect
  */
-function advancedRedEye():EffectAction {
-  return new EffectAction('adv_redeye');
+function advancedRedEye():SimpleEffectAction {
+  return new SimpleEffectAction('adv_redeye');
 }
 
 export default advancedRedEye;

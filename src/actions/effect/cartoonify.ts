@@ -1,4 +1,4 @@
-import EffectAction from "./EffectAction";
+import SimpleEffectAction from "./EffectActions/SimpleEffectAction";
 
 
 /**
@@ -6,8 +6,8 @@ import EffectAction from "./EffectAction";
  * @memberOf Actions.Effect
  * @param cartoonifyLevel
  */
-function cartoonify(cartoonifyLevel?: number):EffectAction {
-  return new EffectAction('cartoonify', cartoonifyLevel);
+function cartoonify(cartoonifyLevel?: number):SimpleEffectAction {
+  return new SimpleEffectAction('cartoonify', cartoonifyLevel);
 }
 
 export default cartoonify;

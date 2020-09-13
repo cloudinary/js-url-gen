@@ -1,12 +1,19 @@
-import EffectAction from "../EffectAction";
+import SimpleEffectAction from "../EffectActions/SimpleEffectAction";
 
 
 /**
  * @description Plays the video or audio file in reverse.
  * @memberOf Actions.Effect
  */
-function reverse():EffectAction {
-  return new EffectAction('reverse');
+function reverse():SimpleEffectAction {
+  return new SimpleEffectAction('reverse');
 }
 
 export default reverse;
+
+
+/*
+ e_negate
+ e_redeye
+ e_blur_faces
+ */

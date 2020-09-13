@@ -1,4 +1,4 @@
-import EffectAction from "../EffectAction";
+import EffectActionWithLevel from "../EffectActions/EffectActionWithLevel";
 
 
 /**
@@ -6,8 +6,8 @@ import EffectAction from "../EffectAction";
  * @memberOf Actions.Effect
  * @param {number} percentage The percent of noise to apply. (Range: 0 to 100 Server default: 0)
  */
-function noise(percentage?: number):EffectAction {
-  return new EffectAction('noise', percentage);
+function noise(percentage?: number):EffectActionWithLevel {
+  return new EffectActionWithLevel('noise', percentage);
 }
 
 export default noise;

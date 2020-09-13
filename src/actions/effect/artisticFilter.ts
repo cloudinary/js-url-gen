@@ -1,4 +1,4 @@
-import EffectAction from "./EffectAction";
+import SimpleEffectAction from "./EffectActions/SimpleEffectAction";
 
 
 /**
@@ -6,8 +6,8 @@ import EffectAction from "./EffectAction";
  * @memberOf Actions.Effect
  * @param artisticFilterType
  */
-function artisticFilter(artisticFilterType: string):EffectAction {
-  return new EffectAction('art', artisticFilterType);
+function artisticFilter(artisticFilterType: string):SimpleEffectAction {
+  return new SimpleEffectAction('art', artisticFilterType);
 }
 
 export default artisticFilter;

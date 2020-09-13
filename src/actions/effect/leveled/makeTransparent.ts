@@ -1,6 +1,12 @@
-import EffectAction from "../EffectAction";
+import LeveledEffectAction from "../EffectActions/LeveledEffectAction";
 
 
+
+class MakeTransparentEffectAction extends LeveledEffectAction {
+  tolerance(value: number | string): this {
+    return this.setLevel(value);
+  }
+}
 
 /**
  * @description
@@ -10,8 +16,8 @@ import EffectAction from "../EffectAction";
  * @memberOf Actions.Effect
  * @param {number} tolerance The tolerance used to accommodate variance in the background color. (Range: 0 to 100, Server default: 10)
  */
-function makeTransparent(tolerance?: number):EffectAction {
-  return new EffectAction('make_transparent', tolerance);
+function makeTransparent(tolerance?: number):MakeTransparentEffectAction {
+  return new MakeTransparentEffectAction('make_transparent', tolerance);
 }
 
 export default makeTransparent;

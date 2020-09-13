@@ -1,4 +1,4 @@
-import EffectAction from "../EffectAction";
+import EffectActionWithLevel from "../EffectActions/EffectActionWithLevel";
 
 
 /**
@@ -6,8 +6,8 @@ import EffectAction from "../EffectAction";
  * @memberOf Actions.Effect
  * @param {number} strength The strength of the vignette. (Range: 0 to 100, Server default: 20)
  */
-function vignette(strength?: number):EffectAction {
-  return new EffectAction('vignette', strength);
+function vignette(strength?: number):EffectActionWithLevel {
+  return new EffectActionWithLevel('vignette', strength);
 }
 
 export default vignette;

@@ -1,10 +1,10 @@
-import EffectAction from "../effect/EffectAction";
 import Action from "../Action";
 import Param from "../../parameters/Param";
 import FillLightAction from "./FillLightAction";
 import RecolorAction from "./RecolorAction";
 import ImproveAction from "./ImproveAction";
 import ReplaceColorAction from "./ReplaceColorAction";
+import SimpleEffectAction from "../effect/EffectActions/SimpleEffectAction";
 
 
 /**
@@ -18,8 +18,8 @@ import ReplaceColorAction from "./ReplaceColorAction";
  * @description Adjusts the brightness.
  * @param {number} level The level of brightness (Range: -99 to 100, Server default: 80)
  */
-function brightness(level?:number): EffectAction {
-  return new EffectAction('brightness', level);
+function brightness(level?:number): SimpleEffectAction {
+  return new SimpleEffectAction('brightness', level);
 }
 
 /**
@@ -28,8 +28,8 @@ function brightness(level?:number): EffectAction {
  * For details, see the Viesus Automatic Image Enhancement add-on documentation.
 
  */
-function viesusCorrect(): EffectAction {
-  return new EffectAction('viesus_correct');
+function viesusCorrect(): SimpleEffectAction {
+  return new SimpleEffectAction('viesus_correct');
 }
 
 /**
@@ -54,8 +54,8 @@ function opacity(level:number): Action {
  *
  * @param {number} level The level of the threshold. (Range: 1 to 100, Server default: 50)
  */
-function opacityThreshold(level?:number): EffectAction {
-  return new EffectAction('opacity_threshold', level);
+function opacityThreshold(level?:number): SimpleEffectAction {
+  return new SimpleEffectAction('opacity_threshold', level);
 }
 
 
@@ -64,8 +64,8 @@ function opacityThreshold(level?:number): EffectAction {
  * @description Adjusts the image's red channel.
  * @param {number} level
  */
-function red(level:number): EffectAction {
-  return new EffectAction('red', level);
+function red(level:number): SimpleEffectAction {
+  return new SimpleEffectAction('red', level);
 }
 
 /**
@@ -73,8 +73,8 @@ function red(level:number): EffectAction {
  * @description Adjusts the image's green channel.
  * @param {number} level
  */
-function green(level:number): EffectAction {
-  return new EffectAction('green', level);
+function green(level:number): SimpleEffectAction {
+  return new SimpleEffectAction('green', level);
 }
 
 /**
@@ -82,8 +82,8 @@ function green(level:number): EffectAction {
  * @description Adjusts the image's blue channel.
  * @param {number} level
  */
-function blue(level:number): EffectAction {
-  return new EffectAction('blue', level);
+function blue(level:number): SimpleEffectAction {
+  return new SimpleEffectAction('blue', level);
 }
 
 /**
@@ -91,8 +91,8 @@ function blue(level:number): EffectAction {
  * @description Applies a sharpening filter to the image.
  * @param {number} strength The strength of the filter. (Range: 1 to 2000, Server default: 100)
  */
-function sharpen(strength?:number): EffectAction {
-  return new EffectAction('sharpen', strength);
+function sharpen(strength?:number):SimpleEffectAction {
+  return new SimpleEffectAction('sharpen', strength);
 }
 
 /**
@@ -100,8 +100,8 @@ function sharpen(strength?:number): EffectAction {
  * @description Applies an unsharp mask filter to the image.
  * @param {number} strength The strength of the filter. (Range: 1 to 2000, Server default: 100)
  */
-function unsharpMask(strength?:number): EffectAction {
-  return new EffectAction('unsharp_mask', strength);
+function unsharpMask(strength?:number):SimpleEffectAction {
+  return new SimpleEffectAction('unsharp_mask', strength);
 }
 
 /**
@@ -118,8 +118,8 @@ function improve(): ImproveAction {
  * @description Adjusts the color saturation.
  * @param {number} level. The level of color saturation (Range: -100 to 100, Server default: 80).
  */
-function saturation(level?:number): EffectAction {
-  return new EffectAction('saturation', level);
+function saturation(level?:number):SimpleEffectAction {
+  return new SimpleEffectAction('saturation', level);
 }
 
 /**
@@ -128,8 +128,8 @@ function saturation(level?:number): EffectAction {
  * Adjusts the contrast.
  * @param {number} level The level of contrast (Range: -100 to 100, Server default: 0)
  */
-function contrast(level?:number): EffectAction {
-  return new EffectAction('contrast', level);
+function contrast(level?:number):SimpleEffectAction {
+  return new SimpleEffectAction('contrast', level);
 }
 
 /**
@@ -138,8 +138,8 @@ function contrast(level?:number): EffectAction {
  * Adjusts the gamma level
  * @param {number} level The level of gamma (Range: -50 to 150, Server default: 0).
  */
-function gamma(level?:number): EffectAction {
-  return new EffectAction('gamma', level);
+function gamma(level?:number):SimpleEffectAction {
+  return new SimpleEffectAction('gamma', level);
 }
 
 /**
@@ -148,8 +148,8 @@ function gamma(level?:number): EffectAction {
  * Adjusts image brightness modulation in HSB to prevent artifacts in some images.
  * @param {number} level The level of modulation. (Range: -99 to 100, Server default: 80)
  */
-function brightnessHSB(level?:number): EffectAction {
-  return new EffectAction('brightness_hsb', level);
+function brightnessHSB(level?:number):SimpleEffectAction {
+  return new SimpleEffectAction('brightness_hsb', level);
 }
 
 /**
@@ -158,8 +158,8 @@ function brightnessHSB(level?:number): EffectAction {
  * Adjusts the image's hue.
  * @param {number} level The level of hue. (Range: -100 to 100, Server default: 80)
  */
-function hue(level?:number): EffectAction {
-  return new EffectAction('hue', level);
+function hue(level?:number):SimpleEffectAction {
+  return new SimpleEffectAction('hue', level);
 }
 
 /**
@@ -170,8 +170,8 @@ function hue(level?:number): EffectAction {
  *                 and 100 means only use the adjusted brightness result.
  *                 (Range: 0 to 100, Server default: 100)
  */
-function autoBrightness(blendPercentage?:number): EffectAction {
-  return new EffectAction('auto_brightness', blendPercentage);
+function autoBrightness(blendPercentage?:number):SimpleEffectAction {
+  return new SimpleEffectAction('auto_brightness', blendPercentage);
 }
 
 /**
@@ -182,8 +182,8 @@ function autoBrightness(blendPercentage?:number): EffectAction {
  *                 and 100 means only use the adjusted color result.
  *                 (Range: 0 to 100, Server default: 100)
  */
-function autoColor(blendPercentage?:number): EffectAction {
-  return new EffectAction('auto_color', blendPercentage);
+function autoColor(blendPercentage?:number):SimpleEffectAction {
+  return new SimpleEffectAction('auto_color', blendPercentage);
 }
 
 /**
@@ -194,8 +194,8 @@ function autoColor(blendPercentage?:number): EffectAction {
  *                 and 100 means only use the adjusted contrast result.
  *                (Range: 0 to 100, Server default: 100)
  */
-function autoContrast(blendPercentage?:number): EffectAction {
-  return new EffectAction('auto_contrast', blendPercentage);
+function autoContrast(blendPercentage?:number):SimpleEffectAction {
+  return new SimpleEffectAction('auto_contrast', blendPercentage);
 }
 
 /**
@@ -204,8 +204,8 @@ function autoContrast(blendPercentage?:number): EffectAction {
  * Applies a vibrance filter on the image.
  * @param {number} strength The strength of the vibrance. (Range: -100 to 100, Server default: 20)
  */
-function vibrance(strength?:number): EffectAction {
-  return new EffectAction('vibrance', strength);
+function vibrance(strength?:number):SimpleEffectAction {
+  return new SimpleEffectAction('vibrance', strength);
 }
 
 
