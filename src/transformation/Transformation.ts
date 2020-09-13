@@ -314,8 +314,8 @@ class Transformation {
    * @param {TranscodeAction} transcodeAction
    * @return this TransformableVideo with the added action
    */
-  transcode(transcodeAction: TranscodeAction): this {
-    return this.addAction(transcodeAction);
+  transcode(action: IAction): this {
+    return this.addAction(action);
   }
 
 

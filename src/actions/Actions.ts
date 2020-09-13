@@ -17,6 +17,7 @@ import Background from "./background/Background";
 import CustomFunction from './customFunction/CustomFunction';
 import Flag from "../params/flag/Flag";
 import SmartObject from "./getSmartObject/GetSmartObject";
+import Transcode from "./transcode/Transcode";
 
-export {Resize, Border, RoundCorners, Effect, Rotate, Adjust, Overlay, Underlay, Variable, NamedTransformation, Delivery, Background, CustomFunction, Flag, SmartObject};
-export default {Resize, Border, RoundCorners, Effect, Rotate, Adjust, Overlay, Underlay, Variable, NamedTransformation, Delivery, Background, CustomFunction, Flag, SmartObject};
+export {Resize, Border, RoundCorners, Effect, Rotate, Adjust, Overlay, Underlay, Variable, NamedTransformation, Delivery, Background, CustomFunction, Flag, SmartObject, Transcode};
+export default {Resize, Border, RoundCorners, Effect, Rotate, Adjust, Overlay, Underlay, Variable, NamedTransformation, Delivery, Background, CustomFunction, Flag, SmartObject, Transcode};

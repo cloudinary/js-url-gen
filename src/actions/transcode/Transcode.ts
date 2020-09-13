@@ -1,12 +1,10 @@
+import BitRateAction from "./BitRateAction";
 /**
- * Transcodes media.
- * @memberOf Actions
- * @namespace Transcode
+ *
  */
+function bitRate(): BitRateAction {
+  return new BitRateAction();
+}
 
-
-import FPSAction from './FPSAction';
-import TranscodeAction from './TranscodeAction';
-
-export {FPSAction, TranscodeAction};
-export default {FPSAction, TranscodeAction};
+export default {bitRate};
+export {bitRate};
