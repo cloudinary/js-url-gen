@@ -34,6 +34,8 @@ import * as ObjectGravity from './constants/gravityObjects/GravityObjects';
 import * as Format from './constants/formats/Formats';
 import * as Quality from './constants/quality/Quality';
 import * as AudioCodec from './constants/audioCodec/AudioCodec';
+import * as AudioFrequency from './constants/audioFrequency/AudioFrequency';
+import * as StreaminProfile from './constants/streamingProfile/StreamingProfile';
 
 /**
  * @description a class
@@ -43,5 +45,5 @@ class Base {
   }
 }
 
-export {cloudinaryURL, Transformation, TransformableImage, Base, Actions, Color, Dpr, ObjectGravity, ArtisticFilter, Format, Quality, AudioCodec};
-export default {cloudinaryURL, Transformation, Base, Actions, Color, Dpr, ObjectGravity, ArtisticFilter, Format, Quality, AudioCodec};
+export {cloudinaryURL, Transformation, TransformableImage, Base, Actions, Color, Dpr, ObjectGravity, ArtisticFilter, Format, Quality, AudioCodec, AudioFrequency, StreaminProfile};
+export default {cloudinaryURL, Transformation, Base, Actions, Color, Dpr, ObjectGravity, ArtisticFilter, Format, Quality, AudioCodec, AudioFrequency, StreaminProfile};

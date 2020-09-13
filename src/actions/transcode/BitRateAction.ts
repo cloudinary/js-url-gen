@@ -3,23 +3,26 @@ import Param from "../../parameters/Param";
 import ParamValue from "../../parameters/ParamValue";
 
 class BitRateAction extends Action {
-  private lvl:number;
-  private biasLvl:number;
-  constructor() {
+  private bitRate: string|number;
+  private isConstant = false;
+
+  constructor(bitRate: string|number) {
     super();
+    this.bitRate = bitRate;
   }
-  level(lvl:number): this {
-    this.lvl = lvl;
-    return this;
-  }
-  bias(biasLvl:number): this {
-    this.biasLvl = biasLvl;
+  constant(): this {
+    this.isConstant = true;
     return this;
   }
 
   protected prepareParam(): this {
-    const paramValue = new ParamValue(['fill_light', this.lvl, this.biasLvl]).setDelimiter(':');
-    this.addParam(new Param('e', paramValue));
+    let paramValue;
+    if(this.isConstant) {
+      paramValue = new ParamValue([this.bitRate, 'constant']).setDelimiter(':');
+    }else {
+      paramValue = new ParamValue(this.bitRate);
+    }
+    this.addParam(new Param('br', paramValue));
     return this;
   }
 }

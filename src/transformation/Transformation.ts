@@ -13,8 +13,6 @@ import {Layer} from "../actions/overlay/Overlay";
 import {Flag} from "../params/flag/Flag";
 import Action from "../actions/Action";
 import {TrimAction} from "../actions/videoEdit/TrimAction";
-import {TranscodeAction} from "../actions/transcode/TranscodeAction";
-import {FPSAction} from "../actions/transcode/FPSAction";
 import {DeliveryAction} from "../actions/delivery/Delivery";
 import BlurredBackgroundAction from "../actions/background/BlurredBackgroundAction";
 import VariableAction from "../actions/variable/VariableAction";
@@ -311,56 +309,12 @@ class Transformation {
 
   /**
    * Transcodes the video (or audio) to another format.
-   * @param {TranscodeAction} transcodeAction
+   * @param {IAction} action
    * @return this TransformableVideo with the added action
    */
   transcode(action: IAction): this {
     return this.addAction(action);
   }
-
-
-  /**
-   * Controls the range of acceptable FPS (Frames Per Second) to ensure that video (even when optimized)
-   * is delivered with an expected fps level (helps with sync to audio).
-   * @param {FPSAction} fpsAction
-   * @return this TransformableVideo with the added action
-   */
-  fps(fpsAction: FPSAction): this {
-    return this.addAction(fpsAction);
-  }
-
-  /**
-   * Explicitly sets the keyframe interval of the delivered video.
-   * @param {KeyframeIntervalAction} keyframeIntervalAction
-   * @return this TransformableVideo with the added action
-   */
-  /*
-  keyframeInterval(keyframeIntervalAction: KeyframeIntervalAction): this {
-    return this.addAction(keyframeIntervalAction);
-  }
-   */
-
-  /**
-   * Controls the video bitrate.
-   * @param {BitRateAction} bitRateAction
-   * @return this TransformableVideo with the added action
-   */
-  /*
-  bitRate(bitRateAction: BitRateAction): this {
-    return this.addAction(bitRateAction);
-  }
-   */
-
-  /**
-   * Sets the streaming profile to apply to an HLS or MPEG-DASH adaptive bitrate streaming video.
-   * @param {StreamingProfileAction} streamingProfileAction
-   * @return this TransformableVideo with the added action
-   */
-  /*
-  streamingProfile(streamingProfileAction: StreamingProfileAction): this {
-    return this.addAction(streamingProfileAction);
-  }
-   */
 
   /**
    * Sets the total number of frames to sample from the original video.
