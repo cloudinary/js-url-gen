@@ -1,6 +1,6 @@
 import Action from "../Action";
 import ImageSource from "../../params/sources/ImageSource";
-import {Layer, imageLayer} from "../layers/Layers";
+import {Layer, imageLayer} from "../overlay/Overlay";
 import {Flag} from "../../params/flag/Flag";
 
 class CutterAction extends Action {

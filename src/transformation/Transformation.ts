@@ -1,6 +1,4 @@
 import {IAction} from "../interfaces/IAction";
-import {IEffectAction} from "../actions/effect/IEffectAction";
-import {IRotateAction} from "../actions/rotate/IRotateAction";
 import {INamedTransformationAction} from "../actions/namedTransformation/INamedTransformationAction";
 import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigurations";
 import CloudinaryConfig from "../config/CloudinaryConfig";
@@ -8,10 +6,9 @@ import {IDescriptor} from "../interfaces/IDescriptor";
 import createCloudinaryURL from "../url/cloudinaryURL";
 import Param from "../parameters/Param";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
-import {ResizeAction} from "../actions/resize/Resize";
 import BackgroundAction from "../actions/background/BackgroundAction";
 import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction";
-import {Layer} from "../actions/layers/Layers";
+import {Layer} from "../actions/overlay/Overlay";
 import {Flag} from "../params/flag/Flag";
 import Action from "../actions/Action";
 import {TrimAction} from "../actions/videoEdit/TrimAction";
@@ -23,6 +20,10 @@ import VariableAction from "../actions/variable/VariableAction";
 import CutterAction from "../actions/cutter/CutterAction";
 import BorderAction from "../actions/border/BorderAction";
 import {ConditionAction} from "../actions/condition/Condition";
+import ResizeSimpleAction from "../actions/resize/ResizeActions/ResizeSimpleAction";
+import RotateAction from "../actions/rotate/RotateAction";
+import SmartObject from "../actions/getSmartObject/GetSmartObjectAction";
+import EffectAction from "../actions/effect/EffectAction";
 
 // TODO: add these video actions:
 /*
@@ -104,9 +105,9 @@ class Transformation {
   }
 
   /**
-   * @param {Resize} resizeAction
+   * @param {ResizeSimpleAction} resizeAction
    */
-  resize(resizeAction: ResizeAction): this {
+  resize(resizeAction: ResizeSimpleAction): this {
     return this.addAction(resizeAction);
   }
 
@@ -169,9 +170,9 @@ class Transformation {
   }
 
   /**
-   * @param {IEffectAction} effectAction
+   * @param {EffectAction} effectAction
    */
-  effect(effectAction: IEffectAction): this {
+  effect(effectAction: Action): this {
     return this.addAction(effectAction);
   }
 
@@ -183,9 +184,9 @@ class Transformation {
   }
 
   /**
-   * @param {IRotateAction} rotateAction
+   * @param {RotateAction} rotateAction
    */
-  rotate(rotateAction: IRotateAction): this {
+  rotate(rotateAction: RotateAction): this {
     return this.addAction(rotateAction);
   }
 
@@ -208,6 +209,13 @@ class Transformation {
    */
   background(backgroundAction: BackgroundAction | BlurredBackgroundAction): this {
     return this.addAction(backgroundAction);
+  }
+
+  /**
+   * @param {SmartObject} smartObject
+   */
+  getSmartObject(smartObject: SmartObject): this {
+    return this.addAction(smartObject);
   }
 
   /**

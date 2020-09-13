@@ -1,5 +1,4 @@
 import EffectAction from "./EffectAction";
-import {IEffectAction} from "./IEffectAction";
 
 
 /**
@@ -7,7 +6,7 @@ import {IEffectAction} from "./IEffectAction";
  * @memberOf Actions.Effect
  * @param colorizeLevel
  */
-function colorize(colorizeLevel?: number):IEffectAction {
+function colorize(colorizeLevel?: number):EffectAction {
   return new EffectAction('colorize', colorizeLevel);
 }
 

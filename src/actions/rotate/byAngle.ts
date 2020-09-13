@@ -1,5 +1,4 @@
 import {RotateAction} from "./RotateAction";
-import {IRotateAction} from "./IRotateAction";
 
 /**
  * @memberOf Actions.Rotate
@@ -7,7 +6,7 @@ import {IRotateAction} from "./IRotateAction";
  * @param {number} angle
  * @returns {RotateAction}
  */
-function byAngle(angle: number) :IRotateAction {
+function byAngle(angle: number) :RotateAction {
   return new RotateAction(angle);
 }
 

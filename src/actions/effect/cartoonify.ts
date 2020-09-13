@@ -1,5 +1,4 @@
 import EffectAction from "./EffectAction";
-import {IEffectAction} from "./IEffectAction";
 
 
 /**
@@ -7,7 +6,7 @@ import {IEffectAction} from "./IEffectAction";
  * @memberOf Actions.Effect
  * @param cartoonifyLevel
  */
-function cartoonify(cartoonifyLevel?: number):IEffectAction {
+function cartoonify(cartoonifyLevel?: number):EffectAction {
   return new EffectAction('cartoonify', cartoonifyLevel);
 }
 

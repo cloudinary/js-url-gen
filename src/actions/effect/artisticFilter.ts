@@ -1,5 +1,4 @@
 import EffectAction from "./EffectAction";
-import {IEffectAction} from "./IEffectAction";
 
 
 /**
@@ -7,7 +6,7 @@ import {IEffectAction} from "./IEffectAction";
  * @memberOf Actions.Effect
  * @param artisticFilterType
  */
-function artisticFilter(artisticFilterType: string):IEffectAction {
+function artisticFilter(artisticFilterType: string):EffectAction {
   return new EffectAction('art', artisticFilterType);
 }
 
