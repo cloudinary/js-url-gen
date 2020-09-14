@@ -4,7 +4,23 @@ import FillLightAction from "./FillLightAction";
 import RecolorAction from "./RecolorAction";
 import ImproveAction from "./ImproveAction";
 import ReplaceColorAction from "./ReplaceColorAction";
-import SimpleEffectAction from "../effect/EffectActions/SimpleEffectAction";
+import brightness from "./leveled/brightness";
+import viesusCorrect from "./simple/viesusCorrect";
+import red from "./leveled/red";
+import sharpen from "./leveled/sharpen";
+import saturation from "./leveled/saturation";
+import contrast from "./leveled/contrast";
+import gamma from "./leveled/gamma";
+import blue from "./leveled/blue";
+import brightnessHSB from "./leveled/brightnessHSB";
+import opacityThreshold from "./leveled/opacityThreshold";
+import autoColor from "./leveled/autoColor";
+import autoBrightness from "./leveled/autoBrightness";
+import hue from "./leveled/hue";
+import green from "./leveled/green";
+import unsharpMask from "./leveled/unsharpenMask";
+import vibrance from "./leveled/vibrance";
+import autoContrast from "./leveled/autoContrast";
 
 
 /**
@@ -13,24 +29,8 @@ import SimpleEffectAction from "../effect/EffectActions/SimpleEffectAction";
  * @namespace Adjust
  */
 
-/**
- * @memberOf Actions.Adjust
- * @description Adjusts the brightness.
- * @param {number} level The level of brightness (Range: -99 to 100, Server default: 80)
- */
-function brightness(level?:number): SimpleEffectAction {
-  return new SimpleEffectAction('brightness', level);
-}
 
-/**
- * @memberOf Actions.Adjust
- * @description Enhances an image to its best visual quality with the Viesus Automatic Image Enhancement add-on.
- * For details, see the Viesus Automatic Image Enhancement add-on documentation.
 
- */
-function viesusCorrect(): SimpleEffectAction {
-  return new SimpleEffectAction('viesus_correct');
-}
 
 /**
  * @memberOf Actions.Adjust
@@ -42,67 +42,9 @@ function opacity(level:number): Action {
   return new Action().addParam(new Param('o').addValue(level));
 }
 
-/**
- * @memberOf Actions.Adjust
- * @description  Causes all semi-transparent pixels in an image to be either fully transparent or fully opaque.
- *
- * Each pixel with an opacity lower than the specified threshold value is set to an opacity of 0%. Each pixel with
- * an opacity greater than the specified threshold is set to an opacity of 100%. For example, setting
- * opacity_threshold:0 makes all pixels non-transparent, while opacity_threshold:100 makes all semi-transparent
- * pixels fully transparent. Note: This effect can be a useful solution when PhotoShop PSD files are delivered in a
- * format supporting partial transparency, such as PNG, and the results without this effect are not as expected.
- *
- * @param {number} level The level of the threshold. (Range: 1 to 100, Server default: 50)
- */
-function opacityThreshold(level?:number): SimpleEffectAction {
-  return new SimpleEffectAction('opacity_threshold', level);
-}
 
 
-/**
- * @memberOf Actions.Adjust
- * @description Adjusts the image's red channel.
- * @param {number} level
- */
-function red(level:number): SimpleEffectAction {
-  return new SimpleEffectAction('red', level);
-}
 
-/**
- * @memberOf Actions.Adjust
- * @description Adjusts the image's green channel.
- * @param {number} level
- */
-function green(level:number): SimpleEffectAction {
-  return new SimpleEffectAction('green', level);
-}
-
-/**
- * @memberOf Actions.Adjust
- * @description Adjusts the image's blue channel.
- * @param {number} level
- */
-function blue(level:number): SimpleEffectAction {
-  return new SimpleEffectAction('blue', level);
-}
-
-/**
- * @memberOf Actions.Adjust
- * @description Applies a sharpening filter to the image.
- * @param {number} strength The strength of the filter. (Range: 1 to 2000, Server default: 100)
- */
-function sharpen(strength?:number):SimpleEffectAction {
-  return new SimpleEffectAction('sharpen', strength);
-}
-
-/**
- * @memberOf Actions.Adjust
- * @description Applies an unsharp mask filter to the image.
- * @param {number} strength The strength of the filter. (Range: 1 to 2000, Server default: 100)
- */
-function unsharpMask(strength?:number):SimpleEffectAction {
-  return new SimpleEffectAction('unsharp_mask', strength);
-}
 
 /**
  * @memberOf Actions.Adjust
@@ -113,100 +55,9 @@ function improve(): ImproveAction {
   return new ImproveAction();
 }
 
-/**
- * @memberOf Actions.Adjust
- * @description Adjusts the color saturation.
- * @param {number} level. The level of color saturation (Range: -100 to 100, Server default: 80).
- */
-function saturation(level?:number):SimpleEffectAction {
-  return new SimpleEffectAction('saturation', level);
-}
 
-/**
- * @memberOf Actions.Adjust
- * @description
- * Adjusts the contrast.
- * @param {number} level The level of contrast (Range: -100 to 100, Server default: 0)
- */
-function contrast(level?:number):SimpleEffectAction {
-  return new SimpleEffectAction('contrast', level);
-}
 
-/**
- * @memberOf Actions.Adjust
- * @description
- * Adjusts the gamma level
- * @param {number} level The level of gamma (Range: -50 to 150, Server default: 0).
- */
-function gamma(level?:number):SimpleEffectAction {
-  return new SimpleEffectAction('gamma', level);
-}
 
-/**
- * @memberOf Actions.Adjust
- * @description
- * Adjusts image brightness modulation in HSB to prevent artifacts in some images.
- * @param {number} level The level of modulation. (Range: -99 to 100, Server default: 80)
- */
-function brightnessHSB(level?:number):SimpleEffectAction {
-  return new SimpleEffectAction('brightness_hsb', level);
-}
-
-/**
- * @memberOf Actions.Adjust
- * @description
- * Adjusts the image's hue.
- * @param {number} level The level of hue. (Range: -100 to 100, Server default: 80)
- */
-function hue(level?:number):SimpleEffectAction {
-  return new SimpleEffectAction('hue', level);
-}
-
-/**
- * @memberOf Actions.Adjust
- * @description
- * Adjusts the brightness and blends the result with the original image.
- * @param {number} blendPercentage How much to blend the adjusted brightness, where 0 means only use the original
- *                 and 100 means only use the adjusted brightness result.
- *                 (Range: 0 to 100, Server default: 100)
- */
-function autoBrightness(blendPercentage?:number):SimpleEffectAction {
-  return new SimpleEffectAction('auto_brightness', blendPercentage);
-}
-
-/**
- * @memberOf Actions.Adjust
- * @description
- * Adjusts the color balance and blends the result with the original image.
- * @param {number} blendPercentage How much to blend the adjusted brightness, where 0 means only use the original
- *                 and 100 means only use the adjusted color result.
- *                 (Range: 0 to 100, Server default: 100)
- */
-function autoColor(blendPercentage?:number):SimpleEffectAction {
-  return new SimpleEffectAction('auto_color', blendPercentage);
-}
-
-/**
- * @memberOf Actions.Adjust
- * @description
- * Adjusts the contrast and blends the result with the original image.
- * @param {number} blendPercentage How much to blend the adjusted contrast, where 0 means only use the original
- *                 and 100 means only use the adjusted contrast result.
- *                (Range: 0 to 100, Server default: 100)
- */
-function autoContrast(blendPercentage?:number):SimpleEffectAction {
-  return new SimpleEffectAction('auto_contrast', blendPercentage);
-}
-
-/**
- * @memberOf Actions.Adjust
- * @description
- * Applies a vibrance filter on the image.
- * @param {number} strength The strength of the vibrance. (Range: -100 to 100, Server default: 20)
- */
-function vibrance(strength?:number):SimpleEffectAction {
-  return new SimpleEffectAction('vibrance', strength);
-}
 
 
 /**
@@ -233,6 +84,7 @@ function recolor(matrix:number[][]): RecolorAction {
 function fillLight(): FillLightAction {
   return new FillLightAction();
 }
+
 
 
 export default {brightness, viesusCorrect, opacity, red, sharpen, improve, saturation,
