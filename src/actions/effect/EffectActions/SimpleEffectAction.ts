@@ -1,17 +1,16 @@
-import Action from "../Action";
-import {IAction} from "../../interfaces/IAction";
-import Param from "../../parameters/Param";
-import ParamValue from "../../parameters/ParamValue";
+import Action from "../../Action";
+import Param from "../../../parameters/Param";
+import ParamValue from "../../../parameters/ParamValue";
 
 
-class EffectAction extends Action implements IAction {
+class SimpleEffectAction extends Action {
   constructor(effectType?: string, level?: number|string) {
     super();
     const paramEffect = this.createEffectParam(effectType, level);
     this.addParam(paramEffect);
   }
 
-  createEffectParam(effectType: string, level?: number|string):Param {
+  protected createEffectParam(effectType: string, level?: number|string):Param {
     let paramValue;
     if(level) {
       paramValue = new ParamValue([effectType, `${level}`]).setDelimiter(':');
@@ -22,4 +21,4 @@ class EffectAction extends Action implements IAction {
   }
 }
 
-export default EffectAction;
+export default SimpleEffectAction;

@@ -1,4 +1,4 @@
-import EffectAction from "../EffectAction";
+import EffectActionWithLevel from "../EffectActions/EffectActionWithLevel";
 
 
 /**
@@ -6,8 +6,8 @@ import EffectAction from "../EffectAction";
  * @memberOf Actions.Effect
  * @param {number} squareSize The width of each pixelation square in pixels. (Range: 1 to 200, Server default: 5)
  */
-function pixelateFaces(squareSize?: number):EffectAction {
-  return new EffectAction('pixelate_faces', squareSize);
+function pixelateFaces(squareSize?: number):EffectActionWithLevel {
+  return new EffectActionWithLevel('pixelate_faces', squareSize);
 }
 
 export default pixelateFaces;

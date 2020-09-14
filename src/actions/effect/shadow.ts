@@ -1,4 +1,4 @@
-import EffectAction from "./EffectAction";
+import SimpleEffectAction from "./EffectActions/SimpleEffectAction";
 
 
 /**
@@ -6,8 +6,8 @@ import EffectAction from "./EffectAction";
  * @memberOf Actions.Effect
  * @param shadowLevel
  */
-function shadow(shadowLevel?: number):EffectAction {
-  return new EffectAction('shadow', shadowLevel);
+function shadow(shadowLevel?: number):SimpleEffectAction {
+  return new SimpleEffectAction('shadow', shadowLevel);
 }
 
 export default shadow;

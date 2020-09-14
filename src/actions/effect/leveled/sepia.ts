@@ -1,4 +1,4 @@
-import EffectAction from "../EffectAction";
+import EffectActionWithLevel from "../EffectActions/EffectActionWithLevel";
 
 
 /**
@@ -6,8 +6,8 @@ import EffectAction from "../EffectAction";
  * @memberOf Actions.Effect
  * @param {number} level The level of sepia to apply. (Range: 1 to 100, Server default: 80)
  */
-function sepia(level?: number):EffectAction {
-  return new EffectAction('sepia', level);
+function sepia(level?: number):EffectActionWithLevel {
+  return new EffectActionWithLevel('sepia', level);
 }
 
 export default sepia;

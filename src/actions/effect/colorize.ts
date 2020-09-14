@@ -1,4 +1,4 @@
-import EffectAction from "./EffectAction";
+import SimpleEffectAction from "./EffectActions/SimpleEffectAction";
 
 
 /**
@@ -6,8 +6,8 @@ import EffectAction from "./EffectAction";
  * @memberOf Actions.Effect
  * @param colorizeLevel
  */
-function colorize(colorizeLevel?: number):EffectAction {
-  return new EffectAction('colorize', colorizeLevel);
+function colorize(colorizeLevel?: number):SimpleEffectAction {
+  return new SimpleEffectAction('colorize', colorizeLevel);
 }
 
 export default colorize;

@@ -1,5 +1,11 @@
-import EffectAction from "../EffectAction";
+import LeveledEffectAction from "../EffectActions/LeveledEffectAction";
 
+
+class LoopEffectAction extends LeveledEffectAction {
+  iterations(value: number | string): this {
+    return this.setLevel(value);
+  }
+}
 
 /**
  * @description
@@ -9,8 +15,8 @@ import EffectAction from "../EffectAction";
  * @memberOf Actions.Effect
  * @param {number} additionalLoops The additional number of times to play the video or animated GIF.
  */
-function loop(additionalLoops?: number):EffectAction {
-  return new EffectAction('loop', additionalLoops);
+function loop(additionalLoops?: number):LoopEffectAction {
+  return new LoopEffectAction('loop', additionalLoops);
 }
 
 export default loop;

@@ -1,4 +1,4 @@
-import EffectAction from "../EffectAction";
+import SimpleEffectAction from "../EffectActions/SimpleEffectAction";
 
 /**
  * @description
@@ -7,8 +7,8 @@ import EffectAction from "../EffectAction";
  * For details and examples, see 'Create a boomerang video clip' in the Video Transformations guide.
  * @memberOf Actions.Effect
  */
-function boomerang():EffectAction {
-  return new EffectAction('boomerang');
+function boomerang():SimpleEffectAction {
+  return new SimpleEffectAction('boomerang');
 }
 
 export default boomerang;

@@ -1,5 +1,12 @@
-import EffectAction from "../EffectAction";
+import LeveledEffectAction from "../EffectActions/LeveledEffectAction";
 
+
+// We can't use EffectActionWithLength because this `length` is reversing the sign
+class FadeoutEffectAction extends LeveledEffectAction {
+  length(value: number | string): this {
+    return this.setLevel(-value);
+  }
+}
 
 /**
  * @description
@@ -8,8 +15,8 @@ import EffectAction from "../EffectAction";
  * @memberOf Actions.Effect
  * @param {number} fadeLength The time in ms for the fade to occur. (Server default: 2000)
  */
-function fadeOut(fadeLength?: number):EffectAction {
-  return new EffectAction('fade', -fadeLength);
+function fadeOut(fadeLength?: number):FadeoutEffectAction {
+  return new FadeoutEffectAction('fade', -fadeLength);
 }
 
 export default fadeOut;

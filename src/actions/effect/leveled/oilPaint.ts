@@ -1,4 +1,4 @@
-import EffectAction from "../EffectAction";
+import EffectActionWithLevel from "../EffectActions/EffectActionWithLevel";
 
 
 
@@ -7,8 +7,8 @@ import EffectAction from "../EffectAction";
  * @memberOf Actions.Effect
  * @param {number} oilPaintLevel The strength of the effect. (Range: 0 to 100, Server default: 30)
  */
-function oilPaint(oilPaintLevel?: number):EffectAction {
-  return new EffectAction('oil_paint', oilPaintLevel);
+function oilPaint(oilPaintLevel?: number):EffectActionWithLevel {
+  return new EffectActionWithLevel('oil_paint', oilPaintLevel);
 }
 
 export default oilPaint;
