@@ -138,11 +138,11 @@ describe('Tests for Transformation Action -- Effect', () => {
   it('Creates a cloudinaryURL with effect colorize', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .effect(Effect.colorize())
+      .effect(Effect.colorize(10).color('red'))
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_colorize/sample');
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/co_red,e_colorize:10/sample');
   });
 
   it('Creates a cloudinaryURL with effect colorize:level', () => {

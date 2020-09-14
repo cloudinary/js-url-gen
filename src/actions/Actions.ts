@@ -8,6 +8,8 @@ import Border from "./border/Border";
 import Effect from "./effect/Effect";
 import Rotate from "./rotate/Rotate";
 import Adjust from "./adjust/Adjust";
+import VideoEdit from "./videoEdit/VideoEdit";
+import Transcode from "./transcode/Transcode";
 import Overlay from "./overlay/Overlay";
 import Underlay from "./underlay/Underlay";
 import Variable from "./variable/Variable";
@@ -18,5 +20,5 @@ import CustomFunction from './customFunction/CustomFunction';
 import Flag from "../params/flag/Flag";
 import SmartObject from "./getSmartObject/GetSmartObject";
 
-export {Resize, Border, RoundCorners, Effect, Rotate, Adjust, Overlay, Underlay, Variable, NamedTransformation, Delivery, Background, CustomFunction, Flag, SmartObject};
-export default {Resize, Border, RoundCorners, Effect, Rotate, Adjust, Overlay, Underlay, Variable, NamedTransformation, Delivery, Background, CustomFunction, Flag, SmartObject};
+export {Resize, Border, RoundCorners, Effect, Rotate, Adjust, Overlay, Underlay, Variable, NamedTransformation, Delivery, Background, CustomFunction, Flag, SmartObject, VideoEdit, Transcode};
+export default {Resize, Border, RoundCorners, Effect, Rotate, Adjust, Overlay, Underlay, Variable, NamedTransformation, Delivery, Background, CustomFunction, Flag, SmartObject, VideoEdit, Transcode};
