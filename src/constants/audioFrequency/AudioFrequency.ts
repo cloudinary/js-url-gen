@@ -1,0 +1,15 @@
+export const FREQ8000 = 8000;
+export const FREQ11025 = 11025;
+export const FREQ16000 = 16000;
+export const FREQ22050 = 22050;
+export const FREQ32000 = 32000;
+export const FREQ37800 = 37800;
+export const FREQ44056 = 44056;
+export const FREQ44100 = 44100;
+export const FREQ47250 = 47250;
+export const FREQ48000 = 48000;
+export const FREQ88200 = 88200;
+export const FREQ96000 = 96000;
+export const FREQ176400 = 176400;
+export const FREQ192000 = 192000;
+export const ORIGINAL = 'iaf';
