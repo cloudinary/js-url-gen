@@ -1,12 +1,12 @@
 import Action from "../Action";
 import {IAction} from "../../interfaces/IAction";
-import Param from "../../parameters/Param";
-import Flag from "../../params/flag/Flag";
+import Qualifier from "../../qualifiers/Qualifier";
+import Flag from "../../qualifiers/flag/Flag";
 
 class DeliveryAction extends Action implements IAction {
   constructor(deliveryKey?: string, deliveryType?: string|number) {
     super();
-    this.addParam(new Param(deliveryKey, deliveryType));
+    this.addQualifier(new Qualifier(deliveryKey, deliveryType));
   }
 
   lossy(): this{

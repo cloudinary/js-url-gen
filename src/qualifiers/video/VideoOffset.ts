@@ -1,5 +1,5 @@
 import Action from "../../actions/Action";
-import Param from "../../parameters/Param";
+import Qualifier from "../Qualifier";
 
 /**
  * @description Defines a video range using startOffset, endOffset, duration.
@@ -22,12 +22,12 @@ class VideoOffset extends Action {
 
   //TODO: consider changing type of startOffset to be VideoOffset, like in php2
   startOffset(startOffset: VideoOffset|number): this {
-    return this.addParam(new Param("so", `${startOffset}`));
+    return this.addQualifier(new Qualifier("so", `${startOffset}`));
   }
 
   endOffset(endOffset: VideoOffset|number): this {
     //TODO: add EndOffset
-    return this.addParam(new Param("eo", `${endOffset}`));
+    return this.addQualifier(new Qualifier("eo", `${endOffset}`));
   }
 }
 

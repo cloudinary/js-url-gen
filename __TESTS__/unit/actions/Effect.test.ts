@@ -5,7 +5,7 @@ import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 import * as EffectESM from "../../../src/actions/effect/Effect";
 import Effect, {shadow} from "../../../src/actions/effect/Effect";
 import * as Outline from "../../../src/constants/outline/Outline";
-import {image} from "../../../src/params/sources/Sources";
+import {image} from "../../../src/qualifiers/sources/Sources";
 import scale from "../../../src/actions/resize/ResizeActions/ScaleAction";
 import cartoonify from "../../../src/actions/effect/cartoonify";
 

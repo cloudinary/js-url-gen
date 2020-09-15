@@ -6,13 +6,13 @@
 
 
 import Action from "../Action";
-import Source, {ImageSource, TextSource, VideoSource} from "../../params/sources/Sources";
-import {Position} from "../../params/position/Position";
-import Param from "../../parameters/Param";
-import {BlendMode} from "../../params/blendMode/BlendMode";
-import {VideoRange} from "../../params/video/VideoRange";
-import {ISource} from "../../params/sources/ISource";
-import {Flag} from "../../params/flag/Flag";
+import Source, {ImageSource, TextSource, VideoSource} from "../../qualifiers/sources/Sources";
+import {Position} from "../../qualifiers/position/Position";
+import Qualifier from "../../qualifiers/Qualifier";
+import {BlendMode} from "../../qualifiers/blendMode/BlendMode";
+import {VideoRange} from "../../qualifiers/video/VideoRange";
+import {ISource} from "../../qualifiers/sources/ISource";
+import {Flag} from "../../qualifiers/flag/Flag";
 
 
 class Layer extends Action{
@@ -63,25 +63,25 @@ class Layer extends Action{
   closeLayer():Action {
     const bit = new Action().addFlag(new Flag('layer_apply'));
 
-    this.position?.params.forEach((param) => {
-      bit.addParam(param);
+    this.position?.qualifiers.forEach((qualifier) => {
+      bit.addQualifier(qualifier);
     });
 
-    this.blendMode?.params.forEach((param) => {
-      bit.addParam(param);
+    this.blendMode?.qualifiers.forEach((qualifier) => {
+      bit.addQualifier(qualifier);
     });
 
-    this.timeLinePosition?.params.forEach((param) => {
-      bit.addParam(param);
+    this.timeLinePosition?.qualifiers.forEach((qualifier) => {
+      bit.addQualifier(qualifier);
     });
 
     if (this.timeLinePosition) {
       // TODO: This is just for testing. remove this after implementing VideoRange
-      bit.addParam(new Param("so", 7));
+      bit.addQualifier(new Qualifier("so", 7));
     }
 
-    this.modifications?.params.forEach((param) => {
-      bit.addParam(param);
+    this.modifications?.qualifiers.forEach((qualifier) => {
+      bit.addQualifier(qualifier);
     });
 
     return bit;

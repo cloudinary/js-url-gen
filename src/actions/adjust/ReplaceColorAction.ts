@@ -1,6 +1,6 @@
 import Action from "../Action";
-import ParamValue from "../../parameters/ParamValue";
-import Param from "../../parameters/Param";
+import QualifierValue from "../../qualifiers/QualifierValue";
+import Qualifier from "../../qualifiers/Qualifier";
 
 class ReplaceColorAction extends Action {
   private baseColor: string;
@@ -34,10 +34,10 @@ class ReplaceColorAction extends Action {
     return this;
   }
 
-  protected prepareParam(): this {
+  protected prepareQualifiers(): this {
     // e_replace_color:red:30:blue
-    const paramValue = new ParamValue(['replace_color', this.targetColor, this.toleranceLevel, this.baseColor]);
-    this.addParam(new Param('e', paramValue));
+    const qualifierValue = new QualifierValue(['replace_color', this.targetColor, this.toleranceLevel, this.baseColor]);
+    this.addQualifier(new Qualifier('e', qualifierValue));
     return this;
   }
 }

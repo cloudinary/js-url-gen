@@ -1,19 +1,19 @@
-import Param from '../../../src/parameters/Param';
-import ParamValue from '../../../src/parameters/ParamValue';
+import Qualifier from '../../../src/qualifiers/Qualifier';
+import QualifierValue from '../../../src/qualifiers/QualifierValue';
 
 describe('Tests for Param', () => {
   it('Creates a Param', () => {
-    const param = new Param("a", 90);
-    expect(param.toString()).toBe('a_90');
+    const qualifier = new Qualifier("a", 90);
+    expect(qualifier.toString()).toBe('a_90');
   });
   it('Creates a Param with multiple values', () => {
-    const param = new Param("a", new ParamValue([90, 80]).setDelimiter('.'));
+    const qualifier = new Qualifier("a", new QualifierValue([90, 80]).setDelimiter('.'));
 
-    expect(param.toString()).toBe('a_90.80');
+    expect(qualifier.toString()).toBe('a_90.80');
   });
   it('Creates a Param, passing ParamValue to constructor', () => {
-    const param = new Param("a", new ParamValue(90));
+    const qualifier = new Qualifier("a", new QualifierValue(90));
 
-    expect(param.toString()).toBe('a_90');
+    expect(qualifier.toString()).toBe('a_90');
   });
 });

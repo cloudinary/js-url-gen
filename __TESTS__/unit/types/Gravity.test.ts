@@ -1,5 +1,5 @@
-import Gravity from "../../../src/params/gravity/Gravity";
-import * as GravityESM from "../../../src/params/gravity/Gravity";
+import Gravity from "../../../src/qualifiers/gravity/Gravity";
+import * as GravityESM from "../../../src/qualifiers/gravity/Gravity";
 
 import * as GravityObjects from "../../../src/constants/gravityObjects/GravityObjects";
 import {AutoGravity} from "../../../src/constants/gravityObjects/GravityObjects";

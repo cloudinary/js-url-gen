@@ -1,6 +1,6 @@
 import Action from "../Action";
-import Param from "../../parameters/Param";
-import ParamValue from "../../parameters/ParamValue";
+import Qualifier from "../../qualifiers/Qualifier";
+import QualifierValue from "../../qualifiers/QualifierValue";
 
 class FPSRangeAction extends Action {
   private from: number;
@@ -13,14 +13,14 @@ class FPSRangeAction extends Action {
   }
 
 
-  protected prepareParam(): this {
-    let paramValue;
+  protected prepareQualifiers(): this {
+    let qualifierValue;
     if(this.from && this.to) {
-      paramValue = new ParamValue(`${this.from}-${this.to}`);
+      qualifierValue = new QualifierValue(`${this.from}-${this.to}`);
     }else {
-      paramValue = new ParamValue(`${this.from}-`);
+      qualifierValue = new QualifierValue(`${this.from}-`);
     }
-    this.addParam(new Param('fps', paramValue));
+    this.addQualifier(new Qualifier('fps', qualifierValue));
     return this;
   }
 }

@@ -1,6 +1,6 @@
-import Param from "../../../parameters/Param";
+import Qualifier from "../../../qualifiers/Qualifier";
 import {toFloatAsString} from "../../../utils/toFloatAsString";
-import {GravityParam} from "../../../params/gravity/Gravity";
+import {GravityParam} from "../../../qualifiers/gravity/Gravity";
 import ResizeSimpleAction from "./ResizeSimpleAction";
 
 class ScaleAction extends ResizeSimpleAction {
@@ -12,11 +12,11 @@ class ScaleAction extends ResizeSimpleAction {
 
   aspectRatio(ratio:number|string): this {
     // toFloatAsString is used to ensure 1 turns into 1.0
-    return this.addParam(new Param('ar', toFloatAsString(ratio)));
+    return this.addQualifier(new Qualifier('ar', toFloatAsString(ratio)));
   }
 
   isLiquid(): this {
-    return this.addParam(new GravityParam('liquid'));
+    return this.addQualifier(new GravityParam('liquid'));
   }
 }
 

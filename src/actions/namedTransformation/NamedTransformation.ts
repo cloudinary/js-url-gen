@@ -5,13 +5,13 @@
  */
 
 import Action from "../Action";
-import Param from "../../parameters/Param";
+import Qualifier from "../../qualifiers/Qualifier";
 import {INamedTransformationAction} from "./INamedTransformationAction";
 
 class NamedTransformationAction extends Action implements INamedTransformationAction{
   constructor(name:string) {
     super();
-    this.addParam(new Param('t', name));
+    this.addQualifier(new Qualifier('t', name));
   }
 }
 

@@ -1,6 +1,6 @@
 import Action from "../Action";
-import ParamValue from "../../parameters/ParamValue";
-import Param from "../../parameters/Param";
+import QualifierValue from "../../qualifiers/QualifierValue";
+import Qualifier from "../../qualifiers/Qualifier";
 
 class Outline extends Action {
   private modeType: string;
@@ -27,18 +27,18 @@ class Outline extends Action {
     return blur ? `${width}:${blur}` : width;
   }
 
-  protected prepareParam() : void {
-    let paramValue;
+  protected prepareQualifiers() : void {
+    let qualifierValue;
     if(this.outlineParam && this.modeType){
-      paramValue = new ParamValue(['outline', `${this.modeType}`, `${this.outlineParam}`]).setDelimiter(':');
+      qualifierValue = new QualifierValue(['outline', `${this.modeType}`, `${this.outlineParam}`]).setDelimiter(':');
     } else {
       if (this.outlineParam){
-        paramValue = new ParamValue(['outline', `${this.outlineParam}`]).setDelimiter(':');
+        qualifierValue = new QualifierValue(['outline', `${this.outlineParam}`]).setDelimiter(':');
       } else {
-        paramValue = new ParamValue(['outline', `${this.modeType}`]).setDelimiter(':');
+        qualifierValue = new QualifierValue(['outline', `${this.modeType}`]).setDelimiter(':');
       }
     }
-    this.addParam(new Param('e', paramValue));
+    this.addQualifier(new Qualifier('e', qualifierValue));
   }
 }
 

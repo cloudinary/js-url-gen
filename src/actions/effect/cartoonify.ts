@@ -1,5 +1,5 @@
-import Param from "../../parameters/Param";
-import ParamValue from "../../parameters/ParamValue";
+import Qualifier from "../../qualifiers/Qualifier";
+import QualifierValue from "../../qualifiers/QualifierValue";
 import Action from "../Action";
 
 class CartoonifyEffect extends Action {
@@ -23,8 +23,8 @@ class CartoonifyEffect extends Action {
     return this;
   }
 
-  protected prepareParam() {
-    this.addParam(new Param('e', new ParamValue([this.effectName, this.cartoonifyStrength, this.colorReduction])));
+  protected prepareQualifiers() {
+    this.addQualifier(new Qualifier('e', new QualifierValue([this.effectName, this.cartoonifyStrength, this.colorReduction])));
     return;
   }
 }

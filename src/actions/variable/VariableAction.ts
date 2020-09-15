@@ -1,7 +1,7 @@
 
 
 import Action from "../Action";
-import Param from "../../parameters/Param";
+import Qualifier from "../../qualifiers/Qualifier";
 import {isString} from "../../utils/dataStructureUtils";
 
 // TODO: when spec for $award_ctx:!First! is ready, implement it
@@ -12,9 +12,9 @@ import {isString} from "../../utils/dataStructureUtils";
 class VariableAction extends Action {
   constructor(key: string, value: number | string) {
     super();
-    const paramKey = `$${key}`;
-    const paramValue = isString(value) ? `!${value}!` : value;
-    this.addParam(new Param(paramKey, paramValue));
+    const qualifierKey = `$${key}`;
+    const qualifierValue = isString(value) ? `!${value}!` : value;
+    this.addQualifier(new Qualifier(qualifierKey, qualifierValue));
   }
 }
 

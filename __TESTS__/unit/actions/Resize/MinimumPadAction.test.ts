@@ -1,5 +1,5 @@
 import getImageWithResize from "./shared/getImageWithResize";
-import Gravity from "../../../../src/params/gravity/Gravity";
+import Gravity from "../../../../src/qualifiers/gravity/Gravity";
 import minimumPad from "../../../../src/actions/resize/ResizeActions/MinimumPadAction";
 
 

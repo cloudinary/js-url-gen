@@ -1,6 +1,6 @@
 import Action from "../Action";
-import Param from "../../parameters/Param";
-import ParamValue from "../../parameters/ParamValue";
+import Qualifier from "../../qualifiers/Qualifier";
+import QualifierValue from "../../qualifiers/QualifierValue";
 
 class RecolorAction extends Action {
   readonly matrix: number[][];
@@ -19,8 +19,8 @@ class RecolorAction extends Action {
       }
     }
 
-    const paramValue = new ParamValue(['recolor', ...flat]).setDelimiter(':');
-    this.addParam(new Param('e', paramValue));
+    const qualifierValue = new QualifierValue(['recolor', ...flat]).setDelimiter(':');
+    this.addQualifier(new Qualifier('e', qualifierValue));
   }
 }
 

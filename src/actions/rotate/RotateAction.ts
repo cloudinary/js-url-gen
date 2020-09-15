@@ -1,15 +1,15 @@
 import {IAction} from "../../interfaces/IAction";
 import Action from "../Action";
-import Param from "../../parameters/Param";
+import Qualifier from "../../qualifiers/Qualifier";
 
 const PARAM_KEY = 'a';
 
-import * as RotationModes from '../../params/rotate/Rotate';
+import * as RotationModes from '../../qualifiers/rotate/Rotate';
 
 class RotateAction extends Action implements IAction {
   constructor(angle?: number) {
     super();
-    this.addParam(new Param(PARAM_KEY, angle));
+    this.addQualifier(new Qualifier(PARAM_KEY, angle));
   }
 
   /**
@@ -19,15 +19,15 @@ class RotateAction extends Action implements IAction {
   mode(rotationMode: string):this {
     switch (rotationMode) {
       case RotationModes.AUTO_RIGHT:
-        return this.addValueToParam(PARAM_KEY, 'auto_right');
+        return this.addValueToQualifier(PARAM_KEY, 'auto_right');
       case RotationModes.AUTO_LEFT:
-        return this.addValueToParam(PARAM_KEY, 'auto_left');
+        return this.addValueToQualifier(PARAM_KEY, 'auto_left');
       case RotationModes.HORIZONTAL_FLIP:
-        return this.addValueToParam(PARAM_KEY, 'hflip');
+        return this.addValueToQualifier(PARAM_KEY, 'hflip');
       case RotationModes.IGNORE:
-        return this.addValueToParam(PARAM_KEY, 'ignore');
+        return this.addValueToQualifier(PARAM_KEY, 'ignore');
       case RotationModes.VERTICAL_FLIP:
-        return this.addValueToParam(PARAM_KEY, 'vflip');
+        return this.addValueToQualifier(PARAM_KEY, 'vflip');
     }
   }
 
@@ -36,7 +36,7 @@ class RotateAction extends Action implements IAction {
    * @return {RotateAction}
    */
   angle(degrees: number): this {
-    return this.addValueToParam(PARAM_KEY, degrees);
+    return this.addValueToQualifier(PARAM_KEY, degrees);
   }
 }
 

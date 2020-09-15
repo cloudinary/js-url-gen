@@ -1,10 +1,10 @@
 import Action from "../Action";
-import Param from "../../parameters/Param";
+import Qualifier from "../../qualifiers/Qualifier";
 
 class AudioCodecAction extends Action {
   constructor(codec: string) {
     super();
-    this.addParam(new Param('ac', codec));
+    this.addQualifier(new Qualifier('ac', codec));
   }
 }
 

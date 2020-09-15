@@ -3,7 +3,7 @@ import Adjust from '../../../src/actions/adjust/Adjust';
 import * as AdjustESM from '../../../src/actions/adjust/Adjust';
 import {TransformableImage} from "../../../src";
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
-import * as ImproveMode from "../../../src/params/improveMode/ImproveMode";
+import * as ImproveMode from "../../../src/qualifiers/improveMode/ImproveMode";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {

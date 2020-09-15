@@ -1,10 +1,10 @@
 import Action from "../Action";
-import Param from "../../parameters/Param";
+import Qualifier from "../../qualifiers/Qualifier";
 
 class StreamingProfileAction extends Action {
   constructor(profile: string|number) {
     super();
-    this.addParam(new Param('sp', profile));
+    this.addQualifier(new Qualifier('sp', profile));
   }
 }
 

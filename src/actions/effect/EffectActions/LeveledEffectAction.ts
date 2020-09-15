@@ -9,8 +9,8 @@ class LeveledEffectAction extends SimpleEffectAction {
   }
 
   protected setLevel(level: string | number): this {
-    const paramEffect = this.createEffectParam(this.effectType, level);
-    this.addParam(paramEffect);
+    const qualifierEffect = this.createEffectParam(this.effectType, level);
+    this.addQualifier(qualifierEffect);
     return this;
   }
 }

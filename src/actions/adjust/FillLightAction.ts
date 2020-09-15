@@ -1,6 +1,6 @@
 import Action from "../Action";
-import Param from "../../parameters/Param";
-import ParamValue from "../../parameters/ParamValue";
+import Qualifier from "../../qualifiers/Qualifier";
+import QualifierValue from "../../qualifiers/QualifierValue";
 
 class FillLightAction extends Action {
   private lvl:number;
@@ -17,9 +17,9 @@ class FillLightAction extends Action {
     return this;
   }
 
-  protected prepareParam(): this {
-    const paramValue = new ParamValue(['fill_light', this.lvl, this.biasLvl]).setDelimiter(':');
-    this.addParam(new Param('e', paramValue));
+  protected prepareQualifiers(): this {
+    const qualifierValue = new QualifierValue(['fill_light', this.lvl, this.biasLvl]).setDelimiter(':');
+    this.addQualifier(new Qualifier('e', qualifierValue));
     return this;
   }
 }

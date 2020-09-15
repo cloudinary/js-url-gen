@@ -1,5 +1,5 @@
 import Action from "../Action";
-import Param from "../../parameters/Param";
+import Qualifier from "../../qualifiers/Qualifier";
 import FillLightAction from "./FillLightAction";
 import RecolorAction from "./RecolorAction";
 import ImproveAction from "./ImproveAction";
@@ -39,7 +39,7 @@ import autoContrast from "./leveled/autoContrast";
  */
 function opacity(level:number): Action {
   // opacity doesn't deserve its own action, it is not reused anywhere
-  return new Action().addParam(new Param('o').addValue(level));
+  return new Action().addQualifier(new Qualifier('o').addValue(level));
 }
 
 
