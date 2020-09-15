@@ -1,21 +1,21 @@
 import {IAction} from "../../interfaces/IAction";
 import Action from "../Action";
-import Param from "../../parameters/Param";
+import Qualifier from "../../qualifiers/Qualifier";
 
 const PARAM_KEY = 'trim';
 
 class TrimAction extends Action implements IAction {
-  constructor(param?: string) {
+  constructor(val?: string) {
     super();
-    this.trim(param);
+    this.trim(val);
   }
 
   /**
-   * @param {string} param
+   * @param {string} val
    * @return {TrimAction}
    */
-  trim(param: string): this {
-    return this.addParam(new Param(PARAM_KEY, param));
+  trim(val: string): this {
+    return this.addQualifier(new Qualifier(PARAM_KEY, val));
   }
 }
 

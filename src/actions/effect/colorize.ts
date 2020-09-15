@@ -1,11 +1,11 @@
 import LeveledEffectAction from "./EffectActions/LeveledEffectAction";
-import ParamValue from "../../parameters/ParamValue";
-import Param from "../../parameters/Param";
+import QualifierValue from "../../qualifiers/QualifierValue";
+import Qualifier from "../../qualifiers/Qualifier";
 import {prepareColor} from "../../utils/prepareColor";
 
 class ColorizeEffectAction extends LeveledEffectAction {
   color(color: string) {
-    return this.addParam(new Param('co', new ParamValue(prepareColor(color))));
+    return this.addQualifier(new Qualifier('co', new QualifierValue(prepareColor(color))));
   }
 }
 

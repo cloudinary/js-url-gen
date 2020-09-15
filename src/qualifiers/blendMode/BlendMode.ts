@@ -1,6 +1,6 @@
 import Action from "../../actions/Action";
-import Param from "../../parameters/Param";
-import ParamValue from "../../parameters/ParamValue";
+import Qualifier from "../Qualifier";
+import QualifierValue from "../QualifierValue";
 
 
 /**
@@ -17,7 +17,7 @@ import ParamValue from "../../parameters/ParamValue";
 class BlendMode extends Action {
   constructor(blendMode:string, level?:number) {
     super();
-    this.addParam(new Param('e', new ParamValue([blendMode, level])));
+    this.addQualifier(new Qualifier('e', new QualifierValue([blendMode, level])));
   }
 }
 

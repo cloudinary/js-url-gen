@@ -1,10 +1,10 @@
-class ParamValue {
+class QualifierValue {
   values: unknown[] = [];
   delimiter = ':'; // {value}{delimiter}{value}...
 
-  constructor(paramValue?: ParamValue | ParamValue[] | unknown[] | string | number) {
-    if (this.hasValue(paramValue)) {
-      this.addValue(paramValue);
+  constructor(qualifierValue?: QualifierValue | QualifierValue[] | unknown[] | string | number) {
+    if (this.hasValue(qualifierValue)) {
+      this.addValue(qualifierValue);
     }
   }
   toString(): string {
@@ -35,4 +35,4 @@ class ParamValue {
   }
 }
 
-export default ParamValue;
+export default QualifierValue;

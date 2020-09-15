@@ -4,17 +4,17 @@
  * @memberOf Params
  */
 
-import Param from "../../parameters/Param";
+import Qualifier from "../Qualifier";
 import {AutoGravity, GravityObject} from "../../constants/gravityObjects/GravityObjects";
-import ParamValue from "../../parameters/ParamValue";
+import QualifierValue from "../QualifierValue";
 
 
-export class GravityParam extends Param {
+export class GravityParam extends Qualifier {
   /**
    * @param gravityParamValue, an array containing (GravityObject | AutoGravity | string) or a string;
    */
   constructor(gravityParamValue: (GravityObject | AutoGravity | string)[] | string) {
-    super('g', new ParamValue(gravityParamValue));
+    super('g', new QualifierValue(gravityParamValue));
   }
 }
 

@@ -1,6 +1,6 @@
 import Action from "../Action";
-import Param from "../../parameters/Param";
-import ParamValue from "../../parameters/ParamValue";
+import Qualifier from "../../qualifiers/Qualifier";
+import QualifierValue from "../../qualifiers/QualifierValue";
 
 class BlurredBackgroundAction extends Action {
   private intensityLvl:number;
@@ -20,9 +20,9 @@ class BlurredBackgroundAction extends Action {
     return this;
   }
 
-  protected prepareParam(): this {
-    const paramValue = new ParamValue(['blurred', this.intensityLvl, this.brightnessLevel]).setDelimiter(':');
-    this.addParam(new Param('b', paramValue));
+  protected prepareQualifiers(): this {
+    const qualifierValue = new QualifierValue(['blurred', this.intensityLvl, this.brightnessLevel]).setDelimiter(':');
+    this.addQualifier(new Qualifier('b', qualifierValue));
     return this;
   }
 }

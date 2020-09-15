@@ -2,7 +2,7 @@ import Rotate from '../../../src/actions/rotate/Rotate';
 import * as RotateESM from '../../../src/actions/rotate/Rotate';
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import * as RotationModes from "../../../src/params/rotate/Rotate";
+import * as RotationModes from "../../../src/qualifiers/rotate/Rotate";
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({

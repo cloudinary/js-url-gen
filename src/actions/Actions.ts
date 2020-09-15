@@ -16,7 +16,7 @@ import NamedTransformation from './namedTransformation/NamedTransformation';
 import Delivery from "./delivery/Delivery";
 import Background from "./background/Background";
 import CustomFunction from './customFunction/CustomFunction';
-import Flag from "../params/flag/Flag";
+import Flag from "../qualifiers/flag/Flag";
 import SmartObject from "./getSmartObject/GetSmartObject";
 import Transcode from "./transcode/Transcode";
 

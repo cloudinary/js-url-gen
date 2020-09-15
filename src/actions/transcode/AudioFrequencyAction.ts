@@ -1,10 +1,10 @@
 import Action from "../Action";
-import Param from "../../parameters/Param";
+import Qualifier from "../../qualifiers/Qualifier";
 
 class AudioFrequencyAction extends Action {
   constructor(freq: string|number) {
     super();
-    this.addParam(new Param('af', freq));
+    this.addQualifier(new Qualifier('af', freq));
   }
 }
 

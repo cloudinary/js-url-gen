@@ -1,19 +1,19 @@
-import ParamValue from '../../../src/parameters/ParamValue';
+import QualifierValue from '../../../src/qualifiers/QualifierValue';
 
 describe('Tests for Param', () => {
   it('Creates a ParamValue', () => {
-    const paramValue = new ParamValue();
-    expect(paramValue.toString()).toBe('');
+    const qualifierValue = new QualifierValue();
+    expect(qualifierValue.toString()).toBe('');
   });
   it('Creates a ParamValue with single value', () => {
-    const paramValue = new ParamValue().addValue(90);
+    const qualifierValue = new QualifierValue().addValue(90);
 
-    expect(paramValue.toString()).toBe('90');
+    expect(qualifierValue.toString()).toBe('90');
   });
   it('Creates a ParamValue with multiple values', () => {
-    const paramValue = new ParamValue().addValue(90).addValue(80);
+    const qualifierValue = new QualifierValue().addValue(90).addValue(80);
 
-    expect(paramValue.toString()).toBe('90:80');
+    expect(qualifierValue.toString()).toBe('90:80');
   });
 
 });

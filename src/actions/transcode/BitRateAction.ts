@@ -1,6 +1,6 @@
 import Action from "../Action";
-import Param from "../../parameters/Param";
-import ParamValue from "../../parameters/ParamValue";
+import Qualifier from "../../qualifiers/Qualifier";
+import QualifierValue from "../../qualifiers/QualifierValue";
 
 class BitRateAction extends Action {
   private bitRate: string|number;
@@ -15,14 +15,14 @@ class BitRateAction extends Action {
     return this;
   }
 
-  protected prepareParam(): this {
-    let paramValue;
+  protected prepareQualifiers(): this {
+    let qualifierValue;
     if(this.isConstant) {
-      paramValue = new ParamValue([this.bitRate, 'constant']).setDelimiter(':');
+      qualifierValue = new QualifierValue([this.bitRate, 'constant']).setDelimiter(':');
     }else {
-      paramValue = new ParamValue(this.bitRate);
+      qualifierValue = new QualifierValue(this.bitRate);
     }
-    this.addParam(new Param('br', paramValue));
+    this.addQualifier(new Qualifier('br', qualifierValue));
     return this;
   }
 }

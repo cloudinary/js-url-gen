@@ -1,6 +1,6 @@
 import Action from "../Action";
-import Param from "../../parameters/Param";
-import ParamValue from "../../parameters/ParamValue";
+import Qualifier from "../../qualifiers/Qualifier";
+import QualifierValue from "../../qualifiers/QualifierValue";
 import base64Encode from "../../utils/base64Encode";
 
 class CustomFunctionAction extends Action {
@@ -37,12 +37,12 @@ class CustomFunctionAction extends Action {
     return this;
   }
 
-  protected prepareParam() {
+  protected prepareQualifiers() {
     this.encodedFn = this.fn;
     if (this.mode === 'remote') {
       this.encodedFn = this.encodeCustomFunctionString(this.fn);
     }
-    return this.addParam(new Param('fn', new ParamValue([this.pre, this.mode, this.encodedFn])));
+    return this.addQualifier(new Qualifier('fn', new QualifierValue([this.pre, this.mode, this.encodedFn])));
   }
 }
 
