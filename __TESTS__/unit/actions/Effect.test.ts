@@ -3,7 +3,7 @@ import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as ArtisticFilter from "../../../src/constants/artisticFilters/ArtisticFilters";
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 import * as EffectESM from "../../../src/actions/effect/Effect";
-import Effect, {shadow} from "../../../src/actions/effect/Effect";
+import Effect from "../../../src/actions/effect/Effect";
 import * as Outline from "../../../src/constants/outline/Outline";
 import {image} from "../../../src/qualifiers/sources/Sources";
 import scale from "../../../src/actions/resize/ResizeActions/ScaleAction";
@@ -116,24 +116,16 @@ describe('Tests for Transformation Action -- Effect', () => {
     expect(url).toBe(`http://res.cloudinary.com/demo/image/upload/${expectedToContain}/sample`);
   });
 
-  it('Creates a cloudinaryURL with effect shadow', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .effect(shadow())
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_shadow/sample');
-  });
-
   it('Creates a cloudinaryURL with effect shadow:50', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
+      .effect(Effect.shadow())
       .effect(Effect.shadow(50))
+      .effect(Effect.shadow().strength(60).offsetX(1).offsetY(2).color('red'))
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_shadow:50/sample');
+    expect(url).toContain('e_shadow/e_shadow:50/co_red,e_shadow:60,x_1,y_2');
   });
 
   it('Creates a cloudinaryURL with effect colorize', () => {
