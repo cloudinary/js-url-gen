@@ -8,6 +8,7 @@ import * as Outline from "../../../src/constants/outline/Outline";
 import {image} from "../../../src/qualifiers/sources/Sources";
 import scale from "../../../src/actions/resize/ResizeActions/ScaleAction";
 import cartoonify from "../../../src/actions/effect/cartoonify";
+import {HALFTONE_4X4} from "../../../src/constants/dither/Dither";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -285,5 +286,16 @@ describe('Tests for Transformation Action -- Effect', () => {
       .toURL();
 
     expect(url).toContain('l_woman/c_scale,h_100,w_100/e_style_transfer:preserve_color:15,fl_layer_apply/sample');
+  });
+
+  it('Tests for Effect.ditehr', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .effect(Effect.dither())
+      .effect(Effect.dither(HALFTONE_4X4))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toContain('e_ordered_dither/e_ordered_dither:9');
   });
 });

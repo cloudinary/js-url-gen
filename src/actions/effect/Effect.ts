@@ -30,7 +30,7 @@ import makeTransparent from "./leveled/makeTransparent";
 import noise from "./leveled/noise";
 import pixelate from "./leveled/pixelate";
 import vignette from "./leveled/vignette";
-
+import dither from "./dither";
 
 export {
   boomerang,
@@ -87,5 +87,6 @@ export default {
   artisticFilter,
   cartoonify,
   outline,
-  styleTransfer
+  styleTransfer,
+  dither
 };
