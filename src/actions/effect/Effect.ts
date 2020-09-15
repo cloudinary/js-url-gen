@@ -12,7 +12,7 @@ import sepia from "./leveled/sepia";
 import shadow from "./shadow";
 import colorize from "./colorize";
 import oilPaint from "./leveled/oilPaint";
-import artisticFilter from "./artisticFilter";
+import artisticFilter from "./simple/artisticFilter";
 import cartoonify from "./cartoonify";
 import outline from "./outline";
 import styleTransfer from "./styleTransfer";
