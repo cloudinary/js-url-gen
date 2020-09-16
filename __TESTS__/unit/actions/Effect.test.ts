@@ -301,7 +301,7 @@ describe('Tests for Transformation Action -- Effect', () => {
     ).toEqual('e_blur_region:10,h_20,w_30,x_40,y_50');
   });
 
-  it('Tests for Effect.ditehr', () => {
+  it('Tests for Effect.dither', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
       .effect(Effect.dither())
@@ -310,6 +310,23 @@ describe('Tests for Transformation Action -- Effect', () => {
       .toURL();
 
     expect(url).toContain('e_ordered_dither/e_ordered_dither:9');
+  });
+
+  it('Test Vectorize', () => {
+
+    expect(Effect.vectorize()
+      .toString()
+    ).toEqual('e_vectorize');
+
+    expect(Effect.vectorize()
+
+      .cornersLevel(1)
+      .despeckleLevel(2)
+      .detailsLevel(3)
+      .paths(4)
+      .numOfColors(5)
+      .toString()
+    ).toEqual('e_vectorize:colors:5:detail:3:despeckle:2:paths:4:corners:1');
   });
 
   it('Test gradientFade', () => {
