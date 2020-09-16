@@ -30,6 +30,7 @@ import makeTransparent from "./leveled/makeTransparent";
 import noise from "./leveled/noise";
 import pixelate from "./leveled/pixelate";
 import vignette from "./leveled/vignette";
+import vectorize from "./vectorize";
 
 
 export {
@@ -58,7 +59,8 @@ export {
   artisticFilter,
   cartoonify,
   outline,
-  styleTransfer
+  styleTransfer,
+  vectorize
 };
 
 export default {
@@ -87,5 +89,6 @@ export default {
   artisticFilter,
   cartoonify,
   outline,
-  styleTransfer
+  styleTransfer,
+  vectorize
 };

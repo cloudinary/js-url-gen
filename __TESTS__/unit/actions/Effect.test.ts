@@ -286,4 +286,21 @@ describe('Tests for Transformation Action -- Effect', () => {
 
     expect(url).toContain('l_woman/c_scale,h_100,w_100/e_style_transfer:preserve_color:15,fl_layer_apply/sample');
   });
+
+  it('Test Vectorize', () => {
+
+    expect(Effect.vectorize()
+      .toString()
+    ).toEqual('e_vectorize');
+
+    expect(Effect.vectorize()
+
+      .cornersLevel(1)
+      .despeckleLevel(2)
+      .detailsLevel(3)
+      .paths(4)
+      .numOfColors(5)
+      .toString()
+    ).toEqual('e_vectorize:colors:5:detail:3:despeckle:2:paths:4:corners:1');
+  });
 });
