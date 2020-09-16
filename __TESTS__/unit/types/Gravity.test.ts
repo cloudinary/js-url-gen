@@ -1,8 +1,8 @@
-import Gravity from "../../../src/qualifiers/gravity/Gravity";
-import * as GravityESM from "../../../src/qualifiers/gravity/Gravity";
+import Gravity from "../../../src/values/gravity/Gravity";
+import * as GravityESM from "../../../src/values/gravity/Gravity";
 
-import * as GravityObjects from "../../../src/constants/gravityObjects/GravityObjects";
-import {AutoGravity} from "../../../src/constants/gravityObjects/GravityObjects";
+import * as GravityObjects from "../../../src/values/gravityObjects/GravityObjects";
+import {AutoGravity} from "../../../src/values/gravityObjects/GravityObjects";
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 
 

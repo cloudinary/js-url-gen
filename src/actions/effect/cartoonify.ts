@@ -1,5 +1,5 @@
-import Qualifier from "../../qualifiers/Qualifier";
-import QualifierValue from "../../qualifiers/QualifierValue";
+import Qualifier from "../../qualifier/Qualifier";
+import QualifierValue from "../../qualifier/QualifierValue";
 import Action from "../Action";
 
 class CartoonifyEffect extends Action {

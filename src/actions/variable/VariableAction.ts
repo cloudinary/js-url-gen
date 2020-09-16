@@ -1,7 +1,7 @@
 
 
 import Action from "../Action";
-import Qualifier from "../../qualifiers/Qualifier";
+import Qualifier from "../../qualifier/Qualifier";
 import {isString} from "../../utils/dataStructureUtils";
 
 // TODO: when spec for $award_ctx:!First! is ready, implement it
