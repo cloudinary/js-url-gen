@@ -286,4 +286,24 @@ describe('Tests for Transformation Action -- Effect', () => {
 
     expect(url).toContain('l_woman/c_scale,h_100,w_100/e_style_transfer:preserve_color:15,fl_layer_apply/sample');
   });
+
+  it('Tests blurRegion', () => {
+    expect(Effect.blurRegion()
+      .toString()
+    ).toEqual('e_blur_region');
+
+    expect(Effect.blurRegion()
+      .strength(10)
+      .toString()
+    ).toEqual('e_blur_region:10');
+
+    expect(Effect.blurRegion()
+      .strength(10)
+      .height(20)
+      .width(30)
+      .x(40)
+      .y(50)
+      .toString()
+    ).toEqual('e_blur_region:10,h_20,w_30,x_40,y_50');
+  });
 });
