@@ -1,6 +1,6 @@
-import Param from "../../parameters/Param";
+import Qualifier from "../../qualifiers/Qualifier";
 import Action from "../Action";
-import ParamValue from "../../parameters/ParamValue";
+import QualifierValue from "../../qualifiers/QualifierValue";
 
 /**
  * @description  Extracts the original content of an embedded object of a Photoshop image.
@@ -14,10 +14,10 @@ class SmartObject extends Action {
     this.smartObjectValue = smartObjectValue;
   }
 
-  protected prepareParam() : void {
-    const paramValue = new ParamValue(['embedded', `${this.smartObjectValue}`]).setDelimiter(':');
+  protected prepareQualifiers() : void {
+    const qualifierValue = new QualifierValue(['embedded', `${this.smartObjectValue}`]).setDelimiter(':');
 
-    this.addParam(new Param('pg', paramValue));
+    this.addQualifier(new Qualifier('pg', qualifierValue));
   }
 }
 

@@ -1,8 +1,8 @@
 /**
  * @description given an ESM package and a default export, this function expects the two to be identical
  * Example usage:
- *    import * as GravityESM from '/params/gravity/Gravity'
- *    import Gravity from '/params/gravity/Gravity'
+ *    import * as GravityESM from '/qualifiers/gravity/Gravity'
+ *    import Gravity from '/qualifiers/gravity/Gravity'
  *
  *    it ('Should work', () => {
  *       expectESMToMatchDefault(GravityESM, Gravity);

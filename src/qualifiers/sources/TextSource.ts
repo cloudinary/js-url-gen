@@ -1,7 +1,7 @@
 import {ISource} from "./ISource";
 import {FontStyle, FontWeight} from "../fonts/Fonts";
 import {prepareColor} from "../../utils/prepareColor";
-import ParamValue from "../../parameters/ParamValue";
+import QualifierValue from "../QualifierValue";
 
 /**
  * @implements {ISource}
@@ -84,15 +84,15 @@ class TextSource implements ISource {
    * @returns {string}
    */
   getSource(): string {
-    const fontValue = new ParamValue([this.fFamily, this.fSize, this.fWeight, this.fStyle])
+    const fontValue = new QualifierValue([this.fFamily, this.fSize, this.fWeight, this.fStyle])
       .setDelimiter('_')
       .toString();
 
-    const fontAndText = new ParamValue(['text', fontValue, this.innerText])
+    const fontAndText = new QualifierValue(['text', fontValue, this.innerText])
       .setDelimiter(':')
       .toString();
 
-    const final = new ParamValue([fontAndText, this.getColor()])
+    const final = new QualifierValue([fontAndText, this.getColor()])
       .setDelimiter(',')
       .toString();
     return `${final}`;

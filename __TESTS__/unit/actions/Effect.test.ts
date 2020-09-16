@@ -5,7 +5,7 @@ import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 import * as EffectESM from "../../../src/actions/effect/Effect";
 import Effect, {shadow} from "../../../src/actions/effect/Effect";
 import * as Outline from "../../../src/constants/outline/Outline";
-import {image} from "../../../src/params/sources/Sources";
+import {image} from "../../../src/qualifiers/sources/Sources";
 import scale from "../../../src/actions/resize/ResizeActions/ScaleAction";
 import cartoonify from "../../../src/actions/effect/cartoonify";
 
@@ -138,11 +138,11 @@ describe('Tests for Transformation Action -- Effect', () => {
   it('Creates a cloudinaryURL with effect colorize', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .effect(Effect.colorize())
+      .effect(Effect.colorize(10).color('red'))
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_colorize/sample');
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/co_red,e_colorize:10/sample');
   });
 
   it('Creates a cloudinaryURL with effect colorize:level', () => {
@@ -188,11 +188,15 @@ describe('Tests for Transformation Action -- Effect', () => {
   it('Creates a cloudinaryURL with effect cartoonify:50', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .effect(cartoonify(50))
+      .effect(cartoonify().strength(50).colorReductionLevel('bw'))
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_cartoonify:50/sample');
+    const withConstructor = cartoonify(50).colorReductionLevel('bw').toString();
+    const withBuilder = cartoonify().strength(50).colorReductionLevel('bw').toString();
+
+    expect(withBuilder).toBe(withConstructor);
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_cartoonify:50:bw/sample');
   });
 
   it('Creates a cloudinaryURL with effect outline:15:200', () => {

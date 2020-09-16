@@ -1,7 +1,7 @@
 import Action from "../../actions/Action";
 import VideoOffset from "./VideoOffset";
-import Param from "../../parameters/Param";
-import ParamValue from "../../parameters/ParamValue";
+import Qualifier from "../Qualifier";
+import QualifierValue from "../QualifierValue";
 
 /**
  * @description Defines a video range using startOffset, endOffset, duration.
@@ -24,8 +24,8 @@ class VideoRange extends Action {
    * @param action
    */
   offset(offset: VideoOffset): this {
-    offset.params.forEach((p)=>{
-      this.addParam(p);
+    offset.qualifiers.forEach((p)=>{
+      this.addQualifier(p);
     });
     return this;
   }
@@ -34,7 +34,7 @@ class VideoRange extends Action {
    * @param duration
    */
   duration(duration: number): this {
-    return this.addParam(new Param('du', new ParamValue(duration)));
+    return this.addQualifier(new Qualifier('du', new QualifierValue(duration)));
   }
 
   toString(): string{

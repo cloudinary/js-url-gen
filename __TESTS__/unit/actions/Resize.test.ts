@@ -1,5 +1,5 @@
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
-import ResizeMode from "../../../src/params/resizeMode/ResizeMode";
+import ResizeMode from "../../../src/qualifiers/resizeMode/ResizeMode";
 import getImageWithResize from "./Resize/shared/getImageWithResize";
 import Resize from "../../../src/actions/resize/Resize";
 import * as ResizeESM from "../../../src/actions/resize/Resize";

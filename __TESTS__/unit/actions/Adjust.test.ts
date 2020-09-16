@@ -3,9 +3,7 @@ import Adjust from '../../../src/actions/adjust/Adjust';
 import * as AdjustESM from '../../../src/actions/adjust/Adjust';
 import {TransformableImage} from "../../../src";
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
-import * as ImproveMode from "../../../src/params/improveMode/ImproveMode";
-
-const {opacity, viesusCorrect, brightness, sharpen, improve, red, saturation} = Adjust;
+import * as ImproveMode from "../../../src/qualifiers/improveMode/ImproveMode";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -18,124 +16,106 @@ describe('Tests for Transformation Action -- Adjust', () => {
     expectESMToMatchDefault(AdjustESM, Adjust);
   });
 
-  it('Ensure namespace is correctly populated', () => {
-    expect(Adjust.viesusCorrect).toEqual(viesusCorrect);
-    expect(Adjust.opacity).toEqual(opacity);
-    expect(Adjust.brightness).toEqual(brightness);
-    expect(Adjust.sharpen).toEqual(sharpen);
-    expect(Adjust.improve).toEqual(improve);
-    expect(Adjust.red).toEqual(red);
-    expect(Adjust.saturation).toEqual(saturation);
-  });
-
-  it('Ensures viesusCorrect, opacity, brightness are accepted as an action to TransformableImage', () => {
-    const tImage = new TransformableImage();
-    const TEST_URL_TO_CREATE = 'http://res.cloudinary.com/demo/image/upload/e_viesus_correct/o_50/e_brightness:200/e_sharpen/e_improve/e_red:20/e_saturation:50/sample';
-
-    expect(
-      tImage
-        .setConfig(CONFIG_INSTANCE)
-        .adjust(viesusCorrect())
-        .adjust(opacity(50))
-        .adjust(brightness(200))
-        .adjust(sharpen())
-        .adjust(improve())
-        .adjust(red(20))
-        .adjust(saturation(50))
-        .setPublicID('sample')
-    ).toEqual(tImage);
-
-    expect(tImage.toURL()).toBe(TEST_URL_TO_CREATE);
-  });
-
-  it('Creates a cloudinaryURL with contrast', () => {
+  it('Ensure leveledAdjusts work properly', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .adjust(Adjust.contrast(-100))
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_contrast:-100/sample');
-  });
-
-  it('Creates a cloudinaryURL with gamma', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .adjust(Adjust.gamma(-100))
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_gamma:-100/sample');
-  });
-
-  it('Creates a cloudinaryURL with brightnessHSB', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .adjust(Adjust.brightnessHSB(-99))
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_brightness_hsb:-99/sample');
-  });
-
-  it('Creates a cloudinaryURL with hue', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .adjust(Adjust.hue(100))
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_hue:100/sample');
-  });
-
-  it('Creates a cloudinaryURL with autoBrightness', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
+      .adjust(Adjust.autoBrightness())
+      .adjust(Adjust.autoBrightness().level(50))
       .adjust(Adjust.autoBrightness(100))
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_auto_brightness:100/sample');
-  });
-
-  it('Creates a cloudinaryURL with autoColor', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
+      .adjust(Adjust.autoColor())
+      .adjust(Adjust.autoColor().level(50))
       .adjust(Adjust.autoColor(100))
+      .adjust(Adjust.autoContrast())
+      .adjust(Adjust.autoContrast().level(50))
+      .adjust(Adjust.autoContrast(100))
+      .adjust(Adjust.red())
+      .adjust(Adjust.red().level(50))
+      .adjust(Adjust.red(100))
+      .adjust(Adjust.green())
+      .adjust(Adjust.green().level(50))
+      .adjust(Adjust.green(100))
+      .adjust(Adjust.blue())
+      .adjust(Adjust.blue().level(50))
+      .adjust(Adjust.blue(100))
+      .adjust(Adjust.brightness())
+      .adjust(Adjust.brightness().level(50))
+      .adjust(Adjust.brightness(100))
+      .adjust(Adjust.brightnessHSB())
+      .adjust(Adjust.brightnessHSB().level(50))
+      .adjust(Adjust.brightnessHSB(100))
+      .adjust(Adjust.contrast())
+      .adjust(Adjust.contrast().level(50))
+      .adjust(Adjust.contrast(100))
+      .adjust(Adjust.gamma())
+      .adjust(Adjust.gamma().level(50))
+      .adjust(Adjust.gamma(100))
+      .adjust(Adjust.hue())
+      .adjust(Adjust.hue().level(50))
+      .adjust(Adjust.hue(100))
+      .adjust(Adjust.opacityThreshold())
+      .adjust(Adjust.opacityThreshold().level(50))
+      .adjust(Adjust.opacityThreshold(100))
+      .adjust(Adjust.saturation())
+      .adjust(Adjust.saturation().level(50))
+      .adjust(Adjust.saturation(100))
+      .adjust(Adjust.sharpen())
+      .adjust(Adjust.sharpen().level(50))
+      .adjust(Adjust.sharpen(100))
+      .adjust(Adjust.unsharpMask())
+      .adjust(Adjust.unsharpMask().level(50))
+      .adjust(Adjust.unsharpMask(100))
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_auto_color:100/sample');
-  });
+    const expectedToContain = [
+      'e_auto_brightness',
+      'e_auto_brightness:50',
+      'e_auto_brightness:100',
+      'e_auto_color',
+      'e_auto_color:50',
+      'e_auto_color:100',
+      'e_auto_contrast',
+      'e_auto_contrast:50',
+      'e_auto_contrast:100',
+      'e_red',
+      'e_red:50',
+      'e_red:100',
+      'e_green',
+      'e_green:50',
+      'e_green:100',
+      'e_blue',
+      'e_blue:50',
+      'e_blue:100',
+      'e_brightness',
+      'e_brightness:50',
+      'e_brightness:100',
+      'e_brightness_hsb',
+      'e_brightness_hsb:50',
+      'e_brightness_hsb:100',
+      'e_contrast',
+      'e_contrast:50',
+      'e_contrast:100',
+      'e_gamma',
+      'e_gamma:50',
+      'e_gamma:100',
+      'e_hue',
+      'e_hue:50',
+      'e_hue:100',
+      'e_opacity_threshold',
+      'e_opacity_threshold:50',
+      'e_opacity_threshold:100',
+      'e_saturation',
+      'e_saturation:50',
+      'e_saturation:100',
+      'e_sharpen',
+      'e_sharpen:50',
+      'e_sharpen:100',
+      'e_unsharp_mask',
+      'e_unsharp_mask:50',
+      'e_unsharp_mask:100'
+    ].join('/');
 
-  it('Creates a cloudinaryURL with vibrance', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .adjust(Adjust.vibrance())
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_vibrance/sample');
-  });
-
-  it('Creates a cloudinaryURL with unsharpMask', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .adjust(Adjust.unsharpMask(1500))
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_unsharp_mask:1500/sample');
-  });
-
-  it('Creates a cloudinaryURL with opacityThreshold', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .adjust(Adjust.opacityThreshold(50))
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_opacity_threshold:50/sample');
+    expect(url).toBe(`http://res.cloudinary.com/demo/image/upload/${expectedToContain}/sample`);
   });
 
   it('tests replaceColor', () => {

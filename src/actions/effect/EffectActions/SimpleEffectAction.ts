@@ -1,23 +1,23 @@
 import Action from "../../Action";
-import Param from "../../../parameters/Param";
-import ParamValue from "../../../parameters/ParamValue";
+import Qualifier from "../../../qualifiers/Qualifier";
+import QualifierValue from "../../../qualifiers/QualifierValue";
 
 
 class SimpleEffectAction extends Action {
   constructor(effectType?: string, level?: number|string) {
     super();
-    const paramEffect = this.createEffectParam(effectType, level);
-    this.addParam(paramEffect);
+    const qualifierEffect = this.createEffectParam(effectType, level);
+    this.addQualifier(qualifierEffect);
   }
 
-  protected createEffectParam(effectType: string, level?: number|string):Param {
-    let paramValue;
+  protected createEffectParam(effectType: string, level?: number|string):Qualifier {
+    let qualifierValue;
     if(level) {
-      paramValue = new ParamValue([effectType, `${level}`]).setDelimiter(':');
+      qualifierValue = new QualifierValue([effectType, `${level}`]).setDelimiter(':');
     } else {
-      paramValue = new ParamValue(effectType);
+      qualifierValue = new QualifierValue(effectType);
     }
-    return new Param('e', paramValue);
+    return new Qualifier('e', qualifierValue);
   }
 }
 

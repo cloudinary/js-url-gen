@@ -1,11 +1,11 @@
 import Action from "../Action";
-import Param from "../../parameters/Param";
+import Qualifier from "../../qualifiers/Qualifier";
 
 class FPSAction extends Action {
 
   constructor(from: number) {
     super();
-    this.addParam(new Param('fps', from));
+    this.addQualifier(new Qualifier('fps', from));
   }
 }
 

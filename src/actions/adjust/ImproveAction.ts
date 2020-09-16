@@ -1,6 +1,6 @@
 import Action from "../Action";
-import Param from "../../parameters/Param";
-import ParamValue from "../../parameters/ParamValue";
+import Qualifier from "../../qualifiers/Qualifier";
+import QualifierValue from "../../qualifiers/QualifierValue";
 
 class ImproveAction extends Action {
   private modeValue:string;
@@ -19,9 +19,9 @@ class ImproveAction extends Action {
     return this;
   }
 
-  protected prepareParam(): this {
-    const paramValue = new ParamValue(['improve', this.modeValue, this.blendValue]).setDelimiter(':');
-    this.addParam(new Param('e', paramValue));
+  protected prepareQualifiers(): this {
+    const qualifierValue = new QualifierValue(['improve', this.modeValue, this.blendValue]).setDelimiter(':');
+    this.addQualifier(new Qualifier('e', qualifierValue));
     return this;
   }
 }

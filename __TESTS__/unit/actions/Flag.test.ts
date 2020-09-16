@@ -1,8 +1,8 @@
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import Flag from "../../../src/params/flag/Flag";
+import Flag from "../../../src/qualifiers/flag/Flag";
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
-import * as FlagESM from "../../../src/params/flag/Flag";
+import * as FlagESM from "../../../src/qualifiers/flag/Flag";
 import Resize from "../../../src/actions/resize/Resize";
 import TransformableVideo from "../../../src/transformation/TransformableVideo";
 

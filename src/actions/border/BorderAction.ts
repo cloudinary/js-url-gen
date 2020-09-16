@@ -1,6 +1,6 @@
 import Action from "../Action";
-import Param from "../../parameters/Param";
-import ParamValue from "../../parameters/ParamValue";
+import Qualifier from "../../qualifiers/Qualifier";
+import QualifierValue from "../../qualifiers/QualifierValue";
 import {prepareColor} from "../../utils/prepareColor";
 
 class BorderAction extends Action {
@@ -28,9 +28,9 @@ class BorderAction extends Action {
     return this;
   }
 
-  protected prepareParam() : void {
-    const paramValue = new ParamValue([`${this.borderWidth}px`, this.borderStyle, `${this.borderColor}`]).setDelimiter('_');
-    this.addParam(new Param('bo', paramValue));
+  protected prepareQualifiers() : void {
+    const qualifierValue = new QualifierValue([`${this.borderWidth}px`, this.borderStyle, `${this.borderColor}`]).setDelimiter('_');
+    this.addQualifier(new Qualifier('bo', qualifierValue));
   }
 }
 

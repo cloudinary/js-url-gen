@@ -4,12 +4,12 @@ import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigura
 import CloudinaryConfig from "../config/CloudinaryConfig";
 import {IDescriptor} from "../interfaces/IDescriptor";
 import createCloudinaryURL from "../url/cloudinaryURL";
-import Param from "../parameters/Param";
+import Qualifier from "../qualifiers/Qualifier";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
 import BackgroundAction from "../actions/background/BackgroundAction";
 import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction";
 import {Layer} from "../actions/overlay/Overlay";
-import {Flag} from "../params/flag/Flag";
+import {Flag} from "../qualifiers/flag/Flag";
 import Action from "../actions/Action";
 import {TrimAction} from "../actions/videoEdit/TrimAction";
 import {DeliveryAction} from "../actions/delivery/Delivery";
@@ -156,7 +156,7 @@ class Transformation {
    * false.
    */
   ifElse(): this {
-    return this.addAction(new Param('if', 'else'));
+    return this.addAction(new Qualifier('if', 'else'));
   }
 
   /**
@@ -164,7 +164,7 @@ class Transformation {
    * @description Finishes the conditional transformation.
    */
   endIfCondition(): this {
-    return this.addAction(new Param('if', 'end'));
+    return this.addAction(new Qualifier('if', 'end'));
   }
 
   /**
@@ -221,7 +221,7 @@ class Transformation {
    */
   addFlag(flagParam: Flag): this {
     const action = new Action();
-    action.addParam(flagParam);
+    action.addQualifier(flagParam);
     return this.addAction(action);
   }
 

@@ -1,11 +1,11 @@
 import Action from "../Action";
-import Param from "../../parameters/Param";
+import Qualifier from "../../qualifiers/Qualifier";
 import {toFloatAsString} from "../../utils/toFloatAsString";
 
 class KeyframeIntervalsAction extends Action {
   constructor(interval: number) {
     super();
-    this.addParam(new Param('ki', toFloatAsString(interval)));
+    this.addQualifier(new Qualifier('ki', toFloatAsString(interval)));
   }
 }
 

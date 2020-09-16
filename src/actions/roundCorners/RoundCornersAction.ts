@@ -1,13 +1,13 @@
 import Action from "../Action";
-import Param from "../../parameters/Param";
-import ParamValue from "../../parameters/ParamValue";
+import Qualifier from "../../qualifiers/Qualifier";
+import QualifierValue from "../../qualifiers/QualifierValue";
 
 /**
  * @private
  * @implements IAction
  */
 class RoundCornersAction extends Action {
-  private param: Param;
+  private qualifier: Qualifier;
   constructor() {
     super();
   }
@@ -20,14 +20,14 @@ class RoundCornersAction extends Action {
    * @return {RoundCornersAction}
    */
   radius(a:number, b?:number, c?:number, d?:number):this {
-    const paramValue = new ParamValue();
+    const qualifierValue = new QualifierValue();
 
-    a && paramValue.addValue(a);
-    b && paramValue.addValue(b);
-    c && paramValue.addValue(c);
-    d && paramValue.addValue(d);
+    a && qualifierValue.addValue(a);
+    b && qualifierValue.addValue(b);
+    c && qualifierValue.addValue(c);
+    d && qualifierValue.addValue(d);
 
-    this.addParam(new Param('r').addValue(paramValue));
+    this.addQualifier(new Qualifier('r').addValue(qualifierValue));
     return this;
   }
 
@@ -35,7 +35,7 @@ class RoundCornersAction extends Action {
    * @return {RoundCornersAction}
    */
   max(): this {
-    return this.addParam(new Param('r', 'max'));
+    return this.addQualifier(new Qualifier('r', 'max'));
   }
 }
 

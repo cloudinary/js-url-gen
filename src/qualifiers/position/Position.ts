@@ -1,6 +1,6 @@
 import Action from "../../actions/Action";
 import {GravityParam} from "../gravity/Gravity";
-import Param from "../../parameters/Param";
+import Qualifier from "../Qualifier";
 
 /**
  * @description Defines the focal gravity for overlays
@@ -16,15 +16,15 @@ import Param from "../../parameters/Param";
 class Position extends Action {
   constructor(positionDirection:string) {
     super();
-    this.addParam(new GravityParam(positionDirection));
+    this.addQualifier(new GravityParam(positionDirection));
   }
 
   x(offsetX:number): this{
-    return this.addParam(new Param('x', offsetX));
+    return this.addQualifier(new Qualifier('x', offsetX));
   }
 
   y(offsetY:number): this{
-    return this.addParam(new Param('y', offsetY));
+    return this.addQualifier(new Qualifier('y', offsetY));
   }
 }
 

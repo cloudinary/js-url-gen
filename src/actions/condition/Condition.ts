@@ -1,5 +1,5 @@
 import Action from "../Action";
-import Param from "../../parameters/Param";
+import Qualifier from "../../qualifiers/Qualifier";
 
 const CONDITIONAL_OPERATORS: Record<string, string> = {
   "=": 'eq',
@@ -26,7 +26,7 @@ class ConditionAction extends Action{
   constructor(expression: string) {
     super();
 
-    this.addParam(new Param('if', this.normalizeExpression(expression)));
+    this.addQualifier(new Qualifier('if', this.normalizeExpression(expression)));
 
   }
 
