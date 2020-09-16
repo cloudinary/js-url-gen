@@ -12,8 +12,9 @@ describe('Tests for Transformation Action -- Resize.imaggaCrop', () => {
     const url = getImageWithResize(
       imaggaCrop()
         .width(250)
-        .height(250),
+        .height(250)
+        .aspectRatio(2),
       'url');
-    expect(url).toContain('c_imagga_crop,h_250,w_250');
+    expect(url).toContain('ar_2.0,c_imagga_crop,h_250,w_250');
   });
 });

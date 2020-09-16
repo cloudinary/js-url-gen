@@ -1,4 +1,14 @@
 import ResizeSimpleAction from "./ResizeSimpleAction";
+import Qualifier from "../../../qualifiers/Qualifier";
+import {toFloatAsString} from "../../../utils/toFloatAsString";
+
+
+class ImaggaScaleAction extends ResizeSimpleAction {
+  aspectRatio(ratio:number|string): this {
+    // toFloatAsString is used to ensure 1 turns into 1.0
+    return this.addQualifier(new Qualifier('ar', toFloatAsString(ratio)));
+  }
+}
 
 /**
  * @memberOf Actions.Resize
@@ -7,8 +17,8 @@ import ResizeSimpleAction from "./ResizeSimpleAction";
  * @param {number|string} width
  * @param {number|string} height
  */
-function imaggaScale(width?: number | string, height?: number | string): ResizeSimpleAction {
-  return new ResizeSimpleAction('imagga_scale', width, height);
+function imaggaScale(width?: number | string, height?: number | string): ImaggaScaleAction {
+  return new ImaggaScaleAction('imagga_scale', width, height);
 }
 
 export default imaggaScale;
