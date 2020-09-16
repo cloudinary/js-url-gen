@@ -32,6 +32,8 @@ import pixelate from "./leveled/pixelate";
 import vignette from "./leveled/vignette";
 import dither from "./dither";
 import blurRegion from "./blurRegion";
+import vectorize from "./vectorize";
+
 
 export {
   boomerang,
@@ -60,7 +62,8 @@ export {
   cartoonify,
   outline,
   styleTransfer,
-  blurRegion
+  blurRegion,
+  vectorize
 };
 
 export default {
@@ -91,5 +94,6 @@ export default {
   outline,
   styleTransfer,
   dither,
-  blurRegion
+  blurRegion,
+  vectorize
 };
