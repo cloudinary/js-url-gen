@@ -5,8 +5,8 @@ import CloudinaryConfig from '../../../src/config/CloudinaryConfig';
 import expectESMToMatchDefault from '../../TestUtils/expectESMToMatchDefault';
 import * as AudioCodec from '../../../src/constants/audioCodec/AudioCodec';
 import * as AudioFrequency from '../../../src/constants/audioFrequency/AudioFrequency';
-import * as StreaminProfile from '../../../src//constants/streamingProfile/StreamingProfile';
-
+import * as StreaminProfile from '../../../src/constants/streamingProfile/StreamingProfile';
+import * as AnimatedFormat from '../../../src/constants/animatedFormat/AnimatedFormat';
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -125,5 +125,51 @@ describe('Tests for Transformation Action -- Transcode', () => {
     expect(url).toBe('http://res.cloudinary.com/demo/video/upload/sp_full_hd/sample');
   });
 
+  it('Creates a cloudinaryURL with toAnimated', () => {
+    const url = new TransformableVideo()
+      .setConfig(CONFIG_INSTANCE)
+      .setAssetType('video')
+      .transcode(Transcode
+        .toAnimated(AnimatedFormat.GIF))
+      .setPublicID('sample')
+      .toURL();
 
+    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/sp_full_hd/sample');
+  });
+
+  it('Creates a cloudinaryURL with toAnimated webp', () => {
+    const url = new TransformableVideo()
+      .setConfig(CONFIG_INSTANCE)
+      .setAssetType('video')
+      .transcode(Transcode
+        .toAnimated(AnimatedFormat.WEBP))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/f_webp,fl_awebp.animated/sample');
+  });
+
+  it('Creates a cloudinaryURL with toAnimated and delay', () => {
+    const url = new TransformableVideo()
+      .setConfig(CONFIG_INSTANCE)
+      .setAssetType('video')
+      .transcode(Transcode
+        .toAnimated('gif').delay(20))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/dl_20,f_gif,fl_animated/sample');
+  });
+
+  it('Creates a cloudinaryURL with toAnimated, delay, sampling', () => {
+    const url = new TransformableVideo()
+      .setConfig(CONFIG_INSTANCE)
+      .setAssetType('video')
+      .transcode(Transcode
+        .toAnimated(AnimatedFormat.GIF).delay(20).sampling('4s'))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/dl_20,f_gif,fl_animated,vs_4s/sample');
+  });
 });
