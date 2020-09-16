@@ -5,6 +5,7 @@ import FPSAction from "./FPSAction";
 import FPSRangeAction from "./FPSRangeAction";
 import KeyframeIntervalsAction from "./KeyframeIntervalsAction";
 import StreamingProfileAction from "./StreamingProfile";
+import ToAnimatedAction from "./ToAnimatedAction";
 
 /**
  * Defines how to transcode a video to another format
@@ -88,5 +89,13 @@ function streamingProfile(profile: string): StreamingProfileAction{
   return new StreamingProfileAction(profile);
 }
 
-export default {bitRate, audioCodec, audioFrequency, fps, fpsRange, keyframeInterval, streamingProfile};
-export {bitRate, audioCodec, audioFrequency, fps, fpsRange, keyframeInterval, streamingProfile};
+/**
+ * @description Converts a video to animated image.
+ * @param {string} animatedFormat The streaming profile.
+ */
+function toAnimated(animatedFormat: string): ToAnimatedAction{
+  return new ToAnimatedAction(animatedFormat);
+}
+
+export default {bitRate, audioCodec, audioFrequency, fps, fpsRange, keyframeInterval, streamingProfile, toAnimated};
+export {bitRate, audioCodec, audioFrequency, fps, fpsRange, keyframeInterval, streamingProfile, toAnimated};
