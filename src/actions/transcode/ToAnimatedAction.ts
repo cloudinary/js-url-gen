@@ -1,6 +1,6 @@
 import Action from "../Action";
-import Param from "../../parameters/Param";
-import Flag from "../../params/flag/Flag";
+import Qualifier from "../../qualifiers/Qualifier";
+import Flag from "../../qualifiers/flag/Flag";
 
 
 class ToAnimatedAction extends Action {
@@ -10,16 +10,16 @@ class ToAnimatedAction extends Action {
       this.addFlag(Flag.animatedWebP());
     }
     this.addFlag(Flag.animated());
-    this.addParam(new Param('f', animatedFormat));
+    this.addQualifier(new Qualifier('f', animatedFormat));
   }
 
   delay(delayValue: number): this {
-    this.addParam(new Param('dl', delayValue));
+    this.addQualifier(new Qualifier('dl', delayValue));
     return this;
   }
 
   sampling(sampling: string|number): this {
-    this.addParam(new Param('vs', sampling));
+    this.addQualifier(new Qualifier('vs', sampling));
     return this;
   }
 
