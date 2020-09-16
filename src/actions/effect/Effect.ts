@@ -31,6 +31,7 @@ import noise from "./leveled/noise";
 import pixelate from "./leveled/pixelate";
 import vignette from "./leveled/vignette";
 import dither from "./dither";
+import blurRegion from "./blurRegion";
 
 export {
   boomerang,
@@ -58,7 +59,8 @@ export {
   artisticFilter,
   cartoonify,
   outline,
-  styleTransfer
+  styleTransfer,
+  blurRegion
 };
 
 export default {
@@ -88,5 +90,6 @@ export default {
   cartoonify,
   outline,
   styleTransfer,
-  dither
+  dither,
+  blurRegion
 };
