@@ -12,8 +12,10 @@ describe('Tests for Transformation Action -- Resize.limitPad', () => {
     const url = getImageWithResize(
       limitPad()
         .width(250)
-        .height(250),
+        .height(250)
+        .aspectRatio(2)
+      ,
       'url');
-    expect(url).toContain('c_lpad,h_250,w_250');
+    expect(url).toContain('ar_2.0,c_lpad,h_250,w_250');
   });
 });
