@@ -8,6 +8,7 @@ import * as Outline from "../../../src/constants/outline/Outline";
 import {image} from "../../../src/qualifiers/sources/Sources";
 import scale from "../../../src/actions/resize/ResizeActions/ScaleAction";
 import cartoonify from "../../../src/actions/effect/cartoonify";
+import {SYMMETRIC_PAD} from "../../../src/constants/gradientFade/GradientFade";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -285,5 +286,25 @@ describe('Tests for Transformation Action -- Effect', () => {
       .toURL();
 
     expect(url).toContain('l_woman/c_scale,h_100,w_100/e_style_transfer:preserve_color:15,fl_layer_apply/sample');
+  });
+
+  it('Test gradientFade', () => {
+    // e_gradient_fade:{type}:{strength},x_{x},y_{y}
+    expect(Effect.gradientFade()
+      .toString()
+    ).toBe('e_gradient_fade');
+
+    expect(Effect.gradientFade()
+      .strength(5)
+      .toString()
+    ).toBe('e_gradient_fade:5');
+
+    expect(Effect.gradientFade()
+      .type(SYMMETRIC_PAD)
+      .strength(5)
+      .horizontalStartPoint(10)
+      .verticalStartPoint(20)
+      .toString()
+    ).toBe('e_gradient_fade:symmetric_pad:5,x_10,y_20');
   });
 });
