@@ -87,7 +87,8 @@ class VectorizeEffectAction extends Action {
 /**
  * @description
  * Vectorizes the image.
- * Notes: * To deliver the image as a vector image, make sure to change the format (or URL extension) to a vector format, such as SVG.</br>
+ * Notes:
+ * To deliver the image as a vector image, make sure to change the format (or URL extension) to a vector format, such as SVG.</br>
  * However, you can also deliver in a raster format if you just want to get the 'vectorized' graphic effect.</br>
  * Large images are scaled down to 1000 pixels in the largest dimension before vectorization.
  *
