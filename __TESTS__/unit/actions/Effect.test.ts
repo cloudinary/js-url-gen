@@ -9,6 +9,7 @@ import {image} from "../../../src/qualifiers/sources/Sources";
 import scale from "../../../src/actions/resize/ResizeActions/ScaleAction";
 import cartoonify from "../../../src/actions/effect/cartoonify";
 import {HALFTONE_4X4} from "../../../src/constants/dither/Dither";
+import {SYMMETRIC_PAD} from "../../../src/constants/gradientFade/GradientFade";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -326,5 +327,25 @@ describe('Tests for Transformation Action -- Effect', () => {
       .numOfColors(5)
       .toString()
     ).toEqual('e_vectorize:colors:5:detail:3:despeckle:2:paths:4:corners:1');
+  });
+
+  it('Test gradientFade', () => {
+    // e_gradient_fade:{type}:{strength},x_{x},y_{y}
+    expect(Effect.gradientFade()
+      .toString()
+    ).toBe('e_gradient_fade');
+
+    expect(Effect.gradientFade()
+      .strength(5)
+      .toString()
+    ).toBe('e_gradient_fade:5');
+
+    expect(Effect.gradientFade()
+      .type(SYMMETRIC_PAD)
+      .strength(5)
+      .horizontalStartPoint(10)
+      .verticalStartPoint(20)
+      .toString()
+    ).toBe('e_gradient_fade:symmetric_pad:5,x_10,y_20');
   });
 });

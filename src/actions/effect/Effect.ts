@@ -33,6 +33,7 @@ import vignette from "./leveled/vignette";
 import dither from "./dither";
 import blurRegion from "./blurRegion";
 import vectorize from "./vectorize";
+import gradientFade from "./gradientFade";
 
 
 export {
@@ -61,8 +62,9 @@ export {
   artisticFilter,
   cartoonify,
   outline,
-  styleTransfer,
   blurRegion,
+  styleTransfer,
+  gradientFade,
   vectorize
 };
 
@@ -92,8 +94,9 @@ export default {
   artisticFilter,
   cartoonify,
   outline,
-  styleTransfer,
   dither,
   blurRegion,
-  vectorize
+  vectorize,
+  styleTransfer,
+  gradientFade
 };
