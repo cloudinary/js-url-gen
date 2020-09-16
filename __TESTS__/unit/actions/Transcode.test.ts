@@ -134,7 +134,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/sp_full_hd/sample');
+    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/f_gif,fl_animated/sample');
   });
 
   it('Creates a cloudinaryURL with toAnimated webp', () => {
