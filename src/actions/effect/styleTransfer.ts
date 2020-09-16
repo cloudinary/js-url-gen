@@ -50,8 +50,8 @@ class StyleTransfer extends Action implements IAction {
    * More aggressively preserves the colors of the the target photo,
    * Can be used with `strength()` to enhance this behaviour
    */
-  preserveColor():this {
-    this.preserve = true;
+  preserveColor(bool = true):this {
+    this.preserve = bool;
     return this;
   }
 

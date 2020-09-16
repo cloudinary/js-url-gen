@@ -12,7 +12,7 @@ import sepia from "./leveled/sepia";
 import shadow from "./shadow";
 import colorize from "./colorize";
 import oilPaint from "./leveled/oilPaint";
-import artisticFilter from "./artisticFilter";
+import artisticFilter from "./simple/artisticFilter";
 import cartoonify from "./cartoonify";
 import outline from "./outline";
 import styleTransfer from "./styleTransfer";
@@ -30,6 +30,8 @@ import makeTransparent from "./leveled/makeTransparent";
 import noise from "./leveled/noise";
 import pixelate from "./leveled/pixelate";
 import vignette from "./leveled/vignette";
+import dither from "./dither";
+import blurRegion from "./blurRegion";
 import vectorize from "./vectorize";
 
 
@@ -60,6 +62,7 @@ export {
   cartoonify,
   outline,
   styleTransfer,
+  blurRegion,
   vectorize
 };
 
@@ -90,5 +93,7 @@ export default {
   cartoonify,
   outline,
   styleTransfer,
+  dither,
+  blurRegion,
   vectorize
 };
