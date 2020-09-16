@@ -3,11 +3,12 @@ import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as ArtisticFilter from "../../../src/constants/artisticFilters/ArtisticFilters";
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 import * as EffectESM from "../../../src/actions/effect/Effect";
-import Effect, {shadow} from "../../../src/actions/effect/Effect";
+import Effect from "../../../src/actions/effect/Effect";
 import * as Outline from "../../../src/constants/outline/Outline";
 import {image} from "../../../src/qualifiers/sources/Sources";
 import scale from "../../../src/actions/resize/ResizeActions/ScaleAction";
 import cartoonify from "../../../src/actions/effect/cartoonify";
+import {HALFTONE_4X4} from "../../../src/constants/dither/Dither";
 import {SYMMETRIC_PAD} from "../../../src/constants/gradientFade/GradientFade";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
@@ -116,24 +117,16 @@ describe('Tests for Transformation Action -- Effect', () => {
     expect(url).toBe(`http://res.cloudinary.com/demo/image/upload/${expectedToContain}/sample`);
   });
 
-  it('Creates a cloudinaryURL with effect shadow', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .effect(shadow())
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_shadow/sample');
-  });
-
   it('Creates a cloudinaryURL with effect shadow:50', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
+      .effect(Effect.shadow())
       .effect(Effect.shadow(50))
+      .effect(Effect.shadow().strength(60).offsetX(1).offsetY(2).color('red'))
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_shadow:50/sample');
+    expect(url).toContain('e_shadow/e_shadow:50/co_red,e_shadow:60,x_1,y_2');
   });
 
   it('Creates a cloudinaryURL with effect colorize', () => {
@@ -286,6 +279,37 @@ describe('Tests for Transformation Action -- Effect', () => {
       .toURL();
 
     expect(url).toContain('l_woman/c_scale,h_100,w_100/e_style_transfer:preserve_color:15,fl_layer_apply/sample');
+  });
+
+  it('Tests blurRegion', () => {
+    expect(Effect.blurRegion()
+      .toString()
+    ).toEqual('e_blur_region');
+
+    expect(Effect.blurRegion()
+      .strength(10)
+      .toString()
+    ).toEqual('e_blur_region:10');
+
+    expect(Effect.blurRegion()
+      .strength(10)
+      .height(20)
+      .width(30)
+      .x(40)
+      .y(50)
+      .toString()
+    ).toEqual('e_blur_region:10,h_20,w_30,x_40,y_50');
+  });
+
+  it('Tests for Effect.ditehr', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .effect(Effect.dither())
+      .effect(Effect.dither(HALFTONE_4X4))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toContain('e_ordered_dither/e_ordered_dither:9');
   });
 
   it('Test gradientFade', () => {
