@@ -1,4 +1,4 @@
-import SimpleEffectAction from "./EffectActions/SimpleEffectAction";
+import SimpleEffectAction from "../EffectActions/SimpleEffectAction";
 
 
 /**

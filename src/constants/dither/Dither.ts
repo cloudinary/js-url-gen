@@ -1,0 +1,20 @@
+export const THRESHOLD_1X1 = 0;
+export const CHECKERBOARD_2X1 = 1;
+export const ORDERED_2X2 = 2;
+export const ORDERED_3X3 = 3;
+export const ORDERED_4X4 = 4;
+export const ORDERED_8X8 = 5;
+// These items need further review
+// export const HALFTONE_4X4 = 6;
+// export const HALFTONE_6X6 = 7;
+// export const HALFTONE_8X8 = 8;
+export const HALFTONE_4X4 = 9;
+export const HALFTONE_6X6 = 10;
+export const HALFTONE_8X8 = 11;
+export const HALFTONE_16X16 = 12;
+export const CIRCLES_5X5_BLACK = 13;
+export const CIRCLES_5X5_WHITE = 14;
+export const CIRCLES_6X6_BLACK = 15;
+export const CIRCLES_6X6_WHITE = 16;
+export const CIRCLES_7X7_BLACK = 17;
+export const CIRCLES_7X7_WHITE = 18;
