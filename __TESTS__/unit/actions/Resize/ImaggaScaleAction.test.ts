@@ -12,8 +12,9 @@ describe('Tests for Transformation Action -- Resize.imaggaScale', () => {
     const url = getImageWithResize(
       imaggaScale()
         .width(250)
-        .height(250),
+        .height(250)
+        .aspectRatio(2),
       'url');
-    expect(url).toContain('c_imagga_scale,h_250,w_250');
+    expect(url).toContain('ar_2.0,c_imagga_scale,h_250,w_250');
   });
 });
