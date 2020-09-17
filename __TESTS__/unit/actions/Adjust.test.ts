@@ -175,6 +175,6 @@ describe('Tests for Transformation Action -- Adjust', () => {
     expect(Adjust
       .by3dLut('sample')
       .toString()
-    ).toBe('l_lut:sample/fl_layer_apply')
+    ).toBe('l_lut:sample/fl_layer_apply');
   });
 });
