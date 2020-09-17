@@ -1,4 +1,18 @@
 import ResizeSimpleAction from "./ResizeSimpleAction";
+import Qualifier from "../../../qualifiers/Qualifier";
+import {toFloatAsString} from "../../../utils/toFloatAsString";
+import {GravityParam} from "../../../qualifiers/gravity/Gravity";
+
+class ThumbnailResizeAction extends ResizeSimpleAction {
+  aspectRatio(ratio:number|string): this {
+    // toFloatAsString is used to ensure 1 turns into 1.0
+    return this.addQualifier(new Qualifier('ar', toFloatAsString(ratio)));
+  }
+
+  gravity(gravity:GravityParam): this {
+    return this.addQualifier(gravity);
+  }
+}
 
 /**
  * @memberOf Actions.Resize
@@ -8,6 +22,6 @@ import ResizeSimpleAction from "./ResizeSimpleAction";
  * @param {number|string} width
  * @param {number|string} height
  */
-export default function thumbnail(width?: string|number, height?: string|number) :ResizeSimpleAction {
-  return new ResizeSimpleAction('thumb', width, height);
+export default function thumbnail(width?: string|number, height?: string|number) :ThumbnailResizeAction {
+  return new ThumbnailResizeAction('thumb', width, height);
 }
