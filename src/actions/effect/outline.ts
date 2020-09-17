@@ -3,53 +3,68 @@ import QualifierValue from "../../qualifiers/QualifierValue";
 import Qualifier from "../../qualifiers/Qualifier";
 
 class Outline extends Action {
-  private modeType: string;
-  private outlineParam: string | number;
+  private _mode: string;
+  private _width: number | string;
+  private _blurLevel : number | string
 
-  constructor(width?: number, blur?: number) {
+  constructor() {
     super();
-    this.outlineParam = this.prepareOutlineParam(width, blur);
   }
 
   /**
-   * @description How to apply the outline effect which can be one of the following values: inner, inner_fill,
-   * outer, fill.
-   * Default value: inner and outer.
+   * @description
+   * How to apply the outline effect which can be one of the following values:
+   * inner, inner_fill, outer, fill.
    * @memberOf Actions.Effect
-   * @param {string} modeType  The type of outline effect. Use the constants defined in Outline.
+   * @param {string} mode  The type of outline effect. Use the constants defined in Outline.
    */
-  mode(modeType?: string): this{
-    this.modeType = modeType;
+  mode(mode?: string): this{
+    this._mode = mode;
     return this;
   }
 
-  prepareOutlineParam(width?: number, blur?: number): number|string {
-    return blur ? `${width}:${blur}` : width;
+  /**
+   * The thickness of the outline in pixels. (Range: 1 to 100, Server default: 5)
+   * @param {number} width
+   */
+  width(width?:number | string) {
+    this._width = width;
+    return this;
+  }
+
+  /**
+   * @description
+   * The level of blur of the outline.
+   * Range: 0 to 2000, Server default: 0
+   * @param lvl
+   */
+  blurLevel(lvl?: number | string) {
+    this._blurLevel = lvl;
+    return this;
+  }
+
+  /**
+   * @param {string} color One of the SDK Color values, string, or rgba: '#fff'
+   * A list of SDK Colors can be found in @cloudinary/base/values/color
+   */
+  color(color:string) {
+    return this.addQualifier(new Qualifier('co', color));
   }
 
   protected prepareQualifiers() : void {
-    let qualifierValue;
-    if(this.outlineParam && this.modeType){
-      qualifierValue = new QualifierValue(['outline', `${this.modeType}`, `${this.outlineParam}`]).setDelimiter(':');
-    } else {
-      if (this.outlineParam){
-        qualifierValue = new QualifierValue(['outline', `${this.outlineParam}`]).setDelimiter(':');
-      } else {
-        qualifierValue = new QualifierValue(['outline', `${this.modeType}`]).setDelimiter(':');
-      }
-    }
-    this.addQualifier(new Qualifier('e', qualifierValue));
+    this.addQualifier(new Qualifier(
+      'e',
+      new QualifierValue(['outline', this._mode, this._width, this._blurLevel]).setDelimiter(':'))
+    );
   }
 }
 
 /**
  * @description Adds an outline to a transparent image. For examples, see the Image Transformations guide.
  * @memberOf Actions.Effect
- * @param {number} width The thickness of the outline in pixels. (Range: 1 to 100, Server default: 5)
- * @param {number} blur  The level of blur of the outline. (Range: 0 to 2000, Server default: 0)
  */
-function outline(width?: number, blur?: number): Outline {
-  return new Outline(width, blur);
+function outline(): Outline {
+  return new Outline();
 }
 
 export default outline;
