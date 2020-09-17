@@ -348,4 +348,17 @@ describe('Tests for Transformation Action -- Effect', () => {
       .toString()
     ).toBe('e_gradient_fade:symmetric_pad:5,x_10,y_20');
   });
+
+  it('Test assistColorBlind', () => {
+    expect(Effect.assistColorBlind()
+      .xray()
+      .toString()
+    ).toBe('e_assist_colorblind:xray');
+
+    expect(Effect.assistColorBlind()
+      .xray()
+      .stripes(10)
+      .toString()
+    ).toBe('e_assist_colorblind:10');
+  });
 });

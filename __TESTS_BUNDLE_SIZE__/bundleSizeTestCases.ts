@@ -15,7 +15,7 @@ import {ITestCase} from "./interfaces/ITestCase";
 const bundleSizeTestCases:ITestCase[] = [
   {
     name: 'Tests a transformable image with Resize',
-    sizeLimitInKB: 14,
+    sizeLimitInKB: 16,
     importsArray: [
       importFromBase('TransformableImage'),
       importFromDist('actions/resize')
