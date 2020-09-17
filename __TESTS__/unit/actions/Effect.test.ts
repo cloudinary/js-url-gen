@@ -301,6 +301,26 @@ describe('Tests for Transformation Action -- Effect', () => {
     ).toEqual('e_blur_region:10,h_20,w_30,x_40,y_50');
   });
 
+  it('Tests pixelateRegion', () => {
+    expect(Effect.pixelateRegion()
+      .toString()
+    ).toEqual('e_pixelate_region');
+
+    expect(Effect.pixelateRegion()
+      .pixelWidth(10)
+      .toString()
+    ).toEqual('e_pixelate_region:10');
+
+    expect(Effect.pixelateRegion()
+      .pixelWidth(10)
+      .height(20)
+      .width(30)
+      .x(40)
+      .y(50)
+      .toString()
+    ).toEqual('e_pixelate_region:10,h_20,w_30,x_40,y_50');
+  });
+
   it('Tests for Effect.dither', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
