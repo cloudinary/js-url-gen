@@ -3,7 +3,15 @@ import Action from "../../Action";
 import BackgroundAction from "../../background/BackgroundAction";
 import {Flag} from "../../../qualifiers/flag/Flag";
 
+/**
+ * @description A simple resize with common methods: width and height
+ */
 class ResizeSimpleAction extends Action {
+  /**
+   * @param {string} cropType
+   * @param {number | string} cropWidth
+   * @param {number | string} cropHeight
+   */
   constructor(cropType: string, cropWidth: number|string, cropHeight?: number|string) {
     super();
     if(cropWidth) {
@@ -15,19 +23,26 @@ class ResizeSimpleAction extends Action {
     this.addQualifier(new Qualifier('c', cropType));
   }
 
+  /**
+   * Sets the height of the resize
+   * @param {string | number} x
+   */
   height(x:number|string):this {
     return this.addQualifier(new Qualifier('h', x));
   }
 
+  /**
+   * Sets the width of the resize
+   * @param {string | number} x
+   */
   width(x:number|string):this {
     return this.addQualifier(new Qualifier('w', x));
   }
 
-  /**
+  /*
    * The methods below should not exist on the ResizeSimpleAction class
    * However they are currently unspecced, so it's TBD where they'll belong.
    */
-
   x(x:number): this {
     return this.addQualifier(new Qualifier('x', x));
   }

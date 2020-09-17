@@ -7,7 +7,10 @@ import ResizeSimpleAction from "./ResizeSimpleAction";
  * and must always be accompanied by the gravity parameter set to one of the face detection or custom values.
  * @param {number|string} width
  * @param {number|string} height
+ * @return {ResizeSimpleAction}
  */
-export default function thumbnail(width?: string|number, height?: string|number) :ResizeSimpleAction {
+function thumbnail(width?: string|number, height?: string|number) :ResizeSimpleAction {
   return new ResizeSimpleAction('thumb', width, height);
 }
+
+export default thumbnail;

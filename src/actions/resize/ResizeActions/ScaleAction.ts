@@ -28,6 +28,8 @@ class ScaleAction extends ResizeSimpleAction {
  * @param {number|string} width
  * @param {number|string} height
  */
-export default function scale(width?: number|string, height?: number|string) :ScaleAction {
+function scale(width?: number|string, height?: number|string) :ScaleAction {
   return new ScaleAction(width, height);
 }
+
+export default scale;
