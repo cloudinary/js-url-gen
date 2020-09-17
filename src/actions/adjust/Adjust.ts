@@ -36,6 +36,7 @@ import autoContrast from "./leveled/autoContrast";
  * @memberOf Actions.Adjust
  * @description Adjusts the opacity of the image and makes it semi-transparent.
  * @param {number} level
+ * @return {Action}
  */
 function opacity(level:number): Action {
   // opacity doesn't deserve its own action, it is not reused anywhere
@@ -50,6 +51,7 @@ function opacity(level:number): Action {
  * @memberOf Actions.Adjust
  * @description Defines how to improve an image by automatically adjusting image colors, contrast and brightness.</br>
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#image_improvement_effects | Image improvement effects}
+ * @return {ImproveAction}
  */
 function improve(): ImproveAction {
   return new ImproveAction();
@@ -61,25 +63,32 @@ function improve(): ImproveAction {
 
 
 /**
+ * @memberOf Actions.Adjust
+ * @description
  * Maps an input color and those similar to the input color to corresponding shades of a specified output color, taking luminosity and chroma into account, in order to recolor an object in a natural way.</br>
  * More highly saturated input colors usually give the best results. It is recommended to avoid input colors approaching white, black, or gray.
  * @param {string} toColor
+ * @return {ReplaceColorAction}
  */
 function replaceColor(toColor:string): ReplaceColorAction {
   return new ReplaceColorAction(toColor);
 }
 
 /**
+ * @memberOf Actions.Adjust
  * @description Converts the colors of every pixel in an image based on the supplied color matrix, in which the value of each color channel is calculated based on the values from all other channels (e.g. a 3x3 matrix for RGB, a 4x4 matrix for RGBA or CMYK, etc).</br>
  * For every pixel in the image, take each color channel and adjust its value by the specified values of the matrix to get a new value.
  * @param {number[][]} matrix
+ * @return {RecolorAction}
  */
 function recolor(matrix:number[][]): RecolorAction {
   return new RecolorAction(matrix);
 }
 
 /**
+ * @memberOf Actions.Adjust
  * @description Adjusts the fill light and blends the result with the original image.
+ * @return {FillLightAction}
  */
 function fillLight(): FillLightAction {
   return new FillLightAction();

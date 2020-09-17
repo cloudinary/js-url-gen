@@ -9,7 +9,6 @@ import Action from "../Action";
 /**
  * @class StyleTransfer
  * @implements IAction
- *
  * @description - This Action, while belonging to Effect, acts as a modified overlay.
  *                The class implements the Builder pattern, where strength() and preserveColor()
  *                are applied to the instance, and toString() is responsible to combining them into the right result.

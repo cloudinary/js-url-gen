@@ -17,7 +17,9 @@ import ToAnimatedAction from "./ToAnimatedAction";
 /**
  * @memberOf Actions.Transcode
  * @description Sets the audio sample frequency.
- * @param {string|number} freq The audio frequency.  Use the constants defined in the AudioFrequency class.
+ * <b>Learn more</b>: {@link https://cloudinary.com/documentation/audio_transformations#audio_frequency_control | Audio frequency control}
+ * @param {string|number} freq The audio frequency.
+ * @return AudioFrequencyAction
  */
 function audioFrequency(freq: string|number): AudioFrequencyAction{
   return new AudioFrequencyAction(freq);
@@ -25,7 +27,7 @@ function audioFrequency(freq: string|number): AudioFrequencyAction{
 /**
  * @memberOf Actions.Transcode
  * @description Sets the audio codec or removes the audio channel.
- * @param {string} codec The audio codec or "none".  Use the constants defined in the AudioCodec class.
+ * @param {string} codec The audio codec or "none".
  */
 function audioCodec(codec: string): AudioCodecAction{
   return new AudioCodecAction(codec);
@@ -77,8 +79,8 @@ function keyframeInterval(interval: number): KeyframeIntervalsAction {
 }
 
 /**
+ * @memberOf Actions.Transcode
  * @description Sets the streaming profile to apply to an HLS or MPEG-DASH adaptive bitrate streaming video.
- *
  * The value can be one of the pre-defined streaming profiles or a custom-defined one.
  * You can use the streaming profiles methods of StreamingProfilesTrait to get a list of the available streaming
  * profiles or to create new custom profiles.
@@ -90,6 +92,7 @@ function streamingProfile(profile: string): StreamingProfileAction{
 }
 
 /**
+ * @memberOf Actions.Transcode
  * @description Converts a video to animated image.
  * @param {string} animatedFormat The streaming profile.
  */
