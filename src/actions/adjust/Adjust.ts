@@ -21,6 +21,7 @@ import green from "./leveled/green";
 import unsharpMask from "./leveled/unsharpenMask";
 import vibrance from "./leveled/vibrance";
 import autoContrast from "./leveled/autoContrast";
+import By3dLutAction from "./By3dLut";
 
 
 /**
@@ -85,12 +86,23 @@ function fillLight(): FillLightAction {
   return new FillLightAction();
 }
 
+/**
+ * @description
+ * Applies a look-up table (LUT) file to the image.</br>
+ * The 3dl file should be pre-uploaded as a raw file
+ *
+ * @param {string} publicId The public ID of the LUT file.
+ */
+function by3dLut(publicId: string): By3dLutAction {
+  return new By3dLutAction(publicId);
+}
+
 
 
 export default {brightness, viesusCorrect, opacity, red, sharpen, improve, saturation,
   contrast, gamma, green, blue, brightnessHSB, hue, autoBrightness, autoColor,
-  autoContrast, vibrance, unsharpMask, opacityThreshold, replaceColor, recolor, fillLight};
+  autoContrast, vibrance, unsharpMask, opacityThreshold, replaceColor, recolor, fillLight, by3dLut};
 
 export {brightness, viesusCorrect, opacity, red, sharpen, improve, saturation,
   contrast, gamma, green, blue, brightnessHSB, hue, autoBrightness, autoColor,
-  autoContrast, vibrance, unsharpMask, opacityThreshold, replaceColor, recolor, fillLight};
+  autoContrast, vibrance, unsharpMask, opacityThreshold, replaceColor, recolor, fillLight, by3dLut};

@@ -170,4 +170,11 @@ describe('Tests for Transformation Action -- Adjust', () => {
 
     expect(url).toContain('e_improve:outdoor:0');
   });
+
+  it('tests by3dLut', () => {
+    expect(Adjust
+      .by3dLut('sample')
+      .toString()
+    ).toBe('l_lut:sample/fl_layer_apply')
+  });
 });
