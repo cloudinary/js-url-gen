@@ -10,6 +10,7 @@ import scale from "../../../src/actions/resize/ResizeActions/ScaleAction";
 import cartoonify from "../../../src/actions/effect/cartoonify";
 import {HALFTONE_4X4} from "../../../src/constants/dither/Dither";
 import {SYMMETRIC_PAD} from "../../../src/constants/gradientFade/GradientFade";
+import {ROD_MONOCHROMACY} from "../../../src/constants/simulatedColorblind/SimulatedColorblind";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -347,5 +348,16 @@ describe('Tests for Transformation Action -- Effect', () => {
       .verticalStartPoint(20)
       .toString()
     ).toBe('e_gradient_fade:symmetric_pad:5,x_10,y_20');
+  });
+
+  it('Test simulateColorBlind', () => {
+    expect(Effect.simulateColorBlind()
+      .toString()
+    ).toBe('e_simulate_colorblind');
+
+    expect(Effect.simulateColorBlind()
+      .condition(ROD_MONOCHROMACY)
+      .toString()
+    ).toBe('e_simulate_colorblind:rod_monochromacy');
   });
 });
