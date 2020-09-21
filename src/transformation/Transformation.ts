@@ -218,7 +218,7 @@ class Transformation {
    * @description Applies delivery action.
    * @param deliveryAction
    */
-  delivery(deliveryAction: DeliveryAction): this {
+  delivery(deliveryAction: Action): this {
     return this.addAction(deliveryAction);
   }
 
