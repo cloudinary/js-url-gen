@@ -1,7 +1,7 @@
 import Action from "../Action";
 import {IAction} from "../../interfaces/IAction";
-import Qualifier from "../../qualifiers/Qualifier";
-import Flag from "../../qualifiers/flag/Flag";
+import Qualifier from "../../qualifier/Qualifier";
+import Flag from "../../values/flag/Flag";
 
 class DeliveryAction extends Action implements IAction {
   constructor(deliveryKey?: string, deliveryType?: string|number) {

@@ -1,6 +1,6 @@
 import {IAction} from "../../interfaces/IAction";
 import Action from "../Action";
-import Qualifier from "../../qualifiers/Qualifier";
+import Qualifier from "../../qualifier/Qualifier";
 
 const PARAM_KEY = 'trim';
 

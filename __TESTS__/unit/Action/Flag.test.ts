@@ -1,4 +1,4 @@
-import {Flag} from '../../../src/qualifiers/flag/Flag';
+import {Flag} from '../../../src/values/flag/Flag';
 
 describe('Tests for Flag', () => {
   it('Creates a Flag', () => {

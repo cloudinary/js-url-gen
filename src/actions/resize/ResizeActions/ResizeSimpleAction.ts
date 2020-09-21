@@ -1,7 +1,7 @@
-import Qualifier from "../../../qualifiers/Qualifier";
+import Qualifier from "../../../qualifier/Qualifier";
 import Action from "../../Action";
 import BackgroundAction from "../../background/BackgroundAction";
-import {Flag} from "../../../qualifiers/flag/Flag";
+import {Flag} from "../../../values/flag/Flag";
 
 class ResizeSimpleAction extends Action {
   constructor(cropType: string, cropWidth: number|string, cropHeight?: number|string) {

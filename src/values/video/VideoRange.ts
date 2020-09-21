@@ -1,7 +1,7 @@
 import Action from "../../actions/Action";
 import VideoOffset from "./VideoOffset";
-import Qualifier from "../Qualifier";
-import QualifierValue from "../QualifierValue";
+import Qualifier from "../../qualifier/Qualifier";
+import QualifierValue from "../../qualifier/QualifierValue";
 
 /**
  * @description Defines a video range using startOffset, endOffset, duration.

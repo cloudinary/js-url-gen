@@ -14,11 +14,11 @@ import limitFit from "./ResizeActions/LimitFitAction";
 import minimumPad from "./ResizeActions/MinimumPadAction";
 import minimumFit from "./ResizeActions/MinimumFitAction";
 import fillPad from "./ResizeActions/FillPadAction";
-import thumbnail from "./ResizeActions/ThumbnailAction";
+import thumb from "./ResizeActions/ThumbAction";
 import imaggaCrop from "./ResizeActions/ImaggaCropAction";
 import imaggaScale from "./ResizeActions/ImaggaScaleAction";
 import limitPad from "./ResizeActions/LimitPadAction";
 
 
-export {imaggaScale, imaggaCrop, crop, fill, scale, minimumPad, fit, pad, limitFit, thumbnail, limitFill, minimumFit, limitPad, fillPad};
-export default {imaggaScale, imaggaCrop, crop, fill, scale, minimumPad, fit, pad, limitFit, thumbnail, limitFill, minimumFit, limitPad, fillPad};
+export {imaggaScale, imaggaCrop, crop, fill, scale, minimumPad, fit, pad, limitFit, thumb, limitFill, minimumFit, limitPad, fillPad};
+export default {imaggaScale, imaggaCrop, crop, fill, scale, minimumPad, fit, pad, limitFit, thumb, limitFill, minimumFit, limitPad, fillPad};
