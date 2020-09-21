@@ -3,6 +3,7 @@ import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as Dpr from "../../../src/constants/dpr/Dpr";
 import * as Format from "../../../src/constants/formats/Formats";
 import * as Quality from "../../../src/constants/quality/Quality";
+import * as ColorSpace from "../../../src/constants/colorSpace/ColorSpace";
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 import * as DeliveryESM from "../../../src/actions/delivery/Delivery";
 import Delivery from "../../../src/actions/delivery/Delivery";
@@ -297,13 +298,23 @@ describe('Tests for Transformation Action -- Delivery', () => {
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/d_default/sample');
   });
 
-  it.skip('Creates a cloudinaryURL with Delivery.colorspace', () => {
+  it('Creates a cloudinaryURL with Delivery.colorspace', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(Delivery.colorSpace(ColorSpace.mode(ColorSpaceValue.NO_CYMK)))
+      .delivery(Delivery.colorSpace(ColorSpace.NO_CMYK))
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/dn_150/sample');
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/cs_no_cmyk/sample');
+  });
+
+  it('Creates a cloudinaryURL with Delivery.ColorSpaceFromICC', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .delivery(Delivery.colorSpaceFromICC('sample'))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/cs_icc:sample/sample');
   });
 });

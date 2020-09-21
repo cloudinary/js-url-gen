@@ -37,6 +37,7 @@ import * as AudioCodec from './constants/audioCodec/AudioCodec';
 import * as AudioFrequency from './constants/audioFrequency/AudioFrequency';
 import * as StreaminProfile from './constants/streamingProfile/StreamingProfile';
 import * as AnimatedFormat from './constants/animatedFormat/AnimatedFormat';
+import * as ColorSpace from './constants/colorSpace/ColorSpace';
 
 /**
  * @description a class
@@ -46,5 +47,5 @@ class Base {
   }
 }
 
-export {cloudinaryURL, Transformation, TransformableImage, Base, Actions, Color, Dpr, ObjectGravity, ArtisticFilter, Format, Quality, AudioCodec, AudioFrequency, StreaminProfile, AnimatedFormat};
-export default {cloudinaryURL, Transformation, Base, Actions, Color, Dpr, ObjectGravity, ArtisticFilter, Format, Quality, AudioCodec, AudioFrequency, StreaminProfile, AnimatedFormat};
+export {cloudinaryURL, Transformation, TransformableImage, Base, Actions, Color, Dpr, ObjectGravity, ArtisticFilter, Format, Quality, AudioCodec, AudioFrequency, StreaminProfile, AnimatedFormat, ColorSpace};
+export default {cloudinaryURL, Transformation, Base, Actions, Color, Dpr, ObjectGravity, ArtisticFilter, Format, Quality, AudioCodec, AudioFrequency, StreaminProfile, AnimatedFormat, ColorSpace};

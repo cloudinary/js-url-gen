@@ -10,7 +10,9 @@ import dpr from "./dpr";
 import quality from "./quality";
 import density from "./density";
 import defaultImage from "./defaultImage";
+import colorSpace from "./colorSpace";
+import colorSpaceFromICC from "./colorSpaceFromICC";
 
-export {DeliveryAction, format, dpr, quality, density, defaultImage};
+export {DeliveryAction, format, dpr, quality, density, defaultImage, colorSpace, colorSpaceFromICC};
 
-export default {DeliveryAction, format, dpr, quality, density, defaultImage};
+export default {DeliveryAction, format, dpr, quality, density, defaultImage, colorSpace, colorSpaceFromICC};
