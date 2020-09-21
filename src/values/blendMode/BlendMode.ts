@@ -11,8 +11,10 @@ import QualifierValue from "../../qualifier/QualifierValue";
 
 
 /**
+ * @description
  * Even though Position is technically an actionParam, it implements exactly the same functionality as an action.
  * This is true because Position is actually multiParam
+ * @extends Action
  */
 class BlendMode extends Action {
   constructor(blendMode:string, level?:number) {

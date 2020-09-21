@@ -18,6 +18,8 @@ class LimitFillAction extends ResizeAdvancedAction {
  * @param {number|string} width
  * @param {number|string} height
  */
-export default function limitFill(width?: string|number, height?: string|number) :LimitFillAction {
+function limitFill(width?: string|number, height?: string|number) :LimitFillAction {
   return new LimitFillAction(width, height);
 }
+
+export default limitFill;
