@@ -1,21 +1,6 @@
 import Action from "../Action";
 import Qualifier from "../../qualifier/Qualifier";
-
-const CONDITIONAL_OPERATORS: Record<string, string> = {
-  "=": 'eq',
-  "!=": 'ne',
-  "<": 'lt',
-  ">": 'gt',
-  "<=": 'lte',
-  ">=": 'gte',
-  "&&": 'and',
-  "||": 'or',
-  "*": "mul",
-  "/": "div",
-  "+": "add",
-  "-": "sub",
-  "^": "pow"
-};
+import normalizeExpression from "../../utils/normalizeExpression";
 
 /**
  * Sets up a conditional transformation.
@@ -25,25 +10,7 @@ const CONDITIONAL_OPERATORS: Record<string, string> = {
 class ConditionAction extends Action{
   constructor(expression: string) {
     super();
-
-    this.addQualifier(new Qualifier('if', this.normalizeExpression(expression)));
-
-  }
-
-  /**
-   * @private
-   * Normalizes expression from user representation to URL form.
-   * @param {string} expression The expression to normalize.
-   * @return {string} The normalized expression.
-   */
-  normalizeExpression(expression: string) {
-    const resultExpression = expression
-      .split(' ')
-      .map((val) => CONDITIONAL_OPERATORS[val] || val)
-      .join('_');
-
-
-    return resultExpression;
+    this.addQualifier(new Qualifier('if', normalizeExpression(expression)));
   }
 }
 

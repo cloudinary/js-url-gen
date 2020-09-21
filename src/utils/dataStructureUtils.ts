@@ -20,7 +20,17 @@ function isString(value: unknown): boolean {
   return (typeof value === 'string' || value instanceof String);
 }
 
+/**
+ * Checks if text is an expression
+ * @private
+ * @param text
+ */
+function isExpression(text: unknown): boolean {
+  return text.match(/\s/) !== null;
+}
+
 export {
   isString,
+  isExpression,
   mapToSortedArray
 };
