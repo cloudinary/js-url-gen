@@ -1,15 +1,15 @@
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import * as ArtisticFilter from "../../../src/constants/artisticFilters/ArtisticFilters";
+import * as ArtisticFilter from "../../../src/values/artisticFilters/ArtisticFilters";
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 import * as EffectESM from "../../../src/actions/effect/Effect";
 import Effect from "../../../src/actions/effect/Effect";
-import * as Outline from "../../../src/constants/outline/Outline";
-import {image} from "../../../src/qualifiers/sources/Sources";
+import * as Outline from "../../../src/values/outline/Outline";
+import {image} from "../../../src/values/sources/Sources";
 import scale from "../../../src/actions/resize/ResizeActions/ScaleAction";
 import cartoonify from "../../../src/actions/effect/cartoonify";
-import {HALFTONE_4X4} from "../../../src/constants/dither/Dither";
-import {SYMMETRIC_PAD} from "../../../src/constants/gradientFade/GradientFade";
+import {HALFTONE_4X4} from "../../../src/values/dither/Dither";
+import {SYMMETRIC_PAD} from "../../../src/values/gradientFade/GradientFade";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -367,5 +367,18 @@ describe('Tests for Transformation Action -- Effect', () => {
       .verticalStartPoint(20)
       .toString()
     ).toBe('e_gradient_fade:symmetric_pad:5,x_10,y_20');
+  });
+
+  it('Test assistColorBlind', () => {
+    expect(Effect.assistColorBlind()
+      .xray()
+      .toString()
+    ).toBe('e_assist_colorblind:xray');
+
+    expect(Effect.assistColorBlind()
+      .xray()
+      .stripes(10)
+      .toString()
+    ).toBe('e_assist_colorblind:10');
   });
 });

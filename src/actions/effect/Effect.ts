@@ -35,6 +35,7 @@ import blurRegion from "./blurRegion";
 import vectorize from "./vectorize";
 import gradientFade from "./gradientFade";
 import pixelateRegion from "./pixelateRegion";
+import assistColorBlind from "./assistColorBlind";
 
 
 export {
@@ -67,7 +68,8 @@ export {
   styleTransfer,
   gradientFade,
   vectorize,
-  pixelateRegion
+  pixelateRegion,
+  assistColorBlind
 };
 
 export default {
@@ -101,6 +103,7 @@ export default {
   vectorize,
   styleTransfer,
   gradientFade,
-  pixelateRegion
+  pixelateRegion,
+  assistColorBlind
 };
 
