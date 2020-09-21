@@ -1,6 +1,6 @@
 import Action from "../../actions/Action";
-import Qualifier from "../Qualifier";
-import QualifierValue from "../QualifierValue";
+import Qualifier from "../../qualifier/Qualifier";
+import QualifierValue from "../../qualifier/QualifierValue";
 
 
 /**

@@ -2,7 +2,7 @@ import Border from '../../../src/actions/border/Border';
 import * as BorderESM from '../../../src/actions/border/Border';
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import * as Colors from "../../../src/constants/colors/Colors";
+import * as Colors from "../../../src/values/colors/Colors";
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 
 const {type, SOLID} = Border;

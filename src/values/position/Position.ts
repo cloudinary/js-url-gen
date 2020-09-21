@@ -1,6 +1,6 @@
 import Action from "../../actions/Action";
 import {GravityParam} from "../gravity/Gravity";
-import Qualifier from "../Qualifier";
+import Qualifier from "../../qualifier/Qualifier";
 
 /**
  * @description Defines the focal gravity for overlays

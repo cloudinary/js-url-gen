@@ -1,7 +1,7 @@
-import ImageSource from '../../qualifiers/sources/ImageSource';
+import ImageSource from '../../values/sources/ImageSource';
 import {imageLayer, Layer} from "../overlay/Overlay";
-import Qualifier from "../../qualifiers/Qualifier";
-import QualifierValue from "../../qualifiers/QualifierValue";
+import Qualifier from "../../qualifier/Qualifier";
+import QualifierValue from "../../qualifier/QualifierValue";
 import {IAction} from "../../interfaces/IAction";
 import Action from "../Action";
 

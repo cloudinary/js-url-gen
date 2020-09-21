@@ -4,12 +4,12 @@ import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigura
 import CloudinaryConfig from "../config/CloudinaryConfig";
 import {IDescriptor} from "../interfaces/IDescriptor";
 import createCloudinaryURL from "../url/cloudinaryURL";
-import Qualifier from "../qualifiers/Qualifier";
+import Qualifier from "../qualifier/Qualifier";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
 import BackgroundAction from "../actions/background/BackgroundAction";
 import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction";
 import {Layer} from "../actions/overlay/Overlay";
-import {Flag} from "../qualifiers/flag/Flag";
+import {Flag} from "../values/flag/Flag";
 import Action from "../actions/Action";
 import {TrimAction} from "../actions/videoEdit/TrimAction";
 import {DeliveryAction} from "../actions/delivery/Delivery";

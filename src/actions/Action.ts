@@ -1,5 +1,5 @@
-import Qualifier from "../qualifiers/Qualifier";
-import {Flag} from "../qualifiers/flag/Flag";
+import Qualifier from "../qualifier/Qualifier";
+import {Flag} from "../values/flag/Flag";
 import {IAction} from "../interfaces/IAction";
 import {mapToSortedArray} from "../utils/dataStructureUtils";
 

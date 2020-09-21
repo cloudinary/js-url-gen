@@ -1,6 +1,6 @@
 import Action from "../Action";
-import Qualifier from "../../qualifiers/Qualifier";
-import Flag from "../../qualifiers/flag/Flag";
+import Qualifier from "../../qualifier/Qualifier";
+import Flag from "../../values/flag/Flag";
 
 
 class ToAnimatedAction extends Action {
