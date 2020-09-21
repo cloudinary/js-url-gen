@@ -4,9 +4,9 @@
  * @memberOf Params
  */
 
-import Qualifier from "../Qualifier";
-import {AutoGravity, GravityObject} from "../../constants/gravityObjects/GravityObjects";
-import QualifierValue from "../QualifierValue";
+import Qualifier from "../../qualifier/Qualifier";
+import {AutoGravity, GravityObject} from "../gravityObjects/GravityObjects";
+import QualifierValue from "../../qualifier/QualifierValue";
 
 
 export class GravityParam extends Qualifier {

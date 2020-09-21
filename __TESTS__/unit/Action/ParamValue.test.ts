@@ -1,4 +1,4 @@
-import QualifierValue from '../../../src/qualifiers/QualifierValue';
+import QualifierValue from '../../../src/qualifier/QualifierValue';
 
 describe('Tests for Param', () => {
   it('Creates a ParamValue', () => {

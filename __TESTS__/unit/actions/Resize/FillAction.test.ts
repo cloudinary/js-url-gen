@@ -1,6 +1,6 @@
 import getImageWithResize from "./shared/getImageWithResize";
 import fill from "../../../../src/actions/resize/ResizeActions/FillAction";
-import Gravity from "../../../../src/qualifiers/gravity/Gravity";
+import Gravity from "../../../../src/values/gravity/Gravity";
 
 
 describe('Tests for Transformation Action -- Resize.fill', () => {

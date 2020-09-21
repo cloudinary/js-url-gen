@@ -1,6 +1,6 @@
 import LeveledEffectAction from "./EffectActions/LeveledEffectAction";
-import QualifierValue from "../../qualifiers/QualifierValue";
-import Qualifier from "../../qualifiers/Qualifier";
+import QualifierValue from "../../qualifier/QualifierValue";
+import Qualifier from "../../qualifier/Qualifier";
 import {prepareColor} from "../../utils/prepareColor";
 
 class ColorizeEffectAction extends LeveledEffectAction {
