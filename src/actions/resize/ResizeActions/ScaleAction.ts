@@ -1,6 +1,6 @@
-import Qualifier from "../../../qualifiers/Qualifier";
+import Qualifier from "../../../qualifier/Qualifier";
 import {toFloatAsString} from "../../../utils/toFloatAsString";
-import {GravityParam} from "../../../qualifiers/gravity/Gravity";
+import {GravityParam} from "../../../values/gravity/Gravity";
 import ResizeSimpleAction from "./ResizeSimpleAction";
 
 class ScaleAction extends ResizeSimpleAction {

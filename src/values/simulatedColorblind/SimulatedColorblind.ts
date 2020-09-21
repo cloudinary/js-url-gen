@@ -1,6 +1,3 @@
-/**
- * Foo
- */
 export const DEUTERANOPIA = 'deuteranopia';
 export const PROTANOPIA = 'protanopia';
 export const TRITANOPIA = 'tritanopia';
