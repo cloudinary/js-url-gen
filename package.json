@@ -13,7 +13,7 @@
     "build": "bash ./scripts/build.sh",
     "build:ESM": "tsc --project ./tsconfig.json",
     "build:UMD": "rollup -c",
-    "build:docs": "jsdoc --configure jsdoc.config.json --verbose",
+    "build:docs": "jsdoc --configure jsdoc.config.json --verbose --readme ./DOCS.README.md",
     "build:entryPoints": "ts-node ./scripts/createEntrypoints.ts",
     "lint": "eslint src __TESTS__ --color --ext .ts",
     "start": "rollup -c rollup.dev.config.js -w",
