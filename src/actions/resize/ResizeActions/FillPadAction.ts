@@ -4,6 +4,8 @@ import ResizeSimpleAction from "./ResizeSimpleAction";
 
 class FillPadAction extends ResizeSimpleAction {
   constructor(width?: number|string, height?: number|string) {
+    /* istanbul ignore next */
+    // Required due to https://github.com/microsoft/TypeScript/issues/13029
     super('fill_pad', width, height);
   }
 
@@ -21,6 +23,8 @@ class FillPadAction extends ResizeSimpleAction {
  * @param {number|string} width
  * @param {number|string} height
  */
-export default function fillPad(width?: string|number, height?: string|number) :FillPadAction {
+function fillPad(width?: string|number, height?: string|number) :FillPadAction {
   return new FillPadAction(width, height);
 }
+
+export default fillPad;

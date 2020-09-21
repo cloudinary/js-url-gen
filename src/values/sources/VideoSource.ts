@@ -4,7 +4,6 @@ import TransformableVideo from "../../transformation/TransformableVideo";
 /**
  * @extends {TransformableVideo}
  * @implements {ISource}
- * @memberOf Params.Sources
  */
 class VideoSource extends TransformableVideo implements ISource {
   getSource():string {

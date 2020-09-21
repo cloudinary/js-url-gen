@@ -9,6 +9,7 @@ import ResizeSimpleAction from "./ResizeSimpleAction";
  * @param {number|string} width
  * @param {number|string} height
  */
-export default function fit(width?: string|number, height?: string|number) :ResizeSimpleAction {
+function fit(width?: string|number, height?: string|number) :ResizeSimpleAction {
   return new ResizeSimpleAction('fit', width, height);
 }
+export default fit;

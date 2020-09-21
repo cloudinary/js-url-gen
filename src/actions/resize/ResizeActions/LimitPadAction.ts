@@ -18,6 +18,8 @@ class LimitPadAction extends ResizeSimpleAction {
  * @param {number|string} width
  * @param {number|string} height
  */
-export default function limitPad(width?: string|number, height?: string|number) :LimitPadAction {
+function limitPad(width?: string|number, height?: string|number) :LimitPadAction {
   return new LimitPadAction('lpad', width, height);
 }
+
+export default limitPad;

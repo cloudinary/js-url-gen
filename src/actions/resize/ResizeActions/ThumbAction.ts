@@ -1,7 +1,7 @@
 import ResizeSimpleAction from "./ResizeSimpleAction";
-import Qualifier from "../../../qualifiers/Qualifier";
+import Qualifier from "../../../qualifier/Qualifier";
 import {toFloatAsString} from "../../../utils/toFloatAsString";
-import {GravityParam} from "../../../qualifiers/gravity/Gravity";
+import {GravityParam} from "../../../values/gravity/Gravity";
 
 class ThumbResizeAction extends ResizeSimpleAction {
   aspectRatio(ratio:number|string): this {
@@ -21,6 +21,7 @@ class ThumbResizeAction extends ResizeSimpleAction {
  * and must always be accompanied by the gravity parameter set to one of the face detection or custom values.
  * @param {number|string} width
  * @param {number|string} height
+ * @return {ResizeSimpleAction}
  */
 export default function thumb(width?: string|number, height?: string|number) :ThumbResizeAction {
   return new ThumbResizeAction('thumb', width, height);

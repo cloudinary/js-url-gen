@@ -5,7 +5,6 @@ import QualifierValue from "../../qualifier/QualifierValue";
 
 /**
  * @implements {ISource}
- * @memberOf Params.Sources
  */
 class TextSource implements ISource {
   private fFamily: string;

@@ -17,6 +17,8 @@ class MinimumPadAction extends ResizeAdvancedAction {
  * @param {number|string} width
  * @param {number|string} height
  */
-export default function minimumPad(width?: string|number, height?: string|number) :MinimumPadAction {
+function minimumPad(width?: string|number, height?: string|number) :MinimumPadAction {
   return new MinimumPadAction(width, height);
 }
+
+export default minimumPad;

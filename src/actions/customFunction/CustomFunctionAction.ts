@@ -3,6 +3,9 @@ import Qualifier from "../../qualifier/Qualifier";
 import QualifierValue from "../../qualifier/QualifierValue";
 import base64Encode from "../../utils/base64Encode";
 
+/**
+ * @class CustomFunctionAction
+ */
 class CustomFunctionAction extends Action {
   private mode: 'wasm' | 'remote' | string;
   private pre?: 'pre';
