@@ -1,6 +1,6 @@
-import Qualifier from "../../../qualifiers/Qualifier";
+import Qualifier from "../../../qualifier/Qualifier";
 import {toFloatAsString} from "../../../utils/toFloatAsString";
-import {GravityParam} from "../../../qualifiers/gravity/Gravity";
+import {GravityParam} from "../../../values/gravity/Gravity";
 import ResizeSimpleAction from "./ResizeSimpleAction";
 
 class ScaleAction extends ResizeSimpleAction {
@@ -28,6 +28,8 @@ class ScaleAction extends ResizeSimpleAction {
  * @param {number|string} width
  * @param {number|string} height
  */
-export default function scale(width?: number|string, height?: number|string) :ScaleAction {
+function scale(width?: number|string, height?: number|string) :ScaleAction {
   return new ScaleAction(width, height);
 }
+
+export default scale;

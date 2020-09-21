@@ -1,5 +1,5 @@
-import BlendMode from "../../../src/qualifiers/blendMode/BlendMode";
-import * as BlendModeESM from "../../../src/qualifiers/blendMode/BlendMode";
+import BlendMode from "../../../src/values/blendMode/BlendMode";
+import * as BlendModeESM from "../../../src/values/blendMode/BlendMode";
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 
 

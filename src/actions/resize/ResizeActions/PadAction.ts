@@ -15,6 +15,8 @@ class PadAction extends ResizeAdvancedAction {
  * @param {number|string} width
  * @param {number|string} height
  */
-export default function pad(width?: string|number, height?: string|number) :PadAction {
+function pad(width?: string|number, height?: string|number) :PadAction {
   return new PadAction(width, height);
 }
+
+export default pad;

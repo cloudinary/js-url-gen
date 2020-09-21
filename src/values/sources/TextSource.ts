@@ -1,11 +1,10 @@
 import {ISource} from "./ISource";
 import {FontStyle, FontWeight} from "../fonts/Fonts";
 import {prepareColor} from "../../utils/prepareColor";
-import QualifierValue from "../QualifierValue";
+import QualifierValue from "../../qualifier/QualifierValue";
 
 /**
  * @implements {ISource}
- * @memberOf Params.Sources
  */
 class TextSource implements ISource {
   private fFamily: string;

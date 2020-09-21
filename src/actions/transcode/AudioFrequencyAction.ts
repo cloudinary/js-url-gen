@@ -1,6 +1,10 @@
 import Action from "../Action";
-import Qualifier from "../../qualifiers/Qualifier";
+import Qualifier from "../../qualifier/Qualifier";
 
+/**
+ * @class AudioFrequencyAction
+ * @description Controls audio sample frequency.
+ */
 class AudioFrequencyAction extends Action {
   constructor(freq: string|number) {
     super();

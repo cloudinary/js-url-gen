@@ -4,12 +4,12 @@ import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigura
 import CloudinaryConfig from "../config/CloudinaryConfig";
 import {IDescriptor} from "../interfaces/IDescriptor";
 import createCloudinaryURL from "../url/cloudinaryURL";
-import Qualifier from "../qualifiers/Qualifier";
+import Qualifier from "../qualifier/Qualifier";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
 import BackgroundAction from "../actions/background/BackgroundAction";
 import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction";
 import {Layer} from "../actions/overlay/Overlay";
-import {Flag} from "../qualifiers/flag/Flag";
+import {Flag} from "../values/flag/Flag";
 import Action from "../actions/Action";
 import {TrimAction} from "../actions/videoEdit/TrimAction";
 import {DeliveryAction} from "../actions/delivery/Delivery";
@@ -34,6 +34,10 @@ import {VideoSamplingAction} from "../actions/transcode/VideoSamplingAction";
 import {VideoEditAction} from "../actions/transcode/VideoEditAction";
 */
 
+/**
+ * @description - Defines how to transform an asset
+ * @class Transformation
+ */
 class Transformation {
   actions: IAction[];
   config: ICloudinaryConfigurations;
@@ -68,6 +72,9 @@ class Transformation {
   }
 
 
+  /**
+   * @param version
+   */
   setVersion(version:number): this {
     this.describeAsset({
       version
@@ -91,6 +98,7 @@ class Transformation {
 
 
   /**
+   * @description Adds a border around the image.
    * @param {BorderAction} borderAction
    */
   border(borderAction: BorderAction): this{
@@ -103,6 +111,7 @@ class Transformation {
   }
 
   /**
+   * @description Resize the asset using provided resize action
    * @param {ResizeSimpleAction} resizeAction
    */
   resize(resizeAction: ResizeSimpleAction): this {
@@ -116,11 +125,16 @@ class Transformation {
     return this.addAction(quality);
   }
 
+  /**
+   * @description Rounds the specified corners of an image.
+   * @param roundCornersAction
+   */
   roundCorners(roundCornersAction: RoundCornersAction): this {
     return this.addAction(roundCornersAction);
   }
 
   /**
+   * @description Adds an overlay over the base image.
    * @param overlayAction
    */
   overlay(overlayAction: Layer): this {
@@ -129,6 +143,7 @@ class Transformation {
   }
 
   /**
+   * @description Adds an underlay under the base image.
    * @param underlayAction
    */
   underlay(underlayAction: Layer): this {
@@ -137,6 +152,7 @@ class Transformation {
   }
 
   /**
+   * @description Defines an new user variable.
    * @param {VariableAction} variableAction
    */
   addVariable(variableAction: VariableAction): this {
@@ -144,6 +160,7 @@ class Transformation {
   }
 
   /**
+   * @description Specifies a condition to be met before applying a transformation.
    * @param {ConditionAction} conditionAction
    */
   ifCondition(conditionAction: ConditionAction): this {
@@ -151,7 +168,6 @@ class Transformation {
   }
 
   /**
-   * @memberOf Actions.Condition
    * @description Specifies a transformation that is applied in the case that the initial condition is evaluated as
    * false.
    */
@@ -160,7 +176,6 @@ class Transformation {
   }
 
   /**
-   * @memberOf Actions.Condition
    * @description Finishes the conditional transformation.
    */
   endIfCondition(): this {
@@ -168,6 +183,7 @@ class Transformation {
   }
 
   /**
+   * @description Applies a filter or an effect on an asset.
    * @param {SimpleEffectAction} effectAction
    */
   effect(effectAction: Action): this {
@@ -175,6 +191,7 @@ class Transformation {
   }
 
   /**
+   * @description Applies adjustment effect on an asset.
    * @param action
    */
   adjust(action: IAction): this {
@@ -182,6 +199,7 @@ class Transformation {
   }
 
   /**
+   * @description Rotates the asset by the given angle.
    * @param {RotateAction} rotateAction
    */
   rotate(rotateAction: RotateAction): this {
@@ -189,6 +207,7 @@ class Transformation {
   }
 
   /**
+   * @description Applies a pre-defined named transformation of the given name.
    * @param {INamedTransformationAction} namedTransformation
    */
   namedTransformation(namedTransformation:INamedTransformationAction ): this {
@@ -196,6 +215,7 @@ class Transformation {
   }
 
   /**
+   * @description Applies delivery action.
    * @param deliveryAction
    */
   delivery(deliveryAction: Action): this {
@@ -203,6 +223,7 @@ class Transformation {
   }
 
   /**
+   * @description Sets the color of the background.
    * @param {BackgroundAction} backgroundAction
    */
   background(backgroundAction: BackgroundAction | BlurredBackgroundAction): this {
@@ -217,6 +238,7 @@ class Transformation {
   }
 
   /**
+   * @description Adds a flag as a separate action.
    * @param flagParam
    */
   addFlag(flagParam: Flag): this {
@@ -226,7 +248,7 @@ class Transformation {
   }
 
   /**
-   *
+   * @description Inject a custom function into the image transformation pipeline.
    */
   customFunction(customFunction: CustomFunctionAction) {
     return this.addAction(customFunction);
@@ -286,7 +308,7 @@ class Transformation {
    */
 
   /**
-   * Applies the video as a cutter for the main video.
+   * @description Trims pixels according to the transparency levels of a given overlay image.
    * @param {CutterAction} ctterAction
    * @return this TransformableVideo with the added action
    */

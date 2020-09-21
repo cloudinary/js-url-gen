@@ -1,9 +1,9 @@
 import TransformableImage from '..         /../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import * as Dpr from "../../../src/constants/dpr/Dpr";
-import * as Format from "../../../src/constants/formats/Formats";
-import * as Quality from "../../../src/constants/quality/Quality";
-import * as ColorSpace from "../../../src/constants/colorSpace/ColorSpace";
+import * as Dpr from "../../../src/values/dpr/Dpr";
+import * as Format from "../../../src/values/formats/Formats";
+import * as Quality from "../../../src/values/quality/Quality";
+import * as ColorSpace from "../../../src/values/colorSpace/ColorSpace";
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 import * as DeliveryESM from "../../../src/actions/delivery/Delivery";
 import Delivery from "../../../src/actions/delivery/Delivery";

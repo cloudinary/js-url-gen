@@ -6,13 +6,13 @@
 
 
 import Action from "../Action";
-import Source, {ImageSource, TextSource, VideoSource} from "../../qualifiers/sources/Sources";
-import {Position} from "../../qualifiers/position/Position";
-import Qualifier from "../../qualifiers/Qualifier";
-import {BlendMode} from "../../qualifiers/blendMode/BlendMode";
-import {VideoRange} from "../../qualifiers/video/VideoRange";
-import {ISource} from "../../qualifiers/sources/ISource";
-import {Flag} from "../../qualifiers/flag/Flag";
+import Source, {ImageSource, TextSource, VideoSource} from "../../values/sources/Sources";
+import {Position} from "../../values/position/Position";
+import Qualifier from "../../qualifier/Qualifier";
+import {BlendMode} from "../../values/blendMode/BlendMode";
+import {VideoRange} from "../../values/video/VideoRange";
+import {ISource} from "../../values/sources/ISource";
+import {Flag} from "../../values/flag/Flag";
 
 
 class Layer extends Action{

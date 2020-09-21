@@ -1,10 +1,10 @@
 import {Source, textLayer} from "../../../src/actions/overlay/Overlay";
 import TransformableImage from "../../../src/transformation/TransformableImage";
-import {Position, center} from "../../../src/qualifiers/position/Position";
+import {Position, center} from "../../../src/values/position/Position";
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import {TextSource} from "../../../src/actions/layers/Source";
-import {BlendMode} from "../../../src/qualifiers/blendMode/BlendMode";
-import {FontStyle, FontWeight} from "../../../src/qualifiers/fonts/Fonts";
+import {BlendMode} from "../../../src/values/blendMode/BlendMode";
+import {FontStyle, FontWeight} from "../../../src/values/fonts/Fonts";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {

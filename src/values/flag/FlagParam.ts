@@ -1,5 +1,5 @@
-import Qualifier from "../Qualifier";
-import QualifierValue from "../QualifierValue";
+import Qualifier from "../../qualifier/Qualifier";
+import QualifierValue from "../../qualifier/QualifierValue";
 
 /**
  * @description Defines flags that you can use to alter the default transformation behavior.

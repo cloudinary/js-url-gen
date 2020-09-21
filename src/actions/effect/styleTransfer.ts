@@ -1,7 +1,7 @@
-import ImageSource from '../../qualifiers/sources/ImageSource';
+import ImageSource from '../../values/sources/ImageSource';
 import {imageLayer, Layer} from "../overlay/Overlay";
-import Qualifier from "../../qualifiers/Qualifier";
-import QualifierValue from "../../qualifiers/QualifierValue";
+import Qualifier from "../../qualifier/Qualifier";
+import QualifierValue from "../../qualifier/QualifierValue";
 import {IAction} from "../../interfaces/IAction";
 import Action from "../Action";
 
@@ -9,7 +9,6 @@ import Action from "../Action";
 /**
  * @class StyleTransfer
  * @implements IAction
- *
  * @description - This Action, while belonging to Effect, acts as a modified overlay.
  *                The class implements the Builder pattern, where strength() and preserveColor()
  *                are applied to the instance, and toString() is responsible to combining them into the right result.

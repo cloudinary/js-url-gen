@@ -21,11 +21,8 @@ const validatePackageFiles = require('./validatePackageFiles');
 // Create an Entry Point from everything under bundles/esm/actions -> dist/actions
 const expectedActionsFiles = createEntryPointFromESMPath('actions', 'actions');
 
-// Create an Entry Point from everything under bundles/esm/constants -> dist/constants
-const expectedConstantsFiles = createEntryPointFromESMPath('constants', 'constants');
-
 // Create an Entry Point from everything under bundles/esm/params -> dist/params
-const expectedParamsFiles = createEntryPointFromESMPath('qualifiers', 'qualifiers');
+const expectedValuesFiles = createEntryPointFromESMPath('values', 'values');
 
 // Allows import from '@base' (With types)
 createMainEntryPoint();
@@ -37,8 +34,7 @@ console.log('Created ./dist entrypoints');
 
 validatePackageFiles({
   ...expectedActionsFiles,
-  ...expectedConstantsFiles,
-  ...expectedParamsFiles,
+  ...expectedValuesFiles,
   types: false, // Exclude from *all* checks, we don't want to test Typescript
   bundles: {
     // For any level, we ensure that we don't have unwanted files

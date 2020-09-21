@@ -4,7 +4,6 @@ import TransformableImage from "../../transformation/TransformableImage";
 /**
  * @extends {TransformableImage}
  * @implements {ISource}
- * @memberOf Params.Sources
  */
 class ImageSource extends TransformableImage implements ISource {
   getSource():string {

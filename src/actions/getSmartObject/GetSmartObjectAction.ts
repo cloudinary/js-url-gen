@@ -1,6 +1,6 @@
-import Qualifier from "../../qualifiers/Qualifier";
+import Qualifier from "../../qualifier/Qualifier";
 import Action from "../Action";
-import QualifierValue from "../../qualifiers/QualifierValue";
+import QualifierValue from "../../qualifier/QualifierValue";
 
 /**
  * @description  Extracts the original content of an embedded object of a Photoshop image.

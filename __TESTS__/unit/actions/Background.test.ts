@@ -1,7 +1,7 @@
 import Background, {auto} from "../../../src/actions/background/Background";
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import * as Color from "../../../src/constants/colors/Colors";
+import * as Color from "../../../src/values/colors/Colors";
 import Resize from "../../../src/actions/resize/Resize";
 
 
