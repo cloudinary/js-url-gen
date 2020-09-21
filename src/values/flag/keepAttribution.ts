@@ -1,7 +1,7 @@
 import Flag from './FlagParam';
 
 /**
- * @memberOf Params.Flag
+ * @memberOf Values.Flag
  * @description Keeps the copyright related fields when stripping meta-data.
  */
 function keepAttribution(): Flag{

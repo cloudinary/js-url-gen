@@ -1,7 +1,7 @@
 import Flag from './FlagParam';
 
 /**
- * @memberOf Params.Flag
+ * @memberOf Values.Flag
  * @description When used with automatic fetch_format (f_auto): ensures that images with a transparency channel will be
  * delivered in PNG format.
  */

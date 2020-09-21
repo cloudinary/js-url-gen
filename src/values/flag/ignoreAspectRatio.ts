@@ -1,7 +1,7 @@
 import Flag from './FlagParam';
 
 /**
- * @memberOf Params.Flag
+ * @memberOf Values.Flag
  * @description * Allows specifying only either width or height so the value of the second axis remains as is, and is not
  * recalculated to maintain the aspect ratio of the original image.
  */

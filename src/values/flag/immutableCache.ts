@@ -1,7 +1,7 @@
 import Flag from './FlagParam';
 
 /**
- * @memberOf Params.Flag
+ * @memberOf Values.Flag
  * @description Sets the cache-control to immutable for the asset.
  */
 function immutableCache(): Flag{

@@ -1,7 +1,7 @@
 import Flag from './FlagParam';
 
 /**
- * @memberOf Params.Flag
+ * @memberOf Values.Flag
  * @description Generate PNG images in the PNG8 format.
  */
 function png8(): Flag{

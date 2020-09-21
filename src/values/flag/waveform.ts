@@ -1,7 +1,7 @@
 import Flag from './FlagParam';
 
 /**
- * @memberOf Params.Flag
+ * @memberOf Values.Flag
  * @description Create a waveform image (in the format specified by the file extension) from the audio or video file.
  */
 function waveform(): Flag{

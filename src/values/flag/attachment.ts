@@ -1,7 +1,7 @@
 import Flag from './FlagParam';
 
 /**
- * @memberOf Params.Flag
+ * @memberOf Values.Flag
  * @description Delivers the image as an attachment.
  * @param {string} filename The attachment's filename
  */

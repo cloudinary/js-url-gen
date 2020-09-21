@@ -1,7 +1,7 @@
 /**
  * @description Defines the focal gravity for certain methods of cropping.
  * @namespace Gravity
- * @memberOf Params
+ * @memberOf Values
  */
 
 import Qualifier from "../../qualifier/Qualifier";
@@ -20,7 +20,7 @@ export class GravityParam extends Qualifier {
 
 
 /**
- * @memberOf Params.Gravity
+ * @memberOf Values.Gravity
  * @description South center part (bottom center).
  * @return {GravityParam} GravityParam
  */
@@ -29,7 +29,7 @@ function south():GravityParam {
 }
 
 /**
- * @memberOf Params.Gravity
+ * @memberOf Values.Gravity
  * @description North center part (top center).
  * @return {GravityParam} GravityParam
  */
@@ -38,7 +38,7 @@ function north():GravityParam {
 }
 
 /**
- * @memberOf Params.Gravity
+ * @memberOf Values.Gravity
  * @description Middle east part (right).
  * @return {GravityParam} GravityParam
  */
@@ -47,7 +47,7 @@ function east():GravityParam {
 }
 
 /**
- * @memberOf Params.Gravity
+ * @memberOf Values.Gravity
  * @description Middle west part (left).
  * @return {GravityParam} GravityParam
  */
@@ -56,7 +56,7 @@ function west():GravityParam {
 }
 
 /**
- * @memberOf Params.Gravity
+ * @memberOf Values.Gravity
  * @description Detects the largest face in an image with the Advanced Facial Attribute Detection add-on and makes it the focus of the transformation.
  * @return {GravityParam} GravityParam
  */
@@ -65,7 +65,7 @@ function advancedFace(): GravityParam {
 }
 
 /**
- * @memberOf Params.Gravity
+ * @memberOf Values.Gravity
  * @description Detects all faces in an image with the Advanced Facial Attribute Detection add-on and makes them the focus of the transformation.
  * @return {GravityParam} GravityParam
  */
@@ -74,7 +74,7 @@ function advancedFaces(): GravityParam {
 }
 
 /**
- * @memberOf Params.Gravity
+ * @memberOf Values.Gravity
  * @description Detects all eyes in an image with the Advanced Facial Attribute Detection add-on and makes them the focus of the transformation.
  * @return {GravityParam} GravityParam
  */
@@ -83,7 +83,7 @@ function advancedEyes(): GravityParam {
 }
 
 /**
- * @memberOf Params.Gravity
+ * @memberOf Values.Gravity
  * @description North west corner (top left).
  * @return {GravityParam} GravityParam
  */
@@ -92,7 +92,7 @@ function northWest(): GravityParam {
 }
 
 /**
- * @memberOf Params.Gravity
+ * @memberOf Values.Gravity
  * @description North east corner (top right).
  * @return {GravityParam} GravityParam
  */
@@ -101,7 +101,7 @@ function northEast(): GravityParam {
 }
 
 /**
- * @memberOf Params.Gravity
+ * @memberOf Values.Gravity
  * @description South west corner (bottom left).
  * @return {GravityParam} GravityParam
  */
@@ -110,7 +110,7 @@ function southWest(): GravityParam {
 }
 
 /**
- * @memberOf Params.Gravity
+ * @memberOf Values.Gravity
  * @description South east corner (bottom right).
  * @return {GravityParam} GravityParam
  */
@@ -119,7 +119,7 @@ function southEast(): GravityParam {
 }
 
 /**
- * @memberOf Params.Gravity
+ * @memberOf Values.Gravity
  * @description
  * Detects all text elements in an image using the OCR Text Detection and Extraction add-on</br>
  * and uses the detected bounding box coordinates as the focus of the transformation.
@@ -130,7 +130,7 @@ function ocrText(): GravityParam {
 }
 
 /**
- * @memberOf Params.Gravity
+ * @memberOf Values.Gravity
  * @description Detects the largest face in the asset and makes it the focus of the transformation.
  * @return {GravityParam} GravityParam
  */
@@ -139,7 +139,7 @@ function face(): GravityParam {
 }
 
 /**
- * @memberOf Params.Gravity
+ * @memberOf Values.Gravity
  * @description Detects all the faces in the asset and makes them the focus of the transformation.
  * @return {GravityParam} GravityParam
  */
@@ -148,7 +148,7 @@ function faces(): GravityParam {
 }
 
 /**
- * @memberOf Params.Gravity
+ * @memberOf Values.Gravity
  * @description The center of the image.
  * @return {GravityParam} GravityParam
  */
@@ -157,7 +157,7 @@ function center(): GravityParam {
 }
 
 /**
- * @memberOf Params.Gravity
+ * @memberOf Values.Gravity
  * @description
  * TODO : (This is not accurate in JS)</br>
  * Creates a new instance of the ObjectGravity.
@@ -168,7 +168,7 @@ function object(...args: GravityObject[]): GravityParam {
 }
 
 /**
- * @memberOf Params.Gravity
+ * @memberOf Values.Gravity
  * @description Sets automatic gravity.
  * @return {GravityParam} GravityParam
  */

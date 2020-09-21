@@ -1,7 +1,7 @@
 import Flag from './FlagParam';
 
 /**
- * @memberOf Params.Flag
+ * @memberOf Values.Flag
  * @description Instructs Cloudinary to run a sanitizer on the image (relevant only for the SVG format).
  */
 function sanitize(): Flag{

@@ -5,7 +5,7 @@ import Qualifier from "../../qualifier/Qualifier";
 /**
  * @description Defines the focal gravity for overlays
  * @namespace Position
- * @memberOf Params
+ * @memberOf Values
  */
 
 
@@ -37,7 +37,7 @@ class Position extends Action {
 }
 
 /**
- * @memberOf Params.Position
+ * @memberOf Values.Position
  * @description South center part (bottom center).
  * @return {Position} Position
  */
@@ -46,7 +46,7 @@ function south():Position {
 }
 
 /**
- * @memberOf Params.Position
+ * @memberOf Values.Position
  * @description North center part (top center).
  * @return {Position} Position
  */
@@ -55,7 +55,7 @@ function north():Position {
 }
 
 /**
- * @memberOf Params.Position
+ * @memberOf Values.Position
  * @description Middle east part (right).
  * @return {Position} Position
  */
@@ -64,7 +64,7 @@ function east():Position {
 }
 
 /**
- * @memberOf Params.Position
+ * @memberOf Values.Position
  * @description Middle west part (left).
  * @return {Position} Position
  */
@@ -73,7 +73,7 @@ function west():Position {
 }
 
 /**
- * @memberOf Params.Position
+ * @memberOf Values.Position
  * @description Detects the largest face in an image with the Advanced Facial Attribute Detection add-on and makes it the focus of the transformation.
  * @return {Position} Position
  */
@@ -82,7 +82,7 @@ function advancedFace():Position {
 }
 
 /**
- * @memberOf Params.Position
+ * @memberOf Values.Position
  * @description Detects all faces in an image with the Advanced Facial Attribute Detection add-on and makes them the focus of the transformation.
  * @return {Position} Position
  */
@@ -91,7 +91,7 @@ function advancedFaces():Position {
 }
 
 /**
- * @memberOf Params.Position
+ * @memberOf Values.Position
  * @description Detects all eyes in an image with the Advanced Facial Attribute Detection add-on and makes them the focus of the transformation.
  * @return {Position} Position
  */
@@ -100,7 +100,7 @@ function advancedEyes():Position {
 }
 
 /**
- * @memberOf Params.Position
+ * @memberOf Values.Position
  * @description North west corner (top left).
  * @return {Position} Position
  */
@@ -109,7 +109,7 @@ function northWest():Position {
 }
 
 /**
- * @memberOf Params.Position
+ * @memberOf Values.Position
  * @description North east corner (top right).
  * @return {Position} Position
  */
@@ -118,7 +118,7 @@ function northEast():Position {
 }
 
 /**
- * @memberOf Params.Position
+ * @memberOf Values.Position
  * @description South west corner (bottom left).
  * @return {Position} Position
  */
@@ -127,7 +127,7 @@ function southWest():Position {
 }
 
 /**
- * @memberOf Params.Position
+ * @memberOf Values.Position
  * @description South east corner (bottom right).
  * @return {Position} Position
  */
@@ -136,7 +136,7 @@ function southEast():Position {
 }
 
 /**
- * @memberOf Params.Position
+ * @memberOf Values.Position
  * @description
  * Detects all text elements in an image using the OCR Text Detection and Extraction add-on</br>
  * and uses the detected bounding box coordinates as the focus of the transformation.
@@ -147,7 +147,7 @@ function ocrText():Position {
 }
 
 /**
- * @memberOf Params.Position
+ * @memberOf Values.Position
  * @description Detects the largest face in the asset and makes it the focus of the transformation.
  * @return {Position} Position
  */
@@ -156,7 +156,7 @@ function face():Position {
 }
 
 /**
- * @memberOf Params.Position
+ * @memberOf Values.Position
  * @description Detects all the faces in the asset and makes them the focus of the transformation.
  * @return {Position} Position
  */
@@ -165,7 +165,7 @@ function faces():Position {
 }
 
 /**
- * @memberOf Params.Position
+ * @memberOf Values.Position
  * @description The center of the image.
  * @return {Position} Position
  */

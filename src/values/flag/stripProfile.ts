@@ -1,7 +1,7 @@
 import Flag from './FlagParam';
 
 /**
- * @memberOf Params.Flag
+ * @memberOf Values.Flag
  * @description Instructs Cloudinary to clear all ICC color profile data included with the image.
  */
 function stripProfile(): Flag{
