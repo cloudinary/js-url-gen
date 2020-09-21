@@ -4,6 +4,8 @@ import ResizeSimpleAction from "./ResizeSimpleAction";
 
 class FillPadAction extends ResizeSimpleAction {
   constructor(width?: number|string, height?: number|string) {
+    /* istanbul ignore next */
+    // Required due to https://github.com/microsoft/TypeScript/issues/13029
     super('fill_pad', width, height);
   }
 

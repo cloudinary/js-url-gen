@@ -32,7 +32,7 @@ class ConditionAction extends Action{
 
   /**
    * @private
-   * Normalizes expression from user representation to URL form.
+   * @description Normalizes expression from user representation to URL form.
    * @param {string} expression The expression to normalize.
    * @return {string} The normalized expression.
    */
