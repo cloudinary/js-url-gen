@@ -1,5 +1,5 @@
-import Position from "../../../src/qualifiers/position/Position";
-import * as PositionESM from "../../../src/qualifiers/position/Position";
+import Position from "../../../src/values/position/Position";
+import * as PositionESM from "../../../src/values/position/Position";
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 
 describe('Position Param', () => {

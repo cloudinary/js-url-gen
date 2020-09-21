@@ -7,11 +7,11 @@ import {fill} from "../../../src/actions/resize/Resize";
 import Layers from "../../../src/actions/overlay/Overlay";
 import * as LayersESM from "../../../src/actions/overlay/Overlay";
 
-import Position from "../../../src/qualifiers/position/Position";
-import BlendMode from "../../../src/qualifiers/blendMode/BlendMode";
-import {VideoRange, VideoOffset} from "../../../src/qualifiers/video/Video";
-import * as PositionESM from "../../../src/qualifiers/position/Position";
-import * as BlendModeESM from "../../../src/qualifiers/blendMode/BlendMode";
+import Position from "../../../src/values/position/Position";
+import BlendMode from "../../../src/values/blendMode/BlendMode";
+import {VideoRange, VideoOffset} from "../../../src/values/video/Video";
+import * as PositionESM from "../../../src/values/position/Position";
+import * as BlendModeESM from "../../../src/values/blendMode/BlendMode";
 
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 import format from "../../../src/actions/delivery/format";

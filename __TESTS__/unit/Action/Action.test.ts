@@ -1,9 +1,9 @@
 import Action from '../../../src/actions/Action';
-import Qualifier from '../../../src/qualifiers/Qualifier';
-import {Flag} from '../../../src/qualifiers/flag/Flag';
+import Qualifier from '../../../src/qualifier/Qualifier';
+import {Flag} from '../../../src/values/flag/Flag';
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import QualifierValue from "../../../src/qualifiers/QualifierValue";
+import QualifierValue from "../../../src/qualifier/QualifierValue";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {

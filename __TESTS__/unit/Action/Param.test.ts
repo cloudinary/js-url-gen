@@ -1,5 +1,5 @@
-import Qualifier from '../../../src/qualifiers/Qualifier';
-import QualifierValue from '../../../src/qualifiers/QualifierValue';
+import Qualifier from '../../../src/qualifier/Qualifier';
+import QualifierValue from '../../../src/qualifier/QualifierValue';
 
 describe('Tests for Param', () => {
   it('Creates a Param', () => {
