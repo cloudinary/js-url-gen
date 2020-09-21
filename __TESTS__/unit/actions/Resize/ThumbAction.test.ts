@@ -1,5 +1,5 @@
 import getImageWithResize from "./shared/getImageWithResize";
-import Gravity from "../../../../src/qualifiers/gravity/Gravity";
+import Gravity from "../../../../src/values/gravity/Gravity";
 import {thumb} from "../../../../src/actions/resize/Resize";
 
 describe('Tests for Transformation Action -- Resize.thumb()', () => {
