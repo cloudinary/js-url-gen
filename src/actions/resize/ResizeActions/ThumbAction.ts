@@ -1,7 +1,7 @@
 import ResizeSimpleAction from "./ResizeSimpleAction";
-import Qualifier from "../../../qualifiers/Qualifier";
+import Qualifier from "../../../qualifier/Qualifier";
 import {toFloatAsString} from "../../../utils/toFloatAsString";
-import {GravityParam} from "../../../qualifiers/gravity/Gravity";
+import {GravityParam} from "../../../values/gravity/Gravity";
 
 class ThumbResizeAction extends ResizeSimpleAction {
   aspectRatio(ratio:number|string): this {
