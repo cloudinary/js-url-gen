@@ -1,7 +1,7 @@
 import Flag from './FlagParam';
 
 /**
- * @memberOf Params.Flag
+ * @memberOf Values.Flag
  * @description When converting animated images to PNG format, generates an animated PNG from all the frames in the
  * original
  * animated file instead of only from the first still frame.

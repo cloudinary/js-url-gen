@@ -1,7 +1,7 @@
 import Flag from './FlagParam';
 
 /**
- * @memberOf Params.Flag
+ * @memberOf Values.Flag
  * @description If the requested video transformation has already been generated, this flag works identically to
  * Flag::attachment.
  *

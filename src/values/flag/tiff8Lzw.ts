@@ -1,6 +1,6 @@
 import Flag from './FlagParam';
 /**
- * @memberOf Params.Flag
+ * @memberOf Values.Flag
  * @description Generates TIFF images using LZW compression and in the TIFF8 format.
  */
 function tiff8Lzw(): Flag{

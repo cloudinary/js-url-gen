@@ -1,7 +1,7 @@
 import Flag from './FlagParam';
 
 /**
- * @memberOf Params.Flag
+ * @memberOf Values.Flag
  * @description Returns metadata of the input asset and of the transformed output asset in JSON instead of the
  * transformed image.
  */

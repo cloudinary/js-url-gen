@@ -1,11 +1,11 @@
 /**
- * @memberOf Params
+ * @memberOf Values
  * @namespace Fonts
  */
 
 
 /**
- * @memberOf Params.Fonts
+ * @memberOf Values.Fonts
  * @name FontStyle
  * @descirption Map of FontWEights
  */
@@ -16,7 +16,7 @@ export const FontStyle:Record<string, string> = {
 
 
 /**
- * @memberOf Params.Fonts
+ * @memberOf Values.Fonts
  * @name FontWeight
  * @descirption Map of FontWEights
  */

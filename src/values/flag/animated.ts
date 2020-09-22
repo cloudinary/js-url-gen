@@ -1,7 +1,7 @@
 import Flag from './FlagParam';
 
 /**
- * @memberOf Params.Flag
+ * @memberOf Values.Flag
  * @description Used when delivering a video file as an image format that supports animation, such as animated WebP.
  * Plays all frames rather than just delivering the first one as a static image.
  * Use this flag in addition to the flag or parameter controlling the delivery format,

@@ -6,7 +6,7 @@ import QualifierValue from "../../qualifier/QualifierValue";
 /**
  * @description Defines the mode of blending to use when overlaying an image.
  * @namespace BlendMode
- * @memberOf Params
+ * @memberOf Values
  */
 
 
@@ -25,7 +25,7 @@ class BlendMode extends Action {
 
 
 /**
- * @memberOf Params.BlendMode
+ * @memberOf Values.BlendMode
  * @description Add an overlay image blended using the 'multiply' blend mode.
  */
 function multiply():BlendMode {
@@ -33,7 +33,7 @@ function multiply():BlendMode {
 }
 
 /**
- * @memberOf Params.BlendMode
+ * @memberOf Values.BlendMode
  * @description Add an overlay image blended using the 'screen' blend mode.
  */
 function screen():BlendMode {
@@ -41,7 +41,7 @@ function screen():BlendMode {
 }
 
 /**
- * @memberOf Params.BlendMode
+ * @memberOf Values.BlendMode
  * @description Add an overlay image blended using the 'overlay' blend mode.
  */
 function overlay():BlendMode {

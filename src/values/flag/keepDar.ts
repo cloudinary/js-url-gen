@@ -1,7 +1,7 @@
 import Flag from './FlagParam';
 
 /**
- * @memberOf Params.Flag
+ * @memberOf Values.Flag
  * Keep the Display Aspect Ratio metadata of the uploaded video (if it’s different from the current video
  * dimensions).
  */

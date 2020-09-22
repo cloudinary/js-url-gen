@@ -1,7 +1,7 @@
 import Flag from './FlagParam';
 
 /**
- * @memberOf Params.Flag
+ * @memberOf Values.Flag
  * @description Trims pixels according to a clipping path included in the original image
  * (e.g., manually created using PhotoShop).
  */

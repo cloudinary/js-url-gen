@@ -4,7 +4,7 @@ import Qualifier from "../../qualifier/Qualifier";
 /**
  * @description Defines a video range using startOffset, endOffset, duration.
  * @namespace VideoRange
- * @memberOf Params
+ * @memberOf Values
  */
 
 

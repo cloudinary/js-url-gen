@@ -1,7 +1,7 @@
 import Flag from './FlagParam';
 
 /**
- * @memberOf Params.Flag
+ * @memberOf Values.Flag
  * @description Generates a JPG image using the progressive (interlaced) JPG format.
  *
  * This format allows the browser to quickly show a low-quality rendering of the image until the full-quality

@@ -1,7 +1,7 @@
 import Flag from './FlagParam';
 
 /**
- * @memberOf Params.Flag
+ * @memberOf Values.Flag
  * @description Automatically use lossy compression when delivering animated GIF files.
  *
  * This flag can also be used as a conditional flag for delivering PNG files: it tells Cloudinary to deliver the

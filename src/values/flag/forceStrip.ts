@@ -1,7 +1,7 @@
 import Flag from './FlagParam';
 
 /**
- * @memberOf Params.Flag
+ * @memberOf Values.Flag
  * @description Instructs Cloudinary to clear all image meta-data (IPTC, Exif and XMP) while applying an incoming
  * transformation.
  */
