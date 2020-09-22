@@ -1,5 +1,6 @@
 /**
  *
+ * @private
  * @description An isomorphic Base64 function, provides browser and server support.
  * @param {string} input - A string to encode with base64
  */

@@ -1,15 +1,17 @@
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import * as ArtisticFilter from "../../../src/constants/artisticFilters/ArtisticFilters";
+import * as ArtisticFilter from "../../../src/values/artisticFilters/ArtisticFilters";
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 import * as EffectESM from "../../../src/actions/effect/Effect";
 import Effect from "../../../src/actions/effect/Effect";
-import * as Outline from "../../../src/constants/outline/Outline";
-import {image} from "../../../src/qualifiers/sources/Sources";
+import * as Outline from "../../../src/values/outline/Outline";
+import {image} from "../../../src/values/sources/Sources";
 import scale from "../../../src/actions/resize/ResizeActions/ScaleAction";
 import cartoonify from "../../../src/actions/effect/cartoonify";
-import {HALFTONE_4X4} from "../../../src/constants/dither/Dither";
-import {SYMMETRIC_PAD} from "../../../src/constants/gradientFade/GradientFade";
+import {HALFTONE_4X4} from "../../../src/values/dither/Dither";
+import {SYMMETRIC_PAD} from "../../../src/values/gradientFade/GradientFade";
+import {BLUE} from "../../../src/values/colors/Colors";
+import {ROD_MONOCHROMACY} from "../../../src/values/simulatedColorblind/SimulatedColorblind";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -193,48 +195,6 @@ describe('Tests for Transformation Action -- Effect', () => {
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_cartoonify:50:bw/sample');
   });
 
-  it('Creates a cloudinaryURL with effect outline:15:200', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .effect(Effect.outline(15, 200))
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_outline:15:200/sample');
-  });
-
-  it('Creates a cloudinaryURL with effect outline:1', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .effect(Effect.outline(1))
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_outline:1/sample');
-  });
-
-  it('Creates a cloudinaryURL with effect outline:mode.fill', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .effect(Effect.outline()
-        .mode(Outline.FILL))
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_outline:fill/sample');
-  });
-
-  it('Creates a cloudinaryURL with effect outline:mode', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .effect(Effect.outline(20, 200)
-        .mode(Outline.OUTER))
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_outline:outer:20:200/sample');
-  });
-
   it('Creates a cloudinaryURL with effect style_transfer', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
@@ -301,6 +261,26 @@ describe('Tests for Transformation Action -- Effect', () => {
     ).toEqual('e_blur_region:10,h_20,w_30,x_40,y_50');
   });
 
+  it('Tests pixelateRegion', () => {
+    expect(Effect.pixelateRegion()
+      .toString()
+    ).toEqual('e_pixelate_region');
+
+    expect(Effect.pixelateRegion()
+      .pixelWidth(10)
+      .toString()
+    ).toEqual('e_pixelate_region:10');
+
+    expect(Effect.pixelateRegion()
+      .pixelWidth(10)
+      .height(20)
+      .width(30)
+      .x(40)
+      .y(50)
+      .toString()
+    ).toEqual('e_pixelate_region:10,h_20,w_30,x_40,y_50');
+  });
+
   it('Tests for Effect.dither', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
@@ -347,5 +327,44 @@ describe('Tests for Transformation Action -- Effect', () => {
       .verticalStartPoint(20)
       .toString()
     ).toBe('e_gradient_fade:symmetric_pad:5,x_10,y_20');
+  });
+
+  it('Test assistColorBlind', () => {
+    expect(Effect.assistColorBlind()
+      .xray()
+      .toString()
+    ).toBe('e_assist_colorblind:xray');
+
+    expect(Effect.assistColorBlind()
+      .xray()
+      .stripes(10)
+      .toString()
+    ).toBe('e_assist_colorblind:10');
+  });
+
+  it('Test Effect.outline', () => {
+    // co_{color},e_outline:{mode}:{width}:{blurLevel}
+    expect(Effect.outline()
+      .toString()
+    ).toBe('e_outline');
+
+    expect(Effect.outline()
+      .mode(Outline.FILL)
+      .width(10)
+      .blurLevel(25)
+      .color(BLUE)
+      .toString()
+    ).toBe('co_blue,e_outline:fill:10:25');
+  });
+
+  it('Test simulateColorBlind', () => {
+    expect(Effect.simulateColorBlind()
+      .toString()
+    ).toBe('e_simulate_colorblind');
+
+    expect(Effect.simulateColorBlind()
+      .condition(ROD_MONOCHROMACY)
+      .toString()
+    ).toBe('e_simulate_colorblind:rod_monochromacy');
   });
 });

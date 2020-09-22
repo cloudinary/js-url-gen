@@ -1,5 +1,5 @@
 import Action from "../../Action";
-import Qualifier from "../../../qualifiers/Qualifier";
+import Qualifier from "../../../qualifier/Qualifier";
 
 
 class ViesusCorrectAdjustAction extends Action {

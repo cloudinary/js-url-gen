@@ -3,10 +3,10 @@ import * as TranscodeESM from '../../../src/actions/transcode/Transcode';
 import TransformableVideo from '../../../src/transformation/TransformableVideo';
 import CloudinaryConfig from '../../../src/config/CloudinaryConfig';
 import expectESMToMatchDefault from '../../TestUtils/expectESMToMatchDefault';
-import * as AudioCodec from '../../../src/constants/audioCodec/AudioCodec';
-import * as AudioFrequency from '../../../src/constants/audioFrequency/AudioFrequency';
-import * as StreaminProfile from '../../../src/constants/streamingProfile/StreamingProfile';
-import * as AnimatedFormat from '../../../src/constants/animatedFormat/AnimatedFormat';
+import * as AudioCodec from '../../../src/values/audioCodec/AudioCodec';
+import * as AudioFrequency from '../../../src/values/audioFrequency/AudioFrequency';
+import * as StreaminProfile from '../../../src/values/streamingProfile/StreamingProfile';
+import * as AnimatedFormat from '../../../src/values/animatedFormat/AnimatedFormat';
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {

@@ -17,6 +17,7 @@ class FillAction extends ResizeAdvancedAction {
  * @param {number|string} width
  * @param {number|string} height
  */
-export default function fill(width?: string|number, height?: string|number) :FillAction {
+function fill(width?: string|number, height?: string|number) :FillAction {
   return new FillAction(width, height);
 }
+export default fill;

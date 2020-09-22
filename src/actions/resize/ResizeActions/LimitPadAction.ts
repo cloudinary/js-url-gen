@@ -1,5 +1,5 @@
 import ResizeSimpleAction from "./ResizeSimpleAction";
-import Qualifier from "../../../qualifiers/Qualifier";
+import Qualifier from "../../../qualifier/Qualifier";
 import {toFloatAsString} from "../../../utils/toFloatAsString";
 
 
@@ -18,6 +18,8 @@ class LimitPadAction extends ResizeSimpleAction {
  * @param {number|string} width
  * @param {number|string} height
  */
-export default function limitPad(width?: string|number, height?: string|number) :LimitPadAction {
+function limitPad(width?: string|number, height?: string|number) :LimitPadAction {
   return new LimitPadAction('lpad', width, height);
 }
+
+export default limitPad;

@@ -1,5 +1,5 @@
-import Qualifier from "../qualifiers/Qualifier";
-import {Flag} from "../qualifiers/flag/Flag";
+import Qualifier from "../qualifier/Qualifier";
+import {Flag} from "../values/flag/Flag";
 import {IAction} from "../interfaces/IAction";
 import {mapToSortedArray} from "../utils/dataStructureUtils";
 
@@ -10,6 +10,9 @@ class Action implements IAction {
   private delimiter = ','; // {qualifier}{delimiter}{qualifier} for example: `${'w_100'}${','}${'c_fill'}`
   protected prepareQualifiers():void {}
 
+  /**
+   * @description Calls toString() on all child qualifiers (implicitly by using .join())
+   */
   toString(): string {
     this.prepareQualifiers();
     return mapToSortedArray(this.qualifiers).join(this.delimiter);

@@ -3,7 +3,7 @@ import Adjust from '../../../src/actions/adjust/Adjust';
 import * as AdjustESM from '../../../src/actions/adjust/Adjust';
 import {TransformableImage} from "../../../src";
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
-import * as ImproveMode from "../../../src/qualifiers/improveMode/ImproveMode";
+import * as ImproveMode from "../../../src/values/improveMode/ImproveMode";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -169,6 +169,13 @@ describe('Tests for Transformation Action -- Adjust', () => {
       .toURL();
 
     expect(url).toContain('e_improve:outdoor:0');
+  });
+
+  it('tests by3dLut', () => {
+    expect(Adjust
+      .by3dLut('sample')
+      .toString()
+    ).toBe('l_lut:sample/fl_layer_apply');
   });
 
   it('tests viesuscorrect', () => {

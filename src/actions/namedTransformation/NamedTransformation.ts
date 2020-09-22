@@ -5,7 +5,7 @@
  */
 
 import Action from "../Action";
-import Qualifier from "../../qualifiers/Qualifier";
+import Qualifier from "../../qualifier/Qualifier";
 import {INamedTransformationAction} from "./INamedTransformationAction";
 
 class NamedTransformationAction extends Action implements INamedTransformationAction{
