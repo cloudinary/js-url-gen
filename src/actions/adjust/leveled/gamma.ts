@@ -5,6 +5,7 @@ import EffectActionWithLevel from "../../effect/EffectActions/EffectActionWithLe
  * @description
  * Adjusts the gamma level
  * @param {number} level The level of gamma (Range: -50 to 150, Server default: 0).
+ * @return {EffectActionWithLevel}
  */
 function gamma(level?:number):EffectActionWithLevel {
   return new EffectActionWithLevel('gamma', level);

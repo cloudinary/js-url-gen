@@ -5,6 +5,7 @@ import EffectActionWithLevel from "../../effect/EffectActions/EffectActionWithLe
  * @description
  * Adjusts the contrast.
  * @param {number} level The level of contrast (Range: -100 to 100, Server default: 0)
+ * @return {EffectActionWithLevel}
  */
 function contrast(level?:number):EffectActionWithLevel {
   return new EffectActionWithLevel('contrast', level);
