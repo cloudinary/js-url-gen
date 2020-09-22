@@ -7,6 +7,7 @@
 
 
 import CustomFunctionAction from "./CustomFunctionAction";
+import RemoteAction from "./RemoteAction";
 
 /**
  *
@@ -15,8 +16,8 @@ import CustomFunctionAction from "./CustomFunctionAction";
  * @param {string} path - Specifies the URL of the remote custom function.
  * @memberOf Actions.CustomFunction
  */
-function remote(path:string): CustomFunctionAction {
-  return new CustomFunctionAction(path)
+function remote(path:string): RemoteAction {
+  return new RemoteAction(path)
     .asRemote();
 }
 
