@@ -17,6 +17,8 @@ class SetAction extends VariableAction {
     }else{
       normalizedValue = parsedValue;
     }
+    // Required due to https://github.com/microsoft/TypeScript/issues/13029
+    /* istanbul ignore next */
     super(name, normalizedValue);
   }
 }

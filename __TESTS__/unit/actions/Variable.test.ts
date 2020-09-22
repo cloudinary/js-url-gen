@@ -29,7 +29,7 @@ describe('Tests for Transformation Action -- Variable', () => {
       tImage.addVariable(set('a', 30))
     ).toEqual(tImage);
   });
-  it('Creates a cloudinaryURL with variable', () => {
+  it('Creates a cloudinaryURL with number variable', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
       .addVariable(set('a', 30))
@@ -38,7 +38,28 @@ describe('Tests for Transformation Action -- Variable', () => {
 
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$a_30/sample');
   });
-  it('Creates a cloudinaryURL with variable', () => {
+
+  it('Creates a cloudinaryURL with number variable convertToFloat', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .addVariable(set('a', 30).convertToFloat())
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$a_30_to_f/sample');
+  });
+
+  it('Creates a cloudinaryURL with number variable convertToNumber', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .addVariable(set('a', 30).convertToNumber())
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$a_30_to_i/sample');
+  });
+
+  it('Creates a cloudinaryURL with a string variable', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
       .addVariable(set('a', 'bbb'))
@@ -47,23 +68,25 @@ describe('Tests for Transformation Action -- Variable', () => {
 
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$a_!bbb!/sample');
   });
-  it('Creates a cloudinaryURL with variable', () => {
+
+  it('Creates a cloudinaryURL with a string variable and convertToNumber', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .addVariable(Variable.set('a', 30))
+      .addVariable(set('a', 'bbb').convertToNumber())
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$a_30/sample');
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$a_!bbb!_to_i/sample');
   });
-  it('Creates a cloudinaryURL with variable bbb', () => {
+
+  it('Creates a cloudinaryURL with a string variable and convertToFloat', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .addVariable(Variable.set('a', 'bbb'))
+      .addVariable(set('a', 'bbb').convertToFloat())
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$a_!bbb!/sample');
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$a_!bbb!_to_f/sample');
   });
 
   it('Creates a cloudinaryURL with expression', () => {
@@ -76,24 +99,14 @@ describe('Tests for Transformation Action -- Variable', () => {
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$myexp_iw_add_100_div_3/sample');
   });
 
-  it('Creates a cloudinaryURL with variable and convertToFloat', () => {
+  it('Creates a cloudinaryURL with expression and convertToFloat', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .addVariable(Variable.set('myexp', 'bbb').convertToFloat())
+      .addVariable(Variable.set('myexp', 'initial_width + 100 / 3').convertToFloat())
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$myexp_!bbb!_to_f/sample');
-  });
-
-  it('Creates a cloudinaryURL with variable and convertToNumber', () => {
-    const url = new TransformableImage()
-      .setConfig(CONFIG_INSTANCE)
-      .addVariable(Variable.set('myexp', 'bbb').convertToNumber())
-      .setPublicID('sample')
-      .toURL();
-
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$myexp_!bbb!_to_i/sample');
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$myexp_iw_add_100_div_3_to_f/sample');
   });
 
   it('Creates a cloudinaryURL with array', () => {
@@ -126,6 +139,16 @@ describe('Tests for Transformation Action -- Variable', () => {
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$myexp_ref:!my_file!_to_i/sample');
   });
 
+  it('Creates a cloudinaryURL with setReference and convertToFloat', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .addVariable(Variable.setReference('myexp', 'my_file').convertToFloat())
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$myexp_ref:!my_file!_to_f/sample');
+  });
+
   it('Creates a cloudinaryURL with setFromContext', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
@@ -144,6 +167,16 @@ describe('Tests for Transformation Action -- Variable', () => {
       .toURL();
 
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$myexp_ctx:!my_file!_to_i/sample');
+  });
+
+  it('Creates a cloudinaryURL with setFromContext and convertToFloat', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .addVariable(Variable.setFromContext('myexp', 'my_file').convertToFloat())
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$myexp_ctx:!my_file!_to_f/sample');
   });
 
   it('Creates a cloudinaryURL with setFromMetadata', () => {
@@ -165,4 +198,15 @@ describe('Tests for Transformation Action -- Variable', () => {
 
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$myexp_md:!my_file!_to_i/sample');
   });
+
+  it('Creates a cloudinaryURL with setFromMetadata and convertToFloat', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .addVariable(Variable.setFromMetadata('myexp', 'my_file').convertToFloat())
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$myexp_md:!my_file!_to_f/sample');
+  });
+
 });

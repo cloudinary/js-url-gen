@@ -26,7 +26,7 @@ function isString(value: unknown): boolean {
  * @param text
  */
 function isExpression(text: unknown): boolean {
-  return text.match(/\s/) !== null;
+  return text.toString().match(/\s/) !== null;
 }
 
 export {
