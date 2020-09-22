@@ -11,7 +11,7 @@ import cartoonify from "../../../src/actions/effect/cartoonify";
 import {HALFTONE_4X4} from "../../../src/values/dither/Dither";
 import {SYMMETRIC_PAD} from "../../../src/values/gradientFade/GradientFade";
 import {BLUE} from "../../../src/values/colors/Colors";
-import {ROD_MONOCHROMACY} from "../../../src/values/simulatedColorblind/SimulatedColorblind";
+import {ROD_MONOCHROMACY} from "../../../src/values/simulateColorBlind/simulateColorBlind";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
