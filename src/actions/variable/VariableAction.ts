@@ -1,21 +1,42 @@
-
-
 import Action from "../Action";
+import QualifierValue from "../../qualifier/QualifierValue";
 import Qualifier from "../../qualifier/Qualifier";
-import {isString} from "../../utils/dataStructureUtils";
-
-// TODO: when spec for $award_ctx:!First! is ready, implement it
-// TODO: when spec for $award_ref:!First! is ready, implement it
-// TODO: when spec for to_i & to_f is ready, implement it
-// TODO: when spec for list_!b:b:b! is ready, implement it
 
 class VariableAction extends Action {
-  constructor(key: string, value: number | string) {
+  private isFloat = false;
+  private isNumber = false;
+  private value: number | string | string[] | number[];
+  private name: string;
+  constructor(name: string, value: number | string | string[] | number[]) {
     super();
-    const qualifierKey = `$${key}`;
-    const qualifierValue = isString(value) ? `!${value}!` : value;
-    this.addQualifier(new Qualifier(qualifierKey, qualifierValue));
+    this.value = value;
+    this.name = name;
   }
+
+  convertToFloat():this{
+    this.isFloat = true;
+    return this;
+  }
+
+  convertToNumber(): this{
+    this.isNumber = true;
+    return this;
+  }
+
+  protected prepareQualifiers(): this {
+    let qualifierValue;
+    if(this.isFloat) {
+      qualifierValue = new QualifierValue([this.value, 'to_f']).setDelimiter('_');
+    }else if(this.isNumber) {
+      qualifierValue = new QualifierValue([this.value, 'to_i']).setDelimiter('_');
+    }else{
+      qualifierValue = new QualifierValue(this.value);
+    }
+
+    this.addQualifier(new Qualifier(`$${this.name}`, qualifierValue));
+    return this;
+  }
+
 }
 
 export default VariableAction;
