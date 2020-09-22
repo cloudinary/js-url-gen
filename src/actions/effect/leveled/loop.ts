@@ -14,6 +14,7 @@ class LoopEffectAction extends LeveledEffectAction {
  * For animated GIFs only, you can also specify the loop effect without a numeric value to instruct it to loop the GIF infinitely.
  * @memberOf Actions.Effect
  * @param {number} additionalLoops The additional number of times to play the video or animated GIF.
+ * @return {LoopEffectAction}
  */
 function loop(additionalLoops?: number):LoopEffectAction {
   return new LoopEffectAction('loop', additionalLoops);

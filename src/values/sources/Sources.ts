@@ -12,7 +12,7 @@ import VideoSource from "./VideoSource";
  * @memberOf Values.Sources
  * @param {string} publicID
  * @description Returns an instance of an ImageSource
- * @returns {Values.Sources.ImageSource}
+ * @return {Values.Sources.ImageSource}
  */
 function image(publicID: string): ImageSource {
   return new ImageSource(publicID);
@@ -23,7 +23,7 @@ function image(publicID: string): ImageSource {
  * @memberOf Values.Sources
  * @param text {string}
  * @description Returns an instance of a TextSource
- * @returns {Values.Sources.TextSource}
+ * @return {Values.Sources.TextSource}
  */
 function text(text: string): TextSource {
   return new TextSource(text);
@@ -33,7 +33,7 @@ function text(text: string): TextSource {
  * @memberOf Values.Sources
  * @param {string} publicID
  * @description Returns an instance of an VideoSource
- * @returns {Values.Sources.VideoSource}
+ * @return {Values.Sources.VideoSource}
  */
 function video(publicID: string): VideoSource {
   return new VideoSource(publicID);

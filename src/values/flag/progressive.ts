@@ -14,6 +14,7 @@ import Flag from './FlagParam';
  *           the required resolution.
  * * none  - Use this to deliver a non-progressive image. This is the default mode when setting
  *           a specific value for quality.
+ * @return {Flag}
  */
 function progressive(mode?: string): Flag{
   return new Flag('progressive', mode);

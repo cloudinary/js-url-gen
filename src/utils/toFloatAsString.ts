@@ -8,7 +8,7 @@
  * - 'auto' -> 'auto'
  * @private
  * @param {string|number} value
- * @returns {string}
+ * @return {string}
  */
 export function toFloatAsString(value: string | number): string {
   // Turn the input to string
