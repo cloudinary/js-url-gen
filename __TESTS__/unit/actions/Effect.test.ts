@@ -296,10 +296,11 @@ describe('Tests for Transformation Action -- Effect', () => {
       .setConfig(CONFIG_INSTANCE)
       .effect(Effect.dither())
       .effect(Effect.dither(HALFTONE_4X4))
+      .effect(Effect.dither().type(HALFTONE_4X4))
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toContain('e_ordered_dither/e_ordered_dither:9');
+    expect(url).toContain('e_ordered_dither/e_ordered_dither:9/e_ordered_dither:9');
   });
 
   it('Test Vectorize', () => {
