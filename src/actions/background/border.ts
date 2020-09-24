@@ -2,7 +2,7 @@ import BackgroundAction from "./BackgroundAction";
 
 /**
  * @memberOf Actions.Background
- * @description Selects the predominant color while taking only the image border pixels into account.
+ * @description Selects the predominant color while taking only the image border pixels into account. (Server default)
  * @return {BackgroundAction}
  */
 function border(): BackgroundAction{
