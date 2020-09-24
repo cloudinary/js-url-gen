@@ -14,6 +14,7 @@ class By3dLutAction extends Action {
 
   /**
    * Returns a string representation of the action
+   * @return {string}
    */
   toString(): string {
     return `l_lut:${this.publicId}/fl_layer_apply`;
