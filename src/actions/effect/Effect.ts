@@ -36,7 +36,7 @@ import vectorize from "./vectorize";
 import gradientFade from "./gradientFade";
 import pixelateRegion from "./pixelateRegion";
 import assistColorBlind from "./assistColorBlind";
-import simulateColorBlind from "./simulateColorBlind";
+import simulateColorblind from "./simulateColorblind";
 import deshake from "./leveled/deshake";
 
 
@@ -75,7 +75,7 @@ export {
   vectorize,
   pixelateRegion,
   assistColorBlind,
-  simulateColorBlind
+  simulateColorblind
 };
 
 export default {
@@ -112,5 +112,5 @@ export default {
   gradientFade,
   pixelateRegion,
   assistColorBlind,
-  simulateColorBlind
+  simulateColorblind
 };
