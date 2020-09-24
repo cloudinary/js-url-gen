@@ -23,6 +23,7 @@ class AssistColorBlindEffectAction extends Action {
  * Applies stripes to the image to help people with common color-blind conditions to differentiate between colors that are similar for them.</br>
  * You can replace colors using the xRay() method of the \Cloudinary\Transformation\AssistColorBlind class.
  * @memberOf Actions.Effect
+ * @return {AssistColorBlindEffectAction}
  */
 function assistColorBlind():AssistColorBlindEffectAction {
   return new AssistColorBlindEffectAction();

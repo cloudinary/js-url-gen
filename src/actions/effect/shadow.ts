@@ -3,6 +3,9 @@ import QualifierValue from "../../qualifier/QualifierValue";
 import Qualifier from "../../qualifier/Qualifier";
 import {prepareColor} from "../../utils/prepareColor";
 
+/**
+ *
+ */
 class ShadowEffectAction extends Action {
   private effectType: string;
 
@@ -13,6 +16,10 @@ class ShadowEffectAction extends Action {
     this.addQualifier(new Qualifier('e', new QualifierValue(['shadow', strength])));
   }
 
+  /**
+   *
+   * @param {number} strength
+   */
   strength(strength: number) {
     return this.addQualifier(new Qualifier('e', new QualifierValue(['shadow', strength])));
   }
@@ -34,6 +41,7 @@ class ShadowEffectAction extends Action {
  * @description Applies a shadow filter to the asset.
  * @memberOf Actions.Effect
  * @param shadowLevel
+ * @return {ShadowEffectAction}
  */
 function shadow(shadowLevel?: number):ShadowEffectAction {
   return new ShadowEffectAction('shadow', shadowLevel);

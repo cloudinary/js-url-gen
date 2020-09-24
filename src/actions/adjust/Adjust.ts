@@ -101,6 +101,7 @@ function fillLight(): FillLightAction {
  * The 3dl file should be pre-uploaded as a raw file
  *
  * @param {string} publicId The public ID of the LUT file.
+ * @return {By3dLutAction}
  */
 function by3dLut(publicId: string): By3dLutAction {
   return new By3dLutAction(publicId);

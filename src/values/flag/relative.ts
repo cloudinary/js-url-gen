@@ -4,6 +4,7 @@ import Flag from './FlagParam';
  * @memberOf Values.Flag
  * @description Modify percentage-based width & height parameters of overlays
  * (e.g., 0.5) to be relative to the containing video instead of the added layer
+ * @return {Flag}
  */
 function relative(): Flag{
   return new Flag('relative');

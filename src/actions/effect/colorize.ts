@@ -13,6 +13,7 @@ class ColorizeEffectAction extends LeveledEffectAction {
  * @description Applies a colorizing filter to the asset.
  * @memberOf Actions.Effect
  * @param colorizeLevel
+ * @return {ColorizeEffectAction}
  */
 function colorize(colorizeLevel: number):ColorizeEffectAction {
   return new ColorizeEffectAction('colorize', colorizeLevel);

@@ -11,6 +11,7 @@ import EffectActionWithLevel from "../../effect/EffectActions/EffectActionWithLe
  * format supporting partial transparency, such as PNG, and the results without this effect are not as expected.
  *
  * @param {number} level The level of the threshold. (Range: 1 to 100, Server default: 50)
+ * @return {EffectActionWithLevel}
  */
 function opacityThreshold(level?:number): EffectActionWithLevel {
   return new EffectActionWithLevel('opacity_threshold', level);

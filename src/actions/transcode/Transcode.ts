@@ -19,7 +19,7 @@ import ToAnimatedAction from "./ToAnimatedAction";
  * @description Sets the audio sample frequency.
  * <b>Learn more</b>: {@link https://cloudinary.com/documentation/audio_transformations#audio_frequency_control | Audio frequency control}
  * @param {string|number} freq The audio frequency.
- * @return AudioFrequencyAction
+ * @return {AudioFrequencyAction}
  */
 function audioFrequency(freq: string|number): AudioFrequencyAction{
   return new AudioFrequencyAction(freq);
@@ -28,6 +28,7 @@ function audioFrequency(freq: string|number): AudioFrequencyAction{
  * @memberOf Actions.Transcode
  * @description Sets the audio codec or removes the audio channel.
  * @param {string} codec The audio codec or "none".
+ * @return {AudioCodecAction}
  */
 function audioCodec(codec: string): AudioCodecAction{
   return new AudioCodecAction(codec);
@@ -45,6 +46,7 @@ function audioCodec(codec: string): AudioCodecAction{
  *
  * <b>Learn more:</b>
  * {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#bitrate_control | Bitrate control}
+ * @return {BitRateAction}
  */
 function bitRate(bitRate: string|number): BitRateAction {
   return new BitRateAction(bitRate);
@@ -53,6 +55,7 @@ function bitRate(bitRate: string|number): BitRateAction {
 /**
  * @memberOf Actions.Transcode
  * @param from frame rate
+ * @return {FPSAction}
  */
 function fps(from: number): FPSAction {
   return new FPSAction(from);
@@ -64,6 +67,7 @@ function fps(from: number): FPSAction {
  * delivered with an expected FPS level (helps with sync to audio).
  * @param from frame rate
  * @param to frame rate
+ * @return {FPSRangeAction}
  */
 function fpsRange(from: number, to?: number): FPSRangeAction {
   return new FPSRangeAction(from, to);
@@ -73,6 +77,7 @@ function fpsRange(from: number, to?: number): FPSRangeAction {
  * @memberOf Actions.Transcode
  * @description Sets the keyframe interval of the delivered video.
  * @param {number} interval The keyframe interval in seconds.
+ * @return {KeyframeIntervalsAction}
  */
 function keyframeInterval(interval: number): KeyframeIntervalsAction {
   return new KeyframeIntervalsAction(interval);
@@ -86,8 +91,9 @@ function keyframeInterval(interval: number): KeyframeIntervalsAction {
  * profiles or to create new custom profiles.
  *
  * @param {string} profile The streaming profile.
+ * @return {StreamingProfileAction}
  */
-function streamingProfile(profile: string): StreamingProfileAction{
+function streamingProfile(profile: string): StreamingProfileAction {
   return new StreamingProfileAction(profile);
 }
 
@@ -95,8 +101,9 @@ function streamingProfile(profile: string): StreamingProfileAction{
  * @memberOf Actions.Transcode
  * @description Converts a video to animated image.
  * @param {string} animatedFormat The streaming profile.
+ * @return {ToAnimatedAction}
  */
-function toAnimated(animatedFormat: string): ToAnimatedAction{
+function toAnimated(animatedFormat: string): ToAnimatedAction {
   return new ToAnimatedAction(animatedFormat);
 }
 

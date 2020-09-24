@@ -15,6 +15,7 @@ class MakeTransparentEffectAction extends LeveledEffectAction {
  *
  * @memberOf Actions.Effect
  * @param {number} tolerance The tolerance used to accommodate variance in the background color. (Range: 0 to 100, Server default: 10)
+ * @return {MakeTransparentEffectAction}
  */
 function makeTransparent(tolerance?: number):MakeTransparentEffectAction {
   return new MakeTransparentEffectAction('make_transparent', tolerance);

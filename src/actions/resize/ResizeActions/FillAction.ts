@@ -16,6 +16,7 @@ class FillAction extends ResizeAdvancedAction {
  * If the requested aspect ratio is different than the original, cropping will occur on the dimension that exceeds the requested size after scaling.
  * @param {number|string} width
  * @param {number|string} height
+ * @return {FillAction}
  */
 function fill(width?: string|number, height?: string|number) :FillAction {
   return new FillAction(width, height);

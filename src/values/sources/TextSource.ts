@@ -21,7 +21,7 @@ class TextSource implements ISource {
   /**
    *
    * @param {string} fontFam
-   * @returns {this}
+   * @return {this}
    */
   fontFamily(fontFam: string): this {
     this.fFamily = fontFam;
@@ -31,7 +31,7 @@ class TextSource implements ISource {
   /**
    *
    * @param {number} size
-   * @returns {this}
+   * @return {this}
    */
   fontSize(size: number): this {
     this.fSize = size;
@@ -41,7 +41,7 @@ class TextSource implements ISource {
   /**
    *
    * @param {FontWeight} weight
-   * @returns {this}
+   * @return {this}
    */
   fontWeight(weight: keyof typeof FontWeight): this {
     this.fWeight = weight;
@@ -51,7 +51,7 @@ class TextSource implements ISource {
   /**
    *
    * @param {FontStyle} style
-   * @returns {this}
+   * @return {this}
    */
   fontStyle(style: keyof typeof FontStyle): this {
     this.fStyle = style;
@@ -61,7 +61,7 @@ class TextSource implements ISource {
   /**
    *
    * @param {string} textColor
-   * @returns {this}
+   * @return {this}
    */
   color(textColor: string): this {
     this.textColor = textColor;
@@ -69,7 +69,7 @@ class TextSource implements ISource {
   }
 
   /**
-   * @returns {string}
+   * @return {string}
    */
   getColor(): string {
     if (this.textColor) {
@@ -80,7 +80,7 @@ class TextSource implements ISource {
   }
 
   /**
-   * @returns {string}
+   * @return {string}
    */
   getSource(): string {
     const fontValue = new QualifierValue([this.fFamily, this.fSize, this.fWeight, this.fStyle])

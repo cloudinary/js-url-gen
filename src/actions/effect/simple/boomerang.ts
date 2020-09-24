@@ -6,6 +6,7 @@ import SimpleEffectAction from "../EffectActions/SimpleEffectAction";
  * Use in conjunction with trimming parameters ('duration', 'start_offset', or 'end_offset') and the 'loop' effect to deliver a classic (short, repeating) boomerang clip.<br/>
  * For details and examples, see 'Create a boomerang video clip' in the Video Transformations guide.
  * @memberOf Actions.Effect
+ * @return {SimpleEffectAction}
  */
 function boomerang():SimpleEffectAction {
   return new SimpleEffectAction('boomerang');

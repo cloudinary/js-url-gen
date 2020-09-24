@@ -33,6 +33,7 @@ class CartoonifyEffect extends Action {
  * @description Applies a cartoonify filter to the asset.
  * @memberOf Actions.Effect
  * @param cartoonifyLevel
+ * @return {CartoonifyEffect}
  */
 function cartoonify(cartoonifyLevel?: number):CartoonifyEffect {
   return new CartoonifyEffect('cartoonify', cartoonifyLevel);

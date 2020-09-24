@@ -3,6 +3,7 @@ import Flag from './FlagParam';
 /**
  * @memberOf Values.Flag
  * @description Generate PNG images in the png24 format.
+ * @return {Flag}
  */
 function png24(): Flag{
   return new Flag('png24');
