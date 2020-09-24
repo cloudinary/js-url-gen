@@ -8,7 +8,7 @@ import base64Encode from "../../utils/base64Encode";
  */
 class CustomFunctionAction extends Action {
   private mode: 'wasm' | 'remote' | string;
-  private pre?: 'pre';
+  protected pre?: 'pre';
   readonly fn:string;
   private encodedFn: string;
 
@@ -32,11 +32,6 @@ class CustomFunctionAction extends Action {
 
   asRemote(): this {
     this.mode = 'remote';
-    return this;
-  }
-
-  preprocess(): this {
-    this.pre = 'pre';
     return this;
   }
 
