@@ -1,5 +1,10 @@
 import Action from "../Action";
 
+/**
+ * @class By3dLutAction
+ * @description Creates the 3D_lut layer transformation
+ * @augments {Action}
+ */
 class By3dLutAction extends Action {
   readonly publicId: string;
   constructor(publicId: string) {
@@ -7,6 +12,9 @@ class By3dLutAction extends Action {
     this.publicId = publicId;
   }
 
+  /**
+   * Returns a string representation of the action
+   */
   toString(): string {
     return `l_lut:${this.publicId}/fl_layer_apply`;
   }
