@@ -4,7 +4,7 @@ import EffectActionWithLevel from "../../effect/EffectActions/EffectActionWithLe
 /**
  * @memberOf Actions.Adjust
  * @description Adjusts the image's green channel.
- * @param {number} level
+ * @param {number} level The level of green. (Range: -100 to 100, Server default: 0)
  * @return {EffectActionWithLevel}
  */
 function green(level?:number): EffectActionWithLevel {
