@@ -18,7 +18,8 @@ class BorderAction extends Action {
   }
 
   /**
-   * @param {number} borderWidth
+   * @description Sets the width of the border
+   * @param {number} borderWidth The width in pixels.
    */
   width(borderWidth: number): this {
     this.borderWidth = borderWidth;
@@ -26,7 +27,8 @@ class BorderAction extends Action {
   }
 
   /**
-   * @param {string} borderColor
+   * @description Sets the color of the border.
+   * @param {string} borderColor The color of the border.
    */
   color(borderColor: string): this {
     this.borderColor = prepareColor(borderColor);
