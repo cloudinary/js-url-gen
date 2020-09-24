@@ -7,6 +7,7 @@ import EffectActionWithLength from "../EffectActions/EffectActionWithLength";
  * For details and examples, see 'Fade in and out' in the Video Transformations guide.
  * @memberOf Actions.Effect
  * @param {number} fadeLength The time in ms for the fade to occur. (Server default: 2000)
+ * @return {EffectActionWithLength}
  */
 function fadeIn(fadeLength?: number):EffectActionWithLength {
   return new EffectActionWithLength('fade', fadeLength);

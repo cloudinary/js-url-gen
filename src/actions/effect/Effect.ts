@@ -18,7 +18,7 @@ import outline from "./outline";
 import styleTransfer from "./styleTransfer";
 import boomerang from "./simple/boomerang";
 import advancedRedEye from "./simple/advanedRedEye";
-import blackWhite from "./simple/blackWhite";
+import blackWhite from "./leveled/blackWhite";
 import negate from "./simple/negate";
 import redEye from "./simple/redEye";
 import reverse from "./simple/reverse";
@@ -37,9 +37,13 @@ import gradientFade from "./gradientFade";
 import pixelateRegion from "./pixelateRegion";
 import assistColorBlind from "./assistColorBlind";
 import simulateColorBlind from "./simulateColorBlind";
+import deshake from "./leveled/deshake";
+
+
 
 
 export {
+  deshake,
   boomerang,
   advancedRedEye,
   blackWhite,
@@ -75,6 +79,7 @@ export {
 };
 
 export default {
+  deshake,
   boomerang,
   advancedRedEye,
   blackWhite,

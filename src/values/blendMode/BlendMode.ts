@@ -27,6 +27,7 @@ class BlendMode extends Action {
 /**
  * @memberOf Values.BlendMode
  * @description Add an overlay image blended using the 'multiply' blend mode.
+ * @return {BlendMode}
  */
 function multiply():BlendMode {
   return new BlendMode('multiply');
@@ -35,6 +36,7 @@ function multiply():BlendMode {
 /**
  * @memberOf Values.BlendMode
  * @description Add an overlay image blended using the 'screen' blend mode.
+ * @return {BlendMode}
  */
 function screen():BlendMode {
   return new BlendMode('screen');
@@ -43,6 +45,7 @@ function screen():BlendMode {
 /**
  * @memberOf Values.BlendMode
  * @description Add an overlay image blended using the 'overlay' blend mode.
+ * @return {BlendMode}
  */
 function overlay():BlendMode {
   return new BlendMode('overlay');

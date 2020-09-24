@@ -15,7 +15,6 @@ class Outline extends Action {
    * @description
    * How to apply the outline effect which can be one of the following values:
    * inner, inner_fill, outer, fill.
-   * @memberOf Actions.Effect
    * @param {string} mode  The type of outline effect. Use the constants defined in Outline.
    */
   mode(mode?: string): this{
@@ -62,6 +61,7 @@ class Outline extends Action {
 /**
  * @description Adds an outline to a transparent image. For examples, see the Image Transformations guide.
  * @memberOf Actions.Effect
+ * @return {Outline}
  */
 function outline(): Outline {
   return new Outline();

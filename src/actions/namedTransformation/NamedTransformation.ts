@@ -19,6 +19,7 @@ class NamedTransformationAction extends Action implements INamedTransformationAc
  * @description Applies a pre-defined named transformation of the given name.
  * @param {string} name Transformation name
  * @memberOf Actions.NamedTransformation
+ * @return {NamedTransformationAction}
  */
 function name(name:string): NamedTransformationAction {
   return new NamedTransformationAction(name);

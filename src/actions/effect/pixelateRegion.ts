@@ -32,6 +32,7 @@ class PixelateRegionEffectAction extends Action {
 /**
  * @description Pixelates the region of the image specified by x, y, width and height.
  * @memberOf Actions.Effect
+ * @return {PixelateRegionEffectAction}
  */
 function pixelateRegion():PixelateRegionEffectAction {
   return new PixelateRegionEffectAction();

@@ -7,7 +7,7 @@ import Flag from './FlagParam';
  * animated file instead of only from the first still frame.
  *
  * Note that animated PNGs are not supported in all browsers and versions.
- *
+ * @return {Flag}
  */
 function animatedPng(): Flag{
   return new Flag('apng');

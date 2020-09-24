@@ -22,6 +22,7 @@ class FillPadAction extends ResizeSimpleAction {
  * but adding padding if it is determined that more of the original image needs to be included in the final image.
  * @param {number|string} width
  * @param {number|string} height
+ * @return {FillPadAction}
  */
 function fillPad(width?: string|number, height?: string|number) :FillPadAction {
   return new FillPadAction(width, height);

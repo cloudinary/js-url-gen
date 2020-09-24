@@ -9,7 +9,7 @@
 /**
  * @memberOf Values.ResizeMode
  * @description Modifies percentage-based width & height parameters of overlays and underlays (e.g., 1.0) to be relative to the containing image instead of the added layer.
- * @returns string
+ * @return string
  */
 function relative(): string {
   return 'relative';
@@ -18,7 +18,7 @@ function relative(): string {
 /**
  * @memberOf Values.ResizeMode
  * @description Modifies percentage-based width & height parameters of overlays and underlays (e.g., 1.0) to be relative to the overlaid region. Currently regions are only defined when using gravity 'face', 'faces' or 'custom'.
- * @returns string
+ * @return string
  */
 function regionRelative(): string {
   return 'region_relative';

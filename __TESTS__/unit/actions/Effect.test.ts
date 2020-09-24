@@ -33,6 +33,8 @@ describe('Tests for Transformation Action -- Effect', () => {
       .effect(Effect.accelerate().rate(5))
       .effect(Effect.boomerang())
       .effect(Effect.blackWhite())
+      .effect(Effect.blackWhite(10))
+      .effect(Effect.blackWhite().level(20))
       .effect(Effect.blurFaces())
       .effect(Effect.blurFaces(100))
       .effect(Effect.blurFaces().level(5))
@@ -68,6 +70,9 @@ describe('Tests for Transformation Action -- Effect', () => {
       .effect(Effect.vignette())
       .effect(Effect.vignette(100))
       .effect(Effect.vignette().level(5))
+      .effect(Effect.deshake())
+      .effect(Effect.deshake(10))
+      .effect(Effect.deshake().pixels(20))
 
       .setPublicID('sample')
       .toURL();
@@ -79,6 +84,8 @@ describe('Tests for Transformation Action -- Effect', () => {
       'e_accelerate:5',
       'e_boomerang',
       'e_blackwhite',
+      'e_blackwhite:10',
+      'e_blackwhite:20',
       'e_blur_faces',
       'e_blur_faces:100',
       'e_blur_faces:5',
@@ -113,7 +120,10 @@ describe('Tests for Transformation Action -- Effect', () => {
       'e_sepia:5',
       'e_vignette',
       'e_vignette:100',
-      'e_vignette:5'
+      'e_vignette:5',
+      'e_deshake',
+      'e_deshake:10',
+      'e_deshake:20'
     ].join('/');
 
     expect(url).toBe(`http://res.cloudinary.com/demo/image/upload/${expectedToContain}/sample`);

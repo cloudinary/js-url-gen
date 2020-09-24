@@ -14,7 +14,7 @@ function mapToSortedArray<T>(map: Map<string, T>): T[] {
  * Checks if `value` is a string.
  * @private
  * @param {*} value The value to check.
- * @returns {boolean} `true` if `value` is a string, else `false`.
+ * @return {boolean} `true` if `value` is a string, else `false`.
  */
 function isString(value: unknown): boolean {
   return (typeof value === 'string' || value instanceof String);

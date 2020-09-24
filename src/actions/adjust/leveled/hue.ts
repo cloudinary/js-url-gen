@@ -5,6 +5,7 @@ import EffectActionWithLevel from "../../effect/EffectActions/EffectActionWithLe
  * @description
  * Adjusts the image's hue.
  * @param {number} level The level of hue. (Range: -100 to 100, Server default: 80)
+ * @return {EffectActionWithLevel}
  */
 function hue(level?:number):EffectActionWithLevel {
   return new EffectActionWithLevel('hue', level);

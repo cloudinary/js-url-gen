@@ -93,6 +93,7 @@ class VectorizeEffectAction extends Action {
  * Large images are scaled down to 1000 pixels in the largest dimension before vectorization.
  *
  * @memberOf Actions.Effect
+ * @return {VectorizeEffectAction}
  */
 function vectorize():VectorizeEffectAction {
   return new VectorizeEffectAction();
