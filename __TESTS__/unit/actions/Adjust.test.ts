@@ -177,4 +177,21 @@ describe('Tests for Transformation Action -- Adjust', () => {
       .toString()
     ).toBe('l_lut:sample/fl_layer_apply');
   });
+
+  it('tests viesuscorrect', () => {
+    expect(Adjust.viesusCorrect()
+      .toString()).toBe('e_viesus_correct');
+
+    expect(Adjust.viesusCorrect()
+      .noRedeye()
+      .toString()).toBe('e_viesus_correct:no_redeye');
+
+    expect(Adjust.viesusCorrect()
+      .skinSaturation()
+      .toString()).toBe('e_viesus_correct:skin_saturation');
+
+    expect(Adjust.viesusCorrect()
+      .skinSaturation(10)
+      .toString()).toBe('e_viesus_correct:skin_saturation:10');
+  });
 });
