@@ -3,6 +3,11 @@ import Qualifier from "../../qualifier/Qualifier";
 import QualifierValue from "../../qualifier/QualifierValue";
 import {prepareColor} from "../../utils/prepareColor";
 
+/**
+ * @description Adds a solid border around an image or video.
+ * @class BorderAction
+ * @augments {Action}
+ */
 class BorderAction extends Action {
   private borderWidth: number;
   private borderColor: string;
