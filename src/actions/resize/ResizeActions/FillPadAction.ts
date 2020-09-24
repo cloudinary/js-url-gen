@@ -8,11 +8,6 @@ class FillPadAction extends ResizeSimpleAction {
     // Required due to https://github.com/microsoft/TypeScript/issues/13029
     super('fill_pad', width, height);
   }
-
-  aspectRatio(ratio:number|string): this {
-    // toFloatAsString is used to ensure 1 turns into 1.0
-    return this.addQualifier(new Qualifier('ar', toFloatAsString(ratio)));
-  }
 }
 
 /**
