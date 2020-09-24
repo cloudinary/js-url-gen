@@ -1,7 +1,7 @@
 import Action from "../Action";
 import Qualifier from "../../qualifier/Qualifier";
 
-class SimulateColorBlindEffectAction extends Action {
+class SimulateColorblindEffectAction extends Action {
   constructor() {
     super();
     this.addQualifier(new Qualifier('e', `simulate_colorblind`));
@@ -23,12 +23,12 @@ class SimulateColorBlindEffectAction extends Action {
 /**
  * @description
  * Simulates the way an image would appear to someone with the specified color blind condition. </br>
- * For a list of supported color blind conditions see {@link Values.simulateColorBlindValues| types of color blindness} for possible values
+ * For a list of supported color blind conditions see {@link Values.simulateColorblindValues| types of color blindness} for possible values
  * @memberOf Actions.Effect
- * @return {SimulateColorBlindEffectAction}
+ * @return {SimulateColorblindEffectAction}
  */
-function simulateColorBlind(): SimulateColorBlindEffectAction {
-  return new SimulateColorBlindEffectAction();
+function simulateColorblind(): SimulateColorblindEffectAction {
+  return new SimulateColorblindEffectAction();
 }
 
-export default simulateColorBlind;
+export default simulateColorblind;
