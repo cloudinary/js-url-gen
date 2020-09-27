@@ -22,6 +22,7 @@ import unsharpMask from "./leveled/unsharpenMask";
 import vibrance from "./leveled/vibrance";
 import autoContrast from "./leveled/autoContrast";
 import By3dLutAction from "./By3dLut";
+import dither from "../effect/dither";
 
 
 /**
@@ -109,10 +110,11 @@ function by3dLut(publicId: string): By3dLutAction {
 
 
 
+
 export default {brightness, viesusCorrect, opacity, red, sharpen, improve, saturation,
   contrast, gamma, green, blue, brightnessHSB, hue, autoBrightness, autoColor,
-  autoContrast, vibrance, unsharpMask, opacityThreshold, replaceColor, recolor, fillLight, by3dLut};
+  autoContrast, vibrance, unsharpMask, opacityThreshold, replaceColor, recolor, fillLight, by3dLut, dither};
 
 export {brightness, viesusCorrect, opacity, red, sharpen, improve, saturation,
   contrast, gamma, green, blue, brightnessHSB, hue, autoBrightness, autoColor,
-  autoContrast, vibrance, unsharpMask, opacityThreshold, replaceColor, recolor, fillLight, by3dLut};
+  autoContrast, vibrance, unsharpMask, opacityThreshold, replaceColor, recolor, fillLight, by3dLut, dither};
