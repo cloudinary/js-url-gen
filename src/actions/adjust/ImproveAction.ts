@@ -2,6 +2,10 @@ import Action from "../Action";
 import Qualifier from "../../qualifier/Qualifier";
 import QualifierValue from "../../qualifier/QualifierValue";
 
+/**
+ * @description Defines how to improve an image by automatically adjusting image colors, contrast and brightness.</br>
+ * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#image_improvement_effects | Image improvement effects}
+ */
 class ImproveAction extends Action {
   private modeValue:string;
   private blendValue:number;
@@ -9,11 +13,21 @@ class ImproveAction extends Action {
     super();
   }
 
+  /**
+   *
+   * @description The improve mode.
+   * @param {'outdoor' | 'indoor' | string} value
+   */
   mode(value:'outdoor' | 'indoor' | string): this {
     this.modeValue = value;
     return this;
   }
 
+  /**
+   *
+   * @description How much to blend the improved result with the original image, where 0 means only use the original and 100 means only use the improved result. (Range: 0 to 100, Server default: 100)
+   * @param {number} value
+   */
   blend(value:number): this {
     this.blendValue = value;
     return this;

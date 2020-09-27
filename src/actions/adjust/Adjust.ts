@@ -51,8 +51,7 @@ function opacity(level:number): Action {
 
 /**
  * @memberOf Actions.Adjust
- * @description Defines how to improve an image by automatically adjusting image colors, contrast and brightness.</br>
- * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#image_improvement_effects | Image improvement effects}
+ * @description Adjusts the image colors, contrast and brightness.
  * @return {ImproveAction}
  */
 function improve(): ImproveAction {
