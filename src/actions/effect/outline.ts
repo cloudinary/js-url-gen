@@ -1,6 +1,7 @@
 import Action from "../Action";
 import QualifierValue from "../../qualifier/QualifierValue";
 import Qualifier from "../../qualifier/Qualifier";
+import {prepareColor} from "../../utils/prepareColor";
 
 class Outline extends Action {
   private _mode: string;
@@ -47,7 +48,7 @@ class Outline extends Action {
    * A list of SDK Colors can be found in @cloudinary/base/values/color
    */
   color(color:string) {
-    return this.addQualifier(new Qualifier('co', color));
+    return this.addQualifier(new Qualifier('co', prepareColor(color)));
   }
 
   protected prepareQualifiers() : void {
