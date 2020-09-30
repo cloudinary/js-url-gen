@@ -2,15 +2,15 @@
 
 ### About this project
 
-This project enables you to create CloudinaryURLs for your images.
+This project enables you to create Cloudinary URLs for your images.
 Using this SDK, you can apply advanced transformations to your images.
 
 
 ### About this documentation
-- All operations begin with a {@link TransformableImage|TransformableImage}, or {@link TransformableVideo|TransformableVideo}, which create a new {@link Transformation|Transformation} object 
-- All Actions that can be applied to a transformation can be found {@link Actions|here}
-- All non-primitive values that can be passed to an Action can be found {@link Values|here}
-- Configuration can be found here
+- All operations begin with a {@link TransformableImage|TransformableImage}, or {@link TransformableVideo|TransformableVideo}, which create a new {@link Transformation|Transformation} object. 
+- All Actions that can be applied to a transformation can be found {@link Actions|here}.
+- All non-primitive values that can be passed to an Action can be found {@link Values|here}.
+- Configuration can be found {@link ICloudinaryConfigurations|here}.
 
 
 ### Installation
@@ -20,17 +20,17 @@ npm install @cloudinary/base
 
 ### Simple usage
 ```javascript
-import {TransforambleImage} from '@cloudinary/base';
+import {TransformableImage} from '@cloudinary/base';
 
 // Get a list of all possible Resize 
 import {Resize} from '@cloudinary/base/actions';
 
-// Use tree shaking to only fetch what you need
+// Alternatively, Use tree shaking to only fetch what you need
 import {scale} from '@cloudinary/base/actions/resize';
 
 
 // Pass the publicId of your image
-const myImage = new TransforambleImage('sample');
+const myImage = new TransformableImage('sample');
 
 myImage.config({
   cloud: {
@@ -47,33 +47,35 @@ const myURL = myImage.toURL();
 </div>
 
 <div class="alert alert-info" role="alert">
-<b>Tree shaking can dramatically impact your bundle size, we strongly importing only what you need!</b>
+<b>Tree shaking can dramatically impact your bundle size, we strongly recommend importing only what you need!</b>
 </div>
 
 ### Using SDK helper types/values
 ```javascript
-import {TransforambleImage} from '@cloudinary/base';
+import {TransformableImage} from '@cloudinary/base';
 import {mode} from '@cloudinary/base/actions/rotate';
 
 // Get all rotation modes, this is a value passed to an action
 import * as RotationMode from '@cloudinary/base/values/rotate';
 
-// Or just get the rotation you need, this is a value passed to an action
+// Alternatively, get just the rotation you need, this is a value passed to an action
 import {VERTICAL_FLIP} from '@cloudinary/base/values/rotate';
 
-const myImage = new TransforambleImage('sample');
+const myImage = new TransformableImage('sample');
 
+// Configure your image
 myImage.config(/* ...snip, your config, same as above */);
 
 // the mode action accepts a rotation value - VERTICAL_FLIP
 myImage.rotate(mode(VERTICAL_FLIP));
 
+// Create a URL
 const myURL = myImage.toURL();
 ```
 
 <br/>
 <div class="alert alert-info" role="alert">
-Some actions accept primitive values, while others accept SDK provided values<br/>
-See the available {@link Actions|actions} for more inforamtion
+Some actions accept primitive values, while others accept SDK provided values.<br/>
+See the available {@link Actions|actions} for more information
 </div>
 
