@@ -8,7 +8,7 @@ import * as Outline from "../../../src/values/outline/Outline";
 import {image} from "../../../src/values/sources/Sources";
 import scale from "../../../src/actions/resize/ResizeActions/ScaleAction";
 import cartoonify from "../../../src/actions/effect/cartoonify";
-import {HALFTONE_4X4} from "../../../src/values/dither/Dither";
+import {HALFTONE_4X4_ORTHOGONAL} from "../../../src/values/dither/Dither";
 import {SYMMETRIC_PAD} from "../../../src/values/gradientFade/GradientFade";
 import {BLUE} from "../../../src/values/colors/Colors";
 import {ROD_MONOCHROMACY} from "../../../src/values/simulateColorblind/SimulateColorblind";
@@ -295,8 +295,8 @@ describe('Tests for Transformation Action -- Effect', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
       .effect(Effect.dither())
-      .effect(Effect.dither(HALFTONE_4X4))
-      .effect(Effect.dither().type(HALFTONE_4X4))
+      .effect(Effect.dither(HALFTONE_4X4_ORTHOGONAL))
+      .effect(Effect.dither().type(HALFTONE_4X4_ORTHOGONAL))
       .setPublicID('sample')
       .toURL();
 
