@@ -8,10 +8,10 @@ import * as Outline from "../../../src/values/outline/Outline";
 import {image} from "../../../src/values/sources/Sources";
 import scale from "../../../src/actions/resize/ResizeActions/ScaleAction";
 import cartoonify from "../../../src/actions/effect/cartoonify";
-import {HALFTONE_4X4} from "../../../src/values/dither/Dither";
+import {HALFTONE_4X4_ORTHOGONAL} from "../../../src/values/dither/Dither";
 import {SYMMETRIC_PAD} from "../../../src/values/gradientFade/GradientFade";
 import {BLUE} from "../../../src/values/colors/Colors";
-import {ROD_MONOCHROMACY} from "../../../src/values/simulatedColorblind/SimulatedColorblind";
+import {ROD_MONOCHROMACY} from "../../../src/values/simulateColorblind/SimulateColorblind";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -295,11 +295,12 @@ describe('Tests for Transformation Action -- Effect', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
       .effect(Effect.dither())
-      .effect(Effect.dither(HALFTONE_4X4))
+      .effect(Effect.dither(HALFTONE_4X4_ORTHOGONAL))
+      .effect(Effect.dither().type(HALFTONE_4X4_ORTHOGONAL))
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toContain('e_ordered_dither/e_ordered_dither:9');
+    expect(url).toContain('e_ordered_dither/e_ordered_dither:9/e_ordered_dither:9');
   });
 
   it('Test Vectorize', () => {
@@ -367,12 +368,12 @@ describe('Tests for Transformation Action -- Effect', () => {
     ).toBe('co_blue,e_outline:fill:10:25');
   });
 
-  it('Test simulateColorBlind', () => {
-    expect(Effect.simulateColorBlind()
+  it('Test simulateColorblind', () => {
+    expect(Effect.simulateColorblind()
       .toString()
     ).toBe('e_simulate_colorblind');
 
-    expect(Effect.simulateColorBlind()
+    expect(Effect.simulateColorblind()
       .condition(ROD_MONOCHROMACY)
       .toString()
     ).toBe('e_simulate_colorblind:rod_monochromacy');

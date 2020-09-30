@@ -3,6 +3,11 @@ import Qualifier from "../../qualifier/Qualifier";
 import QualifierValue from "../../qualifier/QualifierValue";
 import {prepareColor} from "../../utils/prepareColor";
 
+/**
+ * @description Adds a solid border around an image or video.
+ * @class BorderAction
+ * @augments {Action}
+ */
 class BorderAction extends Action {
   private borderWidth: number;
   private borderColor: string;
@@ -13,7 +18,8 @@ class BorderAction extends Action {
   }
 
   /**
-   * @param {number} borderWidth
+   * @description Sets the width of the border
+   * @param {number} borderWidth The width in pixels.
    */
   width(borderWidth: number): this {
     this.borderWidth = borderWidth;
@@ -21,7 +27,8 @@ class BorderAction extends Action {
   }
 
   /**
-   * @param {string} borderColor
+   * @description Sets the color of the border.
+   * @param {string} borderColor The color of the border.
    */
   color(borderColor: string): this {
     this.borderColor = prepareColor(borderColor);

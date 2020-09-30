@@ -4,10 +4,7 @@ import {toFloatAsString} from "../../../utils/toFloatAsString";
 
 
 class LimitPadAction extends ResizeSimpleAction {
-  aspectRatio(ratio:number|string): this {
-    // toFloatAsString is used to ensure 1 turns into 1.0
-    return this.addQualifier(new Qualifier('ar', toFloatAsString(ratio)));
-  }
+
 }
 
 /**

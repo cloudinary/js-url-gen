@@ -3,7 +3,7 @@ import LeveledEffectAction from "./EffectActions/LeveledEffectAction";
 
 class DitherEffectAction extends LeveledEffectAction {
   type(ditherType:number) {
-    this.setLevel(ditherType);
+    return this.setLevel(ditherType);
   }
 }
 

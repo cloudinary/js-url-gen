@@ -22,6 +22,7 @@ import unsharpMask from "./leveled/unsharpenMask";
 import vibrance from "./leveled/vibrance";
 import autoContrast from "./leveled/autoContrast";
 import By3dLutAction from "./By3dLut";
+import dither from "../effect/dither";
 
 
 /**
@@ -50,8 +51,7 @@ function opacity(level:number): Action {
 
 /**
  * @memberOf Actions.Adjust
- * @description Defines how to improve an image by automatically adjusting image colors, contrast and brightness.</br>
- * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#image_improvement_effects | Image improvement effects}
+ * @description Adjusts the image colors, contrast and brightness.
  * @return {ImproveAction}
  */
 function improve(): ImproveAction {
@@ -109,10 +109,11 @@ function by3dLut(publicId: string): By3dLutAction {
 
 
 
+
 export default {brightness, viesusCorrect, opacity, red, sharpen, improve, saturation,
   contrast, gamma, green, blue, brightnessHSB, hue, autoBrightness, autoColor,
-  autoContrast, vibrance, unsharpMask, opacityThreshold, replaceColor, recolor, fillLight, by3dLut};
+  autoContrast, vibrance, unsharpMask, opacityThreshold, replaceColor, recolor, fillLight, by3dLut, dither};
 
 export {brightness, viesusCorrect, opacity, red, sharpen, improve, saturation,
   contrast, gamma, green, blue, brightnessHSB, hue, autoBrightness, autoColor,
-  autoContrast, vibrance, unsharpMask, opacityThreshold, replaceColor, recolor, fillLight, by3dLut};
+  autoContrast, vibrance, unsharpMask, opacityThreshold, replaceColor, recolor, fillLight, by3dLut, dither};
