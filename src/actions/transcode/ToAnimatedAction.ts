@@ -5,7 +5,8 @@ import Flag from "../../values/flag/Flag";
 /**
  * @class ToAnimatedAction
  * @augments Action
- * @@doc @description Converts a video to an animated webp or gif.
+ * @@doc
+ * @description Converts a video to an animated webp or gif.
  * The resulted transformation will include format (f_format) and animated flag (fl_animated).
  * The flag fl_awebp is added only when an animated webp is desired.
  */
@@ -20,7 +21,8 @@ class ToAnimatedAction extends Action {
   }
 
   /**
-   * @@doc @description not defined
+   * @@doc
+   * @description not defined
    * @param delayValue
    */
   delay(delayValue: number): this {
@@ -29,7 +31,8 @@ class ToAnimatedAction extends Action {
   }
 
   /**
-   * @@doc @description The value represents the number of frames to be extracted from the movie. If a string, in
+   * @@doc
+   * @description The value represents the number of frames to be extracted from the movie. If a string, in
    * the format of ‘2s’, it will sample every 2 seconds
    * @param sampling
    */
