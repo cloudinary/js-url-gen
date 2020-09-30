@@ -19,7 +19,8 @@ class VariableAction extends Action {
   }
 
   /**
-   * @@description Converts the returned value to be of type float, so it can be used in places that require float
+   * @@doc
+   * @description Converts the returned value to be of type float, so it can be used in places that require float
    * values
    */
   convertToFloat():this{
@@ -28,6 +29,7 @@ class VariableAction extends Action {
   }
 
   /**
+   * @@doc
    * @description Converts the returned value to be of type number, so it can be used in places that require number
    * values
    */

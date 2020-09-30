@@ -3,7 +3,8 @@ import VariableAction from "./VariableAction";
 /**
  * @class SetAction
  * @augments Action
- * @@description A class that sets variable from reference.
+ * @@doc
+ * @description A class that sets variable from reference.
  */
 class SetReferenceAction extends VariableAction {
   constructor(name: string, value: string) {
