@@ -1,5 +1,10 @@
 import VariableAction from "./VariableAction";
 
+/**
+ * @class SetAction
+ * @augments Action
+ * @@description A class that sets variable from reference.
+ */
 class SetReferenceAction extends VariableAction {
   constructor(name: string, value: string) {
     // Required due to https://github.com/microsoft/TypeScript/issues/13029

@@ -4,17 +4,16 @@ import SetFromContextAction from "./SetFromContextAction";
 import SetFromMetadataAction from "./SetFromMetadataAction";
 
 /**
- * Defines an new user variable.
+ * Defines a new user variable with the given value.
  * @memberOf Actions
  * @namespace Variable
  */
 
-
 /**
- * @description Defines an new user variable.
+ * @description Sets a new user variable with the given value.
  * @memberOf Actions.Variable
- * @param name
- * @param {number | string | number[] | string[]} value
+ * @param name Variable name
+ * @param {number | string | number[] | string[]} value Variable value
  * @return {SetAction}
  */
 function set(name: string, value: number | string | number[] | string[]): SetAction {

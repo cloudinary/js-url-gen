@@ -2,6 +2,11 @@ import {isExpression, isString} from "../../utils/dataStructureUtils";
 import normalizeExpression from "../../utils/normalizeExpression";
 import VariableAction from "./VariableAction";
 
+/**
+ * @class SetAction
+ * @augments Action
+ * @@description A class that sets variable
+ */
 class SetAction extends VariableAction {
   constructor(name: string, value: number | string | string[] | number[]) {
     let normalizedValue;
