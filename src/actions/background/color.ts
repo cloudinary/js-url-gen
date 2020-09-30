@@ -4,7 +4,7 @@ import {prepareColor} from "../../utils/prepareColor";
 
 /**
  * @memberOf Actions.Background
- * @description Applies background color.
+ * @description Sets the background color.
  * @param {string} color
  * @return {BackgroundAction}
  */
