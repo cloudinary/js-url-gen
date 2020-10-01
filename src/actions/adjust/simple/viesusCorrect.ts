@@ -1,12 +1,19 @@
 import Action from "../../Action";
 import Qualifier from "../../../qualifier/Qualifier";
 
-
+/**
+ * @@doc
+ * Enhances an image to its best visual quality with the Viesus Automatic Image Enhancement add-on.</br>
+ * <b>Learn more:</b> {@link https://cloudinary.com/documentation/viesus_automatic_image_enhancement_addon | Viesus Automatic Image Enhancement.}
+ */
 class ViesusCorrectAdjustAction extends Action {
   private _noRedeye : boolean;
   private _skinSaturation: boolean;
   private _skinSaturationLevel: number;
 
+  /**
+   * @description Removes red eyes in the image.
+   */
   noRedeye() {
     this._noRedeye = true;
     return this;
