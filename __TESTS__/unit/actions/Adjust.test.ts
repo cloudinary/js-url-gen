@@ -183,7 +183,7 @@ describe('Tests for Transformation Action -- Adjust', () => {
       .toString()).toBe('e_viesus_correct');
 
     expect(Adjust.viesusCorrect()
-      .noRedeye()
+      .noRedEye()
       .toString()).toBe('e_viesus_correct:no_redeye');
 
     expect(Adjust.viesusCorrect()
