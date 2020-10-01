@@ -290,7 +290,7 @@ class Transformation {
   /**
    * Shortens a video to the specified range.
    * @param {ITrimAction} trimAction
-   * @return this TransformableVideo with the added action
+   * @return {this}
    */
   trim(trimAction: TrimAction): this {
     return this.addAction(trimAction);
@@ -299,7 +299,7 @@ class Transformation {
   /**
    * Concatenates another video or image.
    * @param {VideoConcatenateAction} videoConcatenateAction
-   * @return this TransformableVideo with the added action
+   * @return {this}
    */
   /*
   concatenate(videoConcatenateAction: VideoConcatenateAction): this {
@@ -310,7 +310,7 @@ class Transformation {
   /**
    * @description Trims pixels according to the transparency levels of a given overlay image.
    * @param {CutterAction} ctterAction
-   * @return this TransformableVideo with the added action
+   * @return {this}
    */
   /*
   cutter(cutterAction: CutterAction): this {
@@ -321,7 +321,7 @@ class Transformation {
   /**
    * Adds subtitles to the video.
    * @param {SubtitlesAction} subtitlesAction
-   * @return this TransformableVideo with the added action
+   * @return {this}
    */
   /*
   addSubtitles(subtitlesAction: SubtitlesAction): this {
@@ -332,7 +332,7 @@ class Transformation {
   /**
    * Transcodes the video (or audio) to another format.
    * @param {IAction} action
-   * @return this TransformableVideo with the added action
+   * @return {this}
    */
   transcode(action: IAction): this {
     return this.addAction(action);
@@ -347,7 +347,7 @@ class Transformation {
    * video (use the delay parameter to adjust the amount of time between frames).
    *
    * @param {VideoSamplingAction} videoSamplingAction
-   * @return this TransformableVideo with the added action
+   * @return {this}
    */
   /*
   videoSampling(videoSamplingAction: VideoSamplingAction): this {
@@ -359,7 +359,7 @@ class Transformation {
    * Applies the specified video edit action.
    *
    * @param {IVideoEditAction} videoEditAction
-   * @return this TransformableVideo with the added action
+   * @return {this}
    */
   /*
   videoEdit(videoEditAction: VideoEditAction): this {

@@ -2,6 +2,11 @@ import Qualifier from "../../qualifier/Qualifier";
 import QualifierValue from "../../qualifier/QualifierValue";
 import Action from "../Action";
 
+/**
+ * @class CartoonifyEffect
+ * @augments Action
+ * @description Applies a cartoon effect to an image.
+ */
 class CartoonifyEffect extends Action {
   private colorReduction: number | string;
   private cartoonifyStrength: number;
@@ -13,12 +18,26 @@ class CartoonifyEffect extends Action {
     this.effectName = effectName;
   }
 
+  /**
+   * @description The thickness of the lines. (Range: 0 to 100, Server default: 50)
+   * @param {number} cartoonifyLevel The thickness of the lines
+   * @return {this}
+   */
   strength(cartoonifyLevel: number) {
     this.cartoonifyStrength = cartoonifyLevel;
     return this;
   }
 
-  colorReductionLevel(level: number | string) {
+  /**
+   * @@doc
+   * @description
+   * The decrease in the number of colors and corresponding saturation boost of the remaining colors. <br/>
+   * (Range: 0 to 100, Server default: automatically adjusts according to the line_strength value). Higher reduction values result in a less realistic look.<br/>
+   * Set colorReduction to 'bw'' for a black and white cartoon effect.
+   * @param {number | 'bw'} level The level of color to reduce
+   * @return {this}
+   */
+  colorReductionLevel(level: number | 'bw') {
     this.colorReduction = level;
     return this;
   }

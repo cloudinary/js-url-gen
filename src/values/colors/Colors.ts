@@ -1,3 +1,8 @@
+/**
+ * @memberOf Values
+ * @namespace Color
+ */
+
 export const SNOW = 'snow';
 export const SNOW1 = 'snow1';
 export const SNOW2 = 'snow2';
