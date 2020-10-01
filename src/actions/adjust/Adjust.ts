@@ -68,6 +68,7 @@ function improve(): ImproveAction {
  * @description
  * Maps an input color and those similar to the input color to corresponding shades of a specified output color, taking luminosity and chroma into account, in order to recolor an object in a natural way.</br>
  * More highly saturated input colors usually give the best results. It is recommended to avoid input colors approaching white, black, or gray.
+ * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#replace_color_effect | Replace colors example}
  * @param {string} toColor
  * @return {ReplaceColorAction}
  */
