@@ -5,7 +5,7 @@ import QualifierValue from "../../qualifier/QualifierValue";
 /**
  * @class FillLightAction
  * @augments Action
- * Adjusts the fill light and blends the result with the original image.
+ * @description Adjusts the fill light and blends the result with the original image.
  */
 class FillLightAction extends Action {
   private lvl:number;
