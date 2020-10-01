@@ -3,12 +3,12 @@ import Qualifier from "../../../qualifier/Qualifier";
 
 
 class ViesusCorrectAdjustAction extends Action {
-  private _noRedeye : boolean;
+  private _noRedEye : boolean;
   private _skinSaturation: boolean;
   private _skinSaturationLevel: number;
 
-  noRedeye() {
-    this._noRedeye = true;
+  noRedEye() {
+    this._noRedEye = true;
     return this;
   }
 
@@ -27,7 +27,7 @@ class ViesusCorrectAdjustAction extends Action {
   protected prepareQualifiers() {
     let value = 'viesus_correct';
 
-    if (this._noRedeye) {
+    if (this._noRedEye) {
       value += ':no_redeye';
     }
 
