@@ -164,7 +164,7 @@ describe('Tests for Transformation Action -- Adjust', () => {
   it('tests improve', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .adjust(Adjust.improve().mode(ImproveMode.OUTDOOR).blend(0))
+      .adjust(Adjust.improve().mode(ImproveMode.outdoor()).blend(0))
       .setPublicID('sample')
       .toURL();
 
