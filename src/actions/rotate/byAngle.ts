@@ -3,7 +3,7 @@ import {RotateAction} from "./RotateAction";
 /**
  * @memberOf Actions.Rotate
  * @description Rotate an image by the given degrees.
- * @param {number} angle
+ * @param {number} angle Given degrees. (Range: 0 to 360, Default: 0).
  * @return {RotateAction}
  */
 function byAngle(angle: number) :RotateAction {

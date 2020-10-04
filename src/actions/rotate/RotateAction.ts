@@ -6,6 +6,14 @@ const PARAM_KEY = 'a';
 
 import * as RotationModes from '../../values/rotate/Rotate';
 
+/**
+ * @description Rotates or flips an image or video.
+ *
+ * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#rotating_image | Rotating images}
+ * {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#rotating_videos | Rotating videos}
+ * @class RotateAction
+ * @augments {Action}
+ */
 class RotateAction extends Action implements IAction {
   constructor(angle?: number) {
     super();
@@ -13,8 +21,12 @@ class RotateAction extends Action implements IAction {
   }
 
   /**
+   * @@doc
+   * @description Rotate an image by using a rotationMode
    * @param rotationMode
-   * @return {RotateAction}
+   * For a list of supported rotation modes see {@link Values.rotationModeValues| types of rotation modes} for
+   * possible values
+   * @return {this}
    */
   mode(rotationMode: string):this {
     switch (rotationMode) {
@@ -32,8 +44,9 @@ class RotateAction extends Action implements IAction {
   }
 
   /**
+   * @description Rotate an image by the given degrees.
    * @param {number} degrees rotation in degrees e.g 90, 45, 33
-   * @return {RotateAction}
+   * @return {this}
    */
   angle(degrees: number): this {
     return this.addValueToQualifier(PARAM_KEY, degrees);
