@@ -239,7 +239,7 @@ class Transformation {
 
   /**
    * @description Adds a flag as a separate action.
-   * @param flagParam
+   * @param {Values.Flag} flagParam
    */
   addFlag(flagParam: Flag): this {
     const action = new Action();

@@ -34,8 +34,8 @@ class Action implements IAction {
   }
 
   /**
-   * @description Adds a flag as a separate action.
-   * @param {Flag} flag
+   * @description Adds a flag to the current action
+   * @param {Values.Flag} flag
    * @return {this}
    */
   addFlag(flag: Flag): this {
