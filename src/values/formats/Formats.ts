@@ -1,3 +1,24 @@
+/**
+ * @memberOf Values
+ * @typedef formatTypeValues
+ * @property {string} PNG Image format png.
+ * @property {string} GIF Image format gif.
+ * @property {string} AUTO Image format auto.
+ * @property {string} JPG Image format jpg.
+ * @property {string} BMP Image format bmp.
+ * @property {string} ICO Image format ico.
+ * @property {string} PDF Image format pdf.
+ * @property {string} TIFF Image format tiff.
+ * @property {string} EPS Image format eps.
+ * @property {string} JPC Image format jpc.
+ * @property {string} JP2 Image format jp2.
+ * @property {string} PSD Image format psd.
+ * @property {string} WEBP Image format webp.
+ * @property {string} WDP Image format wdp.
+ * @property {string} AI Image format ai.
+ * @property {string} FLIF Image format flif.
+ * @property {string} HEIC Image format heic.
+ */
 export const PNG = 'png';
 export const GIF ='gif';
 export const AUTO = 'auto';
