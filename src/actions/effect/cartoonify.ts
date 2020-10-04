@@ -23,7 +23,7 @@ class CartoonifyEffect extends Action {
    * @param {number} cartoonifyLevel The thickness of the lines
    * @return {this}
    */
-  strength(cartoonifyLevel: number) {
+  strength(cartoonifyLevel: number): this {
     this.cartoonifyStrength = cartoonifyLevel;
     return this;
   }
@@ -37,12 +37,12 @@ class CartoonifyEffect extends Action {
    * @param {number | 'bw'} level The level of color to reduce
    * @return {this}
    */
-  colorReductionLevel(level: number | 'bw') {
+  colorReductionLevel(level: number | 'bw'): this {
     this.colorReduction = level;
     return this;
   }
 
-  protected prepareQualifiers() {
+  protected prepareQualifiers(): void {
     this.addQualifier(new Qualifier('e', new QualifierValue([this.effectName, this.cartoonifyStrength, this.colorReduction])));
     return;
   }

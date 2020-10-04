@@ -5,7 +5,6 @@ import Qualifier from "../../qualifier/Qualifier";
 /**
  * @class AssistColorBlindEffectAction
  * @augments Action
- *
  * @description Applies stripes to the image to help people with common color-blind conditions to differentiate between colors that are similar for them.
  * You can replace colors using the xray()
  */

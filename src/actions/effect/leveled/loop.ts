@@ -1,9 +1,9 @@
 import LeveledEffectAction from "../EffectActions/LeveledEffectAction";
 
 /**
- * @description Delivers a video or animated GIF that contains additional loops of the video/GIF.
  * @class LoopEffectAction
  * @augments LeveledEffectAction
+ * @description Delivers a video or animated GIF that contains additional loops of the video/GIF.
  */
 class LoopEffectAction extends LeveledEffectAction {
   iterations(value: number | string): this {
