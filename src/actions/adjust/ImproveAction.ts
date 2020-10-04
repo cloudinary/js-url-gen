@@ -16,7 +16,7 @@ class ImproveAction extends Action {
   /**
    *
    * @description The improve mode.
-   * @param {'outdoor' | 'indoor' | string} value
+   * @param {Values.ImproveMode | string} value
    */
   mode(value:'outdoor' | 'indoor' | string): this {
     this.modeValue = value;
@@ -24,7 +24,6 @@ class ImproveAction extends Action {
   }
 
   /**
-   *
    * @description How much to blend the improved result with the original image, where 0 means only use the original and 100 means only use the improved result. (Range: 0 to 100, Server default: 100)
    * @param {number} value
    */

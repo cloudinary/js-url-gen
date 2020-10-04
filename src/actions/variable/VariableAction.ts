@@ -2,6 +2,11 @@ import Action from "../Action";
 import QualifierValue from "../../qualifier/QualifierValue";
 import Qualifier from "../../qualifier/Qualifier";
 
+/**
+ * @description Defines an new user variable.
+ * @class VariableAction
+ * @augments {Action}
+ */
 class VariableAction extends Action {
   private isFloat = false;
   private isNumber = false;
@@ -13,11 +18,21 @@ class VariableAction extends Action {
     this.name = name;
   }
 
+  /**
+   * @@doc
+   * @description Converts the returned value to be of type float, so it can be used in places that require float
+   * values
+   */
   convertToFloat():this{
     this.isFloat = true;
     return this;
   }
 
+  /**
+   * @@doc
+   * @description Converts the returned value to be of type number, so it can be used in places that require number
+   * values
+   */
   convertToNumber(): this{
     this.isNumber = true;
     return this;

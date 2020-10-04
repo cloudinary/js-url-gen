@@ -1,6 +1,13 @@
 import Action from "../Action";
 import Qualifier from "../../qualifier/Qualifier";
 
+/**
+ * @class AudioCodecAction
+ * @augments Action
+ * @description Controls the audio codec or removes the audio channel.
+ *
+ * <b>Learn more</b>: {@link https://cloudinary.com/documentation/audio_transformations#audio_frequency_control | Audio codec settings}
+ */
 class AudioCodecAction extends Action {
   constructor(codec: string) {
     super();

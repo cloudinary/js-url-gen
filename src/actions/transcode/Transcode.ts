@@ -9,6 +9,7 @@ import ToAnimatedAction from "./ToAnimatedAction";
 
 /**
  * Defines how to transcode a video to another format
+ *
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#transcoding_video_to_other_formats | Transcoding video to other formats}
  * @memberOf Actions
  * @namespace Transcode
@@ -17,6 +18,7 @@ import ToAnimatedAction from "./ToAnimatedAction";
 /**
  * @memberOf Actions.Transcode
  * @description Sets the audio sample frequency.
+ *
  * <b>Learn more</b>: {@link https://cloudinary.com/documentation/audio_transformations#audio_frequency_control | Audio frequency control}
  * @param {string|number} freq The audio frequency.
  * @return {AudioFrequencyAction}
@@ -36,16 +38,15 @@ function audioCodec(codec: string): AudioCodecAction{
 /**
  * @memberOf Actions.Transcode
  * @description Controls the video bitrate.
- *
  * Supported codecs: h264, h265 (MPEG-4); vp8, vp9 (WebM).
+ *
+ * <b>Learn more:</b>
+ * {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#bitrate_control | Bitrate control}
  *
  * @param {string|number}  bitRate The number of bits used to represent the video data per second. By default the video
  *                             uses a variable bitrate (VBR), with this value indicating the maximum bitrate.
  *                             The value can be an integer e.g. 120000, or a string supporting "k" and "m"
  *                             (kilobits and megabits respectively) e.g. 250k or 2m.
- *
- * <b>Learn more:</b>
- * {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#bitrate_control | Bitrate control}
  * @return {BitRateAction}
  */
 function bitRate(bitRate: string|number): BitRateAction {
@@ -54,7 +55,7 @@ function bitRate(bitRate: string|number): BitRateAction {
 
 /**
  * @memberOf Actions.Transcode
- * @param from frame rate
+ * @param {number} from frame rate
  * @return {FPSAction}
  */
 function fps(from: number): FPSAction {
@@ -65,8 +66,8 @@ function fps(from: number): FPSAction {
  * @memberOf Actions.Transcode
  * @description Controls the range of acceptable FPS (Frames Per Second) to ensure that video (even when optimized) is
  * delivered with an expected FPS level (helps with sync to audio).
- * @param from frame rate
- * @param to frame rate
+ * @param {number} from frame rate
+ * @param {number} to frame rate
  * @return {FPSRangeAction}
  */
 function fpsRange(from: number, to?: number): FPSRangeAction {
@@ -89,7 +90,6 @@ function keyframeInterval(interval: number): KeyframeIntervalsAction {
  * The value can be one of the pre-defined streaming profiles or a custom-defined one.
  * You can use the streaming profiles methods of StreamingProfilesTrait to get a list of the available streaming
  * profiles or to create new custom profiles.
- *
  * @param {string} profile The streaming profile.
  * @return {StreamingProfileAction}
  */

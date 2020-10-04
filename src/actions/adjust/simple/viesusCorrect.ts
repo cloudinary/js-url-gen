@@ -7,15 +7,15 @@ import Qualifier from "../../../qualifier/Qualifier";
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/viesus_automatic_image_enhancement_addon | Viesus Automatic Image Enhancement.}
  */
 class ViesusCorrectAdjustAction extends Action {
-  private _noRedeye : boolean;
+  private _noRedEye : boolean;
   private _skinSaturation: boolean;
   private _skinSaturationLevel: number;
 
   /**
    * @description Removes red eyes in the image.
    */
-  noRedeye() {
-    this._noRedeye = true;
+  noRedEye() {
+    this._noRedEye = true;
     return this;
   }
 
@@ -34,7 +34,7 @@ class ViesusCorrectAdjustAction extends Action {
   protected prepareQualifiers() {
     let value = 'viesus_correct';
 
-    if (this._noRedeye) {
+    if (this._noRedEye) {
       value += ':no_redeye';
     }
 

@@ -1,5 +1,11 @@
 import VariableAction from "./VariableAction";
 
+/**
+ * @class SetAction
+ * @augments Action
+ * @@doc
+ * @description A class that sets variable from metadata.
+ */
 class SetFromMetadataAction extends VariableAction {
   constructor(name: string, value: string) {
     // Required due to https://github.com/microsoft/TypeScript/issues/13029

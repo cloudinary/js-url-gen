@@ -1,6 +1,15 @@
 import Action from "../Action";
 import Qualifier from "../../qualifier/Qualifier";
 
+/**
+ * @class FPSAction
+ * @augments Action
+ * @description Controls the FPS (Frames Per Second) to ensure that video (even when optimized)
+ * is delivered with
+ * an expected FPS level (helps with sync to audio).
+ *
+ * <b>Learn more</b>: {@link https://cloudinary.com/documentation/video_transformation_reference#video_settings | Video settings}
+ */
 class FPSAction extends Action {
 
   constructor(from: number) {
