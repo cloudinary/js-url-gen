@@ -192,6 +192,6 @@ describe('Tests for Transformation Action -- Adjust', () => {
 
     expect(Adjust.viesusCorrect()
       .skinSaturation(10)
-      .toString()).toBe('e_viesus_correct:skin_saturation:10');
+      .toString()).toBe('e_viesus_correct:skin_saturation_10');
   });
 });
