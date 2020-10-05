@@ -11,6 +11,11 @@ import Qualifier from "../../qualifier/Qualifier";
 class AssistColorBlindEffectAction extends Action {
   private hasStripes:boolean;
 
+  constructor() {
+    super();
+    this.addQualifier(new Qualifier('e', new QualifierValue('assist_colorblind')));
+  }
+
   /**
    * @@doc
    * @description replace colors of the stripes
