@@ -19,6 +19,7 @@ class DeliveryAction extends Action implements IAction {
    * @@doc
    * @description Adds lossy flag-
    * Automatically use lossy compression when delivering animated GIF files.
+   * @return {this}
    */
   lossy(): this{
     this.addFlag(Flag.lossy());
@@ -29,6 +30,7 @@ class DeliveryAction extends Action implements IAction {
    * @@doc
    * @description Adds progressive flag-
    * Uses progressive compression when delivering JPG file format.
+   * @return {this}
    */
   progressive(): this{
     this.addFlag(Flag.progressive());
