@@ -11,7 +11,7 @@ import cartoonify from "../../../src/actions/effect/cartoonify";
 import {HALFTONE_4X4_ORTHOGONAL} from "../../../src/values/dither/Dither";
 import {SYMMETRIC_PAD} from "../../../src/values/gradientFade/GradientFade";
 import {BLUE} from "../../../src/values/colors/Colors";
-import {ROD_MONOCHROMACY} from "../../../src/values/simulateColorblind/SimulateColorblind";
+import {ROD_MONOCHROMACY} from "../../../src/values/simulateColorBlind/SimulateColorBlind";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -372,12 +372,12 @@ describe('Tests for Transformation Action -- Effect', () => {
     ).toBe('co_blue,e_outline:fill:10:25');
   });
 
-  it('Test simulateColorblind', () => {
-    expect(Effect.simulateColorblind()
+  it('Test simulateColorBlind', () => {
+    expect(Effect.simulateColorBlind()
       .toString()
     ).toBe('e_simulate_colorblind');
 
-    expect(Effect.simulateColorblind()
+    expect(Effect.simulateColorBlind()
       .condition(ROD_MONOCHROMACY)
       .toString()
     ).toBe('e_simulate_colorblind:rod_monochromacy');
