@@ -2,19 +2,18 @@ import '../../interfaces/IAction';
 import RoundCornersAction from "./RoundCornersAction";
 
 /**
- * @memberOf Actions.RoundCorners
  * @description Rounds the specified corners of an image or a video by specifying 1-4 pixel values as follows:
  *
- * **Learn more**:
- * <a href=https://cloudinary.com/documentation/image_transformations#rounding_corners_and_creating_circular_images
- * target="_blank">Rounded images</a> |
- * <a href=
- * https://cloudinary.com/documentation/video_manipulation_and_delivery#rounding_corners_and_creating_circular_videos
- * target="_blank">Rounded videos</a>
+ * * 1 value: All four corners are rounded equally according to the specified value.
+ * * 2 values: 1st value => top-left & bottom-right. 2nd value => top-right & bottom-left.
+ * * 3 values: 1st value => top-left. 2nd value => top-right & bottom-left. 3rd value => bottom-right.
+ * * 4 values: Each corner specified separately, in clockwise order, starting with top-left.
+ *
  * @param {number} a
- * @param {number} [b];
- * @param {number} [c];
- * @param {number} [d];
+ * @param {number} b
+ * @param {number} c
+ * @param {number} d
+ * @memberOf Actions.RoundCorners
  * @return {RoundCornersAction}
  */
 function byRadius(a:number, b?:number, c?:number, d?:number):RoundCornersAction {
