@@ -29,6 +29,7 @@ class ReplaceColorAction extends Action {
    *                                  representing the span of colors that should be replaced with a correspondingly adjusted version of the target output color. </br>
    *                                  Larger values result in replacing more colors within the image. </br>
    *                                  The more saturated the original input color, the more a change in value will impact the result (Server default: 50).
+   * @return {this}
    */
   tolerance(toleranceLevel:number): this {
     this.toleranceLevel = toleranceLevel;
@@ -38,6 +39,7 @@ class ReplaceColorAction extends Action {
   /**
    * @description Sets the base input color to map.
    * @param {string} baseColor - The HTML name or RGB/A hex code of the base input color to map (Server default: the most prominent high-saturation color in the image).
+   * @return {this}
    */
   fromColor(baseColor:string): this {
     this.baseColor = baseColor;
