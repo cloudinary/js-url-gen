@@ -1,3 +1,16 @@
+/**
+ * @memberOf Values
+ * @typedef qualityTypeValues
+ * @property {string} AUTO Quality auto.
+ * @property {string} BEST Quality best.
+ * @property {string} ECO Quality eco.
+ * @property {string} GOOD Quality good.
+ * @property {string} JPEGMINI Quality jpegmini.
+ * @property {string} LOW Quality low.
+ * @property {string} JPEGMINI_HIGH Quality jpegmini high.
+ * @property {string} JPEGMINI_MEDIUM Quality jpegmini medium.
+ * @property {string} JPEGMINI_BEST Quality jpegmini best.
+ */
 export const AUTO = 'auto';
 export const BEST = 'auto:best';
 export const ECO = 'auto:eco';

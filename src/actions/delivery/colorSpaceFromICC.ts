@@ -2,6 +2,12 @@ import Action from "../Action";
 import Qualifier from "../../qualifier/Qualifier";
 import QualifierValue from "../../qualifier/QualifierValue";
 
+/**
+ * @@doc
+ * @description A class for colorspace from ICC.
+ * @class ColorSpaceFromICC
+ * @augments Action
+ */
 class ColorSpaceFromICC extends Action {
   constructor(publicId: string) {
     super();
@@ -15,6 +21,7 @@ class ColorSpaceFromICC extends Action {
  * @memberOf Actions.Delivery
  * @param {string} publicId The public ID (including the file extension) of the ICC profile that defines the
  * color space.
+ * @return {ColorSpaceFromICC}
  */
 function colorSpaceFromICC(publicId:string) :ColorSpaceFromICC {
   return new ColorSpaceFromICC(publicId);
