@@ -37,11 +37,10 @@ class ViesusCorrectAdjustAction extends Action {
     if (this._noRedEye) {
       value += ':no_redeye';
     }
-
     if (this._skinSaturation) {
       value += ':skin_saturation';
       if (typeof this._skinSaturationLevel !== 'undefined') {
-        value += `:${this._skinSaturationLevel}`;
+        value += `_${this._skinSaturationLevel}`;
       }
     }
 
