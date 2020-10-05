@@ -4,25 +4,26 @@ import FillLightAction from "./FillLightAction";
 import RecolorAction from "./RecolorAction";
 import ImproveAction from "./ImproveAction";
 import ReplaceColorAction from "./ReplaceColorAction";
-import brightness from "./leveled/brightness";
+import brightness from "./withLevel/brightness";
 import viesusCorrect from "./simple/viesusCorrect";
-import red from "./leveled/red";
-import sharpen from "./leveled/sharpen";
-import saturation from "./leveled/saturation";
-import contrast from "./leveled/contrast";
-import gamma from "./leveled/gamma";
-import blue from "./leveled/blue";
-import brightnessHSB from "./leveled/brightnessHSB";
-import opacityThreshold from "./leveled/opacityThreshold";
-import autoColor from "./leveled/autoColor";
-import autoBrightness from "./leveled/autoBrightness";
-import hue from "./leveled/hue";
-import green from "./leveled/green";
-import unsharpMask from "./leveled/unsharpenMask";
-import vibrance from "./leveled/vibrance";
-import autoContrast from "./leveled/autoContrast";
+import red from "./withLevel/red";
+import sharpen from "./withStrength/sharpen";
+import saturation from "./withLevel/saturation";
+import contrast from "./withLevel/contrast";
+import gamma from "./withLevel/gamma";
+import blue from "./withLevel/blue";
+import brightnessHSB from "./withLevel/brightnessHSB";
+import opacityThreshold from "./withLevel/opacityThreshold";
+import autoColor from "./withBlendPercentage/autoColor";
+import autoBrightness from "./withBlendPercentage/autoBrightness";
+import hue from "./withLevel/hue";
+import green from "./withLevel/green";
+import unsharpMask from "./withStrength/unsharpenMask";
+import vibrance from "./withStrength/vibrance";
+import autoContrast from "./withBlendPercentage/autoContrast";
 import By3dLutAction from "./By3dLut";
 import dither from "../effect/dither";
+import OpacityAdjustAction from "./Opacity";
 
 
 /**
@@ -35,14 +36,13 @@ import dither from "../effect/dither";
 
 
 /**
- * @memberOf Actions.Adjust
  * @description Adjusts the opacity of the image and makes it semi-transparent.
+ * @memberOf Actions.Adjust
  * @param {number} level
- * @return {Action}
+ * @return OpacityAdjustAction
  */
-function opacity(level:number): Action {
-  // opacity doesn't deserve its own action, it is not reused anywhere
-  return new Action().addQualifier(new Qualifier('o').addValue(level));
+function opacity(level:number): OpacityAdjustAction {
+  return new OpacityAdjustAction(level);
 }
 
 
