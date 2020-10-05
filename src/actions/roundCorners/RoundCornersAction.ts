@@ -3,11 +3,11 @@ import Qualifier from "../../qualifier/Qualifier";
 import QualifierValue from "../../qualifier/QualifierValue";
 
 /**
- * @private
- * @implements IAction
+ * @description A class to round one or more corners of an image or video.
+ * @class RoundCornersAction
+ * @augments {Action}
  */
 class RoundCornersAction extends Action {
-  private qualifier: Qualifier;
   constructor() {
     super();
   }
@@ -32,7 +32,8 @@ class RoundCornersAction extends Action {
   }
 
   /**
-   * @return {RoundCornersAction}
+   * @@doc
+   * @description Generates an asset with a circular crop using the 'max' radius value.
    */
   max(): this {
     return this.addQualifier(new Qualifier('r', 'max'));

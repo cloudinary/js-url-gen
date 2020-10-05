@@ -2,19 +2,17 @@ import ImageSource from '../../values/sources/ImageSource';
 import {imageLayer, Layer} from "../overlay/Overlay";
 import Qualifier from "../../qualifier/Qualifier";
 import QualifierValue from "../../qualifier/QualifierValue";
-import {IAction} from "../../interfaces/IAction";
 import Action from "../Action";
 
 
 /**
- * @class StyleTransfer
- * @implements IAction
  * @description - This Action, while belonging to Effect, acts as a modified overlay.
  *                The class implements the Builder pattern, where strength() and preserveColor()
  *                are applied to the instance, and toString() is responsible to combining them into the right result.
- *
+ * @class StyleTransfer
+ * @augments Action
  */
-class StyleTransfer extends Action implements IAction {
+class StyleTransfer extends Action {
   // This action is actually a layer.
   private imgLayer: Layer;
   // This action is built from effectStrength and preserve
@@ -25,8 +23,8 @@ class StyleTransfer extends Action implements IAction {
   /**
    * The Image Source used to create the style transfer,
    * Use the Image Source builder to quickly create a source:
-   * Import: `import {image} from '@cloudinary/base/qualifiers/sources';`
-   * Create: `image('dog')`
+   * </br>Import: {@link Values.Sources|import * as Sources from '@cloudinary/base/qualifiers/sources';}
+   * </br>Create: `Sources.image('dog')`
    * @param {ImageSource} imageSource
    */
   constructor(imageSource: ImageSource) {
@@ -38,6 +36,7 @@ class StyleTransfer extends Action implements IAction {
   /**
    * Determines the strength in which the styleTransfer is applied.
    * @param {number} [effectStrength] - The strength level, 1-100, default: 100
+   * @return {this}
    */
   strength(effectStrength:number = null):this {
     this.effectStrength = effectStrength;
@@ -48,6 +47,8 @@ class StyleTransfer extends Action implements IAction {
   /**
    * More aggressively preserves the colors of the the target photo,
    * Can be used with `strength()` to enhance this behaviour
+   * @param {boolean} bool
+   * @return {this}
    */
   preserveColor(bool = true):this {
     this.preserve = bool;
@@ -57,6 +58,7 @@ class StyleTransfer extends Action implements IAction {
   /**
    * The `build` phase of the Action, used internally to concat all the options received into a single string.
    * The result of this method is the toString() of the imageLayer provided in the constructor.
+   * @return {string}
    */
   toString():string {
     const NAME = 'style_transfer';

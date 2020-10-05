@@ -2,10 +2,10 @@ import {GravityParam} from "../../../values/gravity/Gravity";
 import ResizeSimpleAction from "./ResizeSimpleAction";
 
 /**
- * @class ScaleAction
- * @augments ResizeSimpleAction
  * @@doc
  * @description A class used to define resize scale.
+ * @class ScaleAction
+ * @augments ResizeSimpleAction
  */
 class ScaleAction extends ResizeSimpleAction {
   constructor(width: number|string, height: number|string) {
@@ -24,10 +24,10 @@ class ScaleAction extends ResizeSimpleAction {
 }
 
 /**
- * @memberOf Actions.Resize
  * @description
  * Change the size of the image exactly to the given width and height without necessarily retaining the original aspect ratio:<br/>
  * all original image parts are visible but might be stretched or shrunk.
+ * @memberOf Actions.Resize
  * @param {number|string} width The required width of a transformed asset.
  * @param {number|string} height The required height of a transformed asset.
  * @return {ScaleAction}

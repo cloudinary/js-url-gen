@@ -1,6 +1,5 @@
 import EffectActionWithLevel from "../EffectActions/EffectActionWithLevel";
 
-
 /**
  * @description Applies a blurring filter to the asset.
  * @memberOf Actions.Effect

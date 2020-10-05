@@ -1,10 +1,10 @@
 import ResizeAdvancedAction from "./ResizeAdvancedAction";
 
 /**
- * @class FillAction
- * @augments ResizeAdvancedAction
  * @@doc
  * @description A class used to define resize fill.
+ * @class FillAction
+ * @augments ResizeAdvancedAction
  */
 class FillAction extends ResizeAdvancedAction {
   constructor(width?: number|string, height?: number|string) {
@@ -15,11 +15,11 @@ class FillAction extends ResizeAdvancedAction {
 }
 
 /**
- * @memberOf Actions.Resize
  * @description
  * Creates an image with the exact given width and height without distorting the image.<br/>
  * This option first scales up or down as much as needed to at least fill both of the given dimensions.<br/><br/>
  * If the requested aspect ratio is different than the original, cropping will occur on the dimension that exceeds the requested size after scaling.
+ * @memberOf Actions.Resize
  * @param {number|string} width The required width of a transformed asset.
  * @param {number|string} height The required height of a transformed asset.
  * @return {FillAction}

@@ -1,6 +1,6 @@
 /**
  * @memberOf Values
- * @typedef simulateColorblindValues
+ * @typedef simulateColorBlindValues
  * @property {string} DEUTERANOPIA
  * @property {string} PROTANOPIA
  * @property {string} TRITANOPIA

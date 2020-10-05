@@ -5,10 +5,10 @@ import {Flag} from "../../../values/flag/Flag";
 import {toFloatAsString} from "../../../utils/toFloatAsString";
 
 /**
- * @class ResizeSimpleAction
- * @augments Action
  * @@doc
  * @description A class used to define simple resize with common methods: width and height
+ * @class ResizeSimpleAction
+ * @augments Action
  */
 class ResizeSimpleAction extends Action {
   /**

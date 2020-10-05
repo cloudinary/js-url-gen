@@ -1,3 +1,10 @@
+/**
+ * @description Values for applying an ordered dither filter to the image.
+ * @namespace Dither
+ * @memberOf Values
+ */
+
+
 export const THRESHOLD_1X1_NON_DITHER = 0;
 export const CHECKERBOARD_2X1_DITHER = 1;
 export const ORDERED_2X2_DISPERSED = 2;

@@ -1,8 +1,8 @@
 import ResizeSimpleAction from "./ResizeSimpleAction";
 
 /**
- * @memberOf Actions.Resize
  * @description Extracts a region of the given width and height out of the original image.
+ * @memberOf Actions.Resize
  * @param {number|string} width The required width of a transformed asset.
  * @param {number|string} height The required height of a transformed asset.
  * @return {ResizeSimpleAction}

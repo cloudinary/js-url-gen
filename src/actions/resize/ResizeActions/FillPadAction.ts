@@ -1,10 +1,10 @@
 import ResizeSimpleAction from "./ResizeSimpleAction";
 
 /**
- * @class FillPadAction
- * @augments ResizeSimpleAction
  * @@doc
  * @description A class used to define resize fillPad.
+ * @class FillPadAction
+ * @augments ResizeSimpleAction
  */
 class FillPadAction extends ResizeSimpleAction {
   constructor(width?: number|string, height?: number|string) {

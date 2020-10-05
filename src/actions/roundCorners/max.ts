@@ -3,8 +3,8 @@ import RoundCornersAction from "./RoundCornersAction";
 
 
 /**
- * @memberOf Actions.RoundCorners
  * @description Generates an asset with a circular crop using the 'max' radius value.
+ * @memberOf Actions.RoundCorners
  * @return {RoundCornersAction}
  */
 function max():RoundCornersAction {
