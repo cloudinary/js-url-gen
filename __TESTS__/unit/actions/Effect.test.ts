@@ -342,6 +342,10 @@ describe('Tests for Transformation Action -- Effect', () => {
 
   it('Test assistColorBlind', () => {
     expect(Effect.assistColorBlind()
+      .toString()
+    ).toBe('e_assist_colorblind');
+
+    expect(Effect.assistColorBlind()
       .xray()
       .toString()
     ).toBe('e_assist_colorblind:xray');

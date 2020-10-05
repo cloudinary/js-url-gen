@@ -1,6 +1,5 @@
 import EffectActionWithLevel from "../EffectActions/EffectActionWithLevel";
 
-
 /**
  * @description Changes the color scheme of the image to sepia.
  * @memberOf Actions.Effect

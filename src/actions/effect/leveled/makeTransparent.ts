@@ -1,8 +1,15 @@
 import LeveledEffectAction from "../EffectActions/LeveledEffectAction";
 
-
-
+/**
+ * @class MakeTransparentEffectAction
+ * @augments LeveledEffectAction
+ * @description Makes the background of the image transparent (or solid white for formats that do not support transparency).
+ */
 class MakeTransparentEffectAction extends LeveledEffectAction {
+  /**
+   * @description tolerance The tolerance used to accommodate variance in the background color. (Range: 0 to 100, Server default: 10)
+   * @param {number | string} value
+   */
   tolerance(value: number | string): this {
     return this.setLevel(value);
   }

@@ -2,7 +2,11 @@ import Action from "../../Action";
 import Qualifier from "../../../qualifier/Qualifier";
 import QualifierValue from "../../../qualifier/QualifierValue";
 
-
+/**
+ * @class SimpleEffectAction
+ * @augments Action
+ * @description A class that defines a simple effect of the type e_{effectName}
+ */
 class SimpleEffectAction extends Action {
   constructor(effectType?: string, level?: number|string) {
     super();

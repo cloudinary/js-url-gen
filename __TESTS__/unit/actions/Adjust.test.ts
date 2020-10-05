@@ -20,13 +20,13 @@ describe('Tests for Transformation Action -- Adjust', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
       .adjust(Adjust.autoBrightness())
-      .adjust(Adjust.autoBrightness().level(50))
+      .adjust(Adjust.autoBrightness().blendPercentage(50))
       .adjust(Adjust.autoBrightness(100))
       .adjust(Adjust.autoColor())
-      .adjust(Adjust.autoColor().level(50))
+      .adjust(Adjust.autoColor().blendPercentage(50))
       .adjust(Adjust.autoColor(100))
       .adjust(Adjust.autoContrast())
-      .adjust(Adjust.autoContrast().level(50))
+      .adjust(Adjust.autoContrast().blendPercentage(50))
       .adjust(Adjust.autoContrast(100))
       .adjust(Adjust.red())
       .adjust(Adjust.red().level(50))
@@ -59,11 +59,15 @@ describe('Tests for Transformation Action -- Adjust', () => {
       .adjust(Adjust.saturation().level(50))
       .adjust(Adjust.saturation(100))
       .adjust(Adjust.sharpen())
-      .adjust(Adjust.sharpen().level(50))
+      .adjust(Adjust.sharpen().strength(50))
       .adjust(Adjust.sharpen(100))
       .adjust(Adjust.unsharpMask())
-      .adjust(Adjust.unsharpMask().level(50))
+      .adjust(Adjust.unsharpMask().strength(50))
       .adjust(Adjust.unsharpMask(100))
+      .adjust(Adjust.vibrance(100))
+      .adjust(Adjust.vibrance().strength(100))
+      .adjust(Adjust.opacity(100))
+
       .setPublicID('sample')
       .toURL();
 
@@ -112,7 +116,10 @@ describe('Tests for Transformation Action -- Adjust', () => {
       'e_sharpen:100',
       'e_unsharp_mask',
       'e_unsharp_mask:50',
-      'e_unsharp_mask:100'
+      'e_unsharp_mask:100',
+      'e_vibrance:100',
+      'e_vibrance:100',
+      'o_100'
     ].join('/');
 
     expect(url).toBe(`http://res.cloudinary.com/demo/image/upload/${expectedToContain}/sample`);
@@ -183,7 +190,7 @@ describe('Tests for Transformation Action -- Adjust', () => {
       .toString()).toBe('e_viesus_correct');
 
     expect(Adjust.viesusCorrect()
-      .noRedeye()
+      .noRedEye()
       .toString()).toBe('e_viesus_correct:no_redeye');
 
     expect(Adjust.viesusCorrect()
@@ -192,6 +199,6 @@ describe('Tests for Transformation Action -- Adjust', () => {
 
     expect(Adjust.viesusCorrect()
       .skinSaturation(10)
-      .toString()).toBe('e_viesus_correct:skin_saturation:10');
+      .toString()).toBe('e_viesus_correct:skin_saturation_10');
   });
 });
