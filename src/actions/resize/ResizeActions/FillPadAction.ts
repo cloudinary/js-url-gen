@@ -1,5 +1,3 @@
-import Qualifier from "../../../qualifier/Qualifier";
-import {toFloatAsString} from "../../../utils/toFloatAsString";
 import ResizeSimpleAction from "./ResizeSimpleAction";
 
 class FillPadAction extends ResizeSimpleAction {

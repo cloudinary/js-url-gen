@@ -33,7 +33,7 @@ const CONDITIONAL_OPERATORS: Record<string, string> = {
  * @param {string} expression The expression to normalize.
  * @return {string} The normalized expression.
  */
-function normalizeExpression(expression:number | string | string[] | number[]) {
+function normalizeExpression(expression:number | string | string[] | number[]):string {
   const resultExpression = expression
     .toString()
     .split(" ")

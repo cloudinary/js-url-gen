@@ -35,7 +35,7 @@ class CustomFunctionAction extends Action {
     return this;
   }
 
-  protected prepareQualifiers() {
+  protected prepareQualifiers():this {
     this.encodedFn = this.fn;
     if (this.mode === 'remote') {
       this.encodedFn = this.encodeCustomFunctionString(this.fn);

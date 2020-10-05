@@ -186,7 +186,7 @@ class Transformation {
    * @description Applies a filter or an effect on an asset.
    * @param {SimpleEffectAction} effectAction
    */
-  effect(effectAction: Action): this {
+  effect(effectAction: SimpleEffectAction): this {
     return this.addAction(effectAction);
   }
 
@@ -250,7 +250,7 @@ class Transformation {
   /**
    * @description Inject a custom function into the image transformation pipeline.
    */
-  customFunction(customFunction: CustomFunctionAction) {
+  customFunction(customFunction: CustomFunctionAction): this {
     return this.addAction(customFunction);
   }
 

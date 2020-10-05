@@ -1,6 +1,4 @@
 import ResizeSimpleAction from "./ResizeSimpleAction";
-import Qualifier from "../../../qualifier/Qualifier";
-import {toFloatAsString} from "../../../utils/toFloatAsString";
 
 
 class LimitPadAction extends ResizeSimpleAction {
