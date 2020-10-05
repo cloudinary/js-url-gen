@@ -1,6 +1,11 @@
 import Action from "../Action";
 import Qualifier from "../../qualifier/Qualifier";
 
+/**
+ * @description Simulates the way an image would appear to someone with the specified color blind condition
+ * @class SimulateColorblindEffectAction
+ * @augments Action
+ */
 class SimulateColorblindEffectAction extends Action {
   constructor() {
     super();
@@ -15,6 +20,12 @@ class SimulateColorblindEffectAction extends Action {
     return this;
   }
 
+  /**
+   * @@doc
+   * @description Sets the condition of the colorblind you wish to simulate
+   * @param {Values.simulateColorblindValues | string} cond
+   * @return {this}
+   */
   condition(cond: string) {
     return this.setQualifier(cond);
   }

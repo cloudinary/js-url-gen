@@ -3,6 +3,11 @@ import QualifierValue from "../../qualifier/QualifierValue";
 import Qualifier from "../../qualifier/Qualifier";
 import {prepareColor} from "../../utils/prepareColor";
 
+/**
+ * @description Adds an outline to a transparent image. For examples, see the Image Transformations guide.
+ * @class Outline
+ * @augments Action
+ */
 class Outline extends Action {
   private _mode: string;
   private _width: number | string;
@@ -17,6 +22,7 @@ class Outline extends Action {
    * How to apply the outline effect which can be one of the following values:
    * inner, inner_fill, outer, fill.
    * @param {string} mode  The type of outline effect. Use the constants defined in Outline.
+   * @return {this}
    */
   mode(mode?: string): this{
     this._mode = mode;
@@ -26,6 +32,7 @@ class Outline extends Action {
   /**
    * The thickness of the outline in pixels. (Range: 1 to 100, Server default: 5)
    * @param {number} width
+   * @return {this}
    */
   width(width?:number | string) {
     this._width = width;
@@ -36,7 +43,8 @@ class Outline extends Action {
    * @description
    * The level of blur of the outline.
    * Range: 0 to 2000, Server default: 0
-   * @param lvl
+   * @param {number | string} lvl
+   * @return {this}
    */
   blurLevel(lvl?: number | string) {
     this._blurLevel = lvl;
@@ -44,8 +52,8 @@ class Outline extends Action {
   }
 
   /**
-   * @param {string} color One of the SDK Color values, string, or rgba: '#fff'
-   * A list of SDK Colors can be found in @cloudinary/base/values/color
+   * @param {string | Values.Color} color One of the SDK Color values, string, or rgba: '#fff'
+   * @return {this}
    */
   color(color:string) {
     return this.addQualifier(new Qualifier('co', prepareColor(color)));

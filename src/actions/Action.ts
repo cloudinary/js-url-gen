@@ -16,6 +16,7 @@ class Action implements IAction {
 
   /**
    * @description Calls toString() on all child qualifiers (implicitly by using .join())
+   * @return {string}
    */
   toString(): string {
     this.prepareQualifiers();
@@ -25,6 +26,7 @@ class Action implements IAction {
   /**
    * @description Adds the parameter to the action.
    * @param {Qualifier} qualifier
+   * @return {this}
    */
   addQualifier(qualifier: Qualifier): this {
     this.qualifiers.set(qualifier.key, qualifier);
@@ -34,6 +36,7 @@ class Action implements IAction {
   /**
    * @description Adds a flag to the current action
    * @param {Values.Flag} flag
+   * @return {this}
    */
   addFlag(flag: Flag): this {
     const existingFlag = this.qualifiers.get('fl_');

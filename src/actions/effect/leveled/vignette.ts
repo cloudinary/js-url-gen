@@ -1,6 +1,5 @@
 import EffectActionWithLevel from "../EffectActions/EffectActionWithLevel";
 
-
 /**
  * @description Applies a vignette effect.
  * @memberOf Actions.Effect

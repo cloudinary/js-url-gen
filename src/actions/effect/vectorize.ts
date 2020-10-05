@@ -2,7 +2,11 @@ import Action from "../Action";
 import Qualifier from "../../qualifier/Qualifier";
 import QualifierValue from "../../qualifier/QualifierValue";
 
-
+/**
+ * @description Vectorizes the image.
+ * @class VectorizeEffectAction
+ * @augments Action
+ */
 class VectorizeEffectAction extends Action {
   private _numOfColors: number | string;
   private _detailsLevel: number | string;
@@ -15,7 +19,8 @@ class VectorizeEffectAction extends Action {
 
   /**
    * @description The number of colors. (Range: 2 to 30, Server default: 10)
-   * @param num
+   * @param {number} num
+   * @return {this}
    */
   numOfColors(num: number) {
     this._numOfColors = num;
@@ -24,7 +29,8 @@ class VectorizeEffectAction extends Action {
 
   /**
    * @description The level of detail. Specify either a percentage of the original image (Range: 0.0 to 1.0) or an absolute number of pixels (Range: 0 to 1000). (Server default: 300)
-   * @param num
+   * @param {number} num
+   * @return {this}
    */
   detailsLevel(num: number) {
     this._detailsLevel = num;
@@ -33,7 +39,8 @@ class VectorizeEffectAction extends Action {
 
   /**
    * @description The size of speckles to suppress. Specify either a percentage of the original image (Range: 0.0 to 1.0) or an absolute number of pixels (Range: 0 to 100, Server default: 2)
-   * @param num
+   * @param {number} num
+   * @return {this}
    */
   despeckleLevel(num: number) {
     this._despeckleLevel = num;
@@ -42,7 +49,8 @@ class VectorizeEffectAction extends Action {
 
   /**
    * @description The corner threshold. Specify 100 for no smoothing (polygon corners), 0 for completely smooth corners. (Range: 0 to 100, Default: 25)
-   * @param num
+   * @param {number} num
+   * @return {this}
    */
   cornersLevel(num: number) {
     this._cornersLevel = num;
@@ -51,7 +59,8 @@ class VectorizeEffectAction extends Action {
 
   /**
    * @description The optimization value. Specify 100 for least optimization and the largest file. (Range: 0 to 100, Server default: 100).
-   * @param num
+   * @param {number} num
+   * @return {this}
    */
   paths(num: number) {
     this._paths = num;
