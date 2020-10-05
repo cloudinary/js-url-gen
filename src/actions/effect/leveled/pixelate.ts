@@ -1,6 +1,5 @@
 import EffectActionWithLevel from "../EffectActions/EffectActionWithLevel";
 
-
 /**
  * @description Applies a pixelation effect to the image.
  * @memberOf Actions.Effect

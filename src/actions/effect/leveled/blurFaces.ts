@@ -1,7 +1,5 @@
 import EffectActionWithLevel from "../EffectActions/EffectActionWithLevel";
 
-
-
 /**
  * @description Blurs all detected faces in the image.
  * @memberOf Actions.Effect
