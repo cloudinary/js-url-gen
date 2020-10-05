@@ -1,5 +1,3 @@
-import Action from "../Action";
-import Qualifier from "../../qualifier/Qualifier";
 import FillLightAction from "./FillLightAction";
 import RecolorAction from "./RecolorAction";
 import ImproveAction from "./ImproveAction";

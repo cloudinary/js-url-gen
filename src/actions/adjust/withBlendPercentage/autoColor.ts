@@ -1,4 +1,3 @@
-import EffectActionWithLevel from "../../effect/EffectActions/EffectActionWithLevel";
 import EffectActionWithBlendPercentage from "../../effect/EffectActions/EffectActionWithBlendPercentage";
 
 /**

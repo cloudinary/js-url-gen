@@ -1,2 +1,2 @@
 export const AUTO = 'auto';
-export const auto = () => AUTO;
+export const auto = ():string => AUTO;

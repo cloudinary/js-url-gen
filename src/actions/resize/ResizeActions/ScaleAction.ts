@@ -1,5 +1,3 @@
-import Qualifier from "../../../qualifier/Qualifier";
-import {toFloatAsString} from "../../../utils/toFloatAsString";
 import {GravityParam} from "../../../values/gravity/Gravity";
 import ResizeSimpleAction from "./ResizeSimpleAction";
 
