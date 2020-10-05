@@ -3,6 +3,8 @@ import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import Delivery from "../../../src/actions/delivery/Delivery";
 
+import * as ChromaSubSampling from '../../../src/values/chromaSubSampling/ChromaSubSampling';
+
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
     cloudName: 'demo'
@@ -111,10 +113,10 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
   it('Creates a cloudinaryURL with level', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(Delivery.quality('75'))
+      .delivery(Delivery.quality('75').chromaSubSampling(ChromaSubSampling.CHROMA_420))
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/q_75/sample');
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/q_75:420/sample');
   });
 });
