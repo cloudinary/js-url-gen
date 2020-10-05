@@ -1,5 +1,11 @@
 import ResizeAdvancedAction from "./ResizeAdvancedAction";
 
+/**
+ * @class PadAction
+ * @augments ResizeAdvancedAction
+ * @@doc
+ * @description A class used to define resize pad.
+ */
 class PadAction extends ResizeAdvancedAction {
   constructor(width?: number|string, height?: number|string) {
     /* istanbul ignore next */
@@ -11,9 +17,12 @@ class PadAction extends ResizeAdvancedAction {
 /**
  * @memberOf Actions.Resize
  * @description
- * Resizes the image to fill the given width and height while retaining the original aspect ratio and with all of the original image visible.
- * @param {number|string} width
- * @param {number|string} height
+ * Resizes the asset to fill the given width and height while retaining the original aspect ratio.
+ *
+ * If the proportions of the original asset do not match the given width and height, padding is added to the asset
+ * to reach the required size.
+ * @param {number|string} width The required width of a transformed asset.
+ * @param {number|string} height The required height of a transformed asset.
  * @return {PadAction}
  */
 function pad(width?: string|number, height?: string|number) :PadAction {

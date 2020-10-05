@@ -5,13 +5,16 @@ import {Flag} from "../../../values/flag/Flag";
 import {toFloatAsString} from "../../../utils/toFloatAsString";
 
 /**
- * @description A simple resize with common methods: width and height
+ * @class ResizeSimpleAction
+ * @augments Action
+ * @@doc
+ * @description A class used to define simple resize with common methods: width and height
  */
 class ResizeSimpleAction extends Action {
   /**
    * @param {string} cropType
-   * @param {number | string} cropWidth
-   * @param {number | string} cropHeight
+   * @param {number | string} cropWidth The required width of a transformed asset.
+   * @param {number | string} cropHeight The required height of a transformed asset.
    */
   constructor(cropType: string, cropWidth: number|string, cropHeight?: number|string) {
     super();
@@ -25,23 +28,23 @@ class ResizeSimpleAction extends Action {
   }
 
   /**
-   * Sets the height of the resize
-   * @param {string | number} x
+   * @description Sets the height of the resize
+   * @param {string | number} x The height in pixels (if an integer is specified) or as a percentage (if a float is specified).
    */
   height(x:number|string):this {
     return this.addQualifier(new Qualifier('h', x));
   }
 
   /**
-   * Sets the width of the resize
-   * @param {string | number} x
+   * @description Sets the width of the resize
+   * @param {string | number} x The width in pixels (if an integer is specified) or as a percentage (if a float is specified).
    */
   width(x:number|string):this {
     return this.addQualifier(new Qualifier('w', x));
   }
 
   /**
-   * Sets the aspect ratio of the asset.
+   * @description Sets the aspect ratio of the asset.
    * @param {number|string} ratio The new aspect ratio, specified as a percentage or ratio.
    */
   aspectRatio(ratio:number|string): this {
@@ -59,36 +62,46 @@ class ResizeSimpleAction extends Action {
 
 
   /**
-   * Horizontal position for custom-coordinates based cropping
-   * @param {number} x
-   * @return {this}
+   * @description Horizontal position for custom-coordinates based cropping.
+   * @param {number} x The x position.
    */
   x(x:number): this {
     return this.addQualifier(new Qualifier('x', x));
   }
 
   /**
-   * Vertical position for custom-coordinates based cropping
-   * @param {number} y
-   * @return {this}
+   * @description Vertical position for custom-coordinates based cropping
+   * @param {number} y The y position.
    */
   y(y:number): this {
     return this.addQualifier(new Qualifier('y', y));
   }
 
 
-
-
+  /**
+   * @description Controls how much of the original image surrounding the face to keep when using either the 'crop' or 'thumb' cropping modes with face detection.
+   * @param {number} z The zoom factor. (Default: 1.0)
+   */
   zoom(z:number): this {
     return this.addQualifier(new Qualifier('z', z));
   }
 
-
-
+  /**
+   * @@doc
+   * @description Adds background Action to Resize Action.
+   * @param {BackgroundAction} backgroundAction Defines the background color to use instead of
+   * transparent background areas or when resizing with padding.
+   */
   background(backgroundAction: BackgroundAction): this {
     return this.addQualifier(backgroundAction);
   }
 
+  /**
+   * @@doc
+   * @description Sets the resize mode.
+   * @param {string} modeType The resize mode type. For a list of supported types see {@link Values.ResizeMode |
+    * Resize mode}
+   */
   resizeMode(modeType:string): this {
     this.addFlag(new Flag(modeType));
 
