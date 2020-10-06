@@ -1,7 +1,7 @@
-import * as PSDTools from "../../../src/actions/psdTools/PSDTools";
+import * as PSDTools from "../../../src/actions/psdTools/PsdTools";
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import * as PSDToolsESM from '../../../src/actions/psdTools/PSDTools';
+import * as PSDToolsESM from '../../../src/actions/psdTools/PsdTools';
 import expectESMToMatchDefault from '../../TestUtils/expectESMToMatchDefault';
 
 

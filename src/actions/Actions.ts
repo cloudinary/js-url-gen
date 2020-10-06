@@ -18,7 +18,7 @@ import Background from "./background/Background";
 import CustomFunction from './customFunction/CustomFunction';
 import Flag from "../values/flag/Flag";
 import Transcode from "./transcode/Transcode";
-import PSDTools from "./psdTools/PSDTools";
+import PSDTools from "./psdTools/PsdTools";
 
 export {Resize, Border, RoundCorners, Effect, Rotate, Adjust, Overlay, Underlay, Variable, NamedTransformation, Delivery, Background, CustomFunction, Flag, VideoEdit, Transcode, PSDTools};
 export default {Resize, Border, RoundCorners, Effect, Rotate, Adjust, Overlay, Underlay, Variable, NamedTransformation, Delivery, Background, CustomFunction, Flag, VideoEdit, Transcode, PSDTools};
