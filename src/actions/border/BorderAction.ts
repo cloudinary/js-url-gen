@@ -11,10 +11,16 @@ import {prepareColor} from "../../utils/prepareColor";
 class BorderAction extends Action {
   private borderWidth: number;
   private borderColor: string;
-  private borderStyle: string;
-  constructor(borderStyle:'solid' | string) {
+  private borderType: string;
+
+  /**
+   * @@doc
+   * @description Use values provided from {@link Values.Border|Border Values}
+   * @param {'solid'} borderType
+   */
+  constructor(borderType: string) {
     super();
-    this.borderStyle = borderStyle;
+    this.borderType = borderType;
   }
 
   /**
@@ -36,11 +42,9 @@ class BorderAction extends Action {
   }
 
   protected prepareQualifiers() : void {
-    const qualifierValue = new QualifierValue([`${this.borderWidth}px`, this.borderStyle, `${this.borderColor}`]).setDelimiter('_');
+    const qualifierValue = new QualifierValue([`${this.borderWidth}px`, this.borderType, `${this.borderColor}`]).setDelimiter('_');
     this.addQualifier(new Qualifier('bo', qualifierValue));
   }
 }
 
-
 export default BorderAction;
-
