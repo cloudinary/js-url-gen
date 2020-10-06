@@ -1,20 +1,17 @@
 import ResizeSimpleAction from "./ResizeSimpleAction";
 
-
-class ImaggaScaleAction extends ResizeSimpleAction {
-
-}
-
 /**
- * @memberOf Actions.Resize
  * @description
- * Generates a smartly scaled image that perfectly fits the requested dimensions.
- * @param {number|string} width
- * @param {number|string} height
- * @return {ImaggaScaleAction}
+ * Scales your image based on automatically calculated areas of interest within each specific photo.
+ *
+ * @memberOf Actions.Resize
+ * For details, see the Imagga Crop and Scale {@link  https://cloudinary.com/documentation/imagga_crop_and_scale_addon#smartly_scale_images |  add-on documentation}.
+ * @param {number|string} width The required width of a transformed asset.
+ * @param {number|string} height The required height of a transformed asset.
+ * @return {ResizeSimpleAction}
  */
-function imaggaScale(width?: number | string, height?: number | string): ImaggaScaleAction {
-  return new ImaggaScaleAction('imagga_scale', width, height);
+function imaggaScale(width?: number | string, height?: number | string): ResizeSimpleAction {
+  return new ResizeSimpleAction('imagga_scale', width, height);
 }
 
 export default imaggaScale;

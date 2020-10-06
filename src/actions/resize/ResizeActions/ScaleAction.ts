@@ -1,6 +1,12 @@
 import {GravityParam} from "../../../values/gravity/Gravity";
 import ResizeSimpleAction from "./ResizeSimpleAction";
 
+/**
+ * @@doc
+ * @description A class used to define resize scale.
+ * @class ScaleAction
+ * @augments ResizeSimpleAction
+ */
 class ScaleAction extends ResizeSimpleAction {
   constructor(width: number|string, height: number|string) {
     /* istanbul ignore next */
@@ -8,18 +14,23 @@ class ScaleAction extends ResizeSimpleAction {
     super('scale', width, height);
   }
 
+  /**
+   * @description Changes the aspect ratio of an image while retaining all important content and avoiding unnatural
+   * distortions.
+   */
   isLiquid(): this {
     return this.addQualifier(new GravityParam('liquid'));
   }
 }
 
 /**
- * @memberOf Actions.Resize
  * @description
  * Change the size of the image exactly to the given width and height without necessarily retaining the original aspect ratio:<br/>
  * all original image parts are visible but might be stretched or shrunk.
- * @param {number|string} width
- * @param {number|string} height
+ * @memberOf Actions.Resize
+ * @param {number|string} width The required width of a transformed asset.
+ * @param {number|string} height The required height of a transformed asset.
+ * @return {ScaleAction}
  */
 function scale(width?: number|string, height?: number|string) :ScaleAction {
   return new ScaleAction(width, height);
