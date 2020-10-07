@@ -1,15 +1,19 @@
-import ResizeSimpleAction from "./ResizeSimpleAction";
-import {GravityParam} from "../../../values/gravity/Gravity";
+import Qualifier from "../../../qualifier/Qualifier";
+import ResizeAdvancedAction from "./shared/ResizeAdvancedAction";
 
 /**
  * @@doc
  * @description A class used to define resize thumb.
  * @class ThumbResizeAction
- * @augments ResizeSimpleAction
+ * @augments ResizeAdvancedAction
  */
-class ThumbResizeAction extends ResizeSimpleAction {
-  gravity(gravity:GravityParam): this {
-    return this.addQualifier(gravity);
+class ThumbResizeAction extends ResizeAdvancedAction {
+  /**
+   * @description Controls how much of the original image surrounding the face to keep when using either the 'crop' or 'thumb' cropping modes with face detection.
+   * @param {number} z The zoom factor. (Default: 1.0)
+   */
+  zoom(z:number): this {
+    return this.addQualifier(new Qualifier('z', z));
   }
 }
 
@@ -22,8 +26,8 @@ class ThumbResizeAction extends ResizeSimpleAction {
  * @param {number|string} height The required height of a transformed asset.
  * @return {ThumbResizeAction}
  */
-function thumb(width?: string|number, height?: string|number) :ThumbResizeAction {
+function thumbnail(width?: string|number, height?: string|number) :ThumbResizeAction {
   return new ThumbResizeAction('thumb', width, height);
 }
 
-export default thumb;
+export default thumbnail;

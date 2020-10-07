@@ -1,5 +1,5 @@
 import {GravityParam} from "../../../values/gravity/Gravity";
-import ResizeSimpleAction from "./ResizeSimpleAction";
+import ResizeSimpleAction from "./shared/ResizeSimpleAction";
 
 /**
  * @@doc
@@ -8,15 +8,10 @@ import ResizeSimpleAction from "./ResizeSimpleAction";
  * @augments ResizeSimpleAction
  */
 class ScaleAction extends ResizeSimpleAction {
-  constructor(width: number|string, height: number|string) {
-    /* istanbul ignore next */
-    // Required due to https://github.com/microsoft/TypeScript/issues/13029
-    super('scale', width, height);
-  }
-
   /**
    * @description Changes the aspect ratio of an image while retaining all important content and avoiding unnatural
    * distortions.
+   * @return {this}
    */
   isLiquid(): this {
     return this.addQualifier(new GravityParam('liquid'));
@@ -33,7 +28,7 @@ class ScaleAction extends ResizeSimpleAction {
  * @return {ScaleAction}
  */
 function scale(width?: number|string, height?: number|string) :ScaleAction {
-  return new ScaleAction(width, height);
+  return new ScaleAction('scale', width, height);
 }
 
 export default scale;

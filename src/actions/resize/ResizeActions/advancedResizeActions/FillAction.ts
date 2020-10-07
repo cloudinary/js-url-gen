@@ -1,18 +1,4 @@
-import ResizeAdvancedAction from "./ResizeAdvancedAction";
-
-/**
- * @@doc
- * @description A class used to define resize fill.
- * @class FillAction
- * @augments ResizeAdvancedAction
- */
-class FillAction extends ResizeAdvancedAction {
-  constructor(width?: number|string, height?: number|string) {
-    /* istanbul ignore next */
-    // Required due to https://github.com/microsoft/TypeScript/issues/13029
-    super('fill', width, height);
-  }
-}
+import ResizeAdvancedAction from "../shared/ResizeAdvancedAction";
 
 /**
  * @description
@@ -22,9 +8,9 @@ class FillAction extends ResizeAdvancedAction {
  * @memberOf Actions.Resize
  * @param {number|string} width The required width of a transformed asset.
  * @param {number|string} height The required height of a transformed asset.
- * @return {FillAction}
+ * @return {ResizeAdvancedAction}
  */
-function fill(width?: string|number, height?: string|number) :FillAction {
-  return new FillAction(width, height);
+function fill(width?: string|number, height?: string|number) :ResizeAdvancedAction {
+  return new ResizeAdvancedAction('fill', width, height);
 }
 export default fill;

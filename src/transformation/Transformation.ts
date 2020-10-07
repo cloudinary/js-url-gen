@@ -18,7 +18,7 @@ import VariableAction from "../actions/variable/VariableAction";
 import CutterAction from "../actions/cutter/CutterAction";
 import BorderAction from "../actions/border/BorderAction";
 import {ConditionAction} from "../actions/condition/Condition";
-import ResizeSimpleAction from "../actions/resize/ResizeActions/ResizeSimpleAction";
+import ResizeSimpleAction from "../actions/resize/ResizeActions/shared/ResizeSimpleAction";
 import RotateAction from "../actions/rotate/RotateAction";
 import SmartObject from "../actions/getSmartObject/GetSmartObjectAction";
 import SimpleEffectAction from "../actions/effect/EffectActions/SimpleEffectAction";

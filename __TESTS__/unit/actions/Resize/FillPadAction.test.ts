@@ -1,5 +1,7 @@
 import getImageWithResize from "./shared/getImageWithResize";
-import fillPad from "../../../../src/actions/resize/ResizeActions/FillPadAction";
+import fillPad from "../../../../src/actions/resize/ResizeActions/pad/FillPadAction";
+import Gravity from "../../../../src/values/gravity/Gravity";
+import Background from "../../../../src/actions/background/Background";
 
 
 describe('Tests for Transformation Action -- Resize.fillPad', () => {
@@ -13,8 +15,12 @@ describe('Tests for Transformation Action -- Resize.fillPad', () => {
       fillPad()
         .width(250)
         .height(250)
-        .aspectRatio(1.2),
+        .x(10)
+        .y(10)
+        .gravity(Gravity.north())
+        .aspectRatio(1.2)
+        .background(Background.color('red')),
       'url');
-    expect(url).toContain('ar_1.2,c_fill_pad,h_250,w_250');
+    expect(url).toContain('ar_1.2,b_red,c_fill_pad,g_north,h_250,w_250,x_10,y_10');
   });
 });

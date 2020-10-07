@@ -1,7 +1,7 @@
 import TransformableImage from "../../../src/transformation/TransformableImage";
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import Cloudinary from "../../../src/instance/Cloudinary";
-import fill from "../../../src/actions/resize/ResizeActions/FillAction";
+import fill from "../../../src/actions/resize/ResizeActions/advancedResizeActions/FillAction";
 
 describe('Tests for Cloudinary instance', () => {
   it ('Creates an instance with its own global config', () => {
