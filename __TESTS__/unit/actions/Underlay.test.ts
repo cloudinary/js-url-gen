@@ -7,9 +7,9 @@ import BlendMode from "../../../src/values/blendMode/BlendMode";
 
 import * as UnderlayESM from "../../../src/actions/underlay/Underlay";
 import * as OverlayESM from "../../../src/actions/overlay/Overlay";
+import {image} from "../../../src/values/sources/Sources";
 
 const {imageLayer} = Underlay;
-const {image} = Underlay.Source;
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {

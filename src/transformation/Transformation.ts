@@ -8,7 +8,7 @@ import Qualifier from "../qualifier/Qualifier";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
 import BackgroundAction from "../actions/background/BackgroundAction";
 import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction";
-import {Layer} from "../actions/overlay/Overlay";
+import {LayerAction} from "../actions/overlay/LayerAction";
 import {Flag} from "../values/flag/Flag";
 import Action from "../actions/Action";
 import {TrimAction} from "../actions/videoEdit/TrimAction";
@@ -33,6 +33,7 @@ import {StreamingProfileAction} from "../actions/transcode/StreamingProfileActio
 import {VideoSamplingAction} from "../actions/transcode/VideoSamplingAction";
 import {VideoEditAction} from "../actions/transcode/VideoEditAction";
 */
+
 
 /**
  * @description - Defines how to transform an asset
@@ -137,7 +138,7 @@ class Transformation {
    * @description Adds an overlay over the base image.
    * @param overlayAction
    */
-  overlay(overlayAction: Layer): this {
+  overlay(overlayAction: LayerAction): this {
     overlayAction.setLayerType('l');
     return this.addAction(overlayAction);
   }
@@ -146,7 +147,7 @@ class Transformation {
    * @description Adds an underlay under the base image.
    * @param underlayAction
    */
-  underlay(underlayAction: Layer): this {
+  underlay(underlayAction: LayerAction): this {
     underlayAction.setLayerType('u');
     return this.addAction(underlayAction);
   }
