@@ -1,8 +1,8 @@
 import VariableAction from "./VariableAction";
 
 /**
- * @class SetAction
- * @augments Action
+ * @class SetReferenceAction
+ * @augments VariableAction
  * @@doc
  * @description A class that sets variable from reference.
  */

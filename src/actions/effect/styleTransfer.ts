@@ -1,5 +1,6 @@
-import ImageSource from '../../values/sources/ImageSource';
-import {imageLayer, Layer} from "../overlay/Overlay";
+import {ImageSource} from '../../values/sources/sourceTypes/ImageSource';
+import {imageLayer} from "../overlay/Overlay";
+import {LayerAction} from "../overlay/LayerAction";
 import Qualifier from "../../qualifier/Qualifier";
 import QualifierValue from "../../qualifier/QualifierValue";
 import Action from "../Action";
@@ -14,7 +15,7 @@ import Action from "../Action";
  */
 class StyleTransfer extends Action {
   // This action is actually a layer.
-  private imgLayer: Layer;
+  private imgLayer: LayerAction;
   // This action is built from effectStrength and preserve
   private effectStrength : number;
   private preserve: boolean;

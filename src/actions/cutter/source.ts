@@ -1,4 +1,4 @@
-import ImageSource from "../../values/sources/ImageSource";
+import {ImageSource} from "../../values/sources/sourceTypes/ImageSource";
 import CutterAction from "./CutterAction";
 
 /**

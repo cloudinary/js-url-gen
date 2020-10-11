@@ -1,66 +1,50 @@
-import Action from "../../actions/Action";
-import Qualifier from "../../qualifier/Qualifier";
-import QualifierValue from "../../qualifier/QualifierValue";
-
-
+import {BlendModeQualifier} from "./BlendModeQualifier";
 /**
  * @description Defines the mode of blending to use when overlaying an image.
+ *
+ * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#overlay_blending_effects|Overlay blending effects}
  * @namespace BlendMode
  * @memberOf Values
  */
 
 
-/**
- * @description
- * Even though Position is technically an actionParam, it implements exactly the same functionality as an action.
- * This is true because Position is actually multiParam
- * @extends Action
- */
-class BlendMode extends Action {
-  constructor(blendMode:string, level?:number) {
-    super();
-    this.addQualifier(new Qualifier('e', new QualifierValue([blendMode, level])));
-  }
-}
 
 
 /**
  * @memberOf Values.BlendMode
  * @description Add an overlay image blended using the 'multiply' blend mode.
- * @return {BlendMode}
+ * @return {BlendModeQualifier}
  */
-function multiply():BlendMode {
-  return new BlendMode('multiply');
+function multiply():BlendModeQualifier {
+  return new BlendModeQualifier('multiply');
 }
 
 /**
  * @memberOf Values.BlendMode
  * @description Add an overlay image blended using the 'screen' blend mode.
- * @return {BlendMode}
+ * @return {BlendModeQualifier}
  */
-function screen():BlendMode {
-  return new BlendMode('screen');
+function screen():BlendModeQualifier {
+  return new BlendModeQualifier('screen');
 }
 
 /**
  * @memberOf Values.BlendMode
  * @description Add an overlay image blended using the 'overlay' blend mode.
- * @return {BlendMode}
+ * @return {BlendModeQualifier}
  */
-function overlay():BlendMode {
-  return new BlendMode('overlay');
+function overlay():BlendModeQualifier {
+  return new BlendModeQualifier('overlay');
 }
 
 export {
   screen,
   multiply,
-  overlay,
-  BlendMode
+  overlay
 };
 
 export default {
   screen,
   multiply,
-  overlay,
-  BlendMode
+  overlay
 };

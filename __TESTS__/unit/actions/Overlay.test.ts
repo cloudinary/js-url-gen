@@ -15,9 +15,9 @@ import * as BlendModeESM from "../../../src/values/blendMode/BlendMode";
 
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 import format from "../../../src/actions/delivery/format";
+import {image, video} from "../../../src/values/sources/Sources";
 
 const {imageLayer, videoLayer} = Layers;
-const {image, video} = Layers.Source;
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {

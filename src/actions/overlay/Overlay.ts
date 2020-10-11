@@ -1,131 +1,45 @@
-/**
- * Adds another video, text or image as an underlay over the container video.
- * @memberOf Actions
- * @namespace Layers
- */
-
-
-import Action from "../Action";
-import Source, {ImageSource, TextSource, VideoSource} from "../../values/sources/Sources";
-import {Position} from "../../values/position/Position";
-import Qualifier from "../../qualifier/Qualifier";
-import {BlendMode} from "../../values/blendMode/BlendMode";
 import {VideoRange} from "../../values/video/VideoRange";
-import {ISource} from "../../values/sources/ISource";
-import {Flag} from "../../values/flag/Flag";
+import {LayerAction} from "./LayerAction";
+import {BlendModeQualifier} from "../../values/blendMode/BlendModeQualifier";
+import {PositionQualifier} from "../../values/position/PositionQualifier";
+import {TextSource} from "../../values/sources/sourceTypes/TextSource";
+import {VideoSource} from "../../values/sources/sourceTypes/VideoSource";
+import {ImageSource} from "../../values/sources/sourceTypes/ImageSource";
 
-
-class Layer extends Action{
-  source: ISource;
-  position:Position;
-  blendMode: BlendMode;
-  timeLinePosition: VideoRange;
-  modifications: Action; // Appends modifications to the layer, such as e_style_transfer
-  layerType: string;
-  constructor(transformable: ISource, position:Position, blendMode: BlendMode|null=null, timeLinePosition: VideoRange|null=null) {
-    super();
-    this.source = transformable;
-    this.position = position;
-    this.blendMode = blendMode;
-    this.timeLinePosition = timeLinePosition;
-    this.modifications = new Action();
-  }
-
-  /**
-   * Sets the layerType with u | l depending if underlay or overlay
-   * @param type
-   */
-  setLayerType(type: 'u' | 'l'): this {
-    this.layerType = type;
-    return this;
-  }
-
-  /**
-   * Layers are built using three bits -> /Open/Transform/Close
-   * The opening of a layer
-   */
-  openLayer(): string {
-    return `${this.layerType}_${this.source.getSource()}`;
-  }
-
-  /**
-   * Layers are built using three bits -> /Open/Transform/Close
-   * Transformations conducted on the image in the layer
-   */
-  layerTransformation():string {
-    return this.source.getTransformationString();
-  }
-
-  /**
-   * Layers are built using three bits -> /Open/Transform/Close
-   * Closing of the layer, includes Position as well
-   */
-  closeLayer():Action {
-    const bit = new Action().addFlag(new Flag('layer_apply'));
-
-    this.position?.qualifiers.forEach((qualifier) => {
-      bit.addQualifier(qualifier);
-    });
-
-    this.blendMode?.qualifiers.forEach((qualifier) => {
-      bit.addQualifier(qualifier);
-    });
-
-    this.timeLinePosition?.qualifiers.forEach((qualifier) => {
-      bit.addQualifier(qualifier);
-    });
-
-    if (this.timeLinePosition) {
-      // TODO: This is just for testing. remove this after implementing VideoRange
-      bit.addQualifier(new Qualifier("so", 7));
-    }
-
-    this.modifications?.qualifiers.forEach((qualifier) => {
-      bit.addQualifier(qualifier);
-    });
-
-    return bit;
-  }
-
-  toString():string{
-    // Since layerTransformation can be empty, we filter out empty strings.
-    return [this.openLayer(), this.layerTransformation(), this.closeLayer()].filter((a) => a).join('/');
-  }
-}
+/**
+ * @@doc
+ * Adds another video, text or image as an overlay over the container video. </br>
+ * When adding an overlay to an image, use the imageLayer
+ * When adding an overlay to a video, use the videoLayer
+ * @memberOf Actions
+ * @namespace Overlay
+ */
 
 
 /**
- * @param imageSource
- * @param position
- * @param blendMode
- * @memberOf Actions.Layers
- * @return {Layer}
+ * @description
+ * Adds a layer for an asset of type image
+ * @param {ImageSource | TextSource} source The Source used for the layer, use the builders provided {@link Values.Sources|here}
+ * @param {Values.Position} position The position of the overlay with respect to the base image.
+ * @param {Values.BlendMode} blendMode The blend mode.
+ * @memberOf Actions.Overlay
+ * @return {LayerAction}
  */
-function imageLayer(imageSource: ImageSource, position?:Position, blendMode?:BlendMode): Layer {
-  return new Layer(imageSource, position, blendMode);
+function imageLayer(source: ImageSource | TextSource, position?:PositionQualifier, blendMode?:BlendModeQualifier): LayerAction {
+  return new LayerAction(source, position, blendMode);
 }
 
 /**
- * @param textSource
- * @param position
- * @param blendMode
- * @memberOf Actions.Layers
- * @return {Layer}
+ * Adds a layer for an asset of type video
+ * @param {VideoSource | ImageSource | TextSource} source The Source used for the layer, use the builders provided {@link Values.Sources|here}
+ * @param {Values.Position} position The position of the overlay with respect to the base image.
+ * @param {VideoRange} timeLinePosition Sets the timeline position of the overlay.
+ * @memberOf Actions.Overlay
+ * @return {LayerAction}
  */
-function textLayer(textSource: TextSource, position?:Position, blendMode?:BlendMode): Layer {
-  return new Layer(textSource, position, blendMode);
+function videoLayer(source: VideoSource | ImageSource | TextSource, position?:PositionQualifier, timeLinePosition?:VideoRange): LayerAction {
+  return new LayerAction(source, position, null, timeLinePosition);
 }
 
-/**
- * @param videoSource
- * @param position
- * @param timeLinePosition
- * @memberOf Actions.Layers
- * @return {Layer}
- */
-function videoLayer(videoSource: VideoSource, position?:Position, timeLinePosition?:VideoRange): Layer {
-  return new Layer(videoSource, position, null, timeLinePosition);
-}
-
-export {imageLayer, textLayer, videoLayer, Source, Layer};
-export default {imageLayer, textLayer, videoLayer, Source, Layer};
+export {imageLayer, videoLayer};
+export default {imageLayer, videoLayer};

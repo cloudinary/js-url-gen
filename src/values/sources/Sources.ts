@@ -1,18 +1,19 @@
-import TextSource from "./TextSource";
-import ImageSource from "./ImageSource";
-import VideoSource from "./VideoSource";
+import {TextSource} from "./sourceTypes/TextSource";
+import {ImageSource} from "./sourceTypes/ImageSource";
+import {VideoSource} from "./sourceTypes/VideoSource";
 
 /**
+ * @description This namespace contains different sources that can be used in overlays and underlays
  * @memberOf Values
  * @namespace Sources
  */
 
 
 /**
- * @memberOf Values.Sources
- * @param {string} publicID
  * @description Returns an instance of an ImageSource
- * @return {Values.Sources.ImageSource}
+ * @memberOf Values.Sources
+ * @param {string} publicID The publicID of the image to be used as a layer
+ * @return {ImageSource}
  */
 function image(publicID: string): ImageSource {
   return new ImageSource(publicID);
@@ -20,24 +21,24 @@ function image(publicID: string): ImageSource {
 
 
 /**
- * @memberOf Values.Sources
- * @param text {string}
  * @description Returns an instance of a TextSource
- * @return {Values.Sources.TextSource}
+ * @memberOf Values.Sources
+ * @param text {string} The text to display.
+ * @return {TextSource}
  */
 function text(text: string): TextSource {
   return new TextSource(text);
 }
 
 /**
- * @memberOf Values.Sources
- * @param {string} publicID
  * @description Returns an instance of an VideoSource
- * @return {Values.Sources.VideoSource}
+ * @memberOf Values.Sources
+ * @param {string} publicID The publicID of the video to be used as a layer
+ * @return {VideoSource}
  */
 function video(publicID: string): VideoSource {
   return new VideoSource(publicID);
 }
 
-export default {ImageSource, TextSource, VideoSource, image, text, video};
-export {ImageSource, TextSource, VideoSource, image, text, video};
+export default {image, text, video};
+export {image, text, video};

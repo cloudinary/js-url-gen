@@ -1,9 +1,11 @@
-import {ISource} from "./ISource";
-import {FontStyle, FontWeight} from "../fonts/Fonts";
-import {prepareColor} from "../../utils/prepareColor";
-import QualifierValue from "../../qualifier/QualifierValue";
+import {ISource} from "../ISource";
+import {FontStyle, FontWeight} from "../../fonts/Fonts";
+import {prepareColor} from "../../../utils/prepareColor";
+import QualifierValue from "../../../qualifier/QualifierValue";
 
 /**
+ * @description Defines how to manipulate a text layer
+ * @class TextSource
  * @implements {ISource}
  */
 class TextSource implements ISource {
@@ -103,4 +105,4 @@ class TextSource implements ISource {
 }
 
 
-export default TextSource;
+export {TextSource};
