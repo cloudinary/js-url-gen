@@ -2,13 +2,14 @@ import LeveledEffectAction from "./EffectActions/LeveledEffectAction";
 import QualifierValue from "../../qualifier/QualifierValue";
 import Qualifier from "../../qualifier/Qualifier";
 import {prepareColor} from "../../utils/prepareColor";
+import EffectActionWithLevel from "./EffectActions/EffectActionWithLevel";
 
 /**
  * @class ColorizeEffectAction
  * @augments LeveledEffectAction
  * @description Applies a colorizing filter to the asset, use the methods in the class to adjust the filter
  */
-class ColorizeEffectAction extends LeveledEffectAction {
+class ColorizeEffectAction extends EffectActionWithLevel {
   /**
    * @description The color to use for colorization. Specify HTML name or RGB hex code. (Server default: gray)
    * @param {string} color HTML name(red, green, etc.) or RGB hex code. (Server default: gray)

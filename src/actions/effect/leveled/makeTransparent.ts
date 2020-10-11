@@ -1,4 +1,7 @@
 import LeveledEffectAction from "../EffectActions/LeveledEffectAction";
+import Qualifier from "../../../qualifier/Qualifier";
+import QualifierValue from "../../../qualifier/QualifierValue";
+import {prepareColor} from "../../../utils/prepareColor";
 
 /**
  * @class MakeTransparentEffectAction
@@ -12,6 +15,16 @@ class MakeTransparentEffectAction extends LeveledEffectAction {
    */
   tolerance(value: number | string): this {
     return this.setLevel(value);
+  }
+
+  /**
+   * @@doc
+   * @description The color to make transparent
+   * @param {string} color HTML name(red, green, etc.) or RGB hex code.
+   * @return {this}
+   */
+  color(color: string) {
+    return this.addQualifier(new Qualifier('co', new QualifierValue(prepareColor(color))));
   }
 }
 

@@ -1,6 +1,6 @@
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import * as ArtisticFilter from "../../../src/values/artisticFilters/ArtisticFilters";
+import * as ArtisticFilter from "../../../src/values/artisticFilter/ArtisticFilter";
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 import * as EffectESM from "../../../src/actions/effect/Effect";
 import Effect from "../../../src/actions/effect/Effect";
@@ -52,6 +52,7 @@ describe('Tests for Transformation Action -- Effect', () => {
       .effect(Effect.makeTransparent())
       .effect(Effect.makeTransparent(100))
       .effect(Effect.makeTransparent().tolerance(5))
+      .effect(Effect.makeTransparent().tolerance(5).color('red'))
       .effect(Effect.noise())
       .effect(Effect.noise(100))
       .effect(Effect.noise().level(5))
@@ -103,6 +104,7 @@ describe('Tests for Transformation Action -- Effect', () => {
       'e_make_transparent',
       'e_make_transparent:100',
       'e_make_transparent:5',
+      'co_red,e_make_transparent:5',
       'e_noise',
       'e_noise:100',
       'e_noise:5',
