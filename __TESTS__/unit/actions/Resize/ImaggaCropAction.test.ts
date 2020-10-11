@@ -1,5 +1,5 @@
 import getImageWithResize from "./shared/getImageWithResize";
-import imaggaCrop from "../../../../src/actions/resize/ResizeActions/ImaggaCropAction";
+import imaggaCrop from "../../../../src/actions/resize/ResizeActions/simpleResizeActions/ImaggaCropAction";
 
 
 describe('Tests for Transformation Action -- Resize.imaggaCrop', () => {
@@ -13,8 +13,9 @@ describe('Tests for Transformation Action -- Resize.imaggaCrop', () => {
       imaggaCrop()
         .width(250)
         .height(250)
-        .aspectRatio(2),
+        .aspectRatio(1.2)
+        .relative(),
       'url');
-    expect(url).toContain('ar_2.0,c_imagga_crop,h_250,w_250');
+    expect(url).toContain('ar_1.2,c_imagga_crop,fl_relative,h_250,w_250');
   });
 });

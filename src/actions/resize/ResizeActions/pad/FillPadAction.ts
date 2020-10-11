@@ -1,18 +1,4 @@
-import ResizeSimpleAction from "./ResizeSimpleAction";
-
-/**
- * @@doc
- * @description A class used to define resize fillPad.
- * @class FillPadAction
- * @augments ResizeSimpleAction
- */
-class FillPadAction extends ResizeSimpleAction {
-  constructor(width?: number|string, height?: number|string) {
-    /* istanbul ignore next */
-    // Required due to https://github.com/microsoft/TypeScript/issues/13029
-    super('fill_pad', width, height);
-  }
-}
+import ResizePadAction from "../shared/ResizePadAction";
 
 /**
  * @memberOf Actions.Resize
@@ -27,10 +13,10 @@ class FillPadAction extends ResizeSimpleAction {
  *
  * @param {number|string} width The required width of a transformed asset.
  * @param {number|string} height The required height of a transformed asset.
- * @return {FillPadAction}
+ * @return {ResizePadAction}
  */
-function fillPad(width?: string|number, height?: string|number) :FillPadAction {
-  return new FillPadAction(width, height);
+function fillPad(width?: string|number, height?: string|number) :ResizePadAction {
+  return new ResizePadAction('fill_pad', width, height);
 }
 
 export default fillPad;

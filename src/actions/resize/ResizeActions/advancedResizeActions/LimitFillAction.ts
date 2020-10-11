@@ -1,19 +1,4 @@
-import ResizeAdvancedAction from "./ResizeAdvancedAction";
-
-/**
- *@@doc
- * @description A class used to define resize limitFill.
- * @class LimitFillAction
- * @augments ResizeAdvancedAction
- */
-class LimitFillAction extends ResizeAdvancedAction {
-  constructor(width?: number|string, height?: number|string) {
-    /* istanbul ignore next */
-    // Required due to https://github.com/microsoft/TypeScript/issues/13029 \n // Required due to https://github.com/microsoft/TypeScript/issues/13029
-    super('lfill', width, height);
-  }
-}
-
+import ResizeAdvancedAction from "../shared/ResizeAdvancedAction";
 
 /**
  * @description
@@ -29,8 +14,8 @@ class LimitFillAction extends ResizeAdvancedAction {
  * @param {number|string} height The required height of a transformed asset.
  * @return {LimitFillAction}
  */
-function limitFill(width?: string|number, height?: string|number) :LimitFillAction {
-  return new LimitFillAction(width, height);
+function limitFill(width?: string|number, height?: string|number) :ResizeAdvancedAction {
+  return new ResizeAdvancedAction('lfill', width, height);
 }
 
 export default limitFill;

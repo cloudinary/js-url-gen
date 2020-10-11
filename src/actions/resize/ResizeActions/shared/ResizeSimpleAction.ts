@@ -1,8 +1,9 @@
-import Qualifier from "../../../qualifier/Qualifier";
-import Action from "../../Action";
-import BackgroundAction from "../../background/BackgroundAction";
-import {Flag} from "../../../values/flag/Flag";
-import {toFloatAsString} from "../../../utils/toFloatAsString";
+import Qualifier from "../../../../qualifier/Qualifier";
+import Action from "../../../Action";
+import {Flag} from "../../../../values/flag/Flag";
+import {toFloatAsString} from "../../../../utils/toFloatAsString";
+import relativeFlag from '../../../../values/flag/relative';
+import regionRelativeFlag from '../../../../values/flag/regionRelative';
 
 /**
  * @@doc
@@ -52,49 +53,27 @@ class ResizeSimpleAction extends Action {
     return this.addQualifier(new Qualifier('ar', toFloatAsString(ratio)));
   }
 
+  /**
+   * @description Modifies percentage-based width & height parameters of overlays and underlays (e.g., 1.0) to be relative to the containing image instead of the added layer.
+   * @return {this}
+   */
+  relative(): this {
+    return this.addFlag(relativeFlag());
+  }
 
+  /**
+   * @description Modifies percentage-based width & height parameters of overlays and underlays (e.g., 1.0) to be relative to the overlaid region
+   * @return {this}
+   */
+  regionRelative(): this {
+    return this.addFlag(regionRelativeFlag());
+  }
 
 
   /*
    * The methods below should not exist on the ResizeSimpleAction class
    * However they are currently unspecced, so it's TBD where they'll belong.
    */
-
-
-  /**
-   * @description Horizontal position for custom-coordinates based cropping.
-   * @param {number} x The x position.
-   */
-  x(x:number): this {
-    return this.addQualifier(new Qualifier('x', x));
-  }
-
-  /**
-   * @description Vertical position for custom-coordinates based cropping
-   * @param {number} y The y position.
-   */
-  y(y:number): this {
-    return this.addQualifier(new Qualifier('y', y));
-  }
-
-
-  /**
-   * @description Controls how much of the original image surrounding the face to keep when using either the 'crop' or 'thumb' cropping modes with face detection.
-   * @param {number} z The zoom factor. (Default: 1.0)
-   */
-  zoom(z:number): this {
-    return this.addQualifier(new Qualifier('z', z));
-  }
-
-  /**
-   * @@doc
-   * @description Adds background Action to Resize Action.
-   * @param {BackgroundAction} backgroundAction Defines the background color to use instead of
-   * transparent background areas or when resizing with padding.
-   */
-  background(backgroundAction: BackgroundAction): this {
-    return this.addQualifier(backgroundAction);
-  }
 
   /**
    * @@doc

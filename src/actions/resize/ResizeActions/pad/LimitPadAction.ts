@@ -1,4 +1,5 @@
-import ResizeSimpleAction from "./ResizeSimpleAction";
+import ResizePadAction from "../shared/ResizePadAction";
+
 /**
  * @description
  * Resizes the asset to fill the given width and height while retaining the original aspect ratio, but only if the
@@ -10,10 +11,10 @@ import ResizeSimpleAction from "./ResizeSimpleAction";
  * @memberOf Actions.Resize
  * @param {number|string} width The required width of a transformed asset.
  * @param {number|string} height The required height of a transformed asset.
- * @return {ResizeSimpleAction}
+ * @return {ResizePadAction}
  */
-function limitPad(width?: string|number, height?: string|number) :ResizeSimpleAction {
-  return new ResizeSimpleAction('lpad', width, height);
+function limitPad(width?: string|number, height?: string|number) :ResizePadAction {
+  return new ResizePadAction('lpad', width, height);
 }
 
 export default limitPad;

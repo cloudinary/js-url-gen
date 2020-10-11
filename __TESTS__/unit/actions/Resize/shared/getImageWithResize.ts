@@ -1,6 +1,6 @@
 import TransformableImage from "../../../../../src/transformation/TransformableImage";
 import CloudinaryConfig from "../../../../../src/config/CloudinaryConfig";
-import ResizeSimpleAction from "../../../../../src/actions/resize/ResizeActions/ResizeSimpleAction";
+import ResizeSimpleAction from "../../../../../src/actions/resize/ResizeActions/shared/ResizeSimpleAction";
 
 
 const CONFIG_INSTANCE = new CloudinaryConfig({

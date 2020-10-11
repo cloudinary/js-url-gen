@@ -1,4 +1,4 @@
-import ResizeSimpleAction from "./ResizeSimpleAction";
+import ResizeSimpleAction from "../shared/ResizeSimpleAction";
 
 /**
  * @description

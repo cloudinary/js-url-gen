@@ -1,5 +1,5 @@
 import getImageWithResize from "./shared/getImageWithResize";
-import fit from '../../../../src/actions/resize/ResizeActions/FitAction';
+import fit from '../../../../src/actions/resize/ResizeActions/simpleResizeActions/FitAction';
 
 describe('Tests for Transformation Action -- Resize.fill', () => {
   it('Ensures it generates the right URL', () => {
@@ -11,8 +11,10 @@ describe('Tests for Transformation Action -- Resize.fill', () => {
     const url = getImageWithResize(
       fit()
         .width(250)
-        .height(250),
+        .height(250)
+        .aspectRatio(1.2)
+        .relative(),
       'url');
-    expect(url).toContain('c_fit,h_250,w_250');
+    expect(url).toContain('ar_1.2,c_fit,fl_relative,h_250,w_250');
   });
 });

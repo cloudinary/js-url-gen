@@ -1,5 +1,5 @@
 import getImageWithResize from "./shared/getImageWithResize";
-import fill from "../../../../src/actions/resize/ResizeActions/FillAction";
+import fill from "../../../../src/actions/resize/ResizeActions/advancedResizeActions/FillAction";
 import Gravity from "../../../../src/values/gravity/Gravity";
 
 
