@@ -20,7 +20,6 @@ import BorderAction from "../actions/border/BorderAction";
 import {ConditionAction} from "../actions/condition/Condition";
 import ResizeSimpleAction from "../actions/resize/ResizeActions/ResizeSimpleAction";
 import RotateAction from "../actions/rotate/RotateAction";
-import SmartObject from "../actions/getSmartObject/GetSmartObjectAction";
 import SimpleEffectAction from "../actions/effect/EffectActions/SimpleEffectAction";
 
 // TODO: add these video actions:
@@ -231,10 +230,11 @@ class Transformation {
   }
 
   /**
-   * @param {SmartObject} smartObject
+   * @description Adds a layer in a Photoshop document.
+   * @param action
    */
-  getSmartObject(smartObject: SmartObject): this {
-    return this.addAction(smartObject);
+  psdTools(action: IAction): this {
+    return this.addAction(action);
   }
 
   /**
