@@ -6,14 +6,12 @@ import {IDescriptor} from "../interfaces/IDescriptor";
 import createCloudinaryURL from "../url/cloudinaryURL";
 import Qualifier from "../qualifier/Qualifier";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
-import BackgroundAction from "../actions/background/BackgroundAction";
 import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction";
 import {LayerAction} from "../actions/overlay/LayerAction";
 import {Flag} from "../values/flag/Flag";
 import Action from "../actions/Action";
 import {TrimAction} from "../actions/videoEdit/TrimAction";
 import {DeliveryAction} from "../actions/delivery/Delivery";
-import BlurredBackgroundAction from "../actions/background/BlurredBackgroundAction";
 import VariableAction from "../actions/variable/VariableAction";
 import CutterAction from "../actions/cutter/CutterAction";
 import BorderAction from "../actions/border/BorderAction";
@@ -21,6 +19,7 @@ import {ConditionAction} from "../actions/condition/Condition";
 import ResizeSimpleAction from "../actions/resize/ResizeActions/shared/ResizeSimpleAction";
 import RotateAction from "../actions/rotate/RotateAction";
 import SimpleEffectAction from "../actions/effect/EffectActions/SimpleEffectAction";
+import {BackgroundColorAction} from "../actions/background/actions/BackgroundColorAction";
 
 // TODO: add these video actions:
 /*
@@ -224,9 +223,10 @@ class Transformation {
 
   /**
    * @description Sets the color of the background.
-   * @param {BackgroundAction} backgroundAction
+   * @param {BackgroundColorAction} backgroundAction Action
+   * @return {this}
    */
-  background(backgroundAction: BackgroundAction | BlurredBackgroundAction): this {
+  backgroundColor(backgroundAction: BackgroundColorAction): this {
     return this.addAction(backgroundAction);
   }
 
