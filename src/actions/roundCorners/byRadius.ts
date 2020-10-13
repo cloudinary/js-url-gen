@@ -1,4 +1,3 @@
-import '../../interfaces/IAction';
 import RoundCornersAction from "./RoundCornersAction";
 
 /**

@@ -1,5 +1,4 @@
 import Action from "../Action";
-import {IAction} from "../../interfaces/IAction";
 import Qualifier from "../../qualifier/Qualifier";
 import Flag from "../../values/flag/Flag";
 
@@ -9,7 +8,7 @@ import Flag from "../../values/flag/Flag";
  * @class DeliveryAction
  * @augments Action
  */
-class DeliveryAction extends Action implements IAction {
+class DeliveryAction extends Action {
   constructor(deliveryKey?: string, deliveryType?: string|number) {
     super();
     this.addQualifier(new Qualifier(deliveryKey, deliveryType));
