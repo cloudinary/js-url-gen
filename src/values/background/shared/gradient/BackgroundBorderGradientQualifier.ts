@@ -3,6 +3,8 @@ import {BaseGradientBackground} from "../base/BaseGradientBackground";
 /**
  * @@doc
  * @description Automatically sets the background color when resizing with padding.
+ * @class BackgroundBorderGradientQualifier
+ * @augments BaseGradientBackground
  */
 class BackgroundBorderGradientQualifier extends BaseGradientBackground {
   /**

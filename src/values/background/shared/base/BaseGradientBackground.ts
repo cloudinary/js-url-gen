@@ -3,6 +3,8 @@ import {BaseCommonBackground} from "./BaseCommonBackground";
 /**
  * @@doc
  * @description Automatically sets the background color when resizing with padding.
+ * @class BaseGradientBackground
+ * @augments BaseCommonBackground
  */
 class BaseGradientBackground extends BaseCommonBackground {
   protected _gradientColors: number;
