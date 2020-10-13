@@ -13,7 +13,7 @@ class ScaleAction extends ResizeSimpleAction {
    * distortions.
    * @return {this}
    */
-  isLiquid(): this {
+  liquidRescaling(): this {
     return this.addQualifier(new GravityParam('liquid'));
   }
 }
