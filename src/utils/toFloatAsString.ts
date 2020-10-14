@@ -30,7 +30,7 @@ export function toFloatAsString(value: string | number): string {
   const isNumberLike = !isNaN(parseFloat(returnValue));
 
   // If it's a number-like, but the input does not contain a decimal - add it.
-  if (isNumberLike && returnValue.indexOf('.') === -1) {
+  if (isNumberLike && returnValue.indexOf('.') === -1 && returnValue.indexOf(':') === -1) {
     return `${returnValue}.0`;
   } else {
     // If the input already contains a decimal, just return the value
