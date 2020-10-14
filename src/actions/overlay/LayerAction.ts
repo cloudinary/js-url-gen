@@ -5,6 +5,7 @@ import {Flag} from "../../values/flag/Flag";
 import Qualifier from "../../qualifier/Qualifier";
 import {BlendModeQualifier} from "../../values/blendMode/BlendModeQualifier";
 import {PositionQualifier} from "../../values/position/PositionQualifier";
+import SimpleEffectAction from "../effect/EffectActions/SimpleEffectAction";
 
 
 /**
@@ -21,6 +22,8 @@ class LayerAction extends Action {
   timeLinePosition: VideoRange;
   modifications: Action; // Appends modifications to the layer, such as e_style_transfer
   layerType: string;
+  flag: Flag;
+  private effect: SimpleEffectAction;
   constructor(layerSource: ISource, position:PositionQualifier, blendMode: BlendModeQualifier|null=null, timeLinePosition: VideoRange|null=null) {
     super();
     this.source = layerSource;
@@ -42,10 +45,36 @@ class LayerAction extends Action {
 
   /**
    * @@docs
+   * Sets a flag in the first bit (Open)
+   * @param {Flag} flag
+   */
+  setOpenLayerFlag(flag:Flag){
+    this.flag = flag;
+    return this;
+  }
+
+  /**
+   * @@docs
+   * Sets an effect in the first bit (Open)
+   * @param effect
+   */
+  setOpenLayerTransformation(effect: SimpleEffectAction){
+    this.effect = effect;
+    return this;
+  }
+
+  /**
+   * @@docs
    * Layers are built using three bits -> /Open/Transform/Close
    * The opening of a layer
    */
   openLayer(): string {
+    if(this.flag) {
+      return `${this.layerType}_${this.source.getSource()},${this.flag}`;
+    } else if(this.effect) {
+      return `${this.layerType}_${this.source.getSource()},${this.effect}`;
+    }
+
     return `${this.layerType}_${this.source.getSource()}`;
   }
 

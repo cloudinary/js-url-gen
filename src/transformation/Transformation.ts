@@ -11,7 +11,6 @@ import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction
 import {LayerAction} from "../actions/overlay/LayerAction";
 import {Flag} from "../values/flag/Flag";
 import Action from "../actions/Action";
-import {TrimAction} from "../actions/videoEdit/TrimAction";
 import {DeliveryAction} from "../actions/delivery/Delivery";
 import BlurredBackgroundAction from "../actions/background/BlurredBackgroundAction";
 import VariableAction from "../actions/variable/VariableAction";
@@ -362,11 +361,11 @@ class Transformation {
    * @param {IVideoEditAction} videoEditAction
    * @return {this}
    */
-  /*
-  videoEdit(videoEditAction: VideoEditAction): this {
-    return this.addAction(videoEditAction);
+
+  videoEdit(action: IAction): this {
+    return this.addAction(action);
   }
-   */
+
 }
 
 export default Transformation;
