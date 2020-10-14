@@ -288,15 +288,6 @@ class Transformation {
   // ==========================
 
   /**
-   * Shortens a video to the specified range.
-   * @param {ITrimAction} trimAction
-   * @return {this}
-   */
-  trim(trimAction: TrimAction): this {
-    return this.addAction(trimAction);
-  }
-
-  /**
    * Concatenates another video or image.
    * @param {VideoConcatenateAction} videoConcatenateAction
    * @return {this}

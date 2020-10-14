@@ -3,7 +3,7 @@ import {VideoSource} from "../../values/sources/sourceTypes/VideoSource";
 import {LayerAction} from "../overlay/LayerAction";
 import {imageLayer} from "../overlay/Overlay";
 import Flag from "../../values/flag/Flag";
-import Effect from "../../../src/actions/effect/Effect";
+import Effect from "../effect/Effect";
 
 /**
  * @description Class for Concatenating another video.

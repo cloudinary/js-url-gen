@@ -35,9 +35,9 @@ function byPercent(percent: string|number): string {
  * @param {string|number} decibel The offset in dB.
  * @return string
  */
-function byDecibel(decibel: string|number): string {
+function byDecibels(decibel: string|number): string {
   return `${decibel}db`;
 }
 
-export {mute, byPercent, byDecibel};
-export default {mute, byPercent, byDecibel};
+export {mute, byPercent, byDecibels};
+export default {mute, byPercent, byDecibels};

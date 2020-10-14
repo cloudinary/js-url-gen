@@ -45,7 +45,7 @@ function trim(): TrimAction{
   * Adjust the audio volume}
  *
  * @memberOf Actions.VideoEdit
- * @param {string | number | typeof Volume} volumeValue The value of volume. The percentage change of volume (Range: -100 to 400).
+ * @param {string | number} volumeValue The value of volume. The percentage change of volume (Range: -100 to 400).
  * For a list of supported types see {@link Values.Volume |
     * Volume values}
  * @return {VolumeAction}
