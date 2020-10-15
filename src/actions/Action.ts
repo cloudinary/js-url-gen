@@ -1,13 +1,12 @@
 import Qualifier from "../qualifier/Qualifier";
 import {Flag} from "../values/flag/Flag";
-import {IAction} from "../interfaces/IAction";
 import {mapToSortedArray} from "../utils/dataStructureUtils";
 
 /**
  * @class Action
  * @description Defines the category of transformation to perform.
  */
-class Action implements IAction {
+class Action {
   // We're using map, to overwrite existing keys. for example:
   // addParam(w_100).addQualifier(w_200) should result in w_200. and not w_100,w_200
   qualifiers: Map<string, Qualifier> = new Map();

@@ -1,7 +1,7 @@
 import getImageWithResize from "./shared/getImageWithResize";
 import fillPad from "../../../../src/actions/resize/ResizeActions/pad/FillPadAction";
 import Gravity from "../../../../src/values/gravity/Gravity";
-import Background from "../../../../src/actions/background/Background";
+import Background from "../../../../src/values/background/Background";
 
 
 describe('Tests for Transformation Action -- Resize.fillPad', () => {

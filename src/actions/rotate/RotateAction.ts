@@ -1,4 +1,3 @@
-import {IAction} from "../../interfaces/IAction";
 import Action from "../Action";
 import Qualifier from "../../qualifier/Qualifier";
 
@@ -14,7 +13,7 @@ import * as RotationModes from '../../values/rotate/Rotate';
  * @class RotateAction
  * @augments {Action}
  */
-class RotateAction extends Action implements IAction {
+class RotateAction extends Action {
   constructor(angle?: number) {
     super();
     this.addQualifier(new Qualifier(PARAM_KEY, angle));
