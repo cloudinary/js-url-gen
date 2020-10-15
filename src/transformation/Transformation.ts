@@ -18,18 +18,11 @@ import RotateAction from "../actions/rotate/RotateAction";
 import SimpleEffectAction from "../actions/effect/EffectActions/SimpleEffectAction";
 import {BackgroundColorAction} from "../actions/background/actions/BackgroundColorAction";
 import {NamedTransformationAction} from "../actions/namedTransformation/NamedTransformationAction";
+import VolumeAction from "../actions/videoEdit/VolumeAction";
+import TrimAction from "../actions/videoEdit/TrimAction";
+import ConcatenateAction from "../actions/videoEdit/ConcatenateAction";
 
-// TODO: add these video actions:
-/*
-import {SubtitlesAction} from "../actions/layers/SubtitlesAction";
-import {VideoConcatenateAction} from "../actions/layers/VideoConcatenateAction";
-import {KeyframeIntervalAction} from "../actions/transcode/KeyframeIntervalAction";
-import {BitRateAction} from "../actions/transcode/BitRateAction";
-import {StreamingProfileAction} from "../actions/transcode/StreamingProfileAction";
-import {VideoSamplingAction} from "../actions/transcode/VideoSamplingAction";
-import {VideoEditAction} from "../actions/transcode/VideoEditAction";
-*/
-
+declare type videoEditType = VolumeAction | TrimAction | ConcatenateAction;
 
 /**
  * @description - Defines how to transform an asset
@@ -348,11 +341,11 @@ class Transformation {
   /**
    * Applies the specified video edit action.
    *
-   * @param {Action} action
+   * @param {videoEditType} action
    * @return {this}
    */
 
-  videoEdit(action: Action): this {
+  videoEdit(action: videoEditType): this {
     return this.addAction(action);
   }
 
