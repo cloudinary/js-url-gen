@@ -1,5 +1,3 @@
-import {IAction} from "../interfaces/IAction";
-import {INamedTransformationAction} from "../actions/namedTransformation/INamedTransformationAction";
 import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigurations";
 import CloudinaryConfig from "../config/CloudinaryConfig";
 import {IDescriptor} from "../interfaces/IDescriptor";
@@ -20,6 +18,7 @@ import ResizeSimpleAction from "../actions/resize/ResizeActions/shared/ResizeSim
 import RotateAction from "../actions/rotate/RotateAction";
 import SimpleEffectAction from "../actions/effect/EffectActions/SimpleEffectAction";
 import {BackgroundColorAction} from "../actions/background/actions/BackgroundColorAction";
+import {NamedTransformationAction} from "../actions/namedTransformation/NamedTransformationAction";
 
 // TODO: add these video actions:
 /*
@@ -38,7 +37,7 @@ import {VideoEditAction} from "../actions/transcode/VideoEditAction";
  * @class Transformation
  */
 class Transformation {
-  actions: IAction[];
+  actions: Action[];
   config: ICloudinaryConfigurations;
   asset: IDescriptor;
 
@@ -54,9 +53,9 @@ class Transformation {
   }
 
   /**
-   * @param {IAction} action
+   * @param {Action} action
    */
-  addAction(action: IAction): this {
+  addAction(action: Action): this {
     this.actions.push(action);
     return this;
   }
@@ -171,14 +170,14 @@ class Transformation {
    * false.
    */
   ifElse(): this {
-    return this.addAction(new Qualifier('if', 'else'));
+    return this.addAction(new Action().addQualifier(new Qualifier('if', 'else')));
   }
 
   /**
    * @description Finishes the conditional transformation.
    */
   endIfCondition(): this {
-    return this.addAction(new Qualifier('if', 'end'));
+    return this.addAction(new Action().addQualifier(new Qualifier('if', 'end')));
   }
 
   /**
@@ -193,7 +192,7 @@ class Transformation {
    * @description Applies adjustment effect on an asset.
    * @param action
    */
-  adjust(action: IAction): this {
+  adjust(action: Action): this {
     return this.addAction(action);
   }
 
@@ -207,9 +206,9 @@ class Transformation {
 
   /**
    * @description Applies a pre-defined named transformation of the given name.
-   * @param {INamedTransformationAction} namedTransformation
+   * @param {NamedTransformation} namedTransformation
    */
-  namedTransformation(namedTransformation:INamedTransformationAction ): this {
+  namedTransformation(namedTransformation:NamedTransformationAction ): this {
     return this.addAction(namedTransformation);
   }
 
@@ -234,7 +233,7 @@ class Transformation {
    * @description Adds a layer in a Photoshop document.
    * @param action
    */
-  psdTools(action: IAction): this {
+  psdTools(action: Action): this {
     return this.addAction(action);
   }
 
@@ -332,10 +331,10 @@ class Transformation {
 
   /**
    * Transcodes the video (or audio) to another format.
-   * @param {IAction} action
+   * @param {Action} action
    * @return {this}
    */
-  transcode(action: IAction): this {
+  transcode(action: Action): this {
     return this.addAction(action);
   }
 
