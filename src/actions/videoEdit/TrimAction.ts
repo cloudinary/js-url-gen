@@ -28,8 +28,6 @@ class TrimAction extends Action {
    * @param {string|number} offset The end position of the part of the video to keep. This can be specified as a
    *                         float representing the time in seconds or a string representing the percentage of the
    *                         video length (for example, "30%" or "30p").
-   *
-   * @param offset
    */
   endOffset(offset: string|number): this {
     return this.addQualifier(new Qualifier('eo', offset));
@@ -41,8 +39,6 @@ class TrimAction extends Action {
    * @param {string|number} duration The length of the part of the video to keep. This can be specified as a float
    *                        representing the time in seconds or a string representing the percentage of the
    *                        video length (for example, "30%" or "30p").
-   *
-   * @param duration
    */
   duration(duration: string|number): this {
     return this.addQualifier(new Qualifier('du', duration));

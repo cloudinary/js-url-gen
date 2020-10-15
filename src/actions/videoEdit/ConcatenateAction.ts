@@ -27,6 +27,7 @@ class ConcatenateAction extends Action {
   /**
    * @description Concatenates two videos one after the other, with custom transition
    * @param {VideoSource} source The source to concatenate.
+   * @return {this}
    */
   transition(source:VideoSource): this{
     this.shouldTransition = true;

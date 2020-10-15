@@ -50,7 +50,7 @@ function trim(): TrimAction{
     * Volume values}
  * @return {VolumeAction}
  */
-function volume(volumeValue: string | number | typeof Volume): VolumeAction{
+function volume(volumeValue: string | number): VolumeAction{
   return new VolumeAction(volumeValue);
 }
 

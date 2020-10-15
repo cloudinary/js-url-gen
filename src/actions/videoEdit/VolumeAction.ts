@@ -9,7 +9,7 @@ import QualifierValue from "../../qualifier/QualifierValue";
  * @augments Action
  */
 class VolumeAction extends Action {
-  constructor(volumeValue: string | number | typeof Volume) {
+  constructor(volumeValue: string | number) {
     super();
     const qualifierValue = new QualifierValue(['volume', volumeValue]).setDelimiter(':');
     this.addQualifier(new Qualifier('e', qualifierValue));

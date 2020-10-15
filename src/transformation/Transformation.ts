@@ -20,6 +20,8 @@ import {ConditionAction} from "../actions/condition/Condition";
 import ResizeSimpleAction from "../actions/resize/ResizeActions/shared/ResizeSimpleAction";
 import RotateAction from "../actions/rotate/RotateAction";
 import SimpleEffectAction from "../actions/effect/EffectActions/SimpleEffectAction";
+import ConcatenateAction from "../actions/videoEdit/ConcatenateAction";
+
 
 // TODO: add these video actions:
 /*
@@ -353,7 +355,7 @@ class Transformation {
    * @return {this}
    */
 
-  videoEdit(action: IAction): this {
+  videoEdit(action: ConcatenateAction): this {
     return this.addAction(action);
   }
 
