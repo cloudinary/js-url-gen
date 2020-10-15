@@ -4,6 +4,8 @@ import {BackgroundQualifier} from "./BackgroundQualifier";
 /**
  * @@doc
  * @description Automatically sets the background color when resizing with padding.
+ * @class BaseCommonBackground
+ * @augments BackgroundQualifier
  */
 class BaseCommonBackground extends BackgroundQualifier {
   protected _palette: string[];

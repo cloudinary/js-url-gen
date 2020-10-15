@@ -3,6 +3,8 @@ import {BaseCommonBackground} from "../base/BaseCommonBackground";
 /**
  * @@doc
  * @description Automatically sets the background color when resizing with padding.
+ * @class BackgroundAutoBorderQualifier
+ * @augments BaseCommonBackground
  */
 class BackgroundAutoBorderQualifier extends BaseCommonBackground {
   /**
