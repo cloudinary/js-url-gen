@@ -24,6 +24,7 @@ class CutterAction extends Action {
   /**
    * @description Defines the position of the layer.
    * @param {Values.Position} position The position of the overlay with respect to the base image.
+   * @return {this}
    */
   position(position?:PositionQualifier): this{
     this.layer.position = position;
