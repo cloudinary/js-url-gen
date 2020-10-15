@@ -27,10 +27,10 @@ export function toFloatAsString(value: string | number): string {
   }
 
   // Final sanity check, parse the number as a float and check if its NaN
-  const isNumberLike = !isNaN(parseFloat(returnValue));
+  const isNumberLike = !isNaN(parseFloat(returnValue)) && returnValue.indexOf(':') === -1;
 
   // If it's a number-like, but the input does not contain a decimal - add it.
-  if (isNumberLike && returnValue.indexOf('.') === -1 && returnValue.indexOf(':') === -1) {
+  if (isNumberLike && returnValue.indexOf('.') === -1) {
     return `${returnValue}.0`;
   } else {
     // If the input already contains a decimal, just return the value

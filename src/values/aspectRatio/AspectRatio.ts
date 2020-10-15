@@ -17,7 +17,7 @@ class IgnoreAspectRatioQualifier extends Action {
 /**
  * @description 1 by 1 aspect ration.
  * @memberOf Values.AspectRatio
- * @return string
+ * @return {string}
  */
 function AR1X1(): string {
   return '1:1';
@@ -26,7 +26,7 @@ function AR1X1(): string {
 /**
  * @description 5 by 4 aspect ration.
  * @memberOf Values.AspectRatio
- * @return string
+ * @return {string}
  */
 function AR5X4(): string {
   return '5:4';
@@ -35,7 +35,7 @@ function AR5X4(): string {
 /**
  * @description 4 by 3 aspect ration.
  * @memberOf Values.AspectRatio
- * @return string
+ * @return {string}
  */
 function AR4X3(): string {
   return '4:3';
@@ -44,7 +44,7 @@ function AR4X3(): string {
 /**
  * @description 3 by 2 aspect ration.
  * @memberOf Values.AspectRatio
- * @return string
+ * @return {string}
  */
 function AR3X2(): string {
   return '3:2';
@@ -53,7 +53,7 @@ function AR3X2(): string {
 /**
  * @description 16 by 9 aspect ration.
  * @memberOf Values.AspectRatio
- * @return string
+ * @return {string}
  */
 function AR16X9(): string {
   return '16:9';
@@ -62,7 +62,7 @@ function AR16X9(): string {
 /**
  * @description 3 by 1 aspect ration.
  * @memberOf Values.AspectRatio
- * @return string
+ * @return {string}
  */
 function AR3X1() : string {
   return '3:1';
@@ -71,7 +71,7 @@ function AR3X1() : string {
 /**
  * @description ignores aspect ratio.
  * @memberOf Values.AspectRatio
- * @return IgnoreAspectRatio
+ * @return {IgnoreAspectRatioQualifier}
  */
 function IgnoreInitialAspectRatio(): IgnoreAspectRatioQualifier {
   return new IgnoreAspectRatioQualifier();

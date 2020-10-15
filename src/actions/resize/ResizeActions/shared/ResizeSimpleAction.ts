@@ -49,6 +49,7 @@ class ResizeSimpleAction extends Action {
    * For a list of supported types see {@link Values.AspectRatio |
     * AspectRatio values}
    * @param {number|string} ratio The new aspect ratio, specified as a percentage or ratio.
+   * @return {this}
    */
   aspectRatio(ratio:number|string): this {
     // toFloatAsString is used to ensure 1 turns into 1.0
