@@ -1,6 +1,7 @@
 import Action from "../Action";
 import QualifierValue from "../../qualifier/QualifierValue";
 import Qualifier from "../../qualifier/Qualifier";
+import {ExpressionObject} from "../../values/expression/Expression";
 
 /**
  * @description Defines an new user variable.
@@ -10,9 +11,9 @@ import Qualifier from "../../qualifier/Qualifier";
 class VariableAction extends Action {
   private isFloat = false;
   private isNumber = false;
-  private value: number | string | string[] | number[];
+  private value: number | string | string[] | number[] | ExpressionObject;
   private name: string;
-  constructor(name: string, value: number | string | string[] | number[]) {
+  constructor(name: string, value: number | string | string[] | number[] | ExpressionObject) {
     super();
     this.value = value;
     this.name = name;
