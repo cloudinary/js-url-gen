@@ -32,7 +32,7 @@ import {scale} from '@cloudinary/base/actions/resize';
 // Pass the publicId of your image
 const myImage = new TransformableImage('sample');
 
-myImage.config({
+myImage.setConfig({
   cloud: {
     cloudName: 'demo'
     }
