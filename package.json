@@ -13,11 +13,13 @@
     "build": "bash ./scripts/build.sh",
     "build:ESM": "tsc --project ./tsconfig.json",
     "build:UMD": "rollup -c",
-    "build:docs": "jsdoc --configure jsdoc.config.json --verbose --readme ./DOCS.README.md",
+    "build:docs": "node ./scripts/buildDocs.js",
     "build:entryPoints": "ts-node ./scripts/createEntrypoints.ts",
     "lint": "eslint src __TESTS__ --color --ext .ts",
     "start": "rollup -c rollup.dev.config.js -w",
-    "bundlewatch": "bundlewatch --config ./bundlewatch.config.js"
+    "bundlewatch": "bundlewatch --config ./bundlewatch.config.js",
+    "release-dry-run" : "npm run build && cp README.md LICENSE ./dist && cd ./dist && release-it --dry-run",
+    "release" : "npm run build && cp README.md LICENSE ./dist && cd ./dist && release-it"
   },
   "keywords": [],
   "author": "",
@@ -51,8 +53,8 @@
     "tslib": "^2.0.0",
     "typedoc": "^0.17.8",
     "typescript": "^3.9.3",
-    "webpack": "^4.44.1"
+    "webpack": "^4.44.1",
+    "release-it": "^14.2.0"
   },
-  "types": "./types/index.d.ts",
-  "dependencies": {}
+  "types": "./types/index.d.ts"
 }
