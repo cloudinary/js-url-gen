@@ -1,4 +1,5 @@
 import Variable, {set} from '../../../src/actions/variable/Variable';
+import Expression, {expression} from '../../../src/values/expression/Expression';
 import * as VariableESM from '../../../src/actions/variable/Variable';
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
@@ -92,7 +93,7 @@ describe('Tests for Transformation Action -- Variable', () => {
   it('Creates a cloudinaryURL with expression', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .addVariable(Variable.set('myexp', 'initial_width + 100 / 3'))
+      .addVariable(Variable.set('myexp', Expression.expression('initial_width + 100 / 3')))
       .setPublicID('sample')
       .toURL();
 
@@ -102,7 +103,7 @@ describe('Tests for Transformation Action -- Variable', () => {
   it('Creates a cloudinaryURL with expression and convertToFloat', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .addVariable(Variable.set('myexp', 'initial_width + 100 / 3').convertToFloat())
+      .addVariable(Variable.set('myexp', expression('initial_width + 100 / 3')).convertToFloat())
       .setPublicID('sample')
       .toURL();
 
