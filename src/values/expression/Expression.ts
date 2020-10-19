@@ -12,9 +12,9 @@ import normalizeExpression from '../../utils/normalizeExpression';
 
 /**
  * @description sets expression
- * @class ExpressionObject
+ * @class ExpressionQualifier
  */
-export class ExpressionObject {
+export class ExpressionQualifier {
   readonly value:string;
   constructor(value?:string) {
     this.value = value;
@@ -29,10 +29,10 @@ export class ExpressionObject {
  * @description An expression helper/builder function that transforms an input into an expression.
  * @memberOf Values.Expression
  * @param {string} expression The string representing expression.
- * @return {ExpressionObject}
+ * @return {ExpressionQualifier}
  */
-function expression(expression: string): ExpressionObject{
-  return new ExpressionObject(normalizeExpression(expression));
+function expression(expression: string): ExpressionQualifier{
+  return new ExpressionQualifier(normalizeExpression(expression));
 }
 
 export default {expression};
