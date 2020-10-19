@@ -2,7 +2,6 @@ import TrimAction from './TrimAction';
 import ConcatenateAction from './ConcatenateAction';
 import {VideoSource} from "../../values/sources/sourceTypes/VideoSource";
 import VolumeAction from "./VolumeAction";
-import Volume from "../../values/volume/Volume";
 
 /**
  * Methods for editing a video.

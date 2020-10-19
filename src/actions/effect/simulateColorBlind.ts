@@ -6,7 +6,7 @@ import Qualifier from "../../qualifier/Qualifier";
  * @class SimulateColorBlindEffectAction
  * @augments Action
  */
-class SimulateColorBlindEffectAction extends Action {
+export class SimulateColorBlindEffectAction extends Action {
   constructor() {
     super();
     this.addQualifier(new Qualifier('e', `simulate_colorblind`));
@@ -26,7 +26,7 @@ class SimulateColorBlindEffectAction extends Action {
    * @param {Values.simulateColorBlindValues | string} cond
    * @return {this}
    */
-  condition(cond: string) {
+  condition(cond: string): this {
     return this.setQualifier(cond);
   }
 }

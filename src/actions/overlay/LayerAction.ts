@@ -47,8 +47,9 @@ class LayerAction extends Action {
    * @@docs
    * Sets a flag in the first bit (Open)
    * @param {Flag} flag
+   * @return {this}
    */
-  setOpenLayerFlag(flag:Flag){
+  setOpenLayerFlag(flag:Flag): this{
     this.flag = flag;
     return this;
   }
@@ -57,8 +58,9 @@ class LayerAction extends Action {
    * @@docs
    * Sets an effect in the first bit (Open)
    * @param effect
+   * @return {this}
    */
-  setOpenLayerTransformation(effect: SimpleEffectAction){
+  setOpenLayerTransformation(effect: SimpleEffectAction): this{
     this.effect = effect;
     return this;
   }
