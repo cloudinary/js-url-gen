@@ -3,8 +3,7 @@ import Qualifier from "../../qualifier/Qualifier";
 import QualifierValue from "../../qualifier/QualifierValue";
 
 /**
- * @@doc
- * @description A class for colorspace from ICC.
+ * @description Specifies the ICC profile to use for the color space.
  * @class ColorSpaceFromICC
  * @augments Action
  */

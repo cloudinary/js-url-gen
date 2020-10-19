@@ -3,8 +3,7 @@ import Qualifier from "../../qualifier/Qualifier";
 import Flag from "../../values/flag/Flag";
 
 /**
- * @@doc
- * @description A class that sets delivery of asset.
+ * @description Qualifies the delivery of an asset.
  * @class DeliveryAction
  * @augments Action
  */
@@ -15,9 +14,7 @@ class DeliveryAction extends Action {
   }
 
   /**
-   * @@doc
-   * @description Adds lossy flag-
-   * Automatically use lossy compression when delivering animated GIF files.
+   * @description Uses lossy compression when delivering animated GIF files.
    * @return {this}
    */
   lossy(): this{
@@ -26,9 +23,7 @@ class DeliveryAction extends Action {
   }
 
   /**
-   * @@doc
-   * @description Adds progressive flag-
-   * Uses progressive compression when delivering JPG file format.
+   * @description Uses progressive compression when delivering JPG file format.
    * @return {this}
    */
   progressive(): this{
@@ -37,9 +32,7 @@ class DeliveryAction extends Action {
   }
 
   /**
-   * @@doc
-   * @description Adds preserve transparency flag-
-   * Ensures that images with a transparency channel will be delivered in PNG format.
+   * @description Ensures that images with a transparency channel are delivered in PNG format.
    */
   preserveTransparency(): this {
     this.addFlag(Flag.preserveTransparency());
