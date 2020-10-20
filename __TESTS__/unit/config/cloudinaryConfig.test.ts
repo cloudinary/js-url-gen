@@ -70,15 +70,18 @@ describe('Tests for CloudinaryConfiguration', () => {
     console.warn = () => {};
     const mockedFunction = jest.spyOn(console, 'warn');
 
-    new CloudinaryConfig({
+    const config = {
       cloud:{
         'fakeKey': true,
         cloudName:'foo'
       },
       url: {
-        'fakeKey': true
+        'fakeKey': true,
+        secure: true
       }
-    });
+    };
+
+    new CloudinaryConfig(config);
 
     // ensure expected result
     expect(mockedFunction).toHaveBeenCalledTimes(2);
@@ -97,12 +100,12 @@ describe('Tests for CloudinaryConfiguration', () => {
 
     // Configs expect objects as input, but we allow invalid types without throwing
     expect(() => {
-      new CloudConfig('foo');
+      new CloudConfig('foo' as any);
     }).toThrow();
     expect(new URLConfig('foo')).toEqual({});
 
     expect(() => {
-      new CloudConfig([]);
+      new CloudConfig([] as any);
     }).toThrow();
     expect(new URLConfig([])).toEqual({});
 

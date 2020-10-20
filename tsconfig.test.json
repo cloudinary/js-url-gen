@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "declaration": true,
+    "module": "ES2015",
+    "baseUrl": "src",
+    "moduleResolution": "node",
+    "esModuleInterop": true
+  },
+  "include": [
+    "__TESTS__"
+  ]
+}
