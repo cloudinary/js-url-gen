@@ -7,7 +7,7 @@ import QualifierValue from "../../qualifier/QualifierValue";
  * @class VectorizeEffectAction
  * @augments Action
  */
-class VectorizeEffectAction extends Action {
+export class VectorizeEffectAction extends Action {
   private _numOfColors: number | string;
   private _detailsLevel: number | string;
   private _despeckleLevel: number | string;
@@ -22,7 +22,7 @@ class VectorizeEffectAction extends Action {
    * @param {number} num
    * @return {this}
    */
-  numOfColors(num: number) {
+  numOfColors(num: number): this {
     this._numOfColors = num;
     return this;
   }
@@ -32,7 +32,7 @@ class VectorizeEffectAction extends Action {
    * @param {number} num
    * @return {this}
    */
-  detailsLevel(num: number) {
+  detailsLevel(num: number): this {
     this._detailsLevel = num;
     return this;
   }
@@ -42,7 +42,7 @@ class VectorizeEffectAction extends Action {
    * @param {number} num
    * @return {this}
    */
-  despeckleLevel(num: number) {
+  despeckleLevel(num: number):this {
     this._despeckleLevel = num;
     return this;
   }
@@ -52,7 +52,7 @@ class VectorizeEffectAction extends Action {
    * @param {number} num
    * @return {this}
    */
-  cornersLevel(num: number) {
+  cornersLevel(num: number): this {
     this._cornersLevel = num;
     return this;
   }
@@ -62,12 +62,12 @@ class VectorizeEffectAction extends Action {
    * @param {number} num
    * @return {this}
    */
-  paths(num: number) {
+  paths(num: number):this {
     this._paths = num;
     return this;
   }
 
-  protected prepareQualifiers() {
+  protected prepareQualifiers(): void {
     let str = 'vectorize';
     if (this._numOfColors) {
       str += `:${new QualifierValue(`colors:${this._numOfColors}`).toString()}`;

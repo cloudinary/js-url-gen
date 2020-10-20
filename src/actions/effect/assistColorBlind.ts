@@ -8,7 +8,7 @@ import Qualifier from "../../qualifier/Qualifier";
  * @description Applies stripes to the image to help people with common color-blind conditions to differentiate between colors that are similar for them.
  * You can replace colors using the xray()
  */
-class AssistColorBlindEffectAction extends Action {
+export class AssistColorBlindEffectAction extends Action {
   private hasStripes:boolean;
 
   constructor() {
@@ -19,11 +19,14 @@ class AssistColorBlindEffectAction extends Action {
   /**
    * @@doc
    * @description replace colors of the stripes
+   * @return {this}
    */
-  xray() {
+  xray(): this{
     // If stripes are defined, we don't do anything with xray
     if (!this.hasStripes) {
       return this.addQualifier(new Qualifier('e', new QualifierValue(['assist_colorblind', 'xray']).setDelimiter(':')));
+    } else {
+      return this;
     }
   }
 
@@ -31,8 +34,9 @@ class AssistColorBlindEffectAction extends Action {
    * @@doc
    * @description Adjusts the strength of the stripes on the asset
    * @param {number | string} num The strength of the stripes. (Range: 1 to 100, Server default: 10)
+   * @return {this}
    */
-  stripes(num:number | string) {
+  stripes(num:number | string): this {
     this.hasStripes = true;
     return this.addQualifier(new Qualifier('e', new QualifierValue(['assist_colorblind', num]).setDelimiter(':')));
   }

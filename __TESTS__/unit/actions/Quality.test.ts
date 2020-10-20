@@ -23,7 +23,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
   it('Creates a cloudinaryURL with quality', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(Delivery.quality(Quality.AUTO))
+      .delivery(Delivery.quality(Quality.auto()))
       .setPublicID('sample')
       .toURL();
 
@@ -33,7 +33,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
   it('Creates a cloudinaryURL with quality:best', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(Delivery.quality(Quality.BEST))
+      .delivery(Delivery.quality(Quality.best()))
       .setPublicID('sample')
       .toURL();
 
@@ -43,7 +43,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
   it('Creates a cloudinaryURL with quality:eco', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(Delivery.quality(Quality.ECO))
+      .delivery(Delivery.quality(Quality.eco()))
       .setPublicID('sample')
       .toURL();
 
@@ -53,7 +53,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
   it('Creates a cloudinaryURL with quality:good', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(Delivery.quality(Quality.GOOD))
+      .delivery(Delivery.quality(Quality.good()))
       .setPublicID('sample')
       .toURL();
 
@@ -63,7 +63,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
   it('Creates a cloudinaryURL with quality:low', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(Delivery.quality(Quality.LOW))
+      .delivery(Delivery.quality(Quality.low()))
       .setPublicID('sample')
       .toURL();
 
@@ -73,7 +73,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
   it('Creates a cloudinaryURL with jpegmini', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(Delivery.quality(Quality.JPEGMINI))
+      .delivery(Delivery.quality(Quality.jpegmini()))
       .setPublicID('sample')
       .toURL();
 
@@ -83,7 +83,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
   it('Creates a cloudinaryURL with jpegmini HIGH', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(Delivery.quality(Quality.JPEGMINI_HIGH))
+      .delivery(Delivery.quality(Quality.jpegminiHigh()))
       .setPublicID('sample')
       .toURL();
 
@@ -93,7 +93,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
   it('Creates a cloudinaryURL with jpegmini MEDIUM', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(Delivery.quality(Quality.JPEGMINI_MEDIUM))
+      .delivery(Delivery.quality(Quality.jpegminiMedium()))
       .setPublicID('sample')
       .toURL();
 
@@ -103,7 +103,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
   it('Creates a cloudinaryURL with jpegmini BEST', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(Delivery.quality(Quality.JPEGMINI_BEST))
+      .delivery(Delivery.quality(Quality.jpegminiBest()))
       .setPublicID('sample')
       .toURL();
 

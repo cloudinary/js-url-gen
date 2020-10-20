@@ -5,13 +5,20 @@
  * @namespace GradientFade
  */
 
-
 /**
  * @description Instructs the gradient fade to be applied symmetrically (to opposite edges of the image).
+ * @memberOf Values.GradientFade
+ * @return {string}
  */
-export const SYMMETRIC = 'symmetric';
+export function symmetric(): string {
+  return 'symmetric';
+}
 
 /**
- * Instructs the gradient fade to be applied symmetrically (to opposite edges of the image) including background padding.
+ * @description Instructs the gradient fade to be applied symmetrically (to opposite edges of the image) including background padding.
+ * @memberOf Values.GradientFade
+ * @return {string}
  */
-export const SYMMETRIC_PAD = 'symmetric_pad';
+export function symmetricPad(): string {
+  return 'symmetric_pad';
+}

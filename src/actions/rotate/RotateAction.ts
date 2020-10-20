@@ -3,7 +3,6 @@ import Qualifier from "../../qualifier/Qualifier";
 
 const PARAM_KEY = 'a';
 
-import * as RotationModes from '../../values/rotate/Rotate';
 
 /**
  * @description Rotates or flips an image or video.
@@ -22,24 +21,13 @@ class RotateAction extends Action {
   /**
    * @@doc
    * @description Rotate an image by using a rotationMode
-   * @param rotationMode
-   * For a list of supported rotation modes see {@link Values.rotationModeValues| types of rotation modes} for
+   * @param {Values.RotationMode | string} rotationMode
+   * For a list of supported rotation modes see {@link Values.RotationMode| types of rotation modes} for
    * possible values
    * @return {this}
    */
   mode(rotationMode: string):this {
-    switch (rotationMode) {
-      case RotationModes.AUTO_RIGHT:
-        return this.addValueToQualifier(PARAM_KEY, 'auto_right');
-      case RotationModes.AUTO_LEFT:
-        return this.addValueToQualifier(PARAM_KEY, 'auto_left');
-      case RotationModes.HORIZONTAL_FLIP:
-        return this.addValueToQualifier(PARAM_KEY, 'hflip');
-      case RotationModes.IGNORE:
-        return this.addValueToQualifier(PARAM_KEY, 'ignore');
-      case RotationModes.VERTICAL_FLIP:
-        return this.addValueToQualifier(PARAM_KEY, 'vflip');
-    }
+    return this.addValueToQualifier(PARAM_KEY, rotationMode);
   }
 
   /**
