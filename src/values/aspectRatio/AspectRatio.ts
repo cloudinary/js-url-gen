@@ -77,5 +77,5 @@ function IgnoreInitialAspectRatio(): IgnoreAspectRatioQualifier {
   return new IgnoreAspectRatioQualifier();
 }
 
-export {AR1X1, AR5X4, AR3X1, AR3X2, AR4X3, AR16X9, IgnoreInitialAspectRatio, IgnoreAspectRatioQualifier};
-export default {AR1X1, AR5X4, AR3X1, AR3X2, AR4X3, AR16X9, IgnoreInitialAspectRatio, IgnoreAspectRatioQualifier};
+export {AR1X1, AR5X4, AR3X1, AR3X2, AR4X3, AR16X9, IgnoreInitialAspectRatio};
+export default {AR1X1, AR5X4, AR3X1, AR3X2, AR4X3, AR16X9, IgnoreInitialAspectRatio};
