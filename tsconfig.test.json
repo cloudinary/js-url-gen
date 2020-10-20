@@ -8,6 +8,7 @@
     "noEmit": true
   },
   "include": [
-    "__TESTS__"
+    "__TESTS__",
+    "__TESTS_BUNDLE_SIZE__"
   ]
 }
