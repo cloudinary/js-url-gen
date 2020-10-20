@@ -23,7 +23,7 @@ describe('Tests for Transformation Action', () => {
 
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/a_90/sample');
   });
-  it('Creates a cloudinaryURL with new action while passing an array to addParam()', () => {
+  it('Creates a cloudinaryURL with new action while passing an array to addQualifier()', () => {
     const action = new Action().addQualifier(new Qualifier('a', new QualifierValue([90, 80]).setDelimiter('.')));
 
     const url = new TransformableImage()
@@ -45,7 +45,7 @@ describe('Tests for Transformation Action', () => {
 
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/a_90.80.70/sample');
   });
-  it('Creates a cloudinaryURL with new action while calling addParam twice', () => {
+  it('Creates a cloudinaryURL with new action while calling addQualifier twice', () => {
     const action = new Action()
       .addQualifier(new Qualifier('w', 100))
       .addQualifier(new Qualifier('c', 'fill'));

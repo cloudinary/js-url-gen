@@ -20,7 +20,7 @@ class LeveledEffectAction extends SimpleEffectAction {
    * @protected
    */
   protected setLevel(level: string | number): this {
-    const qualifierEffect = this.createEffectParam(this.effectType, level);
+    const qualifierEffect = this.createEffectQualifier(this.effectType, level);
     this.addQualifier(qualifierEffect);
     return this;
   }

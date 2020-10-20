@@ -9,12 +9,12 @@ import {AutoGravity, GravityObject} from "../gravityObjects/GravityObjects";
 import QualifierValue from "../../qualifier/QualifierValue";
 
 
-export class GravityParam extends Qualifier {
+export class GravityQualifier extends Qualifier {
   /**
    * @param gravityParamValue, an array containing (GravityObject | AutoGravity | string) or a string;
    */
-  constructor(gravityParamValue: (GravityObject | AutoGravity | string)[] | string) {
-    super('g', new QualifierValue(gravityParamValue));
+  constructor(gravityQualifierValue: (GravityObject | AutoGravity | string)[] | string) {
+    super('g', new QualifierValue(gravityQualifierValue));
   }
 }
 
@@ -22,100 +22,100 @@ export class GravityParam extends Qualifier {
 /**
  * @memberOf Values.Gravity
  * @description South center part (bottom center).
- * @return {GravityParam} GravityParam
+ * @return {GravityQualifier} GravityParam
  */
-function south():GravityParam {
-  return new GravityParam('south');
+function south():GravityQualifier {
+  return new GravityQualifier('south');
 }
 
 /**
  * @memberOf Values.Gravity
  * @description North center part (top center).
- * @return {GravityParam} GravityParam
+ * @return {GravityQualifier} GravityParam
  */
-function north():GravityParam {
-  return new GravityParam('north');
+function north():GravityQualifier {
+  return new GravityQualifier('north');
 }
 
 /**
  * @memberOf Values.Gravity
  * @description Middle east part (right).
- * @return {GravityParam} GravityParam
+ * @return {GravityQualifier} GravityParam
  */
-function east():GravityParam {
-  return new GravityParam('east');
+function east():GravityQualifier {
+  return new GravityQualifier('east');
 }
 
 /**
  * @memberOf Values.Gravity
  * @description Middle west part (left).
- * @return {GravityParam} GravityParam
+ * @return {GravityQualifier} GravityParam
  */
-function west():GravityParam {
-  return new GravityParam('west');
+function west():GravityQualifier {
+  return new GravityQualifier('west');
 }
 
 /**
  * @memberOf Values.Gravity
  * @description Detects the largest face in an image with the Advanced Facial Attribute Detection add-on and makes it the focus of the transformation.
- * @return {GravityParam} GravityParam
+ * @return {GravityQualifier} GravityParam
  */
-function advancedFace(): GravityParam {
-  return new GravityParam('adv_face');
+function advancedFace(): GravityQualifier {
+  return new GravityQualifier('adv_face');
 }
 
 /**
  * @memberOf Values.Gravity
  * @description Detects all faces in an image with the Advanced Facial Attribute Detection add-on and makes them the focus of the transformation.
- * @return {GravityParam} GravityParam
+ * @return {GravityQualifier} GravityParam
  */
-function advancedFaces(): GravityParam {
-  return new GravityParam('adv_faces');
+function advancedFaces(): GravityQualifier {
+  return new GravityQualifier('adv_faces');
 }
 
 /**
  * @memberOf Values.Gravity
  * @description Detects all eyes in an image with the Advanced Facial Attribute Detection add-on and makes them the focus of the transformation.
- * @return {GravityParam} GravityParam
+ * @return {GravityQualifier} GravityParam
  */
-function advancedEyes(): GravityParam {
-  return new GravityParam('adv_eyes');
+function advancedEyes(): GravityQualifier {
+  return new GravityQualifier('adv_eyes');
 }
 
 /**
  * @memberOf Values.Gravity
  * @description North west corner (top left).
- * @return {GravityParam} GravityParam
+ * @return {GravityQualifier} GravityParam
  */
-function northWest(): GravityParam {
-  return new GravityParam('north_west');
+function northWest(): GravityQualifier {
+  return new GravityQualifier('north_west');
 }
 
 /**
  * @memberOf Values.Gravity
  * @description North east corner (top right).
- * @return {GravityParam} GravityParam
+ * @return {GravityQualifier} GravityParam
  */
-function northEast(): GravityParam {
-  return new GravityParam('north_east');
+function northEast(): GravityQualifier {
+  return new GravityQualifier('north_east');
 }
 
 /**
  * @memberOf Values.Gravity
  * @description South west corner (bottom left).
- * @return {GravityParam} GravityParam
+ * @return {GravityQualifier} GravityParam
  */
-function southWest(): GravityParam {
-  return new GravityParam('south_west');
+function southWest(): GravityQualifier {
+  return new GravityQualifier('south_west');
 }
 
 /**
  * @memberOf Values.Gravity
  * @description South east corner (bottom right).
- * @return {GravityParam} GravityParam
+ * @return {GravityQualifier} GravityParam
  */
-function southEast(): GravityParam {
-  return new GravityParam('south_east');
+function southEast(): GravityQualifier {
+  return new GravityQualifier('south_east');
 }
 
 /**
@@ -123,37 +123,37 @@ function southEast(): GravityParam {
  * @description
  * Detects all text elements in an image using the OCR Text Detection and Extraction add-on</br>
  * and uses the detected bounding box coordinates as the focus of the transformation.
- * @return {GravityParam} GravityParam
+ * @return {GravityQualifier} GravityParam
  */
-function ocrText(): GravityParam {
-  return new GravityParam('ocr_text');
+function ocrText(): GravityQualifier {
+  return new GravityQualifier('ocr_text');
 }
 
 /**
  * @memberOf Values.Gravity
  * @description Detects the largest face in the asset and makes it the focus of the transformation.
- * @return {GravityParam} GravityParam
+ * @return {GravityQualifier} GravityParam
  */
-function face(): GravityParam {
-  return new GravityParam('face');
+function face(): GravityQualifier {
+  return new GravityQualifier('face');
 }
 
 /**
  * @memberOf Values.Gravity
  * @description Detects all the faces in the asset and makes them the focus of the transformation.
- * @return {GravityParam} GravityParam
+ * @return {GravityQualifier} GravityParam
  */
-function faces(): GravityParam {
-  return new GravityParam('faces');
+function faces(): GravityQualifier {
+  return new GravityQualifier('faces');
 }
 
 /**
  * @memberOf Values.Gravity
  * @description The center of the image.
- * @return {GravityParam} GravityParam
+ * @return {GravityQualifier} GravityParam
  */
-function center(): GravityParam {
-  return new GravityParam('center');
+function center(): GravityQualifier {
+  return new GravityQualifier('center');
 }
 
 /**
@@ -161,19 +161,19 @@ function center(): GravityParam {
  * @description
  * TODO : (This is not accurate in JS)</br>
  * Creates a new instance of the ObjectGravity.
- * @return {GravityParam} GravityParam
+ * @return {GravityQualifier} GravityParam
  */
-function object(...args: GravityObject[]): GravityParam {
-  return new GravityParam(args);
+function object(...args: GravityObject[]): GravityQualifier {
+  return new GravityQualifier(args);
 }
 
 /**
  * @memberOf Values.Gravity
  * @description Sets automatic gravity.
- * @return {GravityParam} GravityParam
+ * @return {GravityQualifier} GravityParam
  */
-function auto(...args: (GravityObject | AutoGravity)[]): GravityParam {
-  return new GravityParam(['auto', ...args]);
+function auto(...args: (GravityObject | AutoGravity)[]): GravityQualifier {
+  return new GravityQualifier(['auto', ...args]);
 }
 
 
@@ -215,5 +215,5 @@ export default {
   southEast,
   northEast,
   southWest,
-  GravityParam
+  GravityQualifier
 };

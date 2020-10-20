@@ -64,7 +64,7 @@ function AR16X9(): string {
  * @memberOf Values.AspectRatio
  * @return {string}
  */
-function AR3X1() : string {
+function AR3X1(): string {
   return '3:1';
 }
 
@@ -77,5 +77,5 @@ function IgnoreInitialAspectRatio(): IgnoreAspectRatioQualifier {
   return new IgnoreAspectRatioQualifier();
 }
 
-export {AR1X1, AR5X4, AR3X1, AR3X2, AR4X3, AR16X9, IgnoreInitialAspectRatio};
-export default {AR1X1, AR5X4, AR3X1, AR3X2, AR4X3, AR16X9, IgnoreInitialAspectRatio};
+export {AR1X1, AR5X4, AR3X1, AR3X2, AR4X3, AR16X9, IgnoreInitialAspectRatio, IgnoreAspectRatioQualifier};
+export default {AR1X1, AR5X4, AR3X1, AR3X2, AR4X3, AR16X9, IgnoreInitialAspectRatio, IgnoreAspectRatioQualifier};
