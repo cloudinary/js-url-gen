@@ -26,7 +26,6 @@
     "copyright": "Copyright © 2020 Cloudinary.com"
   },
   "opts": {
-    "destination": "public/docs",
     "recurse": true,
     "readme": "README.md",
     "template": "./node_modules/foodoc/template"

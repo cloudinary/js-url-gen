@@ -45,8 +45,9 @@ class LayerAction extends Action {
   /**
    * Sets a flag to take effect at the point specified in the transformation.
    * @param {Flag} flag
+   * @return {this}
    */
-  setOpenLayerFlag(flag:Flag){
+  setOpenLayerFlag(flag:Flag): this{
     this.flag = flag;
     return this;
   }
@@ -54,8 +55,9 @@ class LayerAction extends Action {
   /**
    * Sets an effect action to start at the point specified in the transformation.
    * @param effect
+   * @return {this}
    */
-  setOpenLayerTransformation(effect: SimpleEffectAction){
+  setOpenLayerTransformation(effect: SimpleEffectAction): this{
     this.effect = effect;
     return this;
   }

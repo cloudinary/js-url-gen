@@ -8,7 +8,7 @@ import {prepareColor} from "../../utils/prepareColor";
  * @class Outline
  * @augments Action
  */
-class Outline extends Action {
+export class Outline extends Action {
   private _mode: string;
   private _width: number | string;
   private _blurLevel : number | string
@@ -34,7 +34,7 @@ class Outline extends Action {
    * @param {number} width
    * @return {this}
    */
-  width(width?:number | string) {
+  width(width?:number | string): this {
     this._width = width;
     return this;
   }
@@ -46,7 +46,7 @@ class Outline extends Action {
    * @param {number | string} lvl
    * @return {this}
    */
-  blurLevel(lvl?: number | string) {
+  blurLevel(lvl?: number | string): this {
     this._blurLevel = lvl;
     return this;
   }
@@ -55,7 +55,7 @@ class Outline extends Action {
    * @param {string | Values.Color} color One of the SDK Color values, string, or rgba: '#fff'
    * @return {this}
    */
-  color(color:string) {
+  color(color:string): this {
     return this.addQualifier(new Qualifier('co', prepareColor(color)));
   }
 

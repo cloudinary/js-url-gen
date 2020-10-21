@@ -1,5 +1,5 @@
 import Action from "../../actions/Action";
-import {GravityParam} from "../gravity/Gravity";
+import {GravityQualifier} from "../gravity/Gravity";
 import Qualifier from "../../qualifier/Qualifier";
 
 /**
@@ -16,7 +16,7 @@ import Qualifier from "../../qualifier/Qualifier";
 class PositionQualifier extends Action {
   constructor(positionDirection:string) {
     super();
-    this.addQualifier(new GravityParam(positionDirection));
+    this.addQualifier(new GravityQualifier(positionDirection));
   }
 
   /**

@@ -1,4 +1,4 @@
-import Flag from './FlagParam';
+import Flag from './FlagQualifier';
 
 /**
  * @memberOf Values.Flag

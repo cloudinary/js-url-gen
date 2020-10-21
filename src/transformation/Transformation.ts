@@ -21,8 +21,27 @@ import {NamedTransformationAction} from "../actions/namedTransformation/NamedTra
 import VolumeAction from "../actions/videoEdit/VolumeAction";
 import TrimAction from "../actions/videoEdit/TrimAction";
 import ConcatenateAction from "../actions/videoEdit/ConcatenateAction";
+import {Outline} from "../actions/effect/outline";
+import {ShadowEffectAction} from "../actions/effect/shadow";
+import {AssistColorBlindEffectAction} from "../actions/effect/assistColorBlind";
+import {SimulateColorBlindEffectAction} from "../actions/effect/simulateColorBlind";
+import {CartoonifyEffect} from "../actions/effect/cartoonify";
+import {StyleTransfer} from "../actions/effect/styleTransfer";
+import {VectorizeEffectAction} from "../actions/effect/vectorize";
+import {GradientFadeEffectAction} from "../actions/effect/gradientFade";
 
 declare type videoEditType = VolumeAction | TrimAction | ConcatenateAction;
+declare type EffectActions =
+  SimpleEffectAction
+  | Outline
+  | ShadowEffectAction
+  | AssistColorBlindEffectAction
+  | SimulateColorBlindEffectAction
+  | CartoonifyEffect
+  | StyleTransfer
+  | VectorizeEffectAction
+  | GradientFadeEffectAction
+
 
 /**
  * @description - Defines how to transform an asset
@@ -176,7 +195,7 @@ class Transformation {
    * @description Applies a filter or an effect on an asset.
    * @param {SimpleEffectAction} effectAction
    */
-  effect(effectAction: SimpleEffectAction): this {
+  effect(effectAction: EffectActions): this {
     return this.addAction(effectAction);
   }
 
@@ -231,11 +250,11 @@ class Transformation {
 
   /**
    * @description Adds a flag as a separate action.
-   * @param {Values.Flag} flagParam
+   * @param {Values.Flag} flagQualifier
    */
-  addFlag(flagParam: Flag): this {
+  addFlag(flagQualifier: Flag): this {
     const action = new Action();
-    action.addQualifier(flagParam);
+    action.addQualifier(flagQualifier);
     return this.addAction(action);
   }
 

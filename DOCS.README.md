@@ -59,15 +59,15 @@ import {mode} from '@cloudinary/base/actions/rotate';
 import * as RotationMode from '@cloudinary/base/values/rotate';
 
 // Alternatively, get just the rotation you need, this is a value passed to an action
-import {VERTICAL_FLIP} from '@cloudinary/base/values/rotate';
+import {verticalFlip} from '@cloudinary/base/values/rotate';
 
 const myImage = new TransformableImage('sample');
 
 // Configure your image
 myImage.config(/* ...snip, your config, same as above */);
 
-// the mode action accepts a rotation value - VERTICAL_FLIP
-myImage.rotate(mode(VERTICAL_FLIP));
+// the mode action accepts a rotationMode value - verticalFlip()
+myImage.rotate(mode(verticalFlip()));
 
 // Create a URL
 const myURL = myImage.toURL();

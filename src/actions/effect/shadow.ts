@@ -8,7 +8,7 @@ import {prepareColor} from "../../utils/prepareColor";
  * @class ShadowEffectAction
  * @augments Action
  */
-class ShadowEffectAction extends Action {
+export class ShadowEffectAction extends Action {
   private effectType: string;
 
   constructor(effectType: string, strength: number) {
@@ -23,7 +23,7 @@ class ShadowEffectAction extends Action {
    * @param {number} strength
    * @return {this}
    */
-  strength(strength: number) {
+  strength(strength: number): this {
     return this.addQualifier(new Qualifier('e', new QualifierValue(['shadow', strength])));
   }
 
@@ -32,7 +32,7 @@ class ShadowEffectAction extends Action {
    * @param {number} x
    * @return {this}
    */
-  offsetX(x:number) {
+  offsetX(x:number): this {
     return this.addQualifier(new Qualifier('x', new QualifierValue(x)));
   }
 
@@ -41,7 +41,7 @@ class ShadowEffectAction extends Action {
    * @param {number} y
    * @return {this}
    */
-  offsetY(y:number) {
+  offsetY(y:number): this {
     return this.addQualifier(new Qualifier('y', new QualifierValue(y)));
   }
 
@@ -50,7 +50,7 @@ class ShadowEffectAction extends Action {
    * @param color
    * @return {this}
    */
-  color(color:string) {
+  color(color:string): this {
     return this.addQualifier(new Qualifier('co', new QualifierValue(prepareColor(color))));
   }
 }

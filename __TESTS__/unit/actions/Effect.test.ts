@@ -9,7 +9,7 @@ import {image} from "../../../src/values/sources/Sources";
 import scale from "../../../src/actions/resize/ResizeActions/ScaleAction";
 import cartoonify from "../../../src/actions/effect/cartoonify";
 import {HALFTONE_4X4_ORTHOGONAL} from "../../../src/values/dither/Dither";
-import {SYMMETRIC_PAD} from "../../../src/values/gradientFade/GradientFade";
+import * as GradientFade from "../../../src/values/gradientFade/GradientFade";
 import {BLUE} from "../../../src/values/colors/Colors";
 import {ROD_MONOCHROMACY} from "../../../src/values/simulateColorBlind/SimulateColorBlind";
 
@@ -334,7 +334,7 @@ describe('Tests for Transformation Action -- Effect', () => {
     ).toBe('e_gradient_fade:5');
 
     expect(Effect.gradientFade()
-      .type(SYMMETRIC_PAD)
+      .type(GradientFade.symmetricPad())
       .strength(5)
       .horizontalStartPoint(10)
       .verticalStartPoint(20)

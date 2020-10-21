@@ -41,20 +41,4 @@ describe('Tests for Transformation', () => {
       .toURL()
     ).toBe('http://res.cloudinary.com/demo/avatar/fetch/v1234/sample');
   });
-
-  it('When providing actions with a toString method, should concat all child strings', () => {
-    transformation
-      .addAction({
-        toString() {
-          return 'aa';
-        }
-      })
-      .addAction({
-        toString() {
-          return 'bb';
-        }
-      });
-
-    expect(transformation.toString()).toBe('aa/bb');
-  });
 });

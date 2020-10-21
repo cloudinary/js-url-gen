@@ -1,9 +1,9 @@
 {
   "name": "@cloudinary/base",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "description": "",
   "scripts": {
-    "test": "npm run build && jest --coverage --reporters default &&  npm run test:size",
+    "test": "npm run test:types && npm run build && jest --coverage --reporters default &&  npm run test:size",
     "test:size": "ts-node -O '{\"module\":\"CommonJS\"}' __TESTS_BUNDLE_SIZE__/bin/bin.ts",
     "test:comp": "node ./scripts/updateCompliationTests.js && jest __TESTS__/compilation.test.ts  --coverage",
     "test:unit": "jest __TESTS__/unit --reporters default",
@@ -11,13 +11,16 @@
     "test:integration": "jest __TESTS__/integration",
     "test:integration:watch": "jest __TESTS__/integration --watch",
     "build": "bash ./scripts/build.sh",
-    "build:ESM": "tsc --project ./tsconfig.json",
+    "test:types": "tsc --project tsconfig.test.json",
+    "build:ESM": "tsc --project tsconfig.json",
     "build:UMD": "rollup -c",
-    "build:docs": "jsdoc --configure jsdoc.config.json --verbose --readme ./DOCS.README.md",
+    "build:docs": "node ./scripts/buildDocs.js",
     "build:entryPoints": "ts-node ./scripts/createEntrypoints.ts",
     "lint": "eslint src __TESTS__ --color --ext .ts",
     "start": "rollup -c rollup.dev.config.js -w",
-    "bundlewatch": "bundlewatch --config ./bundlewatch.config.js"
+    "bundlewatch": "bundlewatch --config ./bundlewatch.config.js",
+    "release-dry-run" : "npm run build && cp README.md LICENSE ./dist && cd ./dist && release-it --dry-run",
+    "release" : "npm run build && cp README.md LICENSE ./dist && cd ./dist && release-it"
   },
   "keywords": [],
   "author": "",
@@ -51,8 +54,8 @@
     "tslib": "^2.0.0",
     "typedoc": "^0.17.8",
     "typescript": "^3.9.3",
-    "webpack": "^4.44.1"
+    "webpack": "^4.44.1",
+    "release-it": "^14.2.0"
   },
-  "types": "./types/index.d.ts",
-  "dependencies": {}
+  "types": "./types/index.d.ts"
 }

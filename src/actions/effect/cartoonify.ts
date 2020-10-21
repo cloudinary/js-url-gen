@@ -7,7 +7,7 @@ import Action from "../Action";
  * @augments Action
  * @description Applies a cartoon effect to an image.
  */
-class CartoonifyEffect extends Action {
+export class CartoonifyEffect extends Action {
   private colorReduction: number | string;
   private cartoonifyStrength: number;
   private effectName: string;

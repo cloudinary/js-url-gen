@@ -1,9 +1,8 @@
 import Action from "../Action";
 import Qualifier from "../../qualifier/Qualifier";
 
-const PARAM_KEY = 'a';
+const QUALIFIER_KEY = 'a';
 
-import * as RotationModes from '../../values/rotate/Rotate';
 
 /**
  * @description Rotates or flips an image or video.
@@ -16,29 +15,18 @@ import * as RotationModes from '../../values/rotate/Rotate';
 class RotateAction extends Action {
   constructor(angle?: number) {
     super();
-    this.addQualifier(new Qualifier(PARAM_KEY, angle));
+    this.addQualifier(new Qualifier(QUALIFIER_KEY, angle));
   }
 
   /**
    * @description Rotates an asset using a defined mode.
-   * @param rotationMode
+   * @param {Values.RotationMode | string} rotationMode
    * For a list of supported rotation modes see {@link Values.rotationModeValues| types of rotation modes} for
    * possible values
    * @return {this}
    */
   mode(rotationMode: string):this {
-    switch (rotationMode) {
-      case RotationModes.AUTO_RIGHT:
-        return this.addValueToQualifier(PARAM_KEY, 'auto_right');
-      case RotationModes.AUTO_LEFT:
-        return this.addValueToQualifier(PARAM_KEY, 'auto_left');
-      case RotationModes.HORIZONTAL_FLIP:
-        return this.addValueToQualifier(PARAM_KEY, 'hflip');
-      case RotationModes.IGNORE:
-        return this.addValueToQualifier(PARAM_KEY, 'ignore');
-      case RotationModes.VERTICAL_FLIP:
-        return this.addValueToQualifier(PARAM_KEY, 'vflip');
-    }
+    return this.addValueToQualifier(QUALIFIER_KEY, rotationMode);
   }
 
   /**
@@ -47,7 +35,7 @@ class RotateAction extends Action {
    * @return {this}
    */
   angle(degrees: number): this {
-    return this.addValueToQualifier(PARAM_KEY, degrees);
+    return this.addValueToQualifier(QUALIFIER_KEY, degrees);
   }
 }
 

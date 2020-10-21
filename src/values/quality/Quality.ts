@@ -1,22 +1,68 @@
 /**
  * @memberOf Values
- * @typedef qualityTypeValues
- * @property {string} AUTO Quality auto.
- * @property {string} BEST Quality best.
- * @property {string} ECO Quality eco.
- * @property {string} GOOD Quality good.
- * @property {string} JPEGMINI Quality jpegmini.
- * @property {string} LOW Quality low.
- * @property {string} JPEGMINI_HIGH Quality jpegmini high.
- * @property {string} JPEGMINI_MEDIUM Quality jpegmini medium.
- * @property {string} JPEGMINI_BEST Quality jpegmini best.
+ * @namespace QualityValues
  */
-export const AUTO = 'auto';
-export const BEST = 'auto:best';
-export const ECO = 'auto:eco';
-export const GOOD = 'auto:good';
-export const JPEGMINI = 'jpegmini';
-export const LOW = 'auto:low';
-export const JPEGMINI_HIGH = 'jpegmini:1';
-export const JPEGMINI_MEDIUM = 'jpegmini:2';
-export const JPEGMINI_BEST = 'jpegmini:0';
+
+/**
+ * @description Quality auto
+ * @memberOf Values.QualityValues
+ * @return {string}
+ */
+export function auto():string { return 'auto';}
+
+/**
+ * @description Quality best
+ * @memberOf Values.QualityValues
+ * @return {string}
+ */
+export function best():string { return 'auto:best';}
+
+/**
+ * @description Quality eco
+ * @memberOf Values.QualityValues
+ * @return {string}
+ */
+export function eco():string { return 'auto:eco';}
+
+/**
+ * @description Quality good
+ * @memberOf Values.QualityValues
+ * @return {string}
+ */
+export function good():string { return 'auto:good';}
+
+/**
+ * @description Quality low
+ * @memberOf Values.QualityValues
+ * @return {string}
+ */
+export function low():string { return 'auto:low';}
+
+/**
+ * @description Quality jpegmini
+ * @memberOf Values.QualityValues
+ * @return {string}
+ */
+export function jpegmini():string { return 'jpegmini';}
+
+/**
+ * @description Quality jpegmini best
+ * @memberOf Values.QualityValues
+ * @return {string}
+ */
+export function jpegminiBest():string { return 'jpegmini:0';}
+
+/**
+ * @description Quality jpegmini high
+ * @memberOf Values.QualityValues
+ * @return {string}
+ */
+export function jpegminiHigh():string { return 'jpegmini:1';}
+
+/**
+ * @description Quality jpegmini medium
+ * @memberOf Values.QualityValues
+ * @return {string}
+ */
+export function jpegminiMedium():string { return 'jpegmini:2';}
+

@@ -13,7 +13,7 @@ import Action from "../Action";
  * @class StyleTransfer
  * @augments Action
  */
-class StyleTransfer extends Action {
+export class StyleTransfer extends Action {
   // This action is actually a layer.
   private imgLayer: LayerAction;
   // This action is built from effectStrength and preserve

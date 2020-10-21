@@ -6,7 +6,7 @@ import Qualifier from "../../qualifier/Qualifier";
  * @class GradientFadeEffectAction
  * @augments Action
  */
-class GradientFadeEffectAction extends Action {
+export class GradientFadeEffectAction extends Action {
   private _strength: number;
   private _type: string;
 

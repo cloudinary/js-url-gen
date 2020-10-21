@@ -1,4 +1,4 @@
-import {GravityParam} from "../../../values/gravity/Gravity";
+import {GravityQualifier} from "../../../values/gravity/Gravity";
 import ResizeSimpleAction from "./shared/ResizeSimpleAction";
 
 /**
@@ -13,7 +13,7 @@ class ScaleAction extends ResizeSimpleAction {
    * @return {this}
    */
   liquidRescaling(): this {
-    return this.addQualifier(new GravityParam('liquid'));
+    return this.addQualifier(new GravityQualifier('liquid'));
   }
 }
 
