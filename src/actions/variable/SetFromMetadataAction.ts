@@ -3,8 +3,7 @@ import VariableAction from "./VariableAction";
 /**
  * @class SetFromMetadataAction
  * @augments VariableAction
- * @@doc
- * @description A class that sets variable from metadata.
+ * @description Sets a user-defined variable from structured metadata.
  */
 class SetFromMetadataAction extends VariableAction {
   constructor(name: string, value: string) {

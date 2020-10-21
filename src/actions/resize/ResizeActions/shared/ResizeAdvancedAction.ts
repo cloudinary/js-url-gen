@@ -2,8 +2,7 @@ import ResizeSimpleAction from "./ResizeSimpleAction";
 import {GravityParam} from "../../../../values/gravity/Gravity";
 
 /**
- * @@doc
- * @description A class used to define an advanced resize.
+ * @description Defines an advanced resize.
  * @class ResizeAdvancedAction
  * @augments ResizeSimpleAction
  */

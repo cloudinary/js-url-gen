@@ -2,8 +2,7 @@ import {prepareColor} from "../../../../utils/prepareColor";
 import {BackgroundQualifier} from "./BackgroundQualifier";
 
 /**
- * @@doc
- * @description Automatically sets the background color when resizing with padding.
+ * @description Defines the background color to use when resizing with padding.
  * @class BaseCommonBackground
  * @augments BackgroundQualifier
  */
@@ -17,8 +16,7 @@ class BaseCommonBackground extends BackgroundQualifier {
   }
 
   /**
-   * @@doc
-   * @description Selects the strongest contrasting color to the predominant color while taking only the image border pixels into account.
+   * @description Selects the strongest contrasting color to use for padding.
    * @return {this}
    */
   contrast(): this {

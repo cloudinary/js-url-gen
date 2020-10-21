@@ -1,6 +1,5 @@
 /**
- * @@docs
- * @description Defines the instructions for how the gradient fade should be applied
+ * @description Defines how the background gradient fade effect is applied.
  * @memberOf Values
  * @namespace GradientFade
  */

@@ -1,6 +1,5 @@
 /**
- * @@docs
- * @description Defines the directions for a background gradient fade effect.
+ * @description Defines the direction for a background gradient fade effect.
  * @memberOf Values
  * @namespace GradientDirection
  */

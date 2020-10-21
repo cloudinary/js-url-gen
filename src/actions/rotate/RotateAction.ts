@@ -20,8 +20,7 @@ class RotateAction extends Action {
   }
 
   /**
-   * @@doc
-   * @description Rotate an image by using a rotationMode
+   * @description Rotates an asset using a defined mode.
    * @param rotationMode
    * For a list of supported rotation modes see {@link Values.rotationModeValues| types of rotation modes} for
    * possible values
@@ -43,7 +42,7 @@ class RotateAction extends Action {
   }
 
   /**
-   * @description Rotate an image by the given degrees.
+   * @description Rotates an asset by the specified degrees.
    * @param {number} degrees rotation in degrees e.g 90, 45, 33
    * @return {this}
    */

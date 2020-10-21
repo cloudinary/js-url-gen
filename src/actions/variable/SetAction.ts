@@ -5,8 +5,7 @@ import {ExpressionQualifier} from "../../values/expression/Expression";
 /**
  * @class SetAction
  * @augments VariableAction
- * @@doc
- * @description A class that sets variable
+ * @description Sets a user-defined variable.
  */
 class SetAction extends VariableAction {
   constructor(name: string, value: number | string | string[] | number[] | ExpressionQualifier) {

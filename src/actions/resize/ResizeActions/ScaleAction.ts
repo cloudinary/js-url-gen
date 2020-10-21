@@ -2,8 +2,7 @@ import {GravityParam} from "../../../values/gravity/Gravity";
 import ResizeSimpleAction from "./shared/ResizeSimpleAction";
 
 /**
- * @@doc
- * @description A class used to define resize scale.
+ * @description Defines a scaling resize action.
  * @class ScaleAction
  * @augments ResizeSimpleAction
  */
@@ -20,7 +19,7 @@ class ScaleAction extends ResizeSimpleAction {
 
 /**
  * @description
- * Change the size of the image exactly to the given width and height without necessarily retaining the original aspect ratio:<br/>
+ * Changes the size of the image exactly to the given width and height without necessarily retaining the original aspect ratio:<br/>
  * all original image parts are visible but might be stretched or shrunk.
  * @memberOf Actions.Resize
  * @param {number|string} width The required width of a transformed asset.

@@ -25,8 +25,7 @@ export class ExpressionQualifier {
   }
 }
 /**
- *@@doc
- * @description An expression helper/builder function that transforms an input into an expression.
+ * @description Transforms an input into an expression for use with conditional transformations.
  * @memberOf Values.Expression
  * @param {string} expression The string representing expression.
  * @return {ExpressionQualifier}
