@@ -7,7 +7,7 @@ import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 
 
 
-describe('Gravity Param', () => {
+describe('Gravity Qualifier', () => {
   it('Ensure ESM and Default export the same thing', () => {
     expectESMToMatchDefault(GravityESM, Gravity);
   });

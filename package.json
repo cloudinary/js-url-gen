@@ -3,7 +3,7 @@
   "version": "1.0.0-alpha.1",
   "description": "",
   "scripts": {
-    "test": "npm run build && jest --coverage --reporters default &&  npm run test:size",
+    "test": "npm run test:types && npm run build && jest --coverage --reporters default &&  npm run test:size",
     "test:size": "ts-node -O '{\"module\":\"CommonJS\"}' __TESTS_BUNDLE_SIZE__/bin/bin.ts",
     "test:comp": "node ./scripts/updateCompliationTests.js && jest __TESTS__/compilation.test.ts  --coverage",
     "test:unit": "jest __TESTS__/unit --reporters default",
@@ -11,7 +11,8 @@
     "test:integration": "jest __TESTS__/integration",
     "test:integration:watch": "jest __TESTS__/integration --watch",
     "build": "bash ./scripts/build.sh",
-    "build:ESM": "tsc --project ./tsconfig.json",
+    "test:types": "tsc --project tsconfig.test.json",
+    "build:ESM": "tsc --project tsconfig.json",
     "build:UMD": "rollup -c",
     "build:docs": "node ./scripts/buildDocs.js",
     "build:entryPoints": "ts-node ./scripts/createEntrypoints.ts",

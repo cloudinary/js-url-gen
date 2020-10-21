@@ -21,7 +21,7 @@ const validatePackageFiles = require('./validatePackageFiles');
 // Create an Entry Point from everything under bundles/esm/actions -> dist/actions
 const expectedActionsFiles = createEntryPointFromESMPath('actions', 'actions');
 
-// Create an Entry Point from everything under bundles/esm/params -> dist/params
+// Create an Entry Point from everything under bundles/esm/values -> dist/values
 const expectedValuesFiles = createEntryPointFromESMPath('values', 'values');
 
 // Allows import from '@base' (With types)

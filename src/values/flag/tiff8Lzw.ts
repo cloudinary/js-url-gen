@@ -1,4 +1,4 @@
-import Flag from './FlagParam';
+import Flag from './FlagQualifier';
 /**
  * @memberOf Values.Flag
  * @description Generates TIFF images using LZW compression and in the TIFF8 format.

@@ -3,7 +3,7 @@ import * as BlendModeESM from "../../../src/values/blendMode/BlendMode";
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 
 
-describe('BlendMode Param', () => {
+describe('BlendMode Qualifier', () => {
   it('Ensure ESM and Default export the same thing', () => {
     expectESMToMatchDefault(BlendModeESM, BlendMode);
   });

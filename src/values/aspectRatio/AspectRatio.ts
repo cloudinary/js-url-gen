@@ -64,7 +64,7 @@ function AR16X9(): string {
  * @memberOf Values.AspectRatio
  * @return {string}
  */
-function AR3X1() : string {
+function AR3X1(): string {
   return '3:1';
 }
 
