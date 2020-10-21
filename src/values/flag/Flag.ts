@@ -33,7 +33,7 @@ import splice from "./splice";
 import truncateTS from "./truncateTS";
 import waveform from "./waveform";
 import ignoreAspectRatio from "./ignoreAspectRatio";
-import Flag from "./FlagParam";
+import Flag from "./FlagQualifier";
 
 export {Flag, animated, anyFormat, animatedPng, animatedWebP, clip,
   clipEvenOdd, lossy, preserveTransparency, png8, png24, png32, progressive, rasterize,

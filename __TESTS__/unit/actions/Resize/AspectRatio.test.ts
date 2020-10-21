@@ -1,9 +1,6 @@
-import getImageWithResize from "./shared/getImageWithResize";
 import crop from "../../../../src/actions/resize/ResizeActions/CropAction";
-import Gravity from "../../../../src/values/gravity/Gravity";
 import AspectRatio from "../../../../src/values/aspectRatio/AspectRatio";
 import TransformableImage from "../../../../src/transformation/TransformableImage";
-import * as Format from "../../../../src/values/formats/Formats";
 import CloudinaryConfig from "../../../../src/config/CloudinaryConfig";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({

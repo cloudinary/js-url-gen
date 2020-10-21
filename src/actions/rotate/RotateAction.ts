@@ -1,7 +1,7 @@
 import Action from "../Action";
 import Qualifier from "../../qualifier/Qualifier";
 
-const PARAM_KEY = 'a';
+const QUALIFIER_KEY = 'a';
 
 
 /**
@@ -15,7 +15,7 @@ const PARAM_KEY = 'a';
 class RotateAction extends Action {
   constructor(angle?: number) {
     super();
-    this.addQualifier(new Qualifier(PARAM_KEY, angle));
+    this.addQualifier(new Qualifier(QUALIFIER_KEY, angle));
   }
 
   /**
@@ -27,7 +27,7 @@ class RotateAction extends Action {
    * @return {this}
    */
   mode(rotationMode: string):this {
-    return this.addValueToQualifier(PARAM_KEY, rotationMode);
+    return this.addValueToQualifier(QUALIFIER_KEY, rotationMode);
   }
 
   /**
@@ -36,7 +36,7 @@ class RotateAction extends Action {
    * @return {this}
    */
   angle(degrees: number): this {
-    return this.addValueToQualifier(PARAM_KEY, degrees);
+    return this.addValueToQualifier(QUALIFIER_KEY, degrees);
   }
 }
 
