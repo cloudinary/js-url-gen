@@ -5,8 +5,6 @@ import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as Colors from "../../../src/values/colors/Colors";
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 
-const {type, SOLID} = Border;
-
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
     cloudName: 'demo'
@@ -18,27 +16,10 @@ describe('Tests for Transformation Action -- Border', () => {
     expectESMToMatchDefault(BorderESM, Border);
   });
 
-  it('Is accepted as an action to TransformableImage', () => {
-    const tImage = new TransformableImage();
-    // Ensures it compiles and doesn't throw
-    expect(
-      tImage.border(type(SOLID).width(50).color('green'))
-    ).toEqual(tImage);
-  });
-
-  it('Ensure the "solid" methods are chainable', () => {
-    const borderActionInstance = type(SOLID);
-
-    expect(borderActionInstance.width(50)).toEqual(borderActionInstance);
-    expect(borderActionInstance.color(Colors.RED)).toEqual(borderActionInstance);
-  });
-
   it('Creates a cloudinaryURL with border and color', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .border(Border.type(SOLID)
-        .width(7)
-        .color(Colors.RED))
+      .border(Border.solid(Colors.RED, 7))
       .setPublicID('sample')
       .toURL();
 
@@ -48,9 +29,7 @@ describe('Tests for Transformation Action -- Border', () => {
   it('Creates a cloudinaryURL with border and rgb #0000ff', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .border(Border.type(SOLID)
-        .width(7)
-        .color('#0000ff'))
+      .border(Border.solid('#0000ff', 7))
       .setPublicID('sample')
       .toURL();
 
@@ -60,9 +39,7 @@ describe('Tests for Transformation Action -- Border', () => {
   it('Creates a cloudinaryURL with border and rgb #FFF', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .border(Border.type(SOLID)
-        .width(7)
-        .color('#FFF'))
+      .border(Border.solid('#FFF', 7))
       .setPublicID('sample')
       .toURL();
 
@@ -72,9 +49,7 @@ describe('Tests for Transformation Action -- Border', () => {
   it('Creates a cloudinaryURL with border and rgb #FFFFFFFF', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .border(Border.type(SOLID)
-        .width(7)
-        .color('#FFFFFFFF'))
+      .border(Border.solid('#FFFFFFFF', 7))
       .setPublicID('sample')
       .toURL();
 

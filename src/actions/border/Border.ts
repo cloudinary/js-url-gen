@@ -7,8 +7,6 @@
  * @namespace Border
  *
  */
-import type from './type';
-const SOLID = 'solid';
+import solid from './solid';
 
-export {type, SOLID};
-export default {type, SOLID};
+export default {solid};

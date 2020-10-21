@@ -251,7 +251,7 @@ describe('Tests for Transformation Action -- Delivery', () => {
   it('Creates a cloudinaryURL with Delivery.dpr', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(Delivery.dpr(Dpr.AUTO))
+      .delivery(Delivery.dpr(Dpr.auto()))
       .setPublicID('sample')
       .toURL();
 
@@ -301,7 +301,7 @@ describe('Tests for Transformation Action -- Delivery', () => {
   it('Creates a cloudinaryURL with Delivery.colorspace', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(Delivery.colorSpace(ColorSpace.NO_CMYK))
+      .delivery(Delivery.colorSpace(ColorSpace.noCMYK()))
       .setPublicID('sample')
       .toURL();
 

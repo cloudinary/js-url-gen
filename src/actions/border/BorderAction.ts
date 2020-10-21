@@ -17,10 +17,13 @@ class BorderAction extends Action {
    * @@doc
    * @description Use values provided from {@link Values.Border|Border Values}
    * @param {'solid'} borderType
+   * @param {number} borderWidth The width in pixels.
    */
-  constructor(borderType: string) {
+  constructor(borderType: string, color: string, width: number) {
     super();
     this.borderType = borderType;
+    this.borderColor = prepareColor(color);
+    this.borderWidth = width;
   }
 
   /**

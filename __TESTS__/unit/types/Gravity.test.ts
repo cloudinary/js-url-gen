@@ -30,15 +30,15 @@ describe('Gravity Param', () => {
   });
 
   it('Tests gravity objects - Singular', () => {
-    expect(Gravity.object(GravityObjects.CAT).toString()).toBe('g_cat');
+    expect(Gravity.object(GravityObjects.cat()).toString()).toBe('g_cat');
   });
 
   it('Tests gravity objects - Many', () => {
-    expect(Gravity.object(GravityObjects.CAT, GravityObjects.DOG).toString()).toBe('g_cat:dog');
+    expect(Gravity.object(GravityObjects.cat(), GravityObjects.dog()).toString()).toBe('g_cat:dog');
   });
 
   it('Tests Gravity.auto() with objects', () => {
-    expect(Gravity.auto(GravityObjects.CAT, GravityObjects.DOG).toString()).toBe('g_auto:cat:dog');
+    expect(Gravity.auto(GravityObjects.cat(), GravityObjects.dog()).toString()).toBe('g_auto:cat:dog');
   });
 
   it('Tests Gravity.auto() with AutoGravity.classic', () => {
@@ -46,7 +46,7 @@ describe('Gravity Param', () => {
   });
 
   it('Tests Gravity.auto() with AutoGravity with object', () => {
-    expect(Gravity.auto(AutoGravity.object(GravityObjects.CAT)).toString()).toBe('g_auto:cat');
+    expect(Gravity.auto(AutoGravity.object(GravityObjects.cat())).toString()).toBe('g_auto:cat');
   });
 
   it('Tests Gravity.auto() with AutoGravity with subject', () => {
@@ -54,11 +54,11 @@ describe('Gravity Param', () => {
   });
 
   it('Tests Gravity.auto() with AutoGravity with object avoid', () => {
-    expect(Gravity.auto(AutoGravity.object(GravityObjects.CAT).avoid()).toString()).toBe('g_auto:cat_avoid');
+    expect(Gravity.auto(AutoGravity.object(GravityObjects.cat()).avoid()).toString()).toBe('g_auto:cat_avoid');
   });
 
   it('Tests Gravity.auto() with AutoGravity with object weighed', () => {
-    expect(Gravity.auto(AutoGravity.object(GravityObjects.CAT, -100)).toString()).toBe('g_auto:cat_-100');
+    expect(Gravity.auto(AutoGravity.object(GravityObjects.cat(), -100)).toString()).toBe('g_auto:cat_-100');
   });
 
 

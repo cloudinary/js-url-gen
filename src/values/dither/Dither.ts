@@ -5,22 +5,200 @@
  */
 
 
-export const THRESHOLD_1X1_NON_DITHER = 0;
-export const CHECKERBOARD_2X1_DITHER = 1;
-export const ORDERED_2X2_DISPERSED = 2;
-export const ORDERED_3X3_DISPERSED = 3;
-export const ORDERED_4X4_DISPERSED = 4;
-export const ORDERED_8X8_DISPERSED = 5;
-export const HALFTONE_4X4_ANGLED = 6;
-export const HALFTONE_6X6_ANGLED = 7;
-export const HALFTONE_8X8_ANGLED = 8;
-export const HALFTONE_4X4_ORTHOGONAL = 9;
-export const HALFTONE_6X6_ORTHOGONAL = 10;
-export const HALFTONE_8X8_ORTHOGONAL = 11;
-export const HALFTONE_16X16_ORTHOGONAL = 12;
-export const CIRCLES_5X5_BLACK = 13;
-export const CIRCLES_5X5_WHITE = 14;
-export const CIRCLES_6X6_BLACK = 15;
-export const CIRCLES_6X6_WHITE = 16;
-export const CIRCLES_7X7_BLACK = 17;
-export const CIRCLES_7X7_WHITE = 18;
+/**
+ * @@doc
+ * @memberOf Values.Dither
+ */
+function threshold1x1nondither(): number {
+  return 0;
+}
+
+/**
+ * @@doc
+ * @memberOf Values.Dither
+ */
+function checkerboard2x1dither(): number {
+  return 1;
+}
+
+/**
+ * @@doc
+ * @memberOf Values.Dither
+ */
+function ordered2x2dispersed(): number {
+  return 2;
+}
+
+/**
+ * @@doc
+ * @memberOf Values.Dither
+ */
+function ordered3x3dispersed(): number {
+  return 3;
+}
+
+/**
+ * @@doc
+ * @memberOf Values.Dither
+ */
+function ordered4x4dispersed(): number {
+  return 4;
+}
+
+/**
+ * @@doc
+ * @memberOf Values.Dither
+ */
+function ordered8x8dispersed(): number {
+  return 5;
+}
+
+/**
+ * @@doc
+ * @memberOf Values.Dither
+ */
+function halftone4x4angled(): number {
+  return 6;
+}
+
+/**
+ * @@doc
+ * @memberOf Values.Dither
+ */
+function halftone6x6angled(): number {
+  return 7;
+}
+
+/**
+ * @@doc
+ * @memberOf Values.Dither
+ */
+function halftone8x8angled(): number {
+  return 8;
+}
+
+/**
+ * @@doc
+ * @memberOf Values.Dither
+ */
+function halftone4x4orthogonal(): number {
+  return 9;
+}
+
+/**
+ * @@doc
+ * @memberOf Values.Dither
+ */
+function halftone6x6orthogonal(): number {
+  return 10;
+}
+
+/**
+ * @@doc
+ * @memberOf Values.Dither
+ */
+function halftone8x8orthogonal(): number {
+  return 11;
+}
+
+/**
+ * @@doc
+ * @memberOf Values.Dither
+ */
+function halftone16x16orthogonal(): number {
+  return 12;
+}
+
+/**
+ * @@doc
+ * @memberOf Values.Dither
+ */
+function circles5x5black(): number {
+  return 13;
+}
+
+/**
+ * @@doc
+ * @memberOf Values.Dither
+ */
+function circles5x5white(): number {
+  return 14;
+}
+
+/**
+ * @@doc
+ * @memberOf Values.Dither
+ */
+function circles6x6black(): number {
+  return 15;
+}
+
+/**
+ * @@doc
+ * @memberOf Values.Dither
+ */
+function circles6x6white(): number {
+  return 16;
+}
+
+/**
+ * @@doc
+ * @memberOf Values.Dither
+ */
+function circles7x7black(): number {
+  return 17;
+}
+
+/**
+ * @@doc
+ * @memberOf Values.Dither
+ */
+function circles7x7white(): number {
+  return 18;
+}
+
+
+export {
+  checkerboard2x1dither,
+  circles5x5black,
+  circles5x5white,
+  circles6x6black,
+  circles6x6white,
+  circles7x7black,
+  circles7x7white,
+  halftone4x4angled,
+  halftone4x4orthogonal,
+  halftone6x6angled,
+  halftone6x6orthogonal,
+  halftone8x8angled,
+  halftone8x8orthogonal,
+  halftone16x16orthogonal,
+  ordered2x2dispersed,
+  ordered3x3dispersed,
+  ordered4x4dispersed,
+  ordered8x8dispersed,
+  threshold1x1nondither
+};
+
+
+export default {
+  checkerboard2x1dither,
+  circles5x5black,
+  circles5x5white,
+  circles6x6black,
+  circles6x6white,
+  circles7x7black,
+  circles7x7white,
+  halftone4x4angled,
+  halftone4x4orthogonal,
+  halftone6x6angled,
+  halftone6x6orthogonal,
+  halftone8x8angled,
+  halftone8x8orthogonal,
+  halftone16x16orthogonal,
+  ordered2x2dispersed,
+  ordered3x3dispersed,
+  ordered4x4dispersed,
+  ordered8x8dispersed,
+  threshold1x1nondither
+};

@@ -1,80 +1,98 @@
-export class GravityObject {
-  readonly name:string;
-  constructor(name?:string) {
-    this.name = name;
-  }
+/**
+ * @@doc
+ * @memberOf Values
+ * @namespace GravityObjects
+ */
+import {GravityObject} from "./GravityObject";
+import {AutoGravity} from "./AutoGravity";
 
-  toString(): string {
-    return this.name;
-  }
+
+/**
+ * @memberOf Values.GravityObjects
+ */
+function bird(): GravityObject {
+  return new GravityObject('bird');
 }
 
-export class AutoGravity {
-  readonly gravityObject:GravityObject;
-  private readonly weight?:number | string;
-  private shouldAvoid:boolean;
+/**
+ * @memberOf Values.GravityObjects
+ */
+function dog(): GravityObject {
+  return new GravityObject('dog');
+}
 
-  constructor(gravityObject:GravityObject, weight?: number | string) {
-    this.weight = weight;
-    this.gravityObject = gravityObject;
-    this.shouldAvoid = false;
-  }
+/**
+ * @memberOf Values.GravityObjects
+ */
+function cat(): GravityObject {
+  return new GravityObject('cat');
+}
 
-  private shouldAddWeight() {
-    return typeof this.weight === 'number' || typeof this.weight === 'string' || this.shouldAvoid;
-  }
+/**
+ * @memberOf Values.GravityObjects
+ */
+function microwave(): GravityObject {
+  return new GravityObject('microwave');
+}
 
-  getName():string {
-    return this.gravityObject.name;
-  }
+/**
+ * @memberOf Values.GravityObjects
+ */
+function refrigerator(): GravityObject {
+  return new GravityObject('refrigerator');
+}
 
-  getWeight():number|string {
-    if (this.shouldAvoid) {
-      return 'avoid';
-    } else {
-      return this.weight;
-    }
-  }
+/**
+ * @memberOf Values.GravityObjects
+ */
+function bottle(): GravityObject {
+  return new GravityObject('bottle');
+}
 
-  toString():string {
-    // Future proofing, in case we'd like to support some custom string in the future, or if data is coming from a DB
-    if(this.shouldAddWeight()) {
-      return `${this.getName()}_${this.getWeight()}`;
-    } else {
-      return this.getName();
-    }
-  }
+/**
+ * @memberOf Values.GravityObjects
+ */
+function sink(): GravityObject {
+  return new GravityObject('sink');
+}
 
-  static classic():GravityObject {
-    // this is not really an 'object', but we leverage the existing behaviour in GravityObject
-    return new GravityObject('classic');
-  }
+/**
+ * @memberOf Values.GravityObjects
+ */
+function skateboard(): GravityObject {
+  return new GravityObject('skateboard');
+}
 
-  static subject():GravityObject {
-    // this is not really an 'object', but we leverage the existing behaviour in GravityObject
-    return new GravityObject('subject');
-  }
-
-  static object(gravityObject: GravityObject, weight?: number):AutoGravity {
-    return new AutoGravity(gravityObject, weight);
-  }
-
-  avoid(): AutoGravity {
-    this.shouldAvoid = true;
-    return this;
-  }
+/**
+ * @memberOf Values.GravityObjects
+ */
+function person(): GravityObject {
+  return new GravityObject('person');
 }
 
 
-export const BIRD = new GravityObject('bird');
-export const DOG = new GravityObject('dog');
-export const CAT = new GravityObject('cat');
-export const MICROWAVE = new GravityObject('microwave');
-export const REFRIGERATOR = new GravityObject('refrigerator');
-export const BOTTLE = new GravityObject('bottle');
-export const SINK = new GravityObject('sink');
-export const SKATEBOARD = new GravityObject('skateboard');
-export const PERSON = new GravityObject('person');
+export {
+  AutoGravity,
+  person,
+  cat,
+  microwave,
+  refrigerator,
+  skateboard,
+  bird,
+  bottle,
+  dog,
+  sink
+};
 
-
-
+export default {
+  AutoGravity,
+  person,
+  cat,
+  microwave,
+  refrigerator,
+  skateboard,
+  bird,
+  bottle,
+  dog,
+  sink
+};

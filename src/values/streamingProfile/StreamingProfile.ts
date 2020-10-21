@@ -1,6 +1,73 @@
-export const FULL_HD = 'full_hd';
-export const HD = 'hd';
-export const SD = 'sd';
-export const FULL_HD_WIFI = 'full_hd_wifi';
-export const FULL_HD_LEAN = 'full_hd_lean';
-export const HD_LEAN= 'hd_lean';
+/**
+ * @description Values for applying an ordered dither filter to the image.
+ * @namespace StreamingProfile
+ * @memberOf Values
+ */
+
+
+/**
+ * @@doc
+ * @memberOf Values.StreamingProfile
+ */
+function fullHD():string {
+  return 'full_hd';
+}
+
+/**
+ * @@doc
+ * @memberOf Values.StreamingProfile
+ */
+function HD():string {
+  return 'hd';
+}
+
+/**
+ * @@doc
+ * @memberOf Values.StreamingProfile
+ */
+function SD():string {
+  return 'sd';
+}
+
+/**
+ * @@doc
+ * @memberOf Values.StreamingProfile
+ */
+function fullHDWifi():string {
+  return 'full_hd_wifi';
+}
+
+/**
+ * @@doc
+ * @memberOf Values.StreamingProfile
+ */
+function fullHDLean():string {
+  return 'full_hd_lean';
+}
+
+/**
+ * @@doc
+ * @memberOf Values.StreamingProfile
+ */
+function HDLean():string {
+  return 'hd_lean';
+}
+
+
+export {
+  HD,
+  SD,
+  HDLean,
+  fullHD,
+  fullHDLean,
+  fullHDWifi
+};
+
+export default {
+  HD,
+  SD,
+  HDLean,
+  fullHD,
+  fullHDLean,
+  fullHDWifi
+};

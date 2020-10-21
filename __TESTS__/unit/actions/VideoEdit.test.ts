@@ -2,7 +2,7 @@ import VideoEdit from '../../../src/actions/videoEdit/VideoEdit';
 import * as VideoEditESM from '../../../src/actions/videoEdit/VideoEdit';
 import TransformableVideo from '../../../src/transformation/TransformableVideo';
 import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
-import Sources, {video} from "../../../src/values/sources/Sources";
+import Sources from "../../../src/values/sources/Sources";
 
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import Volume from "../../../src/values/volume/Volume";

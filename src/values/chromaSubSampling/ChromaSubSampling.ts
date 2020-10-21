@@ -1,9 +1,27 @@
 /**
  * @memberOf Values
- * @typedef ChromeSubSampling
- * @property {number} CHROMA_444
- * @property {number} CHROMA_420
+ * @namespace ChromeSubSampling
  */
 
-export const CHROMA_444 = 444;
-export const CHROMA_420 = 420;
+
+/**
+ * @@doc
+ * @memberOf Values.ChromeSubSampling
+ */
+function chroma444():number { return 444; }
+
+/**
+ * * @@doc
+ * @memberOf Values.ChromeSubSampling
+ */
+function chroma420():number { return 420; }
+
+export {
+  chroma420,
+  chroma444
+};
+
+export default {
+  chroma420,
+  chroma444
+};
