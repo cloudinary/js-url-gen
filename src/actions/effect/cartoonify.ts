@@ -19,8 +19,8 @@ export class CartoonifyEffect extends Action {
   }
 
   /**
-   * @description The thickness of the lines. (Range: 0 to 100, Server default: 50)
-   * @param {number} cartoonifyLevel The thickness of the lines
+   * @description Sets the thickness of the lines. 
+   * @param {number} cartoonifyLevel The thickness of the lines. (Range: 0 to 100, Server default: 50)
    * @return {this}
    */
   strength(cartoonifyLevel: number): this {
@@ -29,12 +29,10 @@ export class CartoonifyEffect extends Action {
   }
 
   /**
-   * @@doc
    * @description
-   * The decrease in the number of colors and corresponding saturation boost of the remaining colors. <br/>
-   * (Range: 0 to 100, Server default: automatically adjusts according to the line_strength value). Higher reduction values result in a less realistic look.<br/>
-   * Set colorReduction to 'bw'' for a black and white cartoon effect.
-   * @param {number | 'bw'} level The level of color to reduce
+   * Sets the decrease in the number of colors and corresponding saturation boost of the remaining colors. <br/>
+   * Higher reduction values result in a less realistic look.
+   * @param {number | 'bw'} level The decrease in the number of colors and corresponding saturation boost of the remaining colors. (Range: 0 to 100, Server default: automatically adjusts according to the line_strength value). Set to 'bw' for a black and white cartoon effect.
    * @return {this}
    */
   colorReductionLevel(level: number | 'bw'): this {
@@ -49,9 +47,9 @@ export class CartoonifyEffect extends Action {
 }
 
 /**
- * @description Applies a cartoonify filter to the asset.
+ * @description Applies a cartoonify effect to the asset.
  * @memberOf Actions.Effect
- * @param cartoonifyLevel
+ * @param cartoonifyLevel The thickness of the lines. (Range: 0 to 100, Server default: 50)
  * @return {CartoonifyEffect}
  */
 function cartoonify(cartoonifyLevel?: number):CartoonifyEffect {

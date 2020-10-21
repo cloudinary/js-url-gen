@@ -5,10 +5,9 @@ import Flag from "../../values/flag/Flag";
 /**
  * @class ToAnimatedAction
  * @augments Action
- * @@doc
  * @description Converts a video to an animated webp or gif.
- * The resulted transformation will include format (f_format) and animated flag (fl_animated).
- * The flag fl_awebp is added only when an animated webp is desired.
+ * The resulting transformation includes format (f_format) and the animated flag (fl_animated).
+ * The flag fl_awebp is added only when an animated webp is requested.
  */
 class ToAnimatedAction extends Action {
   constructor(animatedFormat: string) {
@@ -21,9 +20,8 @@ class ToAnimatedAction extends Action {
   }
 
   /**
-   * @@doc
-   * @description not defined
-   * @param delayValue
+   * @description Sets the time between frames.
+   * @param delayValue The time in milliseconds.
    */
   delay(delayValue: number): this {
     this.addQualifier(new Qualifier('dl', delayValue));
@@ -31,10 +29,9 @@ class ToAnimatedAction extends Action {
   }
 
   /**
-   * @@doc
-   * @description The value represents the number of frames to be extracted from the movie. If a string, in
-   * the format of ‘2s’, it will sample every 2 seconds
-   * @param sampling
+   * @description Sets the frequency at which the video is sampled. 
+   * @param sampling As a string (e.g. '2.3s'), samples one frame every 2.3 seconds.<br>As a number (e.g. 20), 
+   * samples that many equally spaced frames over the duration of the video.
    */
   sampling(sampling: string|number): this {
     this.addQualifier(new Qualifier('vs', sampling));

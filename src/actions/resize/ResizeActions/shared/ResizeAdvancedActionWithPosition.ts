@@ -2,8 +2,7 @@ import ResizeAdvancedAction from "./ResizeAdvancedAction";
 import Qualifier from "../../../../qualifier/Qualifier";
 
 /**
- * @@doc
- * @description A class used to define an advanced resize with positional arguments (x, y).
+ * @description Defines an advanced resize with positional arguments (x, y).
  * @class ResizeAdvancedActionWithPosition
  * @augments ResizeAdvancedAction
  */

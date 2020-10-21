@@ -29,8 +29,7 @@ function border(): BackgroundAutoBorderQualifier{
 }
 
 /**
- * @@doc
- * @description Automatically sets the background color when resizing with padding.
+ * @description Automatically determines the color to use for padding, if needed when resizing an asset.
  *
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#content_aware_padding|Content-aware padding}
  * @memberOf Values.Background
@@ -41,8 +40,7 @@ function auto(): BackgroundQualifier{
 }
 
 /**
- * @@doc
- * @description Applies a padding gradient fade effect with the predominant colors in the image.
+ * @description Applies a padding gradient fade effect using the predominant colors in the border of the image.
  * @memberOf Values.Background
  * @return {BackgroundBorderGradientQualifier}
  */
@@ -51,8 +49,7 @@ function borderGradient(): BackgroundBorderGradientQualifier {
 }
 
 /**
- * @@doc
- * @description Applies a padding gradient fade effect with the predominant colors in the image.
+ * @description Applies a padding gradient fade effect using the predominant colors in the image.
  * @memberOf Values.Background
  * @return {BackgroundPredominantGradientQualifier}
  */

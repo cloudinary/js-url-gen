@@ -1,10 +1,7 @@
 import {color} from "./bgColor";
 
 /**
- *
- * @@doc
- *
- * @description - Contains functions that manipulate the image background directly, useful for transparent PNGs and videos
+ * @description - Contains functions that transform the background of transparent images or videos, or set the color of the padding used with 'pad' crop modes.
  * @memberOf Actions
  * @namespace Background
  */

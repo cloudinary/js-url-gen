@@ -2,8 +2,7 @@ import Action from "../Action";
 import Qualifier from "../../qualifier/Qualifier";
 
 /**
- * @@doc
- * @description Applies a gradient fade effect from the top edge of the image.
+ * @description Applies a gradient fade effect from one edge of the image.
  * @class GradientFadeEffectAction
  * @augments Action
  */
@@ -12,8 +11,8 @@ export class GradientFadeEffectAction extends Action {
   private _type: string;
 
   /**
-   * @description The strength of the fade effect. (Range: 0 to 100, Server default: 20)
-   * @param {number} strength
+   * @description Sets the strength of the fade effect.
+   * @param {number} strength The strength of the fade effect. (Range: 0 to 100, Server default: 20)
    */
   strength(strength:number): this {
     this._strength = strength;
@@ -21,8 +20,8 @@ export class GradientFadeEffectAction extends Action {
   }
 
   /**
-   * @description The mode of gradient fade
-   * @param {string | Values.GradientFade} type
+   * @description Sets the mode of gradient fade.
+   * @param {string | Values.GradientFade} type The mode of gradient fade.
    */
   type(type:string): this {
     this._type = type;
@@ -31,7 +30,7 @@ export class GradientFadeEffectAction extends Action {
 
   /**
    * @description Sets the x dimension of the start point.
-   * @param {number} x
+   * @param {number} x The x dimension of the start point.
    */
   horizontalStartPoint(x:number): this {
     return this.addQualifier(new Qualifier('x', x));
@@ -39,7 +38,7 @@ export class GradientFadeEffectAction extends Action {
 
   /**
    * @description Sets the y dimension of the start point.
-   * @param {number} y
+   * @param {number} y The y dimension of the start point.
    */
   verticalStartPoint(y:number): this {
     return this.addQualifier(new Qualifier('y', y));
@@ -62,7 +61,7 @@ export class GradientFadeEffectAction extends Action {
 
 /**
  * @description
- * Applies a gradient fade effect from the top edge of the image.
+ * Applies a gradient fade effect from one edge of the image.
  * Use .x() or .y() to indicate from which edge to fade and how much of the image should be faded.
  * Values of x and y can be specified as a percentage (Range: 0.0 to 1.0), or in pixels (integer values). <br/>
  * Positive values fade from the top (y) or left (x). Negative values fade from the bottom (y) or right (x). <br/>

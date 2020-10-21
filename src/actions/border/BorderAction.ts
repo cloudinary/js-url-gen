@@ -14,9 +14,8 @@ class BorderAction extends Action {
   private borderType: string;
 
   /**
-   * @@doc
-   * @description Use values provided from {@link Values.Border|Border Values}
-   * @param {'solid'} borderType
+   * @description Adds a border of the specified type around an image or video. 
+   * @param {'solid'} borderType The type of border (currently only 'solid' is supported). Use values in {@link Values.Border|Border Values}.
    */
   constructor(borderType: string) {
     super();

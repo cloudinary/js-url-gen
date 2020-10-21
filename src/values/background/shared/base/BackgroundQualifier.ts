@@ -1,8 +1,7 @@
 import Qualifier from "../../../../qualifier/Qualifier";
 
 /**
- * @@doc
- * @description A class that represents a background qualifier
+ * @description Defines the visual appearance of the background.
  * @class BackgroundQualifier
  * @augments Qualifier
  */

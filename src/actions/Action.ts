@@ -14,7 +14,7 @@ class Action {
   protected prepareQualifiers():void {}
 
   /**
-   * @description Calls toString() on all child qualifiers (implicitly by using .join())
+   * @description Calls toString() on all child qualifiers (implicitly by using .join()).
    * @return {string}
    */
   toString(): string {
@@ -33,7 +33,7 @@ class Action {
   }
 
   /**
-   * @description Adds a flag to the current action
+   * @description Adds a flag to the current action.
    * @param {Values.Flag} flag
    * @return {this}
    */

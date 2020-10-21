@@ -2,8 +2,7 @@ import Qualifier from "../../../qualifier/Qualifier";
 import ResizeAdvancedAction from "./shared/ResizeAdvancedAction";
 
 /**
- * @@doc
- * @description A class used to define resize thumb.
+ * @description Defines a thumbnail resize action.
  * @class ThumbResizeAction
  * @augments ResizeAdvancedAction
  */
