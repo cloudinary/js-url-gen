@@ -70,11 +70,6 @@ const myURL = myImage.toURL();
 <br/>
 
 
-#### Actions and ActionGroups
-- Assets expose methods called ActionGroups
-- ActionGroups receive an Action
-- We call the Factory methods to create the actions
-
 <div class="alert alert-info" role="alert">
 <div>For simplicity, we use the term <b>Action</b> for both the Factory methods and its return value (an Action object)</div>
 </div>
@@ -140,18 +135,6 @@ myImage.rotate(mode(verticalFlip()));
 const myURL = myImage.toURL();
 ```
 
-
-#### Qualifiers and QualifierValues
-- Actions expose methods to define their behaviours 
-- We call the Methods on Actions <b>Qualifiers</b>
-- Qualifiers usually accept a <b>QualifierValue</b>
-- QualifierValue can be primitive (numbers, strings) or predefined SDK values that can be imported
-- Almost all QualifierValues are functions (RotationMode.verticalFlip())
-- You can find more QualifierValues in <code>'@cloudinary/base/values'</code>
-
-<br/>
-<hr/>
-<br/>
 
 ### Treeshaking and performance
 <div class="alert alert-info" role="alert">

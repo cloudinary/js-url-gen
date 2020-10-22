@@ -1,0 +1,7 @@
+/**
+Custom CSS for the JSDOC template
+ */
+
+.container .kind{
+  display:none;
+}

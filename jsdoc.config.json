@@ -17,8 +17,17 @@
   },
   "templates": {
     "cleverLinks": true,
+    "navMembers" : [
+      {"kind": "namespace", "title": "Actions & Values", "summary": "All documented namespaces."},
+      {"kind": "interface", "title": "Interfaces", "summary": "All documented interfaces."},
+      {"kind": "tutorial", "title": "Help & Examples", "summary": "All available tutorials."}
+    ],
+    "stylesheets" : [
+      "./customStyles.css"
+    ],
+    "search": false,
     "monospaceLinks": true,
-    "systemColor": "#071BA",
+    "systemColor": "#3448C5",
     "systemName": "Cloudinary JS.2.0 SDK",
     "systemLogo": "__DOC_RESOURCES__/cloudinaryicon.png",
     "systemSummary": "@cloudinary/base",
