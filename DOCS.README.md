@@ -41,7 +41,7 @@ cld.useImage(TransformableImage);
 // Lets create a new image
 const myImage = cld.image('sample');
 
-// The image interface exposes alot of useful functions we call ActionGroups
+// The image interface exposes a lot of useful functions we call ActionGroups
 // Each ActionGroup accepts a matching Action as a parameter
 
 // For example, resize is an ActionGroup that needs a ResizeAction to work
