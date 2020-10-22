@@ -3,7 +3,7 @@
 ### About this project
 
 This project enables you to create Cloudinary URLs for your images and videos.
-Using this SDK, you can apply advanced transformations to your images.
+Using this SDK, you can apply advanced transformations to your images and videos.
 
 <br/>
 <hr/>
