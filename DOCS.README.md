@@ -90,7 +90,7 @@ We've just seen an example of how to scale our image.<br/>
 This example used width and height, and passed some numeric values as parameters.<br/><br/>
 In the SDK world, we refer to methods on an Action as Qualifiers.<br/><br/>
 The ResizeScale action has a width and height Qualifier.<br/>
-Qualifiers receive QualifierValues are parameters.
+Qualifiers receive QualifierValues as parameters.
 </div>
 <br/><br/>
 
