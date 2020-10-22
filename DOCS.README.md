@@ -2,7 +2,7 @@
 
 ### About this project
 
-This project enables you to create Cloudinary URLs for your images.
+This project enables you to create Cloudinary URLs for your images and videos.
 Using this SDK, you can apply advanced transformations to your images.
 
 <br/>
@@ -157,4 +157,3 @@ const myURL = myImage.toURL();
 <div class="alert alert-info" role="alert">
 <b>Tree shaking can dramatically impact your bundle size, we strongly recommend importing only what you need!</b>
 </div>
-
