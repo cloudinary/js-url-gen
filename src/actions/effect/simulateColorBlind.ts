@@ -33,7 +33,7 @@ export class SimulateColorBlindEffectAction extends Action {
 /**
  * @description
  * Simulates the way an image would appear to someone with the specified color blind condition. </br>
- * For a list of supported color blind conditions see {@link Values.simulateColorBlindValues| types of color blindness} for possible values
+ * For a list of supported color blind conditions see {@link Values.SimulateColorBlindValues| types of color blindness} for possible values
  * @memberOf Actions.Effect
  * @return {SimulateColorBlindEffectAction}
  */

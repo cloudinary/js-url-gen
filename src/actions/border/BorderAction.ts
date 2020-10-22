@@ -14,12 +14,16 @@ class BorderAction extends Action {
   private borderType: string;
 
   /**
-   * @description Adds a border of the specified type around an image or video. 
+   * @description Adds a border of the specified type around an image or video.
    * @param {'solid'} borderType The type of border (currently only 'solid' is supported). Use values in {@link Values.Border|Border Values}.
+   * @param {string} color The color of the border.
+   * @param {number} borderWidth The width in pixels.
    */
-  constructor(borderType: string) {
+  constructor(borderType: string, color: string, borderWidth: number) {
     super();
     this.borderType = borderType;
+    this.borderColor = prepareColor(color);
+    this.borderWidth = borderWidth;
   }
 
   /**

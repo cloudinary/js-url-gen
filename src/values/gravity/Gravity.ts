@@ -5,8 +5,9 @@
  */
 
 import Qualifier from "../../qualifier/Qualifier";
-import {AutoGravity, GravityObject} from "../gravityObjects/GravityObjects";
 import QualifierValue from "../../qualifier/QualifierValue";
+import {GravityObject} from "../gravityObjects/GravityObject";
+import {AutoGravity} from "../gravityObjects/AutoGravity";
 
 
 export class GravityQualifier extends Qualifier {

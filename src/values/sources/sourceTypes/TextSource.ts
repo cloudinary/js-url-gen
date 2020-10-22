@@ -1,5 +1,4 @@
 import {ISource} from "../ISource";
-import {FontStyle, FontWeight} from "../../fonts/Fonts";
 import {prepareColor} from "../../../utils/prepareColor";
 import QualifierValue from "../../../qualifier/QualifierValue";
 
@@ -42,20 +41,20 @@ class TextSource implements ISource {
 
   /**
    *
-   * @param {FontWeight} weight
+   * @param {Values.FontWeight} weight
    * @return {this}
    */
-  fontWeight(weight: keyof typeof FontWeight): this {
+  fontWeight(weight: string): this {
     this.fWeight = weight;
     return this;
   }
 
   /**
    *
-   * @param {FontStyle} style
+   * @param {Values.FontWeight} style
    * @return {this}
    */
-  fontStyle(style: keyof typeof FontStyle): this {
+  fontStyle(style: string): this {
     this.fStyle = style;
     return this;
   }

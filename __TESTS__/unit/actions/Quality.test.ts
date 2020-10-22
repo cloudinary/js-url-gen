@@ -113,7 +113,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
   it('Creates a cloudinaryURL with level', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(Delivery.quality('75').chromaSubSampling(ChromaSubSampling.CHROMA_420))
+      .delivery(Delivery.quality('75').chromaSubSampling(ChromaSubSampling.chroma420()))
       .setPublicID('sample')
       .toURL();
 

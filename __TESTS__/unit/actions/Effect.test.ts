@@ -8,10 +8,10 @@ import * as Outline from "../../../src/values/outline/Outline";
 import {image} from "../../../src/values/sources/Sources";
 import scale from "../../../src/actions/resize/ResizeActions/ScaleAction";
 import cartoonify from "../../../src/actions/effect/cartoonify";
-import {HALFTONE_4X4_ORTHOGONAL} from "../../../src/values/dither/Dither";
 import * as GradientFade from "../../../src/values/gradientFade/GradientFade";
 import {BLUE} from "../../../src/values/colors/Colors";
-import {ROD_MONOCHROMACY} from "../../../src/values/simulateColorBlind/SimulateColorBlind";
+import {rodMonochromacy} from "../../../src/values/simulateColorBlind/SimulateColorBlind";
+import {halftone4x4orthogonal} from "../../../src/values/dither/Dither";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -186,7 +186,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   it('Creates a cloudinaryURL with effect artisticFilter', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .effect(Effect.artisticFilter(ArtisticFilter.PEACOCK))
+      .effect(Effect.artisticFilter(ArtisticFilter.peacock()))
       .setPublicID('sample')
       .toURL();
 
@@ -297,8 +297,8 @@ describe('Tests for Transformation Action -- Effect', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
       .effect(Effect.dither())
-      .effect(Effect.dither(HALFTONE_4X4_ORTHOGONAL))
-      .effect(Effect.dither().type(HALFTONE_4X4_ORTHOGONAL))
+      .effect(Effect.dither(halftone4x4orthogonal()))
+      .effect(Effect.dither().type(halftone4x4orthogonal()))
       .setPublicID('sample')
       .toURL();
 
@@ -366,7 +366,7 @@ describe('Tests for Transformation Action -- Effect', () => {
     ).toBe('e_outline');
 
     expect(Effect.outline()
-      .mode(Outline.FILL)
+      .mode(Outline.fill())
       .width(10)
       .blurLevel(25)
       .color(BLUE)
@@ -380,7 +380,7 @@ describe('Tests for Transformation Action -- Effect', () => {
     ).toBe('e_simulate_colorblind');
 
     expect(Effect.simulateColorBlind()
-      .condition(ROD_MONOCHROMACY)
+      .condition(rodMonochromacy())
       .toString()
     ).toBe('e_simulate_colorblind:rod_monochromacy');
   });

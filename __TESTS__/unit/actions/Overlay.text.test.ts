@@ -1,12 +1,13 @@
 import TransformableImage from "../../../src/transformation/TransformableImage";
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import {FontStyle, FontWeight} from "../../../src/values/fonts/Fonts";
 import {TextSource} from "../../../src/values/sources/sourceTypes/TextSource";
 import {text} from "../../../src/values/sources/Sources";
 import {BlendModeQualifier} from "../../../src/values/blendMode/BlendModeQualifier";
 import {imageLayer} from "../../../src/actions/overlay/Overlay";
 import {PositionQualifier} from "../../../src/values/position/PositionQualifier";
 import {center} from "../../../src/values/position/Position";
+import FontWeight from "../../../src/values/fontWeight/FontWeight";
+import FontStyle from "../../../src/values/fontStyle/FontStyle";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -56,7 +57,7 @@ describe('Tests for overlay texts', () => {
       text('Testing')
         .fontFamily('arial')
         .fontSize(20)
-        .fontWeight(FontWeight.BOLD)
+        .fontWeight(FontWeight.bold())
     ).toURL();
     expect(url).toContain('l_text:arial_20_bold:Testing/fl_layer_apply/sample');
   });
@@ -78,7 +79,7 @@ describe('Tests for overlay texts', () => {
         .fontFamily('arial')
         .fontSize(20)
         .fontWeight('bold')
-        .fontStyle(FontStyle.ITALIC)
+        .fontStyle(FontStyle.italic())
         .color('red')
     ).toURL();
     expect(url).toContain('l_text:arial_20_bold_italic:Testing,co_red/fl_layer_apply/sample');

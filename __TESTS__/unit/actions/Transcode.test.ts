@@ -23,7 +23,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
     const url = new TransformableVideo()
       .setConfig(CONFIG_INSTANCE)
       .setAssetType('video')
-      .transcode(Transcode.audioCodec(AudioCodec.AUTO))
+      .transcode(Transcode.audioCodec(AudioCodec.auto()))
       .setPublicID('sample')
       .toURL();
 
@@ -58,7 +58,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
       .setConfig(CONFIG_INSTANCE)
       .setAssetType('video')
       .transcode(Transcode
-        .audioFrequency(AudioFrequency.FREQ11025))
+        .audioFrequency(AudioFrequency.FREQ11025()))
       .setPublicID('sample')
       .toURL();
 
@@ -118,7 +118,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
       .setConfig(CONFIG_INSTANCE)
       .setAssetType('video')
       .transcode(Transcode
-        .streamingProfile(StreaminProfile.FULL_HD))
+        .streamingProfile(StreaminProfile.fullHD()))
       .setPublicID('sample')
       .toURL();
 
@@ -130,7 +130,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
       .setConfig(CONFIG_INSTANCE)
       .setAssetType('video')
       .transcode(Transcode
-        .toAnimated(AnimatedFormat.GIF))
+        .toAnimated(AnimatedFormat.gif()))
       .setPublicID('sample')
       .toURL();
 
@@ -142,7 +142,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
       .setConfig(CONFIG_INSTANCE)
       .setAssetType('video')
       .transcode(Transcode
-        .toAnimated(AnimatedFormat.WEBP))
+        .toAnimated(AnimatedFormat.webp()))
       .setPublicID('sample')
       .toURL();
 
@@ -166,7 +166,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
       .setConfig(CONFIG_INSTANCE)
       .setAssetType('video')
       .transcode(Transcode
-        .toAnimated(AnimatedFormat.GIF).delay(20).sampling('4s'))
+        .toAnimated(AnimatedFormat.gif()).delay(20).sampling('4s'))
       .setPublicID('sample')
       .toURL();
 

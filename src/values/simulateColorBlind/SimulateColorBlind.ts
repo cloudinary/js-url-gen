@@ -1,19 +1,83 @@
 /**
+ * @@doc
  * @memberOf Values
- * @typedef simulateColorBlindValues
- * @property {string} DEUTERANOPIA
- * @property {string} PROTANOPIA
- * @property {string} TRITANOPIA
- * @property {string} TRITANOMALY
- * @property {string} DEUTERANOMALY
- * @property {string} CONE_MONOCHROMACY
- * @property {string} ROD_MONOCHROMACY
+ * @namespace SimulateColorBlindValues
  */
 
-export const DEUTERANOPIA = 'deuteranopia';
-export const PROTANOPIA = 'protanopia';
-export const TRITANOPIA = 'tritanopia';
-export const TRITANOMALY = 'tritanomaly';
-export const DEUTERANOMALY = 'dueteranomaly';
-export const CONE_MONOCHROMACY = 'cone_monochromacy';
-export const ROD_MONOCHROMACY = 'rod_monochromacy';
+/**
+ * @@doc
+ * @memberOf Values.SimulateColorBlindValues
+ */
+function deuteranopia(): string {
+  return 'deuteranopia';
+}
+
+/**
+ * @@doc
+ * @memberOf Values.SimulateColorBlindValues
+ */
+function protanopia(): string {
+  return 'protanopia';
+}
+
+/**
+ * @@doc
+ * @memberOf Values.SimulateColorBlindValues
+ */
+function tritanopia(): string {
+  return 'tritanopia';
+}
+
+/**
+ * @@doc
+ * @memberOf Values.SimulateColorBlindValues
+ */
+function tritanomaly(): string {
+  return 'tritanomaly';
+}
+
+/**
+ * @@doc
+ * @memberOf Values.SimulateColorBlindValues
+ */
+function deuteranomaly(): string {
+  return 'dueteranomaly';
+}
+
+/**
+ * @@doc
+ * @memberOf Values.SimulateColorBlindValues
+ */
+function coneMonochromacy(): string {
+  return 'cone_monochromacy';
+}
+
+/**
+ * @@doc
+ * @memberOf Values.SimulateColorBlindValues
+ */
+function rodMonochromacy(): string {
+  return 'rod_monochromacy';
+}
+
+
+export {
+  coneMonochromacy,
+  deuteranomaly,
+  deuteranopia,
+  protanopia,
+  rodMonochromacy,
+  tritanomaly,
+  tritanopia
+};
+
+
+export default {
+  coneMonochromacy,
+  deuteranomaly,
+  deuteranopia,
+  protanopia,
+  rodMonochromacy,
+  tritanomaly,
+  tritanopia
+};
