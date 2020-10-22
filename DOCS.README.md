@@ -76,7 +76,7 @@ const myURL = myImage.toURL();
 - We call the Factory methods to create the actions
 
 <div class="alert alert-info" role="alert">
-<div>For simplicity, we use the term <b>Action</b> for both the Factory methods and its return value (An Action Object)</div>
+<div>For simplicity, we use the term <b>Action</b> for both the Factory methods and its return value (an Action object)</div>
 </div>
 
 <br/>
