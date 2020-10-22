@@ -3,8 +3,7 @@ import VariableAction from "./VariableAction";
 /**
  * @class SetReferenceAction
  * @augments VariableAction
- * @@doc
- * @description A class that sets variable from reference.
+ * @description Sets a user-defined variable from a file reference.
  */
 class SetReferenceAction extends VariableAction {
   constructor(name: string, value: string) {

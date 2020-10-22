@@ -1,8 +1,7 @@
 import {BaseCommonBackground} from "./BaseCommonBackground";
 
 /**
- * @@doc
- * @description Automatically sets the background color when resizing with padding.
+ * @description Defines the gradient fade effect to use for the background when resizing with padding.
  * @class BaseGradientBackground
  * @augments BaseCommonBackground
  */

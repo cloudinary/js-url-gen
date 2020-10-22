@@ -3,8 +3,7 @@ import VariableAction from "./VariableAction";
 /**
  * @class SetFromContextAction
  * @augments VariableAction
- * @@doc
- * @description A class that sets variable from context.
+ * @description Sets a user-defined variable from contextual metadata.
  */
 class SetFromContextAction extends VariableAction {
   constructor(name: string, value: string) {

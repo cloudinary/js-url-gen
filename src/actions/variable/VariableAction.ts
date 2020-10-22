@@ -20,8 +20,7 @@ class VariableAction extends Action {
   }
 
   /**
-   * @@doc
-   * @description Converts the returned value to be of type float, so it can be used in places that require float
+   * @description Converts the returned value to type float.
    * values
    */
   convertToFloat():this{
@@ -30,8 +29,7 @@ class VariableAction extends Action {
   }
 
   /**
-   * @@doc
-   * @description Converts the returned value to be of type number, so it can be used in places that require number
+   * @description Converts the returned value to type number.
    * values
    */
   convertToNumber(): this{

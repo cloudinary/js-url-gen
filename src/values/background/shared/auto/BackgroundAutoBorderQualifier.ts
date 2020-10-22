@@ -1,8 +1,8 @@
 import {BaseCommonBackground} from "../base/BaseCommonBackground";
 
 /**
- * @@doc
- * @description Automatically sets the background color when resizing with padding.
+ * @description Automatically determines the color to use for padding, if needed when resizing an asset. Selects the 
+ * predominant color from the border of the image.
  * @class BackgroundAutoBorderQualifier
  * @augments BaseCommonBackground
  */
@@ -10,7 +10,7 @@ class BackgroundAutoBorderQualifier extends BaseCommonBackground {
   /**
    * @description
    * Stringify the qualifier
-   * BackgroundQualifiers don't have a value, but instead override the toString() function
+   * BackgroundQualifiers don't have a value, but instead override the toString() function.
    */
   toString(): string {
     return `

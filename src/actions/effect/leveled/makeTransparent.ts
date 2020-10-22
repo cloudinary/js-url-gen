@@ -10,17 +10,16 @@ import {prepareColor} from "../../../utils/prepareColor";
  */
 class MakeTransparentEffectAction extends LeveledEffectAction {
   /**
-   * @description tolerance The tolerance used to accommodate variance in the background color. (Range: 0 to 100, Server default: 10)
-   * @param {number | string} value
+   * @description Sets the tolerance used to accommodate variance in the background color.
+   * @param {number | string} value The tolerance used to accommodate variance in the background color. (Range: 0 to 100, Server default: 10)
    */
   tolerance(value: number | string): this {
     return this.setLevel(value);
   }
 
   /**
-   * @@doc
-   * @description The color to make transparent
-   * @param {string} color HTML name(red, green, etc.) or RGB hex code.
+   * @description Sets the color to make transparent.
+   * @param {string} color The HTML name of the color (red, green, etc.) or RGB hex code.
    * @return {this}
    */
   color(color: string) {

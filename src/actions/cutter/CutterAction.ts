@@ -6,8 +6,8 @@ import {LayerAction} from "../overlay/LayerAction";
 import {PositionQualifier} from "../../values/position/PositionQualifier";
 
 /**
- * @@doc
- * @description A class for Cutter
+ * @description Trims pixels according to the transparency levels of a given overlay image.
+ * Wherever the overlay image is transparent, the original is shown, and wherever the overlay is opaque, the resulting image is transparent.
  * @class CutterAction
  * @augments Action
  */

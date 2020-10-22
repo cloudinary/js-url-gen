@@ -8,9 +8,9 @@ import {ImageSource} from "../../values/sources/sourceTypes/ImageSource";
 
 /**
  * @@doc
- * Adds another video, text or image as an overlay over the container video. </br>
- * When adding an overlay to an image, use the imageLayer
- * When adding an overlay to a video, use the videoLayer
+ * Adds a video, text or image as an overlay over the base layer. </br>
+ * When adding an overlay to an image, use the imageLayer.
+ * When adding an overlay to a video, use the videoLayer.
  * @memberOf Actions
  * @namespace Overlay
  */

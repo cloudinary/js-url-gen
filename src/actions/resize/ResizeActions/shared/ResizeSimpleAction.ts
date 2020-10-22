@@ -6,8 +6,7 @@ import relativeFlag from '../../../../values/flag/relative';
 import regionRelativeFlag from '../../../../values/flag/regionRelative';
 
 /**
- * @@doc
- * @description A class used to define simple resize with common methods: width and height
+ * @description Defines a resize using width and height.
  * @class ResizeSimpleAction
  * @augments Action
  */
@@ -79,8 +78,7 @@ class ResizeSimpleAction extends Action {
    */
 
   /**
-   * @@doc
-   * @description Sets the resize mode.
+   * @description Sets a flag determining how the media is resized relative to different layers.
    * @param {string} modeType The resize mode type. For a list of supported types see {@link Values.ResizeMode |
     * Resize mode}
    */

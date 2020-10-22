@@ -32,8 +32,7 @@ class RoundCornersAction extends Action {
   }
 
   /**
-   * @@doc
-   * @description Generates an asset with a circular crop using the 'max' radius value.
+   * @description Applies maximum rounding to the corners of the asset. An asset with square dimensions becomes a circle.
    */
   max(): this {
     return this.addQualifier(new Qualifier('r', 'max'));

@@ -10,7 +10,7 @@ import SimpleEffectAction from "../effect/EffectActions/SimpleEffectAction";
 
 /**
  * @description
- * A generic Layer action that can a Video, Text or Image layer
+ * A generic Layer action that can add a Video, Text or Image layer.<br> 
  * This class can represent an overlay or an underlay.
  * @class LayerAction
  * @augments Action
@@ -34,8 +34,7 @@ class LayerAction extends Action {
   }
 
   /**
-   * @@docs
-   * Sets the layerType with u | l depending if underlay or overlay
+   * Sets the layerType to 'u' (underlay) or 'l' (overlay).
    * @param type
    */
   setLayerType(type: 'u' | 'l'): this {
@@ -44,8 +43,7 @@ class LayerAction extends Action {
   }
 
   /**
-   * @@docs
-   * Sets a flag in the first bit (Open)
+   * Sets a flag to take effect at the point specified in the transformation.
    * @param {Flag} flag
    * @return {this}
    */
@@ -55,8 +53,7 @@ class LayerAction extends Action {
   }
 
   /**
-   * @@docs
-   * Sets an effect in the first bit (Open)
+   * Sets an effect action to start at the point specified in the transformation.
    * @param effect
    * @return {this}
    */
@@ -66,9 +63,7 @@ class LayerAction extends Action {
   }
 
   /**
-   * @@docs
-   * Layers are built using three bits -> /Open/Transform/Close
-   * The opening of a layer
+   * Opens a layer (layers are built in three stages -> /Open/Transform/Close).
    */
   openLayer(): string {
     if(this.flag) {
@@ -81,19 +76,15 @@ class LayerAction extends Action {
   }
 
   /**
-   * @@docs
-   * Layers are built using three bits -> /Open/Transform/Close
-   * Transformations conducted on the image in the layer
+   * Applies a transformation to the layer (layers are built in three stages -> /Open/Transform/Close).
    */
   layerTransformation():string {
     return this.source.getTransformationString();
   }
 
   /**
-   * @@docs
    * @description
-   * Layers are built using three bits -> /Open/Transform/Close
-   * this function returns a string that closes the layer
+   * Closes a layer (layers are built in three stages -> /Open/Transform/Close).
    */
   closeLayer():Action {
     const bit = new Action().addFlag(new Flag('layer_apply'));

@@ -1,7 +1,6 @@
 
 /**
- * @@doc
- * @description Defines the available modes to improve an image
+ * @description Defines the available modes to use with the improve effect.
  * @namespace ImproveMode
  * @memberOf Values
  */
@@ -10,8 +9,7 @@
 
 /**
  * @memberOf Values.ImproveMode
- * @@doc
- * @description Use this mode to get better results on images with outdoor lighting and shadows.
+ * @description Use this mode to get better results on outdoor images.
  * @return string
  */
 function outdoor(): string {
