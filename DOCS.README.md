@@ -118,7 +118,7 @@ cld.useImage(TransformableImage);
 import {mode} from '@cloudinary/base/actions/rotate';
 
 // Remember, mode is a function that returns an Action
-// but we refer to both as an RotationMode action
+// but we refer to both as a RotationMode action
 
 // The RotationModeAction (mode) requires a Qualifier
 // That qualifier will require a certain QualifierValue
