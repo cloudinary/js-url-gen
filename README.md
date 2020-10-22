@@ -26,53 +26,9 @@ You can read more about the project here:
 npm install @cloudinary/base 
 ```
 
-### Simple usage
-```javascript
-import {TransformableImage} from '@cloudinary/base';
+### Usage
+<a href="https://cloudinary.github.io/cloudinary-js-base/public/docs/">Documentation website</a>
 
-// Get a list of all possible Resize 
-import {Resize} from '@cloudinary/base/actions';
-
-// Alternatively, Use tree shaking to only fetch what you need
-import {scale} from '@cloudinary/base/actions/resize';
-
-
-// Pass the publicId of your image
-const myImage = new TransformableImage('sample');
-
-myImage.setConfig({
-  cloud: {
-    cloudName: 'demo'
-    }
-});
-
-myImage.resize(Resize.scale().width(100).height(100));
-
-const myURL = myImage.toURL();
-```
-
-### Using SDK helper types/values
-```javascript
-import {TransformableImage} from '@cloudinary/base';
-import {mode} from '@cloudinary/base/actions/rotate';
-
-// Get all rotation modes, this is a value passed to an action
-import * as RotationMode from '@cloudinary/base/values/rotate';
-
-// Alternatively, get just the rotation you need, this is a value passed to an action
-import {verticalFlip} from '@cloudinary/base/values/rotate';
-
-const myImage = new TransformableImage('sample');
-
-// Configure your image
-myImage.config(/* ...snip, your config, same as above */);
-
-// the mode action accepts a rotation value - verticalFlip()
-myImage.rotate(mode(verticalFlip()));
-
-// Create a URL
-const myURL = myImage.toURL();
-```
 
 ### Progress report
 We're currently working on implementing all the wide range of features and possible transformations.  
