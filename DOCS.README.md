@@ -62,7 +62,7 @@ import Resize, {scale} from '@cloudinary/base/actions/resize';
 // Every Action has a different set of methods (for scale, we have width and height)
 myImage.resize(Resize.scale().width(100).height(100));
 
-// When we're done, we can calculate all our changes and create a URL.
+// When we're done, we can apply all our changes and create a URL.
 const myURL = myImage.toURL();
 // https://res.cloudinary.com/demo/image/upload/c_scale,w_100,h_100/sample
 ```
