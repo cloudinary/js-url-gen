@@ -1,24 +1,21 @@
-## Welcome
+# Welcome
 
-### About this project
+## About this project
 
 This project enables you to create Cloudinary URLs for your images and videos.
 Using this SDK, you can apply advanced transformations to your images and videos.
 
-<br/>
-<hr/>
-<br/>
+## Help & Examples
+- {@tutorial gettingStarted} 
+- {@tutorial annotatedExamples}
+- {@tutorial configuration}
 
-### Installation
+## Installation
 ```bash
 npm install @cloudinary/base 
 ```
 
-<br/>
-<hr/>
-<br/>
-
-### Simple usage
+## Simple usage
 ```javascript
 
 // Import the cloudinary class, and the assets you want to use
@@ -40,26 +37,7 @@ cld.useImage(TransformableImage);
 
 // Lets create a new image
 const myImage = cld.image('sample');
-
-// The image interface exposes a lot of useful functions we call ActionGroups
-// Each ActionGroup accepts a matching Action as a parameter
-
-// For example, resize is an ActionGroup that needs a ResizeAction to work
-// There are many types of Resizes, so we'll need to be specific.
-// This doesn't make much sense on its own
-// myImage.resize();  
-
-
-// the resize() ActionGroup needs an Action parameter
-// Lets give resize() a ResizeScale paramter to scale our image
-// We import all of our Action parameters from @cloudinary/base/actions/{actionGroup}
-// Note that you can import all Resize Actions, or just the single one you want
-import Resize, {scale} from '@cloudinary/base/actions/resize';
-// Resize.scale === scale
-// Explose the Resize object to discover more resize actions
-
-// The Actions are actually factory functions that return an Action Object
-// Every Action has a different set of methods (for scale, we have width and height)
+import Resize from '@cloudinary/base/actions/resize';
 myImage.resize(Resize.scale().width(100).height(100));
 
 // When we're done, we can apply all our changes and create a URL.
@@ -67,18 +45,7 @@ const myURL = myImage.toURL();
 // https://res.cloudinary.com/demo/image/upload/c_scale,w_100,h_100/sample
 ```
 
-<br/>
-
-
-<div class="alert alert-info" role="alert">
-<div>For simplicity, we use the term <b>Action</b> for both the Factory methods and its return value (an Action object)</div>
-</div>
-
-<br/>
-<hr/>
-<br/>
-
-### Passing values to Actions
+## Passing values to Actions
 
 <div>
 We've just seen an example of how to scale our image.<br/>
@@ -112,31 +79,13 @@ cld.useImage(TransformableImage);
 // Import the RotationModeAction
 import {mode} from '@cloudinary/base/actions/rotate';
 
-// Remember, mode is a function that returns an Action
-// but we refer to both as a RotationMode action
-
-// The RotationModeAction (mode) requires a Qualifier
-// That qualifier will require a certain QualifierValue
-// To make life easier, you can import all possible QualifierValue(s) of rotate 
-import * as RotationMode from '@cloudinary/base/values/rotate';
-
-// You can also import only the required QualifierValue you want
-import {verticalFlip} from '@cloudinary/base/values/rotate';
-// RotationMode.verticalFlip === verticalFlip
+// Import the RotationModeAction
+import * as ResizeMode from '@cloudinary/base/values/rotate';
 
 const myImage = cld.image('sample');
 
-// rotate() accepts a RotationModeAction (mode)
-// mode() has a Qualifier, however because that Qualifier is mandatory, we pass it directly to the factory
-// We pass it verticalFlip() as a QualifierValue to flip the image vertically
-// As you can see, QualifierValues are also functions
-myImage.rotate(mode(verticalFlip()));
+myImage.rotate(mode(ResizeMode.verticalFlip()));
 
 const myURL = myImage.toURL();
 ```
 
-
-### Treeshaking and performance
-<div class="alert alert-info" role="alert">
-<b>Tree shaking can dramatically impact your bundle size, we strongly recommend importing only what you need!</b>
-</div>
