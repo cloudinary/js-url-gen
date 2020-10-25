@@ -25,7 +25,7 @@ class PixelateRegionEffectAction extends Action {
    * @param {number} x
    * @return {this}
    */
-  x(x:number) {
+  x(x:number | string) {
     return this.addQualifier(new Qualifier('x', x));
   }
 
@@ -34,7 +34,7 @@ class PixelateRegionEffectAction extends Action {
    * @param {number} y
    * @return {this}
    */
-  y(y:number) {
+  y(y:number | string) {
     return this.addQualifier(new Qualifier('y', y));
   }
 
