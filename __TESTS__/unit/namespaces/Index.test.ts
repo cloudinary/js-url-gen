@@ -1,8 +1,9 @@
-import CloudinaryBase, {Actions} from "../../../src/index";
+import CloudinaryInstance from '../../../src/instance/Cloudinary';
+import Cloudinary, {Actions} from "../../../src/index";
 
 describe('Tests for the Main index namespace', () => {
   it('Test that Index exports Actions correctly', () => {
-    expect(CloudinaryBase.Actions).toBe(Actions);
+    expect(Cloudinary).toBe(CloudinaryInstance);
     expect(Actions.Resize).not.toBeUndefined();
   });
 });
