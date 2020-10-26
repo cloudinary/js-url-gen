@@ -29,7 +29,7 @@ import {image} from "@cloudinary/base/values/sources";
 // Import how to position your layer
 import Position from "@cloudinary/base/values/position";
 
-// We'l also resize the our overlay, we'll need this for later.
+// We'll also resize our overlay, we'll need this for later.
 import Resize from "@cloudinary/base/actions/resize";
 
 // image sources go into layers (image or video)

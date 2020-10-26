@@ -43,9 +43,9 @@ Everything can be very granularly imported to ensure you only import what you ne
  <h4>With Tree-Shaking</h4>
  
    ```javascript
-           import {png, png} from '@cloudinary/base/values/format';
+           import {png, jpg} from '@cloudinary/base/values/format';
            png()
-           png()
+           jpg()
    ```
 </div>
 

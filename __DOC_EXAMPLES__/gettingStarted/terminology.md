@@ -33,7 +33,7 @@
   <li>The first step in every new application will be creating a new Cloudinary Instance 
   <li>The SDK has two types of Transformations - <b>TransformableImage</b> and <b>TransformableVideo</b>
   <li>Use the instance you created to generate a new <b>TransformableImage/Video</b> instance
-  <li>The {@link ICloudinaryAssetConfigurations|Cloudinary Configuration} is used to to define how URLs are created 
+  <li>The {@link ICloudinaryAssetConfigurations|Cloudinary Configuration} is used to define how URLs are created 
 </ul>
 
 <h3>Actions and ActionGroups</h3>
@@ -42,7 +42,7 @@
   <li>ActionGroups receive an Action as a parameter
   <li>We create Action objects through Factory methods (<code>scale</code>, <code>mode</code>)
   <li>You can find more Actions in <code>'@cloudinary/base/actions'</code>
-  <li>You can import all actions from with <code>import {Actions} from '@cloudinary/base'</code>
+  <li>You can import all actions from <code>import {Actions} from '@cloudinary/base'</code>
 </ul>
 
 
@@ -51,7 +51,7 @@
   <li>Actions expose methods to define their behaviours
   <li>We call the Methods on Actions <b>Qualifiers</b>
   <li>Qualifiers usually accept a <b>QualifierValue</b>
-  <li>QualifierValue can be primitive (numbers, strings) or predefined SDK values that can be imported
+  <li>QualifierValues can be primitive (numbers, strings) or predefined SDK values that can be imported
   <li>Almost all QualifierValues are functions (RotationMode.verticalFlip())
   <li>You can find more QualifierValues in <code>'@cloudinary/base/values'</code>
 </ul>

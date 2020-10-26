@@ -37,11 +37,11 @@
 <h1>Explanation</h1>
 <h4>The code above performs the following operations:</h4>
 <ul>
-    <li>Import Cloudinary modules and classes</li>
-    <li>Create a new Cloudinary instance, with a set of configurations</li>
-    <li>Instruct your instance to work with a Cloudinary Images (TransformableImage)</li>
-    <li>Create a new TransformableImage instance with a publicID of 'sample' (<code>cld.image('sample')</code>)</li>
-    <li>Import the <code>scale()</code> Action from <code>'@cloudinary/base/actions/resize'</code> </li>
-    <li>Use the Action methods <code>width</code> and <code>height</code> to set the scale size</li>
-    <li>Apply your changes and create a URL string</li>
+    <li>Imports Cloudinary modules and classes</li>
+    <li>Creates a new Cloudinary instance, with a set of configurations</li>
+    <li>Instructs your instance to work with a Cloudinary Image (TransformableImage)</li>
+    <li>Creates a new TransformableImage instance with a publicID of 'sample' (<code>cld.image('sample')</code>)</li>
+    <li>Imports the <code>scale()</code> Action from <code>'@cloudinary/base/actions/resize'</code> </li>
+    <li>Uses the Action methods <code>width</code> and <code>height</code> to set the scale size</li>
+    <li>Applies your changes and creates a URL string</li>
 </ul>
