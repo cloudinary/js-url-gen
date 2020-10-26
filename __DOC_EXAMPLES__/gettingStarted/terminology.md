@@ -8,7 +8,15 @@
   import Cloudinary, {TransformableImage} from '@cloudinary/base';
 
   // Create your instance
-  const cld = new Cloudinary(/* ... config */);
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName: 'demo'
+    },
+    url: {
+      secure: true // force http or https
+    }
+  });
+
   cld.useImage(TransformableImage);
   
   const myImage = cld.image('sample');
