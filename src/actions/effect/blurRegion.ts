@@ -29,7 +29,7 @@ class BlueRegionEffectAction extends Action {
    * @description The x position in pixels.
    * @param {number} x
    */
-  x(x:number) {
+  x(x:number | string) {
     return this.addQualifier(new Qualifier('x', x));
   }
 
@@ -37,7 +37,7 @@ class BlueRegionEffectAction extends Action {
    * @description The y position in pixels.
    * @param {number} y
    */
-  y(y:number) {
+  y(y:number | string) {
     return this.addQualifier(new Qualifier('y', y));
   }
 

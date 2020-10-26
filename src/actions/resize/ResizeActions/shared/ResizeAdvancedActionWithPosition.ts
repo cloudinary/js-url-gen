@@ -11,7 +11,7 @@ class ResizeAdvancedActionWithPosition extends ResizeAdvancedAction {
    * @description Horizontal position for custom-coordinates based cropping.
    * @param {number} x The x position.
    */
-  x(x:number): this {
+  x(x:number | string): this {
     return this.addQualifier(new Qualifier('x', x));
   }
 
@@ -19,7 +19,7 @@ class ResizeAdvancedActionWithPosition extends ResizeAdvancedAction {
    * @description Vertical position for custom-coordinates based cropping
    * @param {number} y The y position.
    */
-  y(y:number): this {
+  y(y:number | string): this {
     return this.addQualifier(new Qualifier('y', y));
   }
 }
