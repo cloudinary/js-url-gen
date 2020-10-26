@@ -1,0 +1,41 @@
+{
+  "gettingStarted": {
+    "title": "Getting started",
+    "children": [
+      "installation",
+      "helloworld",
+      "terminology"
+    ]
+  },
+  "installation" : {
+    "title": "Installation"
+  },
+  "helloworld": {
+    "title": "Hello World"
+  },
+  "terminology": {
+    "title": "SDK Terminology"
+  },
+  "performance": {
+    "title": "Performance"
+  },
+  "treeShaking": {
+    "title": "Tree shaking"
+  },
+  "annotatedExamples" : {
+    "title": "Annotated Code Examples",
+    "children": ["resize", "rotate", "imageOverlay"]
+  },
+  "imageOverlay" : {
+    "title": "Image overlay on an Image"
+  },
+  "resize" : {
+    "title": "Resize"
+  },
+  "rotate" : {
+    "title": "Rotate"
+  },
+  "configuration" : {
+    "title": "Configuration"
+  }
+}

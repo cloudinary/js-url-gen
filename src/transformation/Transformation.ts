@@ -144,7 +144,7 @@ class Transformation {
 
   /**
    * @description Adds an overlay over the base image.
-   * @param overlayAction
+   * @param {LayerAction} overlayAction
    */
   overlay(overlayAction: LayerAction): this {
     overlayAction.setLayerType('l');
@@ -153,7 +153,7 @@ class Transformation {
 
   /**
    * @description Adds an underlay under the base image.
-   * @param underlayAction
+   * @param {LayerAction} underlayAction
    */
   underlay(underlayAction: LayerAction): this {
     underlayAction.setLayerType('u');
