@@ -50,7 +50,7 @@ class Action {
     return this;
   }
 
-  protected addValueToQualifier(qualifierKey: string, qualifierValue: unknown): this{
+  protected addValueToQualifier(qualifierKey: string, qualifierValue: any): this{
     this.qualifiers.get(qualifierKey).addValue(qualifierValue);
 
     return this;
