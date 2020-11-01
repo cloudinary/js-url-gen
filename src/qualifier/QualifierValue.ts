@@ -1,7 +1,7 @@
 import {ExpressionQualifier} from "../values/expression/Expression";
 
 class QualifierValue {
-  values: unknown[] = [];
+  values: any[] = [];
   delimiter = ':'; // {value}{delimiter}{value}...
 
   /**
@@ -27,7 +27,7 @@ class QualifierValue {
    * @private
    * @return {boolean}
    */
-  private hasValue(v:unknown): boolean {
+  private hasValue(v: any): boolean {
     return typeof v !== 'undefined' && v !== null && v !== '';
   }
 
@@ -36,7 +36,7 @@ class QualifierValue {
    * @param value
    * @return {this}
    */
-  addValue(value: unknown): this {
+  addValue(value: any): this {
     // Append value or array of values
     if (Array.isArray(value)) {
       this.values = this.values.concat(value);
