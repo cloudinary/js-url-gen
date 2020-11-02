@@ -33,7 +33,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
   it('Creates a cloudinaryURL with quality:best', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(Delivery.quality(Quality.best()))
+      .delivery(Delivery.quality(Quality.autoBest()))
       .setPublicID('sample')
       .toURL();
 
@@ -43,7 +43,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
   it('Creates a cloudinaryURL with quality:eco', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(Delivery.quality(Quality.eco()))
+      .delivery(Delivery.quality(Quality.autoEco()))
       .setPublicID('sample')
       .toURL();
 
@@ -53,7 +53,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
   it('Creates a cloudinaryURL with quality:good', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(Delivery.quality(Quality.good()))
+      .delivery(Delivery.quality(Quality.autoGood()))
       .setPublicID('sample')
       .toURL();
 
@@ -63,7 +63,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
   it('Creates a cloudinaryURL with quality:low', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(Delivery.quality(Quality.low()))
+      .delivery(Delivery.quality(Quality.autoLow()))
       .setPublicID('sample')
       .toURL();
 
@@ -118,5 +118,15 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
       .toURL();
 
     expect(url).toBe('http://res.cloudinary.com/demo/image/upload/q_75:420/sample');
+  });
+
+  it('Sets Quanitzation level', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .delivery(Delivery.quality('75').quantization(123))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/q_75:qmax_123/sample');
   });
 });
