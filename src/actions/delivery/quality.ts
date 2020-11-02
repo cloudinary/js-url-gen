@@ -18,7 +18,17 @@ class QualityAction extends DeliveryAction {
   chromaSubSampling(type: 420 | 444 | number): this {
     const qualityWithSubSampling = new QualifierValue([this.qualityValue, type]);
     qualityWithSubSampling.setDelimiter(':');
+
+    // We either have chroma or quantization, but not both
     return this.addQualifier(new Qualifier('q', qualityWithSubSampling));
+  }
+
+  quantization(val:number) {
+    const qualityWithQuantization = new QualifierValue([this.qualityValue, `qmax_${val}`]);
+    qualityWithQuantization.setDelimiter(':');
+
+    // We either have chroma or quantization, but not both
+    return this.addQualifier(new Qualifier('q', qualityWithQuantization));
   }
 }
 

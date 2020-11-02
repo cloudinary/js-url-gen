@@ -15,28 +15,28 @@ export function auto():string { return 'auto';}
  * @memberOf Values.QualityValues
  * @return {string}
  */
-export function best():string { return 'auto:best';}
+export function autoBest():string { return 'auto:best';}
 
 /**
  * @description Quality eco
  * @memberOf Values.QualityValues
  * @return {string}
  */
-export function eco():string { return 'auto:eco';}
+export function autoEco():string { return 'auto:eco';}
 
 /**
  * @description Quality good
  * @memberOf Values.QualityValues
  * @return {string}
  */
-export function good():string { return 'auto:good';}
+export function autoGood():string { return 'auto:good';}
 
 /**
  * @description Quality low
  * @memberOf Values.QualityValues
  * @return {string}
  */
-export function low():string { return 'auto:low';}
+export function autoLow():string { return 'auto:low';}
 
 /**
  * @description Quality jpegmini
