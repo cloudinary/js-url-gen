@@ -1,0 +1,7 @@
+{
+  "plugins": {
+    "@release-it/bumper": {
+      "out": ["package.json", "../package.json"]
+    }
+  }
+}
