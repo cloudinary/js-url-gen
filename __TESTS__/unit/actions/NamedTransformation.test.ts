@@ -39,7 +39,7 @@ describe('Tests for Transformation Action -- NamedTransformation', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/t_foobar/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/t_foobar/sample');
   });
 
   it('Creates a cloudinaryURL with name and resize', () => {
@@ -50,6 +50,6 @@ describe('Tests for Transformation Action -- NamedTransformation', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/c_scale,h_100,w_100/t_foobar/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/c_scale,h_100,w_100/t_foobar/sample');
   });
 });

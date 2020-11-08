@@ -23,7 +23,7 @@ describe('Tests for Transformation Action -- PSDTools', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/fl_clip,pg_9/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/fl_clip,pg_9/sample');
   });
 
   it('Creates a cloudinaryURL with clip string', () => {
@@ -33,7 +33,7 @@ describe('Tests for Transformation Action -- PSDTools', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/fl_clip,pg_name:path/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/fl_clip,pg_name:path/sample');
   });
 
   it('Creates a cloudinaryURL with clip evenOdd', () => {
@@ -43,7 +43,7 @@ describe('Tests for Transformation Action -- PSDTools', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/fl_clip_evenodd,pg_9/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/fl_clip_evenodd,pg_9/sample');
   });
 
   it('Creates a cloudinaryURL with getLayer.byNumber', () => {
@@ -53,7 +53,7 @@ describe('Tests for Transformation Action -- PSDTools', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/pg_4/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/pg_4/sample');
   });
 
   it('Creates a cloudinaryURL with getLayer.byRange', () => {
@@ -63,7 +63,7 @@ describe('Tests for Transformation Action -- PSDTools', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/pg_4-10/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/pg_4-10/sample');
   });
 
   it('Creates a cloudinaryURL with getLayer.byName', () => {
@@ -73,7 +73,7 @@ describe('Tests for Transformation Action -- PSDTools', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/pg_name:sample/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/pg_name:sample/sample');
   });
 
   it('Creates a cloudinaryURL with smartObject.byIndex', () => {
@@ -83,7 +83,7 @@ describe('Tests for Transformation Action -- PSDTools', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/pg_embedded:8/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/pg_embedded:8/sample');
   });
 
   it('Creates a cloudinaryURL with smartObject.byFileName', () => {
@@ -93,7 +93,7 @@ describe('Tests for Transformation Action -- PSDTools', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/pg_embedded:name:myFile/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/pg_embedded:name:myFile/sample');
   });
 
 });

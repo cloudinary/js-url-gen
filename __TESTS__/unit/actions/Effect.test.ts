@@ -128,7 +128,7 @@ describe('Tests for Transformation Action -- Effect', () => {
       'e_deshake:20'
     ].join('/');
 
-    expect(url).toBe(`http://res.cloudinary.com/demo/image/upload/${expectedToContain}/sample`);
+    expect(url).toBe(`https://res.cloudinary.com/demo/image/upload/${expectedToContain}/sample`);
   });
 
   it('Creates a cloudinaryURL with effect shadow:50', () => {
@@ -150,7 +150,7 @@ describe('Tests for Transformation Action -- Effect', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/co_red,e_colorize:10/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/co_red,e_colorize:10/sample');
   });
 
   it('Creates a cloudinaryURL with effect colorize:level', () => {
@@ -160,7 +160,7 @@ describe('Tests for Transformation Action -- Effect', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_colorize:50/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/e_colorize:50/sample');
   });
 
   it('Creates a cloudinaryURL with effect oilPaint', () => {
@@ -170,7 +170,7 @@ describe('Tests for Transformation Action -- Effect', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_oil_paint/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/e_oil_paint/sample');
   });
 
   it('Creates a cloudinaryURL with effect oilPaint:level', () => {
@@ -180,7 +180,7 @@ describe('Tests for Transformation Action -- Effect', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_oil_paint:50/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/e_oil_paint:50/sample');
   });
 
   it('Creates a cloudinaryURL with effect artisticFilter', () => {
@@ -190,7 +190,7 @@ describe('Tests for Transformation Action -- Effect', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_art:peacock/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/e_art:peacock/sample');
   });
 
   it('Creates a cloudinaryURL with effect cartoonify:50', () => {
@@ -204,7 +204,7 @@ describe('Tests for Transformation Action -- Effect', () => {
     const withBuilder = cartoonify().strength(50).colorReductionLevel('bw').toString();
 
     expect(withBuilder).toBe(withConstructor);
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/e_cartoonify:50:bw/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/e_cartoonify:50:bw/sample');
   });
 
   it('Creates a cloudinaryURL with effect style_transfer', () => {

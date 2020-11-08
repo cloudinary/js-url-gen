@@ -15,7 +15,7 @@ describe('It tests a combination of Cloudianry URL and Configuration', () => {
       .setConfig(DEMO_CONFIG)
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/my_image');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/my_image');
   });
   it ('Throw error when config is invalid', () => {
     expect(() => {
@@ -30,7 +30,7 @@ describe('It tests a combination of Cloudianry URL and Configuration', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/c_fill,h_100,w_100/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/c_fill,h_100,w_100/sample');
   });
 
   it ('Shows a use-case for global configuration', () => {
@@ -72,6 +72,6 @@ describe('It tests a combination of Cloudianry URL and Configuration', () => {
       })
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/MY_CLOUD_NAME/avatar/fetch/c_fill,h_100,w_100/sample');
+    expect(url).toBe('https://res.cloudinary.com/MY_CLOUD_NAME/avatar/fetch/c_fill,h_100,w_100/sample');
   });
 });

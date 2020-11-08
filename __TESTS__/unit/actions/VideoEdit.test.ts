@@ -26,7 +26,7 @@ describe('Tests for Transformation Action -- VideoEdit', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/l_sample,fl_splice/fl_layer_apply/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/l_sample,fl_splice/fl_layer_apply/sample');
   });
 
   it('Creates a cloudinaryURL with concatenate.transition', () => {
@@ -38,7 +38,7 @@ describe('Tests for Transformation Action -- VideoEdit', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/l_sample/l_dog,e_transition/fl_layer_apply/fl_layer_apply/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/l_sample/l_dog,e_transition/fl_layer_apply/fl_layer_apply/sample');
   });
 
   it('Creates a cloudinaryURL with trim', () => {
@@ -52,7 +52,7 @@ describe('Tests for Transformation Action -- VideoEdit', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/du_10,eo_4,so_3/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/du_10,eo_4,so_3/sample');
   });
 
   it('Creates a cloudinaryURL with volume string', () => {
@@ -63,7 +63,7 @@ describe('Tests for Transformation Action -- VideoEdit', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/e_volume:5db/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/e_volume:5db/sample');
   });
 
   it('Creates a cloudinaryURL with volume number', () => {
@@ -74,7 +74,7 @@ describe('Tests for Transformation Action -- VideoEdit', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/e_volume:10/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/e_volume:10/sample');
   });
 
   it('Creates a cloudinaryURL with volume Volume.mute()', () => {
@@ -85,7 +85,7 @@ describe('Tests for Transformation Action -- VideoEdit', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/e_volume:mute/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/e_volume:mute/sample');
   });
 
   it('Creates a cloudinaryURL with volume Volume.byDecibels()', () => {
@@ -96,7 +96,7 @@ describe('Tests for Transformation Action -- VideoEdit', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/e_volume:5db/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/e_volume:5db/sample');
   });
 
   it('Creates a cloudinaryURL with volume Volume.byPercent()', () => {
@@ -107,6 +107,6 @@ describe('Tests for Transformation Action -- VideoEdit', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/e_volume:10/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/e_volume:10/sample');
   });
 });

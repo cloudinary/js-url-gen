@@ -39,6 +39,6 @@ describe('Tests for Transformation', () => {
       .setVersion(1234)
       .setPublicID('sample')
       .toURL()
-    ).toBe('http://res.cloudinary.com/demo/avatar/fetch/v1234/sample');
+    ).toBe('https://res.cloudinary.com/demo/avatar/fetch/v1234/sample');
   });
 });

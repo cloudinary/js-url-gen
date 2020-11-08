@@ -33,7 +33,7 @@ describe('Tests for Transformation Action -- Condition', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/if_ar_eq_1.0/if_end/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/if_ar_eq_1.0/if_end/sample');
   });
 
   it('Creates a cloudinaryURL with condition !=', () => {
@@ -44,7 +44,7 @@ describe('Tests for Transformation Action -- Condition', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/if_ar_ne_1.0/if_end/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/if_ar_ne_1.0/if_end/sample');
   });
 
   it('Creates a cloudinaryURL with condition <', () => {
@@ -55,7 +55,7 @@ describe('Tests for Transformation Action -- Condition', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/if_ar_lt_1.0/if_end/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/if_ar_lt_1.0/if_end/sample');
   });
 
   it('Creates a cloudinaryURL with condition >', () => {
@@ -66,7 +66,7 @@ describe('Tests for Transformation Action -- Condition', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/if_ar_gt_1.0/if_end/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/if_ar_gt_1.0/if_end/sample');
   });
 
   it('Creates a cloudinaryURL with condition <=', () => {
@@ -77,7 +77,7 @@ describe('Tests for Transformation Action -- Condition', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/if_ar_lte_1.0/if_end/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/if_ar_lte_1.0/if_end/sample');
   });
 
   it('Creates a cloudinaryURL with condition >=', () => {
@@ -88,7 +88,7 @@ describe('Tests for Transformation Action -- Condition', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/if_ar_gte_1.0/if_end/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/if_ar_gte_1.0/if_end/sample');
   });
 
   it('Creates a cloudinaryURL with condition ar > 0.65 and w > 1000', () => {
@@ -100,7 +100,7 @@ describe('Tests for Transformation Action -- Condition', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$a_30/if_ar_gt_0.65_and_w_gt_1000/if_end/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$a_30/if_ar_gt_0.65_and_w_gt_1000/if_end/sample');
   });
 
   it('Creates a cloudinaryURL with elseIf', () => {
@@ -114,7 +114,7 @@ describe('Tests for Transformation Action -- Condition', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/if_w_lte_500/c_crop,w_400/if_else/c_crop,w_500/if_end/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/if_w_lte_500/c_crop,w_400/if_else/c_crop,w_500/if_end/sample');
   });
 
 });
