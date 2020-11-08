@@ -15,7 +15,7 @@ import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigura
  * @return {string} CloudianryURL
  */
 function createCloudinaryURL(config: ICloudinaryConfigurations, descriptor?: IDescriptor, transformation?: Transformation): string {
-  const prefix = getUrlPrefix(config.cloud.cloudName);
+  const prefix = getUrlPrefix(config.cloud.cloudName, config.url);
   const assetType = handleAssetType(descriptor);
   const storageType = handleStorageType(descriptor);
   const signature = descriptor.signature;
@@ -34,11 +34,12 @@ function createCloudinaryURL(config: ICloudinaryConfigurations, descriptor?: IDe
 /**
  * Create the URL prefix for Cloudinary resources.
  * @private
- * @param cloudName
+ * @param {string} cloudName
+ * @param {IURLConfig} urlConfig
  */
-function getUrlPrefix(cloudName: string) {
+function getUrlPrefix(cloudName: string, urlConfig:IURLConfig) {
   // defaults
-  const protocol = "http://";
+  const protocol = urlConfig.secure ? "https://" : "http://";
   const cdnPart = "";
   const subdomain = "res";
   const host = ".cloudinary.com";

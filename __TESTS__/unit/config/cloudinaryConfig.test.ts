@@ -1,6 +1,7 @@
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import URLConfig from "../../../src/config/URLConfig";
 import CloudConfig from "../../../src/config/CloudConfig";
+import TransformableImage from "../../../src/transformation/TransformableImage";
 
 describe('Tests for CloudinaryConfiguration', () => {
   it('Creates a CloudinaryConfig with defaults', () => {
@@ -13,7 +14,9 @@ describe('Tests for CloudinaryConfiguration', () => {
     expect(conf.cloud).toEqual({
       cloudName:'foo'
     });
-    expect(conf.url).toEqual({});
+    expect(conf.url).toEqual({
+      secure:true
+    });
   });
 
   it('Will populate cloud configuration', () => {
@@ -102,12 +105,14 @@ describe('Tests for CloudinaryConfiguration', () => {
     expect(() => {
       new CloudConfig('foo' as any);
     }).toThrow();
-    expect(new URLConfig('foo')).toEqual({});
 
     expect(() => {
       new CloudConfig([] as any);
     }).toThrow();
-    expect(new URLConfig([])).toEqual({});
+
+    expect(new URLConfig([])).toEqual({
+      secure:true
+    });
 
     // Expect no warnings at all
     expect(mockedFunction).toHaveBeenCalledTimes(0);
@@ -135,5 +140,32 @@ describe('Tests for CloudinaryConfiguration', () => {
     });
 
     expect(newConf.cloud.apiKey).toBe('xyz');
+  });
+
+  it('Should set secure to true by default', () => {
+    const url = new TransformableImage('sample')
+      .setConfig({
+        cloud: {
+          cloudName:'demo'
+        }
+      })
+      .toURL();
+
+    expect(url).toContain('https://');
+  });
+
+  it('Should allow setting secure attribute', () => {
+    const url = new TransformableImage('sample')
+      .setConfig({
+        cloud: {
+          cloudName: 'demo'
+        },
+        url: {
+          secure:false
+        }
+      })
+      .toURL();
+
+    expect(url).toContain('http://');
   });
 });
