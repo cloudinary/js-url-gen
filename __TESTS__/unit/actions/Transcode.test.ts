@@ -27,7 +27,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/ac_auto/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/ac_auto/sample');
   });
 
   it('Creates a cloudinaryURL with bitrate', () => {
@@ -38,7 +38,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/br_500k/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/br_500k/sample');
   });
 
   it('Creates a cloudinaryURL with bitrate.constant', () => {
@@ -50,7 +50,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/br_500:constant/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/br_500:constant/sample');
   });
 
   it('Creates a cloudinaryURL with audioFrequency', () => {
@@ -62,7 +62,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/af_11025/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/af_11025/sample');
   });
 
   it('Creates a cloudinaryURL with fps', () => {
@@ -74,7 +74,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/fps_20/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/fps_20/sample');
   });
 
   it('Creates a cloudinaryURL with fpsRange from', () => {
@@ -86,7 +86,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/fps_20-/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/fps_20-/sample');
   });
 
   it('Creates a cloudinaryURL with fpsRange from-to', () => {
@@ -98,7 +98,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/fps_20-20/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/fps_20-20/sample');
   });
 
   it('Creates a cloudinaryURL with keyframeInterval', () => {
@@ -110,7 +110,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/ki_0.4/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/ki_0.4/sample');
   });
 
   it('Creates a cloudinaryURL with streamingProfile', () => {
@@ -122,7 +122,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/sp_full_hd/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/sp_full_hd/sample');
   });
 
   it('Creates a cloudinaryURL with toAnimated', () => {
@@ -134,7 +134,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/f_gif,fl_animated/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/f_gif,fl_animated/sample');
   });
 
   it('Creates a cloudinaryURL with toAnimated webp', () => {
@@ -146,7 +146,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/f_webp,fl_awebp.animated/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/f_webp,fl_awebp.animated/sample');
   });
 
   it('Creates a cloudinaryURL with toAnimated and delay', () => {
@@ -158,7 +158,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/dl_20,f_gif,fl_animated/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/dl_20,f_gif,fl_animated/sample');
   });
 
   it('Creates a cloudinaryURL with toAnimated, delay, sampling', () => {
@@ -170,6 +170,6 @@ describe('Tests for Transformation Action -- Transcode', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/video/upload/dl_20,f_gif,fl_animated,vs_4s/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/dl_20,f_gif,fl_animated,vs_4s/sample');
   });
 });

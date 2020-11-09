@@ -122,7 +122,7 @@ describe('Tests for Transformation Action -- Adjust', () => {
       'o_100'
     ].join('/');
 
-    expect(url).toBe(`http://res.cloudinary.com/demo/image/upload/${expectedToContain}/sample`);
+    expect(url).toBe(`https://res.cloudinary.com/demo/image/upload/${expectedToContain}/sample`);
   });
 
   it('tests replaceColor', () => {

@@ -22,7 +22,7 @@ class URLConfig extends Config implements IURLConfig {
   constructor(userURLConfig: IURLConfig | unknown) {
     super();
     const urlConfig = this.filterOutNonSupportedKeys(userURLConfig, ALLOWED_URL_CONFIG);
-    Object.assign(this, urlConfig);
+    Object.assign(this, {secure: true}, urlConfig);
   }
 
   extend(userURLConfig: ICloudConfig | unknown): URLConfig {

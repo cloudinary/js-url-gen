@@ -30,7 +30,7 @@ describe('Tests for Transformation Action -- Background', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/b_red/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/b_red/sample');
   });
 
 
@@ -126,7 +126,7 @@ describe('Tests for Transformation Action -- Background', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/b_red,c_pad,h_250,w_250/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/b_red,c_pad,h_250,w_250/sample');
   });
 
   it('Background.predominant().contrast().palette()', () => {

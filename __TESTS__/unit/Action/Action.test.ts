@@ -21,7 +21,7 @@ describe('Tests for Transformation Action', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/a_90/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/a_90/sample');
   });
   it('Creates a cloudinaryURL with new action while passing an array to addQualifier()', () => {
     const action = new Action().addQualifier(new Qualifier('a', new QualifierValue([90, 80]).setDelimiter('.')));
@@ -32,7 +32,7 @@ describe('Tests for Transformation Action', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/a_90.80/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/a_90.80/sample');
   });
   it('Creates a cloudinaryURL with new action using addValue()', () => {
     const action = new Action().addQualifier(new Qualifier('a', new QualifierValue([90, 80]).setDelimiter('.')).addValue(70));
@@ -43,7 +43,7 @@ describe('Tests for Transformation Action', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/a_90.80.70/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/a_90.80.70/sample');
   });
   it('Creates a cloudinaryURL with new action while calling addQualifier twice', () => {
     const action = new Action()
@@ -56,7 +56,7 @@ describe('Tests for Transformation Action', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/c_fill,w_100/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/c_fill,w_100/sample');
   });
   it('Creates a cloudinaryURL with new action, overwriting existing qualifier', () => {
     const action = new Action()
@@ -69,7 +69,7 @@ describe('Tests for Transformation Action', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/w_200/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/w_200/sample');
   });
 
   it('Creates a cloudinaryURL with new action while adding a single flag', () => {
@@ -83,7 +83,7 @@ describe('Tests for Transformation Action', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/fl_layer_apply,l_sample/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/fl_layer_apply,l_sample/sample');
   });
 
   it('Creates a cloudinaryURL with new action while adding multiple flags', () => {
@@ -98,7 +98,7 @@ describe('Tests for Transformation Action', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/fl_first_flag.second_flag,l_sample/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/fl_first_flag.second_flag,l_sample/sample');
   });
 
   it('Correctly sorts qualifiers', () => {

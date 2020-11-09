@@ -27,7 +27,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/q_auto/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/q_auto/sample');
   });
 
   it('Creates a cloudinaryURL with quality:best', () => {
@@ -37,7 +37,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/q_auto:best/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/q_auto:best/sample');
   });
 
   it('Creates a cloudinaryURL with quality:eco', () => {
@@ -47,7 +47,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/q_auto:eco/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/q_auto:eco/sample');
   });
 
   it('Creates a cloudinaryURL with quality:good', () => {
@@ -57,7 +57,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/q_auto:good/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/q_auto:good/sample');
   });
 
   it('Creates a cloudinaryURL with quality:low', () => {
@@ -67,7 +67,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/q_auto:low/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/q_auto:low/sample');
   });
 
   it('Creates a cloudinaryURL with jpegmini', () => {
@@ -77,7 +77,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/q_jpegmini/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/q_jpegmini/sample');
   });
 
   it('Creates a cloudinaryURL with jpegmini HIGH', () => {
@@ -87,7 +87,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/q_jpegmini:1/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/q_jpegmini:1/sample');
   });
 
   it('Creates a cloudinaryURL with jpegmini MEDIUM', () => {
@@ -97,7 +97,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/q_jpegmini:2/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/q_jpegmini:2/sample');
   });
 
   it('Creates a cloudinaryURL with jpegmini BEST', () => {
@@ -107,7 +107,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/q_jpegmini:0/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/q_jpegmini:0/sample');
   });
 
   it('Creates a cloudinaryURL with level', () => {
@@ -117,7 +117,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/q_75:420/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/q_75:420/sample');
   });
 
   it('Sets Quanitzation level', () => {
@@ -127,6 +127,6 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/q_75:qmax_123/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/q_75:qmax_123/sample');
   });
 });

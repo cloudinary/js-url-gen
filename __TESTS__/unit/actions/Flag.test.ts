@@ -73,7 +73,7 @@ describe('Tests for Transformation Action -- Flag', () => {
       'fl_layer_apply'
     ].join('/');
 
-    expect(url).toBe(`http://res.cloudinary.com/demo/image/upload/${expectedToContain}/sample`);
+    expect(url).toBe(`https://res.cloudinary.com/demo/image/upload/${expectedToContain}/sample`);
   });
 
   it('Creates a cloudinaryURL with video flags', () => {
@@ -101,7 +101,7 @@ describe('Tests for Transformation Action -- Flag', () => {
       'fl_streaming_attachment:file_name'
     ].join('/');
 
-    expect(url).toBe(`http://res.cloudinary.com/demo/video/upload/${expectedToContain}/sample`);
+    expect(url).toBe(`https://res.cloudinary.com/demo/video/upload/${expectedToContain}/sample`);
   });
 
   it('Creates a cloudinaryURL with multiple flags', () => {
@@ -116,6 +116,6 @@ describe('Tests for Transformation Action -- Flag', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/ar_1.0,c_fill,fl_keep_iptc.keep_attribution,w_400/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/ar_1.0,c_fill,fl_keep_iptc.keep_attribution,w_400/sample');
   });
 });

@@ -15,7 +15,7 @@ describe('Tests for Cloudinary instance', () => {
 
     tImage.resize(fill(10, 10));
 
-    expect(tImage.toURL()).toBe('http://res.cloudinary.com/demoInInstance/image/upload/c_fill,h_10,w_10/sample');
+    expect(tImage.toURL()).toBe('https://res.cloudinary.com/demoInInstance/image/upload/c_fill,h_10,w_10/sample');
   });
 
 
@@ -33,7 +33,7 @@ describe('Tests for Cloudinary instance', () => {
 
     tImage.resize(fill(10, 10));
 
-    expect(tImage.toURL()).toBe('http://res.cloudinary.com/demoInInstance/image/upload/c_fill,h_10,w_10/sample');
+    expect(tImage.toURL()).toBe('https://res.cloudinary.com/demoInInstance/image/upload/c_fill,h_10,w_10/sample');
   });
 
   it ('throw error when useImage() is not called', () => {

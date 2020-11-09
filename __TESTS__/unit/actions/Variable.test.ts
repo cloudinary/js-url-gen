@@ -37,7 +37,7 @@ describe('Tests for Transformation Action -- Variable', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$a_30/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$a_30/sample');
   });
 
   it('Creates a cloudinaryURL with number variable convertToFloat', () => {
@@ -47,7 +47,7 @@ describe('Tests for Transformation Action -- Variable', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$a_30_to_f/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$a_30_to_f/sample');
   });
 
   it('Creates a cloudinaryURL with number variable convertToNumber', () => {
@@ -57,7 +57,7 @@ describe('Tests for Transformation Action -- Variable', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$a_30_to_i/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$a_30_to_i/sample');
   });
 
   it('Creates a cloudinaryURL with a string variable', () => {
@@ -67,7 +67,7 @@ describe('Tests for Transformation Action -- Variable', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$a_!bbb!/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$a_!bbb!/sample');
   });
 
   it('Creates a cloudinaryURL with a string variable and convertToNumber', () => {
@@ -77,7 +77,7 @@ describe('Tests for Transformation Action -- Variable', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$a_!bbb!_to_i/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$a_!bbb!_to_i/sample');
   });
 
   it('Creates a cloudinaryURL with a string variable and convertToFloat', () => {
@@ -87,7 +87,7 @@ describe('Tests for Transformation Action -- Variable', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$a_!bbb!_to_f/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$a_!bbb!_to_f/sample');
   });
 
   it('Creates a cloudinaryURL with expression', () => {
@@ -97,7 +97,7 @@ describe('Tests for Transformation Action -- Variable', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$myexp_iw_add_100_div_3/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$myexp_iw_add_100_div_3/sample');
   });
 
   it('Creates a cloudinaryURL with expression and convertToFloat', () => {
@@ -107,7 +107,7 @@ describe('Tests for Transformation Action -- Variable', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$myexp_iw_add_100_div_3_to_f/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$myexp_iw_add_100_div_3_to_f/sample');
   });
 
   it('Creates a cloudinaryURL with array', () => {
@@ -117,7 +117,7 @@ describe('Tests for Transformation Action -- Variable', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$list_!a:b:c!/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$list_!a:b:c!/sample');
   });
 
   it('Creates a cloudinaryURL with setReference', () => {
@@ -127,7 +127,7 @@ describe('Tests for Transformation Action -- Variable', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$myexp_ref:!my_file!/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$myexp_ref:!my_file!/sample');
   });
 
   it('Creates a cloudinaryURL with setReference and convertToNumber', () => {
@@ -137,7 +137,7 @@ describe('Tests for Transformation Action -- Variable', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$myexp_ref:!my_file!_to_i/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$myexp_ref:!my_file!_to_i/sample');
   });
 
   it('Creates a cloudinaryURL with setReference and convertToFloat', () => {
@@ -147,7 +147,7 @@ describe('Tests for Transformation Action -- Variable', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$myexp_ref:!my_file!_to_f/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$myexp_ref:!my_file!_to_f/sample');
   });
 
   it('Creates a cloudinaryURL with setFromContext', () => {
@@ -157,7 +157,7 @@ describe('Tests for Transformation Action -- Variable', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$myexp_ctx:!my_file!/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$myexp_ctx:!my_file!/sample');
   });
 
   it('Creates a cloudinaryURL with setFromContext and convertToNumber', () => {
@@ -167,7 +167,7 @@ describe('Tests for Transformation Action -- Variable', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$myexp_ctx:!my_file!_to_i/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$myexp_ctx:!my_file!_to_i/sample');
   });
 
   it('Creates a cloudinaryURL with setFromContext and convertToFloat', () => {
@@ -177,7 +177,7 @@ describe('Tests for Transformation Action -- Variable', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$myexp_ctx:!my_file!_to_f/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$myexp_ctx:!my_file!_to_f/sample');
   });
 
   it('Creates a cloudinaryURL with setFromMetadata', () => {
@@ -187,7 +187,7 @@ describe('Tests for Transformation Action -- Variable', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$myexp_md:!my_file!/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$myexp_md:!my_file!/sample');
   });
 
   it('Creates a cloudinaryURL with setFromMetadata and convertToNumber', () => {
@@ -197,7 +197,7 @@ describe('Tests for Transformation Action -- Variable', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$myexp_md:!my_file!_to_i/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$myexp_md:!my_file!_to_i/sample');
   });
 
   it('Creates a cloudinaryURL with setFromMetadata and convertToFloat', () => {
@@ -207,7 +207,7 @@ describe('Tests for Transformation Action -- Variable', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('http://res.cloudinary.com/demo/image/upload/$myexp_md:!my_file!_to_f/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$myexp_md:!my_file!_to_f/sample');
   });
 
 });
