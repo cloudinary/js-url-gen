@@ -61,11 +61,4 @@ export {
   vorbis
 };
 
-export default {
-  auto,
-  aac,
-  mp3,
-  opus,
-  none,
-  vorbis
-};
+

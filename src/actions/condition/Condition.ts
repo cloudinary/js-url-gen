@@ -27,4 +27,3 @@ function fromExpression(expression: string): ConditionAction {
 }
 
 export {fromExpression, ConditionAction};
-export default {fromExpression, ConditionAction};

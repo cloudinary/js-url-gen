@@ -72,12 +72,3 @@ export {
 };
 
 
-export default {
-  coneMonochromacy,
-  deuteranomaly,
-  deuteranopia,
-  protanopia,
-  rodMonochromacy,
-  tritanomaly,
-  tritanopia
-};

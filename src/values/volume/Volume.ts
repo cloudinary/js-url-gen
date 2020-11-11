@@ -40,4 +40,3 @@ function byDecibels(decibel: string|number): string {
 }
 
 export {mute, byPercent, byDecibels};
-export default {mute, byPercent, byDecibels};

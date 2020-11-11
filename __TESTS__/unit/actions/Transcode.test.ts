@@ -1,8 +1,7 @@
-import Transcode from '../../../src/actions/transcode/Transcode';
+import * as Transcode from '../../../src/actions/transcode/Transcode';
 import * as TranscodeESM from '../../../src/actions/transcode/Transcode';
 import TransformableVideo from '../../../src/transformation/TransformableVideo';
 import CloudinaryConfig from '../../../src/config/CloudinaryConfig';
-import expectESMToMatchDefault from '../../TestUtils/expectESMToMatchDefault';
 import * as AudioCodec from '../../../src/values/audioCodec/AudioCodec';
 import * as AudioFrequency from '../../../src/values/audioFrequency/AudioFrequency';
 import * as StreaminProfile from '../../../src/values/streamingProfile/StreamingProfile';
@@ -15,10 +14,6 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 });
 
 describe('Tests for Transformation Action -- Transcode', () => {
-  it ('Ensures ESM Matches Default', () => {
-    expectESMToMatchDefault(TranscodeESM, Transcode);
-  });
-
   it('Creates a cloudinaryURL with audiocodec', () => {
     const url = new TransformableVideo()
       .setConfig(CONFIG_INSTANCE)

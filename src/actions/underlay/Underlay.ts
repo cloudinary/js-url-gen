@@ -13,4 +13,3 @@ import {imageLayer, videoLayer} from "../overlay/Overlay";
 
 
 export {imageLayer, videoLayer};
-export default {imageLayer, videoLayer};

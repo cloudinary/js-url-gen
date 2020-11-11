@@ -21,4 +21,3 @@ import limitPad from "./ResizeActions/pad/LimitPadAction";
 
 
 export {imaggaScale, imaggaCrop, crop, fill, scale, minimumPad, fit, pad, limitFit, thumbnail, limitFill, minimumFit, limitPad, fillPad};
-export default {imaggaScale, imaggaCrop, crop, fill, scale, minimumPad, fit, pad, limitFit, thumbnail, limitFill, minimumFit, limitPad, fillPad};

@@ -57,4 +57,3 @@ function setFromMetadata(name: string, value: string): SetFromMetadataAction {
 }
 
 export {set, setReference, setFromContext, setFromMetadata};
-export default {set, setReference, setFromContext, setFromMetadata};

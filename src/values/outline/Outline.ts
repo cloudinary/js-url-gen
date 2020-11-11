@@ -43,10 +43,3 @@ export {
   inner_fill,
   fill
 };
-
-export default {
-  outer,
-  inner,
-  inner_fill,
-  fill
-};

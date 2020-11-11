@@ -34,5 +34,4 @@ function expression(expression: string): ExpressionQualifier{
   return new ExpressionQualifier(normalizeExpression(expression));
 }
 
-export default {expression};
 export {expression};

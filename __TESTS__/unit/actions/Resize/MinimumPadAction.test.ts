@@ -1,7 +1,7 @@
 import getImageWithResize from "./shared/getImageWithResize";
-import Gravity from "../../../../src/values/gravity/Gravity";
+import * as Gravity from "../../../../src/values/gravity/Gravity";
 import minimumPad from "../../../../src/actions/resize/ResizeActions/pad/MinimumPadAction";
-import Background from "../../../../src/values/background/Background";
+import * as Background from "../../../../src/values/background/Background";
 
 
 describe('Tests for Transformation Action -- Resize.minimumPad', () => {

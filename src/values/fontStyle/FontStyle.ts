@@ -24,7 +24,3 @@ export {
   normal
 };
 
-export default {
-  italic,
-  normal
-};

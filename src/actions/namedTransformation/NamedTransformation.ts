@@ -18,4 +18,3 @@ function name(name:string): NamedTransformationAction {
 
 
 export {name};
-export default {name};

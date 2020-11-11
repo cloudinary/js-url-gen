@@ -84,19 +84,3 @@ export {
   bold,
   book
 };
-
-export default {
-  thin,
-  black,
-  extrabold,
-  extraLight,
-  heavy,
-  normal,
-  ultrabold,
-  demibold,
-  medium,
-  semibold,
-  light,
-  bold,
-  book
-};

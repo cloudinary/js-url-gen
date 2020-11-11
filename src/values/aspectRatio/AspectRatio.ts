@@ -1,4 +1,4 @@
-import Flag from '../flag/Flag';
+import * as Flag from '../flag/Flag';
 import Action from "../../actions/Action";
 
 /**
@@ -78,4 +78,3 @@ function IgnoreInitialAspectRatio(): IgnoreAspectRatioQualifier {
 }
 
 export {AR1X1, AR5X4, AR3X1, AR3X2, AR4X3, AR16X9, IgnoreInitialAspectRatio};
-export default {AR1X1, AR5X4, AR3X1, AR3X2, AR4X3, AR16X9, IgnoreInitialAspectRatio};

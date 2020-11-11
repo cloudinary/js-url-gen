@@ -166,20 +166,3 @@ export {
   northEast
 };
 
-export default {
-  north,
-  west,
-  east,
-  south,
-  advancedEyes,
-  advancedFace,
-  advancedFaces,
-  center,
-  face,
-  northWest,
-  faces,
-  ocrText,
-  southEast,
-  southWest,
-  northEast
-};

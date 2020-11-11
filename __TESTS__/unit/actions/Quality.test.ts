@@ -1,7 +1,7 @@
 import * as Quality from "../../../src/values/quality/Quality";
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import Delivery from "../../../src/actions/delivery/Delivery";
+import * as Delivery from "../../../src/actions/delivery/Delivery";
 
 import * as ChromaSubSampling from '../../../src/values/chromaSubSampling/ChromaSubSampling';
 

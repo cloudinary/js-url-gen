@@ -13,4 +13,3 @@ function auto(): string {
 }
 
 export {auto};
-export default {auto};

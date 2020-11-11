@@ -6,8 +6,8 @@ import {BlendModeQualifier} from "../../../src/values/blendMode/BlendModeQualifi
 import {imageLayer} from "../../../src/actions/overlay/Overlay";
 import {PositionQualifier} from "../../../src/values/position/PositionQualifier";
 import {center} from "../../../src/values/position/Position";
-import FontWeight from "../../../src/values/fontWeight/FontWeight";
-import FontStyle from "../../../src/values/fontStyle/FontStyle";
+import * as FontWeight from "../../../src/values/fontWeight/FontWeight";
+import * as FontStyle from "../../../src/values/fontStyle/FontStyle";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {

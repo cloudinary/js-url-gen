@@ -1,8 +1,6 @@
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import Adjust from '../../../src/actions/adjust/Adjust';
-import * as AdjustESM from '../../../src/actions/adjust/Adjust';
+import * as Adjust from '../../../src/actions/adjust/Adjust';
 import {TransformableImage} from "../../../src";
-import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 import * as ImproveMode from "../../../src/values/improveMode/ImproveMode";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
@@ -12,10 +10,6 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 });
 
 describe('Tests for Transformation Action -- Adjust', () => {
-  it('Expects ESM to match Default', () => {
-    expectESMToMatchDefault(AdjustESM, Adjust);
-  });
-
   it('Ensure leveledAdjusts work properly', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)

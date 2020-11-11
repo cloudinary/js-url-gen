@@ -39,5 +39,4 @@ class RotateAction extends Action {
   }
 }
 
-export {RotateAction};
 export default RotateAction;

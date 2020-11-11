@@ -1,10 +1,8 @@
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import TransformableImage from "../../../src/transformation/TransformableImage";
 import {set} from "../../../src/actions/variable/Variable";
-import Resize from "../../../src/actions/resize/Resize";
-import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
-import * as ConditionESM from "../../../src/actions/condition/Condition";
-import Condition from "../../../src/actions/condition/Condition";
+import * as Resize from "../../../src/actions/resize/Resize";
+import * as Condition from "../../../src/actions/condition/Condition";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -13,10 +11,6 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 });
 
 describe('Tests for Transformation Action -- Condition', () => {
-  it('Expects ESM to match Default', () => {
-    expectESMToMatchDefault(ConditionESM, Condition);
-  });
-
   it('Ensures Condition namespace is accepted as an action to TransformableImage', () => {
     const tImage = new TransformableImage();
     // Ensures it compiles and doesn't throw

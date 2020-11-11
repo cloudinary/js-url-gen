@@ -42,4 +42,3 @@ function videoLayer(source: VideoSource | ImageSource | TextSource, position?:Po
 }
 
 export {imageLayer, videoLayer};
-export default {imageLayer, videoLayer};

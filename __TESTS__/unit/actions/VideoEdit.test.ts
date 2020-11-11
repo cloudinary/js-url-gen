@@ -1,11 +1,10 @@
-import VideoEdit from '../../../src/actions/videoEdit/VideoEdit';
+import * as VideoEdit from '../../../src/actions/videoEdit/VideoEdit';
 import * as VideoEditESM from '../../../src/actions/videoEdit/VideoEdit';
 import TransformableVideo from '../../../src/transformation/TransformableVideo';
-import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
-import Sources from "../../../src/values/sources/Sources";
+import * as Sources from "../../../src/values/sources/Sources";
 
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import Volume from "../../../src/values/volume/Volume";
+import * as Volume from "../../../src/values/volume/Volume";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -14,10 +13,6 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 });
 
 describe('Tests for Transformation Action -- VideoEdit', () => {
-  it ('Ensures ESM Matches Default', () => {
-    expectESMToMatchDefault(VideoEditESM, VideoEdit);
-  });
-
   it('Creates a cloudinaryURL with concatenate', () => {
     const url = new TransformableVideo()
       .setConfig(CONFIG_INSTANCE)

@@ -1,9 +1,9 @@
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import Cutter from '../../../src/actions/cutter/Cutter';
+import * as Cutter from '../../../src/actions/cutter/Cutter';
 import TransformableImage from "../../../src/transformation/TransformableImage";
 import {image} from "../../../src/values/sources/Sources";
 import {scale} from "../../../src/actions/resize/Resize";
-import Position from "../../../src/values/position/Position";
+import * as Position from "../../../src/values/position/Position";
 
 
 

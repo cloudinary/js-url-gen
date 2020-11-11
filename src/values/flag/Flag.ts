@@ -40,9 +40,3 @@ export {Flag, animated, anyFormat, animatedPng, animatedWebP, clip,
   sanitize, stripProfile, tiff8Lzw, attachment, forceIcc, forceStrip, getInfo, immutableCache,
   keepAttribution, keepIptc, custom, streamingAttachment, hlsv3, keepDar, noStream, mono,
   layerApply, relative, splice, truncateTS, waveform, ignoreAspectRatio};
-
-export default {Flag, animated, anyFormat, animatedPng, animatedWebP, clip,
-  clipEvenOdd, lossy, preserveTransparency, png8, png24, png32, progressive, rasterize,
-  sanitize, stripProfile, tiff8Lzw, attachment, forceIcc, forceStrip, getInfo, immutableCache,
-  keepAttribution, keepIptc, custom, streamingAttachment, hlsv3, keepDar, noStream, mono,
-  layerApply, relative, splice, truncateTS, waveform, ignoreAspectRatio};

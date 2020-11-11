@@ -1,16 +1,16 @@
-import ArtisticFilter from "../../../src/values/artisticFilter/ArtisticFilter";
-import Outline from "../../../src/values/outline/Outline";
-import ColorSpace from "../../../src/values/colorSpace/ColorSpace";
-import Dither from "../../../src/values/dither/Dither";
-import ChromaSubSampling from "../../../src/values/chromaSubSampling/ChromaSubSampling";
-import FontStyle from "../../../src/values/fontStyle/FontStyle";
-import FontWeight from "../../../src/values/fontWeight/FontWeight";
-import StreamingProfile from "../../../src/values/streamingProfile/StreamingProfile";
-import GravityObjects from "../../../src/values/gravityObjects/GravityObjects";
+import * as ArtisticFilter from "../../../src/values/artisticFilter/ArtisticFilter";
+import * as Outline from "../../../src/values/outline/Outline";
+import * as ColorSpace from "../../../src/values/colorSpace/ColorSpace";
+import * as Dither from "../../../src/values/dither/Dither";
+import * as ChromaSubSampling from "../../../src/values/chromaSubSampling/ChromaSubSampling";
+import * as FontStyle from "../../../src/values/fontStyle/FontStyle";
+import * as FontWeight from "../../../src/values/fontWeight/FontWeight";
+import * as StreamingProfile from "../../../src/values/streamingProfile/StreamingProfile";
+import * as GravityObjects from "../../../src/values/gravityObjects/GravityObjects";
 import {GravityObject} from "../../../src/values/gravityObjects/GravityObject";
-import SimulateColorBlind from "../../../src/values/simulateColorBlind/SimulateColorBlind";
-import AudioCodec from "../../../src/values/audioCodec/AudioCodec";
-import AudioFrequency from "../../../src/values/audioFrequency/AudioFrequency";
+import * as SimulateColorBlind from "../../../src/values/simulateColorBlind/SimulateColorBlind";
+import * as AudioCodec from "../../../src/values/audioCodec/AudioCodec";
+import * as AudioFrequency from "../../../src/values/audioFrequency/AudioFrequency";
 
 describe('Test imported values', () => {
   it('Generates a URL', () => {

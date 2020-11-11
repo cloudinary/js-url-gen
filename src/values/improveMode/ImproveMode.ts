@@ -26,5 +26,4 @@ function indoor(): string {
 }
 
 export {outdoor, indoor};
-export default {outdoor, indoor};
 

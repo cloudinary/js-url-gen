@@ -66,11 +66,3 @@ export {
   trueColor
 };
 
-export default {
-  CMYK,
-  keepCMYK,
-  noCMYK,
-  SRGB,
-  tinySRGB,
-  trueColor
-};

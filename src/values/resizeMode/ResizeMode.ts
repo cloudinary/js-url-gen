@@ -25,4 +25,3 @@ function regionRelative(): string {
 }
 
 export {relative, regionRelative};
-export default {relative, regionRelative};

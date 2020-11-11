@@ -2,7 +2,6 @@ import * as PSDTools from "../../../src/actions/psdTools/PsdTools";
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as PSDToolsESM from '../../../src/actions/psdTools/PsdTools';
-import expectESMToMatchDefault from '../../TestUtils/expectESMToMatchDefault';
 
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
@@ -12,10 +11,6 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 });
 
 describe('Tests for Transformation Action -- PSDTools', () => {
-  it ('Ensures ESM Matches Default', () => {
-    expectESMToMatchDefault(PSDToolsESM, PSDTools);
-  });
-
   it('Creates a cloudinaryURL with clip number', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)

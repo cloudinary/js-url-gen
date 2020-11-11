@@ -180,25 +180,3 @@ export {
   threshold1x1nondither
 };
 
-
-export default {
-  checkerboard2x1dither,
-  circles5x5black,
-  circles5x5white,
-  circles6x6black,
-  circles6x6white,
-  circles7x7black,
-  circles7x7white,
-  halftone4x4angled,
-  halftone4x4orthogonal,
-  halftone6x6angled,
-  halftone6x6orthogonal,
-  halftone8x8angled,
-  halftone8x8orthogonal,
-  halftone16x16orthogonal,
-  ordered2x2dispersed,
-  ordered3x3dispersed,
-  ordered4x4dispersed,
-  ordered8x8dispersed,
-  threshold1x1nondither
-};

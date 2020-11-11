@@ -12,7 +12,4 @@ import byRadius from './byRadius';
 import max from './max';
 
 export {byRadius, max};
-export default {
-  byRadius,
-  max
-};
+

@@ -42,4 +42,3 @@ function smartObject(): SmartObjectAction {
 }
 
 export {clip, getLayer, smartObject};
-export default {clip, getLayer, smartObject};
