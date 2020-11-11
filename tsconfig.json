@@ -1,9 +1,8 @@
 {
   "compilerOptions": {
     "noImplicitAny": true,
-    "outDir": "./dist/bundles/esm",
+    "outDir": "./dist",
     "target": "ES5",
-    "declarationDir": "dist/types",
     "declaration": true,
     "module": "ES2015",
     "moduleResolution": "node",

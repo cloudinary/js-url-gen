@@ -4,7 +4,7 @@
 
 // Import the cloudinary class, and the assets you want to use
 // In this case, we import a TransformableImage type.
-import Cloudinary, {TransformableImage} from '@cloudinary/base';
+import {Cloudinary, TransformableImage} from '@cloudinary/base';
 
 // Create your instance
 const cld = new Cloudinary({
@@ -25,7 +25,7 @@ cld.useImage(TransformableImage);
 
 // Import the cloudinary class, and the assets you want to use
 // In this case, we import a TransformableImage type.
-import Cloudinary, {TransformableImage} from '@cloudinary/base';
+import {Cloudinary, TransformableImage} from '@cloudinary/base';
 
 // Create your instance
 const cld = new Cloudinary({});
@@ -49,7 +49,7 @@ image.setConfig({
 
 // Import the cloudinary class, and the assets you want to use
 // In this case, we import a TransformableImage type.
-import Cloudinary, {TransformableImage} from '@cloudinary/base';
+import {TransformableImage, Cloudinary} from '@cloudinary/base';
 
 // Create your instance
 const cld = new Cloudinary({
