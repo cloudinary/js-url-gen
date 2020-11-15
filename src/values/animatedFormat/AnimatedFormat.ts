@@ -30,8 +30,4 @@ export {
   webp
 };
 
-export default {
-  auto,
-  gif,
-  webp
-};
+

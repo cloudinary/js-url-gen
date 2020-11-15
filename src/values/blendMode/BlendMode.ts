@@ -43,8 +43,3 @@ export {
   overlay
 };
 
-export default {
-  screen,
-  multiply,
-  overlay
-};

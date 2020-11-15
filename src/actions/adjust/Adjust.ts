@@ -106,13 +106,6 @@ function by3dLut(publicId: string): By3dLutAction {
   return new By3dLutAction(publicId);
 }
 
-
-
-
-export default {brightness, viesusCorrect, opacity, red, sharpen, improve, saturation,
-  contrast, gamma, green, blue, brightnessHSB, hue, autoBrightness, autoColor,
-  autoContrast, vibrance, unsharpMask, opacityThreshold, replaceColor, recolor, fillLight, by3dLut, dither};
-
 export {brightness, viesusCorrect, opacity, red, sharpen, improve, saturation,
   contrast, gamma, green, blue, brightnessHSB, hue, autoBrightness, autoColor,
   autoContrast, vibrance, unsharpMask, opacityThreshold, replaceColor, recolor, fillLight, by3dLut, dither};

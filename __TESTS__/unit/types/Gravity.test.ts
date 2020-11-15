@@ -1,17 +1,10 @@
-import Gravity from "../../../src/values/gravity/Gravity";
-import * as GravityESM from "../../../src/values/gravity/Gravity";
-
+import * as Gravity from "../../../src/values/gravity/Gravity";
 import * as GravityObjects from "../../../src/values/gravityObjects/GravityObjects";
 import {AutoGravity} from "../../../src/values/gravityObjects/GravityObjects";
-import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 
 
 
 describe('Gravity Qualifier', () => {
-  it('Ensure ESM and Default export the same thing', () => {
-    expectESMToMatchDefault(GravityESM, Gravity);
-  });
-
   it('Tests simple gravitation', () => {
     expect(Gravity.auto().toString()).toBe('g_auto');
     expect(Gravity.center().toString()).toBe('g_center');

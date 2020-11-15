@@ -5,7 +5,7 @@
 
 ```javascript
 
-  import Cloudinary, {TransformableImage} from '@cloudinary/base';
+  import {Cloudinary, TransformableImage} from '@cloudinary/base';
 
   // Create your instance
   const cld = new Cloudinary({
@@ -21,9 +21,9 @@
   
   const myImage = cld.image('sample');
 
-  import Resize from '@cloudinary/base/actions/resize';
-  import Rotate from '@cloudinary/base/actions/rotate';
-  import * as RotationMode from '@cloudinary/base/values/rotate';
+  import Resize from '@cloudinary/base/actions/resize/Resize';
+  import Rotate from '@cloudinary/base/actions/rotate/Rotate';
+  import * as RotationMode from '@cloudinary/base/values/rotate/Rotate';
 
   myImage
     .resize(

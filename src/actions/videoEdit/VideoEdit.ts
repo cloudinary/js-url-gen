@@ -54,4 +54,3 @@ function volume(volumeValue: string | number): VolumeAction{
 }
 
 export {concatenate, trim, volume};
-export default {concatenate, trim, volume};

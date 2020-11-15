@@ -4,7 +4,7 @@
 
 ```javascript
 
-  import Cloudinary, {TransformableImage} from '@cloudinary/base';
+  import {Cloudinary, TransformableImage} from '@cloudinary/base';
 
   // Create your instance
   const cld = new Cloudinary({
@@ -22,7 +22,7 @@
   // Create a new image
   const myImage = cld.image('sample');
 
-  import {scale} from '@cloudinary/base/actions/resize';
+  import {scale} from '@cloudinary/base/actions/resize/Resize';
 
   myImage.resize(
     scale()

@@ -15,4 +15,3 @@ import colorSpaceFromICC from "./colorSpaceFromICC";
 
 export {DeliveryAction, format, dpr, quality, density, defaultImage, colorSpace, colorSpaceFromICC};
 
-export default {DeliveryAction, format, dpr, quality, density, defaultImage, colorSpace, colorSpaceFromICC};

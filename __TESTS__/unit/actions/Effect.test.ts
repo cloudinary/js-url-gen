@@ -1,9 +1,8 @@
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as ArtisticFilter from "../../../src/values/artisticFilter/ArtisticFilter";
-import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 import * as EffectESM from "../../../src/actions/effect/Effect";
-import Effect from "../../../src/actions/effect/Effect";
+import * as Effect from "../../../src/actions/effect/Effect";
 import * as Outline from "../../../src/values/outline/Outline";
 import {image} from "../../../src/values/sources/Sources";
 import scale from "../../../src/actions/resize/ResizeActions/ScaleAction";
@@ -20,10 +19,6 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 });
 
 describe('Tests for Transformation Action -- Effect', () => {
-  it('Expects ESM to match Default', () => {
-    expectESMToMatchDefault(EffectESM, Effect);
-  });
-
   it('Creates a cloudinaryURL with Simple and Leveled effects', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)

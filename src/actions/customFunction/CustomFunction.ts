@@ -37,4 +37,3 @@ function wasm(publicID:string): CustomFunctionAction {
 
 
 export {remote, wasm};
-export default {remote, wasm};

@@ -94,12 +94,3 @@ export {
   blurred
 };
 
-export default {
-  auto,
-  border,
-  borderGradient,
-  predominantGradient,
-  predominant,
-  color,
-  blurred
-};

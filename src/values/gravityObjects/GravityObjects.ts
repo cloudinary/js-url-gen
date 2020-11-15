@@ -83,16 +83,3 @@ export {
   dog,
   sink
 };
-
-export default {
-  AutoGravity,
-  person,
-  cat,
-  microwave,
-  refrigerator,
-  skateboard,
-  bird,
-  bottle,
-  dog,
-  sink
-};

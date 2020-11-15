@@ -21,7 +21,3 @@ export {
   chroma444
 };
 
-export default {
-  chroma420,
-  chroma444
-};

@@ -107,5 +107,4 @@ function toAnimated(animatedFormat: string): ToAnimatedAction {
   return new ToAnimatedAction(animatedFormat);
 }
 
-export default {bitRate, audioCodec, audioFrequency, fps, fpsRange, keyframeInterval, streamingProfile, toAnimated};
 export {bitRate, audioCodec, audioFrequency, fps, fpsRange, keyframeInterval, streamingProfile, toAnimated};

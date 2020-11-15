@@ -1,12 +1,7 @@
-import Position from "../../../src/values/position/Position";
+import * as Position from "../../../src/values/position/Position";
 import * as PositionESM from "../../../src/values/position/Position";
-import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 
 describe('Position Qualifier', () => {
-  it('Ensure ESM and Default export the same thing', () => {
-    expectESMToMatchDefault(PositionESM, Position);
-  });
-
   it('Tests simple gravitation', () => {
     expect(Position.center().toString()).toBe('g_center');
     expect(Position.face().toString()).toBe('g_face');

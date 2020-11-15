@@ -11,4 +11,3 @@ import mode from "./mode";
 
 
 export {byAngle, mode};
-export default {byAngle, mode};

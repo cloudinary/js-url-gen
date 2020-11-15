@@ -22,7 +22,7 @@ function ensureNoUnwantedFiles(tree: IFlatFileStructureLevel, currentPath: strin
 
   // Loop over the real files
   filesInCurrentFolder.forEach((fileInCurrentFolder:string) => {
-    // If tree[fileName] is set to false, we skip to the enxt file
+    // If tree[fileName] is set to false, we skip to the next file
     const ignoreFile = tree[fileInCurrentFolder] === false;
     if (ignoreFile) {
       return; // quick exit, no need to validate anything

@@ -18,7 +18,7 @@ const bundleSizeTestCases:ITestCase[] = [
     sizeLimitInKB: 16,
     importsArray: [
       importFromBase('TransformableImage'),
-      importFromDist('actions/resize')
+      importFromDist('actions/resize/Resize')
     ]
   },
   {
@@ -26,8 +26,8 @@ const bundleSizeTestCases:ITestCase[] = [
     sizeLimitInKB: 25,
     importsArray: [
       importFromBase('TransformableImage'),
-      importFromDist('actions/resize'),
-      importFromDist('actions/adjust')
+      importFromDist('actions/resize/Resize'),
+      importFromDist('actions/adjust/Adjust')
     ]
   },
   {
@@ -35,9 +35,9 @@ const bundleSizeTestCases:ITestCase[] = [
     sizeLimitInKB: 25,
     importsArray: [
       importFromBase('TransformableImage'),
-      importFromDist('actions/resize'),
-      importFromDist('actions/adjust'),
-      importFromDist('actions/border')
+      importFromDist('actions/resize/Resize'),
+      importFromDist('actions/adjust/Adjust'),
+      importFromDist('actions/border/Border')
     ]
   },
   {
@@ -45,9 +45,9 @@ const bundleSizeTestCases:ITestCase[] = [
     sizeLimitInKB: 30,
     importsArray: [
       importFromBase('TransformableImage'),
-      importFromDist('actions/resize'),
-      importFromDist('actions/adjust'),
-      importFromDist('actions/delivery')
+      importFromDist('actions/resize/Resize'),
+      importFromDist('actions/adjust/Adjust'),
+      importFromDist('actions/delivery/Delivery')
     ]
   }
 ];

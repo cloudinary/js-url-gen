@@ -1,9 +1,7 @@
-import Border from '../../../src/actions/border/Border';
-import * as BorderESM from '../../../src/actions/border/Border';
+import * as Border from '../../../src/actions/border/Border';
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as Colors from "../../../src/values/colors/Colors";
-import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -12,10 +10,6 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 });
 
 describe('Tests for Transformation Action -- Border', () => {
-  it('Expects ESM to match Default', () => {
-    expectESMToMatchDefault(BorderESM, Border);
-  });
-
   it('Creates a cloudinaryURL with border and color', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)

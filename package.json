@@ -57,6 +57,5 @@
     "typescript": "^3.9.3",
     "webpack": "^4.44.1",
     "release-it": "^14.2.0"
-  },
-  "types": "./types/index.d.ts"
+  }
 }

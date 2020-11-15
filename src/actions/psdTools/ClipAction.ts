@@ -1,7 +1,7 @@
 import Action from "../Action";
 import Qualifier from "../../qualifier/Qualifier";
 import QualifierValue from "../../qualifier/QualifierValue";
-import Flag from "../../values/flag/Flag";
+import * as Flag from "../../values/flag/Flag";
 
 
 /**

@@ -1,6 +1,6 @@
 import Action from "../Action";
 import Qualifier from "../../qualifier/Qualifier";
-import Flag from "../../values/flag/Flag";
+import * as Flag from "../../values/flag/Flag";
 
 /**
  * @class ToAnimatedAction
@@ -29,8 +29,8 @@ class ToAnimatedAction extends Action {
   }
 
   /**
-   * @description Sets the frequency at which the video is sampled. 
-   * @param sampling As a string (e.g. '2.3s'), samples one frame every 2.3 seconds.<br>As a number (e.g. 20), 
+   * @description Sets the frequency at which the video is sampled.
+   * @param sampling As a string (e.g. '2.3s'), samples one frame every 2.3 seconds.<br>As a number (e.g. 20),
    * samples that many equally spaced frames over the duration of the video.
    */
   sampling(sampling: string|number): this {

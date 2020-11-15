@@ -4,9 +4,7 @@ import * as Dpr from "../../../src/values/dpr/Dpr";
 import * as Format from "../../../src/values/formats/Formats";
 import * as Quality from "../../../src/values/quality/Quality";
 import * as ColorSpace from "../../../src/values/colorSpace/ColorSpace";
-import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
-import * as DeliveryESM from "../../../src/actions/delivery/Delivery";
-import Delivery from "../../../src/actions/delivery/Delivery";
+import * as Delivery from "../../../src/actions/delivery/Delivery";
 
 
 
@@ -19,10 +17,6 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 const {format} = Delivery;
 
 describe('Tests for Transformation Action -- Delivery', () => {
-  it('Expects ESM to match Default', () => {
-    expectESMToMatchDefault(DeliveryESM, Delivery);
-  });
-
   it('Ensure namespace is correctly populated', () => {
     expect(Delivery.format).toEqual(format);
   });

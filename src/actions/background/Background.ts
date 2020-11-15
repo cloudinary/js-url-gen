@@ -7,4 +7,3 @@ import {color} from "./bgColor";
  */
 
 export {color};
-export default {color};

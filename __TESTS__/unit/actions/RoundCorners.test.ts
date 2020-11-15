@@ -1,8 +1,6 @@
-import RoundCorners, {byRadius, max} from 'actions/roundCorners/RoundCorners';
-import * as RoundCornersESM from 'actions/roundCorners/RoundCorners';
+import {byRadius, max} from 'actions/roundCorners/RoundCorners';
 import TransformableImage from 'transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
@@ -13,9 +11,6 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 
 
 describe('Tests for Transformation Action -- RoundCorners', () => {
-  it ('Ensures ESM Matches Default', () => {
-    expectESMToMatchDefault(RoundCornersESM, RoundCorners);
-  });
 
   it('Ensure roundCorners accepts 1 radius', () => {
     const url = new TransformableImage('sample')

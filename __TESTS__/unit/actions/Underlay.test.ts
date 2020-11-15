@@ -1,9 +1,9 @@
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import TransformableImage from "../../../src/transformation/TransformableImage";
 import {fill} from "../../../src/actions/resize/Resize";
-import Underlay from "../../../src/actions/underlay/Underlay";
-import Position from "../../../src/values/position/Position";
-import BlendMode from "../../../src/values/blendMode/BlendMode";
+import * as Underlay from "../../../src/actions/underlay/Underlay";
+import * as Position from "../../../src/values/position/Position";
+import * as BlendMode from "../../../src/values/blendMode/BlendMode";
 
 import * as UnderlayESM from "../../../src/actions/underlay/Underlay";
 import * as OverlayESM from "../../../src/actions/overlay/Overlay";

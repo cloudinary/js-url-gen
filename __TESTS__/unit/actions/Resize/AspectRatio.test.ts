@@ -1,5 +1,5 @@
 import crop from "../../../../src/actions/resize/ResizeActions/CropAction";
-import AspectRatio from "../../../../src/values/aspectRatio/AspectRatio";
+import * as AspectRatio from "../../../../src/values/aspectRatio/AspectRatio";
 import TransformableImage from "../../../../src/transformation/TransformableImage";
 import CloudinaryConfig from "../../../../src/config/CloudinaryConfig";
 

@@ -1,9 +1,8 @@
-import Rotate from '../../../src/actions/rotate/Rotate';
+import * as Rotate from '../../../src/actions/rotate/Rotate';
 import * as RotateESM from '../../../src/actions/rotate/Rotate';
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as RotationMode from "../../../src/values/rotate/Rotate";
-import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -12,10 +11,6 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 });
 
 describe('Tests for Transformation Action -- Rotate', () => {
-  it('Expects ESM to match Default', () => {
-    expectESMToMatchDefault(RotateESM, Rotate);
-  });
-
   it('Creates a cloudinaryURL with Rotate', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)

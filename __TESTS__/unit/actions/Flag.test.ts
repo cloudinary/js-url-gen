@@ -1,9 +1,8 @@
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import Flag from "../../../src/values/flag/Flag";
-import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
+import * as Flag from "../../../src/values/flag/Flag";
 import * as FlagESM from "../../../src/values/flag/Flag";
-import Resize from "../../../src/actions/resize/Resize";
+import * as Resize from "../../../src/actions/resize/Resize";
 import TransformableVideo from "../../../src/transformation/TransformableVideo";
 
 
@@ -15,10 +14,6 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 });
 
 describe('Tests for Transformation Action -- Flag', () => {
-  it('Expects ESM to match Default', () => {
-    expectESMToMatchDefault(FlagESM, Flag);
-  });
-
   it('Creates a cloudinaryURL with image flags', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)

@@ -40,5 +40,4 @@ function video(publicID: string): VideoSource {
   return new VideoSource(publicID);
 }
 
-export default {image, text, video};
 export {image, text, video};

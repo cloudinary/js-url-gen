@@ -1,5 +1,5 @@
 import TransformableImage from "../../src/transformation/TransformableImage";
-import Resize from "../../src/actions/resize/Resize";
+import * as Resize from "../../src/actions/resize/Resize";
 import ICloudinaryConfigurations from "../../src/interfaces/Config/ICloudinaryConfigurations";
 
 const DEMO_CONFIG = {

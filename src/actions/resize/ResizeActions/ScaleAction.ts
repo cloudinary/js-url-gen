@@ -26,7 +26,7 @@ class ScaleAction extends ResizeSimpleAction {
  * @param {number|string} height The required height of a transformed asset.
  * @return {ScaleAction}
  */
-function scale(width?: number|string, height?: number|string) :ScaleAction {
+export function scale(width?: number|string, height?: number|string) :ScaleAction {
   return new ScaleAction('scale', width, height);
 }
 

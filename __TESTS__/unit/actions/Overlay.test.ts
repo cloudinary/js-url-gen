@@ -4,16 +4,15 @@ import TransformableVideo from "../../../src/transformation/TransformableImage";
 
 import {fill} from "../../../src/actions/resize/Resize";
 
-import Layers from "../../../src/actions/overlay/Overlay";
+import * as Layers from "../../../src/actions/overlay/Overlay";
 import * as LayersESM from "../../../src/actions/overlay/Overlay";
 
-import Position from "../../../src/values/position/Position";
-import BlendMode from "../../../src/values/blendMode/BlendMode";
+import * as Position from "../../../src/values/position/Position";
+import * as BlendMode from "../../../src/values/blendMode/BlendMode";
 import {VideoRange, VideoOffset} from "../../../src/values/video/Video";
 import * as PositionESM from "../../../src/values/position/Position";
 import * as BlendModeESM from "../../../src/values/blendMode/BlendMode";
 
-import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
 import format from "../../../src/actions/delivery/format";
 import {image, video} from "../../../src/values/sources/Sources";
 
@@ -26,12 +25,6 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 });
 
 describe('Tests for overlay actions', () => {
-  it('Expects ESM to match Default', () => {
-    expectESMToMatchDefault(PositionESM, Position);
-    expectESMToMatchDefault(BlendModeESM, BlendMode);
-    expectESMToMatchDefault(LayersESM, Layers);
-  });
-
   it('Parses an overlay with an imageSource', () => {
     const tImage = new TransformableImage('sample');
     tImage

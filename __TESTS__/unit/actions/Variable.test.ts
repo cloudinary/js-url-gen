@@ -1,9 +1,11 @@
-import Variable, {set} from '../../../src/actions/variable/Variable';
-import Expression, {expression} from '../../../src/values/expression/Expression';
+import * as Variable from '../../../src/actions/variable/Variable';
+import * as Expression from '../../../src/values/expression/Expression';
 import * as VariableESM from '../../../src/actions/variable/Variable';
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import expectESMToMatchDefault from "../../TestUtils/expectESMToMatchDefault";
+
+const {set} = Variable;
+const {expression} = Expression;
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -12,10 +14,6 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 });
 
 describe('Tests for Transformation Action -- Variable', () => {
-  it ('Ensures ESM Matches Default', () => {
-    expectESMToMatchDefault(VariableESM, Variable);
-  });
-
   it('Ensures Variable namespace is accepted as an action to TransformableImage', () => {
     const tImage = new TransformableImage();
     // Ensures it compiles and doesn't throw

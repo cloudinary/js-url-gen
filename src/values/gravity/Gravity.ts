@@ -198,23 +198,3 @@ export {
   northEast
 };
 
-export default {
-  north,
-  west,
-  east,
-  south,
-  advancedEyes,
-  advancedFace,
-  advancedFaces,
-  auto,
-  center,
-  face,
-  northWest,
-  faces,
-  object,
-  ocrText,
-  southEast,
-  northEast,
-  southWest,
-  GravityQualifier
-};

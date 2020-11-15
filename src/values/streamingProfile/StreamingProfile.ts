@@ -62,12 +62,3 @@ export {
   fullHDLean,
   fullHDWifi
 };
-
-export default {
-  HD,
-  SD,
-  HDLean,
-  fullHD,
-  fullHDLean,
-  fullHDWifi
-};
