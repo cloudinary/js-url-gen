@@ -75,9 +75,12 @@ class Transformation {
    * @return {string}
    */
   toString(): string {
-    return this.actions.map((action) => {
-      return action.toString();
-    }).join('/');
+    return this.actions
+      .map((action) => {
+        return action.toString();
+      })
+      .filter((a) => a)
+      .join('/');
   }
 
 
