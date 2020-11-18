@@ -36,7 +36,8 @@ function createMainEntryPoint() {
   const projectJson = JSON.parse(fs.readFileSync('./package.json', 'utf-8'));
   delete projectJson.scripts;
   delete projectJson.devDependencies;
-  projectJson.main = './index.js';
+  projectJson.main = './bundles/umd/base.js';
+  projectJson.browser = './index.js';
 
   Object.assign(projectJson, commonPackageProperties);
   fs.writeFileSync('./dist/package.json', JSON.stringify(projectJson, null, '\t'));
