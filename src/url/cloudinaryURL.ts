@@ -21,14 +21,19 @@ function createCloudinaryURL(config: ICloudinaryConfigurations, descriptor?: IDe
   const signature = descriptor.signature;
   const transformationString = transformation ? transformation.toString() : '';
   const version = getUrlVersion(config.url, descriptor);
-  const publicID = descriptor.publicID;
+
+  const publicID = descriptor.publicID
+    // Serialize the publicID, but leave slashes alone.
+    // we can't use serializeCloudinaryCharacters because that does both things.
+    .replace(/,/g, '%2C');
 
   const url = [prefix, assetType, storageType, signature, transformationString, version, publicID]
     .filter((a) => a)
-    .join('/')
-    .replace(' ', '%20');
+    .join('/');
 
-  return url;
+  return encodeURI(url)
+    .replace(/\?/g, '%3F')
+    .replace(/=/g, '%3D');
 }
 
 /**
