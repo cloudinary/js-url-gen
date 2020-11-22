@@ -7,8 +7,6 @@
  * @private
  */
 export const ALLOWED_URL_CONFIG = [
-  'cdnSubdomain',
-  'secureCdnSubdomain',
   'cname',
   'secureDistribution',
   'privateCdn',

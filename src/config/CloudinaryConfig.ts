@@ -6,7 +6,7 @@ class CloudinaryConfig {
   public cloud: CloudConfig;
   public url: URLConfig;
 
-  constructor(configurations: ICloudinaryConfigurations) {
+  constructor(configurations: ICloudinaryConfigurations = {}) {
     this.cloud = new CloudConfig(configurations.cloud);
     this.url = new URLConfig(configurations.url || {});
   }
