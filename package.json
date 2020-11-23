@@ -1,6 +1,6 @@
 {
   "name": "@cloudinary/base",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.5",
   "description": "",
   "scripts": {
     "test": "npm run test:types && npm run build && jest --coverage --reporters default &&  npm run test:size",
@@ -19,8 +19,8 @@
     "lint": "eslint src __TESTS__ --color --ext .ts",
     "start": "rollup -c rollup.dev.config.js -w",
     "bundlewatch": "bundlewatch --config ./bundlewatch.config.js",
-    "release-dry-run" : "npm run build && cp README.md LICENSE ./dist && cd ./dist && release-it --dry-run",
-    "release" : "npm run build && cp README.md LICENSE ./dist && cd ./dist && release-it"
+    "release-dry-run": "npm run build && cp README.md LICENSE ./dist && cd ./dist && release-it --dry-run",
+    "release": "npm run build && cp README.md LICENSE ./dist && cd ./dist && release-it"
   },
   "keywords": [],
   "author": "",
