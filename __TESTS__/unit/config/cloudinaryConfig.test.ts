@@ -44,12 +44,10 @@ describe('Tests for CloudinaryConfiguration', () => {
         signUrl: true,
         longUrlSignature: true,
         useRootPath: true,
-        cdnSubdomain: true,
         cname: 'cname',
-        secureCdnSubdomain: true,
         privateCdn: true,
         secure: true,
-        secureDistribution: true
+        secureDistribution: ''
       }
     });
 
@@ -58,12 +56,10 @@ describe('Tests for CloudinaryConfiguration', () => {
     expect(conf.url.signUrl).toBe(true);
     expect(conf.url.longUrlSignature).toBe(true);
     expect(conf.url.useRootPath).toBe(true);
-    expect(conf.url.cdnSubdomain).toBe(true);
     expect(conf.url.cname).toBe('cname');
-    expect(conf.url.secureCdnSubdomain).toBe(true);
     expect(conf.url.privateCdn).toBe(true);
     expect(conf.url.secure).toBe(true);
-    expect(conf.url.secureDistribution).toBe(true);
+    expect(conf.url.secureDistribution).toBe('');
 
   });
 

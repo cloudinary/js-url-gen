@@ -1,4 +1,4 @@
-### Pull reuqest for @Cloudianry/Base
+### Pull request for @Cloudinary/Base
 
 
 #### What does this PR solve?

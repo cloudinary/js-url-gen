@@ -4,10 +4,8 @@ import {ALLOWED_URL_CONFIG} from "../internalConstants";
 import ICloudConfig from "../interfaces/Config/ICloudConfig";
 
 class URLConfig extends Config implements IURLConfig {
-  cdnSubdomain?: boolean;
-  secureCdnSubdomain?: boolean;
   cname?: string; // User subdomain (example.cloudinary.com)
-  secureDistribution?: boolean;
+  secureDistribution?: string;
   privateCdn?: boolean;
   signUrl?: boolean;
   longUrlSignature?: boolean;
@@ -22,7 +20,9 @@ class URLConfig extends Config implements IURLConfig {
   constructor(userURLConfig: IURLConfig | unknown) {
     super();
     const urlConfig = this.filterOutNonSupportedKeys(userURLConfig, ALLOWED_URL_CONFIG);
-    Object.assign(this, {secure: true}, urlConfig);
+    Object.assign(this, {
+      secure: true
+    }, urlConfig);
   }
 
   extend(userURLConfig: ICloudConfig | unknown): URLConfig {

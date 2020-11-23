@@ -1,6 +1,24 @@
 import TransformableImage from "../../src/transformation/TransformableImage";
 import * as Resize from "../../src/actions/resize/Resize";
 import ICloudinaryConfigurations from "../../src/interfaces/Config/ICloudinaryConfigurations";
+import IURLConfig from "../../src/interfaces/Config/IURLConfig";
+import CloudinaryConfig from "../../src/config/CloudinaryConfig";
+import createCloudinaryURL from "../../src/url/cloudinaryURL";
+
+/**
+ * @description Create CloudinaryURL based on a URL Configuration, and return the URL
+ * @param urlConfig
+ */
+function createURLFromConfig(urlConfig: IURLConfig) {
+  const conf = new CloudinaryConfig({
+    cloud: {
+      cloudName: 'demo'
+    },
+    url: urlConfig
+  });
+
+  return createCloudinaryURL(conf, { publicID: 'sample' });
+}
 
 const DEMO_CONFIG = {
   cloud: {
@@ -9,7 +27,7 @@ const DEMO_CONFIG = {
   }
 };
 
-describe('It tests a combination of Cloudianry URL and Configuration', () => {
+describe('It tests a combination of Cloudinary URL and Configuration', () => {
   it ('Generates a URL', () => {
     const url = new TransformableImage('my_image')
       .setConfig(DEMO_CONFIG)
@@ -74,4 +92,58 @@ describe('It tests a combination of Cloudianry URL and Configuration', () => {
 
     expect(url).toBe('https://res.cloudinary.com/MY_CLOUD_NAME/avatar/fetch/c_fill,h_100,w_100/sample');
   });
+
+
+
+  it('Secure by default', () => {
+    const url = createURLFromConfig({});
+    expect(url).toContain('https://res.cloudinary.com/demo');
+  });
+
+  it('Supports secure:false', () => {
+    const url = createURLFromConfig({
+      secure:false
+    });
+    expect(url).toContain('http://res.cloudinary.com/demo');
+  });
+
+  it('Support cname with secure false', () => {
+    const url = createURLFromConfig({
+      cname:'hello.com',
+      secure: false
+    });
+    expect(url).toContain('http://hello.com/demo');
+  });
+
+  it('Support secureDistribution with secure true', () => {
+    const url = createURLFromConfig({
+      secureDistribution:'foobar.com'
+    });
+    expect(url).toContain('https://foobar.com/demo');
+  });
+
+  it('Support private CDN with secure true', () => {
+    const url = createURLFromConfig({
+      privateCdn:true
+    });
+    expect(url).toContain(`https://demo-res.cloudinary.com/image/upload`);
+  });
+
+  it('Support secureDistribution with secure true', () => {
+    const url = createURLFromConfig({
+      secure: true,
+      privateCdn: true,
+      secureDistribution: "something.cloudfront.net"
+    });
+    expect(url).toContain('https://something.cloudfront.net/image/upload/');
+  });
 });
+
+
+/**
+ * http://res.cloudinary.com/{cloudName}
+ * https://res.cloudinary.com/{cloudName}
+ * https://{cloudName}-res.cloudinary.com/
+ * http://{domain}
+ * https://{domain}
+ */

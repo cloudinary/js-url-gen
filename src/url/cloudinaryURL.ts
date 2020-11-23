@@ -12,7 +12,7 @@ import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigura
  * @param {Object} config
  * @param {Object} descriptor
  * @param {Transformation} transformation
- * @return {string} CloudianryURL
+ * @return {string} CloudinaryURL
  */
 function createCloudinaryURL(config: ICloudinaryConfigurations, descriptor?: IDescriptor, transformation?: Transformation): string {
   const prefix = getUrlPrefix(config.cloud.cloudName, config.url);
@@ -38,19 +38,49 @@ function createCloudinaryURL(config: ICloudinaryConfigurations, descriptor?: IDe
 
 /**
  * Create the URL prefix for Cloudinary resources.
+ * Available use cases
+ * http://res.cloudinary.com/{cloudName}
+ * https://res.cloudinary.com/{cloudName}
+ * https://{cloudName}-res.cloudinary.com/
+ * http://{domain}/${cloudName}
+ * https://{domain}/${cloudName}
+ * https://{domain}
  * @private
+ *
  * @param {string} cloudName
  * @param {IURLConfig} urlConfig
  */
-function getUrlPrefix(cloudName: string, urlConfig:IURLConfig) {
-  // defaults
-  const protocol = urlConfig.secure ? "https://" : "http://";
-  const cdnPart = "";
-  const subdomain = "res";
-  const host = ".cloudinary.com";
-  const path = `/${cloudName}`;
+function getUrlPrefix(cloudName: string, urlConfig: IURLConfig) {
+  const secure = urlConfig.secure;
+  const privateCDN = urlConfig.privateCdn;
+  const cname = urlConfig.cname;
+  const secureDistribution = urlConfig.secureDistribution;
 
-  return [protocol, cdnPart, subdomain, host, path].join("");
+  if (!secure && !cname) {
+    return `http://res.cloudinary.com/${cloudName}`;
+  }
+
+  if (secure && !secureDistribution && privateCDN) {
+    return `https://${cloudName}-res.cloudinary.com`;
+  }
+
+  if (secure && !secureDistribution) {
+    return `https://res.cloudinary.com/${cloudName}`;
+  }
+
+  if (secure && secureDistribution && privateCDN) {
+    return `https://${secureDistribution}`;
+  }
+
+  if (secure && secureDistribution) {
+    return `https://${secureDistribution}/${cloudName}`;
+  }
+
+  if (!secure && cname) {
+    return `http://${cname}/${cloudName}`;
+  } else {
+    return 'ERROR';
+  }
 }
 
 /**
@@ -59,7 +89,7 @@ function getUrlPrefix(cloudName: string, urlConfig:IURLConfig) {
  */
 function handleAssetType(descriptor: IDescriptor) {
   //default to image
-  if(!descriptor || !descriptor.assetType) {
+  if (!descriptor || !descriptor.assetType) {
     return 'image';
   }
 
@@ -72,7 +102,7 @@ function handleAssetType(descriptor: IDescriptor) {
  */
 function handleStorageType(descriptor: IDescriptor) {
   //default to upload
-  if(!descriptor || !descriptor.storageType) {
+  if (!descriptor || !descriptor.storageType) {
     return 'upload';
   }
 
@@ -83,7 +113,7 @@ function handleStorageType(descriptor: IDescriptor) {
  * @private
  * @param descriptor
  */
-function getUrlVersion(urlConfig:IURLConfig, descriptor: IDescriptor) {
+function getUrlVersion(urlConfig: IURLConfig, descriptor: IDescriptor) {
   const shouldForceVersion = urlConfig.forceVersion !== false;
 
   if (descriptor.version) {
