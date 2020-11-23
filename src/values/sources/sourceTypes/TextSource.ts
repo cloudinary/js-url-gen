@@ -1,6 +1,7 @@
 import {ISource} from "../ISource";
 import {prepareColor} from "../../../utils/prepareColor";
 import QualifierValue from "../../../qualifier/QualifierValue";
+import {serializeCloudinaryCharacters} from "../../../utils/serializeCloudinaryCharacters";
 
 /**
  * @description Defines how to manipulate a text layer
@@ -84,11 +85,11 @@ class TextSource implements ISource {
    * @return {string}
    */
   getSource(): string {
-    const fontValue = new QualifierValue([this.fFamily, this.fSize, this.fWeight, this.fStyle])
+    const fontValue = new QualifierValue([serializeCloudinaryCharacters(this.fFamily), this.fSize, this.fWeight, this.fStyle])
       .setDelimiter('_')
       .toString();
 
-    const fontAndText = new QualifierValue(['text', fontValue, this.innerText])
+    const fontAndText = new QualifierValue(['text', fontValue, serializeCloudinaryCharacters(this.innerText)])
       .setDelimiter(':')
       .toString();
 
