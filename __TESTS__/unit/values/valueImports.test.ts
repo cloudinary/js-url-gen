@@ -13,6 +13,7 @@ import * as AudioCodec from "../../../src/values/audioCodec/AudioCodec";
 import * as AudioFrequency from "../../../src/values/audioFrequency/AudioFrequency";
 import {FontHinting} from "../../../src/values/fontHinting/FontHinting";
 import {FontAntialias} from "../../../src/values/fontAntialias/FontHinting";
+import {TextAlignment} from "../../../src/values/textAlignment/TextAlignment";
 
 describe('Test imported values', () => {
   it('Generates a URL', () => {
@@ -59,6 +60,13 @@ describe('Test imported values', () => {
     expect(FontAntialias.best()).toBe('best');
     expect(FontAntialias.subPixel()).toBe('subpixel');
     expect(FontAntialias.gray()).toBe('gray');
+
+    expect(TextAlignment.left()).toBe('left');
+    expect(TextAlignment.right()).toBe('right');
+    expect(TextAlignment.center()).toBe('center');
+    expect(TextAlignment.start()).toBe('start');
+    expect(TextAlignment.end()).toBe('end');
+    expect(TextAlignment.justify()).toBe('justify');
 
 
 

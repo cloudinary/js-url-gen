@@ -16,7 +16,7 @@ class ChromaSubSampling {
   static chroma420():number { return 420; }
 }
 
-const {chroma420, chroma444} = ChromaSubSampling
+const {chroma420, chroma444} = ChromaSubSampling;
 
 export {
   ChromaSubSampling,
