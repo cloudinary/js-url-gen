@@ -38,20 +38,20 @@ describe('Tests for Transformation Action -- Variable', () => {
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$a_30/sample');
   });
 
-  it('Creates a cloudinaryURL with number variable convertToFloat', () => {
+  it('Creates a cloudinaryURL with number variable asFloat', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .addVariable(set('a', 30).convertToFloat())
+      .addVariable(set('a', 30).asFloat())
       .setPublicID('sample')
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$a_30_to_f/sample');
   });
 
-  it('Creates a cloudinaryURL with number variable convertToNumber', () => {
+  it('Creates a cloudinaryURL with number variable asInteger', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .addVariable(set('a', 30).convertToNumber())
+      .addVariable(set('a', 30).asInteger())
       .setPublicID('sample')
       .toURL();
 
@@ -68,20 +68,20 @@ describe('Tests for Transformation Action -- Variable', () => {
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$a_!bbb!/sample');
   });
 
-  it('Creates a cloudinaryURL with a string variable and convertToNumber', () => {
+  it('Creates a cloudinaryURL with a string variable and asInteger', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .addVariable(set('a', 'bbb').convertToNumber())
+      .addVariable(set('a', 'bbb').asInteger())
       .setPublicID('sample')
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$a_!bbb!_to_i/sample');
   });
 
-  it('Creates a cloudinaryURL with a string variable and convertToFloat', () => {
+  it('Creates a cloudinaryURL with a string variable and asFloat', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .addVariable(set('a', 'bbb').convertToFloat())
+      .addVariable(set('a', 'bbb').asFloat())
       .setPublicID('sample')
       .toURL();
 
@@ -98,10 +98,10 @@ describe('Tests for Transformation Action -- Variable', () => {
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$myexp_iw_add_100_div_3/sample');
   });
 
-  it('Creates a cloudinaryURL with expression and convertToFloat', () => {
+  it('Creates a cloudinaryURL with expression and asFloat', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .addVariable(Variable.set('myexp', expression('initial_width + 100 / 3')).convertToFloat())
+      .addVariable(Variable.set('myexp', expression('initial_width + 100 / 3')).asFloat())
       .setPublicID('sample')
       .toURL();
 
@@ -128,20 +128,20 @@ describe('Tests for Transformation Action -- Variable', () => {
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$myexp_ref:!my_file!/sample');
   });
 
-  it('Creates a cloudinaryURL with setReference and convertToNumber', () => {
+  it('Creates a cloudinaryURL with setReference and asInteger', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .addVariable(Variable.setReference('myexp', 'my_file').convertToNumber())
+      .addVariable(Variable.setReference('myexp', 'my_file').asInteger())
       .setPublicID('sample')
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$myexp_ref:!my_file!_to_i/sample');
   });
 
-  it('Creates a cloudinaryURL with setReference and convertToFloat', () => {
+  it('Creates a cloudinaryURL with setReference and asFloat', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .addVariable(Variable.setReference('myexp', 'my_file').convertToFloat())
+      .addVariable(Variable.setReference('myexp', 'my_file').asFloat())
       .setPublicID('sample')
       .toURL();
 
@@ -158,20 +158,20 @@ describe('Tests for Transformation Action -- Variable', () => {
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$myexp_ctx:!my_file!/sample');
   });
 
-  it('Creates a cloudinaryURL with setFromContext and convertToNumber', () => {
+  it('Creates a cloudinaryURL with setFromContext and asInteger', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .addVariable(Variable.setFromContext('myexp', 'my_file').convertToNumber())
+      .addVariable(Variable.setFromContext('myexp', 'my_file').asInteger())
       .setPublicID('sample')
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$myexp_ctx:!my_file!_to_i/sample');
   });
 
-  it('Creates a cloudinaryURL with setFromContext and convertToFloat', () => {
+  it('Creates a cloudinaryURL with setFromContext and asFloat', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .addVariable(Variable.setFromContext('myexp', 'my_file').convertToFloat())
+      .addVariable(Variable.setFromContext('myexp', 'my_file').asFloat())
       .setPublicID('sample')
       .toURL();
 
@@ -188,20 +188,20 @@ describe('Tests for Transformation Action -- Variable', () => {
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$myexp_md:!my_file!/sample');
   });
 
-  it('Creates a cloudinaryURL with setFromMetadata and convertToNumber', () => {
+  it('Creates a cloudinaryURL with setFromMetadata and asInteger', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .addVariable(Variable.setFromMetadata('myexp', 'my_file').convertToNumber())
+      .addVariable(Variable.setFromMetadata('myexp', 'my_file').asInteger())
       .setPublicID('sample')
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$myexp_md:!my_file!_to_i/sample');
   });
 
-  it('Creates a cloudinaryURL with setFromMetadata and convertToFloat', () => {
+  it('Creates a cloudinaryURL with setFromMetadata and asFloat', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .addVariable(Variable.setFromMetadata('myexp', 'my_file').convertToFloat())
+      .addVariable(Variable.setFromMetadata('myexp', 'my_file').asFloat())
       .setPublicID('sample')
       .toURL();
 

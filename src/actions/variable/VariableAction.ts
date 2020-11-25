@@ -23,7 +23,7 @@ class VariableAction extends Action {
    * @description Converts the returned value to type float.
    * values
    */
-  convertToFloat():this{
+  asFloat():this {
     this.isFloat = true;
     return this;
   }
@@ -32,7 +32,7 @@ class VariableAction extends Action {
    * @description Converts the returned value to type number.
    * values
    */
-  convertToNumber(): this{
+  asInteger(): this {
     this.isNumber = true;
     return this;
   }
