@@ -14,6 +14,7 @@ import * as AudioFrequency from "../../../src/values/audioFrequency/AudioFrequen
 import {FontHinting} from "../../../src/values/fontHinting/FontHinting";
 import {FontAntialias} from "../../../src/values/fontAntialias/FontHinting";
 import {TextAlignment} from "../../../src/values/textAlignment/TextAlignment";
+import {TextDecoration} from "../../../src/values/textDecoration/TextAlignment";
 
 describe('Test imported values', () => {
   it('Generates a URL', () => {
@@ -68,7 +69,9 @@ describe('Test imported values', () => {
     expect(TextAlignment.end()).toBe('end');
     expect(TextAlignment.justify()).toBe('justify');
 
-
+    expect(TextDecoration.normal()).toBe('');
+    expect(TextDecoration.strikethrough()).toBe('strikethrough');
+    expect(TextDecoration.underline()).toBe('underline');
 
     expect(ColorSpace.noCMYK()).toBe('no_cmyk');
     expect(ColorSpace.SRGB()).toBe('srgb');
