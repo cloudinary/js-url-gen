@@ -8,7 +8,6 @@ import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction
 import {LayerAction} from "../actions/overlay/LayerAction";
 import {Flag} from "../values/flag/Flag";
 import Action from "../actions/Action";
-import {DeliveryAction} from "../actions/delivery/Delivery";
 import VariableAction from "../actions/variable/VariableAction";
 import CutterAction from "../actions/cutter/CutterAction";
 import BorderAction from "../actions/border/BorderAction";
@@ -29,6 +28,7 @@ import {CartoonifyEffect} from "../actions/effect/cartoonify";
 import {StyleTransfer} from "../actions/effect/styleTransfer";
 import {VectorizeEffectAction} from "../actions/effect/vectorize";
 import {GradientFadeEffectAction} from "../actions/effect/gradientFade";
+import DeliveryAction from "../actions/delivery/DeliveryAction";
 
 declare type videoEditType = VolumeAction | TrimAction | ConcatenateAction;
 declare type EffectActions =
