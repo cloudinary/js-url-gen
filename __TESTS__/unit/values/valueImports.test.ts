@@ -11,6 +11,8 @@ import {GravityObject} from "../../../src/values/gravityObjects/GravityObject";
 import * as SimulateColorBlind from "../../../src/values/simulateColorBlind/SimulateColorBlind";
 import * as AudioCodec from "../../../src/values/audioCodec/AudioCodec";
 import * as AudioFrequency from "../../../src/values/audioFrequency/AudioFrequency";
+import {FontHinting} from "../../../src/values/fontHinting/FontHinting";
+import {FontAntialias} from "../../../src/values/fontAntialias/FontHinting";
 
 describe('Test imported values', () => {
   it('Generates a URL', () => {
@@ -46,6 +48,19 @@ describe('Test imported values', () => {
     expect(FontWeight.bold()).toBe('bold');
     expect(FontWeight.thin()).toBe('thin');
     expect(FontWeight.light()).toBe('light');
+
+    expect(FontHinting.none()).toBe('');
+    expect(FontHinting.slight()).toBe('slight');
+    expect(FontHinting.full()).toBe('full');
+    expect(FontHinting.medium()).toBe('medium');
+
+    expect(FontAntialias.none()).toBe('');
+    expect(FontAntialias.good()).toBe('good');
+    expect(FontAntialias.best()).toBe('best');
+    expect(FontAntialias.subPixel()).toBe('subpixel');
+    expect(FontAntialias.gray()).toBe('gray');
+
+
 
     expect(ColorSpace.noCMYK()).toBe('no_cmyk');
     expect(ColorSpace.SRGB()).toBe('srgb');
