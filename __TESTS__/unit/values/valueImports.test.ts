@@ -44,13 +44,8 @@ describe('Test imported values', () => {
 
     expect(FontWeight.normal()).toBe('normal');
     expect(FontWeight.bold()).toBe('bold');
-    expect(FontWeight.book()).toBe('book');
+    expect(FontWeight.thin()).toBe('thin');
     expect(FontWeight.light()).toBe('light');
-    expect(FontWeight.semibold()).toBe('semibold');
-    expect(FontWeight.medium()).toBe('medium');
-    expect(FontWeight.demibold()).toBe('demibold');
-    expect(FontWeight.ultrabold()).toBe('ultrabold');
-    expect(FontWeight.heavy()).toBe('heavy');
 
     expect(ColorSpace.noCMYK()).toBe('no_cmyk');
     expect(ColorSpace.SRGB()).toBe('srgb');
