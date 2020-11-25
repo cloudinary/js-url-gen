@@ -9,7 +9,7 @@ function importFromDist(pathInDist: string): string {
   const variableName = splitBy[splitBy.length - 1];
 
   return `
-    import ${variableName} from '${process.cwd()}/dist/${pathInDist}';
+    import * as ${variableName} from '${process.cwd()}/dist/${pathInDist}';
     // we console log to force the bundle not to tree shake
     console.log(${variableName});
   `;
