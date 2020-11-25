@@ -1,68 +1,83 @@
 /**
  * @memberOf Values
- * @namespace QualityValues
+ * @namespace Quality
  */
+class Quality {
+  /**
+   * @description Quality auto
+   * @memberOf Values.Quality
+   * @return {string}
+   */
+  static auto():string { return 'auto';}
 
-/**
- * @description Quality auto
- * @memberOf Values.QualityValues
- * @return {string}
- */
-export function auto():string { return 'auto';}
+  /**
+   * @description Quality best
+   * @memberOf Values.Quality
+   * @return {string}
+   */
+  static autoBest():string { return 'auto:best';}
 
-/**
- * @description Quality best
- * @memberOf Values.QualityValues
- * @return {string}
- */
-export function autoBest():string { return 'auto:best';}
+  /**
+   * @description Quality eco
+   * @memberOf Values.Quality
+   * @return {string}
+   */
+  static autoEco():string { return 'auto:eco';}
 
-/**
- * @description Quality eco
- * @memberOf Values.QualityValues
- * @return {string}
- */
-export function autoEco():string { return 'auto:eco';}
+  /**
+   * @description Quality good
+   * @memberOf Values.Quality
+   * @return {string}
+   */
+  static autoGood():string { return 'auto:good';}
 
-/**
- * @description Quality good
- * @memberOf Values.QualityValues
- * @return {string}
- */
-export function autoGood():string { return 'auto:good';}
+  /**
+   * @description Quality low
+   * @memberOf Values.Quality
+   * @return {string}
+   */
+  static autoLow():string { return 'auto:low';}
 
-/**
- * @description Quality low
- * @memberOf Values.QualityValues
- * @return {string}
- */
-export function autoLow():string { return 'auto:low';}
+  /**
+   * @description Quality jpegmini
+   * @memberOf Values.Quality
+   * @return {string}
+   */
+  static jpegmini():string { return 'jpegmini';}
 
-/**
- * @description Quality jpegmini
- * @memberOf Values.QualityValues
- * @return {string}
- */
-export function jpegmini():string { return 'jpegmini';}
+  /**
+   * @description Quality jpegmini best
+   * @memberOf Values.Quality
+   * @return {string}
+   */
+  static jpegminiBest():string { return 'jpegmini:0';}
 
-/**
- * @description Quality jpegmini best
- * @memberOf Values.QualityValues
- * @return {string}
- */
-export function jpegminiBest():string { return 'jpegmini:0';}
+  /**
+   * @description Quality jpegmini high
+   * @memberOf Values.Quality
+   * @return {string}
+   */
+  static jpegminiHigh():string { return 'jpegmini:1';}
 
-/**
- * @description Quality jpegmini high
- * @memberOf Values.QualityValues
- * @return {string}
- */
-export function jpegminiHigh():string { return 'jpegmini:1';}
+  /**
+   * @description Quality jpegmini medium
+   * @memberOf Values.Quality
+   * @return {string}
+   */
+  static jpegminiMedium():string { return 'jpegmini:2';}
+}
 
-/**
- * @description Quality jpegmini medium
- * @memberOf Values.QualityValues
- * @return {string}
- */
-export function jpegminiMedium():string { return 'jpegmini:2';}
+const {auto, autoBest, autoEco, autoGood, autoLow, jpegmini, jpegminiBest, jpegminiHigh, jpegminiMedium} = Quality;
 
+export {
+  Quality,
+  auto,
+  autoBest,
+  autoEco,
+  autoGood,
+  autoLow,
+  jpegmini,
+  jpegminiBest,
+  jpegminiHigh,
+  jpegminiMedium
+};
