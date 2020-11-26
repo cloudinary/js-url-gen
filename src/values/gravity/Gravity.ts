@@ -4,112 +4,43 @@
  * @memberOf Values
  */
 
-import Qualifier from "../../qualifier/Qualifier";
-import QualifierValue from "../../qualifier/QualifierValue";
-import {GravityObject} from "../gravityObjects/GravityObject";
-import {AutoGravity} from "../gravityObjects/AutoGravity";
-import {Compass} from "../compass/Compass";
-
-
-export class GravityQualifier extends Qualifier {
-  /**
-   * @param gravityParamValue, an array containing (GravityObject | AutoGravity | string) or a string;
-   */
-  constructor(gravityQualifierValue: (GravityObject | AutoGravity | string)[] | string) {
-    super('g', new QualifierValue(gravityQualifierValue));
-  }
-}
-
-
-/**
- * @memberOf Values.Gravity
- * @description Detects the largest face in an image with the Advanced Facial Attribute Detection add-on and makes it the focus of the transformation.
- * @return {GravityQualifier} GravityParam
- */
-function advancedFace(): GravityQualifier {
-  return new GravityQualifier('adv_face');
-}
-
-/**
- * @memberOf Values.Gravity
- * @description Detects all faces in an image with the Advanced Facial Attribute Detection add-on and makes them the focus of the transformation.
- * @return {GravityQualifier} GravityParam
- */
-function advancedFaces(): GravityQualifier {
-  return new GravityQualifier('adv_faces');
-}
-
-/**
- * @memberOf Values.Gravity
- * @description Detects all eyes in an image with the Advanced Facial Attribute Detection add-on and makes them the focus of the transformation.
- * @return {GravityQualifier} GravityParam
- */
-function advancedEyes(): GravityQualifier {
-  return new GravityQualifier('adv_eyes');
-}
-
-/**
- * @memberOf Values.Gravity
- * @description
- * Detects all text elements in an image using the OCR Text Detection and Extraction add-on</br>
- * and uses the detected bounding box coordinates as the focus of the transformation.
- * @return {GravityQualifier} GravityParam
- */
-function ocrText(): GravityQualifier {
-  return new GravityQualifier('ocr_text');
-}
-
-/**
- * @memberOf Values.Gravity
- * @description Detects the largest face in the asset and makes it the focus of the transformation.
- * @return {GravityQualifier} GravityParam
- */
-function face(): GravityQualifier {
-  return new GravityQualifier('face');
-}
-
-/**
- * @memberOf Values.Gravity
- * @description Detects all the faces in the asset and makes them the focus of the transformation.
- * @return {GravityQualifier} GravityParam
- */
-function faces(): GravityQualifier {
-  return new GravityQualifier('faces');
-}
-
-/**
- * @memberOf Values.Gravity
- * @description
- * TODO : (This is not accurate in JS)</br>
- * Creates a new instance of the ObjectGravity.
- * @return {GravityQualifier} GravityParam
- */
-function object(...args: GravityObject[]): GravityQualifier {
-  return new GravityQualifier(args);
-}
+import {Compass} from "./qualifiers/compass/Compass";
+import {FocusOn} from "./qualifiers/focusOn/FocusOn";
+import {OCR} from "./OCR/OCR";
+import {CompassGravity} from "./compassGravity/CompassGravity";
+import {FocusOnGravity} from "./focusOnGravity/FocusOnGravity";
+import {AutoGravity} from "./autoGravity/AutoGravity";
 
 class Gravity {
-  static compass(direction: Compass): Compass {
-    return direction;
+  // Done
+  static compass(direction: Compass): CompassGravity {
+    return new CompassGravity(direction);
   }
 
-  static auto(...args: (GravityObject | AutoGravity)[]) {
-    return new GravityQualifier(['auto', ...args]);
+  // Done
+  static focusOn(...args: FocusOn[]): FocusOnGravity {
+    const res = [...args];
+    return new FocusOnGravity(res);
   }
 
-  static focusOn(...args: GravityObject[]) {
-    return new GravityQualifier(args);
+  // Done
+  static autoGravity(): AutoGravity {
+    return new AutoGravity();
   }
 
-  static ocr() {
-
+  static ocr(): OCR {
+    return new OCR();
   }
 }
 
-const {compass, auto, focusOn, ocr} = Gravity;
+const {compass, autoGravity, focusOn, ocr} = Gravity;
 
 
 export {
-  compass, auto, focusOn, ocr
+  Gravity,
+  compass,
+  autoGravity,
+  focusOn,
+  ocr
 };
 
