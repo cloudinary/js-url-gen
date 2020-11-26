@@ -1,6 +1,6 @@
 import getImageWithResize from "./shared/getImageWithResize";
-import * as Gravity from "../../../../src/values/gravity/Gravity";
 import {thumbnail} from "../../../../src/actions/resize/Resize";
+import {Compass} from "../../../../src/values/compass/Compass";
 
 describe('Tests for Transformation Action -- Resize.thumb()', () => {
   it('Ensures it generates the right URL', () => {
@@ -14,7 +14,7 @@ describe('Tests for Transformation Action -- Resize.thumb()', () => {
         .width(250)
         .height(250)
         .aspectRatio(2)
-        .gravity(Gravity.west())
+        .gravity(Compass.west())
         .zoom(2.5),
       'url');
     expect(url).toContain('ar_2.0,c_thumb,g_west,h_250,w_250,z_2.5');

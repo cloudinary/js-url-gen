@@ -22,42 +22,6 @@ export class GravityQualifier extends Qualifier {
 
 /**
  * @memberOf Values.Gravity
- * @description South center part (bottom center).
- * @return {GravityQualifier} GravityParam
- */
-function south():GravityQualifier {
-  return new GravityQualifier('south');
-}
-
-/**
- * @memberOf Values.Gravity
- * @description North center part (top center).
- * @return {GravityQualifier} GravityParam
- */
-function north():GravityQualifier {
-  return new GravityQualifier('north');
-}
-
-/**
- * @memberOf Values.Gravity
- * @description Middle east part (right).
- * @return {GravityQualifier} GravityParam
- */
-function east():GravityQualifier {
-  return new GravityQualifier('east');
-}
-
-/**
- * @memberOf Values.Gravity
- * @description Middle west part (left).
- * @return {GravityQualifier} GravityParam
- */
-function west():GravityQualifier {
-  return new GravityQualifier('west');
-}
-
-/**
- * @memberOf Values.Gravity
  * @description Detects the largest face in an image with the Advanced Facial Attribute Detection add-on and makes it the focus of the transformation.
  * @return {GravityQualifier} GravityParam
  */
@@ -81,42 +45,6 @@ function advancedFaces(): GravityQualifier {
  */
 function advancedEyes(): GravityQualifier {
   return new GravityQualifier('adv_eyes');
-}
-
-/**
- * @memberOf Values.Gravity
- * @description North west corner (top left).
- * @return {GravityQualifier} GravityParam
- */
-function northWest(): GravityQualifier {
-  return new GravityQualifier('north_west');
-}
-
-/**
- * @memberOf Values.Gravity
- * @description North east corner (top right).
- * @return {GravityQualifier} GravityParam
- */
-function northEast(): GravityQualifier {
-  return new GravityQualifier('north_east');
-}
-
-/**
- * @memberOf Values.Gravity
- * @description South west corner (bottom left).
- * @return {GravityQualifier} GravityParam
- */
-function southWest(): GravityQualifier {
-  return new GravityQualifier('south_west');
-}
-
-/**
- * @memberOf Values.Gravity
- * @description South east corner (bottom right).
- * @return {GravityQualifier} GravityParam
- */
-function southEast(): GravityQualifier {
-  return new GravityQualifier('south_east');
 }
 
 /**
@@ -150,15 +78,6 @@ function faces(): GravityQualifier {
 
 /**
  * @memberOf Values.Gravity
- * @description The center of the image.
- * @return {GravityQualifier} GravityParam
- */
-function center(): GravityQualifier {
-  return new GravityQualifier('center');
-}
-
-/**
- * @memberOf Values.Gravity
  * @description
  * TODO : (This is not accurate in JS)</br>
  * Creates a new instance of the ObjectGravity.
@@ -179,22 +98,13 @@ function auto(...args: (GravityObject | AutoGravity)[]): GravityQualifier {
 
 
 export {
-  north,
-  west,
-  east,
-  south,
   advancedEyes,
   advancedFace,
   advancedFaces,
   auto,
-  center,
   face,
-  northWest,
   faces,
   object,
-  ocrText,
-  southEast,
-  southWest,
-  northEast
+  ocrText
 };
 
