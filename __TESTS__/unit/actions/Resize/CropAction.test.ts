@@ -16,7 +16,7 @@ describe('Tests for Transformation Action -- Resize.crop', () => {
         .height(250)
         .x(10)
         .y(10)
-        .gravity(Gravity.auto())
+        .gravity(Gravity.autoGravity())
         .aspectRatio(1.2)
         .relative(),
       'url');

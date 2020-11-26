@@ -15,7 +15,7 @@ describe('Tests for Transformation Action -- Resize.minimumPad', () => {
       minimumPad()
         .width(250)
         .height(250)
-        .gravity(Gravity.auto())
+        .gravity(Gravity.autoGravity())
         .x(10)
         .y(10)
         .background(Background.color('red'))

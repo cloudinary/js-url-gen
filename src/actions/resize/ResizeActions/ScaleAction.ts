@@ -1,5 +1,5 @@
-import {GravityQualifier} from "../../../values/gravity/Gravity";
 import ResizeSimpleAction from "./shared/ResizeSimpleAction";
+import {GravityQualifier} from "../../../values/gravity/GravityQualifier";
 
 /**
  * @description Defines a scaling resize action.

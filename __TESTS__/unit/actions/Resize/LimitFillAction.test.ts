@@ -14,7 +14,7 @@ describe('Tests for Transformation Action -- Resize.limitFill', () => {
       limitFill()
         .width(250)
         .height(250)
-        .gravity(Gravity.auto())
+        .gravity(Gravity.autoGravity())
         .aspectRatio(1.2),
       'url');
     expect(url).toContain('ar_1.2,c_lfill,g_auto,h_250,w_250');

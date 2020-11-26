@@ -18,7 +18,7 @@ describe('Tests for Transformation Action -- Resize.limitPad', () => {
         .aspectRatio(2)
         .x(10)
         .y(10)
-        .gravity(Gravity.auto())
+        .gravity(Gravity.autoGravity())
         .background(Background.color('red'))
       ,
       'url');
