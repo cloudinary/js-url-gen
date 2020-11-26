@@ -1,6 +1,10 @@
 import {AutoFocus} from "../qualifiers/autoFocus/AutoFocus";
 import {GravityQualifier} from "../GravityQualifier";
 
+/**
+ * @doc
+ * @memberOf Values.Gravity
+ */
 class AutoGravity extends GravityQualifier {
   constructor() {
     // Required due to https://github.com/microsoft/TypeScript/issues/13029

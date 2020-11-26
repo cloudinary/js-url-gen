@@ -1,11 +1,21 @@
 import QualifierValue from "../../../../qualifier/QualifierValue";
 import {FocusOn} from "../focusOn/FocusOn";
 
+/**
+ * @doc
+ * @namespace AutoFocus
+ * @memberOf Values
+ */
 class AutoFocus extends QualifierValue {
   readonly focusOn:FocusOn;
   private _weight: number | string;
   private shouldAvoid:boolean;
 
+  /**
+   * @doc
+   * @param {Values.FocusOn} obj The object to focus on
+   * @param {number} weight
+   */
   static focusOn(obj: FocusOn, weight?: number): AutoFocus {
     return new AutoFocus(obj, weight);
   }
@@ -21,10 +31,17 @@ class AutoFocus extends QualifierValue {
     return typeof this._weight === 'number' || typeof this._weight === 'string' || this.shouldAvoid;
   }
 
+  /**
+   * @desc Get the name of the of the object
+   */
   getName():string {
     return this.focusOn.name;
   }
 
+  /**
+   * @doc
+   * @desc Get the weight for the object
+   */
   getWeight():number|string {
     if (this.shouldAvoid) {
       return 'avoid';
@@ -33,7 +50,10 @@ class AutoFocus extends QualifierValue {
     }
   }
 
-  // TODO g_ should be handled by the GravityQualifier
+  /**
+   * @doc
+   * @desc Return the string representation of this QualifierValue
+   */
   toString():string {
     // Future proofing, in case we'd like to support some custom string in the future, or if data is coming from a DB
     if(this.shouldAddWeight()) {
@@ -43,11 +63,20 @@ class AutoFocus extends QualifierValue {
     }
   }
 
+  /**
+   * @doc
+   * Set the weight of the
+   * @param {numebr} w The focus weight for the object
+   */
   weight(w: number | string): this {
     this._weight = w;
     return this;
   }
 
+  /**
+   * @doc
+   * @desc Marks the object as avoided by the algorithm
+   */
   avoid(): this {
     this.shouldAvoid = true;
     return this;

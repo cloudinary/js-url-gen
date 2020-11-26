@@ -1,10 +1,11 @@
+import QualifierValue from "../../../../qualifier/QualifierValue";
+
+
 /**
  * @description Defines the focal Compass for certain methods of cropping.
  * @namespace Compass
  * @memberOf Values
  */
-import QualifierValue from "../../../../qualifier/QualifierValue";
-
 class Compass extends QualifierValue {
   // Creates a unique type of TypeScript so it can distinguish between QualifierValue and Compass
   private type: 'Compass'

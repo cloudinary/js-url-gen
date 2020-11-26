@@ -1,5 +1,9 @@
 import {GravityQualifier} from "../GravityQualifier";
 
+/**
+ * @doc
+ * @memberOf Values.Gravity
+ */
 class OCR extends GravityQualifier {
   constructor() {
     // Required due to https://github.com/microsoft/TypeScript/issues/13029
@@ -8,6 +12,10 @@ class OCR extends GravityQualifier {
     this.qualifierValue.delimiter = '_';
   }
 
+  /**
+   * @doc
+   * @desc Marks the OCR as avoided by the algorithm
+   */
   avoid(): this {
     this.addValue('avoid');
     return this;
