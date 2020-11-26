@@ -1,92 +1,94 @@
 import {GravityQualifier} from "../gravity/Gravity";
 
+
 /**
  * @description Defines the focal Compass for certain methods of cropping.
  * @namespace Compass
  * @memberOf Values
  */
-class Compass {
+class Compass extends GravityQualifier{
+  private type: 'Compass' // Creates a unique type of TypeScript so it can distinguish between Gravity and Compass
+
   /**
    * @memberOf Values.Compass
    * @description South center part (bottom center).
-   * @return {GravityQualifier} CompassParam
+   * @return {Compass} Compass
    */
-  static south():GravityQualifier {
-    return new GravityQualifier('south');
+  static south():Compass {
+    return new Compass('south');
   }
 
   /**
    * @memberOf Values.Compass
    * @description North center part (top center).
-   * @return {GravityQualifier} CompassParam
+   * @return {Compass} Compass
    */
-  static north():GravityQualifier {
-    return new GravityQualifier('north');
+  static north():Compass {
+    return new Compass('north');
   }
 
   /**
    * @memberOf Values.Compass
    * @description Middle east part (right).
-   * @return {GravityQualifier} CompassParam
+   * @return {Compass} Compass
    */
-  static east():GravityQualifier {
-    return new GravityQualifier('east');
+  static east():Compass {
+    return new Compass('east');
   }
 
   /**
    * @memberOf Values.Compass
    * @description Middle west part (left).
-   * @return {GravityQualifier} CompassParam
+   * @return {Compass} Compass
    */
-  static west():GravityQualifier {
-    return new GravityQualifier('west');
+  static west():Compass {
+    return new Compass('west');
   }
 
   /**
    * @memberOf Values.Compass
    * @description North west corner (top left).
-   * @return {GravityQualifier} CompassParam
+   * @return {Compass} Compass
    */
-  static northWest(): GravityQualifier {
-    return new GravityQualifier('north_west');
+  static northWest(): Compass {
+    return new Compass('north_west');
   }
 
   /**
    * @memberOf Values.Compass
    * @description North east corner (top right).
-   * @return {GravityQualifier} CompassParam
+   * @return {Compass} Compass
    */
-  static northEast(): GravityQualifier {
-    return new GravityQualifier('north_east');
+  static northEast(): Compass {
+    return new Compass('north_east');
   }
 
   /**
    * @memberOf Values.Compass
    * @description South west corner (bottom left).
-   * @return {GravityQualifier} CompassParam
+   * @return {Compass} Compass
    */
-  static southWest(): GravityQualifier {
-    return new GravityQualifier('south_west');
+  static southWest(): Compass {
+    return new Compass('south_west');
   }
 
   /**
    * @memberOf Values.Compass
    * @description South east corner (bottom right).
-   * @return {GravityQualifier} CompassParam
+   * @return {Compass} Compass
    */
-  static southEast(): GravityQualifier {
-    return new GravityQualifier('south_east');
+  static southEast(): Compass {
+    return new Compass('south_east');
   }
 
   /**
    * @memberOf Values.Compass
    * @description The center of the image.
-   * @return {GravityQualifier} CompassParam
+   * @return {Compass} Compass
    */
-  static center(): GravityQualifier {
-    return new GravityQualifier('center');
+  static center(): Compass {
+    return new Compass('center');
   }
-
 }
 
 const {

@@ -15,12 +15,12 @@ describe('Tests for Transformation Action -- Resize.minimumPad', () => {
       minimumPad()
         .width(250)
         .height(250)
-        .gravity(Gravity.face())
+        .gravity(Gravity.auto())
         .x(10)
         .y(10)
         .background(Background.color('red'))
         .aspectRatio(1.2),
       'url');
-    expect(url).toContain('ar_1.2,b_red,c_mpad,g_face,h_250,w_250,x_10,y_10');
+    expect(url).toContain('ar_1.2,b_red,c_mpad,g_auto,h_250,w_250,x_10,y_10');
   });
 });

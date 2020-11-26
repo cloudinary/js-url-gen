@@ -14,9 +14,9 @@ describe('Tests for Transformation Action -- Resize.limitFill', () => {
       limitFill()
         .width(250)
         .height(250)
-        .gravity(Gravity.face())
+        .gravity(Gravity.auto())
         .aspectRatio(1.2),
       'url');
-    expect(url).toContain('ar_1.2,c_lfill,g_face,h_250,w_250');
+    expect(url).toContain('ar_1.2,c_lfill,g_auto,h_250,w_250');
   });
 });

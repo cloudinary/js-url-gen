@@ -8,6 +8,7 @@ import Qualifier from "../../qualifier/Qualifier";
 import QualifierValue from "../../qualifier/QualifierValue";
 import {GravityObject} from "../gravityObjects/GravityObject";
 import {AutoGravity} from "../gravityObjects/AutoGravity";
+import {Compass} from "../compass/Compass";
 
 
 export class GravityQualifier extends Qualifier {
@@ -87,24 +88,28 @@ function object(...args: GravityObject[]): GravityQualifier {
   return new GravityQualifier(args);
 }
 
-/**
- * @memberOf Values.Gravity
- * @description Sets automatic gravity.
- * @return {GravityQualifier} GravityParam
- */
-function auto(...args: (GravityObject | AutoGravity)[]): GravityQualifier {
-  return new GravityQualifier(['auto', ...args]);
+class Gravity {
+  static compass(direction: Compass): Compass {
+    return direction;
+  }
+
+  static auto(...args: (GravityObject | AutoGravity)[]) {
+    return new GravityQualifier(['auto', ...args]);
+  }
+
+  static focusOn(...args: GravityObject[]) {
+    return new GravityQualifier(args);
+  }
+
+  static ocr() {
+
+  }
 }
+
+const {compass, auto, focusOn, ocr} = Gravity;
 
 
 export {
-  advancedEyes,
-  advancedFace,
-  advancedFaces,
-  auto,
-  face,
-  faces,
-  object,
-  ocrText
+  compass, auto, focusOn, ocr
 };
 
