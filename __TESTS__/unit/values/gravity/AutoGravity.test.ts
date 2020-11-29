@@ -21,4 +21,13 @@ describe('Gravity Qualifier', () => {
 
     expect(gAutoStr).toBe('g_auto:person:cat');
   });
+
+  it('AutoGravity with weight and avoid', () => {
+    const gAutoStr = Gravity.autoGravity().autoFocus(
+      AutoFocus.focusOn(FocusOn.person()).weight(100),
+      AutoFocus.focusOn(FocusOn.cat()).avoid()
+    ).toString();
+
+    expect(gAutoStr).toBe('g_auto:person_100:cat_avoid');
+  });
 });
