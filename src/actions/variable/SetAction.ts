@@ -1,6 +1,6 @@
 import {isString} from "../../utils/dataStructureUtils";
 import VariableAction from "./VariableAction";
-import {ExpressionQualifier} from "../../values/expression/Expression";
+import {Expression} from "../../values/expression/Expression";
 
 /**
  * @class SetAction
@@ -8,7 +8,7 @@ import {ExpressionQualifier} from "../../values/expression/Expression";
  * @description Sets a user-defined variable.
  */
 class SetAction extends VariableAction {
-  constructor(name: string, value: number | string | string[] | number[] | ExpressionQualifier) {
+  constructor(name: string, value: number | string | string[] | number[] | Expression) {
     let normalizedValue;
     const parsedValue = Array.isArray(value) ? value.join(':') : value;
     if(isString(parsedValue)){

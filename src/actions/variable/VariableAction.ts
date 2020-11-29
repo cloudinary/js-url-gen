@@ -1,7 +1,9 @@
 import Action from "../Action";
 import QualifierValue from "../../qualifier/QualifierValue";
 import Qualifier from "../../qualifier/Qualifier";
-import {ExpressionQualifier} from "../../values/expression/Expression";
+import {Expression} from "../../values/expression/Expression";
+
+type TypeVariableValue = number | string | Expression;
 
 /**
  * @description Defines an new user variable.
@@ -11,9 +13,9 @@ import {ExpressionQualifier} from "../../values/expression/Expression";
 class VariableAction extends Action {
   private isFloat = false;
   private isNumber = false;
-  private value: number | string | string[] | number[] | ExpressionQualifier;
+  private value: TypeVariableValue;
   private name: string;
-  constructor(name: string, value: number | string | string[] | number[] | ExpressionQualifier) {
+  constructor(name: string, value: TypeVariableValue) {
     super();
     this.value = value;
     this.name = name;
