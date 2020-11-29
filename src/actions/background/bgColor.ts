@@ -1,5 +1,6 @@
 import {prepareColor} from "../../utils/prepareColor";
 import {BackgroundColorAction} from "./actions/BackgroundColorAction";
+import {SystemColors} from "../../values/color/Color";
 
 /**
  * @memberOf Actions.Background
@@ -7,7 +8,7 @@ import {BackgroundColorAction} from "./actions/BackgroundColorAction";
  * @param {string} color
  * @return {BackgroundColorAction}
  */
-function bgColor(color: string): BackgroundColorAction {
+function bgColor(color: SystemColors): BackgroundColorAction {
   return new BackgroundColorAction(prepareColor(color));
 }
 

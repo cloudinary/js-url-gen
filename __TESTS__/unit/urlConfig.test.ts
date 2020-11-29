@@ -5,6 +5,7 @@ import IURLConfig from "../../src/interfaces/Config/IURLConfig";
 import CloudinaryConfig from "../../src/config/CloudinaryConfig";
 import createCloudinaryURL from "../../src/url/cloudinaryURL";
 
+
 /**
  * @description Create CloudinaryURL based on a URL Configuration, and return the URL
  * @param urlConfig

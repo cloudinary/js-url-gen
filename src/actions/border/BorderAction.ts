@@ -2,6 +2,7 @@ import Action from "../Action";
 import Qualifier from "../../qualifier/Qualifier";
 import QualifierValue from "../../qualifier/QualifierValue";
 import {prepareColor} from "../../utils/prepareColor";
+import {SystemColors} from "../../values/color/Color";
 
 /**
  * @description Adds a solid border around an image or video.
@@ -19,7 +20,7 @@ class BorderAction extends Action {
    * @param {string} color The color of the border.
    * @param {number} borderWidth The width in pixels.
    */
-  constructor(borderType: string, color: string, borderWidth: number) {
+  constructor(borderType: string, color: SystemColors, borderWidth: number) {
     super();
     this.borderType = borderType;
     this.borderColor = prepareColor(color);
@@ -39,7 +40,7 @@ class BorderAction extends Action {
    * @description Sets the color of the border.
    * @param {string} borderColor The color of the border.
    */
-  color(borderColor: string): this {
+  color(borderColor: SystemColors): this {
     this.borderColor = prepareColor(borderColor);
     return this;
   }

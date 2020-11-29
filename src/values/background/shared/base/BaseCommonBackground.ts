@@ -1,5 +1,6 @@
 import {prepareColor} from "../../../../utils/prepareColor";
 import {BackgroundQualifier} from "./BackgroundQualifier";
+import {SystemColors} from "../../../color/Color";
 
 /**
  * @description Defines the background color to use when resizing with padding.
@@ -29,7 +30,7 @@ class BaseCommonBackground extends BackgroundQualifier {
    * @param {...string} colors One or more colors - Example: palette('green', 'red', blue')
    * @return {this}
    */
-  palette(...colors: string[]): this {
+  palette(...colors: SystemColors[]): this {
     this._palette = colors.map((color) => {
       return prepareColor(color);
     });

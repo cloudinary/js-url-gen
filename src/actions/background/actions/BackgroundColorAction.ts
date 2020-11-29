@@ -1,6 +1,7 @@
 import Qualifier from "../../../qualifier/Qualifier";
 import QualifierValue from "../../../qualifier/QualifierValue";
 import Action from "../../Action";
+import {SystemColors} from "../../../values/color/Color";
 
 /**
  * @class BackgroundColorAction
@@ -8,9 +9,9 @@ import Action from "../../Action";
  * @description A class for background transformations.
  */
 class BackgroundColorAction extends Action {
-  constructor(backgroundType: string) {
+  constructor(color: SystemColors) {
     super();
-    this.addQualifier(new Qualifier('b', new QualifierValue(backgroundType).setDelimiter('_')));
+    this.addQualifier(new Qualifier('b', new QualifierValue(color).setDelimiter('_')));
   }
 }
 

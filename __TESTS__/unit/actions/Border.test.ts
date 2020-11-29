@@ -1,7 +1,6 @@
 import * as Border from '../../../src/actions/border/Border';
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import * as Colors from "../../../src/values/colors/Colors";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -13,7 +12,7 @@ describe('Tests for Transformation Action -- Border', () => {
   it('Creates a cloudinaryURL with border and color', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .border(Border.solid(Colors.RED, 7))
+      .border(Border.solid('red', 7))
       .setPublicID('sample')
       .toURL();
 
