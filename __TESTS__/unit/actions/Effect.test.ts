@@ -157,6 +157,16 @@ describe('Tests for Transformation Action -- Effect', () => {
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/e_colorize:50/sample');
   });
 
+  it('Creates a cloudinaryURL with effect colorize:level', () => {
+    const url = new TransformableImage()
+      .setConfig(CONFIG_INSTANCE)
+      .effect(Effect.colorize().level(10))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/e_colorize:10/sample');
+  });
+
   it('Creates a cloudinaryURL with effect oilPaint', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
