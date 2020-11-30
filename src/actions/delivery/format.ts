@@ -1,4 +1,5 @@
 import DeliveryAction from "./DeliveryAction";
+import {Format} from "../../values/format/Format";
 
 /**
  * @description Defines the format of the delivered asset.
@@ -13,7 +14,7 @@ import DeliveryAction from "./DeliveryAction";
  * possible values
  * @return {DeliveryAction}
  */
-function format(format:string) :DeliveryAction {
+function format(format:Format | string) :DeliveryAction {
   return new DeliveryAction('f', format);
 }
 

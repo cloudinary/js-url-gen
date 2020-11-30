@@ -1,6 +1,7 @@
 import Action from "../Action";
 import Qualifier from "../../qualifier/Qualifier";
 import * as Flag from "../../values/flag/Flag";
+import {Format} from "../../values/format/Format";
 
 /**
  * @description Qualifies the delivery of an asset.
@@ -8,7 +9,7 @@ import * as Flag from "../../values/flag/Flag";
  * @augments Action
  */
 class DeliveryAction extends Action {
-  constructor(deliveryKey?: string, deliveryType?: string|number) {
+  constructor(deliveryKey?: string, deliveryType?: Format | string|number) {
     super();
     this.addQualifier(new Qualifier(deliveryKey, deliveryType));
   }
