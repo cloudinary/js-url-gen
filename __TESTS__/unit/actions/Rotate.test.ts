@@ -1,5 +1,4 @@
 import * as Rotate from '../../../src/actions/rotate/Rotate';
-import * as RotateESM from '../../../src/actions/rotate/Rotate';
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as RotationMode from "../../../src/values/rotate/Rotate";
