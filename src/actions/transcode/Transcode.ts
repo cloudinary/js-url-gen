@@ -6,6 +6,7 @@ import FPSRangeAction from "./FPSRangeAction";
 import KeyframeIntervalsAction from "./KeyframeIntervalsAction";
 import StreamingProfileAction from "./StreamingProfile";
 import ToAnimatedAction from "./ToAnimatedAction";
+import {AnimatedFormat} from "../../values/animatedFormat/AnimatedFormat";
 
 /**
  * Defines how to transcode a video to another format
@@ -103,7 +104,7 @@ function streamingProfile(profile: string): StreamingProfileAction {
  * @param {string} animatedFormat The streaming profile.
  * @return {ToAnimatedAction}
  */
-function toAnimated(animatedFormat: string): ToAnimatedAction {
+function toAnimated(animatedFormat: AnimatedFormat | string): ToAnimatedAction {
   return new ToAnimatedAction(animatedFormat);
 }
 
