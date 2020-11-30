@@ -1,4 +1,4 @@
-import {ExpressionQualifier} from "../values/expression/Expression";
+import {Expression} from "../values/expression/Expression";
 
 class QualifierValue {
   values: any[] = [];
@@ -8,7 +8,7 @@ class QualifierValue {
    *
    * @param {QualifierValue | QualifierValue[] | any[] | string | number}qualifierValue
    */
-  constructor(qualifierValue?: QualifierValue | QualifierValue[] | unknown[] | string | number | ExpressionQualifier) {
+  constructor(qualifierValue?: QualifierValue | QualifierValue[] | unknown[] | string | number | Expression) {
     if (this.hasValue(qualifierValue)) {
       this.addValue(qualifierValue);
     }

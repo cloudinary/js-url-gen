@@ -32,3 +32,32 @@ export const ALLOWED_CLOUD_CONFIG = [
  * @private
  */
 export const INVALID_TYPE_MESSAGE = 'Invalid Type or key received';
+
+export const CONDITIONAL_OPERATORS = {
+  "=": "eq",
+  "!=": "ne",
+  "<": "lt",
+  ">": "gt",
+  "<=": "lte",
+  ">=": "gte",
+  "&&": "and",
+  "||": "or",
+  "*": "mul",
+  "/": "div",
+  "+": "add",
+  "-": "sub",
+  "^": "pow",
+  "initial_width": "iw",
+  "initial_height": "ih",
+  "width": "w",
+  "height": "h",
+  "aspect_ration": "ar",
+  "initial_aspect_ration": "iar",
+  "trimmed_aspect_ration": "tar",
+  "current_page": "cp",
+  "face_count": "fc",
+  "page_count": "pc",
+  "current_public_id": "cpi",
+  "initial_density": "idn",
+  "page_names": "pgnames"
+};

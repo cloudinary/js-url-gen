@@ -2,7 +2,7 @@ import SetAction from "./SetAction";
 import SetReferenceAction from "./SetReferenceAction";
 import SetFromContextAction from "./SetFromContextAction";
 import SetFromMetadataAction from "./SetFromMetadataAction";
-import {ExpressionQualifier} from "../../values/expression/Expression";
+import {Expression} from "../../values/expression/Expression";
 
 /**
  * Defines a new user variable with the given value.
@@ -17,7 +17,7 @@ import {ExpressionQualifier} from "../../values/expression/Expression";
  * @param {number | string | number[] | string[]} value Variable value
  * @return {SetAction}
  */
-function set(name: string, value: number | string | number[] | string[] | ExpressionQualifier): SetAction {
+function set(name: string, value: number | string | number[] | string[] | Expression): SetAction {
   return new SetAction(name, value);
 }
 

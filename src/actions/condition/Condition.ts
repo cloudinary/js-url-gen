@@ -1,6 +1,6 @@
 import Action from "../Action";
 import Qualifier from "../../qualifier/Qualifier";
-import normalizeExpression from "../../utils/normalizeExpression";
+import {Expression} from "../../values/expression/Expression";
 
 /**
  * Sets up a conditional transformation.
@@ -10,7 +10,7 @@ import normalizeExpression from "../../utils/normalizeExpression";
 class ConditionAction extends Action{
   constructor(expression: string) {
     super();
-    this.addQualifier(new Qualifier('if', normalizeExpression(expression)));
+    this.addQualifier(new Qualifier('if', Expression.expression(expression)));
   }
 }
 
