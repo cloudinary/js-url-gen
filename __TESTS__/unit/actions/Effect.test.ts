@@ -29,12 +29,6 @@ describe('Tests for Transformation Action -- Effect', () => {
       .effect(Effect.blackWhite())
       .effect(Effect.blackWhite(10))
       .effect(Effect.blackWhite().level(20))
-      .effect(Effect.blurFaces())
-      .effect(Effect.blurFaces(100))
-      .effect(Effect.blurFaces().level(5))
-      .effect(Effect.blur())
-      .effect(Effect.blur(100))
-      .effect(Effect.blur().level(5))
       .effect(Effect.fadeIn(100))
       .effect(Effect.fadeIn().length(5))
       .effect(Effect.fadeOut(100))
@@ -81,12 +75,6 @@ describe('Tests for Transformation Action -- Effect', () => {
       'e_blackwhite',
       'e_blackwhite:10',
       'e_blackwhite:20',
-      'e_blur_faces',
-      'e_blur_faces:100',
-      'e_blur_faces:5',
-      'e_blur',
-      'e_blur:100',
-      'e_blur:5',
       'e_fade:100',
       'e_fade:5',
       'e_fade:-100',
@@ -245,26 +233,6 @@ describe('Tests for Transformation Action -- Effect', () => {
       .toURL();
 
     expect(url).toContain('l_woman/c_scale,h_100,w_100/e_style_transfer:preserve_color:15,fl_layer_apply/sample');
-  });
-
-  it('Tests blurRegion', () => {
-    expect(Effect.blurRegion()
-      .toString()
-    ).toEqual('e_blur_region');
-
-    expect(Effect.blurRegion()
-      .strength(10)
-      .toString()
-    ).toEqual('e_blur_region:10');
-
-    expect(Effect.blurRegion()
-      .strength(10)
-      .height(20)
-      .width(30)
-      .x(40)
-      .y(50)
-      .toString()
-    ).toEqual('e_blur_region:10,h_20,w_30,x_40,y_50');
   });
 
   it('Tests pixelateRegion', () => {
