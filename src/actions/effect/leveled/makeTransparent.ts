@@ -2,6 +2,7 @@ import LeveledEffectAction from "../EffectActions/LeveledEffectAction";
 import Qualifier from "../../../qualifier/Qualifier";
 import QualifierValue from "../../../qualifier/QualifierValue";
 import {prepareColor} from "../../../utils/prepareColor";
+import {SystemColors} from "../../../values/color/Color";
 
 /**
  * @class MakeTransparentEffectAction
@@ -22,7 +23,7 @@ class MakeTransparentEffectAction extends LeveledEffectAction {
    * @param {string} color The HTML name of the color (red, green, etc.) or RGB hex code.
    * @return {this}
    */
-  color(color: string) {
+  color(color: SystemColors) {
     return this.addQualifier(new Qualifier('co', new QualifierValue(prepareColor(color))));
   }
 }

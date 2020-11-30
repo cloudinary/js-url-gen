@@ -1,16 +1,15 @@
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as ArtisticFilter from "../../../src/values/artisticFilter/ArtisticFilter";
-import * as EffectESM from "../../../src/actions/effect/Effect";
 import * as Effect from "../../../src/actions/effect/Effect";
 import * as Outline from "../../../src/values/outline/Outline";
 import {image} from "../../../src/values/sources/Sources";
 import scale from "../../../src/actions/resize/ResizeActions/ScaleAction";
 import cartoonify from "../../../src/actions/effect/cartoonify";
 import * as GradientFade from "../../../src/values/gradientFade/GradientFade";
-import {BLUE} from "../../../src/values/colors/Colors";
 import {rodMonochromacy} from "../../../src/values/simulateColorBlind/SimulateColorBlind";
 import {halftone4x4orthogonal} from "../../../src/values/dither/Dither";
+import {Color} from "../../../src/values/color/Color";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -364,7 +363,7 @@ describe('Tests for Transformation Action -- Effect', () => {
       .mode(Outline.fill())
       .width(10)
       .blurLevel(25)
-      .color(BLUE)
+      .color(Color.BLUE)
       .toString()
     ).toBe('co_blue,e_outline:fill:10:25');
   });

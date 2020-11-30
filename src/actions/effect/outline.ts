@@ -2,6 +2,7 @@ import Action from "../Action";
 import QualifierValue from "../../qualifier/QualifierValue";
 import Qualifier from "../../qualifier/Qualifier";
 import {prepareColor} from "../../utils/prepareColor";
+import {SystemColors} from "../../values/color/Color";
 
 /**
  * @description Adds an outline to a transparent image. For examples, see the Image Transformations guide.
@@ -55,7 +56,7 @@ export class Outline extends Action {
    * @param {string | Values.Color} color One of the SDK Color values, string, or rgba: '#fff'
    * @return {this}
    */
-  color(color:string): this {
+  color(color:SystemColors): this {
     return this.addQualifier(new Qualifier('co', prepareColor(color)));
   }
 

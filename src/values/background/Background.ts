@@ -5,6 +5,7 @@ import {BackgroundAutoPredominantQualifier} from "./shared/auto/BackgroundAutoPr
 import {BackgroundPredominantGradientQualifier} from "./shared/gradient/BackgroundPredominantGradientQualifier";
 import BlurredBackgroundAction from "./shared/BlurredBackgroundAction";
 import {BackgroundQualifier} from "./shared/base/BackgroundQualifier";
+import {SystemColors} from "../color/Color";
 
 
 
@@ -71,7 +72,7 @@ function predominant(): BackgroundAutoPredominantQualifier {
  * @memberOf Values.Background
  * @return {BackgroundQualifier}
  */
-function color(colorStr: string): BackgroundQualifier {
+function color(colorStr: SystemColors): BackgroundQualifier {
   return new BackgroundQualifier(prepareColor(colorStr));
 }
 

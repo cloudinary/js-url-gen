@@ -2,6 +2,7 @@ import Action from "../Action";
 import QualifierValue from "../../qualifier/QualifierValue";
 import Qualifier from "../../qualifier/Qualifier";
 import {prepareColor} from "../../utils/prepareColor";
+import {SystemColors} from "../../values/color/Color";
 
 /**
  * @description Applies a shadow filter to the asset.
@@ -50,7 +51,7 @@ export class ShadowEffectAction extends Action {
    * @param color
    * @return {this}
    */
-  color(color:string): this {
+  color(color:SystemColors): this {
     return this.addQualifier(new Qualifier('co', new QualifierValue(prepareColor(color))));
   }
 }

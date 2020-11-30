@@ -2,6 +2,7 @@ import QualifierValue from "../../qualifier/QualifierValue";
 import Qualifier from "../../qualifier/Qualifier";
 import {prepareColor} from "../../utils/prepareColor";
 import EffectActionWithLevel from "./EffectActions/EffectActionWithLevel";
+import {SystemColors} from "../../values/color/Color";
 
 /**
  * @class ColorizeEffectAction
@@ -14,7 +15,7 @@ class ColorizeEffectAction extends EffectActionWithLevel {
    * @param {string} color HTML name(red, green, etc.) or RGB hex code. (Server default: gray)
    * @return {this}
    */
-  color(color: string) {
+  color(color: SystemColors) {
     return this.addQualifier(new Qualifier('co', new QualifierValue(prepareColor(color))));
   }
 }
