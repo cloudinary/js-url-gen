@@ -29,6 +29,9 @@ import {StyleTransfer} from "../actions/effect/styleTransfer";
 import {VectorizeEffectAction} from "../actions/effect/vectorize";
 import {GradientFadeEffectAction} from "../actions/effect/gradientFade";
 import DeliveryAction from "../actions/delivery/DeliveryAction";
+import SmartObjectAction from "../actions/psdTools/SmartObjectAction";
+import ClipAction from "../actions/psdTools/ClipAction";
+import GetLayerAction from "../actions/psdTools/GetLayerAction";
 
 declare type videoEditType = VolumeAction | TrimAction | ConcatenateAction;
 declare type EffectActions =
@@ -247,7 +250,7 @@ class Transformation {
    * @description Adds a layer in a Photoshop document.
    * @param action
    */
-  psdTools(action: Action): this {
+  psdTools(action: SmartObjectAction | ClipAction | GetLayerAction): this {
     return this.addAction(action);
   }
 

@@ -1,8 +1,6 @@
-import * as PSDTools from "../../../src/actions/psdTools/PsdTools";
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import * as PSDToolsESM from '../../../src/actions/psdTools/PsdTools';
-
+import {PSDTools} from "../../../src/actions/Actions";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -91,4 +89,24 @@ describe('Tests for Transformation Action -- PSDTools', () => {
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/pg_embedded:name:myFile/sample');
   });
 
+  it('Uses multiple qualifiers', () => {
+    expect(PSDTools
+      .getLayer()
+      .byNumber(1)
+      .byRange(5, 7)
+      .toString()
+    ).toBe('pg_1;5-7'); // pg_1;5-7
+    expect(PSDTools
+      .getLayer()
+      .byRange(4, 7)
+      .byNumber(9)
+      .toString()
+    ).toBe('pg_4-7;9');
+    expect(PSDTools
+      .getLayer()
+      .byName("lala")
+      .byName('fofo')
+      .toString()
+    ).toBe('pg_name:lala;fofo');
+  });
 });
