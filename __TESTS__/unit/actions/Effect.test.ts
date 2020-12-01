@@ -45,12 +45,6 @@ describe('Tests for Transformation Action -- Effect', () => {
       .effect(Effect.noise(100))
       .effect(Effect.noise().level(5))
       .effect(Effect.negate())
-      .effect(Effect.pixelate())
-      .effect(Effect.pixelate(100))
-      .effect(Effect.pixelate().level(5))
-      .effect(Effect.pixelateFaces())
-      .effect(Effect.pixelateFaces(100))
-      .effect(Effect.pixelateFaces().level(5))
       .effect(Effect.reverse())
       .effect(Effect.redEye())
       .effect(Effect.sepia())
@@ -91,12 +85,6 @@ describe('Tests for Transformation Action -- Effect', () => {
       'e_noise:100',
       'e_noise:5',
       'e_negate',
-      'e_pixelate',
-      'e_pixelate:100',
-      'e_pixelate:5',
-      'e_pixelate_faces',
-      'e_pixelate_faces:100',
-      'e_pixelate_faces:5',
       'e_reverse',
       'e_redeye',
       'e_sepia',
@@ -243,26 +231,6 @@ describe('Tests for Transformation Action -- Effect', () => {
       .toURL();
 
     expect(url).toContain('l_woman/c_scale,h_100,w_100/e_style_transfer:preserve_color:15,fl_layer_apply/sample');
-  });
-
-  it('Tests pixelateRegion', () => {
-    expect(Effect.pixelateRegion()
-      .toString()
-    ).toEqual('e_pixelate_region');
-
-    expect(Effect.pixelateRegion()
-      .pixelWidth(10)
-      .toString()
-    ).toEqual('e_pixelate_region:10');
-
-    expect(Effect.pixelateRegion()
-      .pixelWidth(10)
-      .height(20)
-      .width(30)
-      .x(40)
-      .y(50)
-      .toString()
-    ).toEqual('e_pixelate_region:10,h_20,w_30,x_40,y_50');
   });
 
   it('Tests for Effect.dither', () => {
