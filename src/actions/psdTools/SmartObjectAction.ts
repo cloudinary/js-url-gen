@@ -12,8 +12,11 @@ import QualifierValue from "../../qualifier/QualifierValue";
  */
 class SmartObjectAction extends Action{
   private smartObjectValue: string|number;
+  private qualifierValue = new QualifierValue();
+  private useName = false;
   constructor() {
     super();
+    this.qualifierValue.delimiter = ';';
   }
 
   /**
@@ -22,6 +25,7 @@ class SmartObjectAction extends Action{
    */
   byIndex(index: string|number): this{
     this.smartObjectValue = index;
+    this.qualifierValue.addValue(index);
     return this;
   }
 
@@ -30,12 +34,18 @@ class SmartObjectAction extends Action{
    * @param fileName The name
    */
   byFileName(fileName:string): this{
-    this.smartObjectValue = `name:${fileName}`;
+    this.useName = true;
+    this.qualifierValue.addValue(fileName);
     return this;
   }
 
   protected prepareQualifiers() : void {
-    const qualifierValue = new QualifierValue(['embedded', `${this.smartObjectValue}`]).setDelimiter(':');
+    let qualifierValue;
+    if (this.useName) {
+      qualifierValue = new QualifierValue(['embedded:name', this.qualifierValue]);
+    } else {
+      qualifierValue = new QualifierValue(['embedded', this.qualifierValue]);
+    }
 
     this.addQualifier(new Qualifier('pg', qualifierValue));
   }
