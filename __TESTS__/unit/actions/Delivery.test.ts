@@ -1,10 +1,10 @@
 import TransformableImage from '..         /../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as Dpr from "../../../src/values/dpr/Dpr";
-import * as Format from "../../../src/values/formats/Formats";
 import * as Quality from "../../../src/values/quality/Quality";
 import * as ColorSpace from "../../../src/values/colorSpace/ColorSpace";
 import * as Delivery from "../../../src/actions/delivery/Delivery";
+import {Format} from "../../../src/values/format/Format";
 
 
 
