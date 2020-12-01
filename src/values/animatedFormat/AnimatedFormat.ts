@@ -10,7 +10,7 @@ class AnimatedFormat extends QualifierValue{
   /**
    * @@doc
    * @memberOf Values.AnimatedFormat
-   * @return {this}
+   * @return {Values.AnimatedFormat}
    */
   static auto(): AnimatedFormat {
     return new AnimatedFormat('auto');
@@ -20,7 +20,7 @@ class AnimatedFormat extends QualifierValue{
   /**
    * @@doc
    * @memberOf Values.AnimatedFormat
-   * @return {this}
+   * @return {Values.AnimatedFormat}
    */
   static gif(): AnimatedFormat {
     return new AnimatedFormat('gif');
@@ -29,7 +29,7 @@ class AnimatedFormat extends QualifierValue{
   /**
    * @@doc
    * @memberOf Values.AnimatedFormat
-   * @return {this}
+   * @return {Values.AnimatedFormat}
    */
   static webp(): AnimatedFormat {
     return new AnimatedFormat('webp');
