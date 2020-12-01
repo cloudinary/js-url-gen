@@ -4,8 +4,7 @@
  * @namespace Effect
  */
 
-import blur from "./leveled/blur";
-import blurFaces from "./leveled/blurFaces";
+import blur from "./blur/blur";
 import pixelateFaces from "./leveled/pixelateFaces";
 import grayscale from "./simple/grayscale";
 import sepia from "./leveled/sepia";
@@ -31,7 +30,6 @@ import noise from "./leveled/noise";
 import pixelate from "./leveled/pixelate";
 import vignette from "./leveled/vignette";
 import dither from "./dither";
-import blurRegion from "./blurRegion";
 import vectorize from "./vectorize";
 import gradientFade from "./gradientFade";
 import pixelateRegion from "./pixelateRegion";
@@ -60,7 +58,6 @@ export {
   pixelate,
   vignette,
   blur,
-  blurFaces,
   pixelateFaces,
   grayscale,
   sepia,
@@ -70,7 +67,6 @@ export {
   artisticFilter,
   cartoonify,
   outline,
-  blurRegion,
   styleTransfer,
   gradientFade,
   vectorize,
