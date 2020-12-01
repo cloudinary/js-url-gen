@@ -8,15 +8,15 @@ import {Compass} from "./qualifiers/compass/Compass";
 import {FocusOn} from "./qualifiers/focusOn/FocusOn";
 import {AutoFocus} from "./qualifiers/autoFocus/AutoFocus";
 
-export type IAnyGravity = CompassGravity | AutoGravity | OCR | FocusOnGravity;
-export type IAnyGravityValue = Compass | FocusOn | AutoFocus;
+export type IGravity = CompassGravity | AutoGravity | OCR | FocusOnGravity;
+export type IGravityValue = Compass | FocusOn | AutoFocus;
 
 
 class GravityQualifier extends Qualifier {
   /**
    * @param value, an array containing (GravityObject | AutoGravity | string) or a string;
    */
-  constructor(value: IAnyGravityValue | IAnyGravityValue[] | string) {
+  constructor(value: IGravityValue | IGravityValue[] | string) {
     super('g', new QualifierValue(value));
   }
 }
