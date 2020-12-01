@@ -6,8 +6,6 @@ import * as ChromaSubSampling from "../../../src/values/chromaSubSampling/Chroma
 import * as FontStyle from "../../../src/values/fontStyle/FontStyle";
 import * as FontWeight from "../../../src/values/fontWeight/FontWeight";
 import * as StreamingProfile from "../../../src/values/streamingProfile/StreamingProfile";
-import * as GravityObjects from "../../../src/values/gravityObjects/GravityObjects";
-import {GravityObject} from "../../../src/values/gravityObjects/GravityObject";
 import * as SimulateColorBlind from "../../../src/values/simulateColorBlind/SimulateColorBlind";
 import * as AudioCodec from "../../../src/values/audioCodec/AudioCodec";
 import * as AudioFrequency from "../../../src/values/audioFrequency/AudioFrequency";
@@ -113,11 +111,6 @@ describe('Test imported values', () => {
 
     expect(ChromaSubSampling.chroma420()).toBe(420);
     expect(ChromaSubSampling.chroma444()).toBe(444);
-
-    expect(GravityObjects.cat()).toBeInstanceOf(GravityObject);
-    expect(GravityObjects.dog()).toBeInstanceOf(GravityObject);
-    expect(GravityObjects.refrigerator()).toBeInstanceOf(GravityObject);
-    expect(GravityObjects.person()).toBeInstanceOf(GravityObject);
 
     expect(SimulateColorBlind.coneMonochromacy()).toBe('cone_monochromacy');
     expect(SimulateColorBlind.deuteranomaly()).toBe('dueteranomaly');

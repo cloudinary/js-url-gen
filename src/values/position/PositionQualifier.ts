@@ -1,6 +1,6 @@
 import Action from "../../actions/Action";
-import {GravityQualifier} from "../gravity/Gravity";
 import Qualifier from "../../qualifier/Qualifier";
+import {GravityQualifier} from "../gravity/GravityQualifier";
 
 /**
  * @description

@@ -1,7 +1,8 @@
 import getImageWithResize from "./shared/getImageWithResize";
 import fillPad from "../../../../src/actions/resize/ResizeActions/pad/FillPadAction";
-import * as Gravity from "../../../../src/values/gravity/Gravity";
 import * as Background from "../../../../src/values/background/Background";
+import {Compass} from "../../../../src/values/gravity/qualifiers/compass/Compass";
+import {Gravity} from "../../../../src/values/gravity/Gravity";
 
 
 describe('Tests for Transformation Action -- Resize.fillPad', () => {
@@ -17,7 +18,7 @@ describe('Tests for Transformation Action -- Resize.fillPad', () => {
         .height(250)
         .x(10)
         .y(10)
-        .gravity(Gravity.north())
+        .gravity(Gravity.compass(Compass.north()))
         .aspectRatio(1.2)
         .background(Background.color('red')),
       'url');

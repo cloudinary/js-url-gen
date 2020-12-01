@@ -18,10 +18,10 @@ describe('Tests for Transformation Action -- Resize.limitPad', () => {
         .aspectRatio(2)
         .x(10)
         .y(10)
-        .gravity(Gravity.face())
+        .gravity(Gravity.autoGravity())
         .background(Background.color('red'))
       ,
       'url');
-    expect(url).toContain('ar_2.0,b_red,c_lpad,g_face,h_250,w_250,x_10,y_10');
+    expect(url).toContain('ar_2.0,b_red,c_lpad,g_auto,h_250,w_250,x_10,y_10');
   });
 });
