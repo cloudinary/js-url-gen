@@ -26,7 +26,7 @@ class ColorizeEffectAction extends EffectActionWithLevel {
  * @param {number} colorizeLevel The strength of the color. (Range: 0 to 100, Server default: 100)
  * @return {ColorizeEffectAction}
  */
-function colorize(colorizeLevel: number):ColorizeEffectAction {
+function colorize(colorizeLevel?: number):ColorizeEffectAction {
   return new ColorizeEffectAction('colorize', colorizeLevel);
 }
 
