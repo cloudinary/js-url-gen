@@ -1,33 +1,42 @@
+import QualifierValue from "../../qualifier/QualifierValue";
+
+
 /**
  * @@doc
  * @namespace AnimatedFormat
  * @memberOf Values
  */
+class AnimatedFormat extends QualifierValue{
+  /**
+   * @@doc
+   * @memberOf Values.AnimatedFormat
+   * @return {Values.AnimatedFormat}
+   */
+  static auto(): AnimatedFormat {
+    return new AnimatedFormat('auto');
+  }
 
 
-/**
- * @@doc
- * @memberOf Values.AnimatedFormat
- */
-function auto(): string { return 'auto';}
+  /**
+   * @@doc
+   * @memberOf Values.AnimatedFormat
+   * @return {Values.AnimatedFormat}
+   */
+  static gif(): AnimatedFormat {
+    return new AnimatedFormat('gif');
+  }
 
+  /**
+   * @@doc
+   * @memberOf Values.AnimatedFormat
+   * @return {Values.AnimatedFormat}
+   */
+  static webp(): AnimatedFormat {
+    return new AnimatedFormat('webp');
+  }
+}
 
-/**
- * @@doc
- * @memberOf Values.AnimatedFormat
- */
-function gif(): string { return 'gif';}
-
-/**
- * @@doc
- * @memberOf Values.AnimatedFormat
- */
-function webp(): string { return 'webp';}
-
-export {
-  auto,
-  gif,
-  webp
-};
+const {auto, gif, webp} = AnimatedFormat;
+export {auto, gif, webp, AnimatedFormat};
 
 
