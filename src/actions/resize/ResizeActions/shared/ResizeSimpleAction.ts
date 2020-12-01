@@ -1,6 +1,5 @@
 import Qualifier from "../../../../qualifier/Qualifier";
 import Action from "../../../Action";
-import {Flag} from "../../../../values/flag/Flag";
 import {toFloatAsString} from "../../../../utils/toFloatAsString";
 import relativeFlag from '../../../../values/flag/relative';
 import regionRelativeFlag from '../../../../values/flag/regionRelative';
@@ -69,23 +68,6 @@ class ResizeSimpleAction extends Action {
    */
   regionRelative(): this {
     return this.addFlag(regionRelativeFlag());
-  }
-
-
-  /*
-   * The methods below should not exist on the ResizeSimpleAction class
-   * However they are currently unspecced, so it's TBD where they'll belong.
-   */
-
-  /**
-   * @description Sets a flag determining how the media is resized relative to different layers.
-   * @param {string} modeType The resize mode type. For a list of supported types see {@link Values.ResizeMode |
-    * Resize mode}
-   */
-  resizeMode(modeType:string): this {
-    this.addFlag(new Flag(modeType));
-
-    return this;
   }
 }
 
