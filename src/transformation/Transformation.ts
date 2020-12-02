@@ -32,6 +32,7 @@ import DeliveryAction from "../actions/delivery/DeliveryAction";
 import SmartObjectAction from "../actions/psdTools/SmartObjectAction";
 import ClipAction from "../actions/psdTools/ClipAction";
 import GetLayerAction from "../actions/psdTools/GetLayerAction";
+import {Extract} from "../actions/extract/Extract";
 
 declare type videoEditType = VolumeAction | TrimAction | ConcatenateAction;
 declare type EffectActions =
@@ -251,6 +252,15 @@ class Transformation {
    * @param action
    */
   psdTools(action: SmartObjectAction | ClipAction | GetLayerAction): this {
+    return this.addAction(action);
+  }
+
+  /**
+   * @doc
+   * @description Adds a page or frame from a document
+   * @param action
+   */
+  extract(action: Extract): this {
     return this.addAction(action);
   }
 
