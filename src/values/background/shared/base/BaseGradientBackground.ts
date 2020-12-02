@@ -1,4 +1,5 @@
 import {BaseCommonBackground} from "./BaseCommonBackground";
+import {GradientDirection} from "../../../gradientDirection/GradientDirection";
 
 /**
  * @description Defines the gradient fade effect to use for the background when resizing with padding.
@@ -7,7 +8,7 @@ import {BaseCommonBackground} from "./BaseCommonBackground";
  */
 class BaseGradientBackground extends BaseCommonBackground {
   protected _gradientColors: number;
-  protected _gradientDirection: string;
+  protected _gradientDirection: GradientDirection;
   /**
    *
    * @description Sets the number of predominant colors to use (2 or 4).
@@ -25,7 +26,7 @@ class BaseGradientBackground extends BaseCommonBackground {
    * @example gradientDirection(GradientDirection.horizontal())
    * @return {this}
    */
-  gradientDirection(direction: string): this {
+  gradientDirection(direction: GradientDirection): this {
     this._gradientDirection = direction;
     return this;
   }
