@@ -72,21 +72,21 @@ describe('Tests for Transformation Action -- PSDTools', () => {
   it('Creates a cloudinaryURL with smartObject.byIndex', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .psdTools(PSDTools.smartObject().byIndex(8))
+      .psdTools(PSDTools.smartObject().byIndex(8).byIndex(5))
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/pg_embedded:8/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/pg_embedded:8;5/sample');
   });
 
   it('Creates a cloudinaryURL with smartObject.byFileName', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .psdTools(PSDTools.smartObject().byFileName('myFile'))
+      .psdTools(PSDTools.smartObject().byFileName('myFile').byFileName('myFile2'))
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/pg_embedded:name:myFile/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/pg_embedded:name:myFile;myFile2/sample');
   });
 
   it('Uses multiple qualifiers', () => {
