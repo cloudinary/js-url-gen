@@ -10,7 +10,6 @@ import {Flag} from "../values/flag/Flag";
 import Action from "../actions/Action";
 import VariableAction from "../actions/variable/VariableAction";
 import CutterAction from "../actions/cutter/CutterAction";
-import BorderAction from "../actions/border/BorderAction";
 import {ConditionAction} from "../actions/condition/Condition";
 import ResizeSimpleAction from "../actions/resize/ResizeActions/shared/ResizeSimpleAction";
 import RotateAction from "../actions/rotate/RotateAction";
@@ -32,6 +31,7 @@ import DeliveryAction from "../actions/delivery/DeliveryAction";
 import SmartObjectAction from "../actions/psdTools/SmartObjectAction";
 import ClipAction from "../actions/psdTools/ClipAction";
 import GetLayerAction from "../actions/psdTools/GetLayerAction";
+import {Border} from "../actions/border/Border";
 
 declare type videoEditType = VolumeAction | TrimAction | ConcatenateAction;
 declare type EffectActions =
@@ -114,9 +114,9 @@ class Transformation {
 
   /**
    * @description Adds a border around the image.
-   * @param {BorderAction} borderAction
+   * @param {Border} borderAction
    */
-  border(borderAction: BorderAction): this{
+  border(borderAction: Border): this{
     return this.addAction(borderAction);
   }
 
