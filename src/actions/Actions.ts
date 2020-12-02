@@ -4,7 +4,7 @@
 
 import * as RoundCorners from "./roundCorners/RoundCorners";
 import * as Resize from "./resize/Resize";
-import * as Border from "./border/Border";
+import {Border} from "./border/Border";
 import * as Effect from "./effect/Effect";
 import * as Rotate from "./rotate/Rotate";
 import * as Adjust from "./adjust/Adjust";

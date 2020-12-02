@@ -12,7 +12,7 @@ describe('Tests for Transformation Action -- Border', () => {
   it('Creates a cloudinaryURL with border and color', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .border(Border.solid('red', 7))
+      .border(Border.solid( 7, 'red'))
       .setPublicID('sample')
       .toURL();
 
@@ -22,7 +22,7 @@ describe('Tests for Transformation Action -- Border', () => {
   it('Creates a cloudinaryURL with border and rgb #0000ff', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .border(Border.solid('#0000ff', 7))
+      .border(Border.solid( 7, '#0000ff'))
       .setPublicID('sample')
       .toURL();
 
@@ -32,7 +32,7 @@ describe('Tests for Transformation Action -- Border', () => {
   it('Creates a cloudinaryURL with border and rgb #FFF', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .border(Border.solid('#FFF', 7))
+      .border(Border.solid( 7, '#FFF'))
       .setPublicID('sample')
       .toURL();
 
@@ -42,7 +42,7 @@ describe('Tests for Transformation Action -- Border', () => {
   it('Creates a cloudinaryURL with border and rgb #FFFFFFFF', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .border(Border.solid('#FFFFFFFF', 7))
+      .border(Border.solid( 7, '#FFFFFFFF'))
       .setPublicID('sample')
       .toURL();
 
