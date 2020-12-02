@@ -10,12 +10,12 @@ import QualifierValue from "../../qualifier/QualifierValue";
  * @augments Action
  */
 class GetLayerAction extends Action {
-  private from: string | number;
-  private to: string | number;
   private name: string;
+  private qualifierValue = new QualifierValue();
 
   constructor() {
     super();
+    this.qualifierValue.delimiter = ';';
   }
 
   /**
@@ -23,7 +23,8 @@ class GetLayerAction extends Action {
    * @param {string|number} from The layer number
    */
   byNumber(from: string|number): this{
-    this.from = from;
+
+    this.qualifierValue.addValue(from);
     return this;
   }
 
@@ -33,8 +34,11 @@ class GetLayerAction extends Action {
    * @param {string|number} to The layer number
    */
   byRange(from: string|number, to: string|number): this{
-    this.from = from;
-    this.to = to;
+    const range = new QualifierValue(from);
+    range.addValue(to);
+    range.delimiter = '-';
+
+    this.qualifierValue.addValue(range);
     return this;
   }
 
@@ -44,17 +48,16 @@ class GetLayerAction extends Action {
    */
   byName(name: string): this{
     this.name = name;
+    this.qualifierValue.addValue(name);
     return this;
   }
+
   protected prepareQualifiers(): this {
-    let qualifierValue;
+    let qualifierValue = this.qualifierValue;
     if(this.name) {
-      qualifierValue = new QualifierValue(['name', `${this.name}`]).setDelimiter(':');
-    } else if(this.from && this.to) {
-      qualifierValue = new QualifierValue(`${this.from}-${this.to}`);
-    }else if(this.from && !this.to){
-      qualifierValue = new QualifierValue(`${this.from}`);
+      qualifierValue = new QualifierValue(['name', this.qualifierValue]).setDelimiter(':');
     }
+
     this.addQualifier(new Qualifier('pg', qualifierValue));
     return this;
   }
