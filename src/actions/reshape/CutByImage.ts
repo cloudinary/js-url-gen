@@ -11,7 +11,7 @@ import {PositionQualifier} from "../../values/position/PositionQualifier";
  * @class CutterAction
  * @augments Action
  */
-class CutterAction extends Action {
+class CutByImage extends Action {
   private layer: LayerAction;
   constructor(source: ImageSource) {
     super();
@@ -37,4 +37,4 @@ class CutterAction extends Action {
 }
 
 
-export default CutterAction;
+export default CutByImage;

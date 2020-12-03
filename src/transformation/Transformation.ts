@@ -9,7 +9,7 @@ import {LayerAction} from "../actions/overlay/LayerAction";
 import {Flag} from "../values/flag/Flag";
 import Action from "../actions/Action";
 import VariableAction from "../actions/variable/VariableAction";
-import CutterAction from "../actions/cutter/CutterAction";
+import CutByImage from "../actions/reshape/CutByImage";
 import BorderAction from "../actions/border/BorderAction";
 import {ConditionAction} from "../actions/condition/Condition";
 import ResizeSimpleAction from "../actions/resize/ResizeActions/shared/ResizeSimpleAction";
@@ -32,6 +32,7 @@ import DeliveryAction from "../actions/delivery/DeliveryAction";
 import SmartObjectAction from "../actions/psdTools/SmartObjectAction";
 import ClipAction from "../actions/psdTools/ClipAction";
 import GetLayerAction from "../actions/psdTools/GetLayerAction";
+import {IReshape} from "../actions/reshape/Reshape";
 import {SystemColors} from "../values/color/Color";
 import {prepareColor} from "../utils/prepareColor";
 
@@ -122,9 +123,15 @@ class Transformation {
     return this.addAction(borderAction);
   }
 
-
-  cutter(cutterAction: CutterAction): this {
-    return this.addAction(cutterAction);
+  /**
+   * @description Reshape an asset
+   * @doc
+   * @param {IReshape} reshapeAction
+   * @param {CutByImage} reshapeAction
+   * @return {this}
+   */
+  reshape(reshapeAction: IReshape): this {
+    return this.addAction( reshapeAction);
   }
 
   /**
@@ -314,17 +321,6 @@ class Transformation {
   /*
   concatenate(videoConcatenateAction: VideoConcatenateAction): this {
     return this.addAction(videoConcatenateAction);
-  }
-   */
-
-  /**
-   * @description Trims pixels according to the transparency levels of a given overlay image.
-   * @param {CutterAction} ctterAction
-   * @return {this}
-   */
-  /*
-  cutter(cutterAction: CutterAction): this {
-    return this.addAction(cutterAction);
   }
    */
 
