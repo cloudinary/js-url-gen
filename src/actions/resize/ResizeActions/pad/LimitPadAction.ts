@@ -1,4 +1,5 @@
 import ResizePadAction from "../shared/ResizePadAction";
+import {CompassGravity} from "../../../../values/gravity/compassGravity/CompassGravity";
 
 /**
  * @description
@@ -13,7 +14,7 @@ import ResizePadAction from "../shared/ResizePadAction";
  * @param {number|string} height The required height of a transformed asset.
  * @return {ResizePadAction}
  */
-function limitPad(width?: string|number, height?: string|number) :ResizePadAction {
+function limitPad(width?: string|number, height?: string|number) :ResizePadAction<CompassGravity> {
   return new ResizePadAction('lpad', width, height);
 }
 

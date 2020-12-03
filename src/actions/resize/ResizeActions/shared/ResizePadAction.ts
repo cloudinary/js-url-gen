@@ -1,5 +1,6 @@
 import ResizeAdvancedActionWithPosition from "./ResizeAdvancedActionWithPosition";
 import {BackgroundQualifier} from "../../../../values/background/shared/base/BackgroundQualifier";
+import {IGravity} from "../../../../values/gravity/GravityQualifier";
 
 
 /**
@@ -7,7 +8,7 @@ import {BackgroundQualifier} from "../../../../values/background/shared/base/Bac
  * @class ResizePadAction
  * @augments ResizeAdvancedActionWithPosition
  */
-class ResizePadAction extends ResizeAdvancedActionWithPosition {
+class ResizePadAction<GravityType extends IGravity> extends ResizeAdvancedActionWithPosition {
   /**
    * @description Sets the background.
    * @param {Values.Background} backgroundQualifier Defines the background color to use instead of
@@ -15,6 +16,10 @@ class ResizePadAction extends ResizeAdvancedActionWithPosition {
    */
   background(backgroundQualifier: BackgroundQualifier): this {
     return this.addQualifier(backgroundQualifier);
+  }
+
+  gravity(direction:GravityType): this {
+    return this.addQualifier(direction);
   }
 }
 
