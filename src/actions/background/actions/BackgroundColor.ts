@@ -8,11 +8,11 @@ import {SystemColors} from "../../../values/color/Color";
  * @augments Action
  * @description A class for background transformations.
  */
-class BackgroundColorAction extends Action {
+class BackgroundColor extends Action {
   constructor(color: SystemColors) {
     super();
     this.addQualifier(new Qualifier('b', new QualifierValue(color).setDelimiter('_')));
   }
 }
 
-export {BackgroundColorAction};
+export {BackgroundColor};

@@ -15,7 +15,7 @@ import {ConditionAction} from "../actions/condition/Condition";
 import ResizeSimpleAction from "../actions/resize/ResizeActions/shared/ResizeSimpleAction";
 import RotateAction from "../actions/rotate/RotateAction";
 import SimpleEffectAction from "../actions/effect/EffectActions/SimpleEffectAction";
-import {BackgroundColorAction} from "../actions/background/actions/BackgroundColorAction";
+import {BackgroundColor} from "../actions/background/actions/BackgroundColor";
 import {NamedTransformationAction} from "../actions/namedTransformation/NamedTransformationAction";
 import VolumeAction from "../actions/videoEdit/VolumeAction";
 import TrimAction from "../actions/videoEdit/TrimAction";
@@ -32,6 +32,8 @@ import DeliveryAction from "../actions/delivery/DeliveryAction";
 import SmartObjectAction from "../actions/psdTools/SmartObjectAction";
 import ClipAction from "../actions/psdTools/ClipAction";
 import GetLayerAction from "../actions/psdTools/GetLayerAction";
+import {SystemColors} from "../values/color/Color";
+import {prepareColor} from "../utils/prepareColor";
 
 declare type videoEditType = VolumeAction | TrimAction | ConcatenateAction;
 declare type EffectActions =
@@ -239,11 +241,11 @@ class Transformation {
 
   /**
    * @description Sets the color of the background.
-   * @param {BackgroundColorAction} backgroundAction Action
+   * @param {Values.Color} color
    * @return {this}
    */
-  backgroundColor(backgroundAction: BackgroundColorAction): this {
-    return this.addAction(backgroundAction);
+  backgroundColor(color: SystemColors): this {
+    return this.addAction(new BackgroundColor(prepareColor(color)));
   }
 
   /**
