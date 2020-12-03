@@ -11,7 +11,7 @@ import {
   predominantGradient,
   blurred
 } from "../../../src/values/background/Background";
-import GradientDirection from "../../../src/values/gradientDirection/GradientDirection";
+import {GradientDirection} from "../../../src/values/gradientDirection/GradientDirection";
 
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
