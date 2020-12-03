@@ -1,11 +1,12 @@
-import Flag from './FlagQualifier';
+import {FlagQualifier} from './FlagQualifier';
 
 /**
  * @memberOf Values.Flag
  * @description Keeps all meta-data.
+ * @return {Values.Flag.FlagQualifier}
  */
-function keepIptc(): Flag{
-  return new Flag('keep_iptc');
+function keepIptc(): FlagQualifier {
+  return new FlagQualifier('keep_iptc');
 }
 
-export default keepIptc;
+export {keepIptc};

@@ -1,12 +1,12 @@
-import Flag from './FlagQualifier';
+import {FlagQualifier} from './FlagQualifier';
 
 /**
  * @memberOf Values.Flag
  * @description Generate PNG images in the png24 format.
- * @return {Flag}
+ * @return {Values.Flag.FlagQualifier}
  */
-function png24(): Flag{
-  return new Flag('png24');
+function png24(): FlagQualifier {
+  return new FlagQualifier('png24');
 }
 
-export default png24;
+export {png24};

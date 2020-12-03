@@ -1,4 +1,4 @@
-import Flag from './FlagQualifier';
+import {FlagQualifier} from './FlagQualifier';
 
 /**
  * @memberOf Values.Flag
@@ -7,10 +7,10 @@ import Flag from './FlagQualifier';
  * This flag can also be used as a conditional flag for delivering PNG files: it tells Cloudinary to deliver the
  * image in PNG format (as requested) unless there is no transparency channel - in which case deliver in JPEG
  * format.
- * @return {Flag}
+ * @return {Values.Flag.FlagQualifier}
  */
-function lossy(): Flag{
-  return new Flag('lossy');
+function lossy(): FlagQualifier {
+  return new FlagQualifier('lossy');
 }
 
-export default lossy;
+export {lossy};

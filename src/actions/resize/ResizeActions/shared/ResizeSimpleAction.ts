@@ -1,8 +1,9 @@
 import Qualifier from "../../../../qualifier/Qualifier";
 import Action from "../../../Action";
 import {toFloatAsString} from "../../../../utils/toFloatAsString";
-import relativeFlag from '../../../../values/flag/relative';
-import regionRelativeFlag from '../../../../values/flag/regionRelative';
+import {AspectRatioQualifierValue} from "../../../../values/aspectRatio/AspectRatioQualifierValue";
+import {regionRelative, relative} from "../../../../values/flag/Flag";
+import {FlagQualifier} from "../../../../values/flag/FlagQualifier";
 
 /**
  * @description Defines a resize using width and height.
@@ -49,9 +50,19 @@ class ResizeSimpleAction extends Action {
    * @param {number|string} ratio The new aspect ratio, specified as a percentage or ratio.
    * @return {this}
    */
-  aspectRatio(ratio:number|string): this {
+  aspectRatio(ratio: AspectRatioQualifierValue | FlagQualifier | number|string): this {
     // toFloatAsString is used to ensure 1 turns into 1.0
-    return this.addQualifier(new Qualifier('ar', toFloatAsString(ratio)));
+    if (ratio instanceof AspectRatioQualifierValue) {
+      return this.addQualifier(new Qualifier('ar', ratio));
+    }
+
+    if (typeof ratio === 'number' || typeof ratio === 'string' ) {
+      return this.addQualifier(new Qualifier('ar', toFloatAsString(ratio)));
+    }
+
+    if (ratio instanceof FlagQualifier) {
+      return this.addFlag(ratio);
+    }
   }
 
   /**
@@ -59,7 +70,7 @@ class ResizeSimpleAction extends Action {
    * @return {this}
    */
   relative(): this {
-    return this.addFlag(relativeFlag());
+    return this.addFlag(relative());
   }
 
   /**
@@ -67,7 +78,7 @@ class ResizeSimpleAction extends Action {
    * @return {this}
    */
   regionRelative(): this {
-    return this.addFlag(regionRelativeFlag());
+    return this.addFlag(regionRelative());
   }
 }
 

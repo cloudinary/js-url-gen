@@ -1,12 +1,12 @@
-import Flag from './FlagQualifier';
+import {FlagQualifier} from './FlagQualifier';
 
 /**
  * @memberOf Values.Flag
  * @description Sets the cache-control to immutable for the asset.
- * @return {Flag}
+ * @return {Values.Flag.FlagQualifier}
  */
-function immutableCache(): Flag{
-  return new Flag('immutable_cache');
+function immutableCache(): FlagQualifier {
+  return new FlagQualifier('immutable_cache');
 }
 
-export default immutableCache;
+export {immutableCache};

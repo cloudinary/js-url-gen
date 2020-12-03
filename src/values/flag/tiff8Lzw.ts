@@ -1,11 +1,11 @@
-import Flag from './FlagQualifier';
+import {FlagQualifier} from './FlagQualifier';
 /**
  * @memberOf Values.Flag
  * @description Generates TIFF images using LZW compression and in the TIFF8 format.
- * @return {Flag}
+ * @return {Values.Flag.FlagQualifier}
  */
-function tiff8Lzw(): Flag{
-  return new Flag('tiff8_lzw');
+function tiff8Lzw(): FlagQualifier {
+  return new FlagQualifier('tiff8_lzw');
 }
 
-export default tiff8Lzw;
+export {tiff8Lzw};

@@ -1,12 +1,12 @@
-import Flag from './FlagQualifier';
+import {FlagQualifier} from './FlagQualifier';
 
 /**
  * @memberOf Values.Flag
  * @description Convert the audio channel to mono
- * @return {Flag}
+ * @return {Values.Flag.FlagQualifier}
  */
-function mono(): Flag{
-  return new Flag('mono');
+function mono(): FlagQualifier {
+  return new FlagQualifier('mono');
 }
 
-export default mono;
+export {mono};

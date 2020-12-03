@@ -2,11 +2,11 @@ import Qualifier from "../../qualifier/Qualifier";
 import QualifierValue from "../../qualifier/QualifierValue";
 
 /**
- * @description Defines flags that you can use to alter the default transformation behavior.
- * @namespace Flag
- * @memberOf Values
+ * @memberOf Values.Flag
+ * @extends {SDK.Qualifier}
+ * @description the FlagQualifier class
  */
-class Flag extends Qualifier {
+class FlagQualifier extends Qualifier {
   constructor(flagType?: QualifierValue | QualifierValue[] | number | number[] | string | string[], flagValue?: string) {
     let qualifierValue;
     if(flagValue) {
@@ -18,4 +18,4 @@ class Flag extends Qualifier {
   }
 }
 
-export default Flag;
+export {FlagQualifier};

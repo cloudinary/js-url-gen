@@ -1,9 +1,9 @@
 import Action from '../../../src/actions/Action';
 import Qualifier from '../../../src/qualifier/Qualifier';
-import {Flag} from '../../../src/values/flag/Flag';
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import QualifierValue from "../../../src/qualifier/QualifierValue";
+import {FlagQualifier} from "../../../src/values/flag/FlagQualifier";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -75,7 +75,7 @@ describe('Tests for Transformation Action', () => {
   it('Creates a cloudinaryURL with new action while adding a single flag', () => {
     const action = new Action()
       .addQualifier(new Qualifier('l', 'sample'))
-      .addFlag(new Flag('layer_apply'));
+      .addFlag(new FlagQualifier('layer_apply'));
 
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
@@ -89,8 +89,8 @@ describe('Tests for Transformation Action', () => {
   it('Creates a cloudinaryURL with new action while adding multiple flags', () => {
     const action = new Action()
       .addQualifier(new Qualifier('l', 'sample'))
-      .addFlag(new Flag('first_flag'))
-      .addFlag(new Flag('second_flag'));
+      .addFlag(new FlagQualifier('first_flag'))
+      .addFlag(new FlagQualifier('second_flag'));
 
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
@@ -104,9 +104,9 @@ describe('Tests for Transformation Action', () => {
   it('Correctly sorts qualifiers', () => {
     const action = new Action()
       .addQualifier(new Qualifier('b', '2'))
-      .addFlag(new Flag('a'))
+      .addFlag(new FlagQualifier('a'))
       .addQualifier(new Qualifier('a', '1'))
-      .addFlag(new Flag('b'))
+      .addFlag(new FlagQualifier('b'))
       .addQualifier(new Qualifier('c', '3'));
 
     expect(action.toString()).toBe('a_1,b_2,c_3,fl_a.b');

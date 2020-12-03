@@ -1,4 +1,4 @@
-import Flag from './FlagQualifier';
+import {FlagQualifier} from './FlagQualifier';
 
 /**
  * @memberOf Values.Flag
@@ -14,10 +14,10 @@ import Flag from './FlagQualifier';
  *           the required resolution.
  * * none  - Use this to deliver a non-progressive image. This is the default mode when setting
  *           a specific value for quality.
- * @return {Flag}
+ * @return {Values.Flag.FlagQualifier}
  */
-function progressive(mode?: string): Flag{
-  return new Flag('progressive', mode);
+function progressive(mode?: string): FlagQualifier {
+  return new FlagQualifier('progressive', mode);
 }
 
-export default progressive;
+export {progressive};

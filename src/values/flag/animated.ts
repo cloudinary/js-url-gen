@@ -1,4 +1,4 @@
-import Flag from './FlagQualifier';
+import {FlagQualifier} from './FlagQualifier';
 
 /**
  * @memberOf Values.Flag
@@ -9,9 +9,10 @@ import Flag from './FlagQualifier';
 
  * Note: When delivering a video in GIF format, it is delivered as an animated GIF by default and this flag is not
  * necessary. To deliver a single frame of a video in GIF format, use the page parameter.
+ * @return {Values.Flag.FlagQualifier}
  */
-function animated(): Flag{
-  return new Flag('animated');
+function animated(): FlagQualifier{
+  return new FlagQualifier('animated');
 }
 
-export default animated;
+export {animated};
