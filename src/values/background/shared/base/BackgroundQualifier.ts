@@ -3,7 +3,8 @@ import Qualifier from "../../../../qualifier/Qualifier";
 /**
  * @description Defines the visual appearance of the background.
  * @class BackgroundQualifier
- * @augments Qualifier
+ * @memberOf {Values.Background}
+ * @augments {SDK.Qualifier}
  */
 class BackgroundQualifier extends Qualifier {
   constructor(backgroundValue?: string) {
