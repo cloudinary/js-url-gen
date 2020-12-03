@@ -171,14 +171,14 @@ describe('Tests for Transformation Action -- Delivery', () => {
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/f_wdp/sample');
   });
 
-  it('Creates a cloudinaryURL with webm', () => {
+  it('Creates a cloudinaryURL with webp', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(format(Format.webm()))
+      .delivery(format(Format.webp()))
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/f_webm/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/f_webp/sample');
   });
 
 
