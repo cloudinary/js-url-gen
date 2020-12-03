@@ -1,9 +1,9 @@
 import Action from "../Action";
 import QualifierValue from "../../qualifier/QualifierValue";
 import Qualifier from "../../qualifier/Qualifier";
-import {Expression} from "../../values/expression/Expression";
+import {ExpressionQualifier} from "../../values/expression/ExpressionQualifier";
 
-type TypeVariableValue = number | string | Expression;
+type TypeVariableValue = number | string | ExpressionQualifier;
 
 /**
  * @description Defines an new user variable.

@@ -1,6 +1,6 @@
 import Action from "../Action";
 import Qualifier from "../../qualifier/Qualifier";
-import {Expression} from "../../values/expression/Expression";
+import {expression} from "../../values/expression/Expression";
 
 /**
  * Sets up a conditional transformation.
@@ -8,9 +8,9 @@ import {Expression} from "../../values/expression/Expression";
  * @namespace Condition
  */
 class ConditionAction extends Action{
-  constructor(expression: string) {
+  constructor(exp: string) {
     super();
-    this.addQualifier(new Qualifier('if', Expression.expression(expression)));
+    this.addQualifier(new Qualifier('if', expression(exp)));
   }
 }
 
