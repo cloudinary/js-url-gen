@@ -1,4 +1,276 @@
-import QualifierValue from "../../../../qualifier/QualifierValue";
+import {FocusOnValue} from "./FocusOnValue";
+
+
+/**
+ * @memberOf Values.FocusOns
+ */
+function bird(): FocusOnValue {
+  return new FocusOnValue('bird');
+}
+
+/**
+ * @memberOf Values.FocusOns
+ */
+function dog(): FocusOnValue {
+  return new FocusOnValue('dog');
+}
+
+/**
+ * @memberOf Values.FocusOns
+ */
+function cat(): FocusOnValue {
+  return new FocusOnValue('cat');
+}
+
+/**
+ * @memberOf Values.FocusOns
+ */
+function microwave(): FocusOnValue {
+  return new FocusOnValue('microwave');
+}
+
+/**
+ * @memberOf Values.FocusOns
+ */
+function refrigerator(): FocusOnValue {
+  return new FocusOnValue('refrigerator');
+}
+
+/**
+ * @memberOf Values.FocusOns
+ */
+function bottle(): FocusOnValue {
+  return new FocusOnValue('bottle');
+}
+
+/**
+ * @memberOf Values.FocusOns
+ */
+function sink(): FocusOnValue {
+  return new FocusOnValue('sink');
+}
+
+/**
+ * @memberOf Values.FocusOns
+ */
+function skateboard(): FocusOnValue {
+  return new FocusOnValue('skateboard');
+}
+
+/**
+ * @memberOf Values.FocusOns
+ */
+function person(): FocusOnValue {
+  return new FocusOnValue('person');
+}
+
+
+/**
+ * @memberOf Values.FocusOn
+ * @description Detects the largest face in an image with the Advanced Facial Attribute Detection add-on and makes it the focus of the transformation.
+ * @return {FocusOn} FocusOn
+ */
+function advancedFace(): FocusOnValue {
+  return new FocusOnValue('adv_face');
+}
+
+/**
+ * @memberOf Values.FocusOn
+ * @description Detects all faces in an image with the Advanced Facial Attribute Detection add-on and makes them the focus of the transformation.
+ * @return {FocusOn} FocusOn
+ */
+function advancedFaces(): FocusOnValue {
+  return new FocusOnValue('adv_faces');
+}
+
+/**
+ * @memberOf Values.FocusOn
+ * @description Detects all eyes in an image with the Advanced Facial Attribute Detection add-on and makes them the focus of the transformation.
+ * @return {FocusOn} FocusOn
+ */
+function advancedEyes(): FocusOnValue {
+  return new FocusOnValue('adv_eyes');
+}
+
+/**
+ * @memberOf Values.FocusOn
+ * @description Detects the largest face in the asset and makes it the focus of the transformation.
+ * @return {FocusOn} FocusOn
+ */
+function face(): FocusOnValue {
+  return new FocusOnValue('face');
+}
+
+/**
+ * @memberOf Values.FocusOn
+ * @description Detects all the faces in the asset and makes them the focus of the transformation.
+ * @return {FocusOn} FocusOn
+ */
+function faces(): FocusOnValue {
+  return new FocusOnValue('faces');
+}
+
+/**
+ * @memberOf Values.FocusOn
+ * @description Detects all the faces in the asset and makes them the focus of the transformation.
+ * @return {FocusOn} FocusOn
+ */
+function background(): FocusOnValue {
+  return new FocusOnValue('background');
+}
+
+/**
+ * @memberOf Values.FocusOn
+ * @doc
+ * @description Detects aeroplane
+ * @return {FocusOn} FocusOn
+ */
+function aeroplane(): FocusOnValue {
+  return new FocusOnValue('aeroplane');
+}
+
+/**
+ * @memberOf Values.FocusOn
+ * @doc
+ * @description Detects bicycle
+ * @return {FocusOn} FocusOn
+ */
+function bicycle(): FocusOnValue {
+  return new FocusOnValue('bicycle');
+}
+
+/**
+ * @memberOf Values.FocusOn
+ * @doc
+ * @description Detects boat
+ * @return {FocusOn} FocusOn
+ */
+function boat(): FocusOnValue {
+  return new FocusOnValue('boat');
+}
+
+/**
+ * @memberOf Values.FocusOn
+ * @doc
+ * @description Detects bus
+ * @return {FocusOn} FocusOn
+ */
+function bus(): FocusOnValue {
+  return new FocusOnValue('bus');
+}
+
+/**
+ * @memberOf Values.FocusOn
+ * @doc
+ * @description Detects car
+ * @return {FocusOn} FocusOn
+ */
+function car(): FocusOnValue {
+  return new FocusOnValue('car');
+}
+
+/**
+ * @memberOf Values.FocusOn
+ * @doc
+ * @description Detects chair
+ * @return {FocusOn} FocusOn
+ */
+function chair(): FocusOnValue {
+  return new FocusOnValue('chair');
+}
+
+
+/**
+ * @memberOf Values.FocusOn
+ * @doc
+ * @description Detects cow
+ * @return {FocusOn} FocusOn
+ */
+function cow(): FocusOnValue {
+  return new FocusOnValue('cow');
+}
+
+/**
+ * @memberOf Values.FocusOn
+ * @doc
+ * @description Detects diningtable
+ * @return {FocusOn} FocusOn
+ */
+function diningtable(): FocusOnValue {
+  return new FocusOnValue('diningtable');
+}
+
+/**
+ * @memberOf Values.FocusOn
+ * @doc
+ * @description Detects horse
+ * @return {FocusOn} FocusOn
+ */
+function horse(): FocusOnValue {
+  return new FocusOnValue('horse');
+}
+
+/**
+ * @memberOf Values.FocusOn
+ * @doc
+ * @description Detects motorbike
+ * @return {FocusOn} FocusOn
+ */
+function motorbike(): FocusOnValue {
+  return new FocusOnValue('motorbike');
+}
+
+/**
+ * @memberOf Values.FocusOn
+ * @doc
+ * @description Detects pottedplant
+ * @return {FocusOn} FocusOn
+ */
+function pottedplant(): FocusOnValue {
+  return new FocusOnValue('pottedplant');
+}
+
+/**
+ * @memberOf Values.FocusOn
+ * @doc
+ * @description Detects sheep
+ * @return {FocusOn} FocusOn
+ */
+function sheep(): FocusOnValue {
+  return new FocusOnValue('sheep');
+}
+
+/**
+ * @memberOf Values.FocusOn
+ * @doc
+ * @description Detects sofa
+ * @return {FocusOn} FocusOn
+ */
+function sofa(): FocusOnValue {
+  return new FocusOnValue('sofa');
+}
+
+/**
+ * @memberOf Values.FocusOn
+ * @doc
+ * @description Detects train
+ * @return {FocusOn} FocusOn
+ */
+function train(): FocusOnValue {
+  return new FocusOnValue('train');
+}
+
+/**
+ * @memberOf Values.FocusOn
+ * @doc
+ * @description Detects tvmonitor
+ * @return {FocusOn} FocusOn
+ */
+function tvmonitor(): FocusOnValue {
+  return new FocusOnValue('tvmonitor');
+}
+
+
 
 
 /**
@@ -6,289 +278,7 @@ import QualifierValue from "../../../../qualifier/QualifierValue";
  * @memberOf Values
  * @namespace FocusOn
  */
-class FocusOn extends QualifierValue {
-  readonly name: string;
-
-  constructor(name?: string) {
-    super();
-    this.name = name;
-  }
-
-  toString(): string {
-    return this.name;
-  }
-
-  /**
-   * @memberOf Values.FocusOns
-   */
-  static bird(): FocusOn {
-    return new FocusOn('bird');
-  }
-
-  /**
-   * @memberOf Values.FocusOns
-   */
-  static dog(): FocusOn {
-    return new FocusOn('dog');
-  }
-
-  /**
-   * @memberOf Values.FocusOns
-   */
-  static cat(): FocusOn {
-    return new FocusOn('cat');
-  }
-
-  /**
-   * @memberOf Values.FocusOns
-   */
-  static microwave(): FocusOn {
-    return new FocusOn('microwave');
-  }
-
-  /**
-   * @memberOf Values.FocusOns
-   */
-  static refrigerator(): FocusOn {
-    return new FocusOn('refrigerator');
-  }
-
-  /**
-   * @memberOf Values.FocusOns
-   */
-  static bottle(): FocusOn {
-    return new FocusOn('bottle');
-  }
-
-  /**
-   * @memberOf Values.FocusOns
-   */
-  static sink(): FocusOn {
-    return new FocusOn('sink');
-  }
-
-  /**
-   * @memberOf Values.FocusOns
-   */
-  static skateboard(): FocusOn {
-    return new FocusOn('skateboard');
-  }
-
-  /**
-   * @memberOf Values.FocusOns
-   */
-  static person(): FocusOn {
-    return new FocusOn('person');
-  }
-
-
-  /**
-   * @memberOf Values.FocusOn
-   * @description Detects the largest face in an image with the Advanced Facial Attribute Detection add-on and makes it the focus of the transformation.
-   * @return {FocusOn} FocusOn
-   */
-  static advancedFace(): FocusOn {
-    return new FocusOn('adv_face');
-  }
-
-  /**
-   * @memberOf Values.FocusOn
-   * @description Detects all faces in an image with the Advanced Facial Attribute Detection add-on and makes them the focus of the transformation.
-   * @return {FocusOn} FocusOn
-   */
-  static advancedFaces(): FocusOn {
-    return new FocusOn('adv_faces');
-  }
-
-  /**
-   * @memberOf Values.FocusOn
-   * @description Detects all eyes in an image with the Advanced Facial Attribute Detection add-on and makes them the focus of the transformation.
-   * @return {FocusOn} FocusOn
-   */
-  static advancedEyes(): FocusOn {
-    return new FocusOn('adv_eyes');
-  }
-
-  /**
-   * @memberOf Values.FocusOn
-   * @description Detects the largest face in the asset and makes it the focus of the transformation.
-   * @return {FocusOn} FocusOn
-   */
-  static face(): FocusOn {
-    return new FocusOn('face');
-  }
-
-  /**
-   * @memberOf Values.FocusOn
-   * @description Detects all the faces in the asset and makes them the focus of the transformation.
-   * @return {FocusOn} FocusOn
-   */
-  static faces(): FocusOn {
-    return new FocusOn('faces');
-  }
-
-  /**
-   * @memberOf Values.FocusOn
-   * @description Detects all the faces in the asset and makes them the focus of the transformation.
-   * @return {FocusOn} FocusOn
-   */
-  static background(): FocusOn {
-    return new FocusOn('background');
-  }
-
-  /**
-   * @memberOf Values.FocusOn
-   * @doc
-   * @description Detects aeroplane
-   * @return {FocusOn} FocusOn
-   */
-  static aeroplane(): FocusOn {
-    return new FocusOn('aeroplane');
-  }
-
-  /**
-   * @memberOf Values.FocusOn
-   * @doc
-   * @description Detects bicycle
-   * @return {FocusOn} FocusOn
-   */
-  static bicycle(): FocusOn {
-    return new FocusOn('bicycle');
-  }
-
-  /**
-   * @memberOf Values.FocusOn
-   * @doc
-   * @description Detects boat
-   * @return {FocusOn} FocusOn
-   */
-  static boat(): FocusOn {
-    return new FocusOn('boat');
-  }
-
-  /**
-   * @memberOf Values.FocusOn
-   * @doc
-   * @description Detects bus
-   * @return {FocusOn} FocusOn
-   */
-  static bus(): FocusOn {
-    return new FocusOn('bus');
-  }
-
-  /**
-   * @memberOf Values.FocusOn
-   * @doc
-   * @description Detects car
-   * @return {FocusOn} FocusOn
-   */
-  static car(): FocusOn {
-    return new FocusOn('car');
-  }
-
-  /**
-   * @memberOf Values.FocusOn
-   * @doc
-   * @description Detects chair
-   * @return {FocusOn} FocusOn
-   */
-  static chair(): FocusOn {
-    return new FocusOn('chair');
-  }
-
-
-  /**
-   * @memberOf Values.FocusOn
-   * @doc
-   * @description Detects cow
-   * @return {FocusOn} FocusOn
-   */
-  static cow(): FocusOn {
-    return new FocusOn('cow');
-  }
-
-  /**
-   * @memberOf Values.FocusOn
-   * @doc
-   * @description Detects diningtable
-   * @return {FocusOn} FocusOn
-   */
-  static diningtable(): FocusOn {
-    return new FocusOn('diningtable');
-  }
-
-  /**
-   * @memberOf Values.FocusOn
-   * @doc
-   * @description Detects horse
-   * @return {FocusOn} FocusOn
-   */
-  static horse(): FocusOn {
-    return new FocusOn('horse');
-  }
-
-  /**
-   * @memberOf Values.FocusOn
-   * @doc
-   * @description Detects motorbike
-   * @return {FocusOn} FocusOn
-   */
-  static motorbike(): FocusOn {
-    return new FocusOn('motorbike');
-  }
-
-  /**
-   * @memberOf Values.FocusOn
-   * @doc
-   * @description Detects pottedplant
-   * @return {FocusOn} FocusOn
-   */
-  static pottedplant(): FocusOn {
-    return new FocusOn('pottedplant');
-  }
-
-  /**
-   * @memberOf Values.FocusOn
-   * @doc
-   * @description Detects sheep
-   * @return {FocusOn} FocusOn
-   */
-  static sheep(): FocusOn {
-    return new FocusOn('sheep');
-  }
-
-  /**
-   * @memberOf Values.FocusOn
-   * @doc
-   * @description Detects sofa
-   * @return {FocusOn} FocusOn
-   */
-  static sofa(): FocusOn {
-    return new FocusOn('sofa');
-  }
-
-  /**
-   * @memberOf Values.FocusOn
-   * @doc
-   * @description Detects train
-   * @return {FocusOn} FocusOn
-   */
-  static train(): FocusOn {
-    return new FocusOn('train');
-  }
-
-  /**
-   * @memberOf Values.FocusOn
-   * @doc
-   * @description Detects tvmonitor
-   * @return {FocusOn} FocusOn
-   */
-  static tvmonitor() :FocusOn {
-    return new FocusOn('tvmonitor');
-  }
-}
-
-const {
+const FocusOn = {
   person,
   cat,
   microwave,
@@ -308,7 +298,6 @@ const {
   cow,
   bus,
   boat,
-  prototype,
   advancedEyes,
   advancedFace,
   advancedFaces,
@@ -320,9 +309,11 @@ const {
   diningtable,
   tvmonitor,
   motorbike
-} = FocusOn;
+};
+
 
 export {
+  FocusOnValue,
   FocusOn,
   person,
   cat,
@@ -343,7 +334,6 @@ export {
   cow,
   bus,
   boat,
-  prototype,
   advancedEyes,
   advancedFace,
   advancedFaces,

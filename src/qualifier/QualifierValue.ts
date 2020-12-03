@@ -1,5 +1,8 @@
 import {Expression} from "../values/expression/Expression";
 
+/**
+ * @memberOf SDK
+ */
 class QualifierValue {
   values: any[] = [];
   delimiter = ':'; // {value}{delimiter}{value}...

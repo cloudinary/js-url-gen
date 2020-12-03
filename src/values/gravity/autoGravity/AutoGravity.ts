@@ -4,6 +4,7 @@ import {GravityQualifier} from "../GravityQualifier";
 /**
  * @doc
  * @memberOf Values.Gravity
+ * @extends {Values.Gravity.GravityQualifier}
  */
 class AutoGravity extends GravityQualifier {
   constructor() {

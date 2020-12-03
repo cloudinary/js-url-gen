@@ -3,6 +3,7 @@ import {GravityQualifier} from "../GravityQualifier";
 /**
  * @doc
  * @memberOf Values.Gravity
+ * @extends {Values.Gravity.GravityQualifier}
  */
 class OCR extends GravityQualifier {
   constructor() {

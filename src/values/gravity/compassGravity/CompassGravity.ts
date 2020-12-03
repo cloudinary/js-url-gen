@@ -1,12 +1,13 @@
-import {Compass} from "../qualifiers/compass/Compass";
 import {GravityQualifier} from "../GravityQualifier";
+import {CompassQualifier} from "../qualifiers/compass/CompassQualifier";
 
 /**
  * @doc
  * @memberOf Values.Gravity
+ * @extends {Values.Gravity.GravityQualifier}
  */
 class CompassGravity extends GravityQualifier {
-  constructor(dir: Compass) {
+  constructor(dir: CompassQualifier) {
     // Required due to https://github.com/microsoft/TypeScript/issues/13029
     /* istanbul ignore next */
     super(dir);
