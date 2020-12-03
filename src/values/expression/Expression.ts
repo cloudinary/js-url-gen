@@ -22,7 +22,12 @@ function expression(exp: string): ExpressionQualifier {
     .join("_"));
 }
 
+// as a namespace
+const Expression = {
+  expression
+};
 
 export {
+  Expression,
   expression
 };
