@@ -1,4 +1,5 @@
 import ResizePadAction from "../shared/ResizePadAction";
+import {AutoGravity} from "../../../../values/gravity/autoGravity/AutoGravity";
 
 /**
  * @memberOf Actions.Resize
@@ -15,7 +16,7 @@ import ResizePadAction from "../shared/ResizePadAction";
  * @param {number|string} height The required height of a transformed asset.
  * @return {ResizePadAction}
  */
-function fillPad(width?: string|number, height?: string|number) :ResizePadAction {
+function fillPad(width?: string|number, height?: string|number) :ResizePadAction<AutoGravity> {
   return new ResizePadAction('fill_pad', width, height);
 }
 

@@ -18,10 +18,10 @@ describe('Tests for Transformation Action -- Resize.fillPad', () => {
         .height(250)
         .x(10)
         .y(10)
-        .gravity(Gravity.compass(Compass.north()))
+        .gravity(Gravity.autoGravity())
         .aspectRatio(1.2)
         .background(Background.color('red')),
       'url');
-    expect(url).toContain('ar_1.2,b_red,c_fill_pad,g_north,h_250,w_250,x_10,y_10');
+    expect(url).toContain('ar_1.2,b_red,c_fill_pad,g_auto,h_250,w_250,x_10,y_10');
   });
 });

@@ -16,7 +16,7 @@ class Extract extends Action {
   }
 
   /**
-   * @description Delivers an image containing only specified layers of a Photoshop image.
+   * @description Extracts an image containing only specified layers of a Photoshop image.
    * <b>Learn more:</b> {@link https://cloudinary.com/documentation/paged_and_layered_media#deliver_selected_layers_of_a_psd_image | Deliver selected layers of a PSD image}
    * @memberOf Actions.PSDTools
    * @return {GetLayerAction}
@@ -35,7 +35,7 @@ class Extract extends Action {
   }
 
   /**
-   * @description deliver an image containing only specified layer of an asset
+   * @description Extract an image containing only specified layer of an asset
    * @param {string|number} from The layer number
    */
   byNumber(from: string|number): this{
@@ -45,7 +45,7 @@ class Extract extends Action {
   }
 
   /**
-   * @description deliver an image containing only specified range of layers of an asset
+   * @description Extract an image containing only specified range of layers of an asset
    * @param {string|number} from The layer number
    * @param {string|number} to The layer number
    */
