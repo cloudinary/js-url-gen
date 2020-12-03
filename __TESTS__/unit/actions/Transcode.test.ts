@@ -1,5 +1,4 @@
 import * as Transcode from '../../../src/actions/transcode/Transcode';
-import * as TranscodeESM from '../../../src/actions/transcode/Transcode';
 import TransformableVideo from '../../../src/transformation/TransformableVideo';
 import CloudinaryConfig from '../../../src/config/CloudinaryConfig';
 import * as AudioCodec from '../../../src/values/audioCodec/AudioCodec';
