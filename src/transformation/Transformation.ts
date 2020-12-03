@@ -9,12 +9,11 @@ import {LayerAction} from "../actions/overlay/LayerAction";
 import {Flag} from "../values/flag/Flag";
 import Action from "../actions/Action";
 import VariableAction from "../actions/variable/VariableAction";
-import CutterAction from "../actions/cutter/CutterAction";
 import {ConditionAction} from "../actions/condition/Condition";
 import ResizeSimpleAction from "../actions/resize/ResizeActions/shared/ResizeSimpleAction";
 import RotateAction from "../actions/rotate/RotateAction";
 import SimpleEffectAction from "../actions/effect/EffectActions/SimpleEffectAction";
-import {BackgroundColorAction} from "../actions/background/actions/BackgroundColorAction";
+import {BackgroundColor} from "../actions/background/actions/BackgroundColor";
 import {NamedTransformationAction} from "../actions/namedTransformation/NamedTransformationAction";
 import VolumeAction from "../actions/videoEdit/VolumeAction";
 import TrimAction from "../actions/videoEdit/TrimAction";
@@ -31,6 +30,10 @@ import DeliveryAction from "../actions/delivery/DeliveryAction";
 import SmartObjectAction from "../actions/psdTools/SmartObjectAction";
 import ClipAction from "../actions/psdTools/ClipAction";
 import GetLayerAction from "../actions/psdTools/GetLayerAction";
+import {IReshape} from "../actions/reshape/Reshape";
+import {SystemColors} from "../values/color/Color";
+import {prepareColor} from "../utils/prepareColor";
+import {Extract} from "../actions/extract/Extract";
 import {Border} from "../actions/border/Border";
 
 declare type videoEditType = VolumeAction | TrimAction | ConcatenateAction;
@@ -120,9 +123,15 @@ class Transformation {
     return this.addAction(borderAction);
   }
 
-
-  cutter(cutterAction: CutterAction): this {
-    return this.addAction(cutterAction);
+  /**
+   * @description Reshape an asset
+   * @doc
+   * @param {IReshape} reshapeAction
+   * @param {IReshape} reshapeAction
+   * @return {this}
+   */
+  reshape(reshapeAction: IReshape): this {
+    return this.addAction( reshapeAction);
   }
 
   /**
@@ -239,11 +248,11 @@ class Transformation {
 
   /**
    * @description Sets the color of the background.
-   * @param {BackgroundColorAction} backgroundAction Action
+   * @param {Values.Color} color
    * @return {this}
    */
-  backgroundColor(backgroundAction: BackgroundColorAction): this {
-    return this.addAction(backgroundAction);
+  backgroundColor(color: SystemColors): this {
+    return this.addAction(new BackgroundColor(prepareColor(color)));
   }
 
   /**
@@ -251,6 +260,15 @@ class Transformation {
    * @param action
    */
   psdTools(action: SmartObjectAction | ClipAction | GetLayerAction): this {
+    return this.addAction(action);
+  }
+
+  /**
+   * @doc
+   * @description Adds a page or frame from a document
+   * @param action
+   */
+  extract(action: Extract): this {
     return this.addAction(action);
   }
 
@@ -312,17 +330,6 @@ class Transformation {
   /*
   concatenate(videoConcatenateAction: VideoConcatenateAction): this {
     return this.addAction(videoConcatenateAction);
-  }
-   */
-
-  /**
-   * @description Trims pixels according to the transparency levels of a given overlay image.
-   * @param {CutterAction} ctterAction
-   * @return {this}
-   */
-  /*
-  cutter(cutterAction: CutterAction): this {
-    return this.addAction(cutterAction);
   }
    */
 

@@ -14,10 +14,9 @@ import * as Underlay from "./underlay/Underlay";
 import * as Variable from "./variable/Variable";
 import * as NamedTransformation from './namedTransformation/NamedTransformation';
 import * as Delivery from "./delivery/Delivery";
-import * as Background from "./background/Background";
 import * as CustomFunction from './customFunction/CustomFunction';
 import * as Flag from "../values/flag/Flag";
 import * as Transcode from "./transcode/Transcode";
 import * as PSDTools from "./psdTools/PsdTools";
 
-export {Resize, Border, RoundCorners, Effect, Rotate, Adjust, Overlay, Underlay, Variable, NamedTransformation, Delivery, Background, CustomFunction, Flag, VideoEdit, Transcode, PSDTools};
+export {Resize, Border, RoundCorners, Effect, Rotate, Adjust, Overlay, Underlay, Variable, NamedTransformation, Delivery, CustomFunction, Flag, VideoEdit, Transcode, PSDTools};

@@ -1,4 +1,3 @@
-import * as Background from "../../../src/actions/background/Background";
 import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import {Color} from "../../../src/values/color/Color";
@@ -12,7 +11,7 @@ import {
   predominantGradient,
   blurred
 } from "../../../src/values/background/Background";
-import GradientDirection from "../../../src/values/gradientDirection/GradientDirection";
+import {GradientDirection} from "../../../src/values/gradientDirection/GradientDirection";
 
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
@@ -26,7 +25,7 @@ describe('Tests for Transformation Action -- Background', () => {
   it('Creates a cloudinaryURL with Background.auto', () => {
     const url = new TransformableImage()
       .setConfig(CONFIG_INSTANCE)
-      .backgroundColor(Background.color(Color.RED))
+      .backgroundColor(Color.RED)
       .setPublicID('sample')
       .toURL();
 
