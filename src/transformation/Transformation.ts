@@ -127,7 +127,6 @@ class Transformation {
    * @description Reshape an asset
    * @doc
    * @param {IReshape} reshapeAction
-   * @param {IReshape} reshapeAction
    * @return {this}
    */
   reshape(reshapeAction: IReshape): this {
