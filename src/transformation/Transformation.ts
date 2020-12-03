@@ -35,6 +35,7 @@ import GetLayerAction from "../actions/psdTools/GetLayerAction";
 import {IReshape} from "../actions/reshape/Reshape";
 import {SystemColors} from "../values/color/Color";
 import {prepareColor} from "../utils/prepareColor";
+import {Extract} from "../actions/extract/Extract";
 
 declare type videoEditType = VolumeAction | TrimAction | ConcatenateAction;
 declare type EffectActions =
@@ -260,6 +261,15 @@ class Transformation {
    * @param action
    */
   psdTools(action: SmartObjectAction | ClipAction | GetLayerAction): this {
+    return this.addAction(action);
+  }
+
+  /**
+   * @doc
+   * @description Adds a page or frame from a document
+   * @param action
+   */
+  extract(action: Extract): this {
     return this.addAction(action);
   }
 
