@@ -1,22 +1,25 @@
+
+/**
+ * @@doc
+ * @memberOf Values.ChromeSubSampling
+ */
+function chroma444():number { return 444; }
+
+/**
+ * * @@doc
+ * @memberOf Values.ChromeSubSampling
+ */
+function chroma420():number { return 420; }
+
+
 /**
  * @memberOf Values
  * @namespace ChromeSubSampling
  */
-class ChromaSubSampling {
-  /**
-   * @@doc
-   * @memberOf Values.ChromeSubSampling
-   */
-  static chroma444():number { return 444; }
-
-  /**
-   * * @@doc
-   * @memberOf Values.ChromeSubSampling
-   */
-  static chroma420():number { return 420; }
-}
-
-const {chroma420, chroma444} = ChromaSubSampling;
+const ChromaSubSampling = {
+  chroma444,
+  chroma420
+};
 
 export {
   ChromaSubSampling,
