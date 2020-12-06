@@ -1,9 +1,10 @@
 import Qualifier from "../qualifier/Qualifier";
-import {Flag} from "../values/flag/Flag";
 import {mapToSortedArray} from "../utils/dataStructureUtils";
+import {FlagQualifier} from "../values/flag/FlagQualifier";
 
 /**
  * @class Action
+ * @memberOf SDK
  * @description Defines the category of transformation to perform.
  */
 class Action {
@@ -37,7 +38,7 @@ class Action {
    * @param {Values.Flag} flag
    * @return {this}
    */
-  addFlag(flag: Flag): this {
+  addFlag(flag: FlagQualifier): this {
     const existingFlag = this.qualifiers.get('fl_');
     flag.qualifierValue.setDelimiter('.');
 

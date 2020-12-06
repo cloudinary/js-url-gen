@@ -1,5 +1,8 @@
 import QualifierValue from './QualifierValue';
 
+/**
+ * @memberOf SDK
+ */
 class Qualifier {
   key: string;
   qualifierValue: QualifierValue;

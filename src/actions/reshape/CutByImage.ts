@@ -1,9 +1,9 @@
 import Action from "../Action";
 import {ImageSource} from "../../values/sources/sourceTypes/ImageSource";
 import {imageLayer} from "../overlay/Overlay";
-import {Flag} from "../../values/flag/Flag";
 import {LayerAction} from "../overlay/LayerAction";
 import {PositionQualifier} from "../../values/position/PositionQualifier";
+import {FlagQualifier} from "../../values/flag/FlagQualifier";
 
 /**
  * @description Trims pixels according to the transparency levels of a given overlay image.
@@ -18,7 +18,7 @@ class CutByImage extends Action {
     this.layer = imageLayer(source).setLayerType('l');
     // `modifications` is the action used as the last component of a layer
     // we can leverage that to add more things to it
-    this.layer.modifications.addFlag(new Flag('cutter'));
+    this.layer.modifications.addFlag(new FlagQualifier('cutter'));
   }
 
   /**

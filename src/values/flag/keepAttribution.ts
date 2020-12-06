@@ -1,12 +1,12 @@
-import Flag from './FlagQualifier';
+import {FlagQualifier} from './FlagQualifier';
 
 /**
  * @memberOf Values.Flag
  * @description Keeps the copyright related fields when stripping meta-data.
- * @return {Flag}
+ * @return {Values.Flag.FlagQualifier}
  */
-function keepAttribution(): Flag{
-  return new Flag('keep_attribution');
+function keepAttribution(): FlagQualifier {
+  return new FlagQualifier('keep_attribution');
 }
 
-export default keepAttribution;
+export {keepAttribution};

@@ -6,7 +6,6 @@ import Qualifier from "../qualifier/Qualifier";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
 import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction";
 import {LayerAction} from "../actions/overlay/LayerAction";
-import {Flag} from "../values/flag/Flag";
 import Action from "../actions/Action";
 import VariableAction from "../actions/variable/VariableAction";
 import {ConditionAction} from "../actions/condition/Condition";
@@ -35,6 +34,7 @@ import {SystemColors} from "../values/color/Color";
 import {prepareColor} from "../utils/prepareColor";
 import {Extract} from "../actions/extract/Extract";
 import {Border} from "../actions/border/Border";
+import {FlagQualifier} from "../values/flag/FlagQualifier";
 
 declare type videoEditType = VolumeAction | TrimAction | ConcatenateAction;
 declare type EffectActions =
@@ -275,7 +275,7 @@ class Transformation {
    * @description Adds a flag as a separate action.
    * @param {Values.Flag} flagQualifier
    */
-  addFlag(flagQualifier: Flag): this {
+  addFlag(flagQualifier: FlagQualifier): this {
     const action = new Action();
     action.addQualifier(flagQualifier);
     return this.addAction(action);

@@ -1,4 +1,4 @@
-import Flag from './FlagQualifier';
+import {FlagQualifier} from "./FlagQualifier";
 
 /**
  * @memberOf Values.Flag
@@ -7,10 +7,10 @@ import Flag from './FlagQualifier';
  * animated file instead of only from the first still frame.
  *
  * Note that animated WebPs are not supported in all browsers and versions.
- *
+ * @return {Values.Flag.FlagQualifier}
  */
-function animatedWebP(): Flag{
-  return new Flag('awebp');
+function animatedWebP(): FlagQualifier {
+  return new FlagQualifier('awebp');
 }
 
-export default animatedWebP;
+export {animatedWebP};

@@ -1,11 +1,12 @@
-import Flag from './FlagQualifier';
+import {FlagQualifier} from './FlagQualifier';
 
 /**
  * @memberOf Values.Flag
  * @description Instructs Cloudinary to clear all ICC color profile data included with the image.
+ * @return {Values.Flag.FlagQualifier}
  */
-function stripProfile(): Flag{
-  return new Flag('strip_profile');
+function stripProfile(): FlagQualifier {
+  return new FlagQualifier('strip_profile');
 }
 
-export default stripProfile;
+export {stripProfile};

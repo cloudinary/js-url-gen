@@ -1,16 +1,16 @@
 import Action from "../Action";
 import {ISource} from "../../values/sources/ISource";
 import {VideoRange} from "../../values/video/VideoRange";
-import {Flag} from "../../values/flag/Flag";
 import Qualifier from "../../qualifier/Qualifier";
 import {BlendModeQualifier} from "../../values/blendMode/BlendModeQualifier";
 import {PositionQualifier} from "../../values/position/PositionQualifier";
 import SimpleEffectAction from "../effect/EffectActions/SimpleEffectAction";
+import {FlagQualifier} from "../../values/flag/FlagQualifier";
 
 
 /**
  * @description
- * A generic Layer action that can add a Video, Text or Image layer.<br> 
+ * A generic Layer action that can add a Video, Text or Image layer.<br>
  * This class can represent an overlay or an underlay.
  * @class LayerAction
  * @augments Action
@@ -22,7 +22,7 @@ class LayerAction extends Action {
   timeLinePosition: VideoRange;
   modifications: Action; // Appends modifications to the layer, such as e_style_transfer
   layerType: string;
-  flag: Flag;
+  flag: FlagQualifier;
   private effect: SimpleEffectAction;
   constructor(layerSource: ISource, position:PositionQualifier, blendMode: BlendModeQualifier|null=null, timeLinePosition: VideoRange|null=null) {
     super();
@@ -47,7 +47,7 @@ class LayerAction extends Action {
    * @param {Flag} flag
    * @return {this}
    */
-  setOpenLayerFlag(flag:Flag): this{
+  setOpenLayerFlag(flag:FlagQualifier): this{
     this.flag = flag;
     return this;
   }
@@ -87,7 +87,7 @@ class LayerAction extends Action {
    * Closes a layer (layers are built in three stages -> /Open/Transform/Close).
    */
   closeLayer():Action {
-    const bit = new Action().addFlag(new Flag('layer_apply'));
+    const bit = new Action().addFlag(new FlagQualifier('layer_apply'));
 
     this.position?.qualifiers.forEach((qualifier) => {
       bit.addQualifier(qualifier);

@@ -1,4 +1,4 @@
-import Flag from './FlagQualifier';
+import {FlagQualifier} from './FlagQualifier';
 
 /**
  * @memberOf Values.Flag
@@ -14,9 +14,10 @@ import Flag from './FlagQualifier';
  * Most standard video players successfully play fragmented video files without issue.
  *
  * @param {string} filename The attachment's filename
+ * @return {Values.Flag.FlagQualifier}
  */
-function streamingAttachment(filename: string): Flag{
-  return new Flag('streaming_attachment', filename);
+function streamingAttachment(filename: string): FlagQualifier {
+  return new FlagQualifier('streaming_attachment', filename);
 }
 
-export default streamingAttachment;
+export {streamingAttachment};

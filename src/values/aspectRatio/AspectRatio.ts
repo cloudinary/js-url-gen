@@ -1,26 +1,14 @@
 import * as Flag from '../flag/Flag';
-import Action from "../../actions/Action";
+import {AspectRatioQualifierValue} from "./AspectRatioQualifierValue";
 
-/**
- * @description A list of all most commonly used aspect ratios. including an ‘ignore aspect ratio’ option which direct the BE to not stick to the original aspect ratio.
- * This is used in the context of resize actions
- * @namespace AspectRatio
- * @memberOf Values
- */
-class IgnoreAspectRatioQualifier extends Action {
-  constructor() {
-    super();
-    this.addFlag(Flag.ignoreAspectRatio());
-  }
-}
 
 /**
  * @description 1 by 1 aspect ration.
  * @memberOf Values.AspectRatio
  * @return {string}
  */
-function AR1X1(): string {
-  return '1:1';
+function AR1X1(): AspectRatioQualifierValue {
+  return new AspectRatioQualifierValue('1:1');
 }
 
 /**
@@ -28,8 +16,8 @@ function AR1X1(): string {
  * @memberOf Values.AspectRatio
  * @return {string}
  */
-function AR5X4(): string {
-  return '5:4';
+function AR5X4(): AspectRatioQualifierValue {
+  return new AspectRatioQualifierValue('5:4');
 }
 
 /**
@@ -37,8 +25,8 @@ function AR5X4(): string {
  * @memberOf Values.AspectRatio
  * @return {string}
  */
-function AR4X3(): string {
-  return '4:3';
+function AR4X3(): AspectRatioQualifierValue {
+  return new AspectRatioQualifierValue('4:3');
 }
 
 /**
@@ -46,8 +34,8 @@ function AR4X3(): string {
  * @memberOf Values.AspectRatio
  * @return {string}
  */
-function AR3X2(): string {
-  return '3:2';
+function AR3X2(): AspectRatioQualifierValue {
+  return new AspectRatioQualifierValue('3:2');
 }
 
 /**
@@ -55,8 +43,8 @@ function AR3X2(): string {
  * @memberOf Values.AspectRatio
  * @return {string}
  */
-function AR16X9(): string {
-  return '16:9';
+function AR16X9(): AspectRatioQualifierValue {
+  return new AspectRatioQualifierValue('16:9');
 }
 
 /**
@@ -64,8 +52,8 @@ function AR16X9(): string {
  * @memberOf Values.AspectRatio
  * @return {string}
  */
-function AR3X1(): string {
-  return '3:1';
+function AR3X1(): AspectRatioQualifierValue {
+  return new AspectRatioQualifierValue('3:1');
 }
 
 /**
@@ -73,8 +61,26 @@ function AR3X1(): string {
  * @memberOf Values.AspectRatio
  * @return {IgnoreAspectRatioQualifier}
  */
-function IgnoreInitialAspectRatio(): IgnoreAspectRatioQualifier {
-  return new IgnoreAspectRatioQualifier();
+function ignoreAspectRatio(): any {
+  return Flag.ignoreAspectRatio();
 }
 
-export {AR1X1, AR5X4, AR3X1, AR3X2, AR4X3, AR16X9, IgnoreInitialAspectRatio};
+
+/**
+ * @description A list of all most commonly used aspect ratios. including an ‘ignore aspect ratio’ option which direct the BE to not stick to the original aspect ratio.
+ * This is used in the context of resize actions
+ * @namespace AspectRatio
+ * @memberOf Values
+ */
+class AspectRatio {
+  static AR1X1 = AR1X1;
+  static AR5X4 = AR5X4;
+  static AR3X1 = AR3X1;
+  static AR3X2 = AR3X2;
+  static AR4X3 = AR4X3;
+  static AR16X9 = AR16X9;
+  static ignoreAspectRatio = ignoreAspectRatio;
+}
+
+
+export {AR1X1, AR5X4, AR3X1, AR3X2, AR4X3, AR16X9, ignoreAspectRatio, AspectRatio};
