@@ -8,8 +8,6 @@ import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction
 import {LayerAction} from "../actions/overlay/LayerAction";
 import Action from "../actions/Action";
 import VariableAction from "../actions/variable/VariableAction";
-import CutByImage from "../actions/reshape/CutByImage";
-import BorderAction from "../actions/border/BorderAction";
 import {ConditionAction} from "../actions/condition/Condition";
 import ResizeSimpleAction from "../actions/resize/ResizeActions/shared/ResizeSimpleAction";
 import RotateAction from "../actions/rotate/RotateAction";
@@ -35,6 +33,7 @@ import {IReshape} from "../actions/reshape/Reshape";
 import {SystemColors} from "../values/color/Color";
 import {prepareColor} from "../utils/prepareColor";
 import {Extract} from "../actions/extract/Extract";
+import {Border} from "../actions/border/Border";
 import {FlagQualifier} from "../values/flag/FlagQualifier";
 
 declare type videoEditType = VolumeAction | TrimAction | ConcatenateAction;
@@ -118,9 +117,9 @@ class Transformation {
 
   /**
    * @description Adds a border around the image.
-   * @param {BorderAction} borderAction
+   * @param {Border} borderAction
    */
-  border(borderAction: BorderAction): this{
+  border(borderAction: Border): this{
     return this.addAction(borderAction);
   }
 
@@ -128,7 +127,6 @@ class Transformation {
    * @description Reshape an asset
    * @doc
    * @param {IReshape} reshapeAction
-   * @param {CutByImage} reshapeAction
    * @return {this}
    */
   reshape(reshapeAction: IReshape): this {

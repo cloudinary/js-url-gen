@@ -1,7 +1,7 @@
 import * as Actions from "../../../src/actions/Actions";
-import * as Border from "../../../src/actions/border/Border";
 import * as Resize from "../../../src/actions/resize/Resize";
 import * as RoundCorners from "../../../src/actions/roundCorners/RoundCorners";
+import {Border} from "../../../src/actions/Actions";
 
 
 describe('Tests for the Actions namespace', () => {
