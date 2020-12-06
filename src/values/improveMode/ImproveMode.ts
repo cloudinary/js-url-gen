@@ -25,5 +25,10 @@ function indoor(): string {
   return 'indoor';
 }
 
-export {outdoor, indoor};
+const ImproveMode = {
+  indoor,
+  outdoor
+};
+
+export {outdoor, indoor, ImproveMode};
 

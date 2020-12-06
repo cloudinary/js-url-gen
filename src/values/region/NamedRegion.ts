@@ -1,5 +1,8 @@
 import Action from "../../actions/Action";
 
+/**
+ * @memberOf Values.Region
+ */
 class NamedRegion extends Action {
   public regionType: 'faces' | 'ocr_text' | 'named';
 

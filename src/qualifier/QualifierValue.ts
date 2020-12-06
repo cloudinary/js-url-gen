@@ -35,11 +35,11 @@ class QualifierValue {
   }
 
   /**
-   * @desc Adds a value for the this qualifier instnace
-   * @param value
+   * @desc Adds a value for the this qualifier instance
+   * @param {unknown} value
    * @return {this}
    */
-  addValue(value: any): this {
+  addValue(value: unknown): this {
     // Append value or array of values
     if (Array.isArray(value)) {
       this.values = this.values.concat(value);

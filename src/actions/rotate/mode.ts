@@ -1,5 +1,6 @@
 import RotateAction from "./RotateAction";
 import {RotationMode} from "../../values/rotate/Rotate";
+import {RotationModeQualifierValue} from "../../values/rotate/RotationModeQualifierValue";
 
 /**
  * @memberOf Actions.Rotate
@@ -11,7 +12,7 @@ import {RotationMode} from "../../values/rotate/Rotate";
  * transformation.rotate(Rotate.mode(RotationMode.autoLeft());
  * @return {RotateAction}
  */
-function mode(rotationMode: RotationMode | string) :RotateAction {
+function mode(rotationMode: RotationModeQualifierValue | string) :RotateAction {
   return new RotateAction().mode(rotationMode);
 }
 

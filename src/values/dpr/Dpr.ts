@@ -12,4 +12,8 @@ function auto(): string {
   return 'auto';
 }
 
-export {auto};
+const DPR = {
+  auto
+};
+
+export {auto, DPR};

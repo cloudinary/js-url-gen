@@ -2,41 +2,41 @@
  * @memberOf Values
  * @namespace FontHinting
  */
-class FontHinting {
-  /**
-   * @doc
-   * @memberOf Values.FontHinting
-   */
-  static none(): string {
-    return '';
-  }
 
-  /**
-   * @doc
-   * @memberOf Values.FontHinting
-   */
-  static slight(): string {
-    return 'slight';
-  }
 
-  /**
-   * @doc
-   * @memberOf Values.FontHinting
-   */
-  static medium(): string {
-    return 'medium';
-  }
-
-  /**
-   * @doc
-   * @memberOf Values.FontHinting
-   */
-  static full(): string {
-    return 'full';
-  }
+/**
+ * @doc
+ * @memberOf Values.FontHinting
+ */
+function none(): string {
+  return '';
 }
 
-const {full, none, medium, slight} = FontHinting;
+/**
+ * @doc
+ * @memberOf Values.FontHinting
+ */
+function slight(): string {
+  return 'slight';
+}
+
+/**
+ * @doc
+ * @memberOf Values.FontHinting
+ */
+function medium(): string {
+  return 'medium';
+}
+
+/**
+ * @doc
+ * @memberOf Values.FontHinting
+ */
+function full(): string {
+  return 'full';
+}
+
+const FontHinting = {full, none, medium, slight};
 
 export {
   FontHinting,

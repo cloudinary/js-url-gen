@@ -1,6 +1,7 @@
 import Action from "../Action";
 import Qualifier from "../../qualifier/Qualifier";
 import {RotationMode} from "../../values/rotate/Rotate";
+import {RotationModeQualifierValue} from "../../values/rotate/RotationModeQualifierValue";
 
 const QUALIFIER_KEY = 'a';
 
@@ -26,7 +27,7 @@ class RotateAction extends Action {
    * possible values
    * @return {this}
    */
-  mode(rotationMode: RotationMode | string):this {
+  mode(rotationMode: RotationModeQualifierValue | string):this {
     return this.addValueToQualifier(QUALIFIER_KEY, rotationMode);
   }
 

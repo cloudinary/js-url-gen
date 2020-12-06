@@ -2,25 +2,24 @@
  * @memberOf Values
  * @namespace FontStyle
  */
-class FontStyle {
-  /**
-   * @@doc
-   * @memberOf Values.FontStyle
-   */
-  static normal(): string {
-    return 'normal';
-  }
 
-  /**
-   * @@doc
-   * @memberOf Values.FontStyle
-   */
-  static italic(): string {
-    return 'italic';
-  }
+/**
+ * @@doc
+ * @memberOf Values.FontStyle
+ */
+function normal(): string {
+  return 'normal';
 }
 
-const {normal, italic} = FontStyle;
+/**
+ * @@doc
+ * @memberOf Values.FontStyle
+ */
+function italic(): string {
+  return 'italic';
+}
+
+const FontStyle = {normal, italic};
 
 export {
   FontStyle,

@@ -51,7 +51,7 @@ class Action {
     return this;
   }
 
-  protected addValueToQualifier(qualifierKey: string, qualifierValue: any): this{
+  protected addValueToQualifier(qualifierKey: string, qualifierValue: unknown): this{
     this.qualifiers.get(qualifierKey).addValue(qualifierValue);
 
     return this;

@@ -36,8 +36,15 @@ function outer(): string {
   return 'outer';
 }
 
+const Outline = {
+  outer,
+  inner,
+  inner_fill,
+  fill
+};
 
 export {
+  Outline,
   outer,
   inner,
   inner_fill,

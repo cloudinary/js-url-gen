@@ -1,42 +1,42 @@
-import QualifierValue from "../../qualifier/QualifierValue";
-
+import {AnimatedFormatQualifierValue} from "./AnimatedFormatQualifierValue";
 
 /**
  * @@doc
  * @namespace AnimatedFormat
  * @memberOf Values
  */
-class AnimatedFormat extends QualifierValue{
-  /**
-   * @@doc
-   * @memberOf Values.AnimatedFormat
-   * @return {Values.AnimatedFormat}
-   */
-  static auto(): AnimatedFormat {
-    return new AnimatedFormat('auto');
-  }
 
 
-  /**
-   * @@doc
-   * @memberOf Values.AnimatedFormat
-   * @return {Values.AnimatedFormat}
-   */
-  static gif(): AnimatedFormat {
-    return new AnimatedFormat('gif');
-  }
-
-  /**
-   * @@doc
-   * @memberOf Values.AnimatedFormat
-   * @return {Values.AnimatedFormat}
-   */
-  static webp(): AnimatedFormat {
-    return new AnimatedFormat('webp');
-  }
+/**
+ * @@doc
+ * @memberOf Values.AnimatedFormat
+ * @return {Values.AnimatedFormatQualifierValue}
+ */
+function auto(): AnimatedFormatQualifierValue {
+  return new AnimatedFormatQualifierValue('auto');
 }
 
-const {auto, gif, webp} = AnimatedFormat;
+
+/**
+ * @@doc
+ * @memberOf Values.AnimatedFormat
+ * @return {Values.AnimatedFormatQualifierValue}
+ */
+function gif(): AnimatedFormatQualifierValue {
+  return new AnimatedFormatQualifierValue('gif');
+}
+
+/**
+ * @@doc
+ * @memberOf Values.AnimatedFormat
+ * @return {Values.AnimatedFormatQualifierValue}
+ */
+function webp(): AnimatedFormatQualifierValue {
+  return new AnimatedFormatQualifierValue('webp');
+}
+
+
+const AnimatedFormat = {auto, gif, webp};
 export {auto, gif, webp, AnimatedFormat};
 
 

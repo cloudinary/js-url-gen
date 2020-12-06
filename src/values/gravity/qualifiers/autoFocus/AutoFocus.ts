@@ -5,6 +5,7 @@ import {FocusOnValue} from "../focusOn/FocusOn";
  * @doc
  * @namespace AutoFocus
  * @memberOf Values
+ * @extends {SDK.QualifierValue}
  */
 class AutoFocus extends QualifierValue {
   readonly focusOn:FocusOnValue;

@@ -24,7 +24,7 @@ class Qualifier {
     return `${key}${delimiter}${qualifierValue.toString()}`;
   }
 
-  addValue(value: any): this {
+  addValue(value: unknown): this {
     this.qualifierValue.addValue(value);
 
     return this;

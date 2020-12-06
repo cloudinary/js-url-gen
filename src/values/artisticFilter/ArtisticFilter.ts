@@ -173,8 +173,33 @@ function zorro(): string {
   return 'zorro';
 }
 
+const ArtisticFilter = {
+  alDente,
+  athena,
+  audrey,
+  aurora,
+  daguerre,
+  eucalyptus,
+  hairspray,
+  hokusai,
+  peacock,
+  primavera,
+  quartz,
+  incognito,
+  redRock,
+  sizzle,
+  fes,
+  linen,
+  refresh,
+  sonnet,
+  ukulele,
+  frost,
+  zorro
+};
+
 
 export {
+  ArtisticFilter,
   alDente,
   athena,
   audrey,

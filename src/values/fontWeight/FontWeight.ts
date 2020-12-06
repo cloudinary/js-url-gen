@@ -2,41 +2,41 @@
  * @memberOf Values
  * @namespace FontWeight
  */
-class FontWeight {
-  /**
-   * @@doc
-   * @memberOf Values.FontWeight
-   */
-  static thin(): string {
-    return 'thin';
-  }
 
-  /**
-   * @@doc
-   * @memberOf Values.FontWeight
-   */
-  static light(): string {
-    return 'light';
-  }
-
-  /**
-   * @@doc
-   * @memberOf Values.FontWeight
-   */
-  static normal(): string {
-    return 'normal';
-  }
-
-  /**
-   * @@doc
-   * @memberOf Values.FontWeight
-   */
-  static bold(): string {
-    return 'bold';
-  }
+/**
+ * @@doc
+ * @memberOf Values.FontWeight
+ */
+function thin(): string {
+  return 'thin';
 }
 
-const {bold, light, normal, thin} = FontWeight;
+/**
+ * @@doc
+ * @memberOf Values.FontWeight
+ */
+function light(): string {
+  return 'light';
+}
+
+/**
+ * @@doc
+ * @memberOf Values.FontWeight
+ */
+function normal(): string {
+  return 'normal';
+}
+
+/**
+ * @@doc
+ * @memberOf Values.FontWeight
+ */
+function bold(): string {
+  return 'bold';
+}
+
+
+const FontWeight = {bold, light, normal, thin};
 export {
   FontWeight,
   bold,

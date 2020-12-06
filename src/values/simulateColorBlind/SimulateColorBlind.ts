@@ -7,6 +7,7 @@
 /**
  * @@doc
  * @memberOf Values.SimulateColorBlindValues
+ * @return {string}
  */
 function deuteranopia(): string {
   return 'deuteranopia';
@@ -15,6 +16,7 @@ function deuteranopia(): string {
 /**
  * @@doc
  * @memberOf Values.SimulateColorBlindValues
+ * @return {string}
  */
 function protanopia(): string {
   return 'protanopia';
@@ -23,6 +25,7 @@ function protanopia(): string {
 /**
  * @@doc
  * @memberOf Values.SimulateColorBlindValues
+ * @return {string}
  */
 function tritanopia(): string {
   return 'tritanopia';
@@ -31,6 +34,7 @@ function tritanopia(): string {
 /**
  * @@doc
  * @memberOf Values.SimulateColorBlindValues
+ * @return {string}
  */
 function tritanomaly(): string {
   return 'tritanomaly';
@@ -39,6 +43,7 @@ function tritanomaly(): string {
 /**
  * @@doc
  * @memberOf Values.SimulateColorBlindValues
+ * @return {string}
  */
 function deuteranomaly(): string {
   return 'dueteranomaly';
@@ -47,6 +52,7 @@ function deuteranomaly(): string {
 /**
  * @@doc
  * @memberOf Values.SimulateColorBlindValues
+ * @return {string}
  */
 function coneMonochromacy(): string {
   return 'cone_monochromacy';
@@ -55,13 +61,26 @@ function coneMonochromacy(): string {
 /**
  * @@doc
  * @memberOf Values.SimulateColorBlindValues
+ * @return {string}
  */
 function rodMonochromacy(): string {
   return 'rod_monochromacy';
 }
 
 
+
+const SimulateColorblind = {
+  coneMonochromacy,
+  deuteranomaly,
+  deuteranopia,
+  protanopia,
+  rodMonochromacy,
+  tritanomaly,
+  tritanopia
+};
+
 export {
+  SimulateColorblind,
   coneMonochromacy,
   deuteranomaly,
   deuteranopia,

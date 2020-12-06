@@ -1,7 +1,7 @@
 import Action from "../Action";
 import Qualifier from "../../qualifier/Qualifier";
 import * as Flag from "../../values/flag/Flag";
-import {AnimatedFormat} from "../../values/animatedFormat/AnimatedFormat";
+import {AnimatedFormatQualifierValue} from "../../values/animatedFormat/AnimatedFormatQualifierValue";
 
 /**
  * @class ToAnimatedAction
@@ -11,7 +11,7 @@ import {AnimatedFormat} from "../../values/animatedFormat/AnimatedFormat";
  * The flag fl_awebp is added only when an animated webp is requested.
  */
 class ToAnimatedAction extends Action {
-  constructor(animatedFormat: AnimatedFormat | string) {
+  constructor(animatedFormat: AnimatedFormatQualifierValue | string) {
     super();
     if (animatedFormat.toString() === 'webp'){
       this.addFlag(Flag.animatedWebP());
