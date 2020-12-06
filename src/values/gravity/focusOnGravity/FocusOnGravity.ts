@@ -1,13 +1,14 @@
-import {FocusOn} from "../qualifiers/focusOn/FocusOn";
+import {FocusOnValue} from "../qualifiers/focusOn/FocusOn";
 import {GravityQualifier} from "../GravityQualifier";
 import {AutoGravity} from "../autoGravity/AutoGravity";
 
 /**
  * @doc
  * @memberOf Values.Gravity
+ * @extends {Values.Gravity.GravityQualifier}
  */
 class FocusOnGravity extends GravityQualifier {
-  constructor(FocusOnObjects: FocusOn[]) {
+  constructor(FocusOnObjects: FocusOnValue[]) {
     // Required due to https://github.com/microsoft/TypeScript/issues/13029
     /* istanbul ignore next */
     super(FocusOnObjects);

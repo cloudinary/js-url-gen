@@ -1,5 +1,5 @@
 import QualifierValue from "../../../../qualifier/QualifierValue";
-import {FocusOn} from "../focusOn/FocusOn";
+import {FocusOnValue} from "../focusOn/FocusOn";
 
 /**
  * @doc
@@ -7,7 +7,7 @@ import {FocusOn} from "../focusOn/FocusOn";
  * @memberOf Values
  */
 class AutoFocus extends QualifierValue {
-  readonly focusOn:FocusOn;
+  readonly focusOn:FocusOnValue;
   private _weight: number | string;
   private shouldAvoid:boolean;
 
@@ -16,11 +16,11 @@ class AutoFocus extends QualifierValue {
    * @param {Values.FocusOn} obj The object to focus on
    * @param {number} weight
    */
-  static focusOn(obj: FocusOn, weight?: number): AutoFocus {
+  static focusOn(obj: FocusOnValue, weight?: number): AutoFocus {
     return new AutoFocus(obj, weight);
   }
 
-  constructor(focusOn:FocusOn, weight?: number | string) {
+  constructor(focusOn:FocusOnValue, weight?: number | string) {
     super();
     this._weight = weight;
     this.focusOn = focusOn;
