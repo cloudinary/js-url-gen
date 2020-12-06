@@ -5,6 +5,6 @@
     }
   },
   "hooks" :{
-    "after:bump" : "git add .."
+    "after:bump" : "git add .. -u"
   }
 }
