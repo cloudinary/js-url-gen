@@ -31,7 +31,7 @@ import {Cloudinary, TransformableImage} from '@cloudinary/base';
 const cld = new Cloudinary({});
 cld.useImage(TransformableImage);
 
-const image = cld.image();
+const image = cld.image('sample');
 
 image.setConfig({
     cloud: {

@@ -6,12 +6,12 @@ import {Cloudinary, TransformableImage} from '@cloudinary/base';
 
 // Create your instance
 const cld = new Cloudinary({
-  cloud: {
-    cloudName: 'demo'
-  },
-  url: {
-    secure: true // force http or https
-  }
+    cloud: {
+        cloudName: 'demo'
+    },
+    url: {
+        secure: true // force http or https
+    }
 });
 
 // Plug the image type into your instance
@@ -30,8 +30,8 @@ const myImage = cld.image('sample');
 
 
 // the resize() ActionGroup needs an Action parameter
-// Lets give resize() a ResizeScale paramter to scale our image
-// We import all of our Action parameters from @cloudinary/base/actions/{actionGroup}
+// Lets give resize() a ResizeScale parameter to scale our image
+// We import all of our Action parameters from @cloudinary/base/actions/Actions
 // Note that you can import all Resize Actions, or just the single one you want
 import {Resize} from "@cloudinary/base/actions/Actions";
 const {scale} = Resize;

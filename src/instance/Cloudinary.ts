@@ -15,7 +15,7 @@ class Cloudinary {
     this.TransformableImage = TImage;
   }
 
-  image(publicID: string): TransformableImage {
+  image(publicID?: string): TransformableImage {
     if (!this.TransformableImage) {
       throw 'You cannot use image without first invoking useImage()';
     }

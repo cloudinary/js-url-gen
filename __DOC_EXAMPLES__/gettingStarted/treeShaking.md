@@ -16,7 +16,7 @@ Everything can be very granularly imported to ensure you only import what you ne
 <h4>Without Tree-Shaking</h4>
 
  ```javascript
-         import {Resize} from '@cloudinary/base/actions';
+         import {Resize} from '@cloudinary/base/actions/Actions';
          Resize.scale()
          Resize.crop()
  ```
