@@ -3,5 +3,8 @@
     "@release-it/bumper": {
       "out": ["package.json", "../package.json"]
     }
+  },
+  "hooks" :{
+    "after:bump" : "git add .."
   }
 }
