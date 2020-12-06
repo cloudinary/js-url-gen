@@ -9,7 +9,7 @@
  * @memberOf Values.GradientFade
  * @return {string}
  */
-export function symmetric(): string {
+function symmetric(): string {
   return 'symmetric';
 }
 
@@ -18,6 +18,18 @@ export function symmetric(): string {
  * @memberOf Values.GradientFade
  * @return {string}
  */
-export function symmetricPad(): string {
+function symmetricPad(): string {
   return 'symmetric_pad';
 }
+
+
+const GradientFade = {
+  symmetric,
+  symmetricPad
+};
+
+export {
+  GradientFade,
+  symmetricPad,
+  symmetric
+};

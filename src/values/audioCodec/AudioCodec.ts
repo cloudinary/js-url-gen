@@ -52,7 +52,17 @@ function auto(): string {
   return 'auto';
 }
 
+const AudioCodec = {
+  auto,
+  aac,
+  mp3,
+  opus,
+  none,
+  vorbis
+};
+
 export {
+  AudioCodec,
   auto,
   aac,
   mp3,

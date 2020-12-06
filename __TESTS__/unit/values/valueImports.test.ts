@@ -12,7 +12,7 @@ import * as AudioFrequency from "../../../src/values/audioFrequency/AudioFrequen
 import {FontHinting} from "../../../src/values/fontHinting/FontHinting";
 import {FontAntialias} from "../../../src/values/fontAntialias/FontHinting";
 import {TextAlignment} from "../../../src/values/textAlignment/TextAlignment";
-import {TextDecoration} from "../../../src/values/textDecoration/TextAlignment";
+import {TextDecoration} from "../../../src/values/textDecoration/TextDecoration";
 
 describe('Test imported values', () => {
   it('Generates a URL', () => {

@@ -13,6 +13,7 @@ import {ExpressionQualifier} from "./ExpressionQualifier";
 
 /**
  * @memberOf Values.Expression
+ * @return {Values.Expression.ExpressionQualifier}
  */
 function expression(exp: string): ExpressionQualifier {
   return new ExpressionQualifier(exp

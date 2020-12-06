@@ -56,8 +56,17 @@ function keepCMYK(): string {
   return 'keep_cmyk';
 }
 
+const ColorSpace = {
+  CMYK,
+  keepCMYK,
+  noCMYK,
+  SRGB,
+  tinySRGB,
+  trueColor
+};
 
 export {
+  ColorSpace,
   CMYK,
   keepCMYK,
   noCMYK,

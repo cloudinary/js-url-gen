@@ -1,6 +1,9 @@
 import {NamedRegion} from "./NamedRegion";
 import Qualifier from "../../qualifier/Qualifier";
 
+/**
+ * @memberOf Values.Region
+ */
 class CustomRegion extends NamedRegion {
   constructor() {
     super('named');

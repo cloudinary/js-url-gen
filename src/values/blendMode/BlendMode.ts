@@ -13,7 +13,7 @@ import {BlendModeQualifier} from "./BlendModeQualifier";
 /**
  * @memberOf Values.BlendMode
  * @description Add an overlay image blended using the 'multiply' blend mode.
- * @return {BlendModeQualifier}
+ * @return {Values.BlendMode.BlendModeQualifier}
  */
 function multiply():BlendModeQualifier {
   return new BlendModeQualifier('multiply');
@@ -22,7 +22,7 @@ function multiply():BlendModeQualifier {
 /**
  * @memberOf Values.BlendMode
  * @description Add an overlay image blended using the 'screen' blend mode.
- * @return {BlendModeQualifier}
+ * @return {Values.BlendMode.BlendModeQualifier}
  */
 function screen():BlendModeQualifier {
   return new BlendModeQualifier('screen');
@@ -31,11 +31,17 @@ function screen():BlendModeQualifier {
 /**
  * @memberOf Values.BlendMode
  * @description Add an overlay image blended using the 'overlay' blend mode.
- * @return {BlendModeQualifier}
+ * @return {Values.BlendMode.BlendModeQualifier}
  */
 function overlay():BlendModeQualifier {
   return new BlendModeQualifier('overlay');
 }
+
+const BlendMode = {
+  screen,
+  multiply,
+  overlay
+};
 
 export {
   screen,
