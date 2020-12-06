@@ -34,7 +34,7 @@ function border(): BackgroundAutoBorderQualifier{
  *
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#content_aware_padding|Content-aware padding}
  * @memberOf Values.Background
- * @return {BackgroundQualifier}
+ * @return {Values.Background.BackgroundQualifier}
  */
 function auto(): BackgroundQualifier{
   return new BackgroundQualifier('auto');
@@ -70,7 +70,7 @@ function predominant(): BackgroundAutoPredominantQualifier {
 /**
  * @description Selects the predominant color while taking all pixels in the image into account.
  * @memberOf Values.Background
- * @return {BackgroundQualifier}
+ * @return {Values.Background.BackgroundQualifier}
  */
 function color(colorStr: SystemColors): BackgroundQualifier {
   return new BackgroundQualifier(prepareColor(colorStr));
@@ -85,6 +85,16 @@ function blurred(): BlurredBackgroundAction {
   return new BlurredBackgroundAction();
 }
 
+class Background {
+  static auto = auto;
+  static border = border;
+  static borderGradient = borderGradient;
+  static predominantGradient = predominantGradient;
+  static predominant = predominant;
+  static color = color;
+  static blurred = blurred;
+}
+
 export {
   auto,
   border,
@@ -92,6 +102,7 @@ export {
   predominantGradient,
   predominant,
   color,
-  blurred
+  blurred,
+  Background
 };
 
