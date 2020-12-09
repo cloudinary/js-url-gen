@@ -1,5 +1,7 @@
 import {CloudinaryAsset} from "./CloudinaryAsset";
-import {VideoTransformation} from "..";
+import {VideoTransformation} from "../sdk/transformation/VideoTransformation";
+
+
 
 /**
  * @memberOf SDK
