@@ -4,7 +4,7 @@
 
 ```javascript
 
-  import {Cloudinary, TransformableImage} from '@cloudinary/base';
+  import {Cloudinary, CloudinaryImage} from '@cloudinary/base';
 
   // Create your instance
   const cld = new Cloudinary({
@@ -17,7 +17,7 @@
   });
 
   // Tell your instance that you'd like to use the CloudinaryImage
-  cld.useImage(TransformableImage);
+  cld.useImage(CloudinaryImage);
 
   // Create a new image
   const myImage = cld.image('sample');
@@ -39,8 +39,8 @@
 <ul>
     <li>Imports Cloudinary modules and classes</li>
     <li>Creates a new Cloudinary instance, with a set of configurations</li>
-    <li>Instructs your instance to work with a Cloudinary Image (TransformableImage)</li>
-    <li>Creates a new TransformableImage instance with a publicID of 'sample' (<code>cld.image('sample')</code>)</li>
+    <li>Instructs your instance to work with a Cloudinary Image (CloudinaryImage)</li>
+    <li>Creates a new CloudinaryImage instance with a publicID of 'sample' (<code>cld.image('sample')</code>)</li>
     <li>Imports the <code>scale()</code> Action from <code>'@cloudinary/base/actions/resize'</code> </li>
     <li>Uses the Action methods <code>width</code> and <code>height</code> to set the scale size</li>
     <li>Applies your changes and creates a URL string</li>

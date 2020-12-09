@@ -1,6 +1,5 @@
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import TransformableImage from "../../../src/transformation/TransformableImage";
-import TransformableVideo from "../../../src/transformation/TransformableImage";
+import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 import {fill} from "../../../src/actions/resize/Resize";
 import * as Layers from "../../../src/actions/overlay/Overlay";
 import * as Position from "../../../src/values/position/Position";
@@ -8,6 +7,7 @@ import * as BlendMode from "../../../src/values/blendMode/BlendMode";
 import {VideoRange, VideoOffset} from "../../../src/values/video/Video";
 import format from "../../../src/actions/delivery/format";
 import {image, video} from "../../../src/values/sources/Sources";
+import {CloudinaryVideo} from "../../../src/assets/CloudinaryVideo";
 
 const {imageLayer, videoLayer} = Layers;
 
@@ -19,7 +19,7 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 
 describe('Tests for overlay actions', () => {
   it('Parses an overlay with an imageSource', () => {
-    const tImage = new TransformableImage('sample');
+    const tImage = new CloudinaryImage('sample');
     tImage
       .setConfig(CONFIG_INSTANCE)
       .resize(fill(1000, 1000))
@@ -43,7 +43,7 @@ describe('Tests for overlay actions', () => {
 
 
   it('Adds an overlay with position', () => {
-    const tImage = new TransformableImage('sample');
+    const tImage = new CloudinaryImage('sample');
     tImage
       .setConfig(CONFIG_INSTANCE)
       .overlay(
@@ -56,7 +56,7 @@ describe('Tests for overlay actions', () => {
   });
 
   it('Adds an overlay with position', () => {
-    const tImage = new TransformableImage('sample');
+    const tImage = new CloudinaryImage('sample');
     tImage
       .setConfig(CONFIG_INSTANCE)
       .overlay(
@@ -71,7 +71,7 @@ describe('Tests for overlay actions', () => {
   });
 
   it('Adds an overlay without position and with a blendMode', () => {
-    const tImage = new TransformableImage('sample');
+    const tImage = new CloudinaryImage('sample');
     tImage
       .setConfig(CONFIG_INSTANCE)
       .overlay(
@@ -80,7 +80,7 @@ describe('Tests for overlay actions', () => {
     expect(tImage.toURL()).toContain('l_sample/e_screen,fl_layer_apply/sample');
   });
   it('Adds a video overlay', () => {
-    const tVideo = new TransformableVideo('dog');
+    const tVideo = new CloudinaryVideo('dog');
     tVideo
       .setConfig(CONFIG_INSTANCE)
       .overlay(
@@ -90,7 +90,7 @@ describe('Tests for overlay actions', () => {
     expect(tVideo.toURL()).toContain('l_dog');
   });
   it('Adds a video overlay and converts to jpg', () => {
-    const tVideo = new TransformableVideo('dog');
+    const tVideo = new CloudinaryVideo('dog');
     tVideo
       .setConfig(CONFIG_INSTANCE)
       .overlay(

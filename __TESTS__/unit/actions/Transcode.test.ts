@@ -1,10 +1,10 @@
 import * as Transcode from '../../../src/actions/transcode/Transcode';
-import TransformableVideo from '../../../src/transformation/TransformableVideo';
 import CloudinaryConfig from '../../../src/config/CloudinaryConfig';
 import * as AudioCodec from '../../../src/values/audioCodec/AudioCodec';
 import * as AudioFrequency from '../../../src/values/audioFrequency/AudioFrequency';
 import * as StreaminProfile from '../../../src/values/streamingProfile/StreamingProfile';
 import * as AnimatedFormat from '../../../src/values/animatedFormat/AnimatedFormat';
+import {CloudinaryVideo} from "../../../src/assets/CloudinaryVideo";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -12,9 +12,10 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
   }
 });
 
+
 describe('Tests for Transformation Action -- Transcode', () => {
   it('Creates a cloudinaryURL with audiocodec', () => {
-    const url = new TransformableVideo()
+    const url = new CloudinaryVideo()
       .setConfig(CONFIG_INSTANCE)
       .setAssetType('video')
       .transcode(Transcode.audioCodec(AudioCodec.auto()))
@@ -25,7 +26,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
   });
 
   it('Creates a cloudinaryURL with bitrate', () => {
-    const url = new TransformableVideo()
+    const url = new CloudinaryVideo()
       .setConfig(CONFIG_INSTANCE)
       .setAssetType('video')
       .transcode(Transcode.bitRate('500k'))
@@ -36,7 +37,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
   });
 
   it('Creates a cloudinaryURL with bitrate.constant', () => {
-    const url = new TransformableVideo()
+    const url = new CloudinaryVideo()
       .setConfig(CONFIG_INSTANCE)
       .setAssetType('video')
       .transcode(Transcode
@@ -48,7 +49,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
   });
 
   it('Creates a cloudinaryURL with audioFrequency', () => {
-    const url = new TransformableVideo()
+    const url = new CloudinaryVideo()
       .setConfig(CONFIG_INSTANCE)
       .setAssetType('video')
       .transcode(Transcode
@@ -60,7 +61,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
   });
 
   it('Creates a cloudinaryURL with fps', () => {
-    const url = new TransformableVideo()
+    const url = new CloudinaryVideo()
       .setConfig(CONFIG_INSTANCE)
       .setAssetType('video')
       .transcode(Transcode
@@ -72,7 +73,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
   });
 
   it('Creates a cloudinaryURL with fpsRange from', () => {
-    const url = new TransformableVideo()
+    const url = new CloudinaryVideo()
       .setConfig(CONFIG_INSTANCE)
       .setAssetType('video')
       .transcode(Transcode
@@ -84,7 +85,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
   });
 
   it('Creates a cloudinaryURL with fpsRange from-to', () => {
-    const url = new TransformableVideo()
+    const url = new CloudinaryVideo()
       .setConfig(CONFIG_INSTANCE)
       .setAssetType('video')
       .transcode(Transcode
@@ -96,7 +97,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
   });
 
   it('Creates a cloudinaryURL with keyframeInterval', () => {
-    const url = new TransformableVideo()
+    const url = new CloudinaryVideo()
       .setConfig(CONFIG_INSTANCE)
       .setAssetType('video')
       .transcode(Transcode
@@ -108,7 +109,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
   });
 
   it('Creates a cloudinaryURL with streamingProfile', () => {
-    const url = new TransformableVideo()
+    const url = new CloudinaryVideo()
       .setConfig(CONFIG_INSTANCE)
       .setAssetType('video')
       .transcode(Transcode
@@ -120,7 +121,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
   });
 
   it('Creates a cloudinaryURL with toAnimated', () => {
-    const url = new TransformableVideo()
+    const url = new CloudinaryVideo()
       .setConfig(CONFIG_INSTANCE)
       .setAssetType('video')
       .transcode(Transcode
@@ -132,7 +133,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
   });
 
   it('Creates a cloudinaryURL with toAnimated webp', () => {
-    const url = new TransformableVideo()
+    const url = new CloudinaryVideo()
       .setConfig(CONFIG_INSTANCE)
       .setAssetType('video')
       .transcode(Transcode
@@ -144,7 +145,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
   });
 
   it('Creates a cloudinaryURL with toAnimated and delay', () => {
-    const url = new TransformableVideo()
+    const url = new CloudinaryVideo()
       .setConfig(CONFIG_INSTANCE)
       .setAssetType('video')
       .transcode(Transcode
@@ -156,7 +157,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
   });
 
   it('Creates a cloudinaryURL with toAnimated, delay, sampling', () => {
-    const url = new TransformableVideo()
+    const url = new CloudinaryVideo()
       .setConfig(CONFIG_INSTANCE)
       .setAssetType('video')
       .transcode(Transcode

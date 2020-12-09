@@ -1,7 +1,7 @@
 import createCloudinaryURL from "../../../src/url/cloudinaryURL";
 import {minimumPad, crop, fill, scale} from '../../../src/actions/resize/Resize';
-import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
+import {Transformation} from "../../../src";
 
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
@@ -11,7 +11,7 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 });
 
 
-describe('Tests for TransformableImage', () => {
+describe('Tests for CloudinaryURL', () => {
   it('Creates a default image cloudinaryURL', () => {
     expect(createCloudinaryURL(CONFIG_INSTANCE, { publicID: 'sample' }))
       .toBe('https://res.cloudinary.com/demo/image/upload/sample');
@@ -34,28 +34,28 @@ describe('Tests for TransformableImage', () => {
   });
 
   it('Creates a cloudinaryURL with minimumPad', () => {
-    const tImage = new TransformableImage();
+    const tImage = new Transformation();
     tImage.resize(minimumPad(250, 250));
     expect(createCloudinaryURL(CONFIG_INSTANCE, { publicID: 'sample' }, tImage))
       .toBe('https://res.cloudinary.com/demo/image/upload/c_mpad,h_250,w_250/sample');
   });
 
   it('Creates a cloudinaryURL with crop', () => {
-    const tImage = new TransformableImage();
+    const tImage = new Transformation();
     tImage.resize(crop(250, 250));
     expect(createCloudinaryURL(CONFIG_INSTANCE, { publicID: 'sample'}, tImage))
       .toBe('https://res.cloudinary.com/demo/image/upload/c_crop,h_250,w_250/sample');
   });
 
   it('Creates a cloudinaryURL with fill', () => {
-    const tImage = new TransformableImage();
+    const tImage = new Transformation();
     tImage.resize(fill(250, 250));
     expect(createCloudinaryURL(CONFIG_INSTANCE, { publicID: 'sample'}, tImage))
       .toBe('https://res.cloudinary.com/demo/image/upload/c_fill,h_250,w_250/sample');
   });
 
   it('Creates a cloudinaryURL with scale', () => {
-    const tImage = new TransformableImage();
+    const tImage = new Transformation();
     tImage.resize(scale(250, 250));
 
     expect(createCloudinaryURL(CONFIG_INSTANCE, {publicID: 'sample'}, tImage))

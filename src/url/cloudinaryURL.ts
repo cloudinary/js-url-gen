@@ -1,4 +1,4 @@
-import Transformation from '../transformation/Transformation';
+import {Transformation} from '../transformation/Transformation';
 import {IDescriptor} from '../interfaces/IDescriptor';
 import isFileName from './urlUtils/isFileName';
 import publicIDContainsVersion from './urlUtils/publicIDContainsVersion';

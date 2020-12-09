@@ -1,4 +1,4 @@
-import TransformableImage from '../../../src/transformation/TransformableImage';
+import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import {name} from "../../../src/actions/namedTransformation/NamedTransformation";
 import {scale} from "../../../src/actions/resize/Resize";
@@ -10,16 +10,16 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 });
 
 describe('Tests for Transformation Action -- NamedTransformation', () => {
-  it('Ensures NamedTransformation is accepted as an action to TransformableImage', () => {
-    const tImage = new TransformableImage();
+  it('Ensures NamedTransformation is accepted as an action to ImageTransformation', () => {
+    const tImage = new CloudinaryImage();
     // Ensures it compiles and doesn't throw
     expect(
       tImage.namedTransformation(name('foobar'))
     ).toEqual(tImage);
   });
 
-  it('Ensures name is accepted as an action to TransformableImage', () => {
-    const tImage = new TransformableImage();
+  it('Ensures name is accepted as an action to ImageTransformation', () => {
+    const tImage = new CloudinaryImage();
     // Ensures it compiles and doesn't throw
     expect(
       tImage.namedTransformation(name('foobar'))
@@ -27,7 +27,7 @@ describe('Tests for Transformation Action -- NamedTransformation', () => {
   });
 
   it('Creates a cloudinaryURL with name', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .namedTransformation(name('foobar'))
       .setPublicID('sample')
@@ -37,7 +37,7 @@ describe('Tests for Transformation Action -- NamedTransformation', () => {
   });
 
   it('Creates a cloudinaryURL with name and resize', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .resize(scale(100, 100))
       .namedTransformation(name('foobar'))

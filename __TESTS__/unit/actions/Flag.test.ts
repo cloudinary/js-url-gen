@@ -1,10 +1,8 @@
-import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as Flag from "../../../src/values/flag/Flag";
-import * as FlagESM from "../../../src/values/flag/Flag";
 import * as Resize from "../../../src/actions/resize/Resize";
-import TransformableVideo from "../../../src/transformation/TransformableVideo";
-
+import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
+import {CloudinaryVideo} from "../../../src/assets/CloudinaryVideo";
 
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
@@ -15,7 +13,7 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 
 describe('Tests for Transformation Action -- Flag', () => {
   it('Creates a cloudinaryURL with image flags', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .addFlag(Flag.anyFormat())
       .addFlag(Flag.animatedPng())
@@ -72,7 +70,7 @@ describe('Tests for Transformation Action -- Flag', () => {
   });
 
   it('Creates a cloudinaryURL with video flags', () => {
-    const url = new TransformableVideo()
+    const url = new CloudinaryVideo()
       .setConfig(CONFIG_INSTANCE)
       .setAssetType('video')
       .addFlag(Flag.hlsv3())
@@ -100,7 +98,7 @@ describe('Tests for Transformation Action -- Flag', () => {
   });
 
   it('Creates a cloudinaryURL with multiple flags', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .resize(
         Resize.fill(400)

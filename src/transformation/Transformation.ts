@@ -1,7 +1,3 @@
-import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigurations";
-import CloudinaryConfig from "../config/CloudinaryConfig";
-import {IDescriptor} from "../interfaces/IDescriptor";
-import createCloudinaryURL from "../url/cloudinaryURL";
 import Qualifier from "../qualifier/Qualifier";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
 import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction";
@@ -11,20 +7,8 @@ import VariableAction from "../actions/variable/VariableAction";
 import {ConditionAction} from "../actions/condition/Condition";
 import ResizeSimpleAction from "../actions/resize/ResizeActions/shared/ResizeSimpleAction";
 import RotateAction from "../actions/rotate/RotateAction";
-import SimpleEffectAction from "../actions/effect/EffectActions/SimpleEffectAction";
 import {BackgroundColor} from "../actions/background/actions/BackgroundColor";
 import {NamedTransformationAction} from "../actions/namedTransformation/NamedTransformationAction";
-import VolumeAction from "../actions/videoEdit/VolumeAction";
-import TrimAction from "../actions/videoEdit/TrimAction";
-import ConcatenateAction from "../actions/videoEdit/ConcatenateAction";
-import {Outline} from "../actions/effect/outline";
-import {ShadowEffectAction} from "../actions/effect/shadow";
-import {AssistColorBlindEffectAction} from "../actions/effect/assistColorBlind";
-import {SimulateColorBlindEffectAction} from "../actions/effect/simulateColorBlind";
-import {CartoonifyEffect} from "../actions/effect/cartoonify";
-import {StyleTransfer} from "../actions/effect/styleTransfer";
-import {VectorizeEffectAction} from "../actions/effect/vectorize";
-import {GradientFadeEffectAction} from "../actions/effect/gradientFade";
 import DeliveryAction from "../actions/delivery/DeliveryAction";
 import SmartObjectAction from "../actions/psdTools/SmartObjectAction";
 import ClipAction from "../actions/psdTools/ClipAction";
@@ -35,38 +19,18 @@ import {prepareColor} from "../utils/prepareColor";
 import {Extract} from "../actions/extract/Extract";
 import {Border} from "../actions/border/Border";
 import {FlagQualifier} from "../values/flag/FlagQualifier";
-
-declare type videoEditType = VolumeAction | TrimAction | ConcatenateAction;
-declare type EffectActions =
-  SimpleEffectAction
-  | Outline
-  | ShadowEffectAction
-  | AssistColorBlindEffectAction
-  | SimulateColorBlindEffectAction
-  | CartoonifyEffect
-  | StyleTransfer
-  | VectorizeEffectAction
-  | GradientFadeEffectAction
-
+import {EffectActions} from "../actions/effect/Effect";
+import {videoEditType} from "../actions/videoEdit/VideoEdit";
 
 /**
  * @description - Defines how to transform an asset
- * @class Transformation
+ * @memberOf SDK
  */
 class Transformation {
   actions: Action[];
-  config: ICloudinaryConfigurations;
-  asset: IDescriptor;
 
-  /**
-   *
-   * @param publicID
-   */
-  constructor(publicID?: string) {
+  constructor() {
     this.actions = [];
-    this.asset = {
-      publicID
-    };
   }
 
   /**
@@ -89,35 +53,10 @@ class Transformation {
       .join('/');
   }
 
-
-  /**
-   * @param version
-   */
-  setVersion(version:number): this {
-    this.describeAsset({
-      version
-    });
-    return this;
-  }
-
-  setAssetType(assetType: string): this {
-    this.describeAsset({
-      assetType
-    });
-    return this;
-  }
-
-  setStorageType(storageType: string): this {
-    this.describeAsset({
-      storageType
-    });
-    return this;
-  }
-
-
   /**
    * @description Adds a border around the image.
    * @param {Border} borderAction
+   * @return {this}
    */
   border(borderAction: Border): this{
     return this.addAction(borderAction);
@@ -136,6 +75,7 @@ class Transformation {
   /**
    * @description Resize the asset using provided resize action
    * @param {ResizeSimpleAction} resizeAction
+   * @return {this}
    */
   resize(resizeAction: ResizeSimpleAction): this {
     return this.addAction(resizeAction);
@@ -143,6 +83,7 @@ class Transformation {
 
   /**
    * @param {DeliveryAction} quality
+   * @return {this}
    */
   quality(quality: DeliveryAction): this {
     return this.addAction(quality);
@@ -151,6 +92,7 @@ class Transformation {
   /**
    * @description Rounds the specified corners of an image.
    * @param roundCornersAction
+   * @return {this}
    */
   roundCorners(roundCornersAction: RoundCornersAction): this {
     return this.addAction(roundCornersAction);
@@ -159,6 +101,7 @@ class Transformation {
   /**
    * @description Adds an overlay over the base image.
    * @param {LayerAction} overlayAction
+   * @return {this}
    */
   overlay(overlayAction: LayerAction): this {
     overlayAction.setLayerType('l');
@@ -168,6 +111,7 @@ class Transformation {
   /**
    * @description Adds an underlay under the base image.
    * @param {LayerAction} underlayAction
+   * @return {this}
    */
   underlay(underlayAction: LayerAction): this {
     underlayAction.setLayerType('u');
@@ -177,6 +121,7 @@ class Transformation {
   /**
    * @description Defines an new user variable.
    * @param {VariableAction} variableAction
+   * @return {this}
    */
   addVariable(variableAction: VariableAction): this {
     return this.addAction(variableAction);
@@ -185,6 +130,7 @@ class Transformation {
   /**
    * @description Specifies a condition to be met before applying a transformation.
    * @param {ConditionAction} conditionAction
+   * @return {this}
    */
   ifCondition(conditionAction: ConditionAction): this {
     return this.addAction(conditionAction);
@@ -193,6 +139,7 @@ class Transformation {
   /**
    * @description Specifies a transformation that is applied in the case that the initial condition is evaluated as
    * false.
+   * @return {this}
    */
   ifElse(): this {
     return this.addAction(new Action().addQualifier(new Qualifier('if', 'else')));
@@ -200,6 +147,7 @@ class Transformation {
 
   /**
    * @description Finishes the conditional transformation.
+   * @return {this}
    */
   endIfCondition(): this {
     return this.addAction(new Action().addQualifier(new Qualifier('if', 'end')));
@@ -208,6 +156,7 @@ class Transformation {
   /**
    * @description Applies a filter or an effect on an asset.
    * @param {SimpleEffectAction} effectAction
+   * @return {this}
    */
   effect(effectAction: EffectActions): this {
     return this.addAction(effectAction);
@@ -216,6 +165,7 @@ class Transformation {
   /**
    * @description Applies adjustment effect on an asset.
    * @param action
+   * @return {this}
    */
   adjust(action: Action): this {
     return this.addAction(action);
@@ -224,6 +174,7 @@ class Transformation {
   /**
    * @description Rotates the asset by the given angle.
    * @param {RotateAction} rotateAction
+   * @return {this}
    */
   rotate(rotateAction: RotateAction): this {
     return this.addAction(rotateAction);
@@ -232,6 +183,7 @@ class Transformation {
   /**
    * @description Applies a pre-defined named transformation of the given name.
    * @param {NamedTransformation} namedTransformation
+   * @return {this}
    */
   namedTransformation(namedTransformation:NamedTransformationAction ): this {
     return this.addAction(namedTransformation);
@@ -240,6 +192,7 @@ class Transformation {
   /**
    * @description Applies delivery action.
    * @param deliveryAction
+   * @return {this}
    */
   delivery(deliveryAction: Action): this {
     return this.addAction(deliveryAction);
@@ -257,6 +210,7 @@ class Transformation {
   /**
    * @description Adds a layer in a Photoshop document.
    * @param action
+   * @return {this}
    */
   psdTools(action: SmartObjectAction | ClipAction | GetLayerAction): this {
     return this.addAction(action);
@@ -266,6 +220,7 @@ class Transformation {
    * @doc
    * @description Adds a page or frame from a document
    * @param action
+   * @return {this}
    */
   extract(action: Extract): this {
     return this.addAction(action);
@@ -274,6 +229,7 @@ class Transformation {
   /**
    * @description Adds a flag as a separate action.
    * @param {Values.Flag} flagQualifier
+   * @return {this}
    */
   addFlag(flagQualifier: FlagQualifier): this {
     const action = new Action();
@@ -283,39 +239,10 @@ class Transformation {
 
   /**
    * @description Inject a custom function into the image transformation pipeline.
+   * @return {this}
    */
   customFunction(customFunction: CustomFunctionAction): this {
     return this.addAction(customFunction);
-  }
-
-  /**
-   * for current instance
-   * @param {ICloudinaryConfigurations} cloudinaryConfig
-   */
-  setConfig(cloudinaryConfig: ICloudinaryConfigurations): this {
-    this.config = new CloudinaryConfig(cloudinaryConfig);
-    return this;
-  }
-
-  setPublicID(publicID: string): this {
-    this.asset.publicID = publicID;
-    return this;
-  }
-
-  sign(): this {
-    return this;
-  }
-
-  describeAsset(assetDescriptor: IDescriptor): this {
-    Object.assign(this.asset, assetDescriptor);
-    return this;
-  }
-
-  toURL(): string {
-    return createCloudinaryURL(this.config, Object.assign({
-      assetType: 'image',
-      storageType: 'upload'
-    }, this.asset), this);
   }
 
   // Video Actions
@@ -379,8 +306,7 @@ class Transformation {
   videoEdit(action: videoEditType): this {
     return this.addAction(action);
   }
-
 }
 
-export default Transformation;
+export {Transformation};
 

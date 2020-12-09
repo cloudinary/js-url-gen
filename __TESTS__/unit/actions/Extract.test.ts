@@ -1,4 +1,4 @@
-import TransformableImage from '../../../src/transformation/TransformableImage';
+import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import {Extract} from "../../../src/actions/extract/Extract";
 
@@ -10,7 +10,7 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 
 describe('Tests for Transformation Action -- Extract', () => {
   it('Creates a cloudinaryURL with getFrame.byNumber', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .extract(Extract.getFrame().byNumber(4))
       .setPublicID('sample')
@@ -20,7 +20,7 @@ describe('Tests for Transformation Action -- Extract', () => {
   });
 
   it('Creates a cloudinaryURL with getFrame.byRange', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .extract(Extract.getFrame().byRange(4, 10))
       .setPublicID('sample')

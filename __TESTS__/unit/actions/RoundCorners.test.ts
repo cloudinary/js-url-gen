@@ -1,5 +1,5 @@
 import {byRadius, max} from 'actions/roundCorners/RoundCorners';
-import TransformableImage from 'transformation/TransformableImage';
+import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 
 
@@ -13,7 +13,7 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 describe('Tests for Transformation Action -- RoundCorners', () => {
 
   it('Ensure roundCorners accepts 1 radius', () => {
-    const url = new TransformableImage('sample')
+    const url = new CloudinaryImage('sample')
       .setConfig(CONFIG_INSTANCE)
       .roundCorners(byRadius(25))
       .toURL();
@@ -21,7 +21,7 @@ describe('Tests for Transformation Action -- RoundCorners', () => {
   });
 
   it('Ensure roundCorners accepts 2 radius', () => {
-    const url = new TransformableImage('sample')
+    const url = new CloudinaryImage('sample')
       .setConfig(CONFIG_INSTANCE)
       .roundCorners(byRadius(25, 20))
       .toURL();
@@ -29,7 +29,7 @@ describe('Tests for Transformation Action -- RoundCorners', () => {
   });
 
   it('Ensure roundCorners accepts 3 radius', () => {
-    const url = new TransformableImage('sample')
+    const url = new CloudinaryImage('sample')
       .setConfig(CONFIG_INSTANCE)
       .roundCorners(byRadius(25, 20, 15))
       .toURL();
@@ -37,7 +37,7 @@ describe('Tests for Transformation Action -- RoundCorners', () => {
   });
 
   it('Ensure roundCorners accepts 4 radius', () => {
-    const url = new TransformableImage('sample')
+    const url = new CloudinaryImage('sample')
       .setConfig(CONFIG_INSTANCE)
       .roundCorners(byRadius(25, 20, 15, 10))
       .toURL();
@@ -45,7 +45,7 @@ describe('Tests for Transformation Action -- RoundCorners', () => {
   });
 
   it('Ensure roundCorners accepts max radius', () => {
-    const url = new TransformableImage('sample')
+    const url = new CloudinaryImage('sample')
       .setConfig(CONFIG_INSTANCE)
       .roundCorners(max())
       .toURL();

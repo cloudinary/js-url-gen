@@ -1,8 +1,9 @@
-import TransformableImage from "../transformation/TransformableImage";
 import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigurations";
+import {CloudinaryImage} from "../assets/CloudinaryImage";
+
 
 class Cloudinary {
-  TransformableImage: typeof TransformableImage;
+  CloudinaryImage: typeof CloudinaryImage;
   cloudinaryConfig: ICloudinaryConfigurations;
 
   constructor(cloudinaryConfig?: ICloudinaryConfigurations) {
@@ -11,15 +12,15 @@ class Cloudinary {
     }
   }
 
-  useImage(TImage: typeof TransformableImage):void {
-    this.TransformableImage = TImage;
+  useImage(TImage: typeof CloudinaryImage):void {
+    this.CloudinaryImage = TImage;
   }
 
-  image(publicID: string): TransformableImage {
-    if (!this.TransformableImage) {
+  image(publicID?: string): CloudinaryImage {
+    if (!this.CloudinaryImage) {
       throw 'You cannot use image without first invoking useImage()';
     }
-    return new this.TransformableImage(publicID).setConfig(this.cloudinaryConfig);
+    return new this.CloudinaryImage(publicID).setConfig(this.cloudinaryConfig);
   }
 
   setConfig(cloudinaryConfig: ICloudinaryConfigurations):void {

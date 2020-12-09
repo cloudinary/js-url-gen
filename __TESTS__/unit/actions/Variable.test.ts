@@ -1,7 +1,6 @@
 import * as Variable from '../../../src/actions/variable/Variable';
 import * as Expression from '../../../src/values/expression/Expression';
-import * as VariableESM from '../../../src/actions/variable/Variable';
-import TransformableImage from '../../../src/transformation/TransformableImage';
+import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 
 const {set} = Variable;
@@ -14,22 +13,22 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 });
 
 describe('Tests for Transformation Action -- Variable', () => {
-  it('Ensures Variable namespace is accepted as an action to TransformableImage', () => {
-    const tImage = new TransformableImage();
+  it('Ensures Variable namespace is accepted as an action to ImageTransformation', () => {
+    const tImage = new CloudinaryImage();
     // Ensures it compiles and doesn't throw
     expect(
       tImage.addVariable(Variable.set('a', 30))
     ).toEqual(tImage);
   });
-  it('Ensures variable is accepted as an action to TransformableImage', () => {
-    const tImage = new TransformableImage();
+  it('Ensures variable is accepted as an action to ImageTransformation', () => {
+    const tImage = new CloudinaryImage();
     // Ensures it compiles and doesn't throw
     expect(
       tImage.addVariable(set('a', 30))
     ).toEqual(tImage);
   });
   it('Creates a cloudinaryURL with number variable', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .addVariable(set('a', 30))
       .setPublicID('sample')
@@ -39,7 +38,7 @@ describe('Tests for Transformation Action -- Variable', () => {
   });
 
   it('Creates a cloudinaryURL with number variable asFloat', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .addVariable(set('a', 30).asFloat())
       .setPublicID('sample')
@@ -49,7 +48,7 @@ describe('Tests for Transformation Action -- Variable', () => {
   });
 
   it('Creates a cloudinaryURL with number variable asInteger', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .addVariable(set('a', 30).asInteger())
       .setPublicID('sample')
@@ -59,7 +58,7 @@ describe('Tests for Transformation Action -- Variable', () => {
   });
 
   it('Creates a cloudinaryURL with a string variable', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .addVariable(set('a', 'bbb'))
       .setPublicID('sample')
@@ -69,7 +68,7 @@ describe('Tests for Transformation Action -- Variable', () => {
   });
 
   it('Creates a cloudinaryURL with a string variable and asInteger', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .addVariable(set('a', 'bbb').asInteger())
       .setPublicID('sample')
@@ -79,7 +78,7 @@ describe('Tests for Transformation Action -- Variable', () => {
   });
 
   it('Creates a cloudinaryURL with a string variable and asFloat', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .addVariable(set('a', 'bbb').asFloat())
       .setPublicID('sample')
@@ -89,7 +88,7 @@ describe('Tests for Transformation Action -- Variable', () => {
   });
 
   it('Creates a cloudinaryURL with expression', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .addVariable(Variable.set('myexp', Expression.expression('initial_width + 100 / 3')))
       .setPublicID('sample')
@@ -99,7 +98,7 @@ describe('Tests for Transformation Action -- Variable', () => {
   });
 
   it('Creates a cloudinaryURL with expression and asFloat', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .addVariable(Variable.set('myexp', expression('initial_width + 100 / 3')).asFloat())
       .setPublicID('sample')
@@ -109,7 +108,7 @@ describe('Tests for Transformation Action -- Variable', () => {
   });
 
   it('Creates a cloudinaryURL with array', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .addVariable(Variable.set('list', ['a', 'b', 'c']))
       .setPublicID('sample')
@@ -119,7 +118,7 @@ describe('Tests for Transformation Action -- Variable', () => {
   });
 
   it('Creates a cloudinaryURL with setReference', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .addVariable(Variable.setReference('myexp', 'my_file'))
       .setPublicID('sample')
@@ -129,7 +128,7 @@ describe('Tests for Transformation Action -- Variable', () => {
   });
 
   it('Creates a cloudinaryURL with setReference and asInteger', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .addVariable(Variable.setReference('myexp', 'my_file').asInteger())
       .setPublicID('sample')
@@ -139,7 +138,7 @@ describe('Tests for Transformation Action -- Variable', () => {
   });
 
   it('Creates a cloudinaryURL with setReference and asFloat', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .addVariable(Variable.setReference('myexp', 'my_file').asFloat())
       .setPublicID('sample')
@@ -149,7 +148,7 @@ describe('Tests for Transformation Action -- Variable', () => {
   });
 
   it('Creates a cloudinaryURL with setFromContext', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .addVariable(Variable.setFromContext('myexp', 'my_file'))
       .setPublicID('sample')
@@ -159,7 +158,7 @@ describe('Tests for Transformation Action -- Variable', () => {
   });
 
   it('Creates a cloudinaryURL with setFromContext and asInteger', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .addVariable(Variable.setFromContext('myexp', 'my_file').asInteger())
       .setPublicID('sample')
@@ -169,7 +168,7 @@ describe('Tests for Transformation Action -- Variable', () => {
   });
 
   it('Creates a cloudinaryURL with setFromContext and asFloat', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .addVariable(Variable.setFromContext('myexp', 'my_file').asFloat())
       .setPublicID('sample')
@@ -179,7 +178,7 @@ describe('Tests for Transformation Action -- Variable', () => {
   });
 
   it('Creates a cloudinaryURL with setFromMetadata', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .addVariable(Variable.setFromMetadata('myexp', 'my_file'))
       .setPublicID('sample')
@@ -189,7 +188,7 @@ describe('Tests for Transformation Action -- Variable', () => {
   });
 
   it('Creates a cloudinaryURL with setFromMetadata and asInteger', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .addVariable(Variable.setFromMetadata('myexp', 'my_file').asInteger())
       .setPublicID('sample')
@@ -199,7 +198,7 @@ describe('Tests for Transformation Action -- Variable', () => {
   });
 
   it('Creates a cloudinaryURL with setFromMetadata and asFloat', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .addVariable(Variable.setFromMetadata('myexp', 'my_file').asFloat())
       .setPublicID('sample')

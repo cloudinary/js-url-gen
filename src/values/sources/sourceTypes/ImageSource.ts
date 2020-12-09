@@ -1,8 +1,8 @@
 import {ISource} from "../ISource";
-import TransformableImage from "../../../transformation/TransformableImage";
+import {CloudinaryImage} from "../../../assets/CloudinaryImage";
 
 /**
- * @description Defines how to manipulate an image layer, is an instance of a {@link TransformableImage|TransformableImage}
+ * @description Defines how to manipulate an image layer, is an instance of a {@link ImageTransformation|ImageTransformation}
  * <div class="panel panel-warning">
  *   <div class="panel-heading">Notice</div>
  *   <div class="panel-body">
@@ -10,21 +10,21 @@ import TransformableImage from "../../../transformation/TransformableImage";
  *     You can find regular images and videos transformations below:
  *   </div>
   *   <ul>
- *     <li>{@link TransformableImage| Image Transformations}</li>
- *     <li>{@link TransformableVideo| Video Transformations}
+ *     <li>{@link ImageTransformation| Image Transformations}</li>
+ *     <li>{@link VideoTransformation| Video Transformations}
  *   </ul>
  * </div>
  * @class ImageSource
- * @augments {TransformableImage}
+ * @augments {ImageTransformation}
  * @implements {ISource}
  */
-class ImageSource extends TransformableImage implements ISource {
+class ImageSource extends CloudinaryImage implements ISource {
   getSource():string {
     return this.asset.publicID;
   }
 
   getTransformationString():string {
-    return this.toString();
+    return this.transformation.toString();
   }
 }
 

@@ -1,5 +1,4 @@
 import * as Position from "../../../src/values/position/Position";
-import * as PositionESM from "../../../src/values/position/Position";
 
 describe('Position Qualifier', () => {
   it('Tests simple gravitation', () => {

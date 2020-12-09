@@ -1,7 +1,7 @@
 /**
  * Utility function used to import items from the index of Base
- * @param {string} exportedObject - The name of an exported object in index, for example TransformableImage.
- *                                  The result will be `import {TransformableImage} from '../../dist'
+ * @param {string} exportedObject - The name of an exported object in index, for example ImageTransformation.
+ *                                  The result will be `import {ImageTransformation} from '../../dist'
  * @returns string
  */
 function importFromBase(exportedObject: string): string {

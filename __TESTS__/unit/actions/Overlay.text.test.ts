@@ -1,4 +1,4 @@
-import TransformableImage from "../../../src/transformation/TransformableImage";
+import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import {TextSource} from "../../../src/values/sources/sourceTypes/TextSource";
 import {text} from "../../../src/values/sources/Sources";
@@ -22,7 +22,7 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
  * @param blendMode
  */
 function getImageWithOverlay(source: TextSource, position?: PositionQualifier, blendMode?: BlendModeQualifier) {
-  return new TransformableImage('sample')
+  return new CloudinaryImage('sample')
     .setConfig(CONFIG_INSTANCE)
     .overlay(
       imageLayer(source, position, blendMode)

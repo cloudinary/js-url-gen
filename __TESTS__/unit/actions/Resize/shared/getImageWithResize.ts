@@ -1,6 +1,6 @@
-import TransformableImage from "../../../../../src/transformation/TransformableImage";
 import CloudinaryConfig from "../../../../../src/config/CloudinaryConfig";
 import ResizeSimpleAction from "../../../../../src/actions/resize/ResizeActions/shared/ResizeSimpleAction";
+import {CloudinaryImage} from "../../../../../src/assets/CloudinaryImage";
 
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
@@ -16,8 +16,8 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
  * @param resizeAction
  * @param type
  */
-function getImageWithResize(resizeAction: ResizeSimpleAction, type:'url' | 'image'):TransformableImage | string {
-  const img = new TransformableImage('sample')
+function getImageWithResize(resizeAction: ResizeSimpleAction, type:'url' | 'image'):CloudinaryImage | string {
+  const img = new CloudinaryImage('sample')
     .setConfig(CONFIG_INSTANCE)
     .resize(resizeAction);
 
