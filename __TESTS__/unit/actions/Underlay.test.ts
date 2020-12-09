@@ -1,5 +1,5 @@
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import TransformableImage from "../../../src/transformation/TransformableImage";
+import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 import {fill} from "../../../src/actions/resize/Resize";
 import * as Underlay from "../../../src/actions/underlay/Underlay";
 import * as Position from "../../../src/values/position/Position";
@@ -22,7 +22,7 @@ describe('Tests for underlay actions', () => {
     expect(UnderlayESM).toEqual(OverlayESM);
   });
   it('Parses an underlay with an imageSource', () => {
-    const tImage = new TransformableImage('sample');
+    const tImage = new CloudinaryImage('sample');
     tImage
       .setConfig(CONFIG_INSTANCE)
       .resize(fill(1000, 1000))
@@ -46,7 +46,7 @@ describe('Tests for underlay actions', () => {
 
 
   it('Adds an underlay with position', () => {
-    const tImage = new TransformableImage('sample');
+    const tImage = new CloudinaryImage('sample');
     tImage
       .setConfig(CONFIG_INSTANCE)
       .underlay(
@@ -59,7 +59,7 @@ describe('Tests for underlay actions', () => {
   });
 
   it('Adds an underlay with position', () => {
-    const tImage = new TransformableImage('sample');
+    const tImage = new CloudinaryImage('sample');
     tImage
       .setConfig(CONFIG_INSTANCE)
       .underlay(
@@ -74,7 +74,7 @@ describe('Tests for underlay actions', () => {
   });
 
   it('Adds an underlay without position and with a blendMode', () => {
-    const tImage = new TransformableImage('sample');
+    const tImage = new CloudinaryImage('sample');
     tImage
       .setConfig(CONFIG_INSTANCE)
       .underlay(

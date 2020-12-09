@@ -1,7 +1,7 @@
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as Adjust from '../../../src/actions/adjust/Adjust';
-import {TransformableImage} from "../../../src";
 import * as ImproveMode from "../../../src/values/improveMode/ImproveMode";
+import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -11,7 +11,7 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 
 describe('Tests for Transformation Action -- Adjust', () => {
   it('Ensure leveledAdjusts work properly', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .adjust(Adjust.autoBrightness())
       .adjust(Adjust.autoBrightness().blendPercentage(50))
@@ -120,7 +120,7 @@ describe('Tests for Transformation Action -- Adjust', () => {
   });
 
   it('tests replaceColor', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .adjust(Adjust
         .replaceColor('red')
@@ -133,7 +133,7 @@ describe('Tests for Transformation Action -- Adjust', () => {
   });
 
   it('tests replaceColor - without fromColor', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .adjust(Adjust.replaceColor('red'))
       .setPublicID('sample')
@@ -143,7 +143,7 @@ describe('Tests for Transformation Action -- Adjust', () => {
   });
 
   it('tests recolor matrix', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .adjust(Adjust.recolor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6], [0.7, 0.8, 0.9]]))
       .setPublicID('sample')
@@ -153,7 +153,7 @@ describe('Tests for Transformation Action -- Adjust', () => {
   });
 
   it('tests fillLight', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .adjust(Adjust.fillLight().level(0).bias(0))
       .setPublicID('sample')
@@ -163,7 +163,7 @@ describe('Tests for Transformation Action -- Adjust', () => {
   });
 
   it('tests improve', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .adjust(Adjust.improve().mode(ImproveMode.outdoor()).blend(0))
       .setPublicID('sample')

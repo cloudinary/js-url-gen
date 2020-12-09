@@ -1,5 +1,5 @@
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import TransformableImage from "../../../src/transformation/TransformableImage";
+import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 import {set} from "../../../src/actions/variable/Variable";
 import * as Resize from "../../../src/actions/resize/Resize";
 import * as Condition from "../../../src/actions/condition/Condition";
@@ -11,8 +11,8 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 });
 
 describe('Tests for Transformation Action -- Condition', () => {
-  it('Ensures Condition namespace is accepted as an action to TransformableImage', () => {
-    const tImage = new TransformableImage();
+  it('Ensures Condition namespace is accepted as an action to ImageTransformation', () => {
+    const tImage = new CloudinaryImage();
     // Ensures it compiles and doesn't throw
     expect(
       tImage.ifCondition(Condition.fromExpression('ar >= 1.0'))
@@ -20,7 +20,7 @@ describe('Tests for Transformation Action -- Condition', () => {
   });
 
   it('Creates a cloudinaryURL with condition =', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .ifCondition(Condition.fromExpression('ar = 1.0'))
       .endIfCondition()
@@ -31,7 +31,7 @@ describe('Tests for Transformation Action -- Condition', () => {
   });
 
   it('Creates a cloudinaryURL with condition !=', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .ifCondition(Condition.fromExpression('ar != 1.0'))
       .endIfCondition()
@@ -42,7 +42,7 @@ describe('Tests for Transformation Action -- Condition', () => {
   });
 
   it('Creates a cloudinaryURL with condition <', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .ifCondition(Condition.fromExpression('ar < 1.0'))
       .endIfCondition()
@@ -53,7 +53,7 @@ describe('Tests for Transformation Action -- Condition', () => {
   });
 
   it('Creates a cloudinaryURL with condition >', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .ifCondition(Condition.fromExpression('ar > 1.0'))
       .endIfCondition()
@@ -64,7 +64,7 @@ describe('Tests for Transformation Action -- Condition', () => {
   });
 
   it('Creates a cloudinaryURL with condition <=', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .ifCondition(Condition.fromExpression('ar <= 1.0'))
       .endIfCondition()
@@ -75,7 +75,7 @@ describe('Tests for Transformation Action -- Condition', () => {
   });
 
   it('Creates a cloudinaryURL with condition >=', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .ifCondition(Condition.fromExpression('ar >= 1.0'))
       .endIfCondition()
@@ -86,7 +86,7 @@ describe('Tests for Transformation Action -- Condition', () => {
   });
 
   it('Creates a cloudinaryURL with condition ar > 0.65 and w > 1000', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .addVariable(set('a', 30))
       .ifCondition(Condition.fromExpression('ar > 0.65 and w > 1000'))
@@ -98,7 +98,7 @@ describe('Tests for Transformation Action -- Condition', () => {
   });
 
   it('Creates a cloudinaryURL with elseIf', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .ifCondition(Condition.fromExpression('w <= 500'))
       .resize(Resize.crop(400))

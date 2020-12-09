@@ -1,7 +1,6 @@
 import getImageWithResize from "./shared/getImageWithResize";
 import fillPad from "../../../../src/actions/resize/ResizeActions/pad/FillPadAction";
 import * as Background from "../../../../src/values/background/Background";
-import {Compass} from "../../../../src/values/gravity/qualifiers/compass/Compass";
 import {Gravity} from "../../../../src/values/gravity/Gravity";
 
 

@@ -1,9 +1,9 @@
 import Action from '../../../src/actions/Action';
 import Qualifier from '../../../src/qualifier/Qualifier';
-import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import QualifierValue from "../../../src/qualifier/QualifierValue";
 import {FlagQualifier} from "../../../src/values/flag/FlagQualifier";
+import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -15,7 +15,7 @@ describe('Tests for Transformation Action', () => {
   it('Creates a cloudinaryURL with new action while passing a qualifier to addQualifier()', () => {
     const action = new Action().addQualifier(new Qualifier('a', 90));
 
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .addAction(action)
       .setPublicID('sample')
@@ -26,7 +26,7 @@ describe('Tests for Transformation Action', () => {
   it('Creates a cloudinaryURL with new action while passing an array to addQualifier()', () => {
     const action = new Action().addQualifier(new Qualifier('a', new QualifierValue([90, 80]).setDelimiter('.')));
 
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .addAction(action)
       .setPublicID('sample')
@@ -37,7 +37,7 @@ describe('Tests for Transformation Action', () => {
   it('Creates a cloudinaryURL with new action using addValue()', () => {
     const action = new Action().addQualifier(new Qualifier('a', new QualifierValue([90, 80]).setDelimiter('.')).addValue(70));
 
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .addAction(action)
       .setPublicID('sample')
@@ -50,7 +50,7 @@ describe('Tests for Transformation Action', () => {
       .addQualifier(new Qualifier('w', 100))
       .addQualifier(new Qualifier('c', 'fill'));
 
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .addAction(action)
       .setPublicID('sample')
@@ -63,7 +63,7 @@ describe('Tests for Transformation Action', () => {
       .addQualifier(new Qualifier('w', 100))
       .addQualifier(new Qualifier('w', 200));
 
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .addAction(action)
       .setPublicID('sample')
@@ -77,7 +77,7 @@ describe('Tests for Transformation Action', () => {
       .addQualifier(new Qualifier('l', 'sample'))
       .addFlag(new FlagQualifier('layer_apply'));
 
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .addAction(action)
       .setPublicID('sample')
@@ -92,7 +92,7 @@ describe('Tests for Transformation Action', () => {
       .addFlag(new FlagQualifier('first_flag'))
       .addFlag(new FlagQualifier('second_flag'));
 
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .addAction(action)
       .setPublicID('sample')

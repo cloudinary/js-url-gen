@@ -1,6 +1,6 @@
-import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import {PSDTools} from "../../../src/actions/Actions";
+import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -10,7 +10,7 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 
 describe('Tests for Transformation Action -- PSDTools', () => {
   it('Creates a cloudinaryURL with clip number', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .psdTools(PSDTools.clip(9))
       .setPublicID('sample')
@@ -20,7 +20,7 @@ describe('Tests for Transformation Action -- PSDTools', () => {
   });
 
   it('Creates a cloudinaryURL with clip string', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .psdTools(PSDTools.clip("path"))
       .setPublicID('sample')
@@ -30,7 +30,7 @@ describe('Tests for Transformation Action -- PSDTools', () => {
   });
 
   it('Creates a cloudinaryURL with clip evenOdd', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .psdTools(PSDTools.clip(9).evenOdd())
       .setPublicID('sample')
@@ -40,7 +40,7 @@ describe('Tests for Transformation Action -- PSDTools', () => {
   });
 
   it('Creates a cloudinaryURL with getLayer.byNumber', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .psdTools(PSDTools.getLayer().byNumber(4))
       .setPublicID('sample')
@@ -50,7 +50,7 @@ describe('Tests for Transformation Action -- PSDTools', () => {
   });
 
   it('Creates a cloudinaryURL with getLayer.byRange', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .psdTools(PSDTools.getLayer().byRange(4, 10))
       .setPublicID('sample')
@@ -60,7 +60,7 @@ describe('Tests for Transformation Action -- PSDTools', () => {
   });
 
   it('Creates a cloudinaryURL with getLayer.byName', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .psdTools(PSDTools.getLayer().byName('sample'))
       .setPublicID('sample')
@@ -70,7 +70,7 @@ describe('Tests for Transformation Action -- PSDTools', () => {
   });
 
   it('Creates a cloudinaryURL with smartObject.byIndex', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .psdTools(PSDTools.smartObject().byIndex(8).byIndex(5))
       .setPublicID('sample')
@@ -80,7 +80,7 @@ describe('Tests for Transformation Action -- PSDTools', () => {
   });
 
   it('Creates a cloudinaryURL with smartObject.byFileName', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .psdTools(PSDTools.smartObject().byFileName('myFile').byFileName('myFile2'))
       .setPublicID('sample')

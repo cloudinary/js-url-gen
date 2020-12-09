@@ -1,9 +1,9 @@
-import TransformableImage from "../../src/transformation/TransformableImage";
 import * as Resize from "../../src/actions/resize/Resize";
 import ICloudinaryConfigurations from "../../src/interfaces/Config/ICloudinaryConfigurations";
 import IURLConfig from "../../src/interfaces/Config/IURLConfig";
 import CloudinaryConfig from "../../src/config/CloudinaryConfig";
 import createCloudinaryURL from "../../src/url/cloudinaryURL";
+import {CloudinaryImage} from "../../src/assets/CloudinaryImage";
 
 
 /**
@@ -30,7 +30,7 @@ const DEMO_CONFIG = {
 
 describe('It tests a combination of Cloudinary URL and Configuration', () => {
   it ('Generates a URL', () => {
-    const url = new TransformableImage('my_image')
+    const url = new CloudinaryImage('my_image')
       .setConfig(DEMO_CONFIG)
       .toURL();
 
@@ -38,12 +38,12 @@ describe('It tests a combination of Cloudinary URL and Configuration', () => {
   });
   it ('Throw error when config is invalid', () => {
     expect(() => {
-      new TransformableImage('my_image')
+      new CloudinaryImage('my_image')
         .setConfig({});
     }).toThrow();
   });
   it ('Generates a URL with transforamtions', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(DEMO_CONFIG)
       .resize(Resize.fill(100, 100))
       .setPublicID('sample')
@@ -66,7 +66,7 @@ describe('It tests a combination of Cloudinary URL and Configuration', () => {
 
       // Utility function that returns a new instance with configuration set
       image(publicID: string) {
-        return new TransformableImage(publicID)
+        return new CloudinaryImage(publicID)
           .setConfig(this.cloudinaryConfig);
       }
     }

@@ -1,7 +1,8 @@
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import URLConfig from "../../../src/config/URLConfig";
 import CloudConfig from "../../../src/config/CloudConfig";
-import TransformableImage from "../../../src/transformation/TransformableImage";
+import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
+
 
 describe('Tests for CloudinaryConfiguration', () => {
   it('Creates a CloudinaryConfig with defaults', () => {
@@ -99,11 +100,11 @@ describe('Tests for CloudinaryConfiguration', () => {
 
     // Configs expect objects as input, but we allow invalid types without throwing
     expect(() => {
-      new CloudConfig('foo' as any);
+      new CloudConfig('foo' as unknown);
     }).toThrow();
 
     expect(() => {
-      new CloudConfig([] as any);
+      new CloudConfig([] as unknown);
     }).toThrow();
 
     expect(new URLConfig([])).toEqual({
@@ -139,7 +140,7 @@ describe('Tests for CloudinaryConfiguration', () => {
   });
 
   it('Should set secure to true by default', () => {
-    const url = new TransformableImage('sample')
+    const url = new CloudinaryImage('sample')
       .setConfig({
         cloud: {
           cloudName:'demo'
@@ -151,7 +152,7 @@ describe('Tests for CloudinaryConfiguration', () => {
   });
 
   it('Should allow setting secure attribute', () => {
-    const url = new TransformableImage('sample')
+    const url = new CloudinaryImage('sample')
       .setConfig({
         cloud: {
           cloudName: 'demo'

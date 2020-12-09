@@ -1,6 +1,5 @@
 import * as VideoEdit from '../../../src/actions/videoEdit/VideoEdit';
-import * as VideoEditESM from '../../../src/actions/videoEdit/VideoEdit';
-import TransformableVideo from '../../../src/transformation/TransformableVideo';
+import {CloudinaryVideo} from "../../../src/assets/CloudinaryVideo";
 import * as Sources from "../../../src/values/sources/Sources";
 
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
@@ -14,7 +13,7 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 
 describe('Tests for Transformation Action -- VideoEdit', () => {
   it('Creates a cloudinaryURL with concatenate', () => {
-    const url = new TransformableVideo()
+    const url = new CloudinaryVideo()
       .setConfig(CONFIG_INSTANCE)
       .videoEdit(VideoEdit.concatenate(Sources.video('sample')))
       .setAssetType('video')
@@ -25,7 +24,7 @@ describe('Tests for Transformation Action -- VideoEdit', () => {
   });
 
   it('Creates a cloudinaryURL with concatenate.transition', () => {
-    const url = new TransformableVideo()
+    const url = new CloudinaryVideo()
       .setConfig(CONFIG_INSTANCE)
       .videoEdit(VideoEdit.concatenate(Sources.video('sample'))
         .transition(Sources.video('dog')))
@@ -37,7 +36,7 @@ describe('Tests for Transformation Action -- VideoEdit', () => {
   });
 
   it('Creates a cloudinaryURL with trim', () => {
-    const url = new TransformableVideo()
+    const url = new CloudinaryVideo()
       .setConfig(CONFIG_INSTANCE)
       .videoEdit(VideoEdit.trim()
         .startOffset(3)
@@ -51,7 +50,7 @@ describe('Tests for Transformation Action -- VideoEdit', () => {
   });
 
   it('Creates a cloudinaryURL with volume string', () => {
-    const url = new TransformableVideo()
+    const url = new CloudinaryVideo()
       .setConfig(CONFIG_INSTANCE)
       .videoEdit(VideoEdit.volume('5db'))
       .setAssetType('video')
@@ -62,7 +61,7 @@ describe('Tests for Transformation Action -- VideoEdit', () => {
   });
 
   it('Creates a cloudinaryURL with volume number', () => {
-    const url = new TransformableVideo()
+    const url = new CloudinaryVideo()
       .setConfig(CONFIG_INSTANCE)
       .videoEdit(VideoEdit.volume(10))
       .setAssetType('video')
@@ -73,7 +72,7 @@ describe('Tests for Transformation Action -- VideoEdit', () => {
   });
 
   it('Creates a cloudinaryURL with volume Volume.mute()', () => {
-    const url = new TransformableVideo()
+    const url = new CloudinaryVideo()
       .setConfig(CONFIG_INSTANCE)
       .videoEdit(VideoEdit.volume(Volume.mute()))
       .setAssetType('video')
@@ -84,7 +83,7 @@ describe('Tests for Transformation Action -- VideoEdit', () => {
   });
 
   it('Creates a cloudinaryURL with volume Volume.byDecibels()', () => {
-    const url = new TransformableVideo()
+    const url = new CloudinaryVideo()
       .setConfig(CONFIG_INSTANCE)
       .videoEdit(VideoEdit.volume(Volume.byDecibels(5)))
       .setAssetType('video')
@@ -95,7 +94,7 @@ describe('Tests for Transformation Action -- VideoEdit', () => {
   });
 
   it('Creates a cloudinaryURL with volume Volume.byPercent()', () => {
-    const url = new TransformableVideo()
+    const url = new CloudinaryVideo()
       .setConfig(CONFIG_INSTANCE)
       .videoEdit(VideoEdit.volume(Volume.byPercent('10')))
       .setAssetType('video')

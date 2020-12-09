@@ -1,6 +1,6 @@
 import crop from "../../../../src/actions/resize/ResizeActions/CropAction";
 import * as AspectRatio from "../../../../src/values/aspectRatio/AspectRatio";
-import TransformableImage from "../../../../src/transformation/TransformableImage";
+import {CloudinaryImage} from "../../../../src/assets/CloudinaryImage";
 import CloudinaryConfig from "../../../../src/config/CloudinaryConfig";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
@@ -11,7 +11,7 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 
 describe('Tests for AspectRatio values Action -- Resize.crop', () => {
   it('Generates URL using AspectRatio options', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .resize(
         crop().aspectRatio(AspectRatio.AR1X1())

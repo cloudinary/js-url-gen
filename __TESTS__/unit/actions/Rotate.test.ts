@@ -1,5 +1,5 @@
 import * as Rotate from '../../../src/actions/rotate/Rotate';
-import TransformableImage from '../../../src/transformation/TransformableImage';
+import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as RotationMode from "../../../src/values/rotate/Rotate";
 
@@ -11,7 +11,7 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 
 describe('Tests for Transformation Action -- Rotate', () => {
   it('Creates a cloudinaryURL with Rotate', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .rotate(Rotate.mode(RotationMode.verticalFlip()))
       .rotate(Rotate.mode(RotationMode.horizontalFlip()))

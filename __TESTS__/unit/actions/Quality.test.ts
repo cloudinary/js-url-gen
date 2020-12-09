@@ -1,5 +1,5 @@
 import * as Quality from "../../../src/values/quality/Quality";
-import TransformableImage from '../../../src/transformation/TransformableImage';
+import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as Delivery from "../../../src/actions/delivery/Delivery";
 
@@ -12,8 +12,8 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 });
 
 describe('Tests for Transformation Action -- Delivery.quality', () => {
-  it('Ensures auto is accepted as an action to TransformableImage', () => {
-    const tImage = new TransformableImage();
+  it('Ensures auto is accepted as an action to ImageTransformation', () => {
+    const tImage = new CloudinaryImage();
     // Ensures it compiles and doesn't throw
     expect(
       tImage.quality(Delivery.quality('80'))
@@ -21,7 +21,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
   });
 
   it('Creates a cloudinaryURL with quality', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .delivery(Delivery.quality(Quality.auto()))
       .setPublicID('sample')
@@ -31,7 +31,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
   });
 
   it('Creates a cloudinaryURL with quality:best', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .delivery(Delivery.quality(Quality.autoBest()))
       .setPublicID('sample')
@@ -41,7 +41,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
   });
 
   it('Creates a cloudinaryURL with quality:eco', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .delivery(Delivery.quality(Quality.autoEco()))
       .setPublicID('sample')
@@ -51,7 +51,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
   });
 
   it('Creates a cloudinaryURL with quality:good', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .delivery(Delivery.quality(Quality.autoGood()))
       .setPublicID('sample')
@@ -61,7 +61,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
   });
 
   it('Creates a cloudinaryURL with quality:low', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .delivery(Delivery.quality(Quality.autoLow()))
       .setPublicID('sample')
@@ -71,7 +71,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
   });
 
   it('Creates a cloudinaryURL with jpegmini', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .delivery(Delivery.quality(Quality.jpegmini()))
       .setPublicID('sample')
@@ -81,7 +81,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
   });
 
   it('Creates a cloudinaryURL with jpegmini HIGH', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .delivery(Delivery.quality(Quality.jpegminiHigh()))
       .setPublicID('sample')
@@ -91,7 +91,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
   });
 
   it('Creates a cloudinaryURL with jpegmini MEDIUM', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .delivery(Delivery.quality(Quality.jpegminiMedium()))
       .setPublicID('sample')
@@ -101,7 +101,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
   });
 
   it('Creates a cloudinaryURL with jpegmini BEST', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .delivery(Delivery.quality(Quality.jpegminiBest()))
       .setPublicID('sample')
@@ -111,7 +111,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
   });
 
   it('Creates a cloudinaryURL with level', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .delivery(Delivery.quality('75').chromaSubSampling(ChromaSubSampling.chroma420()))
       .setPublicID('sample')
@@ -121,7 +121,7 @@ describe('Tests for Transformation Action -- Delivery.quality', () => {
   });
 
   it('Sets Quanitzation level', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .delivery(Delivery.quality('75').quantization(123))
       .setPublicID('sample')

@@ -1,4 +1,4 @@
-import TransformableImage from '../../../src/transformation/TransformableImage';
+import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as CustomFunction from "../../../src/actions/customFunction/CustomFunction";
 
@@ -10,7 +10,7 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 
 describe('Tests for Transformation Action -- NamedTransformation', () => {
   it ('Works with wasm', () => {
-    const url = new TransformableImage('sample')
+    const url = new CloudinaryImage('sample')
       .setConfig(CONFIG_INSTANCE)
       .customFunction(CustomFunction.wasm('my_example.wasm')).toURL();
 
@@ -18,7 +18,7 @@ describe('Tests for Transformation Action -- NamedTransformation', () => {
   });
 
   it ('Works with remote', () => {
-    const url = new TransformableImage('sample')
+    const url = new CloudinaryImage('sample')
       .setConfig(CONFIG_INSTANCE)
       .customFunction(CustomFunction.remote('https://my.preprocess.custom/function')).toURL();
 
@@ -26,7 +26,7 @@ describe('Tests for Transformation Action -- NamedTransformation', () => {
   });
 
   it ('Works with remote preprocessed', () => {
-    const url = new TransformableImage('sample')
+    const url = new CloudinaryImage('sample')
       .setConfig(CONFIG_INSTANCE)
       .customFunction(CustomFunction.remote('https://my.preprocess.custom/function').preprocess()).toURL();
 
@@ -34,7 +34,7 @@ describe('Tests for Transformation Action -- NamedTransformation', () => {
   });
 
   it('tests url safe base64 encoding', () => {
-    const url = new TransformableImage('sample')
+    const url = new CloudinaryImage('sample')
       .setConfig(CONFIG_INSTANCE)
       .customFunction(CustomFunction.remote('https://opengraphimg.com/.netlify/functions/generate-opengraph?author=opengraphimg&title=Hey%20Chris%20this%20is%20working').preprocess()).toURL();
 

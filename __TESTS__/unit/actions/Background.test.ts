@@ -1,4 +1,3 @@
-import TransformableImage from '../../../src/transformation/TransformableImage';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import {Color} from "../../../src/values/color/Color";
 import * as Resize from "../../../src/actions/resize/Resize";
@@ -12,6 +11,7 @@ import {
   blurred
 } from "../../../src/values/background/Background";
 import {GradientDirection} from "../../../src/values/gradientDirection/GradientDirection";
+import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
@@ -23,7 +23,7 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 
 describe('Tests for Transformation Action -- Background', () => {
   it('Creates a cloudinaryURL with Background.auto', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .backgroundColor(Color.RED)
       .setPublicID('sample')
@@ -34,7 +34,7 @@ describe('Tests for Transformation Action -- Background', () => {
 
 
   it('Background.border().contrast()', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .resize(Resize.pad(250, 250)
         .background(border().contrast())
@@ -49,7 +49,7 @@ describe('Tests for Transformation Action -- Background', () => {
   });
 
   it('Background.border().contrast().palette()', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .resize(Resize.pad(250, 250)
         .background(border().contrast().palette('red', 'green', 'blue'))
@@ -62,7 +62,7 @@ describe('Tests for Transformation Action -- Background', () => {
 
 
   it('Background.auto()', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .resize(Resize.pad(250, 250)
         .background(auto())
@@ -74,7 +74,7 @@ describe('Tests for Transformation Action -- Background', () => {
   });
 
   it('Background.borderGradient().gradientDirection().gradientColors()', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .resize(Resize.pad(250, 250)
         .background(borderGradient()
@@ -95,7 +95,7 @@ describe('Tests for Transformation Action -- Background', () => {
   });
 
   it('Background.predominantGradient().gradientDirection().gradientColors()', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .resize(Resize.pad(250, 250)
         .background(predominantGradient()
@@ -117,7 +117,7 @@ describe('Tests for Transformation Action -- Background', () => {
 
 
   it('Background.Color()', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .resize(Resize.pad(250, 250)
         .background(color('red'))
@@ -129,7 +129,7 @@ describe('Tests for Transformation Action -- Background', () => {
   });
 
   it('Background.predominant().contrast().palette()', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .resize(Resize.pad(250, 250)
         .background(predominant().contrast().palette('red', 'green', 'blue'))
@@ -145,7 +145,7 @@ describe('Tests for Transformation Action -- Background', () => {
 
 
   it('Test blurred background', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .resize(Resize.pad(250, 250)
         .background(blurred())
@@ -157,7 +157,7 @@ describe('Tests for Transformation Action -- Background', () => {
   });
 
   it('Test blurred background with one qualifiers', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .resize(Resize.pad(250, 250)
         .background(blurred().intensity(100).brightness(100))

@@ -1,4 +1,4 @@
-import TransformableImage from '../../../src/transformation/TransformableImage';
+import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as ArtisticFilter from "../../../src/values/artisticFilter/ArtisticFilter";
 import * as Effect from "../../../src/actions/effect/Effect";
@@ -19,7 +19,7 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 
 describe('Tests for Transformation Action -- Effect', () => {
   it('Creates a cloudinaryURL with Simple and Leveled effects', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .effect(Effect.advancedRedEye())
       .effect(Effect.accelerate())
@@ -102,7 +102,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Creates a cloudinaryURL with effect shadow:50', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .effect(Effect.shadow())
       .effect(Effect.shadow(50))
@@ -114,7 +114,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Creates a cloudinaryURL with effect colorize', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .effect(Effect.colorize(10).color('red'))
       .setPublicID('sample')
@@ -124,7 +124,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Creates a cloudinaryURL with effect colorize:level', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .effect(Effect.colorize(50))
       .setPublicID('sample')
@@ -134,7 +134,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Creates a cloudinaryURL with effect colorize:level', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .effect(Effect.colorize().level(10))
       .setPublicID('sample')
@@ -144,7 +144,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Creates a cloudinaryURL with effect oilPaint', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .effect(Effect.oilPaint())
       .setPublicID('sample')
@@ -154,7 +154,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Creates a cloudinaryURL with effect oilPaint:level', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .effect(Effect.oilPaint(50))
       .setPublicID('sample')
@@ -164,7 +164,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Creates a cloudinaryURL with effect artisticFilter', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .effect(Effect.artisticFilter(ArtisticFilter.peacock()))
       .setPublicID('sample')
@@ -174,7 +174,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Creates a cloudinaryURL with effect cartoonify:50', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .effect(cartoonify().strength(50).colorReductionLevel('bw'))
       .setPublicID('sample')
@@ -188,7 +188,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Creates a cloudinaryURL with effect style_transfer', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .effect(Effect.styleTransfer(image('woman')))
       .setPublicID('sample')
@@ -198,7 +198,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Creates a cloudinaryURL with effect style_transfer:strength', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .effect(Effect.styleTransfer(image('woman')).strength(15))
       .setPublicID('sample')
@@ -208,7 +208,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Creates a cloudinaryURL with effect style_transfer:preserve_color:strength', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .effect(Effect.styleTransfer(image('woman'))
         .strength(15)
@@ -221,7 +221,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Creates a cloudinaryURL with effect style_transfer:preserve_color:strength with a transformation', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .effect(Effect.styleTransfer(image('woman').resize(scale(100, 100)))
         .strength(15)
@@ -234,7 +234,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Tests for Effect.dither', () => {
-    const url = new TransformableImage()
+    const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .effect(Effect.dither())
       .effect(Effect.dither(halftone4x4orthogonal()))
