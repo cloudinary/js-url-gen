@@ -1,8 +1,8 @@
 ```javascript
 
 // Import the cloudinary class, and the assets you want to use
-// In this case, we import a TransformableImage type.
-import {Cloudinary, TransformableImage} from '@cloudinary/base';
+// In this case, we import a CloudinaryImage type.
+import {Cloudinary, CloudinaryImage} from '@cloudinary/base';
 
 // Create your instance
 const cld = new Cloudinary({
@@ -15,7 +15,7 @@ const cld = new Cloudinary({
 });
 
 // Plug the image type into your instance
-cld.useImage(TransformableImage);
+cld.useImage(CloudinaryImage);
 
 // Lets create a new image
 const myImage = cld.image('sample');

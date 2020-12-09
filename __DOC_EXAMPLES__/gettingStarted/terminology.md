@@ -5,7 +5,7 @@
 
 ```javascript
 
-  import {Cloudinary, TransformableImage} from '@cloudinary/base';
+  import {Cloudinary, CloudinaryImage} from '@cloudinary/base';
 
   // Create your instance
   const cld = new Cloudinary({
@@ -17,7 +17,7 @@
     }
   });
 
-  cld.useImage(TransformableImage);
+  cld.useImage(CloudinaryImage);
   
   const myImage = cld.image('sample');
 
@@ -39,8 +39,8 @@
 <h3>Cloudinary Instance & Configuration</h3>
 <ul>
   <li>The first step in every new application will be creating a new Cloudinary Instance 
-  <li>The SDK has two types of Transformations - <b>TransformableImage</b> and <b>TransformableVideo</b>
-  <li>Use the instance you created to generate a new <b>TransformableImage/Video</b> instance
+  <li>The SDK has two types of Transformations - <b>CloudinaryImage</b> and <b>VideoTransformation</b>
+  <li>Use the instance you created to generate a new <b>CloudinaryImage / new VideoTransformation</b> instance
   <li>The {@link ICloudinaryAssetConfigurations|Cloudinary Configuration} is used to define how URLs are created 
 </ul>
 

@@ -1,5 +1,5 @@
 ```javascript
-import {Cloudinary, TransformableImage} from '@cloudinary/base';
+import {Cloudinary, CloudinaryImage} from '@cloudinary/base';
 
 const cld = new Cloudinary({
   cloud: {
@@ -11,7 +11,7 @@ const cld = new Cloudinary({
 });
 
 // Plug the image type into your instance
-cld.useImage(TransformableImage);
+cld.useImage(CloudinaryImage);
 
 // Import the RotationModeAction
 import {mode} from '@cloudinary/base/actions/rotate/Rotate';

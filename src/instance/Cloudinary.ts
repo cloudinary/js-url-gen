@@ -16,7 +16,7 @@ class Cloudinary {
     this.CloudinaryImage = TImage;
   }
 
-  image(publicID: string): CloudinaryImage {
+  image(publicID?: string): CloudinaryImage {
     if (!this.CloudinaryImage) {
       throw 'You cannot use image without first invoking useImage()';
     }
