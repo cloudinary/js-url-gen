@@ -1,5 +1,4 @@
 import RotateAction from "./RotateAction";
-import {RotationMode} from "../../values/rotate/Rotate";
 import {RotationModeQualifierValue} from "../../values/rotate/RotationModeQualifierValue";
 
 /**

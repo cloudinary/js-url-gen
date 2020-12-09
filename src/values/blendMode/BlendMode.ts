@@ -46,6 +46,7 @@ const BlendMode = {
 export {
   screen,
   multiply,
-  overlay
+  overlay,
+  BlendMode
 };
 

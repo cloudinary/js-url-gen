@@ -1,5 +1,6 @@
 import * as Flag from '../flag/Flag';
 import {AspectRatioQualifierValue} from "./AspectRatioQualifierValue";
+import {FlagQualifier} from "../flag/FlagQualifier";
 
 
 /**
@@ -61,7 +62,7 @@ function AR3X1(): AspectRatioQualifierValue {
  * @memberOf Values.AspectRatio
  * @return {IgnoreAspectRatioQualifier}
  */
-function ignoreAspectRatio(): any {
+function ignoreAspectRatio(): FlagQualifier {
   return Flag.ignoreAspectRatio();
 }
 

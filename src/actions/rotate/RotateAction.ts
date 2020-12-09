@@ -1,6 +1,5 @@
 import Action from "../Action";
 import Qualifier from "../../qualifier/Qualifier";
-import {RotationMode} from "../../values/rotate/Rotate";
 import {RotationModeQualifierValue} from "../../values/rotate/RotationModeQualifierValue";
 
 const QUALIFIER_KEY = 'a';

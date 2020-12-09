@@ -4,7 +4,7 @@ import {BaseGradientBackground} from "../base/BaseGradientBackground";
  * @description Specifies that the gradient fade effect, used for the background when resizing with padding, uses the
  * predominant colors in the whole of the image.
  * @class BackgroundPredominantGradientQualifier
- * @memberOf {Values.Background}
+ * @memberOf Values.Background
  * @augments {Values.Background.BaseGradientBackground}
  */
 class BackgroundPredominantGradientQualifier extends BaseGradientBackground {

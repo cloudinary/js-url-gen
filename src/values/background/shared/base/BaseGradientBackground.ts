@@ -1,11 +1,10 @@
 import {BaseCommonBackground} from "./BaseCommonBackground";
-import {GradientDirection} from "../../../gradientDirection/GradientDirection";
 import {GradientDirectionQualifierValue} from "../../../gradientDirection/GradientDirectionQualifierValue";
 
 /**
  * @description Defines the gradient fade effect to use for the background when resizing with padding.
  * @class BaseGradientBackground
- * @memberOf {Values.Background}
+ * @memberOf Values.Background
  * @augments {Values.Background.BaseCommonBackground}
  */
 class BaseGradientBackground extends BaseCommonBackground {

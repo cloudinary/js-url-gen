@@ -3,7 +3,7 @@ import {BackgroundQualifier} from "./base/BackgroundQualifier";
 /**
  * @description A class for blurred background transformations.
  * @class BlurredBackgroundAction
- * @memberOf {Values.Background}
+ * @memberOf Values.Background
  * @augments {Values.Background.BackgroundQualifier}
  */
 class BlurredBackgroundAction extends BackgroundQualifier {

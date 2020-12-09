@@ -1,7 +1,7 @@
 import Action from "../Action";
 import {VideoSource} from "../../values/sources/sourceTypes/VideoSource";
 import {LayerAction} from "../overlay/LayerAction";
-import {imageLayer} from "../overlay/Overlay";
+import {imageLayer, videoLayer} from "../overlay/Overlay";
 import * as Flag from "../../values/flag/Flag";
 import * as Effect from "../effect/Effect";
 
@@ -20,8 +20,7 @@ class ConcatenateAction extends Action {
   constructor(source:VideoSource) {
     super();
     this.concatSource = source;
-    this.layer = imageLayer(this.concatSource).setLayerType('l');
-
+    this.layer = videoLayer(this.concatSource).setLayerType('l');
   }
 
   /**
@@ -43,7 +42,7 @@ class ConcatenateAction extends Action {
    * @description Indicates that the video should be concatenated on to the container video and not added as an overlay.
    * @private
    */
-  private prepareConcatString(){
+  private prepareConcatString() {
     if(!this.shouldTransition){
       this.layer.setOpenLayerFlag(Flag.splice());
     }
