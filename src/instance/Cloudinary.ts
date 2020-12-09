@@ -12,8 +12,9 @@ class Cloudinary {
     }
   }
 
-  useImage(TImage: typeof CloudinaryImage):void {
+  useImage(TImage: typeof CloudinaryImage):this {
     this.CloudinaryImage = TImage;
+    return this;
   }
 
   image(publicID?: string): CloudinaryImage {
@@ -23,8 +24,9 @@ class Cloudinary {
     return new this.CloudinaryImage(publicID).setConfig(this.cloudinaryConfig);
   }
 
-  setConfig(cloudinaryConfig: ICloudinaryConfigurations):void {
+  setConfig(cloudinaryConfig: ICloudinaryConfigurations):this {
     this.cloudinaryConfig = cloudinaryConfig;
+    return this;
   }
 
   extendConfig():void {
