@@ -7,7 +7,7 @@
 
 
 
-import {RotationModeQualifierValue} from "./RotationModeQualifierValue";
+import {RotationModeQualifierValue} from "./rotate/RotationModeQualifierValue";
 
 /**
  * @description Rotate image 90 degrees clockwise only if the requested aspect ratio does not match the image's aspect ratio.

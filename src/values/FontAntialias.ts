@@ -51,7 +51,7 @@ function best(): string {
   return 'best';
 }
 
-const FontAntialias = { gray, subPixel, best, fast, none, good };
+const FontAntialias = {gray, subPixel, best, fast, none, good};
 
 export {
   FontAntialias,

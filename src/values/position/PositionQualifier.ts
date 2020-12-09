@@ -1,5 +1,5 @@
-import Action from "../../actions/Action";
-import Qualifier from "../../qualifier/Qualifier";
+import Action from "../../sdk/Action";
+import Qualifier from "../../sdk/qualifier/Qualifier";
 import {GravityQualifier} from "../gravity/GravityQualifier";
 
 /**

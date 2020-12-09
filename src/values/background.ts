@@ -1,11 +1,11 @@
-import {prepareColor} from "../../utils/prepareColor";
-import {BackgroundAutoBorderQualifier} from "./shared/auto/BackgroundAutoBorderQualifier";
-import {BackgroundBorderGradientQualifier} from "./shared/gradient/BackgroundBorderGradientQualifier";
-import {BackgroundAutoPredominantQualifier} from "./shared/auto/BackgroundAutoPredominantQualifier";
-import {BackgroundPredominantGradientQualifier} from "./shared/gradient/BackgroundPredominantGradientQualifier";
-import BlurredBackgroundAction from "./shared/BlurredBackgroundAction";
-import {BackgroundQualifier} from "./shared/base/BackgroundQualifier";
-import {SystemColors} from "../color/Color";
+import {prepareColor} from "../sdk/utils/prepareColor";
+import {BackgroundAutoBorderQualifier} from "./background/shared/auto/BackgroundAutoBorderQualifier";
+import {BackgroundBorderGradientQualifier} from "./background/shared/gradient/BackgroundBorderGradientQualifier";
+import {BackgroundAutoPredominantQualifier} from "./background/shared/auto/BackgroundAutoPredominantQualifier";
+import {BackgroundPredominantGradientQualifier} from "./background/shared/gradient/BackgroundPredominantGradientQualifier";
+import BlurredBackgroundAction from "./background/shared/BlurredBackgroundAction";
+import {BackgroundQualifier} from "./background/shared/base/BackgroundQualifier";
+import {SystemColors} from "./color";
 
 
 
@@ -85,15 +85,15 @@ function blurred(): BlurredBackgroundAction {
   return new BlurredBackgroundAction();
 }
 
-class Background {
-  static auto = auto;
-  static border = border;
-  static borderGradient = borderGradient;
-  static predominantGradient = predominantGradient;
-  static predominant = predominant;
-  static color = color;
-  static blurred = blurred;
-}
+const Background = {
+  auto: auto,
+  border: border,
+  borderGradient: borderGradient,
+  predominantGradient: predominantGradient,
+  predominant: predominant,
+  color: color,
+  blurred: blurred
+};
 
 export {
   auto,

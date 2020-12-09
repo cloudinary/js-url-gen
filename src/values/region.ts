@@ -1,5 +1,5 @@
-import {CustomRegion} from "./CustomRegion";
-import {NamedRegion} from "./NamedRegion";
+import {CustomRegion} from "./region/CustomRegion";
+import {NamedRegion} from "./region/NamedRegion";
 
 /**
  * @memberOf Values.Region

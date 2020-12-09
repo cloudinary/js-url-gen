@@ -1,7 +1,7 @@
-import Action from "../../actions/Action";
-import VideoOffset from "./VideoOffset";
-import Qualifier from "../../qualifier/Qualifier";
-import QualifierValue from "../../qualifier/QualifierValue";
+import Action from "../../sdk/Action";
+import Qualifier from "../../sdk/qualifier/Qualifier";
+import QualifierValue from "../../sdk/qualifier/QualifierValue";
+import {VideoOffset} from "./VideoOffset";
 
 /**
  * @description Defines a video range using startOffset, endOffset, duration.
@@ -46,5 +46,3 @@ class VideoRange extends Action {
 export {
   VideoRange
 };
-
-export default VideoRange;

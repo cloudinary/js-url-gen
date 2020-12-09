@@ -1,4 +1,4 @@
-import {BlendModeQualifier} from "./BlendModeQualifier";
+import {BlendModeQualifier} from "./blendMode/BlendModeQualifier";
 /**
  * @description Defines the mode of blending to use when overlaying an image.
  *
@@ -44,6 +44,7 @@ const BlendMode = {
 };
 
 export {
+  BlendMode,
   screen,
   multiply,
   overlay

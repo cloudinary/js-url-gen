@@ -39,8 +39,5 @@ function byDecibels(decibel: string|number): string {
   return `${decibel}db`;
 }
 
-const Volume = {
-  mute, byPercent, byDecibels
-};
-
+const Volume = {mute, byPercent, byDecibels};
 export {Volume, mute, byPercent, byDecibels};

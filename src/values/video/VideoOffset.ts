@@ -1,5 +1,5 @@
-import Action from "../../actions/Action";
-import Qualifier from "../../qualifier/Qualifier";
+import Action from "../../sdk/Action";
+import Qualifier from "../../sdk/qualifier/Qualifier";
 
 /**
  * @description Defines a video range using startOffset, endOffset, duration.
@@ -34,5 +34,3 @@ class VideoOffset extends Action {
 export {
   VideoOffset
 };
-
-export default VideoOffset;

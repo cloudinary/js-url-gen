@@ -1,7 +1,7 @@
 import {ISource} from "../ISource";
-import {prepareColor} from "../../../utils/prepareColor";
-import QualifierValue from "../../../qualifier/QualifierValue";
-import {serializeCloudinaryCharacters} from "../../../utils/serializeCloudinaryCharacters";
+import {prepareColor} from "../../../sdk/utils/prepareColor";
+import QualifierValue from "../../../sdk/qualifier/QualifierValue";
+import {serializeCloudinaryCharacters} from "../../../sdk/utils/serializeCloudinaryCharacters";
 
 /**
  * @description Defines how to manipulate a text layer

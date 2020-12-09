@@ -1,4 +1,4 @@
-import {AnimatedFormatQualifierValue} from "./AnimatedFormatQualifierValue";
+import {AnimatedFormatQualifierValue} from "./animatedFormat/AnimatedFormatQualifierValue";
 
 /**
  * @@doc

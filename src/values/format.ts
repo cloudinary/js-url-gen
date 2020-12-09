@@ -1,4 +1,4 @@
-import {FormatQualifier} from "./FormatQualifier";
+import {FormatQualifier} from "./format/FormatQualifier";
 
 /**
  * @doc

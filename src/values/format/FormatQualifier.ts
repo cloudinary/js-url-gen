@@ -1,4 +1,4 @@
-import QualifierValue from "../../qualifier/QualifierValue";
+import QualifierValue from "../../sdk/qualifier/QualifierValue";
 
 /**
  * @memberOf Values.Format

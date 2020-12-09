@@ -1,9 +1,9 @@
-import {FocusOnValue} from "./qualifiers/focusOn/FocusOn";
-import {OCR} from "./OCR/OCR";
-import {CompassGravity} from "./compassGravity/CompassGravity";
-import {FocusOnGravity} from "./focusOnGravity/FocusOnGravity";
-import {AutoGravity} from "./autoGravity/AutoGravity";
-import {CompassQualifier} from "./qualifiers/compass/CompassQualifier";
+import {FocusOnValue} from "./gravity/qualifiers/focusOn/FocusOn";
+import {OCR} from "./gravity/OCR/OCR";
+import {CompassGravity} from "./gravity/compassGravity/CompassGravity";
+import {FocusOnGravity} from "./gravity/focusOnGravity/FocusOnGravity";
+import {AutoGravity} from "./gravity/autoGravity/AutoGravity";
+import {CompassQualifier} from "./gravity/qualifiers/compass/CompassQualifier";
 
 
 /**
@@ -57,12 +57,12 @@ function ocr(): OCR {
  * @memberOf Values
  * @example image.resize(Resize.crop().width(300).gravity(Gravity.compass(Compass.north())))
  */
-class Gravity {
-  static compass = compass;
-  static autoGravity = autoGravity;
-  static focusOn = focusOn;
-  static ocr = ocr;
-}
+const Gravity = {
+  compass: compass,
+  autoGravity: autoGravity,
+  focusOn: focusOn,
+  ocr: ocr
+};
 
 export {
   Gravity,

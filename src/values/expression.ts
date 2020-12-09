@@ -1,5 +1,5 @@
-import {CONDITIONAL_OPERATORS} from "../../internalConstants";
-import {ExpressionQualifier} from "./ExpressionQualifier";
+import {CONDITIONAL_OPERATORS} from "../internalConstants";
+import {ExpressionQualifier} from "./expression/ExpressionQualifier";
 
 
 /**

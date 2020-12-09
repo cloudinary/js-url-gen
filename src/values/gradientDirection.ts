@@ -1,4 +1,4 @@
-import {GradientDirectionQualifierValue} from "./GradientDirectionQualifierValue";
+import {GradientDirectionQualifierValue} from "./gradientDirection/GradientDirectionQualifierValue";
 
 /**
  * @description Defines the direction for a background gradient fade effect.

@@ -1,4 +1,4 @@
-import {PositionQualifier} from "./PositionQualifier";
+import {PositionQualifier} from "./position/PositionQualifier";
 /**
  * @description
  * Defines the position of a layer: overlay or underlay.</br>
@@ -148,7 +148,25 @@ function center():PositionQualifier{
   return new PositionQualifier('center');
 }
 
+const Position = {
+  north,
+  west,
+  east,
+  south,
+  advancedEyes,
+  advancedFace,
+  advancedFaces,
+  center,
+  face,
+  northWest,
+  faces,
+  ocrText,
+  southEast,
+  southWest,
+  northEast
+};
 export {
+  Position,
   north,
   west,
   east,

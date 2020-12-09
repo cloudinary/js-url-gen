@@ -1,6 +1,6 @@
-import {TextSource} from "./sourceTypes/TextSource";
-import {ImageSource} from "./sourceTypes/ImageSource";
-import {VideoSource} from "./sourceTypes/VideoSource";
+import {TextSource} from "./sources/sourceTypes/TextSource";
+import {ImageSource} from "./sources/sourceTypes/ImageSource";
+import {VideoSource} from "./sources/sourceTypes/VideoSource";
 
 /**
  * @description This namespace contains different sources that can be used in overlays and underlays
@@ -40,4 +40,5 @@ function video(publicID: string): VideoSource {
   return new VideoSource(publicID);
 }
 
-export {image, text, video};
+const Sources = {image, text, video};
+export {Sources, image, text, video};

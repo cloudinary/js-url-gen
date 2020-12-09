@@ -1,5 +1,5 @@
 import {BaseCommonBackground} from "./BaseCommonBackground";
-import {GradientDirection} from "../../../gradientDirection/GradientDirection";
+import {GradientDirection} from "../../../gradientDirection";
 import {GradientDirectionQualifierValue} from "../../../gradientDirection/GradientDirectionQualifierValue";
 
 /**

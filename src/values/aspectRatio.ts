@@ -1,5 +1,5 @@
-import * as Flag from '../flag/Flag';
-import {AspectRatioQualifierValue} from "./AspectRatioQualifierValue";
+import * as Flag from './flag/Flag';
+import {AspectRatioQualifierValue} from "./aspectRatio/AspectRatioQualifierValue";
 
 
 /**
@@ -72,15 +72,15 @@ function ignoreAspectRatio(): any {
  * @namespace AspectRatio
  * @memberOf Values
  */
-class AspectRatio {
-  static AR1X1 = AR1X1;
-  static AR5X4 = AR5X4;
-  static AR3X1 = AR3X1;
-  static AR3X2 = AR3X2;
-  static AR4X3 = AR4X3;
-  static AR16X9 = AR16X9;
-  static ignoreAspectRatio = ignoreAspectRatio;
-}
+const AspectRatio = {
+  AR1X1: AR1X1,
+  AR5X4: AR5X4,
+  AR3X1: AR3X1,
+  AR3X2: AR3X2,
+  AR4X3: AR4X3,
+  AR16X9: AR16X9,
+  ignoreAspectRatio: ignoreAspectRatio
+};
 
 
 export {AR1X1, AR5X4, AR3X1, AR3X2, AR4X3, AR16X9, ignoreAspectRatio, AspectRatio};
