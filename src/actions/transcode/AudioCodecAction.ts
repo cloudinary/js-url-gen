@@ -1,5 +1,5 @@
-import Action from "../Action";
-import Qualifier from "../../qualifier/Qualifier";
+import Action from "../../sdk/Action";
+import Qualifier from "../../sdk/qualifier/Qualifier";
 
 /**
  * @class AudioCodecAction

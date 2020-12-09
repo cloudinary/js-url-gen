@@ -1,15 +1,15 @@
-import Action from "../Action";
-import QualifierValue from "../../qualifier/QualifierValue";
-import Qualifier from "../../qualifier/Qualifier";
-import {prepareColor} from "../../utils/prepareColor";
-import {SystemColors} from "../../values/color/Color";
+import Action from "../../sdk/Action";
+import QualifierValue from "../../sdk/qualifier/QualifierValue";
+import Qualifier from "../../sdk/qualifier/Qualifier";
+import {prepareColor} from "../../sdk/utils/prepareColor";
+import {SystemColors} from "../../values/color";
 
 /**
  * @description Applies a shadow filter to the asset.
  * @class ShadowEffectAction
  * @augments Action
  */
-export class ShadowEffectAction extends Action {
+class ShadowEffectAction extends Action {
   private effectType: string;
 
   constructor(effectType: string, strength: number) {
@@ -56,14 +56,5 @@ export class ShadowEffectAction extends Action {
   }
 }
 
-/**
- * @description Applies a shadow filter to the asset.
- * @memberOf Actions.Effect
- * @param shadowLevel
- * @return {ShadowEffectAction}
- */
-function shadow(shadowLevel?: number):ShadowEffectAction {
-  return new ShadowEffectAction('shadow', shadowLevel);
-}
 
-export default shadow;
+export {ShadowEffectAction};

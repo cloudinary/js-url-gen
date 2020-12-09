@@ -1,4 +1,4 @@
-import EffectActionWithStrength from "../../effect/EffectActions/EffectActionWithStrength";
+import {EffectActionWithStrength} from "../../effect/EffectActions/EffectActionWithStrength";
 
 /**
  * @description Applies an unsharp mask filter to the image.

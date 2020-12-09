@@ -1,10 +1,10 @@
-import Action from "../Action";
+import Action from "../../sdk/Action";
 import {ISource} from "../../values/sources/ISource";
 import {VideoRange} from "../../values/video/VideoRange";
-import Qualifier from "../../qualifier/Qualifier";
+import Qualifier from "../../sdk/qualifier/Qualifier";
 import {BlendModeQualifier} from "../../values/blendMode/BlendModeQualifier";
 import {PositionQualifier} from "../../values/position/PositionQualifier";
-import SimpleEffectAction from "../effect/EffectActions/SimpleEffectAction";
+import {SimpleEffectAction} from "../effect/EffectActions/SimpleEffectAction";
 import {FlagQualifier} from "../../values/flag/FlagQualifier";
 
 

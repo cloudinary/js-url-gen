@@ -1,6 +1,6 @@
-import Action from "../Action";
-import Qualifier from "../../qualifier/Qualifier";
-import QualifierValue from "../../qualifier/QualifierValue";
+import Action from "../../sdk/Action";
+import Qualifier from "../../sdk/qualifier/Qualifier";
+import QualifierValue from "../../sdk/qualifier/QualifierValue";
 
 /**
  * @description Defines how to improve an image by automatically adjusting image colors, contrast and brightness.</br>

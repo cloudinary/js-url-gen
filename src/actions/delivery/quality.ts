@@ -1,6 +1,6 @@
 import DeliveryAction from "./DeliveryAction";
-import Qualifier from "../../qualifier/Qualifier";
-import QualifierValue from "../../qualifier/QualifierValue";
+import Qualifier from "../../sdk/qualifier/Qualifier";
+import QualifierValue from "../../sdk/qualifier/QualifierValue";
 
 
 /**

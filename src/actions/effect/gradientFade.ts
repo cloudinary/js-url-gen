@@ -1,12 +1,12 @@
-import Action from "../Action";
-import Qualifier from "../../qualifier/Qualifier";
+import Action from "../../sdk/Action";
+import Qualifier from "../../sdk/qualifier/Qualifier";
 
 /**
  * @description Applies a gradient fade effect from one edge of the image.
  * @class GradientFadeEffectAction
  * @augments Action
  */
-export class GradientFadeEffectAction extends Action {
+class GradientFadeEffectAction extends Action {
   private _strength: number;
   private _type: string;
 
@@ -58,22 +58,4 @@ export class GradientFadeEffectAction extends Action {
   }
 }
 
-
-/**
- * @description
- * Applies a gradient fade effect from one edge of the image.
- * Use .x() or .y() to indicate from which edge to fade and how much of the image should be faded.
- * Values of x and y can be specified as a percentage (Range: 0.0 to 1.0), or in pixels (integer values). <br/>
- * Positive values fade from the top (y) or left (x). Negative values fade from the bottom (y) or right (x). <br/>
- * By default, the gradient is applied to the top 50% of the image (y = 0.5).<br/>
- * Only one direction can be specified but the fade can be applied symmetrically using the mode parameter. </br>
- * To apply different amounts of fade to multiple edges, use chained fade effects.
- *
- * @memberOf Actions.Effect
- * @return {GradientFadeEffectAction}
- */
-function gradientFade():GradientFadeEffectAction {
-  return new GradientFadeEffectAction();
-}
-
-export default gradientFade;
+export {GradientFadeEffectAction};

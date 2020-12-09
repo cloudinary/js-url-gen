@@ -1,4 +1,4 @@
-import Action from "../Action";
+import Action from "../../sdk/Action";
 
 /**
  * @class By3dLutAction

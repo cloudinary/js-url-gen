@@ -1,5 +1,5 @@
 import DeliveryAction from "./DeliveryAction";
-import {toFloatAsString} from "../../utils/toFloatAsString";
+import {toFloatAsString} from "../../sdk/utils/toFloatAsString";
 
 /**
  * @description Deliver the image in the specified device pixel ratio.

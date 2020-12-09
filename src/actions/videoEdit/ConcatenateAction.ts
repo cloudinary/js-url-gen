@@ -1,9 +1,9 @@
-import Action from "../Action";
+import Action from "../../sdk/Action";
 import {VideoSource} from "../../values/sources/sourceTypes/VideoSource";
 import {LayerAction} from "../overlay/LayerAction";
-import {imageLayer} from "../overlay/Overlay";
+import {imageLayer} from "../overlay";
 import * as Flag from "../../values/flag/Flag";
-import * as Effect from "../effect/Effect";
+import * as Effect from "../effect";
 
 /**
  * @description Class for Concatenating another video.

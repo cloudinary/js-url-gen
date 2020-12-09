@@ -1,7 +1,7 @@
-import Action from "../Action";
-import Qualifier from "../../qualifier/Qualifier";
+import Action from "../../sdk/Action";
+import Qualifier from "../../sdk/qualifier/Qualifier";
 import * as Flag from "../../values/flag/Flag";
-import {Format} from "../../values/format/Format";
+import {Format} from "../../values/format";
 import {FormatQualifier} from "../../values/format/FormatQualifier";
 
 /**

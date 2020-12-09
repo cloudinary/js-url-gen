@@ -1,6 +1,6 @@
 import {NamedRegion} from "../../../values/region/NamedRegion";
-import Qualifier from "../../../qualifier/Qualifier";
-import Action from "../../Action";
+import Qualifier from "../../../sdk/qualifier/Qualifier";
+import Action from "../../../sdk/Action";
 
 /**
  * @description The Action class of the blur Builder
@@ -69,14 +69,5 @@ class BlurAction extends Action {
   }
 }
 
-/**
- * @description Applies a blurring filter to the asset.
- * @memberOf Actions.Effect
- * @param {number} blurLevel The strength of the blur. (Range: 1 to 2000, Server default: 100)
- * @return {BlurAction}
- */
-function blur(blurLevel?: number): BlurAction {
-  return new BlurAction(blurLevel);
-}
 
-export default blur;
+export {BlurAction};
