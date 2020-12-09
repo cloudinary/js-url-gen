@@ -1,4 +1,4 @@
-import {Gravity} from "../../../../src/values/gravity/Gravity";
+import {Gravity} from "../../../../src/values/gravity";
 
 describe('Gravity Qualifier', () => {
   it ('works', () => {

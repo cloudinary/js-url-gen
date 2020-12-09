@@ -1,6 +1,6 @@
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
-import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import {Extract} from "../../../src/actions/extract/Extract";
+import CloudinaryConfig from "../../../src/sdk/config/CloudinaryConfig";
+import {Extract} from "../../../src/actions/extract";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {

@@ -1,5 +1,5 @@
-import {Region} from "../../../../src/values/region/Region";
-import {Effect} from "../../../../src/actions/Actions";
+import {Region} from "../../../../src/values/region";
+import {Effect} from "../../../../src/actions/effect";
 
 describe('Tests for Transformation Action -- Blur', () => {
   it('Tests blur with and without strength', () => {

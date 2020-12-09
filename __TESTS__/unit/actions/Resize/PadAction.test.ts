@@ -1,8 +1,7 @@
 import getImageWithResize from "./shared/getImageWithResize";
-import * as Gravity from "../../../../src/values/gravity/Gravity";
-import pad from "../../../../src/actions/resize/ResizeActions/pad/PadAction";
-import * as Background from "../../../../src/values/background/Background";
-
+import {pad} from "../../../../src/actions/resize";
+import {Background} from "../../../../src/values/background";
+import {Gravity} from "../../../../src/values/gravity";
 
 describe('Tests for Transformation Action -- Resize.pad', () => {
   it('Ensures it generates the right URL', () => {

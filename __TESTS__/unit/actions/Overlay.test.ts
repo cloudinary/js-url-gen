@@ -1,12 +1,12 @@
-import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
+import CloudinaryConfig from "../../../src/sdk/config/CloudinaryConfig";
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
-import {fill} from "../../../src/actions/resize/Resize";
-import * as Layers from "../../../src/actions/overlay/Overlay";
-import * as Position from "../../../src/values/position/Position";
-import * as BlendMode from "../../../src/values/blendMode/BlendMode";
-import {VideoRange, VideoOffset} from "../../../src/values/video/Video";
+import {fill} from "../../../src/actions/resize";
+import * as Layers from "../../../src/actions/overlay";
+import * as Position from "../../../src/values/position";
+import * as BlendMode from "../../../src/values/blendMode";
+import {VideoRange, VideoOffset} from "../../../src/values/video";
 import format from "../../../src/actions/delivery/format";
-import {image, video} from "../../../src/values/sources/Sources";
+import {image, video} from "../../../src/values/sources";
 import {CloudinaryVideo} from "../../../src/assets/CloudinaryVideo";
 
 const {imageLayer, videoLayer} = Layers;

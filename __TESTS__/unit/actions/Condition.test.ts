@@ -1,8 +1,8 @@
-import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
+import CloudinaryConfig from "../../../src/sdk/config/CloudinaryConfig";
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
-import {set} from "../../../src/actions/variable/Variable";
-import * as Resize from "../../../src/actions/resize/Resize";
-import * as Condition from "../../../src/actions/condition/Condition";
+import {set} from "../../../src/actions/variable";
+import * as Resize from "../../../src/actions/resize";
+import * as Condition from "../../../src/actions/condition";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {

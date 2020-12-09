@@ -1,6 +1,6 @@
-import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import * as Adjust from '../../../src/actions/adjust/Adjust';
-import * as ImproveMode from "../../../src/values/improveMode/ImproveMode";
+import CloudinaryConfig from "../../../src/sdk/config/CloudinaryConfig";
+import * as Adjust from '../../../src/actions/adjust';
+import * as ImproveMode from "../../../src/values/improveMode";
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({

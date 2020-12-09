@@ -1,18 +1,18 @@
-import * as ArtisticFilter from "../../../src/values/artisticFilter/ArtisticFilter";
-import * as Outline from "../../../src/values/outline/Outline";
-import * as ColorSpace from "../../../src/values/colorSpace/ColorSpace";
-import * as Dither from "../../../src/values/dither/Dither";
-import * as ChromaSubSampling from "../../../src/values/chromaSubSampling/ChromaSubSampling";
-import * as FontStyle from "../../../src/values/fontStyle/FontStyle";
-import * as FontWeight from "../../../src/values/fontWeight/FontWeight";
-import * as StreamingProfile from "../../../src/values/streamingProfile/StreamingProfile";
-import * as SimulateColorBlind from "../../../src/values/simulateColorBlind/SimulateColorBlind";
-import * as AudioCodec from "../../../src/values/audioCodec/AudioCodec";
-import * as AudioFrequency from "../../../src/values/audioFrequency/AudioFrequency";
-import {FontHinting} from "../../../src/values/fontHinting/FontHinting";
-import {FontAntialias} from "../../../src/values/fontAntialias/FontHinting";
-import {TextAlignment} from "../../../src/values/textAlignment/TextAlignment";
-import {TextDecoration} from "../../../src/values/textDecoration/TextDecoration";
+import {TextDecoration} from "../../../src/values/textDecoration";
+import {Dither} from "../../../src/values/dither";
+import {FontStyle} from "../../../src/values/fontStyle";
+import {StreamingProfile} from "../../../src/values/streamingProfile";
+import {ChromaSubSampling} from "../../../src/values/chromaSubSampling";
+import {ColorSpace} from "../../../src/values/colorSpace";
+import {AudioFrequency} from "../../../src/values/audioFrequency";
+import {Outline} from "../../../src/values/outline";
+import {FontWeight} from "../../../src/values/fontWeight";
+import {FontHinting} from "../../../src/values/fontHinting";
+import {TextAlignment} from "../../../src/values/textAlignment";
+import {ArtisticFilter} from "../../../src/values/artisticFilter";
+import {AudioCodec} from "../../../src/values/audioCodec";
+import {SimulateColorblind} from "../../../src/values/simulateColorBlind";
+import {FontAntialias} from "../../../src/values/FontAntialias";
 
 describe('Test imported values', () => {
   it('Generates a URL', () => {
@@ -112,13 +112,13 @@ describe('Test imported values', () => {
     expect(ChromaSubSampling.chroma420()).toBe(420);
     expect(ChromaSubSampling.chroma444()).toBe(444);
 
-    expect(SimulateColorBlind.coneMonochromacy()).toBe('cone_monochromacy');
-    expect(SimulateColorBlind.deuteranomaly()).toBe('dueteranomaly');
-    expect(SimulateColorBlind.deuteranopia()).toBe('deuteranopia');
-    expect(SimulateColorBlind.protanopia()).toBe('protanopia');
-    expect(SimulateColorBlind.rodMonochromacy()).toBe('rod_monochromacy');
-    expect(SimulateColorBlind.tritanomaly()).toBe('tritanomaly');
-    expect(SimulateColorBlind.tritanopia()).toBe('tritanopia');
+    expect(SimulateColorblind.coneMonochromacy()).toBe('cone_monochromacy');
+    expect(SimulateColorblind.deuteranomaly()).toBe('dueteranomaly');
+    expect(SimulateColorblind.deuteranopia()).toBe('deuteranopia');
+    expect(SimulateColorblind.protanopia()).toBe('protanopia');
+    expect(SimulateColorblind.rodMonochromacy()).toBe('rod_monochromacy');
+    expect(SimulateColorblind.tritanomaly()).toBe('tritanomaly');
+    expect(SimulateColorblind.tritanopia()).toBe('tritanopia');
 
     expect(AudioCodec.auto()).toBe('auto');
     expect(AudioCodec.aac()).toBe('aac');

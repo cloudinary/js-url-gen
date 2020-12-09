@@ -1,4 +1,4 @@
-import QualifierValue from '../../../src/qualifier/QualifierValue';
+import QualifierValue from '../../../src/sdk/qualifier/QualifierValue';
 
 describe('Tests for Qualifier', () => {
   it('Creates a QualifierValue', () => {

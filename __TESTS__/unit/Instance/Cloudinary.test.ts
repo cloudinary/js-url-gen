@@ -1,7 +1,7 @@
-import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import Cloudinary from "../../../src/instance/Cloudinary";
-import fill from "../../../src/actions/resize/ResizeActions/advancedResizeActions/FillAction";
+import CloudinaryConfig from "../../../src/sdk/config/CloudinaryConfig";
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
+import Cloudinary from "../../../src/instance/Cloudinary";
+import {fill} from "../../../src/actions/resize";
 
 describe('Tests for Cloudinary instance', () => {
   it ('Creates an instance with its own global config', () => {

@@ -1,9 +1,9 @@
-import * as Transcode from '../../../src/actions/transcode/Transcode';
-import CloudinaryConfig from '../../../src/config/CloudinaryConfig';
-import * as AudioCodec from '../../../src/values/audioCodec/AudioCodec';
-import * as AudioFrequency from '../../../src/values/audioFrequency/AudioFrequency';
-import * as StreaminProfile from '../../../src/values/streamingProfile/StreamingProfile';
-import * as AnimatedFormat from '../../../src/values/animatedFormat/AnimatedFormat';
+import * as Transcode from '../../../src/actions/transcode';
+import CloudinaryConfig from '../../../src/sdk/config/CloudinaryConfig';
+import * as AudioCodec from '../../../src/values/audioCodec';
+import * as AudioFrequency from '../../../src/values/audioFrequency';
+import * as StreaminProfile from '../../../src/values/streamingProfile';
+import * as AnimatedFormat from '../../../src/values/animatedFormat';
 import {CloudinaryVideo} from "../../../src/assets/CloudinaryVideo";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({

@@ -1,6 +1,6 @@
-import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
+import CloudinaryConfig from "../../../src/sdk/config/CloudinaryConfig";
 import * as Flag from "../../../src/values/flag/Flag";
-import * as Resize from "../../../src/actions/resize/Resize";
+import * as Resize from "../../../src/actions/resize";
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 import {CloudinaryVideo} from "../../../src/assets/CloudinaryVideo";
 

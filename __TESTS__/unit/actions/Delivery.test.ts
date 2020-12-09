@@ -1,10 +1,10 @@
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
-import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import * as Dpr from "../../../src/values/dpr/Dpr";
-import * as Quality from "../../../src/values/quality/Quality";
-import * as ColorSpace from "../../../src/values/colorSpace/ColorSpace";
-import * as Delivery from "../../../src/actions/delivery/Delivery";
-import {Format} from "../../../src/values/format/Format";
+import CloudinaryConfig from "../../../src/sdk/config/CloudinaryConfig";
+import * as Dpr from "../../../src/values/dpr";
+import * as Quality from "../../../src/values/quality";
+import * as ColorSpace from "../../../src/values/colorSpace";
+import * as Delivery from "../../../src/actions/delivery";
+import {Format} from "../../../src/values/format";
 
 
 

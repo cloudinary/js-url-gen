@@ -1,9 +1,9 @@
-import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import {Overlay} from "../../../src/actions/Actions";
-import {image, text} from "../../../src/values/sources/Sources";
+import CloudinaryConfig from "../../../src/sdk/config/CloudinaryConfig";
+import {image, text} from "../../../src/values/sources";
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
-import {Transformation} from "../../../src";
 import {CloudinaryAsset} from "../../../src/assets/CloudinaryAsset";
+import {Transformation} from "../../../src/sdk/transformation/Transformation";
+import {Overlay} from "../../../src/actions/overlay";
 
 
 const CONFIG_INSTANCE = new CloudinaryConfig({

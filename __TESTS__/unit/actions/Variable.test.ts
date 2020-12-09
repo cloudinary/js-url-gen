@@ -1,7 +1,7 @@
-import * as Variable from '../../../src/actions/variable/Variable';
-import * as Expression from '../../../src/values/expression/Expression';
+import * as Variable from '../../../src/actions/variable';
+import * as Expression from '../../../src/values/expression';
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
-import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
+import CloudinaryConfig from "../../../src/sdk/config/CloudinaryConfig";
 
 const {set} = Variable;
 const {expression} = Expression;

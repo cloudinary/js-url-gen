@@ -1,13 +1,13 @@
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
-import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
+import CloudinaryConfig from "../../../src/sdk/config/CloudinaryConfig";
 import {TextSource} from "../../../src/values/sources/sourceTypes/TextSource";
-import {text} from "../../../src/values/sources/Sources";
+import {text} from "../../../src/values/sources";
 import {BlendModeQualifier} from "../../../src/values/blendMode/BlendModeQualifier";
-import {imageLayer} from "../../../src/actions/overlay/Overlay";
+import {imageLayer} from "../../../src/actions/overlay";
 import {PositionQualifier} from "../../../src/values/position/PositionQualifier";
-import {center} from "../../../src/values/position/Position";
-import * as FontWeight from "../../../src/values/fontWeight/FontWeight";
-import * as FontStyle from "../../../src/values/fontStyle/FontStyle";
+import {center} from "../../../src/values/position";
+import * as FontWeight from "../../../src/values/fontWeight";
+import * as FontStyle from "../../../src/values/fontStyle";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {

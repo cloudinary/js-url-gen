@@ -1,6 +1,6 @@
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
-import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import * as CustomFunction from "../../../src/actions/customFunction/CustomFunction";
+import CloudinaryConfig from "../../../src/sdk/config/CloudinaryConfig";
+import * as CustomFunction from "../../../src/actions/customFunction";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {

@@ -1,5 +1,5 @@
-import * as Border from '../../../src/actions/border/Border';
-import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
+import * as Border from '../../../src/actions/border';
+import CloudinaryConfig from "../../../src/sdk/config/CloudinaryConfig";
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {

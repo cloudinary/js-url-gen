@@ -1,9 +1,9 @@
-import * as VideoEdit from '../../../src/actions/videoEdit/VideoEdit';
+import * as VideoEdit from '../../../src/actions/videoEdit';
 import {CloudinaryVideo} from "../../../src/assets/CloudinaryVideo";
-import * as Sources from "../../../src/values/sources/Sources";
+import * as Sources from "../../../src/values/sources";
 
-import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import * as Volume from "../../../src/values/volume/Volume";
+import CloudinaryConfig from "../../../src/sdk/config/CloudinaryConfig";
+import * as Volume from "../../../src/values/volume";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {

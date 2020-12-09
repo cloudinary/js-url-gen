@@ -1,5 +1,5 @@
 import getImageWithResize from "./shared/getImageWithResize";
-import fit from '../../../../src/actions/resize/ResizeActions/simpleResizeActions/FitAction';
+import {fit} from "../../../../src/actions/resize";
 
 describe('Tests for Transformation Action -- Resize.fill', () => {
   it('Ensures it generates the right URL', () => {

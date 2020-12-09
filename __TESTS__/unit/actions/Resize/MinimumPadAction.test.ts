@@ -1,8 +1,7 @@
 import getImageWithResize from "./shared/getImageWithResize";
-import * as Gravity from "../../../../src/values/gravity/Gravity";
-import minimumPad from "../../../../src/actions/resize/ResizeActions/pad/MinimumPadAction";
-import * as Background from "../../../../src/values/background/Background";
-
+import {Background} from "../../../../src/values/background";
+import {minimumPad} from "../../../../src/actions/resize";
+import {Gravity} from "../../../../src/values/gravity";
 
 describe('Tests for Transformation Action -- Resize.minimumPad', () => {
   it('Ensures it generates the right URL', () => {

@@ -1,4 +1,4 @@
-import {isString} from "../../../../src/utils/dataStructureUtils";
+import {isString} from "../../../../src/sdk/utils/dataStructureUtils";
 
 describe('Tests for isString', () => {
   it('checks if a value is a string', () => {

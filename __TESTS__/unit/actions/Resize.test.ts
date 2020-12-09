@@ -1,5 +1,5 @@
 import getImageWithResize from "./Resize/shared/getImageWithResize";
-import * as Resize from "../../../src/actions/resize/Resize";
+import * as Resize from "../../../src/actions/resize";
 
 
 describe('Tests for Transformation Action -- Resize', () => {
