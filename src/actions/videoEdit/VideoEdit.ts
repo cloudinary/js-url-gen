@@ -53,4 +53,5 @@ function volume(volumeValue: string | number): VolumeAction{
   return new VolumeAction(volumeValue);
 }
 
+export declare type videoEditType = VolumeAction | TrimAction | ConcatenateAction;
 export {concatenate, trim, volume};

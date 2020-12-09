@@ -19,8 +19,8 @@ npm install @cloudinary/base
 ```javascript
 
 // Import the cloudinary class, and the assets you want to use
-// In this case, we import a TransformableImage type.
-import Cloudinary, {TransformableImage} from '@cloudinary/base';
+// In this case, we import a ImageTransformation type.
+import Cloudinary, {ImageTransformation} from '@cloudinary/base';
 
 // Create your instance
 const cld = new Cloudinary({
@@ -33,7 +33,7 @@ const cld = new Cloudinary({
 });
 
 // Plug the image type into your instance
-cld.useImage(TransformableImage);
+cld.useImage(ImageTransformation);
 
 // Lets create a new image
 const myImage = cld.image('sample');
@@ -62,7 +62,7 @@ Lets see a more complex example and how the SDK helps you in those cases.
 </div>
 
 ```javascript
-import Cloudinary, {TransformableImage} from '@cloudinary/base';
+import Cloudinary, {ImageTransformation} from '@cloudinary/base';
 
 const cld = new Cloudinary({
   cloud: {
@@ -74,7 +74,7 @@ const cld = new Cloudinary({
 });
 
 // Plug the image type into your instance
-cld.useImage(TransformableImage);
+cld.useImage(ImageTransformation);
 
 // Import the RotationModeAction
 import {mode} from '@cloudinary/base/actions/rotate';

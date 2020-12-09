@@ -1,13 +1,13 @@
 import blur from "./blur/blur";
 import grayscale from "./simple/grayscale";
 import sepia from "./leveled/sepia";
-import shadow from "./shadow";
+import shadow, {ShadowEffectAction} from "./shadow";
 import colorize from "./colorize";
 import oilPaint from "./leveled/oilPaint";
 import artisticFilter from "./simple/artisticFilter";
-import cartoonify from "./cartoonify";
-import outline from "./outline";
-import styleTransfer from "./styleTransfer";
+import cartoonify, {CartoonifyEffect} from "./cartoonify";
+import outline, {Outline} from "./outline";
+import styleTransfer, {StyleTransfer} from "./styleTransfer";
 import boomerang from "./simple/boomerang";
 import advancedRedEye from "./simple/advanedRedEye";
 import blackWhite from "./leveled/blackWhite";
@@ -22,13 +22,14 @@ import makeTransparent from "./leveled/makeTransparent";
 import noise from "./leveled/noise";
 import vignette from "./leveled/vignette";
 import dither from "./dither";
-import vectorize from "./vectorize";
-import gradientFade from "./gradientFade";
-import assistColorBlind from "./assistColorBlind";
-import simulateColorBlind from "./simulateColorBlind";
+import vectorize, {VectorizeEffectAction} from "./vectorize";
+import gradientFade, {GradientFadeEffectAction} from "./gradientFade";
+import assistColorBlind, {AssistColorBlindEffectAction} from "./assistColorBlind";
+import simulateColorBlind, {SimulateColorBlindEffectAction} from "./simulateColorBlind";
 import deshake from "./leveled/deshake";
 import transition from "./simple/transition";
 import {pixelate} from "./pixelate/pixelate";
+import SimpleEffectAction from "./EffectActions/SimpleEffectAction";
 
 
 /**
@@ -71,6 +72,17 @@ class Effect {
 }
 
 
+
+export declare type EffectActions =
+  SimpleEffectAction
+  | Outline
+  | ShadowEffectAction
+  | AssistColorBlindEffectAction
+  | SimulateColorBlindEffectAction
+  | CartoonifyEffect
+  | StyleTransfer
+  | VectorizeEffectAction
+  | GradientFadeEffectAction
 
 
 export {
