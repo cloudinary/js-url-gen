@@ -1,6 +1,6 @@
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import {PSDTools} from "../../../src/actions/Actions";
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
+import {PsdTools} from "../../../src/actions/psdTools";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -12,7 +12,7 @@ describe('Tests for Transformation Action -- PSDTools', () => {
   it('Creates a cloudinaryURL with clip number', () => {
     const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
-      .psdTools(PSDTools.clip(9))
+      .psdTools(PsdTools.clip(9))
       .setPublicID('sample')
       .toURL();
 
@@ -22,7 +22,7 @@ describe('Tests for Transformation Action -- PSDTools', () => {
   it('Creates a cloudinaryURL with clip string', () => {
     const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
-      .psdTools(PSDTools.clip("path"))
+      .psdTools(PsdTools.clip("path"))
       .setPublicID('sample')
       .toURL();
 
@@ -32,7 +32,7 @@ describe('Tests for Transformation Action -- PSDTools', () => {
   it('Creates a cloudinaryURL with clip evenOdd', () => {
     const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
-      .psdTools(PSDTools.clip(9).evenOdd())
+      .psdTools(PsdTools.clip(9).evenOdd())
       .setPublicID('sample')
       .toURL();
 
@@ -42,7 +42,7 @@ describe('Tests for Transformation Action -- PSDTools', () => {
   it('Creates a cloudinaryURL with getLayer.byNumber', () => {
     const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
-      .psdTools(PSDTools.getLayer().byNumber(4))
+      .psdTools(PsdTools.getLayer().byNumber(4))
       .setPublicID('sample')
       .toURL();
 
@@ -52,7 +52,7 @@ describe('Tests for Transformation Action -- PSDTools', () => {
   it('Creates a cloudinaryURL with getLayer.byRange', () => {
     const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
-      .psdTools(PSDTools.getLayer().byRange(4, 10))
+      .psdTools(PsdTools.getLayer().byRange(4, 10))
       .setPublicID('sample')
       .toURL();
 
@@ -62,7 +62,7 @@ describe('Tests for Transformation Action -- PSDTools', () => {
   it('Creates a cloudinaryURL with getLayer.byName', () => {
     const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
-      .psdTools(PSDTools.getLayer().byName('sample'))
+      .psdTools(PsdTools.getLayer().byName('sample'))
       .setPublicID('sample')
       .toURL();
 
@@ -72,7 +72,7 @@ describe('Tests for Transformation Action -- PSDTools', () => {
   it('Creates a cloudinaryURL with smartObject.byIndex', () => {
     const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
-      .psdTools(PSDTools.smartObject().byIndex(8).byIndex(5))
+      .psdTools(PsdTools.smartObject().byIndex(8).byIndex(5))
       .setPublicID('sample')
       .toURL();
 
@@ -82,7 +82,7 @@ describe('Tests for Transformation Action -- PSDTools', () => {
   it('Creates a cloudinaryURL with smartObject.byFileName', () => {
     const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
-      .psdTools(PSDTools.smartObject().byFileName('myFile').byFileName('myFile2'))
+      .psdTools(PsdTools.smartObject().byFileName('myFile').byFileName('myFile2'))
       .setPublicID('sample')
       .toURL();
 
@@ -90,19 +90,19 @@ describe('Tests for Transformation Action -- PSDTools', () => {
   });
 
   it('Uses multiple qualifiers', () => {
-    expect(PSDTools
+    expect(PsdTools
       .getLayer()
       .byNumber(1)
       .byRange(5, 7)
       .toString()
     ).toBe('pg_1;5-7'); // pg_1;5-7
-    expect(PSDTools
+    expect(PsdTools
       .getLayer()
       .byRange(4, 7)
       .byNumber(9)
       .toString()
     ).toBe('pg_4-7;9');
-    expect(PSDTools
+    expect(PsdTools
       .getLayer()
       .byName("lala")
       .byName('fofo')

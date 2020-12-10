@@ -1,24 +1,24 @@
-import {Transformation} from "..";
-import {Border} from "../actions/border/Border";
-import {IReshape} from "../actions/reshape/Reshape";
-import ResizeSimpleAction from "../actions/resize/ResizeActions/shared/ResizeSimpleAction";
+import {Border} from "../actions/border";
+import {IReshape} from "../actions/reshape";
+import ResizeSimpleAction from "../actions/resize/ResizeSimpleAction";
 import DeliveryAction from "../actions/delivery/DeliveryAction";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
 import {LayerAction} from "../actions/overlay/LayerAction";
 import VariableAction from "../actions/variable/VariableAction";
-import {ConditionAction} from "../actions/condition/Condition";
-import Action from "../actions/Action";
+import {ConditionAction} from "../actions/condition";
+import {Action} from "../internal/Action";
 import RotateAction from "../actions/rotate/RotateAction";
 import {NamedTransformationAction} from "../actions/namedTransformation/NamedTransformationAction";
-import {SystemColors} from "../values/color/Color";
+import {SystemColors} from "../values/color";
 import SmartObjectAction from "../actions/psdTools/SmartObjectAction";
 import ClipAction from "../actions/psdTools/ClipAction";
 import GetLayerAction from "../actions/psdTools/GetLayerAction";
-import {Extract} from "../actions/extract/Extract";
+import {Extract} from "../actions/extract";
 import {FlagQualifier} from "../values/flag/FlagQualifier";
 import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction";
-import {videoEditType} from "../actions/videoEdit/VideoEdit";
-import {EffectActions} from "../actions/effect/Effect";
+import {videoEditType} from "../actions/videoEdit";
+import {EffectActions} from "../actions/effect";
+import {Transformation} from "../transformation/Transformation";
 
 /**
  * @desc Works

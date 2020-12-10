@@ -1,6 +1,6 @@
-import Action from "../../Action";
-import Qualifier from "../../../qualifier/Qualifier";
-import QualifierValue from "../../../qualifier/QualifierValue";
+import {Action} from "../../../internal/Action";
+import {QualifierValue} from "../../../internal/qualifier/QualifierValue";
+import {Qualifier} from "../../../internal/qualifier/Qualifier";
 
 /**
  * @class SimpleEffectAction
@@ -25,4 +25,4 @@ class SimpleEffectAction extends Action {
   }
 }
 
-export default SimpleEffectAction;
+export {SimpleEffectAction};

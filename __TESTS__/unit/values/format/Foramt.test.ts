@@ -1,4 +1,4 @@
-import {Format} from "../../../../src/values/format/Format";
+import {Format} from "../../../../src/values/format";
 
 describe('Test imported values', () => {
   it ('Tests audio formats', () => {

@@ -1,13 +1,13 @@
-import Qualifier from "../../qualifier/Qualifier";
-import QualifierValue from "../../qualifier/QualifierValue";
-import Action from "../Action";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue";
+import {Action} from "../../internal/Action";
 
 /**
  * @class CartoonifyEffect
  * @augments Action
  * @description Applies a cartoon effect to an image.
  */
-export class CartoonifyEffect extends Action {
+class CartoonifyEffect extends Action {
   private colorReduction: number | string;
   private cartoonifyStrength: number;
   private effectName: string;
@@ -19,7 +19,7 @@ export class CartoonifyEffect extends Action {
   }
 
   /**
-   * @description Sets the thickness of the lines. 
+   * @description Sets the thickness of the lines.
    * @param {number} cartoonifyLevel The thickness of the lines. (Range: 0 to 100, Server default: 50)
    * @return {this}
    */
@@ -46,14 +46,6 @@ export class CartoonifyEffect extends Action {
   }
 }
 
-/**
- * @description Applies a cartoonify effect to the asset.
- * @memberOf Actions.Effect
- * @param cartoonifyLevel The thickness of the lines. (Range: 0 to 100, Server default: 50)
- * @return {CartoonifyEffect}
- */
-function cartoonify(cartoonifyLevel?: number):CartoonifyEffect {
-  return new CartoonifyEffect('cartoonify', cartoonifyLevel);
-}
 
-export default cartoonify;
+
+export {CartoonifyEffect};

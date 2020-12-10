@@ -1,9 +1,9 @@
-import Action from "../Action";
+import {Action} from "../../internal/Action";
 import {VideoSource} from "../../values/sources/sourceTypes/VideoSource";
 import {LayerAction} from "../overlay/LayerAction";
-import {imageLayer} from "../overlay/Overlay";
-import * as Flag from "../../values/flag/Flag";
-import * as Effect from "../effect/Effect";
+import {imageLayer} from "../overlay";
+import {splice} from "../../values/flag/splice";
+import {transition} from "../effect";
 
 /**
  * @description Class for Concatenating another video.
@@ -34,7 +34,7 @@ class ConcatenateAction extends Action {
     this.concatSource
       .overlay(imageLayer(source)
         .setLayerType('l')
-        .setOpenLayerTransformation(Effect.transition()));
+        .setOpenLayerTransformation(transition()));
 
     return this;
   }
@@ -45,7 +45,7 @@ class ConcatenateAction extends Action {
    */
   private prepareConcatString(){
     if(!this.shouldTransition){
-      this.layer.setOpenLayerFlag(Flag.splice());
+      this.layer.setOpenLayerFlag(splice());
     }
   }
 

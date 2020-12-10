@@ -1,4 +1,4 @@
-import QualifierValue from "../../qualifier/QualifierValue";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 
 /**
  * @memberOf Values.AnimatedFormat

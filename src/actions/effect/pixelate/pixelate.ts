@@ -1,6 +1,6 @@
 import {NamedRegion} from "../../../values/region/NamedRegion";
-import Qualifier from "../../../qualifier/Qualifier";
-import Action from "../../Action";
+import {Qualifier} from "../../../internal/qualifier/Qualifier";
+import {Action} from "../../../internal/Action";
 
 /**
  * @description The Action class of the pixelate Builder
@@ -77,14 +77,5 @@ class Pixelate extends Action {
   }
 }
 
-/**
- * @description Applies a pixelatering filter to the asset.
- * @memberOf Actions.Effect
- * @param {number} pixelateLevel The pixelWidth of the pixelate. (Range: 1 to 2000, Server default: 100)
- * @return {Pixelate}
- */
-function pixelate(pixelateLevel?: number): Pixelate {
-  return new Pixelate(pixelateLevel);
-}
 
-export {pixelate};
+export {Pixelate};

@@ -1,5 +1,5 @@
-import ICloudConfig from "../interfaces/Config/ICloudConfig";
-import {ALLOWED_CLOUD_CONFIG} from "../internalConstants";
+import ICloudConfig from "./interfaces/Config/ICloudConfig";
+import {ALLOWED_CLOUD_CONFIG} from "../internal/internalConstants";
 import Config from "./BaseConfig";
 
 class CloudConfig extends Config implements ICloudConfig {

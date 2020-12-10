@@ -1,6 +1,6 @@
-import Action from "../Action";
-import QualifierValue from "../../qualifier/QualifierValue";
-import Qualifier from "../../qualifier/Qualifier";
+import {Action} from "../../internal/Action";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
  * @class AssistColorBlindEffectAction
@@ -8,7 +8,7 @@ import Qualifier from "../../qualifier/Qualifier";
  * @description Applies stripes to the image to help people with common color-blind conditions to differentiate between colors that are similar for them.
  * You can replace colors using the xray() method.
  */
-export class AssistColorBlindEffectAction extends Action {
+class AssistColorBlindEffectAction extends Action {
   private hasStripes:boolean;
 
   constructor() {
@@ -40,15 +40,6 @@ export class AssistColorBlindEffectAction extends Action {
   }
 }
 
-/**
- * @description
- * Applies stripes to the image to help people with common color-blind conditions to differentiate between colors that are similar for them.</br>
- * You can replace colors using the xRay() method of the \Cloudinary\Transformation\AssistColorBlind class.
- * @memberOf Actions.Effect
- * @return {AssistColorBlindEffectAction}
- */
-function assistColorBlind():AssistColorBlindEffectAction {
-  return new AssistColorBlindEffectAction();
-}
+export {AssistColorBlindEffectAction};
 
-export default assistColorBlind;
+

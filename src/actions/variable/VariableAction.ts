@@ -1,6 +1,6 @@
-import Action from "../Action";
-import QualifierValue from "../../qualifier/QualifierValue";
-import Qualifier from "../../qualifier/Qualifier";
+import {Action} from "../../internal/Action";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
 import {ExpressionQualifier} from "../../values/expression/ExpressionQualifier";
 
 type TypeVariableValue = number | string | ExpressionQualifier;

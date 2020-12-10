@@ -1,9 +1,9 @@
 import {ImageSource} from '../../values/sources/sourceTypes/ImageSource';
-import {imageLayer} from "../overlay/Overlay";
+import {imageLayer} from "../overlay";
 import {LayerAction} from "../overlay/LayerAction";
-import Qualifier from "../../qualifier/Qualifier";
-import QualifierValue from "../../qualifier/QualifierValue";
-import Action from "../Action";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue";
+import {Action} from "../../internal/Action";
 
 
 /**
@@ -13,7 +13,7 @@ import Action from "../Action";
  * @class StyleTransfer
  * @augments Action
  */
-export class StyleTransfer extends Action {
+class StyleTransfer extends Action {
   // This action is actually a layer.
   private imgLayer: LayerAction;
   // This action is built from effectStrength and preserve
@@ -24,7 +24,7 @@ export class StyleTransfer extends Action {
   /**
    * The Image Source used to create the style transfer,
    * Use the Image Source builder to quickly create a source:
-   * </br>Import: {@link Values.Sources|import * as Sources from '@cloudinary/base/qualifiers/sources';}
+   * </br>Import: {@link Values.Sources|import Sources from '@cloudinary/base/values/sources';}
    * </br>Create: `Sources.image('dog')`
    * @param {ImageSource} imageSource
    */
@@ -74,14 +74,6 @@ export class StyleTransfer extends Action {
   }
 }
 
-/**
- * @description Applies a complex deep learning neural network algorithm that extracts artistic styles from a source image and applies them to the content of a target photograph.<br/>
- * <b>Learn more:</b> {@link https://cloudinary.com/documentation/neural_artwork_style_transfer_addon | Neural Artwork Style Transfer}
- * @memberOf Actions.Effect
- * @param {ImageSource} imageSource `import {image} from '@cloudinary/base/qualifiers/sources`
- */
-function styleTransfer(imageSource: ImageSource): StyleTransfer {
-  return new StyleTransfer(imageSource);
-}
 
-export default styleTransfer;
+
+export {StyleTransfer};

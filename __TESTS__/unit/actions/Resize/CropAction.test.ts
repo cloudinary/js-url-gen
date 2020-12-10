@@ -1,6 +1,6 @@
 import getImageWithResize from "./shared/getImageWithResize";
-import crop from "../../../../src/actions/resize/ResizeActions/CropAction";
-import * as Gravity from "../../../../src/values/gravity/Gravity";
+import * as Gravity from "../../../../src/values/gravity";
+import {crop} from "../../../../src/actions/resize";
 
 
 describe('Tests for Transformation Action -- Resize.crop', () => {

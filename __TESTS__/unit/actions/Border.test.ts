@@ -1,4 +1,4 @@
-import * as Border from '../../../src/actions/border/Border';
+import {Border} from "../../../src/actions/border";
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 const CONFIG_INSTANCE = new CloudinaryConfig({

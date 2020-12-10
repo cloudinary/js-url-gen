@@ -1,4 +1,4 @@
-import LeveledEffectAction from "./LeveledEffectAction";
+import {LeveledEffectAction} from "./LeveledEffectAction";
 
 /**
  * @class EffectActionWithLevel
@@ -11,4 +11,4 @@ class EffectActionWithLevel extends LeveledEffectAction {
   }
 }
 
-export default EffectActionWithLevel;
+export {EffectActionWithLevel};

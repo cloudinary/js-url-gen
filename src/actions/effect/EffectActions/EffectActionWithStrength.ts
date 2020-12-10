@@ -1,4 +1,4 @@
-import LeveledEffectAction from "./LeveledEffectAction";
+import {LeveledEffectAction} from "./LeveledEffectAction";
 
 /**
  * @description A class for all effects that include a strength method
@@ -11,4 +11,4 @@ class EffectActionWithStrength extends LeveledEffectAction {
   }
 }
 
-export default EffectActionWithStrength;
+export {EffectActionWithStrength};

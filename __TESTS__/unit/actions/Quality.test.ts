@@ -1,9 +1,9 @@
-import * as Quality from "../../../src/values/quality/Quality";
+import * as Quality from "../../../src/values/quality";
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import * as Delivery from "../../../src/actions/delivery/Delivery";
+import * as Delivery from "../../../src/actions/delivery";
 
-import * as ChromaSubSampling from '../../../src/values/chromaSubSampling/ChromaSubSampling';
+import * as ChromaSubSampling from '../../../src/values/chromaSubSampling';
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {

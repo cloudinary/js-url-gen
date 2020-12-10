@@ -1,4 +1,4 @@
-import {Gravity} from "../../../../src/values/gravity/Gravity";
+import {Gravity} from "../../../../src/values/gravity";
 import {AutoFocus} from "../../../../src/values/gravity/qualifiers/autoFocus/AutoFocus";
 import {FocusOn} from "../../../../src/values/gravity/qualifiers/focusOn/FocusOn";
 

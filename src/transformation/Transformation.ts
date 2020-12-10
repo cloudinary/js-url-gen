@@ -1,11 +1,11 @@
-import Qualifier from "../qualifier/Qualifier";
+import {Qualifier} from "../internal/qualifier/Qualifier";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
 import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction";
 import {LayerAction} from "../actions/overlay/LayerAction";
-import Action from "../actions/Action";
+import {Action} from "../internal/Action";
 import VariableAction from "../actions/variable/VariableAction";
-import {ConditionAction} from "../actions/condition/Condition";
-import ResizeSimpleAction from "../actions/resize/ResizeActions/shared/ResizeSimpleAction";
+import {ConditionAction} from "../actions/condition";
+import ResizeSimpleAction from "../actions/resize/ResizeSimpleAction";
 import RotateAction from "../actions/rotate/RotateAction";
 import {BackgroundColor} from "../actions/background/actions/BackgroundColor";
 import {NamedTransformationAction} from "../actions/namedTransformation/NamedTransformationAction";
@@ -13,14 +13,14 @@ import DeliveryAction from "../actions/delivery/DeliveryAction";
 import SmartObjectAction from "../actions/psdTools/SmartObjectAction";
 import ClipAction from "../actions/psdTools/ClipAction";
 import GetLayerAction from "../actions/psdTools/GetLayerAction";
-import {IReshape} from "../actions/reshape/Reshape";
-import {SystemColors} from "../values/color/Color";
-import {prepareColor} from "../utils/prepareColor";
-import {Extract} from "../actions/extract/Extract";
-import {Border} from "../actions/border/Border";
+import {IReshape} from "../actions/reshape";
+import {SystemColors} from "../values/color";
+import {prepareColor} from "../internal/utils/prepareColor";
+import {Extract} from "../actions/extract";
+import {Border} from "../actions/border";
 import {FlagQualifier} from "../values/flag/FlagQualifier";
-import {EffectActions} from "../actions/effect/Effect";
-import {videoEditType} from "../actions/videoEdit/VideoEdit";
+import {EffectActions} from "../actions/effect";
+import {videoEditType} from "../actions/videoEdit";
 
 /**
  * @description - Defines how to transform an asset

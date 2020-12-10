@@ -1,4 +1,4 @@
-import {isString} from "../../utils/dataStructureUtils";
+import {isString} from "../../internal/utils/dataStructureUtils";
 import VariableAction from "./VariableAction";
 import {ExpressionQualifier} from "../../values/expression/ExpressionQualifier";
 

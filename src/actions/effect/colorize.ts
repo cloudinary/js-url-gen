@@ -1,8 +1,8 @@
-import QualifierValue from "../../qualifier/QualifierValue";
-import Qualifier from "../../qualifier/Qualifier";
-import {prepareColor} from "../../utils/prepareColor";
-import EffectActionWithLevel from "./EffectActions/EffectActionWithLevel";
-import {SystemColors} from "../../values/color/Color";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
+import {prepareColor} from "../../internal/utils/prepareColor";
+import {EffectActionWithLevel}from "./EffectActions/EffectActionWithLevel";
+import {SystemColors} from "../../values/color";
 
 /**
  * @class ColorizeEffectAction
@@ -20,14 +20,5 @@ class ColorizeEffectAction extends EffectActionWithLevel {
   }
 }
 
-/**
- * @description Applies a colorizing filter to the asset.
- * @memberOf Actions.Effect
- * @param {number} colorizeLevel The strength of the color. (Range: 0 to 100, Server default: 100)
- * @return {ColorizeEffectAction}
- */
-function colorize(colorizeLevel?: number):ColorizeEffectAction {
-  return new ColorizeEffectAction('colorize', colorizeLevel);
-}
 
-export default colorize;
+export {ColorizeEffectAction};

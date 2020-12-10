@@ -1,6 +1,6 @@
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import {Color} from "../../../src/values/color/Color";
-import * as Resize from "../../../src/actions/resize/Resize";
+import {Color} from "../../../src/values/color";
+import * as Resize from "../../../src/actions/resize";
 import {
   auto,
   border,
@@ -9,8 +9,8 @@ import {
   predominant,
   predominantGradient,
   blurred
-} from "../../../src/values/background/Background";
-import {GradientDirection} from "../../../src/values/gradientDirection/GradientDirection";
+} from "../../../src/values/background";
+import {GradientDirection} from "../../../src/values/gradientDirection";
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 
 

@@ -1,7 +1,7 @@
-import Qualifier from "../../../qualifier/Qualifier";
-import QualifierValue from "../../../qualifier/QualifierValue";
-import Action from "../../Action";
-import {SystemColors} from "../../../values/color/Color";
+import {Action} from "../../../internal/Action";
+import {QualifierValue} from "../../../internal/qualifier/QualifierValue";
+import {Qualifier} from "../../../internal/qualifier/Qualifier";
+import {SystemColors} from "../../../values/color";
 
 /**
  * @class BackgroundColorAction

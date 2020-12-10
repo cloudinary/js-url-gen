@@ -1,4 +1,4 @@
-import EffectActionWithBlendPercentage from "../../effect/EffectActions/EffectActionWithBlendPercentage";
+import {EffectActionWithBlendPercentage} from "../../effect/EffectActions/EffectActionWithBlendPercentage";
 
 /**
  * @memberOf Actions.Adjust

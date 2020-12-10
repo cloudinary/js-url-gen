@@ -1,9 +1,9 @@
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
-import {image} from "../../../src/values/sources/Sources";
-import {scale} from "../../../src/actions/resize/Resize";
-import * as Position from "../../../src/values/position/Position";
-import {Reshape} from "../../../src/actions/reshape/Reshape";
+import {image} from "../../../src/values/sources";
+import {scale} from "../../../src/actions/resize";
+import * as Position from "../../../src/values/position";
+import {Reshape} from "../../../src/actions/reshape";
 
 
 

@@ -1,8 +1,7 @@
 import getImageWithResize from "./shared/getImageWithResize";
-import limitPad from "../../../../src/actions/resize/ResizeActions/pad/LimitPadAction";
-import * as Gravity from "../../../../src/values/gravity/Gravity";
-import * as Background from "../../../../src/values/background/Background";
-
+import {limitPad} from "../../../../src/actions/resize";
+import {Background} from "../../../../src/values/background";
+import {Gravity} from "../../../../src/values/gravity";
 
 describe('Tests for Transformation Action -- Resize.limitPad', () => {
   it('Ensures it generates the right URL', () => {

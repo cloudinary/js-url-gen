@@ -1,8 +1,7 @@
-import Action from "../Action";
-import Qualifier from "../../qualifier/Qualifier";
-import * as Flag from "../../values/flag/Flag";
-import {Format} from "../../values/format/Format";
+import {Action} from "../../internal/Action";
 import {FormatQualifier} from "../../values/format/FormatQualifier";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
+import {Flag} from "../../values/flag/Flag";
 
 /**
  * @description Qualifies the delivery of an asset.

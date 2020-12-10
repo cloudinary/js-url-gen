@@ -1,5 +1,5 @@
-import Action from "../../actions/Action";
-import Qualifier from "../../qualifier/Qualifier";
+import {Action} from "../../internal/Action";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
 import {GravityQualifier} from "../gravity/GravityQualifier";
 
 /**

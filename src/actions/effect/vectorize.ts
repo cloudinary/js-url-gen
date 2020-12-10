@@ -1,13 +1,13 @@
-import Action from "../Action";
-import Qualifier from "../../qualifier/Qualifier";
-import QualifierValue from "../../qualifier/QualifierValue";
+import {Action} from "../../internal/Action";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 
 /**
  * @description Vectorizes the image.
  * @class VectorizeEffectAction
  * @augments Action
  */
-export class VectorizeEffectAction extends Action {
+class VectorizeEffectAction extends Action {
   private _numOfColors: number | string;
   private _detailsLevel: number | string;
   private _despeckleLevel: number | string;
@@ -93,19 +93,5 @@ export class VectorizeEffectAction extends Action {
   }
 }
 
-/**
- * @description
- * Vectorizes the image.
- * Notes:
- * To deliver the image as a vector image, make sure to change the format (or URL extension) to a vector format, such as SVG.</br>
- * However, you can also deliver in a raster format if you just want to get the 'vectorized' graphic effect.</br>
- * Large images are scaled down to 1000 pixels in the largest dimension before vectorization.
- *
- * @memberOf Actions.Effect
- * @return {VectorizeEffectAction}
- */
-function vectorize():VectorizeEffectAction {
-  return new VectorizeEffectAction();
-}
 
-export default vectorize;
+export {VectorizeEffectAction};

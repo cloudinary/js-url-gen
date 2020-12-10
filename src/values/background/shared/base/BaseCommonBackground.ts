@@ -1,6 +1,6 @@
-import {prepareColor} from "../../../../utils/prepareColor";
+import {prepareColor} from "../../../../internal/utils/prepareColor";
 import {BackgroundQualifier} from "./BackgroundQualifier";
-import {SystemColors} from "../../../color/Color";
+import {SystemColors} from "../../../color";
 
 /**
  * @description Defines the background color to use when resizing with padding.

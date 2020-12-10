@@ -1,5 +1,5 @@
-import Action from "../Action";
-import Qualifier from "../../qualifier/Qualifier";
+import {Action} from "../../internal/Action";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
  * @class AudioFrequencyAction

@@ -1,4 +1,4 @@
-import SimpleEffectAction from "./SimpleEffectAction";
+import {SimpleEffectAction} from "./SimpleEffectAction";
 
 /**
  * @class LeveledEffectAction
@@ -26,4 +26,4 @@ class LeveledEffectAction extends SimpleEffectAction {
   }
 }
 
-export default LeveledEffectAction;
+export {LeveledEffectAction};

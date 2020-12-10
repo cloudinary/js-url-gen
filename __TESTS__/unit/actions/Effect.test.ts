@@ -1,15 +1,15 @@
-import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
+import {image} from "../../../src/values/sources";
+import {rodMonochromacy} from "../../../src/values/simulateColorBlind";
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import * as ArtisticFilter from "../../../src/values/artisticFilter/ArtisticFilter";
-import * as Effect from "../../../src/actions/effect/Effect";
-import * as Outline from "../../../src/values/outline/Outline";
-import {image} from "../../../src/values/sources/Sources";
-import scale from "../../../src/actions/resize/ResizeActions/ScaleAction";
-import cartoonify from "../../../src/actions/effect/cartoonify";
-import * as GradientFade from "../../../src/values/gradientFade/GradientFade";
-import {rodMonochromacy} from "../../../src/values/simulateColorBlind/SimulateColorBlind";
-import {halftone4x4orthogonal} from "../../../src/values/dither/Dither";
-import {Color} from "../../../src/values/color/Color";
+import {Color} from "../../../src/values/color";
+import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
+import {scale} from "../../../src/actions/resize";
+import {GradientFade} from "../../../src/values/GradientFade";
+import {cartoonify, Effect} from "../../../src/actions/effect";
+import {Outline} from "../../../src/values/outline";
+import {halftone4x4orthogonal} from "../../../src/values/dither";
+import {ArtisticFilter} from "../../../src/values/artisticFilter";
+
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {

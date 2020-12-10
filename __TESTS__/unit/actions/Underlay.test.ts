@@ -1,13 +1,10 @@
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
-import {fill} from "../../../src/actions/resize/Resize";
-import * as Underlay from "../../../src/actions/underlay/Underlay";
-import * as Position from "../../../src/values/position/Position";
-import * as BlendMode from "../../../src/values/blendMode/BlendMode";
-
-import * as UnderlayESM from "../../../src/actions/underlay/Underlay";
-import * as OverlayESM from "../../../src/actions/overlay/Overlay";
-import {image} from "../../../src/values/sources/Sources";
+import {fill} from "../../../src/actions/resize";
+import {image} from "../../../src/values/sources";
+import {Position} from "../../../src/values/position";
+import {Underlay} from "../../../src/actions/underlay";
+import {BlendMode} from "../../../src/values/blendMode";
 
 const {imageLayer} = Underlay;
 
@@ -18,9 +15,6 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
 });
 
 describe('Tests for underlay actions', () => {
-  it ('Expect underlay to be alias of overlay', () => {
-    expect(UnderlayESM).toEqual(OverlayESM);
-  });
   it('Parses an underlay with an imageSource', () => {
     const tImage = new CloudinaryImage('sample');
     tImage

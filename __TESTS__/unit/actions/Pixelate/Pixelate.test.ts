@@ -1,5 +1,5 @@
-import {Region} from "../../../../src/values/region/Region";
-import {Effect} from "../../../../src/actions/effect/Effect";
+import {Region} from "../../../../src/values/region";
+import {Effect} from "../../../../src/actions/effect";
 
 describe('Tests for Transformation Action -- Pixelate', () => {
   it('Tests pixelate with and without pixelWidth', () => {

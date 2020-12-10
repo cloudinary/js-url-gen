@@ -1,9 +1,9 @@
-import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigurations";
+import ICloudinaryConfigurations from "../config/interfaces/Config/ICloudinaryConfigurations";
 import CloudinaryConfig from "../config/CloudinaryConfig";
-import {IDescriptor} from "../interfaces/IDescriptor";
-import createCloudinaryURL from "../url/cloudinaryURL";
+import {IDescriptor} from "../config/interfaces/IDescriptor";
+import {createCloudinaryURL} from "../internal/url/cloudinaryURL";
 import {CloudinaryTransformable} from "./CloudinaryTransformable";
-import {Transformation} from "..";
+import {Transformation} from "../transformation/Transformation";
 
 /**
  * @desc Okay Go!

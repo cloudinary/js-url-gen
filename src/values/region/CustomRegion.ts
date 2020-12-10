@@ -1,5 +1,5 @@
 import {NamedRegion} from "./NamedRegion";
-import Qualifier from "../../qualifier/Qualifier";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
  * @memberOf Values.Region

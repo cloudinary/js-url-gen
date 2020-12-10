@@ -1,5 +1,5 @@
 import {Compass} from "../../../../src/values/gravity/qualifiers/compass/Compass";
-import {Gravity} from "../../../../src/values/gravity/Gravity";
+import {Gravity} from "../../../../src/values/gravity";
 
 describe('Tests for Compass Gravity', () => {
   it('Expects Gravity to return g_{direction}', () => {

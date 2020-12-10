@@ -1,4 +1,4 @@
-import Action from "../Action";
+import {Action} from "../../internal/Action";
 
 /**
  * @class By3dLutAction

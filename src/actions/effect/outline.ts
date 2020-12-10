@@ -1,15 +1,15 @@
-import Action from "../Action";
-import QualifierValue from "../../qualifier/QualifierValue";
-import Qualifier from "../../qualifier/Qualifier";
-import {prepareColor} from "../../utils/prepareColor";
-import {SystemColors} from "../../values/color/Color";
+import {Action} from "../../internal/Action";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
+import {prepareColor} from "../../internal/utils/prepareColor";
+import {SystemColors} from "../../values/color";
 
 /**
  * @description Adds an outline to a transparent image. For examples, see the Image Transformations guide.
- * @class Outline
+ * @class EffectOutline
  * @augments Action
  */
-export class Outline extends Action {
+class EffectOutline extends Action {
   private _mode: string;
   private _width: number | string;
   private _blurLevel : number | string
@@ -68,13 +68,6 @@ export class Outline extends Action {
   }
 }
 
-/**
- * @description Adds an outline to a transparent image. For examples, see the Image Transformations guide.
- * @memberOf Actions.Effect
- * @return {Outline}
- */
-function outline(): Outline {
-  return new Outline();
-}
 
-export default outline;
+
+export {EffectOutline};

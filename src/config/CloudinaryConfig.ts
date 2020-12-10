@@ -1,6 +1,6 @@
 import CloudConfig from "./CloudConfig";
 import URLConfig from "./URLConfig";
-import ICloudinaryConfigurations from "../interfaces/Config/ICloudinaryConfigurations";
+import ICloudinaryConfigurations from "./interfaces/Config/ICloudinaryConfigurations";
 
 class CloudinaryConfig {
   public cloud: CloudConfig;

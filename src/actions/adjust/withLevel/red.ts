@@ -1,4 +1,4 @@
-import EffectActionWithLevel from "../../effect/EffectActions/EffectActionWithLevel";
+import {EffectActionWithLevel}from "../../effect/EffectActions/EffectActionWithLevel";
 
 
 /**

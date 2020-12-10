@@ -1,7 +1,7 @@
-import Action from '../../../src/actions/Action';
-import Qualifier from '../../../src/qualifier/Qualifier';
+import {Action} from '../../../src/internal/Action';
+import {Qualifier} from '../../../src/internal/qualifier/Qualifier';
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import QualifierValue from "../../../src/qualifier/QualifierValue";
+import {QualifierValue} from "../../../src/internal/qualifier/QualifierValue";
 import {FlagQualifier} from "../../../src/values/flag/FlagQualifier";
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 

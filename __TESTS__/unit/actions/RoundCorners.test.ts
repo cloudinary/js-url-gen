@@ -1,4 +1,4 @@
-import {byRadius, max} from 'actions/roundCorners/RoundCorners';
+import {byRadius, max} from 'actions/roundCorners';
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 

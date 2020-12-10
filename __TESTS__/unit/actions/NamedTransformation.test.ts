@@ -1,7 +1,7 @@
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import {name} from "../../../src/actions/namedTransformation/NamedTransformation";
-import {scale} from "../../../src/actions/resize/Resize";
+import {name} from "../../../src/actions/namedTransformation";
+import {scale} from "../../../src/actions/resize";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
