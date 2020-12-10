@@ -1,10 +1,10 @@
-import {Transformation} from '../transformation/Transformation';
-import {IDescriptor} from '../config/interfaces/IDescriptor';
-import isFileName from './urlUtils/isFileName';
-import publicIDContainsVersion from './urlUtils/publicIDContainsVersion';
-import isUrl from "./urlUtils/isUrl";
-import IURLConfig from "../config/interfaces/Config/IURLConfig";
-import ICloudinaryConfigurations from "../config/interfaces/Config/ICloudinaryConfigurations";
+import {Transformation} from '../../transformation/Transformation';
+import {IDescriptor} from '../../config/interfaces/IDescriptor';
+import IURLConfig from "../../config/interfaces/Config/IURLConfig";
+import ICloudinaryConfigurations from "../../config/interfaces/Config/ICloudinaryConfigurations";
+import {isUrl} from "./urlUtils/isUrl";
+import {isFileName} from "./urlUtils/isFileName";
+import {publicIDContainsVersion} from "./urlUtils/publicIDContainsVersion";
 
 /**
  *
@@ -128,4 +128,4 @@ function getUrlVersion(urlConfig: IURLConfig, descriptor: IDescriptor) {
   return shouldForceVersion ? 'v1' : '';
 }
 
-export default createCloudinaryURL;
+export {createCloudinaryURL};

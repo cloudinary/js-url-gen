@@ -1,6 +1,6 @@
-import QualifierValue from "../../sdk/qualifier/QualifierValue";
-import Qualifier from "../../sdk/qualifier/Qualifier";
-import {prepareColor} from "../../sdk/utils/prepareColor";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
+import {prepareColor} from "../../internal/utils/prepareColor";
 import {EffectActionWithLevel}from "./EffectActions/EffectActionWithLevel";
 import {SystemColors} from "../../values/color";
 

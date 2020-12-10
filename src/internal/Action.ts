@@ -1,6 +1,6 @@
-import Qualifier from "./qualifier/Qualifier";
-import {mapToSortedArray} from "./utils/dataStructureUtils";
 import {FlagQualifier} from "../values/flag/FlagQualifier";
+import {Qualifier} from "./qualifier/Qualifier";
+import {mapToSortedArray} from "./utils/dataStructureUtils";
 
 /**
  * @class Action
@@ -58,4 +58,4 @@ class Action {
   }
 }
 
-export default Action;
+export {Action};

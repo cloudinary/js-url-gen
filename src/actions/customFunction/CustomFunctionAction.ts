@@ -1,7 +1,7 @@
-import Action from "../../sdk/Action";
-import Qualifier from "../../sdk/qualifier/Qualifier";
-import QualifierValue from "../../sdk/qualifier/QualifierValue";
-import base64Encode from "../../sdk/utils/base64Encode";
+import {base64Encode} from "../../internal/utils/base64Encode";
+import {Action} from "../../internal/Action";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
  * @class CustomFunctionAction

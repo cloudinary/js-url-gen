@@ -1,5 +1,5 @@
-import Action from "../../sdk/Action";
-import Qualifier from "../../sdk/qualifier/Qualifier";
+import {Action} from "../../internal/Action";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
  * @description Applies a gradient fade effect from one edge of the image.

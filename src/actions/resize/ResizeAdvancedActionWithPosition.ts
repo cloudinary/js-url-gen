@@ -1,5 +1,5 @@
 import ResizeAdvancedAction from "./ResizeAdvancedAction";
-import Qualifier from "../../sdk/qualifier/Qualifier";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
  * @description Defines an advanced resize with positional arguments (x, y).

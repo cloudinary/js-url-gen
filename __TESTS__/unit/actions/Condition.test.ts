@@ -1,4 +1,4 @@
-import CloudinaryConfig from "../../../src/sdk/config/CloudinaryConfig";
+import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 import {set} from "../../../src/actions/variable";
 import * as Resize from "../../../src/actions/resize";

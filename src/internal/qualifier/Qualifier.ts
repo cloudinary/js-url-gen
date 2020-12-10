@@ -1,4 +1,4 @@
-import QualifierValue from './QualifierValue';
+import {QualifierValue} from './QualifierValue';
 
 /**
  * @memberOf SDK
@@ -31,4 +31,4 @@ class Qualifier {
   }
 }
 
-export default Qualifier;
+export {Qualifier};

@@ -1,6 +1,6 @@
-import Action from "../../sdk/Action";
-import Qualifier from "../../sdk/qualifier/Qualifier";
-import QualifierValue from "../../sdk/qualifier/QualifierValue";
+import {Action} from "../../internal/Action";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 
 /**
  * @description A class to round one or more corners of an image or video.

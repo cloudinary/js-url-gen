@@ -1,6 +1,6 @@
 import * as AspectRatio from "../../../../src/values/aspectRatio";
 import {CloudinaryImage} from "../../../../src/assets/CloudinaryImage";
-import CloudinaryConfig from "../../../../src/sdk/config/CloudinaryConfig";
+import CloudinaryConfig from "../../../../src/config/CloudinaryConfig";
 import {crop} from "../../../../src/actions/resize";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({

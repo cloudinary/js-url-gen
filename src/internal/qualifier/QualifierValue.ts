@@ -63,4 +63,4 @@ class QualifierValue {
   }
 }
 
-export default QualifierValue;
+export {QualifierValue};

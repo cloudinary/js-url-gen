@@ -1,4 +1,4 @@
-import Action from "../../sdk/Action";
+import {Action} from "../../internal/Action";
 
 /**
  * @memberOf Values.Region

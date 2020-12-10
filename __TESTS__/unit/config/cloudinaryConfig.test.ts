@@ -1,6 +1,6 @@
-import CloudinaryConfig from "../../../src/sdk/config/CloudinaryConfig";
-import URLConfig from "../../../src/sdk/config/URLConfig";
-import CloudConfig from "../../../src/sdk/config/CloudConfig";
+import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
+import URLConfig from "../../../src/config/URLConfig";
+import CloudConfig from "../../../src/config/CloudConfig";
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 
 

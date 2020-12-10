@@ -1,9 +1,9 @@
-import * as Resize from "../../src/actions/resize";
-import ICloudinaryConfigurations from "../../src/sdk/config/interfaces/Config/ICloudinaryConfigurations";
-import IURLConfig from "../../src/sdk/config/interfaces/Config/IURLConfig";
-import CloudinaryConfig from "../../src/sdk/config/CloudinaryConfig";
-import createCloudinaryURL from "../../src/sdk/url/cloudinaryURL";
+import ICloudinaryConfigurations from "../../src/config/interfaces/Config/ICloudinaryConfigurations";
+import IURLConfig from "../../src/config/interfaces/Config/IURLConfig";
+import CloudinaryConfig from "../../src/config/CloudinaryConfig";
 import {CloudinaryImage} from "../../src/assets/CloudinaryImage";
+import {createCloudinaryURL} from "../../src/internal/url/cloudinaryURL";
+import {Resize} from "../../src/actions/resize";
 
 
 /**

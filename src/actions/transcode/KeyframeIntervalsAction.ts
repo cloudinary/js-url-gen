@@ -1,6 +1,6 @@
-import Action from "../../sdk/Action";
-import Qualifier from "../../sdk/qualifier/Qualifier";
-import {toFloatAsString} from "../../sdk/utils/toFloatAsString";
+import {Action} from "../../internal/Action";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
+import {toFloatAsString} from "../../internal/utils/toFloatAsString";
 
 /**
  * @class KeyframeIntervalsAction

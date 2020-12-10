@@ -19,4 +19,4 @@ function base64Encode(input: string):string {
   }
 }
 
-export default base64Encode;
+export {base64Encode};

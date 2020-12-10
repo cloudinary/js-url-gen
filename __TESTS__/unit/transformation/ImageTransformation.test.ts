@@ -1,4 +1,4 @@
-import {ImageTransformation} from "../../../src/sdk/transformation/ImageTransformation";
+import {ImageTransformation} from "../../../src/transformation/ImageTransformation";
 
 
 describe('Tests for ImageTransformation', () => {

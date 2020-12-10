@@ -1,4 +1,4 @@
-import CloudinaryConfig from "../../../src/sdk/config/CloudinaryConfig";
+import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import {Color} from "../../../src/values/color";
 import * as Resize from "../../../src/actions/resize";
 import {

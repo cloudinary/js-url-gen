@@ -1,6 +1,6 @@
-import Action from "../sdk/Action";
-import Qualifier from "../sdk/qualifier/Qualifier";
+import {Action} from "../internal/Action";
 import {expression} from "../values/expression";
+import {Qualifier} from "../internal/qualifier/Qualifier";
 
 /**
  * Sets up a conditional transformation.

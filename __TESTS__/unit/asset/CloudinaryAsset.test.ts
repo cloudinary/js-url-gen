@@ -1,5 +1,5 @@
 import {CloudinaryAsset} from "../../../src/assets/CloudinaryAsset";
-import {Transformation} from "../../../src/sdk/transformation/Transformation";
+import {Transformation} from "../../../src/transformation/Transformation";
 
 describe('Tests for cloudinaryAsset', () => {
   let cloudinaryAsset: CloudinaryAsset = null;

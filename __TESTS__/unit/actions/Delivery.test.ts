@@ -1,5 +1,5 @@
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
-import CloudinaryConfig from "../../../src/sdk/config/CloudinaryConfig";
+import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as Dpr from "../../../src/values/dpr";
 import * as Quality from "../../../src/values/quality";
 import * as ColorSpace from "../../../src/values/colorSpace";

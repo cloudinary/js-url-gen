@@ -1,6 +1,6 @@
 import {image} from "../../../src/values/sources";
 import {rodMonochromacy} from "../../../src/values/simulateColorBlind";
-import CloudinaryConfig from "../../../src/sdk/config/CloudinaryConfig";
+import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import {Color} from "../../../src/values/color";
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 import {scale} from "../../../src/actions/resize";

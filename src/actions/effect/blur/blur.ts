@@ -1,6 +1,6 @@
 import {NamedRegion} from "../../../values/region/NamedRegion";
-import Qualifier from "../../../sdk/qualifier/Qualifier";
-import Action from "../../../sdk/Action";
+import {Qualifier} from "../../../internal/qualifier/Qualifier";
+import {Action} from "../../../internal/Action";
 
 /**
  * @description The Action class of the blur Builder

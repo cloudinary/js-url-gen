@@ -1,7 +1,8 @@
-import Action from "../../sdk/Action";
-import Qualifier from "../../sdk/qualifier/Qualifier";
-import * as Flag from "../../values/flag/Flag";
+import {Action} from "../../internal/Action";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
 import {AnimatedFormatQualifierValue} from "../../values/animatedFormat/AnimatedFormatQualifierValue";
+import {animatedWebP} from "../../values/flag/animatedWebP";
+import {animated} from "../../values/flag/animated";
 
 /**
  * @class ToAnimatedAction
@@ -14,9 +15,9 @@ class ToAnimatedAction extends Action {
   constructor(animatedFormat: AnimatedFormatQualifierValue | string) {
     super();
     if (animatedFormat.toString() === 'webp'){
-      this.addFlag(Flag.animatedWebP());
+      this.addFlag(animatedWebP());
     }
-    this.addFlag(Flag.animated());
+    this.addFlag(animated());
     this.addQualifier(new Qualifier('f', animatedFormat));
   }
 

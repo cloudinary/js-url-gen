@@ -1,4 +1,4 @@
-import {CONDITIONAL_OPERATORS} from "../internalConstants";
+import {CONDITIONAL_OPERATORS} from "../internal/internalConstants";
 import {ExpressionQualifier} from "./expression/ExpressionQualifier";
 
 

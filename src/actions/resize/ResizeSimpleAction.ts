@@ -1,6 +1,6 @@
-import Qualifier from "../../sdk/qualifier/Qualifier";
-import Action from "../../sdk/Action";
-import {toFloatAsString} from "../../sdk/utils/toFloatAsString";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
+import {Action} from "../../internal/Action";
+import {toFloatAsString} from "../../internal/utils/toFloatAsString";
 import {AspectRatioQualifierValue} from "../../values/aspectRatio/AspectRatioQualifierValue";
 import {regionRelative, relative} from "../../values/flag/Flag";
 import {FlagQualifier} from "../../values/flag/FlagQualifier";

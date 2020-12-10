@@ -1,6 +1,6 @@
 import * as Quality from "../../../src/values/quality";
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
-import CloudinaryConfig from "../../../src/sdk/config/CloudinaryConfig";
+import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as Delivery from "../../../src/actions/delivery";
 
 import * as ChromaSubSampling from '../../../src/values/chromaSubSampling';

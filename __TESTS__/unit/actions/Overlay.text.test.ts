@@ -1,5 +1,5 @@
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
-import CloudinaryConfig from "../../../src/sdk/config/CloudinaryConfig";
+import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import {TextSource} from "../../../src/values/sources/sourceTypes/TextSource";
 import {text} from "../../../src/values/sources";
 import {BlendModeQualifier} from "../../../src/values/blendMode/BlendModeQualifier";

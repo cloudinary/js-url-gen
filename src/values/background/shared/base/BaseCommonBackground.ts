@@ -1,4 +1,4 @@
-import {prepareColor} from "../../../../sdk/utils/prepareColor";
+import {prepareColor} from "../../../../internal/utils/prepareColor";
 import {BackgroundQualifier} from "./BackgroundQualifier";
 import {SystemColors} from "../../../color";
 

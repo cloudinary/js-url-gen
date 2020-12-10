@@ -1,7 +1,6 @@
+import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 import DeliveryAction from "./DeliveryAction";
-import Qualifier from "../../sdk/qualifier/Qualifier";
-import QualifierValue from "../../sdk/qualifier/QualifierValue";
-
+import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
  * @description Controls the quality of the delivered image or video.

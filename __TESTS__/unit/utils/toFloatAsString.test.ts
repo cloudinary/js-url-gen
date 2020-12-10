@@ -1,4 +1,4 @@
-import {toFloatAsString} from "../../../src/sdk/utils/toFloatAsString";
+import {toFloatAsString} from "../../../src/internal/utils/toFloatAsString";
 
 describe('Tests for toFloatAsString', () => {
   it('Test string input', () => {

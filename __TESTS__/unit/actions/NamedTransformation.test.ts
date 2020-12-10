@@ -1,5 +1,5 @@
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
-import CloudinaryConfig from "../../../src/sdk/config/CloudinaryConfig";
+import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import {name} from "../../../src/actions/namedTransformation";
 import {scale} from "../../../src/actions/resize";
 

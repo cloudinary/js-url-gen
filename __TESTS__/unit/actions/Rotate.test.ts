@@ -1,6 +1,6 @@
 import * as Rotate from '../../../src/actions/rotate';
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
-import CloudinaryConfig from "../../../src/sdk/config/CloudinaryConfig";
+import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as RotationMode from "../../../src/values/RotationMode";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({

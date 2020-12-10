@@ -6,7 +6,7 @@ import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
 import {LayerAction} from "../actions/overlay/LayerAction";
 import VariableAction from "../actions/variable/VariableAction";
 import {ConditionAction} from "../actions/condition";
-import Action from "../sdk/Action";
+import {Action} from "../internal/Action";
 import RotateAction from "../actions/rotate/RotateAction";
 import {NamedTransformationAction} from "../actions/namedTransformation/NamedTransformationAction";
 import {SystemColors} from "../values/color";
@@ -18,7 +18,7 @@ import {FlagQualifier} from "../values/flag/FlagQualifier";
 import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction";
 import {videoEditType} from "../actions/videoEdit";
 import {EffectActions} from "../actions/effect";
-import {Transformation} from "../sdk/transformation/Transformation";
+import {Transformation} from "../transformation/Transformation";
 
 /**
  * @desc Works

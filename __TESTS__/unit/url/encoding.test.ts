@@ -1,8 +1,8 @@
-import CloudinaryConfig from "../../../src/sdk/config/CloudinaryConfig";
+import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import {image, text} from "../../../src/values/sources";
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 import {CloudinaryAsset} from "../../../src/assets/CloudinaryAsset";
-import {Transformation} from "../../../src/sdk/transformation/Transformation";
+import {Transformation} from "../../../src/transformation/Transformation";
 import {Overlay} from "../../../src/actions/overlay";
 
 

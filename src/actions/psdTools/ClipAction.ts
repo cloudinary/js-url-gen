@@ -1,8 +1,8 @@
-import Action from "../../sdk/Action";
-import Qualifier from "../../sdk/qualifier/Qualifier";
-import QualifierValue from "../../sdk/qualifier/QualifierValue";
-import * as Flag from "../../values/flag/Flag";
-
+import {Action} from "../../internal/Action";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue";
+import clipEvenOdd from "../../values/flag/clipEvenOdd";
+import {clip} from "../../values/flag/clip";
 
 /**
  * @description  Defines the clipping path to use when trimming pixels.
@@ -34,9 +34,9 @@ class ClipAction extends Action {
     }
     //handles flag
     if(this.isEvenOdd){
-      this.addFlag(Flag.clipEvenOdd());
+      this.addFlag(clipEvenOdd());
     }else {
-      this.addFlag(Flag.clip());
+      this.addFlag(clip());
     }
 
     this.addQualifier(new Qualifier('pg', qualifierValue));

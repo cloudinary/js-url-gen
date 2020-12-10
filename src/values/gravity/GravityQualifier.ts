@@ -1,5 +1,5 @@
-import Qualifier from "../../sdk/qualifier/Qualifier";
-import QualifierValue from "../../sdk/qualifier/QualifierValue";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 import {CompassGravity} from "./compassGravity/CompassGravity";
 import {AutoGravity} from "./autoGravity/AutoGravity";
 import {OCR} from "./OCR/OCR";

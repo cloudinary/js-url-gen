@@ -1,7 +1,7 @@
-import createCloudinaryURL from "../../../src/sdk/url/cloudinaryURL";
+import {createCloudinaryURL} from "../../../src/internal/url/cloudinaryURL";
 import {minimumPad, crop, fill, scale} from '../../../src/actions/resize';
-import CloudinaryConfig from "../../../src/sdk/config/CloudinaryConfig";
-import {Transformation} from "../../../src/sdk/transformation/Transformation";
+import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
+import {Transformation} from "../../../src/transformation/Transformation";
 
 
 const CONFIG_INSTANCE = new CloudinaryConfig({

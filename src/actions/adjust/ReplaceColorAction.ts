@@ -1,6 +1,6 @@
-import Action from "../../sdk/Action";
-import QualifierValue from "../../sdk/qualifier/QualifierValue";
-import Qualifier from "../../sdk/qualifier/Qualifier";
+import {Action} from "../../internal/Action";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
  * @description

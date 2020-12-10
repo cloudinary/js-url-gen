@@ -1,4 +1,4 @@
-import Qualifier from "../../sdk/qualifier/Qualifier";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
 import ResizeAdvancedAction from "./ResizeAdvancedAction";
 
 /**

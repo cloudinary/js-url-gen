@@ -1,5 +1,5 @@
 import * as Transcode from '../../../src/actions/transcode';
-import CloudinaryConfig from '../../../src/sdk/config/CloudinaryConfig';
+import CloudinaryConfig from '../../../src/config/CloudinaryConfig';
 import * as AudioCodec from '../../../src/values/audioCodec';
 import * as AudioFrequency from '../../../src/values/audioFrequency';
 import * as StreaminProfile from '../../../src/values/streamingProfile';

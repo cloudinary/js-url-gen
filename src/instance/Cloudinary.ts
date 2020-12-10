@@ -1,4 +1,4 @@
-import ICloudinaryConfigurations from "../sdk/config/interfaces/Config/ICloudinaryConfigurations";
+import ICloudinaryConfigurations from "../config/interfaces/Config/ICloudinaryConfigurations";
 import {CloudinaryImage} from "../assets/CloudinaryImage";
 
 

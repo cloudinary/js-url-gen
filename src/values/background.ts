@@ -1,4 +1,4 @@
-import {prepareColor} from "../sdk/utils/prepareColor";
+import {prepareColor} from "../internal/utils/prepareColor";
 import {BackgroundAutoBorderQualifier} from "./background/shared/auto/BackgroundAutoBorderQualifier";
 import {BackgroundBorderGradientQualifier} from "./background/shared/gradient/BackgroundBorderGradientQualifier";
 import {BackgroundAutoPredominantQualifier} from "./background/shared/auto/BackgroundAutoPredominantQualifier";

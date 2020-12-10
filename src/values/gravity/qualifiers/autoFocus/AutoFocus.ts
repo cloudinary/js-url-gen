@@ -1,4 +1,4 @@
-import QualifierValue from "../../../../sdk/qualifier/QualifierValue";
+import {QualifierValue} from "../../../../internal/qualifier/QualifierValue";
 import {FocusOnValue} from "../focusOn/FocusOn";
 
 /**

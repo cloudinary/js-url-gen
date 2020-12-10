@@ -1,5 +1,5 @@
 import {CloudinaryAsset} from "./CloudinaryAsset";
-import {VideoTransformation} from "../sdk/transformation/VideoTransformation";
+import {VideoTransformation} from "../transformation/VideoTransformation";
 
 
 

@@ -1,4 +1,4 @@
-import {ImageTransformation} from "../sdk/transformation/ImageTransformation";
+import {ImageTransformation} from "../transformation/ImageTransformation";
 import {CloudinaryAsset} from "./CloudinaryAsset";
 
 

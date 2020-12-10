@@ -1,4 +1,4 @@
-import Action from "../../sdk/Action";
+import {Action} from "../../internal/Action";
 import {ImageSource} from "../../values/sources/sourceTypes/ImageSource";
 import {imageLayer} from "../overlay";
 import {LayerAction} from "../overlay/LayerAction";

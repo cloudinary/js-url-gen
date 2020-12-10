@@ -1,4 +1,4 @@
-import Qualifier from "../../../../sdk/qualifier/Qualifier";
+import {Qualifier} from "../../../../internal/qualifier/Qualifier";
 
 /**
  * @description Defines the visual appearance of the background.

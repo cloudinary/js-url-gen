@@ -1,8 +1,8 @@
+import {Action} from "../internal/Action";
+import {QualifierValue} from "../internal/qualifier/QualifierValue";
+import {Qualifier} from "../internal/qualifier/Qualifier";
+import {prepareColor} from "../internal/utils/prepareColor";
 import {SystemColors} from "../values/color";
-import {prepareColor} from "../sdk/utils/prepareColor";
-import QualifierValue from "../sdk/qualifier/QualifierValue";
-import Qualifier from "../sdk/qualifier/Qualifier";
-import Action from "../sdk/Action";
 
 /**
  * @description Adds a solid border around an image or video.

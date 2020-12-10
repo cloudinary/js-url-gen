@@ -1,9 +1,9 @@
 import {ImageSource} from '../../values/sources/sourceTypes/ImageSource';
 import {imageLayer} from "../overlay";
 import {LayerAction} from "../overlay/LayerAction";
-import Qualifier from "../../sdk/qualifier/Qualifier";
-import QualifierValue from "../../sdk/qualifier/QualifierValue";
-import Action from "../../sdk/Action";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue";
+import {Action} from "../../internal/Action";
 
 
 /**
@@ -24,7 +24,7 @@ class StyleTransfer extends Action {
   /**
    * The Image Source used to create the style transfer,
    * Use the Image Source builder to quickly create a source:
-   * </br>Import: {@link Values.Sources|import * as Sources from '@cloudinary/base/qualifiers/sources';}
+   * </br>Import: {@link Values.Sources|import Sources from '@cloudinary/base/values/sources';}
    * </br>Create: `Sources.image('dog')`
    * @param {ImageSource} imageSource
    */
