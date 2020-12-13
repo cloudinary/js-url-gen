@@ -176,12 +176,12 @@ describe('Tests for Transformation Action -- Effect', () => {
   it('Creates a cloudinaryURL with effect cartoonify:50', () => {
     const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
-      .effect(cartoonify().strength(50).colorReductionLevel('bw'))
+      .effect(cartoonify().lineStrength(50).blackwhite())
       .setPublicID('sample')
       .toURL();
 
-    const withConstructor = cartoonify(50).colorReductionLevel('bw').toString();
-    const withBuilder = cartoonify().strength(50).colorReductionLevel('bw').toString();
+    const withConstructor = cartoonify(50).blackwhite().toString();
+    const withBuilder = cartoonify().lineStrength(50).blackwhite().toString();
 
     expect(withBuilder).toBe(withConstructor);
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/e_cartoonify:50:bw/sample');
