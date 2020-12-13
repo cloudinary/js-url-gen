@@ -2,12 +2,14 @@ import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 import {fill} from "../../../src/actions/resize";
 import * as Layers from "../../../src/actions/overlay";
-import * as Position from "../../../src/values/position";
 import * as BlendMode from "../../../src/values/blendMode";
 import {VideoRange, VideoOffset} from "../../../src/values/video";
 import format from "../../../src/actions/delivery/format";
 import {image, video} from "../../../src/values/sources";
 import {CloudinaryVideo} from "../../../src/assets/CloudinaryVideo";
+import {Position} from "../../../src/values/position";
+import {Compass} from "../../../src/values/gravity/qualifiers/compass/Compass";
+import {Gravity} from "../../../src/values/gravity";
 
 const {imageLayer, videoLayer} = Layers;
 
@@ -49,7 +51,8 @@ describe('Tests for overlay actions', () => {
       .overlay(
         imageLayer(
           image('sample'),
-          Position.center()
+          new Position().gravity(Gravity.compass(Compass.center())
+          )
         )
       );
     expect(tImage.toURL()).toContain('l_sample/fl_layer_apply,g_center/sample');
@@ -62,7 +65,8 @@ describe('Tests for overlay actions', () => {
       .overlay(
         imageLayer(
           image('sample'),
-          Position.center()
+          new Position()
+            .gravity(Gravity.compass(Compass.center()))
             .x(50)
             .y(100)
         )

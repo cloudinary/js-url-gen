@@ -34,23 +34,26 @@ import {relative} from "./relative";
 import {regionRelative} from "./regionRelative";
 import {ignoreAspectRatio} from "./ignoreAspectRatio";
 import {clip} from "./clip";
+import {tiled} from "./tiled";
+import {noOverflow} from "./noOverflow";
+
 
 /**
  * @description Defines flags that you can use to alter the default transformation behavior.
  * @namespace Flag
  * @memberOf Values
  */
-
-
 const Flag = {animated, anyFormat, animatedPng, animatedWebP,
   clipEvenOdd, lossy, preserveTransparency, png8, png24, png32, progressive, rasterize,
   sanitize, stripProfile, tiff8Lzw, attachment, forceIcc, forceStrip, getInfo, immutableCache,
   keepAttribution, keepIptc, custom, streamingAttachment, hlsv3, keepDar, noStream, mono,
-  layerApply, relative, regionRelative, splice, truncateTS, waveform, ignoreAspectRatio, clip
+  layerApply, relative, regionRelative, splice, truncateTS, waveform, ignoreAspectRatio, clip,
+  tiled, noOverflow
 };
 
 export {Flag, animated, anyFormat, animatedPng, animatedWebP,
   clipEvenOdd, lossy, preserveTransparency, png8, png24, png32, progressive, rasterize,
   sanitize, stripProfile, tiff8Lzw, attachment, forceIcc, forceStrip, getInfo, immutableCache,
   keepAttribution, keepIptc, custom, streamingAttachment, hlsv3, keepDar, noStream, mono,
-  layerApply, relative, regionRelative, splice, truncateTS, waveform, ignoreAspectRatio, clip};
+  layerApply, relative, regionRelative, splice, truncateTS, waveform, ignoreAspectRatio, clip,
+  tiled, noOverflow};

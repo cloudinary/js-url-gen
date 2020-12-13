@@ -5,6 +5,8 @@ import {image} from "../../../src/values/sources";
 import {Position} from "../../../src/values/position";
 import {Underlay} from "../../../src/actions/underlay";
 import {BlendMode} from "../../../src/values/blendMode";
+import {Gravity} from "../../../src/values/gravity";
+import {Compass} from "../../../src/values/gravity/qualifiers/compass/Compass";
 
 const {imageLayer} = Underlay;
 
@@ -46,7 +48,7 @@ describe('Tests for underlay actions', () => {
       .underlay(
         imageLayer(
           image('sample'),
-          Position.center()
+          new Position().gravity(Gravity.compass(Compass.center()))
         )
       );
     expect(tImage.toURL()).toContain('u_sample/fl_layer_apply,g_center/sample');
@@ -59,7 +61,7 @@ describe('Tests for underlay actions', () => {
       .underlay(
         imageLayer(
           image('sample'),
-          Position.center()
+          new Position().gravity(Gravity.compass(Compass.center()))
             .x(50)
             .y(100)
         )
