@@ -16,16 +16,17 @@ Everything can be very granularly imported to ensure you only import what you ne
 <h4>Without Tree-Shaking</h4>
 
  ```javascript
-         import {Resize} from "@cloudinary/base/actions/Actions";
-         Resize.scale()
-         Resize.crop()
+    import {Resize} from "@cloudinary/base/actions/resize";
+    
+    Resize.scale()
+    Resize.crop()
  ```
  <h4>With Tree-Shaking</h4>
  
    ```javascript
-           import {scale, crop} from '@cloudinary/base/actions/resize/Resize';
-           scale()
-           crop()
+    import {scale, crop} from '@cloudinary/base/actions/resize';
+    scale()
+    crop()
    ```
 </div>
 
@@ -36,17 +37,19 @@ Everything can be very granularly imported to ensure you only import what you ne
 <h4>Without Tree-Shaking</h4>
 
  ```javascript
-         import {Format} from "@cloudinary/base/values/format/Format";
-         Format.png()
-         Format.jpg()
+    import {Format} from "@cloudinary/base/values/format";
+    
+    Format.png()
+    Format.jpg()
  ```
  <h4>With Tree-Shaking</h4>
  
-   ```javascript
-           import {png, jpg} from '@cloudinary/base/values/format/Format';
-           png()
-           jpg()
-   ```
+```javascript
+    import {jpg, png} from "@cloudinary/base/values/format";
+    
+    png()
+    jpg()
+```
 </div>
 
 <br/>

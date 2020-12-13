@@ -24,7 +24,7 @@ import {Outline} from "./values/outline";
 import {Position} from "./values/position";
 import {Quality} from "./values/quality";
 import {Region} from "./values/region";
-import {RotationMode} from "./values/RotationMode";
+import {RotationMode} from "./values/rotationMode";
 import {SimulateColorblind} from "./values/simulateColorBlind";
 import {Sources} from "./values/sources";
 import {StreamingProfile} from "./values/streamingProfile";

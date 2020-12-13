@@ -2,9 +2,11 @@
 
 // Import the cloudinary class, and the assets you want to use
 // In this case, we import a CloudinaryImage type.
-import {Cloudinary, CloudinaryImage} from '@cloudinary/base';
 
 // Create your instance
+import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+import {CloudinaryImage} from "@cloudinary/base/assets/CloudinaryImage";
+
 const cld = new Cloudinary({
     cloud: {
         cloudName: 'demo'
@@ -22,15 +24,15 @@ const myImage = cld.image('sample');
 
 // An overlay is built from several parts
 // Import video or image overlay, based on your asset
-import {Overlay} from "@cloudinary/base/actions/Actions";
+import {Overlay} from "@cloudinary/base/actions/overlay";
 // Import the source of the layer, this determines if the layer is an image, text or video
-import {image} from "@cloudinary/base/values/sources/Sources";
+import {image} from "@cloudinary/base/values/sources";
 
 // Import how to position your layer
-import * as Position from "@cloudinary/base/values/position/Position";
+import * as Position from "@cloudinary/base/values/position";
 
 // We'll also resize our overlay, we'll need this for later.
-import Resize from "@cloudinary/base/actions/resize/Resize";
+import Resize from "@cloudinary/base/actions/resize";
 
 // image sources go into layers (image or video)
 // imageLayers go into image assets

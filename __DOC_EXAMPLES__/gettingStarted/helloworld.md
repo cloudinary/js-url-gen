@@ -3,35 +3,34 @@
 <h2>Code Example</h2>
 
 ```javascript
+import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+import {CloudinaryImage} from "@cloudinary/base/assets/CloudinaryImage";
+import {scale} from "@cloudinary/base/actions/resize";
 
-  import {Cloudinary, CloudinaryImage} from '@cloudinary/base';
-
-  // Create your instance
-  const cld = new Cloudinary({
-      cloud: {
+// Create your instance
+const cld = new Cloudinary({
+    cloud: {
         cloudName: 'demo'
-      },
-      url: {
+    },
+    url: {
         secure: true // force http or https
-      }
-  });
+    }
+});
 
-  // Tell your instance that you'd like to use the CloudinaryImage
-  cld.useImage(CloudinaryImage);
+// Tell your instance that you'd like to use the CloudinaryImage
+cld.useImage(CloudinaryImage);
 
-  // Create a new image
-  const myImage = cld.image('sample');
+// Create a new image
+const myImage = cld.image('sample');
 
-  import {scale} from '@cloudinary/base/actions/resize/Resize';
-
-  myImage.resize(
+myImage.resize(
     scale()
-      .width(100)
-      .height(100)
-  );
+        .width(100)
+        .height(100)
+);
 
-  const myURL = myImage.toURL();
-  // End result: https://res.cloudinary.com/demo/image/upload/c_scale,w_100,h_100/sample
+const myURL = myImage.toURL();
+// End result: https://res.cloudinary.com/demo/image/upload/c_scale,w_100,h_100/sample
 ```
 
 <h1>Explanation</h1>

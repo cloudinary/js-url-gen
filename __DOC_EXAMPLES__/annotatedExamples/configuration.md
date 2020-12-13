@@ -3,9 +3,11 @@
 ```javascript
 // Import the cloudinary class, and the assets you want to use
 // In this case, we import a CloudinaryImage type.
-import {Cloudinary, CloudinaryImage} from '@cloudinary/base';
 
 // Create your instance
+import {CloudinaryImage} from "@cloudinary/base/assets/CloudinaryImage";
+import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+
 const cld = new Cloudinary({
     cloud: {
         cloudName: 'demo'
@@ -24,9 +26,11 @@ cld.useImage(CloudinaryImage);
 
 // Import the cloudinary class, and the assets you want to use
 // In this case, we import a CloudinaryImage type.
-import {Cloudinary, CloudinaryImage} from '@cloudinary/base';
 
 // Create your instance
+import {CloudinaryImage} from "@cloudinary/base/assets/CloudinaryImage";
+import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+
 const cld = new Cloudinary({});
 cld.useImage(CloudinaryImage);
 
@@ -47,9 +51,11 @@ image.setConfig({
 ```javascript
 // Import the cloudinary class, and the assets you want to use
 // In this case, we import a CloudinaryImage type.
-import {CloudinaryImage, Cloudinary, CloudinaryImage} from '@cloudinary/base';
 
 // Create your instance
+import {CloudinaryImage} from "@cloudinary/base/assets/CloudinaryImage";
+import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+
 const cld = new Cloudinary({
     cloud: {
         cloudName: 'demo'

@@ -1,17 +1,18 @@
 ```javascript
-
 // Import the cloudinary class, and the assets you want to use
 // In this case, we import a CloudinaryImage type.
-import {Cloudinary, CloudinaryImage} from '@cloudinary/base';
 
 // Create your instance
+import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+import {CloudinaryImage} from "@cloudinary/base/assets/CloudinaryImage";
+
 const cld = new Cloudinary({
-  cloud: {
-    cloudName: 'demo'
-  },
-  url: {
-    secure: true // force http or https
-  }
+    cloud: {
+        cloudName: 'demo'
+    },
+    url: {
+        secure: true // force http or https
+    }
 });
 
 // Plug the image type into your instance
@@ -33,7 +34,7 @@ const myImage = cld.image('sample');
 // Lets give resize() a ResizeScale paramter to scale our image
 // We import all of our Action parameters from @cloudinary/base/actions/{actionGroup}
 // Note that you can import all Resize Actions, or just the single one you want
-import {Resize} from "@cloudinary/base/actions/Actions";
+import {Resize} from "@cloudinary/base/actions/resize";
 const {scale} = Resize;
 // Resize.scale === scale
 // Explore the Resize object to discover more resize actions
