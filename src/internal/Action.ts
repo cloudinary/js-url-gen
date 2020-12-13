@@ -14,6 +14,12 @@ class Action {
   private delimiter = ','; // {qualifier}{delimiter}{qualifier} for example: `${'w_100'}${','}${'c_fill'}`
   protected prepareQualifiers():void {}
 
+
+  setDelimiter(str: string): this {
+    this.delimiter = str;
+    return this;
+  }
+
   /**
    * @description Calls toString() on all child qualifiers (implicitly by using .join()).
    * @return {string}
