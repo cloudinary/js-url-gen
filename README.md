@@ -30,6 +30,36 @@ npm install @cloudinary/base
 <a href="https://cloudinary.github.io/cloudinary-js-base/public/docs/">Documentation website</a>
 
 
+### Testing with Jest
+
+@cloudinary/base is shipped with ES6 code by default, while this provides great tree-shaking potential,
+it also requires a few adjustments
+
+In jest.config, you'll need to add these lines to allow babel to transpile our code.
+```json
+{
+  "transform": {
+    "node_modules/@cloudinary/base": "babel-jest"
+  },
+  "transformIgnorePatterns": ["/node_modules/(?!@cloudinary/base)"]
+}
+```
+Make sure to install babel-jest:
+`npm install babel-jest` 
+
+You'll also need to ensure you have a babel.config.js file (and not a .babelrc), and that
+it's configured properly to transpile code,
+   
+*As an example*:
+```js
+module.exports = {
+  "presets": [
+    "@babel/preset-env"
+  ]
+};
+```
+
+
 ### Progress report
 We're currently working on implementing all the wide range of features and possible transformations.  
 
