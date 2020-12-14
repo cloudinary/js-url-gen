@@ -13,7 +13,7 @@ const cld = new Cloudinary({
         cloudName: 'demo'
     },
     url: {
-        secure: true // force http or https
+        secure: true // force https, set to false to force http
     }
 });
 
