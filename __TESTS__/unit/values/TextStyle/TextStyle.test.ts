@@ -38,7 +38,7 @@ describe('Text Style tests', () => {
       .stroke()
       .fontStyle(FontStyle.italic())
       .toString();
-    expect(res).toBe('arial_50_italic_justify_strikethrough_bold_stroke_hinting_full_line_spacing_20_letter_spacing_10_letter_spacing_good');
+    expect(res).toBe('arial_50_bold_italic_strikethrough_justify_stroke_letter_spacing_10_line_spacing_20_letter_spacing_good_hinting_full');
   });
 
   it('Ensure normal is not included in the URL(this is the default)', () => {

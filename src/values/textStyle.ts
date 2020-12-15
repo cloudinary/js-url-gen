@@ -78,15 +78,15 @@ class TextStyle {
   toString(): string {
     return [
       `${this._fontFamily}_${this._fontSize}`,
-      this._fontStyle !== normalFontStyle() && this._fontStyle,
-      this._textAlignment,
-      this._textDecoration !== normalTextDecoration() && this._textDecoration,
       this._fontWeight !== normalFontWeight() && this._fontWeight,
+      this._fontStyle !== normalFontStyle() && this._fontStyle,
+      this._textDecoration !== normalTextDecoration() && this._textDecoration,
+      this._textAlignment,
       this._stroke && 'stroke',
-      this._fontHinting && `hinting_${this._fontHinting}`,
-      this._lineSpacing && `line_spacing_${this._lineSpacing}`,
       this._letterSpacing && `letter_spacing_${this._letterSpacing}`,
-      this._fontAntialias && `letter_spacing_${this._fontAntialias}`
+      this._lineSpacing && `line_spacing_${this._lineSpacing}`,
+      this._fontAntialias && `letter_spacing_${this._fontAntialias}`,
+      this._fontHinting && `hinting_${this._fontHinting}`
     ].filter( (a) => a).join('_');
   }
 }
