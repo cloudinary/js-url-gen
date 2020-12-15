@@ -1,27 +1,24 @@
-import {Action} from "../internal/Action";
-
+import {normal as normalFontWeight} from "./fontWeight";
+import {normal as normalFontStyle} from "./fontStyle";
+import {normal as normalTextDecoration} from "./textDecoration";
 
 /**
+ * @doc
  * @memberOf Values
  * @namespace TextStyle
  */
-class TextStyle extends Action {
+class TextStyle {
   private _lineSpacing: number;
   private _letterSpacing: number;
-  private _fontAntialias : string;
+  private _fontAntialias: string;
   private _fontFamily: string;
   private _fontSize: number;
-  private _fontWeight: number;
+  private _fontWeight: string;
   private _fontStyle: string;
   private _textDecoration: string;
   private _textAlignment: string;
-  private _stroke: number;
+  private _stroke: boolean;
   private _fontHinting: string;
-
-  constructor() {
-    super();
-    this.setDelimiter('_');
-  }
 
   lineSpacing(spacing: number): this {
     this._lineSpacing = spacing;
@@ -43,12 +40,12 @@ class TextStyle extends Action {
     return this;
   }
 
-  fontSize(fontSize:number): this {
+  fontSize(fontSize: number): this {
     this._fontSize = fontSize;
     return this;
   }
 
-  fontWeight(fontWeight: number): this {
+  fontWeight(fontWeight: string): this {
     this._fontWeight = fontWeight;
     return this;
   }
@@ -72,23 +69,26 @@ class TextStyle extends Action {
     this._textAlignment = textAlignment;
     return this;
   }
-  stroke(stroke: number): this {
-    this._stroke = stroke;
+
+  stroke(): this {
+    this._stroke = true;
     return this;
+  }
+
+  toString(): string {
+    return [
+      `${this._fontFamily}_${this._fontSize}`,
+      this._fontStyle !== normalFontStyle() && this._fontStyle,
+      this._textAlignment,
+      this._textDecoration !== normalTextDecoration() && this._textDecoration,
+      this._fontWeight !== normalFontWeight() && this._fontWeight,
+      this._stroke && 'stroke',
+      this._fontHinting && `hinting_${this._fontHinting}`,
+      this._lineSpacing && `line_spacing_${this._lineSpacing}`,
+      this._letterSpacing && `letter_spacing_${this._letterSpacing}`,
+      this._fontAntialias && `letter_spacing_${this._fontAntialias}`
+    ].filter( (a) => a).join('_');
   }
 }
 
-
-
-//
-// // const TextAlignment = {left, right, center, end, justify, start};
-//
-// export {
-//   TextAlignment,
-//   left,
-//   right,
-//   center,
-//   end,
-//   justify,
-//   start
-// };
+export {TextStyle};
