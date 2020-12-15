@@ -5,34 +5,34 @@
 
 ```javascript
 
-  import {Cloudinary, CloudinaryImage} from '@cloudinary/base';
+import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+import {CloudinaryImage} from "@cloudinary/base/assets/CloudinaryImage";
+import {Rotate} from "@cloudinary/base/actions/rotate";
+import {Resize} from "@cloudinary/base/actions/resize";
+import {RotationMode} from "@cloudinary/base/values/RotationMode";
 
-  // Create your instance
-  const cld = new Cloudinary({
+// Create your instance
+const cld = new Cloudinary({
     cloud: {
-      cloudName: 'demo'
+        cloudName: 'demo'
     },
     url: {
-      secure: true // force http or https
+        secure: true // force https, set to false to force http
     }
-  });
+});
 
-  cld.useImage(CloudinaryImage);
-  
-  const myImage = cld.image('sample');
+cld.useImage(CloudinaryImage);
 
-  import Resize from '@cloudinary/base/actions/resize/Resize';
-  import Rotate from '@cloudinary/base/actions/rotate/Rotate';
-  import * as RotationMode from '@cloudinary/base/values/rotate/Rotate';
+const myImage = cld.image('sample');
 
-  myImage
+myImage
     .resize(
-      Resize.scale()
-        .width(100)
-        .height(100))
+        Resize.scale()
+            .width(100)
+            .height(100))
     .rotate(
-      Rotate.mode(RotationMode.verticalFlip()) 
-  );
+        Rotate.mode(RotationMode.verticalFlip())
+    );
 
 ```
 

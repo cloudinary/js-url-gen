@@ -3,7 +3,9 @@
 ```javascript
 // Import the cloudinary class, and the assets you want to use
 // In this case, we import a CloudinaryImage type.
-import {Cloudinary, CloudinaryImage} from '@cloudinary/base';
+
+import {CloudinaryImage} from "@cloudinary/base/assets/CloudinaryImage";
+import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
 
 // Create your instance
 const cld = new Cloudinary({
@@ -11,7 +13,7 @@ const cld = new Cloudinary({
         cloudName: 'demo'
     },
     url: {
-        secure: true // force http or https
+        secure: true // force https, set to false to force http
     }
 });
 cld.useImage(CloudinaryImage);
@@ -24,7 +26,8 @@ cld.useImage(CloudinaryImage);
 
 // Import the cloudinary class, and the assets you want to use
 // In this case, we import a CloudinaryImage type.
-import {Cloudinary, CloudinaryImage} from '@cloudinary/base';
+import {CloudinaryImage} from "@cloudinary/base/assets/CloudinaryImage";
+import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
 
 // Create your instance
 const cld = new Cloudinary({});
@@ -37,7 +40,7 @@ image.setConfig({
         cloudName: 'demo'
     },
     url: {
-        secure: true // force http or https
+        secure: true // force https, set to false to force http
     }
 })
 ```
@@ -47,7 +50,8 @@ image.setConfig({
 ```javascript
 // Import the cloudinary class, and the assets you want to use
 // In this case, we import a CloudinaryImage type.
-import {CloudinaryImage, Cloudinary, CloudinaryImage} from '@cloudinary/base';
+import {CloudinaryImage} from "@cloudinary/base/assets/CloudinaryImage";
+import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
 
 // Create your instance
 const cld = new Cloudinary({
@@ -55,7 +59,7 @@ const cld = new Cloudinary({
         cloudName: 'demo'
     },
     url: {
-        secure: true // force http or https
+        secure: true // force https, set to false to force http
     }
 });
 cld.useImage(CloudinaryImage);

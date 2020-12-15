@@ -5,9 +5,11 @@ import {text} from "../../../src/values/sources";
 import {BlendModeQualifier} from "../../../src/values/blendMode/BlendModeQualifier";
 import {imageLayer} from "../../../src/actions/overlay";
 import {PositionQualifier} from "../../../src/values/position/PositionQualifier";
-import {center} from "../../../src/values/position";
 import * as FontWeight from "../../../src/values/fontWeight";
 import * as FontStyle from "../../../src/values/fontStyle";
+import {Position} from "../../../src/values/position";
+import {Gravity} from "../../../src/values/gravity";
+import {Compass} from "../../../src/values/gravity/qualifiers/compass/Compass";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -88,7 +90,7 @@ describe('Tests for overlay texts', () => {
   it('Adds an Text Overlay with position', () => {
     const url = getImageWithOverlay(
       text('Testing'),
-      center()
+      new Position().gravity(Gravity.compass(Compass.center()))
         .x(50)
         .y(100)
     ).toURL();
