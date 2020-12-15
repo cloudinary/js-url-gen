@@ -2,7 +2,8 @@ import {LeveledEffectAction} from "./LeveledEffectAction";
 
 /**
  * @class EffectActionWithLevel
- * @augments LeveledEffectAction
+ * @extends {Actions.Effect.LeveledEffectAction}
+ * @memberOf Actions.Effect
  * @description A class that provides a built in level() method that sets the level of the effect
  */
 class EffectActionWithLevel extends LeveledEffectAction {

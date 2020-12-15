@@ -4,6 +4,7 @@ import {Action} from "../../../internal/Action";
 
 /**
  * @description The Action class of the blur Builder
+ * @memberOf Actions.Effect
  * @doc
  */
 class BlurAction extends Action {

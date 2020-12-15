@@ -2,7 +2,8 @@ import {LeveledEffectAction} from "./LeveledEffectAction";
 
 /**
  * @class EffectActionWithLength
- * @augments LeveledEffectAction
+ * @extends {Actions.Effect.LeveledEffectAction}
+ * @memberOf Actions.Effect
  * @description A class that provides a built in length() method that sets that level of the effect
  */
 class EffectActionWithLength extends LeveledEffectAction {

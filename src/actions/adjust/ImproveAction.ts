@@ -5,6 +5,7 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
 /**
  * @description Defines how to improve an image by automatically adjusting image colors, contrast and brightness.</br>
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#image_improvement_effects | Image improvement effects}
+ * @memberOf Actions.Adjust
  */
 class ImproveAction extends Action {
   private modeValue:string;
@@ -39,4 +40,4 @@ class ImproveAction extends Action {
   }
 }
 
-export default ImproveAction;
+export {ImproveAction};

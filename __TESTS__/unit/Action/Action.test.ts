@@ -5,6 +5,7 @@ import {QualifierValue} from "../../../src/internal/qualifier/QualifierValue";
 import {FlagQualifier} from "../../../src/values/flag/FlagQualifier";
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 
+
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
     cloudName: 'demo'

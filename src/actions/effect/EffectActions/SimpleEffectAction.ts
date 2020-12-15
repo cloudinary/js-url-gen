@@ -4,7 +4,8 @@ import {Qualifier} from "../../../internal/qualifier/Qualifier";
 
 /**
  * @class SimpleEffectAction
- * @augments Action
+ * @extends {SDK.Action}
+ * @memberOf Actions.Effect
  * @description A class that defines a simple effect of the type e_{effectName}
  */
 class SimpleEffectAction extends Action {

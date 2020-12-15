@@ -2,7 +2,8 @@ import {SimpleEffectAction} from "./SimpleEffectAction";
 
 /**
  * @class LeveledEffectAction
- * @augments SimpleEffectAction
+ * @extends {Actions.Effect.SimpleEffectAction}
+ * @memberOf Actions.Effect
  * @description
  * A base class for effects with a level, the extending class needs to implement a method that calls setLevel()
  */
