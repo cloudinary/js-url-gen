@@ -18,7 +18,8 @@ const Delivery = {
   density: density,
   defaultImage: defaultImage,
   colorSpace: colorSpace,
-  colorSpaceFromICC: colorSpaceFromICC
+  colorSpaceFromICC: colorSpaceFromICC,
+  quality
 };
 
 export {Delivery, format, dpr, quality, density, defaultImage, colorSpace, colorSpaceFromICC};
