@@ -1,4 +1,4 @@
-import * as BlendMode from "../../../src/values/blendMode";
+import {BlendMode} from "../../../src/values/blendMode";
 
 
 describe('BlendMode Qualifier', () => {
@@ -6,5 +6,7 @@ describe('BlendMode Qualifier', () => {
     expect(BlendMode.screen().toString()).toBe('e_screen');
     expect(BlendMode.multiply().toString()).toBe('e_multiply');
     expect(BlendMode.overlay().toString()).toBe('e_overlay');
+    expect(BlendMode.mask().toString()).toBe('e_mask');
+    expect(BlendMode.antiRemoval().toString()).toBe('e_anti_removal');
   });
 });

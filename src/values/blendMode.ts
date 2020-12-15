@@ -37,16 +37,40 @@ function overlay():BlendModeQualifier {
   return new BlendModeQualifier('overlay');
 }
 
+/**
+ * @memberOf Values.BlendMode
+ * @description Add an overlay image blended using the 'mask' blend mode.
+ * @return {Values.BlendMode.BlendModeQualifier}
+ */
+function mask():BlendModeQualifier {
+  return new BlendModeQualifier('mask');
+}
+
+
+/**
+ * @memberOf Values.BlendMode
+ * @description Add an overlay image blended using the 'antiRemoval' blend mode.
+ * @return {Values.BlendMode.BlendModeQualifier}
+ */
+function antiRemoval():BlendModeQualifier {
+  return new BlendModeQualifier('anti_removal');
+}
+
+
 const BlendMode = {
   screen,
   multiply,
-  overlay
+  overlay,
+  mask,
+  antiRemoval
 };
 
 export {
   BlendMode,
   screen,
   multiply,
-  overlay
+  overlay,
+  mask,
+  antiRemoval
 };
 

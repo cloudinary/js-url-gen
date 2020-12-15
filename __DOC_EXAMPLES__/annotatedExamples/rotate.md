@@ -1,31 +1,32 @@
 ```javascript
-import {Cloudinary, CloudinaryImage} from '@cloudinary/base';
+import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+import {CloudinaryImage} from "@cloudinary/base/assets/CloudinaryImage";
 
 const cld = new Cloudinary({
-  cloud: {
-    cloudName: 'demo'
-  },
-  url: {
-    secure: true // force http or https
-  }
+    cloud: {
+        cloudName: 'demo'
+    },
+    url: {
+        secure: true // force https, set to false to force http
+    }
 });
 
 // Plug the image type into your instance
 cld.useImage(CloudinaryImage);
 
 // Import the RotationModeAction
-import {mode} from '@cloudinary/base/actions/rotate/Rotate';
+import {mode} from '@cloudinary/base/actions/rotate';
 
 // Remember, mode is a function that returns an Action
 // but we refer to both as a RotationMode action
 
 // The RotationModeAction (mode) requires a Qualifier
 // That qualifier will require a certain QualifierValue
-// To make life easier, you can import all possible QualifierValue(s) of rotate 
-import * as RotationMode from '@cloudinary/base/values/rotate/Rotate';
+// To make life easier, you can import all possible QualifierValue(s) of rotate
+import {RotationMode} from '@cloudinary/base/values/rotationMode';
 
 // You can also import only the required QualifierValue you want
-import {verticalFlip} from '@cloudinary/base/values/rotate/Rotate';
+import {verticalFlip} from '@cloudinary/base/values/rotationMode';
 // RotationMode.verticalFlip === verticalFlip
 
 const myImage = cld.image('sample');
