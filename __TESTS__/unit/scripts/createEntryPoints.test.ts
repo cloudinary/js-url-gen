@@ -1,6 +1,6 @@
 /* eslint @typescript-eslint/no-var-requires: 0 */
 
-import TEST_FILE_STRUCTURE from "../../TestConstants/createEntryMockedFS";
+import TEST_FILE_STRUCTURE from "../../TestUtils/createEntryMockedFS";
 
 const createEntryPoints = require('../../../scripts/lib/entryPointsLib');
 const mock = require('mock-fs');
