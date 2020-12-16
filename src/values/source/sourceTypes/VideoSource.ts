@@ -1,6 +1,3 @@
-import {ISource} from "../ISource";
-import {CloudinaryVideo} from "../../../assets/CloudinaryVideo";
-
 /**
  * @description Defines how to manipulate a video layer, is an instance of a {@link VideoTransformation|VideoTransformation}
  * <div class="panel panel-primary">
@@ -16,15 +13,27 @@ import {CloudinaryVideo} from "../../../assets/CloudinaryVideo";
  * </div>
  * @class VideoSource
  * @augments {VideoTransformation}
- * @implements {ISource}
+ * @implements {IAssetSource}
  */
-class VideoSource extends CloudinaryVideo implements ISource {
-  getSource():string {
-    return this.asset.publicID;
+import {BaseSource} from "../BaseSource";
+import {ImageTransformation} from "../../../transformation/ImageTransformation";
+
+class VideoSource extends BaseSource {
+  readonly _publicID: string;
+
+  constructor(publicID: string) {
+    super();
+    this._publicID = publicID;
+    this._transformation = new ImageTransformation();
   }
 
-  getTransformationString():string {
-    return this.transformation.toString();
+  getOpenSourceString(): string {
+    return `video:${this._publicID}`;
+  }
+
+  transformation(t: ImageTransformation): this {
+    this._transformation = t;
+    return this;
   }
 }
 
