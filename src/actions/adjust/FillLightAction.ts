@@ -4,8 +4,9 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
  * @class FillLightAction
- * @augments Action
  * @description Adjusts the fill light and blends the result with the original image.
+ * @memberOf Actions.Adjust
+ * @augments {SDK.Action}
  */
 class FillLightAction extends Action {
   private lvl:number;
@@ -39,4 +40,4 @@ class FillLightAction extends Action {
   }
 }
 
-export default FillLightAction;
+export {FillLightAction};

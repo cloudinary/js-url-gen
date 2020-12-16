@@ -8,6 +8,7 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
  * More highly saturated input colors usually give the best results. It is recommended to avoid input colors approaching white, black, or gray.</br>
  *
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#replace_color_effect | Replace colors example}
+ * @memberOf Actions.Adjust
  */
 class ReplaceColorAction extends Action {
   private baseColor: string;
@@ -54,4 +55,4 @@ class ReplaceColorAction extends Action {
   }
 }
 
-export default ReplaceColorAction;
+export {ReplaceColorAction};

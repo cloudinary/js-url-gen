@@ -3,7 +3,8 @@ import {Action} from "../../internal/Action";
 /**
  * @class By3dLutAction
  * @description Creates the 3D_lut layer transformation
- * @augments {Action}
+ * @memberOf Actions.Adjust
+ * @augments {SDK.Action}
  */
 class By3dLutAction extends Action {
   readonly publicId: string;
@@ -21,4 +22,4 @@ class By3dLutAction extends Action {
   }
 }
 
-export default By3dLutAction;
+export {By3dLutAction};
