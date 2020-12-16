@@ -1,10 +1,11 @@
 import {BaseSource} from "../BaseSource";
 import {SystemColors} from "../../color";
-import {ImageTransformation} from "../../../transformation/ImageTransformation";
 import {TextStyle} from "../../textStyle";
 import {serializeCloudinaryCharacters} from "../../../internal/utils/serializeCloudinaryCharacters";
 
 /**
+ * @memberOf Values.Source
+ * @extends {Values.Source.BaseSource}
  * @description Defines how to manipulate a text layer
  */
 class TextSource extends BaseSource {
@@ -17,11 +18,6 @@ class TextSource extends BaseSource {
     super();
     this.text = text;
     this._textStyle = textStyle;
-  }
-
-  transformation(t: ImageTransformation): this {
-    this._transformation = t;
-    return this;
   }
 
   textStyle(tStyle:TextStyle): this {
@@ -39,80 +35,11 @@ class TextSource extends BaseSource {
     return this;
   }
 
-  // private fFamily: string;
-  // private fSize: number;
-  // private fWeight: string;
-  // private textColor: string;
-  // private innerText: string;
-  // private fStyle: string;
-  //
-
-  //
-  // /**
-  //  *
-  //  * @param {string} fontFam
-  //  * @return {this}
-  //  */
-  // fontFamily(fontFam: string): this {
-  //   this.fFamily = fontFam;
-  //   return this;
-  // }
-  //
-  // /**
-  //  *
-  //  * @param {number} size
-  //  * @return {this}
-  //  */
-  // fontSize(size: number): this {
-  //   this.fSize = size;
-  //   return this;
-  // }
-  //
-  // /**
-  //  *
-  //  * @param {Values.FontWeight} weight
-  //  * @return {this}
-  //  */
-  // fontWeight(weight: string): this {
-  //   this.fWeight = weight;
-  //   return this;
-  // }
-  //
-  // /**
-  //  *
-  //  * @param {Values.FontWeight} style
-  //  * @return {this}
-  //  */
-  // fontStyle(style: string): this {
-  //   this.fStyle = style;
-  //   return this;
-  // }
-  //
-  // /**
-  //  *
-  //  * @param {string} textColor
-  //  * @return {this}
-  //  */
-  // color(textColor: string): this {
-  //   this.textColor = textColor;
-  //   return this;
-  // }
-  //
-  // /**
-  //  * @return {string}
-  //  */
-  // getColor(): string {
-  //   if (this.textColor) {
-  //     return `co_${prepareColor(this.textColor)}`;
-  //   } else {
-  //     return '';
-  //   }
-  // }
-  //
-
-
   /**
-   * @return {string}
+   * @description
+   * Get the opening string of the layer,
+   * This method is used internally within {@link SDK.LayerAction|LayerAction}
+   * @returns {string}
    */
   getOpenSourceString(): string {
     let str = 'text';

@@ -24,7 +24,7 @@ class Action {
 
   /**
    * @description Adds the parameter to the action.
-   * @param {Qualifier} qualifier
+   * @param {SDK.Qualifier} qualifier
    * @return {this}
    */
   addQualifier(qualifier: Qualifier): this {

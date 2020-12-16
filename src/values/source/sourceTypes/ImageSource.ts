@@ -1,8 +1,9 @@
 import {BaseSource} from "../BaseSource";
-import {ImageTransformation} from "../../../transformation/ImageTransformation";
 import {FormatQualifier} from "../../format/FormatQualifier";
 
 /**
+ * @memberOf Values.Source
+ * @extends {Values.Source.BaseSource}
  * @description Defines how to manipulate an image layer, is an instance of a {@link ImageTransformation|ImageTransformation}
  * <div class="panel panel-warning">
  *   <div class="panel-heading">Notice</div>
@@ -15,7 +16,6 @@ import {FormatQualifier} from "../../format/FormatQualifier";
  *     <li>{@link SDK.VideoTransformation| Video Transformations}
  *   </ul>
  * </div>
- * @augments {BaseSource}
  */
 class ImageSource extends BaseSource {
   readonly _publicID: string;
@@ -28,8 +28,8 @@ class ImageSource extends BaseSource {
 
   /**
    * @description
-   * Get the opening string of the overlay,
-   * This method is used internally within {@link LayerAction|LayerAction}
+   * Get the opening string of the layer,
+   * This method is used internally within {@link SDK.LayerAction|LayerAction}
    * @returns {string}
    */
   getOpenSourceString(): string {
@@ -42,17 +42,8 @@ class ImageSource extends BaseSource {
 
   /**
    * @description
-   * Apply a transformation on the image source of the layer
-   * @returns {this}
-   */
-  transformation(t: ImageTransformation): this {
-    this._transformation = t;
-    return this;
-  }
-
-  /**
-   * @description
    * Apply a format for the image source of the layer
+   * @param {FormatQualifier} format A to apply to the layered image, see more {@link Values.Format|here}
    * @returns {this}
    */
   format(format: FormatQualifier): this {

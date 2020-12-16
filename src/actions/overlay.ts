@@ -4,18 +4,20 @@ import {LayerAction} from "./layer/LayerAction";
 /**
  * @@doc
  * @description Adds a video, text or image as an overlay over the base layer. </br>
- * When adding an overlay to an image, use the imageLayer.
- * When adding an overlay to a video, use the videoLayer.
  * @memberOf Actions
  * @namespace Overlay
+ * @example
+ * new CloudinaryImage('woman')
+ *    .overlay(
+ *       Overlay.source(Source.image('sample'))
+ *     )
  */
 
 
-
 /**
- * @description Adds a layer for an asset
- * @param {source | ImageSource | TextSource | VideoSource} source The Source used for the layer, use the builders provided {@link Values.Source|here}
  * @memberOf Actions.Overlay
+ * @description Adds a layer for an asset
+ * @param {ImageSource | TextSource | VideoSource} source The Source used for the layer, use the builders provided {@link Values.Source|here}
  * @return {SDK.LayerAction}
  */
 function source(source: BaseSource): LayerAction {

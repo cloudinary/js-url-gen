@@ -24,7 +24,6 @@ class LayerAction extends Action {
   /**
    * @description Creates a LayerAction to be used with overlays and underlays
    * @param {ImageSource | TextSource | VideoSource} layerSource The Source used for the layer, use the builders provided {@link Values.Source|here}
-   * @param layerSource
    */
   constructor(layerSource: BaseSource) {
     super();
@@ -109,7 +108,7 @@ class LayerAction extends Action {
   /**
    * @description
    * Serializes the Layer to a string
-   * @return string
+   * @return {string}
    */
   toString():string{
     return [

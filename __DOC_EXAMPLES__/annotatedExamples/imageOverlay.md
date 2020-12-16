@@ -26,25 +26,30 @@ const myImage = cld.image('sample');
 // Import video or image overlay, based on your asset
 import {Overlay} from "@cloudinary/base/actions/overlay";
 // Import the source of the layer, this determines if the layer is an image, text or video
-import {image} from "@cloudinary/base/values/sources";
+import {image} from "@cloudinary/base/values/source";
 
 // Import how to position your layer
-import * as Position from "@cloudinary/base/values/position";
+import {Position} from "@cloudinary/base/values/position";
+import {southEast} from "@cloudinary/base/values/gravity/qualifiers/compass/Compass";
+import {compass} from "@cloudinary/base/values/gravity";
 
-// We'll also resize our overlay, we'll need this for later.
-import Resize from "@cloudinary/base/actions/resize";
+// We'll also scale our overlay, we'll need this for later.
+import {scale} from "@cloudinary/base/actions/resize";
+import {Transformation} from "@cloudinary/base/transformation/Transformation";
+
 
 // image sources go into layers (image or video)
 // imageLayers go into image assets
 // videoLayers go into video assets
 myImage.overlay(
-    Overlay.source( // imageLayer with a Source and a Position Qualifiers
-        image('cloudinary_icon') // Mandatory - Source
-            .resize(Resize.scale().width(300).height(300)) // A source can be transformed like an image
-        ,
-        Position.southEast(), // Optional - Position
-    ),
-);
+           Overlay.source( // imageLayer with a Source and a Position Qualifiers
+               image('cloudinary_icon') // Mandatory - Source
+                   .transformation(new Transformation()
+                       .resize(scale().width(300).height(300)) // A source can be transformed like an image
+                   ))
+               .position(new Position().gravity(compass(southEast()))
+           ),
+       )
 myImage.toURL();
 // http://res.cloudinary.com/demo/image/upload/l_cloudinary_icon/c_scale,h_300,w_300/fl_layer_apply,g_south_east/sample
 
