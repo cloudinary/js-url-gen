@@ -20,11 +20,21 @@ class CartoonifyEffect extends Action {
 
   /**
    * @description Sets the thickness of the lines.
-   * @param {number} cartoonifyLevel The thickness of the lines. (Range: 0 to 100, Server default: 50)
+   * @param {number} lineStrength The thickness of the lines. (Range: 0 to 100, Server default: 50)
    * @return {this}
    */
-  strength(cartoonifyLevel: number): this {
-    this.cartoonifyStrength = cartoonifyLevel;
+  lineStrength(lineStrength: number): this {
+    this.cartoonifyStrength = lineStrength;
+    return this;
+  }
+
+  /**
+   * @description Use blackwhite to achieve a black and white cartoon effect.
+   * @doc
+   * @return {this}
+   */
+  blackwhite(): this {
+    this.colorReduction = 'bw';
     return this;
   }
 
@@ -32,10 +42,10 @@ class CartoonifyEffect extends Action {
    * @description
    * Sets the decrease in the number of colors and corresponding saturation boost of the remaining colors. <br/>
    * Higher reduction values result in a less realistic look.
-   * @param {number | 'bw'} level The decrease in the number of colors and corresponding saturation boost of the remaining colors. (Range: 0 to 100, Server default: automatically adjusts according to the line_strength value). Set to 'bw' for a black and white cartoon effect.
+   * @param {number } level The decrease in the number of colors and corresponding saturation boost of the remaining colors. (Range: 0 to 100, Server default: automatically adjusts according to the line_strength value). Set to 'bw' for a black and white cartoon effect.
    * @return {this}
    */
-  colorReductionLevel(level: number | 'bw'): this {
+  colorReductionLevel(level: number): this {
     this.colorReduction = level;
     return this;
   }
