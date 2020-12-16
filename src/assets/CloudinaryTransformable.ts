@@ -3,7 +3,7 @@ import {IReshape} from "../actions/reshape";
 import ResizeSimpleAction from "../actions/resize/ResizeSimpleAction";
 import DeliveryAction from "../actions/delivery/DeliveryAction";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
-import {LayerAction} from "../actions/overlay/LayerAction";
+import {LayerAction} from "../actions/layer/LayerAction";
 import VariableAction from "../actions/variable/VariableAction";
 import {ConditionAction} from "../actions/condition";
 import {Action} from "../internal/Action";

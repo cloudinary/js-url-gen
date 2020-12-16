@@ -6,7 +6,6 @@ import {SystemColors} from "../../values/color";
 
 /**
  * @description Adds an outline to a transparent image. For examples, see the Image Transformations guide.
- * @class EffectOutline
  * @augments Action
  */
 class EffectOutline extends Action {

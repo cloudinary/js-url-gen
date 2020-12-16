@@ -1,3 +1,6 @@
+import {BaseSource} from "../BaseSource";
+import {ImageTransformation} from "../../../transformation/ImageTransformation";
+
 /**
  * @description Defines how to manipulate a video layer, is an instance of a {@link VideoTransformation|VideoTransformation}
  * <div class="panel panel-primary">
@@ -7,17 +10,12 @@
  *     You can find regular images and videos transformations below:
  *   </div>
  *   <ul>
- *     <li>{@link ImageTransformation| Image Transformations}</li>
- *     <li>{@link VideoTransformation| Video Transformations}
+ *     <li>{@link SDK.ImageTransformation| Image Transformations}</li>
+ *     <li>{@link SDK.VideoTransformation| Video Transformations}
  *   </ul>
  * </div>
- * @class VideoSource
- * @augments {VideoTransformation}
- * @implements {IAssetSource}
+ * @augments {SDK.VideoTransformation}
  */
-import {BaseSource} from "../BaseSource";
-import {ImageTransformation} from "../../../transformation/ImageTransformation";
-
 class VideoSource extends BaseSource {
   readonly _publicID: string;
 

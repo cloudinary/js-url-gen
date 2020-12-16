@@ -6,7 +6,6 @@ import {SystemColors} from "../../values/color";
 
 /**
  * @description Applies a shadow filter to the asset.
- * @class ShadowEffectAction
  * @augments Action
  */
 class ShadowEffectAction extends Action {

@@ -1,6 +1,9 @@
 import {Transformation} from "../../transformation/Transformation";
 
 
+/**
+ * @memberOf Values.Source
+ */
 abstract class BaseSource {
   protected _transformation:Transformation;
 

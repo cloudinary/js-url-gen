@@ -10,6 +10,7 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
  * TimelinePosition
+ * @memberOf Values.TimelinePosition
  */
 class TimelinePosition extends Action {
   constructor() {

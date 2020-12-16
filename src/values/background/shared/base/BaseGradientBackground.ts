@@ -4,7 +4,6 @@ import {GradientDirectionQualifierValue} from "../../../gradientDirection/Gradie
 
 /**
  * @description Defines the gradient fade effect to use for the background when resizing with padding.
- * @class BaseGradientBackground
  * @memberOf {Values.Background}
  * @augments {Values.Background.BaseCommonBackground}
  */

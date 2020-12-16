@@ -5,7 +5,6 @@ import {animatedWebP} from "../../values/flag/animatedWebP";
 import {animated} from "../../values/flag/animated";
 
 /**
- * @class ToAnimatedAction
  * @augments Action
  * @description Converts a video to an animated webp or gif.
  * The resulting transformation includes format (f_format) and the animated flag (fl_animated).

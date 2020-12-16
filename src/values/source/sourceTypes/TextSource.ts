@@ -6,8 +6,6 @@ import {serializeCloudinaryCharacters} from "../../../internal/utils/serializeCl
 
 /**
  * @description Defines how to manipulate a text layer
- * @class TextSource
- * @implements {IAssetSource}
  */
 class TextSource extends BaseSource {
   private text: string;

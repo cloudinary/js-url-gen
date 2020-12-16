@@ -1,7 +1,6 @@
 import {SimpleEffectAction} from "./SimpleEffectAction";
 
 /**
- * @class LeveledEffectAction
  * @extends {Actions.Effect.SimpleEffectAction}
  * @memberOf Actions.Effect
  * @description

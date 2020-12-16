@@ -2,7 +2,6 @@ import {LeveledEffectAction} from "../EffectActions/LeveledEffectAction";
 
 
 /**
- * @class FadeoutEffectAction
  * @augments LeveledEffectAction
  * @description Fade out at the end of the video, use the length() method to set the time in ms for the fade to occur. (Server default: 2000)
  */

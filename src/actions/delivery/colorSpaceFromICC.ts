@@ -4,7 +4,6 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
  * @description Specifies the ICC profile to use for the color space.
- * @class ColorSpaceFromICC
  * @augments Action
  */
 class ColorSpaceFromICC extends Action {

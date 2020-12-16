@@ -3,7 +3,6 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
 import {toFloatAsString} from "../../internal/utils/toFloatAsString";
 
 /**
- * @class KeyframeIntervalsAction
  * @augments Action
  * @description Controls the keyframe interval of the delivered video.
  */

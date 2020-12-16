@@ -1,7 +1,6 @@
 import {Action} from "../../internal/Action";
 
 /**
- * @class By3dLutAction
  * @description Creates the 3D_lut layer transformation
  * @memberOf Actions.Adjust
  * @augments {SDK.Action}

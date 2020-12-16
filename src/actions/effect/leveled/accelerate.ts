@@ -1,7 +1,6 @@
 import {LeveledEffectAction} from "../EffectActions/LeveledEffectAction";
 
 /**
- * @class AccelerationEffectAction
  * @augments LeveledEffectAction
  * @description Changes the speed of the video playback using the rate() method
  */

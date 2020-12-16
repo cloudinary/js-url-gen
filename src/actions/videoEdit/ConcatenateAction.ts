@@ -1,5 +1,5 @@
 import {Action} from "../../internal/Action";
-import {LayerAction} from "../overlay/LayerAction";
+import {LayerAction} from "../layer/LayerAction";
 import {splice} from "../../values/flag/splice";
 import {transition} from "../effect";
 import {Overlay} from "../overlay";
@@ -10,7 +10,6 @@ import {VideoSource} from "../../values/source/sourceTypes/VideoSource";
  * @description Class for Concatenating another video.
  *
  * <b>Learn more</b>: {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#concatenating_videos | Concatenating videos}
- * @class ConcatenateAction
  * @augments Action
  */
 class ConcatenateAction extends Action {

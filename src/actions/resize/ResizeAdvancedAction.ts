@@ -3,7 +3,6 @@ import {IGravity} from "../../values/gravity/GravityQualifier";
 
 /**
  * @description Defines an advanced resize.
- * @class ResizeAdvancedAction
  * @augments ResizeSimpleAction
  */
 class ResizeAdvancedAction extends ResizeSimpleAction {

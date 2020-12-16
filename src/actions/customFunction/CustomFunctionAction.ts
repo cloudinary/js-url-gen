@@ -4,7 +4,6 @@ import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
- * @class CustomFunctionAction
  */
 class CustomFunctionAction extends Action {
   private mode: 'wasm' | 'remote' | string;

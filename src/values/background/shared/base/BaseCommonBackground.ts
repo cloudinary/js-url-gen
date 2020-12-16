@@ -4,7 +4,6 @@ import {SystemColors} from "../../../color";
 
 /**
  * @description Defines the background color to use when resizing with padding.
- * @class BaseCommonBackground
  * @memberOf {Values.Background}
  * @augments {Values.Background.BackgroundQualifier}
  */

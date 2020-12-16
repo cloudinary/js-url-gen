@@ -1,3 +1,8 @@
+import {LayerAction} from "./layer/LayerAction";
+import {ImageSource} from "../values/source/sourceTypes/ImageSource";
+import {TextSource} from "../values/source/sourceTypes/TextSource";
+
+
 /**
  * @@doc
  * @description
@@ -9,12 +14,11 @@
  * @namespace Underlay
  */
 
-import {LayerAction} from "./overlay/LayerAction";
-import {ImageSource} from "../values/source/sourceTypes/ImageSource";
-import {TextSource} from "../values/source/sourceTypes/TextSource";
-
 /**
- *
+ * Adds a layer for an asset
+ * @param {Source.ImageSource | Source.TextSource} source The Source used for the layer, use the builders provided {@link Values.Source|here}
+ * @memberOf Actions.Underlay
+ * @return {SDK.LayerAction}
  */
 function source(source: ImageSource | TextSource): LayerAction {
   return new LayerAction(source)

@@ -2,7 +2,6 @@ import {Action} from "../../internal/Action";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
- * @class StreamingProfileAction
  * @augments Action
  * @description The predefined streaming profiles.
  *

@@ -3,7 +3,6 @@ import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 import {Action} from "../../internal/Action";
 
 /**
- * @class CartoonifyEffect
  * @augments Action
  * @description Applies a cartoon effect to an image.
  */

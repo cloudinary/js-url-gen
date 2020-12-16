@@ -4,7 +4,6 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
  * @description Controls the quality of the delivered image or video.
- * @class QualityAction
  * @augments DeliveryAction
  */
 class QualityAction extends DeliveryAction {

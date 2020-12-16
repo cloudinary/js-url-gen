@@ -3,7 +3,6 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
  * @description Defines an advanced resize with positional arguments (x, y).
- * @class ResizeAdvancedActionWithPosition
  * @augments ResizeAdvancedAction
  */
 class ResizeAdvancedActionWithPosition extends ResizeAdvancedAction {

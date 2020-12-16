@@ -1,7 +1,6 @@
 import VariableAction from "./VariableAction";
 
 /**
- * @class SetReferenceAction
  * @augments VariableAction
  * @description Sets a user-defined variable from a file reference.
  */

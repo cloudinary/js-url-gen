@@ -1,13 +1,12 @@
 import {Action} from "../../internal/Action";
 import {Overlay} from "../overlay";
-import {LayerAction} from "../overlay/LayerAction";
+import {LayerAction} from "../layer/LayerAction";
 import {PositionQualifier} from "../../values/position/PositionQualifier";
 import {ImageSource} from "../../values/source/sourceTypes/ImageSource";
 
 /**
  * @description Trims pixels according to the transparency levels of a given overlay image.
  * Wherever the overlay image is transparent, the original is shown, and wherever the overlay is opaque, the resulting image is transparent.
- * @class CutterAction
  * @augments Action
  */
 class CutByImage extends Action {

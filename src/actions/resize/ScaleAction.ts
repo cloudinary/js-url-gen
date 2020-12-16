@@ -3,7 +3,6 @@ import {GravityQualifier} from "../../values/gravity/GravityQualifier";
 
 /**
  * @description Defines a scaling resize action.
- * @class ScaleAction
  * @augments ResizeSimpleAction
  */
 class ScaleAction extends ResizeSimpleAction {

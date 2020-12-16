@@ -5,7 +5,6 @@ import {prepareColor} from "../../../internal/utils/prepareColor";
 import {SystemColors} from "../../../values/color";
 
 /**
- * @class MakeTransparentEffectAction
  * @augments LeveledEffectAction
  * @description Makes the background of the image transparent (or solid white for formats that do not support transparency).
  */

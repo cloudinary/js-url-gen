@@ -3,7 +3,6 @@ import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
- * @class FillLightAction
  * @description Adjusts the fill light and blends the result with the original image.
  * @memberOf Actions.Adjust
  * @augments {SDK.Action}

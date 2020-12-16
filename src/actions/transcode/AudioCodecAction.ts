@@ -2,7 +2,6 @@ import {Action} from "../../internal/Action";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
- * @class AudioCodecAction
  * @augments Action
  * @description Controls the audio codec or removes the audio channel.
  *
