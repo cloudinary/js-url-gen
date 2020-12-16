@@ -26,16 +26,14 @@ import {Quality} from "./values/quality";
 import {Region} from "./values/region";
 import {RotationMode} from "./values/rotationMode";
 import {SimulateColorblind} from "./values/simulateColorBlind";
-import {Sources} from "./values/sources";
+import {Source} from "./values/source";
 import {StreamingProfile} from "./values/streamingProfile";
 import {TextAlignment} from "./values/textAlignment";
 import {TextDecoration} from "./values/textDecoration";
-import {Video} from "./values/video";
 import {GradientFade} from "./values/GradientFade";
 
 
 const Values = {
-  Video,
   TextDecoration,
   TextAlignment,
   StreamingProfile,
@@ -64,7 +62,7 @@ const Values = {
   Gravity,
   ChromaSubSampling,
   Dpr,
-  Sources,
+  Sources: Source,
   GradientFade
 };
 

@@ -8,26 +8,20 @@ import {TextAlignment} from "../../../../src/values/textAlignment";
 
 describe('Text Style tests', () => {
   it('Create a new instance', () => {
-    const res = new TextStyle()
-      .fontFamily('arial')
-      .fontSize(50)
+    const res = new TextStyle('arial', 50)
       .toString();
     expect(res).toBe('arial_50');
   });
 
   it('Create a new with italic', () => {
-    const res = new TextStyle()
-      .fontFamily('arial')
-      .fontSize(50)
+    const res = new TextStyle('arial', 50)
       .fontStyle(FontStyle.italic())
       .toString();
     expect(res).toBe('arial_50_italic');
   });
 
   it('Create a new with all options', () => {
-    const res = new TextStyle()
-      .fontFamily('arial')
-      .fontSize(50)
+    const res = new TextStyle('arial', 50)
       .letterSpacing(10)
       .lineSpacing(20)
       .fontAntialias(FontAntialias.good())
@@ -42,9 +36,7 @@ describe('Text Style tests', () => {
   });
 
   it('Ensure normal is not included in the URL(this is the default)', () => {
-    const res = new TextStyle()
-      .fontFamily('arial')
-      .fontSize(50)
+    const res = new TextStyle('arial', 50)
       .fontWeight(FontWeight.normal())
       .textDecoration(TextDecoration.normal())
       .fontStyle(FontStyle.normal())

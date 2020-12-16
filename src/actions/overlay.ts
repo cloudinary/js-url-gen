@@ -1,11 +1,5 @@
-import {VideoRange} from "../values/video/VideoRange";
+import {BaseSource} from "../values/source/BaseSource";
 import {LayerAction} from "./overlay/LayerAction";
-import {BlendModeQualifier} from "../values/blendMode/BlendModeQualifier";
-import {PositionQualifier} from "../values/position/PositionQualifier";
-import {TextSource} from "../values/sources/sourceTypes/TextSource";
-import {VideoSource} from "../values/sources/sourceTypes/VideoSource";
-import {ImageSource} from "../values/sources/sourceTypes/ImageSource";
-
 /**
  * @@doc
  * Adds a video, text or image as an overlay over the base layer. </br>
@@ -17,29 +11,15 @@ import {ImageSource} from "../values/sources/sourceTypes/ImageSource";
 
 
 /**
- * @description
- * Adds a layer for an asset of type image
- * @param {ImageSource | TextSource} source The Source used for the layer, use the builders provided {@link Values.Sources|here}
- * @param {Values.Position} position The position of the overlay with respect to the base image.
- * @param {Values.BlendMode} blendMode The blend mode.
+ * Adds a layer for an asset
+ * @param {source | ImageSource | TextSource | VideoSource} source The Source used for the layer, use the builders provided {@link Values.Sources|here}
  * @memberOf Actions.Overlay
  * @return {LayerAction}
  */
-function imageLayer(source: ImageSource | TextSource, position?:PositionQualifier, blendMode?:BlendModeQualifier): LayerAction {
-  return new LayerAction(source, position, blendMode);
+function source(source: BaseSource): LayerAction {
+  return new LayerAction(source)
+    .setLayerType('l');
 }
 
-/**
- * Adds a layer for an asset of type video
- * @param {VideoSource | ImageSource | TextSource} source The Source used for the layer, use the builders provided {@link Values.Sources|here}
- * @param {Values.Position} position The position of the overlay with respect to the base image.
- * @param {VideoRange} timeLinePosition Sets the timeline position of the overlay.
- * @memberOf Actions.Overlay
- * @return {LayerAction}
- */
-function videoLayer(source: VideoSource | ImageSource | TextSource, position?:PositionQualifier, timeLinePosition?:VideoRange): LayerAction {
-  return new LayerAction(source, position, null, timeLinePosition);
-}
-
-const Overlay = {imageLayer, videoLayer};
-export {Overlay, imageLayer, videoLayer};
+const Overlay = {source};
+export {Overlay, source};

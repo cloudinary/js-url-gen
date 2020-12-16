@@ -1,107 +1,103 @@
-import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
-import {fill} from "../../../src/actions/resize";
-import * as Layers from "../../../src/actions/overlay";
-import * as BlendMode from "../../../src/values/blendMode";
-import {VideoRange, VideoOffset} from "../../../src/values/video";
-import format from "../../../src/actions/delivery/format";
-import {image, video} from "../../../src/values/sources";
-import {CloudinaryVideo} from "../../../src/assets/CloudinaryVideo";
-import {Position} from "../../../src/values/position";
-import {Compass} from "../../../src/values/gravity/qualifiers/compass/Compass";
-import {Gravity} from "../../../src/values/gravity";
-
-const {imageLayer, videoLayer} = Layers;
-
-const CONFIG_INSTANCE = new CloudinaryConfig({
-  cloud: {
-    cloudName: 'demo'
-  }
-});
+import {BlendMode} from "../../../src/values/blendMode";
+import {Overlay} from "../../../src/actions/overlay";
+import {Source} from "../../../src/values/source";
+import {createNewImage} from "../../TestUtils/createCloudinaryImage";
+import {sampleFacePosition} from "../../TestUtils/transformations/sampleFacePosition";
+import {sampleTxResizePad} from "../../TestUtils/transformations/sampleTxResizePad";
+import {createNewVideo} from "../../TestUtils/createCloudinaryVideo";
+import {sampleTextStyle} from "../../TestUtils/transformations/sampleTextStyle";
+import {Format} from "../../../src/values/format";
+import {Underlay} from "../../../src/actions/underlay";
+import {Timeline} from "../../../src/values/timeline";
 
 describe('Tests for overlay actions', () => {
-  it('Parses an overlay with an imageSource', () => {
-    const tImage = new CloudinaryImage('sample');
-    tImage
-      .setConfig(CONFIG_INSTANCE)
-      .resize(fill(1000, 1000))
-      .overlay(
-        imageLayer(
-          image('sample')
-            .resize(fill(500, 500))
-            .overlay(
-              imageLayer(
-                image('sample')
-                  .resize(fill(200, 200)
-                  )
-              )
-            )
-        )
-      );
-
-    expect(tImage.toURL())
-      .toBe('https://res.cloudinary.com/demo/image/upload/c_fill,h_1000,w_1000/l_sample/c_fill,h_500,w_500/l_sample/c_fill,h_200,w_200/fl_layer_apply/fl_layer_apply/sample');
-  });
-
-
-  it('Adds an overlay with position', () => {
-    const tImage = new CloudinaryImage('sample');
-    tImage
-      .setConfig(CONFIG_INSTANCE)
-      .overlay(
-        imageLayer(
-          image('sample'),
-          new Position().gravity(Gravity.compass(Compass.center())
-          )
-        )
-      );
-    expect(tImage.toURL()).toContain('l_sample/fl_layer_apply,g_center/sample');
-  });
-
-  it('Adds an overlay with position', () => {
-    const tImage = new CloudinaryImage('sample');
-    tImage
-      .setConfig(CONFIG_INSTANCE)
-      .overlay(
-        imageLayer(
-          image('sample'),
-          new Position()
-            .gravity(Gravity.compass(Compass.center()))
-            .x(50)
-            .y(100)
-        )
-      );
-    expect(tImage.toURL()).toContain('l_sample/fl_layer_apply,g_center,x_50,y_100/sample');
-  });
-
-  it('Adds an overlay without position and with a blendMode', () => {
-    const tImage = new CloudinaryImage('sample');
-    tImage
-      .setConfig(CONFIG_INSTANCE)
-      .overlay(
-        imageLayer(image('sample'), null, BlendMode.screen())
-      );
-    expect(tImage.toURL()).toContain('l_sample/e_screen,fl_layer_apply/sample');
-  });
-  it('Adds a video overlay', () => {
-    const tVideo = new CloudinaryVideo('dog');
-    tVideo
-      .setConfig(CONFIG_INSTANCE)
-      .overlay(
-        videoLayer(video('dog'), null, new VideoRange(new VideoOffset(7)))
-      );
-    //TODO: update this dummy test to be a real test when spec is ready
-    expect(tVideo.toURL()).toContain('l_dog');
-  });
-  it('Adds a video overlay and converts to jpg', () => {
-    const tVideo = new CloudinaryVideo('dog');
-    tVideo
-      .setConfig(CONFIG_INSTANCE)
-      .overlay(
-        videoLayer(video('dog'), null, new VideoRange(new VideoOffset(7)))
+  it('Tests Image on Image with format', () => {
+    const asset = createNewImage();
+    asset.overlay(
+      Overlay.source(Source.image("sample")
+        .format(Format.png())
       )
-      .delivery(format('jpg'));
-    //TODO: update this dummy test to be a real test when spec is ready
-    expect(tVideo.toURL()).toContain('l_dog/');
+    );
+
+    expect(asset.toString()).toBe('l_sample.png/fl_layer_apply');
+  });
+
+  it('Tests Image on Image with BlendMode and Position', () => {
+    const asset = createNewImage();
+
+    asset.overlay(Overlay.source(Source.image("sample"))
+      .position(sampleFacePosition())
+      .blendMode(BlendMode.screen())
+    );
+
+    expect(asset.toString()).toBe('l_sample/e_screen,fl_layer_apply,g_face');
+  });
+
+  it('Tests Image on Image with Transformation', () => {
+    const asset = createNewImage();
+
+    asset.overlay(
+      Overlay.source(Source.image("sample")
+        .transformation(sampleTxResizePad())
+      )
+    );
+
+    expect(asset.toString()).toBe('l_sample/c_pad,w_100/fl_layer_apply');
+  });
+
+  it('Tests Video on Video with Transformation', () => {
+    const asset = createNewVideo();
+
+    asset.overlay(
+      Overlay.source(Source.video("sample")
+        .transformation(sampleTxResizePad())
+      )
+    );
+
+    expect(asset.toString()).toBe('l_video:sample/c_pad,w_100/fl_layer_apply');
+  });
+
+  it('Tests text on image', () => {
+    const asset = createNewImage();
+    const textStyle = sampleTextStyle();
+
+    asset.overlay(Overlay.source(
+      Source.text('Testing', textStyle)
+    ));
+
+    expect(asset.toString()).toBe(`l_text:${textStyle.toString()}:Testing/fl_layer_apply`);
+  });
+
+  it('Tests an overlay with a complete example', () => {
+    const asset = createNewImage();
+
+    asset.overlay(Overlay.source(Source.image("sample").transformation(sampleTxResizePad()))
+      .position(sampleFacePosition())
+      .blendMode(BlendMode.screen())
+    );
+
+    expect(asset.toString()).toBe('l_sample/c_pad,w_100/e_screen,fl_layer_apply,g_face');
+  });
+
+  it('Tests an underlay with a complete example', () => {
+    const asset = createNewImage();
+
+    asset.underlay(Underlay.source(Source.image("sample").transformation(sampleTxResizePad()))
+      .position(sampleFacePosition())
+      .blendMode(BlendMode.screen())
+    );
+
+    expect(asset.toString()).toBe('u_sample/c_pad,w_100/e_screen,fl_layer_apply,g_face');
+  });
+
+  it('Video on Video with timeline', () => {
+    const asset = createNewVideo();
+
+    asset.overlay(Overlay.source(Source.video("sample").transformation(sampleTxResizePad()))
+      .timeline(Timeline.position().startOffset(10).duration(20))
+      .position(sampleFacePosition())
+    );
+
+    expect(asset.toString()).toBe('l_video:sample/c_pad,w_100/du_20,fl_layer_apply,g_face,so_10');
   });
 });

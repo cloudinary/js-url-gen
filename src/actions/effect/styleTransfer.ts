@@ -1,9 +1,9 @@
-import {ImageSource} from '../../values/sources/sourceTypes/ImageSource';
-import {imageLayer} from "../overlay";
+import {Overlay} from "../overlay";
 import {LayerAction} from "../overlay/LayerAction";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
 import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 import {Action} from "../../internal/Action";
+import {ImageSource} from "../../values/source/sourceTypes/ImageSource";
 
 
 /**
@@ -30,7 +30,7 @@ class StyleTransfer extends Action {
    */
   constructor(imageSource: ImageSource) {
     super();
-    this.imgLayer = imageLayer(imageSource);
+    this.imgLayer = Overlay.source(imageSource);
   }
 
 
@@ -68,7 +68,7 @@ class StyleTransfer extends Action {
     const effectValue = new QualifierValue([NAME, PRES, STRENGTH]);
 
 
-    this.imgLayer.modifications.addQualifier(new Qualifier('e', effectValue));
+    // this.imgLayer.modifications.addQualifier(new Qualifier('e', effectValue));
     this.imgLayer.setLayerType('l');
     return this.imgLayer.toString();
   }

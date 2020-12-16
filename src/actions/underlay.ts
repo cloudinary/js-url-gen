@@ -9,8 +9,17 @@
  * @namespace Underlay
  */
 
-import {imageLayer, videoLayer} from "./overlay";
+import {LayerAction} from "./overlay/LayerAction";
+import {ImageSource} from "../values/source/sourceTypes/ImageSource";
+import {TextSource} from "../values/source/sourceTypes/TextSource";
 
+/**
+ *
+ */
+function source(source: ImageSource | TextSource): LayerAction {
+  return new LayerAction(source)
+    .setLayerType('u');
+}
 
-const Underlay = {imageLayer, videoLayer};
-export {Underlay, imageLayer, videoLayer};
+const Underlay = {source};
+export {Underlay, source};

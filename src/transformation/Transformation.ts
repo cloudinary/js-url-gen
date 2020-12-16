@@ -104,7 +104,6 @@ class Transformation {
    * @return {this}
    */
   overlay(overlayAction: LayerAction): this {
-    overlayAction.setLayerType('l');
     return this.addAction(overlayAction);
   }
 

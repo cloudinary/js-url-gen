@@ -12,13 +12,13 @@ import {AssistColorBlindEffectAction} from "./effect/assistColorBlind";
 import {GradientFadeEffectAction} from "./effect/gradientFade";
 import {EffectActionWithLength} from "./effect/EffectActions/EffectActionWithLength";
 import {FadeoutEffectAction} from "./effect/leveled/fadeOut";
-import {ImageSource} from "../values/sources/sourceTypes/ImageSource";
 import {ColorizeEffectAction} from "./effect/colorize";
 import {ShadowEffectAction} from "./effect/shadow";
 import {StyleTransfer} from "./effect/styleTransfer";
 import {DitherEffectAction} from "./effect/dither";
 import {DeshakeEffectAction} from "./effect/leveled/deshake";
 import {Pixelate} from "./effect/pixelate/pixelate";
+import {ImageSource} from "../values/source/sourceTypes/ImageSource";
 
 
 /**

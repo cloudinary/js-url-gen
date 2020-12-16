@@ -38,7 +38,7 @@ import Resize from "@cloudinary/base/actions/resize";
 // imageLayers go into image assets
 // videoLayers go into video assets
 myImage.overlay(
-    Overlay.imageLayer( // imageLayer with a Source and a Position Qualifiers
+    Overlay.source( // imageLayer with a Source and a Position Qualifiers
         image('cloudinary_icon') // Mandatory - Source
             .resize(Resize.scale().width(300).height(300)) // A source can be transformed like an image
         ,
