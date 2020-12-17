@@ -12,6 +12,24 @@ class Action {
   qualifiers: Map<string, Qualifier> = new Map();
   private delimiter = ','; // {qualifier}{delimiter}{qualifier} for example: `${'w_100'}${','}${'c_fill'}`
   protected prepareQualifiers():void {}
+  private actionTag = ''; // A custom name tag to identify this action in the future
+
+  /**
+   * @description Returns the custom name tag that was given to this action
+   * @return {string}
+   */
+  getActionTag(): string {
+    return this.actionTag;
+  }
+
+  /**
+   * @description Returns the custom name tag that was given to this action
+   * @return {this}
+   */
+  setActionTag(tag:string): this {
+    this.actionTag = tag;
+    return this;
+  }
 
   /**
    * @description Calls toString() on all child qualifiers (implicitly by using .join()).
