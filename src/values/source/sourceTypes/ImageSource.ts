@@ -4,7 +4,7 @@ import {FormatQualifier} from "../../format/FormatQualifier";
 /**
  * @memberOf Values.Source
  * @extends {Values.Source.BaseSource}
- * @description Defines how to manipulate an image layer, is an instance of a {@link ImageTransformation|ImageTransformation}
+ * @description Defines how to manipulate an image layer
  * <div class="panel panel-warning">
  *   <div class="panel-heading">Notice</div>
  *   <div class="panel-body">
@@ -28,7 +28,7 @@ class ImageSource extends BaseSource {
 
   /**
    * @description
-   * Get the opening string of the layer,
+   * Returns the opening string of the layer,
    * This method is used internally within {@link SDK.LayerAction|LayerAction}
    * @returns {string}
    */

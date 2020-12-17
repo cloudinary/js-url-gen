@@ -26,7 +26,7 @@ class VideoSource extends BaseSource {
 
   /**
    * @description
-   * Get the opening string of the layer,
+   * Returns the opening string of the layer,
    * This method is used internally within {@link SDK.LayerAction|LayerAction}
    * @returns {string}
    */
