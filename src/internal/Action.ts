@@ -23,7 +23,7 @@ class Action {
   }
 
   /**
-   * @description Returns the custom name tag that was given to this action
+   * @description Sets the custom name tag for this action
    * @return {this}
    */
   setActionTag(tag:string): this {
