@@ -6,9 +6,10 @@ import {sampleFacePosition} from "../../TestUtils/transformations/sampleFacePosi
 import {sampleTxResizePad} from "../../TestUtils/transformations/sampleTxResizePad";
 import {createNewVideo} from "../../TestUtils/createCloudinaryVideo";
 import {sampleTextStyle} from "../../TestUtils/transformations/sampleTextStyle";
-import {Format} from "../../../src/values/format";
+import {Format, png} from "../../../src/values/format";
 import {Underlay} from "../../../src/actions/underlay";
 import {Timeline} from "../../../src/values/timeline";
+import {base64Encode} from "../../../src/internal/utils/base64Encode";
 
 describe('Tests for overlay actions', () => {
   it('Tests Image on Image with format', () => {
@@ -99,5 +100,38 @@ describe('Tests for overlay actions', () => {
     );
 
     expect(asset.toString()).toBe('l_video:sample/c_pad,w_100/du_20,fl_layer_apply,g_face,so_10');
+  });
+
+  it('Tests a fetchSource without format', () => {
+    const asset = createNewVideo();
+    const REMOTE_URL = "https://res.cloudinary.com/demo/image/upload/ci";
+    const BASE64_URL = base64Encode(REMOTE_URL);
+
+    asset.overlay(
+      Overlay.source(
+        Source.fetch(REMOTE_URL)
+          .transformation(sampleTxResizePad())
+      )
+        .position(sampleFacePosition())
+    );
+
+    expect(asset.toString()).toContain(`l_fetch:${BASE64_URL}/${sampleTxResizePad().toString()}`);
+  });
+
+  it('Tests a fetchSource with format', () => {
+    const asset = createNewImage('sample');
+    const REMOTE_URL = "https://res.cloudinary.com/demo/image/upload/ci";
+    const BASE64_URL = base64Encode(REMOTE_URL);
+
+    asset.overlay(
+      Overlay.source(
+        Source.fetch(REMOTE_URL)
+          .transformation(sampleTxResizePad())
+          .format(png())
+      )
+    );
+
+    // This is a fully functional URL that should work in the browser.
+    expect(asset.toString()).toContain(`l_fetch:${BASE64_URL}.png/${sampleTxResizePad().toString()}`);
   });
 });
