@@ -28,7 +28,7 @@ abstract class BaseSource {
     return this._transformation;
   }
 
-  abstract getOpenSourceString(): string
+  abstract getOpenSourceString(layerType: 'u' | 'l'): string
 }
 
 export {BaseSource};

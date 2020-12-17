@@ -2,6 +2,8 @@ import {BaseSource} from "../BaseSource";
 import {SystemColors} from "../../color";
 import {TextStyle} from "../../textStyle";
 import {serializeCloudinaryCharacters} from "../../../internal/utils/serializeCloudinaryCharacters";
+import {Action} from "../../../internal/Action";
+import {Qualifier} from "../../../internal/qualifier/Qualifier";
 
 /**
  * @memberOf Values.Source
@@ -10,9 +12,10 @@ import {serializeCloudinaryCharacters} from "../../../internal/utils/serializeCl
  */
 class TextSource extends BaseSource {
   private text: string;
-  private _textStyle: TextStyle
-  private _textColor: SystemColors
-  private _backgroundColor: SystemColors
+  protected _textStyle: TextStyle
+  protected _textColor: SystemColors
+  protected _backgroundColor: SystemColors
+  protected type = 'text';
 
   constructor(text: string, textStyle: TextStyle) {
     super();
@@ -41,22 +44,23 @@ class TextSource extends BaseSource {
    * This method is used internally within {@link SDK.LayerAction|LayerAction}
    * @returns {string}
    */
-  getOpenSourceString(): string {
-    let str = 'text';
+  getOpenSourceString(layerType: 'u' | 'l'): string {
+    let layerParam = this.type;
 
     if (this._textStyle) {
-      str += `:${this._textStyle.toString()}`;
+      layerParam += `:${this._textStyle.toString()}`;
     }
 
-    str += `:${serializeCloudinaryCharacters(this.text)}`;
+    layerParam += `:${serializeCloudinaryCharacters(this.text)}`;
 
-    if (this._textColor) {
-      str += `,${this._textColor}`;
-    }
+    const tmpAction = new Action();
 
-    return str;
+    tmpAction.addQualifier(new Qualifier('l', layerParam));
+    this._textColor && tmpAction.addQualifier(new Qualifier('co', this._textColor));
+    this._backgroundColor && tmpAction.addQualifier(new Qualifier('b', this._backgroundColor));
+
+    return tmpAction.toString();
   }
 }
-
 
 export {TextSource};
