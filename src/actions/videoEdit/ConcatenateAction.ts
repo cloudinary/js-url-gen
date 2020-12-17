@@ -1,15 +1,15 @@
 import {Action} from "../../internal/Action";
-import {VideoSource} from "../../values/sources/sourceTypes/VideoSource";
-import {LayerAction} from "../overlay/LayerAction";
-import {imageLayer} from "../overlay";
+import {LayerAction} from "../layer/LayerAction";
 import {splice} from "../../values/flag/splice";
 import {transition} from "../effect";
+import {Overlay} from "../overlay";
+import {Transformation} from "../../transformation/Transformation";
+import {VideoSource} from "../../values/source/sourceTypes/VideoSource";
 
 /**
  * @description Class for Concatenating another video.
  *
  * <b>Learn more</b>: {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#concatenating_videos | Concatenating videos}
- * @class ConcatenateAction
  * @augments Action
  */
 class ConcatenateAction extends Action {
@@ -17,11 +17,10 @@ class ConcatenateAction extends Action {
   private concatSource: VideoSource;
   private shouldTransition = false;
 
-  constructor(source:VideoSource) {
+  constructor(source: VideoSource) {
     super();
     this.concatSource = source;
-    this.layer = imageLayer(this.concatSource).setLayerType('l');
-
+    // this.layer = Overlay.source(this.concatSource).setLayerType('l');
   }
 
   /**
@@ -29,13 +28,15 @@ class ConcatenateAction extends Action {
    * @param {VideoSource} source The source to concatenate.
    * @return {this}
    */
-  transition(source:VideoSource): this{
+  transition(source: VideoSource): this {
     this.shouldTransition = true;
     this.concatSource
-      .overlay(imageLayer(source)
-        .setLayerType('l')
-        .setOpenLayerTransformation(transition()));
-
+      .transformation(
+        new Transformation()
+          .overlay(Overlay.source(source)
+            .setLayerType('l')
+            // .setOpenLayerTransformation(transition())
+          ));
     return this;
   }
 
@@ -43,14 +44,18 @@ class ConcatenateAction extends Action {
    * @description Indicates that the video should be concatenated on to the container video and not added as an overlay.
    * @private
    */
-  private prepareConcatString(){
-    if(!this.shouldTransition){
-      this.layer.setOpenLayerFlag(splice());
+  private prepareConcatString() {
+    if (!this.shouldTransition) {
+      // this.layer.setOpenLayerFlag(splice());
     }
   }
 
   toString(): string {
     this.prepareConcatString();
+    // const open = this.concatSource.getOpener();
+    // return `l_${open},fl_splice`;
+
+
     return this.layer.toString();
   }
 }

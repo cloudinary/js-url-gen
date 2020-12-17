@@ -1,5 +1,5 @@
 import CutByImage from "./reshape/CutByImage";
-import {ImageSource} from "../values/sources/sourceTypes/ImageSource";
+import {ImageSource} from "../values/source/sourceTypes/ImageSource";
 
 type IReshape = CutByImage;
 

@@ -17,41 +17,52 @@ const bundleSizeTestCases:ITestCase[] = [
     name: 'Tests CloudinaryImage with Resize',
     sizeLimitInKB: 20,
     importsArray: [
-      importFromDist('assets/CloudinaryImage'),
-      importFromDist('instance/Cloudinary'),
-      importFromDist('actions/resize')
+      importFromDist('assets/CloudinaryImage', 'CloudinaryImage'),
+      importFromDist('instance/Cloudinary', 'Cloudinary'),
+      importFromDist('actions/resize', 'Resize')
     ]
   },
   {
     name: 'Tests CloudinaryImage with Resize and Adjust',
     sizeLimitInKB: 30,
     importsArray: [
-      importFromDist('assets/CloudinaryImage'),
-      importFromDist('instance/Cloudinary'),
-      importFromDist('actions/resize'),
-      importFromDist('actions/adjust')
+      importFromDist('assets/CloudinaryImage', 'CloudinaryImage'),
+      importFromDist('instance/Cloudinary', 'Cloudinary'),
+      importFromDist('actions/resize', 'Resize'),
+      importFromDist('actions/adjust', 'Adjust')
     ]
   },
   {
     name: 'Tests CloudinaryImage with Resize, Adjust and Border',
     sizeLimitInKB: 30,
     importsArray: [
-      importFromDist('assets/CloudinaryImage'),
-      importFromDist('instance/Cloudinary'),
-      importFromDist('actions/resize'),
-      importFromDist('actions/adjust'),
-      importFromDist('actions/border')
+      importFromDist('assets/CloudinaryImage', 'CloudinaryImage'),
+      importFromDist('instance/Cloudinary', 'Cloudinary'),
+      importFromDist('actions/resize', 'Resize'),
+      importFromDist('actions/adjust', 'Adjust'),
+      importFromDist('actions/border', 'Border')
     ]
   },
   {
     name: 'Tests CloudinaryImage image with Resize, adjust and delivery',
     sizeLimitInKB: 32,
     importsArray: [
-      importFromDist('assets/CloudinaryImage'),
-      importFromDist('instance/Cloudinary'),
-      importFromDist('actions/resize'),
-      importFromDist('actions/adjust'),
-      importFromDist('actions/delivery')
+      importFromDist('assets/CloudinaryImage', 'CloudinaryImage'),
+      importFromDist('instance/Cloudinary', 'Cloudinary'),
+      importFromDist('actions/resize', 'Resize'),
+      importFromDist('actions/adjust', 'Adjust'),
+      importFromDist('actions/delivery', 'Delivery')
+    ]
+  },
+  {
+    name: 'Tests Overlay imports',
+    sizeLimitInKB: 32,
+    importsArray: [
+      importFromDist('assets/CloudinaryImage', 'CloudinaryImage'),
+      importFromDist('actions/overlay', 'Overlay'),
+      importFromDist('values/source', 'Source'),
+      importFromDist('transformation/Transformation', 'Transformation'),
+      importFromDist('actions/resize', 'crop')
     ]
   },
   {

@@ -3,7 +3,6 @@ import VariableAction from "./VariableAction";
 import {ExpressionQualifier} from "../../values/expression/ExpressionQualifier";
 
 /**
- * @class SetAction
  * @augments VariableAction
  * @description Sets a user-defined variable.
  */

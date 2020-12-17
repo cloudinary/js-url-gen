@@ -2,7 +2,6 @@ import {LeveledEffectAction} from "./LeveledEffectAction";
 
 /**
  * @description A class for all effects that include a blendPercentage method
- * @class EffectActionWithBlendPercentage
  * @memberOf Actions.Effect
  * @extends {Actions.Effect.LeveledEffectAction}
  */

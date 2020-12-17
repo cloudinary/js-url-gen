@@ -1,7 +1,7 @@
 import {Qualifier} from "../internal/qualifier/Qualifier";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
 import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction";
-import {LayerAction} from "../actions/overlay/LayerAction";
+import {LayerAction} from "../actions/layer/LayerAction";
 import {Action} from "../internal/Action";
 import VariableAction from "../actions/variable/VariableAction";
 import {ConditionAction} from "../actions/condition";
@@ -104,7 +104,6 @@ class Transformation {
    * @return {this}
    */
   overlay(overlayAction: LayerAction): this {
-    overlayAction.setLayerType('l');
     return this.addAction(overlayAction);
   }
 

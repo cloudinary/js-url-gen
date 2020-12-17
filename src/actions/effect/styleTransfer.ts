@@ -1,16 +1,15 @@
-import {ImageSource} from '../../values/sources/sourceTypes/ImageSource';
-import {imageLayer} from "../overlay";
-import {LayerAction} from "../overlay/LayerAction";
+import {Overlay} from "../overlay";
+import {LayerAction} from "../layer/LayerAction";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
 import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 import {Action} from "../../internal/Action";
+import {ImageSource} from "../../values/source/sourceTypes/ImageSource";
 
 
 /**
  * @description - This Action, while belonging to Effect, acts as a modified overlay.
  *                The class implements the Builder pattern, where strength() and preserveColor()
  *                are applied to the instance, and toString() is responsible to combining them into the right result.
- * @class StyleTransfer
  * @augments Action
  */
 class StyleTransfer extends Action {
@@ -24,13 +23,13 @@ class StyleTransfer extends Action {
   /**
    * The Image Source used to create the style transfer,
    * Use the Image Source builder to quickly create a source:
-   * </br>Import: {@link Values.Sources|import Sources from '@cloudinary/base/values/sources';}
+   * </br>Import: {@link Values.Source|import Sources from '@cloudinary/base/values/sources';}
    * </br>Create: `Sources.image('dog')`
    * @param {ImageSource} imageSource
    */
   constructor(imageSource: ImageSource) {
     super();
-    this.imgLayer = imageLayer(imageSource);
+    this.imgLayer = Overlay.source(imageSource);
   }
 
 
@@ -68,7 +67,7 @@ class StyleTransfer extends Action {
     const effectValue = new QualifierValue([NAME, PRES, STRENGTH]);
 
 
-    this.imgLayer.modifications.addQualifier(new Qualifier('e', effectValue));
+    // this.imgLayer.modifications.addQualifier(new Qualifier('e', effectValue));
     this.imgLayer.setLayerType('l');
     return this.imgLayer.toString();
   }

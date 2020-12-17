@@ -3,7 +3,6 @@ import ResizeAdvancedAction from "./ResizeAdvancedAction";
 
 /**
  * @description Defines a thumbnail resize action.
- * @class ThumbResizeAction
  * @augments ResizeAdvancedAction
  */
 class ThumbResizeAction extends ResizeAdvancedAction {

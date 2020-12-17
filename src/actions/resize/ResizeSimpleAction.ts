@@ -7,7 +7,6 @@ import {FlagQualifier} from "../../values/flag/FlagQualifier";
 
 /**
  * @description Defines a resize using width and height.
- * @class ResizeSimpleAction
  * @augments Action
  */
 class ResizeSimpleAction extends Action {

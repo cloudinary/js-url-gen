@@ -5,7 +5,6 @@ import {IGravity} from "../../values/gravity/GravityQualifier";
 
 /**
  * @description Defines an advanced resize with padding.
- * @class ResizePadAction
  * @augments ResizeAdvancedActionWithPosition
  */
 class ResizePadAction<GravityType extends IGravity> extends ResizeAdvancedActionWithPosition {

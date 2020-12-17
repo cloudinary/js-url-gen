@@ -7,7 +7,6 @@ type TypeVariableValue = number | string | ExpressionQualifier;
 
 /**
  * @description Defines an new user variable.
- * @class VariableAction
  * @augments {Action}
  */
 class VariableAction extends Action {

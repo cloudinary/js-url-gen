@@ -1,7 +1,6 @@
 import {LeveledEffectAction} from "../EffectActions/LeveledEffectAction";
 
 /**
- * @class LoopEffectAction
  * @augments LeveledEffectAction
  * @description Delivers a video or animated GIF that contains additional loops of the video/GIF.
  */

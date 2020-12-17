@@ -1,6 +1,7 @@
 import {normal as normalFontWeight} from "./fontWeight";
 import {normal as normalFontStyle} from "./fontStyle";
 import {normal as normalTextDecoration} from "./textDecoration";
+import {serializeCloudinaryCharacters} from "../internal/utils/serializeCloudinaryCharacters";
 
 /**
  * @doc
@@ -12,13 +13,18 @@ class TextStyle {
   private _letterSpacing: number;
   private _fontAntialias: string;
   private _fontFamily: string;
-  private _fontSize: number;
+  private _fontSize: number | string;
   private _fontWeight: string;
   private _fontStyle: string;
   private _textDecoration: string;
   private _textAlignment: string;
   private _stroke: boolean;
   private _fontHinting: string;
+
+  constructor(fontFamily: string, fontSize: string | number) {
+    this._fontFamily = fontFamily;
+    this._fontSize = fontSize;
+  }
 
   lineSpacing(spacing: number): this {
     this._lineSpacing = spacing;
@@ -40,8 +46,8 @@ class TextStyle {
     return this;
   }
 
-  fontSize(fontSize: number): this {
-    this._fontSize = fontSize;
+  fontSize(fontSize: number | string): this {
+    this._fontSize = fontSize ;
     return this;
   }
 
@@ -77,7 +83,7 @@ class TextStyle {
 
   toString(): string {
     return [
-      `${this._fontFamily}_${this._fontSize}`,
+      `${serializeCloudinaryCharacters(this._fontFamily)}_${this._fontSize}`,
       this._fontWeight !== normalFontWeight() && this._fontWeight,
       this._fontStyle !== normalFontStyle() && this._fontStyle,
       this._textDecoration !== normalTextDecoration() && this._textDecoration,

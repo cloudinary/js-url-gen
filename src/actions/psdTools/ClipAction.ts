@@ -6,7 +6,6 @@ import {clip} from "../../values/flag/clip";
 
 /**
  * @description  Defines the clipping path to use when trimming pixels.
- * @class ClipAction
  * @augments Action
  */
 class ClipAction extends Action {

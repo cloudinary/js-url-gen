@@ -4,7 +4,6 @@ import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 
 /**
  * @description Class to Controls the volume of an audio or video file.
- * @class VolumeAction
  * @augments Action
  */
 class VolumeAction extends Action {

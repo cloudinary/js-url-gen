@@ -2,7 +2,6 @@ import {Action} from "../../internal/Action";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
- * @class AudioFrequencyAction
  * @augments Action
  * @description Controls audio sample frequency.
  *

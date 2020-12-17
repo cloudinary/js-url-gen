@@ -3,7 +3,6 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
  * @description Applies a gradient fade effect from one edge of the image.
- * @class GradientFadeEffectAction
  * @augments Action
  */
 class GradientFadeEffectAction extends Action {

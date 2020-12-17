@@ -2,7 +2,6 @@ import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 
 /**
  * @namespace Expression
- * @class Expression
  * @memberOf Values.Expression
  * @extends {SDK.QualifierValue}
  */

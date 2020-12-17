@@ -4,7 +4,6 @@ import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 
 /**
  * @description Vectorizes the image.
- * @class VectorizeEffectAction
  * @augments Action
  */
 class VectorizeEffectAction extends Action {

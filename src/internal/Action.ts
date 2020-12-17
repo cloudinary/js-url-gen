@@ -3,7 +3,6 @@ import {Qualifier} from "./qualifier/Qualifier";
 import {mapToSortedArray} from "./utils/dataStructureUtils";
 
 /**
- * @class Action
  * @memberOf SDK
  * @description Defines the category of transformation to perform.
  */
@@ -25,7 +24,7 @@ class Action {
 
   /**
    * @description Adds the parameter to the action.
-   * @param {Qualifier} qualifier
+   * @param {SDK.Qualifier} qualifier
    * @return {this}
    */
   addQualifier(qualifier: Qualifier): this {

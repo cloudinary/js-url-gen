@@ -7,7 +7,6 @@ import {QualifierValue} from "../../internal/qualifier/QualifierValue";
  *
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/paged_and_layered_media#extract_the_original_content_of_an_embedded_object
   * | Extract the original content of an embedded Photoshop object}
- * @class SmartObjectAction
  * @augments Action
  */
 class SmartObjectAction extends Action{

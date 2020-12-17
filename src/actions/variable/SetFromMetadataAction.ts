@@ -1,7 +1,6 @@
 import VariableAction from "./VariableAction";
 
 /**
- * @class SetFromMetadataAction
  * @augments VariableAction
  * @description Sets a user-defined variable from structured metadata.
  */

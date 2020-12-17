@@ -3,7 +3,6 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
 import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 
 /**
- * @class BitRateAction
  * @augments Action
  * @description  Defines the video bitrate in bits per second.
  *

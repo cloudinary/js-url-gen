@@ -3,7 +3,6 @@ import {QualifierValue} from "../../../internal/qualifier/QualifierValue";
 import {Qualifier} from "../../../internal/qualifier/Qualifier";
 
 /**
- * @class SimpleEffectAction
  * @extends {SDK.Action}
  * @memberOf Actions.Effect
  * @description A class that defines a simple effect of the type e_{effectName}

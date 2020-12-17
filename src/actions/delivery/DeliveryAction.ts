@@ -5,7 +5,6 @@ import {Flag} from "../../values/flag/Flag";
 
 /**
  * @description Qualifies the delivery of an asset.
- * @class DeliveryAction
  * @augments Action
  */
 class DeliveryAction extends Action {

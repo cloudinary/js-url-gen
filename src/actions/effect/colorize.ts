@@ -5,7 +5,6 @@ import {EffectActionWithLevel}from "./EffectActions/EffectActionWithLevel";
 import {SystemColors} from "../../values/color";
 
 /**
- * @class ColorizeEffectAction
  * @augments EffectActionWithLevel
  * @description Applies a colorizing filter to the asset, use the methods in the class to adjust the filter
  */

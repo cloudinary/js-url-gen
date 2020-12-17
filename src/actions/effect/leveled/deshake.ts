@@ -1,7 +1,6 @@
 import {LeveledEffectAction} from "../EffectActions/LeveledEffectAction";
 
 /**
- * @class DeshakeEffectAction
  * @augments LeveledEffectAction
  * @description Removes small motion shifts from the video. with a maximum extent of movement in the horizontal and vertical direction of 32 pixels
  */

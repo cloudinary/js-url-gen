@@ -1,24 +1,22 @@
 import {Action} from "../../internal/Action";
-import {ImageSource} from "../../values/sources/sourceTypes/ImageSource";
-import {imageLayer} from "../overlay";
-import {LayerAction} from "../overlay/LayerAction";
+import {Overlay} from "../overlay";
+import {LayerAction} from "../layer/LayerAction";
 import {PositionQualifier} from "../../values/position/PositionQualifier";
-import {FlagQualifier} from "../../values/flag/FlagQualifier";
+import {ImageSource} from "../../values/source/sourceTypes/ImageSource";
 
 /**
  * @description Trims pixels according to the transparency levels of a given overlay image.
  * Wherever the overlay image is transparent, the original is shown, and wherever the overlay is opaque, the resulting image is transparent.
- * @class CutterAction
  * @augments Action
  */
 class CutByImage extends Action {
   private layer: LayerAction;
   constructor(source: ImageSource) {
     super();
-    this.layer = imageLayer(source).setLayerType('l');
+    this.layer = Overlay.source(source).setLayerType('l');
     // `modifications` is the action used as the last component of a layer
     // we can leverage that to add more things to it
-    this.layer.modifications.addFlag(new FlagQualifier('cutter'));
+    // this.layer.modifications.addFlag(new FlagQualifier('cutter'));
   }
 
   /**
@@ -27,7 +25,7 @@ class CutByImage extends Action {
    * @return {this}
    */
   position(position?:PositionQualifier): this{
-    this.layer.position = position;
+    this.layer.position(position);
     return this;
   }
 

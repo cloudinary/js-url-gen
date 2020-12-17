@@ -2,7 +2,6 @@ import {Action} from "../../internal/Action";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
- * @class FPSAction
  * @augments Action
  * @description Controls the FPS (Frames Per Second) to ensure that video (even when optimized)
  * is delivered with
