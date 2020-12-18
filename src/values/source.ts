@@ -2,6 +2,7 @@ import {TextSource} from "./source/sourceTypes/TextSource";
 import {VideoSource} from "./source/sourceTypes/VideoSource";
 import {ImageSource} from "./source/sourceTypes/ImageSource";
 import {TextStyle} from "./textStyle";
+import {SubtitlesSource} from "./source/sourceTypes/SubtitlesSource";
 import {FetchSource} from "./source/sourceTypes/FetchSource";
 
 /**
@@ -42,6 +43,16 @@ function video(publicID: string): VideoSource {
 }
 
 /**
+ * @description Returns an instance of an VideoSource
+ * @memberOf Values.Source
+ * @param {string} fileName The publicID of the video to be used as a layer
+ * @return {Values.Source.VideoSource}
+ */
+function subtitles(fileName: string, textStyle: TextStyle): TextSource {
+  return new SubtitlesSource(fileName, textStyle);
+}
+
+/**
  * @description Returns an instance of a FetchSource
  * @memberOf Values.Source
  * @param {string} remoteURL The URL of the remote asset to fetch as a layer
@@ -52,5 +63,5 @@ function fetch(remoteURL: string): FetchSource {
 }
 
 
-const Source = {image, text, video, fetch};
-export {Source, image, text, video, fetch};
+const Source = {image, text, video, subtitles, fetch};
+export {Source, image, text, video, subtitles, fetch};

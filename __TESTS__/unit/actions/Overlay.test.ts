@@ -64,9 +64,22 @@ describe('Tests for overlay actions', () => {
 
     asset.overlay(Overlay.source(
       Source.text('Testing', textStyle)
+        .backgroundColor('red')
+        .textColor('blue')
     ));
 
-    expect(asset.toString()).toBe(`l_text:${textStyle.toString()}:Testing/fl_layer_apply`);
+    expect(asset.toString()).toBe(`b_red,co_blue,l_text:${textStyle.toString()}:Testing/fl_layer_apply`);
+  });
+
+  it('Tests subtitle on image', () => {
+    const asset = createNewImage();
+    const textStyle = sampleTextStyle();
+
+    asset.overlay(Overlay.source(
+      Source.subtitles('subs.srt', textStyle)
+    ));
+
+    expect(asset.toString()).toBe(`l_subtitles:${textStyle.toString()}:subs.srt/fl_layer_apply`);
   });
 
   it('Tests an overlay with a complete example', () => {

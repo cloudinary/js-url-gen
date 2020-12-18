@@ -101,7 +101,7 @@ class LayerAction extends Action {
    * @return string
    */
   private openLayer(): string {
-    return `${this.layerType}_${this.source.getOpenSourceString()}`;
+    return `${this.source.getOpenSourceString(this.layerType)}`;
   }
 
 

@@ -35,11 +35,11 @@ class FetchSource extends BaseSource {
    * This method is used internally within {@link SDK.LayerAction|LayerAction}
    * @returns {string}
    */
-  getOpenSourceString(): string {
+  getOpenSourceString(layerType: 'l' | 'u'): string {
     if (this._format) {
-      return `fetch:${base64Encode(this._remoteURL)}.${this._format.toString()}`;
+      return `${layerType}_fetch:${base64Encode(this._remoteURL)}.${this._format.toString()}`;
     } else {
-      return `fetch:${base64Encode(this._remoteURL)}`;
+      return `${layerType}_fetch:${base64Encode(this._remoteURL)}`;
     }
   }
 
