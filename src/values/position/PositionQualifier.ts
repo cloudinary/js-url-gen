@@ -3,8 +3,8 @@ import {CompassGravity} from "../gravity/compassGravity/CompassGravity";
 import {OCR} from "../gravity/OCR/OCR";
 import {FocusOnGravity} from "../gravity/focusOnGravity/FocusOnGravity";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
-import {tiled} from "../flag/tiled";
-import {noOverflow} from "../flag/noOverflow";
+import {tiled} from "../flag";
+import {noOverflow} from "../flag";
 
 /**
  * @description

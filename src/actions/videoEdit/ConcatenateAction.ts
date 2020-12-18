@@ -1,6 +1,6 @@
 import {Action} from "../../internal/Action";
 import {LayerAction} from "../layer/LayerAction";
-import {splice} from "../../values/flag/splice";
+import {splice} from "../../values/flag";
 import {transition} from "../effect";
 import {Overlay} from "../overlay";
 import {Transformation} from "../../transformation/Transformation";
