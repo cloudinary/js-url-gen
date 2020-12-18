@@ -1,9 +1,7 @@
-import {Overlay} from "../overlay";
-import {LayerAction} from "../layer/LayerAction";
-import {Qualifier} from "../../internal/qualifier/Qualifier";
 import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 import {Action} from "../../internal/Action";
 import {ImageSource} from "../../values/source/sourceTypes/ImageSource";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 
 /**
@@ -14,7 +12,7 @@ import {ImageSource} from "../../values/source/sourceTypes/ImageSource";
  */
 class StyleTransfer extends Action {
   // This action is actually a layer.
-  private imgLayer: LayerAction;
+  private imageSource: ImageSource;
   // This action is built from effectStrength and preserve
   private effectStrength : number;
   private preserve: boolean;
@@ -29,7 +27,7 @@ class StyleTransfer extends Action {
    */
   constructor(imageSource: ImageSource) {
     super();
-    this.imgLayer = Overlay.source(imageSource);
+    this.imageSource = imageSource;
   }
 
 
@@ -64,12 +62,21 @@ class StyleTransfer extends Action {
     const NAME = 'style_transfer';
     const PRES = this.preserve ? 'preserve_color' : null;
     const STRENGTH = this.effectStrength;
-    const effectValue = new QualifierValue([NAME, PRES, STRENGTH]);
+    // Create the style effect
+    const styleEffect = new Qualifier('e', new QualifierValue([NAME, PRES, STRENGTH]));
 
+    // Handle Handle the source for publicID,
+    const sourceOpenString = this.imageSource.getOpenSourceString('l');
 
-    // this.imgLayer.modifications.addQualifier(new Qualifier('e', effectValue));
-    this.imgLayer.setLayerType('l');
-    return this.imgLayer.toString();
+    // Handle source transfomration
+    const imgTx = this.imageSource.getTransformation();
+    const sourceTransformation = imgTx ? imgTx.toString() : '';
+
+    return [
+      sourceOpenString,
+      sourceTransformation,
+      `${styleEffect},fl_layer_apply`
+    ].filter((a) => a).join('/');
   }
 }
 
