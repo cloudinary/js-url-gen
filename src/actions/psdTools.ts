@@ -42,5 +42,5 @@ function smartObject(): SmartObjectAction {
 }
 
 
-const PsdTools = {clip, getLayer, smartObject};
-export {PsdTools, clip, getLayer, smartObject};
+const PSDTools = {clip, getLayer, smartObject};
+export {PSDTools, clip, getLayer, smartObject};

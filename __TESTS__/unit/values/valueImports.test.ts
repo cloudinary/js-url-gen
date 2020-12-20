@@ -5,13 +5,13 @@ import {StreamingProfile} from "../../../src/values/streamingProfile";
 import {ChromaSubSampling} from "../../../src/values/chromaSubSampling";
 import {ColorSpace} from "../../../src/values/colorSpace";
 import {AudioFrequency} from "../../../src/values/audioFrequency";
-import {Outline} from "../../../src/values/outline";
+import {OutlineMode} from "../../../src/values/outlineMode";
 import {FontWeight} from "../../../src/values/fontWeight";
 import {FontHinting} from "../../../src/values/fontHinting";
 import {TextAlignment} from "../../../src/values/textAlignment";
 import {ArtisticFilter} from "../../../src/values/artisticFilter";
 import {AudioCodec} from "../../../src/values/audioCodec";
-import {SimulateColorblind} from "../../../src/values/simulateColorBlind";
+import {SimulateColorBlind} from "../../../src/values/simulateColorBlind";
 import {FontAntialias} from "../../../src/values/FontAntialias";
 
 describe('Test imported values', () => {
@@ -36,10 +36,10 @@ describe('Test imported values', () => {
     expect(ArtisticFilter.zorro()).toBe('zorro');
 
 
-    expect(Outline.fill()).toBe('fill');
-    expect(Outline.inner_fill()).toBe('inner_fill');
-    expect(Outline.inner()).toBe('inner');
-    expect(Outline.outer()).toBe('outer');
+    expect(OutlineMode.fill()).toBe('fill');
+    expect(OutlineMode.inner_fill()).toBe('inner_fill');
+    expect(OutlineMode.inner()).toBe('inner');
+    expect(OutlineMode.outer()).toBe('outer');
 
     expect(FontStyle.italic()).toBe('italic');
     expect(FontStyle.normal()).toBe('normal');
@@ -87,38 +87,38 @@ describe('Test imported values', () => {
     expect(StreamingProfile.SD()).toBe('sd');
 
 
-    expect(Dither.threshold1x1nondither()).toBe(0);
-    expect(Dither.checkerboard2x1dither()).toBe(1);
-    expect(Dither.ordered2x2dispersed()).toBe(2);
-    expect(Dither.ordered3x3dispersed()).toBe(3);
-    expect(Dither.ordered4x4dispersed()).toBe(4);
-    expect(Dither.ordered8x8dispersed()).toBe(5);
-    expect(Dither.halftone4x4angled()).toBe(6);
-    expect(Dither.halftone6x6angled()).toBe(7);
-    expect(Dither.halftone8x8angled()).toBe(8);
-    expect(Dither.halftone4x4orthogonal()).toBe(9);
+    expect(Dither.threshold1x1Nondither()).toBe(0);
+    expect(Dither.checkerboard2x1Dither()).toBe(1);
+    expect(Dither.ordered2x2Dispersed()).toBe(2);
+    expect(Dither.ordered3x3Dispersed()).toBe(3);
+    expect(Dither.ordered4x4Dispersed()).toBe(4);
+    expect(Dither.ordered8x8Dispersed()).toBe(5);
+    expect(Dither.halftone4x4Angled()).toBe(6);
+    expect(Dither.halftone6x6Angled()).toBe(7);
+    expect(Dither.halftone8x8Angled()).toBe(8);
+    expect(Dither.halftone4x4Orthogonal()).toBe(9);
 
-    expect(Dither.halftone6x6orthogonal()).toBe(10);
-    expect(Dither.halftone8x8orthogonal()).toBe(11);
-    expect(Dither.halftone16x16orthogonal()).toBe(12);
-    expect(Dither.circles5x5black()).toBe(13);
-    expect(Dither.circles5x5white()).toBe(14);
-    expect(Dither.circles6x6black()).toBe(15);
-    expect(Dither.circles6x6white()).toBe(16);
-    expect(Dither.circles7x7black()).toBe(17);
-    expect(Dither.circles7x7white()).toBe(18);
+    expect(Dither.halftone6x6Orthogonal()).toBe(10);
+    expect(Dither.halftone8x8Orthogonal()).toBe(11);
+    expect(Dither.halftone16x16Orthogonal()).toBe(12);
+    expect(Dither.circles5x5Black()).toBe(13);
+    expect(Dither.circles5x5White()).toBe(14);
+    expect(Dither.circles6x6Black()).toBe(15);
+    expect(Dither.circles6x6White()).toBe(16);
+    expect(Dither.circles7x7Black()).toBe(17);
+    expect(Dither.circles7x7White()).toBe(18);
 
 
     expect(ChromaSubSampling.chroma420()).toBe(420);
     expect(ChromaSubSampling.chroma444()).toBe(444);
 
-    expect(SimulateColorblind.coneMonochromacy()).toBe('cone_monochromacy');
-    expect(SimulateColorblind.deuteranomaly()).toBe('dueteranomaly');
-    expect(SimulateColorblind.deuteranopia()).toBe('deuteranopia');
-    expect(SimulateColorblind.protanopia()).toBe('protanopia');
-    expect(SimulateColorblind.rodMonochromacy()).toBe('rod_monochromacy');
-    expect(SimulateColorblind.tritanomaly()).toBe('tritanomaly');
-    expect(SimulateColorblind.tritanopia()).toBe('tritanopia');
+    expect(SimulateColorBlind.coneMonochromacy()).toBe('cone_monochromacy');
+    expect(SimulateColorBlind.deuteranomaly()).toBe('dueteranomaly');
+    expect(SimulateColorBlind.deuteranopia()).toBe('deuteranopia');
+    expect(SimulateColorBlind.protanopia()).toBe('protanopia');
+    expect(SimulateColorBlind.rodMonochromacy()).toBe('rod_monochromacy');
+    expect(SimulateColorBlind.tritanomaly()).toBe('tritanomaly');
+    expect(SimulateColorBlind.tritanopia()).toBe('tritanopia');
 
     expect(AudioCodec.auto()).toBe('auto');
     expect(AudioCodec.aac()).toBe('aac');

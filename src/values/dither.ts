@@ -9,7 +9,7 @@
  * @@doc
  * @memberOf Values.Dither
  */
-function threshold1x1nondither(): number {
+function threshold1x1Nondither(): number {
   return 0;
 }
 
@@ -17,7 +17,7 @@ function threshold1x1nondither(): number {
  * @@doc
  * @memberOf Values.Dither
  */
-function checkerboard2x1dither(): number {
+function checkerboard2x1Dither(): number {
   return 1;
 }
 
@@ -25,7 +25,7 @@ function checkerboard2x1dither(): number {
  * @@doc
  * @memberOf Values.Dither
  */
-function ordered2x2dispersed(): number {
+function ordered2x2Dispersed(): number {
   return 2;
 }
 
@@ -33,7 +33,7 @@ function ordered2x2dispersed(): number {
  * @@doc
  * @memberOf Values.Dither
  */
-function ordered3x3dispersed(): number {
+function ordered3x3Dispersed(): number {
   return 3;
 }
 
@@ -41,7 +41,7 @@ function ordered3x3dispersed(): number {
  * @@doc
  * @memberOf Values.Dither
  */
-function ordered4x4dispersed(): number {
+function ordered4x4Dispersed(): number {
   return 4;
 }
 
@@ -49,7 +49,7 @@ function ordered4x4dispersed(): number {
  * @@doc
  * @memberOf Values.Dither
  */
-function ordered8x8dispersed(): number {
+function ordered8x8Dispersed(): number {
   return 5;
 }
 
@@ -57,7 +57,7 @@ function ordered8x8dispersed(): number {
  * @@doc
  * @memberOf Values.Dither
  */
-function halftone4x4angled(): number {
+function halftone4x4Angled(): number {
   return 6;
 }
 
@@ -65,7 +65,7 @@ function halftone4x4angled(): number {
  * @@doc
  * @memberOf Values.Dither
  */
-function halftone6x6angled(): number {
+function halftone6x6Angled(): number {
   return 7;
 }
 
@@ -73,7 +73,7 @@ function halftone6x6angled(): number {
  * @@doc
  * @memberOf Values.Dither
  */
-function halftone8x8angled(): number {
+function halftone8x8Angled(): number {
   return 8;
 }
 
@@ -81,7 +81,7 @@ function halftone8x8angled(): number {
  * @@doc
  * @memberOf Values.Dither
  */
-function halftone4x4orthogonal(): number {
+function halftone4x4Orthogonal(): number {
   return 9;
 }
 
@@ -89,7 +89,7 @@ function halftone4x4orthogonal(): number {
  * @@doc
  * @memberOf Values.Dither
  */
-function halftone6x6orthogonal(): number {
+function halftone6x6Orthogonal(): number {
   return 10;
 }
 
@@ -97,7 +97,7 @@ function halftone6x6orthogonal(): number {
  * @@doc
  * @memberOf Values.Dither
  */
-function halftone8x8orthogonal(): number {
+function halftone8x8Orthogonal(): number {
   return 11;
 }
 
@@ -105,7 +105,7 @@ function halftone8x8orthogonal(): number {
  * @@doc
  * @memberOf Values.Dither
  */
-function halftone16x16orthogonal(): number {
+function halftone16x16Orthogonal(): number {
   return 12;
 }
 
@@ -113,7 +113,7 @@ function halftone16x16orthogonal(): number {
  * @@doc
  * @memberOf Values.Dither
  */
-function circles5x5black(): number {
+function circles5x5Black(): number {
   return 13;
 }
 
@@ -121,7 +121,7 @@ function circles5x5black(): number {
  * @@doc
  * @memberOf Values.Dither
  */
-function circles5x5white(): number {
+function circles5x5White(): number {
   return 14;
 }
 
@@ -129,7 +129,7 @@ function circles5x5white(): number {
  * @@doc
  * @memberOf Values.Dither
  */
-function circles6x6black(): number {
+function circles6x6Black(): number {
   return 15;
 }
 
@@ -137,7 +137,7 @@ function circles6x6black(): number {
  * @@doc
  * @memberOf Values.Dither
  */
-function circles6x6white(): number {
+function circles6x6White(): number {
   return 16;
 }
 
@@ -145,7 +145,7 @@ function circles6x6white(): number {
  * @@doc
  * @memberOf Values.Dither
  */
-function circles7x7black(): number {
+function circles7x7Black(): number {
   return 17;
 }
 
@@ -153,56 +153,53 @@ function circles7x7black(): number {
  * @@doc
  * @memberOf Values.Dither
  */
-function circles7x7white(): number {
+function circles7x7White(): number {
   return 18;
 }
 
 
 const Dither = {
-  checkerboard2x1dither,
-  circles5x5black,
-  circles5x5white,
-  circles6x6black,
-  circles6x6white,
-  circles7x7black,
-  circles7x7white,
-  halftone4x4angled,
-  halftone4x4orthogonal,
-  halftone6x6angled,
-  halftone6x6orthogonal,
-  halftone8x8angled,
-  halftone8x8orthogonal,
-  halftone16x16orthogonal,
-  ordered2x2dispersed,
-  ordered3x3dispersed,
-  ordered4x4dispersed,
-  ordered8x8dispersed,
-  threshold1x1nondither
+  checkerboard2x1Dither,
+  circles5x5Black,
+  circles5x5White,
+  circles6x6Black,
+  circles6x6White,
+  circles7x7Black,
+  circles7x7White,
+  halftone4x4Angled,
+  halftone4x4Orthogonal,
+  halftone6x6Angled,
+  halftone6x6Orthogonal,
+  halftone8x8Angled,
+  halftone8x8Orthogonal,
+  halftone16x16Orthogonal,
+  ordered2x2Dispersed,
+  ordered3x3Dispersed,
+  ordered4x4Dispersed,
+  ordered8x8Dispersed,
+  threshold1x1Nondither
 };
-
-
-
 
 
 export {
   Dither,
-  checkerboard2x1dither,
-  circles5x5black,
-  circles5x5white,
-  circles6x6black,
-  circles6x6white,
-  circles7x7black,
-  circles7x7white,
-  halftone4x4angled,
-  halftone4x4orthogonal,
-  halftone6x6angled,
-  halftone6x6orthogonal,
-  halftone8x8angled,
-  halftone8x8orthogonal,
-  halftone16x16orthogonal,
-  ordered2x2dispersed,
-  ordered3x3dispersed,
-  ordered4x4dispersed,
-  ordered8x8dispersed,
-  threshold1x1nondither
+  checkerboard2x1Dither,
+  circles5x5Black,
+  circles5x5White,
+  circles6x6Black,
+  circles6x6White,
+  circles7x7Black,
+  circles7x7White,
+  halftone4x4Angled,
+  halftone4x4Orthogonal,
+  halftone6x6Angled,
+  halftone6x6Orthogonal,
+  halftone8x8Angled,
+  halftone8x8Orthogonal,
+  halftone16x16Orthogonal,
+  ordered2x2Dispersed,
+  ordered3x3Dispersed,
+  ordered4x4Dispersed,
+  ordered8x8Dispersed,
+  threshold1x1Nondither
 };
