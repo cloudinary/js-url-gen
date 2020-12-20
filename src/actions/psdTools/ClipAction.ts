@@ -1,8 +1,7 @@
 import {Action} from "../../internal/Action";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
 import {QualifierValue} from "../../internal/qualifier/QualifierValue";
-import clipEvenOdd from "../../values/flag/clipEvenOdd";
-import {clip} from "../../values/flag/clip";
+import {clip, clipEvenOdd} from "../../values/flag";
 
 /**
  * @description  Defines the clipping path to use when trimming pixels.

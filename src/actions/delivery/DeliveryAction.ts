@@ -1,7 +1,7 @@
 import {Action} from "../../internal/Action";
 import {FormatQualifier} from "../../values/format/FormatQualifier";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
-import {Flag} from "../../values/flag/Flag";
+import {lossy, preserveTransparency, progressive} from "../../values/flag";
 
 /**
  * @description Qualifies the delivery of an asset.
@@ -18,7 +18,7 @@ class DeliveryAction extends Action {
    * @return {this}
    */
   lossy(): this{
-    this.addFlag(Flag.lossy());
+    this.addFlag(lossy());
     return this;
   }
 
@@ -27,7 +27,7 @@ class DeliveryAction extends Action {
    * @return {this}
    */
   progressive(): this{
-    this.addFlag(Flag.progressive());
+    this.addFlag(progressive());
     return this;
   }
 
@@ -35,7 +35,7 @@ class DeliveryAction extends Action {
    * @description Ensures that images with a transparency channel are delivered in PNG format.
    */
   preserveTransparency(): this {
-    this.addFlag(Flag.preserveTransparency());
+    this.addFlag(preserveTransparency());
     return this;
   }
 }

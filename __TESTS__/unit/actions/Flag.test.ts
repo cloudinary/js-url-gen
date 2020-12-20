@@ -1,8 +1,8 @@
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import * as Flag from "../../../src/values/flag/Flag";
 import * as Resize from "../../../src/actions/resize";
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 import {CloudinaryVideo} from "../../../src/assets/CloudinaryVideo";
+import {Flag} from "../../../src/values/flag";
 
 
 const CONFIG_INSTANCE = new CloudinaryConfig({

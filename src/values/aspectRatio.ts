@@ -1,5 +1,5 @@
 import {AspectRatioQualifierValue} from "./aspectRatio/AspectRatioQualifierValue";
-import {ignoreAspectRatio as ignoreAspectRatioFlag} from "./flag/ignoreAspectRatio";
+import {ignoreAspectRatio as ignoreAspectRatioFlag} from "./flag";
 import {FlagQualifier} from "./flag/FlagQualifier";
 
 
