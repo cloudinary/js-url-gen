@@ -4,8 +4,8 @@ import CloudinaryConfig from "../../src/config/CloudinaryConfig";
 /**
  *
  */
-function createNewImage() {
-  return new CloudinaryImage()
+function createNewImage(publicID?: string) {
+  return new CloudinaryImage(publicID)
     .setConfig(new CloudinaryConfig({
       cloud: {
         cloudName: 'demo'

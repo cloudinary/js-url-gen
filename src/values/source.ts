@@ -3,6 +3,7 @@ import {VideoSource} from "./source/sourceTypes/VideoSource";
 import {ImageSource} from "./source/sourceTypes/ImageSource";
 import {TextStyle} from "./textStyle";
 import {SubtitlesSource} from "./source/sourceTypes/SubtitlesSource";
+import {FetchSource} from "./source/sourceTypes/FetchSource";
 
 /**
  * @description This namespace contains different sources that can be used in overlays and underlays
@@ -32,7 +33,7 @@ function text(text: string, textStyle: TextStyle): TextSource {
 }
 
 /**
- * @description Returns an instance of an VideoSource
+ * @description Returns an instance of a VideoSource
  * @memberOf Values.Source
  * @param {string} publicID The publicID of the video to be used as a layer
  * @return {Values.Source.VideoSource}
@@ -51,6 +52,16 @@ function subtitles(fileName: string, textStyle: TextStyle): TextSource {
   return new SubtitlesSource(fileName, textStyle);
 }
 
+/**
+ * @description Returns an instance of a FetchSource
+ * @memberOf Values.Source
+ * @param {string} remoteURL The URL of the remote asset to fetch as a layer
+ * @return {Values.Source.FetchSource}
+ */
+function fetch(remoteURL: string): FetchSource {
+  return new FetchSource(remoteURL);
+}
 
-const Source = {image, text, video, subtitles};
-export {Source, image, text, video, subtitles};
+
+const Source = {image, text, video, subtitles, fetch};
+export {Source, image, text, video, subtitles, fetch};
