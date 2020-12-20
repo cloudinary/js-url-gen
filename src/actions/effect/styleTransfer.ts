@@ -11,9 +11,7 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
  * @augments Action
  */
 class StyleTransfer extends Action {
-  // This action is actually a layer.
   private imageSource: ImageSource;
-  // This action is built from effectStrength and preserve
   private effectStrength : number;
   private preserve: boolean;
 

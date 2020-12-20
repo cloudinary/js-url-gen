@@ -112,4 +112,11 @@ describe('Tests for Transformation Action', () => {
 
     expect(action.toString()).toBe('a_1,b_2,c_3,fl_a.b');
   });
+
+  it('Add and read actions tags', () => {
+    const action = new Action()
+      .setActionTag('testing');
+
+    expect(action.getActionTag()).toBe('testing');
+  });
 });
