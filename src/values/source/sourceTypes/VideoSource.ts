@@ -30,8 +30,8 @@ class VideoSource extends BaseSource {
    * This method is used internally within {@link SDK.LayerAction|LayerAction}
    * @returns {string}
    */
-  getOpenSourceString(): string {
-    return `video:${this._publicID}`;
+  getOpenSourceString(layerType: 'u' | 'l'): string {
+    return `${layerType}_video:${this._publicID}`;
   }
 }
 

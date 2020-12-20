@@ -32,11 +32,11 @@ class ImageSource extends BaseSource {
    * This method is used internally within {@link SDK.LayerAction|LayerAction}
    * @returns {string}
    */
-  getOpenSourceString(): string {
+  getOpenSourceString(layerType: 'u' | 'l'): string {
     if (this._format) {
-      return `${this._publicID}.${this._format.toString()}`;
+      return `${layerType}_${this._publicID}.${this._format.toString()}`;
     } else {
-      return this._publicID;
+      return `${layerType}_${this._publicID}`;
     }
   }
 
