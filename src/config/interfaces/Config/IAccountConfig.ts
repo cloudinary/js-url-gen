@@ -3,7 +3,7 @@ interface IAccountConfig {
   provisioningApiSecret?: string;
   accountID?: string;
 
-  [other:string]: any;
+  [other:string]: string | number;
 }
 
 export default IAccountConfig;

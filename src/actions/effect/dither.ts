@@ -10,7 +10,7 @@ class DitherEffectAction extends LeveledEffectAction {
    * @param {Values.Dither} ditherType - The dither type applied to the image
    * @return {this}
    */
-  type(ditherType:number) {
+  type(ditherType:number): this {
     return this.setLevel(ditherType);
   }
 }
