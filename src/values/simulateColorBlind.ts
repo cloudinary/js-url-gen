@@ -69,7 +69,7 @@ function rodMonochromacy(): string {
 
 
 
-const SimulateColorblind = {
+const SimulateColorBlind = {
   coneMonochromacy,
   deuteranomaly,
   deuteranopia,
@@ -80,7 +80,7 @@ const SimulateColorblind = {
 };
 
 export {
-  SimulateColorblind,
+  SimulateColorBlind,
   coneMonochromacy,
   deuteranomaly,
   deuteranopia,

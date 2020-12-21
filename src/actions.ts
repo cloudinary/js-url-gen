@@ -15,7 +15,7 @@ import {NamedTransformation} from './actions/namedTransformation';
 import {Delivery} from "./actions/delivery";
 import {CustomFunction} from './actions/customFunction';
 import {Transcode} from "./actions/transcode";
-import {PsdTools} from "./actions/psdTools";
+import {PSDTools} from "./actions/psdTools";
 
 const Actions = {
   Resize,
@@ -31,7 +31,7 @@ const Actions = {
   CustomFunction,
   VideoEdit,
   Transcode,
-  PsdTools
+  PSDTools
 };
 
 export {

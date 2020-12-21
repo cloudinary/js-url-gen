@@ -111,7 +111,7 @@ function cartoonify(cartoonifyLevel?: number):CartoonifyEffect {
 /**
  * @description Adds an outline to a transparent image. For examples, see the Image Transformations guide.
  * @memberOf Actions.Effect
- * @return {Outline}
+ * @return {OutlineMode}
  */
 function outline(): EffectOutline {
   return new EffectOutline();
@@ -439,6 +439,8 @@ export declare type EffectActions =
   | StyleTransfer
   | VectorizeEffectAction
   | GradientFadeEffectAction
+  | BlurAction
+  | Pixelate
 
 
 export {

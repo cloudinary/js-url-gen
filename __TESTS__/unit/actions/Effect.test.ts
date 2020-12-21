@@ -6,8 +6,8 @@ import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 import {scale} from "../../../src/actions/resize";
 import {GradientFade} from "../../../src/values/GradientFade";
 import {cartoonify, Effect} from "../../../src/actions/effect";
-import {Outline} from "../../../src/values/outline";
-import {halftone4x4orthogonal} from "../../../src/values/dither";
+import {OutlineMode} from "../../../src/values/outlineMode";
+import {halftone4x4Orthogonal} from "../../../src/values/dither";
 import {ArtisticFilter} from "../../../src/values/artisticFilter";
 import {Transformation} from "../../../src/transformation/Transformation";
 
@@ -242,8 +242,8 @@ describe('Tests for Transformation Action -- Effect', () => {
     const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
       .effect(Effect.dither())
-      .effect(Effect.dither(halftone4x4orthogonal()))
-      .effect(Effect.dither().type(halftone4x4orthogonal()))
+      .effect(Effect.dither(halftone4x4Orthogonal()))
+      .effect(Effect.dither().type(halftone4x4Orthogonal()))
       .setPublicID('sample')
       .toURL();
 
@@ -311,7 +311,7 @@ describe('Tests for Transformation Action -- Effect', () => {
     ).toBe('e_outline');
 
     expect(Effect.outline()
-      .mode(Outline.fill())
+      .mode(OutlineMode.fill())
       .width(10)
       .blurLevel(25)
       .color(Color.BLUE)

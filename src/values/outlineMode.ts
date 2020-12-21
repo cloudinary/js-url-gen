@@ -36,7 +36,7 @@ function outer(): string {
   return 'outer';
 }
 
-const Outline = {
+const OutlineMode = {
   outer,
   inner,
   inner_fill,
@@ -44,7 +44,7 @@ const Outline = {
 };
 
 export {
-  Outline,
+  OutlineMode,
   outer,
   inner,
   inner_fill,

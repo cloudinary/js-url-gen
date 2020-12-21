@@ -20,12 +20,12 @@ import {Format} from "./values/format";
 import {GradientDirection} from "./values/gradientDirection";
 import {Gravity} from "./values/gravity";
 import {ImproveMode} from "./values/improveMode";
-import {Outline} from "./values/outline";
+import {OutlineMode} from "./values/outlineMode";
 import {Position} from "./values/position";
 import {Quality} from "./values/quality";
 import {Region} from "./values/region";
 import {RotationMode} from "./values/rotationMode";
-import {SimulateColorblind} from "./values/simulateColorBlind";
+import {SimulateColorBlind} from "./values/simulateColorBlind";
 import {Source} from "./values/source";
 import {StreamingProfile} from "./values/streamingProfile";
 import {TextAlignment} from "./values/textAlignment";
@@ -37,12 +37,12 @@ const Values = {
   TextDecoration,
   TextAlignment,
   StreamingProfile,
-  SimulateColorblind,
+  SimulateColorBlind,
   RotationMode,
   Region,
   Quality,
   Position,
-  Outline,
+  OutlineMode,
   ImproveMode,
   GradientDirection,
   Format,
