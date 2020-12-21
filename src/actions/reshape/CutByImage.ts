@@ -1,8 +1,8 @@
 import {Action} from "../../internal/Action";
-import {Overlay} from "../overlay";
-import {LayerAction} from "../layer/LayerAction";
 import {PositionQualifier} from "../../values/position/PositionQualifier";
 import {ImageSource} from "../../values/source/sourceTypes/ImageSource";
+import {Position} from "../../values/position";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
  * @description Trims pixels according to the transparency levels of a given overlay image.
@@ -10,13 +10,11 @@ import {ImageSource} from "../../values/source/sourceTypes/ImageSource";
  * @augments Action
  */
 class CutByImage extends Action {
-  private layer: LayerAction;
+  private source: ImageSource;
+  private _position: Position;
   constructor(source: ImageSource) {
     super();
-    this.layer = Overlay.source(source).setLayerType('l');
-    // `modifications` is the action used as the last component of a layer
-    // we can leverage that to add more things to it
-    // this.layer.modifications.addFlag(new FlagQualifier('cutter'));
+    this.source = source;
   }
 
   /**
@@ -24,13 +22,27 @@ class CutByImage extends Action {
    * @param {Values.Position} position The position of the overlay with respect to the base image.
    * @return {this}
    */
-  position(position?:PositionQualifier): this{
-    this.layer.position(position);
+  position(position:PositionQualifier): this {
+    this._position = position;
     return this;
   }
 
   toString(): string {
-    return this.layer.toString();
+    const close = new Action();
+    // Our implementation prevents two `fl` keys in the same URL component
+    // We also don't want to concatenate flags (fl_layer_apply.cutter)
+    // We use this trick to create two separate flags
+    close.addQualifier(new Qualifier('fl', 'cutter,fl_layer_apply'));
+
+    this._position?.qualifiers.forEach((qualifier) => {
+      close.addQualifier(qualifier);
+    });
+
+    return [
+      this.source.getOpenSourceString('l'),
+      this.source.getTransformation(),
+      close
+    ].filter((a) => a).join('/');
   }
 }
 
