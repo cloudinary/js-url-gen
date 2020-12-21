@@ -9,7 +9,7 @@ import {FontStyle} from "../../../src/values/fontStyle";
 /**
  * Creates a TextStyle instance used for testing
  */
-function sampleTextStyle() {
+function sampleTextStyle(): TextStyle {
   return new TextStyle('arial', 50)
     .letterSpacing(10)
     .lineSpacing(20)

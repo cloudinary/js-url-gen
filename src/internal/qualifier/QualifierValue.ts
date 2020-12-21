@@ -4,7 +4,7 @@ import {ExpressionQualifier} from "../../values/expression/ExpressionQualifier";
  * @memberOf SDK
  */
 class QualifierValue {
-  values: any[] = [];
+  values: unknown[] = [];
   delimiter = ':'; // {value}{delimiter}{value}...
 
   /**
@@ -30,7 +30,7 @@ class QualifierValue {
    * @private
    * @return {boolean}
    */
-  private hasValue(v: any): boolean {
+  private hasValue(v: unknown): boolean {
     return typeof v !== 'undefined' && v !== null && v !== '';
   }
 

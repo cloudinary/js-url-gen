@@ -1,5 +1,4 @@
 import {pad} from "../../../src/actions/resize";
-import {Action} from "../../../src/internal/Action";
 import {Transformation} from "../../../src/transformation/Transformation";
 
 /**

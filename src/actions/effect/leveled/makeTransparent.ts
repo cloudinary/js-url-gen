@@ -22,7 +22,7 @@ class MakeTransparentEffectAction extends LeveledEffectAction {
    * @param {string} color The HTML name of the color (red, green, etc.) or RGB hex code.
    * @return {this}
    */
-  color(color: SystemColors) {
+  color(color: SystemColors): this {
     return this.addQualifier(new Qualifier('co', new QualifierValue(prepareColor(color))));
   }
 }

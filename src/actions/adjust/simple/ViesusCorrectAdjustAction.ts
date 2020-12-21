@@ -14,7 +14,7 @@ class ViesusCorrectAdjustAction extends Action {
   /**
    * @description Enhances the image without correcting for red eye.
    */
-  noRedEye() {
+  noRedEye(): this {
     this._noRedEye = true;
     return this;
   }
@@ -23,7 +23,7 @@ class ViesusCorrectAdjustAction extends Action {
    * @description Applies saturation to the skin tones in the image.
    * @param level The saturation level. (Range: -100 to 100, Server default: 50).
    */
-  skinSaturation(level?:number) {
+  skinSaturation(level?:number): this {
     this._skinSaturation = true;
     if (level) {
       this._skinSaturationLevel = level;
@@ -31,7 +31,7 @@ class ViesusCorrectAdjustAction extends Action {
     return this;
   }
 
-  protected prepareQualifiers() {
+  protected prepareQualifiers(): void {
     let value = 'viesus_correct';
 
     if (this._noRedEye) {

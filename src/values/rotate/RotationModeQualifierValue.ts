@@ -13,7 +13,7 @@ class RotationModeQualifierValue extends QualifierValue {
     this.val = val;
   }
 
-  toString() {
+  toString(): string {
     return this.val;
   }
 }

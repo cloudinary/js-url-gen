@@ -16,17 +16,17 @@ class BlurAction extends Action {
     this._strength = strength;
   }
 
-  region(blurRegion: NamedRegion) {
+  region(blurRegion: NamedRegion): this {
     this._region = blurRegion;
     return this;
   }
 
-  strength(strength: number | string) {
+  strength(strength: number | string): this {
     this._strength = strength;
     return this;
   }
 
-  protected prepareQualifiers() {
+  protected prepareQualifiers():void {
     /*
      * Blur with region is a unique object in this codebase.
      * On top of Blur being an Action with Qualifiers,

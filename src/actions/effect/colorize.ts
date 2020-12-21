@@ -14,7 +14,7 @@ class ColorizeEffectAction extends EffectActionWithLevel {
    * @param {string} color HTML name(red, green, etc.) or RGB hex code. (Server default: gray)
    * @return {this}
    */
-  color(color: SystemColors) {
+  color(color: SystemColors): this {
     return this.addQualifier(new Qualifier('co', new QualifierValue(prepareColor(color))));
   }
 }

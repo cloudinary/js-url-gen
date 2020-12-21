@@ -4,7 +4,7 @@ import {CloudinaryVideo} from "../../src/assets/CloudinaryVideo";
 /**
  *
  */
-function createNewVideo() {
+function createNewVideo(): CloudinaryVideo {
   return new CloudinaryVideo()
     .setConfig(new CloudinaryConfig({
       cloud: {

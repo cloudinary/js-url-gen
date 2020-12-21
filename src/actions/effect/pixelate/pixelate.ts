@@ -19,7 +19,7 @@ class Pixelate extends Action {
    * @doc
    * @param {NamedRegion} pixelateRegion
    */
-  region(pixelateRegion: NamedRegion) {
+  region(pixelateRegion: NamedRegion): this {
     this._region = pixelateRegion;
     return this;
   }
@@ -28,12 +28,12 @@ class Pixelate extends Action {
    * @doc
    * @param {number | string} pixelWidth The width of the pixel
    */
-  pixelWidth(pixelWidth: number | string) {
+  pixelWidth(pixelWidth: number | string): this {
     this._pixelWidth = pixelWidth;
     return this;
   }
 
-  protected prepareQualifiers() {
+  protected prepareQualifiers(): void {
     /*
      * pixelate with region is a unique object in this codebase.
      * On top of pixelate being an Action with Qualifiers,
