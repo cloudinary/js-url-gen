@@ -63,10 +63,10 @@ class StyleTransfer extends Action {
     // Create the style effect
     const styleEffect = new Qualifier('e', new QualifierValue([NAME, PRES, STRENGTH]));
 
-    // Handle Handle the source for publicID,
+    // Handle the source for publicID,
     const sourceOpenString = this.imageSource.getOpenSourceString('l');
 
-    // Handle source transfomration
+    // Handle source transformation
     const imgTx = this.imageSource.getTransformation();
     const sourceTransformation = imgTx ? imgTx.toString() : '';
 

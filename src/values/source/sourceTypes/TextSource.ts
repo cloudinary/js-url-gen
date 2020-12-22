@@ -23,11 +23,6 @@ class TextSource extends BaseSource {
     this._textStyle = textStyle;
   }
 
-  textStyle(tStyle:TextStyle): this {
-    this._textStyle = tStyle;
-    return this;
-  }
-
   textColor(color:SystemColors): this {
     this._textColor = color;
     return this;
@@ -46,11 +41,7 @@ class TextSource extends BaseSource {
    */
   getOpenSourceString(layerType: 'u' | 'l'): string {
     let layerParam = this.type;
-
-    if (this._textStyle) {
-      layerParam += `:${this._textStyle.toString()}`;
-    }
-
+    layerParam += `:${this._textStyle.toString()}`;
     layerParam += `:${serializeCloudinaryCharacters(this.text)}`;
 
     const tmpAction = new Action();
