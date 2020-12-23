@@ -27,7 +27,7 @@ import {videoEditType} from "../actions/videoEdit";
  * @memberOf SDK
  */
 class Transformation {
-  actions: Action[];
+  actions: (Action | string)[];
 
   constructor() {
     this.actions = [];
@@ -38,6 +38,11 @@ class Transformation {
    */
   addAction(action: Action): this {
     this.actions.push(action);
+    return this;
+  }
+
+  addRawAction(raw: string) {
+    this.actions.push(raw);
     return this;
   }
 
