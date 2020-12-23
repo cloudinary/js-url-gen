@@ -10,7 +10,7 @@ import {VideoSource} from "./source/sourceTypes/VideoSource";
  * @description Returns an instance of a VideoSource
  * @memberOf Values.Transition
  * @param {string} publicID The publicID of the video to be used as a transition
- * @return {Values.Transition.VideoSource}
+ * @return {Values.Source.VideoSource}
  */
 function videoSource(publicID: string): VideoSource {
   return new VideoSource(publicID);
