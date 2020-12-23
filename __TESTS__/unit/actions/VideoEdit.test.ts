@@ -1,8 +1,12 @@
 import * as VideoEdit from '../../../src/actions/videoEdit';
 import {CloudinaryVideo} from "../../../src/assets/CloudinaryVideo";
-
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as Volume from "../../../src/values/volume";
+import {createNewVideo} from "../../TestUtils/createCloudinaryVideo";
+import {Concatenate} from "../../../src/values/concatenate";
+import {Transition} from "../../../src/values/transition";
+import {Effect} from "../../../src/actions/effect";
+import {Transformation} from "../../../src/transformation/Transformation";
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
   cloud: {
@@ -10,28 +14,47 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
   }
 });
 
+
 describe('Tests for Transformation Action -- VideoEdit', () => {
   it('Creates a cloudinaryURL with concatenate', () => {
-    // const url = new CloudinaryVideo()
-    //   .setConfig(CONFIG_INSTANCE)
-    //   .videoEdit(VideoEdit.concatenate(Sources.video('sample')))
-    //   .setAssetType('video')
-    //   .setPublicID('sample')
-    //   .toURL();
-    //
-    // expect(url).toBe('https://res.cloudinary.com/demo/video/upload/l_sample,fl_splice/fl_layer_apply/sample');
+    const url = createNewVideo('sample')
+      .videoEdit(
+        VideoEdit.concatenate(
+          Concatenate.videoSource("dog")
+        )
+      )
+      .toString();
+
+    // fl_splice,l_video:dog/{videoTransformation}/fl_layer_apply
+    expect(url).toContain('fl_splice,l_video:dog/fl_layer_apply');
   });
 
-  it('Creates a cloudinaryURL with concatenate.transition', () => {
-    // const url = new CloudinaryVideo()
-    //   .setConfig(CONFIG_INSTANCE)
-    //   .videoEdit(VideoEdit.concatenate(Sources.video('sample'))
-    //     .transition(Sources.video('dog')))
-    //   .setAssetType('video')
-    //   .setPublicID('sample')
-    //   .toURL();
-    //
-    // expect(url).toBe('https://res.cloudinary.com/demo/video/upload/l_sample/l_dog,e_transition/fl_layer_apply/fl_layer_apply/sample');
+  it('Creates a cloudinaryURL with concatenate prepend', () => {
+    const url = new CloudinaryVideo()
+      .videoEdit(
+        VideoEdit.concatenate(
+          Concatenate.videoSource("dog")
+        )
+          .prepend() // implicitly true
+      )
+      .toString();
+
+    expect(url).toBe('fl_splice,l_video:dog/fl_layer_apply,so_0');
+  });
+
+  it('Creates a cloudinaryURL with concatenate with transition', () => {
+    const src = Concatenate.imageSource("sample");
+    src.transformation(new Transformation());
+    src.getTransformation().effect(Effect.sepia());
+
+    const url = createNewVideo('sample')
+      .videoEdit(
+        VideoEdit.concatenate(src)
+          .transition(Transition.videoSource("transition1"))
+          .duration(5)
+      ).toString();
+
+    expect(url).toBe('du_5,l_sample/e_sepia/e_transition,l_video:transition1/fl_layer_apply/fl_layer_apply');
   });
 
   it('Creates a cloudinaryURL with trim', () => {
