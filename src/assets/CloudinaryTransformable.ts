@@ -5,7 +5,7 @@ import DeliveryAction from "../actions/delivery/DeliveryAction";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
 import {LayerAction} from "../actions/layer/LayerAction";
 import VariableAction from "../actions/variable/VariableAction";
-import {ConditionAction} from "../actions/condition";
+import {ConditionalAction} from "../actions/conditional";
 import {Action} from "../internal/Action";
 import RotateAction from "../actions/rotate/RotateAction";
 import {NamedTransformationAction} from "../actions/namedTransformation/NamedTransformationAction";
@@ -113,26 +113,8 @@ class CloudinaryTransformable {
    * @param {Actions.Condition} conditionAction
    * @return {this}
    */
-  ifCondition(conditionAction: ConditionAction): this {
-    this.transformation.ifCondition(conditionAction);
-    return this;
-  }
-
-  /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
-   * @return {this}
-   */
-  ifElse(): this {
-    this.transformation.ifElse();
-    return this;
-  }
-
-  /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
-   * @return {this}
-   */
-  endIfCondition(): this {
-    this.transformation.endIfCondition();
+  conditional(conditionalAction: ConditionalAction): this {
+    this.transformation.conditional(conditionalAction);
     return this;
   }
 
