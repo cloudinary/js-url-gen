@@ -4,8 +4,6 @@
  * @namespace Resize
  */
 
-
-
 import ResizePadAction from "./resize/ResizePadAction";
 import ResizeSimpleAction from "./resize/ResizeSimpleAction";
 import {ScaleAction} from "./resize/ScaleAction";
@@ -13,7 +11,7 @@ import {ThumbResizeAction} from "./resize/ThumbnailAction";
 import {AutoGravity} from "../values/gravity/autoGravity/AutoGravity";
 import {CompassGravity} from "../values/gravity/compassGravity/CompassGravity";
 import ResizeAdvancedAction from "./resize/ResizeAdvancedAction";
-import ResizeAdvancedActionWithPosition from "./resize/ResizeAdvancedActionWithPosition";
+import ResizeCropAction from "./resize/ResizeCropAction";
 
 /**
  * @description
@@ -64,10 +62,10 @@ function imaggaCrop(width?: number|string, height?: number|string) :ResizeSimple
  * @memberOf Actions.Resize
  * @param {number|string} width The required width of a transformed asset.
  * @param {number|string} height The required height of a transformed asset.
- * @return {ResizeAdvancedActionWithPosition}
+ * @return {ResizeCropAction}
  */
-function crop(width?: number|string, height?: number|string) :ResizeAdvancedActionWithPosition {
-  return new ResizeAdvancedActionWithPosition('crop', width, height);
+function crop(width?: number|string, height?: number|string) :ResizeCropAction {
+  return new ResizeCropAction('crop', width, height);
 }
 
 /**
