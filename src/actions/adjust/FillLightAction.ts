@@ -18,8 +18,8 @@ class FillLightAction extends Action {
    * @description Sets the level of adjustment
    * @param {number} lvl How much to blend the adjusted fill light, where 0 means only use the original and 100 means only use the adjusted fill light result. (Range: 0 to 100, Server default: 100)
    */
-  level(lvl:number): this {
-    this.lvl = lvl;
+  blend(blend:number): this {
+    this.lvl = blend;
     return this;
   }
 
