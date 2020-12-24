@@ -14,11 +14,10 @@ import SmartObjectAction from "./psdTools/SmartObjectAction";
 /**
  * @description Trims the pixels of a PSD image according to a Photoshop clipping path that is stored in the image's metadata.
  * @memberOf Actions.PSDTools
- * @param {string|number} path Number or the name of the clipping path.
- * @return {ClipAction}
+ * @return {Actions.PSDTools.ClipAction}
  */
-function clip(path: string | number): ClipAction {
-  return new ClipAction(path);
+function clip(): ClipAction {
+  return new ClipAction();
 }
 
 /**
@@ -26,7 +25,7 @@ function clip(path: string | number): ClipAction {
  *
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/paged_and_layered_media#deliver_selected_layers_of_a_psd_image | Deliver selected layers of a PSD image}
  * @memberOf Actions.PSDTools
- * @return {GetLayerAction}
+ * @return {Actions.PSDTools.GetLayerAction}
  */
 function getLayer(): GetLayerAction {
   return new GetLayerAction();
@@ -35,7 +34,7 @@ function getLayer(): GetLayerAction {
 /**
  * @description Extracts the original content of an embedded object of a Photoshop image.
  * @memberOf Actions.PSDTools
- * @return {SmartObjectAction}
+ * @return {Actions.PSDTools.SmartObjectAction}
  */
 function smartObject(): SmartObjectAction {
   return new SmartObjectAction();

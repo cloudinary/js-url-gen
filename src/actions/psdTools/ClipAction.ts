@@ -5,14 +5,33 @@ import {clip, clipEvenOdd} from "../../values/flag";
 
 /**
  * @description  Defines the clipping path to use when trimming pixels.
- * @augments Action
+ * @memberOf Actions.PSDTools
+ * @extends {SDK.Action}
  */
 class ClipAction extends Action {
   private path: string | number;
   private isEvenOdd = false;
-  constructor(path: string|number) {
+  constructor() {
     super();
+
+  }
+
+  /**
+   * @description The name of the path to clip by
+   * @param {string} path
+   */
+  byName(path: string): this {
     this.path = path;
+    return this;
+  }
+
+  /**
+   * @description The index of the path to clip by
+   * @param {number} path
+   */
+  byIndex(path: number): this {
+    this.path = path;
+    return this;
   }
 
   /**
