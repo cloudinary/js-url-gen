@@ -131,12 +131,12 @@ function opacityThreshold(level?:number): EffectActionWithLevel {
  * @memberOf Actions.Adjust
  * @description
  * Adjusts the color balance and blends the result with the original image.
- * @param {number} blendPercentage How much to blend the adjusted color result, where 0 means only use the original and 100 means only use the adjusted color result. </br>
+ * @param {number} blend How much to blend the adjusted color result, where 0 means only use the original and 100 means only use the adjusted color result. </br>
  *                                  (Range: 0 to 100, Server default: 100)
  * @return {Actions.Effect.EffectActionWithBlendPercentage}
  */
-function autoColor(blendPercentage?:number):EffectActionWithBlendPercentage {
-  return new EffectActionWithBlendPercentage('auto_color', blendPercentage);
+function autoColor(blend?:number):EffectActionWithBlend {
+  return new EffectActionWithBlend('auto_color', blend);
 }
 
 
@@ -144,13 +144,13 @@ function autoColor(blendPercentage?:number):EffectActionWithBlendPercentage {
  * @memberOf Actions.Adjust
  * @description
  * Adjusts the brightness and blends the result with the original image.
- * @param {number} blendPercentage How much to blend the adjusted brightness, where 0 means only use the original
+ * @param {number} blend How much to blend the adjusted brightness, where 0 means only use the original
  *                 and 100 means only use the adjusted brightness result.
  *                 (Range: 0 to 100, Server default: 100)
  * @return {Actions.Effect.EffectActionWithBlendPercentage}
  */
-function autoBrightness(blendPercentage?:number):EffectActionWithBlendPercentage {
-  return new EffectActionWithBlendPercentage('auto_brightness', blendPercentage);
+function autoBrightness(blend?:number):EffectActionWithBlend {
+  return new EffectActionWithBlend('auto_brightness', blend);
 }
 
 /**
@@ -199,18 +199,18 @@ function vibrance(strength?:number):EffectActionWithStrength {
  * @memberOf Actions.Adjust
  * @description
  * Adjusts the contrast and blends the result with the original image.
- * @param {number} blendPercentage How much to blend the adjusted contrast, where 0 means only use the original
+ * @param {number} blend How much to blend the adjusted contrast, where 0 means only use the original
  *                 and 100 means only use the adjusted contrast result.
  *                (Range: 0 to 100, Server default: 100)
  * @return {Actions.Effect.EffectActionWithBlendPercentage}
  */
-function autoContrast(blendPercentage?:number):EffectActionWithBlendPercentage {
-  return new EffectActionWithBlendPercentage('auto_contrast', blendPercentage);
+function autoContrast(blend?:number):EffectActionWithBlend {
+  return new EffectActionWithBlend('auto_contrast', blend);
 }
 
 import {EffectActionWithLevel} from "./effect/EffectActions/EffectActionWithLevel";
 import {EffectActionWithStrength} from "./effect/EffectActions/EffectActionWithStrength";
-import {EffectActionWithBlendPercentage} from "./effect/EffectActions/EffectActionWithBlendPercentage";
+import {EffectActionWithBlend} from "./effect/EffectActions/EffectActionWithBlend";
 import {ViesusCorrectAdjustAction} from "./adjust/simple/ViesusCorrectAdjustAction";
 
 

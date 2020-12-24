@@ -5,10 +5,10 @@ import {LeveledEffectAction} from "./LeveledEffectAction";
  * @memberOf Actions.Effect
  * @extends {Actions.Effect.LeveledEffectAction}
  */
-class EffectActionWithBlendPercentage extends LeveledEffectAction {
-  blendPercentage(value: number | string): this {
+class EffectActionWithBlend extends LeveledEffectAction {
+  blend(value: number | string): this {
     return this.setLevel(value);
   }
 }
 
-export {EffectActionWithBlendPercentage};
+export {EffectActionWithBlend};
