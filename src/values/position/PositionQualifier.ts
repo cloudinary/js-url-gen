@@ -51,7 +51,7 @@ class PositionQualifier extends Action {
    * @param {number} offsetX
    * @return {this}
    */
-  x(offsetX:number): this{
+  offsetX(offsetX:number): this{
     this.addQualifier(new Qualifier('x', offsetX));
     return this;
   }
@@ -61,7 +61,7 @@ class PositionQualifier extends Action {
    * @param {number} offsetY
    * @return {this}
    */
-  y(offsetY:number): this{
+  offsetY(offsetY:number): this{
     this.addQualifier(new Qualifier('y', offsetY));
     return this;
   }
