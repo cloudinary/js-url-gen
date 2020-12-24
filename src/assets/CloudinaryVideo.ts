@@ -9,6 +9,7 @@ import {VideoTransformation} from "../transformation/VideoTransformation";
 class CloudinaryVideo extends CloudinaryAsset {
   constructor(publicID?: string) {
     super(publicID, new VideoTransformation());
+    this.setAssetType('video');
   }
 }
 
