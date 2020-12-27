@@ -15,8 +15,8 @@ describe('Tests for Transformation Action -- Resize.fillPad', () => {
       fillPad()
         .width(250)
         .height(250)
-        .x(10)
-        .y(10)
+        .offsetX(10)
+        .offsetY(10)
         .gravity(Gravity.autoGravity())
         .aspectRatio(1.2)
         .background(Background.color('red')),

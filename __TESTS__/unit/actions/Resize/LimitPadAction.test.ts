@@ -15,8 +15,8 @@ describe('Tests for Transformation Action -- Resize.limitPad', () => {
         .width(250)
         .height(250)
         .aspectRatio(2)
-        .x(10)
-        .y(10)
+        .offsetX(10)
+        .offsetY(10)
         .gravity(Gravity.autoGravity())
         .background(Background.color('red'))
       ,

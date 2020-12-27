@@ -1,11 +1,12 @@
-import ResizeAdvancedAction from "./ResizeAdvancedAction";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
+import ResizeAdvancedAction from "./ResizeAdvancedAction";
+
 
 /**
- * @description Defines an advanced resize with positional arguments (x, y).
+ * @description Defines how to crop an asset
  * @augments ResizeAdvancedAction
  */
-class ResizeAdvancedActionWithPosition extends ResizeAdvancedAction {
+class ResizeCropAction extends ResizeAdvancedAction {
   /**
    * @description Horizontal position for custom-coordinates based cropping.
    * @param {number} x The x position.
@@ -24,4 +25,4 @@ class ResizeAdvancedActionWithPosition extends ResizeAdvancedAction {
 }
 
 
-export default ResizeAdvancedActionWithPosition;
+export default ResizeCropAction;

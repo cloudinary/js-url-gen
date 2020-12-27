@@ -1,13 +1,14 @@
-import ResizeAdvancedActionWithPosition from "./ResizeAdvancedActionWithPosition";
 import {BackgroundQualifier} from "../../values/background/shared/base/BackgroundQualifier";
 import {IGravity} from "../../values/gravity/GravityQualifier";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
+import ResizeAdvancedAction from "./ResizeAdvancedAction";
 
 
 /**
  * @description Defines an advanced resize with padding.
- * @augments ResizeAdvancedActionWithPosition
+ * @augments ResizeAdvancedAction
  */
-class ResizePadAction<GravityType extends IGravity> extends ResizeAdvancedActionWithPosition {
+class ResizePadAction<GravityType extends IGravity> extends ResizeAdvancedAction {
   /**
    * @description Sets the background.
    * @param {Values.Background} backgroundQualifier Defines the background color to use instead of
@@ -19,6 +20,22 @@ class ResizePadAction<GravityType extends IGravity> extends ResizeAdvancedAction
 
   gravity(direction:GravityType): this {
     return this.addQualifier(direction);
+  }
+
+  /**
+   * @description Horizontal position for custom-coordinates based padding.
+   * @param {number} x The x position.
+   */
+  offsetX(x:number | string): this {
+    return this.addQualifier(new Qualifier('x', x));
+  }
+
+  /**
+   * @description Vertical position for custom-coordinates based padding
+   * @param {number} y The y position.
+   */
+  offsetY(y:number | string): this {
+    return this.addQualifier(new Qualifier('y', y));
   }
 }
 

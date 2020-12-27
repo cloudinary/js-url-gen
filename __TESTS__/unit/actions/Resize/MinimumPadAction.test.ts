@@ -15,8 +15,8 @@ describe('Tests for Transformation Action -- Resize.minimumPad', () => {
         .width(250)
         .height(250)
         .gravity(Gravity.autoGravity())
-        .x(10)
-        .y(10)
+        .offsetX(10)
+        .offsetY(10)
         .background(Background.color('red'))
         .aspectRatio(1.2),
       'url');

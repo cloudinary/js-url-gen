@@ -17,8 +17,8 @@ describe('Position Qualifier', () => {
       .allowOverflow()
       .tiled()
       .gravity(Gravity.compass(Compass.north()))
-      .x(10)
-      .y(10)
+      .offsetX(10)
+      .offsetY(10)
       .toString();
 
     expect(posString).toBe('fl_no_overflow.tiled,g_north,x_10,y_10');
@@ -29,8 +29,8 @@ describe('Position Qualifier', () => {
       .allowOverflow()
       .tiled()
       .gravity(Gravity.focusOn(FocusOn.cat()))
-      .x(10)
-      .y(10)
+      .offsetX(10)
+      .offsetY(10)
       .toString();
 
     expect(posString).toBe('fl_no_overflow.tiled,g_cat,x_10,y_10');

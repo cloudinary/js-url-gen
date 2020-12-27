@@ -155,7 +155,7 @@ describe('Tests for Transformation Action -- Adjust', () => {
   it('tests fillLight', () => {
     const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
-      .adjust(Adjust.fillLight().level(0).bias(0))
+      .adjust(Adjust.fillLight().blend(0).bias(0))
       .setPublicID('sample')
       .toURL();
 
