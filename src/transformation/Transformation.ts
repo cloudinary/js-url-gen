@@ -9,7 +9,6 @@ import ResizeSimpleAction from "../actions/resize/ResizeSimpleAction";
 import RotateAction from "../actions/rotate/RotateAction";
 import {BackgroundColor} from "../actions/background/actions/BackgroundColor";
 import {NamedTransformationAction} from "../actions/namedTransformation/NamedTransformationAction";
-import DeliveryAction from "../actions/delivery/DeliveryAction";
 import SmartObjectAction from "../actions/psdTools/SmartObjectAction";
 import ClipAction from "../actions/psdTools/ClipAction";
 import GetLayerAction from "../actions/psdTools/GetLayerAction";
@@ -21,6 +20,7 @@ import {Border} from "../actions/border";
 import {FlagQualifier} from "../values/flag/FlagQualifier";
 import {EffectActions} from "../actions/effect";
 import {videoEditType} from "../actions/videoEdit";
+import {DeliveryAction} from "../actions/delivery/DeliveryAction";
 
 /**
  * @description - Defines how to transform an asset

@@ -4,21 +4,117 @@
  * @namespace Delivery
  */
 
-import format from "./delivery/format";
-import dpr from "./delivery/dpr";
-import quality from "./delivery/quality";
-import density from "./delivery/density";
-import defaultImage from "./delivery/defaultImage";
-import colorSpace from "./delivery/colorSpace";
-import colorSpaceFromICC from "./delivery/colorSpaceFromICC";
+import {DeliveryFormat} from "./delivery/DeliveryFormat";
+import {DeliveryQualityAction} from "./delivery/DeliveryQuality";
+import {FormatQualifier} from "../values/format/FormatQualifier";
+import {toFloatAsString} from "../internal/utils/toFloatAsString";
+import {DeliveryColorSpaceFromICC} from "./delivery/DeliveryColorSpaceFromICC";
+import {DeliveryAction} from "./delivery/DeliveryAction";
+
+
+/**
+ * @description Defines the format of the delivered asset.
+ *
+ * <b>Learn more:</b>
+ * {@link https://cloudinary.com/documentation/image_transformations#image_format_support | Image formats}
+ * {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#transcoding_video_to_other_formats |
+  * Video formats}
+ *
+ * @memberOf Actions.Delivery
+ * @param {string} format The file format. For a list of supported format types see {@link Values.formatTypeValues|
+  * format types} for
+ * possible values
+ * @return {Actions.Delivery.DeliveryFormat}
+ */
+function format(format:FormatQualifier | string) :DeliveryFormat {
+  return new DeliveryFormat('f', format);
+}
+
+
+
+/**
+ * @description Deliver the image in the specified device pixel ratio.
+ * @memberOf Actions.Delivery
+ * @param {string} dpr The DPR (Device Pixel Ratio). Any positive float value.
+ * @return {Actions.Delivery.DeliveryAction}
+ */
+function dpr(dpr: string|number):DeliveryAction {
+  // toFloatAsString is used to ensure 1 turns into 1.0
+  return new DeliveryAction('dpr', toFloatAsString(dpr));
+}
+
+
+/**
+ * @description Controls the quality of the delivered image or video.
+ *
+ * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_optimization#how_to_optimize_image_quality | Image quality}
+ *  {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#quality_control | Video quality}
+ * @memberOf Actions.Delivery
+ * @param {string | number} qualityType For a list of supported quality types see {@link Values.qualityTypeValues| quality types} for
+ * possible values.
+ * @return {Actions.Delivery.DeliveryQualityAction}
+ */
+function quality(qualityType:string | number) :DeliveryQualityAction {
+  return new DeliveryQualityAction(qualityType);
+}
+
+/**
+ * @description Controls the density to use when delivering an image or when converting a vector file such as a PDF or EPS
+ * document to a web image delivery format.
+ * @memberOf Actions.Delivery
+ * @param {string} value The density in dpi.
+ * @return {Actions.Delivery.DeliveryAction}
+ */
+function density(value:number) :DeliveryAction {
+  return new DeliveryAction('dn', value);
+}
+
+
+
+/**
+ * @description Default images can be used in the case that a requested image does not exist.
+ * @memberOf Actions.Delivery
+ * @param {string} publicId Default image public ID
+ * @return {Actions.Delivery.DeliveryAction}
+ */
+function defaultImage(publicId:string) :DeliveryAction {
+  return new DeliveryAction('d', publicId);
+}
+
+
+/**
+ * @description Controls the color space used for the delivered image.
+ * @memberOf Actions.Delivery
+ * @param {string} mode The color space.
+ * @return {Actions.Delivery.DeliveryAction}
+ */
+function colorSpace(mode:string): DeliveryAction {
+  return new DeliveryAction('cs', mode);
+}
+
+
+/**
+ * @description Specifies the ICC profile to use for the color space.
+ * The ICC file must be uploaded to your account as a raw, authenticated file.
+ * @memberOf Actions.Delivery
+ * @param {string} publicId The public ID (including the file extension) of the ICC profile that defines the
+ * color space.
+ * @return {Actions.Delivery.DeliveryColorSpaceFromICC}
+ */
+function colorSpaceFromICC(publicId:string) :DeliveryColorSpaceFromICC {
+  return new DeliveryColorSpaceFromICC(publicId);
+}
+
+
+
 
 const Delivery = {
-  format: format,
-  dpr: dpr,
-  density: density,
-  defaultImage: defaultImage,
-  colorSpace: colorSpace,
-  colorSpaceFromICC: colorSpaceFromICC,
+  format,
+  dpr,
+  density,
+  defaultImage,
+  colorSpace,
+  colorSpaceFromICC,
   quality
 };
 

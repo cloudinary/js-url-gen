@@ -1,7 +1,6 @@
 import {Border} from "../actions/border";
 import {IReshape} from "../actions/reshape";
 import ResizeSimpleAction from "../actions/resize/ResizeSimpleAction";
-import DeliveryAction from "../actions/delivery/DeliveryAction";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
 import {LayerAction} from "../actions/layer/LayerAction";
 import VariableAction from "../actions/variable/VariableAction";
@@ -19,6 +18,7 @@ import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction
 import {videoEditType} from "../actions/videoEdit";
 import {EffectActions} from "../actions/effect";
 import {Transformation} from "../transformation/Transformation";
+import {DeliveryAction} from "../actions/delivery/DeliveryAction";
 
 /**
  * @desc Works
