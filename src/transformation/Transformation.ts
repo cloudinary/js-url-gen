@@ -4,7 +4,7 @@ import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction
 import {LayerAction} from "../actions/layer/LayerAction";
 import {Action} from "../internal/Action";
 import VariableAction from "../actions/variable/VariableAction";
-import {ConditionAction} from "../actions/condition";
+import {ConditionalAction} from "../actions/conditional";
 import ResizeSimpleAction from "../actions/resize/ResizeSimpleAction";
 import RotateAction from "../actions/rotate/RotateAction";
 import {BackgroundColor} from "../actions/background/actions/BackgroundColor";
@@ -133,28 +133,11 @@ class Transformation {
 
   /**
    * @description Specifies a condition to be met before applying a transformation.
-   * @param {ConditionAction} conditionAction
+   * @param {ConditionalAction} conditionAction
    * @return {this}
    */
-  ifCondition(conditionAction: ConditionAction): this {
+  conditional(conditionAction: ConditionalAction): this {
     return this.addAction(conditionAction);
-  }
-
-  /**
-   * @description Specifies a transformation that is applied in the case that the initial condition is evaluated as
-   * false.
-   * @return {this}
-   */
-  ifElse(): this {
-    return this.addAction(new Action().addQualifier(new Qualifier('if', 'else')));
-  }
-
-  /**
-   * @description Finishes the conditional transformation.
-   * @return {this}
-   */
-  endIfCondition(): this {
-    return this.addAction(new Action().addQualifier(new Qualifier('if', 'end')));
   }
 
   /**
