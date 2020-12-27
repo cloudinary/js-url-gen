@@ -7,7 +7,9 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
 /**
  * @description Trims pixels according to the transparency levels of a given overlay image.
  * Wherever the overlay image is transparent, the original is shown, and wherever the overlay is opaque, the resulting image is transparent.
- * @augments Action
+ * @memberOf Actions.Reshape
+ * @param {Values.Source.ImageSource} imageSource
+ * @augments {SDK.Action}
  */
 class CutByImage extends Action {
   private source: ImageSource;
