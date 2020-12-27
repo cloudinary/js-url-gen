@@ -299,9 +299,15 @@ describe('Tests for Transformation Action -- Effect', () => {
 
     expect(Effect.assistColorBlind()
       .xray()
-      .stripes(10)
+      .stripesStrength(10)
       .toString()
     ).toBe('e_assist_colorblind:10');
+
+    expect(Effect.assistColorBlind()
+      .stripesStrength(10)
+      .xray()
+      .toString()
+    ).toBe('e_assist_colorblind:xray');
   });
 
   it('Test Effect.outline', () => {
