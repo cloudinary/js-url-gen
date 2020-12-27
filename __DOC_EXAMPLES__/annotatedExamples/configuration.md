@@ -16,7 +16,6 @@ const cld = new Cloudinary({
         secure: true // force https, set to false to force http
     }
 });
-cld.useImage(CloudinaryImage);
 ```
 
 
@@ -31,7 +30,6 @@ import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
 
 // Create your instance
 const cld = new Cloudinary({});
-cld.useImage(CloudinaryImage);
 
 const image = cld.image('sample');
 
@@ -62,7 +60,6 @@ const cld = new Cloudinary({
         secure: true // force https, set to false to force http
     }
 });
-cld.useImage(CloudinaryImage);
 
 const myImage = cld.image('sample'); // Not setting publicID yet
 

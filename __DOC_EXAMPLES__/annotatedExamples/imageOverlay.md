@@ -16,9 +16,6 @@ const cld = new Cloudinary({
     }
 });
 
-// Plug the image type into your instance
-cld.useImage(CloudinaryImage);
-
 // Lets create a new image
 const myImage = cld.image('sample');
 

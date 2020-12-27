@@ -11,8 +11,6 @@ const cld = new Cloudinary({
     }
 });
 
-// Plug the image type into your instance
-cld.useImage(CloudinaryImage);
 
 // Import the RotationModeAction
 import {mode} from '@cloudinary/base/actions/rotate';

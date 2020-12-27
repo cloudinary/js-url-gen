@@ -17,8 +17,6 @@ const cld = new Cloudinary({
     }
 });
 
-// Tell your instance that you'd like to use the CloudinaryImage
-cld.useImage(CloudinaryImage);
 
 // Create a new image
 const myImage = cld.image('sample');

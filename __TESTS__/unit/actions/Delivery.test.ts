@@ -24,7 +24,7 @@ describe('Tests for Transformation Action -- Delivery', () => {
   it('Creates a cloudinaryURL with format using string', () => {
     const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(format('auto'))
+      .delivery(Delivery.format('auto'))
       .setPublicID('sample')
       .toURL();
 

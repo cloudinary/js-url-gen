@@ -21,7 +21,6 @@ const cld = new Cloudinary({
     }
 });
 
-cld.useImage(CloudinaryImage);
 
 const myImage = cld.image('sample');
 
