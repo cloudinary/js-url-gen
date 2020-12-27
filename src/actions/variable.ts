@@ -1,5 +1,5 @@
 import SetAction from "./variable/SetAction";
-import SetReferenceAction from "./variable/SetReferenceAction";
+import SetAssetReferenceAction from "./variable/SetAssetReferenceAction";
 import SetFromContextAction from "./variable/SetFromContextAction";
 import SetFromMetadataAction from "./variable/SetFromMetadataAction";
 import {ExpressionQualifier} from "../values/expression/ExpressionQualifier";
@@ -15,21 +15,21 @@ import {ExpressionQualifier} from "../values/expression/ExpressionQualifier";
  * @memberOf Actions.Variable
  * @param name Variable name
  * @param {number | string | number[] | string[]} value Variable value
- * @return {SetAction}
+ * @return {Actions.Variable.SetAction}
  */
 function set(name: string, value: number | string | number[] | string[] | ExpressionQualifier): SetAction {
   return new SetAction(name, value);
 }
 
 /**
- * @description Allows adding a variable by sending a key and value which is a reference to a file.
+ * @description Allows adding a variable by sending a key and value which is a reference to an asset.
  * @memberOf Actions.Variable
  * @param {string} name
  * @param {string} value
- * @return {SetReferenceAction}
+ * @return {Actions.Variable.SetAssetReferenceAction}
  */
-function setReference(name: string, value: string): SetReferenceAction{
-  return new SetReferenceAction(name, value);
+function setAssetReference(name: string, value: string): SetAssetReferenceAction{
+  return new SetAssetReferenceAction(name, value);
 }
 
 /**
@@ -38,7 +38,7 @@ function setReference(name: string, value: string): SetReferenceAction{
  * @memberOf Actions.Variable
  * @param {string} name
  * @param {string} value
- * @return {SetFromContextAction}
+ * @return {Actions.Variable.SetFromContextAction}
  */
 function setFromContext(name: string, value: string): SetFromContextAction {
   return new SetFromContextAction(name, value);
@@ -50,11 +50,11 @@ function setFromContext(name: string, value: string): SetFromContextAction {
  * @memberOf Actions.Variable
  * @param {string} name
  * @param {string} value
- * @return {SetFromMetadataAction}
+ * @return {Actions.Variable.SetFromMetadataAction}
  */
 function setFromMetadata(name: string, value: string): SetFromMetadataAction {
   return new SetFromMetadataAction(name, value);
 }
 
-const Variable = {set, setReference, setFromContext, setFromMetadata};
-export {set, setReference, setFromContext, setFromMetadata, Variable};
+const Variable = {set, setReference: setAssetReference, setFromContext, setFromMetadata};
+export {set, setAssetReference, setFromContext, setFromMetadata, Variable};

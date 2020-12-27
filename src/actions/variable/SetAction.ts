@@ -3,8 +3,9 @@ import VariableAction from "./VariableAction";
 import {ExpressionQualifier} from "../../values/expression/ExpressionQualifier";
 
 /**
- * @augments VariableAction
  * @description Sets a user-defined variable.
+ * @memberOf Actions.Variable
+ * @extends {Variable.VariableAction}
  */
 class SetAction extends VariableAction {
   constructor(name: string, value: number | string | string[] | number[] | ExpressionQualifier) {

@@ -1,8 +1,9 @@
 import VariableAction from "./VariableAction";
 
 /**
- * @augments VariableAction
  * @description Sets a user-defined variable from structured metadata.
+ * @memberOf Actions.Variable
+ * @extends {Variable.VariableAction}
  */
 class SetFromMetadataAction extends VariableAction {
   constructor(name: string, value: string) {

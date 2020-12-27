@@ -120,7 +120,7 @@ describe('Tests for Transformation Action -- Variable', () => {
   it('Creates a cloudinaryURL with setReference', () => {
     const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
-      .addVariable(Variable.setReference('myexp', 'my_file'))
+      .addVariable(Variable.setAssetReference('myexp', 'my_file'))
       .setPublicID('sample')
       .toURL();
 
@@ -130,7 +130,7 @@ describe('Tests for Transformation Action -- Variable', () => {
   it('Creates a cloudinaryURL with setReference and asInteger', () => {
     const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
-      .addVariable(Variable.setReference('myexp', 'my_file').asInteger())
+      .addVariable(Variable.setAssetReference('myexp', 'my_file').asInteger())
       .setPublicID('sample')
       .toURL();
 
@@ -140,7 +140,7 @@ describe('Tests for Transformation Action -- Variable', () => {
   it('Creates a cloudinaryURL with setReference and asFloat', () => {
     const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
-      .addVariable(Variable.setReference('myexp', 'my_file').asFloat())
+      .addVariable(Variable.setAssetReference('myexp', 'my_file').asFloat())
       .setPublicID('sample')
       .toURL();
 
