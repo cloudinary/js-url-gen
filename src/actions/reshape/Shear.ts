@@ -30,7 +30,7 @@ class ShearAction extends Action {
       'e_shear',
       this._x,
       this._y
-    ].filter((a) => a).join(':')
+    ].filter((a) => a).join(':');
   }
 }
 
