@@ -20,7 +20,7 @@ class StyleTransfer extends Action {
    * The Image Source used to create the style transfer,
    * Use the Image Source builder to quickly create a source:
    * </br>Import: {@link Values.Source|import Sources from '@cloudinary/base/values/sources';}
-   * </br>Create: `Sources.image('dog')`
+   * </br>Create: `Source.image('dog')`
    * @param {ImageSource} imageSource
    */
   constructor(imageSource: ImageSource) {

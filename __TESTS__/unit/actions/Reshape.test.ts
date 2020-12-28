@@ -7,6 +7,7 @@ import {Position} from "../../../src/values/position";
 import {Gravity} from "../../../src/values/gravity";
 import {Compass} from "../../../src/values/gravity/qualifiers/compass/Compass";
 import {Transformation} from "../../../src/transformation/Transformation";
+import {createNewImage} from "../../TestUtils/createCloudinaryImage";
 
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
@@ -55,5 +56,29 @@ describe('Tests for Transformation Action -- Cutter', () => {
       .toURL();
 
     expect(url).toContain('l_sourceImage/fl_cutter,fl_layer_apply,g_north/main');
+  });
+
+  it('Distorts an image with an arc', () => {
+    const url = createNewImage()
+      .reshape(Reshape.distortArc(200))
+      .toString();
+
+    expect(url).toBe('e_distort:arc:200');
+  });
+
+  it('Shears an image', () => {
+    const url = createNewImage()
+      .reshape(Reshape.shear().skewX(100).skewY(200))
+      .toString();
+
+    expect(url).toBe('e_shear:100:200');
+  });
+
+  it('Distorts an image with coordinates', () => {
+    const url = createNewImage()
+      .reshape(Reshape.distort([1, 2, 3, 4, 5, 6, 7, 8]))
+      .toString();
+
+    expect(url).toBe('e_distort:1:2:3:4:5:6:7:8');
   });
 });
