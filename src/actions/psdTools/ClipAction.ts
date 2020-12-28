@@ -19,6 +19,7 @@ class ClipAction extends Action {
   /**
    * @description The name of the path to clip by
    * @param {string} path
+   * @return {this}
    */
   byName(path: string): this {
     this.path = path;
@@ -28,6 +29,7 @@ class ClipAction extends Action {
   /**
    * @description The index of the path to clip by
    * @param {number} path
+   * @return {this}
    */
   byIndex(path: number): this {
     this.path = path;
@@ -36,6 +38,7 @@ class ClipAction extends Action {
 
   /**
    * @description Trims pixels according to a clipping path included in the original image using an evenodd clipping rule.
+   * @return {this}
    */
   evenOdd(): this {
     this.isEvenOdd = true;
