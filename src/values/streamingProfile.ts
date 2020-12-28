@@ -10,7 +10,7 @@
  * @memberOf Values.StreamingProfile
  * @return {string}
  */
-function fullHD():string {
+function fullHd():string {
   return 'full_hd';
 }
 
@@ -19,7 +19,7 @@ function fullHD():string {
  * @memberOf Values.StreamingProfile
  * @return {string}
  */
-function HD():string {
+function hd():string {
   return 'hd';
 }
 
@@ -28,7 +28,7 @@ function HD():string {
  * @memberOf Values.StreamingProfile
  * @return {string}
  */
-function SD():string {
+function sd():string {
   return 'sd';
 }
 
@@ -37,7 +37,7 @@ function SD():string {
  * @memberOf Values.StreamingProfile
  * @return {string}
  */
-function fullHDWifi():string {
+function fullHdWifi():string {
   return 'full_hd_wifi';
 }
 
@@ -46,7 +46,7 @@ function fullHDWifi():string {
  * @memberOf Values.StreamingProfile
  * @return {string}
  */
-function fullHDLean():string {
+function fullHdLean():string {
   return 'full_hd_lean';
 }
 
@@ -55,26 +55,26 @@ function fullHDLean():string {
  * @memberOf Values.StreamingProfile
  * @return {string}
  */
-function HDLean():string {
+function hdLean():string {
   return 'hd_lean';
 }
 
 const StreamingProfile = {
-  HD,
-  SD,
-  HDLean,
-  fullHD,
-  fullHDLean,
-  fullHDWifi
+  hd,
+  sd,
+  hdLean,
+  fullHd,
+  fullHdLean,
+  fullHdWifi
 };
 
 
 export {
-  HD,
-  SD,
-  HDLean,
-  fullHD,
-  fullHDLean,
-  fullHDWifi,
+  hd,
+  sd,
+  hdLean,
+  fullHd,
+  fullHdLean,
+  fullHdWifi,
   StreamingProfile
 };

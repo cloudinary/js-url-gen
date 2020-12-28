@@ -79,12 +79,12 @@ describe('Test imported values', () => {
     expect(ColorSpace.CMYK()).toBe('cmyk');
 
 
-    expect(StreamingProfile.fullHD()).toBe('full_hd');
-    expect(StreamingProfile.HDLean()).toBe('hd_lean');
-    expect(StreamingProfile.fullHDLean()).toBe('full_hd_lean');
-    expect(StreamingProfile.fullHDWifi()).toBe('full_hd_wifi');
-    expect(StreamingProfile.HD()).toBe('hd');
-    expect(StreamingProfile.SD()).toBe('sd');
+    expect(StreamingProfile.fullHd()).toBe('full_hd');
+    expect(StreamingProfile.hdLean()).toBe('hd_lean');
+    expect(StreamingProfile.fullHdLean()).toBe('full_hd_lean');
+    expect(StreamingProfile.fullHdWifi()).toBe('full_hd_wifi');
+    expect(StreamingProfile.hd()).toBe('hd');
+    expect(StreamingProfile.sd()).toBe('sd');
 
 
     expect(Dither.threshold1x1Nondither()).toBe(0);
