@@ -32,9 +32,6 @@ const cld = new Cloudinary({
   }
 });
 
-// Plug the image type into your instance
-cld.useImage(ImageTransformation);
-
 // Lets create a new image
 const myImage = cld.image('sample');
 import Resize from '@cloudinary/base/actions/resize';
@@ -72,9 +69,6 @@ const cld = new Cloudinary({
     secure: true // force https, set to false to force http
   }
 });
-
-// Plug the image type into your instance
-cld.useImage(ImageTransformation);
 
 // Import the RotationModeAction
 import {mode} from '@cloudinary/base/actions/rotate';

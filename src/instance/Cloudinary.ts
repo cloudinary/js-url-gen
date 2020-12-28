@@ -12,16 +12,8 @@ class Cloudinary {
     }
   }
 
-  useImage(TImage: typeof CloudinaryImage):this {
-    this.CloudinaryImage = TImage;
-    return this;
-  }
-
   image(publicID?: string): CloudinaryImage {
-    if (!this.CloudinaryImage) {
-      throw 'You cannot use image without first invoking useImage()';
-    }
-    return new this.CloudinaryImage(publicID).setConfig(this.cloudinaryConfig);
+    return new CloudinaryImage(publicID).setConfig(this.cloudinaryConfig);
   }
 
   setConfig(cloudinaryConfig: ICloudinaryConfigurations):this {

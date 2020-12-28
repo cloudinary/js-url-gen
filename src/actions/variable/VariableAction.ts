@@ -7,13 +7,14 @@ type TypeVariableValue = number | string | ExpressionQualifier;
 
 /**
  * @description Defines an new user variable.
- * @augments {Action}
+ * @memberOf Actions.Variable
+ * @extends {SDK.Action}
  */
 class VariableAction extends Action {
   private isFloat = false;
   private isNumber = false;
-  private value: TypeVariableValue;
-  private name: string;
+  private readonly value: TypeVariableValue;
+  private readonly name: string;
   constructor(name: string, value: TypeVariableValue) {
     super();
     this.value = value;

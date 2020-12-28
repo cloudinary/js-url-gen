@@ -1,9 +1,9 @@
 import VariableAction from "./VariableAction";
 
-
 /**
- * @augments VariableAction
  * @description Sets a user-defined variable from contextual metadata.
+ * @memberOf Actions.Variable
+ * @extends {Variable.VariableAction}
  */
 class SetFromContextAction extends VariableAction {
   constructor(name: string, value: string) {
