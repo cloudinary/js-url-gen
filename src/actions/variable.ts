@@ -28,7 +28,7 @@ function set(name: string, value: number | string | number[] | string[] | Expres
  * @param {string} value
  * @return {Actions.Variable.SetAssetReferenceAction}
  */
-function setAssetReference(name: string, value: string): SetAssetReferenceAction{
+function setAssetReference(name: string, value: string): SetAssetReferenceAction {
   return new SetAssetReferenceAction(name, value);
 }
 
@@ -56,5 +56,16 @@ function setFromMetadata(name: string, value: string): SetFromMetadataAction {
   return new SetFromMetadataAction(name, value);
 }
 
-const Variable = {set, setReference: setAssetReference, setFromContext, setFromMetadata};
-export {set, setAssetReference, setFromContext, setFromMetadata, Variable};
+const Variable = {
+  set,
+  setAssetReference,
+  setFromContext,
+  setFromMetadata
+};
+export {
+  set,
+  setAssetReference,
+  setFromContext,
+  setFromMetadata,
+  Variable
+};
