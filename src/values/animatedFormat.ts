@@ -35,8 +35,17 @@ function webp(): AnimatedFormatQualifierValue {
   return new AnimatedFormatQualifierValue('webp');
 }
 
+/**
+ * @@doc
+ * @memberOf Values.AnimatedFormat
+ * @return {Values.AnimatedFormatQualifierValue}
+ */
+function png(): AnimatedFormatQualifierValue {
+  return new AnimatedFormatQualifierValue('png');
+}
 
-const AnimatedFormat = {auto, gif, webp};
-export {auto, gif, webp, AnimatedFormat};
+
+const AnimatedFormat = {auto, gif, webp, png};
+export {auto, gif, webp, png, AnimatedFormat};
 
 
