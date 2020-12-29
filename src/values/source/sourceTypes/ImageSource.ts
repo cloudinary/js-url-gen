@@ -33,10 +33,12 @@ class ImageSource extends BaseSource {
    * @returns {string}
    */
   getOpenSourceString(layerType: 'u' | 'l'): string {
+    const encodedPublicID = this.encodeAssetPublicID(this._publicID);
+
     if (this._format) {
-      return `${layerType}_${this._publicID}.${this._format.toString()}`;
+      return `${layerType}_${encodedPublicID}.${this._format.toString()}`;
     } else {
-      return `${layerType}_${this._publicID}`;
+      return `${layerType}_${encodedPublicID}`;
     }
   }
 

@@ -10,6 +10,15 @@ abstract class BaseSource {
   protected _transformation:Transformation;
 
   /**
+   * @description Utility function to encode an asset publicID in an overlay
+   * @protected
+   * @example
+   * encodeAssetPublicID('foo/bar'); // -> foo:bar
+   */
+  protected encodeAssetPublicID(publicID: string): string {
+    return publicID.replace(/\//g, ':');
+  }
+  /**
    * @description
    * Apply a transformation on the image source of the layer
    * @param {SDK.ImageTransformation} t An image transformation to apply to the layer

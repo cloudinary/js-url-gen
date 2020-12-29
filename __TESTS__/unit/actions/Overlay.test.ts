@@ -12,6 +12,17 @@ import {Timeline} from "../../../src/values/timeline";
 import {base64Encode} from "../../../src/internal/utils/base64Encode";
 
 describe('Tests for overlay actions', () => {
+  it('Tests Image on Image with publicID encoding', () => {
+    const asset = createNewImage();
+    asset.overlay(
+      Overlay.source(Source.image("path/to/sample")
+        .format(Format.png())
+      )
+    );
+
+    expect(asset.toString()).toBe('l_path:to:sample.png/fl_layer_apply');
+  });
+
   it('Tests Image on Image with format', () => {
     const asset = createNewImage();
     asset.overlay(
@@ -69,6 +80,17 @@ describe('Tests for overlay actions', () => {
     ));
 
     expect(asset.toString()).toBe(`b_red,co_blue,l_text:${textStyle.toString()}:Testing/fl_layer_apply`);
+  });
+
+  it('Tests nested subtitles on image', () => {
+    const asset = createNewImage();
+    const textStyle = sampleTextStyle();
+
+    asset.overlay(Overlay.source(
+      Source.subtitles('path/to/subs.srt', textStyle)
+    ));
+
+    expect(asset.toString()).toBe(`l_subtitles:${textStyle.toString()}:path:to:subs.srt/fl_layer_apply`);
   });
 
   it('Tests subtitle on image', () => {

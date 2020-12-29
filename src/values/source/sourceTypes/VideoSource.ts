@@ -31,7 +31,9 @@ class VideoSource extends BaseSource {
    * @returns {string}
    */
   getOpenSourceString(layerType: 'u' | 'l'): string {
-    return `${layerType}_video:${this._publicID}`;
+    const encodedPublicID = this.encodeAssetPublicID(this._publicID);
+
+    return `${layerType}_video:${encodedPublicID}`;
   }
 }
 

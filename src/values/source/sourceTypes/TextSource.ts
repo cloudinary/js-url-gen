@@ -17,6 +17,10 @@ class TextSource extends BaseSource {
   protected _backgroundColor: SystemColors
   protected type = 'text';
 
+  encodeText(text:string): string {
+    return serializeCloudinaryCharacters(text);
+  }
+
   constructor(text: string, textStyle: TextStyle) {
     super();
     this.text = text;
@@ -42,7 +46,7 @@ class TextSource extends BaseSource {
   getOpenSourceString(layerType: 'u' | 'l'): string {
     let layerParam = this.type;
     layerParam += `:${this._textStyle.toString()}`;
-    layerParam += `:${serializeCloudinaryCharacters(this.text)}`;
+    layerParam += `:${this.encodeText(this.text)}`;
 
     const tmpAction = new Action();
 
