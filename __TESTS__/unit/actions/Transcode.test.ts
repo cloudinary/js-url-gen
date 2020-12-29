@@ -113,7 +113,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
       .setConfig(CONFIG_INSTANCE)
       .setAssetType('video')
       .transcode(Transcode
-        .streamingProfile(StreaminProfile.fullHD()))
+        .streamingProfile(StreaminProfile.fullHd()))
       .setPublicID('sample')
       .toURL();
 
