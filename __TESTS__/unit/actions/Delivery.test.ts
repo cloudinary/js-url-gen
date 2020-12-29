@@ -24,7 +24,7 @@ describe('Tests for Transformation Action -- Delivery', () => {
   it('Creates a cloudinaryURL with format using string', () => {
     const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(Delivery.format('auto'))
+      .delivery(Delivery.format(Format.auto()))
       .setPublicID('sample')
       .toURL();
 
@@ -295,7 +295,7 @@ describe('Tests for Transformation Action -- Delivery', () => {
   it('Creates a cloudinaryURL with Delivery.colorspace', () => {
     const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
-      .delivery(Delivery.colorSpace(ColorSpace.noCMYK()))
+      .delivery(Delivery.colorSpace(ColorSpace.noCmyk()))
       .setPublicID('sample')
       .toURL();
 

@@ -21,10 +21,11 @@ class RoundCornersAction extends Action {
   radius(a:number, b?:number, c?:number, d?:number):this {
     const qualifierValue = new QualifierValue();
 
-    a && qualifierValue.addValue(a);
-    b && qualifierValue.addValue(b);
-    c && qualifierValue.addValue(c);
-    d && qualifierValue.addValue(d);
+    // In case a === 0, check typeof
+    typeof a !== undefined && qualifierValue.addValue(a);
+    typeof b !== undefined && qualifierValue.addValue(b);
+    typeof c !== undefined && qualifierValue.addValue(c);
+    typeof d !== undefined && qualifierValue.addValue(d);
 
     this.addQualifier(new Qualifier('r').addValue(qualifierValue));
     return this;

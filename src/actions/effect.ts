@@ -379,11 +379,11 @@ function transition():SimpleEffectAction {
 /**
  * @description Applies a pixelatering filter to the asset.
  * @memberOf Actions.Effect
- * @param {number} pixelateLevel The pixelWidth of the pixelate. (Range: 1 to 2000, Server default: 100)
+ * @param {number} squareSize The squareSize in the pixelation. (Range: 1 to 2000, Server default: 100)
  * @return {Pixelate}
  */
-function pixelate(pixelateLevel?: number): Pixelate {
-  return new Pixelate(pixelateLevel);
+function pixelate(squareSize?: number): Pixelate {
+  return new Pixelate(squareSize);
 }
 
 

@@ -7,5 +7,9 @@ import {SystemColors} from "../../values/color";
  * @param color
  */
 export function prepareColor(color: SystemColors): SystemColors {
-  return color.match(/^#/) ? `rgb:${color.substr(1)}` : color;
+  if (color) {
+    return color.match(/^#/) ? `rgb:${color.substr(1)}` : color;
+  } else {
+    return color;
+  }
 }

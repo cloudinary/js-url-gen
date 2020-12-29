@@ -156,7 +156,6 @@ describe('Tests for overlay actions', () => {
   it('Tests a fetchSource with format', () => {
     const asset = createNewImage('sample');
     const REMOTE_URL = "https://res.cloudinary.com/demo/image/upload/ci";
-    const BASE64_URL = base64Encode(REMOTE_URL);
 
     asset.overlay(
       Overlay.source(
@@ -167,6 +166,7 @@ describe('Tests for overlay actions', () => {
     );
 
     // This is a fully functional URL that should work in the browser.
-    expect(asset.toString()).toContain(`l_fetch:${BASE64_URL}.png/${sampleTxResizePad().toString()}`);
+    // Explicitly check the resulting base64 string
+    expect(asset.toString()).toContain(`l_fetch:aHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vZGVtby9pbWFnZS91cGxvYWQvY2k=.png/${sampleTxResizePad().toString()}`);
   });
 });

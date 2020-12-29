@@ -37,7 +37,7 @@ describe('Tests for Transformation Action -- Effect', () => {
       .effect(Effect.grayscale())
       .effect(Effect.loop())
       .effect(Effect.loop(100))
-      .effect(Effect.loop().iterations(5))
+      .effect(Effect.loop().additionalIterations(5))
       .effect(Effect.makeTransparent())
       .effect(Effect.makeTransparent(100))
       .effect(Effect.makeTransparent().tolerance(5))
