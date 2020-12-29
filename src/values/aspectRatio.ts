@@ -1,5 +1,5 @@
 import {AspectRatioQualifierValue} from "./aspectRatio/AspectRatioQualifierValue";
-import {ignoreAspectRatio as ignoreAspectRatioFlag} from "./flag";
+import {ignoreInitialAspectRatio as ignoreInitialAspectRatioFlag} from "./flag";
 import {FlagQualifier} from "./flag/FlagQualifier";
 
 
@@ -62,8 +62,8 @@ function AR3X1(): AspectRatioQualifierValue {
  * @memberOf Values.AspectRatio
  * @return {IgnoreAspectRatioQualifier}
  */
-function ignoreAspectRatio(): FlagQualifier {
-  return ignoreAspectRatioFlag();
+function ignoreInitialAspectRatio(): FlagQualifier {
+  return ignoreInitialAspectRatioFlag();
 }
 
 
@@ -74,14 +74,14 @@ function ignoreAspectRatio(): FlagQualifier {
  * @memberOf Values
  */
 const AspectRatio = {
-  AR1X1: AR1X1,
-  AR5X4: AR5X4,
-  AR3X1: AR3X1,
-  AR3X2: AR3X2,
-  AR4X3: AR4X3,
-  AR16X9: AR16X9,
-  ignoreAspectRatio: ignoreAspectRatio
+  AR1X1,
+  AR5X4,
+  AR3X1,
+  AR3X2,
+  AR4X3,
+  AR16X9,
+  ignoreInitialAspectRatio
 };
 
 
-export {AR1X1, AR5X4, AR3X1, AR3X2, AR4X3, AR16X9, ignoreAspectRatio, AspectRatio};
+export {AR1X1, AR5X4, AR3X1, AR3X2, AR4X3, AR16X9, ignoreInitialAspectRatio, AspectRatio};

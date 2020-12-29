@@ -37,7 +37,7 @@ describe('Test imported values', () => {
 
 
     expect(OutlineMode.fill()).toBe('fill');
-    expect(OutlineMode.inner_fill()).toBe('inner_fill');
+    expect(OutlineMode.innerFill()).toBe('inner_fill');
     expect(OutlineMode.inner()).toBe('inner');
     expect(OutlineMode.outer()).toBe('outer');
 
@@ -113,7 +113,7 @@ describe('Test imported values', () => {
     expect(ChromaSubSampling.chroma444()).toBe(444);
 
     expect(SimulateColorBlind.coneMonochromacy()).toBe('cone_monochromacy');
-    expect(SimulateColorBlind.deuteranomaly()).toBe('dueteranomaly');
+    expect(SimulateColorBlind.deuteranomaly()).toBe('deuteranomaly');
     expect(SimulateColorBlind.deuteranopia()).toBe('deuteranopia');
     expect(SimulateColorBlind.protanopia()).toBe('protanopia');
     expect(SimulateColorBlind.rodMonochromacy()).toBe('rod_monochromacy');

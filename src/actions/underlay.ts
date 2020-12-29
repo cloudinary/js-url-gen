@@ -1,6 +1,7 @@
 import {LayerAction} from "./layer/LayerAction";
 import {ImageSource} from "../values/source/sourceTypes/ImageSource";
 import {TextSource} from "../values/source/sourceTypes/TextSource";
+import {FetchSource} from "../values/source/sourceTypes/FetchSource";
 
 
 /**
@@ -23,7 +24,7 @@ import {TextSource} from "../values/source/sourceTypes/TextSource";
  * @memberOf Actions.Underlay
  * @return {SDK.LayerAction}
  */
-function source(source: ImageSource | TextSource): LayerAction {
+function source(source: ImageSource | TextSource | FetchSource): LayerAction {
   return new LayerAction(source)
     .setLayerType('u');
 }

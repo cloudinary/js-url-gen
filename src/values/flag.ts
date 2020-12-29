@@ -165,7 +165,7 @@ function immutableCache(): FlagQualifier {
  * recalculated to maintain the aspect ratio of the original image.
  * @return {Values.Flag.FlagQualifier}
  */
-function ignoreAspectRatio(): FlagQualifier {
+function ignoreInitialAspectRatio(): FlagQualifier {
   return new FlagQualifier('ignore_aspect_ratio');
 }
 
@@ -452,7 +452,7 @@ const Flag = {
   clipEvenOdd, lossy, preserveTransparency, png8, png24, png32, progressive, rasterize,
   sanitize, stripProfile, tiff8Lzw, attachment, forceIcc, forceStrip, getInfo, immutableCache,
   keepAttribution, keepIptc, custom, streamingAttachment, hlsv3, keepDar, noStream, mono,
-  layerApply, relative, regionRelative, splice, truncateTS, waveform, ignoreAspectRatio, clip,
+  layerApply, relative, regionRelative, splice, truncateTS, waveform, ignoreInitialAspectRatio, clip,
   tiled, noOverflow
 };
 
@@ -461,7 +461,7 @@ export {
   clipEvenOdd, lossy, preserveTransparency, png8, png24, png32, progressive, rasterize,
   sanitize, stripProfile, tiff8Lzw, attachment, forceIcc, forceStrip, getInfo, immutableCache,
   keepAttribution, keepIptc, custom, streamingAttachment, hlsv3, keepDar, noStream, mono,
-  layerApply, relative, regionRelative, splice, truncateTS, waveform, ignoreAspectRatio, clip,
+  layerApply, relative, regionRelative, splice, truncateTS, waveform, ignoreInitialAspectRatio, clip,
   tiled, noOverflow
 };
 

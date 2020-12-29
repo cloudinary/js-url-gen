@@ -24,7 +24,7 @@ function inner(): string {
  * @@doc
  * @memberOf Values.Outline
  */
-function inner_fill(): string {
+function innerFill(): string {
   return 'inner_fill';
 }
 
@@ -39,7 +39,7 @@ function outer(): string {
 const OutlineMode = {
   outer,
   inner,
-  inner_fill,
+  innerFill,
   fill
 };
 
@@ -47,6 +47,6 @@ export {
   OutlineMode,
   outer,
   inner,
-  inner_fill,
+  innerFill,
   fill
 };

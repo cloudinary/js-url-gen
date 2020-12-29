@@ -46,7 +46,7 @@ function tritanomaly(): string {
  * @return {string}
  */
 function deuteranomaly(): string {
-  return 'dueteranomaly';
+  return 'deuteranomaly';
 }
 
 /**
