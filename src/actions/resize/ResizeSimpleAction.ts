@@ -4,6 +4,7 @@ import {toFloatAsString} from "../../internal/utils/toFloatAsString";
 import {AspectRatioQualifierValue} from "../../values/aspectRatio/AspectRatioQualifierValue";
 import {regionRelative, relative} from "../../values/flag";
 import {FlagQualifier} from "../../values/flag/FlagQualifier";
+import {ExpressionQualifier} from "../../values/expression/ExpressionQualifier";
 
 /**
  * @description Defines a resize using width and height.
@@ -30,7 +31,7 @@ class ResizeSimpleAction extends Action {
    * @description Sets the height of the resize
    * @param {string | number} x The height in pixels (if an integer is specified) or as a percentage (if a float is specified).
    */
-  height(x:number|string):this {
+  height(x:number|string | ExpressionQualifier):this {
     return this.addQualifier(new Qualifier('h', x));
   }
 
@@ -38,7 +39,7 @@ class ResizeSimpleAction extends Action {
    * @description Sets the width of the resize
    * @param {string | number} x The width in pixels (if an integer is specified) or as a percentage (if a float is specified).
    */
-  width(x:number|string):this {
+  width(x:number | string | ExpressionQualifier):this {
     return this.addQualifier(new Qualifier('w', x));
   }
 

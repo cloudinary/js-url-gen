@@ -32,7 +32,7 @@ describe('Tests for AspectRatio values Action -- Resize.crop', () => {
         crop().aspectRatio(AspectRatio.AR5X4())
       )
       .resize(
-        crop().aspectRatio(AspectRatio.ignoreAspectRatio())
+        crop().aspectRatio(AspectRatio.ignoreInitialAspectRatio())
       )
       .setPublicID('sample')
       .toURL();
