@@ -1,19 +1,19 @@
-import {VideoTransformation} from "../transformation/VideoTransformation";
 import {CloudinaryTransformable} from "./CloudinaryTransformable";
 import {Action} from "../internal/Action";
 import {videoEditType} from "../actions/videoEdit";
 import {createCloudinaryURL} from "../internal/url/cloudinaryURL";
+import {LayerAction} from "../actions/layer/LayerAction";
+import {Transformation} from "../transformation/Transformation";
 
 
 
 /**
- * @desc Cloudinary image asset, with video-related transformations
+ * @desc Cloudinary media asset, with all possible transformations
  * @memberOf SDK
  */
-class CloudinaryVideo extends CloudinaryTransformable {
+class CloudinaryMedia extends CloudinaryTransformable {
   constructor(publicID?: string) {
-    super(publicID, new VideoTransformation());
-    this.setAssetType('video');
+    super(publicID, new Transformation());
   }
 
   /**
@@ -36,13 +36,22 @@ class CloudinaryVideo extends CloudinaryTransformable {
     return this;
   }
 
+  /**
+   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
+   * @return {this}
+   */
+  underlay(underlayAction: LayerAction): this {
+    this.transformation.underlay(underlayAction);
+    return this;
+  }
+
   toURL(): string {
     return createCloudinaryURL(this.config, Object.assign({
-      assetType: 'video',
+      assetType: 'image', // media asset defaults to image
       storageType: 'upload'
     }, this.asset), this.transformation);
   }
 }
 
 
-export {CloudinaryVideo};
+export {CloudinaryMedia};

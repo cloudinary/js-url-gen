@@ -15,18 +15,19 @@ import GetLayerAction from "../actions/psdTools/GetLayerAction";
 import {Extract} from "../actions/extract";
 import {FlagQualifier} from "../values/flag/FlagQualifier";
 import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction";
-import {videoEditType} from "../actions/videoEdit";
 import {EffectActions} from "../actions/effect";
-import {Transformation} from "../transformation/Transformation";
 import {DeliveryAction} from "../actions/delivery/DeliveryAction";
+import {CloudinaryFile} from "./CloudinaryFile";
+import {Transformation} from "../transformation/Transformation";
 
 /**
  * @desc Works
  * @memberOf SDK
  */
-class CloudinaryTransformable {
+class CloudinaryTransformable extends CloudinaryFile {
   public transformation: Transformation;
-  constructor(transformation: Transformation) {
+  constructor(publicID:string, transformation: Transformation) {
+    super(publicID);
     this.transformation = transformation;
   }
 
@@ -86,15 +87,6 @@ class CloudinaryTransformable {
    */
   overlay(overlayAction: LayerAction): this {
     this.transformation.overlay(overlayAction);
-    return this;
-  }
-
-  /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
-   * @return {this}
-   */
-  underlay(underlayAction: LayerAction): this {
-    this.transformation.underlay(underlayAction);
     return this;
   }
 
@@ -215,26 +207,6 @@ class CloudinaryTransformable {
    */
   customFunction(customFunction: CustomFunctionAction): this {
     this.transformation.customFunction(customFunction);
-    return this;
-  }
-
-  /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
-   * @param {Actions.Transcode} action
-   * @return {this}
-   */
-  transcode(action: Action): this {
-    this.transformation.transcode(action);
-    return this;
-  }
-
-  /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
-   * @param {Actions.VideoEdit} action
-   * @return {this}
-   */
-  videoEdit(action: videoEditType): this {
-    this.transformation.videoEdit(action);
     return this;
   }
 

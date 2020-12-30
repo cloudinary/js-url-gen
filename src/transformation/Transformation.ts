@@ -1,4 +1,3 @@
-import {Qualifier} from "../internal/qualifier/Qualifier";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
 import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction";
 import {LayerAction} from "../actions/layer/LayerAction";
