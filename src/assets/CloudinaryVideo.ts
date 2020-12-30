@@ -8,12 +8,15 @@ import IURLConfig from "../config/interfaces/Config/IURLConfig";
 
 
 /**
- * @desc Cloudinary image asset, with video-related transformations
+ * @desc Cloudinary video asset, with video-related transformations
  * @memberOf SDK
  */
 class CloudinaryVideo extends CloudinaryTransformable {
   constructor(publicID?: string, cloudConfig?: ICloudConfig, urlConfig?: IURLConfig) {
+
+    /* istanbul ignore next */
     super(publicID, cloudConfig, urlConfig, new VideoTransformation());
+
     this.assetType = 'video';
   }
 

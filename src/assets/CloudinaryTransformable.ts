@@ -29,6 +29,7 @@ import ICloudConfig from "../config/interfaces/Config/ICloudConfig";
 class CloudinaryTransformable extends CloudinaryFile {
   public transformation: Transformation;
   constructor(publicID:string, cloudConfig?: ICloudConfig, urlConfig?: IURLConfig, transformation?: Transformation) {
+    /* istanbul ignore next */
     super(publicID, cloudConfig, urlConfig);
     this.transformation = transformation;
   }

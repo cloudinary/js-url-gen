@@ -13,6 +13,7 @@ import IURLConfig from "../config/interfaces/Config/IURLConfig";
  */
 class CloudinaryMedia extends CloudinaryTransformable {
   constructor(publicID?: string, cloudConfig?: ICloudConfig, urlConfig?: IURLConfig) {
+    /* istanbul ignore next */
     super(publicID, cloudConfig, urlConfig, new Transformation());
   }
 

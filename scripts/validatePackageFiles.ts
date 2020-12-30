@@ -94,7 +94,7 @@ function validatePackageFiles(treeWithFlags: IFileStructureLevel, currentPath = 
       const existsInFileSystem = fs.existsSync(fullFileSystemPath, 'utf-8');
 
       if(!existsInFileSystem) {
-        throw MissingRequiredFile(fullFileSystemPath);
+        throw new MissingRequiredFile(fullFileSystemPath);
       }
     }
 
