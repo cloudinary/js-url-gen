@@ -1,5 +1,3 @@
-import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 import {image} from "../../../src/values/source";
 import {scale} from "../../../src/actions/resize";
 import {Reshape} from "../../../src/actions/reshape";
@@ -10,16 +8,11 @@ import {Transformation} from "../../../src/transformation/Transformation";
 import {createNewImage} from "../../TestUtils/createCloudinaryImage";
 
 
-const CONFIG_INSTANCE = new CloudinaryConfig({
-  cloud: {
-    cloudName: 'demo'
-  }
-});
+
 
 describe('Tests for Transformation Action -- Cutter', () => {
   it('Creates a reshape.cutByImage (cutter)overlay', () => {
-    const url = new CloudinaryImage('main')
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('main')
       .reshape(Reshape.cutByImage(image('sourceImage').transformation(
         new Transformation().resize(scale().width(100))
       )))
@@ -29,8 +22,7 @@ describe('Tests for Transformation Action -- Cutter', () => {
   });
 
   it('Creates a reshape.cutByImage (cutter)overlay with position g_center', () => {
-    const url = new CloudinaryImage('main')
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('main')
       .reshape(
         Reshape.cutByImage(
           image('sourceImage'))
@@ -44,8 +36,7 @@ describe('Tests for Transformation Action -- Cutter', () => {
   });
 
   it('Creates a reshape.cutByImage (cutter)overlay with position g_north', () => {
-    const url = new CloudinaryImage('main')
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('main')
       .reshape(
         Reshape.cutByImage(
           image('sourceImage'))

@@ -13,7 +13,7 @@ class Cloudinary {
   }
 
   image(publicID?: string): CloudinaryImage {
-    return new CloudinaryImage(publicID).setConfig(this.cloudinaryConfig);
+    return new CloudinaryImage(publicID, this.cloudinaryConfig.cloud, this.cloudinaryConfig.url);
   }
 
   setConfig(cloudinaryConfig: ICloudinaryConfigurations):this {

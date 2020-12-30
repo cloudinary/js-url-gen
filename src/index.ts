@@ -7,7 +7,6 @@ import {CloudinaryImage} from "./assets/CloudinaryImage";
 import {CloudinaryVideo} from "./assets/CloudinaryVideo";
 import {CloudinaryFile} from "./assets/CloudinaryFile";
 import {Cloudinary} from "./instance/Cloudinary";
-import {createCloudinaryURL} from "./internal/url/cloudinaryURL";
 
 
 /**
@@ -15,7 +14,6 @@ import {createCloudinaryURL} from "./internal/url/cloudinaryURL";
  */
 
 const CloudinarySDK = {
-  createCloudinaryURL,
   Transformation,
   ImageTransformation,
   VideoTransformation,

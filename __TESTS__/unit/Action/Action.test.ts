@@ -1,25 +1,16 @@
 import {Action} from '../../../src/internal/Action';
 import {Qualifier} from '../../../src/internal/qualifier/Qualifier';
-import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import {QualifierValue} from "../../../src/internal/qualifier/QualifierValue";
 import {FlagQualifier} from "../../../src/values/flag/FlagQualifier";
-import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
+import {createNewImage} from "../../TestUtils/createCloudinaryImage";
 
-
-const CONFIG_INSTANCE = new CloudinaryConfig({
-  cloud: {
-    cloudName: 'demo'
-  }
-});
 
 describe('Tests for Transformation Action', () => {
   it('Creates a cloudinaryURL with new action while passing a qualifier to addQualifier()', () => {
     const action = new Action().addQualifier(new Qualifier('a', 90));
 
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .addAction(action)
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/a_90/sample');
@@ -27,10 +18,8 @@ describe('Tests for Transformation Action', () => {
   it('Creates a cloudinaryURL with new action while passing an array to addQualifier()', () => {
     const action = new Action().addQualifier(new Qualifier('a', new QualifierValue([90, 80]).setDelimiter('.')));
 
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .addAction(action)
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/a_90.80/sample');
@@ -38,10 +27,8 @@ describe('Tests for Transformation Action', () => {
   it('Creates a cloudinaryURL with new action using addValue()', () => {
     const action = new Action().addQualifier(new Qualifier('a', new QualifierValue([90, 80]).setDelimiter('.')).addValue(70));
 
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .addAction(action)
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/a_90.80.70/sample');
@@ -51,10 +38,8 @@ describe('Tests for Transformation Action', () => {
       .addQualifier(new Qualifier('w', 100))
       .addQualifier(new Qualifier('c', 'fill'));
 
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .addAction(action)
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/c_fill,w_100/sample');
@@ -64,10 +49,8 @@ describe('Tests for Transformation Action', () => {
       .addQualifier(new Qualifier('w', 100))
       .addQualifier(new Qualifier('w', 200));
 
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .addAction(action)
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/w_200/sample');
@@ -78,10 +61,8 @@ describe('Tests for Transformation Action', () => {
       .addQualifier(new Qualifier('l', 'sample'))
       .addFlag(new FlagQualifier('layer_apply'));
 
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .addAction(action)
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/fl_layer_apply,l_sample/sample');
@@ -93,10 +74,8 @@ describe('Tests for Transformation Action', () => {
       .addFlag(new FlagQualifier('first_flag'))
       .addFlag(new FlagQualifier('second_flag'));
 
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .addAction(action)
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/fl_first_flag.second_flag,l_sample/sample');

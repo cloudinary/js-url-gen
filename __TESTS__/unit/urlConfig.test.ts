@@ -1,9 +1,8 @@
 import ICloudinaryConfigurations from "../../src/config/interfaces/Config/ICloudinaryConfigurations";
 import IURLConfig from "../../src/config/interfaces/Config/IURLConfig";
-import CloudinaryConfig from "../../src/config/CloudinaryConfig";
 import {CloudinaryImage} from "../../src/assets/CloudinaryImage";
-import {createCloudinaryURL} from "../../src/internal/url/cloudinaryURL";
 import {Resize} from "../../src/actions/resize";
+import {createNewImage} from "../TestUtils/createCloudinaryImage";
 
 
 /**
@@ -11,40 +10,28 @@ import {Resize} from "../../src/actions/resize";
  * @param urlConfig
  */
 function createURLFromConfig(urlConfig: IURLConfig) {
-  const conf = new CloudinaryConfig({
-    cloud: {
-      cloudName: 'demo'
-    },
-    url: urlConfig
-  });
-
-  return createCloudinaryURL(conf, { publicID: 'sample' });
+  return new CloudinaryImage('sample', {
+    cloudName: 'demo'
+  }, urlConfig).toURL();
 }
 
-const DEMO_CONFIG = {
-  cloud: {
-    cloudName: 'demo'
-    // Other cloud-based properties
-  }
-};
 
 describe('It tests a combination of Cloudinary URL and Configuration', () => {
   it ('Generates a URL', () => {
-    const url = new CloudinaryImage('my_image')
-      .setConfig(DEMO_CONFIG)
+    const url = createNewImage('my_image')
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/my_image');
   });
+
   it ('Throw error when config is invalid', () => {
     expect(() => {
-      new CloudinaryImage('my_image')
-        .setConfig({});
+      new CloudinaryImage('my_image').toURL(); // missing cloudName should throw error
     }).toThrow();
   });
+
   it ('Generates a URL with transforamtions', () => {
-    const url = new CloudinaryImage()
-      .setConfig(DEMO_CONFIG)
+    const url = createNewImage()
       .resize(Resize.fill(100, 100))
       .setPublicID('sample')
       .toURL();
@@ -66,8 +53,11 @@ describe('It tests a combination of Cloudinary URL and Configuration', () => {
 
       // Utility function that returns a new instance with configuration set
       image(publicID: string) {
-        return new CloudinaryImage(publicID)
-          .setConfig(this.cloudinaryConfig);
+        return new CloudinaryImage(
+          publicID,
+          this.cloudinaryConfig.cloud,
+          this.cloudinaryConfig.url
+        );
       }
     }
 
@@ -83,15 +73,10 @@ describe('It tests a combination of Cloudinary URL and Configuration', () => {
     /**
      * Use the "global" instance
      */
-    const url = myInstance.image('sample')
-      .resize(Resize.fill(100, 100))
-      .describeAsset({
-        storageType:'fetch', // defaults to "upload"
-        assetType: 'avatar' // Defaults to image
-      })
-      .toURL();
+    const img = myInstance.image('sample');
+    img.resize(Resize.fill(100, 100));
 
-    expect(url).toBe('https://res.cloudinary.com/MY_CLOUD_NAME/avatar/fetch/c_fill,h_100,w_100/sample');
+    expect(img.toURL()).toBe('https://res.cloudinary.com/MY_CLOUD_NAME/image/upload/c_fill,h_100,w_100/sample');
   });
 
 

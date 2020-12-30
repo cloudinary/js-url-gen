@@ -1,13 +1,8 @@
-import CloudinaryConfig from "../../../../../src/config/CloudinaryConfig";
 import ResizeSimpleAction from "../../../../../src/actions/resize/ResizeSimpleAction";
 import {CloudinaryImage} from "../../../../../src/assets/CloudinaryImage";
 
 
-const CONFIG_INSTANCE = new CloudinaryConfig({
-  cloud: {
-    cloudName: 'demo'
-  }
-});
+
 
 
 
@@ -17,8 +12,7 @@ const CONFIG_INSTANCE = new CloudinaryConfig({
  * @param type
  */
 function getImageWithResize(resizeAction: ResizeSimpleAction, type:'url' | 'image'):CloudinaryImage | string {
-  const img = new CloudinaryImage('sample')
-    .setConfig(CONFIG_INSTANCE)
+  const img = new CloudinaryImage('sample', {cloudName: 'demo'})
     .resize(resizeAction);
 
   if (type === 'image') {

@@ -1,7 +1,7 @@
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import URLConfig from "../../../src/config/URLConfig";
 import CloudConfig from "../../../src/config/CloudConfig";
-import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
+import {createNewImage} from "../../TestUtils/createCloudinaryImage";
 
 
 describe('Tests for CloudinaryConfiguration', () => {
@@ -140,27 +140,14 @@ describe('Tests for CloudinaryConfiguration', () => {
   });
 
   it('Should set secure to true by default', () => {
-    const url = new CloudinaryImage('sample')
-      .setConfig({
-        cloud: {
-          cloudName:'demo'
-        }
-      })
+    const url = createNewImage('sample')
       .toURL();
 
     expect(url).toContain('https://');
   });
 
   it('Should allow setting secure attribute', () => {
-    const url = new CloudinaryImage('sample')
-      .setConfig({
-        cloud: {
-          cloudName: 'demo'
-        },
-        url: {
-          secure:false
-        }
-      })
+    const url = createNewImage('sample', {}, { secure: false})
       .toURL();
 
     expect(url).toContain('http://');

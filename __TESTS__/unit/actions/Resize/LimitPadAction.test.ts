@@ -18,8 +18,7 @@ describe('Tests for Transformation Action -- Resize.limitPad', () => {
         .offsetX(10)
         .offsetY(10)
         .gravity(Gravity.autoGravity())
-        .background(Background.color('red'))
-      ,
+        .background(Background.color('red')),
       'url');
     expect(url).toContain('ar_2.0,b_red,c_lpad,g_auto,h_250,w_250,x_10,y_10');
   });

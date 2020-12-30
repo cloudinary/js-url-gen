@@ -1,33 +1,44 @@
-import ICloudinaryConfigurations from "../config/interfaces/Config/ICloudinaryConfigurations";
-import CloudinaryConfig from "../config/CloudinaryConfig";
-import {IDescriptor} from "../config/interfaces/IDescriptor";
-import {createCloudinaryURL} from "../internal/url/cloudinaryURL";
+import {
+  getUrlPrefix,
+  getUrlVersion,
+  handleAssetType,
+  handleStorageType
+} from "../internal/url/cloudinaryURL";
+import {Transformation} from "../transformation/Transformation";
+import ICloudConfig from "../config/interfaces/Config/ICloudConfig";
+import IURLConfig from "../config/interfaces/Config/IURLConfig";
+import IAuthTokenConfig from "../config/interfaces/Config/IAuthTokenConfig";
+import URLConfig from "../config/URLConfig";
 
 /**
  * @desc Cloudinary file without a transformation
  * @memberOf SDK
  */
 class CloudinaryFile {
-  public config: ICloudinaryConfigurations;
-  public asset: IDescriptor;
+  protected assetType: string; // resourceType image/video, determined by the asset type
+  protected cloudName: string; // populated from the cloud config
+  protected apiKey: string; // populated from  the cloud config
+  protected apiSecret: string; // populated from the cloud config
+  protected authToken: IAuthTokenConfig; // populated from the cloud config
+  protected urlConfig: IURLConfig;
 
-  constructor(publicID: string) {
-    this.asset = {
-      publicID
-    };
-  }
+  public version: number;
+  public publicID: string;
+  public extension: string;
+  public suffix: string;
+  public storageType: string; // type upload/private
 
-  /**
-   * for current instance
-   * @param {ICloudinaryConfigurations} cloudinaryConfig
-   */
-  setConfig(cloudinaryConfig: ICloudinaryConfigurations): this {
-    this.config = new CloudinaryConfig(cloudinaryConfig);
-    return this;
+  constructor(publicID: string, cloudConfig?: ICloudConfig, urlConfig?: IURLConfig) {
+    this.publicID = publicID;
+    this.cloudName = cloudConfig.cloudName;
+    this.apiKey = cloudConfig.apiKey;
+    this.apiSecret = cloudConfig.apiSecret;
+    this.authToken = cloudConfig.authToken;
+    this.urlConfig = new URLConfig(urlConfig);
   }
 
   setPublicID(publicID: string): this {
-    this.asset.publicID = publicID;
+    this.publicID = publicID;
     return this;
   }
 
@@ -35,40 +46,37 @@ class CloudinaryFile {
     return this;
   }
 
-  describeAsset(assetDescriptor: IDescriptor): this {
-    Object.assign(this.asset, assetDescriptor);
-    return this;
+  toURL(): string {
+    return this.createCloudinaryURL();
   }
 
   /**
-   * @param version
+   *
+   * @description Creates a fully qualified CloudinaryURL
+   * @return {string} CloudinaryURL
    */
-  setVersion(version:number): this {
-    this.describeAsset({
-      version
-    });
-    return this;
-  }
+  createCloudinaryURL(transformation?: Transformation): string {
+    // config: ICloudinaryConfigurations, descriptor?: IDescriptor, transformation?: Transformation
+    const prefix = getUrlPrefix(this.cloudName, this.urlConfig);
+    const assetType = handleAssetType(this.assetType);
+    const storageType = handleStorageType(this.storageType);
 
-  setAssetType(assetType: string): this {
-    this.describeAsset({
-      assetType
-    });
-    return this;
-  }
+    const transformationString = transformation ? transformation.toString() : '';
 
-  setStorageType(storageType: string): this {
-    this.describeAsset({
-      storageType
-    });
-    return this;
-  }
+    const version = getUrlVersion(this.publicID, this.version, this.urlConfig.forceVersion);
 
-  toURL(): string {
-    return createCloudinaryURL(this.config, Object.assign({
-      assetType: 'raw',
-      storageType: 'upload'
-    }, this.asset));
+    const publicID = this.publicID
+      // Serialize the publicID, but leave slashes alone.
+      // we can't use serializeCloudinaryCharacters because that does both things (, and /)
+      .replace(/,/g, '%2C');
+
+    const url = [prefix, assetType, storageType, transformationString, version, publicID]
+      .filter((a) => a)
+      .join('/');
+
+    return encodeURI(url)
+      .replace(/\?/g, '%3F')
+      .replace(/=/g, '%3D');
   }
 }
 

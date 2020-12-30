@@ -1,23 +1,13 @@
-import * as Transcode from '../../../src/actions/transcode';
-import CloudinaryConfig from '../../../src/config/CloudinaryConfig';
-import * as AudioCodec from '../../../src/values/audioCodec';
-import * as AudioFrequency from '../../../src/values/audioFrequency';
-import * as StreaminProfile from '../../../src/values/streamingProfile';
-import * as AnimatedFormat from '../../../src/values/animatedFormat';
-import {CloudinaryVideo} from "../../../src/assets/CloudinaryVideo";
-
-const CONFIG_INSTANCE = new CloudinaryConfig({
-  cloud: {
-    cloudName: 'demo'
-  }
-});
-
+import {AnimatedFormat} from "../../../src/values/animatedFormat";
+import {createNewVideo} from "../../TestUtils/createCloudinaryVideo";
+import {AudioFrequency} from "../../../src/values/audioFrequency";
+import {Transcode} from "../../../src/actions/transcode";
+import {AudioCodec} from "../../../src/values/audioCodec";
+import {StreamingProfile} from "../../../src/values/streamingProfile";
 
 describe('Tests for Transformation Action -- Transcode', () => {
   it('Creates a cloudinaryURL with audiocodec', () => {
-    const url = new CloudinaryVideo()
-      .setConfig(CONFIG_INSTANCE)
-      .setAssetType('video')
+    const url = createNewVideo('sample')
       .transcode(Transcode.audioCodec(AudioCodec.auto()))
       .setPublicID('sample')
       .toURL();
@@ -26,9 +16,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
   });
 
   it('Creates a cloudinaryURL with bitrate', () => {
-    const url = new CloudinaryVideo()
-      .setConfig(CONFIG_INSTANCE)
-      .setAssetType('video')
+    const url = createNewVideo('sample')
       .transcode(Transcode.bitRate('500k'))
       .setPublicID('sample')
       .toURL();
@@ -37,9 +25,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
   });
 
   it('Creates a cloudinaryURL with bitrate.constant', () => {
-    const url = new CloudinaryVideo()
-      .setConfig(CONFIG_INSTANCE)
-      .setAssetType('video')
+    const url = createNewVideo('sample')
       .transcode(Transcode
         .bitRate(500).constant())
       .setPublicID('sample')
@@ -49,9 +35,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
   });
 
   it('Creates a cloudinaryURL with audioFrequency', () => {
-    const url = new CloudinaryVideo()
-      .setConfig(CONFIG_INSTANCE)
-      .setAssetType('video')
+    const url = createNewVideo('sample')
       .transcode(Transcode
         .audioFrequency(AudioFrequency.FREQ11025()))
       .setPublicID('sample')
@@ -61,9 +45,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
   });
 
   it('Creates a cloudinaryURL with fps', () => {
-    const url = new CloudinaryVideo()
-      .setConfig(CONFIG_INSTANCE)
-      .setAssetType('video')
+    const url = createNewVideo('sample')
       .transcode(Transcode
         .fps(20))
       .setPublicID('sample')
@@ -73,9 +55,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
   });
 
   it('Creates a cloudinaryURL with fpsRange from', () => {
-    const url = new CloudinaryVideo()
-      .setConfig(CONFIG_INSTANCE)
-      .setAssetType('video')
+    const url = createNewVideo('sample')
       .transcode(Transcode
         .fpsRange(20))
       .setPublicID('sample')
@@ -85,9 +65,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
   });
 
   it('Creates a cloudinaryURL with fpsRange from-to', () => {
-    const url = new CloudinaryVideo()
-      .setConfig(CONFIG_INSTANCE)
-      .setAssetType('video')
+    const url = createNewVideo('sample')
       .transcode(Transcode
         .fpsRange(20, 20))
       .setPublicID('sample')
@@ -97,9 +75,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
   });
 
   it('Creates a cloudinaryURL with keyframeInterval', () => {
-    const url = new CloudinaryVideo()
-      .setConfig(CONFIG_INSTANCE)
-      .setAssetType('video')
+    const url = createNewVideo('sample')
       .transcode(Transcode
         .keyframeInterval(0.4))
       .setPublicID('sample')
@@ -109,11 +85,9 @@ describe('Tests for Transformation Action -- Transcode', () => {
   });
 
   it('Creates a cloudinaryURL with streamingProfile', () => {
-    const url = new CloudinaryVideo()
-      .setConfig(CONFIG_INSTANCE)
-      .setAssetType('video')
+    const url = createNewVideo('sample')
       .transcode(Transcode
-        .streamingProfile(StreaminProfile.fullHd()))
+        .streamingProfile(StreamingProfile.fullHd()))
       .setPublicID('sample')
       .toURL();
 
@@ -121,9 +95,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
   });
 
   it('Creates a cloudinaryURL with toAnimated', () => {
-    const url = new CloudinaryVideo()
-      .setConfig(CONFIG_INSTANCE)
-      .setAssetType('video')
+    const url = createNewVideo('sample')
       .transcode(Transcode
         .toAnimated(AnimatedFormat.gif()))
       .setPublicID('sample')
@@ -133,9 +105,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
   });
 
   it('Creates a cloudinaryURL with toAnimated webp', () => {
-    const url = new CloudinaryVideo()
-      .setConfig(CONFIG_INSTANCE)
-      .setAssetType('video')
+    const url = createNewVideo('sample')
       .transcode(Transcode
         .toAnimated(AnimatedFormat.webp()))
       .setPublicID('sample')
@@ -145,9 +115,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
   });
 
   it('Creates a cloudinaryURL with toAnimated and delay', () => {
-    const url = new CloudinaryVideo()
-      .setConfig(CONFIG_INSTANCE)
-      .setAssetType('video')
+    const url = createNewVideo('sample')
       .transcode(Transcode
         .toAnimated('gif').delay(20))
       .setPublicID('sample')
@@ -157,9 +125,7 @@ describe('Tests for Transformation Action -- Transcode', () => {
   });
 
   it('Creates a cloudinaryURL with toAnimated, delay, sampling', () => {
-    const url = new CloudinaryVideo()
-      .setConfig(CONFIG_INSTANCE)
-      .setAssetType('video')
+    const url = createNewVideo('sample')
       .transcode(Transcode
         .toAnimated(AnimatedFormat.gif()).delay(20).sampling('4s'))
       .setPublicID('sample')

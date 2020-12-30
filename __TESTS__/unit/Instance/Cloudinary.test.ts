@@ -1,5 +1,4 @@
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 import {Cloudinary} from "../../../src/instance/Cloudinary";
 import {fill} from "../../../src/actions/resize";
 

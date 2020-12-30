@@ -1,8 +1,6 @@
 import {image} from "../../../src/values/source";
 import {rodMonochromacy} from "../../../src/values/simulateColorBlind";
-import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import {Color} from "../../../src/values/color";
-import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 import {scale} from "../../../src/actions/resize";
 import {GradientFade} from "../../../src/values/GradientFade";
 import {cartoonify, Effect} from "../../../src/actions/effect";
@@ -10,18 +8,12 @@ import {OutlineMode} from "../../../src/values/outlineMode";
 import {halftone4x4Orthogonal} from "../../../src/values/dither";
 import {ArtisticFilter} from "../../../src/values/artisticFilter";
 import {Transformation} from "../../../src/transformation/Transformation";
+import {createNewImage} from "../../TestUtils/createCloudinaryImage";
 
-
-const CONFIG_INSTANCE = new CloudinaryConfig({
-  cloud: {
-    cloudName: 'demo'
-  }
-});
 
 describe('Tests for Transformation Action -- Effect', () => {
   it('Creates a cloudinaryURL with Simple and Leveled effects', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(Effect.advancedRedEye())
       .effect(Effect.accelerate())
       .effect(Effect.accelerate(100))
@@ -103,8 +95,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Creates a cloudinaryURL with effect shadow:50', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(Effect.shadow())
       .effect(Effect.shadow(50))
       .effect(Effect.shadow().strength(60).offsetX(1).offsetY(2).color('red'))
@@ -115,8 +106,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Creates a cloudinaryURL with effect colorize', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(Effect.colorize(10).color('red'))
       .setPublicID('sample')
       .toURL();
@@ -125,8 +115,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Creates a cloudinaryURL with effect colorize:level', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(Effect.colorize(50))
       .setPublicID('sample')
       .toURL();
@@ -135,8 +124,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Creates a cloudinaryURL with effect colorize:level', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(Effect.colorize().level(10))
       .setPublicID('sample')
       .toURL();
@@ -145,8 +133,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Creates a cloudinaryURL with effect oilPaint', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(Effect.oilPaint())
       .setPublicID('sample')
       .toURL();
@@ -155,8 +142,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Creates a cloudinaryURL with effect oilPaint:level', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(Effect.oilPaint(50))
       .setPublicID('sample')
       .toURL();
@@ -165,8 +151,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Creates a cloudinaryURL with effect artisticFilter', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(Effect.artisticFilter(ArtisticFilter.peacock()))
       .setPublicID('sample')
       .toURL();
@@ -175,8 +160,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Creates a cloudinaryURL with effect cartoonify:50', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(cartoonify().lineStrength(50).blackwhite())
       .setPublicID('sample')
       .toURL();
@@ -189,8 +173,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Creates a cloudinaryURL with effect style_transfer', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(Effect.styleTransfer(image('woman')))
       .setPublicID('sample')
       .toURL();
@@ -199,8 +182,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Creates a cloudinaryURL with effect style_transfer:strength', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(Effect.styleTransfer(image('woman')).strength(15))
       .setPublicID('sample')
       .toURL();
@@ -209,8 +191,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Creates a cloudinaryURL with effect style_transfer:preserve_color:strength', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(Effect.styleTransfer(image('woman'))
         .strength(15)
         .preserveColor()
@@ -222,8 +203,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Creates a cloudinaryURL with effect style_transfer:preserve_color:strength with a transformation', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(Effect.styleTransfer(
         image('woman')
           .transformation(
@@ -239,8 +219,7 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Tests for Effect.dither', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(Effect.dither())
       .effect(Effect.dither(halftone4x4Orthogonal()))
       .effect(Effect.dither().type(halftone4x4Orthogonal()))

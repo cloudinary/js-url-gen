@@ -1,6 +1,4 @@
-import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import {image, text} from "../../../src/values/source";
-import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 import {Transformation} from "../../../src/transformation/Transformation";
 import {Overlay} from "../../../src/actions/overlay";
 import {sampleTextStyle} from "../../TestUtils/transformations/sampleTextStyle";
@@ -8,38 +6,28 @@ import {sampleEmptyTextStyle} from "../../TestUtils/transformations/sampleEmptyT
 import {createNewImage} from "../../TestUtils/createCloudinaryImage";
 
 
-const CONFIG_INSTANCE = new CloudinaryConfig({
-  cloud: {
-    cloudName: 'demo'
-  }
-});
-
-
 describe('Tests for Encoding the URL', () => {
   it('Should serialize, but not encode, when calling toString', () => {
-    const str = new CloudinaryImage()
+    const str = createNewImage()
       .overlay(Overlay.source(text('he llo', sampleTextStyle())))
       .toString();
     expect(str).toBe(`l_text:${sampleTextStyle()}:he llo/fl_layer_apply`);
   });
 
   it('Should encode cloudinary characters (",") in a publicID', () => {
-    const url = new CloudinaryImage('sam,ple')
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sam,ple')
       .toURL();
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/sam%252Cple');
   });
 
   it('Does not mutate valid / in publicID', () => {
-    const url = new CloudinaryImage('folder/name')
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('folder/name')
       .toURL();
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/v1/folder/name');
   });
 
   it('Should encode regular text in a textLayer', () => {
-    const url = new CloudinaryImage('sample')
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .overlay(Overlay.source(text('he llo', sampleEmptyTextStyle())))
       .toURL();
 
@@ -72,36 +60,24 @@ describe('Tests for Encoding the URL', () => {
     expect(cldImage.toURL()).toBe('https://res.cloudinary.com/demo/image/upload/l_text:arial_50:he%252C%252F%20llo/fl_layer_apply/sample');
   });
 
-
   it('Fetch: should not encode ("$:/") signs', () => {
-    const url = new CloudinaryImage('https://res.cloudinary.com/demo/image/upload/sample?a=b')
-      .setConfig(CONFIG_INSTANCE)
-      .describeAsset({
-        assetType: 'image',
-        storageType: 'fetch'
-      })
-      .toURL();
+    const img = createNewImage('https://res.cloudinary.com/demo/image/upload/sample?a=b');
+    img.storageType = 'fetch';
 
-    expect(url)
+    expect(img.toURL())
       .toBe('https://res.cloudinary.com/demo/image/fetch/https://res.cloudinary.com/demo/image/upload/sample%3Fa%3Db');
   });
 
   it('Should ', () => {
-    const url = new CloudinaryImage('https://www.youtube.com/watch?v=d9NF2edxy-M')
-      .setConfig(CONFIG_INSTANCE)
-      .describeAsset({
-        assetType: 'image',
-        storageType: 'youtube'
-      })
-      .toURL();
+    const img = createNewImage('https://www.youtube.com/watch?v=d9NF2edxy-M');
+    img.storageType = 'youtube';
 
-    expect(url)
+    expect(img.toURL())
       .toBe('https://res.cloudinary.com/demo/image/youtube/https://www.youtube.com/watch%3Fv%3Dd9NF2edxy-M');
   });
 
   it('Should encode a space in publicID', () => {
     const url = createNewImage('sa mple')
-      .setConfig(CONFIG_INSTANCE)
       .toURL();
 
     expect(url)

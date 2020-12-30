@@ -1,40 +1,7 @@
-import {Transformation} from '../../transformation/Transformation';
-import {IDescriptor} from '../../config/interfaces/IDescriptor';
 import IURLConfig from "../../config/interfaces/Config/IURLConfig";
-import ICloudinaryConfigurations from "../../config/interfaces/Config/ICloudinaryConfigurations";
 import {isUrl} from "./urlUtils/isUrl";
 import {isFileName} from "./urlUtils/isFileName";
 import {publicIDContainsVersion} from "./urlUtils/publicIDContainsVersion";
-
-/**
- *
- * @description Creates a fully qualified CloudinaryURL
- * @param {Object} config
- * @param {Object} descriptor
- * @param {Transformation} transformation
- * @return {string} CloudinaryURL
- */
-function createCloudinaryURL(config: ICloudinaryConfigurations, descriptor?: IDescriptor, transformation?: Transformation): string {
-  const prefix = getUrlPrefix(config.cloud.cloudName, config.url);
-  const assetType = handleAssetType(descriptor);
-  const storageType = handleStorageType(descriptor);
-  const signature = descriptor.signature;
-  const transformationString = transformation ? transformation.toString() : '';
-  const version = getUrlVersion(config.url, descriptor);
-
-  const publicID = descriptor.publicID
-    // Serialize the publicID, but leave slashes alone.
-    // we can't use serializeCloudinaryCharacters because that does both things.
-    .replace(/,/g, '%2C');
-
-  const url = [prefix, assetType, storageType, signature, transformationString, version, publicID]
-    .filter((a) => a)
-    .join('/');
-
-  return encodeURI(url)
-    .replace(/\?/g, '%3F')
-    .replace(/=/g, '%3D');
-}
 
 /**
  * Create the URL prefix for Cloudinary resources.
@@ -85,47 +52,49 @@ function getUrlPrefix(cloudName: string, urlConfig: IURLConfig) {
 
 /**
  * @private
- * @param descriptor
+ * @param assetType
  */
-function handleAssetType(descriptor: IDescriptor) {
+function handleAssetType(assetType: string): string {
   //default to image
-  if (!descriptor || !descriptor.assetType) {
+  if (!assetType) {
     return 'image';
   }
 
-  return descriptor.assetType;
+  return assetType;
 }
 
 /**
  * @private
- * @param descriptor
+ * @param storageType
  */
-function handleStorageType(descriptor: IDescriptor) {
+function handleStorageType(storageType: string): string {
   //default to upload
-  if (!descriptor || !descriptor.storageType) {
+  if (!storageType) {
     return 'upload';
   }
 
-  return descriptor.storageType;
+  return storageType;
 }
 
 /**
- * @private
- * @param descriptor
+ *
+ * @param {string} publicID
+ * @param {number} version
+ * @param {boolean} forceVersion
  */
-function getUrlVersion(urlConfig: IURLConfig, descriptor: IDescriptor) {
-  const shouldForceVersion = urlConfig.forceVersion !== false;
+function getUrlVersion(publicID: string, version: number, forceVersion:boolean): string {
+  const shouldForceVersion = forceVersion !== false;
 
-  if (descriptor.version) {
-    return `v${descriptor.version}`;
+  if (version) {
+    return `v${version}`;
   }
 
   // In all these conditions we never force a version
-  if (publicIDContainsVersion(descriptor.publicID) || isUrl(descriptor.publicID) || isFileName(descriptor.publicID)) {
+  if (publicIDContainsVersion(publicID) || isUrl(publicID) || isFileName(publicID)) {
     return '';
   }
 
   return shouldForceVersion ? 'v1' : '';
 }
 
-export {createCloudinaryURL};
+export {handleAssetType, getUrlVersion, handleStorageType, getUrlPrefix};
