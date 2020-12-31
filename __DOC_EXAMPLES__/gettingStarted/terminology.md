@@ -4,9 +4,7 @@
 
 
 ```javascript
-
 import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
-import {CloudinaryImage} from "@cloudinary/base/assets/CloudinaryImage";
 import {Rotate} from "@cloudinary/base/actions/rotate";
 import {Resize} from "@cloudinary/base/actions/resize";
 import {RotationMode} from "@cloudinary/base/values/RotationMode";
@@ -32,7 +30,6 @@ myImage
     .rotate(
         Rotate.mode(RotationMode.verticalFlip())
     );
-
 ```
 
 <h3>Cloudinary Instance & Configuration</h3>

@@ -1,6 +1,5 @@
 ```javascript
 import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
-import {CloudinaryImage} from "@cloudinary/base/assets/CloudinaryImage";
 
 const cld = new Cloudinary({
     cloud: {

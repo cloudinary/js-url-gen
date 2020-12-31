@@ -4,7 +4,6 @@
 
 ```javascript
 import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
-import {CloudinaryImage} from "@cloudinary/base/assets/CloudinaryImage";
 import {scale} from "@cloudinary/base/actions/resize";
 
 // Create your instance
@@ -29,6 +28,7 @@ myImage.resize(
 
 const myURL = myImage.toURL();
 // End result: https://res.cloudinary.com/demo/image/upload/c_scale,w_100,h_100/sample
+
 ```
 
 <h1>Explanation</h1>
