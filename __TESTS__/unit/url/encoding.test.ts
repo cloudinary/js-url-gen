@@ -1,11 +1,11 @@
 import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import {image, text} from "../../../src/values/source";
 import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
-import {CloudinaryAsset} from "../../../src/assets/CloudinaryAsset";
 import {Transformation} from "../../../src/transformation/Transformation";
 import {Overlay} from "../../../src/actions/overlay";
 import {sampleTextStyle} from "../../TestUtils/transformations/sampleTextStyle";
 import {sampleEmptyTextStyle} from "../../TestUtils/transformations/sampleEmptyTextStyle";
+import {createNewImage} from "../../TestUtils/createCloudinaryImage";
 
 
 const CONFIG_INSTANCE = new CloudinaryConfig({
@@ -49,32 +49,27 @@ describe('Tests for Encoding the URL', () => {
   });
 
   it('Should encode font name in textOverlay', () => {
-    const tx = new Transformation()
+    const cldImage = createNewImage('sample')
       .overlay(Overlay.source(text('he llo', sampleEmptyTextStyle('roboto condensed'))));
 
-
-    expect(tx.toString())
+    expect(cldImage.toString())
       // Correctly serialize the cloudinary control characters
       .toBe('l_text:roboto condensed_50:he llo/fl_layer_apply');
 
-    const asset = new CloudinaryAsset('sample', tx).setConfig(CONFIG_INSTANCE);
-
-    expect(asset.toURL())
+    expect(cldImage.toURL())
       // Space encoded correctly to %20
       .toBe('https://res.cloudinary.com/demo/image/upload/l_text:roboto%20condensed_50:he%20llo/fl_layer_apply/sample');
   });
 
   it('Should encode cloudinary characters ("/,") in the text of a textLayer', () => {
-    const tx = new Transformation()
+    const cldImage = createNewImage('sample')
       .overlay(Overlay.source(text('he,/ llo', sampleEmptyTextStyle())));
 
     // Correctly serialize the cloudinary control characters
-    expect(tx.toString()).toBe('l_text:arial_50:he%2C%2F llo/fl_layer_apply');
-
-    const asset = new CloudinaryAsset('sample', tx).setConfig(CONFIG_INSTANCE);
+    expect(cldImage.toString()).toBe('l_text:arial_50:he%2C%2F llo/fl_layer_apply');
 
     // Add URL encoding on top of serialization
-    expect(asset.toURL()).toBe('https://res.cloudinary.com/demo/image/upload/l_text:arial_50:he%252C%252F%20llo/fl_layer_apply/sample');
+    expect(cldImage.toURL()).toBe('https://res.cloudinary.com/demo/image/upload/l_text:arial_50:he%252C%252F%20llo/fl_layer_apply/sample');
   });
 
 
@@ -105,7 +100,7 @@ describe('Tests for Encoding the URL', () => {
   });
 
   it('Should encode a space in publicID', () => {
-    const url = new CloudinaryImage('sa mple')
+    const url = createNewImage('sa mple')
       .setConfig(CONFIG_INSTANCE)
       .toURL();
 
@@ -114,7 +109,7 @@ describe('Tests for Encoding the URL', () => {
   });
 
   it('should serialize nested texts correctly (text inside an image inside an image)', () => {
-    const tx = new Transformation()
+    const cldImage = createNewImage('woman')
       .overlay(Overlay.source(
         image('sample')
           .transformation(
@@ -124,12 +119,10 @@ describe('Tests for Encoding the URL', () => {
           )
       ));
 
-    expect(tx.toString())
+    expect(cldImage.toString())
       .toBe(`l_sample/l_text:arial_50:he%2C%2Fllo/fl_layer_apply/fl_layer_apply`);
 
-    const asset = new CloudinaryAsset('woman', tx).setConfig(CONFIG_INSTANCE);
-
-    expect(asset.toURL())
+    expect(cldImage.toURL())
       .toBe(`https://res.cloudinary.com/demo/image/upload/l_sample/l_text:arial_50:he%252C%252Fllo/fl_layer_apply/fl_layer_apply/woman`);
   });
 });

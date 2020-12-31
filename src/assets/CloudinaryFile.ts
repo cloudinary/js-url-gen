@@ -2,20 +2,16 @@ import ICloudinaryConfigurations from "../config/interfaces/Config/ICloudinaryCo
 import CloudinaryConfig from "../config/CloudinaryConfig";
 import {IDescriptor} from "../config/interfaces/IDescriptor";
 import {createCloudinaryURL} from "../internal/url/cloudinaryURL";
-import {CloudinaryTransformable} from "./CloudinaryTransformable";
-import {Transformation} from "../transformation/Transformation";
 
 /**
- * @desc Okay Go!
+ * @desc Cloudinary file without a transformation
  * @memberOf SDK
- * @extends {SDK.CloudinaryTransformable}
  */
-class CloudinaryAsset extends CloudinaryTransformable {
+class CloudinaryFile {
   public config: ICloudinaryConfigurations;
   public asset: IDescriptor;
 
-  constructor(publicID: string, transformation: Transformation ) {
-    super(transformation);
+  constructor(publicID: string) {
     this.asset = {
       publicID
     };
@@ -70,10 +66,10 @@ class CloudinaryAsset extends CloudinaryTransformable {
 
   toURL(): string {
     return createCloudinaryURL(this.config, Object.assign({
-      assetType: 'image',
+      assetType: 'raw',
       storageType: 'upload'
-    }, this.asset), this.transformation);
+    }, this.asset));
   }
 }
 
-export {CloudinaryAsset};
+export {CloudinaryFile};

@@ -1,10 +1,9 @@
-import {CloudinaryAsset} from "../../../src/assets/CloudinaryAsset";
-import {Transformation} from "../../../src/transformation/Transformation";
+import {CloudinaryFile} from "../../../src/assets/CloudinaryFile";
 
-describe('Tests for cloudinaryAsset', () => {
-  let cloudinaryAsset: CloudinaryAsset = null;
+describe('Tests for CloudinaryFile', () => {
+  let cloudinaryAsset: CloudinaryFile = null;
   beforeEach(() => {
-    cloudinaryAsset = new CloudinaryAsset('sample', new Transformation());
+    cloudinaryAsset = new CloudinaryFile('sample');
   });
 
   it('Instantiates a cloudinaryAsset', () => {
