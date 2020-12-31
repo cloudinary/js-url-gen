@@ -259,8 +259,7 @@ describe('Tests for Transformation Action -- Delivery', () => {
 
   it('Creates a cloudinaryURL with Delivery.colorspace', () => {
     const url = createNewImage('sample')
-      .delivery(Delivery.colorSpace(ColorSpace.noCMYK()))
-      .setPublicID('sample')
+      .delivery(Delivery.colorSpace(ColorSpace.noCmyk()))
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/cs_no_cmyk/sample');

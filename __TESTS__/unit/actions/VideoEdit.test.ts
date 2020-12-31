@@ -61,6 +61,17 @@ describe('Tests for Transformation Action -- VideoEdit', () => {
     expect(url).toBe('https://res.cloudinary.com/demo/video/upload/du_10,eo_4,so_3/sample');
   });
 
+  it('Creates a cloudinaryURL with trim %', () => {
+    const url = createNewVideo('sample')
+      .videoEdit(VideoEdit.trim()
+        .startOffset('3%')
+        .endOffset('4%')
+        .duration('10%'))
+      .toURL();
+
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/du_10p,eo_4p,so_3p/sample');
+  });
+
   it('Creates a cloudinaryURL with volume string', () => {
     const url = createNewVideo('sample')
       .videoEdit(VideoEdit.volume('5db'))

@@ -17,7 +17,7 @@ import {publicIDContainsVersion} from "./urlUtils/publicIDContainsVersion";
  * @param {string} cloudName
  * @param {IURLConfig} urlConfig
  */
-function getUrlPrefix(cloudName: string, urlConfig: IURLConfig) {
+function getUrlPrefix(cloudName: string, urlConfig: IURLConfig): string {
   const secure = urlConfig.secure;
   const privateCDN = urlConfig.privateCdn;
   const cname = urlConfig.cname;

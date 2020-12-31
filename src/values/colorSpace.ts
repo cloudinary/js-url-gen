@@ -8,7 +8,7 @@
  * @@doc
  * @memberOf Values.ColorSpace
  */
-function SRGB(): string {
+function srgb(): string {
   return 'srgb';
 }
 
@@ -25,7 +25,7 @@ function trueColor(): string {
  * @@doc
  * @memberOf Values.ColorSpace
  */
-function tinySRGB(): string {
+function tinySrgb(): string {
   return 'tinysrgb';
 }
 
@@ -34,7 +34,7 @@ function tinySRGB(): string {
  * @@doc
  * @memberOf Values.ColorSpace
  */
-function CMYK(): string {
+function cmyk(): string {
   return 'cmyk';
 }
 
@@ -43,7 +43,7 @@ function CMYK(): string {
  * @@doc
  * @memberOf Values.ColorSpace
  */
-function noCMYK(): string {
+function noCmyk(): string {
   return 'no_cmyk';
 }
 
@@ -52,26 +52,26 @@ function noCMYK(): string {
  * @@doc
  * @memberOf Values.ColorSpace
  */
-function keepCMYK(): string {
+function keepCmyk(): string {
   return 'keep_cmyk';
 }
 
 const ColorSpace = {
-  CMYK,
-  keepCMYK,
-  noCMYK,
-  SRGB,
-  tinySRGB,
+  cmyk,
+  keepCmyk,
+  noCmyk,
+  srgb,
+  tinySrgb,
   trueColor
 };
 
 export {
   ColorSpace,
-  CMYK,
-  keepCMYK,
-  noCMYK,
-  SRGB,
-  tinySRGB,
+  cmyk,
+  keepCmyk,
+  noCmyk,
+  srgb,
+  tinySrgb,
   trueColor
 };
 

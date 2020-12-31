@@ -41,7 +41,7 @@ class URLConfig extends Config implements IURLConfig {
   /**
    * @param {string} value Sets the secureDistribution
    */
-  setSecureDistribution(value: string) {
+  setSecureDistribution(value: string): this {
     this.secureDistribution = value;
     return this;
   }
@@ -49,7 +49,7 @@ class URLConfig extends Config implements IURLConfig {
   /**
    * @param {boolean} value Sets whether to use a private CDN (Removes cloudName from URL)
    */
-  setPrivateCdn(value: boolean) {
+  setPrivateCdn(value: boolean): this {
     this.privateCdn = value;
     return this;
   }
@@ -57,7 +57,7 @@ class URLConfig extends Config implements IURLConfig {
   /**
    * @param value Sets whether or not to sign the URL
    */
-  setSignUrl(value: boolean) {
+  setSignUrl(value: boolean): this {
     this.signUrl = value;
     return this;
   }
@@ -65,7 +65,7 @@ class URLConfig extends Config implements IURLConfig {
   /**
    * @param value Sets whether or not to use a long signature
    */
-  setLongUrlSignature(value: boolean) {
+  setLongUrlSignature(value: boolean): this {
     this.longUrlSignature = value;
     return this;
   }
@@ -73,7 +73,7 @@ class URLConfig extends Config implements IURLConfig {
   /**
    * @param value Sets whether or not to shorten the URL
    */
-  setShorten(value: boolean) {
+  setShorten(value: boolean): this {
     this.shorten = value;
     return this;
   }
@@ -81,7 +81,7 @@ class URLConfig extends Config implements IURLConfig {
   /**
    * @param value Sets whether or not to use a root path
    */
-  setUseRootPath(value: boolean) {
+  setUseRootPath(value: boolean): this {
     this.useRootPath = value;
     return this;
   }
@@ -89,7 +89,7 @@ class URLConfig extends Config implements IURLConfig {
   /**
    * @param value Sets whether or not to deliver the asset through https
    */
-  setSecure(value: boolean) {
+  setSecure(value: boolean): this {
     this.secure = value;
     return this;
   }
@@ -97,7 +97,7 @@ class URLConfig extends Config implements IURLConfig {
   /**
    * @param value Sets whether to force a version in the URL
    */
-  setForceVersion(value: boolean) {
+  setForceVersion(value: boolean): this {
     this.forceVersion = value;
     return this;
   }

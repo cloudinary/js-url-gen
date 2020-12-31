@@ -11,6 +11,17 @@ class TrimAction extends Action {
   }
 
   /**
+   *
+   * @description Support Percentages in values (30% -> 30p)
+   * @param {string|number} val
+   * @private
+   * @return {string}
+   */
+  private parseVal(val: string|number): string | number {
+    return typeof val === 'number' ? val : val.replace('%', 'p');
+  }
+
+  /**
    * @description Sets the starting position of the part of the video to keep when trimming videos.
    *
    * @param {string|number} offset The starting position of the part of the video to keep. This can be specified as a
@@ -19,7 +30,7 @@ class TrimAction extends Action {
    * @return {this}
    */
   startOffset(offset: string|number): this {
-    return this.addQualifier(new Qualifier('so', offset));
+    return this.addQualifier(new Qualifier('so', this.parseVal(offset)));
   }
 
   /**
@@ -31,7 +42,7 @@ class TrimAction extends Action {
    * @return {this}
    */
   endOffset(offset: string|number): this {
-    return this.addQualifier(new Qualifier('eo', offset));
+    return this.addQualifier(new Qualifier('eo', this.parseVal(offset)));
   }
 
   /**
@@ -43,7 +54,7 @@ class TrimAction extends Action {
    * @return {this}
    */
   duration(duration: string|number): this {
-    return this.addQualifier(new Qualifier('du', duration));
+    return this.addQualifier(new Qualifier('du', this.parseVal(duration)));
   }
 }
 

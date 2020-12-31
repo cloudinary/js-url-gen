@@ -50,13 +50,13 @@ class CloudinaryFile {
     return this.createCloudinaryURL();
   }
 
+
   /**
    *
    * @description Creates a fully qualified CloudinaryURL
    * @return {string} CloudinaryURL
    */
   createCloudinaryURL(transformation?: Transformation): string {
-    // config: ICloudinaryConfigurations, descriptor?: IDescriptor, transformation?: Transformation
     const prefix = getUrlPrefix(this.cloudName, this.urlConfig);
     const assetType = handleAssetType(this.assetType);
     const storageType = handleStorageType(this.storageType);

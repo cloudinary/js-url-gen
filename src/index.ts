@@ -22,7 +22,7 @@ const CloudinarySDK = {
   Cloudinary,
   CloudinaryImage,
   CloudinaryVideo,
-  CloudinaryAsset: CloudinaryFile
+  CloudinaryFile
 };
 
 export {
