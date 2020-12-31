@@ -1,5 +1,6 @@
 import {Border} from "../../../src/actions/border";
 import {createNewImage} from "../../TestUtils/createCloudinaryImage";
+import {RoundCorners} from "../../../src/actions/roundCorners";
 
 
 describe('Tests for Transformation Action -- Border', () => {
@@ -32,10 +33,20 @@ describe('Tests for Transformation Action -- Border', () => {
 
   it('Creates a cloudinaryURL with border and rgb #FFFFFFFF', () => {
     const url = createNewImage('sample')
-      .border(Border.solid( 7, '#FFFFFFFF'))
-      .setPublicID('sample')
+      .border(Border.solid(7, '#FFFFFFFF'))
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/bo_7px_solid_rgb:FFFFFFFF/sample');
+  });
+
+  it('Creates a cloudinaryURL with border and rgb #FFFFFFFF and round corners', () => {
+    const url = createNewImage('sample')
+      .border(
+        Border.solid(7, '#FFFFFFFF')
+          .roundCorners(RoundCorners.byRadius(50))
+      )
+      .toURL();
+
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/bo_7px_solid_rgb:FFFFFFFF,r_50/sample');
   });
 });
