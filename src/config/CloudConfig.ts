@@ -43,7 +43,7 @@ class CloudConfig extends Config implements ICloudConfig {
   }
 
   /**
-   * @param {string} str Sets the API Secret
+   * @param {string} value Sets the API Secret
    */
   setApiSecret(value: string): this {
     this.apiSecret = value;

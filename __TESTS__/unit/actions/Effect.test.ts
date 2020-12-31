@@ -50,7 +50,6 @@ describe('Tests for Transformation Action -- Effect', () => {
       .effect(Effect.deshake(10))
       .effect(Effect.deshake().pixels(20))
 
-      .setPublicID('sample')
       .toURL();
 
     const expectedToContain = [
@@ -99,7 +98,6 @@ describe('Tests for Transformation Action -- Effect', () => {
       .effect(Effect.shadow())
       .effect(Effect.shadow(50))
       .effect(Effect.shadow().strength(60).offsetX(1).offsetY(2).color('red'))
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toContain('e_shadow/e_shadow:50/co_red,e_shadow:60,x_1,y_2');
@@ -108,7 +106,6 @@ describe('Tests for Transformation Action -- Effect', () => {
   it('Creates a cloudinaryURL with effect colorize', () => {
     const url = createNewImage('sample')
       .effect(Effect.colorize(10).color('red'))
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/co_red,e_colorize:10/sample');
@@ -117,7 +114,6 @@ describe('Tests for Transformation Action -- Effect', () => {
   it('Creates a cloudinaryURL with effect colorize:level', () => {
     const url = createNewImage('sample')
       .effect(Effect.colorize(50))
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/e_colorize:50/sample');
@@ -126,7 +122,6 @@ describe('Tests for Transformation Action -- Effect', () => {
   it('Creates a cloudinaryURL with effect colorize:level', () => {
     const url = createNewImage('sample')
       .effect(Effect.colorize().level(10))
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/e_colorize:10/sample');
@@ -135,7 +130,6 @@ describe('Tests for Transformation Action -- Effect', () => {
   it('Creates a cloudinaryURL with effect oilPaint', () => {
     const url = createNewImage('sample')
       .effect(Effect.oilPaint().strength(10))
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/e_oil_paint:10/sample');
@@ -144,7 +138,6 @@ describe('Tests for Transformation Action -- Effect', () => {
   it('Creates a cloudinaryURL with effect oilPaint:level', () => {
     const url = createNewImage('sample')
       .effect(Effect.oilPaint(50))
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/e_oil_paint:50/sample');
@@ -153,7 +146,6 @@ describe('Tests for Transformation Action -- Effect', () => {
   it('Creates a cloudinaryURL with effect artisticFilter', () => {
     const url = createNewImage('sample')
       .effect(Effect.artisticFilter(ArtisticFilter.peacock()))
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/e_art:peacock/sample');
@@ -162,7 +154,6 @@ describe('Tests for Transformation Action -- Effect', () => {
   it('Creates a cloudinaryURL with effect cartoonify:50', () => {
     const url = createNewImage('sample')
       .effect(cartoonify().lineStrength(50).blackwhite())
-      .setPublicID('sample')
       .toURL();
 
     const withConstructor = cartoonify(50).blackwhite().toString();
@@ -175,7 +166,6 @@ describe('Tests for Transformation Action -- Effect', () => {
   it('Creates a cloudinaryURL with effect style_transfer', () => {
     const url = createNewImage('sample')
       .effect(Effect.styleTransfer(image('woman')))
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toContain('l_woman/e_style_transfer,fl_layer_apply/sample');
@@ -184,7 +174,6 @@ describe('Tests for Transformation Action -- Effect', () => {
   it('Creates a cloudinaryURL with effect style_transfer:strength', () => {
     const url = createNewImage('sample')
       .effect(Effect.styleTransfer(image('woman')).strength(15))
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toContain('l_woman/e_style_transfer:15,fl_layer_apply/sample');
@@ -196,7 +185,6 @@ describe('Tests for Transformation Action -- Effect', () => {
         .strength(15)
         .preserveColor()
       )
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toContain('l_woman/e_style_transfer:preserve_color:15,fl_layer_apply/sample');
@@ -212,7 +200,6 @@ describe('Tests for Transformation Action -- Effect', () => {
         .strength(15)
         .preserveColor()
       )
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toContain('l_woman/c_scale,h_100,w_100/e_style_transfer:preserve_color:15,fl_layer_apply/sample');
@@ -223,7 +210,6 @@ describe('Tests for Transformation Action -- Effect', () => {
       .effect(Effect.dither())
       .effect(Effect.dither(halftone4x4Orthogonal()))
       .effect(Effect.dither().type(halftone4x4Orthogonal()))
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toContain('e_ordered_dither/e_ordered_dither:9/e_ordered_dither:9');

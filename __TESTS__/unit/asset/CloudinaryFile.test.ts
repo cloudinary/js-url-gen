@@ -1,25 +1,25 @@
 import {CloudinaryFile} from "../../../src/assets/CloudinaryFile";
 
 describe('Tests for CloudinaryFile', () => {
-  let cloudinaryAsset: CloudinaryFile = null;
+  let cloudinaryFile: CloudinaryFile = null;
   beforeEach(() => {
-    cloudinaryAsset = new CloudinaryFile('sample', {cloudName:'demo'});
+    cloudinaryFile = new CloudinaryFile('sample', {cloudName:'demo'});
   });
 
-  it('Instantiates a cloudinaryAsset', () => {
-    expect(cloudinaryAsset).toBeDefined();
+  it('Instantiates a cloudinaryFile', () => {
+    expect(cloudinaryFile).toBeDefined();
   });
 
   it('setPublicID should be chainable', () => {
-    expect(cloudinaryAsset.setPublicID('sample')).toBe(cloudinaryAsset);
+    expect(cloudinaryFile.setPublicID('sample')).toBe(cloudinaryFile);
   });
 
   it('Sign should be chainable', () => {
-    expect(cloudinaryAsset.sign()).toBe(cloudinaryAsset);
+    expect(cloudinaryFile.sign()).toBe(cloudinaryFile);
   });
 
   it('Can be turned to a URL', () => {
-    expect(cloudinaryAsset.toURL()).toBe('https://res.cloudinary.com/demo/image/upload/sample');
+    expect(cloudinaryFile.toURL()).toBe('https://res.cloudinary.com/demo/image/upload/sample');
   });
 });
 

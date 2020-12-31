@@ -40,7 +40,7 @@ myImage
   <li>The first step in every new application will be creating a new Cloudinary Instance 
   <li>The SDK has two types of Transformations - <b>CloudinaryImage</b> and <b>VideoTransformation</b>
   <li>Use the instance you created to generate a new <b>CloudinaryImage / new VideoTransformation</b> instance
-  <li>The {@link ICloudinaryAssetConfigurations|Cloudinary Configuration} is used to define how URLs are created 
+  <li>The {@link ICloudinaryFileConfiguration|Cloudinary Configuration} is used to define how URLs are created 
 </ul>
 
 <h3>Actions and ActionGroups</h3>
