@@ -30,4 +30,14 @@ describe('Tests for Transformation Action -- Resize.crop', () => {
       'url');
     expect(url).toContain('fl_region_relative');
   });
+
+  it('Uses xyCenter as a gravity type', () => {
+    const url = getImageWithResize(
+      crop()
+        .gravity(Gravity.xyCenter())
+        .x(100)
+        .y(100),
+      'url');
+    expect(url).toContain('g_xy_center,x_100,y_100');
+  });
 });

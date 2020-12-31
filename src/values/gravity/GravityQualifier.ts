@@ -7,8 +7,9 @@ import {FocusOnGravity} from "./focusOnGravity/FocusOnGravity";
 import {FocusOnValue} from "./qualifiers/focusOn/FocusOn";
 import {AutoFocus} from "./qualifiers/autoFocus/AutoFocus";
 import {CompassQualifier} from "./qualifiers/compass/CompassQualifier";
+import {XYCenterGravity} from "./xyCenterGravity/XYCenterGravity";
 
-export type IGravity = CompassGravity | AutoGravity | OCR | FocusOnGravity;
+export type IGravity = CompassGravity | AutoGravity | OCR | FocusOnGravity | XYCenterGravity;
 export type IGravityValue = CompassQualifier | FocusOnValue | AutoFocus;
 
 
