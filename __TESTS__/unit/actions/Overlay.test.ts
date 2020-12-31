@@ -87,10 +87,20 @@ describe('Tests for overlay actions', () => {
     const textStyle = sampleTextStyle();
 
     asset.overlay(Overlay.source(
-      Source.subtitles('path/to/subs.srt', textStyle)
+      Source.subtitles('path/to/subs.srt').textStyle(textStyle)
     ));
 
     expect(asset.toString()).toBe(`l_subtitles:${textStyle.toString()}:path:to:subs.srt/fl_layer_apply`);
+  });
+
+  it('Tests subtitle on without style', () => {
+    const asset = createNewImage();
+
+    asset.overlay(Overlay.source(
+      Source.subtitles('subs.srt')
+    ));
+
+    expect(asset.toString()).toBe(`l_subtitles:subs.srt/fl_layer_apply`);
   });
 
   it('Tests subtitle on image', () => {
@@ -98,7 +108,8 @@ describe('Tests for overlay actions', () => {
     const textStyle = sampleTextStyle();
 
     asset.overlay(Overlay.source(
-      Source.subtitles('subs.srt', textStyle)
+      Source.subtitles('subs.srt')
+        .textStyle(textStyle)
     ));
 
     expect(asset.toString()).toBe(`l_subtitles:${textStyle.toString()}:subs.srt/fl_layer_apply`);
