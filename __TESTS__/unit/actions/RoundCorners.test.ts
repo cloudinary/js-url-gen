@@ -44,6 +44,14 @@ describe('Tests for Transformation Action -- RoundCorners', () => {
     expect(url).toContain('r_25:20:15:10');
   });
 
+  it('Ensure roundCorners accepts 4 radius, including zeroes', () => {
+    const url = new CloudinaryImage('sample')
+      .setConfig(CONFIG_INSTANCE)
+      .roundCorners(byRadius(25, 0, 0, 0))
+      .toURL();
+    expect(url).toContain('r_25:0:0:0');
+  });
+
   it('Ensure roundCorners accepts max radius', () => {
     const url = new CloudinaryImage('sample')
       .setConfig(CONFIG_INSTANCE)

@@ -1,6 +1,7 @@
 import {Action} from "../../internal/Action";
 import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
+import {prepareColor} from "../../internal/utils/prepareColor";
 
 /**
  * @description
@@ -49,7 +50,7 @@ class ReplaceColorAction extends Action {
 
   protected prepareQualifiers(): this {
     // e_replace_color:red:30:blue
-    const qualifierValue = new QualifierValue(['replace_color', this.targetColor, this.toleranceLevel, this.baseColor]);
+    const qualifierValue = new QualifierValue(['replace_color', this.targetColor, this.toleranceLevel, prepareColor(this.baseColor)]);
     this.addQualifier(new Qualifier('e', qualifierValue));
     return this;
   }

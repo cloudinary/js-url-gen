@@ -8,11 +8,11 @@ import {Action} from "../../../internal/Action";
  */
 class Pixelate extends Action {
   private _region?: NamedRegion;
-  private _pixelWidth: number | string;
+  private _squareSize: number | string;
 
-  constructor(pixelWidth: number | string) {
+  constructor(squareSize: number | string) {
     super();
-    this._pixelWidth = pixelWidth;
+    this._squareSize = squareSize;
   }
 
   /**
@@ -26,10 +26,10 @@ class Pixelate extends Action {
 
   /**
    * @doc
-   * @param {number | string} pixelWidth The width of the pixel
+   * @param {number | string} squareSize The width of the pixel
    */
-  pixelWidth(pixelWidth: number | string): this {
-    this._pixelWidth = pixelWidth;
+  squareSize(squareSize: number | string): this {
+    this._squareSize = squareSize;
     return this;
   }
 
@@ -53,7 +53,7 @@ class Pixelate extends Action {
      * We're not using the full Gravity Qualifier here to prevent the code import for such a simplistic case
      */
 
-    const str = this._pixelWidth ? `:${this._pixelWidth}` : '';
+    const str = this._squareSize ? `:${this._squareSize}` : '';
     if ('_region' in this) {
       const qualifiers = this._region.qualifiers;
       // Copy qualifiers from the region "action" to the pixelate action

@@ -4,6 +4,7 @@ import {TextStyle} from "../../textStyle";
 import {serializeCloudinaryCharacters} from "../../../internal/utils/serializeCloudinaryCharacters";
 import {Action} from "../../../internal/Action";
 import {Qualifier} from "../../../internal/qualifier/Qualifier";
+import {prepareColor} from "../../../internal/utils/prepareColor";
 
 /**
  * @memberOf Values.Source
@@ -51,7 +52,7 @@ class TextSource extends BaseSource {
     const tmpAction = new Action();
 
     tmpAction.addQualifier(new Qualifier(layerType, layerParam));
-    this._textColor && tmpAction.addQualifier(new Qualifier('co', this._textColor));
+    this._textColor && tmpAction.addQualifier(new Qualifier('co', prepareColor(this._textColor)));
     this._backgroundColor && tmpAction.addQualifier(new Qualifier('b', this._backgroundColor));
 
     return tmpAction.toString();

@@ -71,12 +71,12 @@ describe('Test imported values', () => {
     expect(TextDecoration.strikethrough()).toBe('strikethrough');
     expect(TextDecoration.underline()).toBe('underline');
 
-    expect(ColorSpace.noCMYK()).toBe('no_cmyk');
-    expect(ColorSpace.SRGB()).toBe('srgb');
+    expect(ColorSpace.noCmyk()).toBe('no_cmyk');
+    expect(ColorSpace.srgb()).toBe('srgb');
     expect(ColorSpace.trueColor()).toBe('srgb:truecolor');
-    expect(ColorSpace.tinySRGB()).toBe('tinysrgb');
-    expect(ColorSpace.keepCMYK()).toBe('keep_cmyk');
-    expect(ColorSpace.CMYK()).toBe('cmyk');
+    expect(ColorSpace.tinySrgb()).toBe('tinysrgb');
+    expect(ColorSpace.keepCmyk()).toBe('keep_cmyk');
+    expect(ColorSpace.cmyk()).toBe('cmyk');
 
 
     expect(StreamingProfile.fullHd()).toBe('full_hd');
