@@ -1,18 +1,11 @@
-import * as AspectRatio from "../../../../src/values/aspectRatio";
-import {CloudinaryImage} from "../../../../src/assets/CloudinaryImage";
-import CloudinaryConfig from "../../../../src/config/CloudinaryConfig";
+import {AspectRatio} from "../../../../src/values/aspectRatio";
+import {createNewImage} from "../../../TestUtils/createCloudinaryImage";
 import {crop} from "../../../../src/actions/resize";
 
-const CONFIG_INSTANCE = new CloudinaryConfig({
-  cloud: {
-    cloudName: 'demo'
-  }
-});
 
 describe('Tests for AspectRatio values Action -- Resize.crop', () => {
   it('Generates URL using AspectRatio options', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .resize(
         crop().aspectRatio(AspectRatio.AR1X1())
       )

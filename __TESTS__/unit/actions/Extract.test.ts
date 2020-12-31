@@ -1,17 +1,9 @@
-import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
-import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import {Extract} from "../../../src/actions/extract";
-
-const CONFIG_INSTANCE = new CloudinaryConfig({
-  cloud: {
-    cloudName: 'demo'
-  }
-});
+import {createNewImage} from "../../TestUtils/createCloudinaryImage";
 
 describe('Tests for Transformation Action -- Extract', () => {
   it('Creates a cloudinaryURL with getFrame.byNumber', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .extract(Extract.getFrame().byNumber(4))
       .setPublicID('sample')
       .toURL();
@@ -20,8 +12,7 @@ describe('Tests for Transformation Action -- Extract', () => {
   });
 
   it('Creates a cloudinaryURL with getFrame.byRange', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .extract(Extract.getFrame().byRange(4, 10))
       .setPublicID('sample')
       .toURL();

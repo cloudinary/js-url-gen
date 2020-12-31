@@ -1,10 +1,10 @@
 import {CloudinaryTransformable} from "./CloudinaryTransformable";
 import {Action} from "../internal/Action";
 import {videoEditType} from "../actions/videoEdit";
-import {createCloudinaryURL} from "../internal/url/cloudinaryURL";
 import {LayerAction} from "../actions/layer/LayerAction";
 import {Transformation} from "../transformation/Transformation";
-
+import ICloudConfig from "../config/interfaces/Config/ICloudConfig";
+import IURLConfig from "../config/interfaces/Config/IURLConfig";
 
 
 /**
@@ -12,8 +12,9 @@ import {Transformation} from "../transformation/Transformation";
  * @memberOf SDK
  */
 class CloudinaryMedia extends CloudinaryTransformable {
-  constructor(publicID?: string) {
-    super(publicID, new Transformation());
+  constructor(publicID?: string, cloudConfig?: ICloudConfig, urlConfig?: IURLConfig) {
+    /* istanbul ignore next */
+    super(publicID, cloudConfig, urlConfig, new Transformation());
   }
 
   /**
@@ -46,10 +47,7 @@ class CloudinaryMedia extends CloudinaryTransformable {
   }
 
   toURL(): string {
-    return createCloudinaryURL(this.config, Object.assign({
-      assetType: 'image', // media asset defaults to image
-      storageType: 'upload'
-    }, this.asset), this.transformation);
+    return this.createCloudinaryURL(this.transformation);
   }
 }
 

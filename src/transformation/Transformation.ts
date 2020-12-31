@@ -40,7 +40,7 @@ class Transformation {
     return this;
   }
 
-  addRawAction(raw: string) {
+  addRawAction(raw: string): this {
     this.actions.push(raw);
     return this;
   }

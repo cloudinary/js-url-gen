@@ -19,15 +19,18 @@ import {EffectActions} from "../actions/effect";
 import {DeliveryAction} from "../actions/delivery/DeliveryAction";
 import {CloudinaryFile} from "./CloudinaryFile";
 import {Transformation} from "../transformation/Transformation";
+import IURLConfig from "../config/interfaces/Config/IURLConfig";
+import ICloudConfig from "../config/interfaces/Config/ICloudConfig";
 
 /**
- * @desc Works
+ * @desc Cloudinary Transformable interface, extended by any class that needs a Transformation Interface
  * @memberOf SDK
  */
 class CloudinaryTransformable extends CloudinaryFile {
   public transformation: Transformation;
-  constructor(publicID:string, transformation: Transformation) {
-    super(publicID);
+  constructor(publicID:string, cloudConfig?: ICloudConfig, urlConfig?: IURLConfig, transformation?: Transformation) {
+    /* istanbul ignore next */
+    super(publicID, cloudConfig, urlConfig);
     this.transformation = transformation;
   }
 

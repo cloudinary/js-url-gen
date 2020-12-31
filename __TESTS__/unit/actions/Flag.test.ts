@@ -1,20 +1,14 @@
-import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import * as Resize from "../../../src/actions/resize";
-import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
-import {CloudinaryVideo} from "../../../src/assets/CloudinaryVideo";
 import {Flag} from "../../../src/values/flag";
+import {createNewVideo} from "../../TestUtils/createCloudinaryVideo";
+import {createNewImage} from "../../TestUtils/createCloudinaryImage";
 
 
-const CONFIG_INSTANCE = new CloudinaryConfig({
-  cloud: {
-    cloudName: 'demo'
-  }
-});
+
 
 describe('Tests for Transformation Action -- Flag', () => {
   it('Creates a cloudinaryURL with image flags', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .addFlag(Flag.anyFormat())
       .addFlag(Flag.animatedPng())
       .addFlag(Flag.animatedWebP())
@@ -70,9 +64,7 @@ describe('Tests for Transformation Action -- Flag', () => {
   });
 
   it('Creates a cloudinaryURL with video flags', () => {
-    const url = new CloudinaryVideo()
-      .setConfig(CONFIG_INSTANCE)
-      .setAssetType('video')
+    const url = createNewVideo('sample')
       .addFlag(Flag.hlsv3())
       .addFlag(Flag.keepDar())
       .addFlag(Flag.noStream())
@@ -98,8 +90,7 @@ describe('Tests for Transformation Action -- Flag', () => {
   });
 
   it('Creates a cloudinaryURL with multiple flags', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .resize(
         Resize.fill(400)
           .aspectRatio(1.0)

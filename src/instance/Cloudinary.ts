@@ -1,5 +1,6 @@
 import ICloudinaryConfigurations from "../config/interfaces/Config/ICloudinaryConfigurations";
 import {CloudinaryImage} from "../assets/CloudinaryImage";
+import {CloudinaryVideo} from "../assets/CloudinaryVideo";
 
 
 class Cloudinary {
@@ -13,7 +14,11 @@ class Cloudinary {
   }
 
   image(publicID?: string): CloudinaryImage {
-    return new CloudinaryImage(publicID).setConfig(this.cloudinaryConfig);
+    return new CloudinaryImage(publicID, this.cloudinaryConfig.cloud, this.cloudinaryConfig.url);
+  }
+
+  video(publicID?: string): CloudinaryVideo {
+    return new CloudinaryVideo(publicID, this.cloudinaryConfig.cloud, this.cloudinaryConfig.url);
   }
 
   setConfig(cloudinaryConfig: ICloudinaryConfigurations):this {

@@ -1,16 +1,10 @@
 import {Border} from "../../../src/actions/border";
-import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
-const CONFIG_INSTANCE = new CloudinaryConfig({
-  cloud: {
-    cloudName: 'demo'
-  }
-});
+import {createNewImage} from "../../TestUtils/createCloudinaryImage";
+
 
 describe('Tests for Transformation Action -- Border', () => {
   it('Creates a cloudinaryURL with border and color', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .border(Border.solid( 7, 'red'))
       .setPublicID('sample')
       .toURL();
@@ -19,8 +13,7 @@ describe('Tests for Transformation Action -- Border', () => {
   });
 
   it('Creates a cloudinaryURL with border and rgb #0000ff', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .border(Border.solid( 7, '#0000ff'))
       .setPublicID('sample')
       .toURL();
@@ -29,8 +22,7 @@ describe('Tests for Transformation Action -- Border', () => {
   });
 
   it('Creates a cloudinaryURL with border and rgb #FFF', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .border(Border.solid( 7, '#FFF'))
       .setPublicID('sample')
       .toURL();
@@ -39,8 +31,7 @@ describe('Tests for Transformation Action -- Border', () => {
   });
 
   it('Creates a cloudinaryURL with border and rgb #FFFFFFFF', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .border(Border.solid( 7, '#FFFFFFFF'))
       .setPublicID('sample')
       .toURL();

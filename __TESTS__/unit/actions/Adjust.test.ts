@@ -1,18 +1,11 @@
-import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
-import * as Adjust from '../../../src/actions/adjust';
-import * as ImproveMode from "../../../src/values/improveMode";
-import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
+import {Adjust} from "../../../src/actions/adjust";
+import {createNewImage} from "../../TestUtils/createCloudinaryImage";
+import {ImproveMode} from "../../../src/values/improveMode";
 
-const CONFIG_INSTANCE = new CloudinaryConfig({
-  cloud: {
-    cloudName: 'demo'
-  }
-});
 
 describe('Tests for Transformation Action -- Adjust', () => {
   it('Ensure leveledAdjusts work properly', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .adjust(Adjust.autoBrightness())
       .adjust(Adjust.autoBrightness().blend(50))
       .adjust(Adjust.autoBrightness(100))
@@ -62,7 +55,6 @@ describe('Tests for Transformation Action -- Adjust', () => {
       .adjust(Adjust.vibrance().strength(100))
       .adjust(Adjust.opacity(100))
 
-      .setPublicID('sample')
       .toURL();
 
     const expectedToContain = [
@@ -120,53 +112,43 @@ describe('Tests for Transformation Action -- Adjust', () => {
   });
 
   it('tests replaceColor', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .adjust(Adjust
         .replaceColor('red')
         .tolerance(30)
         .fromColor('blue'))
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toContain('e_replace_color:red:30:blue');
   });
 
   it('tests replaceColor - without fromColor', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .adjust(Adjust.replaceColor('red'))
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toContain('e_replace_color:red');
   });
 
   it('tests recolor matrix', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .adjust(Adjust.recolor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6], [0.7, 0.8, 0.9]]))
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toContain('e_recolor:0.1:0.2:0.3:0.4:0.5:0.6:0.7:0.8:0.9');
   });
 
   it('tests fillLight', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .adjust(Adjust.fillLight().blend(0).bias(0))
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toContain('e_fill_light:0:0');
   });
 
   it('tests improve', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .adjust(Adjust.improve().mode(ImproveMode.outdoor()).blend(0))
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toContain('e_improve:outdoor:0');

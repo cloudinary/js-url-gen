@@ -1,8 +1,6 @@
 import {image} from "../../../src/values/source";
 import {rodMonochromacy} from "../../../src/values/simulateColorBlind";
-import CloudinaryConfig from "../../../src/config/CloudinaryConfig";
 import {Color} from "../../../src/values/color";
-import {CloudinaryImage} from "../../../src/assets/CloudinaryImage";
 import {scale} from "../../../src/actions/resize";
 import {GradientFade} from "../../../src/values/GradientFade";
 import {cartoonify, Effect} from "../../../src/actions/effect";
@@ -10,18 +8,12 @@ import {OutlineMode} from "../../../src/values/outlineMode";
 import {halftone4x4Orthogonal} from "../../../src/values/dither";
 import {ArtisticFilter} from "../../../src/values/artisticFilter";
 import {Transformation} from "../../../src/transformation/Transformation";
+import {createNewImage} from "../../TestUtils/createCloudinaryImage";
 
-
-const CONFIG_INSTANCE = new CloudinaryConfig({
-  cloud: {
-    cloudName: 'demo'
-  }
-});
 
 describe('Tests for Transformation Action -- Effect', () => {
   it('Creates a cloudinaryURL with Simple and Leveled effects', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(Effect.advancedRedEye())
       .effect(Effect.accelerate())
       .effect(Effect.accelerate(100))
@@ -58,7 +50,6 @@ describe('Tests for Transformation Action -- Effect', () => {
       .effect(Effect.deshake(10))
       .effect(Effect.deshake().pixels(20))
 
-      .setPublicID('sample')
       .toURL();
 
     const expectedToContain = [
@@ -103,82 +94,66 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Creates a cloudinaryURL with effect shadow:50', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(Effect.shadow())
       .effect(Effect.shadow(50))
       .effect(Effect.shadow().strength(60).offsetX(1).offsetY(2).color('red'))
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toContain('e_shadow/e_shadow:50/co_red,e_shadow:60,x_1,y_2');
   });
 
   it('Creates a cloudinaryURL with effect colorize', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(Effect.colorize(10).color('red'))
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/co_red,e_colorize:10/sample');
   });
 
   it('Creates a cloudinaryURL with effect colorize:level', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(Effect.colorize(50))
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/e_colorize:50/sample');
   });
 
   it('Creates a cloudinaryURL with effect colorize:level', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(Effect.colorize().level(10))
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/e_colorize:10/sample');
   });
 
   it('Creates a cloudinaryURL with effect oilPaint', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(Effect.oilPaint().strength(10))
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/e_oil_paint:10/sample');
   });
 
   it('Creates a cloudinaryURL with effect oilPaint:level', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(Effect.oilPaint(50))
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/e_oil_paint:50/sample');
   });
 
   it('Creates a cloudinaryURL with effect artisticFilter', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(Effect.artisticFilter(ArtisticFilter.peacock()))
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/e_art:peacock/sample');
   });
 
   it('Creates a cloudinaryURL with effect cartoonify:50', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(cartoonify().lineStrength(50).blackwhite())
-      .setPublicID('sample')
       .toURL();
 
     const withConstructor = cartoonify(50).blackwhite().toString();
@@ -189,41 +164,34 @@ describe('Tests for Transformation Action -- Effect', () => {
   });
 
   it('Creates a cloudinaryURL with effect style_transfer', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(Effect.styleTransfer(image('woman')))
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toContain('l_woman/e_style_transfer,fl_layer_apply/sample');
   });
 
   it('Creates a cloudinaryURL with effect style_transfer:strength', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(Effect.styleTransfer(image('woman')).strength(15))
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toContain('l_woman/e_style_transfer:15,fl_layer_apply/sample');
   });
 
   it('Creates a cloudinaryURL with effect style_transfer:preserve_color:strength', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(Effect.styleTransfer(image('woman'))
         .strength(15)
         .preserveColor()
       )
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toContain('l_woman/e_style_transfer:preserve_color:15,fl_layer_apply/sample');
   });
 
   it('Creates a cloudinaryURL with effect style_transfer:preserve_color:strength with a transformation', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(Effect.styleTransfer(
         image('woman')
           .transformation(
@@ -232,19 +200,16 @@ describe('Tests for Transformation Action -- Effect', () => {
         .strength(15)
         .preserveColor()
       )
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toContain('l_woman/c_scale,h_100,w_100/e_style_transfer:preserve_color:15,fl_layer_apply/sample');
   });
 
   it('Tests for Effect.dither', () => {
-    const url = new CloudinaryImage()
-      .setConfig(CONFIG_INSTANCE)
+    const url = createNewImage('sample')
       .effect(Effect.dither())
       .effect(Effect.dither(halftone4x4Orthogonal()))
       .effect(Effect.dither().type(halftone4x4Orthogonal()))
-      .setPublicID('sample')
       .toURL();
 
     expect(url).toContain('e_ordered_dither/e_ordered_dither:9/e_ordered_dither:9');
