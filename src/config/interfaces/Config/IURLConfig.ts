@@ -1,5 +1,5 @@
 /**
- * @name ICloudinaryAssetConfiguration
+ * @name ICloudinaryAssetConfigurations
  * @description
  * Defines the configuration needed for URL-related options when creating Cloudinary URL
  * @prop {string}  [cname]
