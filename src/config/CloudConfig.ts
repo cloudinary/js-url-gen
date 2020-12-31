@@ -25,6 +25,30 @@ class CloudConfig extends Config implements ICloudConfig {
     const cloudConfig = this.filterOutNonSupportedKeys(userCloudConfig, ALLOWED_CLOUD_CONFIG);
     return new CloudConfig(Object.assign({}, this, cloudConfig));
   }
+
+  /**
+   * @param {string} value Sets the CloudName
+   */
+  setCloudName(value: string): this {
+    this.cloudName = value;
+    return this;
+  }
+
+  /**
+   * @param {string} value Sets the API Key
+   */
+  setApiKey(value: string): this {
+    this.apiKey = value;
+    return this;
+  }
+
+  /**
+   * @param {string} str Sets the API Secret
+   */
+  setApiSecret(value: string): this {
+    this.apiSecret = value;
+    return this;
+  }
 }
 
 
