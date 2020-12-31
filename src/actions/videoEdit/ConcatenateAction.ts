@@ -118,7 +118,7 @@ class ConcatenateAction extends Action {
     }
 
     if (this._transition) {
-      concatSourceTx.addRawAction(this.getTransitionString());
+      concatSourceTx.addTransformation(this.getTransitionString());
     }
 
     // Put it all together, the transition is already part of the concatSourceTx

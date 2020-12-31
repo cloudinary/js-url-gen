@@ -215,10 +215,10 @@ class CloudinaryTransformable extends CloudinaryFile {
 
   /**
    * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
-   * @param {SDK.Action} action
+   * @param {SDK.Action | string} action
    * @return {this}
    */
-  addAction(action: Action): this {
+  addAction(action: Action | string): this {
     this.transformation.addAction(action);
     return this;
   }
