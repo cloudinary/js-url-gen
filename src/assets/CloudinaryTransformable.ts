@@ -23,7 +23,7 @@ import IURLConfig from "../config/interfaces/Config/IURLConfig";
 import ICloudConfig from "../config/interfaces/Config/ICloudConfig";
 
 /**
- * @desc Works
+ * @desc Cloudinary Transformable interface, extended by any class that needs a Transformation Interface
  * @memberOf SDK
  */
 class CloudinaryTransformable extends CloudinaryFile {

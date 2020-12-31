@@ -1,9 +1,9 @@
-import ICloudinaryFileConfiguration from "./ICloudinaryFileConfiguration";
+import ICloudinaryAssetConfiguration from "./ICloudinaryAssetConfiguration";
 import ITagConfig from "./ITagConfig";
 import IApiConfig from "./IApiConfig";
 
 /**
- * @name ICloudinaryFileConfiguration
+ * @name ICloudinaryAssetConfiguration
  * @description
  * Defines the configuration needed for the Cloudinary Base SDK</br>
  *
@@ -12,7 +12,7 @@ import IApiConfig from "./IApiConfig";
  * @prop {ICloudConfig} [cloud]
  * @prop {IURLConfig} [url]
  */
-interface ICloudinaryConfigurations extends ICloudinaryFileConfiguration {
+interface ICloudinaryConfigurations extends ICloudinaryAssetConfiguration {
   tag?: ITagConfig
   api?: IApiConfig
 }
