@@ -29,15 +29,15 @@ describe('Tests for Transformation Action -- Effect', () => {
       .effect(Effect.boomerang())
       .effect(Effect.blackwhite())
       .effect(Effect.blackwhite(10))
-      .effect(Effect.blackwhite().level(20))
+      .effect(Effect.blackwhite().threshold(20))
       .effect(Effect.fadeIn(100))
       .effect(Effect.fadeIn().length(5))
       .effect(Effect.fadeOut(100))
-      .effect(Effect.fadeOut().length(5))
+      .effect(Effect.fadeOut().duration(5))
       .effect(Effect.grayscale())
       .effect(Effect.loop())
       .effect(Effect.loop(100))
-      .effect(Effect.loop().iterations(5))
+      .effect(Effect.loop().additionalIterations(5))
       .effect(Effect.makeTransparent())
       .effect(Effect.makeTransparent(100))
       .effect(Effect.makeTransparent().tolerance(5))
@@ -147,11 +147,11 @@ describe('Tests for Transformation Action -- Effect', () => {
   it('Creates a cloudinaryURL with effect oilPaint', () => {
     const url = new CloudinaryImage()
       .setConfig(CONFIG_INSTANCE)
-      .effect(Effect.oilPaint())
+      .effect(Effect.oilPaint().strength(10))
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/e_oil_paint/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/e_oil_paint:10/sample');
   });
 
   it('Creates a cloudinaryURL with effect oilPaint:level', () => {

@@ -19,6 +19,8 @@ import {DitherEffectAction} from "./effect/dither";
 import {DeshakeEffectAction} from "./effect/leveled/deshake";
 import {Pixelate} from "./effect/pixelate/pixelate";
 import {ImageSource} from "../values/source/sourceTypes/ImageSource";
+import {EffectActionWithStrength} from "./effect/EffectActions/EffectActionWithStrength";
+import {BlackwhiteEffectAction} from "./effect/leveled/blackwhite";
 
 
 /**
@@ -80,10 +82,10 @@ function colorize(colorizeLevel?: number):ColorizeEffectAction {
  * @description Applies an oilPaint filter to the asset.
  * @memberOf Actions.Effect
  * @param {number} oilPaintLevel The strength of the effect. (Range: 0 to 100, Server default: 30)
- * @return {EffectActionWithLevel}
+ * @return {EffectActionWithStrength}
  */
-function oilPaint(oilPaintLevel?: number):EffectActionWithLevel {
-  return new EffectActionWithLevel('oil_paint', oilPaintLevel);
+function oilPaint(oilPaintLevel?: number):EffectActionWithStrength {
+  return new EffectActionWithStrength('oil_paint', oilPaintLevel);
 }
 
 /**
@@ -159,10 +161,10 @@ function advancedRedEye():SimpleEffectAction {
  * @description Converts the image to black and white.
  * @memberOf Actions.Effect
  * @param {number | string} level The balance between black (100) and white (0). (Range: 0 to 100, Server default: 50)
- * @return EffectActionWithLevel
+ * @return BlackwhiteEffectAction
  */
-function blackwhite(level?: number | 'bw'):EffectActionWithLevel {
-  return new EffectActionWithLevel('blackwhite', level);
+function blackwhite(level?: number | 'bw'):BlackwhiteEffectAction {
+  return new BlackwhiteEffectAction('blackwhite', level);
 }
 
 
@@ -379,11 +381,11 @@ function transition():SimpleEffectAction {
 /**
  * @description Applies a pixelatering filter to the asset.
  * @memberOf Actions.Effect
- * @param {number} pixelateLevel The pixelWidth of the pixelate. (Range: 1 to 2000, Server default: 100)
+ * @param {number} squareSize The squareSize in the pixelation. (Range: 1 to 2000, Server default: 100)
  * @return {Pixelate}
  */
-function pixelate(pixelateLevel?: number): Pixelate {
-  return new Pixelate(pixelateLevel);
+function pixelate(squareSize?: number): Pixelate {
+  return new Pixelate(squareSize);
 }
 
 
