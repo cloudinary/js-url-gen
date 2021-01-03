@@ -1,9 +1,9 @@
-import {TextSource} from "./source/sourceTypes/TextSource";
 import {VideoSource} from "./source/sourceTypes/VideoSource";
 import {ImageSource} from "./source/sourceTypes/ImageSource";
 import {TextStyle} from "./textStyle";
 import {SubtitlesSource} from "./source/sourceTypes/SubtitlesSource";
 import {FetchSource} from "./source/sourceTypes/FetchSource";
+import {TextSource} from "./source/sourceTypes/TextSource";
 
 /**
  * @description This namespace contains different sources that can be used in overlays and underlays
@@ -26,6 +26,7 @@ function image(publicID: string): ImageSource {
  * @description Returns an instance of a TextSource
  * @memberOf Values.Source
  * @param text {string} The text to display.
+ * @param text {TextStyle} The textStyle to use with the text in the layer
  * @return {Values.Source.TextSource}
  */
 function text(text: string, textStyle: TextStyle): TextSource {
@@ -48,8 +49,8 @@ function video(publicID: string): VideoSource {
  * @param {string} fileName The publicID of the video to be used as a layer
  * @return {Values.Source.VideoSource}
  */
-function subtitles(fileName: string, textStyle: TextStyle): TextSource {
-  return new SubtitlesSource(fileName, textStyle);
+function subtitles(fileName: string): SubtitlesSource {
+  return new SubtitlesSource(fileName);
 }
 
 /**
