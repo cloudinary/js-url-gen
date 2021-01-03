@@ -1,9 +1,6 @@
 ```javascript
-// Import the cloudinary class, and the assets you want to use
-// In this case, we import a CloudinaryImage type.
-
+// Import the cloudinary class
 import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
-import {CloudinaryImage} from "@cloudinary/base/assets/CloudinaryImage";
 
 // Create your instance
 const cld = new Cloudinary({
@@ -15,7 +12,6 @@ const cld = new Cloudinary({
     }
 });
 
-
 // Lets create a new image
 const myImage = cld.image('sample');
 
@@ -25,7 +21,7 @@ const myImage = cld.image('sample');
 // For example, resize is an ActionGroup that needs a ResizeAction to work
 // There are many types of Resizes, so we'll need to be specific.
 // This doesn't make much sense on its own
-// myImage.resize();  
+// myImage.resize();
 
 
 // the resize() ActionGroup needs an Action parameter

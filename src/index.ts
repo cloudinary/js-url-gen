@@ -26,6 +26,14 @@ const CloudinarySDK = {
 };
 
 export {
-  CloudinarySDK,
+  Transformation,
+  ImageTransformation,
+  VideoTransformation,
+  Actions,
+  Values,
+  Cloudinary,
+  CloudinaryImage,
+  CloudinaryVideo,
+  CloudinaryFile,
   CloudinarySDK as default
 };

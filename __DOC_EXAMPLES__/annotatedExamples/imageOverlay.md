@@ -1,10 +1,6 @@
 ```javascript
-
-// Import the cloudinary class, and the assets you want to use
-// In this case, we import a CloudinaryImage type.
-
+// Import the cloudinary class
 import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
-import {CloudinaryImage} from "@cloudinary/base/assets/CloudinaryImage";
 
 // Create your instance
 const cld = new Cloudinary({
@@ -36,15 +32,14 @@ import {Transformation} from "@cloudinary/base/transformation/Transformation";
 
 
 myImage.overlay(
-           Overlay.source( // An overlay has a Source and a Position Qualifiers
-               image('cloudinary_icon') // Mandatory - Source
-                   .transformation(new Transformation()
-                       .resize(scale().width(300).height(300)) // A source can be transformed like an image
-                   ))
-               .position(new Position().gravity(compass(southEast()))
-           ),
-       )
+    Overlay.source( // An overlay has a Source and a Position Qualifiers
+        image('cloudinary_icon') // Mandatory - Source
+            .transformation(new Transformation()
+                .resize(scale().width(300).height(300)) // A source can be transformed like an image
+            ))
+        .position(new Position().gravity(compass(southEast()))
+        ),
+)
 myImage.toURL();
 // http://res.cloudinary.com/demo/image/upload/l_cloudinary_icon/c_scale,h_300,w_300/fl_layer_apply,g_south_east/sample
-
 ```

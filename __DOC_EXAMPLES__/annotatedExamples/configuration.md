@@ -1,10 +1,7 @@
 <h2>Global configuration (See {@link ICloudinaryConfigurations})</h2>
 
 ```javascript
-// Import the cloudinary class, and the assets you want to use
-// In this case, we import a CloudinaryImage type.
-
-import {CloudinaryImage} from "@cloudinary/base/assets/CloudinaryImage";
+// Import the cloudinary class
 import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
 
 // Create your instance
@@ -23,32 +20,23 @@ const cld = new Cloudinary({
 
 ```javascript
 
-// Import the cloudinary class, and the assets you want to use
+// Import the asset you want to use
 // In this case, we import a CloudinaryImage type.
-import {CloudinaryImage} from "@cloudinary/base/assets/CloudinaryImage";
-import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+import {CloudinaryImage} from "@cloudinary/base";
 
-// Create your instance
-const cld = new Cloudinary({});
-
-const image = cld.image('sample');
-
-image.setConfig({
-    cloud: {
-        cloudName: 'demo'
-    },
-    url: {
-        secure: true // force https, set to false to force http
-    }
-})
+const image = new CloudinaryImage('sample', {
+    // any cloudConfiguration goes here
+    cloudName: 'demo' 
+}, {
+    // any urlConfiguration goes here
+    secure: true // force https, set to false to force http
+});
 ```
 
 <h2>Asset Description (See {@link IDescriptor})</h2>
 
 ```javascript
-// Import the cloudinary class, and the assets you want to use
-// In this case, we import a CloudinaryImage type.
-import {CloudinaryImage} from "@cloudinary/base/assets/CloudinaryImage";
+// Import the cloudinary class
 import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
 
 // Create your instance
@@ -61,14 +49,10 @@ const cld = new Cloudinary({
     }
 });
 
-const myImage = cld.image('sample'); // Not setting publicID yet
+const myAsset = cld.video(); // or cld.image()
 
-myImage.describeAsset({
-    storageType: 'fetch',
-    assetType: 'video',
-    publicID: 'some-remote-url' // Another way to set the public ID
-})
+myAsset.setPublicID('some-remote-url')
+myAsset.storageType = 'fetch';
 
-myImage.toURL()
 // https://res.cloudinary.com/video/fetch/some-remote-url
 ```
