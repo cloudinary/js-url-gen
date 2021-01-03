@@ -49,10 +49,10 @@ const cld = new Cloudinary({
     }
 });
 
-const myImage = cld.video();
+const myAsset = cld.video(); // or cld.image()
 
-myImage.setPublicID('some-remote-url')
-myImage.storageType = 'fetch';
+myAsset.setPublicID('some-remote-url')
+myAsset.storageType = 'fetch';
 
 // https://res.cloudinary.com/video/fetch/some-remote-url
 ```
