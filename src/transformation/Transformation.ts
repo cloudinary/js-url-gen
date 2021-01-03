@@ -33,15 +33,27 @@ class Transformation {
   }
 
   /**
-   * @param {Action} action
+   * @param {SDK.Action | string} action
+   * @return {this}
    */
-  addAction(action: Action): this {
+  addAction(action: Action | string): this {
+    if (typeof action === 'string') {
+      if (action.indexOf('/') >= 0) {
+        throw 'addAction cannot accept a string with a forward slash in it - /, use .addTransformation() instead';
+      }
+    }
     this.actions.push(action);
     return this;
   }
 
-  addRawAction(raw: string): this {
-    this.actions.push(raw);
+  /**
+   * @description Allows the injection of a raw transformation as a string into the transformation
+   * @param {string} stringTransformation
+   * @example transformation.addTransformation('w_100/w_200/w_300');
+   * @return {this}
+   */
+  addTransformation(stringTransformation: string): this {
+    this.actions.push(stringTransformation);
     return this;
   }
 
