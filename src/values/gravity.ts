@@ -4,6 +4,7 @@ import {CompassGravity} from "./gravity/compassGravity/CompassGravity";
 import {FocusOnGravity} from "./gravity/focusOnGravity/FocusOnGravity";
 import {AutoGravity} from "./gravity/autoGravity/AutoGravity";
 import {CompassQualifier} from "./gravity/qualifiers/compass/CompassQualifier";
+import {XYCenterGravity} from "./gravity/xyCenterGravity/XYCenterGravity";
 
 
 /**
@@ -50,6 +51,15 @@ function ocr(): OCR {
   return new OCR();
 }
 
+/**
+ * @doc
+ * @memberOf Values.Gravity
+ * @return {XYCenterGravity}
+ */
+function xyCenter() {
+  return new XYCenterGravity();
+}
+
 
 /**
  * @description Defines the focal gravity for certain methods of cropping.
@@ -61,7 +71,8 @@ const Gravity = {
   compass: compass,
   autoGravity: autoGravity,
   focusOn: focusOn,
-  ocr: ocr
+  ocr: ocr,
+  xyCenter
 };
 
 export {
@@ -69,5 +80,6 @@ export {
   compass,
   autoGravity,
   focusOn,
-  ocr
+  ocr,
+  xyCenter
 };
