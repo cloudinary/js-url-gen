@@ -3,6 +3,7 @@ import {QualifierValue} from "../internal/qualifier/QualifierValue";
 import {Qualifier} from "../internal/qualifier/Qualifier";
 import {prepareColor} from "../internal/utils/prepareColor";
 import {SystemColors} from "../values/color";
+import RoundCornersAction from "./roundCorners/RoundCornersAction";
 
 /**
  * @description Adds a solid border around an image or video.
@@ -16,6 +17,8 @@ class Border extends Action {
   private borderWidth: number;
   private borderColor: string;
   private borderType: string;
+  private _roundCorners: RoundCornersAction;
+
 
   /**
    * @memberOf Actions.Border
@@ -57,9 +60,18 @@ class Border extends Action {
     return this;
   }
 
-  protected prepareQualifiers() : void {
+  roundCorners(roundCorners: RoundCornersAction): this {
+    this._roundCorners = roundCorners;
+    return this;
+  }
+
+  protected prepareQualifiers(): void {
     const qualifierValue = new QualifierValue([`${this.borderWidth}px`, this.borderType, `${this.borderColor}`]).setDelimiter('_');
     this.addQualifier(new Qualifier('bo', qualifierValue));
+
+    if (this._roundCorners) {
+      this.addQualifier(this._roundCorners.qualifiers.get('r'));
+    }
   }
 }
 
