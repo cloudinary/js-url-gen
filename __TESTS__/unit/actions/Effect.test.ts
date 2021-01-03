@@ -45,7 +45,7 @@ describe('Tests for Transformation Action -- Effect', () => {
       .effect(Effect.sepia().level(5))
       .effect(Effect.vignette())
       .effect(Effect.vignette(100))
-      .effect(Effect.vignette().level(5))
+      .effect(Effect.vignette().strength(5))
       .effect(Effect.deshake())
       .effect(Effect.deshake(10))
       .effect(Effect.deshake().pixels(20))
