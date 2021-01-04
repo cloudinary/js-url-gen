@@ -31,7 +31,7 @@ class VectorizeEffectAction extends Action {
    * @param {number} num
    * @return {this}
    */
-  detailsLevel(num: number): this {
+  detailsLevel(num: number | string): this {
     this._detailsLevel = num;
     return this;
   }
@@ -41,7 +41,7 @@ class VectorizeEffectAction extends Action {
    * @param {number} num
    * @return {this}
    */
-  despeckleLevel(num: number):this {
+  despeckleLevel(num: number | string):this {
     this._despeckleLevel = num;
     return this;
   }
