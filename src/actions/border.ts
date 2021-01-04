@@ -60,6 +60,11 @@ class Border extends Action {
     return this;
   }
 
+  /**
+   * @description Rounds the specified corners of an image.
+   * @param {RoundCornersAction} roundCornersAction
+   * @return {this}
+   */
   roundCorners(roundCorners: RoundCornersAction): this {
     this._roundCorners = roundCorners;
     return this;
