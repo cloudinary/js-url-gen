@@ -8,7 +8,7 @@ import {FlagQualifier} from "./flag/FlagQualifier";
  * @memberOf Values.AspectRatio
  * @return {string}
  */
-function AR1X1(): AspectRatioQualifierValue {
+function ar1X1(): AspectRatioQualifierValue {
   return new AspectRatioQualifierValue('1:1');
 }
 
@@ -17,7 +17,7 @@ function AR1X1(): AspectRatioQualifierValue {
  * @memberOf Values.AspectRatio
  * @return {string}
  */
-function AR5X4(): AspectRatioQualifierValue {
+function ar5X4(): AspectRatioQualifierValue {
   return new AspectRatioQualifierValue('5:4');
 }
 
@@ -26,7 +26,7 @@ function AR5X4(): AspectRatioQualifierValue {
  * @memberOf Values.AspectRatio
  * @return {string}
  */
-function AR4X3(): AspectRatioQualifierValue {
+function ar4X3(): AspectRatioQualifierValue {
   return new AspectRatioQualifierValue('4:3');
 }
 
@@ -35,7 +35,7 @@ function AR4X3(): AspectRatioQualifierValue {
  * @memberOf Values.AspectRatio
  * @return {string}
  */
-function AR3X2(): AspectRatioQualifierValue {
+function ar3X2(): AspectRatioQualifierValue {
   return new AspectRatioQualifierValue('3:2');
 }
 
@@ -44,7 +44,7 @@ function AR3X2(): AspectRatioQualifierValue {
  * @memberOf Values.AspectRatio
  * @return {string}
  */
-function AR16X9(): AspectRatioQualifierValue {
+function ar16X9(): AspectRatioQualifierValue {
   return new AspectRatioQualifierValue('16:9');
 }
 
@@ -53,7 +53,7 @@ function AR16X9(): AspectRatioQualifierValue {
  * @memberOf Values.AspectRatio
  * @return {string}
  */
-function AR3X1(): AspectRatioQualifierValue {
+function ar3X1(): AspectRatioQualifierValue {
   return new AspectRatioQualifierValue('3:1');
 }
 
@@ -74,14 +74,14 @@ function ignoreInitialAspectRatio(): FlagQualifier {
  * @memberOf Values
  */
 const AspectRatio = {
-  AR1X1,
-  AR5X4,
-  AR3X1,
-  AR3X2,
-  AR4X3,
-  AR16X9,
+  ar1X1,
+  ar5X4,
+  ar3X1,
+  ar3X2,
+  ar4X3,
+  ar16X9,
   ignoreInitialAspectRatio
 };
 
 
-export {AR1X1, AR5X4, AR3X1, AR3X2, AR4X3, AR16X9, ignoreInitialAspectRatio, AspectRatio};
+export {ar1X1, ar5X4, ar3X1, ar3X2, ar4X3, ar16X9, ignoreInitialAspectRatio, AspectRatio};
