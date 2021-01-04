@@ -28,7 +28,7 @@ class CloudinaryFile {
   public suffix: string;
   public storageType: string; // type upload/private
 
-  constructor(publicID: string, cloudConfig?: ICloudConfig, urlConfig?: IURLConfig) {
+  constructor(publicID: string, cloudConfig: ICloudConfig = {}, urlConfig?: IURLConfig) {
     this.publicID = publicID;
     this.cloudName = cloudConfig.cloudName;
     this.apiKey = cloudConfig.apiKey;
@@ -57,6 +57,9 @@ class CloudinaryFile {
    * @return {string} CloudinaryURL
    */
   createCloudinaryURL(transformation?: Transformation): string {
+    if (typeof this.cloudName === 'undefined') {
+      throw 'You must supply a cloudName in either toURL() or whe initializing the asset';
+    }
     const prefix = getUrlPrefix(this.cloudName, this.urlConfig);
     const assetType = handleAssetType(this.assetType);
     const storageType = handleStorageType(this.storageType);
