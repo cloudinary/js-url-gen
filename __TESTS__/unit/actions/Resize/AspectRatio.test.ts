@@ -7,22 +7,22 @@ describe('Tests for AspectRatio values Action -- Resize.crop', () => {
   it('Generates URL using AspectRatio options', () => {
     const url = createNewImage('sample')
       .resize(
-        crop().aspectRatio(AspectRatio.AR1X1())
+        crop().aspectRatio(AspectRatio.ar1X1())
       )
       .resize(
-        crop().aspectRatio(AspectRatio.AR16X9())
+        crop().aspectRatio(AspectRatio.ar16X9())
       )
       .resize(
-        crop().aspectRatio(AspectRatio.AR4X3())
+        crop().aspectRatio(AspectRatio.ar4X3())
       )
       .resize(
-        crop().aspectRatio(AspectRatio.AR3X2())
+        crop().aspectRatio(AspectRatio.ar3X2())
       )
       .resize(
-        crop().aspectRatio(AspectRatio.AR3X1())
+        crop().aspectRatio(AspectRatio.ar3X1())
       )
       .resize(
-        crop().aspectRatio(AspectRatio.AR5X4())
+        crop().aspectRatio(AspectRatio.ar5X4())
       )
       .resize(
         crop().aspectRatio(AspectRatio.ignoreInitialAspectRatio())

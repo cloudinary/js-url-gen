@@ -25,7 +25,7 @@ const addKeyEnvVar = process.env.KEY ? `KEY=${process.env.KEY}` : ''
 const bashScript = ` 
   cd ${CODE_GENERATOR_PATH};
   # NOTE - We pipe the response of rspec to prevent the script from exiting in case the rspec command fails
-  source ~/.rvm/scripts/rvm && rvm use ${ENV_RUBY_VER} && ${addKeyEnvVar} rspec ${CODE_GENERATOR_PATH}  | grep 'ok'
+  source ~/.rvm/scripts/rvm && rvm use ${ENV_RUBY_VER} && ${addKeyEnvVar} DEV_ENV=DEV rspec ${CODE_GENERATOR_PATH}  | grep 'ok'
 `;
 
 // Create the bash script
