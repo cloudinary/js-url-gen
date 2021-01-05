@@ -58,7 +58,7 @@ class CloudinaryFile {
    */
   createCloudinaryURL(transformation?: Transformation): string {
     if (typeof this.cloudName === 'undefined') {
-      throw 'You must supply a cloudName in either toURL() or whe initializing the asset';
+      throw 'You must supply a cloudName in either toURL() or when initializing the asset';
     }
     const prefix = getUrlPrefix(this.cloudName, this.urlConfig);
     const assetType = handleAssetType(this.assetType);
