@@ -43,4 +43,10 @@ describe('Text Style tests', () => {
       .toString();
     expect(res).toBe('arial_50');
   });
+
+  it('Ensure a raw string can be passed to textStyle', () => {
+    const res = new TextStyle('Foobar_stuff_amazing')
+      .toString();
+    expect(res).toBe('Foobar_stuff_amazing');
+  });
 });

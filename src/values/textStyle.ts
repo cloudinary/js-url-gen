@@ -20,10 +20,17 @@ class TextStyle {
   private _textAlignment: string;
   private _stroke: boolean;
   private _fontHinting: string;
+  private _rawTextStyle: string;
 
-  constructor(fontFamily: string, fontSize: string | number) {
-    this._fontFamily = fontFamily;
-    this._fontSize = fontSize;
+  constructor(rawTextStyle: string)
+  constructor(fontFamily: string, fontSize?: string | number)
+  constructor(fontFamily: string, fontSize?: string | number) {
+    if (typeof fontSize === 'undefined') {
+      this._rawTextStyle = fontFamily;
+    } else {
+      this._fontFamily = fontFamily;
+      this._fontSize = fontSize;
+    }
   }
 
   lineSpacing(spacing: number): this {
@@ -82,18 +89,22 @@ class TextStyle {
   }
 
   toString(): string {
-    return [
-      `${serializeCloudinaryCharacters(this._fontFamily)}_${this._fontSize}`,
-      this._fontWeight !== normalFontWeight() && this._fontWeight,
-      this._fontStyle !== normalFontStyle() && this._fontStyle,
-      this._textDecoration !== normalTextDecoration() && this._textDecoration,
-      this._textAlignment,
-      this._stroke && 'stroke',
-      this._letterSpacing && `letter_spacing_${this._letterSpacing}`,
-      this._lineSpacing && `line_spacing_${this._lineSpacing}`,
-      this._fontAntialias && `letter_spacing_${this._fontAntialias}`,
-      this._fontHinting && `hinting_${this._fontHinting}`
-    ].filter( (a) => a).join('_');
+    if (typeof this._rawTextStyle !== 'undefined') {
+      return serializeCloudinaryCharacters(this._rawTextStyle);
+    } else {
+      return [
+        `${serializeCloudinaryCharacters(this._fontFamily)}_${this._fontSize}`,
+        this._fontWeight !== normalFontWeight() && this._fontWeight,
+        this._fontStyle !== normalFontStyle() && this._fontStyle,
+        this._textDecoration !== normalTextDecoration() && this._textDecoration,
+        this._textAlignment,
+        this._stroke && 'stroke',
+        this._letterSpacing && `letter_spacing_${this._letterSpacing}`,
+        this._lineSpacing && `line_spacing_${this._lineSpacing}`,
+        this._fontAntialias && `letter_spacing_${this._fontAntialias}`,
+        this._fontHinting && `hinting_${this._fontHinting}`
+      ].filter( (a) => a).join('_');
+    }
   }
 }
 
