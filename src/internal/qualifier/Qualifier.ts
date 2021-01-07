@@ -14,7 +14,7 @@ class Qualifier {
       this.qualifierValue = qualifierValue;
     } else {
       this.qualifierValue = new QualifierValue();
-      this.qualifierValue.addValue(qualifierValue).setDelimiter('.');
+      this.qualifierValue.addValue(qualifierValue);
     }
   }
 

@@ -100,6 +100,6 @@ describe('Tests for Transformation Action -- Flag', () => {
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/ar_1.0,c_fill,fl_keep_iptc.keep_attribution,w_400/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/ar_1.0,c_fill,fl_keep_attribution,fl_keep_iptc,w_400/sample');
   });
 });

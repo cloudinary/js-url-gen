@@ -78,7 +78,7 @@ describe('Tests for Transformation Action', () => {
       .addAction(action)
       .toURL();
 
-    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/fl_first_flag.second_flag,l_sample/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/fl_first_flag,fl_second_flag,l_sample/sample');
   });
 
   it('Correctly sorts qualifiers', () => {
@@ -89,7 +89,7 @@ describe('Tests for Transformation Action', () => {
       .addFlag(new FlagQualifier('b'))
       .addQualifier(new Qualifier('c', '3'));
 
-    expect(action.toString()).toBe('a_1,b_2,c_3,fl_a.b');
+    expect(action.toString()).toBe('a_1,b_2,c_3,fl_a,fl_b');
   });
 
   it('Add and read actions tags', () => {

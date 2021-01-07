@@ -21,7 +21,7 @@ describe('Position Qualifier', () => {
       .offsetY(10)
       .toString();
 
-    expect(posString).toBe('fl_no_overflow.tiled,g_north,x_10,y_10');
+    expect(posString).toBe('fl_no_overflow,fl_tiled,g_north,x_10,y_10');
   });
 
   it('Tests the toString() method of Position (FocusOn Gravity)', () => {
@@ -33,6 +33,6 @@ describe('Position Qualifier', () => {
       .offsetY(10)
       .toString();
 
-    expect(posString).toBe('fl_no_overflow.tiled,g_cat,x_10,y_10');
+    expect(posString).toBe('fl_no_overflow,fl_tiled,g_cat,x_10,y_10');
   });
 });
