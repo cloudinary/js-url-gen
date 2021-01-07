@@ -35,7 +35,7 @@ class CloudinaryTransformable extends CloudinaryFile {
   }
 
   /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
+   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
    * @param {Actions.Border} border
    * @return {this}
    */
@@ -45,7 +45,7 @@ class CloudinaryTransformable extends CloudinaryFile {
   }
 
   /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
+   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
    * @param {Actions.Reshape} reshape
    * @return {this}
    */
@@ -55,7 +55,7 @@ class CloudinaryTransformable extends CloudinaryFile {
   }
 
   /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
+   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
    * @param {Actions.Resize} resize
    * @return {this}
    */
@@ -65,7 +65,7 @@ class CloudinaryTransformable extends CloudinaryFile {
   }
 
   /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
+   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
    * @param {Actions.Delivery} quality
    * @return {this}
    */
@@ -75,7 +75,7 @@ class CloudinaryTransformable extends CloudinaryFile {
   }
 
   /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
+   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
    * @param {Actions.RoundCorners} roundCorners
    * @return {this}
    */
@@ -85,7 +85,7 @@ class CloudinaryTransformable extends CloudinaryFile {
   }
 
   /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
+   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
    * @return {this}
    */
   overlay(overlayAction: LayerAction): this {
@@ -94,7 +94,7 @@ class CloudinaryTransformable extends CloudinaryFile {
   }
 
   /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
+   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
    * @param {Actions.Variable} variableAction
    * @return {this}
    */
@@ -104,7 +104,7 @@ class CloudinaryTransformable extends CloudinaryFile {
   }
 
   /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
+   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
    * @param {Actions.Condition} conditionAction
    * @return {this}
    */
@@ -114,7 +114,7 @@ class CloudinaryTransformable extends CloudinaryFile {
   }
 
   /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
+   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
    * @param {Actions.effect} effect
    * @return {this}
    */
@@ -124,7 +124,7 @@ class CloudinaryTransformable extends CloudinaryFile {
   }
 
   /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
+   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
    * @param {Actions.Adjust} action
    * @return {this}
    */
@@ -134,7 +134,7 @@ class CloudinaryTransformable extends CloudinaryFile {
   }
 
   /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
+   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
    * @param {Actions.Rotate} rotate
    * @return {this}
    */
@@ -144,7 +144,7 @@ class CloudinaryTransformable extends CloudinaryFile {
   }
 
   /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
+   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
    * @param {Actions.NamedTransformation} namedTransformation
    * @return {this}
    */
@@ -154,7 +154,7 @@ class CloudinaryTransformable extends CloudinaryFile {
   }
 
   /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
+   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
    * @param {Actions.Delivery} deliveryAction
    * @return {this}
    */
@@ -164,7 +164,7 @@ class CloudinaryTransformable extends CloudinaryFile {
   }
 
   /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
+   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
    * @param {Values.color} color
    * @return {this}
    */
@@ -174,7 +174,7 @@ class CloudinaryTransformable extends CloudinaryFile {
   }
 
   /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
+   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
    * @param {Actions.PSDTools} action
    * @return {this}
    */
@@ -184,7 +184,7 @@ class CloudinaryTransformable extends CloudinaryFile {
   }
 
   /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
+   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
    * @param {Actions.Extract} action
    * @return {this}
    */
@@ -194,7 +194,7 @@ class CloudinaryTransformable extends CloudinaryFile {
   }
 
   /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
+   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
    * @param {Values.Flag} flagQualifier
    * @return {this}
    */
@@ -204,7 +204,7 @@ class CloudinaryTransformable extends CloudinaryFile {
   }
 
   /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
+   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
    * @param {Actions.CustomFunction} customFunction
    * @return {this}
    */
@@ -214,7 +214,7 @@ class CloudinaryTransformable extends CloudinaryFile {
   }
 
   /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
+   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
    * @param {SDK.Action | string} action
    * @return {this}
    */
@@ -224,7 +224,7 @@ class CloudinaryTransformable extends CloudinaryFile {
   }
 
   /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
+   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
    * @return {string}
    */
   toString(): string {
