@@ -5,7 +5,8 @@ import {animatedWebP} from "../../values/flag";
 import {animated} from "../../values/flag";
 
 /**
- * @augments Action
+ * @extend {SDK.Action}
+ * @memberOf Actions.Transcode
  * @description Converts a video to an animated webp or gif.
  * The resulting transformation includes format (f_format) and the animated flag (fl_animated).
  * The flag fl_awebp is added only when an animated webp is requested.

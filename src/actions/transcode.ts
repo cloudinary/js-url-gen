@@ -114,7 +114,13 @@ function toAnimated(animatedFormat: AnimatedFormatQualifierValue | string): ToAn
  * @memberOf Actions.Transcode
  * @description Controls the video codec.
  * @param {Values.VideoCodec.VideoCodecType | Values.VideoCodec.AdvVideoCodecType} videoCodecType CodecType
- * @return {VideoCodecAction}
+ * @example // Setting the video codec
+ * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {vp9} from '@cloudinary/base/values/videoCodec'
+ * import {videoCodec} from '@cloudinary/base/actions/transcode'
+ *
+ * video.transcode( videoCodec( vp9() ) );
+ * @return {Actions.Transcode.VideoCodecAction}
  */
 function videoCodec(videoCodecType: VideoCodecType | AdvVideoCodecType): VideoCodecAction {
   return new VideoCodecAction(videoCodecType);

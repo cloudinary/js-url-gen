@@ -2,7 +2,8 @@ import {Action} from "../../internal/Action";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
- * @augments Action
+ * @extend {SDK.Action}
+ * @memberOf Actions.Transcode
  * @description Controls the audio codec or removes the audio channel.
  *
  * <b>Learn more</b>: {@link https://cloudinary.com/documentation/audio_transformations#audio_frequency_control | Audio codec settings}

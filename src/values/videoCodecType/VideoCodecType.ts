@@ -3,7 +3,7 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
  * @doc
- * @description A VideoCodec class
+ * @description A VideoCodec class, this class has no methods, and just sets the codec type (vp9, vp8, etc.)
  * @memberOf Values.VideoCodec
  */
 class VideoCodecType extends Qualifier {
@@ -15,7 +15,7 @@ class VideoCodecType extends Qualifier {
 
 /**
  * @doc
- * @description An Advanced VideoCodec class
+ * @description An Advanced VideoCodec class with Profile and Level methods
  * @memberOf Values.VideoCodec
  */
 class AdvVideoCodecType extends Qualifier{
@@ -30,7 +30,9 @@ class AdvVideoCodecType extends Qualifier{
 
   /**
    * @doc
-   * @param {string} profile Sets the profile of the video codec
+   * @param {Values.VideoCodecProfile | string} profile Sets the profile of the video codec
+   * @example new AdvVideoCodecType('h264').profile(VideoCodecProfile.baseline())
+   * @return this;
    */
   profile(profile: string): this {
     this._prof = profile;
@@ -40,7 +42,9 @@ class AdvVideoCodecType extends Qualifier{
   /**
    * @doc
    * @description Sets the level of the videoCodec
-   * @param {number | string} lvl
+   * @param {Values.VideoCodecLevel | number | string} lvl
+   * @example new AdvVideoCodecType('h264').profile(VideoCodecLevel.baseline())
+   * @return this;
    */
   level(lvl: number | string): this {
     this._lvl = lvl;
@@ -49,6 +53,7 @@ class AdvVideoCodecType extends Qualifier{
 
   /**
    * @description returns a toString representation of this qualifier
+   * @return string;
    */
   toString(): string {
     return `vc_${this._type}:${this._prof}:${this._lvl}`;

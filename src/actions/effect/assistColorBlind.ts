@@ -3,7 +3,7 @@ import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
- * @augments Action
+ * @extend {SDK.Action}
  * @description Applies stripes to the image to help people with common color-blind conditions to differentiate between colors that are similar for them.
  * You can replace colors using the xray() method.
  * @memberOf Actions.Effect

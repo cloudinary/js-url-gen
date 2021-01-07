@@ -2,7 +2,8 @@ import {Action} from "../../internal/Action";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
- * @augments Action
+ * @extend {SDK.Action}
+ * @memberOf Actions.Transcode
  * @description The predefined streaming profiles.
  *
  * <b>Learn more</b>: {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#predefined_streaming_profiles | Predefined streaming profiles}

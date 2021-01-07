@@ -3,7 +3,7 @@ import {AdvVideoCodecType, VideoCodecType} from "../../values/videoCodecType/Vid
 
 /**
  * @extends {SDK.Action}
- * @memberOf Values.VideoCodec
+ * @memberOf Actions.Transcode
  * @description Converts a video to an animated webp or gif.
  */
 class VideoCodecAction extends Action {

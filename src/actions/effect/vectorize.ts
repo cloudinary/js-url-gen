@@ -4,7 +4,7 @@ import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 
 /**
  * @description Vectorizes the image.
- * @augments Action
+ * @extend {SDK.Action}
  */
 class VectorizeEffectAction extends Action {
   private _numOfColors: number | string;

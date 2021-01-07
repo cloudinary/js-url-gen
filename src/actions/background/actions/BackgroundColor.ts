@@ -4,7 +4,7 @@ import {Qualifier} from "../../../internal/qualifier/Qualifier";
 import {SystemColors} from "../../../values/color";
 
 /**
- * @augments Action
+ * @extend {SDK.Action}
  * @description A class for background transformations.
  */
 class BackgroundColor extends Action {
