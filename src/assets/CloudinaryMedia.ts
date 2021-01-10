@@ -18,7 +18,7 @@ class CloudinaryMedia extends CloudinaryTransformable {
   }
 
   /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
+   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
    * @param {Actions.Transcode} action
    * @return {this}
    */
@@ -28,7 +28,7 @@ class CloudinaryMedia extends CloudinaryTransformable {
   }
 
   /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
+   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
    * @param {Actions.VideoEdit} action
    * @return {this}
    */
@@ -38,7 +38,7 @@ class CloudinaryMedia extends CloudinaryTransformable {
   }
 
   /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
+   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
    * @return {this}
    */
   underlay(underlayAction: LayerAction): this {

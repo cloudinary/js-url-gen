@@ -16,7 +16,7 @@ class CloudinaryImage extends CloudinaryTransformable {
   }
 
   /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contains in this.transformation
+   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
    * @return {this}
    */
   underlay(underlayAction: LayerAction): this {
