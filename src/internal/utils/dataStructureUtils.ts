@@ -1,13 +1,23 @@
+import {FlagQualifier} from "../../values/flag/FlagQualifier";
+
 /**
  * Sort a map by key
  * @private
  * @param map <string, unknown>
  * @Return array of map's values sorted by key
  */
-function mapToSortedArray<T>(map: Map<string, T>): T[] {
-  const array = Array.from(map.entries()).sort();
+function mapToSortedArray<T>(map: Map<string, T | FlagQualifier>, flags: FlagQualifier[]): (T | FlagQualifier)[] {
+  const array = Array.from(map.entries());
 
-  return array.map((v) => v[1]);
+  // objects from the Array.from() method above are stored in array of arrays:
+  // [[qualifierKey, QualifierObj], [qualifierKey, QualifierObj]]
+  // Flags is an array of FlagQualifierObj
+  // We need to convert it to the same form: [flagQualifier] =>  ['fl', flagQualifier]
+  flags.forEach((flag) => {
+    array.push(['fl', flag]); // push ['fl', flagQualifier]
+  });
+
+  return array.sort().map((v) => v[1]);
 }
 
 /**

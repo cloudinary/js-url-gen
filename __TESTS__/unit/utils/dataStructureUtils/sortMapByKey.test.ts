@@ -7,6 +7,6 @@ describe('Tests for sortMapByKey', () => {
     map.set('a', 'a');
     map.set('b', 'b');
 
-    expect(mapToSortedArray(map).join(',')).toBe('a,b,c');
+    expect(mapToSortedArray(map, []).join(',')).toBe('a,b,c');
   });
 });
