@@ -1,5 +1,6 @@
 /**
- * @description Something Something Dark Side
+ * @doc
+ * @description The level of the video codec
  * @memberOf Values
  * @namespace VideoCodecLevel
  */
