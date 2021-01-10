@@ -2,6 +2,7 @@ import TrimAction from './videoEdit/TrimAction';
 import ConcatenateAction from './videoEdit/ConcatenateAction';
 import VolumeAction from "./videoEdit/VolumeAction";
 import {VideoSource} from "../values/source/sourceTypes/VideoSource";
+import {PreviewAction} from "./videoEdit/PreviewAction";
 
 /**
  * Methods for editing a video.
@@ -53,7 +54,20 @@ function volume(volumeValue: string | number): VolumeAction{
   return new VolumeAction(volumeValue);
 }
 
-export declare type videoEditType = VolumeAction | TrimAction | ConcatenateAction;
+/**
+ * @description A video preview is a short excerpt from a video that can be used to engage your audience and help them select the video content that interests them.
+ *
+ * <b>Learn more</b>: {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#generate_an_ai_based_video_preview |
+  * Create a video preview}
+ *
+ * @memberOf Actions.VideoEdit
+ * @return {Actions.VideoEdit.PreviewAction}
+ */
+function preview(): PreviewAction{
+  return new PreviewAction();
+}
 
-const VideoEdit = {concatenate, trim, volume};
-export {VideoEdit, concatenate, trim, volume};
+export declare type videoEditType = VolumeAction | TrimAction | ConcatenateAction | PreviewAction;
+
+const VideoEdit = {concatenate, trim, volume, preview};
+export {VideoEdit, concatenate, trim, volume, preview};
