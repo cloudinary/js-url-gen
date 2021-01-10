@@ -6,6 +6,52 @@ Custom CSS for the JSDOC template
   display:none;
 }
 
+/*body {*/
+/*  font-size:18px;*/
+/*}*/
+
+.page-header {
+  background-color: #3448C5 !important;
+}
+
+.breadcrumb li a {
+  color: #FF5050!important;
+}
+
+.toc .nav>li.active>a, .toc .nav>li.active>a:focus, .toc .nav>li.active>a:hover {
+  color: #FF5050!important;
+  border-left: 2px solid #3448C5!important;
+}
+
+.symbol-title .name-signature, .symbol-title .signature-params {
+  color: #0c163b!important;
+}
+
+.back-to-top {
+  color: #5A616A!important;
+}
+
+.symbol-title.collapsible-symbol .toggle-icon {
+  color: #3448C5!important;
+  text-indent: 0!important;
+}
+
+.callout-primary {
+  border-left-color: #3448C5!important;
+}
+
+.callout-primary h5 {
+  color: #3448C5!important;
+}
+
 body {
-  font-size:18px;
+  color: #0c163b!important;
+}
+
+.toc .nav>li>a .name-signature, .toc .nav>li>a .signature-params {
+  color: #0c163b!important;
+}
+
+.callout-default {
+  border-left-color: #5A616A!important;
 }
