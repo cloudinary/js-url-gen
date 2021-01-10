@@ -3,7 +3,7 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
  * @description Applies a gradient fade effect from one edge of the image.
- * @augments Action
+ * @extend {SDK.Action}
  */
 class GradientFadeEffectAction extends Action {
   private _strength: number;

@@ -3,7 +3,7 @@ import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 import {Action} from "../../internal/Action";
 
 /**
- * @augments Action
+ * @extend {SDK.Action}
  * @description Applies a cartoon effect to an image.
  */
 class CartoonifyEffect extends Action {

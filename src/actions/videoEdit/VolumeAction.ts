@@ -4,7 +4,7 @@ import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 
 /**
  * @description Class to Controls the volume of an audio or video file.
- * @augments Action
+ * @extend {SDK.Action}
  */
 class VolumeAction extends Action {
   constructor(volumeValue: string | number) {

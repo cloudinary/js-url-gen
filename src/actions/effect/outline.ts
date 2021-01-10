@@ -6,7 +6,7 @@ import {SystemColors} from "../../values/color";
 
 /**
  * @description Adds an outline to a transparent image. For examples, see the Image Transformations guide.
- * @augments Action
+ * @extend {SDK.Action}
  */
 class EffectOutline extends Action {
   private _mode: string;

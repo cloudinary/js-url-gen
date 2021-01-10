@@ -8,7 +8,7 @@ import {FetchSource} from "../../values/source/sourceTypes/FetchSource";
  * @description Class for Concatenating another video.
  *
  * <b>Learn more</b>: {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#concatenating_videos | Concatenating videos}
- * @augments Action
+ * @extend {SDK.Action}
  * @example
  * new CloudinaryVideo('dog').videoEdit(
  *  VideoEdit.concatenate(Concatenate.videoSource('butterfly'))

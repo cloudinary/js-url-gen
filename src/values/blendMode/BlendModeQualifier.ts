@@ -11,7 +11,7 @@ import {QualifierValue} from "../../internal/qualifier/QualifierValue";
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#overlay_blending_effects|Overlay blending effects}
  *
  * @memberOf Values.BlendMode
- * @augments Action
+ * @extend {SDK.Action}
  */
 class BlendModeQualifier extends Action {
   constructor(blendMode:string, level?:number) {

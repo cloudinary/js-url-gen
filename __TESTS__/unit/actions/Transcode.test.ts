@@ -4,6 +4,10 @@ import {AudioFrequency} from "../../../src/values/audioFrequency";
 import {Transcode} from "../../../src/actions/transcode";
 import {AudioCodec} from "../../../src/values/audioCodec";
 import {StreamingProfile} from "../../../src/values/streamingProfile";
+import {VideoCodec} from "../../../src/values/videoCodec";
+import {VideoCodecLevel} from "../../../src/values/videoCodecLevel";
+import {VideoCodecProfile} from "../../../src/values/videoCodecProfile";
+import {scale} from "../../../src/actions/resize";
 
 describe('Tests for Transformation Action -- Transcode', () => {
   it('Creates a cloudinaryURL with audiocodec', () => {
@@ -132,5 +136,44 @@ describe('Tests for Transformation Action -- Transcode', () => {
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/video/upload/dl_20,f_gif,fl_animated,vs_4s/sample');
+  });
+
+  it('Tests for simple videoCodec', () => {
+    const url = createNewVideo('sample').transcode(
+      Transcode.videoCodec(VideoCodec.vp9())
+    ).toURL();
+    expect(url).toContain('vc_vp9');
+  });
+
+  it('Tests for all codec types', () => {
+    expect(VideoCodec.vp8().toString()).toEqual('vc_vp8');
+    expect(VideoCodec.proRes().toString()).toEqual('vc_prores');
+    expect(VideoCodec.theora().toString()).toEqual('vc_theora');
+    expect(VideoCodec.auto().toString()).toEqual('vc_auto');
+  });
+
+  it('Tests for all codecLevels', () => {
+    // @TODO - do we need to change 3 to 3.0 in the transformation?
+    expect(VideoCodecLevel.vcl30()).toEqual(3);
+    expect(VideoCodecLevel.vcl31()).toEqual(3.1);
+    expect(VideoCodecLevel.vcl40()).toEqual(4);
+    expect(VideoCodecLevel.vcl41()).toEqual(4.1);
+    expect(VideoCodecLevel.vcl42()).toEqual(4.2);
+    expect(VideoCodecLevel.vcl50()).toEqual(5);
+    expect(VideoCodecLevel.vcl51()).toEqual(5.1);
+    expect(VideoCodecLevel.vcl52()).toEqual(5.2);
+  });
+
+  it('Tests for adv videoCodec', () => {
+    const url = createNewVideo('sample')
+      .resize(scale().width(100))
+      .transcode(
+        Transcode.videoCodec(
+          VideoCodec.h264()
+            .profile(VideoCodecProfile.baseline())
+            .level(VideoCodecLevel.vcl31())
+        )
+      ).toURL();
+    expect(url).toContain('c_scale,w_100/vc_h264:baseline:3.1');
   });
 });

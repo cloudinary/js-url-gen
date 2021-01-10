@@ -7,6 +7,8 @@ import KeyframeIntervalsAction from "./transcode/KeyframeIntervalsAction";
 import StreamingProfileAction from "./transcode/StreamingProfile";
 import ToAnimatedAction from "./transcode/ToAnimatedAction";
 import {AnimatedFormatQualifierValue} from "../values/animatedFormat/AnimatedFormatQualifierValue";
+import {AdvVideoCodecType, VideoCodecType} from "../values/videoCodecType/VideoCodecType";
+import {VideoCodecAction} from "./transcode/VideoCodecAction";
 
 /**
  * Defines how to transcode a video to another format
@@ -108,5 +110,21 @@ function toAnimated(animatedFormat: AnimatedFormatQualifierValue | string): ToAn
   return new ToAnimatedAction(animatedFormat);
 }
 
-const Transcode = {bitRate, audioCodec, audioFrequency, fps, fpsRange, keyframeInterval, streamingProfile, toAnimated};
-export {Transcode, bitRate, audioCodec, audioFrequency, fps, fpsRange, keyframeInterval, streamingProfile, toAnimated};
+/**
+ * @memberOf Actions.Transcode
+ * @description Controls the video codec.
+ * @param {Values.VideoCodec.VideoCodecType | Values.VideoCodec.AdvVideoCodecType} videoCodecType CodecType
+ * @example // Setting the video codec
+ * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {vp9} from '@cloudinary/base/values/videoCodec'
+ * import {videoCodec} from '@cloudinary/base/actions/transcode'
+ *
+ * video.transcode( videoCodec( vp9() ) );
+ * @return {Actions.Transcode.VideoCodecAction}
+ */
+function videoCodec(videoCodecType: VideoCodecType | AdvVideoCodecType): VideoCodecAction {
+  return new VideoCodecAction(videoCodecType);
+}
+
+const Transcode = {bitRate, audioCodec, audioFrequency, fps, fpsRange, keyframeInterval, streamingProfile, toAnimated, videoCodec};
+export {Transcode, bitRate, audioCodec, audioFrequency, fps, fpsRange, keyframeInterval, streamingProfile, toAnimated, videoCodec};

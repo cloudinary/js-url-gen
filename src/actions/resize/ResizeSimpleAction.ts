@@ -8,7 +8,7 @@ import {ExpressionQualifier} from "../../values/expression/ExpressionQualifier";
 
 /**
  * @description Defines a resize using width and height.
- * @augments Action
+ * @extend {SDK.Action}
  */
 class ResizeSimpleAction extends Action {
   /**
