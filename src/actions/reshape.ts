@@ -3,6 +3,7 @@ import {ImageSource} from "../values/source/sourceTypes/ImageSource";
 import {DistortArcAction} from "./reshape/DistortArc";
 import {ShearAction} from "./reshape/Shear";
 import {DistortAction, IDistortCoordinates} from "./reshape/Distort";
+import {TrimAction} from "./reshape/TrimAction";
 
 type IReshape = CutByImage | DistortArcAction;
 
@@ -59,5 +60,15 @@ function shear(): ShearAction {
   return new ShearAction();
 }
 
-const Reshape = {cutByImage, distortArc, distort, shear};
-export {cutByImage, Reshape, IReshape, distortArc, distort, shear};
+/**
+ * @description Removes the edges of the image based on the color of the corner pixels.
+ * Specify a color other than the color of the corner pixels using the colorOverride() method
+ * @memberOf Actions.Reshape
+ * @return {Actions.Reshape.TrimAction}
+ */
+function trim(): TrimAction {
+  return new TrimAction();
+}
+
+const Reshape = {cutByImage, distortArc, distort, shear, trim};
+export {cutByImage, Reshape, IReshape, distortArc, distort, shear, trim};

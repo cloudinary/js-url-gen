@@ -72,4 +72,12 @@ describe('Tests for Transformation Action -- Cutter', () => {
 
     expect(url).toBe('e_distort:1:2:3:4:5:6:7:8');
   });
+
+  it('Trims an image', () => {
+    const url = createNewImage()
+      .reshape(Reshape.trim().colorOverride('blue').colorSimilarity(15))
+      .toString();
+
+    expect(url).toBe('e_trim:15:blue');
+  });
 });
