@@ -55,3 +55,7 @@ body {
 .callout-default {
   border-left-color: #5A616A!important;
 }
+
+.branding-logo {
+  background-size:30px;
+}
