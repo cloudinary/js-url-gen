@@ -1,6 +1,7 @@
 import {Action} from "../../../internal/Action";
 import {QualifierValue} from "../../../internal/qualifier/QualifierValue";
 import {Qualifier} from "../../../internal/qualifier/Qualifier";
+import {ExpressionQualifier} from "../../../values/expression/ExpressionQualifier";
 
 /**
  * @extends {SDK.Action}
@@ -14,7 +15,7 @@ class SimpleEffectAction extends Action {
     this.addQualifier(qualifierEffect);
   }
 
-  protected createEffectQualifier(effectType: string, level?: number|string):Qualifier {
+  protected createEffectQualifier(effectType: string, level?: number|string|ExpressionQualifier):Qualifier {
     let qualifierValue;
     if(level) {
       qualifierValue = new QualifierValue([effectType, `${level}`]).setDelimiter(':');

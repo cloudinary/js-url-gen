@@ -1,4 +1,5 @@
 import {SimpleEffectAction} from "./SimpleEffectAction";
+import {ExpressionQualifier} from "../../../values/expression/ExpressionQualifier";
 
 /**
  * @extends {Actions.Effect.SimpleEffectAction}
@@ -19,7 +20,7 @@ class LeveledEffectAction extends SimpleEffectAction {
    * @param {string | number} level - The strength of the effect
    * @protected
    */
-  protected setLevel(level: string | number): this {
+  protected setLevel(level: string | number | ExpressionQualifier): this {
     const qualifierEffect = this.createEffectQualifier(this.effectType, level);
     this.addQualifier(qualifierEffect);
     return this;

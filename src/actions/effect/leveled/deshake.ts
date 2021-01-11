@@ -1,4 +1,5 @@
 import {LeveledEffectAction} from "../EffectActions/LeveledEffectAction";
+import {ExpressionQualifier} from "../../../values/expression/ExpressionQualifier";
 
 /**
  * @augments LeveledEffectAction
@@ -7,9 +8,9 @@ import {LeveledEffectAction} from "../EffectActions/LeveledEffectAction";
 class DeshakeEffectAction extends LeveledEffectAction {
   /**
    * The maximum number of pixels in the horizontal and vertical direction that will be addressed. (Possible values: 16, 32, 48, 64. Server default: 16)
-   * @param value
+   * @param value Possible values: 16, 32, 48, 64.  Server default: 16.
    */
-  pixels(value: number | string): this {
+  shakeStrength(value: 16 | 32 | 48 | 64 | string | ExpressionQualifier): this {
     return this.setLevel(value);
   }
 }

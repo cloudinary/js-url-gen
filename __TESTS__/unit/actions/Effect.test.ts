@@ -48,7 +48,7 @@ describe('Tests for Transformation Action -- Effect', () => {
       .effect(Effect.vignette().strength(5))
       .effect(Effect.deshake())
       .effect(Effect.deshake(10))
-      .effect(Effect.deshake().pixels(20))
+      .effect(Effect.deshake().shakeStrength(16))
 
       .toURL();
 
@@ -87,7 +87,7 @@ describe('Tests for Transformation Action -- Effect', () => {
       'e_vignette:5',
       'e_deshake',
       'e_deshake:10',
-      'e_deshake:20'
+      'e_deshake:16'
     ].join('/');
 
     expect(url).toBe(`https://res.cloudinary.com/demo/image/upload/${expectedToContain}/sample`);
