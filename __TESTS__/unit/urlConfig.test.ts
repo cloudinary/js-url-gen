@@ -123,13 +123,22 @@ describe('It tests a combination of Cloudinary URL and Configuration', () => {
     });
     expect(url).toContain('https://something.cloudfront.net/image/upload/');
   });
+
+  it('Generates a URL with version in the public ID', () => {
+    const img = createNewImage('v1234/foo/sample', {cloudName: 'demo'}, { forceVersion: true});
+
+    expect(img.toURL()).toContain('https://res.cloudinary.com/demo/image/upload/v1234/foo/sample');
+  });
+
+  it('Generates a URL with V1', () => {
+    const img = createNewImage('foo/sample', {cloudName: 'demo'}, { forceVersion: true});
+
+    expect(img.toURL()).toContain('https://res.cloudinary.com/demo/image/upload/v1/foo/sample');
+  });
+
+  it('Generates a URL without V1', () => {
+    const img = createNewImage('foo/sample', {cloudName: 'demo'}, { forceVersion: false});
+
+    expect(img.toURL()).toContain('https://res.cloudinary.com/demo/image/upload/foo/sample');
+  });
 });
-
-
-/**
- * http://res.cloudinary.com/{cloudName}
- * https://res.cloudinary.com/{cloudName}
- * https://{cloudName}-res.cloudinary.com/
- * http://{domain}
- * https://{domain}
- */
