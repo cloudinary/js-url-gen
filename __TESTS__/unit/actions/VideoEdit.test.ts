@@ -116,4 +116,16 @@ describe('Tests for Transformation Action -- VideoEdit', () => {
 
     expect(url).toBe('https://res.cloudinary.com/demo/video/upload/e_volume:10/sample');
   });
+
+  it('Tests a preview transformation for a video', () => {
+    const url = createNewVideo('sample')
+      .videoEdit(
+        VideoEdit.preview()
+          .duration(5)
+          .minimumSegmentDuration(1)
+          .maximumSegments(10)
+      ).toString();
+
+    expect(url).toContain('e_preview:duration_5.0:min_seg_dur_1.0:max_seg_10');
+  });
 });
