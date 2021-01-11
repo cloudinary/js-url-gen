@@ -49,8 +49,12 @@ class ReplaceColorAction extends Action {
   }
 
   protected prepareQualifiers(): this {
-    // e_replace_color:red:30:blue
-    const qualifierValue = new QualifierValue(['replace_color', this.targetColor, this.toleranceLevel, prepareColor(this.baseColor)]);
+    // Target color and base color might not exist at this point (optional qualifiers)
+    // If they exist, ensure that any # for RGB are removed from the resulting string
+    const targetColor = this.targetColor && this.targetColor.toString().replace('#', '');
+    const baseColor = this.baseColor && this.baseColor.toString().replace('#', '');
+
+    const qualifierValue = new QualifierValue(['replace_color', targetColor, this.toleranceLevel, baseColor]);
     this.addQualifier(new Qualifier('e', qualifierValue));
     return this;
   }
