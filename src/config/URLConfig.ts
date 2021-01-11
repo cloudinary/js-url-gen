@@ -17,7 +17,7 @@ class URLConfig extends Config implements IURLConfig {
   /**
    * @param {IURLConfig} userURLConfig
    */
-  constructor(userURLConfig: IURLConfig | unknown) {
+  constructor(userURLConfig: IURLConfig | any) {
     super();
     const urlConfig = this.filterOutNonSupportedKeys(userURLConfig, ALLOWED_URL_CONFIG);
     Object.assign(this, {
@@ -25,7 +25,7 @@ class URLConfig extends Config implements IURLConfig {
     }, urlConfig);
   }
 
-  extend(userURLConfig: ICloudConfig | unknown): URLConfig {
+  extend(userURLConfig: ICloudConfig | any): URLConfig {
     const urlConfig = this.filterOutNonSupportedKeys(userURLConfig, ALLOWED_URL_CONFIG);
     return new URLConfig(Object.assign({}, this, urlConfig));
   }

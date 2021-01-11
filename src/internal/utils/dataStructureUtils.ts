@@ -3,7 +3,7 @@ import {FlagQualifier} from "../../values/flag/FlagQualifier";
 /**
  * Sort a map by key
  * @private
- * @param map <string, unknown>
+ * @param map <string, any>
  * @Return array of map's values sorted by key
  */
 function mapToSortedArray<T>(map: Map<string, T | FlagQualifier>, flags: FlagQualifier[]): (T | FlagQualifier)[] {
@@ -26,7 +26,7 @@ function mapToSortedArray<T>(map: Map<string, T | FlagQualifier>, flags: FlagQua
  * @param {*} value The value to check.
  * @return {boolean} `true` if `value` is a string, else `false`.
  */
-function isString(value: unknown): boolean {
+function isString(value: any): boolean {
   return (typeof value === 'string' || value instanceof String);
 }
 
