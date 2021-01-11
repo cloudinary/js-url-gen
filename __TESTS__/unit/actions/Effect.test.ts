@@ -9,6 +9,7 @@ import {halftone4x4Orthogonal} from "../../../src/values/dither";
 import {ArtisticFilter} from "../../../src/values/artisticFilter";
 import {Transformation} from "../../../src/transformation/Transformation";
 import {createNewImage} from "../../TestUtils/createCloudinaryImage";
+import {ShakeStrength} from "../../../src/values/shakeStrength";
 
 
 describe('Tests for Transformation Action -- Effect', () => {
@@ -48,7 +49,7 @@ describe('Tests for Transformation Action -- Effect', () => {
       .effect(Effect.vignette().strength(5))
       .effect(Effect.deshake())
       .effect(Effect.deshake(10))
-      .effect(Effect.deshake().shakeStrength(16))
+      .effect(Effect.deshake().shakeStrength(ShakeStrength.pixels16()))
 
       .toURL();
 

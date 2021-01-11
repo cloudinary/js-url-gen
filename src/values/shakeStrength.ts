@@ -8,7 +8,7 @@
  * @@doc
  * @memberOf Values.ShakeStrength
  */
-function pixels16(): number {
+function pixels16(): 16 {
   return 16;
 }
 
@@ -16,7 +16,7 @@ function pixels16(): number {
  * @@doc
  * @memberOf Values.ShakeStrength
  */
-function pixels32(): number {
+function pixels32(): 32 {
   return 32;
 }
 
@@ -24,7 +24,7 @@ function pixels32(): number {
  * @@doc
  * @memberOf Values.ShakeStrength
  */
-function pixels48(): number {
+function pixels48(): 48 {
   return 48;
 }
 
@@ -32,7 +32,7 @@ function pixels48(): number {
  * @@doc
  * @memberOf Values.ShakeStrength
  */
-function pixels64(): number {
+function pixels64(): 64 {
   return 64;
 }
 
