@@ -56,7 +56,7 @@ class BaseTextSource extends BaseSource {
 
     tmpAction.addQualifier(new Qualifier(layerType, layerParam));
     this._textColor && tmpAction.addQualifier(new Qualifier('co', prepareColor(this._textColor)));
-    this._backgroundColor && tmpAction.addQualifier(new Qualifier('b', this._backgroundColor));
+    this._backgroundColor && tmpAction.addQualifier(new Qualifier('b', prepareColor(this._backgroundColor)));
 
     return tmpAction.toString();
   }

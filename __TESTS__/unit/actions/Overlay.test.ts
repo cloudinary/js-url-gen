@@ -10,6 +10,7 @@ import {Format, png} from "../../../src/values/format";
 import {Underlay} from "../../../src/actions/underlay";
 import {Timeline} from "../../../src/values/timeline";
 import {base64Encode} from "../../../src/internal/utils/base64Encode";
+import {TextStyle} from "../../../src/values/textStyle";
 
 describe('Tests for overlay actions', () => {
   it('Tests Image on Image with publicID encoding', () => {
@@ -80,6 +81,18 @@ describe('Tests for overlay actions', () => {
     ));
 
     expect(asset.toString()).toBe(`b_red,co_blue,l_text:${textStyle.toString()}:Testing/fl_layer_apply`);
+  });
+
+  it('Tests text on image with RGB backgroundColor', () => {
+    const asset = createNewImage();
+
+    asset.overlay(Overlay.source(
+      Source.text('Testing', new TextStyle('arial', 15))
+        .backgroundColor('#FEB61FC2')
+        .textColor('blue')
+    ));
+
+    expect(asset.toString()).toBe(`b_rgb:FEB61FC2,co_blue,l_text:arial_15:Testing/fl_layer_apply`);
   });
 
   it('Tests nested subtitles on image', () => {
