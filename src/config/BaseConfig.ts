@@ -3,7 +3,7 @@
  * @private
  * @param {any} a
  */
-function isObject(a: unknown): boolean {
+function isObject(a: any): boolean {
   if (typeof a !== 'object' || a instanceof Array) {
     return false;
   } else {

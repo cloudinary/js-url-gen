@@ -4,14 +4,14 @@ import {ExpressionQualifier} from "../../values/expression/ExpressionQualifier";
  * @memberOf SDK
  */
 class QualifierValue {
-  values: unknown[] = [];
+  values: any[] = [];
   delimiter = ':'; // {value}{delimiter}{value}...
 
   /**
    *
    * @param {QualifierValue | QualifierValue[] | any[] | string | number}qualifierValue
    */
-  constructor(qualifierValue?: QualifierValue | QualifierValue[] | unknown[] | string | number | ExpressionQualifier) {
+  constructor(qualifierValue?: QualifierValue | QualifierValue[] | any[] | string | number | ExpressionQualifier) {
     if (this.hasValue(qualifierValue)) {
       this.addValue(qualifierValue);
     }
@@ -30,16 +30,16 @@ class QualifierValue {
    * @private
    * @return {boolean}
    */
-  private hasValue(v: unknown): boolean {
+  private hasValue(v: any): boolean {
     return typeof v !== 'undefined' && v !== null && v !== '';
   }
 
   /**
    * @desc Adds a value for the this qualifier instance
-   * @param {unknown} value
+   * @param {any} value
    * @return {this}
    */
-  addValue(value: unknown): this {
+  addValue(value: any): this {
     // Append value or array of values
     if (Array.isArray(value)) {
       this.values = this.values.concat(value);
