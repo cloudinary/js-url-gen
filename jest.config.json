@@ -29,7 +29,7 @@
       "publicPath" : "./public/progress/",
       "filename": "cloudinary-base-progress-report.html",
       "pageTitle": "Cloudinary JS 2.0 Progress Report",
-      "logoImgPath": "./__DOC_RESOURCES__/cloudinary-logo.png",
+      "logoImgPath": "./__DOC_RESOURCES__/cloudinaryicon.png",
       "expand": true
     }]
   ]
