@@ -122,6 +122,17 @@ describe('Tests for Transformation Action -- Adjust', () => {
     expect(url).toContain('e_replace_color:red:30:blue');
   });
 
+  it('tests replaceColor with RGB colors', () => {
+    const url = createNewImage('sample')
+      .adjust(Adjust
+        .replaceColor('#fff')
+        .tolerance(30)
+        .fromColor('#aaa'))
+      .toURL();
+
+    expect(url).toContain('e_replace_color:fff:30:aaa');
+  });
+
   it('tests replaceColor - without fromColor', () => {
     const url = createNewImage('sample')
       .adjust(Adjust.replaceColor('red'))
