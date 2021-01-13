@@ -21,6 +21,7 @@ import {Pixelate} from "./effect/pixelate/pixelate";
 import {ImageSource} from "../values/source/sourceTypes/ImageSource";
 import {EffectActionWithStrength} from "./effect/EffectActions/EffectActionWithStrength";
 import {BlackwhiteEffectAction} from "./effect/leveled/blackwhite";
+import {FadeInEffectAction} from "./effect/leveled/fadeIn";
 
 
 /**
@@ -216,8 +217,8 @@ function accelerate(speedIncreasePercent?: number): AccelerationEffectAction {
  * @param {number} fadeLength The time in ms for the fade to occur. (Server default: 2000)
  * @return {EffectActionWithLength}
  */
-function fadeIn(fadeLength?: number):EffectActionWithLength {
-  return new EffectActionWithLength('fade', fadeLength);
+function fadeIn(fadeLength?: number):FadeInEffectAction {
+  return new FadeInEffectAction('fade', fadeLength);
 }
 
 
