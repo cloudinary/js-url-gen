@@ -8,6 +8,7 @@ import {TextStyle} from "../../textStyle";
  */
 class TextSource extends BaseTextSource {
   constructor(fileName: string, textStyle: TextStyle) {
+    /* istanbul ignore next */
     super(fileName, textStyle);
   }
 }

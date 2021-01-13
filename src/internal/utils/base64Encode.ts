@@ -6,12 +6,16 @@
  */
 function base64Encode(input: string):string {
   // Browser
+  let encodedResult = '';
+
   if (typeof window !== 'undefined') {
-    return btoa(input);
+    encodedResult = btoa(input);
   } else {
     // NodeJS support
-    return global.Buffer.from(input).toString('base64');
+    encodedResult = global.Buffer.from(input).toString('base64');
   }
+
+  return encodedResult.replace(/=+$/, ''); // Remove ending '='
 }
 
 export {base64Encode};
