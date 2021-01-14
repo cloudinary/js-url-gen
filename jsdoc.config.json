@@ -31,8 +31,8 @@
     "systemName": "Cloudinary JS.2.0 SDK",
     "systemLogo": "__DOC_RESOURCES__/cloudinaryicon.png",
     "systemSummary": "@cloudinary/base",
-    "favicon": "__DOC_RESOURCES__/cloudinary_icon_solid.png",
-    "copyright": "Copyright © 2020 Cloudinary.com"
+    "favicon": "__DOC_RESOURCES__/cloudinaryicon.png",
+    "copyright": "Copyright © 2021 Cloudinary.com"
   },
   "opts": {
     "recurse": true,
