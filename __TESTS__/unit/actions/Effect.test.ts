@@ -24,7 +24,7 @@ describe('Tests for Transformation Action -- Effect', () => {
       .effect(Effect.blackwhite(10))
       .effect(Effect.blackwhite().threshold(20))
       .effect(Effect.fadeIn(100))
-      .effect(Effect.fadeIn().length(5))
+      .effect(Effect.fadeIn().duration(5))
       .effect(Effect.fadeOut(100))
       .effect(Effect.fadeOut().duration(5))
       .effect(Effect.grayscale())
