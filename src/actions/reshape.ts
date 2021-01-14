@@ -54,10 +54,12 @@ function distort(coordinates: IDistortCoordinates): DistortAction {
 
 /**
  * @description Skews the image according to the two specified values in degrees.
+ * @param {number} x Skews the image according to the two specified values in degrees. (X and Y)
+ * @param {number} y Skews the image according to the two specified values in degrees. (X and Y)
  * @memberOf Actions.Reshape
  */
-function shear(): ShearAction {
-  return new ShearAction();
+function shear(x: number, y: number): ShearAction {
+  return new ShearAction(x, y);
 }
 
 /**

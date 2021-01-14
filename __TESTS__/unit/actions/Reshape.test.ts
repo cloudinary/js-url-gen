@@ -57,9 +57,9 @@ describe('Tests for Transformation Action -- Cutter', () => {
     expect(url).toBe('e_distort:arc:200');
   });
 
-  it('Shears an image', () => {
+  it('Shears an image with constructor arguments', () => {
     const url = createNewImage()
-      .reshape(Reshape.shear().skewX(100).skewY(200))
+      .reshape(Reshape.shear(100, 200))
       .toString();
 
     expect(url).toBe('e_shear:100:200');
