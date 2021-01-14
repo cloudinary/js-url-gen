@@ -215,7 +215,7 @@ function accelerate(speedIncreasePercent?: number): AccelerationEffectAction {
  * For details and examples, see 'Fade in and out' in the Video Transformations guide.
  * @memberOf Actions.Effect
  * @param {number} fadeLength The time in ms for the fade to occur. (Server default: 2000)
- * @return {EffectActionWithLength}
+ * @return {FadeInEffectAction}
  */
 function fadeIn(fadeLength?: number):FadeInEffectAction {
   return new FadeInEffectAction('fade', fadeLength);
