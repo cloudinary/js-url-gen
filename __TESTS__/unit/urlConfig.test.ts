@@ -3,6 +3,7 @@ import IURLConfig from "../../src/config/interfaces/Config/IURLConfig";
 import {CloudinaryImage} from "../../src/assets/CloudinaryImage";
 import {Resize} from "../../src/actions/resize";
 import {createNewImage} from "../TestUtils/createCloudinaryImage";
+import URLConfig from "../../src/config/URLConfig";
 
 
 /**
@@ -17,20 +18,20 @@ function createURLFromConfig(urlConfig: IURLConfig) {
 
 
 describe('It tests a combination of Cloudinary URL and Configuration', () => {
-  it ('Generates a URL', () => {
+  it('Generates a URL', () => {
     const url = createNewImage('my_image')
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/my_image');
   });
 
-  it ('Throw error when config is invalid', () => {
+  it('Throw error when config is invalid', () => {
     expect(() => {
       new CloudinaryImage('my_image').toURL(); // missing cloudName should throw error
     }).toThrow();
   });
 
-  it ('Generates a URL with transforamtions', () => {
+  it('Generates a URL with transforamtions', () => {
     const url = createNewImage()
       .resize(Resize.fill(100, 100))
       .setPublicID('sample')
@@ -39,13 +40,14 @@ describe('It tests a combination of Cloudinary URL and Configuration', () => {
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/c_fill,h_100,w_100/sample');
   });
 
-  it ('Shows a use-case for global configuration', () => {
+  it('Shows a use-case for global configuration', () => {
     //
     /**
      * We can implement this "wrapper", or instruct our customers how to implement it.
      */
     class MyGlobalCloudinary {
       public cloudinaryConfig: ICloudinaryConfigurations;
+
       // Constructor accepts a cloudinary configuration
       constructor(cloudinaryConfig: ICloudinaryConfigurations) {
         this.cloudinaryConfig = cloudinaryConfig;
@@ -80,7 +82,6 @@ describe('It tests a combination of Cloudinary URL and Configuration', () => {
   });
 
 
-
   it('Secure by default', () => {
     const url = createURLFromConfig({});
     expect(url).toContain('https://res.cloudinary.com/demo');
@@ -88,14 +89,14 @@ describe('It tests a combination of Cloudinary URL and Configuration', () => {
 
   it('Supports secure:false', () => {
     const url = createURLFromConfig({
-      secure:false
+      secure: false
     });
     expect(url).toContain('http://res.cloudinary.com/demo');
   });
 
   it('Support cname with secure false', () => {
     const url = createURLFromConfig({
-      cname:'hello.com',
+      cname: 'hello.com',
       secure: false
     });
     expect(url).toContain('http://hello.com/demo');
@@ -103,14 +104,14 @@ describe('It tests a combination of Cloudinary URL and Configuration', () => {
 
   it('Support secureDistribution with secure true', () => {
     const url = createURLFromConfig({
-      secureDistribution:'foobar.com'
+      secureDistribution: 'foobar.com'
     });
     expect(url).toContain('https://foobar.com/demo');
   });
 
   it('Support private CDN with secure true', () => {
     const url = createURLFromConfig({
-      privateCdn:true
+      privateCdn: true
     });
     expect(url).toContain(`https://demo-res.cloudinary.com/image/upload`);
   });
@@ -125,20 +126,43 @@ describe('It tests a combination of Cloudinary URL and Configuration', () => {
   });
 
   it('Generates a URL with version in the public ID', () => {
-    const img = createNewImage('v1234/foo/sample', {cloudName: 'demo'}, { forceVersion: true});
+    const img = createNewImage('v1234/foo/sample', {cloudName: 'demo'}, {forceVersion: true});
 
     expect(img.toURL()).toContain('https://res.cloudinary.com/demo/image/upload/v1234/foo/sample');
   });
 
   it('Generates a URL with V1', () => {
-    const img = createNewImage('foo/sample', {cloudName: 'demo'}, { forceVersion: true});
+    const img = createNewImage('foo/sample', {cloudName: 'demo'}, {forceVersion: true});
 
     expect(img.toURL()).toContain('https://res.cloudinary.com/demo/image/upload/v1/foo/sample');
   });
 
   it('Generates a URL without V1', () => {
-    const img = createNewImage('foo/sample', {cloudName: 'demo'}, { forceVersion: false});
+    const img = createNewImage('foo/sample', {cloudName: 'demo'}, {forceVersion: false});
 
     expect(img.toURL()).toContain('https://res.cloudinary.com/demo/image/upload/foo/sample');
+  });
+
+  it('Sets attributes using setters', () => {
+    const conf = new URLConfig({});
+
+    conf
+      .setCname('foo')
+      .setForceVersion(true)
+      .setLongUrlSignature(true)
+      .setPrivateCdn(true)
+      .setSecure(true)
+      .setShorten(true)
+      .setSignUrl(true)
+      .setUseRootPath(true);
+
+    expect(conf.cname).toBe('foo');
+    expect(conf.forceVersion).toBe(true);
+    expect(conf.longUrlSignature).toBe(true);
+    expect(conf.privateCdn).toBe(true);
+    expect(conf.secure).toBe(true);
+    expect(conf.shorten).toBe(true);
+    expect(conf.signUrl).toBe(true);
+    expect(conf.useRootPath).toBe(true);
   });
 });

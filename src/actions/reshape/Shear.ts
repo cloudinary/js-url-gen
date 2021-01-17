@@ -9,6 +9,11 @@ class ShearAction extends Action {
   private _x: number;
   private _y: number;
 
+  constructor(x: number, y:number) {
+    super();
+    this.skewX(x);
+    this.skewY(y);
+  }
   /**
    * @param {number} x Skews the image according to the two specified values in degrees. (X and Y)
    */
