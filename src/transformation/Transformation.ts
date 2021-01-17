@@ -47,13 +47,18 @@ class Transformation {
   }
 
   /**
-   * @description Allows the injection of a raw transformation as a string into the transformation
-   * @param {string} stringTransformation
+   * @description Allows the injection of a raw transformation as a string into the transformation, or a Transformation instance that was previously created
+   * @param {string | SDK.Transformation} tx
    * @example transformation.addTransformation('w_100/w_200/w_300');
    * @return {this}
    */
-  addTransformation(stringTransformation: string): this {
-    this.actions.push(stringTransformation);
+  addTransformation(tx: string | Transformation): this {
+    if (tx instanceof Transformation) {
+    // Concat the new actions into the existing actions
+      this.actions = this.actions.concat(tx.actions);
+    } else {
+      this.actions.push(tx);
+    }
     return this;
   }
 
