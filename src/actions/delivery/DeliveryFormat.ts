@@ -1,5 +1,6 @@
 import {lossy, preserveTransparency, progressive} from "../../values/flag";
 import {DeliveryAction} from "./DeliveryAction";
+import {ProgressiveQualifier} from "../../values/progressive";
 
 /**
  * @memberOf Actions.Delivery
@@ -19,8 +20,12 @@ class DeliveryFormat extends DeliveryAction {
    * @description Uses progressive compression when delivering JPG file format.
    * @return {this}
    */
-  progressive(): this {
-    this.addFlag(progressive());
+  progressive(mode?: 'semi' | 'steep' | 'none' | '' | ProgressiveQualifier): this {
+    if (mode instanceof ProgressiveQualifier) {
+      this.addFlag(mode);
+    } else {
+      this.addFlag(progressive(mode));
+    }
     return this;
   }
 

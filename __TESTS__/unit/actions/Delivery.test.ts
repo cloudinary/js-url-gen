@@ -4,6 +4,7 @@ import {ColorSpace} from "../../../src/values/colorSpace";
 import {Dpr} from "../../../src/values/dpr";
 import {Delivery} from "../../../src/actions/delivery";
 import {createNewImage} from "../../TestUtils/createCloudinaryImage";
+import {Progressive} from "../../../src/values/progressive";
 
 
 const {format} = Delivery;
@@ -244,5 +245,61 @@ describe('Tests for Transformation Action -- Delivery', () => {
       .toURL();
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/cs_icc:sample/sample');
+  });
+
+  it('Created delivery formats with progressive', () => {
+    // f_jpg,fl_progressive
+    const url = createNewImage('sample').delivery(
+      Delivery.format(Format.jpg()).progressive(Progressive.progressive())
+    ).toString();
+
+    expect(url).toContain('f_jpg,fl_progressive');
+  });
+
+
+
+  it('Created delivery formats with progressive', () => {
+    // f_jpg,fl_progressive
+    const url = createNewImage('sample').delivery(
+      Delivery.format(Format.jpg()).progressive()
+    ).toString();
+
+    expect(url).toContain('f_jpg,fl_progressive');
+  });
+
+  it('Created delivery formats with progressive:semi', () => {
+    // f_jpg,fl_progressive
+    const url = createNewImage('sample').delivery(
+      Delivery.format(Format.jpg()).progressive(Progressive.semi())
+    ).toString();
+
+    expect(url).toContain('f_jpg,fl_progressive:semi');
+  });
+
+  it('Created delivery formats with progressive:steep', () => {
+    // f_jpg,fl_progressive
+    const url = createNewImage('sample').delivery(
+      Delivery.format(Format.jpg()).progressive(Progressive.steep())
+    ).toString();
+
+    expect(url).toContain('f_jpg,fl_progressive:steep');
+  });
+
+  it('Created delivery formats with progressive:none', () => {
+    // f_jpg,fl_progressive
+    const url = createNewImage('sample').delivery(
+      Delivery.format(Format.jpg()).progressive(Progressive.none())
+    ).toString();
+
+    expect(url).toContain('f_jpg,fl_progressive:none');
+  });
+
+  it('Created delivery formats with progressive:none as a string', () => {
+    // f_jpg,fl_progressive
+    const url = createNewImage('sample').delivery(
+      Delivery.format(Format.jpg()).progressive('none')
+    ).toString();
+
+    expect(url).toContain('f_jpg,fl_progressive:none');
   });
 });
