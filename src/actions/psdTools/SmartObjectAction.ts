@@ -31,11 +31,11 @@ class SmartObjectAction extends Action{
 
   /**
    * @description Creates an instance using the name.
-   * @param fileName The name
+   * @param {string} layerName The name of the layer
    */
-  byFileName(fileName:string): this{
+  byLayerName(layerName: string): this{
     this.useName = true;
-    this.qualifierValue.addValue(fileName);
+    this.qualifierValue.addValue(layerName);
     return this;
   }
 
