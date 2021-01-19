@@ -31,7 +31,7 @@ describe('Tests for Transformation Action -- PSDTools', () => {
 
   it('Creates a cloudinaryURL with getLayer.byNumber', () => {
     const url = createNewImage()
-      .psdTools(PSDTools.getLayer().byNumber(4))
+      .psdTools(PSDTools.getLayer().byIndex(4))
       .setPublicID('sample')
       .toURL();
 
@@ -77,14 +77,14 @@ describe('Tests for Transformation Action -- PSDTools', () => {
   it('Uses multiple qualifiers', () => {
     expect(PSDTools
       .getLayer()
-      .byNumber(1)
+      .byIndex(1)
       .byRange(5, 7)
       .toString()
     ).toBe('pg_1;5-7'); // pg_1;5-7
     expect(PSDTools
       .getLayer()
       .byRange(4, 7)
-      .byNumber(9)
+      .byIndex(9)
       .toString()
     ).toBe('pg_4-7;9');
     expect(PSDTools

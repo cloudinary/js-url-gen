@@ -19,11 +19,10 @@ class GetLayerAction extends Action {
   }
 
   /**
-   * @description deliver an image containing only specified layer of a Photoshop image
-   * @param {string|number} from The layer number
+   * @description deliver an image containing only specified layer of a Photoshop image from The layer index
+   * @param {string|number}  the index of the layer
    */
-  byNumber(from: string|number): this{
-
+  byIndex(from: string|number): this{
     this.qualifierValue.addValue(from);
     return this;
   }
