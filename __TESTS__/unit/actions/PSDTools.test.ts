@@ -65,13 +65,13 @@ describe('Tests for Transformation Action -- PSDTools', () => {
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/pg_embedded:8;5/sample');
   });
 
-  it('Creates a cloudinaryURL with smartObject.byFileName', () => {
+  it('Creates a cloudinaryURL with smartObject.byLayerName', () => {
     const url = createNewImage()
-      .psdTools(PSDTools.smartObject().byFileName('myFile').byFileName('myFile2'))
+      .psdTools(PSDTools.smartObject().byLayerName('myLayer').byLayerName('myLayer2'))
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/pg_embedded:name:myFile;myFile2/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/pg_embedded:name:myLayer;myLayer2/sample');
   });
 
   it('Uses multiple qualifiers', () => {
