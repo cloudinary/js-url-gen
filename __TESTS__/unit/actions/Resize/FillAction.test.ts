@@ -19,4 +19,17 @@ describe('Tests for Transformation Action -- Resize.fill', () => {
       'url');
     expect(url).toContain('ar_1.2,c_fill,g_auto,h_250,w_250');
   });
+
+  it('Ensures it generates the right URL xyCenter and x,y', () => {
+    const url = getImageWithResize(
+      fill()
+        .width(250)
+        .height(250)
+        .gravity(Gravity.xyCenter())
+        .x(100)
+        .y(100)
+        .aspectRatio(1.2),
+      'url');
+    expect(url).toContain('ar_1.2,c_fill,g_xy_center,h_250,w_250,x_100,y_100');
+  });
 });

@@ -12,6 +12,7 @@ import {AutoGravity} from "../values/gravity/autoGravity/AutoGravity";
 import {CompassGravity} from "../values/gravity/compassGravity/CompassGravity";
 import ResizeAdvancedAction from "./resize/ResizeAdvancedAction";
 import ResizeCropAction from "./resize/ResizeCropAction";
+import {ResizeFillAction} from "./resize/ResizeFillAction";
 
 /**
  * @description
@@ -76,10 +77,10 @@ function crop(width?: number|string, height?: number|string) :ResizeCropAction {
  * @memberOf Actions.Resize
  * @param {number|string} width The required width of a transformed asset.
  * @param {number|string} height The required height of a transformed asset.
- * @return {ResizeAdvancedAction}
+ * @return {ResizeFillAction}
  */
-function fill(width?: string|number, height?: string|number) :ResizeAdvancedAction {
-  return new ResizeAdvancedAction('fill', width, height);
+function fill(width?: string|number, height?: string|number) :ResizeFillAction {
+  return new ResizeFillAction('fill', width, height);
 }
 
 /**
