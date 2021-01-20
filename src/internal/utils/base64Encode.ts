@@ -15,7 +15,7 @@ function base64Encode(input: string):string {
     encodedResult = global.Buffer.from(input).toString('base64');
   }
 
-  return encodedResult.replace(/=+$/, ''); // Remove ending '='
+  return encodedResult;
 }
 
 export {base64Encode};
