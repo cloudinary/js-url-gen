@@ -2,7 +2,7 @@ import {GravityQualifier} from "../GravityQualifier";
 import {CompassQualifier} from "../qualifiers/compass/CompassQualifier";
 
 /**
- * @doc
+ * @description The class for the CompassGravity builder
  * @memberOf Values.Gravity
  * @extends {Values.Gravity.GravityQualifier}
  */

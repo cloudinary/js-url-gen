@@ -1,12 +1,12 @@
 /**
- * @@doc
+ * @description Controls the audio sampling frequency.
  * @namespace AudioFrequency
  * @memberOf Values
  */
 
 
 /**
- * @@doc
+ * @description Preserves the original audio frequency of the video when used with vc_auto.
  * @memberOf Values.AudioFrequency
  */
 function ORIGINAL(): string {
@@ -14,7 +14,6 @@ function ORIGINAL(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.AudioFrequency
  */
 function FREQ192000(): number {
@@ -22,7 +21,6 @@ function FREQ192000(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.AudioFrequency
  */
 function FREQ176400(): number {
@@ -31,7 +29,6 @@ function FREQ176400(): number {
 
 
 /**
- * @@doc
  * @memberOf Values.AudioFrequency
  */
 function FREQ96000(): number {
@@ -40,7 +37,6 @@ function FREQ96000(): number {
 
 
 /**
- * @@doc
  * @memberOf Values.AudioFrequency
  */
 function FREQ88200(): number {
@@ -49,7 +45,6 @@ function FREQ88200(): number {
 
 
 /**
- * @@doc
  * @memberOf Values.AudioFrequency
  */
 function FREQ48000(): number {
@@ -57,7 +52,6 @@ function FREQ48000(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.AudioFrequency
  */
 function FREQ8000(): number {
@@ -65,7 +59,6 @@ function FREQ8000(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.AudioFrequency
  */
 function FREQ11025(): number {
@@ -73,7 +66,6 @@ function FREQ11025(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.AudioFrequency
  */
 function FREQ16000(): number {
@@ -81,7 +73,6 @@ function FREQ16000(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.AudioFrequency
  */
 function FREQ22050(): number {
@@ -89,7 +80,6 @@ function FREQ22050(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.AudioFrequency
  */
 function FREQ32000(): number {
@@ -97,7 +87,6 @@ function FREQ32000(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.AudioFrequency
  */
 function FREQ37800(): number {
@@ -105,7 +94,6 @@ function FREQ37800(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.AudioFrequency
  */
 function FREQ44056(): number {
@@ -113,7 +101,6 @@ function FREQ44056(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.AudioFrequency
  */
 function FREQ44100(): number {
@@ -121,7 +108,6 @@ function FREQ44100(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.AudioFrequency
  */
 function FREQ47250(): number {

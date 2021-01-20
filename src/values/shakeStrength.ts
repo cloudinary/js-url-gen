@@ -5,7 +5,6 @@
  */
 
 /**
- * @@doc
  * @memberOf Values.ShakeStrength
  */
 function pixels16(): 16 {
@@ -13,7 +12,6 @@ function pixels16(): 16 {
 }
 
 /**
- * @@doc
  * @memberOf Values.ShakeStrength
  */
 function pixels32(): 32 {
@@ -21,7 +19,6 @@ function pixels32(): 32 {
 }
 
 /**
- * @@doc
  * @memberOf Values.ShakeStrength
  */
 function pixels48(): 48 {
@@ -29,7 +26,6 @@ function pixels48(): 48 {
 }
 
 /**
- * @@doc
  * @memberOf Values.ShakeStrength
  */
 function pixels64(): 64 {

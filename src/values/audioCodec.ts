@@ -5,7 +5,7 @@
  */
 
 /**
- * @@doc
+ * @description Removes the audio channel from the video, effectively muting it.
  * @memberOf Values.AudioCodec
  */
 function none(): string {
@@ -13,7 +13,6 @@ function none(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.AudioCodec
  */
 function aac(): string {
@@ -21,7 +20,6 @@ function aac(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.AudioCodec
  */
 function vorbis(): string {
@@ -29,7 +27,6 @@ function vorbis(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.AudioCodec
  */
 function mp3(): string {
@@ -37,23 +34,14 @@ function mp3(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.AudioCodec
  */
 function opus(): string {
   return 'opus';
 }
 
-/**
- * @@doc
- * @memberOf Values.AudioCodec
- */
-function auto(): string {
-  return 'auto';
-}
 
 const AudioCodec = {
-  auto,
   aac,
   mp3,
   opus,
@@ -63,7 +51,6 @@ const AudioCodec = {
 
 export {
   AudioCodec,
-  auto,
   aac,
   mp3,
   opus,

@@ -12,11 +12,11 @@ import {scale} from "../../../src/actions/resize";
 describe('Tests for Transformation Action -- Transcode', () => {
   it('Creates a cloudinaryURL with audiocodec', () => {
     const url = createNewVideo('sample')
-      .transcode(Transcode.audioCodec(AudioCodec.auto()))
+      .transcode(Transcode.audioCodec(AudioCodec.aac()))
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/ac_auto/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/ac_aac/sample');
   });
 
   it('Creates a cloudinaryURL with bitrate', () => {

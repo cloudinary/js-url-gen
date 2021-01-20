@@ -6,7 +6,6 @@
 
 
 /**
- * @@doc
  * @memberOf Values.Dither
  */
 function threshold1x1Nondither(): number {
@@ -14,7 +13,6 @@ function threshold1x1Nondither(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.Dither
  */
 function checkerboard2x1Dither(): number {
@@ -22,7 +20,6 @@ function checkerboard2x1Dither(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.Dither
  */
 function ordered2x2Dispersed(): number {
@@ -30,7 +27,6 @@ function ordered2x2Dispersed(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.Dither
  */
 function ordered3x3Dispersed(): number {
@@ -38,7 +34,6 @@ function ordered3x3Dispersed(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.Dither
  */
 function ordered4x4Dispersed(): number {
@@ -46,7 +41,6 @@ function ordered4x4Dispersed(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.Dither
  */
 function ordered8x8Dispersed(): number {
@@ -54,7 +48,6 @@ function ordered8x8Dispersed(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.Dither
  */
 function halftone4x4Angled(): number {
@@ -62,7 +55,6 @@ function halftone4x4Angled(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.Dither
  */
 function halftone6x6Angled(): number {
@@ -70,7 +62,6 @@ function halftone6x6Angled(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.Dither
  */
 function halftone8x8Angled(): number {
@@ -78,7 +69,6 @@ function halftone8x8Angled(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.Dither
  */
 function halftone4x4Orthogonal(): number {
@@ -86,7 +76,6 @@ function halftone4x4Orthogonal(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.Dither
  */
 function halftone6x6Orthogonal(): number {
@@ -94,7 +83,6 @@ function halftone6x6Orthogonal(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.Dither
  */
 function halftone8x8Orthogonal(): number {
@@ -102,7 +90,6 @@ function halftone8x8Orthogonal(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.Dither
  */
 function halftone16x16Orthogonal(): number {
@@ -110,7 +97,6 @@ function halftone16x16Orthogonal(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.Dither
  */
 function circles5x5Black(): number {
@@ -118,7 +104,6 @@ function circles5x5Black(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.Dither
  */
 function circles5x5White(): number {
@@ -126,7 +111,6 @@ function circles5x5White(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.Dither
  */
 function circles6x6Black(): number {
@@ -134,7 +118,6 @@ function circles6x6Black(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.Dither
  */
 function circles6x6White(): number {
@@ -142,7 +125,6 @@ function circles6x6White(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.Dither
  */
 function circles7x7Black(): number {
@@ -150,7 +132,6 @@ function circles7x7Black(): number {
 }
 
 /**
- * @@doc
  * @memberOf Values.Dither
  */
 function circles7x7White(): number {

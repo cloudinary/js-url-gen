@@ -5,7 +5,6 @@
  */
 
 /**
- * @@doc
  * @memberOf Values.ColorSpace
  */
 function srgb(): string {
@@ -13,7 +12,6 @@ function srgb(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.ColorSpace
  */
 function trueColor(): string {
@@ -22,7 +20,6 @@ function trueColor(): string {
 
 
 /**
- * @@doc
  * @memberOf Values.ColorSpace
  */
 function tinySrgb(): string {
@@ -31,16 +28,14 @@ function tinySrgb(): string {
 
 
 /**
- * @@doc
  * @memberOf Values.ColorSpace
  */
-function cmyk(): string {
+function cmyk(): string | number {
   return 'cmyk';
 }
 
 
 /**
- * @@doc
  * @memberOf Values.ColorSpace
  */
 function noCmyk(): string {
@@ -49,7 +44,6 @@ function noCmyk(): string {
 
 
 /**
- * @@doc
  * @memberOf Values.ColorSpace
  */
 function keepCmyk(): string {

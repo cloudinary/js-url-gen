@@ -6,7 +6,6 @@
 
 
 /**
- * @@doc
  * @memberOf Values.StreamingProfile
  * @return {string}
  */
@@ -15,7 +14,6 @@ function fullHd():string {
 }
 
 /**
- * @@doc
  * @memberOf Values.StreamingProfile
  * @return {string}
  */
@@ -24,7 +22,6 @@ function hd():string {
 }
 
 /**
- * @@doc
  * @memberOf Values.StreamingProfile
  * @return {string}
  */
@@ -33,7 +30,6 @@ function sd():string {
 }
 
 /**
- * @@doc
  * @memberOf Values.StreamingProfile
  * @return {string}
  */
@@ -42,7 +38,6 @@ function fullHdWifi():string {
 }
 
 /**
- * @@doc
  * @memberOf Values.StreamingProfile
  * @return {string}
  */
@@ -51,7 +46,6 @@ function fullHdLean():string {
 }
 
 /**
- * @@doc
  * @memberOf Values.StreamingProfile
  * @return {string}
  */

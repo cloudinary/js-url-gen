@@ -4,7 +4,6 @@ import {Action} from "../../../internal/Action";
 
 /**
  * @description The Action class of the pixelate Builder
- * @doc
  */
 class Pixelate extends Action {
   private _region?: NamedRegion;
@@ -16,7 +15,7 @@ class Pixelate extends Action {
   }
 
   /**
-   * @doc
+   * @description Specifies the region to piexlate.
    * @param {NamedRegion} pixelateRegion
    */
   region(pixelateRegion: NamedRegion): this {
@@ -25,8 +24,8 @@ class Pixelate extends Action {
   }
 
   /**
-   * @doc
-   * @param {number | string} squareSize The width of the pixel
+   * @description Sets the squareSize of the pixelate effect.
+   * @param {number | string} squareSize
    */
   squareSize(squareSize: number | string): this {
     this._squareSize = squareSize;

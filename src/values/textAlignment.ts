@@ -1,10 +1,10 @@
 /**
+ * @doc
  * @memberOf Values
  * @namespace TextAlignment
  */
 
 /**
- * @doc
  * @memberOf Values.TextAlignment
  */
 function left(): string {
@@ -12,7 +12,6 @@ function left(): string {
 }
 
 /**
- * @doc
  * @memberOf Values.TextAlignment
  */
 function right(): string {
@@ -20,7 +19,6 @@ function right(): string {
 }
 
 /**
- * @doc
  * @memberOf Values.TextAlignment
  */
 function center(): string {
@@ -28,7 +26,6 @@ function center(): string {
 }
 
 /**
- * @doc
  * @memberOf Values.TextAlignment
  */
 function start(): string {
@@ -36,7 +33,6 @@ function start(): string {
 }
 
 /**
- * @doc
  * @memberOf Values.TextAlignment
  */
 function end(): string {
@@ -44,7 +40,6 @@ function end(): string {
 }
 
 /**
- * @doc
  * @memberOf Values.TextAlignment
  */
 function justify(): string {

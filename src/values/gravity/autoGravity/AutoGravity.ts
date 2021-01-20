@@ -2,7 +2,7 @@ import {AutoFocus} from "../qualifiers/autoFocus/AutoFocus";
 import {GravityQualifier} from "../GravityQualifier";
 
 /**
- * @doc
+ * @description The class for the autoGravity builder
  * @memberOf Values.Gravity
  * @extends {Values.Gravity.GravityQualifier}
  */
@@ -13,6 +13,10 @@ class AutoGravity extends GravityQualifier {
     super('auto');
   }
 
+  /**
+   * @description Autofocuses on objects, allowing their priority within the algorithm to be configured.
+   * @param {AutoFocus} AutoFocusObjects
+   */
   autoFocus(...AutoFocusObjects: AutoFocus[]): this {
     this.addValue(AutoFocusObjects);
     return this;

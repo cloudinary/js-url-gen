@@ -1,10 +1,10 @@
 /**
+ * @doc
  * @memberOf Values
  * @namespace TextDecoration
  */
 
 /**
- * @doc
  * @memberOf Values.TextDecoration
  */
 function normal(): string {
@@ -12,7 +12,6 @@ function normal(): string {
 }
 
 /**
- * @doc
  * @memberOf Values.TextDecoration
  */
 function underline(): string {
@@ -20,7 +19,6 @@ function underline(): string {
 }
 
 /**
- * @doc
  * @memberOf Values.TextDecoration
  */
 function strikethrough(): string {

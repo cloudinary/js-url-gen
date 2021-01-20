@@ -1,14 +1,14 @@
 import {AnimatedFormatQualifierValue} from "./animatedFormat/AnimatedFormatQualifierValue";
 
 /**
- * @@doc
+ * @description Contains methods to specify the animated format
  * @namespace AnimatedFormat
  * @memberOf Values
  */
 
 
 /**
- * @@doc
+ * @description Automatically sets the animated format
  * @memberOf Values.AnimatedFormat
  * @return {Values.AnimatedFormatQualifierValue}
  */
@@ -18,7 +18,6 @@ function auto(): AnimatedFormatQualifierValue {
 
 
 /**
- * @@doc
  * @memberOf Values.AnimatedFormat
  * @return {Values.AnimatedFormatQualifierValue}
  */
@@ -27,7 +26,6 @@ function gif(): AnimatedFormatQualifierValue {
 }
 
 /**
- * @@doc
  * @memberOf Values.AnimatedFormat
  * @return {Values.AnimatedFormatQualifierValue}
  */
@@ -36,7 +34,6 @@ function webp(): AnimatedFormatQualifierValue {
 }
 
 /**
- * @@doc
  * @memberOf Values.AnimatedFormat
  * @return {Values.AnimatedFormatQualifierValue}
  */

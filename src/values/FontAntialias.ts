@@ -1,10 +1,10 @@
 /**
+ * @doc
  * @memberOf Values
  * @namespace FontAntialias
  */
 
 /**
- * @doc
  * @memberOf Values.FontAntialias
  */
 function none(): string {
@@ -12,7 +12,6 @@ function none(): string {
 }
 
 /**
- * @doc
  * @memberOf Values.FontAntialias
  */
 function gray(): string {
@@ -20,7 +19,6 @@ function gray(): string {
 }
 
 /**
- * @doc
  * @memberOf Values.FontAntialias
  */
 function subPixel(): string {
@@ -28,7 +26,6 @@ function subPixel(): string {
 }
 
 /**
- * @doc
  * @memberOf Values.FontAntialias
  */
 function fast(): string {
@@ -36,7 +33,6 @@ function fast(): string {
 }
 
 /**
- * @doc
  * @memberOf Values.FontAntialias
  */
 function good(): string {
@@ -44,7 +40,6 @@ function good(): string {
 }
 
 /**
- * @doc
  * @memberOf Values.FontAntialias
  */
 function best(): string {
