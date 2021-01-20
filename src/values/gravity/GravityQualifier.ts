@@ -4,8 +4,8 @@ import {CompassGravity} from "./compassGravity/CompassGravity";
 import {AutoGravity} from "./autoGravity/AutoGravity";
 import {OCR} from "./OCR/OCR";
 import {FocusOnGravity} from "./focusOnGravity/FocusOnGravity";
-import {FocusOnValue} from "./qualifiers/focusOn/FocusOn";
-import {AutoFocus} from "./qualifiers/autoFocus/AutoFocus";
+import {FocusOnValue} from "../focusOn";
+import {AutoFocus} from "../autoFocus";
 import {CompassQualifier} from "./qualifiers/compass/CompassQualifier";
 import {XYCenterGravity} from "./xyCenterGravity/XYCenterGravity";
 

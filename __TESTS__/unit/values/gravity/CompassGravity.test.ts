@@ -1,4 +1,4 @@
-import {Compass} from "../../../../src/values/gravity/qualifiers/compass/Compass";
+import {Compass} from "../../../../src/values/compass";
 import {Gravity} from "../../../../src/values/gravity";
 
 describe('Tests for Compass Gravity', () => {

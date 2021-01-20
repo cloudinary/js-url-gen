@@ -3,7 +3,7 @@ import {scale} from "../../../src/actions/resize";
 import {Reshape} from "../../../src/actions/reshape";
 import {Position} from "../../../src/values/position";
 import {Gravity} from "../../../src/values/gravity";
-import {Compass} from "../../../src/values/gravity/qualifiers/compass/Compass";
+import {Compass} from "../../../src/values/compass";
 import {Transformation} from "../../../src/transformation/Transformation";
 import {createNewImage} from "../../TestUtils/createCloudinaryImage";
 

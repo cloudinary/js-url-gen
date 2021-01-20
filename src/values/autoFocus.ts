@@ -1,5 +1,5 @@
-import {QualifierValue} from "../../../../internal/qualifier/QualifierValue";
-import {FocusOnValue} from "../focusOn/FocusOn";
+import {QualifierValue} from "../internal/qualifier/QualifierValue";
+import {FocusOnValue} from "./focusOn";
 
 /**
  * @doc

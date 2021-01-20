@@ -1,4 +1,4 @@
-import {AutoFocus} from "../qualifiers/autoFocus/AutoFocus";
+import {AutoFocus} from "../../autoFocus";
 import {GravityQualifier} from "../GravityQualifier";
 
 /**

@@ -1,6 +1,6 @@
 import {Position} from "../../../src/values/position";
 import {Gravity} from "../../../src/values/gravity";
-import {FocusOn} from "../../../src/values/gravity/qualifiers/focusOn/FocusOn";
+import {FocusOn} from "../../../src/values/focusOn";
 
 /**
  * sample action used for testing

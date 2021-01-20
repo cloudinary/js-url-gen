@@ -1,5 +1,4 @@
-import {FocusOnValue} from "./FocusOnValue";
-
+import {FocusOnValue} from "./gravity/qualifiers/focusOn/FocusOnValue";
 
 /**
  * @memberOf Values.FocusOns

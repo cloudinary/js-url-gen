@@ -1,4 +1,4 @@
-import {FocusOnValue} from "./gravity/qualifiers/focusOn/FocusOn";
+import {FocusOnValue} from "./focusOn";
 import {OCR} from "./gravity/OCR/OCR";
 import {CompassGravity} from "./gravity/compassGravity/CompassGravity";
 import {FocusOnGravity} from "./gravity/focusOnGravity/FocusOnGravity";
