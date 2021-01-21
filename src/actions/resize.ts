@@ -124,10 +124,10 @@ function pad(width?: string|number, height?: string|number) :ResizePadAction<Com
  * @memberOf Actions.Resize
  * @param {number|string} width The required width of a transformed asset.
  * @param {number|string} height The required height of a transformed asset.
- * @return {LimitFillAction}
+ * @return {ResizeFillAction}
  */
-function limitFill(width?: string|number, height?: string|number) :ResizeAdvancedAction {
-  return new ResizeAdvancedAction('lfill', width, height);
+function limitFill(width?: string|number, height?: string|number) :ResizeFillAction {
+  return new ResizeFillAction('lfill', width, height);
 }
 
 
