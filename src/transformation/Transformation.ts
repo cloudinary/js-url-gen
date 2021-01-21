@@ -230,12 +230,18 @@ class Transformation {
 
   /**
    * @description Adds a flag as a separate action.
-   * @param {Values.Flag} flagQualifier
+   * @param {Values.Flag | string} flagQualifier
    * @return {this}
    */
-  addFlag(flagQualifier: FlagQualifier): this {
+  addFlag(flagQualifier: FlagQualifier | string): this {
     const action = new Action();
-    action.addQualifier(flagQualifier);
+    let flagToAdd = flagQualifier;
+
+    if (typeof flagQualifier === 'string') {
+      flagToAdd = new FlagQualifier(flagQualifier);
+    }
+
+    action.addQualifier(flagToAdd);
     return this.addAction(action);
   }
 
