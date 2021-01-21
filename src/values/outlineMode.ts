@@ -1,5 +1,5 @@
 /**
- * @description Contains functions to select type of improvement to perform when using Adjust.improve().
+ * @description Contains functions to select the type of improvement to perform when using Adjust.improve().
  * @namespace Outline
  * @memberOf Values
  * @example yourAsset.adjust(Adjust.improve().mode(ImproveMode.outdoor()))
