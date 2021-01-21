@@ -11,7 +11,8 @@ function chroma420():number { return 420; }
 
 
 /**
- * @docs
+ * @description Contains functions to select the chroma subsampling setting.
+ * <b>Learn more</b>: {@link https://cloudinary.com/documentation/image_transformations#toggling_chroma_subsampling | Toggling chroma subsampling}
  * @memberOf Values
  * @namespace ChromeSubSampling
  */

@@ -1,5 +1,5 @@
 /**
- * @@doc
+ * @description Contains functions to select the maximum number of pixels in the horizontal and vertical direction that are addressed.
  * @memberOf Values
  * @namespace ShakeStrength
  */

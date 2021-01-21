@@ -4,7 +4,9 @@ import {normal as normalTextDecoration} from "./textDecoration";
 import {serializeCloudinaryCharacters} from "../internal/utils/serializeCloudinaryCharacters";
 
 /**
- * @doc
+ * @description Specifies how to style your layered text, controls the font, font size, line spacing and more.
+ * <b>Learn more</b>: {@link https://cloudinary.com/documentation/image_transformations#adding_text_overlays | Adding text overlays to images}
+ * <b>Learn more</b>: {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#adding_text_captions | Adding text overlays to videos}
  * @memberOf Values
  * @namespace TextStyle
  */
