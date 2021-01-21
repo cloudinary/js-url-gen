@@ -2,7 +2,6 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 
 /**
- * @doc
  * @description A VideoCodec class, this class has no methods, and just sets the codec type (vp9, vp8, etc.)
  * @memberOf Values.VideoCodec
  */
@@ -14,7 +13,6 @@ class VideoCodecType extends Qualifier {
 }
 
 /**
- * @doc
  * @description An Advanced VideoCodec class with Profile and Level methods
  * @memberOf Values.VideoCodec
  */
@@ -29,7 +27,7 @@ class AdvVideoCodecType extends Qualifier{
   }
 
   /**
-   * @doc
+   * @description Specifies the profile to use with the h264 codec.
    * @param {Values.VideoCodecProfile | string} profile Sets the profile of the video codec
    * @example new AdvVideoCodecType('h264').profile(VideoCodecProfile.baseline())
    * @return this;
@@ -40,8 +38,7 @@ class AdvVideoCodecType extends Qualifier{
   }
 
   /**
-   * @doc
-   * @description Sets the level of the videoCodec
+   * @description Specifies the level to use with the h264 codec and specified profile.
    * @param {Values.VideoCodecLevel | number | string} lvl
    * @example new AdvVideoCodecType('h264').profile(VideoCodecLevel.baseline())
    * @return this;

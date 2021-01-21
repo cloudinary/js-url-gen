@@ -5,7 +5,6 @@
  */
 
 /**
- * @@doc
  * @memberOf Values.DPR
  */
 function auto(): string {

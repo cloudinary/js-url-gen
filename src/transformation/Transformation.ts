@@ -84,8 +84,8 @@ class Transformation {
   }
 
   /**
-   * @description Reshape an asset
-   * @doc
+   * @description Adjusts the shape of the delivered image. </br>
+   * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#image_shape_changes_and_distortion_effects|Shape changes and distortion effects}
    * @param {IReshape} reshapeAction
    * @return {this}
    */
@@ -220,8 +220,7 @@ class Transformation {
   }
 
   /**
-   * @doc
-   * @description Adds a page or frame from a document
+   * @description Extracts an image or a page using an index, a range, or a name from a layered media asset.
    * @param action
    * @return {this}
    */

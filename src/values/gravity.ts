@@ -8,7 +8,9 @@ import {XYCenterGravity} from "./gravity/xyCenterGravity/XYCenterGravity";
 
 
 /**
- * @doc
+ * @description Defines the gravity based on directional values from a compass.
+ * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#control_gravity | Control gravity for images}
+ * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#control_gravity | Control gravity for videos}
  * @param {Values.Compass} direction A compass Values
  * @memberOf Values.Gravity
  * @example image.resize(Resize.crop().width(300).gravity(Gravity.compass(Compass.north())))
@@ -19,7 +21,7 @@ function compass(direction: CompassQualifier): CompassGravity {
 }
 
 /**
- * @doc
+ * @description Specifies what to focus on, for example: faces, objects, eyes, etc.
  * @param {...Values.FocusOn} args One or more objects to focus on
  * @memberOf Values.Gravity
  * @example image.resize(Resize.crop().width(300).gravity(Gravity.focusOn(FocusOn.cat())))
@@ -32,7 +34,7 @@ function focusOn(...args: FocusOnValue[]): FocusOnGravity {
 }
 
 /**
- * @doc
+ * @description Automatically identifies the most interesting regions in the asset, can be qualified further by including what to focus on.
  * @memberOf Values.Gravity
  * @return {Values.Gravity.AutoGravity}
  * @example image.resize(Resize.crop().width(300).gravity(Gravity.autoGravity()))
@@ -42,8 +44,11 @@ function autoGravity(): AutoGravity {
   return new AutoGravity();
 }
 
+
+
+
 /**
- * @doc
+ * @description Detect all text elements in an image using the {@link https://cloudinary.com/documentation/image_transformations#control_gravity | OCR Text Detection and Extraction add-on} and use the detected bounding box coordinates as the basis of the transformation.
  * @memberOf Values.Gravity
  * @return {OCR}
  */
@@ -52,7 +57,7 @@ function ocr(): OCR {
 }
 
 /**
- * @doc
+ * @description Set the center of gravity to the given x & y coordinates.
  * @memberOf Values.Gravity
  * @return {XYCenterGravity}
  */
@@ -62,7 +67,8 @@ function xyCenter() {
 
 
 /**
- * @description Defines the focal gravity for certain methods of cropping.
+ * @description A qualifier that determines which part of an asset to focus on, and thus which part of the asset to keep, </br>
+ *              when any part of the asset is cropped. For overlays, this setting determines where to place the overlay.
  * @namespace Gravity
  * @memberOf Values
  * @example image.resize(Resize.crop().width(300).gravity(Gravity.compass(Compass.north())))

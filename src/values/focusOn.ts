@@ -120,7 +120,6 @@ function background(): FocusOnValue {
 
 /**
  * @memberOf Values.FocusOn
- * @doc
  * @description Detects aeroplane
  * @return {FocusOn} FocusOn
  */
@@ -130,7 +129,6 @@ function aeroplane(): FocusOnValue {
 
 /**
  * @memberOf Values.FocusOn
- * @doc
  * @description Detects bicycle
  * @return {FocusOn} FocusOn
  */
@@ -140,7 +138,6 @@ function bicycle(): FocusOnValue {
 
 /**
  * @memberOf Values.FocusOn
- * @doc
  * @description Detects boat
  * @return {FocusOn} FocusOn
  */
@@ -150,7 +147,6 @@ function boat(): FocusOnValue {
 
 /**
  * @memberOf Values.FocusOn
- * @doc
  * @description Detects bus
  * @return {FocusOn} FocusOn
  */
@@ -160,7 +156,6 @@ function bus(): FocusOnValue {
 
 /**
  * @memberOf Values.FocusOn
- * @doc
  * @description Detects car
  * @return {FocusOn} FocusOn
  */
@@ -170,7 +165,6 @@ function car(): FocusOnValue {
 
 /**
  * @memberOf Values.FocusOn
- * @doc
  * @description Detects chair
  * @return {FocusOn} FocusOn
  */
@@ -181,7 +175,6 @@ function chair(): FocusOnValue {
 
 /**
  * @memberOf Values.FocusOn
- * @doc
  * @description Detects cow
  * @return {FocusOn} FocusOn
  */
@@ -191,7 +184,6 @@ function cow(): FocusOnValue {
 
 /**
  * @memberOf Values.FocusOn
- * @doc
  * @description Detects diningtable
  * @return {FocusOn} FocusOn
  */
@@ -201,7 +193,6 @@ function diningtable(): FocusOnValue {
 
 /**
  * @memberOf Values.FocusOn
- * @doc
  * @description Detects horse
  * @return {FocusOn} FocusOn
  */
@@ -211,7 +202,6 @@ function horse(): FocusOnValue {
 
 /**
  * @memberOf Values.FocusOn
- * @doc
  * @description Detects motorbike
  * @return {FocusOn} FocusOn
  */
@@ -221,7 +211,6 @@ function motorbike(): FocusOnValue {
 
 /**
  * @memberOf Values.FocusOn
- * @doc
  * @description Detects pottedplant
  * @return {FocusOn} FocusOn
  */
@@ -231,7 +220,6 @@ function pottedplant(): FocusOnValue {
 
 /**
  * @memberOf Values.FocusOn
- * @doc
  * @description Detects sheep
  * @return {FocusOn} FocusOn
  */
@@ -241,7 +229,6 @@ function sheep(): FocusOnValue {
 
 /**
  * @memberOf Values.FocusOn
- * @doc
  * @description Detects sofa
  * @return {FocusOn} FocusOn
  */
@@ -251,7 +238,6 @@ function sofa(): FocusOnValue {
 
 /**
  * @memberOf Values.FocusOn
- * @doc
  * @description Detects train
  * @return {FocusOn} FocusOn
  */
@@ -261,7 +247,6 @@ function train(): FocusOnValue {
 
 /**
  * @memberOf Values.FocusOn
- * @doc
  * @description Detects tvmonitor
  * @return {FocusOn} FocusOn
  */
@@ -273,7 +258,6 @@ function tvmonitor(): FocusOnValue {
 
 
 /**
- * @@doc
  * @memberOf Values
  * @namespace FocusOn
  */

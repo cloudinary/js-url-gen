@@ -1,7 +1,7 @@
 import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 
 /**
- * @doc
+ * @description Acts as a marker for inputs passed into Rotate.mode()
  * @memberOf Values.RotationMode
  * @extend {SDK.QualifierValue}
  */

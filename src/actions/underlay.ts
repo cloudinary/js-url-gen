@@ -5,11 +5,9 @@ import {FetchSource} from "../values/source/sourceTypes/FetchSource";
 
 
 /**
- * @@doc
  * @memberOf Actions
  * @namespace Underlay
- * @description
- * Adds a video, text or image as an underlay over the base layer. </br>
+ * @description Adds an image or a text layer as an underlay under the base layer. </br>
  * @example
  * new CloudinaryImage('woman')
  *    .underlay(

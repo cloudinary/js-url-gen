@@ -3,9 +3,9 @@ import {Qualifier} from "../internal/qualifier/Qualifier";
 import {Action} from "../internal/Action";
 
 /**
- * @doc
+ * @description Extracts an image or a page using an index, a range, or a name from a layered media asset.
  * @memberOf Actions
- * @namespace PSDTools
+ * @namespace Actions
  */
 class Extract extends Action {
   private qualifierValue = new QualifierValue();
@@ -39,7 +39,6 @@ class Extract extends Action {
    * @param {string|number} from The layer number
    */
   byNumber(from: string|number): this{
-
     this.qualifierValue.addValue(from);
     return this;
   }

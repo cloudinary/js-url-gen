@@ -1,7 +1,7 @@
 import {GravityQualifier} from "../GravityQualifier";
 
 /**
- * @doc
+ * @description The class for the OCR builder
  * @memberOf Values.Gravity
  * @extends {Values.Gravity.GravityQualifier}
  */
@@ -14,8 +14,8 @@ class OCR extends GravityQualifier {
   }
 
   /**
-   * @doc
-   * @desc Marks the OCR as avoided by the algorithm
+   * @description Attempts to avoid the detected text in the image
+   * @returns {this}
    */
   avoid(): this {
     this.addValue('avoid');
