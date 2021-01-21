@@ -301,4 +301,11 @@ describe('Tests for Transformation Action -- Effect', () => {
       .toString()
     ).toBe('e_simulate_colorblind:rod_monochromacy');
   });
+
+  it('Test removeBackground', () => {
+    expect(Effect.removeBackground().toString()).toBe('e_bgremoval');
+    expect(Effect.removeBackground().screen().toString()).toBe('e_bgremoval:screen');
+    expect(Effect.removeBackground().colorToRemove(Color.RED).toString()).toBe('e_bgremoval:red');
+    expect(Effect.removeBackground().screen().colorToRemove(Color.RED).toString()).toBe('e_bgremoval:screen:red');
+  });
 });

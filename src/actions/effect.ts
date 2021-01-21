@@ -22,6 +22,7 @@ import {ImageSource} from "../values/source/sourceTypes/ImageSource";
 import {EffectActionWithStrength} from "./effect/EffectActions/EffectActionWithStrength";
 import {BlackwhiteEffectAction} from "./effect/leveled/blackwhite";
 import {FadeInEffectAction} from "./effect/leveled/fadeIn";
+import {RemoveBackgroundAction} from "./effect/removeBackgroundAction";
 
 
 /**
@@ -391,6 +392,19 @@ function pixelate(squareSize?: number): Pixelate {
 
 
 /**
+ * @description Makes the background of an image transparent (or solid white for JPGs).</br>
+ *              Use when the background is a uniform color.
+ *              {@link https://cloudinary.com/documentation/transformation_reference#e_bgremoval | Background Removal}
+ *
+ * @memberOf Actions.Effect
+ * @return {Actions.Effect.RemoveBackgroundAction}
+ */
+function removeBackground(): RemoveBackgroundAction {
+  return new RemoveBackgroundAction();
+}
+
+
+/**
  * @description Defines effects that you can apply to transform your assets.
  * @memberOf Actions
  * @namespace Effect
@@ -427,7 +441,8 @@ const Effect = {
   assistColorBlind: assistColorBlind,
   simulateColorBlind: simulateColorBlind,
   transition: transition,
-  dither: dither
+  dither: dither,
+  removeBackground
 };
 
 
@@ -444,6 +459,7 @@ export declare type EffectActions =
   | GradientFadeEffectAction
   | BlurAction
   | Pixelate
+  | RemoveBackgroundAction
 
 
 export {
@@ -478,5 +494,6 @@ export {
   assistColorBlind,
   simulateColorBlind,
   transition,
-  dither
+  dither,
+  removeBackground
 };
