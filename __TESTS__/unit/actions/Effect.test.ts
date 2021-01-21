@@ -307,5 +307,6 @@ describe('Tests for Transformation Action -- Effect', () => {
     expect(Effect.removeBackground().screen().toString()).toBe('e_bgremoval:screen');
     expect(Effect.removeBackground().colorToRemove(Color.RED).toString()).toBe('e_bgremoval:red');
     expect(Effect.removeBackground().screen().colorToRemove(Color.RED).toString()).toBe('e_bgremoval:screen:red');
+    expect(Effect.removeBackground().screen().colorToRemove('#fff').toString()).toBe('e_bgremoval:screen:fff');
   });
 });

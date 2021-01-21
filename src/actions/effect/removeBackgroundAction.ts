@@ -23,17 +23,17 @@ class RemoveBackgroundAction extends Action {
    * @private
    */
   private overwriteQualifier(): this {
-    const value = ['bgremoval', this._screen ? 'screen' : '', prepareColor(this._colorToRemove || '')];
+    const value = ['bgremoval', this._screen ? 'screen' : '', (this._colorToRemove || '').replace('#', '')];
     return this.addQualifier(new Qualifier('e', new QualifierValue(value)));
   }
 
   /**
    * @description The strength of the shadow. (Range: 0 to 100, Server default: 40)
-   * @param {number} useSscren
+   * @param {number} useScreen Boolean, defaults to true
    * @return {this}
    */
-  screen(useSscren = true): this {
-    this._screen = useSscren;
+  screen(useScreen = true): this {
+    this._screen = useScreen;
     return this.overwriteQualifier();
   }
 
