@@ -1,7 +1,7 @@
 import {FormatQualifier} from "./format/FormatQualifier";
 
 /**
- * @description Contains functions to select asset format, can be used to convert images and videos to other formats.
+ * @description Contains functions to select the asset format, can be used to convert images and videos to other formats.
  * @memberOf Values
  * @namespace Format
  * @example
