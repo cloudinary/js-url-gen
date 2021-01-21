@@ -191,6 +191,6 @@ describe('Tests for overlay actions', () => {
 
     // This is a fully functional URL that should work in the browser.
     // Explicitly check the resulting base64 string
-    expect(asset.toString()).toContain(`l_fetch:aHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vZGVtby9pbWFnZS91cGxvYWQvY2k.png/${sampleTxResizePad().toString()}`);
+    expect(asset.toString()).toContain(`l_fetch:aHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vZGVtby9pbWFnZS91cGxvYWQvY2k=.png/${sampleTxResizePad().toString()}`);
   });
 });

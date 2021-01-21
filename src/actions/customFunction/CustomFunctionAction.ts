@@ -19,8 +19,7 @@ class CustomFunctionAction extends Action {
   private encodeCustomFunctionString(fn:string):string {
     const encodedSource = base64Encode(fn)
       .replace(/\+/g, '-') // Convert '+' to '-'
-      .replace(/\//g, '_') // Convert '/' to '_'
-      .replace(/=+$/, ''); // Remove ending '='
+      .replace(/\//g, '_'); // Convert '/' to '_'
     return encodedSource;
   }
 
