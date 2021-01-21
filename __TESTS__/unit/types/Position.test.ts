@@ -1,7 +1,7 @@
 import {Position} from "../../../src/values/position";
 import {Gravity} from "../../../src/values/gravity";
-import {Compass} from "../../../src/values/gravity/qualifiers/compass/Compass";
-import {FocusOn} from "../../../src/values/gravity/qualifiers/focusOn/FocusOn";
+import {Compass} from "../../../src/values/compass";
+import {FocusOn} from "../../../src/values/focusOn";
 
 
 describe('Position Qualifier', () => {

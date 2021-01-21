@@ -1,4 +1,4 @@
-import {FocusOnValue} from "../qualifiers/focusOn/FocusOn";
+import {FocusOnValue} from "../../focusOn";
 import {GravityQualifier} from "../GravityQualifier";
 import {AutoGravity} from "../autoGravity/AutoGravity";
 

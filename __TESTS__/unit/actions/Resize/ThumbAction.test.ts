@@ -1,6 +1,6 @@
 import getImageWithResize from "./shared/getImageWithResize";
 import {thumbnail} from "../../../../src/actions/resize";
-import {Compass} from "../../../../src/values/gravity/qualifiers/compass/Compass";
+import {Compass} from "../../../../src/values/compass";
 import {Gravity} from "../../../../src/values/gravity";
 
 describe('Tests for Transformation Action -- Resize.thumb()', () => {
