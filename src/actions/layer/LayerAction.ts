@@ -83,6 +83,11 @@ class LayerAction extends Action {
       bit.addQualifier(qualifier);
     });
 
+    // Flags are stored separately from qualifiers, we need to add those as well
+    this._position?.flags.forEach((flag) => {
+      bit.addFlag(flag);
+    });
+
     this._blendMode?.qualifiers.forEach((qualifier) => {
       bit.addQualifier(qualifier);
     });

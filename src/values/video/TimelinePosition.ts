@@ -18,17 +18,25 @@ class TimelinePosition extends Action {
   }
 
   /**
-   * @param startOffset
+   * @param {string | number} startOffset
    */
-  startOffset(startOffset: number): this {
+  startOffset(startOffset: number | string): this {
     this.addQualifier(new Qualifier('so', startOffset));
     return this;
   }
 
   /**
-   * @param duration
+   * @param {string | number} endOffset
    */
-  duration(duration: number): this {
+  endOffset(endOffset: number | string): this {
+    this.addQualifier(new Qualifier('eo', endOffset));
+    return this;
+  }
+
+  /**
+   * @param {string | number} duration
+   */
+  duration(duration: number | string): this {
     this.addQualifier(new Qualifier('du', duration));
     return this;
   }

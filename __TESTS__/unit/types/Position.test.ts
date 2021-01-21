@@ -2,6 +2,9 @@ import {Position} from "../../../src/values/position";
 import {Gravity} from "../../../src/values/gravity";
 import {Compass} from "../../../src/values/compass";
 import {FocusOn} from "../../../src/values/focusOn";
+import {Overlay} from "../../../src/actions/overlay";
+import {Source} from "../../../src/values/source";
+import {createNewImage} from "../../TestUtils/createCloudinaryImage";
 
 
 describe('Position Qualifier', () => {
@@ -14,7 +17,7 @@ describe('Position Qualifier', () => {
 
   it('Tests the toString() method of Position (Compass Gravity)', () => {
     const posString = new Position()
-      .allowOverflow()
+      .allowOverflow(false)
       .tiled()
       .gravity(Gravity.compass(Compass.north()))
       .offsetX(10)
@@ -26,7 +29,7 @@ describe('Position Qualifier', () => {
 
   it('Tests the toString() method of Position (FocusOn Gravity)', () => {
     const posString = new Position()
-      .allowOverflow()
+      .allowOverflow(false)
       .tiled()
       .gravity(Gravity.focusOn(FocusOn.cat()))
       .offsetX(10)
@@ -34,5 +37,15 @@ describe('Position Qualifier', () => {
       .toString();
 
     expect(posString).toBe('fl_no_overflow,fl_tiled,g_cat,x_10,y_10');
+  });
+
+  it('Tests a tiled overlay', () => {
+    const tAsset = createNewImage('sample')
+      .overlay(Overlay.source(Source.image('sample'))
+        .position(new Position()
+          .tiled()));
+
+
+    console.log(tAsset.toString());
   });
 });
