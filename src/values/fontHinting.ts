@@ -1,11 +1,11 @@
 /**
+ * @doc
  * @memberOf Values
  * @namespace FontHinting
  */
 
 
 /**
- * @doc
  * @memberOf Values.FontHinting
  */
 function none(): string {
@@ -13,7 +13,6 @@ function none(): string {
 }
 
 /**
- * @doc
  * @memberOf Values.FontHinting
  */
 function slight(): string {
@@ -21,7 +20,6 @@ function slight(): string {
 }
 
 /**
- * @doc
  * @memberOf Values.FontHinting
  */
 function medium(): string {
@@ -29,7 +27,6 @@ function medium(): string {
 }
 
 /**
- * @doc
  * @memberOf Values.FontHinting
  */
 function full(): string {

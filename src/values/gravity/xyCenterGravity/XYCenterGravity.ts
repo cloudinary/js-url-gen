@@ -1,7 +1,7 @@
 import {GravityQualifier} from "../GravityQualifier";
 
 /**
- * @doc
+ * @description The class for the XYCenter Gravity builder
  * @memberOf Values.Gravity
  * @extends {Values.Gravity.GravityQualifier}
  */

@@ -2,8 +2,7 @@ import {BaseSource} from "../values/source/BaseSource";
 import {LayerAction} from "./layer/LayerAction";
 
 /**
- * @@doc
- * @description Adds a video, text or image as an overlay over the base layer. </br>
+ * @description Adds a video, text or an image layer as an overlay over the base layer. </br>
  * @memberOf Actions
  * @namespace Overlay
  * @example

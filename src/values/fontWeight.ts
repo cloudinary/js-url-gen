@@ -1,10 +1,10 @@
 /**
+ * @doc
  * @memberOf Values
  * @namespace FontWeight
  */
 
 /**
- * @@doc
  * @memberOf Values.FontWeight
  */
 function thin(): string {
@@ -12,7 +12,6 @@ function thin(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.FontWeight
  */
 function light(): string {
@@ -20,7 +19,6 @@ function light(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.FontWeight
  */
 function normal(): string {
@@ -28,7 +26,6 @@ function normal(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.FontWeight
  */
 function bold(): string {

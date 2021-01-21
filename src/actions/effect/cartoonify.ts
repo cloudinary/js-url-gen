@@ -28,8 +28,7 @@ class CartoonifyEffect extends Action {
   }
 
   /**
-   * @description Use blackwhite to achieve a black and white cartoon effect.
-   * @doc
+   * @description Achieves a black and white cartoon effect.
    * @return {this}
    */
   blackwhite(): this {

@@ -3,9 +3,8 @@ import {Qualifier} from "../../../internal/qualifier/Qualifier";
 import {Action} from "../../../internal/Action";
 
 /**
- * @description The Action class of the blur Builder
+ * @description The Action class of the blur Builder.
  * @memberOf Actions.Effect
- * @doc
  */
 class BlurAction extends Action {
   private _region?: NamedRegion;
@@ -16,11 +15,19 @@ class BlurAction extends Action {
     this._strength = strength;
   }
 
+  /**
+   * @description Specifies the region to blur.
+   * @param {NamedRegion} blurRegion
+   */
   region(blurRegion: NamedRegion): this {
     this._region = blurRegion;
     return this;
   }
 
+  /**
+   * @description Sets the strength of the blur effect.
+   * @param {number | string} strength
+   */
   strength(strength: number | string): this {
     this._strength = strength;
     return this;

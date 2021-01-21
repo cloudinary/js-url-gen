@@ -3,7 +3,7 @@ import {GravityQualifier} from "../GravityQualifier";
 import {AutoGravity} from "../autoGravity/AutoGravity";
 
 /**
- * @doc
+ * @description The class for the FocusOn builder
  * @memberOf Values.Gravity
  * @extends {Values.Gravity.GravityQualifier}
  */
@@ -15,7 +15,7 @@ class FocusOnGravity extends GravityQualifier {
   }
 
   /**
-   * @doc
+   * @description Specifies the gravity to use if none of the other gravity objects are found.
    * @param {Values.Gravity.AutoGravity} val
    */
   fallbackGravity(val: AutoGravity): this {

@@ -1,10 +1,10 @@
 /**
+ * @doc
  * @memberOf Values
  * @namespace FontStyle
  */
 
 /**
- * @@doc
  * @memberOf Values.FontStyle
  */
 function normal(): string {
@@ -12,7 +12,6 @@ function normal(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.FontStyle
  */
 function italic(): string {

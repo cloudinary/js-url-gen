@@ -120,7 +120,6 @@ describe('Test imported values', () => {
     expect(SimulateColorBlind.tritanomaly()).toBe('tritanomaly');
     expect(SimulateColorBlind.tritanopia()).toBe('tritanopia');
 
-    expect(AudioCodec.auto()).toBe('auto');
     expect(AudioCodec.aac()).toBe('aac');
     expect(AudioCodec.mp3()).toBe('mp3');
     expect(AudioCodec.opus()).toBe('opus');

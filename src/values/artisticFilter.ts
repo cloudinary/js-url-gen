@@ -1,12 +1,12 @@
 /**
- * @@doc
+ * @description Contains methods to specify the type of artistic filter </br>
+ * Learn more: {@link https://cloudinary.com/documentation/image_transformations#artistic_filter_effects | Custom functions}
  * @namespace ArtisticFilter
  * @memberOf Values
  */
 
 
 /**
- * @@doc
  * @memberOf Values.ArtisticFilter
  */
 function alDente(): string {
@@ -14,7 +14,6 @@ function alDente(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.ArtisticFilter
  */
 function athena(): string {
@@ -22,7 +21,6 @@ function athena(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.ArtisticFilter
  */
 function audrey(): string {
@@ -30,7 +28,6 @@ function audrey(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.ArtisticFilter
  */
 function aurora(): string {
@@ -38,7 +35,6 @@ function aurora(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.ArtisticFilter
  */
 function daguerre(): string {
@@ -46,7 +42,6 @@ function daguerre(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.ArtisticFilter
  */
 function eucalyptus(): string {
@@ -54,7 +49,6 @@ function eucalyptus(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.ArtisticFilter
  */
 function fes(): string {
@@ -62,7 +56,6 @@ function fes(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.ArtisticFilter
  */
 function frost(): string {
@@ -70,7 +63,6 @@ function frost(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.ArtisticFilter
  */
 function hairspray(): string {
@@ -78,7 +70,6 @@ function hairspray(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.ArtisticFilter
  */
 function hokusai(): string {
@@ -86,7 +77,6 @@ function hokusai(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.ArtisticFilter
  */
 function incognito(): string {
@@ -94,7 +84,6 @@ function incognito(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.ArtisticFilter
  */
 function linen(): string {
@@ -102,7 +91,6 @@ function linen(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.ArtisticFilter
  */
 function peacock(): string {
@@ -110,7 +98,6 @@ function peacock(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.ArtisticFilter
  */
 function primavera(): string {
@@ -118,7 +105,6 @@ function primavera(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.ArtisticFilter
  */
 function quartz(): string {
@@ -126,7 +112,6 @@ function quartz(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.ArtisticFilter
  */
 function redRock(): string {
@@ -134,7 +119,6 @@ function redRock(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.ArtisticFilter
  */
 function refresh(): string {
@@ -142,7 +126,6 @@ function refresh(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.ArtisticFilter
  */
 function sizzle(): string {
@@ -150,7 +133,6 @@ function sizzle(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.ArtisticFilter
  */
 function sonnet(): string {
@@ -158,7 +140,6 @@ function sonnet(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.ArtisticFilter
  */
 function ukulele(): string {
@@ -166,7 +147,6 @@ function ukulele(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.ArtisticFilter
  */
 function zorro(): string {
