@@ -3,6 +3,7 @@ import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
 import {prepareColor} from "../../internal/utils/prepareColor";
 import {SystemColors} from "../../values/color";
+import {ExpressionQualifier} from "../../values/expression/ExpressionQualifier";
 
 /**
  * @description Applies a shadow filter to the asset.
@@ -29,19 +30,19 @@ class ShadowEffectAction extends Action {
 
   /**
    * @description The X offset the shadow
-   * @param {number} x
+   * @param {number | SDK.ExpressionQualifier} x
    * @return {this}
    */
-  offsetX(x:number): this {
+  offsetX(x:number | ExpressionQualifier): this {
     return this.addQualifier(new Qualifier('x', new QualifierValue(x)));
   }
 
   /**
    * @description The Y offset the shadow
-   * @param {number} y
+   * @param {number | SDK.ExpressionQualifier} y
    * @return {this}
    */
-  offsetY(y:number): this {
+  offsetY(y:number | ExpressionQualifier): this {
     return this.addQualifier(new Qualifier('y', new QualifierValue(y)));
   }
 

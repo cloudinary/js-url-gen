@@ -25,11 +25,11 @@ function image(publicID: string): ImageSource {
 /**
  * @description Returns an instance of a TextSource
  * @memberOf Values.Source
- * @param text {string} The text to display.
- * @param text {TextStyle} The textStyle to use with the text in the layer
+ * @param {string} text The text to display.
+ * @param {TextStyle | string} textStyle The textStyle to use with the text in the layer
  * @return {Values.Source.TextSource}
  */
-function text(text: string, textStyle: TextStyle): TextSource {
+function text(text: string, textStyle: TextStyle | string): TextSource {
   return new TextSource(text, textStyle);
 }
 

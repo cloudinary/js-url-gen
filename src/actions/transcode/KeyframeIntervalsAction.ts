@@ -8,7 +8,7 @@ import {toFloatAsString} from "../../internal/utils/toFloatAsString";
  * @description Controls the keyframe interval of the delivered video.
  */
 class KeyframeIntervalsAction extends Action {
-  constructor(interval: number) {
+  constructor(interval: number | string) {
     super();
     this.addQualifier(new Qualifier('ki', toFloatAsString(interval)));
   }

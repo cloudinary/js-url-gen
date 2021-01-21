@@ -29,17 +29,17 @@ class GradientFadeEffectAction extends Action {
 
   /**
    * @description Sets the x dimension of the start point.
-   * @param {number} x The x dimension of the start point.
+   * @param {number | string} x The x dimension of the start point.
    */
-  horizontalStartPoint(x:number): this {
+  horizontalStartPoint(x:number | string): this {
     return this.addQualifier(new Qualifier('x', x));
   }
 
   /**
    * @description Sets the y dimension of the start point.
-   * @param {number} y The y dimension of the start point.
+   * @param {number | string} y The y dimension of the start point.
    */
-  verticalStartPoint(y:number): this {
+  verticalStartPoint(y:number | string): this {
     return this.addQualifier(new Qualifier('y', y));
   }
 

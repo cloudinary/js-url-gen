@@ -14,7 +14,7 @@ import RoundCornersAction from "./roundCorners/RoundCornersAction";
  * @namespace Border
  */
 class Border extends Action {
-  private borderWidth: number;
+  private borderWidth: number | string;
   private borderColor: string;
   private borderType: string;
   private _roundCorners: RoundCornersAction;
@@ -25,7 +25,7 @@ class Border extends Action {
    * @description Sets the style of the border.
    * @return {Actions.Border}
    */
-  static solid(width: number, color: SystemColors): Border {
+  static solid(width: number | string, color: SystemColors): Border {
     return new Border('solid', color, width);
   }
 
@@ -35,7 +35,7 @@ class Border extends Action {
    * @param {string} color The color of the border.
    * @param {number} borderWidth The width in pixels.
    */
-  constructor(borderType: string, color: SystemColors, borderWidth: number) {
+  constructor(borderType: string, color: SystemColors, borderWidth: number | string) {
     super();
     this.borderType = borderType;
     this.borderColor = prepareColor(color);

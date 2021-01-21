@@ -40,27 +40,29 @@ class PositionQualifier extends Action {
    * @description Prevents an image or text overlay from extending a delivered image canvas beyond the dimensions of the base image
    * <b>Learn more:</b> {@link https://cloudinary.com/documentation/transformation_reference#fl_no_overflow | Overflow in overlays}
    */
-  allowOverflow(): this {
-    this.addFlag(noOverflow());
+  allowOverflow(bool = true): this {
+    if (bool === false) {
+      this.addFlag(noOverflow());
+    }
     return this;
   }
 
   /**
    * @description Set the X Offset
-   * @param {number} offsetX
+   * @param {number | string} offsetX
    * @return {this}
    */
-  offsetX(offsetX:number): this{
+  offsetX(offsetX:number | string): this{
     this.addQualifier(new Qualifier('x', offsetX));
     return this;
   }
 
   /**
    * @description Set the Y Offset
-   * @param {number} offsetY
+   * @param {number | string} offsetY
    * @return {this}
    */
-  offsetY(offsetY:number): this{
+  offsetY(offsetY:number | string): this{
     this.addQualifier(new Qualifier('y', offsetY));
     return this;
   }
