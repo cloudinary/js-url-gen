@@ -82,10 +82,12 @@ describe('Tests for Transformation Action -- Transcode', () => {
     const url = createNewVideo('sample')
       .transcode(Transcode
         .keyframeInterval(0.4))
+      .transcode(Transcode
+        .keyframeInterval('0.8'))
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/ki_0.4/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/ki_0.4/ki_0.8/sample');
   });
 
   it('Creates a cloudinaryURL with streamingProfile', () => {
