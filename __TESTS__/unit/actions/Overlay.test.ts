@@ -139,7 +139,7 @@ describe('Tests for overlay actions', () => {
     expect(asset.toString()).toBe('l_sample/c_pad,w_100/e_screen,fl_layer_apply,g_face');
   });
 
-  it('Tests an underlay with a complete example', () => {
+  it('Tests an image underlay with a complete example', () => {
     const asset = createNewImage();
 
     asset.underlay(Underlay.source(Source.image("sample").transformation(sampleTxResizePad()))
@@ -148,6 +148,18 @@ describe('Tests for overlay actions', () => {
     );
 
     expect(asset.toString()).toBe('u_sample/c_pad,w_100/e_screen,fl_layer_apply,g_face');
+  });
+
+  it('Tests a video(main asset) with an image underlay', () => {
+    const asset = createNewVideo();
+
+    asset.underlay(Underlay.source(Source.image("sample").transformation(sampleTxResizePad()))
+      .position(sampleFacePosition())
+      .blendMode(BlendMode.screen())
+    );
+
+    // ensure toURL contains video/upload to confirm it's a video
+    expect(asset.toURL()).toContain('video/upload/u_sample/c_pad,w_100/e_screen,fl_layer_apply,g_face');
   });
 
   it('Video on Video with timeline', () => {

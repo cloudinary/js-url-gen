@@ -239,6 +239,15 @@ class CloudinaryTransformable extends CloudinaryFile {
   toString(): string {
     return this.transformation.toString();
   }
+
+  /**
+   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
+   * @return {this}
+   */
+  underlay(underlayAction: LayerAction): this {
+    this.transformation.underlay(underlayAction);
+    return this;
+  }
 }
 
 export {CloudinaryTransformable};

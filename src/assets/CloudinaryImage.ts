@@ -15,15 +15,6 @@ class CloudinaryImage extends CloudinaryTransformable {
     super(publicID, cloudConfig, urlConfig, new ImageTransformation());
   }
 
-  /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
-   * @return {this}
-   */
-  underlay(underlayAction: LayerAction): this {
-    this.transformation.underlay(underlayAction);
-    return this;
-  }
-
   toURL(): string {
     return this.createCloudinaryURL(this.transformation);
   }
