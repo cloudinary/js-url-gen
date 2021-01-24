@@ -34,7 +34,7 @@ describe('Tests for Transformation Action -- Effect', () => {
       .effect(Effect.makeTransparent())
       .effect(Effect.makeTransparent(100))
       .effect(Effect.makeTransparent().tolerance(5))
-      .effect(Effect.makeTransparent().tolerance(5).color('red'))
+      .effect(Effect.makeTransparent().tolerance(5).colorToReplace('red'))
       .effect(Effect.noise())
       .effect(Effect.noise(100))
       .effect(Effect.noise().level(5))
@@ -300,5 +300,13 @@ describe('Tests for Transformation Action -- Effect', () => {
       .condition(rodMonochromacy())
       .toString()
     ).toBe('e_simulate_colorblind:rod_monochromacy');
+  });
+
+  it('Test removeBackground', () => {
+    expect(Effect.removeBackground().toString()).toBe('e_bgremoval');
+    expect(Effect.removeBackground().screen().toString()).toBe('e_bgremoval:screen');
+    expect(Effect.removeBackground().colorToRemove(Color.RED).toString()).toBe('e_bgremoval:red');
+    expect(Effect.removeBackground().screen().colorToRemove(Color.RED).toString()).toBe('e_bgremoval:screen:red');
+    expect(Effect.removeBackground().screen().colorToRemove('#fff').toString()).toBe('e_bgremoval:screen:fff');
   });
 });

@@ -1,5 +1,6 @@
 /**
- * @@doc
+ * @description Contains functions to select the type of color-blind condition to simulate.
+ * <b>Learn more</b>: {@link https://cloudinary.com/blog/open_your_eyes_to_color_accessibility | Blog: Open your Eyes to Color Accessibility}
  * @memberOf Values
  * @namespace SimulateColorBlindValues
  */
@@ -82,5 +83,4 @@ export {
   tritanomaly,
   tritanopia
 };
-
 

@@ -1,6 +1,6 @@
 /**
- * @doc
- * @description The level of the video codec
+ * @description Contains functions to select the video codec level.
+ * <b>Learn more</b>: {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#video_codec_settings | Video codec settings}
  * @memberOf Values
  * @namespace VideoCodecLevel
  */

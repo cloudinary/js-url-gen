@@ -1,6 +1,8 @@
 
 /**
- * @doc
+ * @description Contains functions to select the rotation mode.
+ * <b>Learn more</b>: {@link https://cloudinary.com/documentation/image_transformations#rotating_images | Rotating images}
+ * <b>Learn more</b>: {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#rotating_videos | Rotating videos}
  * @memberOf Values
  * @namespace RotationMode
  */

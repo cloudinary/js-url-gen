@@ -46,6 +46,6 @@ describe('Position Qualifier', () => {
           .tiled()));
 
 
-    console.log(tAsset.toString());
+    expect(tAsset.toString()).toBe('l_sample/fl_layer_apply,fl_tiled');
   });
 });

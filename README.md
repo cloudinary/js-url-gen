@@ -26,10 +26,6 @@ You can read more about the project here:
 npm install @cloudinary/base 
 ```
 
-### Usage
-<a href="https://cloudinary.github.io/cloudinary-js-base/public/docs/">Documentation website</a>
-
-
 ### Testing with Jest
 
 @cloudinary/base is shipped with ES6 code by default, while this provides great tree-shaking potential,
@@ -59,13 +55,6 @@ module.exports = {
 };
 ```
 
-
-### Progress report
-We're currently working on implementing all the wide range of features and possible transformations.  
-
-We've created a progress report that visualizes our efforts: 
-
-https://cloudinary.github.io/cloudinary-js-base/public/progress/cloudinary-base-progress-report.html
 
 
 ### Interested in Cloudinary?
