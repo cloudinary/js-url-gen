@@ -1,5 +1,6 @@
 import {Action} from "../../internal/Action";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
+import {StringNumberOrExpression} from "../../simpleTypes";
 
 /**
  * @description Defines a video range using startOffset, endOffset, duration.
@@ -20,7 +21,7 @@ class TimelinePosition extends Action {
   /**
    * @param startOffset
    */
-  startOffset(startOffset: number): this {
+  startOffset(startOffset: StringNumberOrExpression): this {
     this.addQualifier(new Qualifier('so', startOffset));
     return this;
   }
@@ -28,7 +29,7 @@ class TimelinePosition extends Action {
   /**
    * @param duration
    */
-  duration(duration: number): this {
+  duration(duration: StringNumberOrExpression): this {
     this.addQualifier(new Qualifier('du', duration));
     return this;
   }
