@@ -5,13 +5,26 @@ import {By3dLutAction} from "./adjust/By3dLutAction";
 import {ImproveAction} from "./adjust/ImproveAction";
 import {ReplaceColorAction} from "./adjust/ReplaceColorAction";
 /**
- * Adjusts the visual appearance of an image or video.
+ * @description Adjusts the visual appearance of an image or video.
  * @memberOf Actions
  * @namespace Adjust
  */
 
 
 
+
+
+/**
+ * @memberOf Actions.Adjust
+ * @description Blends an image with one or more tint colors at a specified intensity. </br>
+ *              You can optionally equalize colors before tinting and specify gradient blend positioning per color.</br>
+ *              <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#tint_effects | Deliver selected layers of a PSD image}
+ * @param {string} value The full tint effect value, provided as a string.
+ * @return {Actions.Effect.SimpleEffectAction}
+ */
+function tint(value: string): SimpleEffectAction {
+  return new SimpleEffectAction('tint', value);
+}
 
 
 /**
@@ -212,6 +225,8 @@ import {EffectActionWithLevel} from "./effect/EffectActions/EffectActionWithLeve
 import {EffectActionWithStrength} from "./effect/EffectActions/EffectActionWithStrength";
 import {EffectActionWithBlend} from "./effect/EffectActions/EffectActionWithBlend";
 import {ViesusCorrectAdjustAction} from "./adjust/simple/ViesusCorrectAdjustAction";
+import {EffectActions} from "./effect";
+import {SimpleEffectAction} from "./effect/EffectActions/SimpleEffectAction";
 
 
 
@@ -291,9 +306,9 @@ function by3dLut(publicId: string): By3dLutAction {
 
 const Adjust = {brightness, viesusCorrect, opacity, red, sharpen, improve, saturation,
   contrast, gamma, green, blue, brightnessHSB, hue, autoBrightness, autoColor,
-  autoContrast, vibrance, unsharpMask, opacityThreshold, replaceColor, recolor, fillLight, by3dLut};
+  autoContrast, vibrance, unsharpMask, opacityThreshold, replaceColor, recolor, fillLight, by3dLut, tint};
 
 
 export {Adjust, brightness, viesusCorrect, opacity, red, sharpen, improve, saturation,
   contrast, gamma, green, blue, brightnessHSB, hue, autoBrightness, autoColor,
-  autoContrast, vibrance, unsharpMask, opacityThreshold, replaceColor, recolor, fillLight, by3dLut};
+  autoContrast, vibrance, unsharpMask, opacityThreshold, replaceColor, recolor, fillLight, by3dLut, tint};

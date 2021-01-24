@@ -188,4 +188,14 @@ describe('Tests for Transformation Action -- Adjust', () => {
       .skinSaturation(10)
       .toString()).toBe('e_viesus_correct:skin_saturation_10');
   });
+
+
+  it('Tests for Adjust.tint', () => {
+    let tintVal = 'equalize:80:red:50p:blue:60p:yellow:40p';
+    expect(Adjust.tint(tintVal).toString()).toBe(`e_tint:${tintVal}`);
+
+    tintVal = 'Anything here is just added as a raw string:to the action, with special characters/no validation';
+    expect(Adjust.tint(tintVal).toString()).toBe(`e_tint:${tintVal}`);
+  });
+
 });
