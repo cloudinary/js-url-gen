@@ -1,5 +1,5 @@
 /**
- * @@doc
+ * @description Contains functions to select an audio codec.
  * @memberOf Values
  * @namespace AudioCodec
  */

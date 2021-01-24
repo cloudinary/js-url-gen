@@ -1,5 +1,5 @@
 /**
- * @@doc
+ * @description Contains functions to select the color space mode.
  * @namespace ColorSpace
  * @memberOf Values
  */

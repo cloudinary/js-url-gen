@@ -1,7 +1,9 @@
 /**
- * @@doc
+ * @description Contains functions to select the mode when using a progressive format.
+ * <b>Learn more</b>: {@link https://cloudinary.com/documentation/transformation_reference#fl_progressive | Progressive modes}
  * @memberOf Values
  * @namespace Progressive
+ * @example yourAsset.delivery(Delivery.format(Format.jpg()).progressive(Progressive.steep()))
  */
 import {FlagQualifier} from "./flag/FlagQualifier";
 
@@ -15,7 +17,6 @@ class ProgressiveQualifier extends FlagQualifier {
 
 
 /**
- * @@doc
  * @memberOf Values.Progressive
  */
 function none(): FlagQualifier {
@@ -23,7 +24,6 @@ function none(): FlagQualifier {
 }
 
 /**
- * @@doc
  * @memberOf Values.Progressive
  */
 function semi(): FlagQualifier {
@@ -31,7 +31,6 @@ function semi(): FlagQualifier {
 }
 
 /**
- * @@doc
  * @memberOf Values.Progressive
  */
 function steep(): FlagQualifier {
@@ -39,7 +38,6 @@ function steep(): FlagQualifier {
 }
 
 /**
- * @@doc
  * @memberOf Values.Progressive
  */
 function progressive(): FlagQualifier {

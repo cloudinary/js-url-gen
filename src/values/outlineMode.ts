@@ -1,11 +1,11 @@
 /**
- * @@doc
+ * @description Contains functions to select the type of improvement to perform when using Adjust.improve().
  * @namespace Outline
  * @memberOf Values
+ * @example yourAsset.adjust(Adjust.improve().mode(ImproveMode.outdoor()))
  */
 
 /**
- * @@doc
  * @memberOf Values.Outline
  */
 function fill(): string {
@@ -13,7 +13,6 @@ function fill(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.Outline
  */
 function inner(): string {
@@ -21,7 +20,6 @@ function inner(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.Outline
  */
 function innerFill(): string {
@@ -29,7 +27,6 @@ function innerFill(): string {
 }
 
 /**
- * @@doc
  * @memberOf Values.Outline
  */
 function outer(): string {
