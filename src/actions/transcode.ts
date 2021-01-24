@@ -80,10 +80,10 @@ function fpsRange(from: number, to?: number): FPSRangeAction {
 /**
  * @memberOf Actions.Transcode
  * @description Sets the keyframe interval of the delivered video.
- * @param {number} interval The keyframe interval in seconds.
+ * @param {number | string} interval The keyframe interval in seconds.
  * @return {KeyframeIntervalsAction}
  */
-function keyframeInterval(interval: number): KeyframeIntervalsAction {
+function keyframeInterval(interval: number | string): KeyframeIntervalsAction {
   return new KeyframeIntervalsAction(interval);
 }
 

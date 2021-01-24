@@ -83,6 +83,19 @@ describe('Tests for overlay actions', () => {
     expect(asset.toString()).toBe(`b_red,co_blue,l_text:${textStyle.toString()}:Testing/fl_layer_apply`);
   });
 
+  it('Tests text on image using a variable', () => {
+    const asset = createNewImage();
+    const textStyle = '$My_Variable';
+
+    asset.overlay(Overlay.source(
+      Source.text('Testing', textStyle)
+        .backgroundColor('red')
+        .textColor('blue')
+    ));
+
+    expect(asset.toString()).toBe(`b_red,co_blue,l_text:${textStyle.toString()}:Testing/fl_layer_apply`);
+  });
+
   it('Tests text on image with RGB backgroundColor', () => {
     const asset = createNewImage();
 

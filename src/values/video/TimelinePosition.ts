@@ -19,7 +19,7 @@ class TimelinePosition extends Action {
   }
 
   /**
-   * @param startOffset
+   * @param {string | number} startOffset
    */
   startOffset(startOffset: StringNumberOrExpression): this {
     this.addQualifier(new Qualifier('so', startOffset));
@@ -27,7 +27,15 @@ class TimelinePosition extends Action {
   }
 
   /**
-   * @param duration
+   * @param {string | number} endOffset
+   */
+  endOffset(endOffset: StringNumberOrExpression): this {
+    this.addQualifier(new Qualifier('eo', endOffset));
+    return this;
+  }
+
+  /**
+   * @param {string | number} duration
    */
   duration(duration: StringNumberOrExpression): this {
     this.addQualifier(new Qualifier('du', duration));

@@ -195,10 +195,10 @@ class CloudinaryTransformable extends CloudinaryFile {
 
   /**
    * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
-   * @param {Values.Flag} flagQualifier
+   * @param {Values.Flag | string} flagQualifier
    * @return {this}
    */
-  addFlag(flagQualifier: FlagQualifier): this {
+  addFlag(flagQualifier: FlagQualifier | string): this {
     this.transformation.addFlag(flagQualifier);
     return this;
   }

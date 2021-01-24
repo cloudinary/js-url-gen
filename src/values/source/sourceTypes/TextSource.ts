@@ -7,7 +7,7 @@ import {TextStyle} from "../../textStyle";
  * @description Defines how to manipulate a text layer
  */
 class TextSource extends BaseTextSource {
-  constructor(fileName: string, textStyle: TextStyle) {
+  constructor(fileName: string, textStyle: TextStyle | string) {
     /* istanbul ignore next */
     super(fileName, textStyle);
   }

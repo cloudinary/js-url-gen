@@ -13,12 +13,12 @@ import {prepareColor} from "../../../internal/utils/prepareColor";
  */
 class BaseTextSource extends BaseSource {
   private text: string;
-  protected _textStyle: TextStyle
+  protected _textStyle: TextStyle | string;
   protected _textColor: SystemColors
   protected _backgroundColor: SystemColors
   protected type = 'text';
 
-  constructor(text: string, textStyle?: TextStyle) {
+  constructor(text: string, textStyle?: TextStyle | string) {
     super();
     this.text = text;
     this._textStyle = textStyle;
