@@ -74,11 +74,11 @@ function density(value:number) :DeliveryAction {
 /**
  * @description Default images can be used in the case that a requested image does not exist.
  * @memberOf Actions.Delivery
- * @param {string} publicId Default image public ID
+ * @param {string} publicIdWithExtension Default image public ID
  * @return {Actions.Delivery.DeliveryAction}
  */
-function defaultImage(publicId:string) :DeliveryAction {
-  return new DeliveryAction('d', publicId);
+function defaultImage(publicIdWithExtension:string) :DeliveryAction {
+  return new DeliveryAction('d', publicIdWithExtension);
 }
 
 
