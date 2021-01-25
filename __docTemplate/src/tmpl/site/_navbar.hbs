@@ -1,0 +1,42 @@
+<!-- start:navbar.hbs -->
+<header class="navbar navbar-default navbar-fixed-top{{#if options.inverseNav}} navbar-inverse{{/if}}">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand{{#if options.systemLogo}} branding-logo{{/if}}" href="{{navbar.index.link}}"{{#if options.systemLogo}} style="background-image: url({{options.systemLogo}});"{{/if}}>
+				{{navbar.index.title}}
+			</a>
+			<!-- displayed on small devices -->
+			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+		<div class="navbar-collapse collapse" id="topNavigation">
+			<ul class="nav navbar-nav">
+				{{#each navbar.topLevel}}
+					{{#if ../options.inlineNav}}
+						<li><a href="{{link}}">{{title}}</a></li>
+					{{else}}
+						{{#if members}}
+							<li class="dropdown">
+								<a href="{{link}}" class="dropdown-toggle" data-toggle="dropdown">{{title}}<b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									{{#each members}}
+										<li>{{{.}}}</li>
+									{{/each}}
+								</ul>
+							</li>
+						{{else}}
+							<li><a href="{{link}}">{{title}}</a></li>
+						{{/if}}
+					{{/if}}
+				{{/each}}
+			</ul>
+			{{#if options.search}}
+				{{> search/navbar-input}}
+			{{/if}}
+		</div>
+	</div>
+</header>
+<!-- end:navbar.hbs -->

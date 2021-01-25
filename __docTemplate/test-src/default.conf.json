@@ -1,0 +1,11 @@
+{
+  "tags": {
+    "allowUnknownTags": true
+  },
+  "plugins": ["plugins/markdown"],
+  "templates": {},
+  "markdown": {
+    "parser": "gfm",
+    "hardwrap": true
+  }
+}

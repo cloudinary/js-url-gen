@@ -1,0 +1,15 @@
+{
+  "tags": {
+    "allowUnknownTags": true
+  },
+  "plugins": ["plugins/markdown"],
+  "templates": {
+    "favicon": "./test-src/foobot-40x40.png",
+    "systemLogo": "./test-src/foobot-40x40.png",
+    "systemColor": "#5233b7"
+  },
+  "markdown": {
+    "parser": "gfm",
+    "hardwrap": true
+  }
+}

@@ -1,0 +1,14 @@
+{{#if returns}}
+	{{#callout "Returns" "callout-success"}}
+		<form class="form-horizontal returns">
+			{{#each returns}}
+				<div class="form-group">
+					<label class="col-sm-3 control-label returns-type">{{type-names type}}</label>
+					<div class="col-sm-9">
+						<div class="form-control-static returns-description">{{{description}}}</div>
+					</div>
+				</div>
+			{{/each}}
+		</form>
+	{{/callout}}
+{{/if}}

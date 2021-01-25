@@ -1,0 +1,21 @@
+{{#extend "site/layout"}}
+
+	{{#content "primary"}}
+		<dl class="symbol">
+			<dt class="symbol-title {{kind}}"></dt>
+			<dd class="symbol-details {{kind}}">
+				<div class="symbol-details-inner">
+					{{> tag/description doclet}}
+					{{#each doclet.modules}}
+						{{#if classdesc}}
+							{{> tag/description this}}
+						{{/if}}
+					{{/each}}
+					{{> tag/requires doclet}}
+					{{> tag/details doclet options=options}}
+				</div>
+			</dd>
+		</dl>
+	{{/content}}
+
+{{/extend}}

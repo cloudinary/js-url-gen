@@ -1,0 +1,18 @@
+{{#if examples}}
+{{#callout "Examples" "callout-example"}}
+	{{#each examples}}
+		{{#if caption}}
+		<div class="example-caption">{{{caption}}}</div>
+		{{/if}}
+		<div class="example-code">
+			<pre class="prettyprint source language-{{lang}}"><code class="language-{{lang}}">{{code}}</code></pre>
+		</div>
+		{{#if run}}
+		<p class="example-run">
+			<input type="hidden" value="{{code}}">
+			<button type="button" class="btn btn-default code-run">Run</button>
+		</p>
+		{{/if}}
+	{{/each}}
+{{/callout}}
+{{/if}}

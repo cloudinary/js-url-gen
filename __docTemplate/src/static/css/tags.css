@@ -1,0 +1,12 @@
+.summary {
+	font-size: 15px;
+	font-weight: normal;
+	color: #808080;
+}
+
+.signature-type,
+.signature-attribs,
+.signature-new {
+	color: #adadad;
+	font-size: smaller;
+}

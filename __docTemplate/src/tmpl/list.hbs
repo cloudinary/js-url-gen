@@ -1,0 +1,17 @@
+{{#extend "site/layout"}}
+	{{#content "primary"}}
+		<h2>{{{doclet.primaryTitleHTML}}}</h2>
+	{{/content}}
+	{{#content "secondary"}}
+		<article class="secondary">
+			{{#if doclet.members}}
+				<dl class="symbol">
+					{{#each doclet.members}}
+						{{#unless @first}}<hr/>{{/unless}}
+						{{symbol this list=true options=../options}}
+					{{/each}}
+				</dl>
+			{{/if}}
+		</article>
+	{{/content}}
+{{/extend}}

@@ -1,0 +1,99 @@
+/*
+ * Callouts
+ *
+ * Not quite alerts, but custom and helpful notes for folks reading the docs.
+ * Requires a base and modifier class.
+ */
+.callout {
+	padding: 20px;
+	margin: 20px 0;
+	border: 1px solid #eee;
+	border-left-width: 5px;
+	border-radius: 3px;
+}
+.callout h5 {
+	margin-top: 0;
+	margin-bottom: 5px;
+	/* text-transform: uppercase; */
+	/* letter-spacing: 1px; */
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	font-size: 18px;
+}
+.callout p:last-child,
+.callout table:last-child {
+	margin-bottom: 0;
+}
+.callout code {
+	border-radius: 3px;
+}
+.callout .control-label {
+	color: #999;
+	font-weight: normal;
+}
+.callout+.callout {
+	margin-top: -5px;
+}
+
+.callout-default {
+	border-left-color: #999;
+}
+.callout-default h5 {
+	color: #999;
+}
+.callout-primary {
+	border-left-color: #337ab7;
+}
+.callout-primary h5 {
+	color: #337ab7;
+}
+.callout-success {
+	border-left-color: #5cb85c;
+}
+.callout-success h5 {
+	color: #5cb85c;
+}
+.callout-danger {
+	border-left-color: #d9534f;
+}
+.callout-danger h5 {
+	color: #d9534f;
+}
+.callout-warning {
+	border-left-color: #f0ad4e;
+}
+.callout-warning h5 {
+	color: #f0ad4e;
+}
+.callout-info {
+	border-left-color: #87b9f1;
+}
+.callout-info h5 {
+	color: #87b9f1;
+}
+.callout-rpc {
+	border-left-color: #c7bfd3;
+}
+.callout-rpc h5 {
+	color: #c7bfd3;
+}
+.callout-example {
+	border-left-color: #8461b9;
+}
+.callout-example h5 {
+	color: #8461b9;
+}
+
+.callout .form-group {
+	margin-bottom: 5px;
+}
+.callout .form-group > div.control-static > p {
+	min-height: 34px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	margin-bottom: 0;
+}
+.callout .table > thead > tr > th {
+	font-weight: normal;
+}

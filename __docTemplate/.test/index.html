@@ -1,0 +1,336 @@
+<!-- start:readme.hbs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+		<title>FooDoc</title>
+		<!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="css/prism.min.css">
+		<link type="text/css" rel="stylesheet" href="css/template.min.css">
+		<script type="text/javascript">
+			window.TEMPLATE_OPTIONS = {"includeDate":true,"dateFormat":"Do MMM YYYY","systemName":"FooDoc","systemSummary":"A Bootstrap and Handlebars based template for JSDoc3.","systemLogo":"","systemColor":"","navMembers":[{"kind":"class","title":"Classes","summary":"All documented classes."},{"kind":"external","title":"Externals","summary":"All documented external members."},{"kind":"global","title":"Globals","summary":"All documented globals."},{"kind":"mixin","title":"Mixins","summary":"All documented mixins."},{"kind":"interface","title":"Interfaces","summary":"All documented interfaces."},{"kind":"module","title":"Modules","summary":"All documented modules."},{"kind":"namespace","title":"Namespaces","summary":"All documented namespaces."},{"kind":"tutorial","title":"Tutorials","summary":"All available tutorials."}],"footer":"","copyright":"FooDoc Copyright © 2016 The contributors to the JSDoc3 and FooDoc projects.","linenums":true,"collapseSymbols":true,"inverseNav":true,"inlineNav":false,"outputSourceFiles":true,"sourceRootPath":null,"disablePackagePath":true,"outputSourcePath":false,"showTableOfContents":true,"showAccessFilter":true,"analytics":null,"methodHeadingReturns":true,"sort":"linenum, longname, version, since","search":true,"favicon":null,"stylesheets":[],"scripts":[],"monospaceLinks":false,"cleverLinks":false};
+			window.DOCLET_TOC_ENABLED = true;
+			window.DOCLET_AFILTER_ENABLED = false;
+		</script>
+</head>
+<body>
+	<!-- start:navbar.hbs -->
+	<header class="navbar navbar-default navbar-fixed-top navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="index.html">
+					FooDoc
+				</a>
+				<!-- displayed on small devices -->
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="navbar-collapse collapse" id="topNavigation">
+				<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Globals<b class="caret"></b></a>
+									<ul class="dropdown-menu">
+											<li><a href="global.html#SomeType">SomeType</a></li>
+									</ul>
+								</li>
+								<li class="dropdown">
+									<a href="list_class.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+									<ul class="dropdown-menu">
+											<li><a href="CustomError.html">CustomError</a></li>
+											<li><a href="GlobalClass.html">GlobalClass</a></li>
+											<li><a href="MyApi.Child.html">MyApi.Child</a></li>
+											<li><a href="MyApi.Class.html">MyApi.Class</a></li>
+									</ul>
+								</li>
+								<li class="dropdown">
+									<a href="list_namespace.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b class="caret"></b></a>
+									<ul class="dropdown-menu">
+											<li><a href="MyApi.html">MyApi</a></li>
+											<li><a href="MyApi.utils.html">MyApi.utils</a></li>
+									</ul>
+								</li>
+								<li class="dropdown">
+									<a href="list_tutorial.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+									<ul class="dropdown-menu">
+											<li><a href="tutorial-brush-teeth.html">Brush Teeth</a></li>
+											<li><a href="tutorial-drive-car.html">Drive Car</a></li>
+									</ul>
+								</li>
+				</ul>
+					<!-- start:lunr-search-navbar.hbs -->
+					<form class="navbar-form navbar-right" role="search">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Search" id="lunr-search-input">
+							<div class="input-group-btn">
+								<button class="btn btn-default" id="lunr-search-submit">
+									<i class="glyphicon glyphicon-search"></i>
+								</button>
+							</div>
+						</div>
+					</form>
+					<!-- start:lunr-search-navbar.hbs -->		</div>
+		</div>
+	</header>
+	<!-- end:navbar.hbs -->		<div class="page-header">
+			<div class="container">
+				<span class="kind">readme</span>
+				<h1><span class="name">FooDoc</span></h1>
+				<div class="summary"><p>A Bootstrap and Handlebars based template for JSDoc3.</p></div>			</div>
+		</div>
+	<div class="container content">
+		<div class="row">
+			<div class="col-md-9 main-content">
+		<section class="readme-section">
+			<article><p><a href="https://nodei.co/npm/foodoc/"><img src="https://nodei.co/npm/foodoc.png?downloads=true" alt="NPM"></a></p>
+<p><a href="https://david-dm.org/steveush/foodoc"><img src="https://img.shields.io/david/steveush/foodoc.svg" alt="Dependency Status"></a> <a href="https://david-dm.org/steveush/foodoc#info=devDependencies"><img src="https://img.shields.io/david/dev/steveush/foodoc.svg" alt="devDependency Status"></a> <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=DHYUFBMRBJLTW"><img src="https://img.shields.io/badge/Donate-PayPal-brightgreen.svg" alt="Donate"></a></p>
+<h1>FooDoc</h1><p>FooDoc is a <a href="http://twitter.github.io/bootstrap/index.html">Bootstrap</a> and <a href="http://handlebarsjs.com/">Handlebars</a> based template for <a href="http://usejsdoc.org/">JSDoc3</a>. A big thanks must go out to <a href="https://github.com/docstrap/docstrap">DocStrap</a> as it served as the inspiration for this project.</p>
+<p>This project began as a simple modification of DocStrap. Removing the Bootswatch support in favor of my own CSS customizations but it ended up with me re-writing pretty much the entire template, even switching out the template engine to Handlebars.</p>
+<h2>Features</h2><ul>
+<li>Right side Table of Contents which auto hides on pages it's not required on.</li>
+<li>Basic themeing is supported through the <code>systemColor</code> option and if required further customizations can be supplied using the <code>stylesheets</code> and <code>scripts</code> options.</li>
+<li>Integrated offline search across all doclets and there members (excludes source files).</li>
+<li>Syntax highlighting using <a href="https://github.com/PrismJS/prism">Prism</a> .</li>
+<li>Breadcrumbs on every page for easy navigation.</li>
+<li>Handlebars template engine using precompiled templates to generate documentation.</li>
+<li>Extended tutorial configuration through the standard <code>.json</code> file approach supported by JSDoc allowing you to supply a structure as well as title and summary info for tutorials.</li>
+<li>Configurable navbar links including support for larger systems by switching to list pages with the <code>inlineNav</code> option instead of the usual drop downs.</li>
+<li>Responsive design, the generated documentation works across both desktop and mobile devices thanks to Bootstrap.</li>
+<li>Makes use of the JSDoc <code>@summary</code> tag where appropriate, this tag now also supports markdown syntax.</li>
+</ul>
+<h3>What it looks like</h3><p>As this started off as a DocStrap modification I've used it's <code>fixtures</code> code to generate the sample documentation so you can compare the differences between the two.</p>
+<p><strong>NOTE:</strong> The <code>fixtures</code> code doesn't make use of the <code>@summary</code> tag when describing it's members so it may look a little sparse.</p>
+<ul>
+<li><a href="http://steveush.github.io/foodoc/examples/default">The default template options</a></li>
+<li><a href="http://steveush.github.io/foodoc/examples/inline">The template with the <code>inlineNav</code> option set to <code>true</code></a></li>
+<li><a href="http://steveush.github.io/foodoc/examples/logo-color">The template using the <code>systemLogo</code> and <code>systemColor</code> options</a></li>
+<li><a href="http://steveush.github.io/foodoc/examples/collapse">The template with the <code>collapseSymbols</code> option set to <code>false</code></a></li>
+</ul>
+<h2>Ooooh, I want it! How do I get it?</h2><p>If you manage your own version of jsdoc:</p>
+<pre class="prettyprint source lang-bash"><code>npm install foodoc</code></pre><p>When using <a href="http://gruntjs.com/">grunt</a>, please look at <a href="https://github.com/krampstudio/grunt-jsdoc">grunt-jsdoc</a> which you can use with FooDoc.</p>
+<h3>Command line example</h3><pre class="prettyprint source lang-bash"><code>jsdoc -c path/to/conf.json -t ./node_modules/foodoc/template -R README.md -r .</code></pre><p>The <code>-c</code> sets the config, the options you can supply in the templates object are listed below in the options.</p>
+<p>The <code>-t</code> sets the template. This is the option you need to set to get the FooDoc template to be used.</p>
+<p>The <code>-R</code> sets a markdown file to be the front page of the documentation.</p>
+<p>The <code>-r</code> tells jsdoc to run recursively.</p>
+<p>The <code>.</code> says from current directory.</p>
+<h2>Configuring the template</h2><p>FooDoc ships with a <code>conf.json</code> file in the template/ directory. It is just a regular old <a href="http://usejsdoc.org/about-configuring-jsdoc.html">JSDoc configuration file</a>, but with the following new options:</p>
+<pre class="prettyprint source lang-javascript"><code>&quot;templates&quot;: {
+    &quot;systemName&quot;            : &quot;{string}&quot;,
+    &quot;systemSummary&quot;         : &quot;{string}&quot;,
+    &quot;systemLogo&quot;            : &quot;{string}&quot;,
+    &quot;systemColor&quot;           : &quot;{string}&quot;,
+    &quot;footer&quot;                : &quot;{string}&quot;,
+    &quot;copyright&quot;             : &quot;{string}&quot;,
+    &quot;includeDate&quot;           : &quot;{boolean}&quot;,
+    &quot;dateFormat&quot;            : &quot;{string}&quot;,
+    &quot;inlineNav&quot;             : &quot;{boolean}&quot;,
+    &quot;inverseNav&quot;            : &quot;{boolean}&quot;,
+    &quot;navMembers&quot;            : &quot;{array.&lt;object>}&quot;,
+    &quot;linenums&quot;              : &quot;{boolean}&quot;,
+    &quot;showTableOfContents&quot;   : &quot;{boolean}&quot;,
+    &quot;showAccessFilter&quot;      : &quot;{boolean}&quot;,
+    &quot;analytics&quot;             : &quot;{object}&quot;,
+    &quot;collapseSymbols&quot;       : &quot;{boolean}&quot;,
+    &quot;methodHeadingReturns&quot;  : &quot;{boolean}&quot;,
+    &quot;outputSourceFiles&quot;     : &quot;{boolean}&quot;,
+    &quot;outputSourcePath&quot;      : &quot;{boolean}&quot;,
+    &quot;sort&quot;                  : &quot;{boolean|string}&quot;,
+    &quot;search&quot;                : &quot;{boolean}&quot;,
+    &quot;favicon&quot;               : &quot;{string}&quot;,
+    &quot;stylesheets&quot;           : &quot;{array.&lt;string>}&quot;,
+    &quot;scripts&quot;               : &quot;{array.&lt;string>}&quot;
+}</code></pre><h3>Options</h3><ul>
+<li><strong>systemName - <code>&quot;FooDoc&quot;</code></strong><br>The name of the system being documented. This value is used to generate the <em>home</em> link in the navbar and the page title for the generated README page.</li>
+<li><strong>systemSummary - <code>&quot;A Bootstrap and Handlebars based JSDoc3 template.&quot;</code></strong><br>The short summary description of the system being documented. This is used as part of the page title for the generated README page.</li>
+<li><strong>systemLogo - <code>&quot;&quot;</code></strong><br>A small 40x40 pixel image to used in the navbar along with the <code>systemName</code> to create the <em>home</em> link.</li>
+<li><strong>systemColor - <code>&quot;&quot;</code></strong><br>The primary color used to generate the documentation. This changes the background color of the jumbotron-esque headers on every page, the primary callout border and header colors, the TOC link colors and various other small highlights.</li>
+<li><strong>footer - <code>&quot;&quot;</code></strong><br>Additional content to place in the footer element of each page before the <code>copyright</code> and default <em>generated by</em> messages. This can contain HTML.</li>
+<li><strong>copyright - <code>&quot;FooDoc Copyright © 2016 The contributors to the JSDoc3 and FooDoc projects.&quot;</code></strong><br>A copyright message to display in the footer of each page throughout the documentation.</li>
+<li><strong>includeDate - <code>true</code></strong><br>Whether or not the date is included as part of the <em>generated by</em> message.</li>
+<li><strong>dateFormat - <code>Do MMM YYYY</code></strong><br>If <code>includeDate</code> is true this is the format used to display the date. This makes use of moment.js so any format it supports should be supported here.</li>
+<li><strong>inlineNav - <code>false</code></strong><br>If your system is quite large the navbar drop downs just don't look good, setting this option to true changes these drop downs to instead just be a link to a list page.</li>
+<li><strong>inverseNav - <code>true</code></strong><br>Bootstrap navbars support an inverse mode, this toggles that option for the documentation navbar with <code>true</code> being the dark version.</li>
+<li><strong>navMembers</strong><br>This option allows you to specify which kinds of documents appear in the navbar, give them a title and provide a short summary which is then used as part of the <code>inlineNav</code> option to generate the list pages. The following shows the default values for this option, you can remove from this array but cannot add new kinds without altering the template. If no documents are registered for a specific kind it is not added to the navbar.<pre class="prettyprint source lang-javascript"><code>[
+    {&quot;kind&quot;: &quot;class&quot;, &quot;title&quot;: &quot;Classes&quot;, &quot;summary&quot;: &quot;All documented classes.&quot;},
+    {&quot;kind&quot;: &quot;external&quot;, &quot;title&quot;: &quot;Externals&quot;, &quot;summary&quot;: &quot;All documented external members.&quot;},
+    {&quot;kind&quot;: &quot;global&quot;, &quot;title&quot;: &quot;Globals&quot;, &quot;summary&quot;: &quot;All documented globals.&quot;},
+    {&quot;kind&quot;: &quot;mixin&quot;, &quot;title&quot;: &quot;Mixins&quot;, &quot;summary&quot;: &quot;All documented mixins.&quot;},
+    {&quot;kind&quot;: &quot;interface&quot;, &quot;title&quot;: &quot;Interfaces&quot;, &quot;summary&quot;: &quot;All documented interfaces.&quot;},
+    {&quot;kind&quot;: &quot;module&quot;, &quot;title&quot;: &quot;Modules&quot;, &quot;summary&quot;: &quot;All documented modules.&quot;},
+    {&quot;kind&quot;: &quot;namespace&quot;, &quot;title&quot;: &quot;Namespaces&quot;, &quot;summary&quot;: &quot;All documented namespaces.&quot;},
+    {&quot;kind&quot;: &quot;tutorial&quot;, &quot;title&quot;: &quot;Tutorials&quot;, &quot;summary&quot;: &quot;All available tutorials.&quot;}
+]</code></pre></li>
+<li><strong>outputSourceFiles - <code>true</code></strong><br>Whether or not to output pretty printed source file documentation that is linked to from other documents.</li>
+<li><strong>outputSourcePath - <code>true</code></strong><br>When <code>outputSourceFiles</code> is <code>false</code>, you may still want to name the file even without a link to the pretty printed output. Set this to <code>true</code> when <code>outputSourceFiles</code> is <code>false</code>. <code>outputSourceFiles</code> when <code>true</code> takes precedence over this setting.</li>
+<li><strong>linenums - <code>true</code></strong><br>When <code>true</code>, line numbers will appear in any pretty printed source code blocks. If <code>outputSourceFiles</code> is <code>true</code> this will add an additional link to all documented members pointing to the exact line number in the pretty printed source file the documentation was pulled from.</li>
+<li><strong>showTableOfContents - <code>true</code></strong><br>When <code>true</code>, a TOC is generated from all <code>H1</code>, <code>H2</code>, <code>H3</code> and <code>H4</code> headings in the generated pages, this includes the README and tutorial pages. If you want to disable this for specific tutorial pages you can set this same option per tutorial in the extended tutorial configuration.</li>
+<li><strong>showAccessFilter - <code>true</code></strong><br>When <code>true</code>, a checkbox list is displayed allowing the user to toggle the visibility of inherited, public, protected and private symbols of the current doclet. Each checkbox will only be displayed if the doclet contains at least one symbol of that type. If there is only a single type available across the entire doclet the filter is not displayed at all.</li>
+<li><p><strong>analytics - <code>null</code></strong><br>Adds a <a href="http://www.google.com/analytics">Google Analytics</a> code block to the template output<br><em>e.g.</em> <code>&quot;analytics&quot;:{&quot;ua&quot;:&quot;UA-XXXXX-XXX&quot;, &quot;domain&quot;:&quot;XXXX&quot;}</code></p>
+<ul>
+<li><strong>ua</strong> The google agent (see Google Analytics help for details)</li>
+<li><strong>domain</strong> The domain being served. (see Google Analytics help for details)</li>
+</ul>
+</li>
+<li><p><strong>collapseSymbols - <code>true</code></strong><br>When <code>true</code>, symbols in generated pages (methods, members, type definitions, etc.) are collapsed so only there title and summary are visible. You can then click on them to reveal more detailed information.</p>
+</li>
+<li><strong>methodHeadingReturns - <code>true</code></strong><br>When <code>true</code>, method headings will contain the return type if one exists.</li>
+<li><strong>sort - <code>&quot;linenum, longname, version, since&quot;</code></strong><br>Specifies the sort order of the symbols on a page. They will still be grouped under there own headings (Classes, Members, Methods, etc.) but within these groups they are sorted using the supplied value. By default this sorts symbols first by where they were found in the original source code, then by there longname, then by there version and lastly by there since tag.</li>
+<li><strong>search - <code>true</code></strong><br>Whether or not to enable the lunr search component.</li>
+<li><strong>favicon - <code>null</code></strong><br>An image or favicon that will be used as favicon.</li>
+<li><strong>stylesheets - <code>[]</code></strong><br>An array of stylesheet urls to include in every page.</li>
+<li><strong>scripts - <code>[]</code></strong><br>An array of script urls to include in every page.</li>
+</ul>
+<h3>Extended tutorial configuration</h3><p><a href="http://usejsdoc.org/about-tutorials.html">JSDoc supports providing a <code>.json</code> file in your tutorials directory</a> to configure the hierarchical structure and title for tutorials. This template adds two new options to each tutorial in this file.</p>
+<ul>
+<li><strong>summary</strong><br>A short summary of the tutorial which is used in various places throughout the documentation, most notably in the page header of the tutorial itself.</li>
+<li><strong>showTableOfContents</strong><br>A boolean value indicating whether or not to generate the Table of Contents for this specific tutorial.</li>
+</ul>
+<p>The following shows what the <code>tutorials.json</code> in the <code>fixtures</code> test code contains.</p>
+<p><strong>NOTE:</strong> The array based syntax for child tutorials is not supported at present and children must be supplied as properties of an object.</p>
+<pre class="prettyprint source lang-javascript"><code>{
+  &quot;brush-teeth&quot;: {
+    &quot;title&quot;: &quot;Brush Teeth&quot;,
+    &quot;summary&quot;: &quot;How to brush your teeth!&quot;,
+    &quot;children&quot;: {
+      &quot;fence-test&quot;: {
+        &quot;title&quot;: &quot;Fence Test&quot;,
+        &quot;summary&quot;: &quot;Testing syntax highlighting.&quot;,
+        &quot;showTableOfContents&quot;: false
+      }
+    }
+  },
+  &quot;drive-car&quot;: {
+    &quot;title&quot;: &quot;Drive Car&quot;,
+    &quot;summary&quot;: &quot;How to drive a car!&quot;
+  }
+}</code></pre><h3>Syntax highlighting</h3><p>FooDoc uses <a href="https://github.com/PrismJS/prism">Prism</a> to provide syntax highlighting and supports a couple of ways to specify which language to use.</p>
+<ul>
+<li><p>The standard markdown syntax is supported.</p>
+<pre>&#96;&#96;&#96;html
+&lt;html&gt;&lt;/html&gt;
+&#96;&#96;&#96;</pre>
+</li>
+<li><p>Or when using an <code>@example</code> tag in your comments you can add a custom inner tag <code>{@lang languageName}</code> where <code>languageName</code> is one of the default languages supported by Prism (Markup, CSS, C-Like and JavaScript languages are supported by default). You can add this tag anywhere within an <code>@example</code> tags body but keep in mind that there is no white-space processing performed when it is removed prior to rendering.</p>
+<pre class="prettyprint source lang-javascript"><code>/**
+ * @example {@lang html}&lt;html>&lt;/html>
+ */</code></pre></li>
+</ul>
+<p>If you need to use a language provided by a Prism plugin you will need to fork the template and add in the specific language yourself. Take a look at the <a href="http://prismjs.com/index.html#languages-list">Prism documentation</a> to see a full list of all 119 supported languages.</p>
+<h2>FAQ</h2><h3>Why another template?</h3><p>Over the years I have tried quite a few templates available for JSDoc and none of them produced a look I was quite happy with. Some got close like DocStrap, but I still wasn't quite satisfied so I did what all developers do eventually, roll their own. I really liked the clean look of the Bootstrap 3 documentation so I used it as base for the layout and styling for this template. </p>
+<h3>Why Handlebars?</h3><p>Personal preference really, Underscore templates work great but due to there ability to have basically any JavaScript in them I've noticed a lot logic which should be handled elsewhere creep into them overtime. It's simply easier to hack it into the template than find where it should be implemented as part of the post processing. </p>
+<h3>What's different from DocStrap's search?</h3><p>The <a href="http://lunrjs.com/">lunr</a> search implementation in DocStrap performs all the indexing in the browser using a hidden iframe, this was done to allow the search to work offline when viewing the documentation via the <code>file://</code> protocol. It does however have the drawback of loading and then indexing what could potentially be a large numbers of documents, on every page load.</p>
+<p>While this works I took a different approach and decided to generate the search index and store as part of the documentation process and output the results in two files <code>lunr-data.json</code> and <code>lunr-data.js</code>. These two files are then consumed by the search component when required. The <code>lunr-data.json</code> file is fetched via ajax request if the documentation is served via <code>http://</code> or <code>https://</code> protocols while the <code>lunr-data.js</code> file is simply included into the page when using the <code>file://</code> protocol as you can't perform ajax requests. This ultimately provides us with two primary benefits over DocStrap's implementation:</p>
+<ol>
+<li>All indexing of documents is performed only once, when the documentation itself is generated. Due to creating the index directly from the JSDoc doclets it contains more detailed information, including information on members, methods and type definitions, leading to better search results where you can click on a method name and be taken directly to it's documentation. </li>
+<li>The index and store information is only loaded into the page when a user performs a search, this greatly improves load speeds.</li>
+</ol>
+<p>The following shows the lunr index fields implemented by this template:</p>
+<pre class="prettyprint source lang-javascript"><code>var index = lunr(function(){
+    this.field('longname', {boost: 1000});
+    this.field('name', {boost: 500});
+    this.field('tags', {boost: 300});
+    this.field('kind', {boost: 110});
+    this.field('title', {boost: 100});
+    this.field('summary', {boost: 70});
+    this.field('description', {boost: 50});
+    this.field('body');
+    this.ref('id');
+});</code></pre><ul>
+<li><strong>longname</strong><br>This is basically a doclet id and is the fully qualified name of a documented symbol. e.g. <code>MyApi.utils.fetch</code> or <code>MyApi.Class#fetch</code>. This has the highest weighting of 1000 as if someone types in the exact longname it should be the first result!</li>
+<li><strong>name</strong><br>This is the short or &quot;friendly&quot; name of a doclet, using the two examples from above (<code>MyApi.utils.fetch</code> or <code>MyApi.Class#fetch</code>) they would both have the same name of <code>fetch</code>.</li>
+<li><strong>tags</strong><br>This is a space delimited string of any tags generated for the doclet. At present this simply provides multiple variations of the longname to aid in searching, for example the longname <code>MyApi.utils#fetch</code> would be added to the tags as the following; <code>utils#fetch fetch</code>.</li>
+<li><strong>kind</strong><br>This is the kind or type of the doclet (class, namespace, function, etc.).</li>
+<li><strong>title</strong><br>This is the page title the doclet uses when generating a page.</li>
+<li><strong>summary</strong><br>This is the HTML sanitized doclet summary, in the case of a tutorial or the readme this is the summary value supplied through either the extended configuration or options.</li>
+<li><strong>description</strong><br>This is the HTML sanitized doclet description.</li>
+<li><strong>body</strong><br>This is the full text of the main content section of the generated HTML for the doclet. Any matches against this have the lowest possible weighting.</li>
+</ul>
+<h3>Why Prism instead of Sunlight?</h3><p>Quite simply Sunlight is no longer maintained and while it does work I prefer Prism which is actively maintained and follows HTML5 standards.</p>
+<h2>To Do</h2><ul>
+<li>Refactor and document the template source code. Now that I know how it all works I can slim down source code and then heavily document it so I can use it as the example documentation.</li>
+</ul>
+<h2>Changelog</h2><p>All releases prior to 1.0.0 are considered pre-release, i.e. I'm not finished changing stuff yet so anything can happen ;)</p>
+<h3>0.0.9</h3><ul>
+<li>Fixed issue with the <code>footer</code> option not rendering HTML as it was intended.</li>
+<li>Fixed the missing <code>global.html</code> issue.</li>
+<li>Updated the <code>copyright</code> option to also allow HTML in it's content.</li>
+<li>Updated the <code>_navbar.hbs</code> so that if an item has no members it is simply rendered as a link instead of an empty dropdown.</li>
+<li>Updated the base CSS to apply a background color to the <code>&lt;html/&gt;</code> element that matches the footer. This stops the page looking 'incomplete' or 'broken' as there is no longer any whitespace below the footer.</li>
+</ul>
+<h3>0.0.8</h3><ul>
+<li>Updated the navbar dropdowns and the table of contents to handle long lists. If the list exceeds the viewport it now displays a scrollbar. (@mistic100)</li>
+<li>Fixed missing Google Analytics code in the <code>_layout.hbs</code>. (@mistic100)</li>
+<li>Added the <code>favicon</code> option allowing you to supply a path to an image or icon to use as the favicon for the documentation. (@mistic100)</li>
+<li>Added the <code>showAccessFilter</code> option which allows users to filter the symbols of a doclet in real-time by if they are inherited, public, protected or private.</li>
+</ul>
+<h3>0.0.7</h3><ul>
+<li>Fixed Prism CSS conflict with <code>.namespace</code> class.</li>
+<li>Updated Gruntfile to compile and minify all used prism files (including customized plugins) into single includes.</li>
+<li>Added in the Prism Normalize Whitespace plugin to perform some additional processing to clean up any extra whitespace in examples.</li>
+</ul>
+<h3>0.0.6</h3><ul>
+<li>Replaced Sunlight syntax highlighter with Prism as it is maintained and it's just generally better.</li>
+</ul>
+<h3>0.0.5</h3><ul>
+<li>Updated TOC to align with crumbs.</li>
+<li>Fixed anchor-links not showing on hover.</li>
+<li>Updated the search input size to match the TOC.</li>
+</ul>
+<h3>0.0.4</h3><ul>
+<li>Added missing {@run } javascript and css as well as some additional styling for related tutorials.</li>
+</ul>
+<h3>0.0.3</h3><ul>
+<li>Fixed page symbols not generating details correctly when displayed as primary header.</li>
+</ul>
+<h3>0.0.2</h3><ul>
+<li>Fixed missing moment.js dependency in the npm package.</li>
+<li>Added .npmignore to exclude the generated examples directory.</li>
+<li>Updated the lunrHelper.js to write files directly to the output directory instead of to the template/static one and then copying it across.</li>
+</ul>
+<h3>0.0.1</h3><ul>
+<li>Initial check in of template.</li>
+</ul></article>
+		</section>
+			</div>
+				<div class="col-md-3 side-content">
+					<nav class="toc hidden-print hidden-sm hidden-xs"></nav>
+				</div>
+		</div>
+	</div>
+	<footer>
+				<div class="copyright">FooDoc Copyright © 2016 The contributors to the JSDoc3 and FooDoc projects.</div>
+			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on 1st May 2018 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
+	</footer>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/clipboard.min.js"></script>
+	<script src="js/prism.min.js"></script>
+	<script src="js/template.min.js"></script>
+		<!-- start:lunr-search-modal.hbs -->
+		<div class="modal fade" id="lunr-search-modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Search results</h4>
+					</div>
+					<div class="modal-body" id="lunr-search-body">
+					</div>
+					<div class="modal-footer" id="lunr-search-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div>
+		<!-- end:lunr-search-modal.hbs -->		<script src="js/lunr.min.js"></script>
+	
+</body>
+</html>
+<!-- end:readme.hbs -->

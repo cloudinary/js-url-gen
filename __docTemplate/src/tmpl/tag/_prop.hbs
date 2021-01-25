@@ -1,0 +1,50 @@
+{{#if properties}}
+	{{#unless child}}
+<div class="callout callout-info">
+	<h5>Properties</h5>
+	{{/unless}}
+	<table class="params table table-striped">
+		<thead>
+		<tr>
+			{{#if propertiesHasNames}}
+				<th>Name</th>
+			{{/if}}
+			<th>Type</th>
+			{{#if propertiesHasAttributes}}
+				<th>Attributes</th>
+			{{/if}}
+			{{#if propertiesHasDefaults}}
+				<th>Default</th>
+			{{/if}}
+			<th class="last">Description</th>
+		</tr>
+		</thead>
+		<tbody>
+		{{#each properties}}
+			<tr>
+				{{#if ../propertiesHasNames}}
+					<td><code>{{name}}</code></td>
+				{{/if}}
+				<td>{{type-names type}}</td>
+				{{#if ../propertiesHasAttributes}}
+					<td class="attributes">{{param-attribs this}}</td>
+				{{/if}}
+				{{#if ../propertiesHasDefaults}}
+					<td>{{defaultvalue}}</td>
+				{{/if}}
+				<td class="last">
+					{{#if description}}
+						{{{description}}}
+					{{/if}}
+					{{#if properties}}
+						{{> tag/prop this child=true}}
+					{{/if}}
+				</td>
+			</tr>
+		{{/each}}
+		</tbody>
+	</table>
+	{{#unless child}}
+</div>
+	{{/unless}}
+{{/if}}

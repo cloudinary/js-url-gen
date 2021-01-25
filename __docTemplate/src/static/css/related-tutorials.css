@@ -1,0 +1,9 @@
+/* Related tutorials */
+.related-tutorials ul {
+	margin-top: 20px;
+}
+.related-tutorials ul li a {
+	font-size: 16px;
+	margin: 5px 0;
+	display: inline-block;
+}

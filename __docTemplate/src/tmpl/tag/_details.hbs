@@ -1,0 +1,252 @@
+{{!-- This is the catch all tag template, any tag that doesn't required it's own callout can be included here --}}
+{{#if hasDetails}}
+	{{#callout "Details" "callout-default"}}
+		<form class="form-horizontal details">
+
+			{{#if type}}
+				<!-- type -->
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Type</label>
+					<div class="col-sm-9">
+						<div class="form-control-static type-names">{{type-names type}}</div>
+					</div>
+				</div>
+			{{/if}}
+
+			{{#if defaultvalue}}
+				<!-- defaultvalue -->
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Default Value</label>
+					<div class="col-sm-9">
+						<p class="form-control-static">{{defaultvalue}}</p>
+					</div>
+				</div>
+			{{/if}}
+
+			{{#if augments}}
+				<!-- augments -->
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Augments</label>
+					<div class="col-sm-9">
+						{{#single augments}}
+							<p class="form-control-static">{{linkto this}}</p>
+						{{else}}
+							<ul class="form-control-static">
+								{{#each augments}}
+									<li>{{linkto this}}</li>
+								{{/each}}
+							</ul>
+						{{/single}}
+					</div>
+				</div>
+			{{/if}}
+
+			{{#if version}}
+				<!-- version -->
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Version</label>
+					<div class="col-sm-9">
+						<p class="form-control-static">{{version}}</p>
+					</div>
+				</div>
+			{{/if}}
+
+			{{#if since}}
+				<!-- since -->
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Since</label>
+					<div class="col-sm-9">
+						<p class="form-control-static">{{since}}</p>
+					</div>
+				</div>
+			{{/if}}
+
+			{{#if inherits}}
+				<!-- inherits -->
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Inherited From</label>
+					<div class="col-sm-9">
+						<p class="form-control-static">{{linkto inherits}}</p>
+					</div>
+				</div>
+			{{/if}}
+
+			{{#if overrides}}
+				<!-- overrides -->
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Overrides</label>
+					<div class="col-sm-9">
+						<p class="form-control-static">{{linkto overrides}}</p>
+					</div>
+				</div>
+			{{/if}}
+
+			{{#if implementations}}
+				<!-- implementations -->
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Implementations</label>
+					<div class="col-sm-9">
+						{{#single implementations}}
+							<p class="form-control-static">{{linkto this}}</p>
+						{{else}}
+							<ul class="form-control-static">
+								{{#each implementations}}
+									<li>{{linkto this}}</li>
+								{{/each}}
+							</ul>
+						{{/single}}
+					</div>
+				</div>
+			{{/if}}
+
+			{{#if implements}}
+				<!-- implements -->
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Implements</label>
+					<div class="col-sm-9">
+						{{#single implements}}
+							<p class="form-control-static">{{linkto this}}</p>
+						{{else}}
+							<ul class="form-control-static">
+								{{#each implements}}
+									<li>{{linkto this}}</li>
+								{{/each}}
+							</ul>
+						{{/single}}
+					</div>
+				</div>
+			{{/if}}
+
+			{{#if mixes}}
+				<!-- mixes -->
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Mixes In</label>
+					<div class="col-sm-9">
+						{{#single mixes}}
+							<p class="form-control-static">{{linkto this}}</p>
+						{{else}}
+							<ul class="form-control-static">
+								{{#each mixes}}
+									<li>{{linkto this}}</li>
+								{{/each}}
+							</ul>
+						{{/single}}
+					</div>
+				</div>
+			{{/if}}
+
+			{{#if deprecated}}
+				<!-- deprecated -->
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Deprecated</label>
+					<div class="col-sm-9">
+						<p class="form-control-static">{{deprecated}}</p>
+					</div>
+				</div>
+			{{/if}}
+
+			{{#if author}}
+				<!-- author -->
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Author</label>
+					<div class="col-sm-9">
+						{{#single author}}
+							<p class="form-control-static">{{linkto this}}</p>
+						{{else}}
+							<ul class="form-control-static">
+								{{#each author}}
+									<li>{{linkto this}}</li>
+								{{/each}}
+							</ul>
+						{{/single}}
+					</div>
+				</div>
+			{{/if}}
+
+			{{#if copyright}}
+				<!-- copyright -->
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Copyright</label>
+					<div class="col-sm-9">
+						<p class="form-control-static">{{copyright}}</p>
+					</div>
+				</div>
+			{{/if}}
+
+			{{#if license}}
+				<!-- license -->
+				<div class="form-group">
+					<label class="col-sm-3 control-label">License</label>
+					<div class="col-sm-9">
+						<p class="form-control-static">{{license}}</p>
+					</div>
+				</div>
+			{{/if}}
+
+			{{#if hasSource}}
+				<!-- source -->
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Source</label>
+					<div class="col-sm-9">
+						<p class="form-control-static">{{#if options.outputSourceFiles}}{{{sourcelink}}}{{else}}{{source}}{{/if}}</p>
+					</div>
+				</div>
+			{{/if}}
+
+			{{#if tutorials}}
+				<!-- tutorials -->
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Tutorials</label>
+					<div class="col-sm-9">
+						{{#single tutorials}}
+							<p class="form-control-static">{{linkto this}}</p>
+						{{else}}
+							<ul class="form-control-static">
+								{{#each tutorials}}
+									<li>{{linkto this}}</li>
+								{{/each}}
+							</ul>
+						{{/single}}
+					</div>
+				</div>
+			{{/if}}
+
+			{{#if see}}
+				<!-- see -->
+				<div class="form-group">
+					<label class="col-sm-3 control-label">See</label>
+					<div class="col-sm-9">
+						{{#single see}}
+							<p class="form-control-static">{{linkto this}}</p>
+						{{else}}
+							<ul class="form-control-static">
+								{{#each see}}
+									<li>{{linkto this}}</li>
+								{{/each}}
+							</ul>
+						{{/single}}
+					</div>
+				</div>
+			{{/if}}
+
+			{{#if todo}}
+				<!-- todo -->
+				<div class="form-group">
+					<label class="col-sm-3 control-label">To Do</label>
+					<div class="col-sm-9">
+						{{#single todo}}
+							<p class="form-control-static">{{this}}</p>
+						{{else}}
+							<ul class="form-control-static">
+								{{#each todo}}
+									<li>{{this}}</li>
+								{{/each}}
+							</ul>
+						{{/single}}
+					</div>
+				</div>
+			{{/if}}
+
+		</form>
+	{{/callout}}
+{{/if}}

@@ -1,0 +1,27 @@
+<dt class="symbol-title {{kind}}{{#unless @primary}} {{access}}{{#if inherited}} inherited{{/if}}{{/unless}}{{#if @options.collapseSymbols}}{{#unless (content "symbol-details")}} collapsible-symbol{{#if @expanded}} expanded{{/if}}{{/unless}}{{/if}}">
+	{{#block "symbol-title"}}
+		{{#if @primary}}
+			<h2 class="{{kind}}">{{{primaryTitleHTML}}}</h2>
+		{{else if @list}}
+			<h4 id="{{id}}" class="{{kind}} {{access}}{{#if inherited}} inherited{{/if}}">{{{listTitleHTML}}}</h4>
+		{{else}}
+			<h4 id="{{id}}" class="{{kind}} {{access}}{{#if inherited}} inherited{{/if}}">{{{symbolTitleHTML}}}</h4>
+		{{/if}}
+		{{> tag/summary this}}
+	{{/block}}
+</dt>
+<dd class="symbol-details {{kind}}{{#unless @primary}} {{access}}{{#if inherited}} inherited{{/if}}{{/unless}}{{#if @options.collapseSymbols}}{{#unless (content "symbol-details")}}  collapsible-symbol{{#if @expanded}} expanded{{/if}}{{/unless}}{{/if}}"{{#if @expanded}} style="max-height: 9999px;"{{/if}}>
+	<div class="symbol-details-inner">
+		{{#block "symbol-details"}}
+			{{> tag/description this}}
+			{{> tag/param this}}
+			{{> tag/prop this}}
+			{{> tag/returns this}}
+			{{> tag/requires this}}
+			{{> tag/example this options=@options}}
+			{{> tag/fires this}}
+			{{> tag/exceptions this}}
+			{{> tag/details this options=@options}}
+		{{/block}}
+	</div>
+</dd>

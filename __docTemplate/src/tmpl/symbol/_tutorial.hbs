@@ -1,0 +1,10 @@
+{{#extend "symbol/inline"}}
+	{{#content "symbol-details"}}
+		<dl class="symbol tutorial-children">
+			{{#each children}}
+				<hr/>
+				{{symbol this list=list primary=primary options=@options}}
+			{{/each}}
+		</dl>
+	{{/content}}
+{{/extend}}
