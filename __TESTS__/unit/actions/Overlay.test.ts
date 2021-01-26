@@ -254,7 +254,7 @@ describe('Tests for overlay actions', () => {
     const textSource = Source.text(text, textStyle);
     asset.overlay(Overlay.source(textSource));
 
-    expect(asset.toString()).toBe("l_text:Arial_18:$(start)Hello%20$(name)$(ext)%252C%20%24%28no%20%29%20%24%28%20no%29$(end)/fl_layer_apply");
+    expect(asset.toString()).toBe("l_text:arial_50_bold_italic_strikethrough_justify_stroke_letter_spacing_10_line_spacing_20_letter_spacing_good_hinting_full:$(start)Hello%20$(name)$(ext)%252C%20%24%28no%20%29%20%24%28%20no%29$(end)/fl_layer_apply");
   });
 
   it.skip("should throw an exception if fontFamily is not provided", () => {
