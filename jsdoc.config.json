@@ -25,7 +25,7 @@
     "stylesheets" : [
       "./customStyles.css"
     ],
-    "search": false,
+    "search": true,
     "monospaceLinks": true,
     "systemColor": "#3448C5",
     "systemName": "Cloudinary JS.2.0 SDK",
@@ -37,6 +37,6 @@
   "opts": {
     "recurse": true,
     "readme": "README.md",
-    "template": "./node_modules/foodoc/template"
+    "template": "./__docTemplate/template"
   }
 }
