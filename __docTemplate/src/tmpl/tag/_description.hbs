@@ -1,0 +1,9 @@
+{{#if classdesc}}
+	{{#callout "Description" "callout-primary"}}
+		<div class="description classdesc">{{{classdesc}}}</div>
+	{{/callout}}
+{{else if description}}
+	{{#callout "Description" "callout-primary"}}
+		<div class="description">{{{description}}}</div>
+	{{/callout}}
+{{/if}}

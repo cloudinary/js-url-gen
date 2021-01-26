@@ -1,0 +1,58 @@
+#lunr-search-footer .pagination {
+	margin: 0;
+}
+
+.lunr-search-results-page {
+	list-style: none;
+	padding: 0;
+	display: none;
+}
+.lunr-search-results-page.active {
+	display: block;
+}
+.lunr-search-results-page li {
+	list-style: none;
+	margin-bottom: 20px;
+}
+
+span.lunr-search-result-kind {
+	text-transform: capitalize;
+}
+a.lunr-search-result-title {
+	font-size: 14px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+a.lunr-search-result-title:hover {
+	text-decoration: underline;
+}
+p.lunr-search-result-url {
+	color: #006621;
+	font-size: 13px;
+	line-height: 16px;
+	margin: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+p.lunr-search-result-summary {
+	color: #999;
+	font-size: 13px;
+	line-height: 16px;
+	margin: 0;
+	overflow: hidden;
+	max-height: 48px;
+	text-overflow: ellipsis;
+}
+
+@media (min-width: 992px) {
+	.navbar-form {
+		width: 228px;/* 3 col */
+	}
+}
+@media (min-width: 1200px) {
+	.navbar-form {
+		width: 278px;/* 3 col*/
+	}
+}

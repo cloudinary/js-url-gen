@@ -1,0 +1,40 @@
+html {
+	margin-top: 50px;
+	background-color: #f9f9f9;
+}
+.navbar-brand.branding-logo {
+	background-position: 15px center;
+	background-size: 40px;
+	background-repeat: no-repeat;
+	text-indent: 44px;
+}
+.main-content {
+	padding-bottom: 200px;
+}
+.main-content h1,
+.main-content h2 {
+	border-bottom: 1px solid #eee;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding-bottom: 9px;
+}
+.main-content .primary p+h1,
+.main-content .primary p+h2,
+.main-content .readme-section p+h1,
+.main-content .readme-section p+h2,
+.main-content .tutorial-section p+h1,
+.main-content .tutorial-section p+h2,
+.main-content .related-tutorials h2 {
+	margin-top: 40px;
+}
+footer {
+	width: 100%;
+	max-width: 100%;
+	overflow: hidden;
+	padding: 15px;
+	text-align: center;
+	background-color: #f9f9f9;
+	border-top: solid 1px #ddd;
+	font-size: small;
+	color: #777;
+}

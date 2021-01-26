@@ -1,0 +1,39 @@
+.access-filter {
+	text-align: right;
+	font-size: 12px;
+	padding: 8px 15px;
+	margin-top: 0;
+	margin-bottom: 20px;
+	list-style: none;
+	background-color: #f5f5f5;
+	border-radius: 4px;
+	color: #767676;
+}
+.breadcrumb+.access-filter {
+	margin-top: -25px;
+	margin-bottom: 0;
+}
+.access-filter .checkbox-inline input[type=checkbox] {
+	margin: 1px 0 0 -17px;
+}
+.access-filter .checkbox-inline,
+.access-filter .checkbox-inline:before {
+	color: #767676;
+}
+.access-filter .checkbox-inline:hover,
+.access-filter .checkbox-inline:focus,
+.access-filter .checkbox-inline.checked {
+	color: #337ab7;
+}
+
+.access-filter .checkbox-inline:before {
+	display: inline-block;
+	position: relative;
+	left: -25px;
+}
+.access-filter .checkbox-inline:first-of-type:before {
+	content: "Show -";
+}
+.access-filter .checkbox-inline+.checkbox-inline:before {
+	content: "|";
+}

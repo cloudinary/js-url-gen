@@ -1,0 +1,17 @@
+{
+  "brush-teeth": {
+    "title": "Brush Teeth",
+    "summary": "How to brush your teeth!",
+    "children": {
+      "fence-test": {
+        "title": "Fence Test",
+        "summary": "Testing syntax highlighting.",
+        "showTableOfContents": false
+      }
+    }
+  },
+  "drive-car": {
+    "title": "Drive Car",
+    "summary": "How to drive a car!"
+  }
+}

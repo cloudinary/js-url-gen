@@ -1,0 +1,161 @@
+/* Side Menu */
+
+/* By default it's not affixed in mobile views, so undo that */
+.toc.affix {
+	position: static;
+}
+
+/* First level of nav */
+.toc-nav {
+	margin-top: 5px;
+	padding-bottom: 10px;
+	max-height: 95%;
+	max-height: calc(100% - 2em);
+	overflow-y: auto;
+}
+
+/* All levels of nav */
+.toc .nav > li > a {
+	display: block;
+	padding: 4px 4px 4px 36px;
+	text-indent: -20px;
+	font-size: 14px;
+	font-weight: 500;
+	color: #767676;
+}
+.toc .nav > li > a:hover,
+.toc .nav > li > a:focus {
+	padding-left: 35px;
+	color: #337ab7;
+	text-decoration: none;
+	background-color: transparent;
+	border-left: 1px solid #337ab7;
+}
+.toc .nav > li.active > a,
+.toc .nav > li.active > a:hover,
+.toc .nav > li.active > a:focus {
+	padding-left: 34px;
+	color: #337ab7;
+	background-color: transparent;
+	border-left: 2px solid #337ab7;
+}
+
+.toc .nav .nav {
+	display: none; /* Hide by default, but at >768px, show it */
+	padding-bottom: 10px;
+}
+.toc .nav .nav > li > a {
+	font-size: 13px;
+	padding-left: 39px;
+	font-weight: normal;
+}
+.toc .nav .nav > li > a:hover,
+.toc .nav .nav > li > a:focus {
+	padding-left: 38px;
+}
+.toc .nav .nav > li.active > a,
+.toc .nav .nav > li.active > a:hover,
+.toc .nav .nav > li.active > a:focus {
+	padding-left: 37px;
+}
+
+.toc .nav .nav .nav > li > a {
+	font-size: 12px;
+	padding-left: 44px;
+}
+.toc .nav .nav .nav > li > a:hover,
+.toc .nav .nav .nav > li > a:focus {
+	padding-left: 43px;
+}
+.toc .nav .nav .nav > li.active > a,
+.toc .nav .nav .nav > li.active > a:hover,
+.toc .nav .nav .nav > li.active > a:focus {
+	padding-left: 42px;
+}
+
+.toc .nav .nav .nav .nav > li > a {
+	font-size: 12px;
+	padding-left: 49px;
+}
+.toc .nav .nav .nav .nav > li > a:hover,
+.toc .nav .nav .nav .nav > li > a:focus {
+	padding-left: 48px;
+}
+.toc .nav .nav .nav .nav > li.active > a,
+.toc .nav .nav .nav .nav > li.active > a:hover,
+.toc .nav .nav .nav .nav > li.active > a:focus {
+	padding-left: 47px;
+}
+.toc .nav > li > a .name-require {
+	color: #767676;
+}
+.toc .nav > li > a > .ancestors > span {
+	color: #337ab7;
+}
+.toc .nav > li > a .signature-attribs {
+	font-weight: normal;
+}
+.toc .nav > li > a .name-signature,
+.toc .nav > li > a .signature-params {
+	color: #000;
+}
+.toc .nav > li.event > a .name,
+.toc .nav > li > a .name-string,
+.toc .nav > li > a .signature-param {
+	color: #c7254e;
+}
+/* Back to top (hidden on mobile) */
+.back-to-top {
+	display: none;
+	padding: 4px 10px;
+	margin-top: 10px;
+	margin-left: 10px;
+	font-size: 12px;
+	font-weight: 500;
+	color: #999;
+	cursor: pointer;
+}
+.back-to-top:hover {
+	color: #337ab7;
+	text-decoration: none;
+}
+
+@media (min-width: 768px) {
+	.back-to-top {
+		display: block;
+	}
+}
+
+/* Show and affix the side nav when space allows it */
+@media (min-width: 992px) {
+	.toc .nav > .active > ul {
+		display: block;
+	}
+	/* Widen the fixed sidebar */
+	.toc.affix,
+	.toc.affix-bottom {
+		width: 213px;/* 3 col */
+		/*width: 293px;/* 4 col */
+	}
+	.toc.affix {
+		position: fixed; /* Undo the static from mobile first approach */
+		top: 67px;
+		height: calc(100% - 67px - 50px);
+	}
+	.toc.affix-bottom {
+		position: absolute; /* Undo the static from mobile first approach */
+	}
+	.toc.affix-bottom .toc-nav,
+	.toc.affix .toc-nav {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+@media (min-width: 1200px) {
+	/* Widen the fixed sidebar again */
+	.toc.affix-bottom,
+	.toc.affix {
+		width: 263px;/* 3 col*/
+		/*width: 360px;/* 4 col */
+	}
+}

@@ -1,0 +1,41 @@
+pre.line-numbers {
+	position: relative;
+	padding-left: 4.8em;
+	counter-reset: linenumber;
+}
+
+pre.line-numbers > code {
+	position: relative;
+}
+
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	top: 0;
+	font-size: 100%;
+	left: -4.8em;
+	width: 4em; /* works for 4 digit line-numbers */
+	letter-spacing: -1px;
+	border-right: 1px solid #e1e1e8;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+
+	.line-numbers-rows > a {
+		display: block;
+		counter-increment: linenumber;
+		color: #bdbdbd;
+	}
+	.line-numbers-rows > a:hover {
+		color: #9b9b9b;
+	}
+
+		.line-numbers-rows > a:before {
+			content: counter(linenumber);
+			display: block;
+			padding-right: 0.8em;
+			text-align: right;
+		}

@@ -1,0 +1,12 @@
+<!-- start:source.tmpl.hbs -->
+{{#extend "site/layout"}}
+
+	{{#content "content"}}
+		<section class="source-section">
+			<article>{{{doclet.contents}}}</article>
+			<pre class="prettyprint source language-javascript{{#if options.linenums}} line-numbers{{/if}}"><code class="language-javascript">{{{doclet.code}}}</code></pre>
+		</section>
+	{{/content}}
+
+{{/extend}}
+<!-- end:source.tmpl.hbs -->

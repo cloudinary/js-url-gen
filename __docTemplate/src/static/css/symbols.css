@@ -1,0 +1,50 @@
+dl.symbol {
+}
+dl.symbol dl.symbol {
+	margin-left: 15px;
+	margin-bottom: 15px;
+}
+.symbol-title h1,
+.symbol-title h2,
+.symbol-title h3,
+.symbol-title h4,
+.symbol-title h5 {
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+	padding-left: 50px;
+	text-indent: -50px;
+}
+.main-content .symbol-title h1,
+.main-content .symbol-title h2 {
+	border-bottom: none;
+	margin-bottom: inherit;
+}
+
+.symbol-title .name-signature,
+.symbol-title .signature-params {
+	color: #222;
+}
+.symbol-title h4.event,
+.symbol-title .name-string,
+.symbol-title .signature-param {
+	color: #c7254e;
+}
+.symbol-details {
+	overflow: hidden;
+}
+
+.symbol-title.collapsible-symbol {
+	cursor: pointer;
+}
+.symbol-title.collapsible-symbol .toggle-icon {
+	color: #337ab7;
+	text-indent: 0;
+}
+.symbol-title.collapsible-symbol:hover .toggle-icon {
+	opacity: 0.8;
+}
+.symbol-details.collapsible-symbol {
+	max-height: 0;
+}
+.symbol-details.collapsible-symbol.transition {
+	transition: max-height .4s ease-in;
+}

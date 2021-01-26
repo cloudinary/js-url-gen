@@ -1,0 +1,21 @@
+<!-- start:readme.hbs -->
+{{#extend "site/layout"}}
+
+	{{#content "content"}}
+		<section class="tutorial-section">
+			<article>{{{doclet.contents}}}</article>
+			{{#if doclet.children}}
+				<div class="related-tutorials">
+					<h2>Related Tutorials</h2>
+					<ul>
+						{{#each doclet.children}}
+							<li>{{linkto longname}}</li>
+						{{/each}}
+					</ul>
+				</div>
+			{{/if}}
+		</section>
+	{{/content}}
+
+{{/extend}}
+<!-- end:readme.hbs -->

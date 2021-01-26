@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	{{#block "head"}}
+		<title>{{doclet.pageTitle}}</title>
+		{{#if options.favicon}}
+		<link rel="icon" type="{{config.faviconType}}" href="{{options.favicon}}"/>
+		{{/if}}
+		<!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="css/prism.min.css">
+		<link type="text/css" rel="stylesheet" href="css/template.min.css">
+		{{#each options.stylesheets}}
+			<link type="text/css" rel="stylesheet" href="{{.}}">
+		{{/each}}
+		{{#if options.systemColor}}
+			<style>
+				.page-header,
+				pre.code-toolbar > .toolbar:hover {
+					background-color: {{options.systemColor}};
+				}
+				.callout-primary,
+				.toc .nav > li > a:hover,
+				.toc .nav > li > a:focus,
+				.toc .nav > li.active > a,
+				.toc .nav > li.active > a:hover,
+				.toc .nav > li.active > a:focus,
+				pre.code-toolbar > .toolbar:hover {
+					border-left-color: {{options.systemColor}};
+				}
+				pre.code-toolbar > .toolbar:hover {
+					border-bottom-color: {{options.systemColor}};
+				}
+				.callout-primary h5,
+				.symbol-title.collapsible-symbol .toggle-icon,
+				.breadcrumb li a,
+				.toc .nav > li > a:hover,
+				.toc .nav > li > a:focus,
+				.toc .nav > li.active > a,
+				.toc .nav > li.active > a:hover,
+				.toc .nav > li.active > a:focus {
+					color: {{options.systemColor}};
+				}
+			</style>
+		{{/if}}
+		<script type="text/javascript">
+			window.TEMPLATE_OPTIONS = {{{json options}}};
+			window.DOCLET_TOC_ENABLED = {{{json doclet.showTableOfContents}}};
+			window.DOCLET_AFILTER_ENABLED = {{{json doclet.showAccessFilter}}};
+		</script>
+	{{/block}}
+</head>
+<body>
+	{{> site/navbar}}
+	{{#block "page-header"}}
+		<div class="page-header">
+			<div class="container">
+				<span class="kind">{{doclet.kind}}</span>
+				<h1>{{{doclet.pageTitleHTML}}}</h1>
+				{{> tag/summary doclet}}
+			</div>
+		</div>
+	{{/block}}
+	<div class="container content">
+		<div class="row">
+			<div class="{{#if doclet.showTableOfContents}}col-md-9{{else}}col-md-12{{/if}} main-content">
+				{{#block "controls"}}
+					{{#if crumbs}}
+						<ol class="breadcrumb">
+							{{#each crumbs}}
+							<li{{#if @last}} class="active"{{/if}}>{{{.}}}</li>
+							{{/each}}
+						</ol>
+					{{/if}}
+					{{#if doclet.showAccessFilter}}
+						<div class="access-filter">
+							{{#if doclet.has.inherited}}
+								<label class="checkbox-inline">
+									<input class="toggle-inherited" type="checkbox" value="" checked>
+									Inherited
+								</label>
+							{{/if}}
+							{{#if doclet.has.public}}
+								<label class="checkbox-inline">
+									<input class="toggle-public" type="checkbox" value="" checked>
+									Public
+								</label>
+							{{/if}}
+							{{#if doclet.has.protected}}
+								<label class="checkbox-inline">
+									<input class="toggle-protected" type="checkbox" value="" checked>
+									Protected
+								</label>
+							{{/if}}
+							{{#if doclet.has.private}}
+								<label class="checkbox-inline">
+									<input class="toggle-private" type="checkbox" value="" checked>
+									Private
+								</label>
+							{{/if}}
+						</div>
+					{{/if}}
+				{{/block}}
+				{{#block "content"}}
+					<section>
+						{{#block "primary"}}
+							<dl class="symbol primary">
+								{{symbol doclet primary=true expanded=true options=options}}
+							</dl>
+						{{/block}}
+						{{#block "secondary"}}
+							<article class="secondary">
+								{{#if doclet.symbols.module}}
+									<h3>Modules</h3>
+									<dl class="symbol">
+										{{#each doclet.symbols.module}}
+											<hr/>
+											{{symbol this options=../options}}
+										{{/each}}
+									</dl>
+								{{/if}}
+								{{#if doclet.symbols.class}}
+									<h3>Classes</h3>
+									<dl class="symbol">
+										{{#each doclet.symbols.class}}
+											<hr/>
+											{{symbol this options=../options}}
+										{{/each}}
+									</dl>
+								{{/if}}
+								{{#if doclet.symbols.mixin}}
+									<h3>Mixins</h3>
+									<dl class="symbol">
+										{{#each doclet.symbols.mixin}}
+											<hr/>
+											{{symbol this options=../options}}
+										{{/each}}
+									</dl>
+								{{/if}}
+								{{#if doclet.symbols.namespace}}
+									<h3>Namespaces</h3>
+									<dl class="symbol">
+										{{#each doclet.symbols.namespace}}
+											<hr/>
+											{{symbol this options=../options}}
+										{{/each}}
+									</dl>
+								{{/if}}
+								{{#if doclet.symbols.member}}
+									<h3>Members</h3>
+									<dl class="symbol">
+										{{#each doclet.symbols.member}}
+											<hr/>
+											{{symbol this options=../options}}
+										{{/each}}
+									</dl>
+								{{/if}}
+								{{#if doclet.symbols.function}}
+									<h3>Methods</h3>
+									<dl class="symbol">
+										{{#each doclet.symbols.function}}
+											<hr/>
+											{{symbol this options=../options}}
+										{{/each}}
+									</dl>
+								{{/if}}
+								{{#if doclet.symbols.typedef}}
+									<h3>Type Definitions</h3>
+									<dl class="symbol">
+										{{#each doclet.symbols.typedef}}
+											<hr/>
+											{{symbol this options=../options}}
+										{{/each}}
+									</dl>
+								{{/if}}
+								{{#if doclet.symbols.event}}
+									<h3>Events</h3>
+									<dl class="symbol">
+										{{#each doclet.symbols.event}}
+											<hr/>
+											{{symbol this options=../options}}
+										{{/each}}
+									</dl>
+								{{/if}}
+								{{#if doclet.symbols.tutorial}}
+									<h3>Tutorials</h3>
+									<dl class="symbol">
+										{{#each doclet.symbols.tutorial}}
+											<hr/>
+											{{symbol this options=../options}}
+										{{/each}}
+									</dl>
+								{{/if}}
+							</article>
+						{{/block}}
+					</section>
+				{{/block}}
+			</div>
+			{{#if doclet.showTableOfContents}}
+				<div class="col-md-3 side-content">
+					<nav class="toc hidden-print hidden-sm hidden-xs"></nav>
+				</div>
+			{{/if}}
+		</div>
+	</div>
+	<footer>
+		{{#block "footer"}}
+			{{#if options.footer}}
+				<div class="footer-option">{{{options.footer}}}</div>
+			{{/if}}
+			{{#if options.copyright}}
+				<div class="copyright">{{{options.copyright}}}</div>
+			{{/if}}
+			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc {{config.version}}</a>{{#if options.includeDate}} on {{config.date}}{{/if}} using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
+		{{/block}}
+	</footer>
+	{{#if config.debug}}
+		<div>
+			<pre class="prettyprint source language-javascript"><code class="language-javascript">{{{json config pretty=true}}}</code></pre>
+			<pre class="prettyprint source language-javascript"><code class="language-javascript">{{{json doclet pretty=true}}}</code></pre>
+		</div>
+	{{/if}}
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/clipboard.min.js"></script>
+	<script src="js/prism.min.js"></script>
+	<script src="js/template.min.js"></script>
+	{{#if options.search}}
+		{{> search/modal}}
+		<script src="js/lunr.min.js"></script>
+	{{/if}}
+	{{#each options.scripts}}
+		<script src="{{.}}"></script>
+	{{/each}}
+	{{#if options.analytics}}{{#if options.analytics.ua}}{{#if options.analytics.domain}}
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			ga('create', '{{options.analytics.ua}}', '{{options.analytics.domain}}');
+			ga('send', 'pageview');
+		</script>
+	{{/if}}{{/if}}{{/if}}
+</body>
+</html>

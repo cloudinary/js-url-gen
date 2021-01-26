@@ -1,0 +1,35 @@
+{
+  "tags": {
+    "allowUnknownTags": true
+  },
+  "plugins": ["plugins/markdown"],
+  "templates": {
+    "includeDate": true,
+    "dateFormat": "Do MMM YYYY",
+    "systemName": "FooDoc",
+    "systemSummary": "A Bootstrap and Handlebars based JSDoc3 template.",
+    "systemLogo": "",
+    "systemColor": "",
+    "copyright": "FooDoc Copyright © 2016 The contributors to the JSDoc3 and FooDoc projects.",
+    "linenums": true,
+    "collapseSymbols": true,
+    "inverseNav": true,
+    "inlineNav": false,
+    "outputSourceFiles": true,
+    "outputSourcePath": false,
+    "disablePackagePath": true,
+    "methodHeadingReturns": true,
+    "showTableOfContents": true,
+    "showAccessFilter": false,
+    "sort": "linenum, longname, version, since",
+    "search": true,
+    "analytics": {"ua": null, "domain": null},
+    "favicon": null,
+    "stylesheets": [],
+    "scripts": []
+  },
+  "markdown": {
+    "parser": "gfm",
+    "hardwrap": true
+  }
+}
