@@ -1,6 +1,7 @@
 import {Transformation} from "./Transformation";
 
 /**
+ * @summary SDK
  * @extends {SDK.Transformation}
  * @memberOf SDK
  */

@@ -8,6 +8,7 @@ import {VideoTransformation} from "../transformation/VideoTransformation";
 
 /**
  * @desc Cloudinary video asset, with video-related transformations
+ * @summary SDK
  * @memberOf SDK
  */
 class CloudinaryVideo extends CloudinaryTransformable {

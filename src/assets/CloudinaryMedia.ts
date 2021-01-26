@@ -9,6 +9,7 @@ import IURLConfig from "../config/interfaces/Config/IURLConfig";
 
 /**
  * @desc Cloudinary media asset, with all possible transformations
+ * @summary SDK
  * @memberOf SDK
  */
 class CloudinaryMedia extends CloudinaryTransformable {
