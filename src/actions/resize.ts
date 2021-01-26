@@ -1,5 +1,5 @@
 /**
- * Determines how to crop, scale, and/or zoom the delivered asset according to the requested dimensions.
+ * @description Determines how to crop, scale, and/or zoom the delivered asset according to the requested dimensions.
  * @memberOf Actions
  * @namespace Resize
  */
@@ -10,7 +10,6 @@ import {ScaleAction} from "./resize/ScaleAction";
 import {ThumbResizeAction} from "./resize/ThumbnailAction";
 import {AutoGravity} from "../values/gravity/autoGravity/AutoGravity";
 import {CompassGravity} from "../values/gravity/compassGravity/CompassGravity";
-import ResizeAdvancedAction from "./resize/ResizeAdvancedAction";
 import ResizeCropAction from "./resize/ResizeCropAction";
 import {ResizeFillAction} from "./resize/ResizeFillAction";
 

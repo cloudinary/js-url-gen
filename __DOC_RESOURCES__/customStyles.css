@@ -120,3 +120,16 @@ body {
   border-top: 1px solid #b1b0b0;
   padding-top: 12px;
 }
+
+.symbol-title {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius:2px;
+}
+
+.symbol-title.namespace {
+  padding: 0;
+  border: none;
+  border-radius:0;
+}
+

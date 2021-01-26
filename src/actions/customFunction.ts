@@ -10,7 +10,7 @@ import CustomFunctionAction from "./customFunction/CustomFunctionAction";
 import RemoteAction from "./customFunction/RemoteAction";
 
 /**
- *
+ * @summary action
  * @description - Calls a custom function. </br>
  * For more information about remote custom functions see {@link https://cloudinary.com/documentation/custom_functions#remote_functions | the documentation}
  * @param {string} path - Specifies the URL of the remote custom function.
@@ -23,7 +23,7 @@ function remote(path:string): RemoteAction {
 }
 
 /**
- *
+ * @summary action
  * @description - Calls a custom function.  </br>
  * For more information about wasm custom functions see {@link https://cloudinary.com/documentation/custom_functions#webassembly_functions | the documentation}
  * @param {string} publicID - Specifies the publicID of the custom function stored in Cloudinary

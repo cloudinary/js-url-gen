@@ -11,7 +11,7 @@ import {AdvVideoCodecType, VideoCodecType} from "../values/videoCodecType/VideoC
 import {VideoCodecAction} from "./transcode/VideoCodecAction";
 
 /**
- * Defines how to transcode a video to another format
+ * @description Defines how to transcode a video to another format
  *
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#transcoding_video_to_other_formats | Transcoding video to other formats}
  * @memberOf Actions
@@ -119,6 +119,7 @@ function toAnimated(animatedFormat: AnimatedFormatQualifierValue | string): ToAn
 }
 
 /**
+ * @summary action
  * @memberOf Actions.Transcode
  * @description Controls the video codec.
  * @param {Values.VideoCodec.VideoCodecType | Values.VideoCodec.AdvVideoCodecType} videoCodecType CodecType

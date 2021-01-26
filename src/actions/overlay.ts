@@ -14,6 +14,7 @@ import {LayerAction} from "./layer/LayerAction";
 
 
 /**
+ * @summary action
  * @memberOf Actions.Overlay
  * @description Adds a layer for an asset
  * @param {Values.Source.ImageSource | Values.Source.TextSource | Values.Source.VideoSource} source
