@@ -253,7 +253,6 @@
         all['rest'].forEach(function(doclet){ sortedResults.push(doclet); });
       }
 
-      console.log(sortedResults);
       $.each(sortedResults, function (i, result) {
         if (i % self.limit === 0) {
           index = pages.push([]) - 1;
