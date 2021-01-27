@@ -140,6 +140,19 @@
      * @type {jQuery}
      */
     this.$body = $('#lunr-search-body');
+
+    /**
+     * @summary The Bootstrap modals' body's left column found in the lunr-search-modal.tmpl.
+     * @type {jQuery}
+     */
+    this.$bodyLeft = $('#lunr-search-body').find('.modal-body__left');
+
+    /**
+     * @summary The Bootstrap modals' body's right column found in the lunr-search-modal.tmpl.
+     * @type {jQuery}
+     */
+    this.$bodyRight = $('#lunr-search-body').find('.modal-body__right');
+
     /**
      * @summary The Bootstrap modals' footer found in the lunr-search-modal.tmpl.
      * @type {jQuery}
@@ -154,7 +167,7 @@
      * @summary The maximum number of results to display per page.
      * @type {number}
      */
-    this.limit = 5;
+    this.limit = 10;
   }
 
   /**
@@ -202,82 +215,53 @@
     var self = this;
     return this.db.search(query).then(function (results) {
       var pages = [], index = -1;
+
       // first split the results into pages using the limit
 
-
-      // Here we can perform one last sort, in case we need to.
-      var __actions = [];
-      var __qualifiers = [];
-      var __namespaces = [];
-      var __methods = [];
-      var __classes = [];
-      var __sdk = [];
-      var __rest = [];
+      var all = {};
+      var summaries = ['action', 'qualifier', 'namespace','sdk', 'test',' config', 'method', 'class']
 
       results.forEach(function(doclet){
-        if (doclet.summary === 'action') {
-          __actions.push(doclet);
-          return;
+        for (var i = 0; i < summaries.length; i++) {
+          var summaryKey = summaries[i];
+          if (summaryKey === doclet.summary) {
+            all[summaryKey] = all[summaryKey] || [];
+            all[summaryKey].push(doclet);
+            return;
+          } else if (summaryKey === doclet.kind) {
+            all[summaryKey] = all[summaryKey] || [];
+            all[summaryKey].push(doclet);
+            return;
+          }
         }
 
-        if (doclet.summary === 'qualifier') {
-          __qualifiers.push(doclet);
-          return;
-        }
-
-        if (doclet.summary.toLowerCase() === 'sdk') {
-          __sdk.push(doclet);
-          return;
-        }
-
-        if (doclet.kind === 'function') {
-          __methods.push(doclet);
-          return;
-        }
-
-        if (doclet.kind === 'classes') {
-          __classes.push(doclet);
-          return;
-        }
-
-        if (doclet.kind === 'namespace') {
-          __namespaces.push(doclet);
-          return;
-        }
-        __rest.push(doclet);
+        // if nothing was found
+        all['rest'] = all['rest'] || [];
+        all['rest'].push(doclet);
       });
 
-      results = [].concat(__namespaces, __actions, __qualifiers, __sdk, __classes, __methods, __rest);
+      var sortedResults = [];
 
-      $.each(results, function (i, result) {
+      summaries.forEach(function(summaryKey) {
+        // make sure it exists, it might not!
+        if (all[summaryKey]) {
+          all[summaryKey].forEach(function(doclet){ sortedResults.push(doclet); });
+        }
+      });
+
+      if (all['rest']) {
+        all['rest'].forEach(function(doclet){ sortedResults.push(doclet); });
+      }
+
+      console.log(sortedResults);
+      $.each(sortedResults, function (i, result) {
         if (i % self.limit === 0) {
           index = pages.push([]) - 1;
         }
         pages[index].push(result);
       });
       // once done clear the body and generate each page as it's own ul
-      self.$body.empty();
-
-      var $div = $('<h4/>', {'style': 'font-weight:bold'}).text('Legend:');
-      self.$body.append($div);
-
-      var $div = $('<div/>');
-      $div.append($('<span/>', {'class': 'lunr-search-result-pill action'}).text('action'));
-      $div.append($('<span/>', {'class': ''}).text(' - Contains the foo bar'));
-      self.$body.append($div);
-
-      var $div = $('<div/>');
-      $div.append($('<span/>', {'class': 'lunr-search-result-pill qualifier'}).text('qualifier'));
-      $div.append($('<span/>', {'class': ''}).text(' - Contains the foo bar'));
-      self.$body.append($div);
-
-      var $div = $('<div/>');
-      $div.append($('<span/>', {'class': 'lunr-search-result-pill namespace'}).text('namespace'));
-      $div.append($('<span/>', {'class': ''}).text(' - Contains the foo bar'));
-      self.$body.append($div);
-
-      var $div = $('<h4/>', {'style': 'font-weight:bold'}).text('Results:');
-      self.$body.append($div);
+      self.$bodyLeft.empty();
 
       $.each(pages, function (i, page) {
         var $ul = $('<ul/>', {'class': 'lunr-search-results-page', id: 'lunr-search-result-page-' + i});
@@ -289,38 +273,13 @@
           var $li = $('<li/>');
           $li.addClass('search-result-line-item');
 
-
-          console.log(result);
-
-          // var summary = result.summary;
-          // var isBuilder = summary.indexOf('@builder') >= 0;
+          // sanitize the id, it can have .html, or .html#foobar, we want use use each part as a a searchable item, but without the html
+          // Foo.Bar.Zoo.html#qwerty -> [Foo, Bar, Zoo, querty]
           var docletNamespace = result.id.replace('.html#', '.').replace('.html', '.').split('.').filter(function (a) {
             return a;
           });
-          var type = docletNamespace[0]; // Actions, Values, SDK - master namespace
-          var masterType;
-
-          // if (type === 'Actions' && isBuilder) {
-          // 	masterType = 'Action builder';
-          // } else if ( type === 'Values' && isBuilder) {
-          // 	masterType = 'Qualifier builder';
-          // } else if (kind === 'namespace') {
-          // 	masterType = 'Namespace';
-          // } else {
-          // 	masterType =  docletNamespace[0]+ kind;
-          // }
-
-          masterType = docletNamespace[0] + ' -> ' + kind;
 
           var $div = $('<div/>');
-          var group = docletNamespace[1]; // Delivery, Resize etc.
-
-          console.log(docletNamespace);
-
-          // MasterType -> _Group_ -> Method?
-          // Master type
-
-          var colors = ['black', 'black', 'black', 'teal'];
 
           (result.summary || kind).split(' ').forEach(function (pillText) {
             if (pillText) {
@@ -328,25 +287,28 @@
             }
           })
 
-
           docletNamespace.forEach(function (namespaceChunk, i) {
-            $div.append($('<span/>', {'style': 'color:' + colors[i] || 'black' + ';font-weight:bold'}).text(namespaceChunk));
+            var nextItemAsSpan = $('<span/>', {'style': 'font-weight:bold'});
+
             if (docletNamespace[i + 1]) {
+              $div.append($('<span/>', nextItemAsSpan).text(namespaceChunk));
               $div.append($('<span/>').text(' -> '));
+            } else {
+              var nextItemAsLink = $('<a/>', {
+                href: result.id,
+                'style': 'font-weight:bold',
+                target: 'blank'
+              }).text(namespaceChunk);
+              $div.append(nextItemAsLink);
             }
           });
 
           $li.append($div);
-          var $a = $('<a/>', {
-            href: result.id,
-            'class': 'lunr-search-result-title'
-          }).html(result.title).prepend($('<span/>', {'class': 'lunr-search-result-kind', text: result.kind + ': '}));
-          $li.append($a);
           $li.append($('<div/>', {'class': 'lunr-search-result-desc'}).text(result.description))
           $ul.append($li);
         });
 
-        self.$body.append($ul);
+        self.$bodyLeft.append($ul);
       });
       // if there is a pagination component from a previous search remove it now before we lose the reference to it
       if (self.$pagination.length) {
