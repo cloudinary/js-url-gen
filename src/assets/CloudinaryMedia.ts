@@ -5,6 +5,7 @@ import {LayerAction} from "../actions/layer/LayerAction";
 import {Transformation} from "../transformation/Transformation";
 import ICloudConfig from "../config/interfaces/Config/ICloudConfig";
 import IURLConfig from "../config/interfaces/Config/IURLConfig";
+import {Effect} from "../actions/effect";
 
 
 /**
@@ -49,7 +50,28 @@ class CloudinaryMedia extends CloudinaryTransformable {
   toURL(): string {
     return this.createCloudinaryURL(this.transformation);
   }
+
+  clone(): object {
+    const clonedAsset = new CloudinaryMedia();
+    deepCopy(this, clonedAsset);
+
+    return clonedAsset;
+  }
 }
 
+const deepCopy = (input, clonedAsset) => {
+  Object.keys(input).forEach(key => {
+    clonedAsset[key] = input[key];
+
+    // console.log(typeof input[key])
+    // console.log(input[key])
+
+    if (typeof input[key] === 'object') {
+      deepCopy(input[key], clonedAsset[key]);
+    }else {
+      clonedAsset[key] = input[key];
+    }
+  });
+};
 
 export {CloudinaryMedia};
