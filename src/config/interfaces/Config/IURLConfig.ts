@@ -1,7 +1,7 @@
 /**
  * @name ICloudinaryAssetConfigurations
- * @description
- * Defines the configuration needed for URL-related options when creating Cloudinary URL
+ * @summary config
+ * @description Defines the configuration needed for URL-related options when creating Cloudinary URL
  * @prop {string}  [cname]
  * @prop {boolean} [secureDistribution]
  * @prop {boolean} [privateCdn]

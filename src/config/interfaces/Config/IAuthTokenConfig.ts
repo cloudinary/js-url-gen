@@ -1,5 +1,6 @@
 /**
  * @name IAuthTokenConfig
+ * @summary config
  * @description
  * Defines the configuration for delivering token-based authenticated media assets.</br>
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/control_access_to_media#delivering_token_based_authenticated_media_assets|Delivering token based authenticated media assets}

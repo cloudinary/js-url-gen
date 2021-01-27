@@ -2,6 +2,7 @@ import IAuthTokenConfig from "./IAuthTokenConfig";
 
 /**
  * @name ICloudConfig
+ * @summary config
  * @description Defines the global configuration applied when generating Cloudinary URLs.
  * @prop {string} [cloudName]
  * @prop {string} [apiKey]
