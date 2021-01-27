@@ -51,9 +51,14 @@ class CloudinaryMedia extends CloudinaryTransformable {
     return this.createCloudinaryURL(this.transformation);
   }
 
-  clone(): object {
-    const clonedAsset = new CloudinaryMedia();
-    deepCopy(this, clonedAsset);
+  clone(): CloudinaryMedia {
+    /*
+    checking why actions is the only thing that is not cloning
+     */
+    const clonedAsset = deepCopy(this, {});
+
+    console.log(clonedAsset)
+
 
     return clonedAsset;
   }
@@ -61,17 +66,15 @@ class CloudinaryMedia extends CloudinaryTransformable {
 
 const deepCopy = (input, clonedAsset) => {
   Object.keys(input).forEach(key => {
-    clonedAsset[key] = input[key];
-
-    // console.log(typeof input[key])
-    // console.log(input[key])
-
     if (typeof input[key] === 'object') {
+      clonedAsset[key] = (Array.isArray(input[key]))?[]:{};
       deepCopy(input[key], clonedAsset[key]);
-    }else {
+    }else{
       clonedAsset[key] = input[key];
     }
   });
+
+  return clonedAsset;
 };
 
 export {CloudinaryMedia};
