@@ -12,6 +12,7 @@ import URLConfig from "../config/URLConfig";
 
 /**
  * @desc Cloudinary file without a transformation
+ * @summary SDK
  * @memberOf SDK
  */
 class CloudinaryFile {

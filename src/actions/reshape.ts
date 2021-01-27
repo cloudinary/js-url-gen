@@ -8,6 +8,7 @@ import {TrimAction} from "./reshape/TrimAction";
 type IReshape = CutByImage | DistortArcAction;
 
 /**
+ * @summary action
  * @memberOf Actions
  * @namespace Reshape
  * @description Adjusts the shape of the delivered image. </br>
@@ -17,6 +18,7 @@ type IReshape = CutByImage | DistortArcAction;
 
 
 /**
+ * @summary action
  * @description Trims pixels according to the transparency levels of a given overlay image.
  * Wherever the overlay image is transparent, the original is shown, and wherever the overlay is opaque, the resulting image is transparent.
  * @param {Values.Source.ImageSource} imageSource
@@ -27,6 +29,7 @@ function cutByImage(imageSource: ImageSource): CutByImage {
 }
 
 /**
+ * @summary action
  * @description Distorts the image to an arc shape.
  *
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/transformation_reference#e_distort | Distorting images}</br>
@@ -40,6 +43,7 @@ function distortArc(degrees: number): DistortArcAction {
 }
 
 /**
+ * @summary action
  * Distorts the image to a new shape by adjusting its corners to achieve perception warping.
  * Specify four corner coordinates, representing the new coordinates for each of the image's four corners,
  * in clockwise order from the top-left corner.
@@ -54,6 +58,7 @@ function distort(coordinates: IDistortCoordinates): DistortAction {
 }
 
 /**
+ * @summary action
  * @description Skews the image according to the two specified values in degrees.
  * @param {number} x Skews the image according to the two specified values in degrees. (X and Y)
  * @param {number} y Skews the image according to the two specified values in degrees. (X and Y)
@@ -64,6 +69,7 @@ function shear(x: number, y: number): ShearAction {
 }
 
 /**
+ * @summary action
  * @description Removes the edges of the image based on the color of the corner pixels.
  * Specify a color other than the color of the corner pixels using the colorOverride() method
  * @memberOf Actions.Reshape

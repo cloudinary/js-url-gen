@@ -7,6 +7,7 @@ import {NamedTransformationAction} from "./namedTransformation/NamedTransformati
  */
 
 /**
+ * @summary action
  * @description Applies a pre-defined named transformation of the given name.
  * @param {string} name Transformation name
  * @memberOf Actions.NamedTransformation

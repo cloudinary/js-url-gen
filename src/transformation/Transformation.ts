@@ -22,6 +22,7 @@ import {videoEditType} from "../actions/videoEdit";
 import {DeliveryAction} from "../actions/delivery/DeliveryAction";
 
 /**
+ * @summary SDK
  * @description - Defines how to transform an asset
  * @memberOf SDK
  */

@@ -16,6 +16,7 @@ import {FetchSource} from "../values/source/sourceTypes/FetchSource";
  */
 
 /**
+ * @summary action
  * Adds a layer for an asset
  * @param {Values.Source.ImageSource | Values.Source.TextSource} source
  *        The Source used for the layer, use the functions provided {@link Values.Source|here} to easily create these objects

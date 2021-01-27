@@ -1,6 +1,7 @@
 import {QualifierValue} from './QualifierValue';
 
 /**
+ * @summary SDK
  * @memberOf SDK
  */
 class Qualifier {

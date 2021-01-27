@@ -24,6 +24,7 @@ import ICloudConfig from "../config/interfaces/Config/ICloudConfig";
 
 /**
  * @desc Cloudinary Transformable interface, extended by any class that needs a Transformation Interface
+ * @summary SDK
  * @memberOf SDK
  */
 class CloudinaryTransformable extends CloudinaryFile {

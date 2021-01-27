@@ -3,6 +3,7 @@ import {Qualifier} from "./qualifier/Qualifier";
 import {mapToSortedArray} from "./utils/dataStructureUtils";
 
 /**
+ * @summary SDK
  * @memberOf SDK
  * @description Defines the category of transformation to perform.
  */

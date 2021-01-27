@@ -6,6 +6,7 @@ import {SystemColors} from "../values/color";
 import RoundCornersAction from "./roundCorners/RoundCornersAction";
 
 /**
+ * @summary action
  * @description Adds a solid border around an image or video.
  *
  *  <b>Learn more:</b>
@@ -21,6 +22,7 @@ class Border extends Action {
 
 
   /**
+   * @summary action
    * @memberOf Actions.Border
    * @description Sets the style of the border.
    * @return {Actions.Border}
@@ -62,7 +64,7 @@ class Border extends Action {
 
   /**
    * @description Rounds the specified corners of an image.
-   * @param {RoundCornersAction} roundCornersAction
+   * @param {RoundCornersAction} roundCorners
    * @return {this}
    */
   roundCorners(roundCorners: RoundCornersAction): this {
