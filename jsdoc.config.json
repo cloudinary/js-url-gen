@@ -4,9 +4,8 @@
     "dictionaries": ["jsdoc","closure"]
   },
   "source": {
-    "include": ["src"],
-    "includePattern": ".+\\.ts(doc|x)?$",
-    "excludePattern": "(^|\\/|\\\\)_"
+    "include": ["src", "__TESTS__"],
+    "includePattern": ".+\\.ts(doc|x)?$"
   },
   "plugins": [
     "plugins/markdown",
@@ -28,7 +27,7 @@
     "search": true,
     "monospaceLinks": true,
     "systemColor": "#3448C5",
-    "systemName": "Cloudinary JS.2.0 SDK",
+    "systemName": "Cloudinary JS SDK v2",
     "systemLogo": "__DOC_RESOURCES__/navLogo.png",
     "systemSummary": "@cloudinary/base",
     "favicon": "__DOC_RESOURCES__/favico.png",

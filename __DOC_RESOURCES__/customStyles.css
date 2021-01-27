@@ -78,6 +78,10 @@ body {
   padding-right:5px;
   margin-right:5px;
   color:grey;
+  display: inline-block;
+  width: 64px;
+  font-size: 10px;
+  text-align: center;
 }
 
 .lunr-search-result-pill.action {
@@ -102,6 +106,17 @@ body {
   color:white;
 }
 
+.lunr-search-result-pill.config {
+  border:1px solid black;
+  background-color: lightpink;
+}
+
+.lunr-search-result-pill.test {
+  border:1px solid black;
+  background-color: mediumpurple;
+  color: white;
+}
+
 /**
  * ENSURE ALL RIGHT-SIDE MENUS ARE ALWAYS OPEN
  */
@@ -116,20 +131,37 @@ body {
   max-height:9999px!important;
 }
 
-.search-result-line-item {
-  border-top: 1px solid #b1b0b0;
-  padding-top: 12px;
-}
-
-.symbol-title {
+.symbol-title.function {
   padding: 10px;
   border: 1px solid black;
   border-radius:2px;
 }
 
-.symbol-title.namespace {
-  padding: 0;
-  border: none;
-  border-radius:0;
+/**
+ * Support left-right columns in the search
+ */
+.modal-body {
+  display:flex;
 }
 
+.modal-dialog {
+  width:900px;
+}
+
+.modal-body__left {
+  width:500px;
+}
+.modal-body__right {
+  width: 350px;
+  padding-left: 10px;
+  margin-left: 20px;
+  border-left: 1px solid black;
+}
+
+.pill-desc {
+  white-space: initial;
+}
+
+.pill-legend {
+  padding-bottom:15px;
+}

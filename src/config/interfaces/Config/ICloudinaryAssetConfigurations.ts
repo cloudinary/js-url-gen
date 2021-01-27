@@ -3,6 +3,7 @@ import ICloudConfig from "./ICloudConfig";
 
 /**
  * @name ICloudinaryAssetConfigurations
+ * @summary config
  * @description
  * Defines the configuration needed to create URLs for cloudinary assets
  *

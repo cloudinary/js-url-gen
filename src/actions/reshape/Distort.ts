@@ -5,7 +5,7 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
 export type IDistortCoordinates = [number, number, number, number, number, number, number, number];
 
 /**
- * Distorts the image to a new shape by adjusting its corners to achieve perception warping.
+ * @description Distorts the image to a new shape by adjusting its corners to achieve perception warping.
  * Specify four corner coordinates, representing the new coordinates for each of the image's four corners,
  * in clockwise order from the top-left corner.
  *
