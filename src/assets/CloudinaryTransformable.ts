@@ -21,6 +21,8 @@ import {CloudinaryFile} from "./CloudinaryFile";
 import {Transformation} from "../transformation/Transformation";
 import IURLConfig from "../config/interfaces/Config/IURLConfig";
 import ICloudConfig from "../config/interfaces/Config/ICloudConfig";
+import {IDeliveryAction} from "../actions/delivery";
+import {IAdjustAction} from "../actions/adjust";
 
 /**
  * @desc Cloudinary Transformable interface, extended by any class that needs a Transformation Interface
@@ -106,7 +108,7 @@ class CloudinaryTransformable extends CloudinaryFile {
 
   /**
    * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
-   * @param {Actions.Condition} conditionAction
+   * @param {Actions.Condition} conditionalAction
    * @return {this}
    */
   conditional(conditionalAction: ConditionalAction): this {
@@ -129,7 +131,7 @@ class CloudinaryTransformable extends CloudinaryFile {
    * @param {Actions.Adjust} action
    * @return {this}
    */
-  adjust(action: Action): this {
+  adjust(action: IAdjustAction): this {
     this.transformation.adjust(action);
     return this;
   }
@@ -159,7 +161,7 @@ class CloudinaryTransformable extends CloudinaryFile {
    * @param {Actions.Delivery} deliveryAction
    * @return {this}
    */
-  delivery(deliveryAction: Action): this {
+  delivery(deliveryAction: IDeliveryAction): this {
     this.transformation.delivery(deliveryAction);
     return this;
   }
@@ -228,7 +230,7 @@ class CloudinaryTransformable extends CloudinaryFile {
    * @description Extend your transformation with another transformation
    * @param { string | SDK.Transformation } tx
    */
-  addTransformation(tx: string | Transformation): this {
+  addTransformation(tx: Transformation | string): this {
     this.transformation.addTransformation(tx);
     return this;
   }
