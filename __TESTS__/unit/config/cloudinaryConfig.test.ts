@@ -3,19 +3,23 @@ import URLConfig from "../../../src/config/URLConfig";
 import CloudConfig from "../../../src/config/CloudConfig";
 import {createNewImage} from "../../TestUtils/createCloudinaryImage";
 
+// Mocks to be removed after we have a well defined syntax for the missing features
+const test_cloudinary_url = (publicId:string, options:any, expected:any, optionsAfter:any) => {};
+const cl = {url:(publicId:string, options:any)=>{}};
+
 describe('Tests for CloudinaryConfiguration', () => {
   it('Creates a CloudinaryConfig with defaults', () => {
     const conf = new CloudinaryConfig({
       cloud: {
-        cloudName: 'foo'
+        cloudName:'foo'
       }
     });
 
     expect(conf.cloud).toEqual({
-      cloudName: 'foo'
+      cloudName:'foo'
     });
     expect(conf.url).toEqual({
-      secure: true
+      secure:true
     });
   });
 
@@ -66,14 +70,13 @@ describe('Tests for CloudinaryConfiguration', () => {
   it('Will log errors when invalid properties are passed as configuration', () => {
     const error = console.warn;
     // mute the errors for the test
-    console.warn = () => {
-    };
+    console.warn = () => {};
     const mockedFunction = jest.spyOn(console, 'warn');
 
     const config = {
-      cloud: {
+      cloud:{
         'fakeKey': true,
-        cloudName: 'foo'
+        cloudName:'foo'
       },
       url: {
         'fakeKey': true,
@@ -94,8 +97,7 @@ describe('Tests for CloudinaryConfiguration', () => {
   it('Will log errors when called directly with invalid types', () => {
     const error = console.warn;
     // mute the errors for the test
-    console.warn = () => {
-    };
+    console.warn = () => {};
     const mockedFunction = jest.spyOn(console, 'warn');
 
 
@@ -109,7 +111,7 @@ describe('Tests for CloudinaryConfiguration', () => {
     }).toThrow();
 
     expect(new URLConfig([])).toEqual({
-      secure: true
+      secure:true
     });
 
     // Expect no warnings at all
@@ -122,8 +124,8 @@ describe('Tests for CloudinaryConfiguration', () => {
 
   it('Can extend the configuration', () => {
     const conf = new CloudinaryConfig({
-      cloud: {
-        cloudName: 'foo',
+      cloud:{
+        cloudName:'foo',
         apiSecret: 'abc'
       }
     });
@@ -133,7 +135,7 @@ describe('Tests for CloudinaryConfiguration', () => {
     const newConf = conf.extend({
       cloud: {
         apiKey: 'xyz',
-        cloudName: 'foo'
+        cloudName:'foo'
       }
     });
 
@@ -148,7 +150,7 @@ describe('Tests for CloudinaryConfiguration', () => {
   });
 
   it('Should allow setting secure attribute', () => {
-    const url = createNewImage('sample', {}, {secure: false})
+    const url = createNewImage('sample', {}, { secure: false})
       .toURL();
 
     expect(url).toContain('http://');
@@ -167,175 +169,154 @@ describe('Tests for CloudinaryConfiguration', () => {
     });
   });
 
-  /*
   // These tests should be "translated" to js base code when these missing features are added:
-  it('should use resource_type from options', function() {
-      return test_cloudinary_url('test', {
+  it.skip('should use resource_type from options', () => {
+    test_cloudinary_url('test', {
         resource_type: 'raw'
-      }, protocol + '//res.cloudinary.com/test123/raw/upload/test', {});
+      }, 'https://res.cloudinary.com/test123/raw/upload/test', {});
     });
 
-   it('should support external cname with cdn_subdomain on', function() {
-      return test_cloudinary_url('test', {
+   it.skip('should support external cname with cdn_subdomain on', () => {
+      test_cloudinary_url('test', {
         cname: 'hello.com',
         cdn_subdomain: true
-      }, protocol + '//a2.hello.com/test123/image/upload/test', {});
+      }, 'https://a2.hello.com/test123/image/upload/test', {});
     });
-    it('should allow to shorted image/upload urls', function() {
-      return test_cloudinary_url('test', {
+    it.skip('should allow to shorted image/upload urls', () => {
+      test_cloudinary_url('test', {
         shorten: true
-      }, protocol + '//res.cloudinary.com/test123/iu/test', {});
+      }, 'https://res.cloudinary.com/test123/iu/test', {});
     });
-    it("should support url_suffix in shared distribution", function() {
-      test_cloudinary_url("test", {
-        url_suffix: "hello"
-      }, protocol + "//res.cloudinary.com/test123/images/test/hello", {});
-      return test_cloudinary_url("test", {
-        url_suffix: "hello",
+    it.skip('should support url_suffix in shared distribution', () => {
+      test_cloudinary_url('test', {
+        url_suffix: 'hello'
+      }, 'https://res.cloudinary.com/test123/images/test/hello', {});
+      test_cloudinary_url('test', {
+        url_suffix: 'hello',
         angle: 0
-      }, protocol + "//res.cloudinary.com/test123/images/a_0/test/hello", {});
+      }, 'https://res.cloudinary.com/test123/images/a_0/test/hello', {});
     });
-    it('should disallow url_suffix in non upload types', function() {
-      return expect(function() {
-        return cl.url('test', {
+    it.skip('should disallow url_suffix in non upload types', () => {
+      expect(() => {
+        cl.url('test', {
           url_suffix: 'hello',
           private_cdn: true,
           type: 'facebook'
         });
       }).toThrow();
     });
-    it('should disallow url_suffix with / or .', function() {
-      expect(function() {
-        return cl.url('test', {
+    it.skip('should disallow url_suffix with / or .', () => {
+      expect(() => {
+        cl.url('test', {
           url_suffix: 'hello/world',
           private_cdn: true
         });
       }).toThrow();
-      return expect(function() {
-        return cl.url('test', {
+      expect(() => {
+        cl.url('test', {
           url_suffix: 'hello.world',
           private_cdn: true
         });
       }).toThrow();
     });
-    it('should support url_suffix for private_cdn', function() {
+    it.skip('should support url_suffix for private_cdn', () => {
       test_cloudinary_url('test', {
         url_suffix: 'hello',
         private_cdn: true
-      }, protocol + '//test123-res.cloudinary.com/images/test/hello', {});
-      return test_cloudinary_url('test', {
+      }, 'https://test123-res.cloudinary.com/images/test/hello', {});
+      test_cloudinary_url('test', {
         url_suffix: 'hello',
         angle: 0,
         private_cdn: true
-      }, protocol + '//test123-res.cloudinary.com/images/a_0/test/hello', {});
+      }, 'https://test123-res.cloudinary.com/images/a_0/test/hello', {});
     });
-    it('should put format after url_suffix', function() {
-      return test_cloudinary_url('test', {
+    it.skip('should put format after url_suffix', () => {
+      test_cloudinary_url('test', {
         url_suffix: 'hello',
         private_cdn: true,
         format: 'jpg'
-      }, protocol + '//test123-res.cloudinary.com/images/test/hello.jpg', {});
+      }, 'https://test123-res.cloudinary.com/images/test/hello.jpg', {});
     });
-    it('should support url_suffix for raw uploads', function() {
-      return test_cloudinary_url('test', {
+    it.skip('should support url_suffix for raw uploads', () => {
+      test_cloudinary_url('test', {
         url_suffix: 'hello',
         private_cdn: true,
         resource_type: 'raw'
-      }, protocol + '//test123-res.cloudinary.com/files/test/hello', {});
+      }, 'https://test123-res.cloudinary.com/files/test/hello', {});
     });
-    it('should support url_suffix for raw uploads', function() {
-      return test_cloudinary_url('test', {
+    it.skip('should support url_suffix for raw uploads', () => {
+      test_cloudinary_url('test', {
         url_suffix: 'hello',
         private_cdn: true,
         resource_type: 'image',
         type: 'private'
-      }, protocol + '//test123-res.cloudinary.com/private_images/test/hello', {});
+      }, 'https://test123-res.cloudinary.com/private_images/test/hello', {});
     });
 
-   */
-
-  /*
-    it('should support use_root_path in shared distribution', function() {
+    it.skip('should support use_root_path in shared distribution', () => {
       test_cloudinary_url('test', {
         use_root_path: true,
         private_cdn: false
-      }, protocol + '//res.cloudinary.com/test123/test', {});
-      return test_cloudinary_url('test', {
+      }, 'https://res.cloudinary.com/test123/test', {});
+      test_cloudinary_url('test', {
         use_root_path: true,
         angle: 0,
         private_cdn: false
-      }, protocol + '//res.cloudinary.com/test123/a_0/test', {});
+      }, 'https://res.cloudinary.com/test123/a_0/test', {});
     });
-    it('should support root_path for private_cdn', function() {
+    it.skip('should support root_path for private_cdn', () => {
       test_cloudinary_url('test', {
         use_root_path: true,
         private_cdn: true
-      }, protocol + '//test123-res.cloudinary.com/test', {});
-      return test_cloudinary_url('test', {
+      }, 'https://test123-res.cloudinary.com/test', {});
+      test_cloudinary_url('test', {
         use_root_path: true,
         angle: 0,
         private_cdn: true
-      }, protocol + '//test123-res.cloudinary.com/a_0/test', {});
+      }, 'https://test123-res.cloudinary.com/a_0/test', {});
     });
-    it('should support globally set use_root_path for private_cdn', function() {
-      cl.config('use_root_path', true);
+    it.skip('should support globally set use_root_path for private_cdn', () => {
       test_cloudinary_url('test', {
-        private_cdn: true
-      }, protocol + '//test123-res.cloudinary.com/test', {});
-      return delete cl.config().use_root_path;
+        private_cdn: true,
+        use_root_path: true
+      }, 'https://test123-res.cloudinary.com/test', {});
     });
-    it('should support use_root_path together with url_suffix for private_cdn', function() {
-      return test_cloudinary_url('test', {
+    it.skip('should support use_root_path together with url_suffix for private_cdn', () => {
+      test_cloudinary_url('test', {
         use_root_path: true,
         private_cdn: true,
         url_suffix: 'hello'
-      }, protocol + '//test123-res.cloudinary.com/test/hello', {});
+      }, 'https://test123-res.cloudinary.com/test/hello', {});
     });
-    it('should disallow use_root_path if not image/upload', function() {
-      expect(function() {
-        return cl.url('test', {
+    it.skip('should disallow use_root_path if not image/upload', () => {
+      expect(() => {
+        cl.url('test', {
           use_root_path: true,
           private_cdn: true,
           type: 'facebook'
         });
       }).toThrow();
-      return expect(function() {
-        return cl.url('test', {
+      expect(() => {
+        cl.url('test', {
           use_root_path: true,
           private_cdn: true,
           resource_type: 'raw'
         });
       }).toThrow();
     });
-    it('should generate sprite css urls', function() {
-      var result;
-      result = cl.sprite_css('test');
-      expect(result).toEqual(protocol + '//res.cloudinary.com/test123/image/sprite/test.css');
-      result = cl.sprite_css('test.css');
-      return expect(result).toEqual(protocol + '//res.cloudinary.com/test123/image/sprite/test.css');
+    it.skip('should generate sprite css urls', () => {
+      let result;
+      //result = cl.sprite_css('test');
+      expect(result).toEqual('https://res.cloudinary.com/test123/image/sprite/test.css');
+      //result = cl.sprite_css('test.css');
+      expect(result).toEqual('https://res.cloudinary.com/test123/image/sprite/test.css');
     });
-    it('should escape public_ids', function() {
-      var results, source, tests;
-      tests = {
-        'a b': 'a%20b',
-        'a+b': 'a%2Bb',
-        'a%20b': 'a%20b',
-        'a-b': 'a-b',
-        'a??b': 'a%3F%3Fb'
-      };
-      results = [];
-      for (source in tests) {
-        results.push(test_cloudinary_url(source, {}, protocol + '//res.cloudinary.com/test123/image/upload/' + tests[source], {}));
-      }
-      return results;
-    });
-    it('should allow to override protocol', function() {
-      var options, result;
+    it.skip('should allow to override protocol', () => {
+      let options, result;
       options = {
         'protocol': 'custom:'
       };
       result = cl.url('test', options);
-      return expect(result).toEqual('custom://res.cloudinary.com/test123/image/upload/test');
+      expect(result).toEqual('custom://res.cloudinary.com/test123/image/upload/test');
     });
-   */
 });
