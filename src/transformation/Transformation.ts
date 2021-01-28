@@ -21,6 +21,7 @@ import {EffectActions} from "../actions/effect";
 import {videoEditType} from "../actions/videoEdit";
 import {DeliveryAction} from "../actions/delivery/DeliveryAction";
 import {RawAction} from "../internal/RawAction";
+import {IAdjustAction} from "../actions/adjust";
 
 /**
  * @summary SDK
@@ -177,7 +178,7 @@ class Transformation {
    * @param action
    * @return {this}
    */
-  adjust(action: Action): this {
+  adjust(action: IAdjustAction): this {
     return this.addAction(action);
   }
 
