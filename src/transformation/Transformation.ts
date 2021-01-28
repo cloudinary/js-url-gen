@@ -20,6 +20,7 @@ import {FlagQualifier} from "../values/flag/FlagQualifier";
 import {EffectActions} from "../actions/effect";
 import {videoEditType} from "../actions/videoEdit";
 import {DeliveryAction} from "../actions/delivery/DeliveryAction";
+import {RawAction} from "../internal/RawAction";
 
 /**
  * @summary SDK
@@ -27,7 +28,7 @@ import {DeliveryAction} from "../actions/delivery/DeliveryAction";
  * @memberOf SDK
  */
 class Transformation {
-  actions: (Action | string)[];
+  actions: (Action | RawAction)[];
 
   constructor() {
     this.actions = [];
@@ -38,12 +39,17 @@ class Transformation {
    * @return {this}
    */
   addAction(action: Action | string): this {
+    let actionToAdd: Action | RawAction;
     if (typeof action === 'string') {
       if (action.indexOf('/') >= 0) {
         throw 'addAction cannot accept a string with a forward slash in it - /, use .addTransformation() instead';
+      } else {
+        actionToAdd = new RawAction(action);
       }
+    } else {
+      actionToAdd = action;
     }
-    this.actions.push(action);
+    this.actions.push(actionToAdd);
     return this;
   }
 
@@ -58,7 +64,7 @@ class Transformation {
     // Concat the new actions into the existing actions
       this.actions = this.actions.concat(tx.actions);
     } else {
-      this.actions.push(tx);
+      this.actions.push(new RawAction(tx));
     }
     return this;
   }
