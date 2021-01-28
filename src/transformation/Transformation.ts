@@ -22,6 +22,7 @@ import {videoEditType} from "../actions/videoEdit";
 import {DeliveryAction} from "../actions/delivery/DeliveryAction";
 import {RawAction} from "../internal/RawAction";
 import {IAdjustAction} from "../actions/adjust";
+import {IDeliveryAction} from "../actions/delivery";
 
 /**
  * @summary SDK
@@ -205,7 +206,7 @@ class Transformation {
    * @param deliveryAction
    * @return {this}
    */
-  delivery(deliveryAction: Action): this {
+  delivery(deliveryAction: IDeliveryAction): this {
     return this.addAction(deliveryAction);
   }
 
