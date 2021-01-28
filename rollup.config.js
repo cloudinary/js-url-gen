@@ -8,11 +8,11 @@ export default [{
       file: 'dist/bundles/umd/base.js',
       format: 'umd',
       name:'cloudinaryBase'
-    },
+    }
   ],
   plugins: [
     resolve(),
-    typescript()
+    typescript({ target: "es5"})
   ]
 }];
 
