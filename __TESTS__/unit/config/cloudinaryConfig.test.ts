@@ -162,7 +162,7 @@ describe('Tests for CloudinaryConfiguration', () => {
       }
     });
 
-    conf.cloud.cloudName = 'demo'
+    conf.cloud.cloudName = 'demo';
 
     expect(conf.cloud).toEqual({
       cloudName: 'demo'
@@ -172,151 +172,150 @@ describe('Tests for CloudinaryConfiguration', () => {
   // These tests should be "translated" to js base code when these missing features are added:
   it.skip('should use resource_type from options', () => {
     test_cloudinary_url('test', {
-        resource_type: 'raw'
-      }, 'https://res.cloudinary.com/test123/raw/upload/test', {});
-    });
+      resource_type: 'raw'
+    }, 'https://res.cloudinary.com/test123/raw/upload/test', {});
+  });
 
-   it.skip('should support external cname with cdn_subdomain on', () => {
-      test_cloudinary_url('test', {
-        cname: 'hello.com',
-        cdn_subdomain: true
-      }, 'https://a2.hello.com/test123/image/upload/test', {});
-    });
-    it.skip('should allow to shorted image/upload urls', () => {
-      test_cloudinary_url('test', {
-        shorten: true
-      }, 'https://res.cloudinary.com/test123/iu/test', {});
-    });
-    it.skip('should support url_suffix in shared distribution', () => {
-      test_cloudinary_url('test', {
-        url_suffix: 'hello'
-      }, 'https://res.cloudinary.com/test123/images/test/hello', {});
-      test_cloudinary_url('test', {
-        url_suffix: 'hello',
-        angle: 0
-      }, 'https://res.cloudinary.com/test123/images/a_0/test/hello', {});
-    });
-    it.skip('should disallow url_suffix in non upload types', () => {
-      expect(() => {
-        cl.url('test', {
-          url_suffix: 'hello',
-          private_cdn: true,
-          type: 'facebook'
-        });
-      }).toThrow();
-    });
-    it.skip('should disallow url_suffix with / or .', () => {
-      expect(() => {
-        cl.url('test', {
-          url_suffix: 'hello/world',
-          private_cdn: true
-        });
-      }).toThrow();
-      expect(() => {
-        cl.url('test', {
-          url_suffix: 'hello.world',
-          private_cdn: true
-        });
-      }).toThrow();
-    });
-    it.skip('should support url_suffix for private_cdn', () => {
-      test_cloudinary_url('test', {
-        url_suffix: 'hello',
-        private_cdn: true
-      }, 'https://test123-res.cloudinary.com/images/test/hello', {});
-      test_cloudinary_url('test', {
-        url_suffix: 'hello',
-        angle: 0,
-        private_cdn: true
-      }, 'https://test123-res.cloudinary.com/images/a_0/test/hello', {});
-    });
-    it.skip('should put format after url_suffix', () => {
-      test_cloudinary_url('test', {
+  it.skip('should support external cname with cdn_subdomain on', () => {
+    test_cloudinary_url('test', {
+      cname: 'hello.com',
+      cdn_subdomain: true
+    }, 'https://a2.hello.com/test123/image/upload/test', {});
+  });
+  it.skip('should allow to shorted image/upload urls', () => {
+    test_cloudinary_url('test', {
+      shorten: true
+    }, 'https://res.cloudinary.com/test123/iu/test', {});
+  });
+  it.skip('should support url_suffix in shared distribution', () => {
+    test_cloudinary_url('test', {
+      url_suffix: 'hello'
+    }, 'https://res.cloudinary.com/test123/images/test/hello', {});
+    test_cloudinary_url('test', {
+      url_suffix: 'hello',
+      angle: 0
+    }, 'https://res.cloudinary.com/test123/images/a_0/test/hello', {});
+  });
+  it.skip('should disallow url_suffix in non upload types', () => {
+    expect(() => {
+      cl.url('test', {
         url_suffix: 'hello',
         private_cdn: true,
-        format: 'jpg'
-      }, 'https://test123-res.cloudinary.com/images/test/hello.jpg', {});
-    });
-    it.skip('should support url_suffix for raw uploads', () => {
-      test_cloudinary_url('test', {
-        url_suffix: 'hello',
+        type: 'facebook'
+      });
+    }).toThrow();
+  });
+  it.skip('should disallow url_suffix with / or .', () => {
+    expect(() => {
+      cl.url('test', {
+        url_suffix: 'hello/world',
+        private_cdn: true
+      });
+    }).toThrow();
+    expect(() => {
+      cl.url('test', {
+        url_suffix: 'hello.world',
+        private_cdn: true
+      });
+    }).toThrow();
+  });
+  it.skip('should support url_suffix for private_cdn', () => {
+    test_cloudinary_url('test', {
+      url_suffix: 'hello',
+      private_cdn: true
+    }, 'https://test123-res.cloudinary.com/images/test/hello', {});
+    test_cloudinary_url('test', {
+      url_suffix: 'hello',
+      angle: 0,
+      private_cdn: true
+    }, 'https://test123-res.cloudinary.com/images/a_0/test/hello', {});
+  });
+  it.skip('should put format after url_suffix', () => {
+    test_cloudinary_url('test', {
+      url_suffix: 'hello',
+      private_cdn: true,
+      format: 'jpg'
+    }, 'https://test123-res.cloudinary.com/images/test/hello.jpg', {});
+  });
+  it.skip('should support url_suffix for raw uploads', () => {
+    test_cloudinary_url('test', {
+      url_suffix: 'hello',
+      private_cdn: true,
+      resource_type: 'raw'
+    }, 'https://test123-res.cloudinary.com/files/test/hello', {});
+  });
+  it.skip('should support url_suffix for raw uploads', () => {
+    test_cloudinary_url('test', {
+      url_suffix: 'hello',
+      private_cdn: true,
+      resource_type: 'image',
+      type: 'private'
+    }, 'https://test123-res.cloudinary.com/private_images/test/hello', {});
+  });
+
+  it.skip('should support use_root_path in shared distribution', () => {
+    test_cloudinary_url('test', {
+      use_root_path: true,
+      private_cdn: false
+    }, 'https://res.cloudinary.com/test123/test', {});
+    test_cloudinary_url('test', {
+      use_root_path: true,
+      angle: 0,
+      private_cdn: false
+    }, 'https://res.cloudinary.com/test123/a_0/test', {});
+  });
+  it.skip('should support root_path for private_cdn', () => {
+    test_cloudinary_url('test', {
+      use_root_path: true,
+      private_cdn: true
+    }, 'https://test123-res.cloudinary.com/test', {});
+    test_cloudinary_url('test', {
+      use_root_path: true,
+      angle: 0,
+      private_cdn: true
+    }, 'https://test123-res.cloudinary.com/a_0/test', {});
+  });
+  it.skip('should support globally set use_root_path for private_cdn', () => {
+    test_cloudinary_url('test', {
+      private_cdn: true,
+      use_root_path: true
+    }, 'https://test123-res.cloudinary.com/test', {});
+  });
+  it.skip('should support use_root_path together with url_suffix for private_cdn', () => {
+    test_cloudinary_url('test', {
+      use_root_path: true,
+      private_cdn: true,
+      url_suffix: 'hello'
+    }, 'https://test123-res.cloudinary.com/test/hello', {});
+  });
+  it.skip('should disallow use_root_path if not image/upload', () => {
+    expect(() => {
+      cl.url('test', {
+        use_root_path: true,
+        private_cdn: true,
+        type: 'facebook'
+      });
+    }).toThrow();
+    expect(() => {
+      cl.url('test', {
+        use_root_path: true,
         private_cdn: true,
         resource_type: 'raw'
-      }, 'https://test123-res.cloudinary.com/files/test/hello', {});
-    });
-    it.skip('should support url_suffix for raw uploads', () => {
-      test_cloudinary_url('test', {
-        url_suffix: 'hello',
-        private_cdn: true,
-        resource_type: 'image',
-        type: 'private'
-      }, 'https://test123-res.cloudinary.com/private_images/test/hello', {});
-    });
-
-    it.skip('should support use_root_path in shared distribution', () => {
-      test_cloudinary_url('test', {
-        use_root_path: true,
-        private_cdn: false
-      }, 'https://res.cloudinary.com/test123/test', {});
-      test_cloudinary_url('test', {
-        use_root_path: true,
-        angle: 0,
-        private_cdn: false
-      }, 'https://res.cloudinary.com/test123/a_0/test', {});
-    });
-    it.skip('should support root_path for private_cdn', () => {
-      test_cloudinary_url('test', {
-        use_root_path: true,
-        private_cdn: true
-      }, 'https://test123-res.cloudinary.com/test', {});
-      test_cloudinary_url('test', {
-        use_root_path: true,
-        angle: 0,
-        private_cdn: true
-      }, 'https://test123-res.cloudinary.com/a_0/test', {});
-    });
-    it.skip('should support globally set use_root_path for private_cdn', () => {
-      test_cloudinary_url('test', {
-        private_cdn: true,
-        use_root_path: true
-      }, 'https://test123-res.cloudinary.com/test', {});
-    });
-    it.skip('should support use_root_path together with url_suffix for private_cdn', () => {
-      test_cloudinary_url('test', {
-        use_root_path: true,
-        private_cdn: true,
-        url_suffix: 'hello'
-      }, 'https://test123-res.cloudinary.com/test/hello', {});
-    });
-    it.skip('should disallow use_root_path if not image/upload', () => {
-      expect(() => {
-        cl.url('test', {
-          use_root_path: true,
-          private_cdn: true,
-          type: 'facebook'
-        });
-      }).toThrow();
-      expect(() => {
-        cl.url('test', {
-          use_root_path: true,
-          private_cdn: true,
-          resource_type: 'raw'
-        });
-      }).toThrow();
-    });
-    it.skip('should generate sprite css urls', () => {
-      let result;
-      //result = cl.sprite_css('test');
-      expect(result).toEqual('https://res.cloudinary.com/test123/image/sprite/test.css');
-      //result = cl.sprite_css('test.css');
-      expect(result).toEqual('https://res.cloudinary.com/test123/image/sprite/test.css');
-    });
-    it.skip('should allow to override protocol', () => {
-      let options, result;
-      options = {
-        'protocol': 'custom:'
-      };
-      result = cl.url('test', options);
-      expect(result).toEqual('custom://res.cloudinary.com/test123/image/upload/test');
-    });
+      });
+    }).toThrow();
+  });
+  it.skip('should generate sprite css urls', () => {
+    let result;
+    //result = cl.sprite_css('test');
+    expect(result).toEqual('https://res.cloudinary.com/test123/image/sprite/test.css');
+    //result = cl.sprite_css('test.css');
+    expect(result).toEqual('https://res.cloudinary.com/test123/image/sprite/test.css');
+  });
+  it.skip('should allow to override protocol', () => {
+    const options = {
+      'protocol': 'custom:'
+    };
+    const result = cl.url('test', options);
+    expect(result).toEqual('custom://res.cloudinary.com/test123/image/upload/test');
+  });
 });
