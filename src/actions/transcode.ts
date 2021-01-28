@@ -10,6 +10,17 @@ import {AnimatedFormatQualifierValue} from "../values/animatedFormat/AnimatedFor
 import {AdvVideoCodecType, VideoCodecType} from "../values/videoCodecType/VideoCodecType";
 import {VideoCodecAction} from "./transcode/VideoCodecAction";
 
+
+export type ITranscodeAction = BitRateAction
+  | AudioCodecAction
+  | AudioFrequencyAction
+  | FPSAction
+  | FPSRangeAction
+  | KeyframeIntervalsAction
+  | StreamingProfileAction
+  | ToAnimatedAction
+  | VideoCodecAction
+
 /**
  * @description Defines how to transcode a video to another format
  *

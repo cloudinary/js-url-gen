@@ -23,6 +23,7 @@ import {DeliveryAction} from "../actions/delivery/DeliveryAction";
 import {RawAction} from "../internal/RawAction";
 import {IAdjustAction} from "../actions/adjust";
 import {IDeliveryAction} from "../actions/delivery";
+import {ITranscodeAction} from "../actions/transcode";
 
 /**
  * @summary SDK
@@ -267,7 +268,7 @@ class Transformation {
    * @param {Action} action
    * @return {this}
    */
-  transcode(action: Action): this {
+  transcode(action: ITranscodeAction): this {
     return this.addAction(action);
   }
 
