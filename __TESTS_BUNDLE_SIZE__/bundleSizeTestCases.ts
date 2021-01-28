@@ -66,6 +66,13 @@ const bundleSizeTestCases:ITestCase[] = [
     ]
   },
   {
+    name: 'Import backwards comaptiblity function',
+    sizeLimitInKB: 12,
+    importsArray: [
+      importFromBase('createCloudinaryV1URL')
+    ]
+  },
+  {
     name: 'Import all of the SDK',
     sizeLimitInKB: 110,
     importsArray: [
