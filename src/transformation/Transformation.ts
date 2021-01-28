@@ -262,31 +262,6 @@ class Transformation {
     return this.addAction(customFunction);
   }
 
-  // Video Actions
-  // ==========================
-
-  /**
-   * Concatenates another video or image.
-   * @param {VideoConcatenateAction} videoConcatenateAction
-   * @return {this}
-   */
-  /*
-  concatenate(videoConcatenateAction: VideoConcatenateAction): this {
-    return this.addAction(videoConcatenateAction);
-  }
-   */
-
-  /**
-   * Adds subtitles to the video.
-   * @param {SubtitlesAction} subtitlesAction
-   * @return {this}
-   */
-  /*
-  addSubtitles(subtitlesAction: SubtitlesAction): this {
-    return this.addAction(subtitlesAction);
-  }
-   */
-
   /**
    * Transcodes the video (or audio) to another format.
    * @param {Action} action
