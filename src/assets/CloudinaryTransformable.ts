@@ -23,6 +23,7 @@ import IURLConfig from "../config/interfaces/Config/IURLConfig";
 import ICloudConfig from "../config/interfaces/Config/ICloudConfig";
 import {IDeliveryAction} from "../actions/delivery";
 import {IAdjustAction} from "../actions/adjust";
+import {DeliveryQualityAction} from "../actions/delivery/DeliveryQuality";
 
 /**
  * @desc Cloudinary Transformable interface, extended by any class that needs a Transformation Interface
@@ -72,7 +73,7 @@ class CloudinaryTransformable extends CloudinaryFile {
    * @param {Actions.Delivery} quality
    * @return {this}
    */
-  quality(quality: DeliveryAction): this {
+  quality(quality: DeliveryQualityAction): this {
     this.transformation.quality(quality);
     return this;
   }
