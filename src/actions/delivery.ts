@@ -11,6 +11,8 @@ import {toFloatAsString} from "../internal/utils/toFloatAsString";
 import {DeliveryColorSpaceFromICC} from "./delivery/DeliveryColorSpaceFromICC";
 import {DeliveryAction} from "./delivery/DeliveryAction";
 
+export type IDeliveryAction = DeliveryAction | DeliveryColorSpaceFromICC;
+
 
 /**
  * @summary action
