@@ -35,5 +35,6 @@ export {
   CloudinaryImage,
   CloudinaryVideo,
   CloudinaryFile,
+  CloudinarySDK,
   CloudinarySDK as default
 };
