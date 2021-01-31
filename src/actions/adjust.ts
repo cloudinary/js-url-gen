@@ -18,6 +18,17 @@ import {SimpleEffectAction} from "./effect/EffectActions/SimpleEffectAction";
 
 
 
+export type IAdjustAction = FillLightAction
+  | RecolorAction
+  | OpacityAdjustAction
+  | By3dLutAction
+  | ImproveAction
+  | ReplaceColorAction
+  | EffectActionWithLevel
+  | EffectActionWithStrength
+  | EffectActionWithBlend
+  | ViesusCorrectAdjustAction
+  | SimpleEffectAction;
 
 
 /**

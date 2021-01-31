@@ -20,6 +20,10 @@ import {FlagQualifier} from "../values/flag/FlagQualifier";
 import {EffectActions} from "../actions/effect";
 import {videoEditType} from "../actions/videoEdit";
 import {DeliveryAction} from "../actions/delivery/DeliveryAction";
+import {RawAction} from "../internal/RawAction";
+import {IAdjustAction} from "../actions/adjust";
+import {IDeliveryAction} from "../actions/delivery";
+import {ITranscodeAction} from "../actions/transcode";
 
 /**
  * @summary SDK
@@ -27,7 +31,7 @@ import {DeliveryAction} from "../actions/delivery/DeliveryAction";
  * @memberOf SDK
  */
 class Transformation {
-  actions: (Action | string)[];
+  actions: (Action | RawAction)[];
 
   constructor() {
     this.actions = [];
@@ -38,12 +42,17 @@ class Transformation {
    * @return {this}
    */
   addAction(action: Action | string): this {
+    let actionToAdd: Action | RawAction;
     if (typeof action === 'string') {
       if (action.indexOf('/') >= 0) {
         throw 'addAction cannot accept a string with a forward slash in it - /, use .addTransformation() instead';
+      } else {
+        actionToAdd = new RawAction(action);
       }
+    } else {
+      actionToAdd = action;
     }
-    this.actions.push(action);
+    this.actions.push(actionToAdd);
     return this;
   }
 
@@ -58,7 +67,7 @@ class Transformation {
     // Concat the new actions into the existing actions
       this.actions = this.actions.concat(tx.actions);
     } else {
-      this.actions.push(tx);
+      this.actions.push(new RawAction(tx));
     }
     return this;
   }
@@ -171,7 +180,7 @@ class Transformation {
    * @param action
    * @return {this}
    */
-  adjust(action: Action): this {
+  adjust(action: IAdjustAction): this {
     return this.addAction(action);
   }
 
@@ -198,7 +207,7 @@ class Transformation {
    * @param deliveryAction
    * @return {this}
    */
-  delivery(deliveryAction: Action): this {
+  delivery(deliveryAction: IDeliveryAction): this {
     return this.addAction(deliveryAction);
   }
 
@@ -254,37 +263,12 @@ class Transformation {
     return this.addAction(customFunction);
   }
 
-  // Video Actions
-  // ==========================
-
-  /**
-   * Concatenates another video or image.
-   * @param {VideoConcatenateAction} videoConcatenateAction
-   * @return {this}
-   */
-  /*
-  concatenate(videoConcatenateAction: VideoConcatenateAction): this {
-    return this.addAction(videoConcatenateAction);
-  }
-   */
-
-  /**
-   * Adds subtitles to the video.
-   * @param {SubtitlesAction} subtitlesAction
-   * @return {this}
-   */
-  /*
-  addSubtitles(subtitlesAction: SubtitlesAction): this {
-    return this.addAction(subtitlesAction);
-  }
-   */
-
   /**
    * Transcodes the video (or audio) to another format.
    * @param {Action} action
    * @return {this}
    */
-  transcode(action: Action): this {
+  transcode(action: ITranscodeAction): this {
     return this.addAction(action);
   }
 
