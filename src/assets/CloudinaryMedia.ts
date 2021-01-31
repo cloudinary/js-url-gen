@@ -5,7 +5,7 @@ import {LayerAction} from "../actions/layer/LayerAction";
 import {Transformation} from "../transformation/Transformation";
 import ICloudConfig from "../config/interfaces/Config/ICloudConfig";
 import IURLConfig from "../config/interfaces/Config/IURLConfig";
-import {Effect} from "../actions/effect";
+import cloneDeep from 'lodash/cloneDeep';
 
 
 /**
@@ -51,30 +51,9 @@ class CloudinaryMedia extends CloudinaryTransformable {
     return this.createCloudinaryURL(this.transformation);
   }
 
-  clone(): CloudinaryMedia {
-    /*
-    checking why actions is the only thing that is not cloning
-     */
-    const clonedAsset = deepCopy(this, {});
-
-    console.log(clonedAsset)
-
-
-    return clonedAsset;
+  clone(): this {
+    return cloneDeep(this);
   }
 }
-
-const deepCopy = (input, clonedAsset) => {
-  Object.keys(input).forEach(key => {
-    if (typeof input[key] === 'object') {
-      clonedAsset[key] = (Array.isArray(input[key]))?[]:{};
-      deepCopy(input[key], clonedAsset[key]);
-    }else{
-      clonedAsset[key] = input[key];
-    }
-  });
-
-  return clonedAsset;
-};
 
 export {CloudinaryMedia};
