@@ -10,8 +10,19 @@ import {AnimatedFormatQualifierValue} from "../values/animatedFormat/AnimatedFor
 import {AdvVideoCodecType, VideoCodecType} from "../values/videoCodecType/VideoCodecType";
 import {VideoCodecAction} from "./transcode/VideoCodecAction";
 
+
+export type ITranscodeAction = BitRateAction
+  | AudioCodecAction
+  | AudioFrequencyAction
+  | FPSAction
+  | FPSRangeAction
+  | KeyframeIntervalsAction
+  | StreamingProfileAction
+  | ToAnimatedAction
+  | VideoCodecAction
+
 /**
- * Defines how to transcode a video to another format
+ * @description Defines how to transcode a video to another format
  *
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#transcoding_video_to_other_formats | Transcoding video to other formats}
  * @memberOf Actions
@@ -19,6 +30,7 @@ import {VideoCodecAction} from "./transcode/VideoCodecAction";
  */
 
 /**
+ * @summary action
  * @memberOf Actions.Transcode
  * @description Sets the audio sample frequency.
  *
@@ -30,6 +42,7 @@ function audioFrequency(freq: string|number): AudioFrequencyAction{
   return new AudioFrequencyAction(freq);
 }
 /**
+ * @summary action
  * @memberOf Actions.Transcode
  * @description Sets the audio codec or removes the audio channel.
  * @param {string} codec The audio codec or "none".
@@ -39,6 +52,7 @@ function audioCodec(codec: string): AudioCodecAction{
   return new AudioCodecAction(codec);
 }
 /**
+ * @summary action
  * @memberOf Actions.Transcode
  * @description Controls the video bitrate.
  * Supported codecs: h264, h265 (MPEG-4); vp8, vp9 (WebM).
@@ -57,6 +71,7 @@ function bitRate(bitRate: string|number): BitRateAction {
 }
 
 /**
+ * @summary action
  * @memberOf Actions.Transcode
  * @param {number} from frame rate
  * @return {FPSAction}
@@ -66,6 +81,7 @@ function fps(from: number): FPSAction {
 }
 
 /**
+ * @summary action
  * @memberOf Actions.Transcode
  * @description Controls the range of acceptable FPS (Frames Per Second) to ensure that video (even when optimized) is
  * delivered with an expected FPS level (helps with sync to audio).
@@ -78,6 +94,7 @@ function fpsRange(from: number, to?: number): FPSRangeAction {
 }
 
 /**
+ * @summary action
  * @memberOf Actions.Transcode
  * @description Sets the keyframe interval of the delivered video.
  * @param {number | string} interval The keyframe interval in seconds.
@@ -88,6 +105,7 @@ function keyframeInterval(interval: number | string): KeyframeIntervalsAction {
 }
 
 /**
+ * @summary action
  * @memberOf Actions.Transcode
  * @description Sets the streaming profile to apply to an HLS or MPEG-DASH adaptive bitrate streaming video.
  * The value can be one of the pre-defined streaming profiles or a custom-defined one.
@@ -101,6 +119,7 @@ function streamingProfile(profile: string): StreamingProfileAction {
 }
 
 /**
+ * @summary action
  * @memberOf Actions.Transcode
  * @description Converts a video to animated image.
  * @param {string} animatedFormat The streaming profile.
@@ -111,6 +130,7 @@ function toAnimated(animatedFormat: AnimatedFormatQualifierValue | string): ToAn
 }
 
 /**
+ * @summary action
  * @memberOf Actions.Transcode
  * @description Controls the video codec.
  * @param {Values.VideoCodec.VideoCodecType | Values.VideoCodec.AdvVideoCodecType} videoCodecType CodecType

@@ -4,6 +4,12 @@ import {OpacityAdjustAction} from "./adjust/OpacityAdjustAction";
 import {By3dLutAction} from "./adjust/By3dLutAction";
 import {ImproveAction} from "./adjust/ImproveAction";
 import {ReplaceColorAction} from "./adjust/ReplaceColorAction";
+import {EffectActionWithLevel} from "./effect/EffectActions/EffectActionWithLevel";
+import {EffectActionWithStrength} from "./effect/EffectActions/EffectActionWithStrength";
+import {EffectActionWithBlend} from "./effect/EffectActions/EffectActionWithBlend";
+import {ViesusCorrectAdjustAction} from "./adjust/simple/ViesusCorrectAdjustAction";
+import {SimpleEffectAction} from "./effect/EffectActions/SimpleEffectAction";
+
 /**
  * @description Adjusts the visual appearance of an image or video.
  * @memberOf Actions
@@ -12,9 +18,21 @@ import {ReplaceColorAction} from "./adjust/ReplaceColorAction";
 
 
 
+export type IAdjustAction = FillLightAction
+  | RecolorAction
+  | OpacityAdjustAction
+  | By3dLutAction
+  | ImproveAction
+  | ReplaceColorAction
+  | EffectActionWithLevel
+  | EffectActionWithStrength
+  | EffectActionWithBlend
+  | ViesusCorrectAdjustAction
+  | SimpleEffectAction;
 
 
 /**
+ * @summary action
  * @memberOf Actions.Adjust
  * @description Blends an image with one or more tint colors at a specified intensity. </br>
  *              You can optionally equalize colors before tinting and specify gradient blend positioning per color.</br>
@@ -28,6 +46,7 @@ function tint(value: string): SimpleEffectAction {
 
 
 /**
+ * @summary action
  * @memberOf Actions.Adjust
  * @description Adjusts the image or video brightness.
  * @param {number} level The level of brightness. (Range: -99 to 100, Server default: 80)
@@ -39,6 +58,7 @@ function brightness(level?:number): EffectActionWithLevel {
 
 
 /**
+ * @summary action
  * @memberOf Actions.Adjust
  * @description
  * Enhances an image to its best visual quality with the Viesus Automatic Image Enhancement add-on.</br>
@@ -50,6 +70,7 @@ function viesusCorrect(): ViesusCorrectAdjustAction {
 }
 
 /**
+ * @summary action
  * @memberOf Actions.Adjust
  * @description Adjusts the image's red channel.
  * @param {number} level The level of red. (Range: -100 to 100, Server default: 0)
@@ -60,6 +81,7 @@ function red(level?:number): EffectActionWithLevel {
 }
 
 /**
+ * @summary action
  * @description Applies a sharpening filter to the image.
  * @memberOf Actions.Adjust
  * @param {number} strength The strength of the filter. (Range: 1 to 2000, Server default: 100)
@@ -70,6 +92,7 @@ function sharpen(strength?:number):EffectActionWithStrength {
 }
 
 /**
+ * @summary action
  * @memberOf Actions.Adjust
  * @description Adjusts the color saturation.
  * @param {number} level The level of color saturation (Range: -100 to 100, Server default: 80).
@@ -80,6 +103,7 @@ function saturation(level?:number):EffectActionWithLevel {
 }
 
 /**
+ * @summary action
  * @memberOf Actions.Adjust
  * @description Adjusts the image or video contrast.
  * @param {number} level The level of contrast. (Range: -100 to 100, Server default: 0)
@@ -90,6 +114,7 @@ function contrast(level?:number):EffectActionWithLevel {
 }
 
 /**
+ * @summary action
  * @memberOf Actions.Adjust
  * @description
  * Adjusts the gamma level
@@ -101,6 +126,7 @@ function gamma(level?:number):EffectActionWithLevel {
 }
 
 /**
+ * @summary action
  * @memberOf Actions.Adjust
  * @description Adjusts the image's blue channel.
  * @param {number} level - The level of blue. (Range: -100 to 100, Server default: 0)
@@ -112,6 +138,7 @@ function blue(level?:number): EffectActionWithLevel {
 
 
 /**
+ * @summary action
  * @memberOf Actions.Adjust
  * @description
  * Adjusts image brightness modulation in HSB to prevent artifacts in some images.
@@ -123,6 +150,7 @@ function brightnessHSB(level?:number):EffectActionWithLevel {
 }
 
 /**
+ * @summary action
  * @memberOf Actions.Adjust
  * @description  Causes all semi-transparent pixels in an image to be either fully transparent or fully opaque.
  *
@@ -141,6 +169,7 @@ function opacityThreshold(level?:number): EffectActionWithLevel {
 
 
 /**
+ * @summary action
  * @memberOf Actions.Adjust
  * @description
  * Adjusts the color balance and blends the result with the original image.
@@ -154,6 +183,7 @@ function autoColor(blend?:number):EffectActionWithBlend {
 
 
 /**
+ * @summary action
  * @memberOf Actions.Adjust
  * @description
  * Adjusts the brightness and blends the result with the original image.
@@ -167,6 +197,7 @@ function autoBrightness(blend?:number):EffectActionWithBlend {
 }
 
 /**
+ * @summary action
  * @memberOf Actions.Adjust
  * @description
  * Adjusts the image's hue.
@@ -179,6 +210,7 @@ function hue(level?:number):EffectActionWithLevel {
 
 
 /**
+ * @summary action
  * @memberOf Actions.Adjust
  * @description Adjusts the image's green channel.
  * @param {number} level The level of green. (Range: -100 to 100, Server default: 0)
@@ -189,6 +221,7 @@ function green(level?:number): EffectActionWithLevel {
 }
 
 /**
+ * @summary action
  * @description Applies an unsharp mask filter to the image.
  * @memberOf Actions.Adjust
  * @param {number} strength The strength of the filter. (Range: 1 to 2000, Server default: 100)
@@ -199,6 +232,7 @@ function unsharpMask(strength?:number):EffectActionWithStrength {
 }
 
 /**
+ * @summary action
  * @description Applies a vibrance filter on the image.
  * @memberOf Actions.Adjust
  * @param {number} strength The strength of the vibrance. (Range: -100 to 100, Server default: 20)
@@ -209,6 +243,7 @@ function vibrance(strength?:number):EffectActionWithStrength {
 }
 
 /**
+ * @summary action
  * @memberOf Actions.Adjust
  * @description
  * Adjusts the contrast and blends the result with the original image.
@@ -221,19 +256,9 @@ function autoContrast(blend?:number):EffectActionWithBlend {
   return new EffectActionWithBlend('auto_contrast', blend);
 }
 
-import {EffectActionWithLevel} from "./effect/EffectActions/EffectActionWithLevel";
-import {EffectActionWithStrength} from "./effect/EffectActions/EffectActionWithStrength";
-import {EffectActionWithBlend} from "./effect/EffectActions/EffectActionWithBlend";
-import {ViesusCorrectAdjustAction} from "./adjust/simple/ViesusCorrectAdjustAction";
-import {EffectActions} from "./effect";
-import {SimpleEffectAction} from "./effect/EffectActions/SimpleEffectAction";
-
-
-
-
-
 
 /**
+ * @summary action
  * @description Adjusts the opacity of the image and makes it semi-transparent.
  * @memberOf Actions.Adjust
  * @param {number} level
@@ -244,10 +269,8 @@ function opacity(level:number): OpacityAdjustAction {
 }
 
 
-
-
-
 /**
+ * @summary action
  * @memberOf Actions.Adjust
  * @description Adjusts the image colors, contrast and brightness.
  * @return {Actions.Adjust.ImproveAction}
@@ -257,6 +280,7 @@ function improve(): ImproveAction {
 }
 
 /**
+ * @summary action
  * @memberOf Actions.Adjust
  * @description
  * Maps an input color and those similar to the input color to corresponding shades of a specified output color, taking luminosity and chroma into account, in order to recolor an object in a natural way.</br>
@@ -265,11 +289,12 @@ function improve(): ImproveAction {
  * @param {string} toColor
  * @return {Actions.Adjust.ReplaceColorAction}
  */
-function replaceColor(toColor:string): ReplaceColorAction {
+function replaceColor(toColor: string): ReplaceColorAction {
   return new ReplaceColorAction(toColor);
 }
 
 /**
+ * @summary action
  * @memberOf Actions.Adjust
  * @description Converts the colors of every pixel in an image based on the supplied color matrix, in which the value of each color channel is calculated based on the values from all other channels (e.g. a 3x3 matrix for RGB, a 4x4 matrix for RGBA or CMYK, etc).</br>
  * For every pixel in the image, take each color channel and adjust its value by the specified values of the matrix to get a new value.
@@ -281,6 +306,7 @@ function recolor(matrix:number[][]): RecolorAction {
 }
 
 /**
+ * @summary action
  * @description Adjusts the fill light and blends the result with the original image.
  * @memberOf Actions.Adjust
  * @return {Actions.Adjust.FillLightAction}
@@ -290,6 +316,7 @@ function fillLight(): FillLightAction {
 }
 
 /**
+ * @summary action
  * @description
  * Applies a look-up table (LUT) file to the image.</br>
  * The 3dl file should be pre-uploaded as a raw file

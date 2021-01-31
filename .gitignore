@@ -9,3 +9,4 @@ scripts/tmp.sh
 __TESTS__/compilation.test.ts
 pcakage-lock.json
 .SIZE_TESTS
+__docTemplate/examples

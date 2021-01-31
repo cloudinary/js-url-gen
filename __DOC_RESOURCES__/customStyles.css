@@ -59,3 +59,109 @@ body {
 .branding-logo {
   background-size:30px;
 }
+
+
+/**
+ * CONTROL THE SEARCH RESULTS, PILLS, FORMATTING ETC,
+ */
+.lunr-search-result-desc {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #808080c4;
+}
+
+.lunr-search-result-pill {
+  border:1px solid grey;
+  border-radius:15px;
+  padding-left:5px;
+  padding-right:5px;
+  margin-right:5px;
+  color:grey;
+  display: inline-block;
+  width: 64px;
+  font-size: 10px;
+  text-align: center;
+}
+
+.lunr-search-result-pill.action {
+  border:1px solid black;
+  background-color:green;
+  color:white;
+}
+.lunr-search-result-pill.qualifier {
+  border:1px solid black;
+  background-color:teal;
+  color:white;
+}
+.lunr-search-result-pill.namespace {
+  border:1px solid black;
+  background-color:darkorange;
+  color:white;
+}
+
+.lunr-search-result-pill.sdk {
+  border:1px solid black;
+  background-color: #2d2d2d;
+  color:white;
+}
+
+.lunr-search-result-pill.config {
+  border:1px solid black;
+  background-color: lightpink;
+}
+
+.lunr-search-result-pill.test {
+  border:1px solid black;
+  background-color: mediumpurple;
+  color: white;
+}
+
+/**
+ * ENSURE ALL RIGHT-SIDE MENUS ARE ALWAYS OPEN
+ */
+.toc .nav .nav {
+  display:block!important;
+}
+
+/**
+ * ENSURE ALL COLLAPSABLE AREAS ARE ALWAYS OPEN
+ */
+.symbol-details {
+  max-height:9999px!important;
+}
+
+.symbol-title.function {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius:2px;
+}
+
+/**
+ * Support left-right columns in the search
+ */
+.modal-body {
+  display:flex;
+}
+
+.modal-dialog {
+  width:900px;
+}
+
+.modal-body__left {
+  width:500px;
+}
+.modal-body__right {
+  width: 350px;
+  padding-left: 10px;
+  margin-left: 20px;
+  border-left: 1px solid black;
+}
+
+.pill-desc {
+  white-space: initial;
+}
+
+.pill-legend {
+  padding-bottom:15px;
+}

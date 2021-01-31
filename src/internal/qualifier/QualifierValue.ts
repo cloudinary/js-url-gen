@@ -1,6 +1,7 @@
 import {ExpressionQualifier} from "../../values/expression/ExpressionQualifier";
 
 /**
+ * @summary SDK
  * @memberOf SDK
  */
 class QualifierValue {

@@ -4,8 +4,8 @@ import IApiConfig from "./IApiConfig";
 
 /**
  * @name ICloudinaryAssetConfigurations
- * @description
- * Defines the configuration needed for the Cloudinary Base SDK</br>
+ * @summary config
+ * @description Defines the configuration needed for the Cloudinary Base SDK</br>
  *
  * @prop {IApiConfig} [api]
  * @prop {ITagConfig} [tag]

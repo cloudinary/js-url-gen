@@ -11,8 +11,11 @@ import {toFloatAsString} from "../internal/utils/toFloatAsString";
 import {DeliveryColorSpaceFromICC} from "./delivery/DeliveryColorSpaceFromICC";
 import {DeliveryAction} from "./delivery/DeliveryAction";
 
+export type IDeliveryAction = DeliveryAction | DeliveryColorSpaceFromICC;
+
 
 /**
+ * @summary action
  * @description Defines the format of the delivered asset.
  *
  * <b>Learn more:</b>
@@ -33,6 +36,7 @@ function format(format:FormatQualifier | string) :DeliveryFormat {
 
 
 /**
+ * @summary action
  * @description Deliver the image in the specified device pixel ratio.
  * @memberOf Actions.Delivery
  * @param {string} dpr The DPR (Device Pixel Ratio). Any positive float value.
@@ -45,6 +49,7 @@ function dpr(dpr: string|number):DeliveryAction {
 
 
 /**
+ * @summary action
  * @description Controls the quality of the delivered image or video.
  *
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_optimization#how_to_optimize_image_quality | Image quality}
@@ -59,6 +64,7 @@ function quality(qualityType:string | number) :DeliveryQualityAction {
 }
 
 /**
+ * @summary action
  * @description Controls the density to use when delivering an image or when converting a vector file such as a PDF or EPS
  * document to a web image delivery format.
  * @memberOf Actions.Delivery
@@ -72,6 +78,7 @@ function density(value:number) :DeliveryAction {
 
 
 /**
+ * @summary action
  * @description Default images can be used in the case that a requested image does not exist.
  * @memberOf Actions.Delivery
  * @param {string} publicIdWithExtension Default image public ID
@@ -83,6 +90,7 @@ function defaultImage(publicIdWithExtension:string) :DeliveryAction {
 
 
 /**
+ * @summary action
  * @description Controls the color space used for the delivered image.
  * @memberOf Actions.Delivery
  * @param {string} mode The color space.
@@ -94,6 +102,7 @@ function colorSpace(mode:string): DeliveryAction {
 
 
 /**
+ * @summary action
  * @description Specifies the ICC profile to use for the color space.
  * The ICC file must be uploaded to your account as a raw, authenticated file.
  * @memberOf Actions.Delivery

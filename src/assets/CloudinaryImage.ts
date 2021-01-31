@@ -7,6 +7,7 @@ import IURLConfig from "../config/interfaces/Config/IURLConfig";
 
 /**
  * @desc Cloudinary image asset, with image-related transformations
+ * @summary SDK
  * @memberOf SDK
  */
 class CloudinaryImage extends CloudinaryTransformable {

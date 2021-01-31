@@ -2,6 +2,7 @@ import RotateAction from "./RotateAction";
 import {RotationModeQualifierValue} from "../../values/rotate/RotationModeQualifierValue";
 
 /**
+ * @summary action
  * @memberOf Actions.Rotate
  * @description Rotate an image by using a rotationMode
  * @param {string} rotationMode

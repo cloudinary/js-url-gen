@@ -10,6 +10,7 @@ import cloneDeep from 'lodash/cloneDeep';
 
 /**
  * @desc Cloudinary media asset, with all possible transformations
+ * @summary SDK
  * @memberOf SDK
  */
 class CloudinaryMedia extends CloudinaryTransformable {

@@ -1,17 +1,47 @@
 <!-- start:lunr-search-modal.hbs -->
 <div class="modal fade" id="lunr-search-modal">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title">Search results</h4>
-			</div>
-			<div class="modal-body" id="lunr-search-body">
-			</div>
-			<div class="modal-footer" id="lunr-search-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			</div>
-		</div><!-- /.modal-content -->
-	</div><!-- /.modal-dialog -->
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Search results</h4>
+      </div>
+      <div class="modal-body foobar" id="lunr-search-body">
+        <div class="modal-body__left"></div>
+        <div class="modal-body__right">
+          <div style="font-weight:bold;text-decoration: underline">Quick Help</div>
+          <div class="pill-legend">
+            <span class="lunr-search-result-pill action">action</span><span class="pill-desc">An action object passed to a Transformation or an Asset</span>
+          </div>
+
+          <div class="pill-legend">
+            <span class="lunr-search-result-pill qualifier">qualifier</span><span class="pill-desc">A value passed to an Action, or to another Qualifier</span>
+          </div>
+
+          <div class="pill-legend">
+            <span class="lunr-search-result-pill namespace">namespace</span><span class="pill-desc">A collection of actions or qualifiers, grouped by a common theme</span>
+          </div>
+
+          <div class="pill-legend">
+            <span class="lunr-search-result-pill sdk">sdk</span><span class="pill-desc">Internal SDK methods and classes</span>
+          </div>
+
+          <div class="pill-legend">
+            <span class="lunr-search-result-pill test">test</span><span class="pill-desc">Unit test examples of the SDK</span>
+          </div>
+
+          <div class="pill-legend">
+            <span class="lunr-search-result-pill config">config</span><span class="pill-desc">Configuration related methods, interfaces and classes</span>
+          </div>
+
+          <div>You can search for any of the above terms, for example "tests" or "action"</div>
+        </div>
+      </div>
+      <div class="modal-footer" id="lunr-search-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
 </div>
 <!-- end:lunr-search-modal.hbs -->
