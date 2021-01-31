@@ -26,10 +26,14 @@ You can read more about the project here:
 npm install @cloudinary/base 
 ```
 
+### Transpilation
+@cloudinary/base is optimized around bundle size, as such we do not transpile our distributed modules, 
+we leave the decision of what browsers to support, and what transpilations to apply, to you, the user. 
+
 ### Testing with Jest
 
-@cloudinary/base is shipped with ES6 code by default, while this provides great tree-shaking potential,
-it also requires a few adjustments
+As mentioned above, we're shipping @cloudinary/base with ES6 code, as this provides great tree-shaking potential.
+it also requires a few adjustments when testing.
 
 In jest.config, you'll need to add these lines to allow babel to transpile our code.
 ```json

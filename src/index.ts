@@ -37,5 +37,6 @@ export {
   CloudinaryVideo,
   CloudinaryFile,
   createCloudinaryV1URL,
+  CloudinarySDK,
   CloudinarySDK as default
 };
