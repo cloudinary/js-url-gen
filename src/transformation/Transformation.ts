@@ -12,11 +12,11 @@ import SmartObjectAction from "../actions/psdTools/SmartObjectAction";
 import ClipAction from "../actions/psdTools/ClipAction";
 import GetLayerAction from "../actions/psdTools/GetLayerAction";
 import {IReshape} from "../actions/reshape";
-import {SystemColors} from "../values/color";
+import {SystemColors} from "../qualifiers/color";
 import {prepareColor} from "../internal/utils/prepareColor";
 import {Extract} from "../actions/extract";
 import {Border} from "../actions/border";
-import {FlagQualifier} from "../values/flag/FlagQualifier";
+import {FlagQualifier} from "../qualifiers/flag/FlagQualifier";
 import {EffectActions} from "../actions/effect";
 import {videoEditType} from "../actions/videoEdit";
 import {DeliveryAction} from "../actions/delivery/DeliveryAction";
@@ -213,7 +213,7 @@ class Transformation {
 
   /**
    * @description Sets the color of the background.
-   * @param {Values.Color} color
+   * @param {Qualifiers.Color} color
    * @return {this}
    */
   backgroundColor(color: SystemColors): this {
@@ -240,7 +240,7 @@ class Transformation {
 
   /**
    * @description Adds a flag as a separate action.
-   * @param {Values.Flag | string} flagQualifier
+   * @param {Qualifiers.Flag | string} flagQualifier
    * @return {this}
    */
   addFlag(flagQualifier: FlagQualifier | string): this {

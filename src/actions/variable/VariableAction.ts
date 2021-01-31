@@ -1,7 +1,7 @@
 import {Action} from "../../internal/Action";
 import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
-import {ExpressionQualifier} from "../../values/expression/ExpressionQualifier";
+import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifier";
 
 type TypeVariableValue = number | string | ExpressionQualifier;
 
@@ -23,7 +23,6 @@ class VariableAction extends Action {
 
   /**
    * @description Converts the returned value to type float.
-   * values
    */
   asFloat():this {
     this.isFloat = true;
@@ -32,7 +31,6 @@ class VariableAction extends Action {
 
   /**
    * @description Converts the returned value to type number.
-   * values
    */
   asInteger(): this {
     this.isNumber = true;

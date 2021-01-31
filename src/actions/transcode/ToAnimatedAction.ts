@@ -1,8 +1,8 @@
 import {Action} from "../../internal/Action";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
-import {AnimatedFormatQualifierValue} from "../../values/animatedFormat/AnimatedFormatQualifierValue";
-import {animatedWebP} from "../../values/flag";
-import {animated} from "../../values/flag";
+import {AnimatedFormatQualifierValue} from "../../qualifiers/animatedFormat/AnimatedFormatQualifierValue";
+import {animatedWebP} from "../../qualifiers/flag";
+import {animated} from "../../qualifiers/flag";
 
 /**
  * @extend {SDK.Action}

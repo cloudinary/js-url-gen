@@ -1,10 +1,10 @@
-import {Format} from "../../../src/values/format";
-import {Quality} from "../../../src/values/quality";
-import {ColorSpace} from "../../../src/values/colorSpace";
-import {Dpr} from "../../../src/values/dpr";
+import {Format} from "../../../src/qualifiers/format";
+import {Quality} from "../../../src/qualifiers/quality";
+import {ColorSpace} from "../../../src/qualifiers/colorSpace";
+import {Dpr} from "../../../src/qualifiers/dpr";
 import {Delivery} from "../../../src/actions/delivery";
 import {createNewImage} from "../../TestUtils/createCloudinaryImage";
-import {Progressive} from "../../../src/values/progressive";
+import {Progressive} from "../../../src/qualifiers/progressive";
 
 
 const {format} = Delivery;

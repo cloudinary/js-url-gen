@@ -1,5 +1,5 @@
 import {Actions} from './actions';
-import {Values} from "./values";
+import {Qualifiers} from "./qualifiers";
 import {Transformation} from "./transformation/Transformation";
 import {ImageTransformation} from "./transformation/ImageTransformation";
 import {VideoTransformation} from "./transformation/VideoTransformation";
@@ -18,7 +18,7 @@ const CloudinarySDK = {
   ImageTransformation,
   VideoTransformation,
   Actions,
-  Values,
+  Qualifiers,
   Cloudinary,
   CloudinaryImage,
   CloudinaryVideo,
@@ -30,7 +30,7 @@ export {
   ImageTransformation,
   VideoTransformation,
   Actions,
-  Values,
+  Qualifiers,
   Cloudinary,
   CloudinaryImage,
   CloudinaryVideo,

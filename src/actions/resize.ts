@@ -8,8 +8,8 @@ import ResizePadAction from "./resize/ResizePadAction";
 import ResizeSimpleAction from "./resize/ResizeSimpleAction";
 import {ScaleAction} from "./resize/ScaleAction";
 import {ThumbResizeAction} from "./resize/ThumbnailAction";
-import {AutoGravity} from "../values/gravity/autoGravity/AutoGravity";
-import {CompassGravity} from "../values/gravity/compassGravity/CompassGravity";
+import {AutoGravity} from "../qualifiers/gravity/autoGravity/AutoGravity";
+import {CompassGravity} from "../qualifiers/gravity/compassGravity/CompassGravity";
 import ResizeCropAction from "./resize/ResizeCropAction";
 import {ResizeFillAction} from "./resize/ResizeFillAction";
 

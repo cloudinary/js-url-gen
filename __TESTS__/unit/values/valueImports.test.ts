@@ -1,20 +1,20 @@
-import {TextDecoration} from "../../../src/values/textDecoration";
-import {Dither} from "../../../src/values/dither";
-import {FontStyle} from "../../../src/values/fontStyle";
-import {StreamingProfile} from "../../../src/values/streamingProfile";
-import {ChromaSubSampling} from "../../../src/values/chromaSubSampling";
-import {ColorSpace} from "../../../src/values/colorSpace";
-import {AudioFrequency} from "../../../src/values/audioFrequency";
-import {OutlineMode} from "../../../src/values/outlineMode";
-import {FontWeight} from "../../../src/values/fontWeight";
-import {FontHinting} from "../../../src/values/fontHinting";
-import {TextAlignment} from "../../../src/values/textAlignment";
-import {ArtisticFilter} from "../../../src/values/artisticFilter";
-import {AudioCodec} from "../../../src/values/audioCodec";
-import {SimulateColorBlind} from "../../../src/values/simulateColorBlind";
-import {FontAntialias} from "../../../src/values/FontAntialias";
+import {TextDecoration} from "../../../src/qualifiers/textDecoration";
+import {Dither} from "../../../src/qualifiers/dither";
+import {FontStyle} from "../../../src/qualifiers/fontStyle";
+import {StreamingProfile} from "../../../src/qualifiers/streamingProfile";
+import {ChromaSubSampling} from "../../../src/qualifiers/chromaSubSampling";
+import {ColorSpace} from "../../../src/qualifiers/colorSpace";
+import {AudioFrequency} from "../../../src/qualifiers/audioFrequency";
+import {OutlineMode} from "../../../src/qualifiers/outlineMode";
+import {FontWeight} from "../../../src/qualifiers/fontWeight";
+import {FontHinting} from "../../../src/qualifiers/fontHinting";
+import {TextAlignment} from "../../../src/qualifiers/textAlignment";
+import {ArtisticFilter} from "../../../src/qualifiers/artisticFilter";
+import {AudioCodec} from "../../../src/qualifiers/audioCodec";
+import {SimulateColorBlind} from "../../../src/qualifiers/simulateColorBlind";
+import {FontAntialias} from "../../../src/qualifiers/FontAntialias";
 
-describe('Test imported values', () => {
+describe('Test imported qualifiers', () => {
   it('Generates a URL', () => {
     expect(ArtisticFilter.aurora()).toBe('aurora');
     expect(ArtisticFilter.audrey()).toBe('audrey');

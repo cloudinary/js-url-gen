@@ -1,4 +1,4 @@
-import {SystemColors} from "../../values/color";
+import {SystemColors} from "../../qualifiers/color";
 
 
 /**

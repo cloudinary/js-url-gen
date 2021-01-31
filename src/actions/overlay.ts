@@ -1,4 +1,4 @@
-import {BaseSource} from "../values/source/BaseSource";
+import {BaseSource} from "../qualifiers/source/BaseSource";
 import {LayerAction} from "./layer/LayerAction";
 
 /**
@@ -17,8 +17,8 @@ import {LayerAction} from "./layer/LayerAction";
  * @summary action
  * @memberOf Actions.Overlay
  * @description Adds a layer for an asset
- * @param {Values.Source.ImageSource | Values.Source.TextSource | Values.Source.VideoSource} source
- *        The Source used for the layer, use the functions provided {@link Values.Source|here} to easily create these objects
+ * @param {Qualifiers.Source.ImageSource | Qualifiers.Source.TextSource | Qualifiers.Source.VideoSource} source
+ *        The Source used for the layer, use the functions provided {@link Qualifiers.Source|here} to easily create these objects
  * @return {SDK.LayerAction}
  */
 function source(source: BaseSource): LayerAction {

@@ -1,4 +1,4 @@
-import {image, text} from "../../../src/values/source";
+import {image, text} from "../../../src/qualifiers/source";
 import {Transformation} from "../../../src/transformation/Transformation";
 import {Overlay} from "../../../src/actions/overlay";
 import {sampleTextStyle} from "../../TestUtils/transformations/sampleTextStyle";

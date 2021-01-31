@@ -1,4 +1,4 @@
-import {Gravity} from "../../../../src/values/gravity";
+import {Gravity} from "../../../../src/qualifiers/gravity";
 
 describe('Gravity Qualifier', () => {
   it ('Expects Gravity to include the four Gravity types', () => {

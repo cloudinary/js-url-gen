@@ -1,5 +1,5 @@
 import * as Resize from "../../../src/actions/resize";
-import {Flag} from "../../../src/values/flag";
+import {Flag} from "../../../src/qualifiers/flag";
 import {createNewVideo} from "../../TestUtils/createCloudinaryVideo";
 import {createNewImage} from "../../TestUtils/createCloudinaryImage";
 

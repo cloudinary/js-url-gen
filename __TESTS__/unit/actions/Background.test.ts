@@ -1,4 +1,4 @@
-import {Color} from "../../../src/values/color";
+import {Color} from "../../../src/qualifiers/color";
 import * as Resize from "../../../src/actions/resize";
 import {
   auto,
@@ -8,8 +8,8 @@ import {
   predominant,
   predominantGradient,
   blurred
-} from "../../../src/values/background";
-import {GradientDirection} from "../../../src/values/gradientDirection";
+} from "../../../src/qualifiers/background";
+import {GradientDirection} from "../../../src/qualifiers/gradientDirection";
 import {createNewImage} from "../../TestUtils/createCloudinaryImage";
 
 

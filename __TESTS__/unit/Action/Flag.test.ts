@@ -1,4 +1,4 @@
-import {FlagQualifier} from "../../../src/values/flag/FlagQualifier";
+import {FlagQualifier} from "../../../src/qualifiers/flag/FlagQualifier";
 import {Action} from "../../../src/internal/Action";
 
 describe('Tests for Flag', () => {

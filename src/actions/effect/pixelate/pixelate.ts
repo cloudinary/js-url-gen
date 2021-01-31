@@ -1,4 +1,4 @@
-import {NamedRegion} from "../../../values/region/NamedRegion";
+import {NamedRegion} from "../../../qualifiers/region/NamedRegion";
 import {Qualifier} from "../../../internal/qualifier/Qualifier";
 import {Action} from "../../../internal/Action";
 

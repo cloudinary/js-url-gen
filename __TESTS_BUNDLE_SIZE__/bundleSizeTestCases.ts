@@ -60,7 +60,7 @@ const bundleSizeTestCases:ITestCase[] = [
     importsArray: [
       importFromDist('assets/CloudinaryImage', 'CloudinaryImage'),
       importFromDist('actions/overlay', 'Overlay'),
-      importFromDist('values/source', 'Source'),
+      importFromDist('qualifiers/source', 'Source'),
       importFromDist('transformation/Transformation', 'Transformation'),
       importFromDist('actions/resize', 'crop')
     ]

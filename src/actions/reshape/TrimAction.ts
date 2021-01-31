@@ -1,5 +1,5 @@
 import {Action} from "../../internal/Action";
-import {SystemColors} from "../../values/color";
+import {SystemColors} from "../../qualifiers/color";
 
 /**
  * @description Removes the edges of the image based on the color of the corner pixels.
@@ -20,7 +20,7 @@ class TrimAction extends Action {
   }
 
   /**
-   * @param {string | Values.Color} color Overrides the corner pixels color with the specified color.
+   * @param {string | Qualifiers.Color} color Overrides the corner pixels color with the specified color.
    */
   colorOverride(color: SystemColors | string): this {
     this._color = color;

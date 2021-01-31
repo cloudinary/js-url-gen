@@ -1,5 +1,5 @@
-import {BackgroundQualifier} from "../../values/background/shared/base/BackgroundQualifier";
-import {IGravity} from "../../values/gravity/GravityQualifier";
+import {BackgroundQualifier} from "../../qualifiers/background/shared/base/BackgroundQualifier";
+import {IGravity} from "../../qualifiers/gravity/GravityQualifier";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
 import ResizeAdvancedAction from "./ResizeAdvancedAction";
 
@@ -11,7 +11,7 @@ import ResizeAdvancedAction from "./ResizeAdvancedAction";
 class ResizePadAction<GravityType extends IGravity> extends ResizeAdvancedAction {
   /**
    * @description Sets the background.
-   * @param {Values.Background} backgroundQualifier Defines the background color to use instead of
+   * @param {Qualifiers.Background} backgroundQualifier Defines the background color to use instead of
    * transparent background areas or when resizing with padding.
    */
   background(backgroundQualifier: BackgroundQualifier): this {

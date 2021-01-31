@@ -1,7 +1,7 @@
 import {LayerAction} from "./layer/LayerAction";
-import {ImageSource} from "../values/source/sourceTypes/ImageSource";
-import {BaseTextSource} from "../values/source/sourceTypes/BaseTextSource";
-import {FetchSource} from "../values/source/sourceTypes/FetchSource";
+import {ImageSource} from "../qualifiers/source/sourceTypes/ImageSource";
+import {BaseTextSource} from "../qualifiers/source/sourceTypes/BaseTextSource";
+import {FetchSource} from "../qualifiers/source/sourceTypes/FetchSource";
 
 
 /**
@@ -18,8 +18,8 @@ import {FetchSource} from "../values/source/sourceTypes/FetchSource";
 /**
  * @summary action
  * @description Adds a layer for an asset
- * @param {Values.Source.ImageSource | Values.Source.TextSource} source
- *        The Source used for the layer, use the functions provided {@link Values.Source|here} to easily create these objects
+ * @param {Qualifiers.Source.ImageSource | Qualifiers.Source.TextSource} source
+ *        The Source used for the layer, use the functions provided {@link Qualifiers.Source|here} to easily create these objects
  * @memberOf Actions.Underlay
  * @return {SDK.LayerAction}
  */

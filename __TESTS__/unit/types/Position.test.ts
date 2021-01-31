@@ -1,9 +1,9 @@
-import {Position} from "../../../src/values/position";
-import {Gravity} from "../../../src/values/gravity";
-import {Compass} from "../../../src/values/compass";
-import {FocusOn} from "../../../src/values/focusOn";
+import {Position} from "../../../src/qualifiers/position";
+import {Gravity} from "../../../src/qualifiers/gravity";
+import {Compass} from "../../../src/qualifiers/compass";
+import {FocusOn} from "../../../src/qualifiers/focusOn";
 import {Overlay} from "../../../src/actions/overlay";
-import {Source} from "../../../src/values/source";
+import {Source} from "../../../src/qualifiers/source";
 import {createNewImage} from "../../TestUtils/createCloudinaryImage";
 
 

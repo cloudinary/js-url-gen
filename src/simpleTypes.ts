@@ -1,4 +1,4 @@
-import {ExpressionQualifier} from "./values/expression/ExpressionQualifier";
+import {ExpressionQualifier} from "./qualifiers/expression/ExpressionQualifier";
 
 export type NumOrString = number | string;
 export type NumOrExpression = number | ExpressionQualifier;

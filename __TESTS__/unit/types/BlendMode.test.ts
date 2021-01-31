@@ -1,4 +1,4 @@
-import {BlendMode} from "../../../src/values/blendMode";
+import {BlendMode} from "../../../src/qualifiers/blendMode";
 
 
 describe('BlendMode Qualifier', () => {

@@ -1,7 +1,7 @@
 import {Action} from "../../../internal/Action";
 import {QualifierValue} from "../../../internal/qualifier/QualifierValue";
 import {Qualifier} from "../../../internal/qualifier/Qualifier";
-import {ExpressionQualifier} from "../../../values/expression/ExpressionQualifier";
+import {ExpressionQualifier} from "../../../qualifiers/expression/ExpressionQualifier";
 
 /**
  * @extends {SDK.Action}

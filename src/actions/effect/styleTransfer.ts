@@ -1,6 +1,6 @@
 import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 import {Action} from "../../internal/Action";
-import {ImageSource} from "../../values/source/sourceTypes/ImageSource";
+import {ImageSource} from "../../qualifiers/source/sourceTypes/ImageSource";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 
@@ -19,7 +19,7 @@ class StyleTransfer extends Action {
   /**
    * The Image Source used to create the style transfer,
    * Use the Image Source builder to quickly create a source:
-   * </br>Import: {@link Values.Source|import Sources from '@cloudinary/base/values/sources';}
+   * </br>Import: {@link Qualifiers.Source|import Sources from '@cloudinary/base/qualifiers/sources';}
    * </br>Create: `Source.image('dog')`
    * @param {ImageSource} imageSource
    */

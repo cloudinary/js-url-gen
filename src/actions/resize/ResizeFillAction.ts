@@ -8,7 +8,7 @@ import ResizeAdvancedAction from "./ResizeAdvancedAction";
  */
 class ResizeFillAction extends ResizeAdvancedAction {
   /**
-   * @description Absolute X position when used with Gravity.xyCenter {@link Values.Gravity.GravityQualifier}}
+   * @description Absolute X position when used with Gravity.xyCenter {@link Qualifiers.Gravity.GravityQualifier}}
    * @param {number} x The x position.
    */
   x(x:number | string): this {
@@ -16,7 +16,7 @@ class ResizeFillAction extends ResizeAdvancedAction {
   }
 
   /**
-   * @description Absolute Y position when used with Gravity.xyCenter {@link Values.Gravity.GravityQualifier}}
+   * @description Absolute Y position when used with Gravity.xyCenter {@link Qualifiers.Gravity.GravityQualifier}}
    * @param {number} y The y position.
    */
   y(y:number | string): this {

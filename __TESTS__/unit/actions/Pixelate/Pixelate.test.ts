@@ -1,4 +1,4 @@
-import {Region} from "../../../../src/values/region";
+import {Region} from "../../../../src/qualifiers/region";
 import {Effect} from "../../../../src/actions/effect";
 
 describe('Tests for Transformation Action -- Pixelate', () => {

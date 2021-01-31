@@ -1,8 +1,8 @@
 import {Transformation} from "../../../src/transformation/Transformation";
-import {Concatenate} from "../../../src/values/concatenate";
-import {Volume} from "../../../src/values/volume";
+import {Concatenate} from "../../../src/qualifiers/concatenate";
+import {Volume} from "../../../src/qualifiers/volume";
 import {createNewVideo} from "../../TestUtils/createCloudinaryVideo";
-import {Transition} from "../../../src/values/transition";
+import {Transition} from "../../../src/qualifiers/transition";
 import {Effect} from "../../../src/actions/effect";
 import {VideoEdit} from "../../../src/actions/videoEdit";
 

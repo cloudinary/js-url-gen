@@ -1,6 +1,6 @@
 import {Action} from "../../internal/Action";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
-import {RotationModeQualifierValue} from "../../values/rotate/RotationModeQualifierValue";
+import {RotationModeQualifierValue} from "../../qualifiers/rotate/RotationModeQualifierValue";
 
 const QUALIFIER_KEY = 'a';
 
@@ -20,8 +20,8 @@ class RotateAction extends Action {
 
   /**
    * @description Rotates an asset using a defined mode.
-   * @param {Values.RotationMode | string} rotationMode
-   * For a list of supported rotation modes see {@link Values.rotationModeValues| types of rotation modes} for
+   * @param {Qualifiers.RotationMode | string} rotationMode
+   * For a list of supported rotation modes see {@link Qualifiers.rotationModeValues| types of rotation modes} for
    * possible values
    * @return {this}
    */

@@ -1,6 +1,6 @@
 import getImageWithResize from "./shared/getImageWithResize";
-import {Gravity} from "../../../../src/values/gravity";
-import {Background} from "../../../../src/values/background";
+import {Gravity} from "../../../../src/qualifiers/gravity";
+import {Background} from "../../../../src/qualifiers/background";
 import {fillPad} from "../../../../src/actions/resize";
 
 
