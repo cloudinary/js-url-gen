@@ -23,7 +23,7 @@ class CloudinaryFile {
   protected authToken: IAuthTokenConfig; // populated from the cloud config
   protected urlConfig: IURLConfig;
 
-  public version: number;
+  public version: number | string;
   public publicID: string;
   public extension: string;
   public suffix: string;
@@ -43,6 +43,30 @@ class CloudinaryFile {
     return this;
   }
 
+  setStorageType(newType: string): this {
+    this.storageType = newType;
+    return this;
+  }
+
+  setSuffix(newSuffix: string): this {
+    this.suffix = newSuffix;
+    return this;
+  }
+
+  setVersion(newVersion: number | string): this {
+    if (newVersion) {
+      this.version = newVersion;
+    }
+    return this;
+  }
+
+  setAssetType(newType: string): this {
+    if (newType) {
+      this.assetType = newType;
+    }
+    return this;
+  }
+
   sign(): this {
     return this;
   }
@@ -57,7 +81,7 @@ class CloudinaryFile {
    * @description Creates a fully qualified CloudinaryURL
    * @return {string} CloudinaryURL
    */
-  createCloudinaryURL(transformation?: Transformation): string {
+  createCloudinaryURL(transformation?: Transformation | string): string {
     if (typeof this.cloudName === 'undefined') {
       throw 'You must supply a cloudName in either toURL() or when initializing the asset';
     }
@@ -78,9 +102,13 @@ class CloudinaryFile {
       .filter((a) => a)
       .join('/');
 
-    return encodeURI(url)
-      .replace(/\?/g, '%3F')
-      .replace(/=/g, '%3D');
+    if (typeof transformation === 'string') {
+      return url;
+    } else {
+      return encodeURI(url)
+        .replace(/\?/g, '%3F')
+        .replace(/=/g, '%3D');
+    }
   }
 }
 
