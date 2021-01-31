@@ -2,7 +2,7 @@
   "compilerOptions": {
     "noImplicitAny": true,
     "outDir": "./dist",
-    "target": "ES5",
+    "target": "ES2015",
     "declaration": true,
     "module": "ES2015",
     "moduleResolution": "node",
