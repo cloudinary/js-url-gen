@@ -5,7 +5,8 @@
   "collectCoverageFrom": [
     "<rootDir>/src/**/*.ts",
     "<rootDir>/scripts/**/*.ts",
-    "!<rootDir>/scripts/createEntrypoints.ts"
+    "!<rootDir>/scripts/createEntrypoints.ts",
+    "!<rootDir>/src/backwards/**/*.ts"
   ],
   "modulePaths": [
     "<rootDir>/src"
