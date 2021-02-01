@@ -92,24 +92,18 @@ describe('Tests for URL configuration', () => {
     expect(image.toURL()).toEqual('https://res.cloudinary.com/test123/a_0/test');
   });
 
-
-
-
-
-
-
-
-
   it.skip('should accept public_id with special characters', () => {
     const url = createNewImage('public%id')
       .toURL();
     expect(url).toEqual('https://res.cloudinary.com/test123/image/upload/public%25id');
   });
+
   it.skip('should not fail on falsy public_id', () => {
     const url = createNewImage(void 0)
       .toURL();
     expect(url).toEqual(void 0);
   });
+  
   it.skip('url should support signature option', () => {
     const image = new CloudinaryImage('sample', {cloudName: 'demo'}, {});
     const signature = "some-signature";
