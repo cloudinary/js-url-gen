@@ -175,61 +175,6 @@ describe('Tests for CloudinaryConfiguration', () => {
       resource_type: 'raw'
     }, 'https://res.cloudinary.com/test123/raw/upload/test', {});
   });
-
-  it.skip('should support external cname with cdn_subdomain on', () => {
-    test_cloudinary_url('test', {
-      cname: 'hello.com',
-      cdn_subdomain: true
-    }, 'https://a2.hello.com/test123/image/upload/test', {});
-  });
-  it.skip('should allow to shorted image/upload urls', () => {
-    test_cloudinary_url('test', {
-      shorten: true
-    }, 'https://res.cloudinary.com/test123/iu/test', {});
-  });
-  it.skip('should support url_suffix in shared distribution', () => {
-    test_cloudinary_url('test', {
-      url_suffix: 'hello'
-    }, 'https://res.cloudinary.com/test123/images/test/hello', {});
-    test_cloudinary_url('test', {
-      url_suffix: 'hello',
-      angle: 0
-    }, 'https://res.cloudinary.com/test123/images/a_0/test/hello', {});
-  });
-  it.skip('should disallow url_suffix in non upload types', () => {
-    expect(() => {
-      cl.url('test', {
-        url_suffix: 'hello',
-        private_cdn: true,
-        type: 'facebook'
-      });
-    }).toThrow();
-  });
-  it.skip('should disallow url_suffix with / or .', () => {
-    expect(() => {
-      cl.url('test', {
-        url_suffix: 'hello/world',
-        private_cdn: true
-      });
-    }).toThrow();
-    expect(() => {
-      cl.url('test', {
-        url_suffix: 'hello.world',
-        private_cdn: true
-      });
-    }).toThrow();
-  });
-  it.skip('should support url_suffix for private_cdn', () => {
-    test_cloudinary_url('test', {
-      url_suffix: 'hello',
-      private_cdn: true
-    }, 'https://test123-res.cloudinary.com/images/test/hello', {});
-    test_cloudinary_url('test', {
-      url_suffix: 'hello',
-      angle: 0,
-      private_cdn: true
-    }, 'https://test123-res.cloudinary.com/images/a_0/test/hello', {});
-  });
   it.skip('should put format after url_suffix', () => {
     test_cloudinary_url('test', {
       url_suffix: 'hello',
@@ -253,17 +198,6 @@ describe('Tests for CloudinaryConfiguration', () => {
     }, 'https://test123-res.cloudinary.com/private_images/test/hello', {});
   });
 
-  it.skip('should support use_root_path in shared distribution', () => {
-    test_cloudinary_url('test', {
-      use_root_path: true,
-      private_cdn: false
-    }, 'https://res.cloudinary.com/test123/test', {});
-    test_cloudinary_url('test', {
-      use_root_path: true,
-      angle: 0,
-      private_cdn: false
-    }, 'https://res.cloudinary.com/test123/a_0/test', {});
-  });
   it.skip('should support root_path for private_cdn', () => {
     test_cloudinary_url('test', {
       use_root_path: true,
