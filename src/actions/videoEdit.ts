@@ -1,7 +1,7 @@
 import TrimAction from './videoEdit/TrimAction';
 import ConcatenateAction from './videoEdit/ConcatenateAction';
 import VolumeAction from "./videoEdit/VolumeAction";
-import {VideoSource} from "../values/source/sourceTypes/VideoSource";
+import {VideoSource} from "../qualifiers/source/sourceTypes/VideoSource";
 import {PreviewAction} from "./videoEdit/PreviewAction";
 
 /**
@@ -50,8 +50,7 @@ function trim(): TrimAction{
  *
  * @memberOf Actions.VideoEdit
  * @param {string | number} volumeValue The value of volume. The percentage change of volume (Range: -100 to 400).
- * For a list of supported types see {@link Values.Volume |
-    * Volume values}
+ * For a list of supported types see {@link Qualifiers.Volume| Volume values}
  * @return {VolumeAction}
  */
 function volume(volumeValue: string | number): VolumeAction{

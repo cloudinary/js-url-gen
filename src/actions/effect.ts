@@ -17,7 +17,7 @@ import {StyleTransfer} from "./effect/styleTransfer";
 import {DitherEffectAction} from "./effect/dither";
 import {DeshakeEffectAction} from "./effect/leveled/deshake";
 import {Pixelate} from "./effect/pixelate/pixelate";
-import {ImageSource} from "../values/source/sourceTypes/ImageSource";
+import {ImageSource} from "../qualifiers/source/sourceTypes/ImageSource";
 import {EffectActionWithStrength} from "./effect/EffectActions/EffectActionWithStrength";
 import {BlackwhiteEffectAction} from "./effect/leveled/blackwhite";
 import {FadeInEffectAction} from "./effect/leveled/fadeIn";
@@ -314,9 +314,9 @@ function vignette(strength?: number):EffectActionWithStrength {
  * @summary action
  * @description
  * Applies an ordered dither filter to the image.
- * Use the constants defined in {@link Values.Dither|@cloudinary/base/values/dither} for ditherType.
+ * Use the constants defined in {@link Qualifiers.Dither|@cloudinary/base/qualifiers/dither} for ditherType.
  * @memberOf Actions.Effect
- * @param {Values.Dither} ditherType - The dither type applied to the image
+ * @param {Qualifiers.Dither} ditherType - The dither type applied to the image
  * @return {DitherEffectAction}
  */
 function dither(ditherType?: number):DitherEffectAction {
@@ -377,7 +377,7 @@ function assistColorBlind():AssistColorBlindEffectAction {
  * @summary action
  * @description
  * Simulates the way an image would appear to someone with the specified color blind condition. </br>
- * For a list of supported color blind conditions see {@link Values.SimulateColorBlindValues| types of color blindness} for possible values
+ * For a list of supported color blind conditions see {@link Qualifiers.SimulateColorBlindValues| types of color blindness} for possible values
  * @memberOf Actions.Effect
  * @return {SimulateColorBlindEffectAction}
  */

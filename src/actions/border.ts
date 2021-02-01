@@ -2,7 +2,7 @@ import {Action} from "../internal/Action";
 import {QualifierValue} from "../internal/qualifier/QualifierValue";
 import {Qualifier} from "../internal/qualifier/Qualifier";
 import {prepareColor} from "../internal/utils/prepareColor";
-import {SystemColors} from "../values/color";
+import {SystemColors} from "../qualifiers/color";
 import RoundCornersAction from "./roundCorners/RoundCornersAction";
 
 /**
@@ -33,7 +33,7 @@ class Border extends Action {
 
   /**
    * @description Adds a border of the specified type around an image or video.
-   * @param {'solid'} borderType The type of border (currently only 'solid' is supported). Use values in {@link Values.Border|Border Values}.
+   * @param {'solid'} borderType The type of border (currently only 'solid' is supported). Use values in {@link Qualifiers.Border|Border Values}.
    * @param {string} color The color of the border.
    * @param {number} borderWidth The width in pixels.
    */

@@ -7,7 +7,7 @@ import {LeveledEffectAction} from "./EffectActions/LeveledEffectAction";
 class DitherEffectAction extends LeveledEffectAction {
   /**
    *
-   * @param {Values.Dither} ditherType - The dither type applied to the image
+   * @param {Qualifiers.Dither} ditherType - The dither type applied to the image
    * @return {this}
    */
   type(ditherType:number): this {

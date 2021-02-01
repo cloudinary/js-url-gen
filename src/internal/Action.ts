@@ -1,4 +1,4 @@
-import {FlagQualifier} from "../values/flag/FlagQualifier";
+import {FlagQualifier} from "../qualifiers/flag/FlagQualifier";
 import {Qualifier} from "./qualifier/Qualifier";
 import {mapToSortedArray} from "./utils/dataStructureUtils";
 
@@ -75,7 +75,7 @@ class Action {
 
   /**
    * @description Adds a flag to the current action.
-   * @param {Values.Flag} flag
+   * @param {Qualifiers.Flag} flag
    * @return {this}
    */
   addFlag(flag: FlagQualifier | string): this {

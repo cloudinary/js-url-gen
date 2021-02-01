@@ -1,10 +1,10 @@
-import {TextStyle} from "../../../src/values/textStyle";
-import {FontAntialias} from "../../../src/values/FontAntialias";
-import {FontWeight} from "../../../src/values/fontWeight";
-import {FontHinting} from "../../../src/values/fontHinting";
-import {TextDecoration} from "../../../src/values/textDecoration";
-import {TextAlignment} from "../../../src/values/textAlignment";
-import {FontStyle} from "../../../src/values/fontStyle";
+import {TextStyle} from "../../../src/qualifiers/textStyle";
+import {FontAntialias} from "../../../src/qualifiers/FontAntialias";
+import {FontWeight} from "../../../src/qualifiers/fontWeight";
+import {FontHinting} from "../../../src/qualifiers/fontHinting";
+import {TextDecoration} from "../../../src/qualifiers/textDecoration";
+import {TextAlignment} from "../../../src/qualifiers/textAlignment";
+import {FontStyle} from "../../../src/qualifiers/fontStyle";
 
 /**
  * Creates a TextStyle instance used for testing

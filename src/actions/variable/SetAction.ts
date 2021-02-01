@@ -1,6 +1,6 @@
 import {isString} from "../../internal/utils/dataStructureUtils";
 import VariableAction from "./VariableAction";
-import {ExpressionQualifier} from "../../values/expression/ExpressionQualifier";
+import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifier";
 
 /**
  * @description Sets a user-defined variable.

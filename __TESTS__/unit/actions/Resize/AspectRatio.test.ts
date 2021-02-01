@@ -1,4 +1,4 @@
-import {AspectRatio} from "../../../../src/values/aspectRatio";
+import {AspectRatio} from "../../../../src/qualifiers/aspectRatio";
 import {createNewImage} from "../../../TestUtils/createCloudinaryImage";
 import {crop} from "../../../../src/actions/resize";
 

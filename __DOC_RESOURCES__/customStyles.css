@@ -79,7 +79,7 @@ body {
   margin-right:5px;
   color:grey;
   display: inline-block;
-  width: 64px;
+  min-width: 64px;
   font-size: 10px;
   text-align: center;
 }

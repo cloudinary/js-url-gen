@@ -20,7 +20,7 @@ class GradientFadeEffectAction extends Action {
 
   /**
    * @description Sets the mode of gradient fade.
-   * @param {string | Values.GradientFade} type The mode of gradient fade.
+   * @param {string | Qualifiers.GradientFade} type The mode of gradient fade.
    */
   type(type:string): this {
     this._type = type;

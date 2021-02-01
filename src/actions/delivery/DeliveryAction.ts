@@ -1,5 +1,5 @@
 import {Action} from "../../internal/Action";
-import {FormatQualifier} from "../../values/format/FormatQualifier";
+import {FormatQualifier} from "../../qualifiers/format/FormatQualifier";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**

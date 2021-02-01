@@ -1,5 +1,5 @@
 import ResizeSimpleAction from "./ResizeSimpleAction";
-import {IGravity} from "../../values/gravity/GravityQualifier";
+import {IGravity} from "../../qualifiers/gravity/GravityQualifier";
 
 /**
  * @description Defines an advanced resize.
@@ -8,7 +8,7 @@ import {IGravity} from "../../values/gravity/GravityQualifier";
 class ResizeAdvancedAction extends ResizeSimpleAction {
   /**
    * @description Which part of the original image to include.
-   * @param {Values.Gravity} gravity
+   * @param {Qualifiers.Gravity} gravity
    */
   gravity(gravity:IGravity): this {
     return this.addQualifier(gravity);

@@ -20,10 +20,10 @@ import {mode} from '@cloudinary/base/actions/rotate';
 // The RotationModeAction (mode) requires a Qualifier
 // That qualifier will require a certain QualifierValue
 // To make life easier, you can import all possible QualifierValue(s) of rotate
-import {RotationMode} from '@cloudinary/base/values/rotationMode';
+import {RotationMode} from '@cloudinary/base/qualifiers/rotationMode';
 
 // You can also import only the required QualifierValue you want
-import {verticalFlip} from '@cloudinary/base/values/rotationMode';
+import {verticalFlip} from '@cloudinary/base/qualifiers/rotationMode';
 // RotationMode.verticalFlip === verticalFlip
 
 const myImage = cld.image('sample');

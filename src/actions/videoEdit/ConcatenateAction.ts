@@ -1,8 +1,8 @@
 import {Action} from "../../internal/Action";
 import {Transformation} from "../../transformation/Transformation";
-import {VideoSource} from "../../values/source/sourceTypes/VideoSource";
-import {ImageSource} from "../../values/source/sourceTypes/ImageSource";
-import {FetchSource} from "../../values/source/sourceTypes/FetchSource";
+import {VideoSource} from "../../qualifiers/source/sourceTypes/VideoSource";
+import {ImageSource} from "../../qualifiers/source/sourceTypes/ImageSource";
+import {FetchSource} from "../../qualifiers/source/sourceTypes/FetchSource";
 
 /**
  * @description Class for Concatenating another video.
@@ -24,7 +24,7 @@ class ConcatenateAction extends Action {
 
   /**
    *
-   * @param {Values.Source.VideoSource | Values.Source.ImageSource | Values.Source.FetchSource} source
+   * @param {Qualifiers.Source.VideoSource | Qualifiers.Source.ImageSource | Qualifiers.Source.FetchSource} source
    *         the Source to concatenate
    */
   constructor(source: VideoSource | ImageSource | FetchSource) {
@@ -34,7 +34,7 @@ class ConcatenateAction extends Action {
 
   /**
    * @description Sets the transition between a video and a concatenated source
-   * @param {Values.Transition.VideoSource} source The source to concatenate.
+   * @param {Qualifiers.Transition.VideoSource} source The source to concatenate.
    * @return {this}
    */
   transition(source: VideoSource): this {

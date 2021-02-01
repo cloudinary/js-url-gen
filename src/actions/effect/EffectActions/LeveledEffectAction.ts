@@ -1,5 +1,5 @@
 import {SimpleEffectAction} from "./SimpleEffectAction";
-import {ExpressionQualifier} from "../../../values/expression/ExpressionQualifier";
+import {ExpressionQualifier} from "../../../qualifiers/expression/ExpressionQualifier";
 
 /**
  * @extends {Actions.Effect.SimpleEffectAction}

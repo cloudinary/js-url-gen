@@ -1,12 +1,12 @@
-import {AnimatedFormat} from "../../../src/values/animatedFormat";
+import {AnimatedFormat} from "../../../src/qualifiers/animatedFormat";
 import {createNewVideo} from "../../TestUtils/createCloudinaryVideo";
-import {AudioFrequency} from "../../../src/values/audioFrequency";
+import {AudioFrequency} from "../../../src/qualifiers/audioFrequency";
 import {Transcode} from "../../../src/actions/transcode";
-import {AudioCodec} from "../../../src/values/audioCodec";
-import {StreamingProfile} from "../../../src/values/streamingProfile";
-import {VideoCodec} from "../../../src/values/videoCodec";
-import {VideoCodecLevel} from "../../../src/values/videoCodecLevel";
-import {VideoCodecProfile} from "../../../src/values/videoCodecProfile";
+import {AudioCodec} from "../../../src/qualifiers/audioCodec";
+import {StreamingProfile} from "../../../src/qualifiers/streamingProfile";
+import {VideoCodec} from "../../../src/qualifiers/videoCodec";
+import {VideoCodecLevel} from "../../../src/qualifiers/videoCodecLevel";
+import {VideoCodecProfile} from "../../../src/qualifiers/videoCodecProfile";
 import {scale} from "../../../src/actions/resize";
 
 describe('Tests for Transformation Action -- Transcode', () => {

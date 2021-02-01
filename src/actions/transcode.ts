@@ -6,8 +6,8 @@ import FPSRangeAction from "./transcode/FPSRangeAction";
 import KeyframeIntervalsAction from "./transcode/KeyframeIntervalsAction";
 import StreamingProfileAction from "./transcode/StreamingProfile";
 import ToAnimatedAction from "./transcode/ToAnimatedAction";
-import {AnimatedFormatQualifierValue} from "../values/animatedFormat/AnimatedFormatQualifierValue";
-import {AdvVideoCodecType, VideoCodecType} from "../values/videoCodecType/VideoCodecType";
+import {AnimatedFormatQualifierValue} from "../qualifiers/animatedFormat/AnimatedFormatQualifierValue";
+import {AdvVideoCodecType, VideoCodecType} from "../qualifiers/videoCodecType/VideoCodecType";
 import {VideoCodecAction} from "./transcode/VideoCodecAction";
 
 
@@ -133,10 +133,10 @@ function toAnimated(animatedFormat: AnimatedFormatQualifierValue | string): ToAn
  * @summary action
  * @memberOf Actions.Transcode
  * @description Controls the video codec.
- * @param {Values.VideoCodec.VideoCodecType | Values.VideoCodec.AdvVideoCodecType} videoCodecType CodecType
+ * @param {Qualifiers.VideoCodec.VideoCodecType | Qualifiers.VideoCodec.AdvVideoCodecType} videoCodecType CodecType
  * @example // Setting the video codec
  * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
- * import {vp9} from '@cloudinary/base/values/videoCodec'
+ * import {vp9} from '@cloudinary/base/qualifiers/videoCodec'
  * import {videoCodec} from '@cloudinary/base/actions/transcode'
  *
  * video.transcode( videoCodec( vp9() ) );

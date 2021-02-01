@@ -2,7 +2,7 @@ import {CloudinaryMedia} from "../../../src/assets/CloudinaryMedia";
 import {VideoEdit} from "../../../src/actions/videoEdit";
 import {Transcode} from "../../../src/actions/transcode";
 import {Underlay} from "../../../src/actions/underlay";
-import {Source} from "../../../src/values/source";
+import {Source} from "../../../src/qualifiers/source";
 
 describe('Tests for CloudinaryMedia', () => {
   let cloudinaryMedia: CloudinaryMedia = null;

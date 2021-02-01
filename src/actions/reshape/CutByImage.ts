@@ -1,14 +1,14 @@
 import {Action} from "../../internal/Action";
-import {PositionQualifier} from "../../values/position/PositionQualifier";
-import {ImageSource} from "../../values/source/sourceTypes/ImageSource";
-import {Position} from "../../values/position";
+import {PositionQualifier} from "../../qualifiers/position/PositionQualifier";
+import {ImageSource} from "../../qualifiers/source/sourceTypes/ImageSource";
+import {Position} from "../../qualifiers/position";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
  * @description Trims pixels according to the transparency levels of a given overlay image.
  * Wherever the overlay image is transparent, the original is shown, and wherever the overlay is opaque, the resulting image is transparent.
  * @memberOf Actions.Reshape
- * @param {Values.Source.ImageSource} imageSource
+ * @param {Qualifiers.Source.ImageSource} imageSource
  * @augments {SDK.Action}
  */
 class CutByImage extends Action {
@@ -21,7 +21,7 @@ class CutByImage extends Action {
 
   /**
    * @description Defines the position of the layer.
-   * @param {Values.Position} position The position of the overlay with respect to the base image.
+   * @param {Qualifiers.Position} position The position of the overlay with respect to the base image.
    * @return {this}
    */
   position(position:PositionQualifier): this {

@@ -1,5 +1,5 @@
 import getImageWithResize from "./shared/getImageWithResize";
-import * as Gravity from "../../../../src/values/gravity";
+import * as Gravity from "../../../../src/qualifiers/gravity";
 import {fill} from "../../../../src/actions/resize";
 
 

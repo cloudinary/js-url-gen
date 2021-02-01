@@ -37,7 +37,7 @@ Everything can be very granularly imported to ensure you only import what you ne
 <h4>Without Tree-Shaking</h4>
 
  ```javascript
-    import {Format} from "@cloudinary/base/values/format";
+    import {Format} from "@cloudinary/base/qualifiers/format";
     
     Format.png()
     Format.jpg()
@@ -45,7 +45,7 @@ Everything can be very granularly imported to ensure you only import what you ne
  <h4>With Tree-Shaking</h4>
  
 ```javascript
-    import {jpg, png} from "@cloudinary/base/values/format";
+    import {jpg, png} from "@cloudinary/base/qualifiers/format";
     
     png()
     jpg()

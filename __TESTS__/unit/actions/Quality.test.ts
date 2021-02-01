@@ -1,5 +1,5 @@
-import {ChromaSubSampling} from "../../../src/values/chromaSubSampling";
-import {Quality} from "../../../src/values/quality";
+import {ChromaSubSampling} from "../../../src/qualifiers/chromaSubSampling";
+import {Quality} from "../../../src/qualifiers/quality";
 import {Delivery} from "../../../src/actions/delivery";
 import {createNewImage} from "../../TestUtils/createCloudinaryImage";
 

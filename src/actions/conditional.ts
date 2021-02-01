@@ -1,5 +1,5 @@
 import {Action} from "../internal/Action";
-import {expression} from "../values/expression";
+import {expression} from "../qualifiers/expression";
 import {Transformation} from "../transformation/Transformation";
 
 /**

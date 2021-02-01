@@ -21,7 +21,7 @@ class SimulateColorBlindEffectAction extends Action {
 
   /**
    * @description Sets the color blind condition to simulate.
-   * @param {Values.simulateColorBlindValues | string} cond
+   * @param {Qualifiers.simulateColorBlindValues | string} cond
    * @return {this}
    */
   condition(cond: string): this {

@@ -2,7 +2,7 @@ import {Action} from "../../internal/Action";
 import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
 import {prepareColor} from "../../internal/utils/prepareColor";
-import {SystemColors} from "../../values/color";
+import {SystemColors} from "../../qualifiers/color";
 
 /**
  * @description Adds an outline to a transparent image. For examples, see the Image Transformations guide.
@@ -52,7 +52,7 @@ class EffectOutline extends Action {
   }
 
   /**
-   * @param {string | Values.Color} color One of the SDK Color values, string, or rgba: '#fff'
+   * @param {string | Qualifiers.Color} color One of the SDK Color values, string, or rgba: '#fff'
    * @return {this}
    */
   color(color:SystemColors): this {

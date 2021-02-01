@@ -1,5 +1,5 @@
 import {LeveledEffectAction} from "../EffectActions/LeveledEffectAction";
-import {ExpressionQualifier} from "../../../values/expression/ExpressionQualifier";
+import {ExpressionQualifier} from "../../../qualifiers/expression/ExpressionQualifier";
 
 /**
  * @augments LeveledEffectAction

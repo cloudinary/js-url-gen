@@ -1,6 +1,6 @@
 import {createNewImage} from "../../TestUtils/createCloudinaryImage";
 import {Variable} from "../../../src/actions/variable";
-import {Expression} from "../../../src/values/expression";
+import {Expression} from "../../../src/qualifiers/expression";
 
 const {set} = Variable;
 const {expression} = Expression;
