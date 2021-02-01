@@ -273,23 +273,6 @@ class Transformation {
   }
 
   /**
-   * Sets the total number of frames to sample from the original video.
-   *
-   * Relevant when converting videos to animated GIF or WebP format. If not specified, the resulting GIF or WebP
-   * samples the whole video (up to 400 frames, at up to 10 frames per second). By default the duration of the
-   * animated image is the same as the duration of the video, no matter how many frames are sampled from the original
-   * video (use the delay parameter to adjust the amount of time between frames).
-   *
-   * @param {VideoSamplingAction} videoSamplingAction
-   * @return {this}
-   */
-  /*
-  videoSampling(videoSamplingAction: VideoSamplingAction): this {
-    return this.addAction(videoSamplingAction);
-  }
-   */
-
-  /**
    * Applies the specified video edit action.
    *
    * @param {videoEditType} action
