@@ -1,6 +1,6 @@
-import {Format} from "../../../../src/values/format";
+import {Format} from "../../../../src/qualifiers/format";
 
-describe('Test imported values', () => {
+describe('Test imported qualifiers', () => {
   it ('Tests audio formats', () => {
 
     const {audioAac, audioAiff, audioAmr, audioFlac, audioM4a, audioMp3, audioOgg, audioOpus, audioWav} = Format;

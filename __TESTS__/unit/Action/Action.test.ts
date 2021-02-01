@@ -1,7 +1,7 @@
 import {Action} from '../../../src/internal/Action';
 import {Qualifier} from '../../../src/internal/qualifier/Qualifier';
 import {QualifierValue} from "../../../src/internal/qualifier/QualifierValue";
-import {FlagQualifier} from "../../../src/values/flag/FlagQualifier";
+import {FlagQualifier} from "../../../src/qualifiers/flag/FlagQualifier";
 import {createNewImage} from "../../TestUtils/createCloudinaryImage";
 
 

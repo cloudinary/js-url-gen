@@ -1,10 +1,10 @@
 import {Action} from "../../internal/Action";
-import {TimelinePosition} from "../../values/video/TimelinePosition";
-import {BlendModeQualifier} from "../../values/blendMode/BlendModeQualifier";
-import {PositionQualifier} from "../../values/position/PositionQualifier";
-import {FlagQualifier} from "../../values/flag/FlagQualifier";
-import {Position} from "../../values/position";
-import {BaseSource} from "../../values/source/BaseSource";
+import {TimelinePosition} from "../../qualifiers/video/TimelinePosition";
+import {BlendModeQualifier} from "../../qualifiers/blendMode/BlendModeQualifier";
+import {PositionQualifier} from "../../qualifiers/position/PositionQualifier";
+import {FlagQualifier} from "../../qualifiers/flag/FlagQualifier";
+import {Position} from "../../qualifiers/position";
+import {BaseSource} from "../../qualifiers/source/BaseSource";
 
 
 /**
@@ -23,7 +23,7 @@ class LayerAction extends Action {
 
   /**
    * @description Creates a LayerAction to be used with overlays and underlays
-   * @param {ImageSource | TextSource | VideoSource} layerSource The Source used for the layer, use the builders provided {@link Values.Source|here}
+   * @param {ImageSource | TextSource | VideoSource} layerSource The Source used for the layer, use the builders provided {@link Qualifiers.Source|here}
    */
   constructor(layerSource: BaseSource) {
     super();
@@ -42,7 +42,7 @@ class LayerAction extends Action {
 
   /**
    * @description Sets the timeline position of the video layer
-   * @param {Values.TimelinePosition} timelinePosition
+   * @param {Qualifiers.TimelinePosition} timelinePosition
    * @return {this}
    */
   timeline(timelinePosition: TimelinePosition): this {
@@ -52,7 +52,7 @@ class LayerAction extends Action {
 
   /**
    * @description Sets the position of the layer
-   * @param {Values.Position} position
+   * @param {Qualifiers.Position} position
    * @return {this}
    */
   position(position: Position): this {
@@ -62,7 +62,7 @@ class LayerAction extends Action {
 
   /**
    * @description Specifies how to blend the image overlay with the base overlay
-   * @param {Values.BlendMode} blendMode
+   * @param {Qualifiers.BlendMode} blendMode
    * @return {this}
    */
   blendMode(blendMode: BlendModeQualifier): this {

@@ -1,6 +1,6 @@
-import {lossy, preserveTransparency, progressive} from "../../values/flag";
+import {lossy, preserveTransparency, progressive} from "../../qualifiers/flag";
 import {DeliveryAction} from "./DeliveryAction";
-import {ProgressiveQualifier} from "../../values/progressive";
+import {ProgressiveQualifier} from "../../qualifiers/progressive";
 
 /**
  * @memberOf Actions.Delivery

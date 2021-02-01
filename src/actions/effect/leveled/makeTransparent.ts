@@ -2,7 +2,7 @@ import {LeveledEffectAction} from "../EffectActions/LeveledEffectAction";
 import {Qualifier} from "../../../internal/qualifier/Qualifier";
 import {QualifierValue} from "../../../internal/qualifier/QualifierValue";
 import {prepareColor} from "../../../internal/utils/prepareColor";
-import {SystemColors} from "../../../values/color";
+import {SystemColors} from "../../../qualifiers/color";
 
 /**
  * @augments LeveledEffectAction

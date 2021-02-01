@@ -2,7 +2,7 @@ import SetAction from "./variable/SetAction";
 import SetAssetReferenceAction from "./variable/SetAssetReferenceAction";
 import SetFromContextAction from "./variable/SetFromContextAction";
 import SetFromMetadataAction from "./variable/SetFromMetadataAction";
-import {ExpressionQualifier} from "../values/expression/ExpressionQualifier";
+import {ExpressionQualifier} from "../qualifiers/expression/ExpressionQualifier";
 
 /**
  * Defines a new user variable with the given value.

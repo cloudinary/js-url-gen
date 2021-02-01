@@ -6,7 +6,7 @@
 
 import {DeliveryFormat} from "./delivery/DeliveryFormat";
 import {DeliveryQualityAction} from "./delivery/DeliveryQuality";
-import {FormatQualifier} from "../values/format/FormatQualifier";
+import {FormatQualifier} from "../qualifiers/format/FormatQualifier";
 import {toFloatAsString} from "../internal/utils/toFloatAsString";
 import {DeliveryColorSpaceFromICC} from "./delivery/DeliveryColorSpaceFromICC";
 import {DeliveryAction} from "./delivery/DeliveryAction";
@@ -24,7 +24,7 @@ export type IDeliveryAction = DeliveryAction | DeliveryColorSpaceFromICC;
   * Video formats}
  *
  * @memberOf Actions.Delivery
- * @param {string} format The file format. For a list of supported format types see {@link Values.formatTypeValues|
+ * @param {string} format The file format. For a list of supported format types see {@link Qualifiers.formatTypeValues|
   * format types} for
  * possible values
  * @return {Actions.Delivery.DeliveryFormat}
@@ -55,7 +55,7 @@ function dpr(dpr: string|number):DeliveryAction {
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_optimization#how_to_optimize_image_quality | Image quality}
  *  {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#quality_control | Video quality}
  * @memberOf Actions.Delivery
- * @param {string | number} qualityType For a list of supported quality types see {@link Values.qualityTypeValues| quality types} for
+ * @param {string | number} qualityType For a list of supported quality types see {@link Qualifiers.qualityTypeValues| quality types} for
  * possible values.
  * @return {Actions.Delivery.DeliveryQualityAction}
  */

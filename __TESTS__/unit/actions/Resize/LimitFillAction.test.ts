@@ -1,6 +1,6 @@
 import getImageWithResize from "./shared/getImageWithResize";
 import {limitFill} from "../../../../src/actions/resize";
-import {Gravity} from "../../../../src/values/gravity";
+import {Gravity} from "../../../../src/qualifiers/gravity";
 
 
 describe('Tests for Transformation Action -- Resize.limitFill', () => {

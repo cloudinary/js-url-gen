@@ -1,16 +1,16 @@
-import {BlendMode} from "../../../src/values/blendMode";
+import {BlendMode} from "../../../src/qualifiers/blendMode";
 import {Overlay} from "../../../src/actions/overlay";
-import {Source} from "../../../src/values/source";
+import {Source} from "../../../src/qualifiers/source";
 import {createNewImage} from "../../TestUtils/createCloudinaryImage";
 import {sampleFacePosition} from "../../TestUtils/transformations/sampleFacePosition";
 import {sampleTxResizePad} from "../../TestUtils/transformations/sampleTxResizePad";
 import {createNewVideo} from "../../TestUtils/createCloudinaryVideo";
 import {sampleTextStyle} from "../../TestUtils/transformations/sampleTextStyle";
-import {Format, png} from "../../../src/values/format";
+import {Format, png} from "../../../src/qualifiers/format";
 import {Underlay} from "../../../src/actions/underlay";
-import {Timeline} from "../../../src/values/timeline";
+import {Timeline} from "../../../src/qualifiers/timeline";
 import {base64Encode} from "../../../src/internal/utils/base64Encode";
-import {TextStyle} from "../../../src/values/textStyle";
+import {TextStyle} from "../../../src/qualifiers/textStyle";
 
 /**
  * @summary test

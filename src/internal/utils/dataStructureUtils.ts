@@ -1,4 +1,4 @@
-import {FlagQualifier} from "../../values/flag/FlagQualifier";
+import {FlagQualifier} from "../../qualifiers/flag/FlagQualifier";
 
 /**
  * Sort a map by key

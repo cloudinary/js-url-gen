@@ -2,8 +2,8 @@ import {Action} from "../../internal/Action";
 import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
 import {prepareColor} from "../../internal/utils/prepareColor";
-import {SystemColors} from "../../values/color";
-import {ExpressionQualifier} from "../../values/expression/ExpressionQualifier";
+import {SystemColors} from "../../qualifiers/color";
+import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifier";
 
 /**
  * @description Applies a shadow filter to the asset.

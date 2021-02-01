@@ -1,0 +1,11 @@
+import {QualifierValue} from "../../internal/qualifier/QualifierValue";
+
+/**
+ * @memberOf Qualifiers.GradientDirection
+ * @extends {SDK.QualifierValue}
+ */
+class GradientDirectionQualifierValue extends QualifierValue {
+
+}
+
+export {GradientDirectionQualifierValue};

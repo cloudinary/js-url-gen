@@ -1,10 +1,10 @@
 import {Qualifier} from "../../internal/qualifier/Qualifier";
 import {Action} from "../../internal/Action";
 import {toFloatAsString} from "../../internal/utils/toFloatAsString";
-import {AspectRatioQualifierValue} from "../../values/aspectRatio/AspectRatioQualifierValue";
-import {regionRelative, relative} from "../../values/flag";
-import {FlagQualifier} from "../../values/flag/FlagQualifier";
-import {ExpressionQualifier} from "../../values/expression/ExpressionQualifier";
+import {AspectRatioQualifierValue} from "../../qualifiers/aspectRatio/AspectRatioQualifierValue";
+import {regionRelative, relative} from "../../qualifiers/flag";
+import {FlagQualifier} from "../../qualifiers/flag/FlagQualifier";
+import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifier";
 
 /**
  * @description Defines a resize using width and height.
@@ -45,7 +45,7 @@ class ResizeSimpleAction extends Action {
 
   /**
    * @description Sets the aspect ratio of the asset.
-   * For a list of supported types see {@link Values.AspectRatio |
+   * For a list of supported types see {@link Qualifiers.AspectRatio |
     * AspectRatio values}
    * @param {number|string} ratio The new aspect ratio, specified as a percentage or ratio.
    * @return {this}

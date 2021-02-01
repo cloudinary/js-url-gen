@@ -1,9 +1,9 @@
-import {image} from "../../../src/values/source";
+import {image} from "../../../src/qualifiers/source";
 import {scale} from "../../../src/actions/resize";
 import {Reshape} from "../../../src/actions/reshape";
-import {Position} from "../../../src/values/position";
-import {Gravity} from "../../../src/values/gravity";
-import {Compass} from "../../../src/values/compass";
+import {Position} from "../../../src/qualifiers/position";
+import {Gravity} from "../../../src/qualifiers/gravity";
+import {Compass} from "../../../src/qualifiers/compass";
 import {Transformation} from "../../../src/transformation/Transformation";
 import {createNewImage} from "../../TestUtils/createCloudinaryImage";
 

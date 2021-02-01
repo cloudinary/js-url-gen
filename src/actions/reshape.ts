@@ -1,5 +1,5 @@
 import CutByImage from "./reshape/CutByImage";
-import {ImageSource} from "../values/source/sourceTypes/ImageSource";
+import {ImageSource} from "../qualifiers/source/sourceTypes/ImageSource";
 import {DistortArcAction} from "./reshape/DistortArc";
 import {ShearAction} from "./reshape/Shear";
 import {DistortAction, IDistortCoordinates} from "./reshape/Distort";
@@ -21,7 +21,7 @@ type IReshape = CutByImage | DistortArcAction;
  * @summary action
  * @description Trims pixels according to the transparency levels of a given overlay image.
  * Wherever the overlay image is transparent, the original is shown, and wherever the overlay is opaque, the resulting image is transparent.
- * @param {Values.Source.ImageSource} imageSource
+ * @param {Qualifiers.Source.ImageSource} imageSource
  * @memberOf Actions.Reshape
  */
 function cutByImage(imageSource: ImageSource): CutByImage {

@@ -19,12 +19,12 @@ const myImage = cld.image('sample');
 // Import video or image overlay, based on your asset
 import {Overlay} from "@cloudinary/base/actions/overlay";
 // Import the source of the layer, this determines if the layer is an image, text or video
-import {image} from "@cloudinary/base/values/source";
+import {image} from "@cloudinary/base/qualifiers/source";
 
 // Import how to position your layer
-import {Position} from "@cloudinary/base/values/position";
-import {southEast} from "@cloudinary/base/values/gravity/qualifiers/compass/Compass";
-import {compass} from "@cloudinary/base/values/gravity";
+import {Position} from "@cloudinary/base/qualifiers/position";
+import {southEast} from "@cloudinary/base/qualifiers/gravity/qualifiers/compass/Compass";
+import {compass} from "@cloudinary/base/qualifiers/gravity";
 
 // We'll also scale our overlay, we'll need this for later.
 import {scale} from "@cloudinary/base/actions/resize";

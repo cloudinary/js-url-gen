@@ -1,6 +1,6 @@
 import getImageWithResize from "./Resize/shared/getImageWithResize";
 import * as Resize from "../../../src/actions/resize";
-import {Expression} from "../../../src/values/expression";
+import {Expression} from "../../../src/qualifiers/expression";
 
 
 describe('Tests for Transformation Action -- Resize', () => {

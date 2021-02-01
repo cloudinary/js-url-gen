@@ -1,5 +1,5 @@
 import * as Rotate from '../../../src/actions/rotate';
-import * as RotationMode from "../../../src/values/rotationMode";
+import * as RotationMode from "../../../src/qualifiers/rotationMode";
 import {createNewImage} from "../../TestUtils/createCloudinaryImage";
 
 

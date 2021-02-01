@@ -8,12 +8,12 @@ import {ConditionalAction} from "../actions/conditional";
 import {Action} from "../internal/Action";
 import RotateAction from "../actions/rotate/RotateAction";
 import {NamedTransformationAction} from "../actions/namedTransformation/NamedTransformationAction";
-import {SystemColors} from "../values/color";
+import {SystemColors} from "../qualifiers/color";
 import SmartObjectAction from "../actions/psdTools/SmartObjectAction";
 import ClipAction from "../actions/psdTools/ClipAction";
 import GetLayerAction from "../actions/psdTools/GetLayerAction";
 import {Extract} from "../actions/extract";
-import {FlagQualifier} from "../values/flag/FlagQualifier";
+import {FlagQualifier} from "../qualifiers/flag/FlagQualifier";
 import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction";
 import {EffectActions} from "../actions/effect";
 import {DeliveryAction} from "../actions/delivery/DeliveryAction";
@@ -169,7 +169,7 @@ class CloudinaryTransformable extends CloudinaryFile {
 
   /**
    * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
-   * @param {Values.color} color
+   * @param {Qualifiers.color} color
    * @return {this}
    */
   backgroundColor(color: SystemColors): this {
@@ -199,7 +199,7 @@ class CloudinaryTransformable extends CloudinaryFile {
 
   /**
    * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
-   * @param {Values.Flag | string} flagQualifier
+   * @param {Qualifiers.Flag | string} flagQualifier
    * @return {this}
    */
   addFlag(flagQualifier: FlagQualifier | string): this {

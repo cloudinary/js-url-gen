@@ -17,7 +17,7 @@ class ImproveAction extends Action {
   /**
    *
    * @description The improve mode.
-   * @param {Values.ImproveMode | string} value
+   * @param {Qualifiers.ImproveMode | string} value
    */
   mode(value:'outdoor' | 'indoor' | string): this {
     this.modeValue = value;

@@ -1,4 +1,4 @@
-import {TextStyle} from "../../../src/values/textStyle";
+import {TextStyle} from "../../../src/qualifiers/textStyle";
 
 /**
  * Creates an empty TextStyle instance used for testing
