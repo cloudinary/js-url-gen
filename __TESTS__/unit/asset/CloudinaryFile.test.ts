@@ -1,4 +1,6 @@
 import {CloudinaryFile} from "../../../src/assets/CloudinaryFile";
+import {Underlay} from "../../../src/actions/underlay";
+import {Source} from "../../../src/qualifiers/source";
 
 describe('Tests for CloudinaryFile', () => {
   let cloudinaryFile: CloudinaryFile = null;
@@ -20,6 +22,17 @@ describe('Tests for CloudinaryFile', () => {
 
   it('Can be turned to a URL', () => {
     expect(cloudinaryFile.toURL()).toBe('https://res.cloudinary.com/demo/image/upload/sample');
+  });
+
+  it('Can set private fields', () => {
+    cloudinaryFile
+      .setPublicID('sample')
+      .setSuffix('foo')
+      .setAssetType('video')
+      .setStorageType('fetch')
+      .setVersion('12345');
+
+    expect(cloudinaryFile.toURL()).toContain('video/fetch/v12345/sample');
   });
 });
 

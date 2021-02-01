@@ -82,7 +82,7 @@ function handleStorageType(storageType: string): string {
  * @param {number} version
  * @param {boolean} forceVersion
  */
-function getUrlVersion(publicID: string, version: number, forceVersion:boolean): string {
+function getUrlVersion(publicID: string, version: number | string, forceVersion:boolean): string {
   const shouldForceVersion = forceVersion !== false;
 
   if (version) {
