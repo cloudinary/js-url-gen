@@ -1,3 +1,39 @@
+1.0.0-beta.0 / 2021-02-01
+==================
+
+New functionality and features
+==============================
+  * Add setter methods to CloudinaryFile for some asset fields (#340)
+  * add clone functionality to image (#332)
+  * Add a backwards compatiblity function to the root of the SDK (#336)
+  * Feature/add support for Effect.removeBackground (#321)
+  * Add support for Adjust.tint() (#320)
+  * Add support for video.underlay (was not previously supported) (#316)
+  * Add the X,Y qualifiers to resize.limitFill by returning ResizeFillAction (#314)
+  * Add qualifiers x and y for Resize.fill, to be used with gravity.xyCenter (#310)
+  * Add support for ProgressiveMode when using DeliveryFormats (#307)
+  
+Breaking changes
+================
+  * Refactor - Rename Values to Qualifiers (#339)
+  * Rename color to colorToReplace for effect.makeTransparent (#323)
+  * Flatten the Gravity qualifiers (#313)
+  * Rename psdTools.byFileName to byLayerName (#311)
+  * Rename byNumber to byIndex (#312)
+
+Other changes
+================
+  * Docs - Fix styling in the search component when searching for @cloudinary/base (#338)
+  * Docs - Change wording of SDK Summary when searching (#337)
+  * Build - Set the bundle target to ES6 for ESM, and ES5 for UMD (#335)
+  * Docs - Enhance the search
+  * Add relevant overlay tests from cloudinary-core (#327)
+  * Docs/Move the foodoc template from package.json to within the project (#328)
+  * Change favico and system logo (#326)
+  * Remove the readme parts that link to github pages (#324)
+  * Rename the parameter name of defaultImage (#322)
+  * Fix the base64 methods to ensure we keep the padding in them (#315)
+
 1.0.0-alpha.14 / 2021-01-17
 ==================
 
