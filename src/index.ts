@@ -12,8 +12,7 @@ import {createCloudinaryV1URL} from "./backwards/createCloudinaryURL";
 /**
  * @namespace SDK
  */
-
-const CloudinarySDK = {
+const CloudinaryBaseSDK = {
   Transformation,
   ImageTransformation,
   VideoTransformation,
@@ -37,6 +36,6 @@ export {
   CloudinaryVideo,
   CloudinaryFile,
   createCloudinaryV1URL,
-  CloudinarySDK,
-  CloudinarySDK as default
+  CloudinaryBaseSDK,
+  CloudinaryBaseSDK as default
 };
