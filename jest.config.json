@@ -29,8 +29,7 @@
     ["jest-html-reporters", {
       "publicPath" : "./public/progress/",
       "filename": "cloudinary-base-progress-report.html",
-      "pageTitle": "Cloudinary JS 2.0 Progress Report",
-      "logoImgPath": "./__DOC_RESOURCES__/cloudinaryicon.png",
+      "pageTitle": "Cloudinary JS v2 Progress Report",
       "expand": true
     }]
   ]

@@ -1,34 +1,64 @@
-## Welcome
+# Welcome
 
-### About this project
-This project enables you to create Cloudinary URLs for your images.
-Using this SDK, you can apply advanced transformations to your images.
+## About this project
 
+This project enables you to create Cloudinary URLs for your images and videos.
+Using this SDK, you can apply advanced transformations to your images and videos.
 
-### What is this project for?
-This project comes to replace and modernize our existing JS offering, and it's part of a larger effort in Cloudinary. 
+This SDK can also be used with [popular frontend frameworks](https://cloudinary.com/documentation/sdks/js/frontend-frameworks/index.html).
 
-You can read more about the project here:
-- <a href="https://cloudinary.com/blog/cloudinary_s_next_generation_developers_sdks">Cloudinary's Next Generation SDKs</a>
-- <a href="https://cloudinary.com/blog/get_ready_for_cloudinary_s_next_generation_javascript_sdks">Cloudinary's next generation JS SDKs</a>
+## Help & Examples
+- {@tutorial gettingStarted} 
+- {@tutorial annotatedExamples}
+- {@tutorial configuration}
 
-
-
-
-### Key Features
-- ESM packages, import only what you need
-- Declarative Syntax 
-- Fully typed for excellent IDE support
-- Easy to write, easy to read.
-
-### Installation
+## Installation
 ```bash
 npm install @cloudinary/base 
 ```
 
+## Simple usage
+```javascript
+
+// Import the Cloudinary class
+import {Cloudinary} from '@cloudinary/base';
+
+// Create your instance
+const cld = new Cloudinary({
+    cloud: {
+        cloudName: 'demo'
+    },
+    url: {
+        secure: true // force https, set to false to force http
+    }
+});
+
+// Let's create a new image
+const myImage = cld.image('sample');
+import {Resize} from '@cloudinary/base/actions/resize';
+myImage.resize(Resize.scale().width(100).height(100));
+
+// When we're done, we can apply all our changes and create a URL.
+const myURL = myImage.toURL();
+console.log(myURL);
+// https://res.cloudinary.com/demo/image/upload/c_scale,w_100,h_100/sample
+
+```
+
+### More examples and documentation
+- [Cloudinary Documentation](https://cloudinary.com/documentation/javascript2_integration)
+- [SDK Reference](https://cloudinary.com/documentation/sdks/js/cloudinary-js-base/index.html)
+- [Use with a Frontend Framework](https://cloudinary.com/documentation/sdks/js/frontend-frameworks/index.html)
+
+### Additional links
+- [React SDK](https://www.npmjs.com/package/@cloudinary/react)
+- [Angular SDK](https://www.npmjs.com/package/@cloudinary/angular) 
+
+
 ### Transpilation
+@cloudinary/base is shipped as untranspiled ES6 code.
 @cloudinary/base is optimized around bundle size, as such we do not transpile our distributed modules, 
-we leave the decision of what browsers to support, and what transpilations to apply, to you, the user. 
+we leave the decision of what browsers to support, and what transpilations to apply, to you, the user.
 
 ### Testing with Jest
 
@@ -58,17 +88,3 @@ module.exports = {
   ]
 };
 ```
-
-
-
-### Interested in Cloudinary?
-
-Feel free to visit our more mature SDKs:
-
-- <a href="https://github.com/cloudinary/cloudinary_js"> Javascript</a>
-- <a href="https://github.com/cloudinary/cloudinary-react"> React</a>
-- <a href="https://github.com/cloudinary/cloudinary_angular"> Angular</a>
-- <a href="https://github.com/cloudinary/cloudinary-vue"> Vue</a>  
-- <a href="https://github.com/cloudinary/cloudinary_npm"> Node</a>
-----
-
