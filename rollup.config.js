@@ -7,7 +7,7 @@ export default [{
     {
       file: 'dist/bundles/umd/base.js',
       format: 'umd',
-      name:'cloudinaryBase'
+      name:'CloudinaryBaseSDK'
     }
   ],
   plugins: [

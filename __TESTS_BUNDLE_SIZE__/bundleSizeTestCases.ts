@@ -76,7 +76,7 @@ const bundleSizeTestCases:ITestCase[] = [
     name: 'Import all of the SDK',
     sizeLimitInKB: 110,
     importsArray: [
-      importFromBase('CloudinarySDK')
+      importFromBase('CloudinaryBaseSDK')
     ]
   }
 ];
