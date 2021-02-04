@@ -2,6 +2,7 @@ import {CompassQualifier} from "./gravity/qualifiers/compass/CompassQualifier";
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Compass
  * @description South center part (bottom center).
  * @return {Qualifiers.Compass.CompassQualifier} Compass
@@ -11,6 +12,7 @@ function south(): CompassQualifier {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Compass
  * @description North center part (top center).
  * @return {Qualifiers.Compass.CompassQualifier} Compass
@@ -20,6 +22,7 @@ function north(): CompassQualifier {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Compass
  * @description Middle east part (right).
  * @return {Qualifiers.Compass.CompassQualifier} Compass
@@ -29,6 +32,7 @@ function east(): CompassQualifier {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Compass
  * @description Middle west part (left).
  * @return {Qualifiers.Compass.CompassQualifier} Compass
@@ -38,6 +42,7 @@ function west(): CompassQualifier {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Compass
  * @description North west corner (top left).
  * @return {Qualifiers.Compass.CompassQualifier} Compass
@@ -47,6 +52,7 @@ function northWest(): CompassQualifier {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Compass
  * @description North east corner (top right).
  * @return {Qualifiers.Compass.CompassQualifier} Compass
@@ -56,6 +62,7 @@ function northEast(): CompassQualifier {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Compass
  * @description South west corner (bottom left).
  * @return {Qualifiers.Compass.CompassQualifier} Compass
@@ -65,6 +72,7 @@ function southWest(): CompassQualifier {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Compass
  * @description South east corner (bottom right).
  * @return {Qualifiers.Compass.CompassQualifier} Compass
@@ -74,6 +82,7 @@ function southEast(): CompassQualifier {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Compass
  * @description The center of the image.
  * @return {Qualifiers.Compass.CompassQualifier} Compass

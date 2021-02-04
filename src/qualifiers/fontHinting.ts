@@ -8,6 +8,7 @@
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FontHinting
  */
 function none(): string {
@@ -15,6 +16,7 @@ function none(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FontHinting
  */
 function slight(): string {
@@ -22,6 +24,7 @@ function slight(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FontHinting
  */
 function medium(): string {
@@ -29,6 +32,7 @@ function medium(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FontHinting
  */
 function full(): string {

@@ -5,6 +5,7 @@
  */
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ColorSpace
  */
 function srgb(): string {
@@ -12,6 +13,7 @@ function srgb(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ColorSpace
  */
 function trueColor(): string {
@@ -20,6 +22,7 @@ function trueColor(): string {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ColorSpace
  */
 function tinySrgb(): string {
@@ -28,6 +31,7 @@ function tinySrgb(): string {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ColorSpace
  */
 function cmyk(): string | number {
@@ -36,6 +40,7 @@ function cmyk(): string | number {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ColorSpace
  */
 function noCmyk(): string {
@@ -44,6 +49,7 @@ function noCmyk(): string {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ColorSpace
  */
 function keepCmyk(): string {

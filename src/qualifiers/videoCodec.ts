@@ -7,6 +7,7 @@ import {AdvVideoCodecType, VideoCodecType} from "./videoCodecType/VideoCodecType
 
 
 /**
+ * @summary qualifier
  * @description Auto video codec.
  * @memberOf Qualifiers.VideoCodec
  * @returns {Qualifiers.VideoCodec.VideoCodecType}
@@ -16,6 +17,7 @@ function auto(): VideoCodecType {
 }
 
 /**
+ * @summary qualifier
  * @description Video codec h264.
  * @memberOf Qualifiers.VideoCodec
  * @returns {Qualifiers.VideoCodec.AdvVideoCodecType}
@@ -25,6 +27,7 @@ function h264(): AdvVideoCodecType {
 }
 
 /**
+ * @summary qualifier
  * @description h265 video codec.
  * @memberOf Qualifiers.VideoCodec
  * @returns {Qualifiers.VideoCodec.VideoCodecType}
@@ -34,6 +37,7 @@ function h265(): VideoCodecType {
 }
 
 /**
+ * @summary qualifier
  * @description Video codec proRes (Apple ProRes 422 HQ).
  * @memberOf Qualifiers.VideoCodec
  * @returns {Qualifiers.VideoCodec.VideoCodecType}
@@ -43,6 +47,7 @@ function proRes(): VideoCodecType {
 }
 
 /**
+ * @summary qualifier
  * @description Video codec theora.
  * @memberOf Qualifiers.VideoCodec
  * @returns {Qualifiers.VideoCodec.VideoCodecType}
@@ -52,6 +57,7 @@ function theora(): VideoCodecType {
 }
 
 /**
+ * @summary qualifier
  * @description Video codec vp8.
  * @memberOf Qualifiers.VideoCodec
  * @returns {Qualifiers.VideoCodec.VideoCodecType}
@@ -61,6 +67,7 @@ function vp8(): VideoCodecType {
 }
 
 /**
+ * @summary qualifier
  * @description Video codec vp9.
  * @memberOf Qualifiers.VideoCodec
  * @returns {Qualifiers.VideoCodec.VideoCodecType}

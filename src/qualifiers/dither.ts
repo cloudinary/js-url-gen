@@ -6,6 +6,7 @@
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Dither
  */
 function threshold1x1Nondither(): number {
@@ -13,6 +14,7 @@ function threshold1x1Nondither(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Dither
  */
 function checkerboard2x1Dither(): number {
@@ -20,6 +22,7 @@ function checkerboard2x1Dither(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Dither
  */
 function ordered2x2Dispersed(): number {
@@ -27,6 +30,7 @@ function ordered2x2Dispersed(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Dither
  */
 function ordered3x3Dispersed(): number {
@@ -34,6 +38,7 @@ function ordered3x3Dispersed(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Dither
  */
 function ordered4x4Dispersed(): number {
@@ -41,6 +46,7 @@ function ordered4x4Dispersed(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Dither
  */
 function ordered8x8Dispersed(): number {
@@ -48,6 +54,7 @@ function ordered8x8Dispersed(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Dither
  */
 function halftone4x4Angled(): number {
@@ -55,6 +62,7 @@ function halftone4x4Angled(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Dither
  */
 function halftone6x6Angled(): number {
@@ -62,6 +70,7 @@ function halftone6x6Angled(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Dither
  */
 function halftone8x8Angled(): number {
@@ -69,6 +78,7 @@ function halftone8x8Angled(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Dither
  */
 function halftone4x4Orthogonal(): number {
@@ -76,6 +86,7 @@ function halftone4x4Orthogonal(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Dither
  */
 function halftone6x6Orthogonal(): number {
@@ -83,6 +94,7 @@ function halftone6x6Orthogonal(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Dither
  */
 function halftone8x8Orthogonal(): number {
@@ -90,6 +102,7 @@ function halftone8x8Orthogonal(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Dither
  */
 function halftone16x16Orthogonal(): number {
@@ -97,6 +110,7 @@ function halftone16x16Orthogonal(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Dither
  */
 function circles5x5Black(): number {
@@ -104,6 +118,7 @@ function circles5x5Black(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Dither
  */
 function circles5x5White(): number {
@@ -111,6 +126,7 @@ function circles5x5White(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Dither
  */
 function circles6x6Black(): number {
@@ -118,6 +134,7 @@ function circles6x6Black(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Dither
  */
 function circles6x6White(): number {
@@ -125,6 +142,7 @@ function circles6x6White(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Dither
  */
 function circles7x7Black(): number {
@@ -132,6 +150,7 @@ function circles7x7Black(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Dither
  */
 function circles7x7White(): number {

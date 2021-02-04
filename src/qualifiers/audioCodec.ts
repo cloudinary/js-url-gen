@@ -5,6 +5,7 @@
  */
 
 /**
+ * @summary qualifier
  * @description Removes the audio channel from the video, effectively muting it.
  * @memberOf Qualifiers.AudioCodec
  */
@@ -13,6 +14,7 @@ function none(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.AudioCodec
  */
 function aac(): string {
@@ -20,6 +22,7 @@ function aac(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.AudioCodec
  */
 function vorbis(): string {
@@ -27,6 +30,7 @@ function vorbis(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.AudioCodec
  */
 function mp3(): string {
@@ -34,6 +38,7 @@ function mp3(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.AudioCodec
  */
 function opus(): string {

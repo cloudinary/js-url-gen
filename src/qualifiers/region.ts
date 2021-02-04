@@ -2,6 +2,7 @@ import {CustomRegion} from "./region/CustomRegion";
 import {NamedRegion} from "./region/NamedRegion";
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Region
  * @return {Qualifiers.Region.CustomRegion}
  */
@@ -10,6 +11,7 @@ function custom(): CustomRegion {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Region
  * @return {Qualifiers.Region.NamedRegion}
  */
@@ -18,6 +20,7 @@ function faces(): NamedRegion {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Region
  * @return {Qualifiers.Region.NamedRegion}
  */

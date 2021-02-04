@@ -5,6 +5,7 @@
  */
 
 /**
+ * @summary qualifier
  * @description Instructs the gradient fade to be applied symmetrically (to opposite edges of the image).
  * @memberOf Qualifiers.GradientFade
  * @return {string}
@@ -14,6 +15,7 @@ function symmetric(): string {
 }
 
 /**
+ * @summary qualifier
  * @description Instructs the gradient fade to be applied symmetrically (to opposite edges of the image) including background padding.
  * @memberOf Qualifiers.GradientFade
  * @return {string}

@@ -6,6 +6,7 @@
  */
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.SimulateColorBlindValues
  * @return {string}
  */
@@ -14,6 +15,7 @@ function deuteranopia(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.SimulateColorBlindValues
  * @return {string}
  */
@@ -22,6 +24,7 @@ function protanopia(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.SimulateColorBlindValues
  * @return {string}
  */
@@ -30,6 +33,7 @@ function tritanopia(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.SimulateColorBlindValues
  * @return {string}
  */
@@ -38,6 +42,7 @@ function tritanomaly(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.SimulateColorBlindValues
  * @return {string}
  */
@@ -46,6 +51,7 @@ function deuteranomaly(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.SimulateColorBlindValues
  * @return {string}
  */
@@ -54,6 +60,7 @@ function coneMonochromacy(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.SimulateColorBlindValues
  * @return {string}
  */

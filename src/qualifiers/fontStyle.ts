@@ -7,6 +7,7 @@
  */
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FontStyle
  */
 function normal(): string {
@@ -14,6 +15,7 @@ function normal(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FontStyle
  */
 function italic(): string {

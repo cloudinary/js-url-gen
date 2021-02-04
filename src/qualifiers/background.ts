@@ -21,6 +21,7 @@ import {SystemColors} from "./color";
 
 
 /**
+ * @summary qualifier
  * @description Selects the predominant color while taking only the image border pixels into account.
  * @memberOf Qualifiers.Background
  * @return {BackgroundAutoBorderQualifier}
@@ -30,6 +31,7 @@ function border(): BackgroundAutoBorderQualifier{
 }
 
 /**
+ * @summary qualifier
  * @description Automatically determines the color to use for padding, if needed when resizing an asset.
  *
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#content_aware_padding|Content-aware padding}
@@ -41,6 +43,7 @@ function auto(): BackgroundQualifier{
 }
 
 /**
+ * @summary qualifier
  * @description Applies a padding gradient fade effect using the predominant colors in the border of the image.
  * @memberOf Qualifiers.Background
  * @return {BackgroundBorderGradientQualifier}
@@ -50,6 +53,7 @@ function borderGradient(): BackgroundBorderGradientQualifier {
 }
 
 /**
+ * @summary qualifier
  * @description Applies a padding gradient fade effect using the predominant colors in the image.
  * @memberOf Qualifiers.Background
  * @return {BackgroundPredominantGradientQualifier}
@@ -59,6 +63,7 @@ function predominantGradient(): BackgroundPredominantGradientQualifier {
 }
 
 /**
+ * @summary qualifier
  * @description Selects the predominant color while taking all pixels in the image into account
  * @memberOf Qualifiers.Background
  * @return {BackgroundAutoPredominantQualifier}
@@ -68,6 +73,7 @@ function predominant(): BackgroundAutoPredominantQualifier {
 }
 
 /**
+ * @summary qualifier
  * @description Selects the predominant color while taking all pixels in the image into account.
  * @memberOf Qualifiers.Background
  * @return {Qualifiers.Background.BackgroundQualifier}
@@ -77,6 +83,7 @@ function color(colorStr: SystemColors): BackgroundQualifier {
 }
 
 /**
+ * @summary qualifier
  * @description Selects the predominant color while taking all pixels in the image into account.
  * @memberOf Qualifiers.Background
  * @return {BlurredBackgroundAction}

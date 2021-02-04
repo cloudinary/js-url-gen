@@ -1,6 +1,7 @@
 import {FocusOnValue} from "./gravity/qualifiers/focusOn/FocusOnValue";
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOns
  */
 function bird(): FocusOnValue {
@@ -8,6 +9,7 @@ function bird(): FocusOnValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOns
  */
 function dog(): FocusOnValue {
@@ -15,6 +17,7 @@ function dog(): FocusOnValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOns
  */
 function cat(): FocusOnValue {
@@ -22,6 +25,7 @@ function cat(): FocusOnValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOns
  */
 function microwave(): FocusOnValue {
@@ -29,6 +33,7 @@ function microwave(): FocusOnValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOns
  */
 function refrigerator(): FocusOnValue {
@@ -36,6 +41,7 @@ function refrigerator(): FocusOnValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOns
  */
 function bottle(): FocusOnValue {
@@ -43,6 +49,7 @@ function bottle(): FocusOnValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOns
  */
 function sink(): FocusOnValue {
@@ -50,6 +57,7 @@ function sink(): FocusOnValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOns
  */
 function skateboard(): FocusOnValue {
@@ -57,6 +65,7 @@ function skateboard(): FocusOnValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOns
  */
 function person(): FocusOnValue {
@@ -65,6 +74,7 @@ function person(): FocusOnValue {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOn
  * @description Detects the largest face in an image with the Advanced Facial Attribute Detection add-on and makes it the focus of the transformation.
  * @return {FocusOn} FocusOn
@@ -74,6 +84,7 @@ function advancedFace(): FocusOnValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOn
  * @description Detects all faces in an image with the Advanced Facial Attribute Detection add-on and makes them the focus of the transformation.
  * @return {FocusOn} FocusOn
@@ -83,6 +94,7 @@ function advancedFaces(): FocusOnValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOn
  * @description Detects all eyes in an image with the Advanced Facial Attribute Detection add-on and makes them the focus of the transformation.
  * @return {FocusOn} FocusOn
@@ -92,6 +104,7 @@ function advancedEyes(): FocusOnValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOn
  * @description Detects the largest face in the asset and makes it the focus of the transformation.
  * @return {FocusOn} FocusOn
@@ -101,6 +114,7 @@ function face(): FocusOnValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOn
  * @description Detects all the faces in the asset and makes them the focus of the transformation.
  * @return {FocusOn} FocusOn
@@ -110,6 +124,7 @@ function faces(): FocusOnValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOn
  * @description Detects all the faces in the asset and makes them the focus of the transformation.
  * @return {FocusOn} FocusOn
@@ -119,6 +134,7 @@ function background(): FocusOnValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOn
  * @description Detects aeroplane
  * @return {FocusOn} FocusOn
@@ -128,6 +144,7 @@ function aeroplane(): FocusOnValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOn
  * @description Detects bicycle
  * @return {FocusOn} FocusOn
@@ -137,6 +154,7 @@ function bicycle(): FocusOnValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOn
  * @description Detects boat
  * @return {FocusOn} FocusOn
@@ -146,6 +164,7 @@ function boat(): FocusOnValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOn
  * @description Detects bus
  * @return {FocusOn} FocusOn
@@ -155,6 +174,7 @@ function bus(): FocusOnValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOn
  * @description Detects car
  * @return {FocusOn} FocusOn
@@ -164,6 +184,7 @@ function car(): FocusOnValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOn
  * @description Detects chair
  * @return {FocusOn} FocusOn
@@ -174,6 +195,7 @@ function chair(): FocusOnValue {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOn
  * @description Detects cow
  * @return {FocusOn} FocusOn
@@ -183,6 +205,7 @@ function cow(): FocusOnValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOn
  * @description Detects diningtable
  * @return {FocusOn} FocusOn
@@ -192,6 +215,7 @@ function diningtable(): FocusOnValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOn
  * @description Detects horse
  * @return {FocusOn} FocusOn
@@ -201,6 +225,7 @@ function horse(): FocusOnValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOn
  * @description Detects motorbike
  * @return {FocusOn} FocusOn
@@ -210,6 +235,7 @@ function motorbike(): FocusOnValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOn
  * @description Detects pottedplant
  * @return {FocusOn} FocusOn
@@ -219,6 +245,7 @@ function pottedplant(): FocusOnValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOn
  * @description Detects sheep
  * @return {FocusOn} FocusOn
@@ -228,6 +255,7 @@ function sheep(): FocusOnValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOn
  * @description Detects sofa
  * @return {FocusOn} FocusOn
@@ -237,6 +265,7 @@ function sofa(): FocusOnValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOn
  * @description Detects train
  * @return {FocusOn} FocusOn
@@ -246,6 +275,7 @@ function train(): FocusOnValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FocusOn
  * @description Detects tvmonitor
  * @return {FocusOn} FocusOn

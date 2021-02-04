@@ -7,48 +7,56 @@
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.VideoCodecLevel
  * @return {number}
  */
 function vcl30(): 3.0 { return 3.0; }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.VideoCodecLevel
  * @return {number}
  */
 function vcl31(): 3.1 { return 3.1; }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.VideoCodecLevel
  * @return {number}
  */
 function vcl40(): 4.0 { return 4.0; }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.VideoCodecLevel
  * @return {number}
  */
 function vcl41(): 4.1 { return 4.1; }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.VideoCodecLevel
  * @return {number}
  */
 function vcl42(): 4.2 { return 4.2; }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.VideoCodecLevel
  * @return {number}
  */
 function vcl50(): 5.0 { return 5.0; }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.VideoCodecLevel
  * @return {number}
  */
 function vcl51(): 5.1 { return 5.1; }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.VideoCodecLevel
  * @return {number}
  */

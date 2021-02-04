@@ -12,6 +12,7 @@ import {ExpressionQualifier} from "./expression/ExpressionQualifier";
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Expression
  * @return {Qualifiers.Expression.ExpressionQualifier}
  */

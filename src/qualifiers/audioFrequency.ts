@@ -6,6 +6,7 @@
 
 
 /**
+ * @summary qualifier
  * @description Preserves the original audio frequency of the video when used with vc_auto.
  * @memberOf Qualifiers.AudioFrequency
  */
@@ -14,6 +15,7 @@ function ORIGINAL(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.AudioFrequency
  */
 function FREQ192000(): number {
@@ -21,6 +23,7 @@ function FREQ192000(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.AudioFrequency
  */
 function FREQ176400(): number {
@@ -29,6 +32,7 @@ function FREQ176400(): number {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.AudioFrequency
  */
 function FREQ96000(): number {
@@ -37,6 +41,7 @@ function FREQ96000(): number {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.AudioFrequency
  */
 function FREQ88200(): number {
@@ -45,6 +50,7 @@ function FREQ88200(): number {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.AudioFrequency
  */
 function FREQ48000(): number {
@@ -52,6 +58,7 @@ function FREQ48000(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.AudioFrequency
  */
 function FREQ8000(): number {
@@ -59,6 +66,7 @@ function FREQ8000(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.AudioFrequency
  */
 function FREQ11025(): number {
@@ -66,6 +74,7 @@ function FREQ11025(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.AudioFrequency
  */
 function FREQ16000(): number {
@@ -73,6 +82,7 @@ function FREQ16000(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.AudioFrequency
  */
 function FREQ22050(): number {
@@ -80,6 +90,7 @@ function FREQ22050(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.AudioFrequency
  */
 function FREQ32000(): number {
@@ -87,6 +98,7 @@ function FREQ32000(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.AudioFrequency
  */
 function FREQ37800(): number {
@@ -94,6 +106,7 @@ function FREQ37800(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.AudioFrequency
  */
 function FREQ44056(): number {
@@ -101,6 +114,7 @@ function FREQ44056(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.AudioFrequency
  */
 function FREQ44100(): number {
@@ -108,6 +122,7 @@ function FREQ44100(): number {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.AudioFrequency
  */
 function FREQ47250(): number {

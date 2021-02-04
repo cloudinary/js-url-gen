@@ -1,10 +1,12 @@
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ChromeSubSampling
  */
 function chroma444():number { return 444; }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ChromeSubSampling
  */
 function chroma420():number { return 420; }

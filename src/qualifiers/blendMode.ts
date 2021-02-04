@@ -11,6 +11,7 @@ import {BlendModeQualifier} from "./blendMode/BlendModeQualifier";
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.BlendMode
  * @description Add an overlay image blended using the 'multiply' blend mode.
  * @return {Qualifiers.BlendMode.BlendModeQualifier}
@@ -20,6 +21,7 @@ function multiply():BlendModeQualifier {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.BlendMode
  * @description Add an overlay image blended using the 'screen' blend mode.
  * @return {Qualifiers.BlendMode.BlendModeQualifier}
@@ -29,6 +31,7 @@ function screen():BlendModeQualifier {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.BlendMode
  * @description Add an overlay image blended using the 'overlay' blend mode.
  * @return {Qualifiers.BlendMode.BlendModeQualifier}
@@ -38,6 +41,7 @@ function overlay():BlendModeQualifier {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.BlendMode
  * @description Add an overlay image blended using the 'mask' blend mode.
  * @return {Qualifiers.BlendMode.BlendModeQualifier}
@@ -48,6 +52,7 @@ function mask():BlendModeQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.BlendMode
  * @description Add an overlay image blended using the 'antiRemoval' blend mode.
  * @return {Qualifiers.BlendMode.BlendModeQualifier}
