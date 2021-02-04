@@ -18,7 +18,7 @@ npm install @cloudinary/base
 ## Simple usage
 ```javascript
 
-// Import the cloudinary class
+// Import the Cloudinary class
 import {Cloudinary} from '@cloudinary/base';
 
 // Create your instance
