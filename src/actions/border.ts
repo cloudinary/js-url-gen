@@ -25,7 +25,7 @@ class Border extends Action {
    * @summary action
    * @memberOf Actions.Border
    * @description Sets the style of the border.
-   * @return {Actions.Border}
+   * @return {Border}
    */
   static solid(width: number | string, color: SystemColors): Border {
     return new Border('solid', color, width);

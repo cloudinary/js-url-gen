@@ -6,56 +6,94 @@ Custom CSS for the JSDOC template
   display:none;
 }
 
-/*body {*/
-/*  font-size:18px;*/
-/*}*/
-
+/**
+  Set colors to cloudinary theme
+ */
 .page-header {
   background-color: #3448C5 !important;
 }
-
+/**
+  Set colors to cloudinary theme
+ */
 .breadcrumb li a {
   color: #FF5050!important;
 }
 
+/**
+  Set colors to cloudinary theme
+ */
 .toc .nav>li.active>a, .toc .nav>li.active>a:focus, .toc .nav>li.active>a:hover {
   color: #FF5050!important;
   border-left: 2px solid #3448C5!important;
 }
 
+/**
+  Set colors of buttons to cloudinary theme
+ */
 .symbol-title .name-signature, .symbol-title .signature-params {
   color: #0c163b!important;
 }
-
+/**
+  Set colors of buttons to cloudinary theme
+ */
 .back-to-top {
   color: #5A616A!important;
 }
 
+/**
+  make function names bold
+ */
+.symbol-title.collapsible-symbol.function .name {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/**
+  Set colors of buttons to cloudinary theme
+ */
 .symbol-title.collapsible-symbol .toggle-icon {
   color: #3448C5!important;
   text-indent: 0!important;
 }
 
+/**
+  Set colors to cloudinary theme
+ */
 .callout-primary {
   border-left-color: #3448C5!important;
 }
 
+/**
+  Set colors to cloudinary theme
+ */
 .callout-primary h5 {
   color: #3448C5!important;
 }
 
+/**
+  Set colors to cloudinary theme
+ */
 body {
   color: #0c163b!important;
 }
 
+/**
+  Set colors to cloudinary theme
+ */
 .toc .nav>li>a .name-signature, .toc .nav>li>a .signature-params {
   color: #0c163b!important;
 }
 
+/**
+  Set colors to cloudinary theme
+ */
 .callout-default {
   border-left-color: #5A616A!important;
 }
 
+/**
+  Set sizes to cloudinary theme
+ */
 .branding-logo {
   background-size:30px;
 }
@@ -128,13 +166,11 @@ body {
  * ENSURE ALL COLLAPSABLE AREAS ARE ALWAYS OPEN
  */
 .symbol-details {
-  max-height:9999px!important;
+  /*max-height:9999px!important;*/
 }
 
 .symbol-title.function {
-  padding: 10px;
-  border: 1px solid black;
-  border-radius:2px;
+  /*padding: 0px;*/
 }
 
 /**
@@ -164,4 +200,34 @@ body {
 
 .pill-legend {
   padding-bottom:15px;
+}
+
+
+
+/**
+  Hide the <static> prefix in method names
+ */
+.signature-attribs {
+  display:none;
+}
+
+/**
+  Make the description and details sections of a function smaller
+ */
+.callout {
+  padding: 13px;
+}
+/**
+  Hide the Return statement of methods
+ */
+.callout-success {
+  display:none;
+}
+
+/**
+  Reduce spaces between horizontal lines
+ */
+.hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
