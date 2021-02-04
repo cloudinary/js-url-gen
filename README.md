@@ -5,6 +5,8 @@
 This project enables you to create Cloudinary URLs for your images and videos.
 Using this SDK, you can apply advanced transformations to your images and videos.
 
+This SDK can also be used with [popular frontend frameworks](https://cloudinary.com/documentation/sdks/js/frontend-frameworks/index.html).
+
 ## Help & Examples
 - {@tutorial gettingStarted} 
 - {@tutorial annotatedExamples}
@@ -45,8 +47,12 @@ console.log(myURL);
 
 ### More examples and documentation
 - [Cloudinary Documentation](https://cloudinary.com/documentation/javascript2_integration)
-- [SDK Reference](https://cloudinary.com/documentation/sdks/js/cloudinary-js-base/index.html) 
+- [SDK Reference](https://cloudinary.com/documentation/sdks/js/cloudinary-js-base/index.html)
+- [Use with a Frontend Framework](https://cloudinary.com/documentation/sdks/js/frontend-frameworks/index.html)
 
+### Additional links
+- [React SDK](https://www.npmjs.com/package/@cloudinary/react)
+- [Angular SDK](https://www.npmjs.com/package/@cloudinary/angular) 
 
 
 ### Transpilation
