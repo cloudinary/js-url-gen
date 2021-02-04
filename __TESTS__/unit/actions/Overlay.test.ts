@@ -12,11 +12,6 @@ import {Timeline} from "../../../src/qualifiers/timeline";
 import {base64Encode} from "../../../src/internal/utils/base64Encode";
 import {TextStyle} from "../../../src/qualifiers/textStyle";
 
-/**
- * @summary test
- * @namespace OverlayTests
- * @description Tests covering the various use cases for overlays
- */
 describe('Tests for overlay actions', () => {
   it('Tests Image on Image with publicID encoding', () => {
     const asset = createNewImage();
