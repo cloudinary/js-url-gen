@@ -5,7 +5,7 @@ import {Action} from "../internal/Action";
 /**
  * @description Extracts an image or a page using an index, a range, or a name from a layered media asset.
  * @memberOf Actions
- * @namespace Actions
+ * @namespace Extract
  */
 class Extract extends Action {
   private qualifierValue = new QualifierValue();
