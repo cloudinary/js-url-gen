@@ -31,7 +31,7 @@ const cld = new Cloudinary({
     }
 });
 
-// Lets create a new image
+// Let's create a new image
 const myImage = cld.image('sample');
 import {Resize} from '@cloudinary/base/actions/resize';
 myImage.resize(Resize.scale().width(100).height(100));
