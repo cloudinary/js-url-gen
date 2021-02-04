@@ -7,6 +7,7 @@
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ArtisticFilter
  */
 function alDente(): string {
@@ -14,6 +15,7 @@ function alDente(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ArtisticFilter
  */
 function athena(): string {
@@ -21,6 +23,7 @@ function athena(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ArtisticFilter
  */
 function audrey(): string {
@@ -28,6 +31,7 @@ function audrey(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ArtisticFilter
  */
 function aurora(): string {
@@ -35,6 +39,7 @@ function aurora(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ArtisticFilter
  */
 function daguerre(): string {
@@ -42,6 +47,7 @@ function daguerre(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ArtisticFilter
  */
 function eucalyptus(): string {
@@ -49,6 +55,7 @@ function eucalyptus(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ArtisticFilter
  */
 function fes(): string {
@@ -56,6 +63,7 @@ function fes(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ArtisticFilter
  */
 function frost(): string {
@@ -63,6 +71,7 @@ function frost(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ArtisticFilter
  */
 function hairspray(): string {
@@ -70,6 +79,7 @@ function hairspray(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ArtisticFilter
  */
 function hokusai(): string {
@@ -77,6 +87,7 @@ function hokusai(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ArtisticFilter
  */
 function incognito(): string {
@@ -84,6 +95,7 @@ function incognito(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ArtisticFilter
  */
 function linen(): string {
@@ -91,6 +103,7 @@ function linen(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ArtisticFilter
  */
 function peacock(): string {
@@ -98,6 +111,7 @@ function peacock(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ArtisticFilter
  */
 function primavera(): string {
@@ -105,6 +119,7 @@ function primavera(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ArtisticFilter
  */
 function quartz(): string {
@@ -112,6 +127,7 @@ function quartz(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ArtisticFilter
  */
 function redRock(): string {
@@ -119,6 +135,7 @@ function redRock(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ArtisticFilter
  */
 function refresh(): string {
@@ -126,6 +143,7 @@ function refresh(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ArtisticFilter
  */
 function sizzle(): string {
@@ -133,6 +151,7 @@ function sizzle(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ArtisticFilter
  */
 function sonnet(): string {
@@ -140,6 +159,7 @@ function sonnet(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ArtisticFilter
  */
 function ukulele(): string {
@@ -147,6 +167,7 @@ function ukulele(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ArtisticFilter
  */
 function zorro(): string {

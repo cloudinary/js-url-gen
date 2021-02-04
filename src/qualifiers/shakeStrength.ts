@@ -5,6 +5,7 @@
  */
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ShakeStrength
  */
 function pixels16(): 16 {
@@ -12,6 +13,7 @@ function pixels16(): 16 {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ShakeStrength
  */
 function pixels32(): 32 {
@@ -19,6 +21,7 @@ function pixels32(): 32 {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ShakeStrength
  */
 function pixels48(): 48 {
@@ -26,6 +29,7 @@ function pixels48(): 48 {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ShakeStrength
  */
 function pixels64(): 64 {

@@ -9,6 +9,7 @@ import {AnimatedFormatQualifierValue} from "./animatedFormat/AnimatedFormatQuali
 
 /**
  * @description Automatically sets the animated format
+ * @summary qualifier
  * @memberOf Qualifiers.AnimatedFormat
  * @return {Qualifiers.AnimatedFormatQualifierValue}
  */
@@ -18,6 +19,7 @@ function auto(): AnimatedFormatQualifierValue {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.AnimatedFormat
  * @return {Qualifiers.AnimatedFormatQualifierValue}
  */
@@ -26,6 +28,7 @@ function gif(): AnimatedFormatQualifierValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.AnimatedFormat
  * @return {Qualifiers.AnimatedFormatQualifierValue}
  */
@@ -34,6 +37,7 @@ function webp(): AnimatedFormatQualifierValue {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.AnimatedFormat
  * @return {Qualifiers.AnimatedFormatQualifierValue}
  */

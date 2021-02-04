@@ -13,6 +13,7 @@ import {TextSource} from "./source/sourceTypes/TextSource";
 
 
 /**
+ * @summary qualifier
  * @description Returns an instance of an ImageSource
  * @memberOf Qualifiers.Source
  * @param {string} publicID The publicID of the image to be used as a layer
@@ -23,6 +24,7 @@ function image(publicID: string): ImageSource {
 }
 
 /**
+ * @summary qualifier
  * @description Returns an instance of a TextSource
  * @memberOf Qualifiers.Source
  * @param {string} text The text to display.
@@ -34,6 +36,7 @@ function text(text: string, textStyle: TextStyle | string): TextSource {
 }
 
 /**
+ * @summary qualifier
  * @description Returns an instance of a VideoSource
  * @memberOf Qualifiers.Source
  * @param {string} publicID The publicID of the video to be used as a layer
@@ -44,6 +47,7 @@ function video(publicID: string): VideoSource {
 }
 
 /**
+ * @summary qualifier
  * @description Returns an instance of an VideoSource
  * @memberOf Qualifiers.Source
  * @param {string} fileName The publicID of the video to be used as a layer
@@ -54,6 +58,7 @@ function subtitles(fileName: string): SubtitlesSource {
 }
 
 /**
+ * @summary qualifier
  * @description Returns an instance of a FetchSource
  * @memberOf Qualifiers.Source
  * @param {string} remoteURL The URL of the remote asset to fetch as a layer

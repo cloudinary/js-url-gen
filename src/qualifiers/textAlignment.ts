@@ -7,6 +7,7 @@
  */
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.TextAlignment
  */
 function left(): string {
@@ -14,6 +15,7 @@ function left(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.TextAlignment
  */
 function right(): string {
@@ -21,6 +23,7 @@ function right(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.TextAlignment
  */
 function center(): string {
@@ -28,6 +31,7 @@ function center(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.TextAlignment
  */
 function start(): string {
@@ -35,6 +39,7 @@ function start(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.TextAlignment
  */
 function end(): string {
@@ -42,6 +47,7 @@ function end(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.TextAlignment
  */
 function justify(): string {

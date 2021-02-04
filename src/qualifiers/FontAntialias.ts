@@ -7,6 +7,7 @@
  */
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FontAntialias
  */
 function none(): string {
@@ -14,6 +15,7 @@ function none(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FontAntialias
  */
 function gray(): string {
@@ -21,6 +23,7 @@ function gray(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FontAntialias
  */
 function subPixel(): string {
@@ -28,6 +31,7 @@ function subPixel(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FontAntialias
  */
 function fast(): string {
@@ -35,6 +39,7 @@ function fast(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FontAntialias
  */
 function good(): string {
@@ -42,6 +47,7 @@ function good(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FontAntialias
  */
 function best(): string {

@@ -12,6 +12,7 @@
 import {RotationModeQualifierValue} from "./rotate/RotationModeQualifierValue";
 
 /**
+ * @summary qualifier
  * @description Rotate image 90 degrees clockwise only if the requested aspect ratio does not match the image's aspect ratio.
  * @memberOf Qualifiers.RotationMode
  * @return {Qualifiers.RotationMode.RotationModeQualifierValue}
@@ -21,6 +22,7 @@ function autoRight(): RotationModeQualifierValue {
 }
 
 /**
+ * @summary qualifier
  * @description Rotate image 90 degrees counterclockwise only if the requested aspect ratio does not match the image's aspect ratio.
  * @memberOf Qualifiers.RotationMode
  * @return {Qualifiers.RotationMode.RotationModeQualifierValue}
@@ -30,6 +32,7 @@ function autoLeft(): RotationModeQualifierValue {
 }
 
 /**
+ * @summary qualifier
  * @description Vertical mirror flip of the image.
  * @memberOf Qualifiers.RotationMode
  * @return {Qualifiers.RotationMode.RotationModeQualifierValue}
@@ -39,6 +42,7 @@ function verticalFlip(): RotationModeQualifierValue {
 }
 
 /**
+ * @summary qualifier
  * @description Horizontal mirror flip of the image.
  * @memberOf Qualifiers.RotationMode
  * @return {Qualifiers.RotationMode.RotationModeQualifierValue}
@@ -49,6 +53,7 @@ function horizontalFlip(): RotationModeQualifierValue {
 
 
 /**
+ * @summary qualifier
  * @description By default, the image is automatically rotated according to the EXIF data stored by the camera when the image
  *                           was taken. Set the angle to 'ignore' if you do not want the image to be automatically rotated.
  * @memberOf Qualifiers.RotationMode

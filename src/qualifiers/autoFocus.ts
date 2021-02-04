@@ -8,6 +8,7 @@ import {FocusOnValue} from "./focusOn";
  */
 
 /**
+ * @summary qualifier
  * @description A wrapper class around a FocusOn object.
  * @namespace AutoFocus
  * @memberOf Qualifiers
@@ -19,7 +20,8 @@ class AutoFocus extends QualifierValue {
   private shouldAvoid:boolean;
 
   /**
-   * @description Specifies the object to focus on automatically
+ * @summary qualifier
+ * @description Specifies the object to focus on automatically
    * @param {Qualifiers.FocusOn} obj The object to focus on.
    * @param {number} weight
    */
@@ -39,14 +41,16 @@ class AutoFocus extends QualifierValue {
   }
 
   /**
-   * @desc Get the name of the of the object
+ * @summary qualifier
+ * @desc Get the name of the of the object
    */
   private getName():string {
     return this.focusOn.name;
   }
 
   /**
-   * @desc Get the weight for the object
+ * @summary qualifier
+ * @desc Get the weight for the object
    */
   private getWeight():number|string {
     if (this.shouldAvoid) {
@@ -57,7 +61,8 @@ class AutoFocus extends QualifierValue {
   }
 
   /**
-   * @desc Return the string representation of this QualifierValue
+ * @summary qualifier
+ * @desc Return the string representation of this QualifierValue
    */
   toString():string {
     // Future proofing, in case we'd like to support some custom string in the future, or if data is coming from a DB
@@ -69,7 +74,8 @@ class AutoFocus extends QualifierValue {
   }
 
   /**
-   * @description Sets the importance level of the object within the automatic gravity algorithm
+ * @summary qualifier
+ * @description Sets the importance level of the object within the automatic gravity algorithm
    * @param {numebr} w The focus weight for the object
    * @return {this}
    */
@@ -79,7 +85,8 @@ class AutoFocus extends QualifierValue {
   }
 
   /**
-   * @description Attempts to avoid the detected object in the image
+ * @summary qualifier
+ * @description Attempts to avoid the detected object in the image
    * @return {this}
    */
   avoid(): this {

@@ -21,6 +21,7 @@ function compass(direction: CompassQualifier): CompassGravity {
 }
 
 /**
+ * @summary qualifier
  * @description Specifies what to focus on, for example: faces, objects, eyes, etc.
  * @param {...Qualifier.FocusOn} args One or more objects to focus on
  * @memberOf Qualifiers.Gravity
@@ -34,6 +35,7 @@ function focusOn(...args: FocusOnValue[]): FocusOnGravity {
 }
 
 /**
+ * @summary qualifier
  * @description Automatically identifies the most interesting regions in the asset, can be qualified further by including what to focus on.
  * @memberOf Qualifiers.Gravity
  * @return {Qualifiers.Gravity.AutoGravity}
@@ -48,6 +50,7 @@ function autoGravity(): AutoGravity {
 
 
 /**
+ * @summary qualifier
  * @description Detect all text elements in an image using the {@link https://cloudinary.com/documentation/image_transformations#control_gravity | OCR Text Detection and Extraction add-on} and use the detected bounding box coordinates as the basis of the transformation.
  * @memberOf Qualifiers.Gravity
  * @return {OCR}
@@ -57,6 +60,7 @@ function ocr(): OCR {
 }
 
 /**
+ * @summary qualifier
  * @description Set the center of gravity to the given x & y coordinates.
  * @memberOf Qualifiers.Gravity
  * @return {XYCenterGravity}
@@ -67,6 +71,7 @@ function xyCenter() {
 
 
 /**
+ * @summary qualifier
  * @description A qualifier that determines which part of an asset to focus on, and thus which part of the asset to keep, </br>
  *              when any part of the asset is cropped. For overlays, this setting determines where to place the overlay.
  * @namespace Gravity

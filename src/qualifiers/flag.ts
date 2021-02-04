@@ -8,6 +8,7 @@ import {FlagQualifier} from "./flag/FlagQualifier";
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Used when delivering a video file as an image format that supports animation, such as animated WebP.
  * Plays all frames rather than just delivering the first one as a static image.
@@ -24,6 +25,7 @@ function animated(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description When converting animated images to WebP format, generate an animated WebP from all the frames in the
  * original
@@ -38,6 +40,7 @@ function animatedWebP(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description When used together with automatic quality (q_auto):
  * allow switching to PNG8 encoding if the quality algorithm decides that it's more efficient.
@@ -49,6 +52,7 @@ function anyFormat(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description When converting animated images to PNG format, generates an animated PNG from all the frames in the
  * original
@@ -63,6 +67,7 @@ function animatedPng(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Trims pixels according to a clipping path included in the original image
  * (e.g., manually created using PhotoShop).
@@ -74,6 +79,7 @@ function clip(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Trims pixels according to a clipping path included in the original image (e.g., manually created
  * using PhotoShop)
@@ -86,6 +92,7 @@ function clipEvenOdd(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Instructs Cloudinary to clear all image meta-data (IPTC, Exif and XMP) while applying an incoming
  * transformation.
@@ -97,6 +104,7 @@ function forceStrip(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Allows custom flag
  * @return {Qualifiers.Flag.FlagQualifier}
@@ -107,6 +115,7 @@ function custom(value: string): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Adds ICC color space metadata to the image, even when the original image doesn't contain any ICC data.
  * @return {Qualifiers.Flag.FlagQualifier}
@@ -117,6 +126,7 @@ function forceIcc(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Delivers the image as an attachment.
  * @param {string} filename The attachment's filename
@@ -128,6 +138,7 @@ function attachment(filename?: string): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Returns metadata of the input asset and of the transformed output asset in JSON instead of the
  * transformed image.
@@ -139,6 +150,7 @@ function getInfo(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Deliver an HLS adaptive bitrate streaming file as HLS v3 instead of the default version (HLS v4).
  * Delivering in this format requires a private CDN configuration.
@@ -150,6 +162,7 @@ function hlsv3(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Sets the cache-control to immutable for the asset.
  * @return {Qualifiers.Flag.FlagQualifier}
@@ -160,6 +173,7 @@ function immutableCache(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description * Allows specifying only either width or height so the value of the second axis remains as is, and is not
  * recalculated to maintain the aspect ratio of the original image.
@@ -171,6 +185,7 @@ function ignoreInitialAspectRatio(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Keeps the copyright related fields when stripping meta-data.
  * @return {Qualifiers.Flag.FlagQualifier}
@@ -181,6 +196,7 @@ function keepAttribution(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * Keep the Display Aspect Ratio metadata of the uploaded video (if it’s different from the current video
  * dimensions).
@@ -192,6 +208,7 @@ function keepDar(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Keeps all meta-data.
  * @return {Qualifiers.Flag.FlagQualifier}
@@ -202,6 +219,7 @@ function keepIptc(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Applies all chained transformations, until a transformation component that includes this flag, on the last added
  * overlay or underlay instead of applying on the containing image.
@@ -213,6 +231,7 @@ function layerApply(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Automatically use lossy compression when delivering animated GIF files.
  *
@@ -227,6 +246,7 @@ function lossy(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Convert the audio channel to mono
  * @return {Qualifiers.Flag.FlagQualifier}
@@ -237,6 +257,7 @@ function mono(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Used internally by Position within an Overlay, this flag will tile the overlay across your image.
  *
@@ -249,6 +270,7 @@ function noOverflow(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Don't stream a video that is currently being generated on the fly. Wait until the video is fully generated.
  * @return {Qualifiers.Flag.FlagQualifier}
@@ -259,6 +281,7 @@ function noStream(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Generate PNG images in the png24 format.
  * @return {Qualifiers.Flag.FlagQualifier}
@@ -269,6 +292,7 @@ function png24(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Generate PNG images in the png32 format.
  * @return {Qualifiers.Flag.FlagQualifier}
@@ -279,6 +303,7 @@ function png32(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Generate PNG images in the PNG8 format.
  * @return {Qualifiers.Flag.FlagQualifier}
@@ -289,6 +314,7 @@ function png8(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description When used with automatic fetch_format (f_auto): ensures that images with a transparency channel will be
  * delivered in PNG format.
@@ -300,6 +326,7 @@ function preserveTransparency(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Generates a JPG image using the progressive (interlaced) JPG format.
  *
@@ -321,6 +348,7 @@ function progressive(mode?: string): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Modifies percentage-based width & height parameters of overlays and underlays (e.g., 1.0) to be relative to the overlaid region
  * @return {Qualifiers.Flag.FlagQualifier}
@@ -331,6 +359,7 @@ function regionRelative(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Reduces the image to one flat pixelated layer (as opposed to the default vector based graphic) in
  * order to enable
@@ -343,6 +372,7 @@ function rasterize(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Modifies percentage-based width & height parameters of overlays and underlays (e.g., 1.0) to be relative to the containing image instead of the added layer.
  * @return {Qualifiers.Flag.FlagQualifier}
@@ -353,6 +383,7 @@ function relative(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Instructs Cloudinary to run a sanitizer on the image (relevant only for the SVG format).
  * @return {Qualifiers.Flag.FlagQualifier}
@@ -363,6 +394,7 @@ function sanitize(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Splices the video stipulated as an overlay on to the end of the container video instead of adding it as an
  * overlay.
@@ -374,6 +406,7 @@ function splice(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Instructs Cloudinary to clear all ICC color profile data included with the image.
  * @return {Qualifiers.Flag.FlagQualifier}
@@ -384,6 +417,7 @@ function stripProfile(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description If the requested video transformation has already been generated, this flag works identically to
  * Flag::attachment.
@@ -405,6 +439,7 @@ function streamingAttachment(filename: string): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Generates TIFF images using LZW compression and in the TIFF8 format.
  * @return {Qualifiers.Flag.FlagQualifier}
@@ -415,6 +450,7 @@ function tiff8Lzw(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Used internally by Position within an Overlay, this flag will tile the overlay across your image.
  *
@@ -427,6 +463,7 @@ function tiled(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Truncate (trim) a video file based on the start time defined in the metadata (relevant only where the metadata
  * includes a directive to play only a section of the video).
@@ -438,6 +475,7 @@ function truncateTS(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Flag
  * @description Create a waveform image (in the format specified by the file extension) from the audio or video file.
  * @return {Qualifiers.Flag.FlagQualifier}

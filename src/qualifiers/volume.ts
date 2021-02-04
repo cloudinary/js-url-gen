@@ -5,6 +5,7 @@
  */
 
 /**
+ * @summary qualifier
  * @description Mutes the volume.
  *
  * You can use this on the base video to deliver a video without sound, or with a video overlay
@@ -18,6 +19,7 @@ function mute(): string{
 }
 
 /**
+ * @summary qualifier
  * @description Increases or decreases the volume by a percentage of the current volume.
  *
  * @memberOf Qualifiers.Volume
@@ -29,6 +31,7 @@ function byPercent(percent: string|number): string {
 }
 
 /**
+ * @summary qualifier
  * @description Increases or decreases the volume by the specified number of decibels.
  *
  * @memberOf Qualifiers.Volume

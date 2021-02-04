@@ -6,6 +6,7 @@ import {TimelinePosition} from "./video/TimelinePosition";
  */
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.TimelinePosition
  * @return {Qualifiers.TimelinePosition.TimelinePosition}
  */

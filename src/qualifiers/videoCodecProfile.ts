@@ -7,6 +7,7 @@
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.VideoCodecProfile
  * @return {string}
  */
@@ -15,6 +16,7 @@ function high():string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.VideoCodecProfile
  * @return {string}
  */
@@ -23,6 +25,7 @@ function main():string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.VideoCodecProfile
  * @return {string}
  */

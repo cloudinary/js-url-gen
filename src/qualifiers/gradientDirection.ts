@@ -7,6 +7,7 @@ import {GradientDirectionQualifierValue} from "./gradientDirection/GradientDirec
  */
 
 /**
+ * @summary qualifier
  * @description Blend the colors horizontally.
  * @memberOf Qualifiers.GradientDirection
  * @return {Qualifiers.GradientDirection.GradientDirectionQualifierValue}
@@ -16,6 +17,7 @@ function horizontal(): GradientDirectionQualifierValue {
 }
 
 /**
+ * @summary qualifier
  * @description Blend the colors vertically.
  * @memberOf Qualifiers.GradientDirection
  * @return {Qualifiers.GradientDirection.GradientDirectionQualifierValue}
@@ -25,6 +27,7 @@ function vertical(): GradientDirectionQualifierValue {
 }
 
 /**
+ * @summary qualifier
  * @description Blend the colors diagonally from top-left to bottom-right.
  * @memberOf Qualifiers.GradientDirection
  * @return {Qualifiers.GradientDirection.GradientDirectionQualifierValue}
@@ -34,6 +37,7 @@ function diagonalDesc(): GradientDirectionQualifierValue {
 }
 
 /**
+ * @summary qualifier
  * @description Blend the colors diagonally from bottom-left to top-right.
  * @memberOf Qualifiers.GradientDirection
  * @return {Qualifiers.GradientDirection.GradientDirectionQualifierValue}

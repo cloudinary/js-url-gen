@@ -6,6 +6,7 @@
  */
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Outline
  */
 function fill(): string {
@@ -13,6 +14,7 @@ function fill(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Outline
  */
 function inner(): string {
@@ -20,6 +22,7 @@ function inner(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Outline
  */
 function innerFill(): string {
@@ -27,6 +30,7 @@ function innerFill(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.Outline
  */
 function outer(): string {

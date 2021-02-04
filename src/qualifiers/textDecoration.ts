@@ -7,6 +7,7 @@
  */
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.TextDecoration
  */
 function normal(): string {
@@ -14,6 +15,7 @@ function normal(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.TextDecoration
  */
 function underline(): string {
@@ -21,6 +23,7 @@ function underline(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.TextDecoration
  */
 function strikethrough(): string {

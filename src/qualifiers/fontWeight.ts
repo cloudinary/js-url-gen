@@ -7,6 +7,7 @@
  */
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FontWeight
  */
 function thin(): string {
@@ -14,6 +15,7 @@ function thin(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FontWeight
  */
 function light(): string {
@@ -21,6 +23,7 @@ function light(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FontWeight
  */
 function normal(): string {
@@ -28,6 +31,7 @@ function normal(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.FontWeight
  */
 function bold(): string {

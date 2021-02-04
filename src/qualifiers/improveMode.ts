@@ -8,6 +8,7 @@
 
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ImproveMode
  * @description Use this mode to get better results on outdoor images.
  * @return string
@@ -17,6 +18,7 @@ function outdoor(): string {
 }
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.ImproveMode
  * @description Use this mode to get better results on images with indoor lighting and shadows.
  * @return string

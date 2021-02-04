@@ -6,6 +6,7 @@
  */
 
 /**
+ * @summary qualifier
  * @memberOf Qualifiers.DPR
  */
 function auto(): string {

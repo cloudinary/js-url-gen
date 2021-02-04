@@ -13,6 +13,7 @@ function ar1X1(): AspectRatioQualifierValue {
 }
 
 /**
+ * @summary qualifier
  * @description 5 by 4 aspect ration.
  * @memberOf Qualifiers.AspectRatio
  * @return {string}
@@ -22,6 +23,7 @@ function ar5X4(): AspectRatioQualifierValue {
 }
 
 /**
+ * @summary qualifier
  * @description 4 by 3 aspect ration.
  * @memberOf Qualifiers.AspectRatio
  * @return {string}
@@ -31,6 +33,7 @@ function ar4X3(): AspectRatioQualifierValue {
 }
 
 /**
+ * @summary qualifier
  * @description 3 by 2 aspect ration.
  * @memberOf Qualifiers.AspectRatio
  * @return {string}
@@ -40,6 +43,7 @@ function ar3X2(): AspectRatioQualifierValue {
 }
 
 /**
+ * @summary qualifier
  * @description 16 by 9 aspect ration.
  * @memberOf Qualifiers.AspectRatio
  * @return {string}
@@ -49,6 +53,7 @@ function ar16X9(): AspectRatioQualifierValue {
 }
 
 /**
+ * @summary qualifier
  * @description 3 by 1 aspect ration.
  * @memberOf Qualifiers.AspectRatio
  * @return {string}
@@ -58,6 +63,7 @@ function ar3X1(): AspectRatioQualifierValue {
 }
 
 /**
+ * @summary qualifier
  * @description ignores aspect ratio.
  * @memberOf Qualifiers.AspectRatio
  * @return {IgnoreAspectRatioQualifier}
@@ -68,6 +74,7 @@ function ignoreInitialAspectRatio(): FlagQualifier {
 
 
 /**
+ * @summary qualifier
  * @description A list of all most commonly used aspect ratios. including an ‘ignore aspect ratio’ option which direct the BE to not stick to the original aspect ratio.
  * This is used in the context of resize actions
  * @namespace AspectRatio
