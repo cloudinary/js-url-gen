@@ -1,3 +1,7 @@
+/**
+ * @description - Not currently in use
+ * @private
+ */
 interface ITagConfig {
   hiDpi?: boolean;
   clientHints?: boolean;

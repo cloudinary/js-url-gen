@@ -8,6 +8,19 @@ import IAuthTokenConfig from "./IAuthTokenConfig";
  * @prop {string} [apiKey]
  * @prop {string} [apiSecret]
  * @prop {IAuthTokenConfig} [authToken]
+ * @example
+ *  * import Cloudinary from '@cloudinary/base';
+ * // The Cloudinary Instance accepts a CloudConfig under the `cloud` key
+ * const cld = new Cloudinary({
+ *  // the cloudConfig
+ *  cloud: {
+ *       cloudName: 'demo'
+ *   },
+ *   // the urlConfig
+ *   url: {
+ *         // ... urlConfig is optional.
+ *   }
+ * });
  */
 interface ICloudConfig {
   cloudName?: string;
