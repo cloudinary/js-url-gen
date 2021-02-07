@@ -1,6 +1,4 @@
 import {CloudinaryFile} from "../../../src/assets/CloudinaryFile";
-import {Underlay} from "../../../src/actions/underlay";
-import {Source} from "../../../src/qualifiers/source";
 
 describe('Tests for CloudinaryFile', () => {
   let cloudinaryFile: CloudinaryFile = null;
@@ -33,6 +31,12 @@ describe('Tests for CloudinaryFile', () => {
       .setVersion('12345');
 
     expect(cloudinaryFile.toURL()).toContain('video/fetch/v12345/sample');
+  });
+
+  it('should use assetType from the asset', () => {
+    cloudinaryFile.setAssetType('raw');
+
+    expect(cloudinaryFile.toURL()).toBe('https://res.cloudinary.com/demo/raw/upload/sample');
   });
 });
 

@@ -155,6 +155,7 @@ describe('Tests for CloudinaryConfiguration', () => {
 
     expect(url).toContain('http://');
   });
+
   it('should allow overriding cloudName in config', () => {
     const conf = new CloudinaryConfig({
       cloud: {
@@ -170,11 +171,6 @@ describe('Tests for CloudinaryConfiguration', () => {
   });
 
   // These tests should be "translated" to js base code when these missing features are added:
-  it.skip('should use resource_type from options', () => {
-    test_cloudinary_url('test', {
-      resource_type: 'raw'
-    }, 'https://res.cloudinary.com/test123/raw/upload/test', {});
-  });
   it.skip('should put format after url_suffix', () => {
     test_cloudinary_url('test', {
       url_suffix: 'hello',
