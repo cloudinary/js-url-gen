@@ -1,3 +1,6 @@
+/**
+ * @private
+ */
 interface IApiConfig {
   apiProxy?: string;
   connectionTimeout?: number;

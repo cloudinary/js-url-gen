@@ -1,3 +1,6 @@
+/**
+ * @private
+ */
 interface IAccountConfig {
   provisioningApiKey?: string;
   provisioningApiSecret?: string;

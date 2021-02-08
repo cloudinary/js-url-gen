@@ -5,6 +5,8 @@
  * Defines the configuration for delivering token-based authenticated media assets.</br>
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/control_access_to_media#delivering_token_based_authenticated_media_assets|Delivering token based authenticated media assets}
  *
+ * @private
+ *
  * @prop {string} token_name
  * @prop {string} duration
  * @prop {string} start_time
