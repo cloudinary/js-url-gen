@@ -30,7 +30,7 @@ class CloudinaryFile {
   public storageType: string; // type upload/private
 
   constructor(publicID: string, cloudConfig: ICloudConfig = {}, urlConfig?: IURLConfig) {
-    this.publicID = publicID;
+    this.setPublicID(publicID);
     this.cloudName = cloudConfig.cloudName;
     this.apiKey = cloudConfig.apiKey;
     this.apiSecret = cloudConfig.apiSecret;
@@ -39,7 +39,8 @@ class CloudinaryFile {
   }
 
   setPublicID(publicID: string): this {
-    this.publicID = publicID;
+    // PublicID must be a string!
+    this.publicID = publicID ? publicID.toString() : '';
     return this;
   }
 

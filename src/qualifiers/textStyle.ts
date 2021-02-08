@@ -25,6 +25,9 @@ class TextStyle {
   private _fontHinting: string;
 
   constructor(fontFamily: string, fontSize: string | number) {
+    if (!fontFamily || !fontSize) {
+      throw `You must provide a fontFamily and fontSize to a TextStyle`;
+    }
     this._fontFamily = fontFamily;
     this._fontSize = fontSize;
   }
