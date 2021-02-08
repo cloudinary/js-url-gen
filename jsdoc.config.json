@@ -24,10 +24,13 @@
     "stylesheets" : [
       "./customStyles.css"
     ],
+    "scripts" : [
+      "./injectVersionSemver.js"
+    ],
     "search": true,
     "monospaceLinks": true,
     "systemColor": "#3448C5",
-    "systemName": "Cloudinary JS SDK v2",
+    "systemName": "Cloudinary Base SDK",
     "systemLogo": "__DOC_RESOURCES__/navLogo.png",
     "systemSummary": "@cloudinary/base",
     "favicon": "__DOC_RESOURCES__/favico.png",
