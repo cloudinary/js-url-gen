@@ -6,7 +6,7 @@
 			{{#if type}}
 				<!-- type -->
 				<div class="form-group">
-					<label class="col-sm-3 control-label">Type</label>
+					<label class="col-sm-2 control-label">Type</label>
 					<div class="col-sm-9">
 						<div class="form-control-static type-names">{{type-names type}}</div>
 					</div>
@@ -16,7 +16,7 @@
 			{{#if defaultvalue}}
 				<!-- defaultvalue -->
 				<div class="form-group">
-					<label class="col-sm-3 control-label">Default Value</label>
+					<label class="col-sm-2 control-label">Default Value</label>
 					<div class="col-sm-9">
 						<p class="form-control-static">{{defaultvalue}}</p>
 					</div>
@@ -26,7 +26,7 @@
 			{{#if augments}}
 				<!-- augments -->
 				<div class="form-group">
-					<label class="col-sm-3 control-label">Augments</label>
+					<label class="col-sm-2 control-label">Augments</label>
 					<div class="col-sm-9">
 						{{#single augments}}
 							<p class="form-control-static">{{linkto this}}</p>
@@ -44,7 +44,7 @@
 			{{#if version}}
 				<!-- version -->
 				<div class="form-group">
-					<label class="col-sm-3 control-label">Version</label>
+					<label class="col-sm-2 control-label">Version</label>
 					<div class="col-sm-9">
 						<p class="form-control-static">{{version}}</p>
 					</div>
@@ -54,7 +54,7 @@
 			{{#if since}}
 				<!-- since -->
 				<div class="form-group">
-					<label class="col-sm-3 control-label">Since</label>
+					<label class="col-sm-2 control-label">Since</label>
 					<div class="col-sm-9">
 						<p class="form-control-static">{{since}}</p>
 					</div>
@@ -64,7 +64,7 @@
 			{{#if inherits}}
 				<!-- inherits -->
 				<div class="form-group">
-					<label class="col-sm-3 control-label">Inherited From</label>
+					<label class="col-sm-2 control-label">Inherited From</label>
 					<div class="col-sm-9">
 						<p class="form-control-static">{{linkto inherits}}</p>
 					</div>
@@ -74,7 +74,7 @@
 			{{#if overrides}}
 				<!-- overrides -->
 				<div class="form-group">
-					<label class="col-sm-3 control-label">Overrides</label>
+					<label class="col-sm-2 control-label">Overrides</label>
 					<div class="col-sm-9">
 						<p class="form-control-static">{{linkto overrides}}</p>
 					</div>
@@ -84,7 +84,7 @@
 			{{#if implementations}}
 				<!-- implementations -->
 				<div class="form-group">
-					<label class="col-sm-3 control-label">Implementations</label>
+					<label class="col-sm-2 control-label">Implementations</label>
 					<div class="col-sm-9">
 						{{#single implementations}}
 							<p class="form-control-static">{{linkto this}}</p>
@@ -102,7 +102,7 @@
 			{{#if implements}}
 				<!-- implements -->
 				<div class="form-group">
-					<label class="col-sm-3 control-label">Implements</label>
+					<label class="col-sm-2 control-label">Implements</label>
 					<div class="col-sm-9">
 						{{#single implements}}
 							<p class="form-control-static">{{linkto this}}</p>
@@ -120,7 +120,7 @@
 			{{#if mixes}}
 				<!-- mixes -->
 				<div class="form-group">
-					<label class="col-sm-3 control-label">Mixes In</label>
+					<label class="col-sm-2 control-label">Mixes In</label>
 					<div class="col-sm-9">
 						{{#single mixes}}
 							<p class="form-control-static">{{linkto this}}</p>
@@ -138,7 +138,7 @@
 			{{#if deprecated}}
 				<!-- deprecated -->
 				<div class="form-group">
-					<label class="col-sm-3 control-label">Deprecated</label>
+					<label class="col-sm-2 control-label">Deprecated</label>
 					<div class="col-sm-9">
 						<p class="form-control-static">{{deprecated}}</p>
 					</div>
@@ -148,7 +148,7 @@
 			{{#if author}}
 				<!-- author -->
 				<div class="form-group">
-					<label class="col-sm-3 control-label">Author</label>
+					<label class="col-sm-2 control-label">Author</label>
 					<div class="col-sm-9">
 						{{#single author}}
 							<p class="form-control-static">{{linkto this}}</p>
@@ -166,7 +166,7 @@
 			{{#if copyright}}
 				<!-- copyright -->
 				<div class="form-group">
-					<label class="col-sm-3 control-label">Copyright</label>
+					<label class="col-sm-2 control-label">Copyright</label>
 					<div class="col-sm-9">
 						<p class="form-control-static">{{copyright}}</p>
 					</div>
@@ -176,7 +176,7 @@
 			{{#if license}}
 				<!-- license -->
 				<div class="form-group">
-					<label class="col-sm-3 control-label">License</label>
+					<label class="col-sm-2 control-label">License</label>
 					<div class="col-sm-9">
 						<p class="form-control-static">{{license}}</p>
 					</div>
@@ -186,7 +186,7 @@
 			{{#if hasSource}}
 				<!-- source -->
 				<div class="form-group">
-					<label class="col-sm-3 control-label">Source</label>
+					<label class="col-sm-2 control-label">Source</label>
 					<div class="col-sm-9">
 						<p class="form-control-static">{{#if options.outputSourceFiles}}{{{sourcelink}}}{{else}}{{source}}{{/if}}</p>
 					</div>
@@ -196,7 +196,7 @@
 			{{#if tutorials}}
 				<!-- tutorials -->
 				<div class="form-group">
-					<label class="col-sm-3 control-label">Tutorials</label>
+					<label class="col-sm-2 control-label">Tutorials</label>
 					<div class="col-sm-9">
 						{{#single tutorials}}
 							<p class="form-control-static">{{linkto this}}</p>
@@ -214,7 +214,7 @@
 			{{#if see}}
 				<!-- see -->
 				<div class="form-group">
-					<label class="col-sm-3 control-label">See</label>
+					<label class="col-sm-2 control-label">See</label>
 					<div class="col-sm-9">
 						{{#single see}}
 							<p class="form-control-static">{{linkto this}}</p>
@@ -232,7 +232,7 @@
 			{{#if todo}}
 				<!-- todo -->
 				<div class="form-group">
-					<label class="col-sm-3 control-label">To Do</label>
+					<label class="col-sm-2 control-label">To Do</label>
 					<div class="col-sm-9">
 						{{#single todo}}
 							<p class="form-control-static">{{this}}</p>

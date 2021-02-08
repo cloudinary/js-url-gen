@@ -231,3 +231,10 @@ body {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+/**
+ * Fix indentation
+ */
+.symbol-details .form-horizontal .control-label {
+  text-align:left;
+}
