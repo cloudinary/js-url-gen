@@ -6,6 +6,8 @@ coverage
 public
 playground/base.esm.js
 scripts/tmp.sh
+# This file is dynamically generated and should not be part of the repo
+__DOC_RESOURCES__/injectVersionSemver.js
 __TESTS__/compilation.test.ts
 pcakage-lock.json
 .SIZE_TESTS
