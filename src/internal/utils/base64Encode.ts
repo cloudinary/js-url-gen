@@ -9,7 +9,9 @@ function base64Encode(input: string):string {
   let encodedResult = '';
 
   if (typeof window !== 'undefined') {
-    encodedResult = btoa(input);
+    // encodeURI the input to support unicode characters
+    // Since the URI might be encoded already, we try to decode it once before
+    encodedResult = btoa(encodeURI(decodeURI(input)));
   } else {
     // NodeJS support
     encodedResult = global.Buffer.from(input).toString('base64');

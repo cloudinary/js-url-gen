@@ -219,14 +219,13 @@ describe('Tests for overlay actions', () => {
     expect(asset.toString()).toContain(`l_fetch:aHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vZGVtby9pbWFnZS91cGxvYWQvY2k=.png/${sampleTxResizePad().toString()}`);
   });
 
-  it.skip("should serialize a text source", () => {
-    const asset = createNewImage();
-    const text = 'Cloudinary for the win!';
-    const textStyle = sampleTextStyle();
-    const textSource = Source.text(text, textStyle);
+  it("should not serialize a text source with exclamation mark", () => {
+    const asset = createNewImage('sample');
+    const text = '!';
+    const textSource = Source.text(text, 'arial_15');
     asset.overlay(Overlay.source(textSource));
 
-    expect(asset.toString()).toBe("l_text:arial_50_bold_italic_strikethrough_justify_stroke_letter_spacing_10_line_spacing_20_letter_spacing_good_hinting_full:Cloudinary%20for%20the%20win%21'/fl_layer_apply");
+    expect(asset.toURL()).toContain("l_text:arial_15:!/fl_layer_apply");
   });
 
   it("should serialize a fetch source", () => {
@@ -238,7 +237,7 @@ describe('Tests for overlay actions', () => {
     expect(actual).toBe(expected);
   });
 
-  it.skip("should serialize a unicode url of fetch source", () => {
+  it("should serialize a unicode url of fetch source", () => {
     const asset = createNewVideo();
     const REMOTE_URL = "https://upload.wikimedia.org/wikipedia/commons/2/2b/고창갯벌.jpg";
     const expected = "l_fetch:aHR0cHM6Ly91cGxvYWQud2lraW1lZGlhLm9yZy93aWtpcGVkaWEvY29tbW9ucy8yLzJiLyVFQSVCMyVBMCVFQyVCMCVCRCVFQSVCMCVBRiVFQiVCMiU4Qy5qcGc=/fl_layer_apply";
@@ -247,17 +246,17 @@ describe('Tests for overlay actions', () => {
     expect(actual).toBe(expected);
   });
 
-  it.skip("should support string interpolation", () => {
+  it("should support string interpolation", () => {
     const asset = createNewImage();
-    const text = "$(start)Hello $(name)$(ext), $(no ) $( no)$(end)";
-    const textStyle = sampleTextStyle();
-    const textSource = Source.text(text, textStyle);
+    const text = "$(start)hello";
+    const textSource = Source.text(text, 'arial_15');
     asset.overlay(Overlay.source(textSource));
 
-    expect(asset.toString()).toBe("l_text:arial_50_bold_italic_strikethrough_justify_stroke_letter_spacing_10_line_spacing_20_letter_spacing_good_hinting_full:$(start)Hello%20$(name)$(ext)%252C%20%24%28no%20%29%20%24%28%20no%29$(end)/fl_layer_apply");
+    expect(asset.toURL()).toContain("l_text:arial_15:$(start)hello/fl_layer_apply");
   });
 
-  it.skip("should throw an exception if fontFamily is not provided", () => {
+  it("should throw an exception if fontFamily or fontSize are not provided", () => {
     expect(() => new TextStyle(null, 17)).toThrow();
+    expect(() => new TextStyle('arial', null)).toThrow();
   });
 });
