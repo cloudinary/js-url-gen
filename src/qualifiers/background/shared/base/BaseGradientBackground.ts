@@ -23,7 +23,6 @@ class BaseGradientBackground extends BaseCommonBackground {
   /**
    * @description Sets the direction for a background gradient fade effect.
    * @param {Qualifiers.GradientDirection | string} direction Use one of these functions provided by {@link Qualifiers.GradientDirection|GradientDirection}
-   * @example gradientDirection(GradientDirection.horizontal())
    * @return {this}
    */
   gradientDirection(direction: GradientDirectionQualifierValue): this {

@@ -59,7 +59,11 @@ class Transformation {
   /**
    * @description Allows the injection of a raw transformation as a string into the transformation, or a Transformation instance that was previously created
    * @param {string | SDK.Transformation} tx
-   * @example transformation.addTransformation('w_100/w_200/w_300');
+   * @example
+   * import {Transformation} from "@cloudinary/base";
+   *
+   * const transformation = new Transformation();
+   * transformation.addTransformation('w_100/w_200/w_300');
    * @return {this}
    */
   addTransformation(tx: string | Transformation): this {

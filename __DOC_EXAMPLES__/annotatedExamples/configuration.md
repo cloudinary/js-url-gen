@@ -1,4 +1,4 @@
-<h2>Global configuration (See {@link ICloudinaryConfigurations})</h2>
+<h2>1. Global configuration (See {@link ICloudinaryConfigurations})</h2>
 
 ```javascript
 // Import the cloudinary class
@@ -16,7 +16,7 @@ const cld = new Cloudinary({
 ```
 
 
-<h2>Instance configuration</h2>
+<h2>2. Instance configuration</h2>
 
 ```javascript
 
@@ -31,28 +31,4 @@ const image = new CloudinaryImage('sample', {
     // any urlConfiguration goes here
     secure: true // force https, set to false to force http
 });
-```
-
-<h2>Asset Description (See {@link IDescriptor})</h2>
-
-```javascript
-// Import the cloudinary class
-import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
-
-// Create your instance
-const cld = new Cloudinary({
-    cloud: {
-        cloudName: 'demo'
-    },
-    url: {
-        secure: true // force https, set to false to force http
-    }
-});
-
-const myAsset = cld.video(); // or cld.image()
-
-myAsset.setPublicID('some-remote-url')
-myAsset.storageType = 'fetch';
-
-// https://res.cloudinary.com/video/fetch/some-remote-url
 ```
