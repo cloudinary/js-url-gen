@@ -6,8 +6,12 @@ import {LayerAction} from "./layer/LayerAction";
  * @memberOf Actions
  * @namespace Overlay
  * @example
- * new CloudinaryImage('woman')
- *    .overlay(
+ * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ *
+ * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
+ * const image = yourCldInstance.image('woman');
+ *
+ * image.overlay(
  *       Overlay.source(Source.image('sample'))
  *     )
  */

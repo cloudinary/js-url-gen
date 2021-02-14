@@ -3,7 +3,15 @@
  * <b>Learn more</b>: {@link https://cloudinary.com/documentation/transformation_reference#fl_progressive | Progressive modes}
  * @memberOf Qualifiers
  * @namespace Progressive
- * @example yourAsset.delivery(Delivery.format(Format.jpg()).progressive(Progressive.steep()))
+ * @example
+ * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {format} from "@cloudinary/base/actions/delivery";
+ * import {jpg} from "@cloudinary/base/qualifiers/format";
+ * import {steep} from "@cloudinary/base/qualifiers/progressive";
+ *
+ * const yourCldInstance = new Cloudinary({cloud: {cloudName: 'demo'}});
+ * const image = yourCldInstance.image('woman');
+ * image.delivery(format(jpg()).progressive(steep()))
  */
 import {FlagQualifier} from "./flag/FlagQualifier";
 

@@ -9,7 +9,13 @@ import {RotationModeQualifierValue} from "../../qualifiers/rotate/RotationModeQu
  * For a list of supported rotation modes see {@link Qualifiers.rotationModeValues| types of rotation modes} for
  * possible values
  * @example
- * transformation.rotate(Rotate.mode(RotationMode.autoLeft());
+ * import {mode} from "@cloudinary/base/actions/rotate";
+ * import {RotationMode} from "@cloudinary/base/qualifiers/rotationMode";
+ *
+ * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
+ * const image = yourCldInstance.image('woman');
+ *
+ * image.rotate(mode(RotationMode.autoLeft());
  * @return {RotateAction}
  */
 function mode(rotationMode: RotationModeQualifierValue | string) :RotateAction {

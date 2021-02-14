@@ -9,8 +9,11 @@ import {FetchSource} from "../qualifiers/source/sourceTypes/FetchSource";
  * @namespace Underlay
  * @description Adds an image or a text layer as an underlay under the base layer. </br>
  * @example
- * new CloudinaryImage('woman')
- *    .underlay(
+ * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ *
+ * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
+ * const image = yourCldInstance.image('woman');
+ * image.underlay(
  *       Underlay.source(Source.image('sample'))
  *     )
  */

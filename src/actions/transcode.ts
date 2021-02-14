@@ -139,6 +139,9 @@ function toAnimated(animatedFormat: AnimatedFormatQualifierValue | string): ToAn
  * import {vp9} from '@cloudinary/base/qualifiers/videoCodec'
  * import {videoCodec} from '@cloudinary/base/actions/transcode'
  *
+ * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
+ * const video = yourCldInstance.video('dog');
+ *
  * video.transcode( videoCodec( vp9() ) );
  * @return {Actions.Transcode.VideoCodecAction}
  */

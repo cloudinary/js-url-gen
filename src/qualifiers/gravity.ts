@@ -13,7 +13,15 @@ import {XYCenterGravity} from "./gravity/xyCenterGravity/XYCenterGravity";
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#control_gravity | Control gravity for videos}
  * @param {Qualifiers.Compass} direction A compass Values
  * @memberOf Qualifiers.Gravity
- * @example image.resize(Resize.crop().width(300).gravity(Gravity.compass(Compass.north())))
+ * @example
+ * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {compass} from "@cloudinary/base/qualifiers/gravity";
+ * import {north} from "@cloudinary/base/qualifiers/compass";
+ * import {crop} from "@cloudinary/base/actions/resize";
+ *
+ * const yourCldInstance = new Cloudinary({cloud: {cloudName: 'demo'}});
+ * const image = yourCldInstance.image('woman');
+ * image.resize(crop().width(300).gravity(compass(north())))
  * @return {CompassGravity}
  */
 function compass(direction: CompassQualifier): CompassGravity {
@@ -25,7 +33,15 @@ function compass(direction: CompassQualifier): CompassGravity {
  * @description Specifies what to focus on, for example: faces, objects, eyes, etc.
  * @param {...Qualifier.FocusOn} args One or more objects to focus on
  * @memberOf Qualifiers.Gravity
- * @example image.resize(Resize.crop().width(300).gravity(Gravity.focusOn(FocusOn.cat())))
+ * @example
+ * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {focusOn} from "@cloudinary/base/qualifiers/gravity";
+ * import {crop} from "@cloudinary/base/actions/resize";
+ * import {cat} from "@cloudinary/base/qualifiers/focusOn";
+ *
+ * const yourCldInstance = new Cloudinary({cloud: {cloudName: 'demo'}});
+ * const image = yourCldInstance.image('woman');
+ * image.resize(crop().width(300).gravity(focusOn(cat())))
  * @return {FocusOnGravity}
  */
 function focusOn(...args: FocusOnValue[]): FocusOnGravity {
@@ -39,8 +55,24 @@ function focusOn(...args: FocusOnValue[]): FocusOnGravity {
  * @description Automatically identifies the most interesting regions in the asset, can be qualified further by including what to focus on.
  * @memberOf Qualifiers.Gravity
  * @return {Qualifiers.Gravity.AutoGravity}
- * @example image.resize(Resize.crop().width(300).gravity(Gravity.autoGravity()))
- * @example image.resize(Resize.crop().width(300).gravity(Gravity.autoGravity().autoFocus(AutoFocus.focusOn(FocusOn.cat()))))
+ * @example
+ * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {autoGravity} from "@cloudinary/base/qualifiers/gravity";
+ * import {crop} from "@cloudinary/base/actions/resize";
+ *
+ * const yourCldInstance = new Cloudinary({cloud: {cloudName: 'demo'}});
+ * const image = yourCldInstance.image('woman');
+ * image.resize(crop().width(300).gravity(autoGravity()))
+ * @example
+ * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {autoGravity} from "@cloudinary/base/qualifiers/gravity";
+ * import {crop} from "@cloudinary/base/actions/resize";
+ * import {cat} from "@cloudinary/base/qualifiers/focusOn";
+ * import {AutoFocus} from "@cloudinary/base/qualifiers/autoFocus";
+ *
+ * const yourCldInstance = new Cloudinary({cloud: {cloudName: 'demo'}});
+ * const image = yourCldInstance.image('woman');
+ * image.resize(crop().width(300).gravity(autoGravity().autoFocus(AutoFocus.focusOn(cat()))))
  */
 function autoGravity(): AutoGravity {
   return new AutoGravity();
@@ -65,7 +97,7 @@ function ocr(): OCR {
  * @memberOf Qualifiers.Gravity
  * @return {XYCenterGravity}
  */
-function xyCenter() {
+function xyCenter(): XYCenterGravity {
   return new XYCenterGravity();
 }
 
@@ -76,7 +108,15 @@ function xyCenter() {
  *              when any part of the asset is cropped. For overlays, this setting determines where to place the overlay.
  * @namespace Gravity
  * @memberOf Qualifiers
- * @example image.resize(Resize.crop().width(300).gravity(Gravity.compass(Compass.north())))
+ * @example
+ * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {compass} from "@cloudinary/base/qualifiers/gravity";
+ * import {north} from "@cloudinary/base/qualifiers/compass";
+ * import {crop} from "@cloudinary/base/actions/resize";
+ *
+ * const yourCldInstance = new Cloudinary({cloud: {cloudName: 'demo'}});
+ * const image = yourCldInstance.image('woman');
+ * image.resize(crop().width(300).gravity(compass(north())))
  */
 const Gravity = {
   compass: compass,

@@ -7,7 +7,7 @@
 import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
 import {Rotate} from "@cloudinary/base/actions/rotate";
 import {Resize} from "@cloudinary/base/actions/resize";
-import {RotationMode} from "@cloudinary/base/qualifiers/RotationMode";
+import {RotationMode} from "@cloudinary/base/qualifiers/rotationMode";
 
 // Create your instance
 const cld = new Cloudinary({
