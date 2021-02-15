@@ -6,9 +6,15 @@ import IURLConfig from "../../src/config/interfaces/Config/IURLConfig";
  *
  */
 function createNewImage(publicID?: string, cloudConfig?: ICloudConfig, urlConfig?:IURLConfig): CloudinaryImage {
-  return new CloudinaryImage(publicID, Object.assign({
+  const newCloudConfig = Object.assign({
     cloudName: 'demo'
-  }, cloudConfig), urlConfig);
+  }, cloudConfig);
+
+  const newUrlConfig = Object.assign({
+    analytics: false
+  }, urlConfig);
+
+  return new CloudinaryImage(publicID, newCloudConfig, newUrlConfig);
 }
 
 export {createNewImage};
