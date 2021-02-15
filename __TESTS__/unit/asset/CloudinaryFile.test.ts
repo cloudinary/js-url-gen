@@ -3,7 +3,7 @@ import {CloudinaryFile} from "../../../src/assets/CloudinaryFile";
 describe('Tests for CloudinaryFile', () => {
   let cloudinaryFile: CloudinaryFile = null;
   beforeEach(() => {
-    cloudinaryFile = new CloudinaryFile('sample', {cloudName:'demo'});
+    cloudinaryFile = new CloudinaryFile('sample', {cloudName:'demo'}, {analytics:false});
   });
 
   it('Instantiates a cloudinaryFile', () => {
