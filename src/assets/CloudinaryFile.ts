@@ -9,6 +9,8 @@ import ICloudConfig from "../config/interfaces/Config/ICloudConfig";
 import IURLConfig from "../config/interfaces/Config/IURLConfig";
 import IAuthTokenConfig from "../config/interfaces/Config/IAuthTokenConfig";
 import URLConfig from "../config/URLConfig";
+import {getSDKAnalyticsSignature} from "../sdkAnalytics/getSDKAnalyticsSignature";
+import {ITrackedPropertiesThroughAnalytics} from "../sdkAnalytics/interfaces/ITrackedPropertiesThroughAnalytics";
 
 /**
  * @desc Cloudinary file without a transformation
@@ -72,8 +74,8 @@ class CloudinaryFile {
     return this;
   }
 
-  toURL(): string {
-    return this.createCloudinaryURL();
+  toURL(trackedAnalytics?: ITrackedPropertiesThroughAnalytics): string {
+    return this.createCloudinaryURL(null, trackedAnalytics);
   }
 
 
@@ -82,7 +84,7 @@ class CloudinaryFile {
    * @description Creates a fully qualified CloudinaryURL
    * @return {string} CloudinaryURL
    */
-  createCloudinaryURL(transformation?: Transformation | string): string {
+  createCloudinaryURL(transformation?: Transformation | string, trackedAnalytics?: Partial<ITrackedPropertiesThroughAnalytics>): string {
     if (typeof this.cloudName === 'undefined') {
       throw 'You must supply a cloudName in either toURL() or when initializing the asset';
     }
@@ -106,9 +108,16 @@ class CloudinaryFile {
     if (typeof transformation === 'string') {
       return url;
     } else {
-      return encodeURI(url)
+      const safeURL = encodeURI(url)
         .replace(/\?/g, '%3F')
         .replace(/=/g, '%3D');
+
+      // True by default, has to be explicitly set to false to overwrite
+      if (this.urlConfig.analytics !== false) {
+        return `${safeURL}?${getSDKAnalyticsSignature(trackedAnalytics)}`;
+      } else {
+        return safeURL;
+      }
     }
   }
 }

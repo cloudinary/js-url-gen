@@ -6,6 +6,7 @@ import {Transformation} from "../transformation/Transformation";
 import ICloudConfig from "../config/interfaces/Config/ICloudConfig";
 import IURLConfig from "../config/interfaces/Config/IURLConfig";
 import cloneDeep from 'lodash/cloneDeep';
+import {ITrackedPropertiesThroughAnalytics} from "../sdkAnalytics/interfaces/ITrackedPropertiesThroughAnalytics";
 
 
 /**
@@ -46,10 +47,6 @@ class CloudinaryMedia extends CloudinaryTransformable {
   underlay(underlayAction: LayerAction): this {
     this.transformation.underlay(underlayAction);
     return this;
-  }
-
-  toURL(): string {
-    return this.createCloudinaryURL(this.transformation);
   }
 
   clone(): this {

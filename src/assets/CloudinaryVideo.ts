@@ -37,10 +37,6 @@ class CloudinaryVideo extends CloudinaryTransformable {
     this.transformation.videoEdit(action);
     return this;
   }
-
-  toURL(): string {
-    return this.createCloudinaryURL(this.transformation);
-  }
 }
 
 

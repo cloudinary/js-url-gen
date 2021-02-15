@@ -24,6 +24,7 @@ import ICloudConfig from "../config/interfaces/Config/ICloudConfig";
 import {IDeliveryAction} from "../actions/delivery";
 import {IAdjustAction} from "../actions/adjust";
 import {DeliveryQualityAction} from "../actions/delivery/DeliveryQuality";
+import {ITrackedPropertiesThroughAnalytics} from "../sdkAnalytics/interfaces/ITrackedPropertiesThroughAnalytics";
 
 /**
  * @desc Cloudinary Transformable interface, extended by any class that needs a Transformation Interface
@@ -251,6 +252,10 @@ class CloudinaryTransformable extends CloudinaryFile {
   underlay(underlayAction: LayerAction): this {
     this.transformation.underlay(underlayAction);
     return this;
+  }
+
+  toURL(trackedAnalytics?: Partial<ITrackedPropertiesThroughAnalytics>): string {
+    return this.createCloudinaryURL(this.transformation, trackedAnalytics);
   }
 }
 
