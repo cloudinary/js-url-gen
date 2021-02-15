@@ -15,7 +15,8 @@ export const ALLOWED_URL_CONFIG = [
   'shorten',
   'useRootPath',
   'secure',
-  'forceVersion'
+  'forceVersion',
+  'analytics'
 ];
 
 /**
