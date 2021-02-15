@@ -1,5 +1,6 @@
 import resolve from '@rollup/plugin-node-resolve';
 import typescript from 'rollup-plugin-typescript';
+import json from '@rollup/plugin-json';
 
 export default [{
   input: 'src/index.ts',
@@ -11,6 +12,7 @@ export default [{
     }
   ],
   plugins: [
+    json(),
     resolve(),
     typescript({ target: "es5"})
   ]
