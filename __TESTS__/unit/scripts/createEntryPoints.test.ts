@@ -14,7 +14,7 @@ describe('Tests for createEntryPoints', () => {
   });
 
   it ('Creates the main entrypoint to the project', () => {
-    createEntryPoints.createMainEntryPoint();
+    createEntryPoints.copyPackageJson();
     const mainPackageJson = JSON.parse(fs.readFileSync('./dist/package.json', 'utf-8'));
 
     // Expect the right main entrypoint

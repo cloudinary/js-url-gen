@@ -32,7 +32,7 @@ function createUMDBundleEntryPoint() {
  * @description Since only ./dist/ is packaged to npm, we need to copy a proper package.json file to it
  *              That will allow `import {TransformableImage} from '@cloudinary/base`
  */
-function createMainEntryPoint() {
+function copyPackageJson(fileDestination = 'dist') {
   const projectJson = JSON.parse(fs.readFileSync('./package.json', 'utf-8'));
   delete projectJson.scripts;
   delete projectJson.devDependencies;
@@ -40,12 +40,12 @@ function createMainEntryPoint() {
   projectJson.browser = './index.js';
 
   Object.assign(projectJson, commonPackageProperties);
-  fs.writeFileSync('./dist/package.json', JSON.stringify(projectJson, null, '\t'));
+  fs.writeFileSync(`./${fileDestination}/package.json`, JSON.stringify(projectJson, null, '\t'));
 }
 
 
 module.exports = {
-  createMainEntryPoint,
+  copyPackageJson,
   createUMDBundleEntryPoint
 };
 

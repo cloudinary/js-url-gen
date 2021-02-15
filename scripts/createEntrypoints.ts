@@ -11,13 +11,13 @@
  */
 
 const {
-  createMainEntryPoint,
+  copyPackageJson,
   createUMDBundleEntryPoint
 } = require('./lib/entryPointsLib');
 
 
 // Allows import from '@base' (With types)
-createMainEntryPoint();
+copyPackageJson();
 
 // Allows import from '@base/bundles/umd' (With types)
 createUMDBundleEntryPoint();
