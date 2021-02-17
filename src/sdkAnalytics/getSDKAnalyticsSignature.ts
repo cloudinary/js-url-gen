@@ -29,7 +29,7 @@ function ensureShapeOfTrackedProperties(trackedAnalytics?: Partial<ITrackedPrope
   const defaults = {
     techVersion: getNodeVersion(),
     sdkCode: 'T', // Base code
-    sdkSemver : pkg.version.split('-')[0], // remove -beta, -alpha etc.
+    sdkSemver : pkg.version.split('-')[0], // remove -beta, -alpha or other tagged versions from the version string
     responsive: false,
     placeholder: false,
     lazyload: false,

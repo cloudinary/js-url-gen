@@ -15,7 +15,7 @@ describe('Add analytics to a regular URL', () => {
     // Generate a URL with provided sdkSemver and techVersion, but we're using the values that should be given by default
     const sigFromExplicitPackageVersion = cldImage.toURL({
       trackedAnalytics: {
-        sdkSemver: pkg.version.split('-')[0], // If not specified, this is taken from package.json
+        sdkSemver: pkg.version.split('-')[0], // remove -beta, -alpha or other tagged versions from the version string
         techVersion: process.versions.node
       }
     }).split('?')[1];

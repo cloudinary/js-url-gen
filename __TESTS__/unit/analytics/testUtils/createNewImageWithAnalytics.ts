@@ -7,5 +7,5 @@ import {createNewImage} from "../../../TestUtils/createCloudinaryImage";
  * Create a new CloudinaryImage with analytics turned on by default
  */
 export function createNewImageWithAnalytics(publicID: string, cloudConfig?: ICloudConfig, urlConfig?: IURLConfig): CloudinaryImage {
-  return createNewImage(publicID, {cloudName: 'demo'}, urlConfig || {analytics: true});
+  return createNewImage(publicID, {cloudName: 'demo'}, {analytics: true, ...urlConfig});
 }
