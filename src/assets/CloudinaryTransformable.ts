@@ -254,8 +254,8 @@ class CloudinaryTransformable extends CloudinaryFile {
     return this;
   }
 
-  toURL(trackedAnalytics?: Partial<ITrackedPropertiesThroughAnalytics>): string {
-    return this.createCloudinaryURL(this.transformation, trackedAnalytics);
+  toURL(overwriteOptions: {trackedAnalytics?: Partial<ITrackedPropertiesThroughAnalytics>} = {}): string {
+    return this.createCloudinaryURL(this.transformation, overwriteOptions?.trackedAnalytics);
   }
 }
 
