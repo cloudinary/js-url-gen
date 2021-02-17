@@ -15,6 +15,13 @@ export function reverseVersion(semVer: string): string {
 
   // Split by '.', reverse, create new array with padded values and concat it together
   return semVer.split('.').reverse().map((segment) => {
+    // try to cast to number
+    const asNumber = +segment;
+
+    if (isNaN(asNumber) || asNumber < 0) {
+      throw 'Invalid version number provided';
+    }
+
     return stringPad(segment, 2, '0');
   }).join('.');
 }
