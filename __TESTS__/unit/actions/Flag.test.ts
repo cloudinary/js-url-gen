@@ -31,6 +31,9 @@ describe('Tests for Transformation Action -- Flag', () => {
       .addFlag(Flag.keepIptc())
       .addFlag(Flag.custom('myFlag'))
       .addFlag(Flag.layerApply())
+      .addFlag(Flag.ignoreMaskChannels())
+
+
 
       .setPublicID('sample')
       .toURL();
@@ -57,7 +60,8 @@ describe('Tests for Transformation Action -- Flag', () => {
       'fl_keep_attribution',
       'fl_keep_iptc',
       'fl_myFlag',
-      'fl_layer_apply'
+      'fl_layer_apply',
+      'fl_ignore_mask_channels'
     ].join('/');
 
     expect(url).toBe(`https://res.cloudinary.com/demo/image/upload/${expectedToContain}/sample`);

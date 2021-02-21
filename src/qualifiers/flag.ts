@@ -484,6 +484,16 @@ function waveform(): FlagQualifier {
   return new FlagQualifier('waveform');
 }
 
+/**
+ * @summary qualifier
+ * @memberOf Qualifiers.Flag
+ * @description A qualifier that ensures that an alpha channel is not applied to a TIFF image if it is a mask channel.
+ * @return {Qualifiers.Flag.FlagQualifier}
+ */
+function ignoreMaskChannels(): FlagQualifier {
+  return new FlagQualifier('ignore_mask_channels');
+}
+
 
 const Flag = {
   animated, anyFormat, animatedPng, animatedWebP,
@@ -491,7 +501,7 @@ const Flag = {
   sanitize, stripProfile, tiff8Lzw, attachment, forceIcc, forceStrip, getInfo, immutableCache,
   keepAttribution, keepIptc, custom, streamingAttachment, hlsv3, keepDar, noStream, mono,
   layerApply, relative, regionRelative, splice, truncateTS, waveform, ignoreInitialAspectRatio, clip,
-  tiled, noOverflow
+  tiled, noOverflow, ignoreMaskChannels
 };
 
 export {
@@ -500,7 +510,7 @@ export {
   sanitize, stripProfile, tiff8Lzw, attachment, forceIcc, forceStrip, getInfo, immutableCache,
   keepAttribution, keepIptc, custom, streamingAttachment, hlsv3, keepDar, noStream, mono,
   layerApply, relative, regionRelative, splice, truncateTS, waveform, ignoreInitialAspectRatio, clip,
-  tiled, noOverflow
+  tiled, noOverflow, ignoreMaskChannels
 };
 
 
