@@ -1,6 +1,6 @@
-type StreamingProfiles = string | "4k" | "full_hd" | "hd" | "sd" | "full_hd_wifi" | "full_hd_lean" | "hd_lean";
+export type StreamingProfiles = string | "4k" | "full_hd" | "hd" | "sd" | "full_hd_wifi" | "full_hd_lean" | "hd_lean";
 
-type stringOrNumber = number | string;
+export type stringOrNumber = number | string;
 
 export type CropMode =
   string
