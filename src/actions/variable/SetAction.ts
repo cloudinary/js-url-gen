@@ -9,17 +9,23 @@ import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifi
  */
 class SetAction extends VariableAction {
   constructor(name: string, value: number | string | string[] | number[] | ExpressionQualifier) {
-    let normalizedValue;
     const parsedValue = Array.isArray(value) ? value.join(':') : value;
-    if(isString(parsedValue)){
-      normalizedValue = `!${parsedValue}!`;
-      //is number
-    }else{
-      normalizedValue = parsedValue;
+
+
+    let finalValue: string | number | ExpressionQualifier;
+    if (isString(parsedValue)) {
+      finalValue = `!${parsedValue
+        .replace(/,/g, '%2C')
+        .replace(/\//g, '%2F')
+        .replace(/!/g, '%21')}!`;
+    } else {
+      finalValue = parsedValue;
     }
+
+
     // Required due to https://github.com/microsoft/TypeScript/issues/13029
     /* istanbul ignore next */
-    super(name, normalizedValue);
+    super(name, finalValue);
   }
 }
 

@@ -17,9 +17,7 @@ class CustomFunctionAction extends Action {
   }
 
   private encodeCustomFunctionString(fn:string):string {
-    const encodedSource = base64Encode(fn)
-      .replace(/\+/g, '-') // Convert '+' to '-'
-      .replace(/\//g, '_'); // Convert '/' to '_'
+    const encodedSource = base64Encode(fn);
     return encodedSource;
   }
 
@@ -39,6 +37,11 @@ class CustomFunctionAction extends Action {
       this.encodedFn = this.encodeCustomFunctionString(this.fn);
     }
     return this.addQualifier(new Qualifier('fn', new QualifierValue([this.pre, this.mode, this.encodedFn])));
+  }
+
+  toString() {
+    return super.toString()
+      .replace(/\//g, ':');
   }
 }
 
