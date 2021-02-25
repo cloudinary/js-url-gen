@@ -309,4 +309,11 @@ describe('Tests for Transformation Action -- Effect', () => {
     expect(Effect.removeBackground().screen().colorToRemove(Color.RED).toString()).toBe('e_bgremoval:screen:red');
     expect(Effect.removeBackground().screen().colorToRemove('#fff').toString()).toBe('e_bgremoval:screen:fff');
   });
+
+  it('Test theme effect', () => {
+    expect(Effect.theme('red').toString()).toBe('e_theme:color_red');
+    expect(Effect.theme('#fff').toString()).toBe('e_theme:color_fff');
+    expect(Effect.theme('fff').toString()).toBe('e_theme:color_fff');
+    expect(Effect.theme('red').photosensitivity(50).toString()).toBe('e_theme:color_red:photosensitivity_50');
+  });
 });

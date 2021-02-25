@@ -22,6 +22,8 @@ import {EffectActionWithStrength} from "./effect/EffectActions/EffectActionWithS
 import {BlackwhiteEffectAction} from "./effect/leveled/blackwhite";
 import {FadeInEffectAction} from "./effect/leveled/fadeIn";
 import {RemoveBackgroundAction} from "./effect/removeBackgroundAction";
+import {ThemeEffect} from "./effect/theme";
+import {SystemColors} from "../qualifiers/color";
 
 
 /**
@@ -434,13 +436,22 @@ function removeBackground(): RemoveBackgroundAction {
   return new RemoveBackgroundAction();
 }
 
+/**
+ *
+ * @description Changes the main background color to the one specified, as if a 'theme change' was applied (e.g. dark mode vs light mode).
+ * @param {SystemColors} color
+ * @return {Actions.Effect.ThemeEffect}
+ */
+function theme(color: SystemColors): ThemeEffect {
+  return new ThemeEffect(color);
+}
+
 
 /**
  * @description Defines effects that you can apply to transform your assets.
  * @memberOf Actions
  * @namespace Effect
  */
-
 const Effect = {
   pixelate: pixelate,
   deshake: deshake,
@@ -473,7 +484,8 @@ const Effect = {
   simulateColorBlind: simulateColorBlind,
   transition: transition,
   dither: dither,
-  removeBackground
+  removeBackground,
+  theme
 };
 
 
@@ -526,5 +538,6 @@ export {
   simulateColorBlind,
   transition,
   dither,
-  removeBackground
+  removeBackground,
+  theme
 };
