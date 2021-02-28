@@ -39,6 +39,7 @@ class CloudinaryFile {
   public version: number | string;
   public publicID: string;
   public extension: string;
+  public signature: string;
   public suffix: string;
   public storageType: string; // type upload/private
 
