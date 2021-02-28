@@ -13,8 +13,8 @@ type TypeVariableValue = number | string | ExpressionQualifier;
 class VariableAction extends Action {
   private isFloat = false;
   private isNumber = false;
-  private readonly value: TypeVariableValue;
-  private readonly name: string;
+  protected readonly value: TypeVariableValue;
+  protected readonly name: string;
   constructor(name: string, value: TypeVariableValue) {
     super();
     this.value = value;

@@ -26,7 +26,7 @@ function mapToSortedArray<T>(map: Map<string, T | FlagQualifier>, flags: FlagQua
  * @param {*} value The value to check.
  * @return {boolean} `true` if `value` is a string, else `false`.
  */
-function isString(value: any): boolean {
+function isString(value: any): value is string {
   return (typeof value === 'string' || value instanceof String);
 }
 
