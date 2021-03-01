@@ -269,7 +269,7 @@ Handlebars.registerPartial("site/layout", this["tmpl"]["site/layout"] = Handleba
     + ((stack1 = (helpers.block || (depth0 && depth0.block) || alias2).call(alias1,"footer",{"name":"block","hash":{},"fn":container.program(53, data, 0, blockParams, depths),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "	</footer>\r\n"
     + ((stack1 = helpers["if"].call(alias1,((stack1 = (depth0 != null ? depth0.config : depth0)) != null ? stack1.debug : stack1),{"name":"if","hash":{},"fn":container.program(60, data, 0, blockParams, depths),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "	<script src=\"js/jquery.min.js\"></script>\r\n	<script src=\"js/bootstrap.min.js\"></script>\r\n	<script src=\"js/clipboard.min.js\"></script>\r\n	<script src=\"js/prism.min.js\"></script>\r\n	<script src=\"js/template.min.js\"></script>\r\n"
+    + "	<script src=\"js/jquery.min.js\"></script>\r\n	<script src=\"js/bootstrap.min.js\"></script>\r\n	<script src=\"js/clipboard.min.js\"></script>\r\n  <script src=\"js/prism.js\"></script>\r\n	<script src=\"js/prism.min.js\"></script>\r\n	<script src=\"js/template.min.js\"></script>\r\n"
     + ((stack1 = helpers["if"].call(alias1,((stack1 = (depth0 != null ? depth0.options : depth0)) != null ? stack1.search : stack1),{"name":"if","hash":{},"fn":container.program(62, data, 0, blockParams, depths),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + ((stack1 = helpers.each.call(alias1,((stack1 = (depth0 != null ? depth0.options : depth0)) != null ? stack1.scripts : stack1),{"name":"each","hash":{},"fn":container.program(64, data, 0, blockParams, depths),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "	"

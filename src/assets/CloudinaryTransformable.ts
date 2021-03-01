@@ -1,4 +1,4 @@
-import {Border} from "../actions/border";
+import {Border, BorderAction} from "../actions/border";
 import {IReshape} from "../actions/reshape";
 import ResizeSimpleAction from "../actions/resize/ResizeSimpleAction";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
@@ -43,7 +43,7 @@ class CloudinaryTransformable extends CloudinaryFile {
    * @param {Actions.Border} border
    * @return {this}
    */
-  border(border: Border): this {
+  border(border: BorderAction): this {
     this.transformation.border(border);
     return this;
   }
