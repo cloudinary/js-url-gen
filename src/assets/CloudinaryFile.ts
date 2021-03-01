@@ -36,12 +36,12 @@ class CloudinaryFile {
   protected authToken: IAuthTokenConfig; // populated from the cloud config
   protected urlConfig: IURLConfig;
 
-  public version: number | string;
-  public publicID: string;
-  public extension: string;
-  public signature: string;
-  public suffix: string;
-  public storageType: string; // type upload/private
+  private version: number | string;
+  private publicID: string;
+  private extension: string;
+  private signature: string;
+  private suffix: string;
+  private storageType: string; // type upload/private
 
   constructor(publicID: string, cloudConfig: ICloudConfig = {}, urlConfig?: IURLConfig) {
     this.setPublicID(publicID);
