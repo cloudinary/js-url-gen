@@ -5,6 +5,7 @@ import {prepareColor} from "../internal/utils/prepareColor";
 import {SystemColors} from "../qualifiers/color";
 import RoundCornersAction from "./roundCorners/RoundCornersAction";
 
+
 /**
  * @summary action
  * @description Adds a solid border around an image or video.
@@ -13,23 +14,42 @@ import RoundCornersAction from "./roundCorners/RoundCornersAction";
  * {@link https://cloudinary.com/documentation/image_transformations#adding_image_borders | Adding image borders}
  * @memberOf Actions
  * @namespace Border
+ * @example
+ * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ *
+ * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
+ * const image = yourCldInstance.image('woman');
+ * image.border(
+ *  Border.solid(15, 'green'),
+ *  // Or alternatively
+ *  Border.solid().width(15).color('green')
+ * );
+ *
  */
-class Border extends Action {
+
+
+
+/**
+ * @memberOf Actions.Border
+ * @example
+ * // Used through a builder function Border.solid(), and not by creating a new instance
+ * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ *
+ * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
+ * const image = yourCldInstance.image('woman');
+ * image.border(
+ *  Border.solid(15, 'green'),
+ *  // Or alternatively
+ *  Border.solid().width(15).color('green')
+ * );
+ */
+class BorderAction extends Action {
   private borderWidth: number | string;
   private borderColor: string;
   private borderType: string;
   private _roundCorners: RoundCornersAction;
 
 
-  /**
-   * @summary action
-   * @memberOf Actions.Border
-   * @description Sets the style of the border.
-   * @return {Border}
-   */
-  static solid(width: number | string, color: SystemColors): Border {
-    return new Border('solid', color, width);
-  }
 
   /**
    * @description Adds a border of the specified type around an image or video.
@@ -46,9 +66,9 @@ class Border extends Action {
 
   /**
    * @description Sets the width of the border
-   * @param {number} borderWidth The width in pixels.
+   * @param {number | string} borderWidth The width in pixels.
    */
-  width(borderWidth: number): this {
+  width(borderWidth: number | string): this {
     this.borderWidth = borderWidth;
     return this;
   }
@@ -82,6 +102,24 @@ class Border extends Action {
   }
 }
 
-const {solid} = Border;
 
-export {Border, solid};
+
+
+/**
+ * @summary action
+ * @memberOf Actions.Border
+ * @description Sets the style of the border.
+ * @param {number | string} width The width in pixels.
+ * @param {string} color The color of the border, e.g 'green', 'yellow'.
+ * @return {Actions.Border.BorderAction}
+ */
+function solid(width: number | string, color: SystemColors): BorderAction {
+  return new BorderAction('solid', color, width);
+}
+
+
+const Border = {
+  solid
+};
+
+export {BorderAction, Border, solid};
