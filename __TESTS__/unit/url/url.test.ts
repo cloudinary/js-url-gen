@@ -1,112 +1,94 @@
 import {createNewImage} from "../../TestUtils/createCloudinaryImage";
 import {CloudinaryImage} from "../../../src";
 import {Resize} from "../../../src/actions/resize";
-import URLConfig from "../../../src/config/URLConfig";
 import {Rotate} from "../../../src/actions/rotate";
+import {SEO_TYPES} from "../../../src/assets/CloudinaryFile";
 
 
 describe('Tests for URL configuration', () => {
-  it.skip('should support external cname with cdn_subdomain on', () => {
-    const urlConfig = new URLConfig({
-      cname: 'hello.com',
-      cdnSubdomain: true
-    });
+  it('should allow to shorted image/upload urls', () => {
+    const url = createNewImage('sample', {}, {
+      shorten:true
+    }).toURL();
 
-    const url = createNewImage('test', {}, urlConfig).toURL();
-    expect(url).toEqual('https://a2.hello.com/test123/image/upload/test');
+    expect(url).toEqual('https://res.cloudinary.com/demo/iu/sample');
   });
 
-  it.skip('should allow to shorted image/upload urls', () => {
-    const urlConfig = new URLConfig({
-      shorten: true
-    });
+  it('should support `suffix` with `sharedDistribution', () => {
+    const image = createNewImage('sample').setSuffix('hello');
 
-    const url = createNewImage('test', {}, urlConfig).toURL();
-    expect(url).toEqual('https://res.cloudinary.com/test123/iu/test');
+    expect(image.toURL()).toEqual('https://res.cloudinary.com/demo/images/sample/hello');
+
+    image.rotate(Rotate.byAngle(0));
+    expect(image.toURL()).toEqual('https://res.cloudinary.com/demo/images/a_0/sample/hello');
   });
 
-  it.skip('should support url_suffix in shared distribution', () => {
+  it('should support `suffix` with `privateCdn`', () => {
+    const image = createNewImage('sample', {}, {privateCdn: true})
+      .setSuffix('hello');
+
+    expect(image.toURL()).toEqual('https://demo-res.cloudinary.com/images/sample/hello');
+
+    image.rotate(Rotate.byAngle(0));
+    expect(image.toURL()).toEqual('https://demo-res.cloudinary.com/images/a_0/sample/hello');
+  });
+
+  it('should only allow `suffix` with a predfined list of storageType/assetType', () => {
+    const image = createNewImage('test')
+      .setSuffix('abc');
+
+    // Suffix only works with predefined SEO_TYPES
+    Object.keys(SEO_TYPES).forEach((resourceType) => {
+      const [assetType, storageType] = resourceType.split('/');
+      image.setStorageType(assetType)
+        .setStorageType(storageType);
+
+      expect(image.toURL.bind(image)).not.toThrow();
+    });
+
+    // Any other storage type should throw
+    image.setStorageType('fff');
+    expect(image.toURL.bind(image)).toThrow();
+  });
+
+  it('should disallow url_suffix with / or .', () => {
     const image = createNewImage('test');
-    image.suffix = 'hello';
 
-    expect(image.toURL()).toEqual('https://res.cloudinary.com/test123/images/test/hello');
+    image.setSuffix('hello/world');
+    expect(image.toURL.bind(image)).toThrow();
 
-    image.rotate(Rotate.byAngle(0));
-    expect(image.toURL()).toEqual('https://res.cloudinary.com/test123/images/a_0/test/hello');
+    image.setSuffix('hello.world');
+    expect(image.toURL.bind(image)).toThrow();
   });
 
-  it.skip('should support url_suffix for private_cdn', () => {
-    const urlConfig = new URLConfig({
-      privateCdn: true
-    });
-
-    const image = createNewImage('test', {}, urlConfig);
-    image.suffix = 'hello';
-
-    expect(image.toURL()).toEqual('https://res.cloudinary.com/test123/images/test/hello');
-
-    image.rotate(Rotate.byAngle(0));
-    expect(image.toURL()).toEqual('https://test123-res.cloudinary.com/images/a_0/test/hello');
-  });
-
-  it.skip('should disallow url_suffix in non upload types', () => {
-    const urlConfig = new URLConfig({
-      privateCdn: true,
-      type: 'facebook'
-    });
-
-    const image = createNewImage('test', {}, urlConfig);
-    image.suffix = 'hello';
-
-    expect(image.toURL()).toThrow();
-  });
-
-  it.skip('should disallow url_suffix with / or .', () => {
-    const urlConfig = new URLConfig({
-      privateCdn: true
-    });
-
-    const image = createNewImage('test', {}, urlConfig);
-    image.suffix = 'hello/world';
-
-    expect(image.toURL()).toThrow();
-
-    image.suffix = 'hello.world';
-    expect(image.toURL()).toThrow();
-  });
-
-  it.skip('should support use_root_path in shared distribution', () => {
-    const urlConfig = new URLConfig({
+  it('should support `useRootPath` with `privateCdn`', () => {
+    const image = createNewImage('test', {}, {
       privateCdn: true,
       useRootPath: true
     });
 
-    const image = createNewImage('test', {}, urlConfig);
-
-    expect(image.toURL()).toEqual('https://res.cloudinary.com/test123/test');
-
-    image.suffix = 'hello.world';
-    expect(image.toURL()).toThrow();
+    expect(image.toURL()).toEqual('https://demo-res.cloudinary.com/test');
 
     image.rotate(Rotate.byAngle(0));
-    expect(image.toURL()).toEqual('https://res.cloudinary.com/test123/a_0/test');
+    expect(image.toURL()).toEqual('https://demo-res.cloudinary.com/a_0/test');
   });
 
-  it.skip('should accept public_id with special characters', () => {
-    const url = createNewImage('public%id')
-      .toURL();
-    expect(url).toEqual('https://res.cloudinary.com/test123/image/upload/public%25id');
+  it('should accept public_id with special characters', () => {
+    const image = createNewImage('public%id');
+    expect(image.toURL()).toEqual('https://res.cloudinary.com/demo/image/upload/public%25id');
   });
 
-  it.skip('should not fail on falsy public_id', () => {
-    const url = createNewImage(void 0)
+  it('should not fail on falsy public_id', () => {
+    const url = createNewImage(null)
       .toURL();
-    expect(url).toEqual(void 0);
+    expect(url).toEqual('');
   });
-  
-  it.skip('url should support signature option', () => {
+
+  it('Should support an external signature', () => {
     const image = new CloudinaryImage('sample', {cloudName: 'demo'}, {});
     const signature = "some-signature";
+
+    image.setSignature(signature);
     //image.signature(signature)
     image.resize(Resize.crop().width(100));
     const url = image.toURL();
