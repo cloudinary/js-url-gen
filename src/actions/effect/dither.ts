@@ -2,7 +2,9 @@ import {LeveledEffectAction} from "./EffectActions/LeveledEffectAction";
 
 /**
  * @description Applies an ordered dither filter to the image.
- * @augments LeveledEffectAction
+ * @extends LeveledEffectAction
+ * @memberOf Actions.Effect
+ * @see Visit {@link Actions.Effect|Effect} for an example
  */
 class DitherEffectAction extends LeveledEffectAction {
   /**

@@ -2,8 +2,10 @@ import {LeveledEffectAction} from "../EffectActions/LeveledEffectAction";
 import {ExpressionQualifier} from "../../../qualifiers/expression/ExpressionQualifier";
 
 /**
- * @augments LeveledEffectAction
  * @description Removes small motion shifts from the video. with a maximum extent of movement in the horizontal and vertical direction of 32 pixels
+ * @extends LeveledEffectAction
+ * @memberOf Actions.Effect
+ * @see Visit {@link Actions.Effect|Effect} for an example
  */
 class DeshakeEffectAction extends LeveledEffectAction {
   /**

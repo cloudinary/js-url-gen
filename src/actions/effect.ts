@@ -31,7 +31,7 @@ import {SystemColors} from "../qualifiers/color";
  * @description Applies a blurring filter to the asset.
  * @memberOf Actions.Effect
  * @param {number} blurLevel The strength of the blur. (Range: 1 to 2000, Server default: 100)
- * @return {BlurAction}
+ * @return {Actions.Effect.BlurAction}
  */
 function blur(blurLevel?: number): BlurAction {
   return new BlurAction(blurLevel);
@@ -41,7 +41,7 @@ function blur(blurLevel?: number): BlurAction {
  * @summary action
  * @description Converts the image to gray-scale (multiple shades of gray).
  * @memberOf Actions.Effect
- * @return {SimpleEffectAction}
+ * @return {Actions.Effect.SimpleEffectAction}
  */
 function grayscale():SimpleEffectAction {
   return new SimpleEffectAction('grayscale');
@@ -54,7 +54,7 @@ function grayscale():SimpleEffectAction {
  * @description Changes the color scheme of the image to sepia.
  * @memberOf Actions.Effect
  * @param {number} level The level of sepia to apply. (Range: 1 to 100, Server default: 80)
- * @return {EffectActionWithLevel}
+ * @return {Actions.Effect.EffectActionWithLevel}
  */
 function sepia(level?: number):EffectActionWithLevel {
   return new EffectActionWithLevel('sepia', level);
@@ -67,7 +67,7 @@ function sepia(level?: number):EffectActionWithLevel {
  * @description Applies a shadow filter to the asset.
  * @memberOf Actions.Effect
  * @param shadowLevel
- * @return {ShadowEffectAction}
+ * @return {Actions.Effect.ShadowEffectAction}
  */
 function shadow(shadowLevel?: number):ShadowEffectAction {
   return new ShadowEffectAction('shadow', shadowLevel);
@@ -79,7 +79,7 @@ function shadow(shadowLevel?: number):ShadowEffectAction {
  * @description Applies a colorizing filter to the asset.
  * @memberOf Actions.Effect
  * @param {number} colorizeLevel The strength of the color. (Range: 0 to 100, Server default: 100)
- * @return {ColorizeEffectAction}
+ * @return {Actions.Effect.ColorizeEffectAction}
  */
 function colorize(colorizeLevel?: number):ColorizeEffectAction {
   return new ColorizeEffectAction('colorize', colorizeLevel);
@@ -91,7 +91,7 @@ function colorize(colorizeLevel?: number):ColorizeEffectAction {
  * @description Applies an oilPaint filter to the asset.
  * @memberOf Actions.Effect
  * @param {number} oilPaintLevel The strength of the effect. (Range: 0 to 100, Server default: 30)
- * @return {EffectActionWithStrength}
+ * @return {Actions.Effect.EffectActionWithStrength}
  */
 function oilPaint(oilPaintLevel?: number):EffectActionWithStrength {
   return new EffectActionWithStrength('oil_paint', oilPaintLevel);
@@ -102,7 +102,7 @@ function oilPaint(oilPaintLevel?: number):EffectActionWithStrength {
  * @description Applies an artistic filter to the asset.
  * @memberOf Actions.Effect
  * @param artisticFilterType
- * @return {SimpleEffectAction}
+ * @return {Actions.Effect.SimpleEffectAction}
  */
 function artisticFilter(artisticFilterType: string):SimpleEffectAction {
   return new SimpleEffectAction('art', artisticFilterType);
@@ -114,7 +114,7 @@ function artisticFilter(artisticFilterType: string):SimpleEffectAction {
  * @description Applies a cartoonify effect to the asset.
  * @memberOf Actions.Effect
  * @param cartoonifyLevel The thickness of the lines. (Range: 0 to 100, Server default: 50)
- * @return {CartoonifyEffect}
+ * @return {Actions.Effect.CartoonifyEffect}
  */
 function cartoonify(cartoonifyLevel?: number):CartoonifyEffect {
   return new CartoonifyEffect('cartoonify', cartoonifyLevel);
@@ -125,7 +125,7 @@ function cartoonify(cartoonifyLevel?: number):CartoonifyEffect {
  * @summary action
  * @description Adds an outline to a transparent image. For examples, see the Image Transformations guide.
  * @memberOf Actions.Effect
- * @return {OutlineMode}
+ * @return {Actions.Effect.EffectOutline}
  */
 function outline(): EffectOutline {
   return new EffectOutline();
@@ -138,6 +138,7 @@ function outline(): EffectOutline {
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/neural_artwork_style_transfer_addon | Neural Artwork Style Transfer}
  * @memberOf Actions.Effect
  * @param {ImageSource} imageSource `import {image} from '@cloudinary/base/qualifiers/sources`
+ * @return {Actions.Effect.StyleTransfer}
  */
 function styleTransfer(imageSource: ImageSource): StyleTransfer {
   return new StyleTransfer(imageSource);
@@ -152,7 +153,7 @@ function styleTransfer(imageSource: ImageSource): StyleTransfer {
  * Use in conjunction with trimming parameters ('duration', 'start_offset', or 'end_offset') and the 'loop' effect to deliver a classic (short, repeating) boomerang clip.<br/>
  * For details and examples, see 'Create a boomerang video clip' in the Video Transformations guide.
  * @memberOf Actions.Effect
- * @return {SimpleEffectAction}
+ * @return {Actions.Effect.SimpleEffectAction}
  */
 function boomerang():SimpleEffectAction {
   return new SimpleEffectAction('boomerang');
@@ -165,7 +166,7 @@ function boomerang():SimpleEffectAction {
  * Removes red eyes with the Advanced Facial Attribute Detection add-on.
  * For details, see the Advanced Facial Attribute Detection add-on documentation.
  * @memberOf Actions.Effect
- * @return {SimpleEffectAction}
+ * @return {Actions.Effect.SimpleEffectAction}
  */
 function advancedRedEye():SimpleEffectAction {
   return new SimpleEffectAction('adv_redeye');
@@ -177,7 +178,7 @@ function advancedRedEye():SimpleEffectAction {
  * @description Converts the image to black and white.
  * @memberOf Actions.Effect
  * @param {number | string} level The balance between black (100) and white (0). (Range: 0 to 100, Server default: 50)
- * @return BlackwhiteEffectAction
+ * @return {Actions.Effect.BlackwhiteEffectAction}
  */
 function blackwhite(level?: number | 'bw'):BlackwhiteEffectAction {
   return new BlackwhiteEffectAction('blackwhite', level);
@@ -188,7 +189,7 @@ function blackwhite(level?: number | 'bw'):BlackwhiteEffectAction {
  * @summary action
  * @description Negates the image colors (negative).
  * @memberOf Actions.Effect
- * @return {SimpleEffectAction}
+ * @return {Actions.Effect.SimpleEffectAction}
  */
 function negate():SimpleEffectAction {
   return new SimpleEffectAction('negate');
@@ -199,7 +200,7 @@ function negate():SimpleEffectAction {
  * @summary action
  * @description Removes red eyes in the image.
  * @memberOf Actions.Effect
- * @return {SimpleEffectAction}
+ * @return {Actions.Effect.SimpleEffectAction}
  */
 function redEye():SimpleEffectAction {
   return new SimpleEffectAction('redeye');
@@ -210,7 +211,7 @@ function redEye():SimpleEffectAction {
  * @summary action
  * @description Plays the video or audio file in reverse.
  * @memberOf Actions.Effect
- * @return {SimpleEffectAction}
+ * @return {Actions.Effect.SimpleEffectAction}
  */
 function reverse():SimpleEffectAction {
   return new SimpleEffectAction('reverse');
@@ -222,7 +223,7 @@ function reverse():SimpleEffectAction {
  * @description Changes the speed of the video playback.
  * @memberOf Actions.Effect
  * @param {number} speedIncreasePercent The percentage change of speed. Positive numbers speed up the playback, negative numbers slow down the playback (Range: -50 to 100, Server default: 0)
- * @return {AccelerationEffectAction}
+ * @return {Actions.Effect.AccelerationEffectAction}
  */
 function accelerate(speedIncreasePercent?: number): AccelerationEffectAction {
   return new AccelerationEffectAction('accelerate', speedIncreasePercent);
@@ -235,7 +236,7 @@ function accelerate(speedIncreasePercent?: number): AccelerationEffectAction {
  * For details and examples, see 'Fade in and out' in the Video Transformations guide.
  * @memberOf Actions.Effect
  * @param {number} fadeLength The time in ms for the fade to occur. (Server default: 2000)
- * @return {FadeInEffectAction}
+ * @return {Actions.Effect.FadeInEffectAction}
  */
 function fadeIn(fadeLength?: number):FadeInEffectAction {
   return new FadeInEffectAction('fade', fadeLength);
@@ -249,7 +250,7 @@ function fadeIn(fadeLength?: number):FadeInEffectAction {
  * For details and examples, see 'Fade in and out' in the Video Transformations guide.
  * @memberOf Actions.Effect
  * @param {number} fadeLength The time in ms for the fade to occur. (Server default: 2000)
- * @return {FadeoutEffectAction}
+ * @return {Actions.Effect.FadeoutEffectAction}
  */
 function fadeOut(fadeLength?: number):FadeoutEffectAction {
   return new FadeoutEffectAction('fade', -fadeLength);
@@ -264,7 +265,7 @@ function fadeOut(fadeLength?: number):FadeoutEffectAction {
  * For animated GIFs only, you can also specify the loop effect without a numeric value to instruct it to loop the GIF infinitely.
  * @memberOf Actions.Effect
  * @param {number} additionalLoops The additional number of times to play the video or animated GIF.
- * @return {LoopEffectAction}
+ * @return {Actions.Effect.LoopEffectAction}
  */
 function loop(additionalLoops?: number):LoopEffectAction {
   return new LoopEffectAction('loop', additionalLoops);
@@ -278,7 +279,7 @@ function loop(additionalLoops?: number):LoopEffectAction {
  *
  * @memberOf Actions.Effect
  * @param {number} tolerance The tolerance used to accommodate variance in the background color. (Range: 0 to 100, Server default: 10)
- * @return {MakeTransparentEffectAction}
+ * @return {Actions.Effect.MakeTransparentEffectAction}
  */
 function makeTransparent(tolerance?: number):MakeTransparentEffectAction {
   return new MakeTransparentEffectAction('make_transparent', tolerance);
@@ -293,7 +294,7 @@ function makeTransparent(tolerance?: number):MakeTransparentEffectAction {
  * @description Adds visual noise to the video, visible as a random flicker of "dots" or "snow".
  * @memberOf Actions.Effect
  * @param {number} percentage The percent of noise to apply. (Range: 0 to 100 Server default: 0)
- * @return {EffectActionWithLevel}
+ * @return {Actions.Effect.EffectActionWithLevel}
  */
 function noise(percentage?: number):EffectActionWithLevel {
   return new EffectActionWithLevel('noise', percentage);
@@ -305,7 +306,7 @@ function noise(percentage?: number):EffectActionWithLevel {
  * @description Applies a vignette effect.
  * @memberOf Actions.Effect
  * @param {number} strength The strength of the vignette. (Range: 0 to 100, Server default: 20)
- * @return {EffectActionWithStrength}
+ * @return {Actions.Effect.EffectActionWithStrength}
  */
 function vignette(strength?: number):EffectActionWithStrength {
   return new EffectActionWithStrength('vignette', strength);
@@ -319,7 +320,7 @@ function vignette(strength?: number):EffectActionWithStrength {
  * Use the constants defined in {@link Qualifiers.Dither|@cloudinary/base/qualifiers/dither} for ditherType.
  * @memberOf Actions.Effect
  * @param {Qualifiers.Dither} ditherType - The dither type applied to the image
- * @return {DitherEffectAction}
+ * @return {Actions.Effect.DitherEffectAction}
  */
 function dither(ditherType?: number):DitherEffectAction {
   return new DitherEffectAction('ordered_dither', ditherType);
@@ -335,7 +336,7 @@ function dither(ditherType?: number):DitherEffectAction {
  * Large images are scaled down to 1000 pixels in the largest dimension before vectorization.
  *
  * @memberOf Actions.Effect
- * @return {VectorizeEffectAction}
+ * @return {Actions.Effect.VectorizeEffectAction}
  */
 function vectorize():VectorizeEffectAction {
   return new VectorizeEffectAction();
@@ -356,7 +357,7 @@ function vectorize():VectorizeEffectAction {
  * To apply different amounts of fade to multiple edges, use chained fade effects.
  *
  * @memberOf Actions.Effect
- * @return {GradientFadeEffectAction}
+ * @return {Actions.Effect.GradientFadeEffectAction}
  */
 function gradientFade():GradientFadeEffectAction {
   return new GradientFadeEffectAction();
@@ -369,7 +370,7 @@ function gradientFade():GradientFadeEffectAction {
  * Applies stripes to the image to help people with common color-blind conditions to differentiate between colors that are similar for them.</br>
  * You can replace colors using the xRay() method of the \Cloudinary\Transformation\AssistColorBlind class.
  * @memberOf Actions.Effect
- * @return {AssistColorBlindEffectAction}
+ * @return {Actions.Effect.AssistColorBlindEffectAction}
  */
 function assistColorBlind():AssistColorBlindEffectAction {
   return new AssistColorBlindEffectAction();
@@ -381,7 +382,7 @@ function assistColorBlind():AssistColorBlindEffectAction {
  * Simulates the way an image would appear to someone with the specified color blind condition. </br>
  * For a list of supported color blind conditions see {@link Qualifiers.SimulateColorBlindValues| types of color blindness} for possible values
  * @memberOf Actions.Effect
- * @return {SimulateColorBlindEffectAction}
+ * @return {Actions.Effect.SimulateColorBlindEffectAction}
  */
 function simulateColorBlind(): SimulateColorBlindEffectAction {
   return new SimulateColorBlindEffectAction();
@@ -393,7 +394,7 @@ function simulateColorBlind(): SimulateColorBlindEffectAction {
  * @summary action
  * @description Removes small motion shifts from the video. with a maximum extent of movement in the horizontal and vertical direction of 32 pixels
  * @memberOf Actions.Effect
- * @return {DeshakeEffectAction}
+ * @return {Actions.Effect.DeshakeEffectAction}
  */
 function deshake(pixels?: number | string):DeshakeEffectAction {
   return new DeshakeEffectAction('deshake', pixels);
@@ -405,7 +406,7 @@ function deshake(pixels?: number | string):DeshakeEffectAction {
  * @description Supports the concatenation of videos with a custom transition by including a transition video as an
  * additional layer and specifying the transition effect
  * @memberOf Actions.Effect
- * @return {SimpleEffectAction}
+ * @return {Actions.Effect.SimpleEffectAction}
  */
 function transition():SimpleEffectAction {
   return new SimpleEffectAction('transition');
@@ -416,7 +417,7 @@ function transition():SimpleEffectAction {
  * @description Applies a pixelatering filter to the asset.
  * @memberOf Actions.Effect
  * @param {number} squareSize The squareSize in the pixelation. (Range: 1 to 2000, Server default: 100)
- * @return {Pixelate}
+ * @return {Actions.Effect.Pixelate}
  */
 function pixelate(squareSize?: number): Pixelate {
   return new Pixelate(squareSize);
@@ -451,6 +452,50 @@ function theme(color: SystemColors): ThemeEffect {
  * @description Defines effects that you can apply to transform your assets.
  * @memberOf Actions
  * @namespace Effect
+ * @example
+ * <caption>An <b>extreme</b> example of using many effects on the same asset</caption>
+ * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * // Import everything, or just the action you need for tree-shaking purposes
+ * import {Effect, sepia} from "@cloudinary/base/actions/effect";
+ *
+ * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
+ * const image = yourCldInstance.image('woman');
+ *
+ * image.effect(Effect.advancedRedEye())
+ * .effect(Effect.accelerate())
+ * .effect(Effect.accelerate(100))
+ * .effect(Effect.accelerate().rate(5))
+ * .effect(Effect.boomerang())
+ * .effect(Effect.blackwhite())
+ * .effect(Effect.blackwhite(10))
+ * .effect(Effect.blackwhite().threshold(20))
+ * .effect(Effect.fadeIn(100))
+ * .effect(Effect.fadeIn().duration(5))
+ * .effect(Effect.fadeOut(100))
+ * .effect(Effect.fadeOut().duration(5))
+ * .effect(Effect.grayscale())
+ * .effect(Effect.loop())
+ * .effect(Effect.loop(100))
+ * .effect(Effect.loop().additionalIterations(5))
+ * .effect(Effect.makeTransparent())
+ * .effect(Effect.makeTransparent(100))
+ * .effect(Effect.makeTransparent().tolerance(5))
+ * .effect(Effect.makeTransparent().tolerance(5).colorToReplace('red'))
+ * .effect(Effect.noise())
+ * .effect(Effect.noise(100))
+ * .effect(Effect.noise().level(5))
+ * .effect(Effect.negate())
+ * .effect(Effect.reverse())
+ * .effect(Effect.redEye())
+ * .effect(Effect.sepia())
+ * .effect(Effect.sepia(100))
+ * .effect(Effect.sepia().level(5))
+ * .effect(Effect.vignette())
+ * .effect(Effect.vignette(100))
+ * .effect(Effect.vignette().strength(5))
+ * .effect(Effect.deshake())
+ * .effect(Effect.deshake(10))
+ * .effect(Effect.deshake().shakeStrength(ShakeStrength.pixels16()))
  */
 const Effect = {
   pixelate: pixelate,
