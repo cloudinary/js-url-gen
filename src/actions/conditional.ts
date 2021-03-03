@@ -40,7 +40,7 @@ class ConditionalAction extends Action{
   private exp: string;
 
   /**
-   * @description Adds a border of the specified type around an image or video.
+   * @description Specifies a condition to be met before applying a transformation.
    * @param {string} exp The condition to meet in order to apply the transformation.
    * @param {SDK.Transformation} ifTx The transformation to conditionally apply
    */

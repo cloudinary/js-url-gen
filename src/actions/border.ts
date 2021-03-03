@@ -7,7 +7,6 @@ import RoundCornersAction from "./roundCorners/RoundCornersAction";
 
 
 /**
- * @summary action
  * @description Adds a solid border around an image or video.
  *
  *  <b>Learn more:</b>
@@ -16,13 +15,14 @@ import RoundCornersAction from "./roundCorners/RoundCornersAction";
  * @namespace Border
  * @example
  * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {solid} from "@cloudinary/base/actions/border";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');
  * image.border(
- *  Border.solid(15, 'green'),
+ *  solid(15, 'green'),
  *  // Or alternatively
- *  Border.solid().width(15).color('green')
+ *  solid().width(15).color('green')
  * );
  *
  */
