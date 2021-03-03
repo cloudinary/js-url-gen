@@ -31,6 +31,7 @@ import RoundCornersAction from "./roundCorners/RoundCornersAction";
 
 /**
  * @memberOf Actions.Border
+ * @see Actions.Border
  * @example
  * // Used through a builder function Border.solid(), and not by creating a new instance
  * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
