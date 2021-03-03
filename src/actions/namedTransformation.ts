@@ -4,6 +4,15 @@ import {NamedTransformationAction} from "./namedTransformation/NamedTransformati
  * Applies a pre-defined named transformation of the given name.
  * @memberOf Actions
  * @namespace NamedTransformation
+ * @example
+ * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {name} from "@cloudinary/base/actions/namedTransformation";
+ *
+ * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
+ * const image = yourCldInstance.image('woman');
+ * image.namedTransformation(
+ *  name('my_named_transformation'),
+ * );
  */
 
 /**
@@ -11,7 +20,7 @@ import {NamedTransformationAction} from "./namedTransformation/NamedTransformati
  * @description Applies a pre-defined named transformation of the given name.
  * @param {string} name Transformation name
  * @memberOf Actions.NamedTransformation
- * @return {NamedTransformationAction}
+ * @return {Actions.NamedTransformation.NamedTransformationAction}
  */
 function name(name:string): NamedTransformationAction {
   return new NamedTransformationAction(name);
