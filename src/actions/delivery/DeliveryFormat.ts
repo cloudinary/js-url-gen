@@ -5,6 +5,7 @@ import {ProgressiveQualifier} from "../../qualifiers/progressive";
 /**
  * @memberOf Actions.Delivery
  * @extends {Actions.Delivery.DeliveryAction}
+ * @see Visit {@link Actions.Delivery|Delivery} for an example
  */
 class DeliveryFormat extends DeliveryAction {
   /**
