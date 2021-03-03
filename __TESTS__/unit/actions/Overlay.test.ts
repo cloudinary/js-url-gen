@@ -252,7 +252,7 @@ describe('Tests for overlay actions', () => {
     const textSource = Source.text(text, 'arial_15');
     asset.overlay(Overlay.source(textSource));
 
-    expect(asset.toURL()).toContain("l_text:arial_15:$(start)hello/fl_layer_apply");
+    expect(asset.toString()).toContain("l_text:arial_15:$(start)hello/fl_layer_apply");
   });
 
   it("should throw an exception if fontFamily or fontSize are not provided", () => {
