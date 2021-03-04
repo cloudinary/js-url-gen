@@ -14,7 +14,7 @@ import GetLayerAction from "../actions/psdTools/GetLayerAction";
 import {IReshape} from "../actions/reshape";
 import {SystemColors} from "../qualifiers/color";
 import {prepareColor} from "../internal/utils/prepareColor";
-import {Extract} from "../actions/extract";
+import {ExtractAction} from "../actions/extract";
 import {Border, BorderAction} from "../actions/border";
 import {FlagQualifier} from "../qualifiers/flag/FlagQualifier";
 import {EffectActions} from "../actions/effect";
@@ -238,7 +238,7 @@ class Transformation {
    * @param action
    * @return {this}
    */
-  extract(action: Extract): this {
+  extract(action: ExtractAction): this {
     return this.addAction(action);
   }
 
