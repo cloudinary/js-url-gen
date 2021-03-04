@@ -4,6 +4,8 @@ import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
+ * @memberOf Actions.CustomFunction
+ * @see Visit {@link Actions.CustomFunction|Custom functions} for an example
  */
 class CustomFunctionAction extends Action {
   private mode: 'wasm' | 'remote' | string;
@@ -11,6 +13,10 @@ class CustomFunctionAction extends Action {
   readonly fn:string;
   private encodedFn: string;
 
+  /**
+   *
+   * @param {string} fn The custom function to use, can be a URL or a publicID
+   */
   constructor(fn: string) {
     super();
     this.fn = fn;
@@ -21,11 +27,19 @@ class CustomFunctionAction extends Action {
     return encodedSource;
   }
 
+  /**
+   * Use a WASM as a custom function,
+   * Used with the builders of `remote` and `wasm` from {@link Actions.CustomFunction|Custom functions}
+   */
   asWasm(): this {
     this.mode = 'wasm';
     return this;
   }
 
+  /**
+   * Use a remote URL as a custom function
+   * Used with the builders of `remote` and `wasm` from {@link Actions.CustomFunction|Custom functions}
+   */
   asRemote(): this {
     this.mode = 'remote';
     return this;
