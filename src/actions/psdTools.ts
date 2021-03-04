@@ -1,13 +1,14 @@
-import ClipAction from "./psdTools/ClipAction";
-import GetLayerAction from "./psdTools/GetLayerAction";
-import SmartObjectAction from "./psdTools/SmartObjectAction";
+import {ClipAction} from "./psdTools/ClipAction";
+import {GetLayerAction} from "./psdTools/GetLayerAction";
+import {SmartObjectAction} from "./psdTools/SmartObjectAction";
 
 /**
- * @description Represents a layer in a Photoshop document.
- *
- * <b>Learn more:</b> {@link https://cloudinary.com/documentation/paged_and_layered_media#deliver_selected_layers_of_a_psd_image | Deliver selected layers of a PSD image}
- * @memberOf Actions
  * @namespace PSDTools
+ * @description Represents a layer in a Photoshop document.
+ * </br><b>Learn more:</b> {@link https://cloudinary.com/documentation/paged_and_layered_media#deliver_selected_layers_of_a_psd_image | Deliver selected layers of a PSD image}
+ * @memberOf Actions
+ * @example
+ * // See examples under each method
  */
 
 
@@ -16,6 +17,19 @@ import SmartObjectAction from "./psdTools/SmartObjectAction";
  * @description Trims the pixels of a PSD image according to a Photoshop clipping path that is stored in the image's metadata.
  * @memberOf Actions.PSDTools
  * @return {Actions.PSDTools.ClipAction}
+ * @example
+ * import {Cloudinary} from '@cloudinary/base/instance/Cloudinary';
+ * import {clip} from '@cloudinary/base/actions/psdTools';
+ *
+ * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
+ * const image = yourCldInstance.image('woman');
+ *
+ * image.psdTools(
+ *  clip()
+ *    .byName('foo') // either name, or number
+ *    .byNumber(2)   // either name, or number
+ *    .evenOdd()     // Use the evenodd clipping rule
+ * );
  */
 function clip(): ClipAction {
   return new ClipAction();
@@ -28,6 +42,19 @@ function clip(): ClipAction {
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/paged_and_layered_media#deliver_selected_layers_of_a_psd_image | Deliver selected layers of a PSD image}
  * @memberOf Actions.PSDTools
  * @return {Actions.PSDTools.GetLayerAction}
+ * @example
+ * import {Cloudinary} from '@cloudinary/base/instance/Cloudinary';
+ * import {getLayer} from '@cloudinary/base/actions/psdTools';
+ *
+ * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
+ * const image = yourCldInstance.image('woman');
+ *
+ * image.psdTools(
+ *  getLayer()
+ *    .byName('foo') // One of the three
+ *    .byIndex(2)    // One of the three
+ *    .byRange(1, 3) // One of the three
+ * );
  */
 function getLayer(): GetLayerAction {
   return new GetLayerAction();
@@ -38,6 +65,18 @@ function getLayer(): GetLayerAction {
  * @description Extracts the original content of an embedded object of a Photoshop image.
  * @memberOf Actions.PSDTools
  * @return {Actions.PSDTools.SmartObjectAction}
+ * @example
+ * import {Cloudinary} from '@cloudinary/base/instance/Cloudinary';
+ * import {smartObject} from '@cloudinary/base/actions/psdTools';
+ *
+ * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
+ * const image = yourCldInstance.image('woman');
+ *
+ * image.psdTools(
+ *  smartObject()
+ *    .byLayerName('foo') // either name, or number
+ *    .byIndex(2)         // either name, or number
+ * );
  */
 function smartObject(): SmartObjectAction {
   return new SmartObjectAction();
