@@ -2,6 +2,53 @@
  * @description Determines how to crop, scale, and/or zoom the delivered asset according to the requested dimensions.
  * @memberOf Actions
  * @namespace Resize
+ * @see Learn more about Gravity and Focus {@link Qualifiers.Gravity| here }
+ * @example
+ * <caption> <h4>Scaling an image</h4> </caption>
+ * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ *
+ * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
+ * const image = yourCldInstance.image('woman');
+ *
+ * const {scale, fit, pad, crop} from '@cloudinary/base/actions/resize';
+ *
+ * image.resize( scale(100, 100) );
+ * // All resize actions have a similar interface.
+ * // image.resize( fit(100, 100)) );
+ * // image.resize( pad(100, 100)) );
+ * // image.resize( crop(100, 100)) );
+ * // However, Some actions have additional arguments exposed as builder methods.
+ * // See the documentation for each method for more information
+ *
+ *
+ * // Alternative syntax, using builder methods
+ * image.resize(
+ *  scale()
+ *    .width(100)
+ *    .height(100)
+ * );
+ * image.toURL()
+ *
+ * @example
+ * <caption> <h4>Cropping with automatic focus(Gravity)</h4> </caption>
+ * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ *
+ * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
+ * const image = yourCldInstance.image('woman');
+ *
+ * const {scale} from '@cloudinary/base/actions/resize';
+ * const {autoGravity} from '@cloudinary/base/qualifiers/gravity';
+ *
+ * image.resize( crop(100, 100).gravity(autoGravity()) );
+ *
+ * // Alternative syntax, using builder methods
+ * image.resize(
+ *  scale()
+ *    .width(100)
+ *    .height(100)
+ *    .gravity(autoGravity())
+ * );
+ * image.toURL()
  */
 
 import ResizePadAction from "./resize/ResizePadAction";
@@ -21,7 +68,7 @@ import {ResizeFillAction} from "./resize/ResizeFillAction";
  * @memberOf Actions.Resize
  * @param {number|string} width The required width of a transformed asset.
  * @param {number|string} height The required height of a transformed asset.
- * @return {ScaleAction}
+ * @return {Actions.Resize.ScaleAction}
  */
 function scale(width?: number | string, height?: number | string): ScaleAction {
   return new ScaleAction('scale', width, height);
@@ -38,7 +85,7 @@ function scale(width?: number | string, height?: number | string): ScaleAction {
  * @memberOf Actions.Resize
  * @param {number|string} width The required width of a transformed asset.
  * @param {number|string} height The required height of a transformed asset.
- * @return {ResizeSimpleAction}
+ * @return {Actions.Resize.ResizeSimpleAction}
  */
 function imaggaScale(width?: number | string, height?: number | string): ResizeSimpleAction {
   return new ResizeSimpleAction('imagga_scale', width, height);
@@ -54,7 +101,7 @@ function imaggaScale(width?: number | string, height?: number | string): ResizeS
  * @memberOf Actions.Resize
  * @param {number|string} width The required width of a transformed asset.
  * @param {number|string} height The required height of a transformed asset.
- * @return {ResizeSimpleAction}
+ * @return {Actions.Resize.ResizeSimpleAction}
  */
 function imaggaCrop(width?: number|string, height?: number|string) :ResizeSimpleAction {
   return new ResizeSimpleAction('imagga_crop', width, height);
@@ -66,7 +113,7 @@ function imaggaCrop(width?: number|string, height?: number|string) :ResizeSimple
  * @memberOf Actions.Resize
  * @param {number|string} width The required width of a transformed asset.
  * @param {number|string} height The required height of a transformed asset.
- * @return {ResizeCropAction}
+ * @return {Actions.Resize.ResizeCropAction}
  */
 function crop(width?: number|string, height?: number|string) :ResizeCropAction {
   return new ResizeCropAction('crop', width, height);
@@ -81,7 +128,7 @@ function crop(width?: number|string, height?: number|string) :ResizeCropAction {
  * @memberOf Actions.Resize
  * @param {number|string} width The required width of a transformed asset.
  * @param {number|string} height The required height of a transformed asset.
- * @return {ResizeFillAction}
+ * @return {Actions.Resize.ResizeFillAction}
  */
 function fill(width?: string|number, height?: string|number) :ResizeFillAction {
   return new ResizeFillAction('fill', width, height);
@@ -95,7 +142,7 @@ function fill(width?: string|number, height?: string|number) :ResizeFillAction {
  * @memberOf Actions.Resize
  * @param {number|string} width The required width of a transformed asset.
  * @param {number|string} height The required height of a transformed asset.
- * @return {ResizeSimpleAction}
+ * @return {Actions.Resize.ResizeSimpleAction}
  */
 function fit(width?: string|number, height?: string|number) :ResizeSimpleAction {
   return new ResizeSimpleAction('fit', width, height);
@@ -111,7 +158,7 @@ function fit(width?: string|number, height?: string|number) :ResizeSimpleAction 
  * @memberOf Actions.Resize
  * @param {number|string} width The required width of a transformed asset.
  * @param {number|string} height The required height of a transformed asset.
- * @return {ResizePadAction}
+ * @return {Actions.Resize.ResizePadAction}
  */
 function pad(width?: string|number, height?: string|number) :ResizePadAction<CompassGravity> {
   return new ResizePadAction('pad', width, height);
@@ -131,7 +178,7 @@ function pad(width?: string|number, height?: string|number) :ResizePadAction<Com
  * @memberOf Actions.Resize
  * @param {number|string} width The required width of a transformed asset.
  * @param {number|string} height The required height of a transformed asset.
- * @return {ResizeFillAction}
+ * @return {Actions.Resize.ResizeFillAction}
  */
 function limitFill(width?: string|number, height?: string|number) :ResizeFillAction {
   return new ResizeFillAction('lfill', width, height);
@@ -148,7 +195,7 @@ function limitFill(width?: string|number, height?: string|number) :ResizeFillAct
  * @memberOf Actions.Resize
  * @param {number|string} width The required width of a transformed asset.
  * @param {number|string} height The required height of a transformed asset.
- * @return {ResizeSimpleAction}
+ * @return {Actions.Resize.ResizeSimpleAction}
  */
 function limitFit(width?: number|string, height?: number|string) :ResizeSimpleAction {
   return new ResizeSimpleAction('limit', width, height);
@@ -166,7 +213,7 @@ function limitFit(width?: number|string, height?: number|string) :ResizeSimpleAc
  * @memberOf Actions.Resize
  * @param {number|string} width The required width of a transformed asset.
  * @param {number|string} height The required height of a transformed asset.
- * @return {ResizePadAction}
+ * @return {Actions.Resize.ResizePadAction}
  */
 function minimumPad(width?: string|number, height?: string|number) :ResizePadAction<CompassGravity> {
   return new ResizePadAction('mpad', width, height);
@@ -183,7 +230,7 @@ function minimumPad(width?: string|number, height?: string|number) :ResizePadAct
  * @memberOf Actions.Resize
  * @param {number|string} width The required width of a transformed asset.
  * @param {number|string} height The required height of a transformed asset.
- * @return {ResizeSimpleAction}
+ * @return {Actions.Resize.ResizeSimpleAction}
  */
 function minimumFit(width?: number|string, height?: number|string) :ResizeSimpleAction {
   return new ResizeSimpleAction('mfit', width, height);
@@ -204,7 +251,7 @@ function minimumFit(width?: number|string, height?: number|string) :ResizeSimple
  *
  * @param {number|string} width The required width of a transformed asset.
  * @param {number|string} height The required height of a transformed asset.
- * @return {ResizePadAction}
+ * @return {Actions.Resize.ResizePadAction}
  */
 function fillPad(width?: string|number, height?: string|number) :ResizePadAction<AutoGravity> {
   return new ResizePadAction('fill_pad', width, height);
@@ -218,7 +265,7 @@ function fillPad(width?: string|number, height?: string|number) :ResizePadAction
  * @memberOf Actions.Resize
  * @param {number|string} width The required width of a transformed asset.
  * @param {number|string} height The required height of a transformed asset.
- * @return {ThumbResizeAction}
+ * @return {Actions.Resize.ThumbResizeAction}
  */
 function thumbnail(width?: string|number, height?: string|number) :ThumbResizeAction {
   return new ThumbResizeAction('thumb', width, height);
@@ -237,7 +284,7 @@ function thumbnail(width?: string|number, height?: string|number) :ThumbResizeAc
  * @memberOf Actions.Resize
  * @param {number|string} width The required width of a transformed asset.
  * @param {number|string} height The required height of a transformed asset.
- * @return {ResizePadAction}
+ * @return {Actions.Resize.ResizePadAction}
  */
 function limitPad(width?: string|number, height?: string|number) :ResizePadAction<CompassGravity> {
   return new ResizePadAction('lpad', width, height);
