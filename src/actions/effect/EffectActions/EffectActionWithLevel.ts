@@ -1,9 +1,10 @@
 import {LeveledEffectAction} from "./LeveledEffectAction";
 
 /**
+ * @description A class that provides a built in level() method that sets the level of the effect
  * @extends {Actions.Effect.LeveledEffectAction}
  * @memberOf Actions.Effect
- * @description A class that provides a built in level() method that sets the level of the effect
+ * @see Visit {@link Actions.Effect|Effect} for an example
  */
 class EffectActionWithLevel extends LeveledEffectAction {
   level(value: number | string): this {

@@ -5,8 +5,10 @@ import {EffectActionWithLevel}from "./EffectActions/EffectActionWithLevel";
 import {SystemColors} from "../../qualifiers/color";
 
 /**
- * @augments EffectActionWithLevel
  * @description Applies a colorizing filter to the asset, use the methods in the class to adjust the filter
+ * @extends EffectActionWithLevel
+ * @memberOf Actions.Effect
+ * @see Visit {@link Actions.Effect|Effect} for an example
  */
 class ColorizeEffectAction extends EffectActionWithLevel {
   /**

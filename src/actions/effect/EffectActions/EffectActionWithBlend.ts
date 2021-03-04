@@ -2,8 +2,9 @@ import {LeveledEffectAction} from "./LeveledEffectAction";
 
 /**
  * @description A class for all effects that include a blendPercentage method
- * @memberOf Actions.Effect
  * @extends {Actions.Effect.LeveledEffectAction}
+ * @memberOf Actions.Effect
+ * @see Visit {@link Actions.Effect|Effect} for an example
  */
 class EffectActionWithBlend extends LeveledEffectAction {
   blend(value: number | string): this {

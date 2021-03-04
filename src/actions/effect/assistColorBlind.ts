@@ -3,10 +3,11 @@ import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
- * @extend {SDK.Action}
  * @description Applies stripes to the image to help people with common color-blind conditions to differentiate between colors that are similar for them.
- * You can replace colors using the xray() method.
+ *              You can replace colors using the xray() method.
+ * @extend {SDK.Action}
  * @memberOf Actions.Effect
+ * @see Visit {@link Actions.Effect|Effect} for an example
  */
 class AssistColorBlindEffectAction extends Action {
   constructor() {

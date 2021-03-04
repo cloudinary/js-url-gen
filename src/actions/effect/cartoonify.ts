@@ -3,8 +3,10 @@ import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 import {Action} from "../../internal/Action";
 
 /**
- * @extend {SDK.Action}
  * @description Applies a cartoon effect to an image.
+ * @extend {SDK.Action}
+ * @memberOf Actions.Effect
+ * @see Visit {@link Actions.Effect|Effect} for an example
  */
 class CartoonifyEffect extends Action {
   private colorReduction: number | string;

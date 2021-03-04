@@ -9,6 +9,8 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
  *                The class implements the Builder pattern, where strength() and preserveColor()
  *                are applied to the instance, and toString() is responsible to combining them into the right result.
  * @extend {SDK.Action}
+ * @memberOf Actions.Effect
+ * @see Visit {@link Actions.Effect|Effect} for an example
  */
 class StyleTransfer extends Action {
   private imageSource: ImageSource;
