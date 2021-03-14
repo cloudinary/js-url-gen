@@ -8,7 +8,9 @@ import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifi
 
 /**
  * @description Defines a resize using width and height.
- * @extend {SDK.Action}
+ * @extends SDK.Action
+ * @memberOf Actions.Resize
+ * @see Visit {@link Actions.Resize| Resize} for examples
  */
 class ResizeSimpleAction extends Action {
   /**
@@ -16,12 +18,12 @@ class ResizeSimpleAction extends Action {
    * @param {number | string} cropWidth The required width of a transformed asset.
    * @param {number | string} cropHeight The required height of a transformed asset.
    */
-  constructor(cropType: string, cropWidth: number|string, cropHeight?: number|string) {
+  constructor(cropType: string, cropWidth: number | string, cropHeight?: number | string) {
     super();
-    if(cropWidth) {
+    if (cropWidth) {
       this.addQualifier(new Qualifier('w', cropWidth));
     }
-    if(cropHeight) {
+    if (cropHeight) {
       this.addQualifier(new Qualifier('h', cropHeight));
     }
     this.addQualifier(new Qualifier('c', cropType));
@@ -31,7 +33,7 @@ class ResizeSimpleAction extends Action {
    * @description Sets the height of the resize
    * @param {string | number} x The height in pixels (if an integer is specified) or as a percentage (if a float is specified).
    */
-  height(x:number|string | ExpressionQualifier):this {
+  height(x: number | string | ExpressionQualifier): this {
     return this.addQualifier(new Qualifier('h', x));
   }
 
@@ -39,7 +41,7 @@ class ResizeSimpleAction extends Action {
    * @description Sets the width of the resize
    * @param {string | number} x The width in pixels (if an integer is specified) or as a percentage (if a float is specified).
    */
-  width(x:number | string | ExpressionQualifier):this {
+  width(x: number | string | ExpressionQualifier): this {
     return this.addQualifier(new Qualifier('w', x));
   }
 
@@ -50,13 +52,13 @@ class ResizeSimpleAction extends Action {
    * @param {number|string} ratio The new aspect ratio, specified as a percentage or ratio.
    * @return {this}
    */
-  aspectRatio(ratio: AspectRatioQualifierValue | FlagQualifier | number|string): this {
+  aspectRatio(ratio: AspectRatioQualifierValue | FlagQualifier | number | string): this {
     // toFloatAsString is used to ensure 1 turns into 1.0
     if (ratio instanceof AspectRatioQualifierValue) {
       return this.addQualifier(new Qualifier('ar', ratio));
     }
 
-    if (typeof ratio === 'number' || typeof ratio === 'string' ) {
+    if (typeof ratio === 'number' || typeof ratio === 'string') {
       return this.addQualifier(new Qualifier('ar', toFloatAsString(ratio)));
     }
 
