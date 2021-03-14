@@ -12,7 +12,7 @@ import {SystemColors} from "../qualifiers/color";
 import SmartObjectAction from "../actions/psdTools/SmartObjectAction";
 import ClipAction from "../actions/psdTools/ClipAction";
 import GetLayerAction from "../actions/psdTools/GetLayerAction";
-import {Extract} from "../actions/extract";
+import {ExtractAction} from "../actions/extract";
 import {FlagQualifier} from "../qualifiers/flag/FlagQualifier";
 import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction";
 import {EffectActions} from "../actions/effect";
@@ -192,7 +192,7 @@ class CloudinaryTransformable extends CloudinaryFile {
    * @param {Actions.Extract} action
    * @return {this}
    */
-  extract(action: Extract): this {
+  extract(action: ExtractAction): this {
     this.transformation.extract(action);
     return this;
   }
