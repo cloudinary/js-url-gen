@@ -6,10 +6,11 @@ import {serializeCloudinaryCharacters} from "../internal/utils/serializeCloudina
 /**
  * @summary qualifier
  * @description Specifies how to style your layered text, controls the font, font size, line spacing and more.
- * <b>Learn more</b>: {@link https://cloudinary.com/documentation/image_transformations#adding_text_overlays | Adding text overlays to images}
- * <b>Learn more</b>: {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#adding_text_captions | Adding text overlays to videos}
+ * </br><b>Learn more</b>: {@link https://cloudinary.com/documentation/image_transformations#adding_text_overlays | Adding text overlays to images}
+ * </br><b>Learn more</b>: {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#adding_text_captions | Adding text overlays to videos}
+ * @see {@link Actions.Overlay| The overlay action}
+ * @see {@link Actions.Underlay| The underlay action}
  * @memberOf Qualifiers
- * @namespace TextStyle
  */
 class TextStyle {
   private _lineSpacing: number;
@@ -24,6 +25,10 @@ class TextStyle {
   private _stroke: boolean;
   private _fontHinting: string;
 
+  /**
+   * @param {string} fontFamily The font family
+   * @param {number | string} fontSize The font size
+   */
   constructor(fontFamily: string, fontSize: string | number) {
     if (!fontFamily || !fontSize) {
       throw `You must provide a fontFamily and fontSize to a TextStyle`;
@@ -32,56 +37,96 @@ class TextStyle {
     this._fontSize = fontSize;
   }
 
+  /**
+   * @param {number} spacing The spacing between multiple lines in pixels.
+   */
   lineSpacing(spacing: number): this {
     this._lineSpacing = spacing;
     return this;
   }
 
+
+  /**
+   * @param spacing The spacing between the letters, in pixels.
+   */
   letterSpacing(spacing: number): this {
     this._letterSpacing = spacing;
     return this;
   }
 
+  /**
+   * The antialias setting to apply to the text. When this parameter is not specified, the default antialiasing for the subsystem and target device are applied.
+   * @param antiAlias
+   */
   fontAntialias(antiAlias: string): this {
     this._fontAntialias = antiAlias;
     return this;
   }
 
+  /**
+   * The name of any universally available font or a custom font, specified as the public ID of a raw, authenticated font in your account.
+   * For details on custom fonts, see {@link https://cloudinary.com/documentation/image_transformations#using_custom_fonts_for_text_overlays|Using custom fonts for text overlays}.
+   * @param {string} fontFamilyName
+   */
   fontFamily(fontFamilyName: string): this {
     this._fontFamily = fontFamilyName;
     return this;
   }
 
+  /**
+   * @param {number} fontSize The font size
+   */
   fontSize(fontSize: number | string): this {
     this._fontSize = fontSize ;
     return this;
   }
 
-  fontWeight(fontWeight: string): this {
+  /**
+   * @param {string} fontWeight The font weight
+   */
+  fontWeight(fontWeight: 'normal' | 'bold' | 'thin' | 'light' | string): this {
     this._fontWeight = fontWeight;
     return this;
   }
 
-  fontStyle(fontStyle: string): this {
+  /**
+   *
+   * @param {string} fontStyle The font style.
+   */
+  fontStyle(fontStyle: 'normal' | 'italic' | string): this {
     this._fontStyle = fontStyle;
     return this;
   }
 
+  /**
+   * @param {string} fontHinting The outline hinting style to apply to the text. When this parameter is not specified, the default hint style for the font and target device are applied.
+   */
   fontHinting(fontHinting: string): this {
     this._fontHinting = fontHinting;
     return this;
   }
 
-  textDecoration(textDecoration: string): this {
+  /**
+   *
+   * @param {string} textDecoration The font decoration type.
+   */
+  textDecoration(textDecoration: 'normal' | 'underline' | 'strikethrough' | string): this {
     this._textDecoration = textDecoration;
     return this;
   }
 
-  textAlignment(textAlignment: string): this {
+
+  /**
+   * @param {string} textAlignment The text alignment
+   */
+  textAlignment(textAlignment: 'left' | 'center' | 'right' | 'end' | 'start' | 'justify' | string): this {
     this._textAlignment = textAlignment;
     return this;
   }
 
+  /**
+   * @description Whether to include an outline stroke. Set the color and weight of the stroke
+   */
   stroke(): this {
     this._stroke = true;
     return this;
