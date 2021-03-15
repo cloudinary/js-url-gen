@@ -6,7 +6,9 @@ import ResizeAdvancedAction from "./ResizeAdvancedAction";
 
 /**
  * @description Defines an advanced resize with padding.
- * @augments ResizeAdvancedAction
+ * @extends Actions.Resize.ResizeAdvancedAction
+ * @memberOf Actions.Resize
+ * @see Visit {@link Actions.Resize| Resize} for examples
  */
 class ResizePadAction<GravityType extends IGravity> extends ResizeAdvancedAction {
   /**
@@ -18,7 +20,7 @@ class ResizePadAction<GravityType extends IGravity> extends ResizeAdvancedAction
     return this.addQualifier(backgroundQualifier);
   }
 
-  gravity(direction:GravityType): this {
+  gravity(direction: GravityType): this {
     return this.addQualifier(direction);
   }
 
@@ -26,7 +28,7 @@ class ResizePadAction<GravityType extends IGravity> extends ResizeAdvancedAction
    * @description Horizontal position for custom-coordinates based padding.
    * @param {number} x The x position.
    */
-  offsetX(x:number | string): this {
+  offsetX(x: number | string): this {
     return this.addQualifier(new Qualifier('x', x));
   }
 
@@ -34,7 +36,7 @@ class ResizePadAction<GravityType extends IGravity> extends ResizeAdvancedAction
    * @description Vertical position for custom-coordinates based padding
    * @param {number} y The y position.
    */
-  offsetY(y:number | string): this {
+  offsetY(y: number | string): this {
     return this.addQualifier(new Qualifier('y', y));
   }
 }

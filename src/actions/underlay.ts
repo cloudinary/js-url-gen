@@ -8,15 +8,38 @@ import {FetchSource} from "../qualifiers/source/sourceTypes/FetchSource";
  * @memberOf Actions
  * @namespace Underlay
  * @description Adds an image or a text layer as an underlay under the base layer. </br>
+ * @see Visit {@link Qualifiers.TextStyle|TextStyle} for advanced text options
+ * @see {@link Actions.Overlay| The overlay action}
  * @example
  * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
- * const image = yourCldInstance.image('woman');
- * image.underlay(
- *       Underlay.source(Source.image('sample'))
+ * const myVideo = yourCldInstance.video('dog');
+ *
+ * import {source} from "@cloudinary/base/actions/underlay"
+ * import {image, video, text} from "@cloudinary/base/qualifiers/source"
+ * import {TextStyle} from '@cloudinary/base/qualifiers/textStyle
+ *
+ * myVideo.underlay(
+ *       source(image('myImage'))
+ *     )
+ *
+ * myVideo.underlay(
+ *       source(video('myVideo'))
+ *     )
+ *
+ * myVideo.underlay(
+ *       source(text('My text'), 'arial_15')
+ *     )
+ *
+ * // Or a text with more complex options
+ * myVideo.underlay(
+ *       source(text('My text'), new TextStyle('arial', 50))
  *     )
  */
+
+
+
 
 /**
  * @summary action

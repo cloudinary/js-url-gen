@@ -9,6 +9,7 @@ import {Action} from "../internal/Action";
 import RotateAction from "../actions/rotate/RotateAction";
 import {NamedTransformationAction} from "../actions/namedTransformation/NamedTransformationAction";
 import {SystemColors} from "../qualifiers/color";
+import {ExtractAction} from "../actions/extract";
 import {SmartObjectAction} from "../actions/psdTools/SmartObjectAction";
 import {ClipAction} from "../actions/psdTools/ClipAction";
 import {GetLayerAction} from "../actions/psdTools/GetLayerAction";
@@ -192,7 +193,7 @@ class CloudinaryTransformable extends CloudinaryFile {
    * @param {Actions.Extract} action
    * @return {this}
    */
-  extract(action: Extract): this {
+  extract(action: ExtractAction): this {
     this.transformation.extract(action);
     return this;
   }

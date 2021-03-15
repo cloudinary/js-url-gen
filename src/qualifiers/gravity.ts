@@ -103,7 +103,6 @@ function xyCenter(): XYCenterGravity {
 
 
 /**
- * @summary qualifier
  * @description A qualifier that determines which part of an asset to focus on, and thus which part of the asset to keep, </br>
  *              when any part of the asset is cropped. For overlays, this setting determines where to place the overlay.
  * @namespace Gravity
