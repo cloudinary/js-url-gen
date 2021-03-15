@@ -174,7 +174,7 @@ class CloudinaryFile {
    * @return {string} CloudinaryURL
    * @throws Validation Errors
    */
-  createCloudinaryURL(transformation?: Transformation | string): string {
+  createCloudinaryURL(transformation?: Transformation | string, trackedAnalytics?: Partial<ITrackedPropertiesThroughAnalytics>): string {
     // In accordance with the existing implementation, if no publicID exists we should return nothing.
     if (!this.publicID) {
       return '';

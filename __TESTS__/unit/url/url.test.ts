@@ -85,7 +85,7 @@ describe('Tests for URL configuration', () => {
   });
 
   it('Should support an external signature', () => {
-    const image = new CloudinaryImage('sample', {cloudName: 'demo'}, {});
+    const image = createNewImage('sample');
     const signature = "some-signature";
 
     image.setSignature(signature);
