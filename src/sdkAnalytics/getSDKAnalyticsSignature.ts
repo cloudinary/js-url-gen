@@ -33,8 +33,7 @@ function ensureShapeOfTrackedProperties(trackedAnalytics?: Partial<ITrackedPrope
     responsive: false,
     placeholder: false,
     lazyload: false,
-    accessibility: false,
-    urlAnalytics: false
+    accessibility: false
   };
 
   if (!trackedAnalytics) {
