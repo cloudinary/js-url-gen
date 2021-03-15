@@ -4,10 +4,10 @@ import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 
 /**
  * @description Represents a layer in a Photoshop document.
- *
- * <b>Learn more:</b> {@link https://cloudinary.com/documentation/paged_and_layered_media#deliver_selected_layers_of_a_psd_image | Deliver selected layers of a PSD image}
- * @memberOf Actions.PSDTools
+ * </br><b>Learn more:</b> {@link https://cloudinary.com/documentation/paged_and_layered_media#deliver_selected_layers_of_a_psd_image | Deliver selected layers of a PSD image}
  * @extends {SDK.Action}
+ * @memberOf Actions.PSDTools
+ * @see Visit {@link Actions.PSDTools| PSDTools} for an example
  */
 class GetLayerAction extends Action {
   private name: string;
@@ -20,7 +20,7 @@ class GetLayerAction extends Action {
 
   /**
    * @description deliver an image containing only specified layer of a Photoshop image from The layer index
-   * @param {string|number}  the index of the layer
+   * @param {string|number} from the index of the layer
    */
   byIndex(from: string|number): this{
     this.qualifierValue.addValue(from);
@@ -62,4 +62,4 @@ class GetLayerAction extends Action {
   }
 }
 
-export default GetLayerAction;
+export {GetLayerAction};

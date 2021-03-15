@@ -5,8 +5,9 @@ import {clip, clipEvenOdd} from "../../qualifiers/flag";
 
 /**
  * @description  Defines the clipping path to use when trimming pixels.
- * @memberOf Actions.PSDTools
  * @extends {SDK.Action}
+ * @memberOf Actions.PSDTools
+ * @see Visit {@link Actions.PSDTools| PSDTools} for an example
  */
 class ClipAction extends Action {
   private path: string | number;
@@ -64,4 +65,4 @@ class ClipAction extends Action {
   }
 }
 
-export default ClipAction;
+export {ClipAction};
