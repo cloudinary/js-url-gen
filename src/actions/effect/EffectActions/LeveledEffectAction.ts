@@ -2,10 +2,10 @@ import {SimpleEffectAction} from "./SimpleEffectAction";
 import {ExpressionQualifier} from "../../../qualifiers/expression/ExpressionQualifier";
 
 /**
+ * @description A base class for effects with a level, the extending class needs to implement a method that calls setLevel()
  * @extends {Actions.Effect.SimpleEffectAction}
  * @memberOf Actions.Effect
- * @description
- * A base class for effects with a level, the extending class needs to implement a method that calls setLevel()
+ * @see Visit {@link Actions.Effect|Effect} for an example
  */
 class LeveledEffectAction extends SimpleEffectAction {
   protected effectType: string;

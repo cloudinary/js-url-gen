@@ -238,3 +238,13 @@ body {
 .symbol-details .form-horizontal .control-label {
   text-align:left;
 }
+
+
+/**
+ * In the @example tags, we can use <caption></caption> to provide titles to the examples
+ * Since we use title h tags (<h4> for example), these get anchor tags added to them
+ * These interfere with the look & feel, so we're hiding them
+ */
+.example-caption .anchor-link {
+  display:none;
+}

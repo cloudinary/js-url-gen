@@ -9,11 +9,11 @@ $('footer').append($('<div/>').html('SDK Version - <b>${pkg.version}</b>'));
 var content = $('.branding-logo').html();
 $('.branding-logo').html(content + ' - ${pkg.version}');
 `;
-fs.writeFileSync('__DOC_RESOURCES__/injectVersionSemver.js', data);
+fs.writeFileSync('__DOCS__/resources/injectVersionSemver.js', data);
 
 execSync(`
-  (cd ./__docTemplate && grunt) && 
-  jsdoc -u ./__DOC_EXAMPLES__ --configure jsdoc.config.json --verbose --destination public/docs/ && 
-  cp __DOC_RESOURCES__/customStyles.css public/docs/ && 
-  cp __DOC_RESOURCES__/injectVersionSemver.js public/docs/
+  (cd ./__DOCS__/JSDocTemplate && grunt) && 
+  jsdoc -u ./__DOCS__/examples --configure jsdoc.config.json --verbose --destination public/docs/ && 
+  cp __DOCS__/resources/customStyles.css public/docs/ && 
+  cp __DOCS__/resources/injectVersionSemver.js public/docs/
 `, {stdio: 'inherit'});

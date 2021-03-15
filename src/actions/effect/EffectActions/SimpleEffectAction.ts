@@ -4,9 +4,10 @@ import {Qualifier} from "../../../internal/qualifier/Qualifier";
 import {ExpressionQualifier} from "../../../qualifiers/expression/ExpressionQualifier";
 
 /**
+ * @description A class that defines a simple effect of the type e_{effectName}
  * @extends {SDK.Action}
  * @memberOf Actions.Effect
- * @description A class that defines a simple effect of the type e_{effectName}
+ * @see Visit {@link Actions.Effect|Effect} for an example
  */
 class SimpleEffectAction extends Action {
   constructor(effectType?: string, level?: number|string) {

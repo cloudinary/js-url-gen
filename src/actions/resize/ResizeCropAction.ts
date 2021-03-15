@@ -4,14 +4,16 @@ import ResizeAdvancedAction from "./ResizeAdvancedAction";
 
 /**
  * @description Defines how to crop an asset
- * @augments ResizeAdvancedAction
+ * @extends Actions.Resize.ResizeAdvancedAction
+ * @memberOf Actions.Resize
+ * @see Visit {@link Actions.Resize| Resize} for examples
  */
 class ResizeCropAction extends ResizeAdvancedAction {
   /**
    * @description Horizontal position for custom-coordinates based cropping.
    * @param {number} x The x position.
    */
-  x(x:number | string): this {
+  x(x: number | string): this {
     return this.addQualifier(new Qualifier('x', x));
   }
 
@@ -19,7 +21,7 @@ class ResizeCropAction extends ResizeAdvancedAction {
    * @description Vertical position for custom-coordinates based cropping
    * @param {number} y The y position.
    */
-  y(y:number | string): this {
+  y(y: number | string): this {
     return this.addQualifier(new Qualifier('y', y));
   }
 }

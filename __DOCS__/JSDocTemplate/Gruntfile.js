@@ -15,7 +15,7 @@ module.exports = function (grunt) {
   };
 
   grunt.initConfig({
-    pkg: grunt.file.readJSON('../package.json'),
+    pkg: grunt.file.readJSON('../../package.json'),
     clean: {
       test: ['.test/'],
       examples: ['examples/'],
@@ -58,21 +58,21 @@ module.exports = function (grunt) {
           {
             expand: true,
             flatten: true,
-            src: ['../node_modules/bootstrap/dist/js/bootstrap.min.js'],
+            src: ['../../node_modules/bootstrap/dist/js/bootstrap.min.js'],
             dest: 'template/static/js/',
             filter: 'isFile'
           },
           {
             expand: true,
             flatten: true,
-            src: ['../node_modules/bootstrap/dist/css/bootstrap.min.css'],
+            src: ['../../node_modules/bootstrap/dist/css/bootstrap.min.css'],
             dest: 'template/static/css/',
             filter: 'isFile'
           },
           {
             expand: true,
             flatten: true,
-            src: ['../node_modules/bootstrap/dist/fonts/*'],
+            src: ['../../node_modules/bootstrap/dist/fonts/*'],
             dest: 'template/static/fonts/',
             filter: 'isFile'
           }
@@ -83,7 +83,7 @@ module.exports = function (grunt) {
           {
             expand: true,
             flatten: true,
-            src: ['../node_modules/jquery/dist/jquery.min.js'],
+            src: ['../../node_modules/jquery/dist/jquery.min.js'],
             dest: 'template/static/js/',
             filter: 'isFile'
           }
@@ -94,7 +94,7 @@ module.exports = function (grunt) {
           {
             expand: true,
             flatten: true,
-            src: ['../node_modules/clipboard/dist/clipboard.min.js'],
+            src: ['../../node_modules/clipboard/dist/clipboard.min.js'],
             dest: 'template/static/js/',
             filter: 'isFile'
           }
@@ -105,14 +105,14 @@ module.exports = function (grunt) {
           {
             expand: true,
             flatten: true,
-            src: ['../node_modules/prismjs/prism.js'],
+            src: ['../../node_modules/prismjs/prism.js'],
             dest: 'template/static/js/',
             filter: 'isFile'
           },
           {
             expand: true,
             flatten: true,
-            src: ['../node_modules/prismjs/themes/prism.css'],
+            src: ['../../node_modules/prismjs/themes/prism.css'],
             dest: 'template/static/css/',
             filter: 'isFile'
           }
@@ -123,7 +123,7 @@ module.exports = function (grunt) {
           {
             expand: true,
             flatten: true,
-            src: ['../node_modules/lunr/lunr.min.js'],
+            src: ['../../node_modules/lunr/lunr.min.js'],
             dest: 'template/static/js/',
             filter: 'isFile'
           }

@@ -17,7 +17,9 @@ function base64Encode(input: string):string {
     encodedResult = global.Buffer.from(input).toString('base64');
   }
 
-  return encodedResult;
+  return encodedResult
+    .replace(/\+/g, '-') // Convert '+' to '-'
+    .replace(/\//g, '_'); // Convert '/' to '_';
 }
 
 export {base64Encode};

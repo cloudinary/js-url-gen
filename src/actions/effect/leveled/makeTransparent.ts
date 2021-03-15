@@ -5,8 +5,10 @@ import {prepareColor} from "../../../internal/utils/prepareColor";
 import {SystemColors} from "../../../qualifiers/color";
 
 /**
- * @augments LeveledEffectAction
  * @description Makes the background of the image transparent (or solid white for formats that do not support transparency).
+ * @extends LeveledEffectAction
+ * @memberOf Actions.Effect
+ * @see Visit {@link Actions.Effect|Effect} for an example
  */
 class MakeTransparentEffectAction extends LeveledEffectAction {
   /**

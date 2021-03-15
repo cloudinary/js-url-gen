@@ -41,7 +41,7 @@ describe('Test imported qualifiers', () => {
 
   it('Test image formats', () => {
     const {jp2, ai, auto, bmp, eps, flif, gif, heic, ico, jpc, jpg, pdf, png, psd, svg, tiff, wdp, webp, arw,
-      avif, cr2, djvu, eps3, ept, fxb, gltf, hdp, heif, indd, jpe, jpeg, jxr, ps, spd, tga, tif} = Format;
+      avif, cr2, djvu, eps3, ept, fxb, gltf, hdp, heif, indd, jpe, jpeg, jxr, ps, spd, tga, tif, usdz} = Format;
     expect(jp2().toString()).toBe('jp2');
     expect(ai().toString()).toBe('ai');
     expect(auto().toString()).toBe('auto');
@@ -78,6 +78,7 @@ describe('Test imported qualifiers', () => {
     expect(spd().toString()).toBe('spd');
     expect(tga().toString()).toBe('tga');
     expect(tif().toString()).toBe('tif');
+    expect(usdz().toString()).toBe('usdz');
   });
 });
 

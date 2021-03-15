@@ -1,3 +1,33 @@
+1.0.0-beta.1 / 2021-02-24
+==================
+
+
+New functionality and features
+==============================
+  * Add Format.usdz() (#352)
+  * Add flag for ignore-mask-channels (#353)
+  * Add support for unicode characters in l_fetch (#348)
+
+Other changes
+================
+  * changed types file name(backwards-compatibility) (#355)
+  * Docs - Enhance inline examples in the codebase (#350)
+  * Docs - Add version number to the docs reference (#349)
+  * Docs - Add comments and improve some UI areas in the docs (#343)
+  * Docs - Add summary qualifier tags to all qualifiers (#344)
+  * Docs - Unify the two seprate readme files into a single file (#342)
+  * Docs - Remove overlayTests namespace
+  * Docs - Fix indentation in the details tab for any symbol (#347)
+  * Fix typo in Extract namespace
+  * Add configuration tests (#331)
+  * Add examples to IURlConfig interfaces and hide private interfaces (#346)
+  * Add tests for `asset.setAssetType` (#345)
+
+Breaking changes
+================
+ * Breaking - change the name of the named export of the entire SDK (CloudinarySDK -> CloudinaryBaseSDK) (#341)
+
+
 1.0.0-beta.0 / 2021-02-01
 ==================
 

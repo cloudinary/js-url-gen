@@ -26,11 +26,11 @@ describe('Tests for CloudinaryFile', () => {
     cloudinaryFile
       .setPublicID('sample')
       .setSuffix('foo')
-      .setAssetType('video')
-      .setStorageType('fetch')
+      .setAssetType('image')
+      .setStorageType('private')
       .setVersion('12345');
 
-    expect(cloudinaryFile.toURL()).toContain('video/fetch/v12345/sample');
+    expect(cloudinaryFile.toURL()).toContain('private_images/v12345/sample/foo');
   });
 
   it('should use assetType from the asset', () => {

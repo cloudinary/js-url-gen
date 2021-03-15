@@ -13,6 +13,19 @@ import {getSDKAnalyticsSignature} from "../sdkAnalytics/getSDKAnalyticsSignature
 import {ITrackedPropertiesThroughAnalytics} from "../sdkAnalytics/interfaces/ITrackedPropertiesThroughAnalytics";
 
 /**
+ * This const contains all the valid combination of asset/storage for URL shortening purposes
+ * It's exported because it's used in a test, but it's not really shared enough to belong in a separate file
+ */
+export const SEO_TYPES: Record<string, string> = {
+  "image/upload": "images",
+  "image/private": "private_images",
+  "image/authenticated": "authenticated_images",
+  "raw/upload": "files",
+  "video/upload": "videos"
+};
+
+
+/**
  * @desc Cloudinary file without a transformation
  * @summary SDK
  * @memberOf SDK
@@ -25,11 +38,12 @@ class CloudinaryFile {
   protected authToken: IAuthTokenConfig; // populated from the cloud config
   protected urlConfig: IURLConfig;
 
-  public version: number | string;
-  public publicID: string;
-  public extension: string;
-  public suffix: string;
-  public storageType: string; // type upload/private
+  private version: number | string;
+  private publicID: string;
+  private extension: string;
+  private signature: string;
+  private suffix: string;
+  private storageType: string; // type upload/private
 
   constructor(publicID: string, cloudConfig: ICloudConfig = {}, urlConfig?: IURLConfig) {
     this.setPublicID(publicID);
@@ -56,6 +70,11 @@ class CloudinaryFile {
     return this;
   }
 
+  setSignature(signature: string): this {
+    this.signature = signature;
+    return this;
+  }
+
   setVersion(newVersion: number | string): this {
     if (newVersion) {
       this.version = newVersion;
@@ -79,20 +98,94 @@ class CloudinaryFile {
   }
 
   /**
-   *
-   * @description Creates a fully qualified CloudinaryURL
-   * @return {string} CloudinaryURL
+   * @description Validate various options before attempting to create a URL
+   * The function will throw in case a violation
+   * @throws Validation errors
    */
-  createCloudinaryURL(transformation?: Transformation | string, trackedAnalytics?: Partial<ITrackedPropertiesThroughAnalytics>): string {
+  validateAssetForURLCreation(): void {
     if (typeof this.cloudName === 'undefined') {
       throw 'You must supply a cloudName in either toURL() or when initializing the asset';
     }
-    const prefix = getUrlPrefix(this.cloudName, this.urlConfig);
+
+    const suffixContainsDot = this.suffix && this.suffix.indexOf('.') >= 0;
+    const suffixContainsSlash = this.suffix && this.suffix.indexOf('/') >= 0;
+
+    if (suffixContainsDot || suffixContainsSlash) {
+      throw '`suffix`` should not include . or /';
+    }
+  }
+
+
+
+  /**
+   * @description return an SEO friendly name for a combination of asset/storage, some examples:
+   * * image/upload -> images
+   * * video/upload -> videos
+   * If no match is found, return `{asset}/{storage}`
+   */
+  getResourceType(): string {
     const assetType = handleAssetType(this.assetType);
     const storageType = handleStorageType(this.storageType);
 
-    const transformationString = transformation ? transformation.toString() : '';
+    const hasSuffix = !!this.suffix;
+    const regularSEOType = `${assetType}/${storageType}`;
+    const shortSEOType = SEO_TYPES[`${assetType}/${storageType}`];
+    const useRootPath = this.urlConfig.useRootPath;
+    const shorten = this.urlConfig.shorten;
 
+    // Quick exit incase of useRootPath
+    if (useRootPath) {
+      if (regularSEOType === 'image/upload') {
+        return ''; // For image/upload we're done, just return nothing
+      } else {
+        throw new Error(`useRootPath can only be used with assetType: 'image' and storageType: 'upload'. Provided: ${regularSEOType} instead`);
+      }
+    }
+
+    if (shorten && regularSEOType === 'image/upload') {
+      return 'iu';
+    }
+
+
+    if (hasSuffix) {
+      if (shortSEOType) {
+        return shortSEOType;
+      } else {
+        throw new Error(`URL Suffix only supported for ${Object.keys(SEO_TYPES).join(', ')}, Provided: ${regularSEOType} instead`);
+      }
+    }
+
+    // If all else fails, return the regular image/upload combination (asset/storage)
+    return regularSEOType;
+  }
+
+
+  getSignature() {
+    if (this.signature) {
+      return `s--${this.signature}--`;
+    } else {
+      return '';
+    }
+  }
+
+  /**
+   *
+   * @description Creates a fully qualified CloudinaryURL
+   * @return {string} CloudinaryURL
+   * @throws Validation Errors
+   */
+  createCloudinaryURL(transformation?: Transformation | string): string {
+    // In accordance with the existing implementation, if no publicID exists we should return nothing.
+    if (!this.publicID) {
+      return '';
+    }
+
+    // Throws if some options are mis-configured
+    // See the function for more information on when it throws
+    this.validateAssetForURLCreation();
+
+    const prefix = getUrlPrefix(this.cloudName, this.urlConfig);
+    const transformationString = transformation ? transformation.toString() : '';
     const version = getUrlVersion(this.publicID, this.version, this.urlConfig.forceVersion);
 
     const publicID = this.publicID
@@ -100,7 +193,9 @@ class CloudinaryFile {
       // we can't use serializeCloudinaryCharacters because that does both things (, and /)
       .replace(/,/g, '%2C');
 
-    const url = [prefix, assetType, storageType, transformationString, version, publicID]
+    // Resource type is a mixture of assetType, storageType and various URL Configurations
+    // Note how `suffix` changes both image/upload (resourceType) and also is appended at the end
+    const url = [prefix, this.getResourceType(), this.getSignature(), transformationString, version, publicID, this.suffix]
       .filter((a) => a)
       .join('/');
 

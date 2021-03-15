@@ -4,6 +4,9 @@ import {Action} from "../../../internal/Action";
 
 /**
  * @description The Action class of the pixelate Builder
+ * @extends {SDK.Action}
+ * @memberOf Actions.Effect
+ * @see Visit {@link Actions.Effect|Effect} for an example
  */
 class Pixelate extends Action {
   private _region?: NamedRegion;

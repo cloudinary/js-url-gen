@@ -1,4 +1,4 @@
-import {Border} from "../actions/border";
+import {Border, BorderAction} from "../actions/border";
 import {IReshape} from "../actions/reshape";
 import ResizeSimpleAction from "../actions/resize/ResizeSimpleAction";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
@@ -12,7 +12,7 @@ import {SystemColors} from "../qualifiers/color";
 import SmartObjectAction from "../actions/psdTools/SmartObjectAction";
 import ClipAction from "../actions/psdTools/ClipAction";
 import GetLayerAction from "../actions/psdTools/GetLayerAction";
-import {Extract} from "../actions/extract";
+import {ExtractAction} from "../actions/extract";
 import {FlagQualifier} from "../qualifiers/flag/FlagQualifier";
 import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction";
 import {EffectActions} from "../actions/effect";
@@ -44,7 +44,7 @@ class CloudinaryTransformable extends CloudinaryFile {
    * @param {Actions.Border} border
    * @return {this}
    */
-  border(border: Border): this {
+  border(border: BorderAction): this {
     this.transformation.border(border);
     return this;
   }
@@ -193,7 +193,7 @@ class CloudinaryTransformable extends CloudinaryFile {
    * @param {Actions.Extract} action
    * @return {this}
    */
-  extract(action: Extract): this {
+  extract(action: ExtractAction): this {
     this.transformation.extract(action);
     return this;
   }

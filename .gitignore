@@ -7,8 +7,8 @@ public
 playground/base.esm.js
 scripts/tmp.sh
 # This file is dynamically generated and should not be part of the repo
-__DOC_RESOURCES__/injectVersionSemver.js
+__DOCS__/resources/injectVersionSemver.js
 __TESTS__/compilation.test.ts
 pcakage-lock.json
 .SIZE_TESTS
-__docTemplate/examples
+__DOCS__/JSDocTemplate/examples

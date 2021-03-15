@@ -6,34 +6,41 @@ import {Action} from "../internal/Action";
  * @description Extracts an image or a page using an index, a range, or a name from a layered media asset.
  * @memberOf Actions
  * @namespace Extract
+ * @example
+ * import {Cloudinary} from '@cloudinary/base/instance/Cloudinary';
+ *
+ * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
+ * const image = yourCldInstance.image('woman');
+ *
+ * import {getFrame, getPage} from '@cloudinary/base/actions/extract';
+ *
+ * image.extract(
+ *  getFrame()
+ *    .byRange(1, 3) // These are mutually exclusive
+ *    .byNumber(5) // These are mutually exclusive
+ * );
+ *
+ * image.extract(
+ *  getPage()
+ *    .byRange(1, 3) // These are mutually exclusive
+ *    .byNumber(5) // These are mutually exclusive
+ * );
+ *
  */
-class Extract extends Action {
+
+
+/**
+ * @description Extracts an image or a page using an index, a range, or a name from a layered media asset.
+ * @extends SDK.Action
+ * @memberOf Actions.Extract
+ * @see Visit {@link Actions.Extract} for examples
+ */
+class ExtractAction extends Action {
   private qualifierValue = new QualifierValue();
 
   constructor() {
     super();
     this.qualifierValue.delimiter = ';';
-  }
-
-  /**
-   * @summary action
-   * @description Extracts an image containing only specified layers of a Photoshop image.
-   * <b>Learn more:</b> {@link https://cloudinary.com/documentation/paged_and_layered_media#deliver_selected_layers_of_a_psd_image | Deliver selected layers of a PSD image}
-   * @memberOf Actions.PSDTools
-   * @return {GetLayerAction}
-   */
-  static getFrame(): Extract {
-    return new Extract();
-  }
-
-  /**
-   * @summary action
-   * @description Extracts the original content of an embedded object of a Photoshop image.
-   * @memberOf Actions.PSDTools
-   * @return {SmartObjectAction}
-   */
-  static getPage(): Extract {
-    return new Extract();
   }
 
   /**
@@ -66,5 +73,29 @@ class Extract extends Action {
 }
 
 
-const {getFrame, getPage} = Extract;
-export {getFrame, getPage, Extract};
+/**
+ * @summary action
+ * @description Extracts an image containing only specified layers of a Photoshop image.
+ * <b>Learn more:</b> {@link https://cloudinary.com/documentation/paged_and_layered_media#deliver_selected_layers_of_a_psd_image | Deliver selected layers of a PSD image}
+ * @memberOf Actions.Extract
+ * @return {Actions.Extract.ExtractAction}
+ */
+function getFrame(): ExtractAction {
+  return new ExtractAction();
+}
+
+/**
+ * @summary action
+ * @description Extracts the original content of an embedded object of a Photoshop image.
+ * @memberOf Actions.Extract
+ * @return {Actions.Extract.ExtractAction}
+ */
+function getPage(): ExtractAction {
+  return new ExtractAction();
+}
+
+const Extract = {
+  getFrame, getPage, ExtractAction
+};
+
+export {getFrame, getPage, ExtractAction, Extract};
