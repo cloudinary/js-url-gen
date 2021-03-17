@@ -2,6 +2,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
 import serve from 'rollup-plugin-serve'
 import typescript from "rollup-plugin-typescript";
+import json from '@rollup/plugin-json';
 
 export default {
   input: 'src/index.ts',
@@ -12,6 +13,7 @@ export default {
     }
   ],
   plugins: [
+    json(),
     typescript(),
     serve({
       contentBase: 'playground'

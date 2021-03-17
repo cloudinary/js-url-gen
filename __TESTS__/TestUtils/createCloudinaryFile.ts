@@ -6,9 +6,10 @@ import {CloudinaryFile} from "../../src";
  *
  */
 function createNewFile(publicID?: string, cloudConfig?: ICloudConfig, urlConfig?:IURLConfig): CloudinaryFile {
-  return new CloudinaryFile(publicID, Object.assign({
-    cloudName: 'demo'
-  }, cloudConfig), urlConfig);
+  const newCloudConfig = { cloudName: 'demo', ...cloudConfig};
+  const newUrlConfig = { analytics: false, ...urlConfig};
+
+  return new CloudinaryFile(publicID, newCloudConfig, newUrlConfig);
 }
 
 export {createNewFile};

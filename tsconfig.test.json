@@ -5,7 +5,8 @@
     "baseUrl": "src",
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "noEmit": true
+    "noEmit": true,
+    "resolveJsonModule": true
   },
   "include": [
     "src",

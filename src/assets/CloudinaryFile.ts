@@ -9,6 +9,8 @@ import ICloudConfig from "../config/interfaces/Config/ICloudConfig";
 import IURLConfig from "../config/interfaces/Config/IURLConfig";
 import IAuthTokenConfig from "../config/interfaces/Config/IAuthTokenConfig";
 import URLConfig from "../config/URLConfig";
+import {getSDKAnalyticsSignature} from "../sdkAnalytics/getSDKAnalyticsSignature";
+import {ITrackedPropertiesThroughAnalytics} from "../sdkAnalytics/interfaces/ITrackedPropertiesThroughAnalytics";
 
 /**
  * This const contains all the valid combination of asset/storage for URL shortening purposes
@@ -91,10 +93,9 @@ class CloudinaryFile {
     return this;
   }
 
-  toURL(): string {
-    return this.createCloudinaryURL();
+  toURL(overwriteOptions: {trackedAnalytics?: Partial<ITrackedPropertiesThroughAnalytics>} = {}): string {
+    return this.createCloudinaryURL(null, overwriteOptions.trackedAnalytics);
   }
-
 
   /**
    * @description Validate various options before attempting to create a URL
@@ -173,7 +174,7 @@ class CloudinaryFile {
    * @return {string} CloudinaryURL
    * @throws Validation Errors
    */
-  createCloudinaryURL(transformation?: Transformation | string): string {
+  createCloudinaryURL(transformation?: Transformation | string, trackedAnalytics?: Partial<ITrackedPropertiesThroughAnalytics>): string {
     // In accordance with the existing implementation, if no publicID exists we should return nothing.
     if (!this.publicID) {
       return '';
@@ -201,9 +202,16 @@ class CloudinaryFile {
     if (typeof transformation === 'string') {
       return url;
     } else {
-      return encodeURI(url)
+      const safeURL = encodeURI(url)
         .replace(/\?/g, '%3F')
         .replace(/=/g, '%3D');
+
+      // True by default, has to be explicitly set to false to overwrite
+      if (this.urlConfig.analytics !== false) {
+        return `${safeURL}?_a=${getSDKAnalyticsSignature(trackedAnalytics)}`;
+      } else {
+        return safeURL;
+      }
     }
   }
 }

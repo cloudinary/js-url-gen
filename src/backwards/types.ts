@@ -315,6 +315,5 @@ export interface V1ITransforamtionOptions {
   provisioning_api_secret?: string;
   version?: string;
   url_suffix?: string;
-  urlAnalytics?: boolean;
   [futureKey: string]: any;
 }

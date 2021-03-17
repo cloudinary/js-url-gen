@@ -3,7 +3,7 @@ import {Effect} from "../../../src/actions/effect";
 
 describe('Tests for cloning', () => {
   it('should clone resource', () => {
-    const asset = new CloudinaryMedia('sample', {cloudName: 'demo'});
+    const asset = new CloudinaryMedia('sample', {cloudName: 'demo'}, {analytics: false});
 
     const cloneAsset = asset.clone();
 

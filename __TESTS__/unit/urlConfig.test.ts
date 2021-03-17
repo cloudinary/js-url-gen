@@ -69,6 +69,9 @@ describe('It tests a combination of Cloudinary URL and Configuration', () => {
     const myInstance = new MyGlobalCloudinary({
       cloud: {
         cloudName: 'MY_CLOUD_NAME'
+      },
+      url: {
+        analytics: false
       }
     });
 

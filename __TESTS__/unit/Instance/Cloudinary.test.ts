@@ -7,6 +7,9 @@ describe('Tests for Cloudinary instance', () => {
     const cloudinary = new Cloudinary(new CloudinaryConfig({
       cloud: {
         cloudName:'demoInInstance'
+      },
+      url: {
+        analytics: false
       }
     }));
     const tImage = cloudinary.image('sample');
@@ -23,6 +26,9 @@ describe('Tests for Cloudinary instance', () => {
     cloudinary.setConfig(new CloudinaryConfig({
       cloud: {
         cloudName:'demoInInstance'
+      },
+      url: {
+        analytics: false
       }
     }));
 
