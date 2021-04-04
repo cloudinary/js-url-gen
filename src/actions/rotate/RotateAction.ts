@@ -10,7 +10,9 @@ const QUALIFIER_KEY = 'a';
  *
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#rotating_image | Rotating images}
  * {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#rotating_videos | Rotating videos}
- * @augments {Action}
+ * @extends SDK.Action
+ * @memberOf Actions.Rotate
+ * @see Visit {@link Actions.Rotate|Rotate} for an example
  */
 class RotateAction extends Action {
   constructor(angle?: number) {
