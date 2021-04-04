@@ -3,7 +3,7 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
  * @description Applies a pre-defined named transformation of the given name, used with a builder from {@link Actions.NamedTransformation|Named Transformation}
- * @extends {SDK.Action}
+ * @extends SDK.Action
  * @memberOf Actions.NamedTransformation
  * @see Visit {@link Actions.NamedTransformation|Named Transformation} for an example
  */

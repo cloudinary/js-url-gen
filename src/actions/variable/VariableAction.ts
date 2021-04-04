@@ -8,7 +8,7 @@ type TypeVariableValue = number | string | ExpressionQualifier;
 /**
  * @description Defines an new user variable.
  * @memberOf Actions.Variable
- * @extends {SDK.Action}
+ * @extends SDK.Action
  */
 class VariableAction extends Action {
   private isFloat = false;

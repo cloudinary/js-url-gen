@@ -21,8 +21,8 @@ function getNodeVersion() {
  * @private
  * @description Ensure that all values ITrackedPropertiesThroughAnalytics are populated.
  * Accept a partial map of values and returns the complete interface of ITrackedPropertiesThroughAnalytics
- * @param {Partial<ITrackedPropertiesThroughAnalytics>} trackedAnalytics
- * @param {Partial<ITrackedPropertiesThroughAnalytics>} trackedAnalytics
+ * @param {ITrackedPropertiesThroughAnalytics} trackedAnalytics
+ * @param {ITrackedPropertiesThroughAnalytics} trackedAnalytics
  */
 function ensureShapeOfTrackedProperties(trackedAnalytics?: Partial<ITrackedPropertiesThroughAnalytics>): ITrackedPropertiesThroughAnalytics {
   // try to get the process version from node, but if we're on the client return 0.0.0
@@ -85,7 +85,7 @@ export function getSDKAnalyticsSignature(_trackedAnalytics?: Partial<ITrackedPro
  * @private
  * @description Removes patch version from the semver if it exists
  *              Turns x.y.z OR x.y into x.y
- * @param {'x.y.z' || 'x.y' || string} semVerStr
+ * @param {'x.y.z' | 'x.y' | string} semVerStr
  */
 function removePatchFromSemver(semVerStr: string) {
   const parts = semVerStr.split('.');

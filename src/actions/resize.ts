@@ -36,8 +36,8 @@
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');
  *
- * const {scale} from '@cloudinary/base/actions/resize';
- * const {autoGravity} from '@cloudinary/base/qualifiers/gravity';
+ * import {scale} from '@cloudinary/base/actions/resize';
+ * import {autoGravity} from '@cloudinary/base/qualifiers/gravity';
  *
  * image.resize( crop(100, 100).gravity(autoGravity()) );
  *

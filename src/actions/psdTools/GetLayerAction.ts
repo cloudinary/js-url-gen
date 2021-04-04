@@ -5,7 +5,7 @@ import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 /**
  * @description Represents a layer in a Photoshop document.
  * </br><b>Learn more:</b> {@link https://cloudinary.com/documentation/paged_and_layered_media#deliver_selected_layers_of_a_psd_image | Deliver selected layers of a PSD image}
- * @extends {SDK.Action}
+ * @extends SDK.Action
  * @memberOf Actions.PSDTools
  * @see Visit {@link Actions.PSDTools| PSDTools} for an example
  */

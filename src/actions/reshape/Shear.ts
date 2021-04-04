@@ -2,8 +2,9 @@ import {Action} from "../../internal/Action";
 
 /**
  * @description Skews the image according to the two specified values in degrees.
+ * @extends SDK.Action
  * @memberOf Actions.Reshape
- * @extends {SDK.Action}
+ * @see Visit {@link Actions.Reshape| Reshape} for examples
  */
 class ShearAction extends Action {
   private _x: number;

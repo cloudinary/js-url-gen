@@ -8,7 +8,7 @@ import {BaseSource} from "../../qualifiers/source/BaseSource";
 
 
 /**
- * @extends {SDK.Action}
+ * @extends SDK.Action
  * @memberOf SDK
  * @description
  * A generic Layer action that can add a Video, Text or Image layer.<br>

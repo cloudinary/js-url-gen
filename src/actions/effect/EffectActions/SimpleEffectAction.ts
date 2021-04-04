@@ -5,7 +5,7 @@ import {ExpressionQualifier} from "../../../qualifiers/expression/ExpressionQual
 
 /**
  * @description A class that defines a simple effect of the type e_{effectName}
- * @extends {SDK.Action}
+ * @extends SDK.Action
  * @memberOf Actions.Effect
  * @see Visit {@link Actions.Effect|Effect} for an example
  */
