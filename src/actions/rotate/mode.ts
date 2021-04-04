@@ -6,7 +6,7 @@ import {RotationModeQualifierValue} from "../../qualifiers/rotate/RotationModeQu
  * @memberOf Actions.Rotate
  * @description Rotate an image by using a rotationMode
  * @param {string} rotationMode
- * For a list of supported rotation modes see {@link Qualifiers.rotationModeValues| types of rotation modes} for
+ * For a list of supported rotation modes see {@link Qualifiers.RotationMode| types of rotation modes} for
  * possible values
  * @example
  * import {mode} from "@cloudinary/base/actions/rotate";
