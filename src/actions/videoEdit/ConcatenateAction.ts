@@ -8,7 +8,7 @@ import {FetchSource} from "../../qualifiers/source/sourceTypes/FetchSource";
  * @description Class for Concatenating another video.
  *
  * <b>Learn more</b>: {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#concatenating_videos | Concatenating videos}
- * @extend SDK.Action
+ * @extends SDK.Action
  * @memberOf Actions.VideoEdit
  * @see Visit {@link Actions.VideoEdit|VideoEdit} for an example
  */
