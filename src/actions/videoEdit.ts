@@ -50,7 +50,7 @@ function concatenate(source:VideoSource):ConcatenateAction{
   * Trimming videos}
  *
  * @memberOf Actions.VideoEdit
- * @return {TrimAction}
+ * @return {Actions.VideoEDit.TrimAction}
  * @example
  * import {Cloudinary} from "@cloudinary/base";
  * import {trim} from "@cloudinary/base/actions/videoEdit";
