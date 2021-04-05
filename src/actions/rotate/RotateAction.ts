@@ -23,7 +23,7 @@ class RotateAction extends Action {
   /**
    * @description Rotates an asset using a defined mode.
    * @param {Qualifiers.RotationMode | string} rotationMode
-   * For a list of supported rotation modes see {@link Qualifiers.rotationModeValues| types of rotation modes} for
+   * For a list of supported rotation modes see {@link Qualifiers.RotationMode| types of rotation modes} for
    * possible values
    * @return {this}
    */

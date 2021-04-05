@@ -756,13 +756,13 @@ Handlebars.registerPartial("tag/example", this["tmpl"]["tag/example"] = Handleba
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
   return ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.caption : depth0),{"name":"if","hash":{},"fn":container.program(4, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "		<div class=\"example-code\">\r\n			<pre class=\"prettyprint source language-"
+    + "		<div class=\"example-code\">\r\n<pre class=\"prettyprint source language-"
     + alias4(((helper = (helper = helpers.lang || (depth0 != null ? depth0.lang : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"lang","hash":{},"data":data}) : helper)))
     + "\"><code class=\"language-"
     + alias4(((helper = (helper = helpers.lang || (depth0 != null ? depth0.lang : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"lang","hash":{},"data":data}) : helper)))
-    + "\">"
+    + "\">\r\n"
     + alias4(((helper = (helper = helpers.code || (depth0 != null ? depth0.code : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"code","hash":{},"data":data}) : helper)))
-    + "</code></pre>\r\n		</div>\r\n"
+    + "</code></pre> <!-- Indentation for the code examples! -->\r\n		</div>\r\n"
     + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.run : depth0),{"name":"if","hash":{},"fn":container.program(6, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "");
 },"4":function(container,depth0,helpers,partials,data) {
     var stack1, helper;

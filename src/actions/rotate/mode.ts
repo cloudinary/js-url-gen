@@ -5,7 +5,7 @@ import {RotationModeQualifierValue} from "../../qualifiers/rotate/RotationModeQu
  * @summary action
  * @description Rotate an image by using a rotationMode
  * @param {string} rotationMode
- * For a list of supported rotation modes see {@link Qualifiers.rotationModeValues| types of rotation modes} for
+ * For a list of supported rotation modes see {@link Qualifiers.RotationMode| types of rotation modes} for
  * possible values
  * @memberOf Actions.Rotate
  * @return {Actions.Rotate.RotateAction}
