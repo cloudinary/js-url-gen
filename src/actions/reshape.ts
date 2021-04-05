@@ -27,7 +27,7 @@ type IReshape = CutByImage | DistortArcAction;
  * @memberOf Actions.Reshape
  * @return {Actions.Reshape.CutByImage}
  * @example
- * <caption> <h4>Cropping with automatic focus(Gravity)</h4> </caption>
+ * <caption> <h4>Cut an image by using another image(Gravity)</h4> </caption>
  * import {Cloudinary, Transformation} from "@cloudinary/base";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
@@ -57,7 +57,7 @@ function cutByImage(imageSource: ImageSource): CutByImage {
  * @memberOf Actions.Reshape
  * @return {Actions.Reshape.DistortArcAction}
  * @example
- * <caption> <h4>Cropping with automatic focus(Gravity)</h4> </caption>
+ * <caption> <h4>Distort arc</h4> </caption>
  * import {Cloudinary, Transformation} from "@cloudinary/base";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
@@ -86,7 +86,7 @@ function distortArc(degrees: number): DistortArcAction {
  * @memberOf Actions.Reshape
  * @return {Actions.Reshape.DistortAction}
  * @example
- * <caption> <h4>Cropping with automatic focus(Gravity)</h4> </caption>
+ * <caption> <h4>Distorting an image</h4> </caption>
  * import {Cloudinary, Transformation} from "@cloudinary/base";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
@@ -111,7 +111,7 @@ function distort(coordinates: IDistortCoordinates): DistortAction {
  * @memberOf Actions.Reshape
  * @return {Actions.Reshape.ShearAction}
  * @example
- * <caption> <h4>Cropping with automatic focus(Gravity)</h4> </caption>
+ * <caption> <h4>Shearing an image</h4> </caption>
  * import {Cloudinary, Transformation} from "@cloudinary/base";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
@@ -135,7 +135,7 @@ function shear(x: number, y: number): ShearAction {
  * @memberOf Actions.Reshape
  * @return {Actions.Reshape.TrimAction}
  * @example
- * <caption> <h4>Cropping with automatic focus(Gravity)</h4> </caption>
+ * <caption> <h4>Trimming an image</h4> </caption>
  * import {Cloudinary, Transformation} from "@cloudinary/base";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
