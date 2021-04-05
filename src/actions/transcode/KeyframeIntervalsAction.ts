@@ -3,7 +3,7 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
 import {toFloatAsString} from "../../internal/utils/toFloatAsString";
 
 /**
- * @extend {SDK.Action}
+ * @extends SDK.Action
  * @memberOf Actions.Transcode
  * @description Controls the keyframe interval of the delivered video.
  */

@@ -11,6 +11,8 @@ import {PreviewAction} from "./videoEdit/PreviewAction";
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/video_manipulation_and_delivery | Video manipulation}
  * @memberOf Actions
  * @namespace VideoEdit
+ * @example
+ * See the examples under every method
  */
 
 /**
@@ -21,7 +23,20 @@ import {PreviewAction} from "./videoEdit/PreviewAction";
  *
  * @memberOf Actions.VideoEdit
  * @param {VideoSource} source The source to concatenate.
- * @return {ConcatenateAction}
+ * @return {Actions.VideoEdit.ConcatenateAction}
+ * @example
+ * import {Cloudinary} from "@cloudinary/base";
+ * import {concatenate} from "@cloudinary/base/actions/videoEdit";
+ * import {videoSource as concatVideoSource} from "@cloudinary/base/qualifiers/concatenate";
+ * import {videoSource as tVideoSource} from "@cloudinary/base/qualifiers/transition";
+ *
+ * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
+ * const video = yourCldInstance.video('dog');
+ *
+ * video.videoEdit( concatenate(concatVideoSource('butterfly'))
+ *  .transition(tVideoSource('myTransition'))
+ *  .duration(5)
+ * )
  */
 function concatenate(source:VideoSource):ConcatenateAction{
   return new ConcatenateAction(source);
@@ -36,6 +51,18 @@ function concatenate(source:VideoSource):ConcatenateAction{
  *
  * @memberOf Actions.VideoEdit
  * @return {TrimAction}
+ * @example
+ * import {Cloudinary} from "@cloudinary/base";
+ * import {trim} from "@cloudinary/base/actions/videoEdit";
+ *
+ * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
+ * const video = yourCldInstance.video('dog');
+ *
+ * video.videoEdit( trim()
+ *  .startOffset(3)
+ *  .endOffset(4)
+ *  .duration(10)
+ * )
  */
 function trim(): TrimAction{
   return new TrimAction();
@@ -51,7 +78,18 @@ function trim(): TrimAction{
  * @memberOf Actions.VideoEdit
  * @param {string | number} volumeValue The value of volume. The percentage change of volume (Range: -100 to 400).
  * For a list of supported types see {@link Qualifiers.Volume| Volume values}
- * @return {VolumeAction}
+ * @return {Actions.VideoEdit.VolumeAction}
+ * @example
+ * import {Cloudinary} from "@cloudinary/base";
+ * import {volume} from "@cloudinary/base/actions/videoEdit";
+ * import {mute} from '@cloudinary/base/qualifiers/volume';
+ *
+ * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
+ * const video = yourCldInstance.video('dog');
+ *
+ * video.videoEdit( volume(10) ) // as percent
+ * video.videoEdit( volume('5db') ) // as decibels
+ * video.videoEdit( volume(mute()) ) // if you prefer silence..
  */
 function volume(volumeValue: string | number): VolumeAction{
   return new VolumeAction(volumeValue);
@@ -66,6 +104,18 @@ function volume(volumeValue: string | number): VolumeAction{
  *
  * @memberOf Actions.VideoEdit
  * @return {Actions.VideoEdit.PreviewAction}
+ * @example
+ * import {Cloudinary} from "@cloudinary/base";
+ * import {preview} from "@cloudinary/base/actions/videoEdit";
+ *
+ * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
+ * const video = yourCldInstance.video('dog');
+ *
+ * video.videoEdit( preview()
+ *  .duration(5)
+ *  .minimumSegmentDuration(1)
+ *  .maximumSegments(10)
+ * )
  */
 function preview(): PreviewAction{
   return new PreviewAction();

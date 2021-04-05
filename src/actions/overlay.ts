@@ -8,7 +8,7 @@ import {LayerAction} from "./layer/LayerAction";
  * @see Visit {@link Qualifiers.TextStyle|TextStyle} for advanced text options
  * @see {@link Actions.Underlay| The underlay action}
  * @example
- * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {Cloudinary} from "@cloudinary/base";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const myVideo = yourCldInstance.video('dog');

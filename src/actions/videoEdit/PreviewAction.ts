@@ -4,7 +4,8 @@ import {toFloatAsString} from "../../internal/utils/toFloatAsString";
 /**
  * @description Class for creating a preview of a video
  * @memberOf Actions.VideoEdit
- * @extend {SDK.Action}
+ * @extends SDK.Action
+ * @see Visit {@link Actions.VideoEdit|VideoEdit} for an example
  */
 class PreviewAction extends Action {
   private _minSeg: string | number;

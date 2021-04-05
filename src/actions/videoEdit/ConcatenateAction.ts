@@ -8,21 +8,9 @@ import {FetchSource} from "../../qualifiers/source/sourceTypes/FetchSource";
  * @description Class for Concatenating another video.
  *
  * <b>Learn more</b>: {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#concatenating_videos | Concatenating videos}
- * @extend {SDK.Action}
- * @example
- * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
- * import {VideoEdit} from "@cloudinary/base/actions/videoEdit";
- * import {Concatenate} from "@cloudinary/base/qualifiers/concatenate";
- * import {Transition} from "@cloudinary/base/qualifiers/transition";
- *
- * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
- * const video = yourCldInstance.video('dog');
- *
- * video.videoEdit(
- *  VideoEdit.concatenate(Concatenate.videoSource('butterfly'))
- *  .transition(Transition.videoSource('myTransition')) // can be omitted
- *  .duration(5) // can be omitted
- * )
+ * @extend SDK.Action
+ * @memberOf Actions.VideoEdit
+ * @see Visit {@link Actions.VideoEdit|VideoEdit} for an example
  */
 class ConcatenateAction extends Action {
   private concatSource: VideoSource | ImageSource | FetchSource;

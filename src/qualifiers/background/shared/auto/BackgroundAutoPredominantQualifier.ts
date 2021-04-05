@@ -4,7 +4,7 @@ import {BaseCommonBackground} from "../base/BaseCommonBackground";
  * @description Automatically determines the color to use for padding, if needed when resizing an asset. Selects the
  * predominant color from the whole image.
  * @memberOf Qualifiers.Background
- * @augments {Qualifiers.Background.BaseCommonBackground}
+ * @extends {Qualifiers.Background.BaseCommonBackground}
  */
 class BackgroundAutoPredominantQualifier extends BaseCommonBackground {
   /**

@@ -5,7 +5,7 @@ import {NamedTransformationAction} from "./namedTransformation/NamedTransformati
  * @memberOf Actions
  * @namespace NamedTransformation
  * @example
- * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {Cloudinary} from "@cloudinary/base";
  * import {name} from "@cloudinary/base/actions/namedTransformation";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});

@@ -8,7 +8,7 @@ import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifi
 /**
  * @description Applies a shadow filter to the asset.
  * @memberOf Actions.Effect
- * @extend {SDK.Action}
+ * @extends SDK.Action
  * @see Visit {@link Actions.Effect|Effect} for an example
  */
 class ShadowEffectAction extends Action {

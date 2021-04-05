@@ -4,7 +4,7 @@
  * @memberOf Actions
  * @namespace CustomFunction
  * @example
- * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {Cloudinary} from "@cloudinary/base";
  * import {remote, wasm} from "@cloudinary/base/actions/customFunction";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});

@@ -18,7 +18,7 @@ import {SmartObjectAction} from "./psdTools/SmartObjectAction";
  * @memberOf Actions.PSDTools
  * @return {Actions.PSDTools.ClipAction}
  * @example
- * import {Cloudinary} from '@cloudinary/base/instance/Cloudinary';
+ * import {Cloudinary} from '@cloudinary/base';
  * import {clip} from '@cloudinary/base/actions/psdTools';
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
@@ -43,7 +43,7 @@ function clip(): ClipAction {
  * @memberOf Actions.PSDTools
  * @return {Actions.PSDTools.GetLayerAction}
  * @example
- * import {Cloudinary} from '@cloudinary/base/instance/Cloudinary';
+ * import {Cloudinary} from '@cloudinary/base';
  * import {getLayer} from '@cloudinary/base/actions/psdTools';
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
@@ -66,7 +66,7 @@ function getLayer(): GetLayerAction {
  * @memberOf Actions.PSDTools
  * @return {Actions.PSDTools.SmartObjectAction}
  * @example
- * import {Cloudinary} from '@cloudinary/base/instance/Cloudinary';
+ * import {Cloudinary} from '@cloudinary/base';
  * import {smartObject} from '@cloudinary/base/actions/psdTools';
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});

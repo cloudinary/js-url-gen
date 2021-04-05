@@ -6,7 +6,7 @@ import {SystemColors} from "../../qualifiers/color";
 
 /**
  * @description A class that defines how to remove the background of an asset
- * @extend {SDK.Action}
+ * @extends SDK.Action
  * @memberOf Actions.Effect
  * @see Visit {@link Actions.Effect|Effect} for an example
  */

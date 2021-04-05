@@ -4,7 +4,7 @@
  * @memberOf Qualifiers
  * @namespace Progressive
  * @example
- * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {Cloudinary} from "@cloudinary/base";
  * import {format} from "@cloudinary/base/actions/delivery";
  * import {jpg} from "@cloudinary/base/qualifiers/format";
  * import {steep} from "@cloudinary/base/qualifiers/progressive";
