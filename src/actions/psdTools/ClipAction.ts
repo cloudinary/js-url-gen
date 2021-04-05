@@ -5,7 +5,7 @@ import {clip, clipEvenOdd} from "../../qualifiers/flag";
 
 /**
  * @description  Defines the clipping path to use when trimming pixels.
- * @extends {SDK.Action}
+ * @extends SDK.Action
  * @memberOf Actions.PSDTools
  * @see Visit {@link Actions.PSDTools| PSDTools} for an example
  */

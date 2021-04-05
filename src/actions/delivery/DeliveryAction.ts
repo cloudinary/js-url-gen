@@ -5,7 +5,7 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
 /**
  * @description Qualifies the delivery of an asset.
  * @memberOf Actions.Delivery
- * @extends {SDK.Action}
+ * @extends SDK.Action
  */
 class DeliveryAction extends Action {
 

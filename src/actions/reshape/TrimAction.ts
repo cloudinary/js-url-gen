@@ -4,8 +4,9 @@ import {SystemColors} from "../../qualifiers/color";
 /**
  * @description Removes the edges of the image based on the color of the corner pixels.
  * Specify a color other than the color of the corner pixels using the colorOverride() method
+ * @extends SDK.Action
  * @memberOf Actions.Reshape
- * @extends {SDK.Action}
+ * @see Visit {@link Actions.Reshape| Reshape} for examples
  */
 class TrimAction extends Action {
   private _tolerance: number;

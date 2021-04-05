@@ -6,7 +6,7 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
 /**
  * @description Specifies the ICC profile to use for the color space.
  * @memberOf Actions.Delivery
- * @extends {SDK.Action}
+ * @extends SDK.Action
  * @see Visit {@link Actions.Delivery|Delivery} for an example
  */
 class DeliveryColorSpaceFromICC extends Action {
