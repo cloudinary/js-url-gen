@@ -2,7 +2,7 @@
  * Utility function used to import items from ./dist
  * @param {string} pathInDist - relative path inside ./dist, for example 'actions/resize'
  *                              The result will be `import resize from '../../dist/resize`;
- * * @returns string
+ * @returns string
  */
 function importFromDist(pathInDist: string, namedVariableName: string): string {
 

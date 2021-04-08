@@ -9,6 +9,7 @@ type TypeVariableValue = number | string | ExpressionQualifier;
  * @description Defines an new user variable.
  * @memberOf Actions.Variable
  * @extends SDK.Action
+ * @see Visit {@link Actions.Variable|Variable} for an example
  */
 class VariableAction extends Action {
   private isFloat = false;

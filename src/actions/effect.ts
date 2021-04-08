@@ -454,7 +454,7 @@ function theme(color: SystemColors): ThemeEffect {
  * @namespace Effect
  * @example
  * <caption>An <b>extreme</b> example of using many effects on the same asset</caption>
- * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {Cloudinary} from "@cloudinary/base";
  * // Import everything, or just the action you need for tree-shaking purposes
  * import {Effect, sepia} from "@cloudinary/base/actions/effect";
  *

@@ -11,7 +11,7 @@ import {FetchSource} from "../qualifiers/source/sourceTypes/FetchSource";
  * @see Visit {@link Qualifiers.TextStyle|TextStyle} for advanced text options
  * @see {@link Actions.Overlay| The overlay action}
  * @example
- * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {Cloudinary} from "@cloudinary/base";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const myVideo = yourCldInstance.video('dog');

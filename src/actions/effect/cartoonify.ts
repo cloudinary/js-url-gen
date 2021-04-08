@@ -4,7 +4,7 @@ import {Action} from "../../internal/Action";
 
 /**
  * @description Applies a cartoon effect to an image.
- * @extend {SDK.Action}
+ * @extends SDK.Action
  * @memberOf Actions.Effect
  * @see Visit {@link Actions.Effect|Effect} for an example
  */

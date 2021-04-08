@@ -4,6 +4,7 @@ import VariableAction from "./VariableAction";
  * @description Sets a user-defined variable from contextual metadata.
  * @memberOf Actions.Variable
  * @extends {Variable.VariableAction}
+ * @see Visit {@link Actions.Variable|Variable} for an example
  */
 class SetFromContextAction extends VariableAction {
   constructor(name: string, value: string) {
