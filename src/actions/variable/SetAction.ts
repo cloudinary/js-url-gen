@@ -5,7 +5,8 @@ import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifi
 /**
  * @description Sets a user-defined variable.
  * @memberOf Actions.Variable
- * @extends {Variable.VariableAction}
+ * @extends Variable.VariableAction
+ * @see Visit {@link Actions.Variable|Variable} for an example
  */
 class SetAction extends VariableAction {
   constructor(name: string, value: number | string | string[] | number[] | ExpressionQualifier) {

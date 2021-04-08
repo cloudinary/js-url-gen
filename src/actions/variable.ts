@@ -8,7 +8,27 @@ import {ExpressionQualifier} from "../qualifiers/expression/ExpressionQualifier"
  * Defines a new user variable with the given value.
  * @memberOf Actions
  * @namespace Variable
+ * @example
+ * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {
+ *  set,
+ *  setAssetReference,
+ *  setFromContext,
+ *  setFromMetadata
+ * } from "@cloudinary/base/actions/variable";
+ * import {scale} from "@cloudinary/base/actions/resize";
+ *
+ * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
+ *
+ * const image = yourCldInstance.image('woman');
+ * image
+ *  .addVariable(set('foo1', 100))
+ *  .addVariable(setAssetReference('foo2', 'val'))
+ *  .addVariable(setFromContext('foo3', 'val'))
+ *  .addVariable(setFromMetadata('foo4', 'val'))
+ *  .resize(scale().width('$foo1').height('$foo2'))
  */
+
 
 /**
  * @summary action
