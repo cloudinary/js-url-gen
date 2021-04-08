@@ -20,17 +20,13 @@ import {ExpressionQualifier} from "../qualifiers/expression/ExpressionQualifier"
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  *
- * const image1 = yourCldInstance.image('woman');
- * image1.addVariable(set('foo', 100)).resize(scale().width('$foo'));
- *
- * const image2 = yourCldInstance.image('woman');
- * image2.addVariable(setAssetReference('foo', 'val'));
- *
- * const image3 = yourCldInstance.image('woman');
- * image3.addVariable(setFromContext('foo', 'val'));
- *
- * const image4 = yourCldInstance.image('woman');
- * image4.addVariable(setFromMetadata('foo', 'val'));
+ * const image = yourCldInstance.image('woman');
+ * image
+ *  .addVariable(set('foo1', 100))
+ *  .addVariable(setAssetReference('foo2', 'val'))
+ *  .addVariable(setFromContext('foo3', 'val'))
+ *  .addVariable(setFromMetadata('foo4', 'val'))
+ *  .resize(scale().width('$foo1').height('$foo2'))
  */
 
 
