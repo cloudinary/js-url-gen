@@ -1,5 +1,5 @@
 import {createNewImage} from "../../TestUtils/createCloudinaryImage";
-import {Variable} from "../../../src/actions/variable";
+import {setFloat, setInteger, setString, Variable} from "../../../src/actions/variable";
 import {Expression} from "../../../src/qualifiers/expression";
 
 const {set} = Variable;
@@ -10,6 +10,29 @@ describe('Tests for Transformation Action -- Variable', () => {
   it('tests common variable values', () => {
     expect(set('a', 30).toString()).toBe('$a_30');
     expect(set('a', '30').toString()).toBe('$a_!30!');
+  });
+
+  it('tests setFloat with common variable values', () => {
+    expect(setFloat('a', -1).toString()).toBe(`$a_-1.0`);
+    expect(setFloat('a', 0).toString()).toBe(`$a_0.0`);
+    expect(setFloat('a', 1).toString()).toBe(`$a_1.0`);
+    expect(setFloat('a', 0.01).toString()).toBe(`$a_0.01`);
+  });
+
+  it('tests setInteger with common variable values', () => {
+    expect(setInteger('a', -1).toString()).toBe(`$a_-1`);
+    expect(setInteger('a', 0).toString()).toBe(`$a_0`);
+    expect(setInteger('a', 0.9).toString()).toBe(`$a_1`);
+    expect(setInteger('a', 1).toString()).toBe(`$a_1`);
+    expect(setInteger('a', 0.01).toString()).toBe(`$a_0`); // Round down
+  });
+
+  it('tests setString with common variable values', () => {
+    // Strings are trivially supported, so this test tests for numbers
+    expect(setString('a', -1).toString()).toBe(`$a_!-1!`);
+    expect(setString('a', 0).toString()).toBe(`$a_!0!`);
+    expect(setString('a', 1).toString()).toBe(`$a_!1!`);
+    expect(setString('a', 0.01).toString()).toBe(`$a_!0.01!`);
   });
 
   it('Creates a cloudinaryURL with number variable', () => {
