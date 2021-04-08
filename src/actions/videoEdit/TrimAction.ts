@@ -3,7 +3,9 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
  * @description Class for shortening a video to the specified range.
- * @extend {SDK.Action}
+ * @extends SDK.Action
+ * @memberOf Actions.VideoEdit
+ * @see Visit {@link Actions.VideoEdit|VideoEdit} for an example
  */
 class TrimAction extends Action {
   constructor() {

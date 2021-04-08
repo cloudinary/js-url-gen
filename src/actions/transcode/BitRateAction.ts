@@ -3,11 +3,12 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
 import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 
 /**
- * @extend {SDK.Action}
+ * @extends SDK.Action
  * @memberOf Actions.Transcode
  * @description  Defines the video bitrate in bits per second.
  *
  * <b>Learn more</b>: {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#bitrate_control | Bitrate control}
+ * @see Visit {@link Actions.Transcode|Transcode} for an example
  */
 class BitRateAction extends Action {
   private bitRate: string|number;

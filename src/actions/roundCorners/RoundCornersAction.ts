@@ -4,7 +4,7 @@ import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 
 /**
  * @description A class to round one or more corners of an image or video.
- * @augments {Action}
+ * @extends SDK.Action
  */
 class RoundCornersAction extends Action {
   constructor() {

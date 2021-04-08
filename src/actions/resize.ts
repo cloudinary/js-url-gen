@@ -5,7 +5,7 @@
  * @see Learn more about Gravity and Focus {@link Qualifiers.Gravity| here }
  * @example
  * <caption> <h4>Scaling an image</h4> </caption>
- * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {Cloudinary} from "@cloudinary/base";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');
@@ -31,7 +31,7 @@
  *
  * @example
  * <caption> <h4>Cropping with automatic focus(Gravity)</h4> </caption>
- * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {Cloudinary} from "@cloudinary/base";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');

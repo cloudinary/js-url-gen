@@ -5,7 +5,7 @@ import {SystemColors} from "../../qualifiers/color";
 
 /**
  * @description Changes the main background color to the one specified, as if a 'theme change' was applied (e.g. dark mode vs light mode).
- * @extend {SDK.Action}
+ * @extends SDK.Action
  * @memberOf {Actions.Effect}
  * @see Visit {@link Actions.Effect|Effect} for an example
  */

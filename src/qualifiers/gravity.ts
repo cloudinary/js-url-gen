@@ -14,7 +14,7 @@ import {XYCenterGravity} from "./gravity/xyCenterGravity/XYCenterGravity";
  * @param {Qualifiers.Compass} direction A compass Values
  * @memberOf Qualifiers.Gravity
  * @example
- * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {Cloudinary} from "@cloudinary/base";
  * import {compass} from "@cloudinary/base/qualifiers/gravity";
  * import {north} from "@cloudinary/base/qualifiers/compass";
  * import {crop} from "@cloudinary/base/actions/resize";
@@ -34,7 +34,7 @@ function compass(direction: CompassQualifier): CompassGravity {
  * @param {...Qualifier.FocusOn} args One or more objects to focus on
  * @memberOf Qualifiers.Gravity
  * @example
- * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {Cloudinary} from "@cloudinary/base";
  * import {focusOn} from "@cloudinary/base/qualifiers/gravity";
  * import {crop} from "@cloudinary/base/actions/resize";
  * import {cat} from "@cloudinary/base/qualifiers/focusOn";
@@ -56,7 +56,7 @@ function focusOn(...args: FocusOnValue[]): FocusOnGravity {
  * @memberOf Qualifiers.Gravity
  * @return {Qualifiers.Gravity.AutoGravity}
  * @example
- * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {Cloudinary} from "@cloudinary/base";
  * import {autoGravity} from "@cloudinary/base/qualifiers/gravity";
  * import {crop} from "@cloudinary/base/actions/resize";
  *
@@ -64,7 +64,7 @@ function focusOn(...args: FocusOnValue[]): FocusOnGravity {
  * const image = yourCldInstance.image('woman');
  * image.resize(crop().width(300).gravity(autoGravity()))
  * @example
- * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {Cloudinary} from "@cloudinary/base";
  * import {autoGravity} from "@cloudinary/base/qualifiers/gravity";
  * import {crop} from "@cloudinary/base/actions/resize";
  * import {cat} from "@cloudinary/base/qualifiers/focusOn";
@@ -108,7 +108,7 @@ function xyCenter(): XYCenterGravity {
  * @namespace Gravity
  * @memberOf Qualifiers
  * @example
- * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {Cloudinary} from "@cloudinary/base";
  * import {compass} from "@cloudinary/base/qualifiers/gravity";
  * import {north} from "@cloudinary/base/qualifiers/compass";
  * import {crop} from "@cloudinary/base/actions/resize";
