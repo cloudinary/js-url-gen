@@ -27,6 +27,8 @@ export type ITranscodeAction = BitRateAction
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#transcoding_video_to_other_formats | Transcoding video to other formats}
  * @memberOf Actions
  * @namespace Transcode
+ * @example
+ * // See examples under each method
  */
 
 /**
@@ -36,7 +38,17 @@ export type ITranscodeAction = BitRateAction
  *
  * <b>Learn more</b>: {@link https://cloudinary.com/documentation/audio_transformations#audio_frequency_control | Audio frequency control}
  * @param {string|number} freq The audio frequency.
- * @return {AudioFrequencyAction}
+ * @example
+ * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {FREQ11025} from '@cloudinary/base/qualifiers/audioFrequency'
+ * import {audioFrequency} from '@cloudinary/base/actions/transcode'
+ *
+ * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
+ * const video = yourCldInstance.video('dog');
+ *
+ * video.transcode(audioFrequency(FREQ11025()))
+ * @return {Actions.Transcode.AudioFrequencyAction}
+ *
  */
 function audioFrequency(freq: string|number): AudioFrequencyAction{
   return new AudioFrequencyAction(freq);
@@ -46,7 +58,16 @@ function audioFrequency(freq: string|number): AudioFrequencyAction{
  * @memberOf Actions.Transcode
  * @description Sets the audio codec or removes the audio channel.
  * @param {string} codec The audio codec or "none".
- * @return {AudioCodecAction}
+ * @example
+ * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {aac} from '@cloudinary/base/qualifiers/audioCodec'
+ * import {audioCodec} from '@cloudinary/base/actions/transcode'
+ *
+ * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
+ * const video = yourCldInstance.video('dog');
+ *
+ * video.transcode( audioCodec( aac() ) );
+ * @return {Actions.Transcode.AudioCodecAction}
  */
 function audioCodec(codec: string): AudioCodecAction{
   return new AudioCodecAction(codec);
@@ -64,7 +85,14 @@ function audioCodec(codec: string): AudioCodecAction{
  *                             uses a variable bitrate (VBR), with this value indicating the maximum bitrate.
  *                             The value can be an integer e.g. 120000, or a string supporting "k" and "m"
  *                             (kilobits and megabits respectively) e.g. 250k or 2m.
- * @return {BitRateAction}
+ * @example
+ * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {bitRate} from '@cloudinary/base/actions/transcode'
+ * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
+ * const video = yourCldInstance.video('dog');
+ *
+ * video.transcode( bitRate(500).constant() );
+ * @return {Actions.Transcode.BitRateAction}
  */
 function bitRate(bitRate: string|number): BitRateAction {
   return new BitRateAction(bitRate);
@@ -74,7 +102,15 @@ function bitRate(bitRate: string|number): BitRateAction {
  * @summary action
  * @memberOf Actions.Transcode
  * @param {number} from frame rate
- * @return {FPSAction}
+ * @example
+ * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {fps} from '@cloudinary/base/actions/transcode'
+ *
+ * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
+ * const video = yourCldInstance.video('dog');
+ *
+ * video.transcode( fps(15) );
+ * @return {Actions.Transcode.FPSAction}
  */
 function fps(from: number): FPSAction {
   return new FPSAction(from);
@@ -87,7 +123,15 @@ function fps(from: number): FPSAction {
  * delivered with an expected FPS level (helps with sync to audio).
  * @param {number} from frame rate
  * @param {number} to frame rate
- * @return {FPSRangeAction}
+ * @example
+ * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {fpsRange} from '@cloudinary/base/actions/transcode'
+ *
+ * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
+ * const video = yourCldInstance.video('dog');
+ *
+ * video.transcode( fpsRange( 20, 25 ) );
+ * @return {Actions.Transcode.FPSRangeAction}
  */
 function fpsRange(from: number, to?: number): FPSRangeAction {
   return new FPSRangeAction(from, to);
@@ -98,7 +142,15 @@ function fpsRange(from: number, to?: number): FPSRangeAction {
  * @memberOf Actions.Transcode
  * @description Sets the keyframe interval of the delivered video.
  * @param {number | string} interval The keyframe interval in seconds.
- * @return {KeyframeIntervalsAction}
+ * @example
+ * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {keyframeInterval} from '@cloudinary/base/actions/transcode'
+ *
+ * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
+ * const video = yourCldInstance.video('dog');
+ *
+ * video.transcode( keyframeInterval( 0.5 ) );
+ * @return {Actions.Transcode.KeyframeIntervalsAction}
  */
 function keyframeInterval(interval: number | string): KeyframeIntervalsAction {
   return new KeyframeIntervalsAction(interval);
@@ -112,7 +164,16 @@ function keyframeInterval(interval: number | string): KeyframeIntervalsAction {
  * You can use the streaming profiles methods of StreamingProfilesTrait to get a list of the available streaming
  * profiles or to create new custom profiles.
  * @param {string} profile The streaming profile.
- * @return {StreamingProfileAction}
+ * @example
+ * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {fullHd} from "@cloudinary/base/qualifiers/streamingProfile";
+ * import {streamingProfile} from '@cloudinary/base/actions/transcode'
+ *
+ * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
+ * const video = yourCldInstance.video('dog');
+ *
+ * video.transcode( streamingProfile( fullHd() ) );
+ * @return {Actions.Transcode.StreamingProfileAction}
  */
 function streamingProfile(profile: string): StreamingProfileAction {
   return new StreamingProfileAction(profile);
@@ -123,7 +184,16 @@ function streamingProfile(profile: string): StreamingProfileAction {
  * @memberOf Actions.Transcode
  * @description Converts a video to animated image.
  * @param {string} animatedFormat The streaming profile.
- * @return {ToAnimatedAction}
+ * @example
+ * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {gif} from '@cloudinary/base/qualifiers/animatedFormat'
+ * import {toAnimated} from '@cloudinary/base/actions/transcode'
+ *
+ * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
+ * const video = yourCldInstance.video('dog');
+ *
+ * video.transcode( toAnimated( gif() ) );
+ * @return {Actions.Transcode.ToAnimatedAction}
  */
 function toAnimated(animatedFormat: AnimatedFormatQualifierValue | string): ToAnimatedAction {
   return new ToAnimatedAction(animatedFormat);
@@ -134,7 +204,7 @@ function toAnimated(animatedFormat: AnimatedFormatQualifierValue | string): ToAn
  * @memberOf Actions.Transcode
  * @description Controls the video codec.
  * @param {Qualifiers.VideoCodec.VideoCodecType | Qualifiers.VideoCodec.AdvVideoCodecType} videoCodecType CodecType
- * @example // Setting the video codec
+ * @example
  * import {Cloudinary} from "@cloudinary/base";
  * import {vp9} from '@cloudinary/base/qualifiers/videoCodec'
  * import {videoCodec} from '@cloudinary/base/actions/transcode'

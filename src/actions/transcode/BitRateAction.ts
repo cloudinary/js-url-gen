@@ -8,6 +8,7 @@ import {QualifierValue} from "../../internal/qualifier/QualifierValue";
  * @description  Defines the video bitrate in bits per second.
  *
  * <b>Learn more</b>: {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#bitrate_control | Bitrate control}
+ * @see Visit {@link Actions.Transcode|Transcode} for an example
  */
 class BitRateAction extends Action {
   private bitRate: string|number;
