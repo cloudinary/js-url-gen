@@ -6,23 +6,18 @@
  * @example
  * <caption>Rotate by mode</caption>
  * import {Cloudinary} from "@cloudinary/base";
- * import {mode} from "@cloudinary/base/actions/rotate";
+ * import {mode, byAngle} from "@cloudinary/base/actions/rotate";
  * import {autoLeft} from "@cloudinary/base/qualifiers/rotationMode";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');
+ *
+ * // Rotate by mode
  * image.rotate(mode(autoLeft());
- * image.toURL();
  *
- * @example
- * <caption>Rotate by angle</caption>
- * import {Cloudinary} from "@cloudinary/base";
- * import {byAngle} from "@cloudinary/base/actions/rotate";
- *
- * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
- * const image = yourCldInstance.image('woman');
- *
+ * // Rotate by angle
  * image.rotate(byAngle(90));
+ *
  * image.toURL();
  */
 
