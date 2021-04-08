@@ -4,7 +4,7 @@ import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 
 /**
  * @description Vectorizes the image.
- * @extend {SDK.Action}
+ * @extends SDK.Action
  * @memberOf Actions.Effect
  * @see Visit {@link Actions.Effect|Effect} for an example
  */

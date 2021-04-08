@@ -4,7 +4,7 @@
     "dictionaries": ["jsdoc","closure"]
   },
   "source": {
-    "include": ["src", "__TESTS__"],
+    "include": ["src"],
     "includePattern": ".+\\.ts(doc|x)?$"
   },
   "plugins": [

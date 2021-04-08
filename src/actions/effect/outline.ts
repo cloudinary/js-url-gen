@@ -6,7 +6,7 @@ import {SystemColors} from "../../qualifiers/color";
 
 /**
  * @description Adds an outline to a transparent image. For examples, see the Image Transformations guide.
- * @extend {SDK.Action}
+ * @extends SDK.Action
  * @memberOf Actions.Effect
  * @see Visit {@link Actions.Effect|Effect} for an example
  */

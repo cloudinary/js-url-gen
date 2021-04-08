@@ -7,7 +7,7 @@ import {Action} from "../internal/Action";
  * @memberOf Actions
  * @namespace Extract
  * @example
- * import {Cloudinary} from '@cloudinary/base/instance/Cloudinary';
+ * import {Cloudinary} from '@cloudinary/base';
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');

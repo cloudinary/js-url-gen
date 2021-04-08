@@ -29,7 +29,7 @@ export type IDeliveryAction = DeliveryAction | DeliveryColorSpaceFromICC;
  * possible values
  * @return {Actions.Delivery.DeliveryFormat}
  * @example
- * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {Cloudinary} from "@cloudinary/base";
  * import {format} from "@cloudinary/base/actions/delivery";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
@@ -52,7 +52,7 @@ function format(format:FormatQualifier | string) :DeliveryFormat {
  * @param {string} dpr The DPR (Device Pixel Ratio). Any positive float value.
  * @return {Actions.Delivery.DeliveryAction}
  * @example
- * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {Cloudinary} from "@cloudinary/base";
  * import {dpr} from "@cloudinary/base/actions/delivery";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
@@ -78,7 +78,7 @@ function dpr(dpr: string|number):DeliveryAction {
  * possible values.
  * @return {Actions.Delivery.DeliveryQualityAction}
  * @example
- * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {Cloudinary} from "@cloudinary/base";
  * import {quality} from "@cloudinary/base/actions/delivery";
  * import {quality} from "@cloudinary/base/qualifiers/quantity";
  *
@@ -100,7 +100,7 @@ function quality(qualityType:string | number) :DeliveryQualityAction {
  * @param {number | string} value The density in dpi.
  * @return {Actions.Delivery.DeliveryAction}
  * @example
- * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {Cloudinary} from "@cloudinary/base";
  * import {density} from "@cloudinary/base/actions/delivery";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
@@ -122,7 +122,7 @@ function density(value:number) :DeliveryAction {
  * @param {string} publicIdWithExtension Default image public ID
  * @return {Actions.Delivery.DeliveryAction}
  * @example
- * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {Cloudinary} from "@cloudinary/base";
  * import {defaultImage} from "@cloudinary/base/actions/delivery";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
@@ -143,7 +143,7 @@ function defaultImage(publicIdWithExtension:string) :DeliveryAction {
  * @param {string | Qualifiers.ColorSpace} mode The color space.
  * @return {Actions.Delivery.DeliveryAction}
  * @example
- * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {Cloudinary} from "@cloudinary/base";
  * import {colorSpace} from "@cloudinary/base/actions/delivery";
  * import {trueColor} from "@cloudinary/base/qualifiers/colorSpace";
  *
@@ -167,7 +167,7 @@ function colorSpace(mode:string): DeliveryAction {
  * color space.
  * @return {Actions.Delivery.DeliveryColorSpaceFromICC}
  * @example
- * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {Cloudinary} from "@cloudinary/base";
  * import {colorSpaceFromICC} from "@cloudinary/base/actions/delivery";
  * import {trueColor} from "@cloudinary/base/qualifiers/colorSpace";
  *

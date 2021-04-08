@@ -3,7 +3,7 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
  * @description Simulates the way an image would appear to someone with the specified color blind condition
- * @extend {SDK.Action}
+ * @extends SDK.Action
  * @memberOf Actions.Effect
  * @see Visit {@link Actions.Effect|Effect} for an example
  */

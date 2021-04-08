@@ -2,7 +2,7 @@ import {Action} from "../../internal/Action";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 /**
- * @extend {SDK.Action}
+ * @extends SDK.Action
  * @memberOf Actions.Transcode
  * @description Controls the FPS (Frames Per Second) to ensure that video (even when optimized)
  * is delivered with

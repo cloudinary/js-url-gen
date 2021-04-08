@@ -3,7 +3,7 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
 import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 
 /**
- * @extend {SDK.Action}
+ * @extends SDK.Action
  * @memberOf Actions.Transcode
  * @description Controls the range of acceptable FPS (Frames Per Second) to ensure that video (even when optimized)
  * is delivered with

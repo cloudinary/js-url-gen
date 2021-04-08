@@ -205,7 +205,7 @@ function toAnimated(animatedFormat: AnimatedFormatQualifierValue | string): ToAn
  * @description Controls the video codec.
  * @param {Qualifiers.VideoCodec.VideoCodecType | Qualifiers.VideoCodec.AdvVideoCodecType} videoCodecType CodecType
  * @example
- * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {Cloudinary} from "@cloudinary/base";
  * import {vp9} from '@cloudinary/base/qualifiers/videoCodec'
  * import {videoCodec} from '@cloudinary/base/actions/transcode'
  *

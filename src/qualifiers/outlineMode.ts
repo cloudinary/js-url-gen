@@ -3,7 +3,7 @@
  * @namespace Outline
  * @memberOf Qualifiers
  * @example
- * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {Cloudinary} from "@cloudinary/base";
  * import {outdoor} from "@cloudinary/base/qualifiers/improveMode";
  * import {improve} from "@cloudinary/base/actions/adjust";
  *
