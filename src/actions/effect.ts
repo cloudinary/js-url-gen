@@ -457,6 +457,8 @@ function theme(color: SystemColors): ThemeEffect {
  * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
  * // Import everything, or just the action you need for tree-shaking purposes
  * import {Effect, sepia} from "@cloudinary/base/actions/effect";
+ * import {ArtisticFilter, alDente} from "../../../src/qualifiers/artisticFilter";
+ * import {ShakeStrength, pixels16} from "../../../src/qualifiers/shakeStrength";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');
@@ -495,7 +497,8 @@ function theme(color: SystemColors): ThemeEffect {
  * .effect(Effect.vignette().strength(5))
  * .effect(Effect.deshake())
  * .effect(Effect.deshake(10))
- * .effect(Effect.deshake().shakeStrength(ShakeStrength.pixels16()))
+ * .effect(Effect.artisticFilter(alDente())
+ * .effect(Effect.deshake().shakeStrength(pixels16()))
  */
 const Effect = {
   pixelate: pixelate,

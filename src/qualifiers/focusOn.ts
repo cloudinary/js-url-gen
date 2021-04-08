@@ -290,6 +290,7 @@ function tvmonitor(): FocusOnValue {
 /**
  * @memberOf Qualifiers
  * @namespace FocusOn
+ * @see Visit {@link Qualifiers.Gravity|Gravity} for an example
  */
 const FocusOn = {
   person,

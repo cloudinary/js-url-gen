@@ -5,6 +5,7 @@ import {FetchSource} from "./source/sourceTypes/FetchSource";
  * @description This namespace contains different sources that can be used when concatenating to a video
  * @memberOf Qualifiers
  * @namespace Concatenate
+ * @see Visit {@link Actions.VideoEdit.concatenate|VideoEdit.concatenate} for an example
  */
 
 

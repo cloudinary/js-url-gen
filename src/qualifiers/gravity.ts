@@ -116,6 +116,8 @@ function xyCenter(): XYCenterGravity {
  * const yourCldInstance = new Cloudinary({cloud: {cloudName: 'demo'}});
  * const image = yourCldInstance.image('woman');
  * image.resize(crop().width(300).gravity(compass(north())))
+ *
+ * // Expand every function separately to see its own example
  */
 const Gravity = {
   compass: compass,

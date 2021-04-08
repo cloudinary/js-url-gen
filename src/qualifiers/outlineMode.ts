@@ -2,14 +2,7 @@
  * @description Contains functions to select the type of improvement to perform when using Adjust.improve().
  * @namespace Outline
  * @memberOf Qualifiers
- * @example
- * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
- * import {outdoor} from "@cloudinary/base/qualifiers/improveMode";
- * import {improve} from "@cloudinary/base/actions/adjust";
- *
- * const yourCldInstance = new Cloudinary({cloud: {cloudName: 'demo'}});
- * const image = yourCldInstance.image('woman');
- * image.adjust(improve().mode(outdoor()));
+ * @see Visit {@link Actions.Effect|Effect Action} for an example
  */
 
 /**

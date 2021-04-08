@@ -5,6 +5,7 @@ import {BlendModeQualifier} from "./blendMode/BlendModeQualifier";
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#overlay_blending_effects|Overlay blending effects}
  * @namespace BlendMode
  * @memberOf Qualifiers
+ * @see To be used with an {@link Actions.Overlay|Overlay}
  */
 
 

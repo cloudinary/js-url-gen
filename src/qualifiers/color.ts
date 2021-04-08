@@ -1,7 +1,14 @@
 /**
  * @memberOf Qualifiers
+ * @description This namespace contains all the colors used in the SDK
  * @namespace Color
+ * @example
+ * // Reference only, do NOT use within your code for tree-shaking reasons
+ * // SDK functions that require color accept a string (like 'red') or a hex value, like 'ffffff'
+ * import {Color} from '@cloudinary/base/qualifiers/color'
+ * console.log(Color.RED);
  */
+
 const Color = {
   SNOW:'snow',
   SNOW1:'snow1',

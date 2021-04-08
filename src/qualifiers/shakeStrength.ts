@@ -2,6 +2,7 @@
  * @description Contains functions to select the maximum number of pixels in the horizontal and vertical direction that are addressed.
  * @memberOf Qualifiers
  * @namespace ShakeStrength
+ * @see Visit {@link Actions.Effect|Effect} for an example
  */
 
 /**

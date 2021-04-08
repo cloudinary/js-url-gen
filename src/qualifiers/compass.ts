@@ -98,6 +98,7 @@ function center(): CompassQualifier {
  * @description Defines the focal Compass for certain methods of cropping.
  * @namespace Compass
  * @memberOf Qualifiers
+ * @see Visit {@link Qualifiers.Gravity|Gravity} for an example
  */
 class Compass {
   static north = north;

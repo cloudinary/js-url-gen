@@ -1,6 +1,7 @@
 /**
  * @memberOf Qualifiers
  * @namespace Quality
+ * @see Visit {@link Actions.Delivery.quality|Delivery Quality} for an example
  */
 
 /**

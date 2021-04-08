@@ -79,6 +79,7 @@ function ignoreInitialAspectRatio(): FlagQualifier {
  * This is used in the context of resize actions
  * @namespace AspectRatio
  * @memberOf Qualifiers
+ * @see Visit {@link Actions.Resize|Resize} for an example
  */
 const AspectRatio = {
   ar1X1,

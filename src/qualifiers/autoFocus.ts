@@ -1,27 +1,28 @@
 import {QualifierValue} from "../internal/qualifier/QualifierValue";
 import {FocusOnValue} from "./focusOn";
 
-
-/**
- * Accepts an AutoFocusObject (which is just a wrapper for a FocusOn object, but with extra method: avoid, weight)
- * @param {AutoFocus} AutoFocusObjects
- */
-
 /**
  * @summary qualifier
- * @description A wrapper class around a FocusOn object.
  * @namespace AutoFocus
  * @memberOf Qualifiers
+ * @see Visit {@link Qualifiers.Gravity|Gravity} for an example
+ */
+
+
+/**
+ * @memberOf Qualifiers.AutoFocus
  * @extends {SDK.QualifierValue}
+ * @see Visit {@link Qualifiers.Gravity|Gravity} for an example
  */
 class AutoFocus extends QualifierValue {
-  readonly focusOn:FocusOnValue;
+  readonly focusOn: FocusOnValue;
   private _weight: number | string;
-  private shouldAvoid:boolean;
+  private shouldAvoid: boolean;
 
   /**
- * @summary qualifier
- * @description Specifies the object to focus on automatically
+   * @summary qualifier
+   * @description Specifies the object to focus on automatically
+   * Accepts an AutoFocusObject (which is just a wrapper for a FocusOn object, but with extra method: avoid, weight)
    * @param {Qualifiers.FocusOn} obj The object to focus on.
    * @param {number} weight
    */
@@ -29,7 +30,7 @@ class AutoFocus extends QualifierValue {
     return new AutoFocus(obj, weight);
   }
 
-  constructor(focusOn:FocusOnValue, weight?: number | string) {
+  constructor(focusOn: FocusOnValue, weight?: number | string) {
     super();
     this._weight = weight;
     this.focusOn = focusOn;
@@ -41,18 +42,18 @@ class AutoFocus extends QualifierValue {
   }
 
   /**
- * @summary qualifier
- * @desc Get the name of the of the object
+   * @summary qualifier
+   * @desc Get the name of the of the object
    */
-  private getName():string {
+  private getName(): string {
     return this.focusOn.name;
   }
 
   /**
- * @summary qualifier
- * @desc Get the weight for the object
+   * @summary qualifier
+   * @desc Get the weight for the object
    */
-  private getWeight():number|string {
+  private getWeight(): number | string {
     if (this.shouldAvoid) {
       return 'avoid';
     } else {
@@ -61,12 +62,12 @@ class AutoFocus extends QualifierValue {
   }
 
   /**
- * @summary qualifier
- * @desc Return the string representation of this QualifierValue
+   * @summary qualifier
+   * @desc Return the string representation of this QualifierValue
    */
-  toString():string {
+  toString(): string {
     // Future proofing, in case we'd like to support some custom string in the future, or if data is coming from a DB
-    if(this.shouldAddWeight()) {
+    if (this.shouldAddWeight()) {
       return `${this.getName()}_${this.getWeight()}`;
     } else {
       return `${this.getName()}`;
@@ -74,8 +75,8 @@ class AutoFocus extends QualifierValue {
   }
 
   /**
- * @summary qualifier
- * @description Sets the importance level of the object within the automatic gravity algorithm
+   * @summary qualifier
+   * @description Sets the importance level of the object within the automatic gravity algorithm
    * @param {numebr} w The focus weight for the object
    * @return {this}
    */
@@ -85,8 +86,8 @@ class AutoFocus extends QualifierValue {
   }
 
   /**
- * @summary qualifier
- * @description Attempts to avoid the detected object in the image
+   * @summary qualifier
+   * @description Attempts to avoid the detected object in the image
    * @return {this}
    */
   avoid(): this {

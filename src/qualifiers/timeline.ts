@@ -2,7 +2,9 @@ import {TimelinePosition} from "./video/TimelinePosition";
 
 /**
  * @memberOf Qualifiers
+ * @description When applying an overlay on a video, this qualifier controls when this overlay is attached
  * @namespace TimelinePosition
+ * @see {@link Actions.Overlay| The overlay action}
  */
 
 /**

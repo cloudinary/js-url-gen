@@ -3,6 +3,7 @@ import {VideoSource} from "./source/sourceTypes/VideoSource";
  * @description This namespace contains different sources that can be used as a transition between two videos
  * @memberOf Qualifiers
  * @namespace Transition
+ * @see Visit {@link Actions.VideoEdit.concatenate|VideoEdit.concatenate} for an example
  */
 
 
