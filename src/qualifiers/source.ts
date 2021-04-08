@@ -9,6 +9,8 @@ import {TextSource} from "./source/sourceTypes/TextSource";
  * @description This namespace contains different sources that can be used in overlays and underlays
  * @memberOf Qualifiers
  * @namespace Source
+ * @see {@link Actions.Overlay| The overlay action}
+ * @see {@link Actions.Underlay| The underlay action}
  */
 
 

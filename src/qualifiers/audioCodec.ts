@@ -2,6 +2,7 @@
  * @description Contains functions to select an audio codec.
  * @memberOf Qualifiers
  * @namespace AudioCodec
+ * @see Visit {@link Actions.Transcode|Transcode} for an example
  */
 
 /**

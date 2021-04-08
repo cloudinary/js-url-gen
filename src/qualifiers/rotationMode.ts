@@ -5,6 +5,7 @@
  * </br><b>Learn more</b>: {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#rotating_videos | Rotating videos}
  * @memberOf Qualifiers
  * @namespace RotationMode
+ * @see Visit {@link Actions.Rotate|Rotate Action} for an example
  */
 
 

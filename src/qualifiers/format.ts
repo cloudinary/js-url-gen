@@ -4,8 +4,7 @@ import {FormatQualifier} from "./format/FormatQualifier";
  * @description Contains functions to select the asset format, can be used to convert images and videos to other formats.
  * @memberOf Qualifiers
  * @namespace Format
- * @example
- * transformation.delivery(Delivery.format(Format.jpg()))
+ * @see Visit {@link Actions.Delivery.format|Delivery Format} for an example
  */
 
 

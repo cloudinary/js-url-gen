@@ -4,6 +4,7 @@
  * <b>Learn more</b>: {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#adding_text_captions | Adding text overlays to videos}
  * @memberOf Qualifiers
  * @namespace FontAntialias
+ * @see To be used with {@link Qualifiers.TextStyle|Text Style}
  */
 
 /**

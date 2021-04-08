@@ -3,6 +3,7 @@
  * Learn more: {@link https://cloudinary.com/documentation/image_transformations#artistic_filter_effects | Custom functions}
  * @namespace ArtisticFilter
  * @memberOf Qualifiers
+ * @see Visit {@link Actions.Effect|Effect} for an example
  */
 
 

@@ -2,6 +2,7 @@
  * @description Qualifiers for applying an ordered dither filter to the image.
  * @namespace Dither
  * @memberOf Qualifiers
+ * @see Visit {@link Actions.Effect.dither|Dither Effect} for an example
  */
 
 

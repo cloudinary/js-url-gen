@@ -2,6 +2,7 @@
  * @description Controls the volume of an audio or video file.
  * @namespace Volume
  * @memberOf Qualifiers
+ * @see Visit {@link Actions.VideoEdit.concatenate|VideoEdit.concatenate} for an example
  */
 
 /**

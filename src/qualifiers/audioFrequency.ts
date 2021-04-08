@@ -2,6 +2,7 @@
  * @description Controls the audio sampling frequency.
  * @namespace AudioFrequency
  * @memberOf Qualifiers
+ * @see Visit {@link Actions.Transcode|Transcode} for an example
  */
 
 

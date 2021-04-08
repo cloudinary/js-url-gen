@@ -4,6 +4,7 @@ import {AnimatedFormatQualifierValue} from "./animatedFormat/AnimatedFormatQuali
  * @description Contains methods to specify the animated format
  * @namespace AnimatedFormat
  * @memberOf Qualifiers
+ * @see Visit {@link Actions.Transcode|Transcode} for an example
  */
 
 

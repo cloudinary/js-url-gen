@@ -2,6 +2,7 @@
  * @description Contains functions to select the color space mode.
  * @namespace ColorSpace
  * @memberOf Qualifiers
+ * @see Visit {@link Actions.Delivery.colorSpace|Delivery Color Space} for an example
  */
 
 /**

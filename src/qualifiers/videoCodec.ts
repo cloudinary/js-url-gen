@@ -3,6 +3,7 @@ import {AdvVideoCodecType, VideoCodecType} from "./videoCodecType/VideoCodecType
  * @description Determines the video codec to use.
  * @memberOf Qualifiers
  * @namespace VideoCodec
+ * @see Visit {@link Actions.Transcode|Transcode} for an example
  */
 
 
