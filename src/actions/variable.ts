@@ -3,6 +3,7 @@ import SetAssetReferenceAction from "./variable/SetAssetReferenceAction";
 import SetFromContextAction from "./variable/SetFromContextAction";
 import SetFromMetadataAction from "./variable/SetFromMetadataAction";
 import {ExpressionQualifier} from "../qualifiers/expression/ExpressionQualifier";
+import {toFloatAsString} from "../internal/utils/toFloatAsString";
 
 /**
  * Defines a new user variable with the given value.
@@ -34,13 +35,66 @@ import {ExpressionQualifier} from "../qualifiers/expression/ExpressionQualifier"
  * @summary action
  * @description Sets a new user variable with the given value.
  * @memberOf Actions.Variable
- * @param name Variable name
+ * @param {string} name Variable name
  * @param {number | string | number[] | string[]} value Variable value
  * @return {Actions.Variable.SetAction}
  */
 function set(name: string, value: number | string | number[] | string[] | ExpressionQualifier): SetAction {
+  if (Object.prototype.hasOwnProperty.call(value, 'push')) {
+    return new SetAction(name, value);
+  }
+
   return new SetAction(name, value);
 }
+
+/**
+ * @summary action
+ * @description Same as 'set', but forces the end value to be a float  setFloat(1) will result in $foo_1.0
+ * @memberOf Actions.Variable
+ * @param {string} name Variable name
+ * @param {number} value Variable value
+ * @return {Actions.Variable.SetAction}
+ */
+function setFloat(name: string, value: number): SetAction {
+  return new SetAction(name, toFloatAsString(value), '');
+}
+
+/**
+ * @summary action
+ * @description Same as 'set', but forces the end value to be an integer setInteger(1.1) will result in $foo_1, input is rounded down
+ * @memberOf Actions.Variable
+ * @param {string} name Variable name
+ * @param {number} value Variable value
+ * @return {Actions.Variable.SetAction}
+ */
+function setInteger(name: string, value: number): SetAction {
+  let val = value;
+  if (typeof value === 'string') {
+    val = parseInt(value);
+  }
+
+  if (isNaN(val)) {
+    val = 0;
+  }
+
+  return new SetAction(name, Math.round(val));
+}
+
+
+/**
+ * @summary action
+ * @description Same as 'set', but forces the end value to be a string setString(1) will result in $foo_!1!
+ * @memberOf Actions.Variable
+ * @param {string, number} name Variable name
+ * @param {number} value Variable value
+ * @return {Actions.Variable.SetAction}
+ */
+function setString(name: string, value: string | number): SetAction {
+  return new SetAction(name, value.toString());
+}
+
+
+
 
 /**
  * @summary action
@@ -82,12 +136,18 @@ function setFromMetadata(name: string, value: string): SetFromMetadataAction {
 
 const Variable = {
   set,
+  setFloat,
+  setString,
+  setInteger,
   setAssetReference,
   setFromContext,
   setFromMetadata
 };
 export {
   set,
+  setFloat,
+  setString,
+  setInteger,
   setAssetReference,
   setFromContext,
   setFromMetadata,

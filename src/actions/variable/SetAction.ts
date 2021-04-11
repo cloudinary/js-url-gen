@@ -9,16 +9,22 @@ import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifi
  * @see Visit {@link Actions.Variable|Variable} for an example
  */
 class SetAction extends VariableAction {
-  constructor(name: string, value: number | string | string[] | number[] | ExpressionQualifier) {
+  constructor(name: string, value: number | string | string[] | number[] | ExpressionQualifier, wrapper = '!') {
+    let finalValue: string | number | ExpressionQualifier;
+
     const parsedValue = Array.isArray(value) ? value.join(':') : value;
 
-
-    let finalValue: string | number | ExpressionQualifier;
     if (isString(parsedValue)) {
-      finalValue = `!${parsedValue
+      /*
+       * Encoding needed to make the Variable value Cloudinary Safe
+       * If a string, we also determine what wrapper is used (wrapper variable)
+       * The wrapper variable is needed because floats are passed as strings ('1.0') - in those case
+       * we don't need to treat them as URL strings ($foo_!1.0!), but instead as foo_1.0
+       */
+      finalValue = `${wrapper}${parsedValue
         .replace(/,/g, '%2C')
         .replace(/\//g, '%2F')
-        .replace(/!/g, '%21')}!`;
+        .replace(/!/g, '%21')}${wrapper}`;
     } else {
       finalValue = parsedValue;
     }
