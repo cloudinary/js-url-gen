@@ -90,9 +90,7 @@ function setInteger(name: string, value: number): SetAction {
  * @return {Actions.Variable.SetAction}
  */
 function setString(name: string, value: string | number): SetAction {
-  const val = typeof value === 'string' ? value : value.toString();
-
-  return new SetAction(name, val);
+  return new SetAction(name, value.toString());
 }
 
 
