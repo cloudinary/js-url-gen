@@ -1,3 +1,35 @@
+1.0.0-beta.2 / 2021-04-11
+==================
+
+New functionality and features
+==============================
+  * Add Theme Effect (#354)
+  * Breaking - Change the public property of an asset to private (suffix, signature, storageType, extension and version are now private ) (#358)
+  * URLConfig - Implement missing url features(Suffix, StorageType, privateCDN, shorten, SEO, useRootPath and more (All URL Config options) (#357)
+
+
+Other changes
+================
+  * URLEncoding - Fix issues in previous implementation of URL Encoding (#356)
+  * Docs - Add examples to round corners and rotate (#373)
+  * Docs - Add examples to video edit docs and align various names in the docs (#376)
+  * Docs - Add examples to variable docs (#375)
+  * Docs - Add examples to transcode (#374)
+  * Docs - Add examples to rotate docs (#371)
+  * Docs - Add examples to Reshape (#370)
+  * Docs - Add examples to PSDTools (#369)
+  * Docs - Add examples to Overlay and Underlay (#368)
+  * Docs - Add examples to Extract (#367)
+  * Docs - Add examples to Resize (#366)
+  * Docs - Add examples for named transformations (#364)
+  * Docs - add examples to effect (#363)
+  * Docs - add examples to delivery (#362)
+  * Docs - Add examples to custom functions (#361)
+  * Docs - Add examples to Border and fix code highlights (#359)
+  * Analytics - Add SDK analytics (#351)
+  * Docs - Fix indentation issues in the code examples in the reference website (#372)
+  * Docs - Add document links to qualifiers (#377)
+
 1.0.0-beta.1 / 2021-02-24
 ==================
 
