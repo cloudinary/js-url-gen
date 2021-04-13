@@ -85,7 +85,7 @@ function setInteger(name: string, value: number): SetAction {
  * @summary action
  * @description Same as 'set', but forces the end value to be a string setString(1) will result in $foo_!1!
  * @memberOf Actions.Variable
- * @param {string, number} name Variable name
+ * @param {string | number} name Variable name
  * @param {number} value Variable value
  * @return {Actions.Variable.SetAction}
  */
