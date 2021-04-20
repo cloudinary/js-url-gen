@@ -179,8 +179,8 @@ describe('Tests for Transformation Action -- Variable', () => {
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/$myexp_md:!my_file!_to_f/sample');
   });
 
-  it('Tests for expressions', () => {
-    ['$myheight', '$heightheight', '$theheight' ,'$__height'].forEach((exp: string) => {
+  it('Tests special cases are not modified in expressions', () => {
+    ['$myheight', '$heightheight', '$theheight', '$__height'].forEach((exp: string) => {
       expect(Expression.expression(exp).toString()).toBe(exp);
     });
   });
