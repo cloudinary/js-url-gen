@@ -11,3 +11,4 @@ npm run lint
 npm run build:ESM
 npm run build:UMD
 npm run build:entryPoints
+npm run build:docs
