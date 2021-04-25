@@ -81,6 +81,23 @@ describe('Create v1 urls', () => {
     expect(url).toEqual("https://res.cloudinary.com/test123/image/upload/if_w_lt_200,c_fill,h_120,w_80/if_w_gt_400,c_fit,h_150,w_150/e_sepia/sample");
   });
 
+  it("should not modify options objects when chaining transformations ", function () {
+    const optionObj = {
+      cloud_name: 'test123',
+      transformation: [{
+        overlay: 'somepid',
+        crop: "fill",
+        height: 120,
+        width: 80
+      }]
+    };
+    const urlFirstRun = createCloudinaryV1URL("sample", optionObj);
+    const urlSecondRun = createCloudinaryV1URL("sample", optionObj);
+
+    expect(urlFirstRun).toEqual("https://res.cloudinary.com/test123/image/upload/c_fill,h_120,w_80/sample");
+    expect(urlFirstRun).toEqual(urlSecondRun);
+  });
+
   it("should translate operators", function () {
     const url = createCloudinaryV1URL("sample", {
       cloud_name: 'test123',

@@ -136,4 +136,49 @@ describe('it works?', () => {
     const t = generateTransformationString(options);
     expect(t).toEqual("$big_$small_pow_1.5,$small_150");
   });
+
+  it("border can be presented as objects", function () {
+    const optionsAsObject = {
+      transformation: [
+        {
+          border: { width: 4, color: 'white' }
+        }
+      ]
+    };
+    const optionsAsString = {
+      transformation: [
+        {
+          border: '4px_solid_white'
+        }
+      ]
+    };
+    const tObj = generateTransformationString(optionsAsObject);
+    const tStr = generateTransformationString(optionsAsString);
+    expect(tStr).toEqual("bo_4px_solid_white");
+    expect(tStr).toEqual(tObj);
+  });
+
+  it("radius as an array is parsed", function () {
+    const options = {
+      transformation: [
+        {
+          radius: [10, 20, 30, 40]
+        }
+      ]
+    };
+    const t = generateTransformationString(options);
+    expect(t).toEqual("r_10:20:30:40");
+  });
+
+  it("radius accepts a string value", function () {
+    const options = {
+      transformation: [
+        {
+          radius: 'max'
+        }
+      ]
+    };
+    const t = generateTransformationString(options);
+    expect(t).toEqual("r_max");
+  });
 });
