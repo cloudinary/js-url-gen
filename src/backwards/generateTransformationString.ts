@@ -117,7 +117,7 @@ export function generateTransformationString(transformationOptions: V1ITransfora
     );
   }
 
-  let border: typeof transformationOptions.border | string = transformationOptions.border;
+  let border = transformationOptions.border;
   if (isObject(border)) {
     border = `${border.width != null ? border.width : 2}px_solid_${(border.color != null ? border.color : "black").replace(/^#/, 'rgb:')}`;
   } else {
