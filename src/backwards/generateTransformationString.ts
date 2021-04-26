@@ -66,7 +66,6 @@ export function generateTransformationString(transformationOptions: V1ITransfora
   let namedTransformations = [];
   let childTransformations = toArray(transformationOptions.transformation || []);
   let effect = transformationOptions.effect;
-  let border = transformationOptions.border;
 
   // TODO, Do we need this?
   const no_html_sizes = hasLayer || angle || crop === "fit" || crop === "limit";
@@ -118,9 +117,15 @@ export function generateTransformationString(transformationOptions: V1ITransfora
     );
   }
 
-  let borderParam;
+  let border: typeof transformationOptions.border | string = transformationOptions.border;
   if (isObject(border)) {
-    borderParam = `${border.width != null ? border.width : 2}px_solid_${(border.color != null ? border.color : "black").replace(/^#/, 'rgb:')}`;
+    border = `${border.width != null ? border.width : 2}px_solid_${(border.color != null ? border.color : "black").replace(/^#/, 'rgb:')}`;
+  } else {
+    // @ts-ignore
+    if (/^\d+$/.exec(border)) { // fallback to html border attributes
+      transformationOptions.border = border;
+      border = void 0;
+    }
   }
 
   if (Array.isArray(fps)) {

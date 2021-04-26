@@ -238,4 +238,25 @@ describe('Create v1 urls', () => {
       expect(createCloudinaryV1URL(source, {cloud_name: 'demo'})).toEqual(`https://res.cloudinary.com/demo/image/upload/${target}`);
     });
   });
+
+  it("should support string interpolation", function () {
+    const url = createCloudinaryV1URL("sample", {
+      cloud_name: 'demo',
+      border: {
+        width: 5,
+        color: '#ffaabbdd'
+      }
+    });
+
+    expect(url).toContain(`image/upload/bo_5px_solid_rgb:ffaabbdd/sample`);
+  });
+
+  it("should support string interpolation", function () {
+    const url = createCloudinaryV1URL("sample", {
+      cloud_name: 'demo',
+      border: '4px_solid_white'
+    });
+
+    expect(url).toContain(`image/upload/bo_4px_solid_white/sample`);
+  });
 });
