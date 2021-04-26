@@ -239,7 +239,7 @@ describe('Create v1 urls', () => {
     });
   });
 
-  it("should support string interpolation", function () {
+  it("Should generate transformation with border objects", function () {
     const url = createCloudinaryV1URL("sample", {
       cloud_name: 'demo',
       border: {
@@ -251,7 +251,7 @@ describe('Create v1 urls', () => {
     expect(url).toContain(`image/upload/bo_5px_solid_rgb:ffaabbdd/sample`);
   });
 
-  it("should support string interpolation", function () {
+  it("Should generate transformation with border string", function () {
     const url = createCloudinaryV1URL("sample", {
       cloud_name: 'demo',
       border: '4px_solid_white'
