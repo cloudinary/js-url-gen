@@ -274,7 +274,7 @@ export interface V1ITransforamtionOptions {
   border?: {
     width?: stringOrNumber;
     color?: string;
-  };
+  } | string;
   default_image?: string;
   density?: stringOrNumber;
   format?: ImageFormat;
