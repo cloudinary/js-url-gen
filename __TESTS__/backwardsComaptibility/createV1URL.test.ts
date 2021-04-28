@@ -259,4 +259,30 @@ describe('Create v1 urls', () => {
 
     expect(url).toContain(`image/upload/bo_4px_solid_white/sample`);
   });
+
+  it("radius as an array is parsed", function () {
+    const options = {
+      cloud_name: 'demo',
+      transformation: [
+        {
+          radius: [10, 20, 30, 40]
+        }
+      ]
+    };
+    const t = createCloudinaryV1URL('sample', options);
+    expect(t).toContain("r_10:20:30:40");
+  });
+
+  it("radius accepts a string value", function () {
+    const options = {
+      cloud_name: 'demo',
+      transformation: [
+        {
+          radius: 'max'
+        }
+      ]
+    };
+    const t = createCloudinaryV1URL('sample', options);
+    expect(t).toContain("r_max");
+  });
 });
