@@ -19,11 +19,11 @@
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
-		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
-		<link type="text/css" rel="stylesheet" href="css/prism.min.css">
-		<link type="text/css" rel="stylesheet" href="css/template.min.css">
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css?j={{now}}">
+		<link type="text/css" rel="stylesheet" href="css/prism.min.css?j={{now}}">
+		<link type="text/css" rel="stylesheet" href="css/template.min.css?j={{now}}">
 		{{#each options.stylesheets}}
-			<link type="text/css" rel="stylesheet" href="{{.}}">
+			<link type="text/css" rel="stylesheet" href="{{.}}?j={{now}}">
 		{{/each}}
 		{{#if options.systemColor}}
 			<style>
@@ -232,18 +232,18 @@
 			<pre class="prettyprint source language-javascript"><code class="language-javascript">{{{json doclet pretty=true}}}</code></pre>
 		</div>
 	{{/if}}
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/clipboard.min.js"></script>
-  <script src="js/prism.js"></script>
-	<script src="js/prism.min.js"></script>
-	<script src="js/template.min.js"></script>
+	<script src="js/jquery.min.js?j={{now}}"></script>
+	<script src="js/bootstrap.min.js?j={{now}}"></script>
+	<script src="js/clipboard.min.js?j={{now}}"></script>
+  <script src="js/prism.js?j={{now}}"></script>
+	<script src="js/prism.min.js?j={{now}}"></script>
+	<script src="js/template.min.js?j={{now}}"></script>
 	{{#if options.search}}
 		{{> search/modal}}
-		<script src="js/lunr.min.js"></script>
+		<script src="js/lunr.min.js?j={{now}}"></script>
 	{{/if}}
 	{{#each options.scripts}}
-		<script src="{{.}}"></script>
+		<script src="{{.}}?j={{now}}"></script>
 	{{/each}}
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BS5ZV"

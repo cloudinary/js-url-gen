@@ -13,21 +13,27 @@ Handlebars.registerPartial("search/navbar-input", this["tmpl"]["search/navbar-in
 },"useData":true}));
 
 Handlebars.registerPartial("site/layout", this["tmpl"]["site/layout"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
-    var stack1, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing;
+    var stack1, helper, alias1=container.escapeExpression, alias2=depth0 != null ? depth0 : (container.nullContext || {}), alias3=helpers.helperMissing, alias4="function";
 
   return "		<title>"
-    + container.escapeExpression(container.lambda(((stack1 = (depth0 != null ? depth0.doclet : depth0)) != null ? stack1.pageTitle : stack1), depth0))
+    + alias1(container.lambda(((stack1 = (depth0 != null ? depth0.doclet : depth0)) != null ? stack1.pageTitle : stack1), depth0))
     + "</title>\r\n"
-    + ((stack1 = helpers["if"].call(alias1,((stack1 = (depth0 != null ? depth0.options : depth0)) != null ? stack1.favicon : stack1),{"name":"if","hash":{},"fn":container.program(2, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "		<!--[if lt IE 9]>\r\n		<script src=\"//html5shiv.googlecode.com/svn/trunk/html5.js\"></script>\r\n		<![endif]-->\r\n		<link href=\"https://fonts.googleapis.com/css?family=PT+Mono\" rel=\"stylesheet\">\r\n		<link type=\"text/css\" rel=\"stylesheet\" href=\"css/bootstrap.min.css\">\r\n		<link type=\"text/css\" rel=\"stylesheet\" href=\"css/prism.min.css\">\r\n		<link type=\"text/css\" rel=\"stylesheet\" href=\"css/template.min.css\">\r\n"
-    + ((stack1 = helpers.each.call(alias1,((stack1 = (depth0 != null ? depth0.options : depth0)) != null ? stack1.stylesheets : stack1),{"name":"each","hash":{},"fn":container.program(4, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + ((stack1 = helpers["if"].call(alias1,((stack1 = (depth0 != null ? depth0.options : depth0)) != null ? stack1.systemColor : stack1),{"name":"if","hash":{},"fn":container.program(6, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + ((stack1 = helpers["if"].call(alias2,((stack1 = (depth0 != null ? depth0.options : depth0)) != null ? stack1.favicon : stack1),{"name":"if","hash":{},"fn":container.program(2, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "		<!--[if lt IE 9]>\r\n		<script src=\"//html5shiv.googlecode.com/svn/trunk/html5.js\"></script>\r\n		<![endif]-->\r\n		<link href=\"https://fonts.googleapis.com/css?family=PT+Mono\" rel=\"stylesheet\">\r\n		<link type=\"text/css\" rel=\"stylesheet\" href=\"css/bootstrap.min.css?j="
+    + alias1(((helper = (helper = helpers.now || (depth0 != null ? depth0.now : depth0)) != null ? helper : alias3),(typeof helper === alias4 ? helper.call(alias2,{"name":"now","hash":{},"data":data}) : helper)))
+    + "\">\r\n		<link type=\"text/css\" rel=\"stylesheet\" href=\"css/prism.min.css?j="
+    + alias1(((helper = (helper = helpers.now || (depth0 != null ? depth0.now : depth0)) != null ? helper : alias3),(typeof helper === alias4 ? helper.call(alias2,{"name":"now","hash":{},"data":data}) : helper)))
+    + "\">\r\n		<link type=\"text/css\" rel=\"stylesheet\" href=\"css/template.min.css?j="
+    + alias1(((helper = (helper = helpers.now || (depth0 != null ? depth0.now : depth0)) != null ? helper : alias3),(typeof helper === alias4 ? helper.call(alias2,{"name":"now","hash":{},"data":data}) : helper)))
+    + "\">\r\n"
+    + ((stack1 = helpers.each.call(alias2,((stack1 = (depth0 != null ? depth0.options : depth0)) != null ? stack1.stylesheets : stack1),{"name":"each","hash":{},"fn":container.program(4, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + ((stack1 = helpers["if"].call(alias2,((stack1 = (depth0 != null ? depth0.options : depth0)) != null ? stack1.systemColor : stack1),{"name":"if","hash":{},"fn":container.program(6, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "		<script type=\"text/javascript\">\r\n			window.TEMPLATE_OPTIONS = "
-    + ((stack1 = (helpers.json || (depth0 && depth0.json) || alias2).call(alias1,(depth0 != null ? depth0.options : depth0),{"name":"json","hash":{},"data":data})) != null ? stack1 : "")
+    + ((stack1 = (helpers.json || (depth0 && depth0.json) || alias3).call(alias2,(depth0 != null ? depth0.options : depth0),{"name":"json","hash":{},"data":data})) != null ? stack1 : "")
     + ";\r\n			window.DOCLET_TOC_ENABLED = "
-    + ((stack1 = (helpers.json || (depth0 && depth0.json) || alias2).call(alias1,((stack1 = (depth0 != null ? depth0.doclet : depth0)) != null ? stack1.showTableOfContents : stack1),{"name":"json","hash":{},"data":data})) != null ? stack1 : "")
+    + ((stack1 = (helpers.json || (depth0 && depth0.json) || alias3).call(alias2,((stack1 = (depth0 != null ? depth0.doclet : depth0)) != null ? stack1.showTableOfContents : stack1),{"name":"json","hash":{},"data":data})) != null ? stack1 : "")
     + ";\r\n			window.DOCLET_AFILTER_ENABLED = "
-    + ((stack1 = (helpers.json || (depth0 && depth0.json) || alias2).call(alias1,((stack1 = (depth0 != null ? depth0.doclet : depth0)) != null ? stack1.showAccessFilter : stack1),{"name":"json","hash":{},"data":data})) != null ? stack1 : "")
+    + ((stack1 = (helpers.json || (depth0 && depth0.json) || alias3).call(alias2,((stack1 = (depth0 != null ? depth0.doclet : depth0)) != null ? stack1.showAccessFilter : stack1),{"name":"json","hash":{},"data":data})) != null ? stack1 : "")
     + ";\r\n		</script>\r\n";
 },"2":function(container,depth0,helpers,partials,data) {
     var stack1, alias1=container.lambda, alias2=container.escapeExpression;
@@ -38,8 +44,12 @@ Handlebars.registerPartial("site/layout", this["tmpl"]["site/layout"] = Handleba
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.options : depth0)) != null ? stack1.favicon : stack1), depth0))
     + "\"/>\r\n";
 },"4":function(container,depth0,helpers,partials,data) {
-    return "			<link type=\"text/css\" rel=\"stylesheet\" href=\""
-    + container.escapeExpression(container.lambda(depth0, depth0))
+    var helper, alias1=container.escapeExpression;
+
+  return "			<link type=\"text/css\" rel=\"stylesheet\" href=\""
+    + alias1(container.lambda(depth0, depth0))
+    + "?j="
+    + alias1(((helper = (helper = helpers.now || (depth0 != null ? depth0.now : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"now","hash":{},"data":data}) : helper)))
     + "\">\r\n";
 },"6":function(container,depth0,helpers,partials,data) {
     var stack1, alias1=container.lambda, alias2=container.escapeExpression;
@@ -226,16 +236,22 @@ Handlebars.registerPartial("site/layout", this["tmpl"]["site/layout"] = Handleba
     + ((stack1 = (helpers.json || (depth0 && depth0.json) || alias2).call(alias1,(depth0 != null ? depth0.doclet : depth0),{"name":"json","hash":{"pretty":true},"data":data})) != null ? stack1 : "")
     + "</code></pre>\r\n		</div>\r\n";
 },"62":function(container,depth0,helpers,partials,data) {
-    var stack1;
+    var stack1, helper;
 
   return ((stack1 = container.invokePartial(partials["search/modal"],depth0,{"name":"search/modal","data":data,"indent":"\t\t","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "")
-    + "		<script src=\"js/lunr.min.js\"></script>\r\n";
+    + "		<script src=\"js/lunr.min.js?j="
+    + container.escapeExpression(((helper = (helper = helpers.now || (depth0 != null ? depth0.now : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"now","hash":{},"data":data}) : helper)))
+    + "\"></script>\r\n";
 },"64":function(container,depth0,helpers,partials,data) {
-    return "		<script src=\""
-    + container.escapeExpression(container.lambda(depth0, depth0))
+    var helper, alias1=container.escapeExpression;
+
+  return "		<script src=\""
+    + alias1(container.lambda(depth0, depth0))
+    + "?j="
+    + alias1(((helper = (helper = helpers.now || (depth0 != null ? depth0.now : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"now","hash":{},"data":data}) : helper)))
     + "\"></script>\r\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data,blockParams,depths) {
-    var stack1, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing;
+    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
   return "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n  <!-- Google Tag Manager -->\r\n  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\r\n            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\r\n          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\r\n          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\r\n  })(window,document,'script','dataLayer','GTM-5BS5ZV');</script>\r\n  <!-- End Google Tag Manager -->\r\n	<meta charset=\"utf-8\">\r\n	<meta name=\"viewport\" content=\"width=device-width\">\r\n"
     + ((stack1 = (helpers.block || (depth0 && depth0.block) || alias2).call(alias1,"head",{"name":"block","hash":{},"fn":container.program(1, data, 0, blockParams, depths),"inverse":container.noop,"data":data})) != null ? stack1 : "")
@@ -253,7 +269,19 @@ Handlebars.registerPartial("site/layout", this["tmpl"]["site/layout"] = Handleba
     + ((stack1 = (helpers.block || (depth0 && depth0.block) || alias2).call(alias1,"footer",{"name":"block","hash":{},"fn":container.program(53, data, 0, blockParams, depths),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "	</footer>\r\n"
     + ((stack1 = helpers["if"].call(alias1,((stack1 = (depth0 != null ? depth0.config : depth0)) != null ? stack1.debug : stack1),{"name":"if","hash":{},"fn":container.program(60, data, 0, blockParams, depths),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "	<script src=\"js/jquery.min.js\"></script>\r\n	<script src=\"js/bootstrap.min.js\"></script>\r\n	<script src=\"js/clipboard.min.js\"></script>\r\n  <script src=\"js/prism.js\"></script>\r\n	<script src=\"js/prism.min.js\"></script>\r\n	<script src=\"js/template.min.js\"></script>\r\n"
+    + "	<script src=\"js/jquery.min.js?j="
+    + alias4(((helper = (helper = helpers.now || (depth0 != null ? depth0.now : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"now","hash":{},"data":data}) : helper)))
+    + "\"></script>\r\n	<script src=\"js/bootstrap.min.js?j="
+    + alias4(((helper = (helper = helpers.now || (depth0 != null ? depth0.now : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"now","hash":{},"data":data}) : helper)))
+    + "\"></script>\r\n	<script src=\"js/clipboard.min.js?j="
+    + alias4(((helper = (helper = helpers.now || (depth0 != null ? depth0.now : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"now","hash":{},"data":data}) : helper)))
+    + "\"></script>\r\n  <script src=\"js/prism.js?j="
+    + alias4(((helper = (helper = helpers.now || (depth0 != null ? depth0.now : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"now","hash":{},"data":data}) : helper)))
+    + "\"></script>\r\n	<script src=\"js/prism.min.js?j="
+    + alias4(((helper = (helper = helpers.now || (depth0 != null ? depth0.now : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"now","hash":{},"data":data}) : helper)))
+    + "\"></script>\r\n	<script src=\"js/template.min.js?j="
+    + alias4(((helper = (helper = helpers.now || (depth0 != null ? depth0.now : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"now","hash":{},"data":data}) : helper)))
+    + "\"></script>\r\n"
     + ((stack1 = helpers["if"].call(alias1,((stack1 = (depth0 != null ? depth0.options : depth0)) != null ? stack1.search : stack1),{"name":"if","hash":{},"fn":container.program(62, data, 0, blockParams, depths),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + ((stack1 = helpers.each.call(alias1,((stack1 = (depth0 != null ? depth0.options : depth0)) != null ? stack1.scripts : stack1),{"name":"each","hash":{},"fn":container.program(64, data, 0, blockParams, depths),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "    <!-- Google Tag Manager (noscript) -->\r\n    <noscript><iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-5BS5ZV\"\r\n                      height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></noscript>\r\n    <!-- End Google Tag Manager (noscript) -->\r\n</body>\r\n</html>\r\n";

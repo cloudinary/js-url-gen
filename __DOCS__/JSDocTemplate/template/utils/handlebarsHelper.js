@@ -31,6 +31,10 @@ handlebars.registerHelper("json", function(context, options){
 	}
 });
 
+handlebars.registerHelper("now", function(context, options){
+	return Date.now();
+});
+
 handlebars.registerHelper("symbol", function(doclet, options){
 	var result = "", kind = doclet.kind;
 	if (kind === 'class' && options.hash.primary){
