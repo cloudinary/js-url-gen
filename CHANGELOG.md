@@ -1,3 +1,18 @@
+1.0.0-beta.3 / 2021-04-28
+==================
+
+New functionality and features
+==============================
+  * Fix v1 url generation to correctly support border objects and strings (#384)
+  * Add new setters to variable: setFloat, setInteger and setString (#378)
+
+
+Other changes
+================
+  * Add dynamic copy right date for the Reference Website (#381)
+  * Feature/add better tests for expressions (#380)
+  * Add google analytics tag manager to the reference website (#385)
+
 1.0.0-beta.2 / 2021-04-11
 ==================
 
