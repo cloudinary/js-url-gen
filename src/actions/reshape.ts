@@ -6,6 +6,7 @@ import {DistortAction, IDistortCoordinates} from "./reshape/Distort";
 import {TrimAction} from "./reshape/TrimAction";
 import {TextSource} from "../qualifiers/source/sourceTypes/TextSource";
 import {FetchSource} from "../qualifiers/source/sourceTypes/FetchSource";
+import {stringOrNumber} from "../backwards/types";
 
 type IReshape = CutByImage | DistortArcAction;
 
@@ -126,7 +127,7 @@ function distort(coordinates: IDistortCoordinates): DistortAction {
  * )
  * img.toURL()
  */
-function shear(x: number, y: number): ShearAction {
+function shear(x: stringOrNumber, y: stringOrNumber): ShearAction {
   return new ShearAction(x, y);
 }
 

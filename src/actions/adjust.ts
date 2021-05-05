@@ -9,6 +9,7 @@ import {EffectActionWithStrength} from "./effect/EffectActions/EffectActionWithS
 import {EffectActionWithBlend} from "./effect/EffectActions/EffectActionWithBlend";
 import {ViesusCorrectAdjustAction} from "./adjust/simple/ViesusCorrectAdjustAction";
 import {SimpleEffectAction} from "./effect/EffectActions/SimpleEffectAction";
+import {stringOrNumber} from "../backwards/types";
 
 /**
  * @description Adjusts the visual appearance of an image or video.
@@ -40,7 +41,7 @@ export type IAdjustAction = FillLightAction
  * @param {string} value The full tint effect value, provided as a string.
  * @return {Actions.Effect.SimpleEffectAction}
  */
-function tint(value: string): SimpleEffectAction {
+function tint(value: stringOrNumber = ''): SimpleEffectAction {
   return new SimpleEffectAction('tint', value);
 }
 

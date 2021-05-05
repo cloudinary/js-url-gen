@@ -1,6 +1,7 @@
 import {Action} from "../../internal/Action";
 import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
+import {stringOrNumber} from "../../backwards/types";
 
 /**
  * @description Defines how to improve an image by automatically adjusting image colors, contrast and brightness.</br>
@@ -8,7 +9,7 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
  * @memberOf Actions.Adjust
  */
 class ImproveAction extends Action {
-  private modeValue:string;
+  private modeValue:stringOrNumber;
   private blendValue:number;
   constructor() {
     super();
@@ -19,7 +20,7 @@ class ImproveAction extends Action {
    * @description The improve mode.
    * @param {Qualifiers.ImproveMode | string} value
    */
-  mode(value:'outdoor' | 'indoor' | string): this {
+  mode(value:'outdoor' | 'indoor' | stringOrNumber): this {
     this.modeValue = value;
     return this;
   }
