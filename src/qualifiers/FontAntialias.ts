@@ -27,7 +27,7 @@ function gray(): string {
  * @summary qualifier
  * @memberOf Qualifiers.FontAntialias
  */
-function subPixel(): string {
+function subpixel(): string {
   return 'subpixel';
 }
 
@@ -55,12 +55,12 @@ function best(): string {
   return 'best';
 }
 
-const FontAntialias = {gray, subPixel, best, fast, none, good};
+const FontAntialias = {gray, subpixel, best, fast, none, good};
 
 export {
   FontAntialias,
   gray,
-  subPixel,
+  subpixel,
   best,
   fast,
   none,

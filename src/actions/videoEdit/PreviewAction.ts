@@ -50,8 +50,8 @@ class PreviewAction extends Action {
     return [
       'e_preview',
       this._duration && `duration_${toFloatAsString(this._duration)}`,
-      this._minSeg && `min_seg_dur_${toFloatAsString(this._minSeg)}`,
-      this._maxSeg && `max_seg_${toFloatAsString(this._maxSeg)}`
+      this._maxSeg && `max_seg_${toFloatAsString(this._maxSeg)}`,
+      this._minSeg && `min_seg_dur_${toFloatAsString(this._minSeg)}`
     ].filter((a) => a).join(':');
   }
 }

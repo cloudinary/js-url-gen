@@ -195,7 +195,7 @@ function streamingProfile(profile: string): StreamingProfileAction {
  * video.transcode( toAnimated( gif() ) );
  * @return {Actions.Transcode.ToAnimatedAction}
  */
-function toAnimated(animatedFormat: AnimatedFormatQualifierValue | string): ToAnimatedAction {
+function toAnimated(animatedFormat: AnimatedFormatQualifierValue | string = ''): ToAnimatedAction {
   return new ToAnimatedAction(animatedFormat);
 }
 

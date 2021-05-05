@@ -3,6 +3,8 @@ import {PositionQualifier} from "../../qualifiers/position/PositionQualifier";
 import {ImageSource} from "../../qualifiers/source/sourceTypes/ImageSource";
 import {Position} from "../../qualifiers/position";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
+import {TextSource} from "../../qualifiers/source/sourceTypes/TextSource";
+import {FetchSource} from "../../qualifiers/source/sourceTypes/FetchSource";
 
 /**
  * @description Trims pixels according to the transparency levels of a given overlay image.
@@ -13,9 +15,9 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
  * @see Visit {@link Actions.Reshape| Reshape} for examples
  */
 class CutByImage extends Action {
-  private source: ImageSource;
+  private source: ImageSource | TextSource | FetchSource;
   private _position: Position;
-  constructor(source: ImageSource) {
+  constructor(source: ImageSource | TextSource | FetchSource) {
     super();
     this.source = source;
   }

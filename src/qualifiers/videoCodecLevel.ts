@@ -12,7 +12,7 @@
  * @memberOf Qualifiers.VideoCodecLevel
  * @return {number}
  */
-function vcl30(): 3.0 { return 3.0; }
+function vcl30(): '3.0' { return '3.0'; }
 
 /**
  * @summary qualifier

@@ -12,7 +12,7 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
  * @see Visit {@link Actions.Reshape| Reshape} for examples
  */
 class DistortArcAction extends Action {
-  constructor(degrees: number) {
+  constructor(degrees: number | string) {
     super();
     this.addQualifier(new Qualifier('e', `distort:arc:${degrees}`));
   }

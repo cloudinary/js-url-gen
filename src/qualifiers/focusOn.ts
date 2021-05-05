@@ -284,6 +284,16 @@ function tvmonitor(): FocusOnValue {
   return new FocusOnValue('tvmonitor');
 }
 
+/**
+ * @summary qualifier
+ * @memberOf Qualifiers.FocusOn
+ * @description Detect all text elements in an image using the {@link https://cloudinary.com/documentation/image_transformations#control_gravity | OCR Text Detection and Extraction add-on} and use the detected bounding box coordinates as the basis of the transformation.
+ * @return {FocusOn} FocusOn
+ */
+function ocr(): FocusOnValue {
+  return new FocusOnValue('ocr_text');
+}
+
 
 
 
@@ -322,7 +332,8 @@ const FocusOn = {
   chair,
   diningtable,
   tvmonitor,
-  motorbike
+  motorbike,
+  ocr
 };
 
 
@@ -358,5 +369,6 @@ export {
   chair,
   diningtable,
   tvmonitor,
-  motorbike
+  motorbike,
+  ocr
 };

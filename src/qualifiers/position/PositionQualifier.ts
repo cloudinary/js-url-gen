@@ -1,6 +1,5 @@
 import {Action} from "../../internal/Action";
 import {CompassGravity} from "../gravity/compassGravity/CompassGravity";
-import {OCR} from "../gravity/OCR/OCR";
 import {FocusOnGravity} from "../gravity/focusOnGravity/FocusOnGravity";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
 import {tiled} from "../flag";
@@ -21,7 +20,7 @@ class PositionQualifier extends Action {
     super();
   }
 
-  gravity(gravityQualifier: CompassGravity | FocusOnGravity | OCR): this {
+  gravity(gravityQualifier: CompassGravity | FocusOnGravity): this {
     this.addQualifier(gravityQualifier);
     return this;
   }

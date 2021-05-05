@@ -13,13 +13,15 @@ import {animated} from "../../qualifiers/flag";
  * @see Visit {@link Actions.Transcode|Transcode} for an example
  */
 class ToAnimatedAction extends Action {
-  constructor(animatedFormat: AnimatedFormatQualifierValue | string) {
+  constructor(animatedFormat: AnimatedFormatQualifierValue | string = '') {
     super();
     if (animatedFormat.toString() === 'webp'){
       this.addFlag(animatedWebP());
     }
     this.addFlag(animated());
-    this.addQualifier(new Qualifier('f', animatedFormat));
+    if (animatedFormat) {
+      this.addQualifier(new Qualifier('f', animatedFormat));
+    }
   }
 
   /**
