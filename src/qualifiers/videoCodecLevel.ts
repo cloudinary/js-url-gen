@@ -26,7 +26,7 @@ function vcl31(): 3.1 { return 3.1; }
  * @memberOf Qualifiers.VideoCodecLevel
  * @return {number}
  */
-function vcl40(): 4.0 { return 4.0; }
+function vcl40(): '4.0' { return '4.0'; }
 
 /**
  * @summary qualifier
@@ -47,7 +47,7 @@ function vcl42(): 4.2 { return 4.2; }
  * @memberOf Qualifiers.VideoCodecLevel
  * @return {number}
  */
-function vcl50(): 5.0 { return 5.0; }
+function vcl50(): '5.0' { return '5.0'; }
 
 /**
  * @summary qualifier

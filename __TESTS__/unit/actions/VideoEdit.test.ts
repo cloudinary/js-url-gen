@@ -138,6 +138,6 @@ describe('Tests for Transformation Action -- VideoEdit', () => {
           .maximumSegments(10)
       ).toString();
 
-    expect(url).toContain('e_preview:duration_5.0:min_seg_dur_1.0:max_seg_10');
+    expect(url).toContain('e_preview:duration_5.0:max_seg_10:min_seg_dur_1.0');
   });
 });

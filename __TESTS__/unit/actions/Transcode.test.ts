@@ -156,12 +156,12 @@ describe('Tests for Transformation Action -- Transcode', () => {
 
   it('Tests for all codecLevels', () => {
     // @TODO - do we need to change 3 to 3.0 in the transformation?
-    expect(VideoCodecLevel.vcl30()).toEqual(3);
+    expect(VideoCodecLevel.vcl30()).toEqual('3.0');
     expect(VideoCodecLevel.vcl31()).toEqual(3.1);
-    expect(VideoCodecLevel.vcl40()).toEqual(4);
+    expect(VideoCodecLevel.vcl40()).toEqual('4.0');
     expect(VideoCodecLevel.vcl41()).toEqual(4.1);
     expect(VideoCodecLevel.vcl42()).toEqual(4.2);
-    expect(VideoCodecLevel.vcl50()).toEqual(5);
+    expect(VideoCodecLevel.vcl50()).toEqual('5.0');
     expect(VideoCodecLevel.vcl51()).toEqual(5.1);
     expect(VideoCodecLevel.vcl52()).toEqual(5.2);
   });
