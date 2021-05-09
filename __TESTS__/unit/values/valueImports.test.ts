@@ -57,7 +57,7 @@ describe('Test imported qualifiers', () => {
     expect(FontAntialias.none()).toBe('');
     expect(FontAntialias.good()).toBe('good');
     expect(FontAntialias.best()).toBe('best');
-    expect(FontAntialias.subPixel()).toBe('subpixel');
+    expect(FontAntialias.subpixel()).toBe('subpixel');
     expect(FontAntialias.gray()).toBe('gray');
 
     expect(TextAlignment.left()).toBe('left');

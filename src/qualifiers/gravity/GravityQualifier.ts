@@ -2,14 +2,13 @@ import {Qualifier} from "../../internal/qualifier/Qualifier";
 import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 import {CompassGravity} from "./compassGravity/CompassGravity";
 import {AutoGravity} from "./autoGravity/AutoGravity";
-import {OCR} from "./OCR/OCR";
 import {FocusOnGravity} from "./focusOnGravity/FocusOnGravity";
 import {FocusOnValue} from "../focusOn";
 import {AutoFocus} from "../autoFocus";
 import {CompassQualifier} from "./qualifiers/compass/CompassQualifier";
 import {XYCenterGravity} from "./xyCenterGravity/XYCenterGravity";
 
-export type IGravity = CompassGravity | AutoGravity | OCR | FocusOnGravity | XYCenterGravity;
+export type IGravity = CompassGravity | AutoGravity | FocusOnGravity | XYCenterGravity;
 export type IGravityValue = CompassQualifier | FocusOnValue | AutoFocus;
 
 

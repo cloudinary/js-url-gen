@@ -4,6 +4,9 @@ import {DistortArcAction} from "./reshape/DistortArc";
 import {ShearAction} from "./reshape/Shear";
 import {DistortAction, IDistortCoordinates} from "./reshape/Distort";
 import {TrimAction} from "./reshape/TrimAction";
+import {TextSource} from "../qualifiers/source/sourceTypes/TextSource";
+import {FetchSource} from "../qualifiers/source/sourceTypes/FetchSource";
+import {stringOrNumber} from "../backwards/types";
 
 type IReshape = CutByImage | DistortArcAction;
 
@@ -42,7 +45,7 @@ type IReshape = CutByImage | DistortArcAction;
  * ))
  * img.toURL()
  */
-function cutByImage(imageSource: ImageSource): CutByImage {
+function cutByImage(imageSource: ImageSource | TextSource | FetchSource): CutByImage {
   return new CutByImage(imageSource);
 }
 
@@ -70,7 +73,7 @@ function cutByImage(imageSource: ImageSource): CutByImage {
  * )
  * img.toURL()
  */
-function distortArc(degrees: number): DistortArcAction {
+function distortArc(degrees: number | string): DistortArcAction {
   return new DistortArcAction(degrees);
 }
 
@@ -124,7 +127,7 @@ function distort(coordinates: IDistortCoordinates): DistortAction {
  * )
  * img.toURL()
  */
-function shear(x: number, y: number): ShearAction {
+function shear(x: stringOrNumber, y: stringOrNumber): ShearAction {
   return new ShearAction(x, y);
 }
 

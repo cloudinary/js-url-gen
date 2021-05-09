@@ -142,7 +142,7 @@ class TextStyle {
       this._stroke && 'stroke',
       this._letterSpacing && `letter_spacing_${this._letterSpacing}`,
       this._lineSpacing && `line_spacing_${this._lineSpacing}`,
-      this._fontAntialias && `letter_spacing_${this._fontAntialias}`,
+      this._fontAntialias && `antialias_${this._fontAntialias}`,
       this._fontHinting && `hinting_${this._fontHinting}`
     ].filter( (a) => a).join('_');
   }

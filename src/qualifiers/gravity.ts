@@ -1,5 +1,4 @@
 import {FocusOnValue} from "./focusOn";
-import {OCR} from "./gravity/OCR/OCR";
 import {CompassGravity} from "./gravity/compassGravity/CompassGravity";
 import {FocusOnGravity} from "./gravity/focusOnGravity/FocusOnGravity";
 import {AutoGravity} from "./gravity/autoGravity/AutoGravity";
@@ -79,18 +78,6 @@ function autoGravity(): AutoGravity {
 }
 
 
-
-
-/**
- * @summary qualifier
- * @description Detect all text elements in an image using the {@link https://cloudinary.com/documentation/image_transformations#control_gravity | OCR Text Detection and Extraction add-on} and use the detected bounding box coordinates as the basis of the transformation.
- * @memberOf Qualifiers.Gravity
- * @return {OCR}
- */
-function ocr(): OCR {
-  return new OCR();
-}
-
 /**
  * @summary qualifier
  * @description Set the center of gravity to the given x & y coordinates.
@@ -123,7 +110,6 @@ const Gravity = {
   compass: compass,
   autoGravity: autoGravity,
   focusOn: focusOn,
-  ocr: ocr,
   xyCenter
 };
 
@@ -132,6 +118,5 @@ export {
   compass,
   autoGravity,
   focusOn,
-  ocr,
   xyCenter
 };
