@@ -36,7 +36,7 @@ export function generateTransformationString(transformationOptions: V1ITransfora
       // TODO we might need to clone the childTransformation
       .map((singleTransformation) => {
         return generateTransformationString(singleTransformation);
-      }).filter((a) => a).join('/');
+      }).filter((a) => { console.log(a); return a;}).join('/');
   }
 
   // let responsive_width = consumeOption(transformationOptions, "responsive_width", config().responsive_width);
@@ -101,7 +101,7 @@ export function generateTransformationString(transformationOptions: V1ITransfora
       } else {
         return generateTransformationString({transformation});
       }
-    });
+    }).filter((a: V1ITransforamtionOptions) => a);
 
   } else {
     namedTransformations = childTransformations.join(".");
@@ -215,7 +215,6 @@ export function generateTransformationString(transformationOptions: V1ITransfora
     transformationOptions.raw_transformation
   ].filter((a) => a).join(",");
 
-  // TODO why can this be empty?
   if (finalTransformationString) {
     childTransformations.push(finalTransformationString);
   }

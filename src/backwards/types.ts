@@ -244,7 +244,7 @@ export type VideoFormat =
 
 
 export interface V1ITransforamtionOptions {
-  transformation?: V1ITransforamtionOptions;
+  transformation?: V1ITransforamtionOptions | string;
   raw_transformation?: string;
   crop?: CropMode;
   width?: stringOrNumber;
@@ -257,9 +257,9 @@ export interface V1ITransforamtionOptions {
   zoom?: stringOrNumber;
   background?: string;
   angle?: Angle;
-  radius?: stringOrNumber;
+  radius?: stringOrNumber | stringOrNumber[];
   overlay?: string | Record<string, any>;
-  custom_function?: string | { function_type: string | "wasm" | "remote", source: string }
+  custom_function?: string | { function_type?: string | "wasm" | "remote", source?: string }
   variables?: Array<string | Record<string, any>>;
   if?: string;
   else?: string;
@@ -313,7 +313,7 @@ export interface V1ITransforamtionOptions {
   account_id?: string;
   provisioning_api_key?: string;
   provisioning_api_secret?: string;
-  version?: string;
+  version?: stringOrNumber;
   url_suffix?: string;
   [futureKey: string]: any;
 }

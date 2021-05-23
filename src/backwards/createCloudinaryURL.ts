@@ -99,6 +99,7 @@ export function createCloudinaryV1URL(public_id: string, transformationOptions: 
     secure,
     secure_distribution
   );
+
   const resultUrl = [prefix, resource_type, type, transformation, version, public_id].filter(function (part) {
     return (part != null) && part !== '';
   }).join('/').replace(' ', '%20');

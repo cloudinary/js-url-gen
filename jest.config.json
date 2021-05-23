@@ -6,15 +6,14 @@
     "<rootDir>/src/**/*.ts",
     "<rootDir>/scripts/**/*.ts",
     "!<rootDir>/scripts/createEntrypoints.ts",
-    "!<rootDir>/scripts/copyPackageJsonToSrc.ts.ts",
-    "!<rootDir>/src/backwards/**/*.ts"
+    "!<rootDir>/scripts/copyPackageJsonToSrc.ts.ts"
   ],
   "modulePaths": [
     "<rootDir>/src"
   ],
   "coverageThreshold": {
     "global": {
-      "branches": 93,
+      "branches": 84.9,
       "functions": 95,
       "lines": 95,
       "statements": 95
