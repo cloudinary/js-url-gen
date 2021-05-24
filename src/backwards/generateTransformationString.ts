@@ -132,6 +132,10 @@ export function generateTransformationString(transformationOptions: V1ITransfora
     fps = fps.join('-');
   }
 
+  // ocr(value) {
+  //   return this.param(value, "ocr", "ocr");
+  // }
+
   const urlParams = {
     a: v1NormalizeExpression(angle),
     ar: v1NormalizeExpression(transformationOptions.aspect_ratio),

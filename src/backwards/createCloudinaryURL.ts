@@ -28,7 +28,7 @@ export function createCloudinaryV1URL(public_id: string, transformationOptions: 
   }
   const private_cdn = transformationOptions.private_cdn;
   const secure_distribution = transformationOptions.secure_distribution;
-  const secure = typeof transformationOptions.secure === 'boolean' ? transformationOptions.secure : true;
+  const secure = transformationOptions.secure;
 
   const cdn_subdomain = transformationOptions.cdn_subdomain;
   const secure_cdn_subdomain = transformationOptions.secure_cdn_subdomain;

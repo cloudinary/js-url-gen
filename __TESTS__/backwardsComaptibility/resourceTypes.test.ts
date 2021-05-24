@@ -1,10 +1,9 @@
-import {createCloudinaryV1URL} from "../../src";
+import {createTestURL} from "./transformationV1Tests/utils/createTestURL";
 
 describe('Test resource types', () => {
   it('Should throw exception with unsupported format', () => {
     expect(() => {
-      createCloudinaryV1URL('sample', {
-        cloud_name: 'demo',
+      createTestURL('sample', {
         resource_type: 'video',
         type: 'fetch',
         url_suffix:'testing'
@@ -12,9 +11,8 @@ describe('Test resource types', () => {
     }).toThrow();
   });
 
-  it('works', () => {
-    const url = createCloudinaryV1URL('sample', {
-      cloud_name: 'demo',
+  it('uses url suffix to create turn image/upload to images/', () => {
+    const url = createTestURL('sample', {
       resource_type: 'image',
       type: 'upload',
       url_suffix:'testing'
