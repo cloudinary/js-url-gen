@@ -1,4 +1,4 @@
-import {createTestURL} from "./transformationV1Tests/utils/createTestURL";
+import {createTestURL} from "./transformationLegacyTests/utils/createTestURL";
 
 describe('Test resource types', () => {
   it('Should throw exception with unsupported format', () => {

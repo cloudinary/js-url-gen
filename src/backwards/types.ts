@@ -243,8 +243,8 @@ export type VideoFormat =
   | "webm"
 
 
-export interface V1ITransforamtionOptions {
-  transformation?: V1ITransforamtionOptions | string;
+export interface LegacyITransforamtionOptions {
+  transformation?: LegacyITransforamtionOptions | string;
   raw_transformation?: string;
   crop?: CropMode;
   width?: stringOrNumber;

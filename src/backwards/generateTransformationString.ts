@@ -1,5 +1,5 @@
 // eslint-disable @typescript-eslint/ban-ts-comment
-import {V1ITransforamtionOptions} from "./types";
+import {LegacyITransforamtionOptions} from "./types";
 import {processLayer} from "./transformationProcessing/processLayer";
 import {process_if} from "./transformationProcessing/processIf";
 import {toArray} from "./utils/toArray";
@@ -8,7 +8,7 @@ import {isObject} from "./utils/isObject";
 import {processCustomFunction} from "./transformationProcessing/processCustomFunction";
 import {processCustomPreFunction} from "./transformationProcessing/processCustomPreFunction";
 import {splitRange} from "./utils/splitRange";
-import {v1NormalizeExpression} from "./utils/v1NormalizeExpression";
+import {legacyNormalizeExpression} from "./utils/legacyNormalizeExpression";
 import {normRangeValues} from "./utils/norm_range_values";
 import {processVideoParams} from "./transformationProcessing/processVideoParams";
 
@@ -26,7 +26,7 @@ import {processVideoParams} from "./transformationProcessing/processVideoParams"
  * - Secure is default true
  * @param transformationOptions
  */
-export function generateTransformationString(transformationOptions: V1ITransforamtionOptions): string {
+export function generateTransformationString(transformationOptions: LegacyITransforamtionOptions): string {
   if (typeof transformationOptions === 'string') {
     return transformationOptions;
   }
@@ -90,18 +90,18 @@ export function generateTransformationString(transformationOptions: V1ITransfora
 
 
   // Is any child transformation an object?
-  const isAnyChildAnObject = childTransformations.some((transformation: V1ITransforamtionOptions) => typeof transformation === 'object');
+  const isAnyChildAnObject = childTransformations.some((transformation: LegacyITransforamtionOptions) => typeof transformation === 'object');
 
   // If array of objects, or array of strings?
   if (isAnyChildAnObject) {
-    childTransformations = childTransformations.map((transformation: V1ITransforamtionOptions) => {
+    childTransformations = childTransformations.map((transformation: LegacyITransforamtionOptions) => {
       if (isObject(transformation)) {
         // TODO We might need to clone here
         return generateTransformationString(transformation);
       } else {
         return generateTransformationString({transformation});
       }
-    }).filter((a: V1ITransforamtionOptions) => a);
+    }).filter((a: LegacyITransforamtionOptions) => a);
 
   } else {
     namedTransformations = childTransformations.join(".");
@@ -137,29 +137,29 @@ export function generateTransformationString(transformationOptions: V1ITransfora
   // }
 
   const urlParams = {
-    a: v1NormalizeExpression(angle),
-    ar: v1NormalizeExpression(transformationOptions.aspect_ratio),
+    a: legacyNormalizeExpression(angle),
+    ar: legacyNormalizeExpression(transformationOptions.aspect_ratio),
     b: background,
     bo: border,
     c: crop,
     co: color,
-    dpr: v1NormalizeExpression(dpr),
-    e: v1NormalizeExpression(effect),
+    dpr: legacyNormalizeExpression(dpr),
+    e: legacyNormalizeExpression(effect),
     fl: flags,
     fn: custom_function || custom_pre_function,
     fps: fps,
-    h: v1NormalizeExpression(height),
-    ki: v1NormalizeExpression(transformationOptions.keyframe_interval),
+    h: legacyNormalizeExpression(height),
+    ki: legacyNormalizeExpression(transformationOptions.keyframe_interval),
     l: overlay,
-    o: v1NormalizeExpression(transformationOptions.opacity),
-    q: v1NormalizeExpression(transformationOptions.quality),
+    o: legacyNormalizeExpression(transformationOptions.opacity),
+    q: legacyNormalizeExpression(transformationOptions.quality),
     r: radius,
     t: namedTransformations,
     u: underlay,
-    w: v1NormalizeExpression(width),
-    x: v1NormalizeExpression(transformationOptions.x),
-    y: v1NormalizeExpression(transformationOptions.y),
-    z: v1NormalizeExpression(transformationOptions.zoom),
+    w: legacyNormalizeExpression(width),
+    x: legacyNormalizeExpression(transformationOptions.x),
+    y: legacyNormalizeExpression(transformationOptions.y),
+    z: legacyNormalizeExpression(transformationOptions.zoom),
     ac: transformationOptions.audio_codec,
     af: transformationOptions.audio_frequency,
     br: transformationOptions.bit_rate,
@@ -185,10 +185,10 @@ export function generateTransformationString(transformationOptions: V1ITransfora
     .filter(([key, value]) => key.startsWith('$'))
     .map(([key, value]) => {
       // delete transformationOptions[key]; // Delete the variables, so we don't add them twice
-      return `${key}_${v1NormalizeExpression(value)}`;
+      return `${key}_${legacyNormalizeExpression(value)}`;
     }).sort().concat(
       // @ts-ignore
-      (transformationOptions.variables || []).map(([name, value]) => `${name}_${v1NormalizeExpression(value)}`)
+      (transformationOptions.variables || []).map(([name, value]) => `${name}_${legacyNormalizeExpression(value)}`)
     ).join(',');
 
 

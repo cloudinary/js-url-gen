@@ -1,4 +1,4 @@
-import {v1NormalizeExpression} from "../utils/v1NormalizeExpression";
+import {legacyNormalizeExpression} from "../utils/legacyNormalizeExpression";
 
 /**
  * Parse "if" parameter
@@ -8,5 +8,5 @@ import {v1NormalizeExpression} from "../utils/v1NormalizeExpression";
  */
 
 export function process_if(ifValue: any) {
-  return ifValue ? "if_" + v1NormalizeExpression(ifValue) : ifValue;
+  return ifValue ? "if_" + legacyNormalizeExpression(ifValue) : ifValue;
 }

@@ -1,5 +1,5 @@
 import {stringOrNumber} from "../../../src/backwards/types";
-import {v1NormalizeExpression} from "../../../src/backwards/utils/v1NormalizeExpression";
+import {legacyNormalizeExpression} from "../../../src/backwards/utils/legacyNormalizeExpression";
 
 describe("Expression normalization", function () {
   const cases: Record<string, [stringOrNumber, string]> = {
@@ -44,7 +44,7 @@ describe("Expression normalization", function () {
     const [input, expected] = cases[testDescription];
     // eslint-disable-next-line max-nested-callbacks
     it(testDescription, function () {
-      expect(v1NormalizeExpression(input)).toEqual(expected);
+      expect(legacyNormalizeExpression(input)).toEqual(expected);
     });
   });
 });

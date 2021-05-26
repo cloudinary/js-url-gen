@@ -1,10 +1,10 @@
-import {stringOrNumber, V1ITransforamtionOptions} from "./types";
+import {stringOrNumber, LegacyITransforamtionOptions} from "./types";
 import {generateTransformationString} from "./generateTransformationString";
 import {finalize_resource_type} from "./utils/finalizeResourceType";
 import {finalize_source} from "./utils/finalize_source";
 import {unsigned_url_prefix} from "./utils/unsigned_url_prefix";
 
-export function createCloudinaryV1URL(public_id: string, transformationOptions: V1ITransforamtionOptions) {
+export function createCloudinaryLegacyURL(public_id: string, transformationOptions: LegacyITransforamtionOptions) {
   // Path format
   if (transformationOptions.type === "fetch") {
     if (transformationOptions.fetch_format == null) {
