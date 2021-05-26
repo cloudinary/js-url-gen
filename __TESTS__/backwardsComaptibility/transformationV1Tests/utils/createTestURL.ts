@@ -17,9 +17,9 @@ export function createTestURL(publicID: string, options: V1ITransforamtionOption
 /**
  * 
  * @param {string} publicID 
- * @param {object} options 
+ * @param {Record<string, unknown>} options 
  * @returns string
  */
-export function createTestURLUsingRealV1(publicID: string, options: object = {}): string {
+export function createTestURLUsingRealV1(publicID: string, options: Record<string, unknown> = {}): string {
   return CLV1.url(publicID, options);
 }
