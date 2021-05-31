@@ -1,4 +1,4 @@
-import {v1NormalizeExpression} from "../utils/v1NormalizeExpression";
+import {legacyNormalizeExpression} from "../utils/legacyNormalizeExpression";
 
 
 /**
@@ -25,5 +25,5 @@ export function processRadius(_radius: any) {
   if (radius.findIndex((x: any) => x === null) >= 0) {
     throw new Error("Corner: Cannot be null");
   }
-  return radius.map(v1NormalizeExpression).join(':');
+  return radius.map(legacyNormalizeExpression).join(':');
 }

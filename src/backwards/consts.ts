@@ -1,4 +1,4 @@
-export const V1_CONDITIONAL_OPERATORS = {
+export const LEGACY_CONDITIONAL_OPERATORS = {
   "=": 'eq',
   "!=": 'ne',
   "<": 'lt',
@@ -19,7 +19,7 @@ export const OLD_AKAMAI_SHARED_CDN = "cloudinary-a.akamaihd.net";
 export const AKAMAI_SHARED_CDN = "res.cloudinary.com";
 export const SHARED_CDN = AKAMAI_SHARED_CDN;
 
-export const V1_PREDEFINED_VARS = {
+export const LEGACY_PREDEFINED_VARS = {
   "aspect_ratio": "ar",
   "aspectRatio": "ar",
   "current_page": "cp",

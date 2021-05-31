@@ -1,10 +1,10 @@
-import {createTestURL} from "./transformationV1Tests/utils/createTestURL";
-import {createCloudinaryV1URL} from "../../src";
+import {createTestURL} from "./transformationLegacyTests/utils/createTestURL";
+import {createCloudinaryLegacyURL} from "../../src";
 
-describe('Create v1 urls', () => {
+describe('Create legacy urls', () => {
   it('Should throw without cloudName', () => {
     expect(() => {
-      createCloudinaryV1URL('sample', {});
+      createCloudinaryLegacyURL('sample', {});
     }).toThrow();
   });
 

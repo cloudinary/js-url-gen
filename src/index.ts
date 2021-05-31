@@ -7,7 +7,7 @@ import {CloudinaryImage} from "./assets/CloudinaryImage";
 import {CloudinaryVideo} from "./assets/CloudinaryVideo";
 import {CloudinaryFile} from "./assets/CloudinaryFile";
 import {Cloudinary} from "./instance/Cloudinary";
-import {createCloudinaryV1URL} from "./backwards/createCloudinaryURL";
+import {createCloudinaryLegacyURL} from "./backwards/createCloudinaryLegacyURL";
 
 /**
  * @namespace SDK
@@ -22,7 +22,7 @@ const CloudinaryBaseSDK = {
   CloudinaryImage,
   CloudinaryVideo,
   CloudinaryFile,
-  createCloudinaryV1URL
+  createCloudinaryLegacyURL: createCloudinaryLegacyURL
 };
 
 export {
@@ -35,7 +35,7 @@ export {
   CloudinaryImage,
   CloudinaryVideo,
   CloudinaryFile,
-  createCloudinaryV1URL,
+  createCloudinaryLegacyURL,
   CloudinaryBaseSDK,
   CloudinaryBaseSDK as default
 };
