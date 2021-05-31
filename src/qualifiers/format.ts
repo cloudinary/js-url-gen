@@ -444,7 +444,7 @@ function videoMts():FormatQualifier { return new FormatQualifier('mts'); }
 
 /**
  * @summary qualifier
- * @description Image format aac.
+ * @description Audio format aac.
  * @memberOf Qualifiers.Format
  * @return {Qualifiers.Format.FormatQualifier}
  */
@@ -452,7 +452,7 @@ function audioAac():FormatQualifier { return new FormatQualifier('aac'); }
 
 /**
  * @summary qualifier
- * @description Image format aiff.
+ * @description Audio format aiff.
  * @memberOf Qualifiers.Format
  * @return {Qualifiers.Format.FormatQualifier}
  */
@@ -460,7 +460,7 @@ function audioAiff():FormatQualifier { return new FormatQualifier('aiff'); }
 
 /**
  * @summary qualifier
- * @description Image format amr.
+ * @description Audio format amr.
  * @memberOf Qualifiers.Format
  * @return {Qualifiers.Format.FormatQualifier}
  */
@@ -468,7 +468,7 @@ function audioAmr():FormatQualifier { return new FormatQualifier('amr'); }
 
 /**
  * @summary qualifier
- * @description Image format flac.
+ * @description Audio format flac.
  * @memberOf Qualifiers.Format
  * @return {Qualifiers.Format.FormatQualifier}
  */
@@ -476,7 +476,7 @@ function audioFlac():FormatQualifier { return new FormatQualifier('flac'); }
 
 /**
  * @summary qualifier
- * @description Image format m4a.
+ * @description Audio format m4a.
  * @memberOf Qualifiers.Format
  * @return {Qualifiers.Format.FormatQualifier}
  */
@@ -484,7 +484,7 @@ function audioM4a():FormatQualifier { return new FormatQualifier('m4a'); }
 
 /**
  * @summary qualifier
- * @description Image format mp3.
+ * @description Audio format mp3.
  * @memberOf Qualifiers.Format
  * @return {Qualifiers.Format.FormatQualifier}
  */
@@ -492,7 +492,7 @@ function audioMp3():FormatQualifier { return new FormatQualifier('mp3'); }
 
 /**
  * @summary qualifier
- * @description Image format ogg.
+ * @description Audio format ogg.
  * @memberOf Qualifiers.Format
  * @return {Qualifiers.Format.FormatQualifier}
  */
@@ -500,7 +500,7 @@ function audioOgg():FormatQualifier { return new FormatQualifier('ogg'); }
 
 /**
  * @summary qualifier
- * @description Image format opus.
+ * @description Audio format opus.
  * @memberOf Qualifiers.Format
  * @return {Qualifiers.Format.FormatQualifier}
  */
@@ -508,7 +508,7 @@ function audioOpus():FormatQualifier { return new FormatQualifier('opus'); }
 
 /**
  * @summary qualifier
- * @description Image format wav.
+ * @description Audio format wav.
  * @memberOf Qualifiers.Format
  * @return {Qualifiers.Format.FormatQualifier}
  */
