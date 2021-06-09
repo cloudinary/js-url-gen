@@ -3,9 +3,16 @@ import {
   createTestURLUsingRealLegacy
 } from "./transformationLegacyTests/utils/createTestURL";
 
+type CompatibilityTestCase = {
+  name: string;
+  options: Record<string, unknown>,
+  skip?: boolean,
+  publicId?: string
+};
+
 describe("Create exact legacy urls", () => {
-  const testCases = [
-    // Borders
+  const testCases : CompatibilityTestCase[] = [
+    //#region Borders
     {
       name: "Border as string",
       options: { border: "40px_solid_brown" }
@@ -18,12 +25,15 @@ describe("Create exact legacy urls", () => {
       name: "Border with color",
       options: { border: { width: 5, color: "#ffaabbdd" } }
     },
-    // Width & height
+    //#endregion
+
+    //#region Width & height
     {
       name: "Width & height ignores empty",
       options: { width: 0, height: 0, crop: "scale" }
     },
     {
+      // This test fails due to legacy API inconsistency - node.js vs cloudinary-core
       skip: true,
       name: "Width & height ignored when no crop",
       options: { width: 100, height: 100 }
@@ -48,12 +58,16 @@ describe("Create exact legacy urls", () => {
       name: "Width & height oh,ow",
       options: { width: "iw", height: "ih", crop: "scale" }
     },
-    // Aspect Ratio
+    //#endregion
+
+    //#region Aspect Ratio
     {
       name: "Aspect ratio",
       options: { aspect_ratio: "3:2" }
     },
-    // Radius
+    //#endregion
+
+    //#region Radius
     {
       name: "Radius simple",
       options: { radius: 10 }
@@ -74,7 +88,9 @@ describe("Create exact legacy urls", () => {
       name: "Radius array with variable",
       options: { radius: [10, 20, "$v"] }
     },
-    // Gravity
+    //#endregion
+
+    //#region Gravity
     {
       name: "Gravity auto",
       options: { width: 100, height: 100, crop: "crop", gravity: "auto" }
@@ -123,7 +139,9 @@ describe("Create exact legacy urls", () => {
         gravity: "auto:custom_no_override"
       }
     },
-    // Combinations
+    //#endregion
+
+    //#region Various Combinations
     {
       name: "Using x, y, radius, prefix, gravity and quality",
       options: {
@@ -134,14 +152,56 @@ describe("Create exact legacy urls", () => {
         quality: 0.4,
         prefix: "a"
       }
+    },
+    {
+      name: "Using crop, fetch_format, quality, width",
+      options: {
+        crop: "limit",
+        fetch_format: "auto",
+        quality: "auto",
+        width: 2000
+      }
+    },
+    {
+      name: "Using named transformation and fetch_format",
+      options: {
+        transformation: "sometrans",
+        fetch_format: "auto"
+      }
+    },
+    {
+      skip: true,
+      name: "Using width, height, crop, format - publicid has extension",
+      options: {
+        width: 250,
+        height: 250,
+        crop: "pad",
+        format: "jpg"
+      }
+    },
+    {
+      name: "Using width, height, crop, format - publicid has no extension",
+      publicId: "sample",
+      options: {
+        width: 250,
+        height: 250,
+        crop: "pad",
+        format: "jpg"
+      }
+    },
+    {
+      name: "No options",
+      options: undefined
     }
+    ////#endregion
   ];
 
   testCases.forEach((testCase) => {
     const useIt = testCase.skip ? it.skip : it;
     useIt(testCase.name, function () {
-      expect(createTestURL("sample.jpg", testCase.options)).toBe(
-        createTestURLUsingRealLegacy("sample.jpg", testCase.options)
+      const publicId = testCase.publicId || "sample.jpg";
+      expect(createTestURL(publicId, testCase.options)).toBe(
+        createTestURLUsingRealLegacy(publicId, testCase.options)
       );
     });
   });
