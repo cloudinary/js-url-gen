@@ -173,6 +173,41 @@ describe("Create exact legacy urls", () => {
     },
     //#endregion
 
+    //#region format
+    {
+      name: "should use format from options",
+      publicId: "sample",
+      options: {
+        format: "jpg"
+      }
+    },
+    {
+      skip: true,
+      name: "should not repeat extension",
+      publicId: "sample.jpg",
+      options: {
+        format: "jpg"
+      }
+    },
+    {
+      skip: true,
+      name: "options format should override file extension",
+      publicId: "sample.png",
+      options: {
+        format: "jpg"
+      }
+    },
+    {
+      name: "should put format after url_suffix",
+      publicId: "sample",
+      options: {
+        url_suffix: "hello",
+        private_cdn: true,
+        format: "jpg"
+      }
+    },
+    //#endregion
+
     //#region Various Combinations
     {
       name: "Using x, y, radius, prefix, gravity and quality",
@@ -202,17 +237,7 @@ describe("Create exact legacy urls", () => {
       }
     },
     {
-      skip: true,
-      name: "Using width, height, crop, format - publicid has extension",
-      options: {
-        width: 250,
-        height: 250,
-        crop: "pad",
-        format: "jpg"
-      }
-    },
-    {
-      name: "Using width, height, crop, format - publicid has no extension",
+      name: "Using width, height, crop, format",
       publicId: "sample",
       options: {
         width: 250,
