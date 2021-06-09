@@ -1,8 +1,8 @@
-import {Cloudinary } from 'cloudinary-core';
+import {Cloudinary} from 'cloudinary-core';
 import {createCloudinaryLegacyURL} from "../../../../src";
 import {LegacyITransforamtionOptions} from "../../../../src/backwards/types";
 
-const CLV1 = Cloudinary.new( { cloud_name: "demo"});
+const CLegacy = Cloudinary.new( { cloud_name: "demo"});
 
 /**
  * @param {string} publicID
@@ -20,6 +20,6 @@ export function createTestURL(publicID: string, options: LegacyITransforamtionOp
  * @param {Record<string, unknown>} options 
  * @returns string
  */
-export function createTestURLUsingRealV1(publicID: string, options: Record<string, unknown> = {}): string {
-  return CLV1.url(publicID, options);
+export function createTestURLUsingRealLegacy(publicID: string, options: Record<string, unknown> = {}): string {
+  return CLegacy.url(publicID, options);
 }

@@ -1,9 +1,9 @@
 import {
   createTestURL,
-  createTestURLUsingRealV1
+  createTestURLUsingRealLegacy
 } from "./transformationLegacyTests/utils/createTestURL";
 
-describe("Create exact v1 urls", () => {
+describe("Create exact legacy urls", () => {
   const testCases = [
     // Borders
     {
@@ -141,7 +141,7 @@ describe("Create exact v1 urls", () => {
     const useIt = testCase.skip ? it.skip : it;
     useIt(testCase.name, function () {
       expect(createTestURL("sample.jpg", testCase.options)).toBe(
-        createTestURLUsingRealV1("sample.jpg", testCase.options)
+        createTestURLUsingRealLegacy("sample.jpg", testCase.options)
       );
     });
   });
