@@ -1,3 +1,4 @@
+import cloneDeep from 'lodash/cloneDeep';
 import {
   createTestURL,
   createTestURLUsingRealLegacy
@@ -141,6 +142,37 @@ describe("Create exact legacy urls", () => {
     },
     //#endregion
 
+    //#region Transformations
+    {
+      name: "Multi layer complex transformation",
+      options: {
+        transformation: [
+          { width: 1000, height: "500", crop: "fill" },
+          {
+            overlay: "folder:frontpubid",
+            width: 1000,
+            height: 400,
+            crop: "fill"
+          },
+          { effect: "shadow", x: 0, y: 2 },
+          { gravity: "north", flags: "layer_apply" },
+          {
+            overlay: "folder:backpubid",
+            background: "auto",
+            width: 100,
+            height: 100,
+            crop: "pad",
+            gravity: "north",
+            y: 350,
+            border: { width: 4, color: "white" },
+            radius: "max",
+            flags: "layer_apply"
+          }
+        ]
+      }
+    },
+    //#endregion
+
     //#region Various Combinations
     {
       name: "Using x, y, radius, prefix, gravity and quality",
@@ -193,15 +225,18 @@ describe("Create exact legacy urls", () => {
       name: "No options",
       options: undefined
     }
-    ////#endregion
+    //#endregion
   ];
 
   testCases.forEach((testCase) => {
     const useIt = testCase.skip ? it.skip : it;
     useIt(testCase.name, function () {
       const publicId = testCase.publicId || "sample.jpg";
+      // Creating a clone since for some transformations the options
+      // are consumed and removed from the object.
+      const clonedOptions = cloneDeep(testCase.options);
       expect(createTestURL(publicId, testCase.options)).toBe(
-        createTestURLUsingRealLegacy(publicId, testCase.options)
+        createTestURLUsingRealLegacy(publicId, clonedOptions)
       );
     });
   });
