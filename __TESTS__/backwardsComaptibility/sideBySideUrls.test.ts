@@ -1,7 +1,7 @@
 import {
   createTestURL,
   createTestURLUsingRealV1
-} from "./transformationV1Tests/utils/createTestURL";
+} from "./transformationLegacyTests/utils/createTestURL";
 
 describe("Create exact v1 urls", () => {
   const testCases = [

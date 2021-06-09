@@ -1,17 +1,17 @@
 import {Cloudinary } from 'cloudinary-core';
-import {createCloudinaryV1URL} from "../../../../src";
-import {V1ITransforamtionOptions} from "../../../../src/backwards/types";
+import {createCloudinaryLegacyURL} from "../../../../src";
+import {LegacyITransforamtionOptions} from "../../../../src/backwards/types";
 
 const CLV1 = Cloudinary.new( { cloud_name: "demo"});
 
 /**
  * @param {string} publicID
- * @param {V1ITransforamtionOptions} options
- * @return string
+ * @param {LegacyITransforamtionOptions} options
+ * @return string;
  */
-export function createTestURL(publicID: string, options: V1ITransforamtionOptions = {}): string {
+export function createTestURL(publicID: string, options: LegacyITransforamtionOptions = {}): string {
   const opts = Object.assign({}, {cloud_name: 'demo'}, options || {});
-  return createCloudinaryV1URL(publicID, opts);
+  return createCloudinaryLegacyURL(publicID, opts);
 }
 
 /**

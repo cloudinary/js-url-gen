@@ -1,5 +1,5 @@
 import {generateTransformationString} from "../../src/backwards/generateTransformationString";
-import {createCloudinaryV1URL} from "../../src/backwards/createCloudinaryURL";
+import {createCloudinaryLegacyURL} from "../../src/backwards/createCloudinaryLegacyURL";
 
 describe('it works?', () => {
   it('omg', () => {
