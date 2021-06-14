@@ -6,30 +6,28 @@ const prettier = require('prettier');
 
 function createTestFile(txs: ITxResult[]){
   let file = `
-
     import { Dither, checkerboard2x1Dither, circles5x5Black, circles5x5White, circles6x6Black, circles6x6White, circles7x7Black, circles7x7White } from "../src/qualifiers/dither";
 import { Variable, setString, setInteger, set, setAssetReference, setFloat, setFromContext, setFromMetadata } from "../src/actions/variable";
 import { Rotate, byAngle, mode } from "../src/actions/rotate";
-import { GradientDirection } from "../src/qualifiers/gradientDirection";
-import { ColorSpace } from "../src/qualifiers/colorSpace";
+import { GradientDirection, diagonalAsc, diagonalDesc, horizontal, vertical } from "../src/qualifiers/gradientDirection";
+import { ColorSpace, cmyk, keepCmyk, noCmyk, srgb, tinySrgb, trueColor } from "../src/qualifiers/colorSpace";
 import { Dpr, auto } from "../src/qualifiers/dpr";
-import { CustomFunction } from "../src/actions/customFunction";
-import { Extract } from "../src/actions/extract";
+import { CustomFunction, remote, wasm, } from "../src/actions/customFunction";
+import { Extract, ExtractAction, getFrame, getPage, } from "../src/actions/extract";
 import { ImproveMode } from "../src/qualifiers/improveMode";
-import { Source, video, image } from "../src/qualifiers/source";
+import { Source, video, image, subtitles, fetch, text } from "../src/qualifiers/source";
 import { RoundCorners, max, byRadius } from "../src/actions/roundCorners";
 import { Format, auto, ai, arw, audioAac, audioAiff, audioAmr, audioFlac, audioM4a, audioMp3, audioOgg, audioOpus, audioWav, avif, bmp, cr2, djvu, eps, eps3, ept, flif, fxb, gif, glb, gltf, hdp, heic, heif, ico, indd, jp2, jpc, jpe, jpeg, jpg, jxr, pdf, png, ps, psd, spd, svg, tga, tif, tiff, usdz, video3g2, video3gp, videoAvi, videoFlv, videoM2ts, videoM3u8, videoMkv, videoMov, videoMp4, videoMpd, videoMpeg, videoMts, videoMxf, videoOgv, videoTs, videoWebm, videoWmv, wdp, webp} from "../src/qualifiers/format";
-import { Quality } from "../src/qualifiers/quality";
+import { Quality, auto, autoBest, autoEco, autoGood, autoLow, jpegmini, jpegminiBest, jpegminiHigh, jpegminiMedium } from "../src/qualifiers/quality";
 import { ImageTransformation } from "../src/transformation/ImageTransformation";
 import { Transcode, audioCodec, audioFrequency, bitRate, fps, fpsRange, ITranscodeAction, keyframeInterval, streamingProfile, toAnimated, videoCodec } from "../src/actions/transcode";
 import { Overlay, source } from "../src/actions/overlay";
 import { AutoFocus } from "../src/qualifiers/autoFocus";
-import { ArtisticFilter, alDente, athena, audrey, aurora, daguerre, eucalyptus, fes, frost, hairspray, hokusai, incognito, linen, peacock,
-  , primavera, quartz, redRock, refresh, sizzle, sonnet, ukulele, zorro} from "../src/qualifiers/artisticFilter";
+import { ArtisticFilter, alDente, athena, audrey, aurora, daguerre, eucalyptus, fes, frost, hairspray, hokusai, incognito, linen, peacock, primavera, quartz, redRock, refresh, sizzle, sonnet, ukulele, zorro} from "../src/qualifiers/artisticFilter";
 import { Gravity, autoGravity, compass, focusOn, xyCenter } from "../src/qualifiers/gravity";
-import { AnimatedFormat } from "../src/qualifiers/animatedFormat";
+import { AnimatedFormat, webp, png, gif, auto } from "../src/qualifiers/animatedFormat";
 import { Background, auto, blurred, border, borderGradient, color, predominant, predominantGradient } from "../src/qualifiers/background";
-import { ChromaSubSampling } from "../src/qualifiers/chromaSubSampling";
+import { ChromaSubSampling, chroma420, chroma444 } from "../src/qualifiers/chromaSubSampling";
 import { Position } from "../src/qualifiers/position";
 import { Resize, fill, thumbnail, scale, crop, fillPad, fit, imaggaCrop, imaggaScale, limitFill, limitFit, limitPad, minimumFit, minimumPad, pad} from "../src/actions/resize";
 import { Color } from "../src/qualifiers/color";
@@ -41,6 +39,7 @@ import {
   RotationMode,
   verticalFlip,
   autoRight,
+  autoLeft, horizontalFlip, ignore
 } from "../src/qualifiers/rotationMode";
 import { Region, ocr, faces, custom} from "../src/qualifiers/region";
 import { GradientFade } from "../src/qualifiers/GradientFade";
@@ -48,23 +47,22 @@ import { Effect, vignette, sepia, accelerate, advancedRedEye, artisticFilter, as
 import { Delivery, dpr, quality, colorSpace, colorSpaceFromICC, defaultImage, density, format} from "../src/actions/delivery";
 import { FocusOn, advancedEyes, advancedFace, advancedFaces, aeroplane, background, bicycle, bird, boat, bottle, bus, car, cat, chair, cow, diningtable, dog, face, faces, horse, microwave, motorbike, FocusOnValue, ocr, person, pottedplant, refrigerator, sheep, sink, skateboard, sofa, train, tvmonitor } from "../src/qualifiers/focusOn";
 import { OutlineMode } from "../src/qualifiers/outlineMode";
-import { SimulateColorBlind } from "../src/qualifiers/simulateColorBlind";
+import { SimulateColorBlind, coneMonochromacy, deuteranomaly, deuteranopia, protanopia, rodMonochromacy, tritanomaly, tritanopia } from "../src/qualifiers/simulateColorBlind";
 import { StreamingProfile } from "../src/qualifiers/streamingProfile";
 import { Underlay } from "../src/actions/underlay";
 import { VideoEdit, trim, volume, concatenate, preview } from "../src/actions/videoEdit";
 import { VideoTransformation } from "../src/transformation/VideoTransformation";
 import { Border, solid } from "../src/actions/border";
-import { Flag, custom, ignoreInitialAspectRatio, attachment, animated, animatedPng, animatedWebP, anyFormat, clip, clipEvenOdd, forceIcc, forceStrip, getInfo, hlsv3, ignoreMaskChannels, immutableCache, keepAttribution, keepDar, keepIptc, layerApply, lossy, mono, noOverflow, noStream, png8, png24, png32, preserveTransparency, progressive, rasterize, regionRelative, relative, sanitize, splice, streamingAttachment, stripProfile,
-, tiff8Lzw, tiled, truncateTS, waveform} from "../src/qualifiers/flag";
+import { Flag, custom, ignoreInitialAspectRatio, attachment, animated, animatedPng, animatedWebP, anyFormat, clip, clipEvenOdd, forceIcc, forceStrip, getInfo, hlsv3, ignoreMaskChannels, immutableCache, keepAttribution, keepDar, keepIptc, layerApply, lossy, mono, noOverflow, noStream, png8, png24, png32, preserveTransparency, progressive, rasterize, regionRelative, relative, sanitize, splice, streamingAttachment, stripProfile, tiff8Lzw, tiled, truncateTS, waveform} from "../src/qualifiers/flag";
 import { AudioCodec, none } from "../src/qualifiers/audioCodec";
-import { PSDTools } from "../src/actions/psdTools";
-import { TextDecoration } from "../src/qualifiers/textDecoration";
+import { PSDTools, clip, getLayer, smartObject } from "../src/actions/psdTools";
+import { TextDecoration, normal, strikethrough, underline } from "../src/qualifiers/textDecoration";
 import { Transformation } from "../src/transformation/Transformation";
 import { AutoGravity } from "../src/qualifiers/gravity/autoGravity/AutoGravity";
 import { Conditional, ConditionalAction, ifCondition } from "../src/actions/conditional";
-import { FontWeight } from "../src/qualifiers/fontWeight";
+import { FontWeight, normal, bold, light, thin } from "../src/qualifiers/fontWeight";
 import { AspectRatio, ar1X1, ar3X1, ar3X2, ar4X3, ar5X4, ar16X9, ignoreInitialAspectRatio} from "../src/qualifiers/aspectRatio";
-import { Timeline } from "../src/qualifiers/timeline";
+import { Timeline, position } from "../src/qualifiers/timeline";
 import { NamedTransformation, name } from "../src/actions/namedTransformation";
 import { Reshape, trim, cutByImage, distort, distortArc, shear } from "../src/actions/reshape";
 import { Expression, expression } from "../src/qualifiers/expression";
@@ -72,9 +70,9 @@ import { Concatenate, videoSource } from "../src/qualifiers/concatenate";
 import { TextStyle } from "../src/qualifiers/textStyle";
 import { Volume, byDecibels, byPercent, mute } from "../src/qualifiers/volume";
 import { TextAlignment, center, end, justify, left, right, start } from "../src/qualifiers/textAlignment";
-import { Transition } from "../src/qualifiers/transition";
+import { Transition, videoSource } from "../src/qualifiers/transition";
 import { VideoCodecLevel, vcl30, vcl31, vcl40, vcl41, vcl42, vcl50, vcl51, vcl52 } from "../src/qualifiers/videoCodecLevel";
-import { Progressive } from "../src/qualifiers/progressive";
+import { Progressive, progressive, none, ProgressiveQualifier, semi, steep } from "../src/qualifiers/progressive";
 import { FontStyle, italic, normal } from "../src/qualifiers/fontStyle";
 import { VideoCodecProfile, baseline, high, main } from "../src/qualifiers/videoCodecProfile";
 import { ShakeStrength, pixels16, pixels32, pixels48, pixels64 } from "../src/qualifiers/shakeStrength";
