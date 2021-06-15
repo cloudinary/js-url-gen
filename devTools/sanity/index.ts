@@ -41,7 +41,7 @@ transformationStrings.forEach(async (txString, i) => {
 
   console.log('Processing transformation:', i);
 
-  const URL = `${baseURL}?url=https://res.cloudinary.com/demo/image/upload/${txString}/sample`;
+  const URL = `${baseURL}?hideActionGroups=0&url=https://res.cloudinary.com/demo/image/upload/${txString}/sample`;
 
   const res = await nodeFetch(URL).catch((e: Error) => {
     console.log(e);

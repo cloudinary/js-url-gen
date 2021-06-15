@@ -122,7 +122,7 @@ c_crop,g_face,h_150,w_150
 c_crop,g_face,h_400,w_400
 c_crop,g_face,r_75,bo_10px_solid_grey/l_young_couple,w_150,h_150,c_thumb,r_max,g_faces,bo_3px_solid_black/fl_layer_apply,g_north_east
 # Zoom not supported with crop - Needs to be fixed by docs team
-c_crop,g_face,z_1.2,h_150,w_150
+#c_crop,g_face,z_1.2,h_150,w_150
 c_crop,g_microwave
 c_crop,g_microwave,ar_1
 c_crop,g_microwave,ar_1/w_0.3,c_scale
@@ -137,7 +137,7 @@ c_crop,g_sink
 c_crop,g_sink,ar_1
 c_crop,g_sink,ar_1/w_0.3,c_scale
 # Zoom not supported with crop - Needs to be fixed by docs team
-c_crop,g_sink,z_0.8
+#c_crop,g_sink,z_0.8
 c_crop,g_sink/w_0.3,c_scale
 c_crop,h_100,w_150,x_380,y_250/c_fill,h_100,w_130/a_20/c_scale,w_0.8
 c_crop,h_160,w_100
@@ -154,12 +154,12 @@ c_fill,g_auto,h_250,w_250
 c_fill,g_auto,h_400,ar_0.8
 c_fill,g_auto,h_400,ar_0.8/h_300
 c_fill,g_auto,h_500,w_500
-c_fill,g_auto:classic,ar_0.7,w_200
-c_fill,g_auto:classic,ar_0.7,w_750
+#c_fill,g_auto:classic,ar_0.7,w_200
+#c_fill,g_auto:classic,ar_0.7,w_750
 c_fill,g_auto:ocr_text_avoid,h_400,ar_0.8
 c_fill,g_auto:ocr_text_avoid,h_400,ar_0.8/h_300
-c_fill,g_auto:subject,ar_0.7,w_200
-c_fill,g_auto:subject,ar_1:1
+#c_fill,g_auto:subject,ar_0.7,w_200
+#c_fill,g_auto:subject,ar_1:1
 c_fill,g_north,h_200,w_150
 c_fill,g_north,h_200,w_150/
 c_fill,g_ocr_text,h_250,w_250
@@ -327,7 +327,6 @@ e_contrast:-70
 e_cut_out,l_docs:logo:logo,g_south_west,w_200,x_20,y_20
 e_deshake:32
 e_displace,l_radialize,y_100
-e_distort:150:340:1500:10:1500:1550:50:1000
 e_distort:arc:180
 e_fade:2000
 e_fade:2000/e_fade:-4000
@@ -384,7 +383,7 @@ e_progressbar:color_FF0000:width_12:type_frame
 e_progressbar:frame:FF0000:12
 e_progressbar:frame:FF0000:6
 e_progressbar:type_bar:color_blue:width_6
-e_recolor:0.3:0.7:0.1:0.3:0.6:0.1:0.2:0.5:0.1
+#e_recolor:0.3:0.7:0.1:0.3:0.6:0.1:0.2:0.5:0.1
 e_red:50
 e_redeye
 e_replace_color:2F4F4F:20
@@ -446,14 +445,14 @@ f_png
 f_png/a_90,ar_1,b_rgb:a17ec5,c_fill,g_auto,h_200
 f_png/w_800/l_text:Unkempt_250_bold:Water,fl_cutter,e_shadow
 f_webm
-fl_apng
+#fl_apng
 fl_attachment
 fl_attachment:pretty_flower,f_auto
 fl_awebp
 fl_clip,pg_2
 fl_clip,pg_name:stones
 fl_clip_evenodd
-fl_draco
+#fl_draco
 fl_lossy
 fl_lossy,q_50
 fl_region_relative,g_adv_eyes,l_glasses,w_1.5
@@ -463,8 +462,8 @@ fn_pre:remote:aHR0cHM6Ly9teS5wcmVwcm9jZXNzLmN1c3RvbS9mdW5jdGlvbg==
 fn_remote:aHR0cHM6Ly9teS5leGFtcGxlLmN1c3RvbS9mdW5jdGlvbg==
 fn_wasm:my_example.wasm
 fps_1-5
-g_auto:subject,c_fill,ar_0.7,w_750
-g_auto:subject,c_fill,ar_0.7,w_750,fl_getinfo
+#g_auto:subject,c_fill,ar_0.7,w_750
+#g_auto:subject,c_fill,ar_0.7,w_750,fl_getinfo
 g_face,c_crop
 # No zoom with crop - Docs need to fix
 g_face,c_crop,z_1.3
@@ -565,7 +564,7 @@ l_lut:iwltbap_aspen.3dl
 l_lut:iwltbap_aspen.3dl/w_200
 l_lut:iwltbap_sedona.3dl
 l_lut:iwltbap_sedona.3dl/w_200
-l_sample,fl_replace_image,e_cartoonify
+#l_sample,fl_replace_image,e_cartoonify
 l_subtitles:arial_20:sample_sub_en.srt
 l_subtitles:arial_40:sample_sub_en.srt,co_yellow,b_black
 l_subtitles:arial_70:sample_sub_en.srt,co_rgb:ffff00,b_black
@@ -587,11 +586,9 @@ l_video:ski_jump,fl_splice,e_reverse/l_video:ski_jump,fl_splice,e_accelerate:-50
 l_video:ski_jump,fl_splice,e_reverse/l_video:ski_jump,fl_splice,e_accelerate:-50/e_volume:mute/e_brightness:10,r_max
 l_video:ski_jump,so_3,eo_6,c_scale,w_250,g_north_east
 o_30
-p_home_thing_
-p_my_sprite_
+#p_my_sprite_
 pg_2
-pg_2-4;6;8
-pg_2-4;6;8/w_300
+#pg_2-4;6;8
 pg_embedded:3
 pg_embedded:3/w_300
 pg_embedded:7
@@ -814,7 +811,7 @@ w_300,c_fill,g_auto,ar_1:1
 w_300,c_scale,pg_2
 w_300,c_scale,pg_4,e_sepia,r_50,bo_2px_solid_rgb:999/l_aspose_cloud_logo,w_0.9,fl_relative,o_70,g_south,y_20
 w_300,e_accelerate:100
-w_300,e_distort:40:25:280:60:260:155:35:165
+#w_300,e_distort:40:25:280:60:260:155:35:165
 w_300,e_grayscale
 w_300,e_noise:50
 w_300,f_auto,q_auto,dpr_2
@@ -1065,11 +1062,11 @@ c_fill,g_auto,h_250,w_250
 c_fill,g_auto,h_400,ar_0.8
 c_fill,g_auto,h_400,ar_0.8/h_300
 c_fill,g_auto,h_500,w_500
-c_fill,g_auto:classic,ar_0.7,w_200
-c_fill,g_auto:classic,ar_0.7,w_750
+#c_fill,g_auto:classic,ar_0.7,w_200
+#c_fill,g_auto:classic,ar_0.7,w_750
 c_fill,g_auto:ocr_text_avoid,h_400,ar_0.8
 c_fill,g_auto:ocr_text_avoid,h_400,ar_0.8/h_300
-c_fill,g_auto:subject,ar_0.7,w_200
+#c_fill,g_auto:subject,ar_0.7,w_200
 c_fill,g_face,h_10,w_10
 c_fill,g_north,h_200,w_150
 c_fill,g_ocr_text,h_250,w_250
@@ -1215,8 +1212,7 @@ e_preview,fl_getinfo
 e_preview:duration_5
 e_preview:duration_8/c_crop,w_1600,h_800,e_loop
 e_preview:duration_12.0:max_seg_3:min_seg_dur_3.0
-e_recolor:0.3:0.7:0.1:0.2:0.3:0.6:0.1:0.2:0.2:0.5:0.1:0.2
-e_recolor:0.3:0.7:0.1:0.3:0.6:0.1:0.2:0.5:0.1
+#e_recolor:0.3:0.7:0.1:0.2:0.3:0.6:0.1:0.2:0.2:0.5:0.1:0.2
 e_red
 e_red:10
 e_redeye
@@ -1268,7 +1264,7 @@ fl_region_relative,g_adv_faces,l_silver_face_mask,w_1.1
 fn_pre:remote:aHR0cHM6Ly9teS5wcmVwcm9jZXNzLmN1c3RvbS9mdW5jdGlvbg==
 fn_remote:aHR0cHM6Ly9teS5leGFtcGxlLmN1c3RvbS9mdW5jdGlvbg==
 fn_wasm:my_example.wasm
-g_auto:subject,c_fill,ar_0.7,w_750
+#g_auto:subject,c_fill,ar_0.7,w_750
 g_face,c_crop
 g_face,c_crop,z_1.3
 g_face,c_thumb,w_150,h_150
@@ -1360,9 +1356,9 @@ l_video:kitten_fighting,e_fade:3000,w_100
 l_video:ski_jump,fl_splice,e_reverse/l_video:ski_jump,fl_splice,e_accelerate:-50/e_brightness:10,r_max
 l_video:ski_jump,fl_splice,e_reverse/l_video:ski_jump,fl_splice,e_accelerate:-50/e_volume:mute/e_brightness:10,r_max
 o_30
-p_home_thing_
+#p_home_thing_
 pg_2
-pg_2-4;6;8/w_300
+#pg_2-4;6;8/w_300
 pg_embedded:3
 pg_embedded:3/w_300
 pg_embedded:name:skyline-3242040_1920.jpg
@@ -1541,7 +1537,6 @@ w_300,c_fill,g_auto,ar_1:1
 w_300,c_scale,pg_2
 w_300,c_scale,pg_4,e_sepia,r_50,bo_2px_solid_rgb:999/l_aspose_cloud_logo,w_0.9,fl_relative,o_70,g_south,y_20
 w_300,e_accelerate:100
-w_300,e_distort:40:25:280:60:260:155:35:165
 w_300,e_grayscale
 w_300,e_noise:50
 w_300,f_auto,q_auto,dpr_2
@@ -1994,15 +1989,13 @@ pg_embedded:name:skyline.jpg;bg.jpg
 pg_3
 pg_name:skyline
 pg_name:lala;fofo
-pg_4-7;9
+#pg_4-7;9
 fl_clip,pg_2
 fl_clip,pg_name:path
 fl_clip_evenodd,pg_2
 pg_3
-pg_4-7;9
 t_my_named_transformation
 pg_3
-pg_4-7;9
 e_ordered_dither:6
 e_ordered_dither:13
 a_hflip
@@ -2062,7 +2055,6 @@ e_fill_light:17
 e_fill_light:17:-100
 e_brightness_hsb
 e_viesus_correct:no_redeye:skin_saturation_5
-e_recolor:0.3:0.7:0.1:0.2:0.3:0.6:0.1:0.2:0.2:0.5:0.1:0.2
 e_improve:outdoor:50
 e_cartoonify
 e_cartoonify:80
@@ -2076,8 +2068,8 @@ e_assist_colorblind:xray
 fl_keep_iptc
 fl_animated:filename
 fl_attachment:pretty_flower
-fl_whatever
-l_sample/fl_first_flag/fl_second_flag/fl_layer_apply
+#fl_whatever
+#l_sample/fl_first_flag/fl_second_flag/fl_layer_apply
 if_expression,a_20
 if_expression/a_20/if_end
 if_expression/a_20/if_else/a_30/if_end
@@ -2124,7 +2116,7 @@ e_trim
 e_trim:50
 e_trim:50:yellow
 e_shear:23.0:50.0
-e_distort:5:34:70:10:70:75:5:55
+#e_distort:5:34:70:10:70:75:5:55
 e_distort:arc:5
 l_sample,fl_cutter
 l_sample/fl_cutter,fl_layer_apply,g_south
