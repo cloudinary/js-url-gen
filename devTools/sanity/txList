@@ -324,9 +324,9 @@ e_cartoonify:70:80
 e_colorize:35,co_darkviolet
 e_colorize:80
 e_contrast:-70
-e_cut_out,l_docs:logo:logo,g_south_west,w_200,x_20,y_20
+# no action spec (l_docs): e_cut_out,l_docs:logo:logo,g_south_west,w_200,x_20,y_20
 e_deshake:32
-e_displace,l_radialize,y_100
+# no action spec: e_displace,l_radialize,y_100
 e_distort:arc:180
 e_fade:2000
 e_fade:2000/e_fade:-4000
@@ -339,18 +339,18 @@ e_hue:40
 e_improve:50
 e_improve:indoor
 e_improve:outdoor
-e_lightroom:saturation_-100:clarity_25:contrast_73:vignetteamount_60
-e_lightroom:saturation_-100:clarity_25:contrast_73:vignetteamount_60/w_500,q_auto,e_distort:0:0:500:100:500:232:0:332
-e_lightroom:whitebalance_auto
-e_lightroom:whitebalance_shade:clarity_25
-e_lightroom:whitebalance_tungsten
-e_lightroom:xmp:authenticated:my_presets:warm_shadow_auth.xmp
-e_lightroom:xmp:my_presets:warm_shadow.xmp
-e_lightroom:xmp:soft_mist.xmp
-e_lightroom:xmp:soft_mist.xmp/r_50,f_auto,q_auto,bo_40px_solid_orange/a_5/w_400
-e_lightroom:xmp:soft_mist.xmp/w_300
-e_lightroom:xmp:warm_shadow.xmp
-e_lightroom:xmp:warm_shadow.xmp/w_300
+#No action spec: e_lightroom:saturation_-100:clarity_25:contrast_73:vignetteamount_60
+#No action spec: e_lightroom:saturation_-100:clarity_25:contrast_73:vignetteamount_60/w_500,q_auto,e_distort:0:0:500:100:500:232:0:332
+#No action spec: e_lightroom:whitebalance_auto
+#No action spec: e_lightroom:whitebalance_shade:clarity_25
+#No action spec: e_lightroom:whitebalance_tungsten
+#No action spec: e_lightroom:xmp:authenticated:my_presets:warm_shadow_auth.xmp
+#No action spec: e_lightroom:xmp:my_presets:warm_shadow.xmp
+#No action spec: e_lightroom:xmp:soft_mist.xmp
+#No action spec: e_lightroom:xmp:soft_mist.xmp/r_50,f_auto,q_auto,bo_40px_solid_orange/a_5/w_400
+#No action spec: e_lightroom:xmp:soft_mist.xmp/w_300
+#No action spec: e_lightroom:xmp:warm_shadow.xmp
+#No action spec: e_lightroom:xmp:warm_shadow.xmp/w_300
 e_loop:2
 e_make_transparent:5
 e_multiply,l_cloudinary_icon_blue
@@ -378,11 +378,11 @@ e_preview,fl_getinfo
 e_preview:duration_12.0:max_seg_3:min_seg_dur_3.0
 e_preview:duration_5.0
 e_preview:duration_8/c_crop,w_1600,h_800,e_loop
-e_progressbar:bar:blue:6
-e_progressbar:color_FF0000:width_12:type_frame
-e_progressbar:frame:FF0000:12
-e_progressbar:frame:FF0000:6
-e_progressbar:type_bar:color_blue:width_6
+#No action spec: e_progressbar:bar:blue:6
+#No action spec: e_progressbar:color_FF0000:width_12:type_frame
+#No action spec: e_progressbar:frame:FF0000:12
+#No action spec: e_progressbar:frame:FF0000:6
+#No action spec: e_progressbar:type_bar:color_blue:width_6
 #e_recolor:0.3:0.7:0.1:0.3:0.6:0.1:0.2:0.5:0.1
 e_red:50
 e_redeye
@@ -408,8 +408,8 @@ e_simulate_colorblind:protanopia
 e_style_transfer,l_davinci_mona_lisa
 e_style_transfer,l_lighthouse
 e_style_transfer:preserve_color:40,l_lighthouse
-e_theme:color_black:photosensitivity_110
-e_theme:color_d3d3d3
+# no action spec: e_theme:color_black:photosensitivity_110
+# no action spec: e_theme:color_d3d3d3
 e_tint:100:red:blue:yellow
 e_tint:20
 e_tint:50:red:blue
@@ -482,8 +482,8 @@ h_150,dpr_2.0
 h_150,dpr_auto
 h_150,w_150,c_pad,b_auto:predominant
 h_150,w_150,c_pad,b_auto:predominant_gradient:2:diagonal_desc
-h_150/e_progressbar:bar:blue:6/ac_none
-h_150/e_progressbar:frame:FF0000:6/ac_none
+# no action spec: h_150/e_progressbar:bar:blue:6/ac_none
+# no action spec: h_150/e_progressbar:frame:FF0000:6/ac_none
 h_150/l_play_icon2,w_0.1
 h_150/q_auto,f_auto,dpr_2/bo_1px_solid_gray
 h_200
@@ -731,7 +731,7 @@ w_150,h_150,c_pad,b_black
 w_150,h_150,c_pad,b_pink
 w_150,h_150,c_scale
 w_150,h_150,c_thumb,g_auto
-w_150,h_150,c_thumb,g_auto:0
+# No action spec (g_auto:0): w_150,h_150,c_thumb,g_auto:0
 w_150,h_150,c_thumb,g_center
 w_150,h_150,c_thumb,g_face
 w_150,h_150,c_thumb,g_face/r_20/e_sepia/l_cloudinary_icon_blue,g_south_east,x_5,y_5,w_50,o_60,e_brightness:100/a_10
@@ -894,10 +894,10 @@ w_500,q_auto,f_auto
 w_500,q_auto,f_auto,dpr_2
 w_500/e_brightness:70/l_woman,c_crop,g_face/w_150/e_saturation:50/e_shadow/fl_layer_apply
 w_500/e_brightness:70/l_woman,c_crop,g_face/w_250/e_saturation:50/e_shadow,x_20,y_20,co_grey/fl_layer_apply
-w_500/e_progressbar:bar:blue:6/ac_none
-w_500/e_progressbar:bar:blue:6/ac_none/l_play_icon2,w_0.15
-w_500/e_progressbar:frame:FF0000:12/ac_none
-w_500/e_progressbar:frame:FF0000:12/ac_none/l_play_icon2,w_0.15
+# no action spec: w_500/e_progressbar:bar:blue:6/ac_none
+# no action spec: w_500/e_progressbar:bar:blue:6/ac_none/l_play_icon2,w_0.15
+# no action spec: w_500/e_progressbar:frame:FF0000:12/ac_none
+# no action spec: w_500/e_progressbar:frame:FF0000:12/ac_none/l_play_icon2,w_0.15
 w_500/if_!cloudinary!_in_tags/l_cloudinary_icon_white,w_100,g_north_east,o_50,e_brightness:100/l_text:arial_15:By%20Cloudinary,g_north_east,y_10,x_105/if_end/du_5
 w_500/l_cloudinary_icon_blue,g_north_east,o_50,w_200,e_anti_removal:90
 w_500/l_cloudinary_icon_blue,w_150/e_blackwhite/fl_layer_apply,g_north_east
