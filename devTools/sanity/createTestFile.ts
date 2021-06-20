@@ -142,7 +142,8 @@ import { AnimatedFormat } from "qualifiers/animatedFormat";
 import { ChromaSubSampling } from "qualifiers/chromaSubSampling";
 import { Dither } from "qualifiers/dither";
 import { Flag } from "qualifiers/flag";
-
+import {GradientDirection} from "qualifiers/gradientDirection";
+import {StreamingProfile} from "qualifiers/streamingProfile";
 const CloudinaryImage = CloudinaryMedia;
 const CloudinaryVideo = CloudinaryMedia;
       `;
