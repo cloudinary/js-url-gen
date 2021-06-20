@@ -15,7 +15,7 @@ export interface ITXResults {
   fail: ITxResult[]
 }
 
-/**
+/*
  * Remove duplicates and clean lines starting with #
  * @type {string[]}
  */
@@ -23,6 +23,9 @@ const transformationStrings = ([...new Set(file.split('\n'))] as string[])
   .filter((a) => a[0] !== '#').filter((a) => a);
 
 
+/*
+ *  Set the SDK Code Snippets Service URL (Change domain/port only
+ */
 const baseURL = `http://localhost:3000/dev/sdk-code-gen`;
 
 const results:ITXResults = {
@@ -41,7 +44,7 @@ transformationStrings.forEach(async (txString, i) => {
 
   console.log('Processing transformation:', i);
 
-  const URL = `${baseURL}?hideActionGroups=0&url=https://res.cloudinary.com/demo/image/upload/${txString}/sample`;
+  const URL = `${baseURL}?language=javascript&hideActionGroups=0&url=https://res.cloudinary.com/demo/image/upload/${txString}/sample`;
 
   const res = await nodeFetch(URL).catch((e: Error) => {
     console.log(e);
@@ -66,6 +69,9 @@ transformationStrings.forEach(async (txString, i) => {
     });
   }
 
+  /*
+   *  Store the result in a file o fyour choosing
+   */
   if (i === transformationStrings.length - 1) {
     fs.writeFileSync(`${__dirname}/results.json`, JSON.stringify(results));
     fs.writeFileSync(`${__dirname}/../../__TESTS__/compilation.test.ts`, createTestFile(results.success));

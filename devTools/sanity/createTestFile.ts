@@ -157,6 +157,9 @@ const CloudinaryVideo = CloudinaryMedia;
     let test = `it("${txResult.txString}", () => {`;
     test += `const parts = '${txResult.txString}'.replace(/\\//g, ',').split(',');\n\n`;
     test += `const tAsset = ${txResult.parsedCode}`;
+    test += `parts.forEach((part) => { expect(tAsset.toString()).toContain(part)})`;
+
+
     test += '\n})\n'; // Close it test
 
     try {
