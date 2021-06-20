@@ -144,6 +144,8 @@ import { Dither } from "qualifiers/dither";
 import { Flag } from "qualifiers/flag";
 import {GradientDirection} from "qualifiers/gradientDirection";
 import {StreamingProfile} from "qualifiers/streamingProfile";
+import { PSDTools } from "actions/psdTools";
+import { FontStyle } from "qualifiers/fontStyle";
 const CloudinaryImage = CloudinaryMedia;
 const CloudinaryVideo = CloudinaryMedia;
       `;
