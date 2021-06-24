@@ -200,7 +200,7 @@ c_pad,h_360,w_480/du_10/q_70/vc_h265
 c_pad,h_360,w_480/du_10/q_70/vc_vp9
 c_pad,w_200,h_200,e_saturation:50/e_shadow/bo_1px_solid_rgb:666
 c_pad,w_400
-c_scale,dl_1000,e_trim,w_700
+# Animated not implemented yet c_scale,dl_1000,e_trim,w_700
 c_scale,e_grayscale,f_auto,q_auto,w_100
 c_scale,e_saturation:50,r_20,w_400/g_south_east,l_logo_jpegmini,o_80,w_100,x_10,y_10/q_jpegmini
 c_scale,e_viesus_correct,w_400
@@ -239,8 +239,8 @@ co_rgb:20a020,e_colorize:50
 cs_keep_cmyk
 cs_srgb
 d_avatar.png
-dl_100
-dl_200
+#Animated not implemented yet dl_100
+#Animated not implemented yet dl_200
 dn_20
 dpr_2
 dpr_2,f_auto,q_auto,w_800
@@ -345,7 +345,7 @@ e_improve:outdoor
 #No action spec: e_lightroom:xmp:soft_mist.xmp/w_300
 #No action spec: e_lightroom:xmp:warm_shadow.xmp
 #No action spec: e_lightroom:xmp:warm_shadow.xmp/w_300
-e_loop:2
+#e_loop:2
 e_make_transparent:5
 e_multiply,l_cloudinary_icon_blue
 e_negate
@@ -371,7 +371,7 @@ e_pixelate_region:35,h_425,w_550,x_600,y_400
 e_preview,fl_getinfo
 e_preview:duration_12.0:max_seg_3:min_seg_dur_3.0
 e_preview:duration_5.0
-e_preview:duration_8/c_crop,w_1600,h_800,e_loop
+#Animated not implemented yet e_preview:duration_8/c_crop,w_1600,h_800,e_loop
 #No action spec: e_progressbar:bar:blue:6
 #No action spec: e_progressbar:color_FF0000:width_12:type_frame
 #No action spec: e_progressbar:frame:FF0000:12
@@ -457,8 +457,7 @@ fn_remote:aHR0cHM6Ly9teS5leGFtcGxlLmN1c3RvbS9mdW5jdGlvbg==
 fn_wasm:my_example.wasm
 fps_1-5
 g_face,c_crop
-# No zoom with crop - Docs need to fix
-g_face,c_crop,z_1.3
+# Zoom with crop not implemented yet g_face,c_crop,z_1.3
 g_face,c_thumb,w_150,h_150
 g_face,c_thumb,w_150,h_150,z_0.7
 g_face,w_500,c_thumb,fl_getinfo
@@ -484,15 +483,15 @@ h_200,w_200,c_pad,b_auto:border
 h_200,w_200,c_pad,b_auto:border_contrast
 h_200,w_200,c_pad,b_auto:predominant
 h_200,w_200,c_pad,b_auto:predominant_contrast
-h_200,w_500,fl_waveform
-h_200,w_500,fl_waveform,co_black,b_white
-h_200,w_500,fl_waveform,co_darkblue,b_grey
+#Waveform not implemented yet h_200,w_500,fl_waveform
+#Waveform not implemented yet h_200,w_500,fl_waveform,co_black,b_white
+#Waveform not implemented yet h_200,w_500,fl_waveform,co_darkblue,b_grey
 h_200/u_docs:iphone_template,h_300,a_90
 h_200/u_docs:transparent_grid,w_1.0,h_1.0,fl_relative,c_crop,o_50
 h_225/q_auto,f_auto,bo_1px_solid_black
 h_250
 h_250,w_150,c_fill,g_auto/f_auto/q_auto
-h_250,w_400,fl_waveform,so_2,eo_4,co_blue,b_transparent
+#Waveform not implemented yet h_250,w_400,fl_waveform,so_2,eo_4,co_blue,b_transparent
 h_300
 h_300,ar_3:4,c_fill,g_auto:face
 h_300,ar_3:4,c_fill,g_auto:faces
@@ -634,7 +633,7 @@ so_10p,du_30p
 so_120
 so_21/bo_2px_solid_black
 so_3
-so_3,eo_5,e_boomerang/e_loop
+#Animated not implemented yet  so_3,eo_5,e_boomerang/e_loop
 so_30/bo_2px_solid_black
 so_4,w_350,h_350,c_crop,r_20,e_grayscale,bo_5px_solid_black
 so_43,du_10/fl_mono
@@ -657,10 +656,10 @@ u_docs:iphone_template,h_300,a_90
 u_site_bg,w_1.0,h_1.0,fl_relative
 vc_auto
 vc_h264:baseline:3.1
-vs_1.1s,dl_200,w_200,e_loop:2
-vs_10,dl_100,w_250,fl_awebp,fl_animated
+#Animated not implemented yet vs_1.1s,dl_200,w_200,e_loop:2
+#Animated not implemented yet vs_10,dl_100,w_250,fl_awebp,fl_animated
 vs_40
-vs_40,dl_200,h_200,e_loop
+#Animated not implemented yet vs_40,dl_200,h_200,e_loop
 w_0.25,c_scale
 w_0.4,a_20/l_cloudinary_icon_white,w_60,o_50,g_south_east,y_15,x_60
 w_0.5
@@ -1054,8 +1053,8 @@ q_auto,f_auto,bo_1px_solid_gray,dpr_2,w_650
 r_20
 t_sample_named_transform
 t_sample_named_transform.sample_named_transform2
-vs_10,dl_100,w_250,f_gif
-vs_10,dl_100,w_250,f_webp,fl_awebp,fl_animated
+#Animated not implemented yet vs_10,dl_100,w_250,f_gif
+#Animated not implemented yet  vs_10,dl_100,w_250,f_webp,fl_awebp,fl_animated
 w_0.4,a_20/l_cloudinary_icon,o_50,w_60,g_south_east,y_15,x_60
 w_100,c_fill
 w_150,h_150,c_thumb,g_auto:0
@@ -1253,7 +1252,7 @@ fps_10-20
 ki_0.4
 fl_animated,f_auto
 fl_animated,f_gif
-f_auto,fl_animated,vs_10,dl_5
+# Animated not yet supported f_auto,fl_animated,vs_10,dl_5
 f_webp,fl_animated,fl_awebp,vs_10
 sp_sd
 sp_hd_lean
@@ -1312,8 +1311,7 @@ e_blur_region,h_100,w_100,x_50,y_120
 e_oil_paint
 e_oil_paint:5
 e_blackwhite:5
-e_loop
-e_loop:5
+#Animated not implemented yet e_loop
 e_pixelate
 e_pixelate:17
 e_pixelate_region:2,h_100,w_200,x_1,y_3
@@ -1424,3 +1422,4 @@ l_video:dog,fl_splice,so_0,du_5
 l_video:dog/du_5/l_video:transition1,e_transition/fl_layer_apply/fl_layer_apply
 l_video:dog/l_video:transition1,e_transition/a_180/fl_layer_apply/fl_layer_apply
 l_sample,so_6.5,eo_10
+$width_iw_mul_3/w_$width
