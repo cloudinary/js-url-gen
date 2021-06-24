@@ -146,6 +146,8 @@ import {GradientDirection} from "qualifiers/gradientDirection";
 import {StreamingProfile} from "qualifiers/streamingProfile";
 import { PSDTools } from "actions/psdTools";
 import { FontStyle } from "qualifiers/fontStyle";
+import {Volume} from "../src/qualifiers/volume";
+import {FontAntialias} from "../src/qualifiers/FontAntialias";
 const CloudinaryImage = CloudinaryMedia;
 const CloudinaryVideo = CloudinaryMedia;
       `;
