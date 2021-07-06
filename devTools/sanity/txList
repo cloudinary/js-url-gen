@@ -463,7 +463,7 @@ g_face,c_thumb,w_150,h_150,z_0.7
 g_face,w_500,c_thumb,fl_getinfo
 g_north,l_text:arial_60:watchme,y_20
 g_south,l_text:Arial_200:Flower
-g_south,l_text:Arial_200_bold_italic_stroke_letter_spacing_50:Smile!,co_yellow,bo_10px_solid_blue
+# Stroke not yet implemented g_south,l_text:Arial_200_bold_italic_stroke_letter_spacing_50:Smile!,co_yellow,bo_10px_solid_blue
 h_100,w_190
 h_105/e_shadow:50,x_10,y_10
 h_120
@@ -577,7 +577,7 @@ l_video:ski_jump,fl_splice,e_reverse/l_video:ski_jump,fl_splice,e_accelerate:-50
 l_video:ski_jump,fl_splice,e_reverse/l_video:ski_jump,fl_splice,e_accelerate:-50/e_volume:mute/e_brightness:10,r_max
 l_video:ski_jump,so_3,eo_6,c_scale,w_250,g_north_east
 o_30
-p_my_sprite_
+#Prefix not yet implemented p_my_sprite_
 pg_2
 pg_2-4;6;8
 pg_embedded:3
@@ -853,7 +853,7 @@ w_400,h_300,c_pad
 w_400,h_400,c_crop,g_face,r_max/w_200
 w_400,q_auto:best,vc_vp9
 w_450,bo_5px_solid_black/q_auto,dpr_auto
-w_480,so_3,eo_5,e_boomerang/e_loop
+# Animated not currently supported w_480,so_3,eo_5,e_boomerang/e_loop
 w_500
 w_500,ar_1,c_crop,g_auto:bottle
 w_500,ar_1,c_crop,g_auto:bottle/h_150
@@ -1046,7 +1046,7 @@ l_fetch:aHR0cDovL2Nsb3VkaW5hcnkuY29tL2ltYWdlcy9vbGRfbG9nby5wbmc=
 l_text:AlexBrush-Regular.ttf_100:Happy New Year  2017 ,co_white,g_north_west,x_30,y_30
 l_text:arial_60:Cool Video,g_south,y_80,so_2,eo_5
 l_text:impact_150:Your Brand Name or Logo Here,e_distort:arc:-120,co_white,g_south,y_840,o_60
-p_home_thing_
+#Prefix not yet implemented p_home_thing_
 pg_2-4;6;8/w_300
 q_auto,dpr_2,f_auto,h_300
 q_auto,f_auto,bo_1px_solid_gray,dpr_2,w_650
@@ -1352,7 +1352,6 @@ c_pad,b_green
 c_pad,b_rgb:fff
 e_assist_colorblind
 fl_keep_iptc
-fl_animated:filename
 fl_attachment:pretty_flower
 fl_whatever
 l_sample/fl_first_flag/fl_second_flag/fl_layer_apply

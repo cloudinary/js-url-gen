@@ -6,6 +6,7 @@
     "test": "npm run test:types && npm run build && jest --coverage --reporters default &&  npm run test:size",
     "test:size": "ts-node -O '{\"module\":\"CommonJS\"}' __TESTS_BUNDLE_SIZE__/bin/bin.ts",
     "test:comp": "node ./scripts/updateCompliationTests.js && jest __TESTS__/compilation.test.ts  --coverage",
+    "test:comp:service": "ts-node ./devTools/sanity/index.ts && jest __TESTS__/compilation.test.ts  --coverage",
     "test:unit": "jest __TESTS__/unit --reporters default",
     "test:unit:watch": "jest __TESTS__/unit --watch --reporters default",
     "test:integration": "jest __TESTS__/integration",

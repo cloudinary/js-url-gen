@@ -26,7 +26,7 @@ const transformationStrings = ([...new Set(file.split('\n'))] as string[])
 /*
  *  Set the SDK Code Snippets Service URL (Change domain/port only
  */
-const baseURL = `http://localhost:3000/dev/sdk-code-gen`;
+const baseURL = `http://localhost:8000/dev/sdk-code-gen`;
 
 const results:ITXResults = {
   success:[],
@@ -34,13 +34,19 @@ const results:ITXResults = {
 };
 
 console.log(`Attempting to generate code for ${transformationStrings.length} transformations\n`);
+
+let counter = 0;
 transformationStrings.forEach(async (txString, i) => {
   // Space requests apart
+
+
   await new Promise((res) => {
     setTimeout(() => {
-      res(5 * i + 1);
+      res();
     }, 5 * i + 1);
   });
+
+  const foo :number = null;
 
   console.log('Processing transformation:', i);
 
@@ -72,10 +78,13 @@ transformationStrings.forEach(async (txString, i) => {
   /*
    *  Store the result in a file o fyour choosing
    */
-  if (i === transformationStrings.length - 1) {
+  if (counter === transformationStrings.length - 1) {
+    console.log (`Successful transformations: ${results.success.length}`);
+    console.log (`Failed transformations: ${results.fail.length}`);
     fs.writeFileSync(`${__dirname}/results.json`, JSON.stringify(results));
     fs.writeFileSync(`${__dirname}/../../__TESTS__/compilation.test.ts`, createTestFile(results.success));
   }
+  counter++;
 });
 
 
