@@ -1,5 +1,5 @@
 module.exports = {
-  "specVersion": "master",
+  "SDKSpecVersion": "master",
   "langConfig": {
     newInstanceSyntax: 'new #name(#req)#optional',
     lang: 'Javascript',
