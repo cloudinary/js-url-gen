@@ -9,7 +9,7 @@ module.exports = {
     closeQualifiersChar: '',
     closeTransformationChar: '',
     hideActionGroups: true,
-    openSyntaxString: "new CloudinaryImage('sample')",
+    openSyntaxString: "new CloudinaryImage('#publicID')",
     openActionChar: '(',
     closeActionChar: ')',
     overwritePreset: 'javascript',
