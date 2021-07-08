@@ -9,4 +9,7 @@ describe('BlendMode Qualifier', () => {
     expect(BlendMode.mask().toString()).toBe('e_mask');
     expect(BlendMode.antiRemoval().toString()).toBe('e_anti_removal');
   });
+  it('Test antiRemoval with input', () => {
+    expect(BlendMode.antiRemoval(95).toString()).toBe('e_anti_removal:95');
+  });
 });

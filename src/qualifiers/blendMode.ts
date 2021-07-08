@@ -56,10 +56,11 @@ function mask():BlendModeQualifier {
  * @summary qualifier
  * @memberOf Qualifiers.BlendMode
  * @description Add an overlay image blended using the 'antiRemoval' blend mode.
+ * @param {number} lvl 	The level of distortion. (Range: 1 to 100, Server default: 50)
  * @return {Qualifiers.BlendMode.BlendModeQualifier}
  */
-function antiRemoval():BlendModeQualifier {
-  return new BlendModeQualifier('anti_removal');
+function antiRemoval(lvl?: number):BlendModeQualifier {
+  return new BlendModeQualifier('anti_removal', lvl);
 }
 
 
