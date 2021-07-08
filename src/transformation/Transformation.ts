@@ -24,6 +24,7 @@ import {RawAction} from "../internal/RawAction";
 import {IAdjustAction} from "../actions/adjust";
 import {IDeliveryAction} from "../actions/delivery";
 import {ITranscodeAction} from "../actions/transcode";
+import {AnimatedAction} from "../actions/animated";
 
 /**
  * @summary SDK
@@ -86,6 +87,15 @@ class Transformation {
       })
       .filter((a) => a)
       .join('/');
+  }
+
+  /**
+   * @description Delivers an animated GIF.
+   * @param {AnimatedAction} animatedAction
+   * @return {this}
+   */
+  animated(animatedAction: AnimatedAction){
+    return this.addAction(animatedAction);
   }
 
   /**
