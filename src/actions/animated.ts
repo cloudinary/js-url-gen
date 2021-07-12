@@ -25,6 +25,7 @@ import {QualifierValue} from "../internal/qualifier/QualifierValue";
  * @example
  * // Used through a builder function Animated.edit(), and not by creating a new instance
  * import {Cloudinary} from "@cloudinary/base";
+ * import {edit} from "@cloudinary/base/actions/animated";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');
@@ -73,4 +74,4 @@ const Animated = {
 };
 
 
-export {AnimatedAction, Animated};
+export {AnimatedAction, Animated, edit};
