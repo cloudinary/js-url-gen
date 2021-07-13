@@ -5,7 +5,7 @@ import {FontWeight} from "../../../../src/qualifiers/fontWeight";
 import {FontHinting} from "../../../../src/qualifiers/fontHinting";
 import {TextDecoration} from "../../../../src/qualifiers/textDecoration";
 import {TextAlignment} from "../../../../src/qualifiers/textAlignment";
-import {Stroke} from "../../../../src/qualifiers/TextStroke";
+import {Stroke} from "../../../../src/qualifiers/textStroke";
 import {Color} from "../../../../src/qualifiers/color";
 
 describe('Text Style tests', () => {
