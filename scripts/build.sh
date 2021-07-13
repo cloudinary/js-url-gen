@@ -12,3 +12,9 @@ npm run build:ESM
 npm run build:UMD
 npm run build:entryPoints
 npm run build:docs
+
+#cp CHANGELOG.md to dist
+cp ./CHANGELOG.md ./dist
+
+#cp LICENSE to dist
+cp ./LICENSE ./dist
