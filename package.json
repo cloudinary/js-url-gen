@@ -79,7 +79,8 @@
     "tslib": "^2.0.0",
     "typedoc": "^0.17.8",
     "typescript": "^3.9.3",
-    "webpack": "^4.44.1"
+    "webpack": "^4.44.1",
+    "@types/node": "^15.14.2"
   },
   "dependencies": {
     "@types/lodash.clonedeep": "^4.5.6",
