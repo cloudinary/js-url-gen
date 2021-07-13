@@ -970,4 +970,21 @@ describe('Create legacy urls', () => {
     });
     expect(result).toBe('http://res.cloudinary.com/demo/image/upload/bo_5px_solid_rgb:ffaabbdd/sample.jpg');
   });
+
+  it("should not modify options objects when chaining transformations ", function () {
+    const optionObj = {
+      cloud_name: 'test123',
+      transformation: [{
+        overlay: 'somepid',
+        crop: "fill",
+        height: 120,
+        width: 80
+      }]
+    };
+    const urlFirstRun = createTestURL("sample", optionObj);
+    const urlSecondRun = createTestURL("sample", optionObj);
+
+    expect(urlFirstRun).toEqual("http://res.cloudinary.com/test123/image/upload/c_fill,h_120,l_somepid,w_80/sample");
+    expect(urlFirstRun).toEqual(urlSecondRun);
+  });
 });
