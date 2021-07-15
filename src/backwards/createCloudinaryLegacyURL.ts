@@ -3,7 +3,7 @@ import {generateTransformationString} from "./generateTransformationString";
 import {finalize_resource_type} from "./utils/finalizeResourceType";
 import {finalize_source} from "./utils/finalize_source";
 import {unsigned_url_prefix} from "./utils/unsigned_url_prefix";
-import cloneDeep from "lodash/cloneDeep";
+import cloneDeep from 'lodash/cloneDeep';
 
 export function createCloudinaryLegacyURL(public_id: string, transformationOptions: LegacyITransforamtionOptions) {
   // Path format
