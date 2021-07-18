@@ -1,6 +1,7 @@
 import getImageWithResize from "./shared/getImageWithResize";
 import * as Gravity from "../../../../src/qualifiers/gravity";
 import {crop} from "../../../../src/actions/resize";
+import {face} from "../../../../src/qualifiers/focusOn";
 
 
 describe('Tests for Transformation Action -- Resize.crop', () => {
@@ -39,5 +40,14 @@ describe('Tests for Transformation Action -- Resize.crop', () => {
         .y(100),
       'url');
     expect(url).toContain('g_xy_center,x_100,y_100');
+  });
+
+  it('Uses zoom on crop', () => {
+    const url = getImageWithResize(
+      crop()
+        .gravity(Gravity.focusOn(face()))
+        .zoom(1.3),
+      'url');
+    expect(url).toContain('c_crop,g_face,z_1.3');
   });
 });

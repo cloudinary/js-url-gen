@@ -26,6 +26,8 @@ import {IDeliveryAction} from "../actions/delivery";
 import {IAdjustAction} from "../actions/adjust";
 import {DeliveryQualityAction} from "../actions/delivery/DeliveryQuality";
 import {ITrackedPropertiesThroughAnalytics} from "../sdkAnalytics/interfaces/ITrackedPropertiesThroughAnalytics";
+import {AnimatedAction} from "../actions/animated";
+import {LoopEffectAction} from "../actions/effect/leveled/loop";
 
 /**
  * @desc Cloudinary Transformable interface, extended by any class that needs a Transformation Interface
@@ -38,6 +40,16 @@ class CloudinaryTransformable extends CloudinaryFile {
     /* istanbul ignore next */
     super(publicID, cloudConfig, urlConfig);
     this.transformation = transformation;
+  }
+
+  /**
+   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
+   * @param {Actions.Animated} animated
+   * @return {this}
+   */
+  animated(animated: AnimatedAction){
+    this.transformation.animated(animated);
+    return this;
   }
 
   /**
