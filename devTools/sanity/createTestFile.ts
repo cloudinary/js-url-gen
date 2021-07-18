@@ -1,3 +1,7 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable require-jsdoc */
+
+
 import {ITxResult} from "./index";
 
 const fs = require('fs');

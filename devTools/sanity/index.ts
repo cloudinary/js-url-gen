@@ -1,3 +1,7 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable require-jsdoc */
+
+const querystring = require('querystring');
 const fs = require('fs');
 const nodeFetch = require('node-fetch');
 const file = fs.readFileSync(`${__dirname}/txList`, 'utf-8');
@@ -22,10 +26,10 @@ export interface ITXResults {
 const transformationStrings = ([...new Set(file.split('\n'))] as string[])
   .filter((a) => a[0] !== '#').filter((a) => a);
 
-
 /*
  *  Set the SDK Code Snippets Service URL (Change domain/port only
  */
+// const baseURL = `https://staging-code-snippets.cloudinary.com/dev/sdk-code-gen`;
 const baseURL = `http://localhost:8000/dev/sdk-code-gen`;
 
 const results:ITXResults = {
@@ -38,19 +42,28 @@ console.log(`Attempting to generate code for ${transformationStrings.length} tra
 let counter = 0;
 transformationStrings.forEach(async (txString, i) => {
   // Space requests apart
-
-
   await new Promise((res) => {
     setTimeout(() => {
       res();
-    }, 5 * i + 1);
+    }, 30 * i + 1);
   });
-
-  const foo :number = null;
 
   console.log('Processing transformation:', i);
 
-  const URL = `${baseURL}?language=javascript&hideActionGroups=0&url=https://res.cloudinary.com/demo/image/upload/${txString}/sample`;
+  const queryArgs = {
+    framework: 'js_2',
+    url: `https://res.cloudinary.com/demo/image/upload/${txString}/sample`,
+    sdkVersion: 'feature/code-generation', // Which SDK version to use, that contains the version for SDK-Code-Gen
+    hideActionGroups:0 // true, hide...
+  };
+
+  const queryString = querystring.stringify(queryArgs, '&', '=', {
+    encodeURIComponent(a: string) {
+      return a;
+    }
+  });
+
+  const URL = `${baseURL}?${queryString}`;
 
   const res = await nodeFetch(URL).catch((e: Error) => {
     console.log(e);
@@ -76,7 +89,7 @@ transformationStrings.forEach(async (txString, i) => {
   }
 
   /*
-   *  Store the result in a file o fyour choosing
+   *  Store the result in a file of your choosing
    */
   if (counter === transformationStrings.length - 1) {
     console.log (`Successful transformations: ${results.success.length}`);
