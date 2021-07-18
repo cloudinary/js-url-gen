@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable require-jsdoc */
-
 const querystring = require('querystring');
 const fs = require('fs');
 const nodeFetch = require('node-fetch');
@@ -11,7 +10,6 @@ export interface ITxResult {
   error: string;
   txString: string;
   parsedCode: string;
-  actionsDTO:any;
 }
 
 export interface ITXResults {
@@ -29,8 +27,8 @@ const transformationStrings = ([...new Set(file.split('\n'))] as string[])
 /*
  *  Set the SDK Code Snippets Service URL (Change domain/port only
  */
-// const baseURL = `https://staging-code-snippets.cloudinary.com/dev/sdk-code-gen`;
-const baseURL = `http://localhost:8000/dev/sdk-code-gen`;
+const baseURL = `https://staging-code-snippets.cloudinary.com/dev/sdk-code-gen`;
+// const baseURL = `http://localhost:8000/dev/sdk-code-gen`;
 
 const results:ITXResults = {
   success:[],
@@ -38,6 +36,7 @@ const results:ITXResults = {
 };
 
 console.log(`Attempting to generate code for ${transformationStrings.length} transformations\n`);
+
 
 let counter = 0;
 transformationStrings.forEach(async (txString, i) => {
@@ -53,8 +52,7 @@ transformationStrings.forEach(async (txString, i) => {
   const queryArgs = {
     framework: 'js_2',
     url: `https://res.cloudinary.com/demo/image/upload/${txString}/sample`,
-    sdkVersion: 'feature/code-generation', // Which SDK version to use, that contains the version for SDK-Code-Gen
-    hideActionGroups:0 // true, hide...
+    hideActionGroups:0
   };
 
   const queryString = querystring.stringify(queryArgs, '&', '=', {
@@ -72,19 +70,17 @@ transformationStrings.forEach(async (txString, i) => {
   const obj = await res.json();
 
   // Fail
-  if (obj.parsedCode.indexOf('Cannot parse') >= 0) {
+  if (obj.parsedCode.includes('Unable to parse') || obj.parsedCode.includes('not currently available')) {
     results.fail.push({
       txString,
       error: obj.parsedCode,
-      parsedCode: null,
-      actionsDTO: obj.actionsDTO
+      parsedCode: null
     });
   } else { // Success
     results.success.push({
       txString,
       parsedCode: obj.parsedCode,
-      error: null,
-      actionsDTO: obj.actionsDTO
+      error: null
     });
   }
 

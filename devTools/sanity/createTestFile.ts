@@ -152,6 +152,7 @@ import { PSDTools } from "actions/psdTools";
 import { FontStyle } from "qualifiers/fontStyle";
 import {Volume} from "../src/qualifiers/volume";
 import {FontAntialias} from "../src/qualifiers/FontAntialias";
+import {Animated} from "../src/actions/animated";
 const CloudinaryImage = CloudinaryMedia;
 const CloudinaryVideo = CloudinaryMedia;
       `;
