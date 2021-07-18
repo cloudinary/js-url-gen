@@ -54,27 +54,53 @@ class CloudinaryFile {
     this.urlConfig = new URLConfig(urlConfig);
   }
 
+  /**
+   * @desc Sets the public ID of the asset.
+   * @param {string} publicID The public ID of the asset.
+   * @return {this}
+   */
   setPublicID(publicID: string): this {
     // PublicID must be a string!
     this.publicID = publicID ? publicID.toString() : '';
     return this;
   }
 
+  /**
+   * @desc Sets the storage type of the asset.
+   * @param {string} newType The type of the asset. Supported values are key, image,
+   * video, raw, auto, all.
+   * @return {this}
+   */
   setStorageType(newType: string): this {
     this.storageType = newType;
     return this;
   }
 
+  /**
+   * @desc Sets the URL SEO suffix of the asset.
+   * @param {string} newSuffix The SEO suffix.
+   * @return {this}
+   */
   setSuffix(newSuffix: string): this {
     this.suffix = newSuffix;
     return this;
   }
 
+  /**
+   * @desc Sets the signature of the asset.
+   * @param {string} signature The signature.
+   * @return {this}
+   */
   setSignature(signature: string): this {
     this.signature = signature;
     return this;
   }
 
+  /**
+   * @desc Sets the version of the asset.
+   * @param {string} newVersion The version of the asset.
+   * @return {this}
+   */
   setVersion(newVersion: number | string): this {
     if (newVersion) {
       this.version = newVersion;
@@ -82,6 +108,12 @@ class CloudinaryFile {
     return this;
   }
 
+  /**
+   * @desc Sets the asset type.
+   * @param {string} newType The type of the asset. Supported values are key, image,
+   * video, raw, auto, all.
+   * @return {this}
+   */
   setAssetType(newType: string): this {
     if (newType) {
       this.assetType = newType;
