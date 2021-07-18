@@ -2,6 +2,7 @@ import getImageWithResize from "./shared/getImageWithResize";
 import {pad} from "../../../../src/actions/resize";
 import {Background} from "../../../../src/qualifiers/background";
 import {Gravity} from "../../../../src/qualifiers/gravity";
+import {Compass} from "../../../../src/qualifiers/compass";
 
 describe('Tests for Transformation Action -- Resize.pad', () => {
   it('Ensures it generates the right URL', () => {
@@ -14,12 +15,12 @@ describe('Tests for Transformation Action -- Resize.pad', () => {
       pad()
         .width(250)
         .height(250)
-        .gravity(Gravity.autoGravity())
+        .gravity(Gravity.compass(Compass.west()))
         .offsetX(10)
         .offsetY(10)
         .background(Background.color('red'))
         .aspectRatio(1.2),
       'url');
-    expect(url).toContain('ar_1.2,b_red,c_pad,g_auto,h_250,w_250,x_10,y_10');
+    expect(url).toContain('ar_1.2,b_red,c_pad,g_west,h_250,w_250,x_10,y_10');
   });
 });
