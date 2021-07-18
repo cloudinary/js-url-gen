@@ -28,7 +28,6 @@ const transformationStrings = ([...new Set(file.split('\n'))] as string[])
  *  Set the SDK Code Snippets Service URL (Change domain/port only
  */
 const baseURL = `https://staging-code-snippets.cloudinary.com/dev/sdk-code-gen`;
-// const baseURL = `http://localhost:8000/dev/sdk-code-gen`;
 
 const results:ITXResults = {
   success:[],
