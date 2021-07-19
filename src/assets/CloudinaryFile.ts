@@ -24,9 +24,32 @@ export const SEO_TYPES: Record<string, string> = {
   "video/upload": "videos"
 };
 
+/**
+ * Supported delivery type options.
+ */
+type DELIVERY_TYPE =
+  'key'|
+  'upload'|
+  'private_delivery'|
+  'public_delivery'|
+  'authenticated'|
+  'fetch'|
+  'sprite'|
+  'text'|
+  'multi'|
+  'facebook'|
+  'twitter'|
+  'twitter_name'|
+  'gravatar'|
+  'youtube'|
+  'hulu'|
+  'vimeo'|
+  'animoto'|
+  'worldstarhiphop'|
+  'dailymotion';
 
 /**
- * @desc Cloudinary file without a transformation
+ * @description Cloudinary file without a transformation
  * @summary SDK
  * @memberOf SDK
  */
@@ -54,27 +77,52 @@ class CloudinaryFile {
     this.urlConfig = new URLConfig(urlConfig);
   }
 
+  /**
+   * @description Sets the public ID of the asset.
+   * @param {string} publicID The public ID of the asset.
+   * @return {this}
+   */
   setPublicID(publicID: string): this {
     // PublicID must be a string!
     this.publicID = publicID ? publicID.toString() : '';
     return this;
   }
 
-  setStorageType(newType: string): this {
+  /**
+   * @description Sets the delivery type of the asset.
+   * @param {DELIVERY_TYPE | string} newType The type of the asset.
+   * @return {this}
+   */
+  setDeliveryType(newType: DELIVERY_TYPE|string): this {
     this.storageType = newType;
     return this;
   }
 
+  /**
+   * @description Sets the URL SEO suffix of the asset.
+   * @param {string} newSuffix The SEO suffix.
+   * @return {this}
+   */
   setSuffix(newSuffix: string): this {
     this.suffix = newSuffix;
     return this;
   }
 
+  /**
+   * @description Sets the signature of the asset.
+   * @param {string} signature The signature.
+   * @return {this}
+   */
   setSignature(signature: string): this {
     this.signature = signature;
     return this;
   }
 
+  /**
+   * @description Sets the version of the asset.
+   * @param {string} newVersion The version of the asset.
+   * @return {this}
+   */
   setVersion(newVersion: number | string): this {
     if (newVersion) {
       this.version = newVersion;
@@ -82,7 +130,12 @@ class CloudinaryFile {
     return this;
   }
 
-  setAssetType(newType: string): this {
+  /**
+   * @description Sets the asset type.
+   * @param {string} newType The type of the asset.
+   * @return {this}
+   */
+  setAssetType(newType: 'key'|'image'|'video'|'raw'|'auto'|'all'|string): this {
     if (newType) {
       this.assetType = newType;
     }
@@ -93,6 +146,10 @@ class CloudinaryFile {
     return this;
   }
 
+  /**
+   * @description Serializes to URL string
+   * @param overwriteOptions
+   */
   toURL(overwriteOptions: {trackedAnalytics?: Partial<ITrackedPropertiesThroughAnalytics>} = {}): string {
     return this.createCloudinaryURL(null, overwriteOptions.trackedAnalytics);
   }

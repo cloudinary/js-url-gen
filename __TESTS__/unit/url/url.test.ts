@@ -40,14 +40,14 @@ describe('Tests for URL configuration', () => {
     // Suffix only works with predefined SEO_TYPES
     Object.keys(SEO_TYPES).forEach((resourceType) => {
       const [assetType, storageType] = resourceType.split('/');
-      image.setStorageType(assetType)
-        .setStorageType(storageType);
+      image.setDeliveryType(assetType)
+        .setDeliveryType(storageType);
 
       expect(image.toURL.bind(image)).not.toThrow();
     });
 
     // Any other storage type should throw
-    image.setStorageType('fff');
+    image.setDeliveryType('fff');
     expect(image.toURL.bind(image)).toThrow();
   });
 
