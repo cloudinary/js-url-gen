@@ -49,7 +49,7 @@ type DELIVERY_TYPE =
   'dailymotion';
 
 /**
- * @descriptionCloudinary file without a transformation
+ * @description Cloudinary file without a transformation
  * @summary SDK
  * @memberOf SDK
  */
