@@ -1,7 +1,13 @@
+import {
+  CloudinaryImage,
+  CloudinaryVideo,
+  Transformation,
+  Cloudinary,
+  Qualifiers,
+  Actions
+} from '../../src/index';
 
-import {CloudinaryImage, CloudinaryVideo, Transformation, Cloudinary, Qualifiers, Actions} from '../../src/index';
-
-describe ('Ensures index exports correctly', () => {
+describe('Ensures index exports correctly', () => {
   it('Exports correctly', () => {
     expect(CloudinaryImage).toBeDefined();
     expect(CloudinaryVideo).toBeDefined();
@@ -11,3 +17,4 @@ describe ('Ensures index exports correctly', () => {
     expect(Actions).toBeDefined();
   });
 });
+
