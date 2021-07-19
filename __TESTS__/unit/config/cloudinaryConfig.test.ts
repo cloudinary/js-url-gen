@@ -185,7 +185,7 @@ describe('Tests for CloudinaryConfiguration', () => {
 
   it('should support url_suffix for private uploads', () => {
     const img = createNewImage('sample');
-    img.setStorageType('private');
+    img.setDeliveryType('private');
     img.setSuffix('SOME_SUFFIX');
 
     expect(img.toURL()).toBe("https://res.cloudinary.com/demo/private_images/sample/SOME_SUFFIX");
@@ -214,7 +214,7 @@ describe('Tests for CloudinaryConfiguration', () => {
       const img = createNewImage('sample', {}, {
         useRootPath: true,
         privateCdn: true
-      }).setStorageType('private');
+      }).setDeliveryType('private');
       img.toURL();
     }).toThrow();
 

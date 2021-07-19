@@ -27,7 +27,7 @@ describe('Tests for CloudinaryFile', () => {
       .setPublicID('sample')
       .setSuffix('foo')
       .setAssetType('image')
-      .setStorageType('private')
+      .setDeliveryType('private')
       .setVersion('12345');
 
     expect(cloudinaryFile.toURL()).toContain('private_images/v12345/sample/foo');

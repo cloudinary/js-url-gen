@@ -64,7 +64,7 @@ describe('Tests for Encoding the URL', () => {
 
   it('Fetch: should not encode ("$:/") signs', () => {
     const img = createNewImage('https://res.cloudinary.com/demo/image/upload/sample?a=b');
-    img.setStorageType('fetch');
+    img.setDeliveryType('fetch');
 
     expect(img.toURL())
       .toBe('https://res.cloudinary.com/demo/image/fetch/https://res.cloudinary.com/demo/image/upload/sample%3Fa%3Db');
@@ -72,7 +72,7 @@ describe('Tests for Encoding the URL', () => {
 
   it('Should correctly encode youtube URLs', () => {
     const img = createNewImage('https://www.youtube.com/watch?v=d9NF2edxy-M');
-    img.setStorageType('youtube');
+    img.setDeliveryType('youtube');
 
     expect(img.toURL())
       .toBe('https://res.cloudinary.com/demo/image/youtube/https://www.youtube.com/watch%3Fv%3Dd9NF2edxy-M');
