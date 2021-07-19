@@ -33,7 +33,6 @@ export function generateTransformationString(transformationOptions: LegacyITrans
 
   if (Array.isArray(transformationOptions)) {
     return transformationOptions
-      // TODO we might need to clone the childTransformation
       .map((singleTransformation) => {
         return generateTransformationString(singleTransformation);
       }).filter((a) => { console.log(a); return a;}).join('/');
@@ -96,7 +95,6 @@ export function generateTransformationString(transformationOptions: LegacyITrans
   if (isAnyChildAnObject) {
     childTransformations = childTransformations.map((transformation: LegacyITransforamtionOptions) => {
       if (isObject(transformation)) {
-        // TODO We might need to clone here
         return generateTransformationString(transformation);
       } else {
         return generateTransformationString({transformation});

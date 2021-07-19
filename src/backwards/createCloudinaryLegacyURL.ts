@@ -3,6 +3,7 @@ import {generateTransformationString} from "./generateTransformationString";
 import {finalize_resource_type} from "./utils/finalizeResourceType";
 import {finalize_source} from "./utils/finalize_source";
 import {unsigned_url_prefix} from "./utils/unsigned_url_prefix";
+import cloneDeep from 'lodash/cloneDeep';
 
 export function createCloudinaryLegacyURL(public_id: string, transformationOptions: LegacyITransforamtionOptions) {
   // Path format
@@ -69,8 +70,7 @@ export function createCloudinaryLegacyURL(public_id: string, transformationOptio
     version = null;
   }
 
-  const transformation = generateTransformationString(transformationOptions).replace(/([^:])\/\//g, '$1/');;
-
+  const transformation = generateTransformationString(cloneDeep(transformationOptions)).replace(/([^:])\/\//g, '$1/');;
   if (sign_url && !auth_token) {
     let to_sign = [transformation, source_to_sign].filter(function (part) {
       return (part != null) && part !== '';
