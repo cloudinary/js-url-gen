@@ -9,11 +9,17 @@ module.exports = {
     closeQualifiersChar: '',
     closeTransformationChar: '',
     hideActionGroups: true,
-    openSyntaxString: "new CloudinaryImage('#publicID')",
+    mainTransformationString: {
+      openSyntaxString: {
+        image: 'new CloudinaryImage(\'#publicID\')',
+        video: 'new CloudinaryVideo(\'#publicID\')',
+        media: 'new CloudinaryMedia(\'#publicID\')'
+      },
+      closeSyntaxString: ';'
+    },
     openActionChar: '(',
     closeActionChar: ')',
     overwritePreset: 'javascript',
-    closeSyntaxString: ';',
     arraySeparator: ', ',
     arrayOpen: '[',
     arrayClose: ']',
@@ -30,6 +36,15 @@ module.exports = {
           return f;
         }
       }
+    },
+    methodNameMap: {
+      'delivery_type': 'set_delivery_type',
+      'asset_type': 'set_asset_type',
+      'deliveryType': 'set_delivery_type',
+      'assetType': 'set_asset_type',
+    },
+    classNameMap: {
+
     },
     childTransformations: {
       image: {
