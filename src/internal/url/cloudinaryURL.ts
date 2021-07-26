@@ -65,15 +65,15 @@ function handleAssetType(assetType: string): string {
 
 /**
  * @private
- * @param storageType
+ * @param deliveryType
  */
-function handleStorageType(storageType: string): string {
+function handleDeliveryType(deliveryType: string): string {
   //default to upload
-  if (!storageType) {
+  if (!deliveryType) {
     return 'upload';
   }
 
-  return storageType;
+  return deliveryType;
 }
 
 /**
@@ -97,4 +97,4 @@ function getUrlVersion(publicID: string, version: number | string, forceVersion:
   return shouldForceVersion ? 'v1' : '';
 }
 
-export {handleAssetType, getUrlVersion, handleStorageType, getUrlPrefix};
+export {handleAssetType, getUrlVersion, handleDeliveryType, getUrlPrefix};
