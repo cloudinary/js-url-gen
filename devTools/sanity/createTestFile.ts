@@ -162,9 +162,23 @@ const CloudinaryVideo = CloudinaryMedia;
 
   file += txs.map((txResult) => {
     let test = `it("${txResult.txString}", () => {`;
-    test += `const parts = '${txResult.txString}'.replace(/\\//g, ',').split(',');\n\n`;
     test += `const tAsset = ${txResult.parsedCode}`;
-    test += `parts.forEach((part) => { expect(tAsset.toString()).toContain(part)})`;
+
+    if (txResult.txString.startsWith('http')) {
+
+      // For URLS, If not a demo cloud, we do not support the compilation test.
+      if (!txResult.txString.includes('/demo/')) {
+        throw `Unsupported URL: ${txResult.txString}`;
+      }
+
+      test += `tAsset.setCloudConfig({cloudName: 'demo'});`;
+      test += `tAsset.setURLConfig({analytics:false});`;
+      test += `expect(tAsset.toURL()).toBe('${txResult.txString}');`;
+    } else {
+      test += `const parts = '${txResult.txString}'.replace(/\\//g, ',').split(',');\n\n`;
+      test += `parts.forEach((part) => { expect(tAsset.toString()).toContain(part)})`;
+    }
+
 
 
     test += '\n})\n'; // Close it test

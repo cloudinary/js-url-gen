@@ -70,11 +70,31 @@ class CloudinaryFile {
 
   constructor(publicID: string, cloudConfig: ICloudConfig = {}, urlConfig?: IURLConfig) {
     this.setPublicID(publicID);
+    this.setCloudConfig(cloudConfig);
+    this.setURLConfig(urlConfig);
+  }
+
+  /**
+   * @description Sets the URL Config for this asset
+   * @param urlConfig
+   * @return {this}
+   */
+  setURLConfig(urlConfig: IURLConfig): this {
+    this.urlConfig = new URLConfig(urlConfig);
+    return this;
+  }
+
+  /**
+   * @description Sets the Cloud Config for this asset
+   * @param urlConfig
+   * @return {this}
+   */
+  setCloudConfig(cloudConfig: ICloudConfig): this {
     this.cloudName = cloudConfig.cloudName;
     this.apiKey = cloudConfig.apiKey;
     this.apiSecret = cloudConfig.apiSecret;
     this.authToken = cloudConfig.authToken;
-    this.urlConfig = new URLConfig(urlConfig);
+    return this;
   }
 
   /**
