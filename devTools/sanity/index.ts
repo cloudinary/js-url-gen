@@ -48,9 +48,14 @@ transformationStrings.forEach(async (txString, i) => {
 
   console.log('Processing transformation:', i);
 
+  let url = `https://res.cloudinary.com/demo/image/upload/${txString}/sample`;
+  if (txString.startsWith('http')) {
+    url = txString;
+  };
+
   const queryArgs = {
     framework: 'js_2',
-    url: `https://res.cloudinary.com/demo/image/upload/${txString}/sample`,
+    url,
     hideActionGroups:0
   };
 
