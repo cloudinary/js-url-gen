@@ -1,3 +1,31 @@
+1.0.0-beta.4 / 2021-07-27
+==================
+
+New functionality and features
+==============================
+* cloudinaryLegacyURL: cloudinaryLegacyURL will now correctly clone the transformation options
+* Actions and Qualifiers: Add support for stroke.solid
+* Actions and Qualifiers: Add Zoom qualifier to resize.crop
+* Actions and Qualifiers: Add Animated.edit action and qualifier
+* Actions and Qualifiers: Add level qualifier to antiRemoval
+
+
+Renaming / Refactoring
+================
+* Rename storageType to deliveryType
+* Rename the function createCloudinaryV1URL to createCloudinaryLegacyURL
+
+
+Other changes
+================
+  * Code Generation: Implement a config file to support better code generation
+  * Code Generation: Fix implementation for code generation to support full urls
+  * Compliation tests: Update the compilation tests to include a full URL
+  * Bundle Size: raise size limit for backwards compatibility function
+  * add rollup commonjs processing
+  * LegacyURL generation:  createLegacyURL will now correctly support radius arrays and strings (#386)
+  * Add cache busting to the reference website
+
 1.0.0-beta.3 / 2021-04-28
 ==================
 
