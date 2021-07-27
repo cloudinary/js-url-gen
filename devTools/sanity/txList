@@ -1411,3 +1411,20 @@ x_355,y_410,w_300,h_200,c_crop/w_130,h_100,c_fill/a_20/c_scale,w_0.5
 x_355,y_410,w_300,h_200,c_crop/w_130,h_100,c_fill/a_20/w_0.5
 x_355,y_410,w_300,h_200,c_crop/w_150,h_100,c_scale
 https://res.cloudinary.com/demo/video/upload/f_webm/dog.mp4
+# NEW URLS TO VALIDATE BELOW THIS LINE
+http://res.cloudinary.com/demo/video/upload/f_webm/dog.mp4
+http://res.cloudinary.com/demo/raw/twitter/sample
+https://res.cloudinary.com/demo/video/upload/s--abcdefg--/dog.mp4
+https://res.cloudinary.com/demo/image/upload/fl_lossy/kitten_fighting.png
+h_150,w_150,c_pad,b_auto:predominant_gradient:4:palette_f00_green_blue_orange
+a_180/w_300,h_200,c_fill/l_video:kitten_fighting,fl_splice,w_300,h_200,c_fill,so_0,du_5/fl_layer_apply
+# Not working for some reason $tlx_597/$tly_202/$boxw_355/$boxh_220/$color_!blue!/$object_!jacket!/$conf_0.85/$fontsize_17/$pix_3/$style_!Arial_17!/l_docs:filled-square,bo_$pix_solid_$color,c_scale,e_brightness:50,w_$boxw,h_$boxh/fl_layer_apply,g_north_west,x_$tlx,y_$tly/l_text:$style:$(object) $(conf),co_white,b_$color/fl_layer_apply,g_north_west,x_$tlx,y_$tly_sub_$fontsize
+# Not working for some reason c_scale,w_400/l_text:Arial_100:Big Flowers,co_yellow,fl_text_disallow_overflow
+c_crop,g_face,r_75,bo_10px_solid_grey/l_young_couple,w_150,h_150,c_thumb,r_max,g_faces,bo_3px_solid_black/fl_layer_apply,g_north_east
+https://res.cloudinary.com/demo/image/upload/e_bgremoval/docs/casual_yellow.png
+du_5.0/c_scale,h_200,w_300/l_video:dog/c_scale,h_200,w_300/du_5.0/e_transition,l_video:transition1/fl_layer_apply/fl_layer_apply
+w_200,h_200,c_fill/e_style_transfer,l_sailing_angel
+b_blue,c_fill,h_300,r_max,w_300
+w_500/w_400,c_fit,l_text:Neucha_26_bold:Lorem
+l_text:Arial_150:Flowers,co_yellow,bo_6px_solid_red,fl_text_no_trim
+l_video:docs:bluescreen_watches,e_make_transparent:20,co_rgb:0e80d8,w_0.6,fl_relative,g_north/du_15
