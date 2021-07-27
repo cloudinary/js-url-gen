@@ -33,20 +33,20 @@ describe('Tests for URL configuration', () => {
     expect(image.toURL()).toEqual('https://demo-res.cloudinary.com/images/a_0/sample/hello');
   });
 
-  it('should only allow `suffix` with a predfined list of storageType/assetType', () => {
+  it('should only allow `suffix` with a predfined list of deliveryType/assetType', () => {
     const image = createNewImage('test')
       .setSuffix('abc');
 
     // Suffix only works with predefined SEO_TYPES
     Object.keys(SEO_TYPES).forEach((resourceType) => {
-      const [assetType, storageType] = resourceType.split('/');
+      const [assetType, deliveryType] = resourceType.split('/');
       image.setDeliveryType(assetType)
-        .setDeliveryType(storageType);
+        .setDeliveryType(deliveryType);
 
       expect(image.toURL.bind(image)).not.toThrow();
     });
 
-    // Any other storage type should throw
+    // Any other delivery type should throw
     image.setDeliveryType('fff');
     expect(image.toURL.bind(image)).toThrow();
   });

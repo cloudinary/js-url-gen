@@ -2,7 +2,7 @@ import {
   getUrlPrefix,
   getUrlVersion,
   handleAssetType,
-  handleStorageType
+  handleDeliveryType
 } from "../internal/url/cloudinaryURL";
 import {Transformation} from "../transformation/Transformation";
 import ICloudConfig from "../config/interfaces/Config/ICloudConfig";
@@ -13,7 +13,7 @@ import {getSDKAnalyticsSignature} from "../sdkAnalytics/getSDKAnalyticsSignature
 import {ITrackedPropertiesThroughAnalytics} from "../sdkAnalytics/interfaces/ITrackedPropertiesThroughAnalytics";
 
 /**
- * This const contains all the valid combination of asset/storage for URL shortening purposes
+ * This const contains all the valid combination of asset/delivery for URL shortening purposes
  * It's exported because it's used in a test, but it's not really shared enough to belong in a separate file
  */
 export const SEO_TYPES: Record<string, string> = {
@@ -66,7 +66,7 @@ class CloudinaryFile {
   private extension: string;
   private signature: string;
   private suffix: string;
-  private storageType: string; // type upload/private
+  private deliveryType: string; // type upload/private
 
   constructor(publicID: string, cloudConfig: ICloudConfig = {}, urlConfig?: IURLConfig) {
     this.setPublicID(publicID);
@@ -114,7 +114,7 @@ class CloudinaryFile {
    * @return {this}
    */
   setDeliveryType(newType: DELIVERY_TYPE|string): this {
-    this.storageType = newType;
+    this.deliveryType = newType;
     return this;
   }
 
@@ -195,18 +195,18 @@ class CloudinaryFile {
 
 
   /**
-   * @description return an SEO friendly name for a combination of asset/storage, some examples:
+   * @description return an SEO friendly name for a combination of asset/delivery, some examples:
    * * image/upload -> images
    * * video/upload -> videos
-   * If no match is found, return `{asset}/{storage}`
+   * If no match is found, return `{asset}/{delivery}`
    */
   getResourceType(): string {
     const assetType = handleAssetType(this.assetType);
-    const storageType = handleStorageType(this.storageType);
+    const deliveryType = handleDeliveryType(this.deliveryType);
 
     const hasSuffix = !!this.suffix;
-    const regularSEOType = `${assetType}/${storageType}`;
-    const shortSEOType = SEO_TYPES[`${assetType}/${storageType}`];
+    const regularSEOType = `${assetType}/${deliveryType}`;
+    const shortSEOType = SEO_TYPES[`${assetType}/${deliveryType}`];
     const useRootPath = this.urlConfig.useRootPath;
     const shorten = this.urlConfig.shorten;
 
@@ -215,7 +215,7 @@ class CloudinaryFile {
       if (regularSEOType === 'image/upload') {
         return ''; // For image/upload we're done, just return nothing
       } else {
-        throw new Error(`useRootPath can only be used with assetType: 'image' and storageType: 'upload'. Provided: ${regularSEOType} instead`);
+        throw new Error(`useRootPath can only be used with assetType: 'image' and deliveryType: 'upload'. Provided: ${regularSEOType} instead`);
       }
     }
 
@@ -232,7 +232,7 @@ class CloudinaryFile {
       }
     }
 
-    // If all else fails, return the regular image/upload combination (asset/storage)
+    // If all else fails, return the regular image/upload combination (asset/delivery)
     return regularSEOType;
   }
 
@@ -270,7 +270,7 @@ class CloudinaryFile {
       // we can't use serializeCloudinaryCharacters because that does both things (, and /)
       .replace(/,/g, '%2C');
 
-    // Resource type is a mixture of assetType, storageType and various URL Configurations
+    // Resource type is a mixture of assetType, deliveryType and various URL Configurations
     // Note how `suffix` changes both image/upload (resourceType) and also is appended at the end
     const url = [prefix, this.getResourceType(), this.getSignature(), transformationString, version, publicID, this.suffix]
       .filter((a) => a)
