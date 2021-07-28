@@ -1,26 +1,3 @@
-# Invalid String - Text should be "double encoded" - $award_!First!,$color_!rgb:FFFFFF!,$style_!Arial_45!/l_text:$style:%20%20$(award
-# Invalid String - Text should be "double encoded" - $newwidth_1080/w_$newwidth/$name_!Jane%20Smith!/l_text:Comic%20Sans%20MS_24:%C2%A9$(name),g_south_east,x_10,y_10
-# Invalid String - Text should be "double encoded" - c_fill,e_sepia,h_150,r_20,w_150/g_north,l_text:arial_60:This%20is%20my%20picture,y_20/a_20
-# Invalid String - Text should be "double encoded" - c_limit,w_300/if_iw_gt_300,co_white,g_south_east,l_text:Arial_15_bold:Image%20scaled%20down%20to%20300px
-# Invalid String - Text should be "double encoded" - c_scale,w_400/l_text:Arial_100:Big%20Flowers,co_yellow,fl_text_disallow_overflow
-# Invalid String - Text should be "double encoded" - if_w_lt_600/l_text:Arial_20:Image%20shown%20in%20full%20scale,co_white,g_south_east/c_scale,e_blur:400,u_small_dinosaur,w_600/if_end
-# Invalid String - Text should be "double encoded" - l_cloudinary_icon_blue,w_200,g_east,so_1,eo_11/l_text:arial_40:Sample%20Video,g_south,y_60,so_2
-# Invalid String - Text should be "double encoded" - l_couple/c_crop,g_faces,w_120,h_150/r_max/fl_layer_apply,g_north_east/l_cloudinary_icon,w_0.8,fl_relative,o_50,e_brightness:100/l_text:impact_40_bold:Sample image,g_south,y_20
-# Invalid String - Text should be "double encoded" - l_couple/c_crop,g_faces,w_120,h_150/r_max/fl_layer_apply,g_north_east/l_cloudinary_icon_white,w_0.8,fl_relative,o_50,e_brightness:100/l_text:impact_40_bold:Sample%20image,g_south,y_20
-# Invalid String - Text should be "double encoded" - l_text:AlexBrush-Regular.ttf_100:Happy%20New%20Year%20%202017%20,co_white,g_north_west,x_30,y_30
-# Invalid String - Text should be "double encoded" - l_text:arial_60:Cool%20Video,g_south,y_80,so_2,eo_5
-# Invalid String - Text should be "double encoded" - l_text:impact_150:Your%20Brand%20Name%20or%20Logo%20Here,e_distort:arc:-120,co_white,g_south,y_840,o_60
-# Invalid String - Text should be "double encoded" - w_200/l_text:Arial_30:Cool%F0%9F%98%8E
-# Invalid String - Text should be "double encoded" - w_300/w_200,y_30,a_9,h_150,g_north,c_fit,l_text:Times_18_bold_center:Lorem%20ipsum%20dolor%20sit%20amet%20consectetur%20adipisicing%20elit%20sed%20do%20eiusmod%20tempor%20incididunt%20ut%20labore%20et%20dolore%20magna%20aliqua.%20Ut%20enim%20ad%20minim%20veniam%20quis%20nostrud%20exercitation%20ullamco%20laboris%20nisi%20ut%20aliquip%20ex%20ea%20commodo%20consequat.
-# Invalid String - Text should be "double encoded" - w_500/if_!cloudinary!_in_tags/l_cloudinary_icon,w_100,g_north_east,o_50,e_brightness:100/l_text:arial_15:By Cloudinary,g_north_east,y_10,x_105/if_end/du_5
-# Invalid String - Text should be "double encoded" - w_500/l_text:Times_60:Cool%20image,g_south,y_20
-# Invalid String - Text should be "double encoded" - w_500/l_text:Times_90_bold:Cool%20image,g_south,y_80,co_rgb:FFFF00
-# Invalid String - Text should be "double encoded" - w_500/l_text:Times_90_bold:Cool%20image,g_south,y_80,co_rgb:FFFF0080
-# Invalid String - Text should be "double encoded" - w_500/l_text:Verdana_50_bold:Cool%20image,g_west,x_10
-# Invalid String - Text should be "double encoded" - w_500/if_!cloudinary!_in_tags/l_cloudinary_icon_white,w_100,g_north_east,o_50,e_brightness:100/l_text:arial_15:By%20Cloudinary,g_north_east,y_10,x_105/if_end/du_5
-# Invalid String - Text should be "double encoded" - w_500/l_text:sample_text_style:Stylish%20text,g_south
-# Invalid String - Text should be "double encoded" - w_500/w_400,c_fit,l_text:Neucha_26_bold:Lorem%20ipsum%20dolor%20sit%20amet%20consectetur%20adipisicing%20elit%20sed%20do%20eiusmod%20tempor%20incididunt%20ut%20labore%20et%20dolore%20magna%20aliqua.%20Ut%20enim%20ad%20minim%20veniam%20quis%20nostrud%20exercitation%20ullamco%20laboris%20nisi%20ut%20aliquip%20ex%20ea%20commodo%20consequat.
-# Invalid String for tests - Emoji returned - w_300/l_text:Arial_40:Cool%25F0%259F%2598%258E
 # No action spec (g_auto:0) - w_150,h_150,c_thumb,g_auto:0
 # No action spec (g_auto:0) - w_150,h_150,c_thumb,g_auto:0
 # No subject/classic support - c_fill,g_auto:classic,ar_0.7,w_200
@@ -1412,16 +1389,15 @@ x_355,y_410,w_300,h_200,c_crop/w_130,h_100,c_fill/a_20/w_0.5
 x_355,y_410,w_300,h_200,c_crop/w_150,h_100,c_scale
 https://res.cloudinary.com/demo/video/upload/f_webm/dog.mp4
 # NEW URLS TO VALIDATE BELOW THIS LINE
-http://res.cloudinary.com/demo/video/upload/f_webm/dog.mp4
-http://res.cloudinary.com/demo/raw/twitter/sample
-https://res.cloudinary.com/demo/video/upload/s--abcdefg--/dog.mp4
-https://res.cloudinary.com/demo/image/upload/fl_lossy/kitten_fighting.png
+# No support for unsecure URLS yet - http://res.cloudinary.com/demo/video/upload/f_webm/dog.mp4
+# No support for unsecure URLS yet - http://res.cloudinary.com/demo/raw/twitter/sample
+# Signature not yet implemented https://res.cloudinary.com/demo/video/upload/s--12345678--/dog.mp4
 h_150,w_150,c_pad,b_auto:predominant_gradient:4:palette_f00_green_blue_orange
 a_180/w_300,h_200,c_fill/l_video:kitten_fighting,fl_splice,w_300,h_200,c_fill,so_0,du_5/fl_layer_apply
 # Not working for some reason $tlx_597/$tly_202/$boxw_355/$boxh_220/$color_!blue!/$object_!jacket!/$conf_0.85/$fontsize_17/$pix_3/$style_!Arial_17!/l_docs:filled-square,bo_$pix_solid_$color,c_scale,e_brightness:50,w_$boxw,h_$boxh/fl_layer_apply,g_north_west,x_$tlx,y_$tly/l_text:$style:$(object) $(conf),co_white,b_$color/fl_layer_apply,g_north_west,x_$tlx,y_$tly_sub_$fontsize
 # Not working for some reason c_scale,w_400/l_text:Arial_100:Big Flowers,co_yellow,fl_text_disallow_overflow
 c_crop,g_face,r_75,bo_10px_solid_grey/l_young_couple,w_150,h_150,c_thumb,r_max,g_faces,bo_3px_solid_black/fl_layer_apply,g_north_east
-https://res.cloudinary.com/demo/image/upload/e_bgremoval/docs/casual_yellow.png
+https://res.cloudinary.com/demo/image/upload/e_bgremoval/casual_yellow.png
 du_5.0/c_scale,h_200,w_300/l_video:dog/c_scale,h_200,w_300/du_5.0/e_transition,l_video:transition1/fl_layer_apply/fl_layer_apply
 w_200,h_200,c_fill/e_style_transfer,l_sailing_angel
 b_blue,c_fill,h_300,r_max,w_300

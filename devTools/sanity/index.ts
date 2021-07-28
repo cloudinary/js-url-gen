@@ -10,6 +10,7 @@ export interface ITxResult {
   error: string;
   txString: string;
   parsedCode: string;
+  status: number;
 }
 
 export interface ITXResults {
@@ -51,10 +52,10 @@ transformationStrings.forEach(async (txString, i) => {
   let url = `https://res.cloudinary.com/demo/image/upload/${txString}/sample`;
   if (txString.startsWith('http')) {
     url = txString;
-  };
+  }
 
   const queryArgs = {
-    framework: 'js_2',
+    frameworks: ['js_2'],
     url,
     hideActionGroups:0
   };
@@ -71,20 +72,25 @@ transformationStrings.forEach(async (txString, i) => {
     console.log(e);
   });
 
-  const obj = await res.json();
+  const frameworksWithCode = await res.json();
 
-  // Fail
-  if (obj.parsedCode.includes('Unable to parse') || obj.parsedCode.includes('not currently available')) {
+  // get JS snippets
+  const JSSnippet = frameworksWithCode[0];
+
+  // Fail, but not by design (11 = Expected unnsupported feature
+  if (JSSnippet.error && JSSnippet.status !== 11) {
     results.fail.push({
       txString,
-      error: obj.parsedCode,
-      parsedCode: null
+      error: JSSnippet.raw_code,
+      parsedCode: null,
+      status: JSSnippet.status
     });
   } else { // Success
     results.success.push({
       txString,
-      parsedCode: obj.parsedCode,
-      error: null
+      parsedCode: JSSnippet.raw_code,
+      error: null,
+      status: JSSnippet.status
     });
   }
 
