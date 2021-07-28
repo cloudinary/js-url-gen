@@ -42,6 +42,7 @@ module.exports = {
       'asset_type': 'set_asset_type',
       'deliveryType': 'set_delivery_type',
       'assetType': 'set_asset_type',
+      'signature': 'setSignature',
     },
     classNameMap: {
 
