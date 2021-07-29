@@ -28,7 +28,7 @@ const transformationStrings = ([...new Set(file.split('\n'))] as string[])
 /*
  *  Set the SDK Code Snippets Service URL (Change domain/port only
  */
-const baseURL = `https://staging-code-snippets.cloudinary.com/dev/sdk-code-gen`;
+const baseURL = `https://staging-code-snippets.cloudinary.com/v1/generate-code`;
 
 const results:ITXResults = {
   success:[],
