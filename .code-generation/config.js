@@ -59,7 +59,7 @@ module.exports = {
         close: '',
       }
     },
-    unsupportedTxParams: ['fl_waveform', 'fl_animated', 'e_tint', 'u_', 'e_theme', 'l_fetch', 'l_text', 'u_text', 'af_'],
+    unsupportedTxParams: ['p_', 'fl_waveform', 'fl_animated', 'e_tint', 'u_', 'e_theme', 'l_fetch', 'l_text', 'u_text', 'af_'],
     unsupportedCode: ['.stroke(', '.textFit(', 'Animated.edit', '.RoundCorners(', 'getVideoFrame', 'Source.image']
   },
   "overwrites": {
