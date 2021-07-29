@@ -44,9 +44,7 @@ module.exports = {
       'assetType': 'set_asset_type',
       'signature': 'setSignature',
     },
-    classNameMap: {
-
-    },
+    classNameMap: {},
     childTransformations: {
       image: {
         open: "new ImageTransformation()",
@@ -60,7 +58,9 @@ module.exports = {
         open: "new MediaTransformation()",
         close: '',
       }
-    }
+    },
+    unsupportedTxParams: ['fl_waveform', 'fl_animated', 'e_tint', 'u_', 'e_theme', 'l_fetch', 'l_text', 'u_text', 'af_'],
+    unsupportedCode: ['.stroke(', '.textFit(', 'Animated.edit', '.RoundCorners(', 'getVideoFrame', 'Source.image']
   },
   "overwrites": {
     qualifiers: {
