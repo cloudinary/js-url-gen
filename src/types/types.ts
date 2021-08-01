@@ -110,7 +110,7 @@ export type ImageEffect =
   | "improve";
 
 export type VideoEffect = string | "accelerate" | "reverse" | "boomerang" | "loop" | "make_transparent" | "transition";
-export type AudioCodec = string | "none" | "aac" | "vorbis" | "mp3";
+export type AudioCodecType = string | "none" | "aac" | "vorbis" | "mp3";
 export type AudioFrequency =
   string
   | number
@@ -283,7 +283,7 @@ export interface LegacyITransforamtionOptions {
   effect?: string | Array<stringOrNumber> | ImageEffect;
   page?: stringOrNumber;
   flags?: ImageFlags | [] | string;
-  audio_codec?: AudioCodec;
+  audio_codec?: AudioCodecType;
   audio_frequency?: AudioFrequency;
   // eslint-disable-next-line @typescript-eslint/ban-types
   video_codec?: string | Object;
