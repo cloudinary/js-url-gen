@@ -1,7 +1,8 @@
 import ResizeSimpleAction from "./ResizeSimpleAction";
 import {IGravity} from "../../qualifiers/gravity/GravityQualifier";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
 
-export type IShortenGravity = 'g_auto' | 'g_north' | 'g_center' | 'g_east' | 'g_west' | 'g_south' | 'g_north_west' | 'g_south_east' | 'g_south_west' | 'g_north_east';
+export type IShortenGravity = 'auto' | 'north' | 'center' | 'east' | 'west' | 'south' | 'north_west' | 'south_east' | 'south_west' | 'north_east';
 
 /**
  * @description Defines an advanced resize.
@@ -15,6 +16,10 @@ class ResizeAdvancedAction extends ResizeSimpleAction {
    * @param {Qualifiers.Gravity} gravity
    */
   gravity(gravity: IGravity | IShortenGravity): this {
+    if(typeof gravity === "string") {
+      return this.addQualifier(new Qualifier('g', gravity));
+    }
+
     return this.addQualifier(gravity);
   }
 }

@@ -13,7 +13,7 @@ describe('Gravity Qualifier', () => {
       crop()
         .width(250)
         .height(250)
-        .gravity('g_auto'),
+        .gravity('auto'),
       'url');
     expect(url).toContain('c_crop,g_auto,h_250,w_250');
   });
