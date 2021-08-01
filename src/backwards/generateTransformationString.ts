@@ -1,5 +1,5 @@
 // eslint-disable @typescript-eslint/ban-ts-comment
-import {LegacyITransforamtionOptions} from "./types";
+import {LegacyITransforamtionOptions} from "../types/types";
 import {processLayer} from "./transformationProcessing/processLayer";
 import {process_if} from "./transformationProcessing/processIf";
 import {toArray} from "./utils/toArray";
