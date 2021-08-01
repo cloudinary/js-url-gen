@@ -14,6 +14,7 @@ import {DeliveryColorSpaceFromICC} from "./delivery/DeliveryColorSpaceFromICC";
 import {DeliveryAction} from "./delivery/DeliveryAction";
 
 export type IDeliveryAction = DeliveryAction | DeliveryColorSpaceFromICC;
+export type IShortenQuality = 'auto'|'auto:best'|'auto:eco'|'auto:good'|'auto:low'|'jpegmini'|'jpegmini:best'|'jpegmini:high'|'jpegmini:medium';
 
 
 /**
@@ -88,7 +89,7 @@ function dpr(dpr: string|number):DeliveryAction {
  *  quality('auto'),
  * );
  */
-function quality(qualityType:string | number) :DeliveryQualityAction {
+function quality(qualityType:IShortenQuality|string | number) :DeliveryQualityAction {
   return new DeliveryQualityAction(qualityType);
 }
 
