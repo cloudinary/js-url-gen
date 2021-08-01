@@ -1,7 +1,7 @@
 import {AnimatedFormat} from "../../../src/qualifiers/animatedFormat";
 import {createNewVideo} from "../../TestUtils/createCloudinaryVideo";
 import {AudioFrequency} from "../../../src/qualifiers/audioFrequency";
-import {Transcode} from "../../../src/actions/transcode";
+import {audioCodec, Transcode} from "../../../src/actions/transcode";
 import {AudioCodec} from "../../../src/qualifiers/audioCodec";
 import {StreamingProfile} from "../../../src/qualifiers/streamingProfile";
 import {VideoCodec} from "../../../src/qualifiers/videoCodec";
@@ -13,6 +13,15 @@ describe('Tests for Transformation Action -- Transcode', () => {
   it('Creates a cloudinaryURL with audiocodec', () => {
     const url = createNewVideo('sample')
       .transcode(Transcode.audioCodec(AudioCodec.aac()))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/ac_aac/sample');
+  });
+
+  it('Can use shortened audioCodec notation', () => {
+    const url = createNewVideo('sample')
+      .transcode(audioCodec('aac'))
       .setPublicID('sample')
       .toURL();
 

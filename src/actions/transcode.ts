@@ -9,7 +9,7 @@ import ToAnimatedAction from "./transcode/ToAnimatedAction";
 import {AnimatedFormatQualifierValue} from "../qualifiers/animatedFormat/AnimatedFormatQualifierValue";
 import {AdvVideoCodecType, VideoCodecType} from "../qualifiers/videoCodecType/VideoCodecType";
 import {VideoCodecAction} from "./transcode/VideoCodecAction";
-
+import {AudioCodecType} from "../types/types";
 
 export type ITranscodeAction = BitRateAction
   | AudioCodecAction
@@ -57,7 +57,7 @@ function audioFrequency(freq: string|number): AudioFrequencyAction{
  * @summary action
  * @memberOf Actions.Transcode
  * @description Sets the audio codec or removes the audio channel.
- * @param {string} codec The audio codec or "none".
+ * @param {AudioCodecType | string} codec The audio codec or "none".
  * @example
  * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
  * import {aac} from '@cloudinary/base/qualifiers/audioCodec'
@@ -69,7 +69,7 @@ function audioFrequency(freq: string|number): AudioFrequencyAction{
  * video.transcode( audioCodec( aac() ) );
  * @return {Actions.Transcode.AudioCodecAction}
  */
-function audioCodec(codec: string): AudioCodecAction{
+function audioCodec(codec: AudioCodecType | string): AudioCodecAction{
   return new AudioCodecAction(codec);
 }
 /**
