@@ -244,7 +244,7 @@ export type VideoFormat =
   | "ogv"
   | "webm"
 
-export type AnimatedFormat = "auto" | "gif" | "webp" | "png";
+export type AnimatedFormatType = "auto" | "gif" | "webp" | "png";
 
 export interface LegacyITransforamtionOptions {
   transformation?: LegacyITransforamtionOptions | string;
