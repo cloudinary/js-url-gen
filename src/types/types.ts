@@ -110,7 +110,7 @@ export type ImageEffect =
   | "improve";
 
 export type VideoEffect = string | "accelerate" | "reverse" | "boomerang" | "loop" | "make_transparent" | "transition";
-export type AudioCodec = string | "none" | "aac" | "vorbis" | "mp3";
+export type AudioCodecType = string | "none" | "aac" | "vorbis" | "mp3";
 export type AudioFrequency =
   string
   | number
@@ -267,6 +267,7 @@ export interface LegacyITransforamtionOptions {
   dpr?: stringOrNumber;
   quality?: stringOrNumber;
   delay?: stringOrNumber;
+  // eslint-disable-next-line @typescript-eslint/ban-types
   underlay?: string | Object;
   color?: string;
   color_space?: ColorSpace;
@@ -282,8 +283,9 @@ export interface LegacyITransforamtionOptions {
   effect?: string | Array<stringOrNumber> | ImageEffect;
   page?: stringOrNumber;
   flags?: ImageFlags | [] | string;
-  audio_codec?: AudioCodec;
+  audio_codec?: AudioCodecType;
   audio_frequency?: AudioFrequency;
+  // eslint-disable-next-line @typescript-eslint/ban-types
   video_codec?: string | Object;
   bit_rate?: stringOrNumber;
   fps?: string | Array<stringOrNumber>;
@@ -309,6 +311,7 @@ export interface LegacyITransforamtionOptions {
   sign_url?: boolean;
   long_url_signature?: boolean;
   use_root_path?: boolean;
+  // eslint-disable-next-line @typescript-eslint/ban-types
   auth_token?: object;
   account_id?: string;
   provisioning_api_key?: string;

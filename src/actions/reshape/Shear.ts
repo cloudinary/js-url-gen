@@ -1,5 +1,5 @@
 import {Action} from "../../internal/Action";
-import {stringOrNumber} from "../../backwards/types";
+import {stringOrNumber} from "../../types/types";
 
 /**
  * @description Skews the image according to the two specified values in degrees.

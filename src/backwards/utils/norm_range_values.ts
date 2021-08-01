@@ -1,5 +1,5 @@
 import {RANGE_VALUE_RE} from "../consts";
-import {stringOrNumber} from "../types";
+import {stringOrNumber} from "../../types/types";
 
 /**
  *

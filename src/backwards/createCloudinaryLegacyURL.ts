@@ -1,4 +1,4 @@
-import {stringOrNumber, LegacyITransforamtionOptions} from "./types";
+import {stringOrNumber, LegacyITransforamtionOptions} from "../types/types";
 import {generateTransformationString} from "./generateTransformationString";
 import {finalize_resource_type} from "./utils/finalizeResourceType";
 import {finalize_source} from "./utils/finalize_source";
