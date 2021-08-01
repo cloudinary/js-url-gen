@@ -320,3 +320,14 @@ export interface LegacyITransforamtionOptions {
   url_suffix?: string;
   [futureKey: string]: any;
 }
+
+export type QualityTypes =
+  'auto'|
+  'auto:best'|
+  'auto:eco'|
+  'auto:good'|
+  'auto:low'|
+  'jpegmini'|
+  'jpegmini:best' |
+  'jpegmini:high' |
+  'jpegmini:medium';
