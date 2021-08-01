@@ -14,7 +14,7 @@ import {DeliveryColorSpaceFromICC} from "./delivery/DeliveryColorSpaceFromICC";
 import {DeliveryAction} from "./delivery/DeliveryAction";
 
 export type IDeliveryAction = DeliveryAction | DeliveryColorSpaceFromICC;
-
+export type IShortenFormat = 'usdz'|'jp2'|'ai'|'auto'|'bmp'|'eps'|'flif'|'gif'|'heic'|'ico'|'jpc'|'jpg'|'pdf'|'png'|'psd'|'svg'|'tiff'|'wdp'|'webp'|'arw'|'aac'|'aiff'|'amr'|'flac'|'m4a'|'mp3'|'ogg'|'opus'|'wav'|'avif'|'cr2'|'djvu'|'eps3'|'ept'|'fxb'|'gltf'|'hdp'|'heif'|'indd'|'jpe'|'jpeg'|'jxr'|'ps'|'spd'|'tga'|'tif'|'3g2'|'3gp'|'avi'|'flv'|'m2ts'|'m3u8'|'mkv'|'mov'|'mp4'|'mpd'|'mpeg'|'mts'|'mxf'|'ogv'|'ts'|'webm'|'wmv'|'glb';
 
 /**
  * @summary action
@@ -39,7 +39,7 @@ export type IDeliveryAction = DeliveryAction | DeliveryColorSpaceFromICC;
  * );
  *
  */
-function format(format:FormatQualifier | string) :DeliveryFormat {
+function format(format:FormatQualifier | IShortenFormat | string) :DeliveryFormat {
   return new DeliveryFormat('f', format);
 }
 
