@@ -129,6 +129,16 @@ describe('Tests for Transformation Action -- Transcode', () => {
     expect(url).toBe('https://res.cloudinary.com/demo/video/upload/f_webp,fl_animated,fl_awebp/sample');
   });
 
+  it('Can use shortened toAnimated webp', () => {
+    const url = createNewVideo('sample')
+      .transcode(Transcode
+        .toAnimated('webp'))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/f_webp,fl_animated,fl_awebp/sample');
+  });
+
   it('Creates a cloudinaryURL with toAnimated and delay', () => {
     const url = createNewVideo('sample')
       .transcode(Transcode

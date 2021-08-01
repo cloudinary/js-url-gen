@@ -9,7 +9,7 @@ import ToAnimatedAction from "./transcode/ToAnimatedAction";
 import {AnimatedFormatQualifierValue} from "../qualifiers/animatedFormat/AnimatedFormatQualifierValue";
 import {AdvVideoCodecType, VideoCodecType} from "../qualifiers/videoCodecType/VideoCodecType";
 import {VideoCodecAction} from "./transcode/VideoCodecAction";
-import {AudioCodecType} from "../types/types";
+import {AnimatedFormat, AudioCodecType} from "../types/types";
 
 export type ITranscodeAction = BitRateAction
   | AudioCodecAction
@@ -183,7 +183,7 @@ function streamingProfile(profile: string): StreamingProfileAction {
  * @summary action
  * @memberOf Actions.Transcode
  * @description Converts a video to animated image.
- * @param {string} animatedFormat The streaming profile.
+ * @param {string | AnimatedFormat} animatedFormat The streaming profile.
  * @example
  * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
  * import {gif} from '@cloudinary/base/qualifiers/animatedFormat'
@@ -195,7 +195,7 @@ function streamingProfile(profile: string): StreamingProfileAction {
  * video.transcode( toAnimated( gif() ) );
  * @return {Actions.Transcode.ToAnimatedAction}
  */
-function toAnimated(animatedFormat: AnimatedFormatQualifierValue | string = ''): ToAnimatedAction {
+function toAnimated(animatedFormat: AnimatedFormatQualifierValue | AnimatedFormat | string = ''): ToAnimatedAction {
   return new ToAnimatedAction(animatedFormat);
 }
 
