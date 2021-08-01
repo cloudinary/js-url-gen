@@ -1,4 +1,4 @@
-import {stringOrNumber} from "../../../src/backwards/types";
+import {stringOrNumber} from "../../../src/types/types";
 import {legacyNormalizeExpression} from "../../../src/backwards/utils/legacyNormalizeExpression";
 
 describe("Expression normalization", function () {
