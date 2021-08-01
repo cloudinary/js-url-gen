@@ -9,7 +9,7 @@ import {EffectActionWithStrength} from "./effect/EffectActions/EffectActionWithS
 import {EffectActionWithBlend} from "./effect/EffectActions/EffectActionWithBlend";
 import {ViesusCorrectAdjustAction} from "./adjust/simple/ViesusCorrectAdjustAction";
 import {SimpleEffectAction} from "./effect/EffectActions/SimpleEffectAction";
-import {stringOrNumber} from "../backwards/types";
+import {stringOrNumber} from "../types/types";
 
 /**
  * @description Adjusts the visual appearance of an image or video.
