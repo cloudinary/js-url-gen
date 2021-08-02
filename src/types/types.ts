@@ -1,4 +1,5 @@
 import {gif, png, webp} from "../qualifiers/animatedFormat";
+import {ar16X9, ar1X1, ar3X1, ar3X2, ar4X3, ar5X4, ignoreInitialAspectRatio} from "../qualifiers/aspectRatio";
 
 export type StreamingProfiles = string | "4k" | "full_hd" | "hd" | "sd" | "full_hd_wifi" | "full_hd_lean" | "hd_lean";
 
@@ -245,6 +246,14 @@ export type VideoFormat =
   | "webm"
 
 export type AnimatedFormatType = "auto" | "gif" | "webp" | "png";
+
+export type AspectRatioType =
+  "1:1"|
+  "5:4"|
+  "3:1"|
+  "3:2"|
+  "4:3"|
+  "16:9";
 
 export interface LegacyITransforamtionOptions {
   transformation?: LegacyITransforamtionOptions | string;

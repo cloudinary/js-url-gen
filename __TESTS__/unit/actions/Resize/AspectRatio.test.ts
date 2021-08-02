@@ -32,4 +32,13 @@ describe('Tests for AspectRatio values Action -- Resize.crop', () => {
 
     expect(url).toContain('ar_1:1,c_crop/ar_16:9,c_crop/ar_4:3,c_crop/ar_3:2,c_crop/ar_3:1,c_crop/ar_5:4,c_crop/c_crop,fl_ignore_aspect_ratio');
   });
+  it('Can use shortened aspectRatio notation', () => {
+    const url = createNewImage('sample')
+      .resize(
+        crop().aspectRatio("3:2"))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toContain('ar_3:2,c_crop');
+  });
 });
