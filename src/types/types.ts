@@ -1,15 +1,3 @@
-import {gif, png, webp} from "../qualifiers/animatedFormat";
-import {
-  FREQ11025,
-  FREQ16000, FREQ176400, FREQ192000,
-  FREQ22050,
-  FREQ32000,
-  FREQ37800,
-  FREQ44056,
-  FREQ44100, FREQ47250, FREQ48000,
-  FREQ8000, FREQ88200, FREQ96000, ORIGINAL
-} from "../qualifiers/audioFrequency";
-
 export type StreamingProfiles = string | "4k" | "full_hd" | "hd" | "sd" | "full_hd_wifi" | "full_hd_lean" | "hd_lean";
 
 export type stringOrNumber = number | string;
@@ -272,6 +260,14 @@ export type AudioFrequencyType =
   176400|
   192000|
   "iaf";
+
+export type BlendModeType =
+  "screen"|
+  "multiply"|
+  "overlay"|
+  "mask"|
+  "anti_removal";
+
 
 export interface LegacyITransforamtionOptions {
   transformation?: LegacyITransforamtionOptions | string;

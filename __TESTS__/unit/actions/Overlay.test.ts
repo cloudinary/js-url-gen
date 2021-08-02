@@ -46,6 +46,17 @@ describe('Tests for overlay actions', () => {
     expect(asset.toString()).toBe('l_sample/e_screen,fl_layer_apply,g_face');
   });
 
+  it('Can use shortened BlendMode notation', () => {
+    const asset = createNewImage();
+
+    asset.overlay(Overlay.source(Source.image("sample"))
+      .position(sampleFacePosition())
+      .blendMode("mask")
+    );
+
+    expect(asset.toString()).toBe('l_sample/e_mask,fl_layer_apply,g_face');
+  });
+
   it('Tests Image on Image with Transformation', () => {
     const asset = createNewImage();
 
