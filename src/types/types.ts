@@ -56,7 +56,7 @@ export type Gravity =
   | "auto:none"
   | "liquid"
   | "ocr_text";
-export type Angle = stringOrNumber | Array<stringOrNumber> | "auto_right" | "auto_left" | "ignore" | "vflip" | "hflip";
+export type RotationModeType = stringOrNumber | Array<stringOrNumber> | "auto_right" | "auto_left" | "ignore" | "vflip" | "hflip";
 export type ImageEffect =
   string
   | "hue"
@@ -320,7 +320,7 @@ export interface LegacyITransforamtionOptions {
   y?: stringOrNumber;
   zoom?: stringOrNumber;
   background?: string;
-  angle?: Angle;
+  angle?: RotationModeType;
   radius?: stringOrNumber | stringOrNumber[];
   overlay?: string | Record<string, any>;
   custom_function?: string | { function_type?: string | "wasm" | "remote", source?: string }

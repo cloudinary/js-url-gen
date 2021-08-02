@@ -17,4 +17,13 @@ describe('Tests for Transformation Action -- Rotate', () => {
 
     expect(url).toContain('/a_vflip/a_hflip/a_auto_left/a_auto_right/a_ignore/a_40/');
   });
+
+  it('Can use shortened Rotate notation', () => {
+    const url = createNewImage('sample')
+      .rotate(Rotate.mode("hflip"))
+      .rotate(Rotate.byAngle(40))
+      .toURL();
+
+    expect(url).toContain('a_hflip/a_40/');
+  });
 });
