@@ -2,7 +2,7 @@ import {normal as normalFontWeight} from "./fontWeight";
 import {normal as normalFontStyle} from "./fontStyle";
 import {normal as normalTextDecoration} from "./textDecoration";
 import {serializeCloudinaryCharacters} from "../internal/utils/serializeCloudinaryCharacters";
-import {FontAntialiasType, FontWeightType} from "../types/types";
+import {FontAntialiasType, FontWeightType, TextAlignmentType} from "../types/types";
 
 /**
  * @summary qualifier
@@ -119,9 +119,9 @@ class TextStyle {
 
 
   /**
-   * @param {string} textAlignment The text alignment
+   * @param {TextAlignmentType|string} textAlignment The text alignment
    */
-  textAlignment(textAlignment: 'left' | 'center' | 'right' | 'end' | 'start' | 'justify' | string): this {
+  textAlignment(textAlignment: TextAlignmentType | string): this {
     this._textAlignment = textAlignment;
     return this;
   }

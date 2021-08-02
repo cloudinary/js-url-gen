@@ -289,6 +289,14 @@ export type FontWeightType =
   "normal"|
   "thin";
 
+export type TextAlignmentType =
+  'left' |
+  'center' |
+  'right' |
+  'end' |
+  'start' |
+  'justify';
+
 export type GradientDirectionType =
   "horizontal"|
   "vertical"|
