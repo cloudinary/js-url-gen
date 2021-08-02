@@ -129,6 +129,9 @@ export type AudioFrequency =
   | 176400
   | 192000;
 /****************************** Flags *************************************/
+
+export type FlagTypes = ImageFlags | VideoFlags;
+
 export type ImageFlags =
   string
   | Array<string>
@@ -140,6 +143,7 @@ export type ImageFlags =
   | "clip_evenodd"
   | "cutter"
   | "force_strip"
+  | "force_icc"
   | "getinfo"
   | "ignore_aspect_ratio"
   | "immutable_cache"
@@ -149,6 +153,7 @@ export type ImageFlags =
   | "lossy"
   | "preserve_transparency"
   | "png8"
+  | "png24"
   | "png32"
   | "progressive"
   | "rasterize"
@@ -229,6 +234,7 @@ export type ImageFormat =
   | "miff"
   | "tga"
   | "heic"
+  | "ignore_mask_channels";
 
 export type VideoFormat =
   string
