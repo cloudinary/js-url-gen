@@ -302,4 +302,11 @@ describe('Tests for Transformation Action -- Delivery', () => {
 
     expect(url).toContain('f_jpg,fl_progressive:none');
   });
+
+  it('Can use shortened format notation', () => {
+    // f_jpg,fl_progressive
+    const url = createNewImage('sample').delivery(format('jpg')).toString();
+
+    expect(url).toContain('f_jpg');
+  });
 });
