@@ -297,6 +297,11 @@ export type TextAlignmentType =
   'start' |
   'justify';
 
+export type TextDecorationType =
+  'normal' |
+  'underline' |
+  'strikethrough';
+
 export type GradientDirectionType =
   "horizontal"|
   "vertical"|

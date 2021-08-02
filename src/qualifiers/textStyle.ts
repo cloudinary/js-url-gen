@@ -2,7 +2,7 @@ import {normal as normalFontWeight} from "./fontWeight";
 import {normal as normalFontStyle} from "./fontStyle";
 import {normal as normalTextDecoration} from "./textDecoration";
 import {serializeCloudinaryCharacters} from "../internal/utils/serializeCloudinaryCharacters";
-import {FontAntialiasType, FontWeightType, TextAlignmentType} from "../types/types";
+import {FontAntialiasType, FontWeightType, TextAlignmentType, TextDecorationType} from "../types/types";
 
 /**
  * @summary qualifier
@@ -110,9 +110,9 @@ class TextStyle {
 
   /**
    *
-   * @param {string} textDecoration The font decoration type.
+   * @param {TextDecorationType|string} textDecoration The font decoration type.
    */
-  textDecoration(textDecoration: 'normal' | 'underline' | 'strikethrough' | string): this {
+  textDecoration(textDecoration: TextDecorationType | string): this {
     this._textDecoration = textDecoration;
     return this;
   }

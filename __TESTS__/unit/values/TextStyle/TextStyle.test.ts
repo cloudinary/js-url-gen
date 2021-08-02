@@ -42,9 +42,10 @@ describe('Text Style tests', () => {
       .fontAntialias("good")
       .fontWeight("bold")
       .fontStyle("italic")
+      .textDecoration("strikethrough")
       .textAlignment("center")
       .toString();
-    expect(res).toBe('arial_50_bold_italic_center_antialias_good');
+    expect(res).toBe('arial_50_bold_italic_strikethrough_center_antialias_good');
   });
 
   it('Create a new instance with stroke solid', () => {
