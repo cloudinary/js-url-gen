@@ -13,9 +13,9 @@ import {toFloatAsString} from "../internal/utils/toFloatAsString";
 import {DeliveryColorSpaceFromICC} from "./delivery/DeliveryColorSpaceFromICC";
 import {DeliveryAction} from "./delivery/DeliveryAction";
 import {QualityTypes} from "../types/types";
+import {ImageFormatType, VideoFormatType} from "../types/types";
 
 export type IDeliveryAction = DeliveryAction | DeliveryColorSpaceFromICC;
-
 
 /**
  * @summary action
@@ -40,7 +40,7 @@ export type IDeliveryAction = DeliveryAction | DeliveryColorSpaceFromICC;
  * );
  *
  */
-function format(format:FormatQualifier | string) :DeliveryFormat {
+function format(format:FormatQualifier | ImageFormatType | VideoFormatType | string) :DeliveryFormat {
   return new DeliveryFormat('f', format);
 }
 

@@ -44,6 +44,7 @@ module.exports = {
       'assetType': 'set_asset_type',
       'signature': 'setSignature',
     },
+    canGenerateSignature:false,
     classNameMap: {},
     childTransformations: {
       image: {

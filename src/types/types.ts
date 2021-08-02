@@ -110,7 +110,7 @@ export type ImageEffect =
   | "improve";
 
 export type VideoEffect = string | "accelerate" | "reverse" | "boomerang" | "loop" | "make_transparent" | "transition";
-export type AudioCodec = string | "none" | "aac" | "vorbis" | "mp3";
+export type AudioCodecType = string | "none" | "aac" | "vorbis" | "mp3";
 export type AudioFrequency =
   string
   | number
@@ -202,34 +202,74 @@ export type DeliveryType =
   | "dailymotion";
 /****************************** URL *************************************/
 export type ResourceType = string | "image" | "raw" | "video";
-export type ImageFormat =
-  string
-  | "gif"
-  | "png"
-  | "jpg"
-  | "bmp"
-  | "ico"
-  | "pdf"
-  | "tiff"
-  | "eps"
-  | "jpc"
-  | "jp2"
-  | "psd"
-  | "webp"
-  | "zip"
-  | "svg"
-  | "webm"
-  | "wdp"
-  | "hpx"
-  | "djvu"
-  | "ai"
-  | "flif"
-  | "bpg"
-  | "miff"
-  | "tga"
-  | "heic"
+export type ImageFormatType =
+  string |
+  'usdz'|
+  'jp2'|
+  'ai'|
+  'auto'|
+  'bmp'|
+  'eps'|
+  'flif'|
+  'gif'|
+  'heic'|
+  'ico'|
+  'jpc'|
+  'jpg'|
+  'pdf'|
+  'png'|
+  'psd'|
+  'svg'|
+  'tiff'|
+  'wdp'|
+  'webp'|
+  'arw'|
+  'aac'|
+  'aiff'|
+  'amr'|
+  'flac'|
+  'm4a'|
+  'mp3'|
+  'ogg'|
+  'opus'|
+  'wav'|
+  'avif'|
+  'cr2'|
+  'djvu'|
+  'eps3'|
+  'ept'|
+  'fxb'|
+  'gltf'|
+  'hdp'|
+  'heif'|
+  'indd'|
+  'jpe'|
+  'jpeg'|
+  'jxr'|
+  'ps'|
+  'spd'|
+  'tga'|
+  'tif'|
+  '3g2'|
+  '3gp'|
+  'avi'|
+  'flv'|
+  'm2ts'|
+  'm3u8'|
+  'mkv'|
+  'mov'|
+  'mp4'|
+  'mpd'|
+  'mpeg'|
+  'mts'|
+  'mxf'|
+  'ogv'|
+  'ts'|
+  'webm'|
+  'wmv'|
+  'glb';
 
-export type VideoFormat =
+export type VideoFormatType =
   string
   | "auto"
   | "flv"
@@ -242,6 +282,7 @@ export type VideoFormat =
   | "ogv"
   | "webm"
 
+export type AnimatedFormatType = "auto" | "gif" | "webp" | "png";
 
 export interface LegacyITransforamtionOptions {
   transformation?: LegacyITransforamtionOptions | string;
@@ -278,12 +319,12 @@ export interface LegacyITransforamtionOptions {
   } | string;
   default_image?: string;
   density?: stringOrNumber;
-  format?: ImageFormat;
-  fetch_format?: ImageFormat;
+  format?: ImageFormatType;
+  fetch_format?: ImageFormatType;
   effect?: string | Array<stringOrNumber> | ImageEffect;
   page?: stringOrNumber;
   flags?: ImageFlags | [] | string;
-  audio_codec?: AudioCodec;
+  audio_codec?: AudioCodecType;
   audio_frequency?: AudioFrequency;
   // eslint-disable-next-line @typescript-eslint/ban-types
   video_codec?: string | Object;
