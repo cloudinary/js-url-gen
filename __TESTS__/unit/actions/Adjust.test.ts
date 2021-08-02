@@ -165,6 +165,14 @@ describe('Tests for Transformation Action -- Adjust', () => {
     expect(url).toContain('e_improve:outdoor:0');
   });
 
+  it('can use shortened improve notation', () => {
+    const url = createNewImage('sample')
+      .adjust(Adjust.improve().mode("outdoor").blend(0))
+      .toURL();
+
+    expect(url).toContain('e_improve:outdoor:0');
+  });
+
   it('tests by3dLut', () => {
     expect(Adjust
       .by3dLut('sample')

@@ -291,6 +291,16 @@ describe('Tests for Transformation Action -- Effect', () => {
     ).toBe('co_blue,e_outline:fill:10:25');
   });
 
+  it('Can use shortened Effect.outline notation', () => {
+    expect(Effect.outline()
+      .mode("fill")
+      .width(10)
+      .blurLevel(25)
+      .color(Color.BLUE)
+      .toString()
+    ).toBe('co_blue,e_outline:fill:10:25');
+  });
+
   it('Test simulateColorBlind', () => {
     expect(Effect.simulateColorBlind()
       .toString()

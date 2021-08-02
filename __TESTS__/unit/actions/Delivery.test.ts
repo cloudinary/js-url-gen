@@ -284,6 +284,15 @@ describe('Tests for Transformation Action -- Delivery', () => {
     expect(url).toContain('f_jpg,fl_progressive:semi');
   });
 
+  it('Can use shortened progressive:semi notation', () => {
+    // f_jpg,fl_progressive
+    const url = createNewImage('sample').delivery(
+      Delivery.format(Format.jpg()).progressive("semi")
+    ).toString();
+
+    expect(url).toContain('f_jpg,fl_progressive:semi');
+  });
+
   it('Created delivery formats with progressive:steep', () => {
     // f_jpg,fl_progressive
     const url = createNewImage('sample').delivery(

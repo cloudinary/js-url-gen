@@ -289,6 +289,23 @@ export type FontWeightType =
   "normal"|
   "thin";
 
+export type GradientDirectionType =
+  "horizontal"|
+  "vertical"|
+  "diagonal_desc"|
+  "diagonal_asc";
+
+export type OutlineModeType =
+  "outer"|
+  "inner"|
+  "inner_fill"|
+  "fill";
+
+export type ProgressiveType =
+  "semi"|
+  "none"|
+  "steep"|
+  "progressive";
 
 export interface LegacyITransforamtionOptions {
   transformation?: LegacyITransforamtionOptions | string;
