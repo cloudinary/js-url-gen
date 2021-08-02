@@ -24,6 +24,7 @@ import {FadeInEffectAction} from "./effect/leveled/fadeIn";
 import {RemoveBackgroundAction} from "./effect/removeBackgroundAction";
 import {ThemeEffect} from "./effect/theme";
 import {SystemColors} from "../qualifiers/color";
+import {ArtisticFilterType} from "../types/types";
 
 
 /**
@@ -101,10 +102,10 @@ function oilPaint(oilPaintLevel?: number):EffectActionWithStrength {
  * @summary action
  * @description Applies an artistic filter to the asset.
  * @memberOf Actions.Effect
- * @param artisticFilterType
+ * @param {ArtisticFilterType | string} artisticFilterType
  * @return {Actions.Effect.SimpleEffectAction}
  */
-function artisticFilter(artisticFilterType: string):SimpleEffectAction {
+function artisticFilter(artisticFilterType: ArtisticFilterType | string):SimpleEffectAction {
   return new SimpleEffectAction('art', artisticFilterType);
 }
 

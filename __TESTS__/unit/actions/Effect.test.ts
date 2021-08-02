@@ -152,6 +152,14 @@ describe('Tests for Transformation Action -- Effect', () => {
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/e_art:peacock/sample');
   });
 
+  it('Can use shortened artisticFilter notation', () => {
+    const url = createNewImage('sample')
+      .effect(Effect.artisticFilter("al_dente"))
+      .toURL();
+
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/e_art:al_dente/sample');
+  });
+
   it('Creates a cloudinaryURL with effect cartoonify:50', () => {
     const url = createNewImage('sample')
       .effect(cartoonify().lineStrength(50).blackwhite())

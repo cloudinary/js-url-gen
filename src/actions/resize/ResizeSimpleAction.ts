@@ -5,6 +5,7 @@ import {AspectRatioQualifierValue} from "../../qualifiers/aspectRatio/AspectRati
 import {regionRelative, relative} from "../../qualifiers/flag";
 import {FlagQualifier} from "../../qualifiers/flag/FlagQualifier";
 import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifier";
+import {AspectRatioType} from "../../types/types";
 
 /**
  * @description Defines a resize using width and height.
@@ -49,10 +50,10 @@ class ResizeSimpleAction extends Action {
    * @description Sets the aspect ratio of the asset.
    * For a list of supported types see {@link Qualifiers.AspectRatio |
     * AspectRatio values}
-   * @param {number|string} ratio The new aspect ratio, specified as a percentage or ratio.
+   * @param {AspectRatioType|number|string} ratio The new aspect ratio, specified as a percentage or ratio.
    * @return {this}
    */
-  aspectRatio(ratio: AspectRatioQualifierValue | FlagQualifier | number | string): this {
+  aspectRatio(ratio: AspectRatioType | AspectRatioQualifierValue | FlagQualifier | number | string): this {
     // toFloatAsString is used to ensure 1 turns into 1.0
     if (ratio instanceof AspectRatioQualifierValue) {
       return this.addQualifier(new Qualifier('ar', ratio));
