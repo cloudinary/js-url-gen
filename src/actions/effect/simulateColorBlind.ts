@@ -1,5 +1,6 @@
 import {Action} from "../../internal/Action";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
+import {SimulateColorBlindType} from "../../types/types";
 
 /**
  * @description Simulates the way an image would appear to someone with the specified color blind condition
@@ -23,10 +24,10 @@ class SimulateColorBlindEffectAction extends Action {
 
   /**
    * @description Sets the color blind condition to simulate.
-   * @param {Qualifiers.simulateColorBlindValues | string} cond
+   * @param {Qualifiers.simulateColorBlindValues | SimulateColorBlindType | string} cond
    * @return {this}
    */
-  condition(cond: string): this {
+  condition(cond: SimulateColorBlindType | string): this {
     return this.setQualifier(cond);
   }
 }

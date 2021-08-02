@@ -307,6 +307,15 @@ export type ProgressiveType =
   "steep"|
   "progressive";
 
+export type SimulateColorBlindType =
+  "cone_monochromacy"|
+  "deuteranomaly"|
+  "deuteranopia"|
+  "protanopia"|
+  "rod_monochromacy"|
+  "tritanomaly"|
+  "tritanopia";
+
 export interface LegacyITransforamtionOptions {
   transformation?: LegacyITransforamtionOptions | string;
   raw_transformation?: string;
