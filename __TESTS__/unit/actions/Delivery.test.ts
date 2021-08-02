@@ -239,6 +239,14 @@ describe('Tests for Transformation Action -- Delivery', () => {
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/cs_no_cmyk/sample');
   });
 
+  it('Creates a cloudinaryURL with shortened ColorSpaceType', () => {
+    const url = createNewImage('sample')
+      .delivery(Delivery.colorSpace("no_cmyk"))
+      .toURL();
+
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/cs_no_cmyk/sample');
+  });
+
   it('Creates a cloudinaryURL with Delivery.ColorSpaceFromICC', () => {
     const url = createNewImage('sample')
       .delivery(Delivery.colorSpaceFromICC('sample'))

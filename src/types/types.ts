@@ -178,7 +178,8 @@ export type VideoFlags =
   | "relative"
   | "truncate_ts"
   | "waveform";
-export type ColorSpace = string | "srgb" | "no_cmyk" | "keep_cmyk";
+export type ColorSpaceType = string | "srgb" | "cmyk" |"no_cmyk" | "keep_cmyk" | "tinysrgb" | "srgb:truecolor";
+
 export type DeliveryType =
   string
   | "upload"
@@ -296,7 +297,7 @@ export interface LegacyITransforamtionOptions {
   // eslint-disable-next-line @typescript-eslint/ban-types
   underlay?: string | Object;
   color?: string;
-  color_space?: ColorSpace;
+  color_space?: ColorSpaceType;
   opacity?: stringOrNumber;
   border?: {
     width?: stringOrNumber;

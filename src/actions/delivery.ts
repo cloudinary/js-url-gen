@@ -12,6 +12,7 @@ import {FormatQualifier} from "../qualifiers/format/FormatQualifier";
 import {toFloatAsString} from "../internal/utils/toFloatAsString";
 import {DeliveryColorSpaceFromICC} from "./delivery/DeliveryColorSpaceFromICC";
 import {DeliveryAction} from "./delivery/DeliveryAction";
+import {ColorSpaceType} from "../types/types";
 
 export type IDeliveryAction = DeliveryAction | DeliveryColorSpaceFromICC;
 
@@ -153,7 +154,7 @@ function defaultImage(publicIdWithExtension:string) :DeliveryAction {
  *  colorSpace(trueColor()),
  * );
  */
-function colorSpace(mode:string): DeliveryAction {
+function colorSpace(mode:ColorSpaceType|string): DeliveryAction {
   return new DeliveryAction('cs', mode);
 }
 
