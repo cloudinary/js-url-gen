@@ -1,16 +1,3 @@
-import {gif, png, webp} from "../qualifiers/animatedFormat";
-import {
-  alDente,
-  athena,
-  audrey,
-  aurora,
-  daguerre,
-  eucalyptus, fes, frost,
-  hairspray,
-  hokusai, incognito, linen,
-  peacock, primavera, quartz, redRock, refresh, sizzle, sonnet, ukulele, zorro
-} from "../qualifiers/artisticFilter";
-
 export type StreamingProfiles = string | "4k" | "full_hd" | "hd" | "sd" | "full_hd_wifi" | "full_hd_lean" | "hd_lean";
 
 export type stringOrNumber = number | string;
@@ -215,34 +202,74 @@ export type DeliveryType =
   | "dailymotion";
 /****************************** URL *************************************/
 export type ResourceType = string | "image" | "raw" | "video";
-export type ImageFormat =
-  string
-  | "gif"
-  | "png"
-  | "jpg"
-  | "bmp"
-  | "ico"
-  | "pdf"
-  | "tiff"
-  | "eps"
-  | "jpc"
-  | "jp2"
-  | "psd"
-  | "webp"
-  | "zip"
-  | "svg"
-  | "webm"
-  | "wdp"
-  | "hpx"
-  | "djvu"
-  | "ai"
-  | "flif"
-  | "bpg"
-  | "miff"
-  | "tga"
-  | "heic"
+export type ImageFormatType =
+  string |
+  'usdz'|
+  'jp2'|
+  'ai'|
+  'auto'|
+  'bmp'|
+  'eps'|
+  'flif'|
+  'gif'|
+  'heic'|
+  'ico'|
+  'jpc'|
+  'jpg'|
+  'pdf'|
+  'png'|
+  'psd'|
+  'svg'|
+  'tiff'|
+  'wdp'|
+  'webp'|
+  'arw'|
+  'aac'|
+  'aiff'|
+  'amr'|
+  'flac'|
+  'm4a'|
+  'mp3'|
+  'ogg'|
+  'opus'|
+  'wav'|
+  'avif'|
+  'cr2'|
+  'djvu'|
+  'eps3'|
+  'ept'|
+  'fxb'|
+  'gltf'|
+  'hdp'|
+  'heif'|
+  'indd'|
+  'jpe'|
+  'jpeg'|
+  'jxr'|
+  'ps'|
+  'spd'|
+  'tga'|
+  'tif'|
+  '3g2'|
+  '3gp'|
+  'avi'|
+  'flv'|
+  'm2ts'|
+  'm3u8'|
+  'mkv'|
+  'mov'|
+  'mp4'|
+  'mpd'|
+  'mpeg'|
+  'mts'|
+  'mxf'|
+  'ogv'|
+  'ts'|
+  'webm'|
+  'wmv'|
+  'glb';
 
-export type VideoFormat =
+export type VideoFormatType =
   string
   | "auto"
   | "flv"
@@ -315,8 +342,8 @@ export interface LegacyITransforamtionOptions {
   } | string;
   default_image?: string;
   density?: stringOrNumber;
-  format?: ImageFormat;
-  fetch_format?: ImageFormat;
+  format?: ImageFormatType;
+  fetch_format?: ImageFormatType;
   effect?: string | Array<stringOrNumber> | ImageEffect;
   page?: stringOrNumber;
   flags?: ImageFlags | [] | string;
@@ -357,3 +384,14 @@ export interface LegacyITransforamtionOptions {
   url_suffix?: string;
   [futureKey: string]: any;
 }
+
+export type QualityTypes =
+  'auto'|
+  'auto:best'|
+  'auto:eco'|
+  'auto:good'|
+  'auto:low'|
+  'jpegmini'|
+  'jpegmini:best' |
+  'jpegmini:high' |
+  'jpegmini:medium';

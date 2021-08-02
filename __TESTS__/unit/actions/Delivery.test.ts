@@ -215,6 +215,14 @@ describe('Tests for Transformation Action -- Delivery', () => {
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/q_auto/sample');
   });
 
+  it('Can use shortened quality notation', () => {
+    const url = createNewImage('sample')
+      .delivery(Delivery.quality('auto:best'))
+      .toURL();
+
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/q_auto:best/sample');
+  });
+
   it('Creates a cloudinaryURL with Delivery.density', () => {
     const url = createNewImage('sample')
       .delivery(Delivery.density(150))
@@ -301,5 +309,12 @@ describe('Tests for Transformation Action -- Delivery', () => {
     ).toString();
 
     expect(url).toContain('f_jpg,fl_progressive:none');
+  });
+
+  it('Can use shortened format notation', () => {
+    // f_jpg,fl_progressive
+    const url = createNewImage('sample').delivery(format('jpg')).toString();
+
+    expect(url).toContain('f_jpg');
   });
 });
