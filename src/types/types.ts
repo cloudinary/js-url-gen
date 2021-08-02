@@ -284,6 +284,29 @@ export type VideoFormatType =
 
 export type AnimatedFormatType = "auto" | "gif" | "webp" | "png";
 
+export type ArtisticFilterType =
+  "al_dente"|
+  "athena"|
+  "audrey"|
+  "aurora"|
+  "daguerre"|
+  "eucalyptus"|
+  "hairspray"|
+  "hokusai"|
+  "peacock"|
+  "primavera"|
+  "quartz"|
+  "incognito"|
+  "red_rock"|
+  "sizzle"|
+  "fes"|
+  "linen"|
+  "refresh"|
+  "sonnet"|
+  "ukulele"|
+  "frost"|
+  "zorro";
+
 export interface LegacyITransforamtionOptions {
   transformation?: LegacyITransforamtionOptions | string;
   raw_transformation?: string;
