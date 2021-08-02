@@ -1,5 +1,3 @@
-import {gif, png, webp} from "../qualifiers/animatedFormat";
-
 export type StreamingProfiles = string | "4k" | "full_hd" | "hd" | "sd" | "full_hd_wifi" | "full_hd_lean" | "hd_lean";
 
 export type stringOrNumber = number | string;
@@ -363,3 +361,14 @@ export interface LegacyITransforamtionOptions {
   url_suffix?: string;
   [futureKey: string]: any;
 }
+
+export type QualityTypes =
+  'auto'|
+  'auto:best'|
+  'auto:eco'|
+  'auto:good'|
+  'auto:low'|
+  'jpegmini'|
+  'jpegmini:best' |
+  'jpegmini:high' |
+  'jpegmini:medium';

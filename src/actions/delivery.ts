@@ -12,6 +12,7 @@ import {FormatQualifier} from "../qualifiers/format/FormatQualifier";
 import {toFloatAsString} from "../internal/utils/toFloatAsString";
 import {DeliveryColorSpaceFromICC} from "./delivery/DeliveryColorSpaceFromICC";
 import {DeliveryAction} from "./delivery/DeliveryAction";
+import {QualityTypes} from "../types/types";
 import {ImageFormatType, VideoFormatType} from "../types/types";
 
 export type IDeliveryAction = DeliveryAction | DeliveryColorSpaceFromICC;
@@ -74,7 +75,8 @@ function dpr(dpr: string|number):DeliveryAction {
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_optimization#how_to_optimize_image_quality | Image quality}
  *  {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#quality_control | Video quality}
  * @memberOf Actions.Delivery
- * @param {string | number | Qualifiers.Quality} qualityType For a list of supported quality types see {@link Qualifiers.Quality| quality types} for
+ * @param {QualityTypes | string | number | Qualifiers.Quality} qualityType For a list of supported quality types see
+ * {@link Qualifiers.Quality| quality types} for
  * possible values.
  * @return {Actions.Delivery.DeliveryQualityAction}
  * @example
@@ -88,7 +90,7 @@ function dpr(dpr: string|number):DeliveryAction {
  *  quality('auto'),
  * );
  */
-function quality(qualityType:string | number) :DeliveryQualityAction {
+function quality(qualityType:QualityTypes|string | number) :DeliveryQualityAction {
   return new DeliveryQualityAction(qualityType);
 }
 
