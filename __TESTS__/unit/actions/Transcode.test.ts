@@ -57,6 +57,16 @@ describe('Tests for Transformation Action -- Transcode', () => {
     expect(url).toBe('https://res.cloudinary.com/demo/video/upload/af_11025/sample');
   });
 
+  it('Can use shortened audioFrequency notation', () => {
+    const url = createNewVideo('sample')
+      .transcode(Transcode
+        .audioFrequency(11025))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/af_11025/sample');
+  });
+
   it('Creates a cloudinaryURL with fps', () => {
     const url = createNewVideo('sample')
       .transcode(Transcode

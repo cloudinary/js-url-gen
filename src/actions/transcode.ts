@@ -9,7 +9,7 @@ import ToAnimatedAction from "./transcode/ToAnimatedAction";
 import {AnimatedFormatQualifierValue} from "../qualifiers/animatedFormat/AnimatedFormatQualifierValue";
 import {AdvVideoCodecType, VideoCodecType} from "../qualifiers/videoCodecType/VideoCodecType";
 import {VideoCodecAction} from "./transcode/VideoCodecAction";
-import {AnimatedFormatType, AudioCodecType} from "../types/types";
+import {AnimatedFormatType, AudioCodecType, AudioFrequencyType} from "../types/types";
 
 export type ITranscodeAction = BitRateAction
   | AudioCodecAction
@@ -37,7 +37,7 @@ export type ITranscodeAction = BitRateAction
  * @description Sets the audio sample frequency.
  *
  * <b>Learn more</b>: {@link https://cloudinary.com/documentation/audio_transformations#audio_frequency_control | Audio frequency control}
- * @param {string|number} freq The audio frequency.
+ * @param {AudioFrequencyType|string|number} freq The audio frequency.
  * @example
  * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
  * import {FREQ11025} from '@cloudinary/base/qualifiers/audioFrequency'
@@ -50,7 +50,7 @@ export type ITranscodeAction = BitRateAction
  * @return {Actions.Transcode.AudioFrequencyAction}
  *
  */
-function audioFrequency(freq: string|number): AudioFrequencyAction{
+function audioFrequency(freq: AudioFrequencyType|string|number): AudioFrequencyAction{
   return new AudioFrequencyAction(freq);
 }
 /**

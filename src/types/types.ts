@@ -1,4 +1,14 @@
 import {gif, png, webp} from "../qualifiers/animatedFormat";
+import {
+  FREQ11025,
+  FREQ16000, FREQ176400, FREQ192000,
+  FREQ22050,
+  FREQ32000,
+  FREQ37800,
+  FREQ44056,
+  FREQ44100, FREQ47250, FREQ48000,
+  FREQ8000, FREQ88200, FREQ96000, ORIGINAL
+} from "../qualifiers/audioFrequency";
 
 export type StreamingProfiles = string | "4k" | "full_hd" | "hd" | "sd" | "full_hd_wifi" | "full_hd_lean" | "hd_lean";
 
@@ -245,6 +255,23 @@ export type VideoFormat =
   | "webm"
 
 export type AnimatedFormatType = "auto" | "gif" | "webp" | "png";
+
+export type AudioFrequencyType =
+  8000|
+  11025|
+  16000|
+  22050|
+  32000|
+  37800|
+  44056|
+  44100|
+  47250|
+  48000|
+  88200|
+  96000|
+  176400|
+  192000|
+  "iaf";
 
 export interface LegacyITransforamtionOptions {
   transformation?: LegacyITransforamtionOptions | string;
