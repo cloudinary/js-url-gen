@@ -275,6 +275,20 @@ export type BlendModeType =
   "mask"|
   "anti_removal";
 
+export type FontAntialiasType =
+  "gray"|
+  "subpixel"|
+  "best"|
+  "fast"|
+  "none"|
+  "good";
+
+export type FontWeightType =
+  "bold"|
+  "light"|
+  "normal"|
+  "thin";
+
 
 export interface LegacyITransforamtionOptions {
   transformation?: LegacyITransforamtionOptions | string;
