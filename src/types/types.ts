@@ -1,4 +1,15 @@
 import {gif, png, webp} from "../qualifiers/animatedFormat";
+import {
+  alDente,
+  athena,
+  audrey,
+  aurora,
+  daguerre,
+  eucalyptus, fes, frost,
+  hairspray,
+  hokusai, incognito, linen,
+  peacock, primavera, quartz, redRock, refresh, sizzle, sonnet, ukulele, zorro
+} from "../qualifiers/artisticFilter";
 
 export type StreamingProfiles = string | "4k" | "full_hd" | "hd" | "sd" | "full_hd_wifi" | "full_hd_lean" | "hd_lean";
 
@@ -245,6 +256,29 @@ export type VideoFormat =
   | "webm"
 
 export type AnimatedFormatType = "auto" | "gif" | "webp" | "png";
+
+export type ArtisticFilterType =
+  "al_dente"|
+  "athena"|
+  "audrey"|
+  "aurora"|
+  "daguerre"|
+  "eucalyptus"|
+  "hairspray"|
+  "hokusai"|
+  "peacock"|
+  "primavera"|
+  "quartz"|
+  "incognito"|
+  "red_rock"|
+  "sizzle"|
+  "fes"|
+  "linen"|
+  "refresh"|
+  "sonnet"|
+  "ukulele"|
+  "frost"|
+  "zorro";
 
 export interface LegacyITransforamtionOptions {
   transformation?: LegacyITransforamtionOptions | string;
