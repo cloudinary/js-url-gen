@@ -307,6 +307,14 @@ export type ArtisticFilterType =
   "frost"|
   "zorro";
 
+export type AspectRatioType =
+  "1:1"|
+  "5:4"|
+  "3:1"|
+  "3:2"|
+  "4:3"|
+  "16:9";
+
 export interface LegacyITransforamtionOptions {
   transformation?: LegacyITransforamtionOptions | string;
   raw_transformation?: string;
