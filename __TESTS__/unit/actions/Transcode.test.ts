@@ -119,6 +119,16 @@ describe('Tests for Transformation Action -- Transcode', () => {
     expect(url).toBe('https://res.cloudinary.com/demo/video/upload/sp_full_hd/sample');
   });
 
+  it('Can use shortened streamingProfile notation', () => {
+    const url = createNewVideo('sample')
+      .transcode(Transcode
+        .streamingProfile("full_hd"))
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/sp_full_hd/sample');
+  });
+
   it('Creates a cloudinaryURL with toAnimated', () => {
     const url = createNewVideo('sample')
       .transcode(Transcode

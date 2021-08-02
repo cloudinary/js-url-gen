@@ -9,7 +9,7 @@ import ToAnimatedAction from "./transcode/ToAnimatedAction";
 import {AnimatedFormatQualifierValue} from "../qualifiers/animatedFormat/AnimatedFormatQualifierValue";
 import {AdvVideoCodecType, VideoCodecType} from "../qualifiers/videoCodecType/VideoCodecType";
 import {VideoCodecAction} from "./transcode/VideoCodecAction";
-import {AnimatedFormatType, AudioCodecType, AudioFrequencyType} from "../types/types";
+import {AnimatedFormatType, AudioCodecType, AudioFrequencyType, StreamingProfileTypes} from "../types/types";
 
 export type ITranscodeAction = BitRateAction
   | AudioCodecAction
@@ -175,7 +175,7 @@ function keyframeInterval(interval: number | string): KeyframeIntervalsAction {
  * video.transcode( streamingProfile( fullHd() ) );
  * @return {Actions.Transcode.StreamingProfileAction}
  */
-function streamingProfile(profile: string): StreamingProfileAction {
+function streamingProfile(profile: StreamingProfileTypes | string): StreamingProfileAction {
   return new StreamingProfileAction(profile);
 }
 

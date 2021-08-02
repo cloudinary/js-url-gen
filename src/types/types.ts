@@ -1,4 +1,4 @@
-export type StreamingProfiles = string | "4k" | "full_hd" | "hd" | "sd" | "full_hd_wifi" | "full_hd_lean" | "hd_lean";
+export type StreamingProfileTypes = string | "4k" | "full_hd" | "hd" | "sd" | "full_hd_wifi" | "full_hd_lean" | "hd_lean";
 
 export type stringOrNumber = number | string;
 
@@ -367,7 +367,7 @@ export interface LegacyITransforamtionOptions {
   start_offset?: stringOrNumber;
   end_offset?: stringOrNumber;
   duration?: stringOrNumber;
-  streaming_profile?: StreamingProfiles
+  streaming_profile?: StreamingProfileTypes
   video_sampling?: stringOrNumber;
   cloud_name?: string;
   api_key?: string;
