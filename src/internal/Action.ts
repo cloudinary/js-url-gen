@@ -1,6 +1,7 @@
 import {FlagQualifier} from "../qualifiers/flag/FlagQualifier";
 import {Qualifier} from "./qualifier/Qualifier";
 import {mapToSortedArray} from "./utils/dataStructureUtils";
+import {FlagTypes} from "../types/types";
 
 /**
  * @summary SDK
@@ -78,11 +79,13 @@ class Action {
    * @param {Qualifiers.Flag} flag
    * @return {this}
    */
-  addFlag(flag: FlagQualifier | string): this {
+  addFlag(flag: FlagTypes | FlagQualifier | string): this {
     if (typeof flag === 'string') {
       this.flags.push(new FlagQualifier(flag));
     } else {
-      this.flags.push(flag);
+      if (flag instanceof FlagQualifier) {
+        this.flags.push(flag);
+      }
     }
 
     return this;

@@ -5,6 +5,8 @@ import {PositionQualifier} from "../../qualifiers/position/PositionQualifier";
 import {FlagQualifier} from "../../qualifiers/flag/FlagQualifier";
 import {Position} from "../../qualifiers/position";
 import {BaseSource} from "../../qualifiers/source/BaseSource";
+import {BlendModeType} from "../../types/types";
+import {Qualifier} from "../../internal/qualifier/Qualifier";
 
 
 /**
@@ -17,7 +19,7 @@ import {BaseSource} from "../../qualifiers/source/BaseSource";
 class LayerAction extends Action {
   private source: BaseSource;
   private _position:PositionQualifier;
-  private _blendMode: BlendModeQualifier;
+  private _blendMode: BlendModeQualifier | BlendModeType;
   private _timelinePosition: TimelinePosition;
   layerType: 'u' | 'l';
 
@@ -62,10 +64,10 @@ class LayerAction extends Action {
 
   /**
    * @description Specifies how to blend the image overlay with the base overlay
-   * @param {Qualifiers.BlendMode} blendMode
+   * @param {Qualifiers.BlendMode|BlendModeType} blendMode
    * @return {this}
    */
-  blendMode(blendMode: BlendModeQualifier): this {
+  blendMode(blendMode: BlendModeType|BlendModeQualifier): this {
     this._blendMode = blendMode;
     return this;
   }
@@ -88,10 +90,13 @@ class LayerAction extends Action {
       bit.addFlag(flag);
     });
 
-    this._blendMode?.qualifiers.forEach((qualifier) => {
-      bit.addQualifier(qualifier);
-    });
-
+    if(typeof this._blendMode === "string"){
+      bit.addQualifier(new Qualifier('e', this._blendMode));
+    }else{
+      this._blendMode?.qualifiers.forEach((qualifier) => {
+        bit.addQualifier(qualifier);
+      });
+    }
     this._timelinePosition?.qualifiers.forEach((qualifier) => {
       bit.addQualifier(qualifier);
     });

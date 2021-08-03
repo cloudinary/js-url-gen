@@ -1,6 +1,7 @@
 import {Action} from "../../internal/Action";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
 import {RotationModeQualifierValue} from "../../qualifiers/rotate/RotationModeQualifierValue";
+import {RotationModeType} from "../../types/types";
 
 const QUALIFIER_KEY = 'a';
 
@@ -22,12 +23,12 @@ class RotateAction extends Action {
 
   /**
    * @description Rotates an asset using a defined mode.
-   * @param {Qualifiers.RotationMode | string} rotationMode
+   * @param {Qualifiers.RotationMode | RotationModeType | string} rotationMode
    * For a list of supported rotation modes see {@link Qualifiers.RotationMode| types of rotation modes} for
    * possible values
    * @return {this}
    */
-  mode(rotationMode: RotationModeQualifierValue | string):this {
+  mode(rotationMode: RotationModeQualifierValue | RotationModeType | string):this {
     return this.addValueToQualifier(QUALIFIER_KEY, rotationMode);
   }
 

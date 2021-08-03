@@ -76,6 +76,18 @@ describe('Tests for Transformation Action -- Background', () => {
     expect(url).toContain('image/upload/b_auto:border_gradient_contrast:2:horizontal:palette_red_green_blue,c_pad,h_250,w_250/b_auto:border_gradient,c_pad,h_250,w_250/sample');
   });
 
+  it('can use shortened GradientDirection notation', () => {
+    const url = createNewImage('sample')
+      .resize(Resize.pad(250, 250)
+        .background(borderGradient()
+          .gradientDirection("horizontal")
+        )
+      )
+      .toURL();
+
+    expect(url).toContain('image/upload/b_auto:border_gradient:horizontal,c_pad,h_250,w_250/sample');
+  });
+
   it('Background.predominantGradient().gradientDirection().gradientColors()', () => {
     const url = createNewImage('sample')
       .resize(Resize.pad(250, 250)

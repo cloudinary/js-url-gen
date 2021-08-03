@@ -1,4 +1,4 @@
-export type StreamingProfiles = string | "4k" | "full_hd" | "hd" | "sd" | "full_hd_wifi" | "full_hd_lean" | "hd_lean";
+export type StreamingProfileTypes = string | "4k" | "full_hd" | "hd" | "sd" | "full_hd_wifi" | "full_hd_lean" | "hd_lean";
 
 export type stringOrNumber = number | string;
 
@@ -56,7 +56,7 @@ export type Gravity =
   | "auto:none"
   | "liquid"
   | "ocr_text";
-export type Angle = stringOrNumber | Array<stringOrNumber> | "auto_right" | "auto_left" | "ignore" | "vflip" | "hflip";
+export type RotationModeType = stringOrNumber | Array<stringOrNumber> | "auto_right" | "auto_left" | "ignore" | "vflip" | "hflip";
 export type ImageEffect =
   string
   | "hue"
@@ -129,6 +129,9 @@ export type AudioFrequency =
   | 176400
   | 192000;
 /****************************** Flags *************************************/
+
+export type FlagTypes = ImageFlags | VideoFlags;
+
 export type ImageFlags =
   string
   | Array<string>
@@ -140,6 +143,7 @@ export type ImageFlags =
   | "clip_evenodd"
   | "cutter"
   | "force_strip"
+  | "force_icc"
   | "getinfo"
   | "ignore_aspect_ratio"
   | "immutable_cache"
@@ -149,6 +153,7 @@ export type ImageFlags =
   | "lossy"
   | "preserve_transparency"
   | "png8"
+  | "png24"
   | "png32"
   | "progressive"
   | "rasterize"
@@ -178,7 +183,8 @@ export type VideoFlags =
   | "relative"
   | "truncate_ts"
   | "waveform";
-export type ColorSpace = string | "srgb" | "no_cmyk" | "keep_cmyk";
+export type ColorSpaceType = string | "srgb" | "cmyk" |"no_cmyk" | "keep_cmyk" | "tinysrgb" | "srgb:truecolor";
+
 export type DeliveryType =
   string
   | "upload"
@@ -315,6 +321,84 @@ export type AspectRatioType =
   "4:3"|
   "16:9";
 
+export type AudioFrequencyType =
+  8000|
+  11025|
+  16000|
+  22050|
+  32000|
+  37800|
+  44056|
+  44100|
+  47250|
+  48000|
+  88200|
+  96000|
+  176400|
+  192000|
+  "iaf";
+
+export type BlendModeType =
+  "screen"|
+  "multiply"|
+  "overlay"|
+  "mask"|
+  "anti_removal";
+
+export type FontAntialiasType =
+  "gray"|
+  "subpixel"|
+  "best"|
+  "fast"|
+  "none"|
+  "good";
+
+export type FontWeightType =
+  "bold"|
+  "light"|
+  "normal"|
+  "thin";
+
+export type TextAlignmentType =
+  'left' |
+  'center' |
+  'right' |
+  'end' |
+  'start' |
+  'justify';
+
+export type TextDecorationType =
+  'normal' |
+  'underline' |
+  'strikethrough';
+
+export type GradientDirectionType =
+  "horizontal"|
+  "vertical"|
+  "diagonal_desc"|
+  "diagonal_asc";
+
+export type OutlineModeType =
+  "outer"|
+  "inner"|
+  "inner_fill"|
+  "fill";
+
+export type ProgressiveType =
+  "semi"|
+  "none"|
+  "steep"|
+  "progressive";
+
+export type SimulateColorBlindType =
+  "cone_monochromacy"|
+  "deuteranomaly"|
+  "deuteranopia"|
+  "protanopia"|
+  "rod_monochromacy"|
+  "tritanomaly"|
+  "tritanopia";
+
 export interface LegacyITransforamtionOptions {
   transformation?: LegacyITransforamtionOptions | string;
   raw_transformation?: string;
@@ -328,7 +412,7 @@ export interface LegacyITransforamtionOptions {
   y?: stringOrNumber;
   zoom?: stringOrNumber;
   background?: string;
-  angle?: Angle;
+  angle?: RotationModeType;
   radius?: stringOrNumber | stringOrNumber[];
   overlay?: string | Record<string, any>;
   custom_function?: string | { function_type?: string | "wasm" | "remote", source?: string }
@@ -342,7 +426,7 @@ export interface LegacyITransforamtionOptions {
   // eslint-disable-next-line @typescript-eslint/ban-types
   underlay?: string | Object;
   color?: string;
-  color_space?: ColorSpace;
+  color_space?: ColorSpaceType;
   opacity?: stringOrNumber;
   border?: {
     width?: stringOrNumber;
@@ -366,7 +450,7 @@ export interface LegacyITransforamtionOptions {
   start_offset?: stringOrNumber;
   end_offset?: stringOrNumber;
   duration?: stringOrNumber;
-  streaming_profile?: StreamingProfiles
+  streaming_profile?: StreamingProfileTypes
   video_sampling?: stringOrNumber;
   cloud_name?: string;
   api_key?: string;

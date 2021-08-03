@@ -2,6 +2,7 @@ import {normal as normalFontWeight} from "./fontWeight";
 import {normal as normalFontStyle} from "./fontStyle";
 import {normal as normalTextDecoration} from "./textDecoration";
 import {serializeCloudinaryCharacters} from "../internal/utils/serializeCloudinaryCharacters";
+import {FontAntialiasType, FontWeightType, TextAlignmentType, TextDecorationType} from "../types/types";
 
 /**
  * @summary qualifier
@@ -57,9 +58,9 @@ class TextStyle {
 
   /**
    * The antialias setting to apply to the text. When this parameter is not specified, the default antialiasing for the subsystem and target device are applied.
-   * @param antiAlias
+   * @param {FontAntialiasType|string} antiAlias
    */
-  fontAntialias(antiAlias: string): this {
+  fontAntialias(antiAlias: FontAntialiasType | string): this {
     this._fontAntialias = antiAlias;
     return this;
   }
@@ -83,9 +84,9 @@ class TextStyle {
   }
 
   /**
-   * @param {string} fontWeight The font weight
+   * @param {FontWeightType|string} fontWeight The font weight
    */
-  fontWeight(fontWeight: 'normal' | 'bold' | 'thin' | 'light' | string): this {
+  fontWeight(fontWeight: FontWeightType | string): this {
     this._fontWeight = fontWeight;
     return this;
   }
@@ -109,18 +110,18 @@ class TextStyle {
 
   /**
    *
-   * @param {string} textDecoration The font decoration type.
+   * @param {TextDecorationType|string} textDecoration The font decoration type.
    */
-  textDecoration(textDecoration: 'normal' | 'underline' | 'strikethrough' | string): this {
+  textDecoration(textDecoration: TextDecorationType | string): this {
     this._textDecoration = textDecoration;
     return this;
   }
 
 
   /**
-   * @param {string} textAlignment The text alignment
+   * @param {TextAlignmentType|string} textAlignment The text alignment
    */
-  textAlignment(textAlignment: 'left' | 'center' | 'right' | 'end' | 'start' | 'justify' | string): this {
+  textAlignment(textAlignment: TextAlignmentType | string): this {
     this._textAlignment = textAlignment;
     return this;
   }

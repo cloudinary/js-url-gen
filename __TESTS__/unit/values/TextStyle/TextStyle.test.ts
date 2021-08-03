@@ -37,6 +37,17 @@ describe('Text Style tests', () => {
     expect(res).toBe('arial_50_bold_italic_strikethrough_justify_stroke_letter_spacing_10_line_spacing_20_antialias_good_hinting_full');
   });
 
+  it('Can use shortened text notation', () => {
+    const res = new TextStyle('arial', 50)
+      .fontAntialias("good")
+      .fontWeight("bold")
+      .fontStyle("italic")
+      .textDecoration("strikethrough")
+      .textAlignment("center")
+      .toString();
+    expect(res).toBe('arial_50_bold_italic_strikethrough_center_antialias_good');
+  });
+
   it('Create a new instance with stroke solid', () => {
     const res = new TextStyle('arial', 50)
       .stroke(Stroke.solid(2, Color.WHITE))

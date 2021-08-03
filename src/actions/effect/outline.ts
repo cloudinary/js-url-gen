@@ -3,6 +3,7 @@ import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
 import {prepareColor} from "../../internal/utils/prepareColor";
 import {SystemColors} from "../../qualifiers/color";
+import {OutlineModeType} from "../../types/types";
 
 /**
  * @description Adds an outline to a transparent image. For examples, see the Image Transformations guide.
@@ -23,10 +24,10 @@ class EffectOutline extends Action {
    * @description
    * How to apply the outline effect which can be one of the following values:
    * inner, inner_fill, outer, fill.
-   * @param {string} mode  The type of outline effect. Use the constants defined in Outline.
+   * @param {OutlineModeType|string} mode  The type of outline effect. Use the constants defined in Outline.
    * @return {this}
    */
-  mode(mode?: string): this{
+  mode(mode?: OutlineModeType|string): this{
     this._mode = mode;
     return this;
   }

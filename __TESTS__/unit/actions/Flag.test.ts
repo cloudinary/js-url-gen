@@ -106,4 +106,18 @@ describe('Tests for Transformation Action -- Flag', () => {
 
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/ar_1.0,c_fill,fl_keep_attribution,fl_keep_iptc,w_400/sample');
   });
+
+  it('Can use shortened flag notation', () => {
+    const url = createNewImage('sample')
+      .resize(
+        Resize.fill(400)
+          .aspectRatio(1.0)
+          .addFlag("keep_iptc")
+          .addFlag("keep_attribution")
+      )
+      .setPublicID('sample')
+      .toURL();
+
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/ar_1.0,c_fill,fl_keep_attribution,fl_keep_iptc,w_400/sample');
+  });
 });

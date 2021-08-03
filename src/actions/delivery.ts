@@ -12,6 +12,7 @@ import {FormatQualifier} from "../qualifiers/format/FormatQualifier";
 import {toFloatAsString} from "../internal/utils/toFloatAsString";
 import {DeliveryColorSpaceFromICC} from "./delivery/DeliveryColorSpaceFromICC";
 import {DeliveryAction} from "./delivery/DeliveryAction";
+import {ColorSpaceType} from "../types/types";
 import {QualityTypes} from "../types/types";
 import {ImageFormatType, VideoFormatType} from "../types/types";
 
@@ -90,7 +91,7 @@ function dpr(dpr: string|number):DeliveryAction {
  *  quality('auto'),
  * );
  */
-function quality(qualityType:QualityTypes|string | number) :DeliveryQualityAction {
+function quality(qualityType:QualityTypes | string | number) :DeliveryQualityAction {
   return new DeliveryQualityAction(qualityType);
 }
 
@@ -155,7 +156,7 @@ function defaultImage(publicIdWithExtension:string) :DeliveryAction {
  *  colorSpace(trueColor()),
  * );
  */
-function colorSpace(mode:string): DeliveryAction {
+function colorSpace(mode:ColorSpaceType|string): DeliveryAction {
   return new DeliveryAction('cs', mode);
 }
 
