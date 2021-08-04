@@ -70,8 +70,8 @@ import {ResizeFillAction} from "./resize/ResizeFillAction";
  * @param {number|string} height The required height of a transformed asset.
  * @return {Actions.Resize.ScaleAction}
  */
-function scale(width?: number | string, height?: number | string): ScaleAction {
-  return new ScaleAction('scale', width, height);
+function scale(width?: number | string, height?: number | string): { __EXTENDED__:true } & ScaleAction {
+  return new ScaleAction('scale', width, height) as ReturnType<typeof scale>;
 }
 
 
@@ -87,8 +87,8 @@ function scale(width?: number | string, height?: number | string): ScaleAction {
  * @param {number|string} height The required height of a transformed asset.
  * @return {Actions.Resize.ResizeSimpleAction}
  */
-function imaggaScale(width?: number | string, height?: number | string): ResizeSimpleAction {
-  return new ResizeSimpleAction('imagga_scale', width, height);
+function imaggaScale(width?: number | string, height?: number | string): { __EXTENDED__:true } & ResizeSimpleAction {
+  return new ResizeSimpleAction('imagga_scale', width, height) as ReturnType<typeof imaggaScale>;
 }
 
 
@@ -103,8 +103,8 @@ function imaggaScale(width?: number | string, height?: number | string): ResizeS
  * @param {number|string} height The required height of a transformed asset.
  * @return {Actions.Resize.ResizeSimpleAction}
  */
-function imaggaCrop(width?: number|string, height?: number|string) :ResizeSimpleAction {
-  return new ResizeSimpleAction('imagga_crop', width, height);
+function imaggaCrop(width?: number|string, height?: number|string): { __EXTENDED__:true } & ResizeSimpleAction {
+  return new ResizeSimpleAction('imagga_crop', width, height) as ReturnType<typeof imaggaCrop>;
 }
 
 /**
@@ -115,8 +115,8 @@ function imaggaCrop(width?: number|string, height?: number|string) :ResizeSimple
  * @param {number|string} height The required height of a transformed asset.
  * @return {Actions.Resize.ResizeCropAction}
  */
-function crop(width?: number|string, height?: number|string) :ResizeCropAction {
-  return new ResizeCropAction('crop', width, height);
+function crop(width?: number|string, height?: number|string): { __EXTENDED__:true } & ResizeCropAction {
+  return new ResizeCropAction('crop', width, height) as ReturnType<typeof crop>;
 }
 
 /**
@@ -130,8 +130,8 @@ function crop(width?: number|string, height?: number|string) :ResizeCropAction {
  * @param {number|string} height The required height of a transformed asset.
  * @return {Actions.Resize.ResizeFillAction}
  */
-function fill(width?: string|number, height?: string|number) :ResizeFillAction {
-  return new ResizeFillAction('fill', width, height);
+function fill(width?: string|number, height?: string|number): { __EXTENDED__:true } & ResizeFillAction {
+  return new ResizeFillAction('fill', width, height) as ReturnType<typeof fill>;
 }
 
 /**
@@ -144,8 +144,8 @@ function fill(width?: string|number, height?: string|number) :ResizeFillAction {
  * @param {number|string} height The required height of a transformed asset.
  * @return {Actions.Resize.ResizeSimpleAction}
  */
-function fit(width?: string|number, height?: string|number) :ResizeSimpleAction {
-  return new ResizeSimpleAction('fit', width, height);
+function fit(width?: string|number, height?: string|number): { __EXTENDED__:true } & ResizeSimpleAction {
+  return new ResizeSimpleAction('fit', width, height) as ReturnType<typeof fit>;
 }
 
 /**
@@ -160,8 +160,8 @@ function fit(width?: string|number, height?: string|number) :ResizeSimpleAction 
  * @param {number|string} height The required height of a transformed asset.
  * @return {Actions.Resize.ResizePadAction}
  */
-function pad(width?: string|number, height?: string|number) :ResizePadAction<CompassGravity> {
-  return new ResizePadAction('pad', width, height);
+function pad(width?: string|number, height?: string|number): { __EXTENDED__:true } & ResizePadAction<CompassGravity> {
+  return new ResizePadAction('pad', width, height) as ReturnType<typeof pad>;
 }
 
 
@@ -180,8 +180,8 @@ function pad(width?: string|number, height?: string|number) :ResizePadAction<Com
  * @param {number|string} height The required height of a transformed asset.
  * @return {Actions.Resize.ResizeFillAction}
  */
-function limitFill(width?: string|number, height?: string|number) :ResizeFillAction {
-  return new ResizeFillAction('lfill', width, height);
+function limitFill(width?: string|number, height?: string|number): { __EXTENDED__:true } & ResizeFillAction {
+  return new ResizeFillAction('lfill', width, height) as ReturnType<typeof limitFill>;
 }
 
 
@@ -197,8 +197,8 @@ function limitFill(width?: string|number, height?: string|number) :ResizeFillAct
  * @param {number|string} height The required height of a transformed asset.
  * @return {Actions.Resize.ResizeSimpleAction}
  */
-function limitFit(width?: number|string, height?: number|string) :ResizeSimpleAction {
-  return new ResizeSimpleAction('limit', width, height);
+function limitFit(width?: number|string, height?: number|string): { __EXTENDED__:true } & ResizeSimpleAction {
+  return new ResizeSimpleAction('limit', width, height) as ReturnType<typeof limitFit>;
 }
 
 
@@ -215,8 +215,8 @@ function limitFit(width?: number|string, height?: number|string) :ResizeSimpleAc
  * @param {number|string} height The required height of a transformed asset.
  * @return {Actions.Resize.ResizePadAction}
  */
-function minimumPad(width?: string|number, height?: string|number) :ResizePadAction<CompassGravity> {
-  return new ResizePadAction('mpad', width, height);
+function minimumPad(width?: string|number, height?: string|number): { __EXTENDED__:true } & ResizePadAction<CompassGravity> {
+  return new ResizePadAction('mpad', width, height) as ReturnType<typeof minimumPad>;
 }
 
 
@@ -232,8 +232,8 @@ function minimumPad(width?: string|number, height?: string|number) :ResizePadAct
  * @param {number|string} height The required height of a transformed asset.
  * @return {Actions.Resize.ResizeSimpleAction}
  */
-function minimumFit(width?: number|string, height?: number|string) :ResizeSimpleAction {
-  return new ResizeSimpleAction('mfit', width, height);
+function minimumFit(width?: number|string, height?: number|string): { __EXTENDED__:true } & ResizeSimpleAction {
+  return new ResizeSimpleAction('mfit', width, height) as ReturnType<typeof minimumFit>;
 }
 
 
@@ -253,8 +253,8 @@ function minimumFit(width?: number|string, height?: number|string) :ResizeSimple
  * @param {number|string} height The required height of a transformed asset.
  * @return {Actions.Resize.ResizePadAction}
  */
-function fillPad(width?: string|number, height?: string|number) :ResizePadAction<AutoGravity> {
-  return new ResizePadAction('fill_pad', width, height);
+function fillPad(width?: string|number, height?: string|number): { __EXTENDED__:true } & ResizePadAction<AutoGravity> {
+  return new ResizePadAction('fill_pad', width, height) as ReturnType<typeof fillPad>;
 }
 
 /**
@@ -267,8 +267,8 @@ function fillPad(width?: string|number, height?: string|number) :ResizePadAction
  * @param {number|string} height The required height of a transformed asset.
  * @return {Actions.Resize.ThumbResizeAction}
  */
-function thumbnail(width?: string|number, height?: string|number) :ThumbResizeAction {
-  return new ThumbResizeAction('thumb', width, height);
+function thumbnail(width?: string|number, height?: string|number): { __EXTENDED__:true } & ThumbResizeAction {
+  return new ThumbResizeAction('thumb', width, height) as ReturnType<typeof thumbnail>;
 }
 
 
@@ -286,9 +286,27 @@ function thumbnail(width?: string|number, height?: string|number) :ThumbResizeAc
  * @param {number|string} height The required height of a transformed asset.
  * @return {Actions.Resize.ResizePadAction}
  */
-function limitPad(width?: string|number, height?: string|number) :ResizePadAction<CompassGravity> {
-  return new ResizePadAction('lpad', width, height);
+function limitPad(width?: string|number, height?: string|number): { __EXTENDED__:true } & ResizePadAction<CompassGravity> {
+  return new ResizePadAction('lpad', width, height) as ReturnType<typeof limitPad>;
 }
+
+
+
+export type IResizeActions =
+  ReturnType<typeof imaggaScale> |
+  ReturnType<typeof imaggaCrop> |
+  ReturnType<typeof crop> |
+  ReturnType<typeof fill> |
+  ReturnType<typeof scale> |
+  ReturnType<typeof minimumPad> |
+  ReturnType<typeof fit> |
+  ReturnType<typeof pad> |
+  ReturnType<typeof limitFit> |
+  ReturnType<typeof thumbnail> |
+  ReturnType<typeof limitFill> |
+  ReturnType<typeof minimumFit> |
+  ReturnType<typeof limitPad> |
+  ReturnType<typeof fillPad>
 
 
 const Resize = {

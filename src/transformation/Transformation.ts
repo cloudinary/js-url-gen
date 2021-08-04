@@ -4,7 +4,6 @@ import {LayerAction} from "../actions/layer/LayerAction";
 import {Action} from "../internal/Action";
 import VariableAction from "../actions/variable/VariableAction";
 import {ConditionalAction} from "../actions/conditional";
-import ResizeSimpleAction from "../actions/resize/ResizeSimpleAction";
 import RotateAction from "../actions/rotate/RotateAction";
 import {BackgroundColor} from "../actions/background/actions/BackgroundColor";
 import {NamedTransformationAction} from "../actions/namedTransformation/NamedTransformationAction";
@@ -25,6 +24,19 @@ import {IAdjustAction} from "../actions/adjust";
 import {IDeliveryAction} from "../actions/delivery";
 import {ITranscodeAction} from "../actions/transcode";
 import {AnimatedAction} from "../actions/animated";
+import {
+  crop,
+  fill, fillPad,
+  fit,
+  imaggaCrop,
+  imaggaScale,
+  limitFill,
+  limitFit, limitPad, minimumFit,
+  minimumPad,
+  pad,
+  scale,
+  thumbnail
+} from "../actions/resize";
 
 /**
  * @summary SDK
@@ -122,7 +134,20 @@ class Transformation {
    * @param {ResizeSimpleAction} resizeAction
    * @return {this}
    */
-  resize(resizeAction: ResizeSimpleAction): this {
+  resize(resizeAction: ReturnType<typeof imaggaScale> |
+    ReturnType<typeof imaggaCrop> |
+    ReturnType<typeof crop> |
+    ReturnType<typeof fill> |
+    ReturnType<typeof scale> |
+    ReturnType<typeof minimumPad> |
+    ReturnType<typeof fit> |
+    ReturnType<typeof pad> |
+    ReturnType<typeof limitFit> |
+    ReturnType<typeof thumbnail> |
+    ReturnType<typeof limitFill> |
+    ReturnType<typeof minimumFit> |
+    ReturnType<typeof limitPad> |
+    ReturnType<typeof fillPad>): this {
     return this.addAction(resizeAction);
   }
 

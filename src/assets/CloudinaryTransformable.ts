@@ -28,6 +28,18 @@ import {DeliveryQualityAction} from "../actions/delivery/DeliveryQuality";
 import {ITrackedPropertiesThroughAnalytics} from "../sdkAnalytics/interfaces/ITrackedPropertiesThroughAnalytics";
 import {AnimatedAction} from "../actions/animated";
 import {LoopEffectAction} from "../actions/effect/leveled/loop";
+import {
+  crop,
+  fill, fillPad,
+  fit,
+  imaggaCrop,
+  imaggaScale,
+  limitFill,
+  limitFit, limitPad, minimumFit,
+  minimumPad,
+  pad,
+  scale, thumbnail
+} from "../actions/resize";
 
 /**
  * @desc Cloudinary Transformable interface, extended by any class that needs a Transformation Interface
@@ -77,7 +89,20 @@ class CloudinaryTransformable extends CloudinaryFile {
    * @param {Actions.Resize} resize
    * @return {this}
    */
-  resize(resize: ResizeSimpleAction): this {
+  resize(resize: ReturnType<typeof imaggaScale> |
+    ReturnType<typeof imaggaCrop> |
+    ReturnType<typeof crop> |
+    ReturnType<typeof fill> |
+    ReturnType<typeof scale> |
+    ReturnType<typeof minimumPad> |
+    ReturnType<typeof fit> |
+    ReturnType<typeof pad> |
+    ReturnType<typeof limitFit> |
+    ReturnType<typeof thumbnail> |
+    ReturnType<typeof limitFill> |
+    ReturnType<typeof minimumFit> |
+    ReturnType<typeof limitPad> |
+    ReturnType<typeof fillPad>): this {
     this.transformation.resize(resize);
     return this;
   }
