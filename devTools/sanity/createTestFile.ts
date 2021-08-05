@@ -2,13 +2,10 @@
 /* eslint-disable require-jsdoc */
 
 
-import {ITxResult} from "./index";
-
-const fs = require('fs');
-
+import {IFrameworkResponse} from "sdk-sanity-generator/dist/interfaces";
 const prettier = require('prettier');
 
-function createTestFile(txs: ITxResult[]){
+function createTestFile(txs: IFrameworkResponse[]){
   let file = `
   // In the future, we'll support HOTER tests without name duplication issues, for now it's commented out
   // It's stored here since this is built manually, and it's best to keep the work :)
@@ -153,14 +150,13 @@ import { FontStyle } from "qualifiers/fontStyle";
 import {Volume} from "../src/qualifiers/volume";
 import {FontAntialias} from "../src/qualifiers/FontAntialias";
 import {Animated} from "../src/actions/animated";
-const CloudinaryImage = CloudinaryMedia;
-const CloudinaryVideo = CloudinaryMedia;
+import {CloudinaryImage, CloudinaryVideo, CloudinaryMedia} from "../src"
       `;
 
   file += `describe("Testing", () => {\n`;
 
   file += txs.map((txResult) => {
-    let test = `it("${txResult.txString}", () => {`;
+    let test = `it("${txResult.transformation}", () => {`;
     // If the SDK does not support the transformation, we comment out the test
 
     if (txResult.status === 11) {
@@ -168,20 +164,20 @@ const CloudinaryVideo = CloudinaryMedia;
     }
 
     if (txResult.status !== 11) {
-      test += `const tAsset = ${txResult.parsedCode}`;
+      test += `const tAsset = ${txResult.code}`;
 
-      if (txResult.txString.startsWith('http')) {
+      if (txResult.transformation.startsWith('http')) {
 
         // For URLS, If not a demo cloud, we do not support the compilation test.
-        if (!txResult.txString.includes('/demo/')) {
-          throw `Unsupported URL: ${txResult.txString}`;
+        if (!txResult.transformation.includes('/demo/')) {
+          throw `Unsupported URL: ${txResult.transformation}`;
         }
 
         test += `tAsset.setCloudConfig({cloudName: 'demo'});`;
         test += `tAsset.setURLConfig({analytics:false});`;
-        test += `expect(tAsset.toURL()).toBe('${txResult.txString}');`;
+        test += `expect(tAsset.toURL()).toBe('${txResult.transformation}');`;
       } else {
-        test += `const parts = '${txResult.txString}'.replace(/\\//g, ',').split(',');\n\n`;
+        test += `const parts = '${txResult.transformation}'.replace(/\\//g, ',').split(',');\n\n`;
         test += `parts.forEach((part) => { expect(tAsset.toString()).toContain(part)})`;
       }
     }
