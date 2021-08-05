@@ -61,7 +61,7 @@ module.exports = {
       }
     },
     unsupportedTxParams: ['fl_waveform', 'fl_animated', 'e_tint', 'u_', 'e_theme', 'l_fetch', 'l_text', 'u_text', 'af_'],
-    unsupportedCode: ['.stroke(', '.textFit(', 'Animated.edit', '.RoundCorners(', 'getVideoFrame', 'Source.image']
+    unsupportedCode: ['.stroke(', '.textFit(', 'Animated.edit', '.RoundCorners(', 'getVideoFrame', 'Source.image', '.transcode(']
   },
   "overwrites": {
     qualifiers: {
