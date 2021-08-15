@@ -8,6 +8,8 @@ import {isObject} from "../utils/isObject";
 import {base64Encode} from "../../internal/utils/base64Encode";
 import {LAYER_KEYWORD_PARAMS} from "../consts";
 import {smartEscape} from "../utils/smartEscape";
+import TextLayer from "../legacyLayer/textlayer";
+import Layer from "../legacyLayer/layer";
 
 export function textStyle(layer: any) {
   const keywords:any[] = [];
@@ -44,6 +46,9 @@ export function textStyle(layer: any) {
 
 
 export function processLayer(layer: any) {
+  if (layer instanceof TextLayer || layer instanceof Layer){
+    return layer.toString();
+  }
   let result = '';
   if (isObject(layer)) {
     if (layer.resource_type === "fetch" || (layer.url != null)) {

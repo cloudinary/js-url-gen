@@ -11,6 +11,8 @@ import {splitRange} from "./utils/splitRange";
 import {legacyNormalizeExpression} from "./utils/legacyNormalizeExpression";
 import {normRangeValues} from "./utils/norm_range_values";
 import {processVideoParams} from "./transformationProcessing/processVideoParams";
+import Transformation from "./transformation";
+import {processDpr} from "./transformationProcessing/processDpr";
 
 
 
@@ -31,6 +33,10 @@ export function generateTransformationString(transformationOptions: LegacyITrans
     return transformationOptions;
   }
 
+  if (transformationOptions instanceof Transformation){
+    return transformationOptions.toString();
+  }
+
   if (Array.isArray(transformationOptions)) {
     return transformationOptions
       .map((singleTransformation) => {
@@ -43,7 +49,6 @@ export function generateTransformationString(transformationOptions: LegacyITrans
   let width: string | number;
   let height: string | number;
 
-
   const size = transformationOptions.size;
   const hasLayer = transformationOptions.overlay || transformationOptions.underlay;
   const crop = transformationOptions.crop;
@@ -51,7 +56,7 @@ export function generateTransformationString(transformationOptions: LegacyITrans
   const background = (transformationOptions.background || '').replace(/^#/, "rgb:");
   const color = (transformationOptions.color || '').replace(/^#/, "rgb:");
   const flags = (toArray(transformationOptions.flags || [])).join('.');
-  const dpr = transformationOptions.dpr;
+  const dpr = transformationOptions.dpr === undefined ? transformationOptions.dpr : processDpr(transformationOptions.dpr);
 
   const overlay = processLayer(transformationOptions.overlay);
   const radius = processRadius(transformationOptions.radius);
