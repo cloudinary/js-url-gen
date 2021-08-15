@@ -67,7 +67,7 @@ const bundleSizeTestCases:ITestCase[] = [
   },
   {
     name: 'Import backwards comaptiblity function',
-    sizeLimitInKB: 56,
+    sizeLimitInKB: 57,
     importsArray: [
       importFromBase('createCloudinaryLegacyURL')
     ]
