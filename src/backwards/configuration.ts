@@ -15,7 +15,7 @@ import {isObject} from "./utils/isObject";
  * @param {...Object} source - the source object(s) to assign defaults from
  * @return {Object} destination after it was modified
  */
-const defaults = (destination:{}, ...sources: object[])=>{
+const useDefaultValues = (destination:{}, ...sources: object[])=>{
   return sources.reduce(function(dest, source) {
     let key, value;
     for (key in source) {
@@ -42,7 +42,7 @@ class Configuration {
   private configuration: any;
   constructor(options: {}) {
     this.configuration = options == null ? {} : cloneDeep(options);
-    defaults(this.configuration, DEFAULT_CONFIGURATION_PARAMS);
+    useDefaultValues(this.configuration, DEFAULT_CONFIGURATION_PARAMS);
   }
 
   /**
