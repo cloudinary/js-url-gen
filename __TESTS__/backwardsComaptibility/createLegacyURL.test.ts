@@ -1,5 +1,6 @@
 import {createTestURL} from "./transformationLegacyTests/utils/createTestURL";
 import {createCloudinaryLegacyURL} from "../../src";
+import Transformation from "../../src/backwards/transformation";
 
 describe('Create legacy urls', () => {
   it('Should throw without cloudName', () => {
@@ -986,5 +987,73 @@ describe('Create legacy urls', () => {
 
     expect(urlFirstRun).toEqual("http://res.cloudinary.com/test123/image/upload/c_fill,h_120,l_somepid,w_80/sample");
     expect(urlFirstRun).toEqual(urlSecondRun);
+  });
+  it("Transformation object: User Define Variables", function () {
+    const options = {
+      if: "face_count > 2",
+      variables: [["$z", 5], ["$foo", "$z * 2"]],
+      crop: "scale",
+      width: "$foo * 200"
+    };
+    const result = createTestURL("sample",
+      {
+        transformation:  new Transformation(options)
+      }
+    );
+    expect(result).toBe('http://res.cloudinary.com/demo/image/upload/if_fc_gt_2,$z_5,$foo_$z_mul_2,c_scale,w_$foo_mul_200/sample');
+  });
+
+  it("Transformation object: should sort variables", function () {
+    const result = createTestURL("sample",
+      {
+        transformation:  new Transformation({
+          $second: 1,
+          $first: 2
+        })
+      }
+    );
+    expect(result).toBe('http://res.cloudinary.com/demo/image/upload/$first_2,$second_1/sample');
+  });
+
+  it("Transformation object: string overlay", function () {
+    const result = createTestURL("sample",
+      {
+        transformation:  new Transformation().overlay("text:hello").width(100).height(100)
+      }
+    );
+    expect(result).toBe('http://res.cloudinary.com/demo/image/upload/h_100,l_text:hello,w_100/sample');
+  });
+
+  it("Transformation object: object overlay", function () {
+    const options = {
+      text: "Cloudinary for the win!",
+      fontFamily: "Arial",
+      fontSize: 18,
+      fontAntialiasing: "fast"
+    };
+    const result = createTestURL("sample",
+      {
+        transformation:  new Transformation().overlay(options).width(100).height(100)
+      }
+    );
+    expect(result).toBe('http://res.cloudinary.com/demo/image/upload/h_100,l_text:Arial_18_antialias_fast:Cloudinary%20for%20the%20win%21,w_100/sample');
+  });
+
+  it("Transformation object: should support fetch:URL literal", function () {
+    const result = createTestURL("sample",
+      {
+        transformation:  new Transformation().overlay("fetch:http://cloudinary.com/images/old_logo.png")
+      }
+    );
+    expect(result).toBe('http://res.cloudinary.com/demo/image/upload/l_fetch:aHR0cDovL2Nsb3VkaW5hcnkuY29tL2ltYWdlcy9vbGRfbG9nby5wbmc=/sample');
+  });
+
+  it("Transformation object: should support chained transformation", function () {
+    const result = createTestURL("sample",
+      {
+        transformation:  new Transformation().width(100).crop("scale").chain().crop("crop").width(200)
+      }
+    );
+    expect(result).toBe('http://res.cloudinary.com/demo/image/upload/c_scale,w_100/c_crop,w_200/sample');
   });
 });

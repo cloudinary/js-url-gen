@@ -1,3 +1,5 @@
+import Transformation from "../backwards/transformation";
+
 export type StreamingProfileTypes = string | "4k" | "full_hd" | "hd" | "sd" | "full_hd_wifi" | "full_hd_lean" | "hd_lean";
 
 export type stringOrNumber = number | string;
@@ -400,7 +402,7 @@ export type SimulateColorBlindType =
   "tritanopia";
 
 export interface LegacyITransforamtionOptions {
-  transformation?: LegacyITransforamtionOptions | string;
+  transformation?: LegacyITransforamtionOptions | string | Transformation;
   raw_transformation?: string;
   crop?: CropMode;
   width?: stringOrNumber;
