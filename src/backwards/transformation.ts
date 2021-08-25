@@ -1,7 +1,7 @@
 import Expression from './expression';
 import Condition from './condition';
 import {CONFIG_PARAMS} from './configuration';
-import cloneDeep from 'lodash.clonedeep';
+import { cloneDeep } from '../internal/utils/cloneDeep';
 
 /**
  * A list of keys used by the url() function.
