@@ -1,4 +1,4 @@
-import cloneDeep from 'lodash.clonedeep';
+import cloneDeep from 'clone-deep';
 import {isObject} from "./utils/isObject";
 /**
  * Class for defining account configuration options.

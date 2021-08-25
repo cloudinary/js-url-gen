@@ -5,7 +5,7 @@ import {LayerAction} from "../actions/layer/LayerAction";
 import {Transformation} from "../transformation/Transformation";
 import ICloudConfig from "../config/interfaces/Config/ICloudConfig";
 import IURLConfig from "../config/interfaces/Config/IURLConfig";
-import cloneDeep from 'lodash.cloneDeep';
+import cloneDeep from 'clone-deep';
 import {ITrackedPropertiesThroughAnalytics} from "../sdkAnalytics/interfaces/ITrackedPropertiesThroughAnalytics";
 
 
