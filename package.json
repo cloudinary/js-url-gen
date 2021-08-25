@@ -86,7 +86,6 @@
     "webpack": "^4.44.1"
   },
   "dependencies": {
-    "@types/clone-deep": "^4.0.1",
-    "clone-deep": "^4.0.1"
+    "deep-copy": "^1.4.2"
   }
 }

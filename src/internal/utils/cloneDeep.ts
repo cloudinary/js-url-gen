@@ -1,11 +1,11 @@
-import cd from 'clone-deep';
+import cd from 'deep-copy';
 
 /**
  * Deep clones the given value
  * @param val
  */
 function cloneDeep<T>(val: T) {
-  return cd(val, true);
+  return cd(val);
 }
 
 export {cloneDeep};
