@@ -164,7 +164,7 @@ import {CloudinaryImage, CloudinaryVideo, CloudinaryMedia} from "../src"
     }
 
     if (txResult.status !== 11) {
-      test += `const tAsset = ${txResult.code}`;
+      test += `const tAsset = ${txResult.codeSnippet}`;
 
       if (txResult.transformation.startsWith('http')) {
 

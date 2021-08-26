@@ -1,0 +1,15 @@
+{
+  "name": "devtools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sdk-sanity-generator": "git+ssh://git@github.com/CloudinaryLtd/sdk-sanity-generator.git",
+    "ts-node": "^10.1.0"
+  }
+}
