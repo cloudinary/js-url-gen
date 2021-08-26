@@ -7782,7 +7782,7 @@ describe("Testing", () => {
     const parts = "e_improve:50".replace(/\//g, ",").split(",");
 
     const tAsset = new CloudinaryImage("sample").adjust(
-      Adjust.improve().mode(50)
+      Adjust.improve().mode('50')
     );
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
