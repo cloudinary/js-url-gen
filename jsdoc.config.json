@@ -32,7 +32,7 @@
     "systemColor": "#3448C5",
     "systemName": "Cloudinary Base SDK",
     "systemLogo": "./__DOCS__/resources/navLogo.png",
-    "systemSummary": "@cloudinary/base",
+    "systemSummary": "@cloudinary/js-url-gen",
     "favicon": "./__DOCS__/resources/favico.png",
     "copyright": "Copyright © 2021 Cloudinary.com"
   },

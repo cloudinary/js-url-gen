@@ -5,12 +5,12 @@
  * @see Learn more about Gravity and Focus {@link Qualifiers.Gravity| here }
  * @example
  * <caption> <h4>Scaling an image</h4> </caption>
- * import {Cloudinary} from "@cloudinary/base";
+ * import {Cloudinary} from "@cloudinary/js-url-gen";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');
  *
- * const {scale, fit, pad, crop} from '@cloudinary/base/actions/resize';
+ * const {scale, fit, pad, crop} from '@cloudinary/js-url-gen/actions/resize';
  *
  * image.resize( scale(100, 100) );
  * // All resize actions have a similar interface.
@@ -31,13 +31,13 @@
  *
  * @example
  * <caption> <h4>Cropping with automatic focus(Gravity)</h4> </caption>
- * import {Cloudinary} from "@cloudinary/base";
+ * import {Cloudinary} from "@cloudinary/js-url-gen";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');
  *
- * import {scale} from '@cloudinary/base/actions/resize';
- * import {autoGravity} from '@cloudinary/base/qualifiers/gravity';
+ * import {scale} from '@cloudinary/js-url-gen/actions/resize';
+ * import {autoGravity} from '@cloudinary/js-url-gen/qualifiers/gravity';
  *
  * image.resize( crop(100, 100).gravity(autoGravity()) );
  *

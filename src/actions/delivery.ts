@@ -31,8 +31,8 @@ export type IDeliveryAction = DeliveryAction | DeliveryColorSpaceFromICC;
  * possible values
  * @return {Actions.Delivery.DeliveryFormat}
  * @example
- * import {Cloudinary} from "@cloudinary/base";
- * import {format} from "@cloudinary/base/actions/delivery";
+ * import {Cloudinary} from "@cloudinary/js-url-gen";
+ * import {format} from "@cloudinary/js-url-gen/actions/delivery";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');
@@ -54,8 +54,8 @@ function format(format:FormatQualifier | ImageFormatType | VideoFormatType | str
  * @param {string} dpr The DPR (Device Pixel Ratio). Any positive float value.
  * @return {Actions.Delivery.DeliveryAction}
  * @example
- * import {Cloudinary} from "@cloudinary/base";
- * import {dpr} from "@cloudinary/base/actions/delivery";
+ * import {Cloudinary} from "@cloudinary/js-url-gen";
+ * import {dpr} from "@cloudinary/js-url-gen/actions/delivery";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');
@@ -81,9 +81,9 @@ function dpr(dpr: string|number):DeliveryAction {
  * possible values.
  * @return {Actions.Delivery.DeliveryQualityAction}
  * @example
- * import {Cloudinary} from "@cloudinary/base";
- * import {quality} from "@cloudinary/base/actions/delivery";
- * import {quality} from "@cloudinary/base/qualifiers/quantity";
+ * import {Cloudinary} from "@cloudinary/js-url-gen";
+ * import {quality} from "@cloudinary/js-url-gen/actions/delivery";
+ * import {quality} from "@cloudinary/js-url-gen/qualifiers/quantity";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');
@@ -103,8 +103,8 @@ function quality(qualityType:QualityTypes | string | number) :DeliveryQualityAct
  * @param {number | string} value The density in dpi.
  * @return {Actions.Delivery.DeliveryAction}
  * @example
- * import {Cloudinary} from "@cloudinary/base";
- * import {density} from "@cloudinary/base/actions/delivery";
+ * import {Cloudinary} from "@cloudinary/js-url-gen";
+ * import {density} from "@cloudinary/js-url-gen/actions/delivery";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');
@@ -125,8 +125,8 @@ function density(value:number) :DeliveryAction {
  * @param {string} publicIdWithExtension Default image public ID
  * @return {Actions.Delivery.DeliveryAction}
  * @example
- * import {Cloudinary} from "@cloudinary/base";
- * import {defaultImage} from "@cloudinary/base/actions/delivery";
+ * import {Cloudinary} from "@cloudinary/js-url-gen";
+ * import {defaultImage} from "@cloudinary/js-url-gen/actions/delivery";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');
@@ -146,9 +146,9 @@ function defaultImage(publicIdWithExtension:string) :DeliveryAction {
  * @param {string | Qualifiers.ColorSpace} mode The color space.
  * @return {Actions.Delivery.DeliveryAction}
  * @example
- * import {Cloudinary} from "@cloudinary/base";
- * import {colorSpace} from "@cloudinary/base/actions/delivery";
- * import {trueColor} from "@cloudinary/base/qualifiers/colorSpace";
+ * import {Cloudinary} from "@cloudinary/js-url-gen";
+ * import {colorSpace} from "@cloudinary/js-url-gen/actions/delivery";
+ * import {trueColor} from "@cloudinary/js-url-gen/qualifiers/colorSpace";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');
@@ -170,9 +170,9 @@ function colorSpace(mode:ColorSpaceType|string): DeliveryAction {
  * color space.
  * @return {Actions.Delivery.DeliveryColorSpaceFromICC}
  * @example
- * import {Cloudinary} from "@cloudinary/base";
- * import {colorSpaceFromICC} from "@cloudinary/base/actions/delivery";
- * import {trueColor} from "@cloudinary/base/qualifiers/colorSpace";
+ * import {Cloudinary} from "@cloudinary/js-url-gen";
+ * import {colorSpaceFromICC} from "@cloudinary/js-url-gen/actions/delivery";
+ * import {trueColor} from "@cloudinary/js-url-gen/qualifiers/colorSpace";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');

@@ -7,7 +7,7 @@ import {Transformation} from "../transformation/Transformation";
  * @memberOf Actions
  * @namespace Conditional
  * @example
- * import {Cloudinary} from "@cloudinary/base";
+ * import {Cloudinary} from "@cloudinary/js-url-gen";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');
@@ -24,7 +24,7 @@ import {Transformation} from "../transformation/Transformation";
  * @see Actions.Conditional
  * @example
  * // To be used through a builder and not to be created as an instance!
- * import {Cloudinary} from "@cloudinary/base";
+ * import {Cloudinary} from "@cloudinary/js-url-gen";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');

@@ -10,14 +10,14 @@ import {toFloatAsString} from "../internal/utils/toFloatAsString";
  * @memberOf Actions
  * @namespace Variable
  * @example
- * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+ * import {Cloudinary} from "@cloudinary/js-url-gen/instance/Cloudinary";
  * import {
  *  set,
  *  setAssetReference,
  *  setFromContext,
  *  setFromMetadata
- * } from "@cloudinary/base/actions/variable";
- * import {scale} from "@cloudinary/base/actions/resize";
+ * } from "@cloudinary/js-url-gen/actions/variable";
+ * import {scale} from "@cloudinary/js-url-gen/actions/resize";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  *

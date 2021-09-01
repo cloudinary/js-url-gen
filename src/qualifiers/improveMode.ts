@@ -5,9 +5,9 @@
  * @memberOf Qualifiers
  * @see To be used with an {@link Actions.Adjust.improve|Adjust Improve}
  * @example
- * import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
- * import {outdoor} from "@cloudinary/base/qualifiers/improveMode";
- * import {improve} from "@cloudinary/base/actions/adjust";
+ * import {Cloudinary} from "@cloudinary/js-url-gen/instance/Cloudinary";
+ * import {outdoor} from "@cloudinary/js-url-gen/qualifiers/improveMode";
+ * import {improve} from "@cloudinary/js-url-gen/actions/adjust";
  *
  * const yourCldInstance = new Cloudinary({cloud: {cloudName: 'demo'}});
  * const image = yourCldInstance.image('woman');

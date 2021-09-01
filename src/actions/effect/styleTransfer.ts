@@ -21,7 +21,7 @@ class StyleTransfer extends Action {
   /**
    * The Image Source used to create the style transfer,
    * Use the Image Source builder to quickly create a source:
-   * </br>Import: {@link Qualifiers.Source|import Sources from '@cloudinary/base/qualifiers/sources';}
+   * </br>Import: {@link Qualifiers.Source|import Sources from '@cloudinary/js-url-gen/qualifiers/sources';}
    * </br>Create: `Source.image('dog')`
    * @param {ImageSource} imageSource
    */

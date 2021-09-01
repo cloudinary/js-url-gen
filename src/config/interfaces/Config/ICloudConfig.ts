@@ -9,7 +9,7 @@ import IAuthTokenConfig from "./IAuthTokenConfig";
  * @prop {string} [apiSecret]
  * @prop {IAuthTokenConfig} [authToken]
  * @example
- * import Cloudinary from '@cloudinary/base';
+ * import Cloudinary from '@cloudinary/js-url-gen';
  * // The Cloudinary Instance accepts a CloudConfig under the `cloud` key
  * const cld = new Cloudinary({
  *  // the cloudConfig

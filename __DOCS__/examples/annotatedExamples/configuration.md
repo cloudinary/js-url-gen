@@ -2,7 +2,7 @@
 
 ```javascript
 // Import the cloudinary class
-import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+import {Cloudinary} from "@cloudinary/js-url-gen/instance/Cloudinary";
 
 // Create your instance
 const cld = new Cloudinary({

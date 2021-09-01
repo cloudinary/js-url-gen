@@ -5,9 +5,9 @@
  *
  * @example
  * <caption>Rotate by mode</caption>
- * import {Cloudinary} from "@cloudinary/base";
- * import {mode, byAngle} from "@cloudinary/base/actions/rotate";
- * import {autoLeft} from "@cloudinary/base/qualifiers/rotationMode";
+ * import {Cloudinary} from "@cloudinary/js-url-gen";
+ * import {mode, byAngle} from "@cloudinary/js-url-gen/actions/rotate";
+ * import {autoLeft} from "@cloudinary/js-url-gen/qualifiers/rotationMode";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');

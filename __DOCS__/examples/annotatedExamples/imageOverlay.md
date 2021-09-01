@@ -1,6 +1,6 @@
 ```javascript
 // Import the cloudinary class
-import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
+import {Cloudinary} from "@cloudinary/js-url-gen/instance/Cloudinary";
 
 // Create your instance
 const cld = new Cloudinary({
@@ -17,18 +17,18 @@ const myImage = cld.image('sample');
 
 // An overlay is built from several parts
 // Import video or image overlay, based on your asset
-import {Overlay} from "@cloudinary/base/actions/overlay";
+import {Overlay} from "@cloudinary/js-url-gen/actions/overlay";
 // Import the source of the layer, this determines if the layer is an image, text or video
-import {image} from "@cloudinary/base/qualifiers/source";
+import {image} from "@cloudinary/js-url-gen/qualifiers/source";
 
 // Import how to position your layer
-import {Position} from "@cloudinary/base/qualifiers/position";
-import {southEast} from "@cloudinary/base/qualifiers/compass";
-import {compass} from "@cloudinary/base/qualifiers/gravity";
+import {Position} from "@cloudinary/js-url-gen/qualifiers/position";
+import {southEast} from "@cloudinary/js-url-gen/qualifiers/compass";
+import {compass} from "@cloudinary/js-url-gen/qualifiers/gravity";
 
 // We'll also scale our overlay, we'll need this for later.
-import {scale} from "@cloudinary/base/actions/resize";
-import {Transformation} from "@cloudinary/base/transformation/Transformation";
+import {scale} from "@cloudinary/js-url-gen/actions/resize";
+import {Transformation} from "@cloudinary/js-url-gen/transformation/Transformation";
 
 
 myImage.overlay(

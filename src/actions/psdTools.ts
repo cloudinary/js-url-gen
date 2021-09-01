@@ -18,8 +18,8 @@ import {SmartObjectAction} from "./psdTools/SmartObjectAction";
  * @memberOf Actions.PSDTools
  * @return {Actions.PSDTools.ClipAction}
  * @example
- * import {Cloudinary} from '@cloudinary/base';
- * import {clip} from '@cloudinary/base/actions/psdTools';
+ * import {Cloudinary} from '@cloudinary/js-url-gen';
+ * import {clip} from '@cloudinary/js-url-gen/actions/psdTools';
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');
@@ -43,8 +43,8 @@ function clip(): ClipAction {
  * @memberOf Actions.PSDTools
  * @return {Actions.PSDTools.GetLayerAction}
  * @example
- * import {Cloudinary} from '@cloudinary/base';
- * import {getLayer} from '@cloudinary/base/actions/psdTools';
+ * import {Cloudinary} from '@cloudinary/js-url-gen';
+ * import {getLayer} from '@cloudinary/js-url-gen/actions/psdTools';
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');
@@ -66,8 +66,8 @@ function getLayer(): GetLayerAction {
  * @memberOf Actions.PSDTools
  * @return {Actions.PSDTools.SmartObjectAction}
  * @example
- * import {Cloudinary} from '@cloudinary/base';
- * import {smartObject} from '@cloudinary/base/actions/psdTools';
+ * import {Cloudinary} from '@cloudinary/js-url-gen';
+ * import {smartObject} from '@cloudinary/js-url-gen/actions/psdTools';
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');
