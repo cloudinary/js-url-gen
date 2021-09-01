@@ -11,14 +11,14 @@ import {FetchSource} from "../qualifiers/source/sourceTypes/FetchSource";
  * @see Visit {@link Qualifiers.TextStyle|TextStyle} for advanced text options
  * @see {@link Actions.Overlay| The overlay action}
  * @example
- * import {Cloudinary} from "@cloudinary/js-url-gen";
+ * import {Cloudinary} from "@cloudinary/url-gen";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const myVideo = yourCldInstance.video('dog');
  *
- * import {source} from "@cloudinary/js-url-gen/actions/underlay"
- * import {image, video, text} from "@cloudinary/js-url-gen/qualifiers/source"
- * import {TextStyle} from '@cloudinary/js-url-gen/qualifiers/textStyle
+ * import {source} from "@cloudinary/url-gen/actions/underlay"
+ * import {image, video, text} from "@cloudinary/url-gen/qualifiers/source"
+ * import {TextStyle} from '@cloudinary/url-gen/qualifiers/textStyle
  *
  * myVideo.underlay(
  *       source(image('myImage'))

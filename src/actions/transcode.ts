@@ -39,9 +39,9 @@ export type ITranscodeAction = BitRateAction
  * <b>Learn more</b>: {@link https://cloudinary.com/documentation/audio_transformations#audio_frequency_control | Audio frequency control}
  * @param {AudioFrequencyType|string|number} freq The audio frequency.
  * @example
- * import {Cloudinary} from "@cloudinary/js-url-gen/instance/Cloudinary";
- * import {FREQ11025} from '@cloudinary/js-url-gen/qualifiers/audioFrequency'
- * import {audioFrequency} from '@cloudinary/js-url-gen/actions/transcode'
+ * import {Cloudinary} from "@cloudinary/url-gen/instance/Cloudinary";
+ * import {FREQ11025} from '@cloudinary/url-gen/qualifiers/audioFrequency'
+ * import {audioFrequency} from '@cloudinary/url-gen/actions/transcode'
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const video = yourCldInstance.video('dog');
@@ -59,9 +59,9 @@ function audioFrequency(freq: AudioFrequencyType|string|number): AudioFrequencyA
  * @description Sets the audio codec or removes the audio channel.
  * @param {AudioCodecType | string} codec The audio codec or "none".
  * @example
- * import {Cloudinary} from "@cloudinary/js-url-gen/instance/Cloudinary";
- * import {aac} from '@cloudinary/js-url-gen/qualifiers/audioCodec'
- * import {audioCodec} from '@cloudinary/js-url-gen/actions/transcode'
+ * import {Cloudinary} from "@cloudinary/url-gen/instance/Cloudinary";
+ * import {aac} from '@cloudinary/url-gen/qualifiers/audioCodec'
+ * import {audioCodec} from '@cloudinary/url-gen/actions/transcode'
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const video = yourCldInstance.video('dog');
@@ -86,8 +86,8 @@ function audioCodec(codec: AudioCodecType | string): AudioCodecAction{
  *                             The value can be an integer e.g. 120000, or a string supporting "k" and "m"
  *                             (kilobits and megabits respectively) e.g. 250k or 2m.
  * @example
- * import {Cloudinary} from "@cloudinary/js-url-gen/instance/Cloudinary";
- * import {bitRate} from '@cloudinary/js-url-gen/actions/transcode'
+ * import {Cloudinary} from "@cloudinary/url-gen/instance/Cloudinary";
+ * import {bitRate} from '@cloudinary/url-gen/actions/transcode'
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const video = yourCldInstance.video('dog');
  *
@@ -103,8 +103,8 @@ function bitRate(bitRate: string|number): BitRateAction {
  * @memberOf Actions.Transcode
  * @param {number} from frame rate
  * @example
- * import {Cloudinary} from "@cloudinary/js-url-gen/instance/Cloudinary";
- * import {fps} from '@cloudinary/js-url-gen/actions/transcode'
+ * import {Cloudinary} from "@cloudinary/url-gen/instance/Cloudinary";
+ * import {fps} from '@cloudinary/url-gen/actions/transcode'
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const video = yourCldInstance.video('dog');
@@ -124,8 +124,8 @@ function fps(from: number): FPSAction {
  * @param {number} from frame rate
  * @param {number} to frame rate
  * @example
- * import {Cloudinary} from "@cloudinary/js-url-gen/instance/Cloudinary";
- * import {fpsRange} from '@cloudinary/js-url-gen/actions/transcode'
+ * import {Cloudinary} from "@cloudinary/url-gen/instance/Cloudinary";
+ * import {fpsRange} from '@cloudinary/url-gen/actions/transcode'
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const video = yourCldInstance.video('dog');
@@ -143,8 +143,8 @@ function fpsRange(from: number, to?: number): FPSRangeAction {
  * @description Sets the keyframe interval of the delivered video.
  * @param {number | string} interval The keyframe interval in seconds.
  * @example
- * import {Cloudinary} from "@cloudinary/js-url-gen/instance/Cloudinary";
- * import {keyframeInterval} from '@cloudinary/js-url-gen/actions/transcode'
+ * import {Cloudinary} from "@cloudinary/url-gen/instance/Cloudinary";
+ * import {keyframeInterval} from '@cloudinary/url-gen/actions/transcode'
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const video = yourCldInstance.video('dog');
@@ -165,9 +165,9 @@ function keyframeInterval(interval: number | string): KeyframeIntervalsAction {
  * profiles or to create new custom profiles.
  * @param {string} profile The streaming profile.
  * @example
- * import {Cloudinary} from "@cloudinary/js-url-gen/instance/Cloudinary";
- * import {fullHd} from "@cloudinary/js-url-gen/qualifiers/streamingProfile";
- * import {streamingProfile} from '@cloudinary/js-url-gen/actions/transcode'
+ * import {Cloudinary} from "@cloudinary/url-gen/instance/Cloudinary";
+ * import {fullHd} from "@cloudinary/url-gen/qualifiers/streamingProfile";
+ * import {streamingProfile} from '@cloudinary/url-gen/actions/transcode'
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const video = yourCldInstance.video('dog');
@@ -185,9 +185,9 @@ function streamingProfile(profile: StreamingProfileTypes | string): StreamingPro
  * @description Converts a video to animated image.
  * @param {string | AnimatedFormatType} animatedFormat The streaming profile.
  * @example
- * import {Cloudinary} from "@cloudinary/js-url-gen/instance/Cloudinary";
- * import {gif} from '@cloudinary/js-url-gen/qualifiers/animatedFormat'
- * import {toAnimated} from '@cloudinary/js-url-gen/actions/transcode'
+ * import {Cloudinary} from "@cloudinary/url-gen/instance/Cloudinary";
+ * import {gif} from '@cloudinary/url-gen/qualifiers/animatedFormat'
+ * import {toAnimated} from '@cloudinary/url-gen/actions/transcode'
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const video = yourCldInstance.video('dog');
@@ -205,9 +205,9 @@ function toAnimated(animatedFormat: AnimatedFormatQualifierValue | AnimatedForma
  * @description Controls the video codec.
  * @param {Qualifiers.VideoCodec.VideoCodecType | Qualifiers.VideoCodec.AdvVideoCodecType} videoCodecType CodecType
  * @example
- * import {Cloudinary} from "@cloudinary/js-url-gen";
- * import {vp9} from '@cloudinary/js-url-gen/qualifiers/videoCodec'
- * import {videoCodec} from '@cloudinary/js-url-gen/actions/transcode'
+ * import {Cloudinary} from "@cloudinary/url-gen";
+ * import {vp9} from '@cloudinary/url-gen/qualifiers/videoCodec'
+ * import {videoCodec} from '@cloudinary/url-gen/actions/transcode'
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const video = yourCldInstance.video('dog');

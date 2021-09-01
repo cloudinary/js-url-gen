@@ -7,12 +7,12 @@ import {Action} from "../internal/Action";
  * @memberOf Actions
  * @namespace Extract
  * @example
- * import {Cloudinary} from '@cloudinary/js-url-gen';
+ * import {Cloudinary} from '@cloudinary/url-gen';
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');
  *
- * import {getFrame, getPage} from '@cloudinary/js-url-gen/actions/extract';
+ * import {getFrame, getPage} from '@cloudinary/url-gen/actions/extract';
  *
  * image.extract(
  *  getFrame()

@@ -4,10 +4,10 @@
  * @memberOf Qualifiers
  * @namespace Progressive
  * @example
- * import {Cloudinary} from "@cloudinary/js-url-gen";
- * import {format} from "@cloudinary/js-url-gen/actions/delivery";
- * import {jpg} from "@cloudinary/js-url-gen/qualifiers/format";
- * import {steep} from "@cloudinary/js-url-gen/qualifiers/progressive";
+ * import {Cloudinary} from "@cloudinary/url-gen";
+ * import {format} from "@cloudinary/url-gen/actions/delivery";
+ * import {jpg} from "@cloudinary/url-gen/qualifiers/format";
+ * import {steep} from "@cloudinary/url-gen/qualifiers/progressive";
  *
  * const yourCldInstance = new Cloudinary({cloud: {cloudName: 'demo'}});
  * const image = yourCldInstance.image('woman');

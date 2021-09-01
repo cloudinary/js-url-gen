@@ -5,7 +5,7 @@
  * @example
  * // Reference only, do NOT use within your code for tree-shaking reasons
  * // SDK functions that require color accept a string (like 'red') or a hex value, like 'ffffff'
- * import {Color} from '@cloudinary/js-url-gen/qualifiers/color'
+ * import {Color} from '@cloudinary/url-gen/qualifiers/color'
  * console.log(Color.RED);
  */
 

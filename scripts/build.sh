@@ -18,3 +18,6 @@ cp ./CHANGELOG.md ./dist
 
 #cp LICENSE to dist
 cp ./LICENSE ./dist
+
+#cp README to dist
+cp ./README.md ./dist

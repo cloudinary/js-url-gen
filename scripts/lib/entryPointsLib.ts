@@ -30,7 +30,7 @@ function createUMDBundleEntryPoint() {
 
 /**
  * @description Since only ./dist/ is packaged to npm, we need to copy a proper package.json file to it
- *              That will allow `import {TransformableImage} from '@cloudinary/js-url-gen`
+ *              That will allow `import {TransformableImage} from '@cloudinary/url-gen`
  */
 function copyPackageJson(fileDestination = 'dist') {
   const projectJson = JSON.parse(fs.readFileSync('./package.json', 'utf-8'));
