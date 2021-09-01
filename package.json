@@ -1,5 +1,5 @@
 {
-  "name": "@cloudinary/js-url-gen",
+  "name": "@cloudinary/url-gen",
   "version": "1.0.0-beta.4",
   "description": "",
   "scripts": {
