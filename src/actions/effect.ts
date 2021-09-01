@@ -138,7 +138,7 @@ function outline(): EffectOutline {
  * @description Applies a complex deep learning neural network algorithm that extracts artistic styles from a source image and applies them to the content of a target photograph.<br/>
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/neural_artwork_style_transfer_addon | Neural Artwork Style Transfer}
  * @memberOf Actions.Effect
- * @param {ImageSource} imageSource `import {image} from '@cloudinary/base/qualifiers/sources`
+ * @param {ImageSource} imageSource `import {image} from '@cloudinary/js-url-gen/qualifiers/sources`
  * @return {Actions.Effect.StyleTransfer}
  */
 function styleTransfer(imageSource: ImageSource): StyleTransfer {
@@ -318,7 +318,7 @@ function vignette(strength?: number):EffectActionWithStrength {
  * @summary action
  * @description
  * Applies an ordered dither filter to the image.
- * Use the constants defined in {@link Qualifiers.Dither|@cloudinary/base/qualifiers/dither} for ditherType.
+ * Use the constants defined in {@link Qualifiers.Dither|@cloudinary/js-url-gen/qualifiers/dither} for ditherType.
  * @memberOf Actions.Effect
  * @param {Qualifiers.Dither} ditherType - The dither type applied to the image
  * @return {Actions.Effect.DitherEffectAction}
@@ -455,9 +455,9 @@ function theme(color: SystemColors): ThemeEffect {
  * @namespace Effect
  * @example
  * <caption>An <b>extreme</b> example of using many effects on the same asset</caption>
- * import {Cloudinary} from "@cloudinary/base";
+ * import {Cloudinary} from "@cloudinary/js-url-gen";
  * // Import everything, or just the action you need for tree-shaking purposes
- * import {Effect, sepia} from "@cloudinary/base/actions/effect";
+ * import {Effect, sepia} from "@cloudinary/js-url-gen/actions/effect";
  * import {ArtisticFilter, alDente} from "../../../src/qualifiers/artisticFilter";
  * import {ShakeStrength, pixels16} from "../../../src/qualifiers/shakeStrength";
  *

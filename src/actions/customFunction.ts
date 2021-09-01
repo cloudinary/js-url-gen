@@ -4,8 +4,8 @@
  * @memberOf Actions
  * @namespace CustomFunction
  * @example
- * import {Cloudinary} from "@cloudinary/base";
- * import {remote, wasm} from "@cloudinary/base/actions/customFunction";
+ * import {Cloudinary} from "@cloudinary/js-url-gen";
+ * import {remote, wasm} from "@cloudinary/js-url-gen/actions/customFunction";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');

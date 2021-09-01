@@ -13,10 +13,10 @@ import {XYCenterGravity} from "./gravity/xyCenterGravity/XYCenterGravity";
  * @param {Qualifiers.Compass} direction A compass Values
  * @memberOf Qualifiers.Gravity
  * @example
- * import {Cloudinary} from "@cloudinary/base";
- * import {compass} from "@cloudinary/base/qualifiers/gravity";
- * import {north} from "@cloudinary/base/qualifiers/compass";
- * import {crop} from "@cloudinary/base/actions/resize";
+ * import {Cloudinary} from "@cloudinary/js-url-gen";
+ * import {compass} from "@cloudinary/js-url-gen/qualifiers/gravity";
+ * import {north} from "@cloudinary/js-url-gen/qualifiers/compass";
+ * import {crop} from "@cloudinary/js-url-gen/actions/resize";
  *
  * const yourCldInstance = new Cloudinary({cloud: {cloudName: 'demo'}});
  * const image = yourCldInstance.image('woman');
@@ -33,10 +33,10 @@ function compass(direction: CompassQualifier): CompassGravity {
  * @param {...Qualifier.FocusOn} args One or more objects to focus on
  * @memberOf Qualifiers.Gravity
  * @example
- * import {Cloudinary} from "@cloudinary/base";
- * import {focusOn} from "@cloudinary/base/qualifiers/gravity";
- * import {crop} from "@cloudinary/base/actions/resize";
- * import {cat} from "@cloudinary/base/qualifiers/focusOn";
+ * import {Cloudinary} from "@cloudinary/js-url-gen";
+ * import {focusOn} from "@cloudinary/js-url-gen/qualifiers/gravity";
+ * import {crop} from "@cloudinary/js-url-gen/actions/resize";
+ * import {cat} from "@cloudinary/js-url-gen/qualifiers/focusOn";
  *
  * const yourCldInstance = new Cloudinary({cloud: {cloudName: 'demo'}});
  * const image = yourCldInstance.image('woman');
@@ -55,19 +55,19 @@ function focusOn(...args: FocusOnValue[]): FocusOnGravity {
  * @memberOf Qualifiers.Gravity
  * @return {Qualifiers.Gravity.AutoGravity}
  * @example
- * import {Cloudinary} from "@cloudinary/base";
- * import {autoGravity} from "@cloudinary/base/qualifiers/gravity";
- * import {crop} from "@cloudinary/base/actions/resize";
+ * import {Cloudinary} from "@cloudinary/js-url-gen";
+ * import {autoGravity} from "@cloudinary/js-url-gen/qualifiers/gravity";
+ * import {crop} from "@cloudinary/js-url-gen/actions/resize";
  *
  * const yourCldInstance = new Cloudinary({cloud: {cloudName: 'demo'}});
  * const image = yourCldInstance.image('woman');
  * image.resize(crop().width(300).gravity(autoGravity()))
  * @example
- * import {Cloudinary} from "@cloudinary/base";
- * import {autoGravity} from "@cloudinary/base/qualifiers/gravity";
- * import {crop} from "@cloudinary/base/actions/resize";
- * import {cat} from "@cloudinary/base/qualifiers/focusOn";
- * import {AutoFocus} from "@cloudinary/base/qualifiers/autoFocus";
+ * import {Cloudinary} from "@cloudinary/js-url-gen";
+ * import {autoGravity} from "@cloudinary/js-url-gen/qualifiers/gravity";
+ * import {crop} from "@cloudinary/js-url-gen/actions/resize";
+ * import {cat} from "@cloudinary/js-url-gen/qualifiers/focusOn";
+ * import {AutoFocus} from "@cloudinary/js-url-gen/qualifiers/autoFocus";
  *
  * const yourCldInstance = new Cloudinary({cloud: {cloudName: 'demo'}});
  * const image = yourCldInstance.image('woman');
@@ -95,10 +95,10 @@ function xyCenter(): XYCenterGravity {
  * @namespace Gravity
  * @memberOf Qualifiers
  * @example
- * import {Cloudinary} from "@cloudinary/base";
- * import {compass} from "@cloudinary/base/qualifiers/gravity";
- * import {north} from "@cloudinary/base/qualifiers/compass";
- * import {crop} from "@cloudinary/base/actions/resize";
+ * import {Cloudinary} from "@cloudinary/js-url-gen";
+ * import {compass} from "@cloudinary/js-url-gen/qualifiers/gravity";
+ * import {north} from "@cloudinary/js-url-gen/qualifiers/compass";
+ * import {crop} from "@cloudinary/js-url-gen/actions/resize";
  *
  * const yourCldInstance = new Cloudinary({cloud: {cloudName: 'demo'}});
  * const image = yourCldInstance.image('woman');

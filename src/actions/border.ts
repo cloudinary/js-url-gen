@@ -14,8 +14,8 @@ import RoundCornersAction from "./roundCorners/RoundCornersAction";
  * @memberOf Actions
  * @namespace Border
  * @example
- * import {Cloudinary} from "@cloudinary/base";
- * import {solid} from "@cloudinary/base/actions/border";
+ * import {Cloudinary} from "@cloudinary/js-url-gen";
+ * import {solid} from "@cloudinary/js-url-gen/actions/border";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');
@@ -34,7 +34,7 @@ import RoundCornersAction from "./roundCorners/RoundCornersAction";
  * @see Actions.Border
  * @example
  * // Used through a builder function Border.solid(), and not by creating a new instance
- * import {Cloudinary} from "@cloudinary/base";
+ * import {Cloudinary} from "@cloudinary/js-url-gen";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');

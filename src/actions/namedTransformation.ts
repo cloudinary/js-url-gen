@@ -5,8 +5,8 @@ import {NamedTransformationAction} from "./namedTransformation/NamedTransformati
  * @memberOf Actions
  * @namespace NamedTransformation
  * @example
- * import {Cloudinary} from "@cloudinary/base";
- * import {name} from "@cloudinary/base/actions/namedTransformation";
+ * import {Cloudinary} from "@cloudinary/js-url-gen";
+ * import {name} from "@cloudinary/js-url-gen/actions/namedTransformation";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');

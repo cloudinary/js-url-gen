@@ -3,8 +3,8 @@
 <h2>Code Example</h2>
 
 ```javascript
-import {Cloudinary} from "@cloudinary/base/instance/Cloudinary";
-import {scale} from "@cloudinary/base/actions/resize";
+import {Cloudinary} from "@cloudinary/js-url-gen/instance/Cloudinary";
+import {scale} from "@cloudinary/js-url-gen/actions/resize";
 
 // Create your instance
 const cld = new Cloudinary({
@@ -38,7 +38,7 @@ const myURL = myImage.toURL();
     <li>Creates a new Cloudinary instance, with a set of configurations</li>
     <li>Instructs your instance to work with a Cloudinary Image (CloudinaryImage)</li>
     <li>Creates a new CloudinaryImage instance with a publicID of 'sample' (<code>cld.image('sample')</code>)</li>
-    <li>Imports the <code>scale()</code> Action from <code>'@cloudinary/base/actions/resize'</code> </li>
+    <li>Imports the <code>scale()</code> Action from <code>'@cloudinary/js-url-gen/actions/resize'</code> </li>
     <li>Uses the Action methods <code>width</code> and <code>height</code> to set the scale size</li>
     <li>Applies your changes and creates a URL string</li>
 </ul>

@@ -25,10 +25,10 @@ import {PreviewAction} from "./videoEdit/PreviewAction";
  * @param {VideoSource} source The source to concatenate.
  * @return {Actions.VideoEdit.ConcatenateAction}
  * @example
- * import {Cloudinary} from "@cloudinary/base";
- * import {concatenate} from "@cloudinary/base/actions/videoEdit";
- * import {videoSource as concatVideoSource} from "@cloudinary/base/qualifiers/concatenate";
- * import {videoSource as tVideoSource} from "@cloudinary/base/qualifiers/transition";
+ * import {Cloudinary} from "@cloudinary/js-url-gen";
+ * import {concatenate} from "@cloudinary/js-url-gen/actions/videoEdit";
+ * import {videoSource as concatVideoSource} from "@cloudinary/js-url-gen/qualifiers/concatenate";
+ * import {videoSource as tVideoSource} from "@cloudinary/js-url-gen/qualifiers/transition";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const video = yourCldInstance.video('dog');
@@ -52,8 +52,8 @@ function concatenate(source:VideoSource):ConcatenateAction{
  * @memberOf Actions.VideoEdit
  * @return {Actions.VideoEdit.TrimAction}
  * @example
- * import {Cloudinary} from "@cloudinary/base";
- * import {trim} from "@cloudinary/base/actions/videoEdit";
+ * import {Cloudinary} from "@cloudinary/js-url-gen";
+ * import {trim} from "@cloudinary/js-url-gen/actions/videoEdit";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const video = yourCldInstance.video('dog');
@@ -80,9 +80,9 @@ function trim(): TrimAction{
  * For a list of supported types see {@link Qualifiers.Volume| Volume values}
  * @return {Actions.VideoEdit.VolumeAction}
  * @example
- * import {Cloudinary} from "@cloudinary/base";
- * import {volume} from "@cloudinary/base/actions/videoEdit";
- * import {mute} from '@cloudinary/base/qualifiers/volume';
+ * import {Cloudinary} from "@cloudinary/js-url-gen";
+ * import {volume} from "@cloudinary/js-url-gen/actions/videoEdit";
+ * import {mute} from '@cloudinary/js-url-gen/qualifiers/volume';
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const video = yourCldInstance.video('dog');
@@ -105,8 +105,8 @@ function volume(volumeValue: string | number): VolumeAction{
  * @memberOf Actions.VideoEdit
  * @return {Actions.VideoEdit.PreviewAction}
  * @example
- * import {Cloudinary} from "@cloudinary/base";
- * import {preview} from "@cloudinary/base/actions/videoEdit";
+ * import {Cloudinary} from "@cloudinary/js-url-gen";
+ * import {preview} from "@cloudinary/js-url-gen/actions/videoEdit";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const video = yourCldInstance.video('dog');

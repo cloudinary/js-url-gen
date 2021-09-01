@@ -14,7 +14,7 @@
  * @prop {boolean} [forceVersion]
  * @prop {boolean} [analytics]
  * @example
- * import Cloudinary from '@cloudinary/base';
+ * import Cloudinary from '@cloudinary/js-url-gen';
  * // The Cloudinary Instance accepts a URLConfig under the `url` key
  * const cld = new Cloudinary({
  *  // the cloudConfig
