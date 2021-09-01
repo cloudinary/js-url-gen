@@ -16,7 +16,7 @@ Everything can be very granularly imported to ensure you only import what you ne
 <h4>Without Tree-Shaking</h4>
 
  ```javascript
-    import {Resize} from "@cloudinary/js-url-gen/actions/resize";
+    import {Resize} from "@cloudinary/url-gen/actions/resize";
     
     Resize.scale()
     Resize.crop()
@@ -24,7 +24,7 @@ Everything can be very granularly imported to ensure you only import what you ne
  <h4>With Tree-Shaking</h4>
  
    ```javascript
-    import {scale, crop} from '@cloudinary/js-url-gen/actions/resize';
+    import {scale, crop} from '@cloudinary/url-gen/actions/resize';
     scale()
     crop()
    ```
@@ -37,7 +37,7 @@ Everything can be very granularly imported to ensure you only import what you ne
 <h4>Without Tree-Shaking</h4>
 
  ```javascript
-    import {Format} from "@cloudinary/js-url-gen/qualifiers/format";
+    import {Format} from "@cloudinary/url-gen/qualifiers/format";
     
     Format.png()
     Format.jpg()
@@ -45,7 +45,7 @@ Everything can be very granularly imported to ensure you only import what you ne
  <h4>With Tree-Shaking</h4>
  
 ```javascript
-    import {jpg, png} from "@cloudinary/js-url-gen/qualifiers/format";
+    import {jpg, png} from "@cloudinary/url-gen/qualifiers/format";
     
     png()
     jpg()

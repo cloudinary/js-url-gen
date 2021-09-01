@@ -9,7 +9,7 @@ import ICloudConfig from "./ICloudConfig";
  * @prop {ICloudConfig} cloud
  * @prop {IURLConfig} url
  * @example
- * import Cloudinary from '@cloudinary/js-url-gen';
+ * import Cloudinary from '@cloudinary/url-gen';
  * // The Cloudinary Instance accepts an ICloudinaryAssetConfigurations as an argument
  * // ICloudinaryAssetConfigurations is built from two parts, the `cloud` and the `url` keys.
  * const cld = new Cloudinary({

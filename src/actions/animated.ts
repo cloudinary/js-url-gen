@@ -10,8 +10,8 @@ import {QualifierValue} from "../internal/qualifier/QualifierValue";
  * @memberOf Actions
  * @namespace Animated
  * @example
- * import {Cloudinary} from "@cloudinary/js-url-gen";
- * import {animated} from "@cloudinary/js-url-gen/actions/animated";
+ * import {Cloudinary} from "@cloudinary/url-gen";
+ * import {animated} from "@cloudinary/url-gen/actions/animated";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');
@@ -24,8 +24,8 @@ import {QualifierValue} from "../internal/qualifier/QualifierValue";
  * @see Actions.Animated
  * @example
  * // Used through a builder function Animated.edit(), and not by creating a new instance
- * import {Cloudinary} from "@cloudinary/js-url-gen";
- * import {edit} from "@cloudinary/js-url-gen/actions/animated";
+ * import {Cloudinary} from "@cloudinary/url-gen";
+ * import {edit} from "@cloudinary/url-gen/actions/animated";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');

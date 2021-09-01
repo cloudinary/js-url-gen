@@ -4,10 +4,10 @@
 
 
 ```javascript
-import {Cloudinary} from "@cloudinary/js-url-gen/instance/Cloudinary";
-import {Rotate} from "@cloudinary/js-url-gen/actions/rotate";
-import {Resize} from "@cloudinary/js-url-gen/actions/resize";
-import {RotationMode} from "@cloudinary/js-url-gen/qualifiers/rotationMode";
+import {Cloudinary} from "@cloudinary/url-gen/instance/Cloudinary";
+import {Rotate} from "@cloudinary/url-gen/actions/rotate";
+import {Resize} from "@cloudinary/url-gen/actions/resize";
+import {RotationMode} from "@cloudinary/url-gen/qualifiers/rotationMode";
 
 // Create your instance
 const cld = new Cloudinary({
@@ -45,8 +45,8 @@ myImage
   <li>Assets expose methods called <b>ActionGroups</b> (<code>image.resize</code>, <code>image.rotate</code>) 
   <li>ActionGroups receive an Action as a parameter
   <li>We create Action objects through Factory methods (<code>scale</code>, <code>mode</code>)
-  <li>You can find more Actions in <code>'@cloudinary/js-url-gen/actions'</code>
-  <li>You can import all actions from <code>import {Actions} from '@cloudinary/js-url-gen'</code>
+  <li>You can find more Actions in <code>'@cloudinary/url-gen/actions'</code>
+  <li>You can import all actions from <code>import {Actions} from '@cloudinary/url-gen'</code>
 </ul>
 
 
@@ -57,7 +57,7 @@ myImage
   <li>Qualifiers usually accept a <b>QualifierValue</b>
   <li>QualifierValues can be primitive (numbers, strings) or predefined SDK values that can be imported
   <li>Almost all QualifierValues are functions (RotationMode.verticalFlip())
-  <li>You can find more QualifierValues in <code>'@cloudinary/js-url-gen/values'</code>
+  <li>You can find more QualifierValues in <code>'@cloudinary/url-gen/values'</code>
 </ul>
 
 <h4>Generalized form</h4>

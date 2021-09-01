@@ -31,13 +31,13 @@ type IReshape = CutByImage | DistortArcAction;
  * @return {Actions.Reshape.CutByImage}
  * @example
  * <caption> <h4>Cut an image by using another image(Gravity)</h4> </caption>
- * import {Cloudinary, Transformation} from "@cloudinary/js-url-gen";
+ * import {Cloudinary, Transformation} from "@cloudinary/url-gen";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const img = yourCldInstance.image('woman');
  *
- * import {cutByImage} from '@cloudinary/js-url-gen/actions/reshape';
- * import {image} from "@cloudinary/js-url-gen/qualifiers/source";
+ * import {cutByImage} from '@cloudinary/url-gen/actions/reshape';
+ * import {image} from "@cloudinary/url-gen/qualifiers/source";
  *
  * img.reshape(
  *    cutByImage(
@@ -61,12 +61,12 @@ function cutByImage(imageSource: ImageSource | TextSource | FetchSource): CutByI
  * @return {Actions.Reshape.DistortArcAction}
  * @example
  * <caption> <h4>Distort arc</h4> </caption>
- * import {Cloudinary, Transformation} from "@cloudinary/js-url-gen";
+ * import {Cloudinary, Transformation} from "@cloudinary/url-gen";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const img = yourCldInstance.image('woman');
  *
- * import {distortArc} from '@cloudinary/js-url-gen/actions/reshape';
+ * import {distortArc} from '@cloudinary/url-gen/actions/reshape';
  *
  * img.reshape(
  *    distortArc(200)
@@ -90,12 +90,12 @@ function distortArc(degrees: number | string): DistortArcAction {
  * @return {Actions.Reshape.DistortAction}
  * @example
  * <caption> <h4>Distorting an image</h4> </caption>
- * import {Cloudinary, Transformation} from "@cloudinary/js-url-gen";
+ * import {Cloudinary, Transformation} from "@cloudinary/url-gen";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const img = yourCldInstance.image('woman');
  *
- * import {distort} from '@cloudinary/js-url-gen/actions/reshape';
+ * import {distort} from '@cloudinary/url-gen/actions/reshape';
  *
  * img.reshape(
  *    distort([100, 100, 100, 200, 200, 200, 200, 100])
@@ -115,12 +115,12 @@ function distort(coordinates: IDistortCoordinates): DistortAction {
  * @return {Actions.Reshape.ShearAction}
  * @example
  * <caption> <h4>Shearing an image</h4> </caption>
- * import {Cloudinary, Transformation} from "@cloudinary/js-url-gen";
+ * import {Cloudinary, Transformation} from "@cloudinary/url-gen";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const img = yourCldInstance.image('woman');
  *
- * import {shear} from '@cloudinary/js-url-gen/actions/reshape';
+ * import {shear} from '@cloudinary/url-gen/actions/reshape';
  *
  * img.reshape(
  *    shear(50, 0)
@@ -139,12 +139,12 @@ function shear(x: stringOrNumber, y: stringOrNumber): ShearAction {
  * @return {Actions.Reshape.TrimAction}
  * @example
  * <caption> <h4>Trimming an image</h4> </caption>
- * import {Cloudinary, Transformation} from "@cloudinary/js-url-gen";
+ * import {Cloudinary, Transformation} from "@cloudinary/url-gen";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const img = yourCldInstance.image('woman');
  *
- * import {trim} from '@cloudinary/js-url-gen/actions/reshape';
+ * import {trim} from '@cloudinary/url-gen/actions/reshape';
  *
  * img.reshape(
  *    trim().colorOverride('blue').colorSimilarity(15)

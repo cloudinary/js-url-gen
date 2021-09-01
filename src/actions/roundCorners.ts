@@ -8,8 +8,8 @@
  * @namespace RoundCorners
  * @example
  * <caption>Round corners by a radius</caption>
- * import {Cloudinary} from "@cloudinary/js-url-gen";
- * import {byRadius, max} from "@cloudinary/js-url-gen/actions/roundCorners";
+ * import {Cloudinary} from "@cloudinary/url-gen";
+ * import {byRadius, max} from "@cloudinary/url-gen/actions/roundCorners";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');

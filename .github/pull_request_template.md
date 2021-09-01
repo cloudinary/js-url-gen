@@ -1,4 +1,4 @@
-### Pull request for @cloudinary/js-url-gen
+### Pull request for @cloudinary/url-gen
 
 
 #### What does this PR solve?

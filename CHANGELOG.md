@@ -128,7 +128,7 @@ Breaking changes
 
 Other changes
 ================
-  * Docs - Fix styling in the search component when searching for @cloudinary/js-url-gen (#338)
+  * Docs - Fix styling in the search component when searching for @cloudinary/url-gen (#338)
   * Docs - Change wording of SDK Summary when searching (#337)
   * Build - Set the bundle target to ES6 for ESM, and ES5 for UMD (#335)
   * Docs - Enhance the search
