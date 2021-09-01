@@ -1,3 +1,10 @@
+1.0.0-beta.5 / 2021-09-01
+==================
+
+Renaming / Refactoring
+================
+Rename the package to @cloudinary/url-gen (Previously @cloudinary/base)
+
 1.0.0-beta.4 / 2021-07-27
 ==================
 
