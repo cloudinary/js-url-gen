@@ -18,7 +18,7 @@ describe('Tests for createEntryPoints', () => {
     const mainPackageJson = JSON.parse(fs.readFileSync('./dist/package.json', 'utf-8'));
 
     // Expect the right main entrypoint
-    expect(mainPackageJson.main).toBe('./index.js');
+    expect(mainPackageJson.main).toBe('./bundles/umd/base.js');
     expect(mainPackageJson.module).toBe('./index.js');
     expect(mainPackageJson.browser).toBe('./index.js');
     // Expect not to delete existing values
