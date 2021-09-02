@@ -4,8 +4,8 @@
  */
 
 import importFromDist from "./utils/stringGenerators/importFromDist";
-import importFromBase from "./utils/stringGenerators/importFromBase";
 import {ITestCase} from "./interfaces/ITestCase";
+import importFromPackage from "./utils/stringGenerators/importFromPackage";
 
 /**
  * @description - Each test case is built using an array of imports  (importsArray)
@@ -69,14 +69,14 @@ const bundleSizeTestCases:ITestCase[] = [
     name: 'Import backwards compatibility function',
     sizeLimitInKB: 57,
     importsArray: [
-      importFromBase('createCloudinaryLegacyURL')
+      importFromPackage('createCloudinaryLegacyURL')
     ]
   },
   {
     name: 'Import all of the SDK',
     sizeLimitInKB: 118,
     importsArray: [
-      importFromBase('CloudinaryBaseSDK')
+      importFromPackage('CloudinaryBaseSDK')
     ]
   }
 ];
