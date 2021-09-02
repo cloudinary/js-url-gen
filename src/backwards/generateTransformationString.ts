@@ -41,7 +41,7 @@ export function generateTransformationString(transformationOptions: LegacyITrans
     return transformationOptions
       .map((singleTransformation) => {
         return generateTransformationString(singleTransformation);
-      }).filter((a) => { console.log(a); return a;}).join('/');
+      }).filter((a) => { return a;}).join('/');
   }
 
   // let responsive_width = consumeOption(transformationOptions, "responsive_width", config().responsive_width);

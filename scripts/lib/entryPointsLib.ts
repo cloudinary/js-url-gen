@@ -36,8 +36,8 @@ function copyPackageJson(fileDestination = 'dist') {
   const projectJson = JSON.parse(fs.readFileSync('./package.json', 'utf-8'));
   delete projectJson.scripts;
   delete projectJson.devDependencies;
-  projectJson.main = './index.js';
-  projectJson.browser = './bundles/umd/base.js';
+  projectJson.main = './bundles/umd/base.js';
+  projectJson.browser = './index.js';
   projectJson.module = './index.js';
 
   Object.assign(projectJson, commonPackageProperties);
