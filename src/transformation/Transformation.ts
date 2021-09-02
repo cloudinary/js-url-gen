@@ -15,7 +15,7 @@ import {IReshape} from "../actions/reshape";
 import {SystemColors} from "../qualifiers/color";
 import {prepareColor} from "../internal/utils/prepareColor";
 import {ExtractAction} from "../actions/extract";
-import {Border, BorderAction} from "../actions/border";
+import {BorderAction} from "../actions/border";
 import {FlagQualifier} from "../qualifiers/flag/FlagQualifier";
 import {EffectActions} from "../actions/effect";
 import {videoEditType} from "../actions/videoEdit";
@@ -94,7 +94,7 @@ class Transformation {
    * @param {AnimatedAction} animatedAction
    * @return {this}
    */
-  animated(animatedAction: AnimatedAction){
+  animated(animatedAction: AnimatedAction): this{
     return this.addAction(animatedAction);
   }
 

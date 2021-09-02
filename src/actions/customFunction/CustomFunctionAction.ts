@@ -53,7 +53,7 @@ class CustomFunctionAction extends Action {
     return this.addQualifier(new Qualifier('fn', new QualifierValue([this.pre, this.mode, this.encodedFn])));
   }
 
-  toString() {
+  toString(): string {
     return super.toString()
       .replace(/\//g, ':');
   }

@@ -1,7 +1,6 @@
 import {Action} from "../../internal/Action";
 import {QualifierValue} from "../../internal/qualifier/QualifierValue";
 import {Qualifier} from "../../internal/qualifier/Qualifier";
-import {prepareColor} from "../../internal/utils/prepareColor";
 
 /**
  * @description
