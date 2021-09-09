@@ -1,7 +1,7 @@
 import {encodeVersion} from "./encodeVersion";
 import {getAnalyticsOptions} from "./getAnalyticsOptions";
 import {ITrackedPropertiesThroughAnalytics} from "./interfaces/ITrackedPropertiesThroughAnalytics";
-import pkg from '../package.json';
+import {packageVersion} from "../internal/utils/packageVersion";
 
 /**
  * @private
@@ -29,7 +29,7 @@ function ensureShapeOfTrackedProperties(trackedAnalytics?: Partial<ITrackedPrope
   const defaults = {
     techVersion: getNodeVersion(),
     sdkCode: 'T', // Base code
-    sdkSemver : pkg.version.split('-')[0], // remove -beta, -alpha or other tagged versions from the version string
+    sdkSemver : packageVersion.split('-')[0], // remove -beta, -alpha or other tagged versions from the version string
     responsive: false,
     placeholder: false,
     lazyload: false,

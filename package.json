@@ -36,6 +36,7 @@
     "@release-it/bumper": "^2.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^7.1.1",
+    "@rollup/plugin-replace": "^3.0.0",
     "@types/jest": "^25.2.3",
     "@types/mock-fs": "^4.10.0",
     "@types/node": "^15.14.2",
