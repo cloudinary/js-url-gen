@@ -1,5 +1,4 @@
 import {createNewImage} from "../../TestUtils/createCloudinaryImage";
-import {CloudinaryImage} from "../../../src";
 import {Resize} from "../../../src/actions/resize";
 import {Rotate} from "../../../src/actions/rotate";
 import {SEO_TYPES} from "../../../src/assets/CloudinaryFile";

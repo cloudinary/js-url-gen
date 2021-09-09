@@ -17,7 +17,7 @@ class FlagQualifier extends Qualifier {
     super('fl', qualifierValue);
   }
 
-  toString() {
+  toString(): string {
     return super.toString().replace(/\./, '%2E');
   }
 }

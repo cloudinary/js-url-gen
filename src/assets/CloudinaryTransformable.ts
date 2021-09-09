@@ -1,4 +1,4 @@
-import {Border, BorderAction} from "../actions/border";
+import {BorderAction} from "../actions/border";
 import {IReshape} from "../actions/reshape";
 import ResizeSimpleAction from "../actions/resize/ResizeSimpleAction";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
@@ -13,11 +13,9 @@ import {ExtractAction} from "../actions/extract";
 import {SmartObjectAction} from "../actions/psdTools/SmartObjectAction";
 import {ClipAction} from "../actions/psdTools/ClipAction";
 import {GetLayerAction} from "../actions/psdTools/GetLayerAction";
-import {Extract} from "../actions/extract";
 import {FlagQualifier} from "../qualifiers/flag/FlagQualifier";
 import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction";
 import {EffectActions} from "../actions/effect";
-import {DeliveryAction} from "../actions/delivery/DeliveryAction";
 import {CloudinaryFile} from "./CloudinaryFile";
 import {Transformation} from "../transformation/Transformation";
 import IURLConfig from "../config/interfaces/Config/IURLConfig";
@@ -27,7 +25,6 @@ import {IAdjustAction} from "../actions/adjust";
 import {DeliveryQualityAction} from "../actions/delivery/DeliveryQuality";
 import {ITrackedPropertiesThroughAnalytics} from "../sdkAnalytics/interfaces/ITrackedPropertiesThroughAnalytics";
 import {AnimatedAction} from "../actions/animated";
-import {LoopEffectAction} from "../actions/effect/leveled/loop";
 
 /**
  * @desc Cloudinary Transformable interface, extended by any class that needs a Transformation Interface
@@ -47,7 +44,7 @@ class CloudinaryTransformable extends CloudinaryFile {
    * @param {Actions.Animated} animated
    * @return {this}
    */
-  animated(animated: AnimatedAction){
+  animated(animated: AnimatedAction): this{
     this.transformation.animated(animated);
     return this;
   }

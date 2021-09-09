@@ -23,7 +23,6 @@ import { Dpr } from "qualifiers/dpr";
 import { Variable } from "actions/variable";
 import { CustomFunction } from "actions/customFunction";
 import { NamedTransformation } from "actions/namedTransformation";
-import { Color } from "qualifiers/color";
 import { Concatenate } from "qualifiers/concatenate";
 import { Expression } from "qualifiers/expression";
 import { Compass } from "qualifiers/compass";
@@ -64,12 +63,10 @@ import { Flag } from "qualifiers/flag";
 import { GradientDirection } from "qualifiers/gradientDirection";
 import { StreamingProfile } from "qualifiers/streamingProfile";
 import { PSDTools } from "actions/psdTools";
-import { FontStyle } from "qualifiers/fontStyle";
 import { Volume } from "../src/qualifiers/volume";
 import { FontAntialias } from "../src/qualifiers/FontAntialias";
 import { Animated } from "../src/actions/animated";
 const CloudinaryImage = CloudinaryMedia;
-const CloudinaryVideo = CloudinaryMedia;
 describe("Testing", () => {
   it("so_3,eo_5,e_boomerang/e_loop", () => {
     const parts = "so_3,eo_5,e_boomerang/e_loop".replace(/\//g, ",").split(",");

@@ -11,5 +11,6 @@
 	},
 	"main": "./bundles/umd/base.js",
 	"browser": "./index.js",
+	"module": "./index.js",
 	"sideEffects": false
 }

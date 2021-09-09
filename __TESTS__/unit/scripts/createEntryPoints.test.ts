@@ -19,6 +19,7 @@ describe('Tests for createEntryPoints', () => {
 
     // Expect the right main entrypoint
     expect(mainPackageJson.main).toBe('./bundles/umd/base.js');
+    expect(mainPackageJson.module).toBe('./index.js');
     expect(mainPackageJson.browser).toBe('./index.js');
     // Expect not to delete existing values
     expect(mainPackageJson.fieldA).toBe('foobar');

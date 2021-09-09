@@ -38,6 +38,7 @@ function copyPackageJson(fileDestination = 'dist') {
   delete projectJson.devDependencies;
   projectJson.main = './bundles/umd/base.js';
   projectJson.browser = './index.js';
+  projectJson.module = './index.js';
 
   Object.assign(projectJson, commonPackageProperties);
   fs.writeFileSync(`./${fileDestination}/package.json`, JSON.stringify(projectJson, null, '\t'));

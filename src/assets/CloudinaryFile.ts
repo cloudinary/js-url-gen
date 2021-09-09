@@ -237,7 +237,7 @@ class CloudinaryFile {
   }
 
 
-  getSignature() {
+  getSignature(): string {
     if (this.signature) {
       return `s--${this.signature}--`;
     } else {

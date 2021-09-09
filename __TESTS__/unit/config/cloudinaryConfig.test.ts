@@ -100,11 +100,11 @@ describe('Tests for CloudinaryConfiguration', () => {
 
     // Configs expect objects as input, but we allow invalid types without throwing
     expect(() => {
-      new CloudConfig('foo' as any);
+      new CloudConfig('foo' as unknown);
     }).toThrow();
 
     expect(() => {
-      new CloudConfig([] as any);
+      new CloudConfig([] as unknown);
     }).toThrow();
 
     expect(new URLConfig([])).toEqual({
