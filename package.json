@@ -88,5 +88,34 @@
   "dependencies": {
     "@types/lodash.clonedeep": "^4.5.6",
     "lodash.clonedeep": "^4.5.0"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json",
+    "./actions/adjust": "./actions/adjust.js",
+    "./actions/customFunction": "./actions/customFunction.js",
+    "./actions/delivery": "./actions/delivery.js",
+    "./actions/effect": "./actions/effect.js",
+    "./actions/namedTransformation": "./actions/namedTransformation.js",
+    "./actions/psdTools": "./actions/psdTools.js",
+    "./actions/reshape": "./actions/reshape.js",
+    "./actions/resize": "./actions/resize.js",
+    "./actions/rotate": "./actions/rotate.js",
+    "./actions/roundCorners": "./actions/roundCorners.js",
+    "./actions/transcode": "./actions/transcode.js",
+    "./actions/variable": "./actions/variable.js",
+    "./actions/videoEdit": "./actions/videoEdit.js",
+    "./qualifiers/animatedFormat": "./qualifiers/animatedFormat.js",
+    "./qualifiers/aspectRatio": "./qualifiers/aspectRatio.js",
+    "./qualifiers/background": "./qualifiers/background.js",
+    "./qualifiers/blendMode": "./qualifiers/blendMode.js",
+    "./qualifiers/expression": "./qualifiers/expression.js",
+    "./qualifiers/flag": "./qualifiers/flag.js",
+    "./qualifiers/format": "./qualifiers/format.js",
+    "./qualifiers/gradientDirection": "./qualifiers/gradientDirection.js",
+    "./qualifiers/gravity": "./qualifiers/gravity.js",
+    "./qualifiers/position": "./qualifiers/position.js",
+    "./qualifiers/region": "./qualifiers/region.js",
+    "./qualifiers/source": "./qualifiers/source.js"
   }
 }
