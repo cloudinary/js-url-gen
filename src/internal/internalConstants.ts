@@ -47,7 +47,10 @@ export const CONDITIONAL_OPERATORS = {
   "/": "div",
   "+": "add",
   "-": "sub",
-  "^": "pow",
+  "^": "pow"
+};
+
+export const RESERVED_NAMES = {
   "initial_width": "iw",
   "initial_height": "ih",
   "width": "w",
@@ -61,4 +64,4 @@ export const CONDITIONAL_OPERATORS = {
   "current_public_id": "cpi",
   "initial_density": "idn",
   "page_names": "pgnames"
-};
+}

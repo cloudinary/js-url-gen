@@ -11,13 +11,13 @@ describe('Tests for Transformation Action -- NamedTransformation', () => {
     ).toEqual(tImage);
   });
 
-  it('Creates a cloudinaryURL with name', () => {
+  it('Creates a cloudinaryURL with name that has an underscore', () => {
     const url = createNewImage('sample')
-      .namedTransformation(name('foobar'))
+      .namedTransformation(name('_foobar'))
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/t_foobar/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/t__foobar/sample');
   });
 
   it('Creates a cloudinaryURL with name and resize', () => {
