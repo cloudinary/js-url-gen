@@ -1,4 +1,4 @@
-const packageVersion = 'PACKAGE_VERSION_INJECTED_BY_ROLLUP_DURING_BUILD';
+const packageVersion = 'PACKAGE_VERSION_INJECTED_DURING_BUILD';
 
 /**
  * Export package version (injected during our build).
