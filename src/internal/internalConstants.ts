@@ -51,17 +51,28 @@ export const CONDITIONAL_OPERATORS = {
 };
 
 export const RESERVED_NAMES = {
-  "initial_width": "iw",
-  "initial_height": "ih",
-  "width": "w",
-  "height": "h",
   "aspect_ratio": "ar",
-  "initial_aspect_ratio": "iar",
-  "trimmed_aspect_ratio": "tar",
+  "aspectRatio": "ar",
   "current_page": "cp",
+  "currentPage": "cp",
+  "duration": "du",
   "face_count": "fc",
+  "faceCount": "fc",
+  "height": "h",
+  "initial_aspect_ratio": "iar",
+  "initial_height": "ih",
+  "initial_width": "iw",
+  "initialAspectRatio": "iar",
+  "initialHeight": "ih",
+  "initialWidth": "iw",
+  "initial_duration": "idu",
+  "initialDuration": "idu",
   "page_count": "pc",
-  "current_public_id": "cpi",
-  "initial_density": "idn",
-  "page_names": "pgnames"
+  "page_x": "px",
+  "page_y": "py",
+  "pageCount": "pc",
+  "pageX": "px",
+  "pageY": "py",
+  "tags": "tags",
+  "width": "w"
 };

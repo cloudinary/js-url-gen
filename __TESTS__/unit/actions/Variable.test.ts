@@ -12,6 +12,7 @@ const cases: Record<string, [string, string]> = {
   'underscore is not affected': ['_', '_'],
   'sequence of underscores and spaces is unchanged': [' _ __  _', ' _ __  _'],
   'arbitrary text is not affected': ['foobar', 'foobar'],
+  'duration is recognized as a variable and replaced with du': ['duration', 'du'],
   'double ampersand replaced with and operator': ['foo && bar', 'foo_and_bar'],
   'double ampersand with no space at the end is not affected': ['foo&&bar', 'foo&&bar'],
   'width recognized as variable and replaced with w': ['width', 'w'],
