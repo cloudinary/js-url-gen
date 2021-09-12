@@ -64,4 +64,4 @@ export const RESERVED_NAMES = {
   "current_public_id": "cpi",
   "initial_density": "idn",
   "page_names": "pgnames"
-}
+};
