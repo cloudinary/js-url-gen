@@ -104,6 +104,7 @@
     "./transformation/*": "./transformation/*.js",
     "./types/*": "./types/*.js",
     ".": {
+      "node": "./index.js",
       "require": "./bundles/umd/base.js",
       "default": "./index.js"
     }
