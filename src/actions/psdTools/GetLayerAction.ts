@@ -1,6 +1,6 @@
-import {Action} from "../../internal/Action";
-import {Qualifier} from "../../internal/qualifier/Qualifier";
-import {QualifierValue} from "../../internal/qualifier/QualifierValue";
+import {Action} from "../../internal/Action.js";
+import {Qualifier} from "../../internal/qualifier/Qualifier.js";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue.js";
 
 /**
  * @description Represents a layer in a Photoshop document.

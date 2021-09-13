@@ -1,5 +1,5 @@
-import {QualifierValue} from "../../internal/qualifier/QualifierValue";
-import {Qualifier} from "../../internal/qualifier/Qualifier";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue.js";
+import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 
 /**
  * @memberOf Qualifiers.Flag

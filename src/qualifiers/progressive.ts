@@ -13,7 +13,7 @@
  * const image = yourCldInstance.image('woman');
  * image.delivery(format(jpg()).progressive(steep()))
  */
-import {FlagQualifier} from "./flag/FlagQualifier";
+import {FlagQualifier} from "./flag/FlagQualifier.js";
 
 
 

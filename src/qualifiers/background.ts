@@ -1,11 +1,11 @@
-import {prepareColor} from "../internal/utils/prepareColor";
-import {BackgroundAutoBorderQualifier} from "./background/shared/auto/BackgroundAutoBorderQualifier";
-import {BackgroundBorderGradientQualifier} from "./background/shared/gradient/BackgroundBorderGradientQualifier";
-import {BackgroundAutoPredominantQualifier} from "./background/shared/auto/BackgroundAutoPredominantQualifier";
-import {BackgroundPredominantGradientQualifier} from "./background/shared/gradient/BackgroundPredominantGradientQualifier";
-import BlurredBackgroundAction from "./background/shared/BlurredBackgroundAction";
-import {BackgroundQualifier} from "./background/shared/base/BackgroundQualifier";
-import {SystemColors} from "./color";
+import {prepareColor} from "../internal/utils/prepareColor.js";
+import {BackgroundAutoBorderQualifier} from "./background/shared/auto/BackgroundAutoBorderQualifier.js";
+import {BackgroundBorderGradientQualifier} from "./background/shared/gradient/BackgroundBorderGradientQualifier.js";
+import {BackgroundAutoPredominantQualifier} from "./background/shared/auto/BackgroundAutoPredominantQualifier.js";
+import {BackgroundPredominantGradientQualifier} from "./background/shared/gradient/BackgroundPredominantGradientQualifier.js";
+import BlurredBackgroundAction from "./background/shared/BlurredBackgroundAction.js";
+import {BackgroundQualifier} from "./background/shared/base/BackgroundQualifier.js";
+import {SystemColors} from "./color.js";
 
 
 

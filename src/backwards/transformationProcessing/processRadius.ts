@@ -1,4 +1,4 @@
-import {legacyNormalizeExpression} from "../utils/legacyNormalizeExpression";
+import {legacyNormalizeExpression} from "../utils/legacyNormalizeExpression.js";
 
 
 /**

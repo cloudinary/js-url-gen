@@ -1,4 +1,4 @@
-import {BlendModeQualifier} from "./blendMode/BlendModeQualifier";
+import {BlendModeQualifier} from "./blendMode/BlendModeQualifier.js";
 /**
  * @description Defines the mode of blending to use when overlaying an image.
  *

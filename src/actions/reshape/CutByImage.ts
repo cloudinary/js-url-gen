@@ -1,10 +1,10 @@
-import {Action} from "../../internal/Action";
-import {PositionQualifier} from "../../qualifiers/position/PositionQualifier";
-import {ImageSource} from "../../qualifiers/source/sourceTypes/ImageSource";
-import {Position} from "../../qualifiers/position";
-import {Qualifier} from "../../internal/qualifier/Qualifier";
-import {TextSource} from "../../qualifiers/source/sourceTypes/TextSource";
-import {FetchSource} from "../../qualifiers/source/sourceTypes/FetchSource";
+import {Action} from "../../internal/Action.js";
+import {PositionQualifier} from "../../qualifiers/position/PositionQualifier.js";
+import {ImageSource} from "../../qualifiers/source/sourceTypes/ImageSource.js";
+import {Position} from "../../qualifiers/position.js";
+import {Qualifier} from "../../internal/qualifier/Qualifier.js";
+import {TextSource} from "../../qualifiers/source/sourceTypes/TextSource.js";
+import {FetchSource} from "../../qualifiers/source/sourceTypes/FetchSource.js";
 
 /**
  * @description Trims pixels according to the transparency levels of a given overlay image.

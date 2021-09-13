@@ -1,4 +1,4 @@
-import {PositionQualifier} from "./position/PositionQualifier";
+import {PositionQualifier} from "./position/PositionQualifier.js";
 /**
  * @description
  * Defines the position of a layer: overlay or underlay.</br>

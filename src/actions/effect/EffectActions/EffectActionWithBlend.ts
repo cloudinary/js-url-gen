@@ -1,4 +1,4 @@
-import {LeveledEffectAction} from "./LeveledEffectAction";
+import {LeveledEffectAction} from "./LeveledEffectAction.js";
 
 /**
  * @description A class for all effects that include a blendPercentage method

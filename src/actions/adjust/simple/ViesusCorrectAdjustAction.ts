@@ -1,5 +1,5 @@
-import {Action} from "../../../internal/Action";
-import {Qualifier} from "../../../internal/qualifier/Qualifier";
+import {Action} from "../../../internal/Action.js";
+import {Qualifier} from "../../../internal/qualifier/Qualifier.js";
 
 /**
  * Enhances an image to its best visual quality with the Viesus Automatic Image Enhancement add-on.</br>

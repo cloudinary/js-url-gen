@@ -1,5 +1,5 @@
-import {Action} from "../../internal/Action";
-import {SystemColors} from "../../qualifiers/color";
+import {Action} from "../../internal/Action.js";
+import {SystemColors} from "../../qualifiers/color.js";
 
 /**
  * @description Removes the edges of the image based on the color of the corner pixels.

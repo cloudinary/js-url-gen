@@ -1,4 +1,4 @@
-import {CompassQualifier} from "./gravity/qualifiers/compass/CompassQualifier";
+import {CompassQualifier} from "./gravity/qualifiers/compass/CompassQualifier.js";
 
 
 /**

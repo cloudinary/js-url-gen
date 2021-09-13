@@ -1,8 +1,8 @@
-import {Action} from "../../internal/Action";
-import {Qualifier} from "../../internal/qualifier/Qualifier";
-import {AnimatedFormatQualifierValue} from "../../qualifiers/animatedFormat/AnimatedFormatQualifierValue";
-import {animatedWebP} from "../../qualifiers/flag";
-import {animated} from "../../qualifiers/flag";
+import {Action} from "../../internal/Action.js";
+import {Qualifier} from "../../internal/qualifier/Qualifier.js";
+import {AnimatedFormatQualifierValue} from "../../qualifiers/animatedFormat/AnimatedFormatQualifierValue.js";
+import {animatedWebP} from "../../qualifiers/flag.js";
+import {animated} from "../../qualifiers/flag.js";
 
 /**
  * @extends SDK.Action

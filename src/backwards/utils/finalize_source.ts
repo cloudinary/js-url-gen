@@ -1,4 +1,4 @@
-import {smartEscape} from "./smartEscape";
+import {smartEscape} from "./smartEscape.js";
 
 export function finalize_source(source: string, format: string, url_suffix: string) {
   let source_to_sign;

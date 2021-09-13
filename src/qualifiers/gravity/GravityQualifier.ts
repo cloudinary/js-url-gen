@@ -1,12 +1,12 @@
-import {Qualifier} from "../../internal/qualifier/Qualifier";
-import {QualifierValue} from "../../internal/qualifier/QualifierValue";
-import {CompassGravity} from "./compassGravity/CompassGravity";
-import {AutoGravity} from "./autoGravity/AutoGravity";
-import {FocusOnGravity} from "./focusOnGravity/FocusOnGravity";
-import {FocusOnValue} from "../focusOn";
-import {AutoFocus} from "../autoFocus";
-import {CompassQualifier} from "./qualifiers/compass/CompassQualifier";
-import {XYCenterGravity} from "./xyCenterGravity/XYCenterGravity";
+import {Qualifier} from "../../internal/qualifier/Qualifier.js";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue.js";
+import {CompassGravity} from "./compassGravity/CompassGravity.js";
+import {AutoGravity} from "./autoGravity/AutoGravity.js";
+import {FocusOnGravity} from "./focusOnGravity/FocusOnGravity.js";
+import {FocusOnValue} from "../focusOn.js";
+import {AutoFocus} from "../autoFocus.js";
+import {CompassQualifier} from "./qualifiers/compass/CompassQualifier.js";
+import {XYCenterGravity} from "./xyCenterGravity/XYCenterGravity.js";
 
 export type IGravity = CompassGravity | AutoGravity | FocusOnGravity | XYCenterGravity;
 export type IGravityValue = CompassQualifier | FocusOnValue | AutoFocus;

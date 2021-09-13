@@ -2,7 +2,7 @@
  * Split a range into the start and end values
  * @param range
  */
-import {OFFSET_ANY_PATTERN_RE} from "../consts";
+import {OFFSET_ANY_PATTERN_RE} from "../consts.js";
 
 export function splitRange(range: any) {
   switch (range && range.constructor) {

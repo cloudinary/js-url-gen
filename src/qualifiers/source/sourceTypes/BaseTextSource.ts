@@ -1,10 +1,10 @@
-import {BaseSource} from "../BaseSource";
-import {SystemColors} from "../../color";
-import {TextStyle} from "../../textStyle";
-import {serializeCloudinaryCharacters} from "../../../internal/utils/serializeCloudinaryCharacters";
-import {Action} from "../../../internal/Action";
-import {Qualifier} from "../../../internal/qualifier/Qualifier";
-import {prepareColor} from "../../../internal/utils/prepareColor";
+import {BaseSource} from "../BaseSource.js";
+import {SystemColors} from "../../color.js";
+import {TextStyle} from "../../textStyle.js";
+import {serializeCloudinaryCharacters} from "../../../internal/utils/serializeCloudinaryCharacters.js";
+import {Action} from "../../../internal/Action.js";
+import {Qualifier} from "../../../internal/qualifier/Qualifier.js";
+import {prepareColor} from "../../../internal/utils/prepareColor.js";
 
 /**
  * @memberOf Qualifiers.Source

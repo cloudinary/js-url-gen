@@ -1,6 +1,6 @@
-import {ClipAction} from "./psdTools/ClipAction";
-import {GetLayerAction} from "./psdTools/GetLayerAction";
-import {SmartObjectAction} from "./psdTools/SmartObjectAction";
+import {ClipAction} from "./psdTools/ClipAction.js";
+import {GetLayerAction} from "./psdTools/GetLayerAction.js";
+import {SmartObjectAction} from "./psdTools/SmartObjectAction.js";
 
 /**
  * @namespace PSDTools

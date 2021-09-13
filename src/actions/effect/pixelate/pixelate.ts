@@ -1,6 +1,6 @@
-import {NamedRegion} from "../../../qualifiers/region/NamedRegion";
-import {Qualifier} from "../../../internal/qualifier/Qualifier";
-import {Action} from "../../../internal/Action";
+import {NamedRegion} from "../../../qualifiers/region/NamedRegion.js";
+import {Qualifier} from "../../../internal/qualifier/Qualifier.js";
+import {Action} from "../../../internal/Action.js";
 
 /**
  * @description The Action class of the pixelate Builder

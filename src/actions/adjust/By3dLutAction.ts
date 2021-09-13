@@ -1,4 +1,4 @@
-import {Action} from "../../internal/Action";
+import {Action} from "../../internal/Action.js";
 
 /**
  * @description Creates the 3D_lut layer transformation

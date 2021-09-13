@@ -1,6 +1,6 @@
-import {BaseCommonBackground} from "./BaseCommonBackground";
-import {GradientDirectionQualifierValue} from "../../../gradientDirection/GradientDirectionQualifierValue";
-import {GradientDirectionType} from "../../../../types/types";
+import {BaseCommonBackground} from "./BaseCommonBackground.js";
+import {GradientDirectionQualifierValue} from "../../../gradientDirection/GradientDirectionQualifierValue.js";
+import {GradientDirectionType} from "../../../../types/types.js";
 
 /**
  * @description Defines the gradient fade effect to use for the background when resizing with padding.

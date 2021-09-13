@@ -4,7 +4,7 @@
  * @memberOf Qualifiers
  */
 
-import {FlagQualifier} from "./flag/FlagQualifier";
+import {FlagQualifier} from "./flag/FlagQualifier.js";
 
 
 /**

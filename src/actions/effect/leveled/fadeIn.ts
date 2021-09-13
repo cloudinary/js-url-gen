@@ -1,4 +1,4 @@
-import {LeveledEffectAction} from "../EffectActions/LeveledEffectAction";
+import {LeveledEffectAction} from "../EffectActions/LeveledEffectAction.js";
 
 
 /**

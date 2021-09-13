@@ -4,12 +4,12 @@
  * @param {object|*} layer The layer to parse.
  * @return {string} layer transformation string
  */
-import {isObject} from "../utils/isObject";
-import {base64Encode} from "../../internal/utils/base64Encode";
-import {LAYER_KEYWORD_PARAMS} from "../consts";
-import {smartEscape} from "../utils/smartEscape";
-import TextLayer from "../legacyLayer/textlayer";
-import Layer from "../legacyLayer/layer";
+import {isObject} from "../utils/isObject.js";
+import {base64Encode} from "../../internal/utils/base64Encode.js";
+import {LAYER_KEYWORD_PARAMS} from "../consts.js";
+import {smartEscape} from "../utils/smartEscape.js";
+import TextLayer from "../legacyLayer/textlayer.js";
+import Layer from "../legacyLayer/layer.js";
 
 export function textStyle(layer: any) {
   const keywords:any[] = [];

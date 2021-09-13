@@ -1,6 +1,6 @@
-import {Action} from "../../internal/Action";
-import {Qualifier} from "../../internal/qualifier/Qualifier";
-import {StringNumberOrExpression} from "../../simpleTypes";
+import {Action} from "../../internal/Action.js";
+import {Qualifier} from "../../internal/qualifier/Qualifier.js";
+import {StringNumberOrExpression} from "../../simpleTypes.js";
 
 /**
  * @description Defines a video range using startOffset, endOffset, duration.

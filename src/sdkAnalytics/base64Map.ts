@@ -1,4 +1,4 @@
-import {stringPad} from "./stringPad";
+import {stringPad} from "./stringPad.js";
 
 /**
  * This file maps sequences of 6 bit binary digits to a character in base64.

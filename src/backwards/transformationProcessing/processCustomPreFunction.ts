@@ -1,4 +1,4 @@
-import {processCustomFunction} from "./processCustomFunction";
+import {processCustomFunction} from "./processCustomFunction.js";
 
 /**
  * Parse custom_pre_function options

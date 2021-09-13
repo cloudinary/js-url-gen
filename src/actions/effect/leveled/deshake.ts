@@ -1,5 +1,5 @@
-import {LeveledEffectAction} from "../EffectActions/LeveledEffectAction";
-import {ExpressionQualifier} from "../../../qualifiers/expression/ExpressionQualifier";
+import {LeveledEffectAction} from "../EffectActions/LeveledEffectAction.js";
+import {ExpressionQualifier} from "../../../qualifiers/expression/ExpressionQualifier.js";
 
 /**
  * @description Removes small motion shifts from the video. with a maximum extent of movement in the horizontal and vertical direction of 32 pixels

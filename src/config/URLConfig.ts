@@ -1,7 +1,7 @@
-import IURLConfig from "./interfaces/Config/IURLConfig";
-import Config from "./BaseConfig";
-import {ALLOWED_URL_CONFIG} from "../internal/internalConstants";
-import ICloudConfig from "./interfaces/Config/ICloudConfig";
+import IURLConfig from "./interfaces/Config/IURLConfig.js";
+import Config from "./BaseConfig.js";
+import {ALLOWED_URL_CONFIG} from "../internal/internalConstants.js";
+import ICloudConfig from "./interfaces/Config/ICloudConfig.js";
 
 class URLConfig extends Config implements IURLConfig {
   cname?: string; // User subdomain (example.cloudinary.com)

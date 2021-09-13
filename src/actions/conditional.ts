@@ -1,6 +1,6 @@
-import {Action} from "../internal/Action";
-import {expression} from "../qualifiers/expression";
-import {Transformation} from "../transformation/Transformation";
+import {Action} from "../internal/Action.js";
+import {expression} from "../qualifiers/expression.js";
+import {Transformation} from "../transformation/Transformation.js";
 
 /**
  * Sets up a conditional transformation.

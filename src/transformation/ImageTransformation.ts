@@ -1,4 +1,4 @@
-import {Transformation} from "./Transformation";
+import {Transformation} from "./Transformation.js";
 
 /**
  * @summary SDK

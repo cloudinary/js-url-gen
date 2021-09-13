@@ -1,4 +1,4 @@
-import {BaseSource} from "../BaseSource";
+import {BaseSource} from "../BaseSource.js";
 
 /**
  * @memberOf Qualifiers.Source

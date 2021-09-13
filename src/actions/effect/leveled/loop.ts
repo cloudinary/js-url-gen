@@ -1,4 +1,4 @@
-import {LeveledEffectAction} from "../EffectActions/LeveledEffectAction";
+import {LeveledEffectAction} from "../EffectActions/LeveledEffectAction.js";
 
 /**
  * @description Delivers a video or animated GIF that contains additional loops of the video/GIF.

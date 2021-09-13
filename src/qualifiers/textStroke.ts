@@ -1,5 +1,5 @@
-import {SystemColors} from "./color";
-import {ExpressionQualifier} from "./expression/ExpressionQualifier";
+import {SystemColors} from "./color.js";
+import {ExpressionQualifier} from "./expression/ExpressionQualifier.js";
 /**
  * @description Contains function to set the outline stroke.
  * <b>Learn more</b>: {@link https://cloudinary.com/documentation/image_transformations#adding_text_overlays | Adding text overlays to images}

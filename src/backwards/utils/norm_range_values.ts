@@ -1,5 +1,5 @@
-import {RANGE_VALUE_RE} from "../consts";
-import {stringOrNumber} from "../../types/types";
+import {RANGE_VALUE_RE} from "../consts.js";
+import {stringOrNumber} from "../../types/types.js";
 
 /**
  *

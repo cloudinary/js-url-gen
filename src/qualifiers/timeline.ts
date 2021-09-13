@@ -1,4 +1,4 @@
-import {TimelinePosition} from "./video/TimelinePosition";
+import {TimelinePosition} from "./video/TimelinePosition.js";
 
 /**
  * @memberOf Qualifiers

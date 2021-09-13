@@ -1,4 +1,4 @@
-import {GradientDirectionQualifierValue} from "./gradientDirection/GradientDirectionQualifierValue";
+import {GradientDirectionQualifierValue} from "./gradientDirection/GradientDirectionQualifierValue.js";
 
 /**
  * @description Defines the direction for a background gradient fade effect.

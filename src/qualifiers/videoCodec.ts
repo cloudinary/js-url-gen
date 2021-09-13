@@ -1,4 +1,4 @@
-import {AdvVideoCodecType, VideoCodecType} from "./videoCodecType/VideoCodecType";
+import {AdvVideoCodecType, VideoCodecType} from "./videoCodecType/VideoCodecType.js";
 /**
  * @description Determines the video codec to use.
  * @memberOf Qualifiers

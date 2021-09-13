@@ -1,4 +1,4 @@
-import {LEGACY_PREDEFINED_VARS, LEGACY_CONDITIONAL_OPERATORS} from "../consts";
+import {LEGACY_PREDEFINED_VARS, LEGACY_CONDITIONAL_OPERATORS} from "../consts.js";
 
 /**
  * Normalize an offset value

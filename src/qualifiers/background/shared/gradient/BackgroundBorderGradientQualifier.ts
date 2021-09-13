@@ -1,4 +1,4 @@
-import {BaseGradientBackground} from "../base/BaseGradientBackground";
+import {BaseGradientBackground} from "../base/BaseGradientBackground.js";
 
 /**
  * @description Specifies that the gradient fade effect, used for the background when resizing with padding, uses the

@@ -1,4 +1,4 @@
-import RoundCornersAction from "./RoundCornersAction";
+import RoundCornersAction from "./RoundCornersAction.js";
 
 
 /**

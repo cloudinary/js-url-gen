@@ -1,6 +1,6 @@
-import {AspectRatioQualifierValue} from "./aspectRatio/AspectRatioQualifierValue";
-import {ignoreInitialAspectRatio as ignoreInitialAspectRatioFlag} from "./flag";
-import {FlagQualifier} from "./flag/FlagQualifier";
+import {AspectRatioQualifierValue} from "./aspectRatio/AspectRatioQualifierValue.js";
+import {ignoreInitialAspectRatio as ignoreInitialAspectRatioFlag} from "./flag.js";
+import {FlagQualifier} from "./flag/FlagQualifier.js";
 
 
 /**

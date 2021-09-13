@@ -1,6 +1,6 @@
-import {QualifierValue} from "../internal/qualifier/QualifierValue";
-import {Qualifier} from "../internal/qualifier/Qualifier";
-import {Action} from "../internal/Action";
+import {QualifierValue} from "../internal/qualifier/QualifierValue.js";
+import {Qualifier} from "../internal/qualifier/Qualifier.js";
+import {Action} from "../internal/Action.js";
 
 /**
  * @description Extracts an image or a page using an index, a range, or a name from a layered media asset.

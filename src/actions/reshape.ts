@@ -1,12 +1,12 @@
-import CutByImage from "./reshape/CutByImage";
-import {ImageSource} from "../qualifiers/source/sourceTypes/ImageSource";
-import {DistortArcAction} from "./reshape/DistortArc";
-import {ShearAction} from "./reshape/Shear";
-import {DistortAction, IDistortCoordinates} from "./reshape/Distort";
-import {TrimAction} from "./reshape/TrimAction";
-import {TextSource} from "../qualifiers/source/sourceTypes/TextSource";
-import {FetchSource} from "../qualifiers/source/sourceTypes/FetchSource";
-import {stringOrNumber} from "../types/types";
+import CutByImage from "./reshape/CutByImage.js";
+import {ImageSource} from "../qualifiers/source/sourceTypes/ImageSource.js";
+import {DistortArcAction} from "./reshape/DistortArc.js";
+import {ShearAction} from "./reshape/Shear.js";
+import {DistortAction, IDistortCoordinates} from "./reshape/Distort.js";
+import {TrimAction} from "./reshape/TrimAction.js";
+import {TextSource} from "../qualifiers/source/sourceTypes/TextSource.js";
+import {FetchSource} from "../qualifiers/source/sourceTypes/FetchSource.js";
+import {stringOrNumber} from "../types/types.js";
 
 type IReshape = CutByImage | DistortArcAction;
 

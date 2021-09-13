@@ -1,5 +1,5 @@
-import IURLConfig from "./IURLConfig";
-import ICloudConfig from "./ICloudConfig";
+import IURLConfig from "./IURLConfig.js";
+import ICloudConfig from "./ICloudConfig.js";
 
 /**
  * @name ICloudinaryAssetConfigurations

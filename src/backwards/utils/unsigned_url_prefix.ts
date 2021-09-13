@@ -1,4 +1,4 @@
-import {OLD_AKAMAI_SHARED_CDN, SHARED_CDN} from "../consts";
+import {OLD_AKAMAI_SHARED_CDN, SHARED_CDN} from "../consts.js";
 
 export function unsigned_url_prefix(
   source: string,

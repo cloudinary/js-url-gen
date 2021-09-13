@@ -1,7 +1,7 @@
-import {lossy, preserveTransparency, progressive} from "../../qualifiers/flag";
-import {DeliveryAction} from "./DeliveryAction";
-import {ProgressiveQualifier} from "../../qualifiers/progressive";
-import {ProgressiveType} from "../../types/types";
+import {lossy, preserveTransparency, progressive} from "../../qualifiers/flag.js";
+import {DeliveryAction} from "./DeliveryAction.js";
+import {ProgressiveQualifier} from "../../qualifiers/progressive.js";
+import {ProgressiveType} from "../../types/types.js";
 
 /**
  * @memberOf Actions.Delivery
