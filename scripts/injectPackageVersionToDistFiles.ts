@@ -20,11 +20,9 @@ const fileNamesReplaced = replace
   .filter((fileData: typeof replace.ReplaceResult) => fileData.hasChanged)
   .map((fileData: typeof replace.ReplaceResult) => fileData.file);
 
-
 // files is not empty
 if (fileNamesReplaced.length) {
   console.log('Successfully injected package version to dist files:', fileNamesReplaced);
 } else {
   throw 'Failed to inject package version to dist files because no matching files where found';
 }
-

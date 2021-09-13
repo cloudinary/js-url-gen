@@ -20,7 +20,7 @@
     "build:docs": "node ./scripts/buildDocs.js",
     "build:entryPoints": "ts-node ./scripts/createEntrypoints.ts",
     "build:copyCleanPackageJSON": "ts-node scripts/copyPackageJsonToSrc.ts",
-    "build:replaceStrings": "ts-node ./scripts/replaceStrings.ts",
+    "build:injectPackageVersion": "ts-node ./scripts/injectPackageVersionToDistFiles.ts",
     "lint": "eslint src __TESTS__ --color --ext .ts",
     "start": "rollup -c rollup.dev.config.js -w",
     "bundlewatch": "bundlewatch --config ./bundlewatch.config.js",
