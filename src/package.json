@@ -9,6 +9,24 @@
 		"@types/lodash.clonedeep": "^4.5.6",
 		"lodash.clonedeep": "^4.5.0"
 	},
+	"exports": {
+		"./bundles/umd/package.json": "./bundles/umd/package.json",
+		"./package.json": "./package.json",
+		"./actions/*": "./actions/*.js",
+		"./assets/*": "./assets/*.js",
+		"./backwards/*": "./backwards/*.js",
+		"./bundles/*": "./bundles/*.js",
+		"./config/*": "./config/*.js",
+		"./instance/*": "./instance/*.js",
+		"./qualifiers/*": "./qualifiers/*.js",
+		"./sdkAnalytics/*": "./sdkAnalytics/*.js",
+		"./transformation/*": "./transformation/*.js",
+		"./types/*": "./types/*.js",
+		".": {
+			"require": "./bundles/umd/base.js",
+			"default": "./index.js"
+		}
+	},
 	"main": "./bundles/umd/base.js",
 	"browser": "./index.js",
 	"module": "./index.js",
