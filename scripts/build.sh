@@ -12,7 +12,7 @@ npm run build:ESM
 npm run build:UMD
 npm run build:entryPoints
 npm run build:docs
-npm run build:replaceStrings
+npm run build:injectPackageVersion
 
 #cp CHANGELOG.md to dist
 cp ./CHANGELOG.md ./dist
