@@ -47,7 +47,7 @@ console.log(myURL);
 
 ### More examples and documentation
 - [Cloudinary Documentation](https://cloudinary.com/documentation/javascript2_integration)
-- [SDK Reference](https://cloudinary.com/documentation/sdks/js/cloudinary-js-base/index.html)
+- [SDK Reference](https://cloudinary.com/documentation/sdks/js/url-gen/index.html)
 - [Use with a Frontend Framework](https://cloudinary.com/documentation/sdks/js/frontend-frameworks/index.html)
 
 ### Additional links
