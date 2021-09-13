@@ -48,8 +48,9 @@ const resultPackageJson = JSON.stringify({
 
 // Update (overwrite) package.json
 writeFile(resolve('./package.json'), resultPackageJson, (err: Error) => {
-  if (err) {
-    return console.log(err);
+  if (!err) {
+    console.log('Successfully updated package.json exports field');
+  } else {
+    throw `Failed to updated package.json exports field: ${err}`;
   }
-  console.log('Successfully updated package.json exports field');
 });
