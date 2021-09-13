@@ -74,5 +74,9 @@ export const RESERVED_NAMES = {
   "pageX": "px",
   "pageY": "py",
   "tags": "tags",
-  "width": "w"
+  "width": "w",
+  "trimmed_aspect_ratio": "tar",
+  "current_public_id": "cpi",
+  "initial_density": "idn",
+  "page_names": "pgnames"
 };

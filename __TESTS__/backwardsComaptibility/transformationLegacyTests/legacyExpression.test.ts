@@ -1,7 +1,7 @@
 import {stringOrNumber} from "../../../src/types/types";
 import {legacyNormalizeExpression} from "../../../src/backwards/utils/legacyNormalizeExpression";
 
-describe("Expression normalization", function () {
+describe("Legacy Expression normalization", function () {
   const cases: Record<string, [stringOrNumber, string]> = {
     'null is not affected': [null, null],
     'number replaced with a string value': [10, '10'],

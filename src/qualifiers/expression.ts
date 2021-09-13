@@ -51,7 +51,7 @@ function expression(exp: string): ExpressionQualifier {
   const reservedNamesRE = new RegExp(`(\\$_*[^_ ]+)|${regexSafeReservedNameList}`, "g");
 
   // Since this regex captures both user variables and our reserved keywords, we need to add some logic in the replacer
-  const finalExpressionString = stringWithOperators.replace(reservedNamesRE, (match) => {
+  const stringWithVariables = stringWithOperators.replace(reservedNamesRE, (match) => {
     // Do not do anything to user variables (anything starting with $)
     if (match.startsWith('$')) {
       return match;
@@ -59,6 +59,9 @@ function expression(exp: string): ExpressionQualifier {
       return RESERVED_NAMES[match as keyof typeof RESERVED_NAMES] || match;
     }
   });
+
+  // Serialize remaining spaces with an underscore
+  const finalExpressionString = stringWithVariables.replace(/\s/g, '_');
 
   return new ExpressionQualifier(finalExpressionString);
 }
