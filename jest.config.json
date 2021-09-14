@@ -2,6 +2,7 @@
   "preset": "ts-jest",
   "testEnvironment": "jsdom",
   "bail": true,
+  "resolver": "<rootDir>/src/internal/utils/jest-ts-resolver.js",
   "collectCoverageFrom": [
     "<rootDir>/src/**/*.ts",
     "<rootDir>/scripts/**/*.ts",
