@@ -1,5 +1,5 @@
-import {CONDITIONAL_OPERATORS} from "../internal/internalConstants";
-import {ExpressionQualifier} from "./expression/ExpressionQualifier";
+import {CONDITIONAL_OPERATORS} from "../internal/internalConstants.js";
+import {ExpressionQualifier} from "./expression/ExpressionQualifier.js";
 
 
 /**

@@ -10,7 +10,7 @@
 
 
 
-import {RotationModeQualifierValue} from "./rotate/RotationModeQualifierValue";
+import {RotationModeQualifierValue} from "./rotate/RotationModeQualifierValue.js";
 
 /**
  * @summary qualifier

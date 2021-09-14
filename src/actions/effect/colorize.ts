@@ -1,8 +1,8 @@
-import {QualifierValue} from "../../internal/qualifier/QualifierValue";
-import {Qualifier} from "../../internal/qualifier/Qualifier";
-import {prepareColor} from "../../internal/utils/prepareColor";
-import {EffectActionWithLevel}from "./EffectActions/EffectActionWithLevel";
-import {SystemColors} from "../../qualifiers/color";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue.js";
+import {Qualifier} from "../../internal/qualifier/Qualifier.js";
+import {prepareColor} from "../../internal/utils/prepareColor.js";
+import {EffectActionWithLevel}from "./EffectActions/EffectActionWithLevel.js";
+import {SystemColors} from "../../qualifiers/color.js";
 
 /**
  * @description Applies a colorizing filter to the asset, use the methods in the class to adjust the filter

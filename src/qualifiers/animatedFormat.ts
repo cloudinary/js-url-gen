@@ -1,4 +1,4 @@
-import {AnimatedFormatQualifierValue} from "./animatedFormat/AnimatedFormatQualifierValue";
+import {AnimatedFormatQualifierValue} from "./animatedFormat/AnimatedFormatQualifierValue.js";
 
 /**
  * @description Contains methods to specify the animated format

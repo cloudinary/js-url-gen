@@ -6,15 +6,15 @@
  * See the examples under every method
  */
 
-import {DeliveryFormat} from "./delivery/DeliveryFormat";
-import {DeliveryQualityAction} from "./delivery/DeliveryQuality";
-import {FormatQualifier} from "../qualifiers/format/FormatQualifier";
-import {toFloatAsString} from "../internal/utils/toFloatAsString";
-import {DeliveryColorSpaceFromICC} from "./delivery/DeliveryColorSpaceFromICC";
-import {DeliveryAction} from "./delivery/DeliveryAction";
-import {ColorSpaceType} from "../types/types";
-import {QualityTypes} from "../types/types";
-import {ImageFormatType, VideoFormatType} from "../types/types";
+import {DeliveryFormat} from "./delivery/DeliveryFormat.js";
+import {DeliveryQualityAction} from "./delivery/DeliveryQuality.js";
+import {FormatQualifier} from "../qualifiers/format/FormatQualifier.js";
+import {toFloatAsString} from "../internal/utils/toFloatAsString.js";
+import {DeliveryColorSpaceFromICC} from "./delivery/DeliveryColorSpaceFromICC.js";
+import {DeliveryAction} from "./delivery/DeliveryAction.js";
+import {ColorSpaceType} from "../types/types.js";
+import {QualityTypes} from "../types/types.js";
+import {ImageFormatType, VideoFormatType} from "../types/types.js";
 
 export type IDeliveryAction = DeliveryAction | DeliveryColorSpaceFromICC;
 

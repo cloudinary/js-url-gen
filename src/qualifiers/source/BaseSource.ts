@@ -1,5 +1,5 @@
-import {Transformation} from "../../transformation/Transformation";
-import {ImageTransformation} from "../../transformation/ImageTransformation";
+import {Transformation} from "../../transformation/Transformation.js";
+import {ImageTransformation} from "../../transformation/ImageTransformation.js";
 
 
 /**

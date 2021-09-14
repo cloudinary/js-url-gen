@@ -1,4 +1,4 @@
-import {BaseCommonBackground} from "../base/BaseCommonBackground";
+import {BaseCommonBackground} from "../base/BaseCommonBackground.js";
 
 /**
  * @description Automatically determines the color to use for padding, if needed when resizing an asset. Selects the

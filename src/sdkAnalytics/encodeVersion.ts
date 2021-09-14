@@ -1,6 +1,6 @@
-import {base64Map} from "./base64Map";
-import {stringPad} from "./stringPad";
-import {reverseVersion} from "./reverseVersion";
+import {base64Map} from "./base64Map.js";
+import {stringPad} from "./stringPad.js";
+import {reverseVersion} from "./reverseVersion.js";
 
 /**
  * @private

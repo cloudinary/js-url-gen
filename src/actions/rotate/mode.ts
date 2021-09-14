@@ -1,6 +1,6 @@
-import RotateAction from "./RotateAction";
-import {RotationModeQualifierValue} from "../../qualifiers/rotate/RotationModeQualifierValue";
-import {RotationModeType} from "../../types/types";
+import RotateAction from "./RotateAction.js";
+import {RotationModeQualifierValue} from "../../qualifiers/rotate/RotationModeQualifierValue.js";
+import {RotationModeType} from "../../types/types.js";
 
 /**
  * @summary action

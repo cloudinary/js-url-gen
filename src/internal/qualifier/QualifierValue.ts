@@ -1,4 +1,4 @@
-import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifier";
+import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifier.js";
 
 /**
  * @summary SDK

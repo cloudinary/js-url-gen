@@ -1,9 +1,9 @@
-import {Action} from "../../internal/Action";
-import {CompassGravity} from "../gravity/compassGravity/CompassGravity";
-import {FocusOnGravity} from "../gravity/focusOnGravity/FocusOnGravity";
-import {Qualifier} from "../../internal/qualifier/Qualifier";
-import {tiled} from "../flag";
-import {noOverflow} from "../flag";
+import {Action} from "../../internal/Action.js";
+import {CompassGravity} from "../gravity/compassGravity/CompassGravity.js";
+import {FocusOnGravity} from "../gravity/focusOnGravity/FocusOnGravity.js";
+import {Qualifier} from "../../internal/qualifier/Qualifier.js";
+import {tiled} from "../flag.js";
+import {noOverflow} from "../flag.js";
 
 /**
  * @description

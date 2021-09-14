@@ -1,4 +1,4 @@
-import {SystemColors} from "../../qualifiers/color";
+import {SystemColors} from "../../qualifiers/color.js";
 
 
 /**

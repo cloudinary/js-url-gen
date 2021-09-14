@@ -1,4 +1,4 @@
-import {snakeCase} from "../utils/snakeCase";
+import {snakeCase} from "../utils/snakeCase.js";
 
 class Layer {
   protected options: {

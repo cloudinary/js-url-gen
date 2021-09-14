@@ -1,15 +1,15 @@
-import BitRateAction from "./transcode/BitRateAction";
-import AudioCodecAction from "./transcode/AudioCodecAction";
-import AudioFrequencyAction from "./transcode/AudioFrequencyAction";
-import FPSAction from "./transcode/FPSAction";
-import FPSRangeAction from "./transcode/FPSRangeAction";
-import KeyframeIntervalsAction from "./transcode/KeyframeIntervalsAction";
-import StreamingProfileAction from "./transcode/StreamingProfile";
-import ToAnimatedAction from "./transcode/ToAnimatedAction";
-import {AnimatedFormatQualifierValue} from "../qualifiers/animatedFormat/AnimatedFormatQualifierValue";
-import {AdvVideoCodecType, VideoCodecType} from "../qualifiers/videoCodecType/VideoCodecType";
-import {VideoCodecAction} from "./transcode/VideoCodecAction";
-import {AnimatedFormatType, AudioCodecType, AudioFrequencyType, StreamingProfileTypes} from "../types/types";
+import BitRateAction from "./transcode/BitRateAction.js";
+import AudioCodecAction from "./transcode/AudioCodecAction.js";
+import AudioFrequencyAction from "./transcode/AudioFrequencyAction.js";
+import FPSAction from "./transcode/FPSAction.js";
+import FPSRangeAction from "./transcode/FPSRangeAction.js";
+import KeyframeIntervalsAction from "./transcode/KeyframeIntervalsAction.js";
+import StreamingProfileAction from "./transcode/StreamingProfile.js";
+import ToAnimatedAction from "./transcode/ToAnimatedAction.js";
+import {AnimatedFormatQualifierValue} from "../qualifiers/animatedFormat/AnimatedFormatQualifierValue.js";
+import {AdvVideoCodecType, VideoCodecType} from "../qualifiers/videoCodecType/VideoCodecType.js";
+import {VideoCodecAction} from "./transcode/VideoCodecAction.js";
+import {AnimatedFormatType, AudioCodecType, AudioFrequencyType, StreamingProfileTypes} from "../types/types.js";
 
 export type ITranscodeAction = BitRateAction
   | AudioCodecAction

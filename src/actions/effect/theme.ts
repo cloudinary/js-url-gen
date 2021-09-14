@@ -1,7 +1,7 @@
-import {Qualifier} from "../../internal/qualifier/Qualifier";
-import {QualifierValue} from "../../internal/qualifier/QualifierValue";
-import {Action} from "../../internal/Action";
-import {SystemColors} from "../../qualifiers/color";
+import {Qualifier} from "../../internal/qualifier/Qualifier.js";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue.js";
+import {Action} from "../../internal/Action.js";
+import {SystemColors} from "../../qualifiers/color.js";
 
 /**
  * @description Changes the main background color to the one specified, as if a 'theme change' was applied (e.g. dark mode vs light mode).

@@ -1,8 +1,8 @@
-import {normal as normalFontWeight} from "./fontWeight";
-import {normal as normalFontStyle} from "./fontStyle";
-import {normal as normalTextDecoration} from "./textDecoration";
-import {serializeCloudinaryCharacters} from "../internal/utils/serializeCloudinaryCharacters";
-import {FontAntialiasType, FontWeightType, TextAlignmentType, TextDecorationType} from "../types/types";
+import {normal as normalFontWeight} from "./fontWeight.js";
+import {normal as normalFontStyle} from "./fontStyle.js";
+import {normal as normalTextDecoration} from "./textDecoration.js";
+import {serializeCloudinaryCharacters} from "../internal/utils/serializeCloudinaryCharacters.js";
+import {FontAntialiasType, FontWeightType, TextAlignmentType, TextDecorationType} from "../types/types.js";
 
 /**
  * @summary qualifier

@@ -1,7 +1,7 @@
-import {Action} from "../../internal/Action";
-import {QualifierValue} from "../../internal/qualifier/QualifierValue";
-import {Qualifier} from "../../internal/qualifier/Qualifier";
-import {stringOrNumber} from "../../types/types";
+import {Action} from "../../internal/Action.js";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue.js";
+import {Qualifier} from "../../internal/qualifier/Qualifier.js";
+import {stringOrNumber} from "../../types/types.js";
 
 /**
  * @description Defines how to improve an image by automatically adjusting image colors, contrast and brightness.</br>

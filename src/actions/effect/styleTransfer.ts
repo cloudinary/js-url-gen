@@ -1,7 +1,7 @@
-import {QualifierValue} from "../../internal/qualifier/QualifierValue";
-import {Action} from "../../internal/Action";
-import {ImageSource} from "../../qualifiers/source/sourceTypes/ImageSource";
-import {Qualifier} from "../../internal/qualifier/Qualifier";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue.js";
+import {Action} from "../../internal/Action.js";
+import {ImageSource} from "../../qualifiers/source/sourceTypes/ImageSource.js";
+import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 
 
 /**

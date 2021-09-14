@@ -22,8 +22,8 @@
  */
 
 
-import byAngle from "./rotate/byAngle";
-import mode from "./rotate/mode";
+import byAngle from "./rotate/byAngle.js";
+import mode from "./rotate/mode.js";
 
 
 

@@ -1,8 +1,8 @@
-import {Action} from "../../internal/Action";
-import {Transformation} from "../../transformation/Transformation";
-import {VideoSource} from "../../qualifiers/source/sourceTypes/VideoSource";
-import {ImageSource} from "../../qualifiers/source/sourceTypes/ImageSource";
-import {FetchSource} from "../../qualifiers/source/sourceTypes/FetchSource";
+import {Action} from "../../internal/Action.js";
+import {Transformation} from "../../transformation/Transformation.js";
+import {VideoSource} from "../../qualifiers/source/sourceTypes/VideoSource.js";
+import {ImageSource} from "../../qualifiers/source/sourceTypes/ImageSource.js";
+import {FetchSource} from "../../qualifiers/source/sourceTypes/FetchSource.js";
 
 /**
  * @description Class for Concatenating another video.

@@ -1,9 +1,9 @@
-import SetAction from "./variable/SetAction";
-import SetAssetReferenceAction from "./variable/SetAssetReferenceAction";
-import SetFromContextAction from "./variable/SetFromContextAction";
-import SetFromMetadataAction from "./variable/SetFromMetadataAction";
-import {ExpressionQualifier} from "../qualifiers/expression/ExpressionQualifier";
-import {toFloatAsString} from "../internal/utils/toFloatAsString";
+import SetAction from "./variable/SetAction.js";
+import SetAssetReferenceAction from "./variable/SetAssetReferenceAction.js";
+import SetFromContextAction from "./variable/SetFromContextAction.js";
+import SetFromMetadataAction from "./variable/SetFromMetadataAction.js";
+import {ExpressionQualifier} from "../qualifiers/expression/ExpressionQualifier.js";
+import {toFloatAsString} from "../internal/utils/toFloatAsString.js";
 
 /**
  * Defines a new user variable with the given value.

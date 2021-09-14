@@ -1,4 +1,4 @@
-import {NamedTransformationAction} from "./namedTransformation/NamedTransformationAction";
+import {NamedTransformationAction} from "./namedTransformation/NamedTransformationAction.js";
 
 /**
  * Applies a pre-defined named transformation of the given name.

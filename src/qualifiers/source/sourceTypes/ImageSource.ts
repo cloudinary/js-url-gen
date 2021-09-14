@@ -1,5 +1,5 @@
-import {BaseSource} from "../BaseSource";
-import {FormatQualifier} from "../../format/FormatQualifier";
+import {BaseSource} from "../BaseSource.js";
+import {FormatQualifier} from "../../format/FormatQualifier.js";
 
 /**
  * @memberOf Qualifiers.Source

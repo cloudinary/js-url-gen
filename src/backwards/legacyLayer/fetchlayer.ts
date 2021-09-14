@@ -1,6 +1,6 @@
-import Layer from './layer';
-import {isString} from "../../internal/utils/dataStructureUtils";
-import {base64Encode} from "../../internal/utils/base64Encode";
+import Layer from './layer.js';
+import {isString} from "../../internal/utils/dataStructureUtils.js";
+import {base64Encode} from "../../internal/utils/base64Encode.js";
 
 
 class FetchLayer extends Layer {

@@ -1,18 +1,18 @@
-import Condition from './condition';
-import {CONFIG_PARAMS} from './configuration';
-import { cloneDeep } from '../internal/utils/cloneDeep';
-import {camelCase, contains, difference,} from "./utils/legacyBaseUtil";
-import {snakeCase} from "./utils/snakeCase";
-import Expression from './expression';
-import Layer from './legacyLayer/layer';
-import TextLayer from './legacyLayer/textlayer';
-import SubtitlesLayer from './legacyLayer/subtitleslayer';
-import FetchLayer from './legacyLayer/fetchlayer';
-import {isObject} from "./utils/isObject";
-import {isString} from "../internal/utils/dataStructureUtils";
-import {isEmpty} from "./utils/isEmpty";
-import {isFunction} from "./utils/isFunction";
-import {identity, withCamelCaseKeys} from "./utils/legacyBaseUtil";
+import Condition from './condition.js';
+import {CONFIG_PARAMS} from './configuration.js';
+import { cloneDeep } from '../internal/utils/cloneDeep.js';
+import {camelCase, contains, difference,} from "./utils/legacyBaseUtil.js";
+import {snakeCase} from "./utils/snakeCase.js";
+import Expression from './expression.js';
+import Layer from './legacyLayer/layer.js';
+import TextLayer from './legacyLayer/textlayer.js';
+import SubtitlesLayer from './legacyLayer/subtitleslayer.js';
+import FetchLayer from './legacyLayer/fetchlayer.js';
+import {isObject} from "./utils/isObject.js";
+import {isString} from "../internal/utils/dataStructureUtils.js";
+import {isEmpty} from "./utils/isEmpty.js";
+import {isFunction} from "./utils/isFunction.js";
+import {identity, withCamelCaseKeys} from "./utils/legacyBaseUtil.js";
 
 /**
  * A list of keys used by the url() function.

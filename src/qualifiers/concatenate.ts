@@ -1,6 +1,6 @@
-import {VideoSource} from "./source/sourceTypes/VideoSource";
-import {ImageSource} from "./source/sourceTypes/ImageSource";
-import {FetchSource} from "./source/sourceTypes/FetchSource";
+import {VideoSource} from "./source/sourceTypes/VideoSource.js";
+import {ImageSource} from "./source/sourceTypes/ImageSource.js";
+import {FetchSource} from "./source/sourceTypes/FetchSource.js";
 /**
  * @description This namespace contains different sources that can be used when concatenating to a video
  * @memberOf Qualifiers

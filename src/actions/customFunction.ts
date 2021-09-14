@@ -19,8 +19,8 @@
  */
 
 
-import CustomFunctionAction from "./customFunction/CustomFunctionAction";
-import RemoteAction from "./customFunction/RemoteAction";
+import CustomFunctionAction from "./customFunction/CustomFunctionAction.js";
+import RemoteAction from "./customFunction/RemoteAction.js";
 
 /**
  * @summary action

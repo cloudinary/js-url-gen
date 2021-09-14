@@ -1,7 +1,7 @@
-import {encodeVersion} from "./encodeVersion";
-import {getAnalyticsOptions} from "./getAnalyticsOptions";
-import {ITrackedPropertiesThroughAnalytics} from "./interfaces/ITrackedPropertiesThroughAnalytics";
-import {packageVersion} from "../internal/utils/packageVersion";
+import {encodeVersion} from "./encodeVersion.js";
+import {getAnalyticsOptions} from "./getAnalyticsOptions.js";
+import {ITrackedPropertiesThroughAnalytics} from "./interfaces/ITrackedPropertiesThroughAnalytics.js";
+import {packageVersion} from "../internal/utils/packageVersion.js";
 
 /**
  * @private

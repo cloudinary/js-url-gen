@@ -1,6 +1,6 @@
-import {prepareColor} from "../../../../internal/utils/prepareColor";
-import {BackgroundQualifier} from "./BackgroundQualifier";
-import {SystemColors} from "../../../color";
+import {prepareColor} from "../../../../internal/utils/prepareColor.js";
+import {BackgroundQualifier} from "./BackgroundQualifier.js";
+import {SystemColors} from "../../../color.js";
 
 /**
  * @description Defines the background color to use when resizing with padding.

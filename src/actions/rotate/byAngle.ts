@@ -1,4 +1,4 @@
-import RotateAction from "./RotateAction";
+import RotateAction from "./RotateAction.js";
 
 /**
  * @summary action

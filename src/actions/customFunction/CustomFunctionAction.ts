@@ -1,7 +1,7 @@
-import {base64Encode} from "../../internal/utils/base64Encode";
-import {Action} from "../../internal/Action";
-import {QualifierValue} from "../../internal/qualifier/QualifierValue";
-import {Qualifier} from "../../internal/qualifier/Qualifier";
+import {base64Encode} from "../../internal/utils/base64Encode.js";
+import {Action} from "../../internal/Action.js";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue.js";
+import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 
 /**
  * @memberOf Actions.CustomFunction

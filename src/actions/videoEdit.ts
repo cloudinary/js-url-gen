@@ -1,8 +1,8 @@
-import TrimAction from './videoEdit/TrimAction';
-import ConcatenateAction from './videoEdit/ConcatenateAction';
-import VolumeAction from "./videoEdit/VolumeAction";
-import {VideoSource} from "../qualifiers/source/sourceTypes/VideoSource";
-import {PreviewAction} from "./videoEdit/PreviewAction";
+import TrimAction from './videoEdit/TrimAction.js';
+import ConcatenateAction from './videoEdit/ConcatenateAction.js';
+import VolumeAction from "./videoEdit/VolumeAction.js";
+import {VideoSource} from "../qualifiers/source/sourceTypes/VideoSource.js";
+import {PreviewAction} from "./videoEdit/PreviewAction.js";
 
 /**
  * @summary action
@@ -28,7 +28,7 @@ import {PreviewAction} from "./videoEdit/PreviewAction";
  * import {Cloudinary} from "@cloudinary/url-gen";
  * import {concatenate} from "@cloudinary/url-gen/actions/videoEdit";
  * import {videoSource as concatVideoSource} from "@cloudinary/url-gen/qualifiers/concatenate";
- * import {videoSource as tVideoSource} from "@cloudinary/url-gen/qualifiers/transition";
+ * import {videoSource as tVideoSource} from "@cloudinary/url-gen/qualifiers/transition.js";
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const video = yourCldInstance.video('dog');

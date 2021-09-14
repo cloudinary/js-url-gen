@@ -1,6 +1,6 @@
-import ICloudinaryConfigurations from "../config/interfaces/Config/ICloudinaryConfigurations";
-import {CloudinaryImage} from "../assets/CloudinaryImage";
-import {CloudinaryVideo} from "../assets/CloudinaryVideo";
+import ICloudinaryConfigurations from "../config/interfaces/Config/ICloudinaryConfigurations.js";
+import {CloudinaryImage} from "../assets/CloudinaryImage.js";
+import {CloudinaryVideo} from "../assets/CloudinaryVideo.js";
 
 
 class Cloudinary {

@@ -1,15 +1,15 @@
-import {FillLightAction} from "./adjust/FillLightAction";
-import {RecolorAction} from "./adjust/RecolorAction";
-import {OpacityAdjustAction} from "./adjust/OpacityAdjustAction";
-import {By3dLutAction} from "./adjust/By3dLutAction";
-import {ImproveAction} from "./adjust/ImproveAction";
-import {ReplaceColorAction} from "./adjust/ReplaceColorAction";
-import {EffectActionWithLevel} from "./effect/EffectActions/EffectActionWithLevel";
-import {EffectActionWithStrength} from "./effect/EffectActions/EffectActionWithStrength";
-import {EffectActionWithBlend} from "./effect/EffectActions/EffectActionWithBlend";
-import {ViesusCorrectAdjustAction} from "./adjust/simple/ViesusCorrectAdjustAction";
-import {SimpleEffectAction} from "./effect/EffectActions/SimpleEffectAction";
-import {stringOrNumber} from "../types/types";
+import {FillLightAction} from "./adjust/FillLightAction.js";
+import {RecolorAction} from "./adjust/RecolorAction.js";
+import {OpacityAdjustAction} from "./adjust/OpacityAdjustAction.js";
+import {By3dLutAction} from "./adjust/By3dLutAction.js";
+import {ImproveAction} from "./adjust/ImproveAction.js";
+import {ReplaceColorAction} from "./adjust/ReplaceColorAction.js";
+import {EffectActionWithLevel} from "./effect/EffectActions/EffectActionWithLevel.js";
+import {EffectActionWithStrength} from "./effect/EffectActions/EffectActionWithStrength.js";
+import {EffectActionWithBlend} from "./effect/EffectActions/EffectActionWithBlend.js";
+import {ViesusCorrectAdjustAction} from "./adjust/simple/ViesusCorrectAdjustAction.js";
+import {SimpleEffectAction} from "./effect/EffectActions/SimpleEffectAction.js";
+import {stringOrNumber} from "../types/types.js";
 
 /**
  * @description Adjusts the visual appearance of an image or video.

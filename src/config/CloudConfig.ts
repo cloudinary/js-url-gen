@@ -1,6 +1,6 @@
-import ICloudConfig from "./interfaces/Config/ICloudConfig";
-import {ALLOWED_CLOUD_CONFIG} from "../internal/internalConstants";
-import Config from "./BaseConfig";
+import ICloudConfig from "./interfaces/Config/ICloudConfig.js";
+import {ALLOWED_CLOUD_CONFIG} from "../internal/internalConstants.js";
+import Config from "./BaseConfig.js";
 
 class CloudConfig extends Config implements ICloudConfig {
   cloudName?: string;

@@ -1,18 +1,18 @@
 // eslint-disable @typescript-eslint/ban-ts-comment
-import {LegacyITransforamtionOptions} from "../types/types";
-import {processLayer} from "./transformationProcessing/processLayer";
-import {process_if} from "./transformationProcessing/processIf";
-import {toArray} from "./utils/toArray";
-import {processRadius} from "./transformationProcessing/processRadius";
-import {isObject} from "./utils/isObject";
-import {processCustomFunction} from "./transformationProcessing/processCustomFunction";
-import {processCustomPreFunction} from "./transformationProcessing/processCustomPreFunction";
-import {splitRange} from "./utils/splitRange";
-import {legacyNormalizeExpression} from "./utils/legacyNormalizeExpression";
-import {normRangeValues} from "./utils/norm_range_values";
-import {processVideoParams} from "./transformationProcessing/processVideoParams";
-import Transformation from "./transformation";
-import {processDpr} from "./transformationProcessing/processDpr";
+import {LegacyITransforamtionOptions} from "../types/types.js";
+import {processLayer} from "./transformationProcessing/processLayer.js";
+import {process_if} from "./transformationProcessing/processIf.js";
+import {toArray} from "./utils/toArray.js";
+import {processRadius} from "./transformationProcessing/processRadius.js";
+import {isObject} from "./utils/isObject.js";
+import {processCustomFunction} from "./transformationProcessing/processCustomFunction.js";
+import {processCustomPreFunction} from "./transformationProcessing/processCustomPreFunction.js";
+import {splitRange} from "./utils/splitRange.js";
+import {legacyNormalizeExpression} from "./utils/legacyNormalizeExpression.js";
+import {normRangeValues} from "./utils/norm_range_values.js";
+import {processVideoParams} from "./transformationProcessing/processVideoParams.js";
+import Transformation from "./transformation.js";
+import {processDpr} from "./transformationProcessing/processDpr.js";
 
 
 

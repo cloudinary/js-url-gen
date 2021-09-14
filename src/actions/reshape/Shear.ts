@@ -1,5 +1,5 @@
-import {Action} from "../../internal/Action";
-import {stringOrNumber} from "../../types/types";
+import {Action} from "../../internal/Action.js";
+import {stringOrNumber} from "../../types/types.js";
 
 /**
  * @description Skews the image according to the two specified values in degrees.

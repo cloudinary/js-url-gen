@@ -1,7 +1,7 @@
-import {ImageTransformation} from "../transformation/ImageTransformation";
-import {CloudinaryTransformable} from "./CloudinaryTransformable";
-import ICloudConfig from "../config/interfaces/Config/ICloudConfig";
-import IURLConfig from "../config/interfaces/Config/IURLConfig";
+import {ImageTransformation} from "../transformation/ImageTransformation.js";
+import {CloudinaryTransformable} from "./CloudinaryTransformable.js";
+import ICloudConfig from "../config/interfaces/Config/ICloudConfig.js";
+import IURLConfig from "../config/interfaces/Config/IURLConfig.js";
 
 
 /**

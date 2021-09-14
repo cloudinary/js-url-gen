@@ -3,14 +3,14 @@ import {
   getUrlVersion,
   handleAssetType,
   handleDeliveryType
-} from "../internal/url/cloudinaryURL";
-import {Transformation} from "../transformation/Transformation";
-import ICloudConfig from "../config/interfaces/Config/ICloudConfig";
-import IURLConfig from "../config/interfaces/Config/IURLConfig";
-import IAuthTokenConfig from "../config/interfaces/Config/IAuthTokenConfig";
-import URLConfig from "../config/URLConfig";
-import {getSDKAnalyticsSignature} from "../sdkAnalytics/getSDKAnalyticsSignature";
-import {ITrackedPropertiesThroughAnalytics} from "../sdkAnalytics/interfaces/ITrackedPropertiesThroughAnalytics";
+} from "../internal/url/cloudinaryURL.js";
+import {Transformation} from "../transformation/Transformation.js";
+import ICloudConfig from "../config/interfaces/Config/ICloudConfig.js";
+import IURLConfig from "../config/interfaces/Config/IURLConfig.js";
+import IAuthTokenConfig from "../config/interfaces/Config/IAuthTokenConfig.js";
+import URLConfig from "../config/URLConfig.js";
+import {getSDKAnalyticsSignature} from "../sdkAnalytics/getSDKAnalyticsSignature.js";
+import {ITrackedPropertiesThroughAnalytics} from "../sdkAnalytics/interfaces/ITrackedPropertiesThroughAnalytics.js";
 
 /**
  * This const contains all the valid combination of asset/delivery for URL shortening purposes

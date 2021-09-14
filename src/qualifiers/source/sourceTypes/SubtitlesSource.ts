@@ -1,5 +1,5 @@
-import {BaseTextSource} from "./BaseTextSource";
-import {TextStyle} from "../../textStyle";
+import {BaseTextSource} from "./BaseTextSource.js";
+import {TextStyle} from "../../textStyle.js";
 
 /**
  * @memberOf Qualifiers.Source

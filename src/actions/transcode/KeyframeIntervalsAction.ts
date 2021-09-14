@@ -1,6 +1,6 @@
-import {Action} from "../../internal/Action";
-import {Qualifier} from "../../internal/qualifier/Qualifier";
-import {toFloatAsString} from "../../internal/utils/toFloatAsString";
+import {Action} from "../../internal/Action.js";
+import {Qualifier} from "../../internal/qualifier/Qualifier.js";
+import {toFloatAsString} from "../../internal/utils/toFloatAsString.js";
 
 /**
  * @extends SDK.Action

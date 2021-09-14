@@ -1,4 +1,4 @@
-import Expression from "../expression";
+import Expression from "../expression.js";
 
 /**
  * Process DPR value. If input is 1 returns 1.0

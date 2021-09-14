@@ -1,5 +1,5 @@
-import {IAnalyticsOptions} from "./interfaces/IAnalyticsOptions";
-import {ITrackedPropertiesThroughAnalytics} from "./interfaces/ITrackedPropertiesThroughAnalytics";
+import {IAnalyticsOptions} from "./interfaces/IAnalyticsOptions.js";
+import {ITrackedPropertiesThroughAnalytics} from "./interfaces/ITrackedPropertiesThroughAnalytics.js";
 
 /**
  * @private

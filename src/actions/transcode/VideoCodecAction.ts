@@ -1,5 +1,5 @@
-import {Action} from "../../internal/Action";
-import {AdvVideoCodecType, VideoCodecType} from "../../qualifiers/videoCodecType/VideoCodecType";
+import {Action} from "../../internal/Action.js";
+import {AdvVideoCodecType, VideoCodecType} from "../../qualifiers/videoCodecType/VideoCodecType.js";
 
 /**
  * @extends SDK.Action

@@ -1,4 +1,4 @@
-import {stringPad} from "./stringPad";
+import {stringPad} from "./stringPad.js";
 
 /**
  * @private

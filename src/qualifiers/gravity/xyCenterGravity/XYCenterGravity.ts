@@ -1,4 +1,4 @@
-import {GravityQualifier} from "../GravityQualifier";
+import {GravityQualifier} from "../GravityQualifier.js";
 
 /**
  * @description The class for the XYCenter Gravity builder

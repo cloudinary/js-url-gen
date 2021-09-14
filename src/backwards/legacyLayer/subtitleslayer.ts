@@ -1,4 +1,4 @@
-import TextLayer from './textlayer';
+import TextLayer from './textlayer.js';
 
 class SubtitlesLayer extends TextLayer {
   /**

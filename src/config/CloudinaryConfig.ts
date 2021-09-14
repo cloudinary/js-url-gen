@@ -1,8 +1,8 @@
-import CloudConfig from "./CloudConfig";
-import URLConfig from "./URLConfig";
-import ICloudinaryConfigurations from "./interfaces/Config/ICloudinaryConfigurations";
-import ICloudConfig from "./interfaces/Config/ICloudConfig";
-import IURLConfig from "./interfaces/Config/IURLConfig";
+import CloudConfig from "./CloudConfig.js";
+import URLConfig from "./URLConfig.js";
+import ICloudinaryConfigurations from "./interfaces/Config/ICloudinaryConfigurations.js";
+import ICloudConfig from "./interfaces/Config/ICloudConfig.js";
+import IURLConfig from "./interfaces/Config/IURLConfig.js";
 
 class CloudinaryConfig {
   public cloud: CloudConfig;

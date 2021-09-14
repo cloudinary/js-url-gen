@@ -1,6 +1,6 @@
-import ICloudinaryAssetConfigurations from "./ICloudinaryAssetConfigurations";
-import ITagConfig from "./ITagConfig";
-import IApiConfig from "./IApiConfig";
+import ICloudinaryAssetConfigurations from "./ICloudinaryAssetConfigurations.js";
+import ITagConfig from "./ITagConfig.js";
+import IApiConfig from "./IApiConfig.js";
 
 /**
  * @name ICloudinaryAssetConfigurations

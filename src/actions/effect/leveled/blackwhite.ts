@@ -1,4 +1,4 @@
-import {LeveledEffectAction} from "../EffectActions/LeveledEffectAction";
+import {LeveledEffectAction} from "../EffectActions/LeveledEffectAction.js";
 
 /**
  * @description Converts the image to black and white.

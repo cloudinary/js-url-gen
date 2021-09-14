@@ -1,9 +1,9 @@
-import {VideoSource} from "./source/sourceTypes/VideoSource";
-import {ImageSource} from "./source/sourceTypes/ImageSource";
-import {TextStyle} from "./textStyle";
-import {SubtitlesSource} from "./source/sourceTypes/SubtitlesSource";
-import {FetchSource} from "./source/sourceTypes/FetchSource";
-import {TextSource} from "./source/sourceTypes/TextSource";
+import {VideoSource} from "./source/sourceTypes/VideoSource.js";
+import {ImageSource} from "./source/sourceTypes/ImageSource.js";
+import {TextStyle} from "./textStyle.js";
+import {SubtitlesSource} from "./source/sourceTypes/SubtitlesSource.js";
+import {FetchSource} from "./source/sourceTypes/FetchSource.js";
+import {TextSource} from "./source/sourceTypes/TextSource.js";
 
 /**
  * @description This namespace contains different sources that can be used in overlays and underlays

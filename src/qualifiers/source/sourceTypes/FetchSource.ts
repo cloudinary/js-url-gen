@@ -1,6 +1,6 @@
-import {BaseSource} from "../BaseSource";
-import {FormatQualifier} from "../../format/FormatQualifier";
-import {base64Encode} from "../../../internal/utils/base64Encode";
+import {BaseSource} from "../BaseSource.js";
+import {FormatQualifier} from "../../format/FormatQualifier.js";
+import {base64Encode} from "../../../internal/utils/base64Encode.js";
 
 /**
  * @memberOf Qualifiers.Source

@@ -1,7 +1,7 @@
-import {FlagQualifier} from "../qualifiers/flag/FlagQualifier";
-import {Qualifier} from "./qualifier/Qualifier";
-import {mapToSortedArray} from "./utils/dataStructureUtils";
-import {FlagTypes} from "../types/types";
+import {FlagQualifier} from "../qualifiers/flag/FlagQualifier.js";
+import {Qualifier} from "./qualifier/Qualifier.js";
+import {mapToSortedArray} from "./utils/dataStructureUtils.js";
+import {FlagTypes} from "../types/types.js";
 
 /**
  * @summary SDK

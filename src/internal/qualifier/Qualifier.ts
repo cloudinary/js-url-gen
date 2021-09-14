@@ -1,4 +1,4 @@
-import {QualifierValue} from './QualifierValue';
+import {QualifierValue} from './QualifierValue.js';
 
 /**
  * @summary SDK

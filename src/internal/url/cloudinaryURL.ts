@@ -1,7 +1,7 @@
-import IURLConfig from "../../config/interfaces/Config/IURLConfig";
-import {isUrl} from "./urlUtils/isUrl";
-import {isFileName} from "./urlUtils/isFileName";
-import {publicIDContainsVersion} from "./urlUtils/publicIDContainsVersion";
+import IURLConfig from "../../config/interfaces/Config/IURLConfig.js";
+import {isUrl} from "./urlUtils/isUrl.js";
+import {isFileName} from "./urlUtils/isFileName.js";
+import {publicIDContainsVersion} from "./urlUtils/publicIDContainsVersion.js";
 
 /**
  * Create the URL prefix for Cloudinary resources.
