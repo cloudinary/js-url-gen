@@ -21,6 +21,7 @@
     "build:entryPoints": "ts-node ./scripts/createEntrypoints.ts",
     "build:copyCleanPackageJSON": "ts-node scripts/copyPackageJsonToSrc.ts",
     "build:injectPackageVersion": "ts-node ./scripts/injectPackageVersionToDistFiles.ts",
+    "build:updatePackageExports": "ts-node scripts/updatePackageJsonExports.ts",
     "lint": "eslint src __TESTS__ --color --ext .ts",
     "start": "rollup -c rollup.dev.config.js -w",
     "bundlewatch": "bundlewatch --config ./bundlewatch.config.js",
@@ -91,5 +92,24 @@
   "dependencies": {
     "@types/lodash.clonedeep": "^4.5.6",
     "lodash.clonedeep": "^4.5.0"
+  },
+  "exports": {
+    "./bundles/umd/package.json": "./bundles/umd/package.json",
+    "./package.json": "./package.json",
+    "./actions/*": "./actions/*.js",
+    "./assets/*": "./assets/*.js",
+    "./backwards/*": "./backwards/*.js",
+    "./bundles/*": "./bundles/*.js",
+    "./config/*": "./config/*.js",
+    "./instance/*": "./instance/*.js",
+    "./qualifiers/*": "./qualifiers/*.js",
+    "./sdkAnalytics/*": "./sdkAnalytics/*.js",
+    "./transformation/*": "./transformation/*.js",
+    "./types/*": "./types/*.js",
+    ".": {
+      "node": "./index.js",
+      "require": "./bundles/umd/base.js",
+      "default": "./index.js"
+    }
   }
 }
