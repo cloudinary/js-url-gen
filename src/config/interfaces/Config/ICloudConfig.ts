@@ -1,4 +1,4 @@
-import IAuthTokenConfig from "./IAuthTokenConfig";
+import IAuthTokenConfig from "./IAuthTokenConfig.js";
 
 /**
  * @name ICloudConfig

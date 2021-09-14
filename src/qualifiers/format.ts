@@ -1,4 +1,4 @@
-import {FormatQualifier} from "./format/FormatQualifier";
+import {FormatQualifier} from "./format/FormatQualifier.js";
 
 /**
  * @description Contains functions to select the asset format, can be used to convert images and videos to other formats.

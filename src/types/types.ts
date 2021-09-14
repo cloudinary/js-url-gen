@@ -1,4 +1,4 @@
-import Transformation from "../backwards/transformation";
+import Transformation from "../backwards/transformation.js";
 
 export type StreamingProfileTypes = string | "4k" | "full_hd" | "hd" | "sd" | "full_hd_wifi" | "full_hd_lean" | "hd_lean";
 

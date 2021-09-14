@@ -1,9 +1,9 @@
-import {Action} from "../../internal/Action";
-import {QualifierValue} from "../../internal/qualifier/QualifierValue";
-import {Qualifier} from "../../internal/qualifier/Qualifier";
-import {prepareColor} from "../../internal/utils/prepareColor";
-import {SystemColors} from "../../qualifiers/color";
-import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifier";
+import {Action} from "../../internal/Action.js";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue.js";
+import {Qualifier} from "../../internal/qualifier/Qualifier.js";
+import {prepareColor} from "../../internal/utils/prepareColor.js";
+import {SystemColors} from "../../qualifiers/color.js";
+import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifier.js";
 
 /**
  * @description Applies a shadow filter to the asset.

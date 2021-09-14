@@ -1,5 +1,5 @@
-import {GravityQualifier} from "../GravityQualifier";
-import {CompassQualifier} from "../qualifiers/compass/CompassQualifier";
+import {GravityQualifier} from "../GravityQualifier.js";
+import {CompassQualifier} from "../qualifiers/compass/CompassQualifier.js";
 
 /**
  * @description The class for the CompassGravity builder

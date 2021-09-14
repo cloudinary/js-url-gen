@@ -1,30 +1,30 @@
-import RoundCornersAction from "../actions/roundCorners/RoundCornersAction";
-import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction";
-import {LayerAction} from "../actions/layer/LayerAction";
-import {Action} from "../internal/Action";
-import VariableAction from "../actions/variable/VariableAction";
-import {ConditionalAction} from "../actions/conditional";
-import ResizeSimpleAction from "../actions/resize/ResizeSimpleAction";
-import RotateAction from "../actions/rotate/RotateAction";
-import {BackgroundColor} from "../actions/background/actions/BackgroundColor";
-import {NamedTransformationAction} from "../actions/namedTransformation/NamedTransformationAction";
-import {SmartObjectAction} from "../actions/psdTools/SmartObjectAction";
-import {ClipAction} from "../actions/psdTools/ClipAction";
-import {GetLayerAction} from "../actions/psdTools/GetLayerAction";
-import {IReshape} from "../actions/reshape";
-import {SystemColors} from "../qualifiers/color";
-import {prepareColor} from "../internal/utils/prepareColor";
-import {ExtractAction} from "../actions/extract";
-import {BorderAction} from "../actions/border";
-import {FlagQualifier} from "../qualifiers/flag/FlagQualifier";
-import {EffectActions} from "../actions/effect";
-import {videoEditType} from "../actions/videoEdit";
-import {DeliveryAction} from "../actions/delivery/DeliveryAction";
-import {RawAction} from "../internal/RawAction";
-import {IAdjustAction} from "../actions/adjust";
-import {IDeliveryAction} from "../actions/delivery";
-import {ITranscodeAction} from "../actions/transcode";
-import {AnimatedAction} from "../actions/animated";
+import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction.js";
+import {LayerAction} from "../actions/layer/LayerAction.js";
+import {Action} from "../internal/Action.js";
+import VariableAction from "../actions/variable/VariableAction.js";
+import {ConditionalAction} from "../actions/conditional.js";
+import ResizeSimpleAction from "../actions/resize/ResizeSimpleAction.js";
+import RotateAction from "../actions/rotate/RotateAction.js";
+import {BackgroundColor} from "../actions/background/actions/BackgroundColor.js";
+import {NamedTransformationAction} from "../actions/namedTransformation/NamedTransformationAction.js";
+import {SmartObjectAction} from "../actions/psdTools/SmartObjectAction.js";
+import {ClipAction} from "../actions/psdTools/ClipAction.js";
+import {GetLayerAction} from "../actions/psdTools/GetLayerAction.js";
+import {IReshape} from "../actions/reshape.js";
+import {SystemColors} from "../qualifiers/color.js";
+import {prepareColor} from "../internal/utils/prepareColor.js";
+import {ExtractAction} from "../actions/extract.js";
+import {BorderAction} from "../actions/border.js";
+import {FlagQualifier} from "../qualifiers/flag/FlagQualifier.js";
+import {EffectActions} from "../actions/effect.js";
+import {videoEditType} from "../actions/videoEdit.js";
+import {DeliveryAction} from "../actions/delivery/DeliveryAction.js";
+import {RawAction} from "../internal/RawAction.js";
+import {IAdjustAction} from "../actions/adjust.js";
+import {IDeliveryAction} from "../actions/delivery.js";
+import {ITranscodeAction} from "../actions/transcode.js";
+import {AnimatedAction} from "../actions/animated.js";
+import RoundCornersAction from "../actions/roundCorners/RoundCornersAction.js";
 
 /**
  * @summary SDK
@@ -69,7 +69,7 @@ class Transformation {
    */
   addTransformation(tx: string | Transformation): this {
     if (tx instanceof Transformation) {
-    // Concat the new actions into the existing actions
+      // Concat the new actions into the existing actions
       this.actions = this.actions.concat(tx.actions);
     } else {
       this.actions.push(new RawAction(tx));
@@ -94,7 +94,7 @@ class Transformation {
    * @param {AnimatedAction} animatedAction
    * @return {this}
    */
-  animated(animatedAction: AnimatedAction): this{
+  animated(animatedAction: AnimatedAction): this {
     return this.addAction(animatedAction);
   }
 
@@ -103,7 +103,7 @@ class Transformation {
    * @param {Border} borderAction
    * @return {this}
    */
-  border(borderAction: BorderAction): this{
+  border(borderAction: BorderAction): this {
     return this.addAction(borderAction);
   }
 
@@ -114,7 +114,7 @@ class Transformation {
    * @return {this}
    */
   reshape(reshapeAction: IReshape): this {
-    return this.addAction( reshapeAction);
+    return this.addAction(reshapeAction);
   }
 
   /**
@@ -212,7 +212,7 @@ class Transformation {
    * @param {NamedTransformation} namedTransformation
    * @return {this}
    */
-  namedTransformation(namedTransformation:NamedTransformationAction ): this {
+  namedTransformation(namedTransformation: NamedTransformationAction): this {
     return this.addAction(namedTransformation);
   }
 

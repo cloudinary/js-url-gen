@@ -1,7 +1,7 @@
-import {Action} from "../../internal/Action";
-import {Qualifier} from "../../internal/qualifier/Qualifier";
-import {QualifierValue} from "../../internal/qualifier/QualifierValue";
-import {clip, clipEvenOdd} from "../../qualifiers/flag";
+import {Action} from "../../internal/Action.js";
+import {Qualifier} from "../../internal/qualifier/Qualifier.js";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue.js";
+import {clip, clipEvenOdd} from "../../qualifiers/flag.js";
 
 /**
  * @description  Defines the clipping path to use when trimming pixels.

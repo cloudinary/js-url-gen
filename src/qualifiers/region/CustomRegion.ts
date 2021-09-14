@@ -1,5 +1,5 @@
-import {NamedRegion} from "./NamedRegion";
-import {Qualifier} from "../../internal/qualifier/Qualifier";
+import {NamedRegion} from "./NamedRegion.js";
+import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 
 /**
  * @memberOf Qualifiers.Region

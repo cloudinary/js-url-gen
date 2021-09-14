@@ -1,7 +1,7 @@
-import {BackgroundQualifier} from "../../qualifiers/background/shared/base/BackgroundQualifier";
-import {IGravity} from "../../qualifiers/gravity/GravityQualifier";
-import {Qualifier} from "../../internal/qualifier/Qualifier";
-import ResizeAdvancedAction from "./ResizeAdvancedAction";
+import {BackgroundQualifier} from "../../qualifiers/background/shared/base/BackgroundQualifier.js";
+import {IGravity} from "../../qualifiers/gravity/GravityQualifier.js";
+import {Qualifier} from "../../internal/qualifier/Qualifier.js";
+import ResizeAdvancedAction from "./ResizeAdvancedAction.js";
 
 
 /**

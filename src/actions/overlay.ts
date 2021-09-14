@@ -1,5 +1,5 @@
-import {BaseSource} from "../qualifiers/source/BaseSource";
-import {LayerAction} from "./layer/LayerAction";
+import {BaseSource} from "../qualifiers/source/BaseSource.js";
+import {LayerAction} from "./layer/LayerAction.js";
 
 /**
  * @description Adds a video, text or an image layer as an overlay over the base layer. </br>

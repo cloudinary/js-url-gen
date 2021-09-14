@@ -1,8 +1,8 @@
-import {LeveledEffectAction} from "../EffectActions/LeveledEffectAction";
-import {Qualifier} from "../../../internal/qualifier/Qualifier";
-import {QualifierValue} from "../../../internal/qualifier/QualifierValue";
-import {prepareColor} from "../../../internal/utils/prepareColor";
-import {SystemColors} from "../../../qualifiers/color";
+import {LeveledEffectAction} from "../EffectActions/LeveledEffectAction.js";
+import {Qualifier} from "../../../internal/qualifier/Qualifier.js";
+import {QualifierValue} from "../../../internal/qualifier/QualifierValue.js";
+import {prepareColor} from "../../../internal/utils/prepareColor.js";
+import {SystemColors} from "../../../qualifiers/color.js";
 
 /**
  * @description Makes the background of the image transparent (or solid white for formats that do not support transparency).

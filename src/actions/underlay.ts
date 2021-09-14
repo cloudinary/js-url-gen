@@ -1,7 +1,7 @@
-import {LayerAction} from "./layer/LayerAction";
-import {ImageSource} from "../qualifiers/source/sourceTypes/ImageSource";
-import {BaseTextSource} from "../qualifiers/source/sourceTypes/BaseTextSource";
-import {FetchSource} from "../qualifiers/source/sourceTypes/FetchSource";
+import {LayerAction} from "./layer/LayerAction.js";
+import {ImageSource} from "../qualifiers/source/sourceTypes/ImageSource.js";
+import {BaseTextSource} from "../qualifiers/source/sourceTypes/BaseTextSource.js";
+import {FetchSource} from "../qualifiers/source/sourceTypes/FetchSource.js";
 
 
 /**

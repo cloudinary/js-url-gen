@@ -1,4 +1,4 @@
-import {FocusOnValue} from "./gravity/qualifiers/focusOn/FocusOnValue";
+import {FocusOnValue} from "./gravity/qualifiers/focusOn/FocusOnValue.js";
 
 /**
  * @summary qualifier

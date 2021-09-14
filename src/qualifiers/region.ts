@@ -1,5 +1,5 @@
-import {CustomRegion} from "./region/CustomRegion";
-import {NamedRegion} from "./region/NamedRegion";
+import {CustomRegion} from "./region/CustomRegion.js";
+import {NamedRegion} from "./region/NamedRegion.js";
 
 /**
  * @summary qualifier

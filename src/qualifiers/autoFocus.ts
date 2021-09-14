@@ -1,5 +1,5 @@
-import {QualifierValue} from "../internal/qualifier/QualifierValue";
-import {FocusOnValue} from "./focusOn";
+import {QualifierValue} from "../internal/qualifier/QualifierValue.js";
+import {FocusOnValue} from "./focusOn.js";
 
 /**
  * @summary qualifier

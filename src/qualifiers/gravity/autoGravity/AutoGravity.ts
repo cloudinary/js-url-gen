@@ -1,5 +1,5 @@
-import {AutoFocus} from "../../autoFocus";
-import {GravityQualifier} from "../GravityQualifier";
+import {AutoFocus} from "../../autoFocus.js";
+import {GravityQualifier} from "../GravityQualifier.js";
 
 /**
  * @description The class for the autoGravity builder

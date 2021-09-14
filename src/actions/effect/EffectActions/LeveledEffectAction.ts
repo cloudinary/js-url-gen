@@ -1,5 +1,5 @@
-import {SimpleEffectAction} from "./SimpleEffectAction";
-import {ExpressionQualifier} from "../../../qualifiers/expression/ExpressionQualifier";
+import {SimpleEffectAction} from "./SimpleEffectAction.js";
+import {ExpressionQualifier} from "../../../qualifiers/expression/ExpressionQualifier.js";
 
 /**
  * @description A base class for effects with a level, the extending class needs to implement a method that calls setLevel()

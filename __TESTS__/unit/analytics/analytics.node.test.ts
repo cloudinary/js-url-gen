@@ -6,6 +6,9 @@
 import pkg from '../../../src/package.json';
 import {createNewImageWithAnalytics} from "./testUtils/createNewImageWithAnalytics";
 
+// Since packageVersion value is only set during build, we need to mock it during tests
+jest.mock("../../../src/internal/utils/packageVersion", () => ({packageVersion: pkg.version}));
+
 describe('Add analytics to a regular URL', () => {
   it('Works with default values', () => {
     const cldImage = createNewImageWithAnalytics('sample');

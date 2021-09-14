@@ -1,9 +1,9 @@
-import IURLConfig from "../config/interfaces/Config/IURLConfig";
-import {Action} from "../internal/Action";
-import {CloudinaryTransformable} from "./CloudinaryTransformable";
-import ICloudConfig from "../config/interfaces/Config/ICloudConfig";
-import {videoEditType} from "../actions/videoEdit";
-import {VideoTransformation} from "../transformation/VideoTransformation";
+import IURLConfig from "../config/interfaces/Config/IURLConfig.js";
+import {Action} from "../internal/Action.js";
+import {CloudinaryTransformable} from "./CloudinaryTransformable.js";
+import ICloudConfig from "../config/interfaces/Config/ICloudConfig.js";
+import {videoEditType} from "../actions/videoEdit.js";
+import {VideoTransformation} from "../transformation/VideoTransformation.js";
 
 
 /**

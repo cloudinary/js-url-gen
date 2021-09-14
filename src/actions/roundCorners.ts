@@ -20,8 +20,8 @@
  * image.toURL();
  */
 
-import byRadius from './roundCorners/byRadius';
-import max from './roundCorners/max';
+import byRadius from './roundCorners/byRadius.js';
+import max from './roundCorners/max.js';
 
 const RoundCorners = {byRadius, max};
 export {RoundCorners, byRadius, max};

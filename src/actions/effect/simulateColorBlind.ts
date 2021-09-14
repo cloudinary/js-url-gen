@@ -1,6 +1,6 @@
-import {Action} from "../../internal/Action";
-import {Qualifier} from "../../internal/qualifier/Qualifier";
-import {SimulateColorBlindType} from "../../types/types";
+import {Action} from "../../internal/Action.js";
+import {Qualifier} from "../../internal/qualifier/Qualifier.js";
+import {SimulateColorBlindType} from "../../types/types.js";
 
 /**
  * @description Simulates the way an image would appear to someone with the specified color blind condition

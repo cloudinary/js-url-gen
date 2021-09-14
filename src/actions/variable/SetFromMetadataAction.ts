@@ -1,4 +1,4 @@
-import VariableAction from "./VariableAction";
+import VariableAction from "./VariableAction.js";
 
 /**
  * @description Sets a user-defined variable from structured metadata.

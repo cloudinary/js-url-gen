@@ -1,4 +1,4 @@
-import {Qualifier} from "../../internal/qualifier/Qualifier";
+import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 
 
 /**

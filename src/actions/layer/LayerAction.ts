@@ -1,12 +1,12 @@
-import {Action} from "../../internal/Action";
-import {TimelinePosition} from "../../qualifiers/video/TimelinePosition";
-import {BlendModeQualifier} from "../../qualifiers/blendMode/BlendModeQualifier";
-import {PositionQualifier} from "../../qualifiers/position/PositionQualifier";
-import {FlagQualifier} from "../../qualifiers/flag/FlagQualifier";
-import {Position} from "../../qualifiers/position";
-import {BaseSource} from "../../qualifiers/source/BaseSource";
-import {BlendModeType} from "../../types/types";
-import {Qualifier} from "../../internal/qualifier/Qualifier";
+import {Action} from "../../internal/Action.js";
+import {TimelinePosition} from "../../qualifiers/video/TimelinePosition.js";
+import {BlendModeQualifier} from "../../qualifiers/blendMode/BlendModeQualifier.js";
+import {PositionQualifier} from "../../qualifiers/position/PositionQualifier.js";
+import {FlagQualifier} from "../../qualifiers/flag/FlagQualifier.js";
+import {Position} from "../../qualifiers/position.js";
+import {BaseSource} from "../../qualifiers/source/BaseSource.js";
+import {BlendModeType} from "../../types/types.js";
+import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 
 
 /**

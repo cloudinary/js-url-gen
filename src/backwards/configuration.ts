@@ -1,5 +1,5 @@
-import { cloneDeep } from '../internal/utils/cloneDeep';
-import {isObject} from "./utils/isObject";
+import { cloneDeep } from '../internal/utils/cloneDeep.js';
+import {isObject} from "./utils/isObject.js";
 /**
  * Class for defining account configuration options.
  * Depends on 'utils'

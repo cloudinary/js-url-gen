@@ -1,4 +1,4 @@
-import {LeveledEffectAction} from "./EffectActions/LeveledEffectAction";
+import {LeveledEffectAction} from "./EffectActions/LeveledEffectAction.js";
 
 /**
  * @description Applies an ordered dither filter to the image.

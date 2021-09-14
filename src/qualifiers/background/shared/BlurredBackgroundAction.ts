@@ -1,4 +1,4 @@
-import {BackgroundQualifier} from "./base/BackgroundQualifier";
+import {BackgroundQualifier} from "./base/BackgroundQualifier.js";
 
 /**
  * @description A class for blurred background transformations.

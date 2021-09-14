@@ -1,4 +1,4 @@
-import CustomFunctionAction from "./CustomFunctionAction";
+import CustomFunctionAction from "./CustomFunctionAction.js";
 
 class RemoteAction extends CustomFunctionAction {
   constructor(fn: string) {

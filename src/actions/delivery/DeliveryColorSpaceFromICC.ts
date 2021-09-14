@@ -1,6 +1,6 @@
-import {Action} from "../../internal/Action";
-import {QualifierValue} from "../../internal/qualifier/QualifierValue";
-import {Qualifier} from "../../internal/qualifier/Qualifier";
+import {Action} from "../../internal/Action.js";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue.js";
+import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 
 
 /**

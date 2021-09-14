@@ -1,9 +1,9 @@
-import {Action} from "../../internal/Action";
-import {QualifierValue} from "../../internal/qualifier/QualifierValue";
-import {Qualifier} from "../../internal/qualifier/Qualifier";
-import {prepareColor} from "../../internal/utils/prepareColor";
-import {SystemColors} from "../../qualifiers/color";
-import {OutlineModeType} from "../../types/types";
+import {Action} from "../../internal/Action.js";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue.js";
+import {Qualifier} from "../../internal/qualifier/Qualifier.js";
+import {prepareColor} from "../../internal/utils/prepareColor.js";
+import {SystemColors} from "../../qualifiers/color.js";
+import {OutlineModeType} from "../../types/types.js";
 
 /**
  * @description Adds an outline to a transparent image. For examples, see the Image Transformations guide.

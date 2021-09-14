@@ -1,6 +1,6 @@
-import {isString} from "../../internal/utils/dataStructureUtils";
-import VariableAction from "./VariableAction";
-import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifier";
+import {isString} from "../../internal/utils/dataStructureUtils.js";
+import VariableAction from "./VariableAction.js";
+import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifier.js";
 
 /**
  * @description Sets a user-defined variable.

@@ -1,8 +1,8 @@
-import Layer from './layer';
-import {snakeCase} from "../utils/snakeCase";
-import {isEmpty} from "../utils/isEmpty";
-import {smartEscape} from "../utils/smartEscape";
-import {isNumberLike} from "../utils/isNumberLike";
+import Layer from './layer.js';
+import {snakeCase} from "../utils/snakeCase.js";
+import {isEmpty} from "../utils/isEmpty.js";
+import {smartEscape} from "../utils/smartEscape.js";
+import {isNumberLike} from "../utils/isNumberLike.js";
 
 class TextLayer extends Layer {
   /**

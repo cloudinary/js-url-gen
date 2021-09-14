@@ -1,6 +1,6 @@
-import ResizeSimpleAction from "./ResizeSimpleAction";
-import {IGravity} from "../../qualifiers/gravity/GravityQualifier";
-import {Qualifier} from "../../internal/qualifier/Qualifier";
+import ResizeSimpleAction from "./ResizeSimpleAction.js";
+import {IGravity} from "../../qualifiers/gravity/GravityQualifier.js";
+import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 
 export type IShortenGravity = 'auto' | 'north' | 'center' | 'east' | 'west' | 'south' | 'north_west' | 'south_east' | 'south_west' | 'north_east';
 

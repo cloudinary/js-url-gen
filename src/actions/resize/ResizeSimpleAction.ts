@@ -1,11 +1,11 @@
-import {Qualifier} from "../../internal/qualifier/Qualifier";
-import {Action} from "../../internal/Action";
-import {toFloatAsString} from "../../internal/utils/toFloatAsString";
-import {AspectRatioQualifierValue} from "../../qualifiers/aspectRatio/AspectRatioQualifierValue";
-import {regionRelative, relative} from "../../qualifiers/flag";
-import {FlagQualifier} from "../../qualifiers/flag/FlagQualifier";
-import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifier";
-import {AspectRatioType} from "../../types/types";
+import {Qualifier} from "../../internal/qualifier/Qualifier.js";
+import {Action} from "../../internal/Action.js";
+import {toFloatAsString} from "../../internal/utils/toFloatAsString.js";
+import {AspectRatioQualifierValue} from "../../qualifiers/aspectRatio/AspectRatioQualifierValue.js";
+import {regionRelative, relative} from "../../qualifiers/flag.js";
+import {FlagQualifier} from "../../qualifiers/flag/FlagQualifier.js";
+import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifier.js";
+import {AspectRatioType} from "../../types/types.js";
 
 /**
  * @description Defines a resize using width and height.

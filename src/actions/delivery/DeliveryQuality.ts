@@ -1,6 +1,6 @@
-import {QualifierValue} from "../../internal/qualifier/QualifierValue";
-import {Qualifier} from "../../internal/qualifier/Qualifier";
-import {DeliveryAction} from "./DeliveryAction";
+import {QualifierValue} from "../../internal/qualifier/QualifierValue.js";
+import {Qualifier} from "../../internal/qualifier/Qualifier.js";
+import {DeliveryAction} from "./DeliveryAction.js";
 
 /**
  * @description Controls the quality of the delivered image or video.

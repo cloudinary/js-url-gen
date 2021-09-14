@@ -1,7 +1,7 @@
-import {Action} from "../../internal/Action";
-import {Qualifier} from "../../internal/qualifier/Qualifier";
-import {RotationModeQualifierValue} from "../../qualifiers/rotate/RotationModeQualifierValue";
-import {RotationModeType} from "../../types/types";
+import {Action} from "../../internal/Action.js";
+import {Qualifier} from "../../internal/qualifier/Qualifier.js";
+import {RotationModeQualifierValue} from "../../qualifiers/rotate/RotationModeQualifierValue.js";
+import {RotationModeType} from "../../types/types.js";
 
 const QUALIFIER_KEY = 'a';
 

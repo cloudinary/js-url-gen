@@ -1,5 +1,5 @@
-import {Action} from "../../internal/Action";
-import {toFloatAsString} from "../../internal/utils/toFloatAsString";
+import {Action} from "../../internal/Action.js";
+import {toFloatAsString} from "../../internal/utils/toFloatAsString.js";
 
 /**
  * @description Class for creating a preview of a video

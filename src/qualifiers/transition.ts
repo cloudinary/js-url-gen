@@ -1,4 +1,4 @@
-import {VideoSource} from "./source/sourceTypes/VideoSource";
+import {VideoSource} from "./source/sourceTypes/VideoSource.js";
 /**
  * @description This namespace contains different sources that can be used as a transition between two videos
  * @memberOf Qualifiers

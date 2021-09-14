@@ -4,7 +4,7 @@
  * @return {Object} a new object
  * @param source
  */
-import {isEmpty} from "./isEmpty";
+import {isEmpty} from "./isEmpty.js";
 
 export const withCamelCaseKeys = function(source: {}) {
   return convertKeys(source, camelCase);

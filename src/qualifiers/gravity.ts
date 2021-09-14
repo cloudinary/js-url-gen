@@ -1,9 +1,9 @@
-import {FocusOnValue} from "./focusOn";
-import {CompassGravity} from "./gravity/compassGravity/CompassGravity";
-import {FocusOnGravity} from "./gravity/focusOnGravity/FocusOnGravity";
-import {AutoGravity} from "./gravity/autoGravity/AutoGravity";
-import {CompassQualifier} from "./gravity/qualifiers/compass/CompassQualifier";
-import {XYCenterGravity} from "./gravity/xyCenterGravity/XYCenterGravity";
+import {FocusOnValue} from "./focusOn.js";
+import {CompassGravity} from "./gravity/compassGravity/CompassGravity.js";
+import {FocusOnGravity} from "./gravity/focusOnGravity/FocusOnGravity.js";
+import {AutoGravity} from "./gravity/autoGravity/AutoGravity.js";
+import {CompassQualifier} from "./gravity/qualifiers/compass/CompassQualifier.js";
+import {XYCenterGravity} from "./gravity/xyCenterGravity/XYCenterGravity.js";
 
 
 /**

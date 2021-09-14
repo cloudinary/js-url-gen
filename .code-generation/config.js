@@ -9,6 +9,7 @@ module.exports = {
     closeQualifiersChar: '',
     closeTransformationChar: '',
     hideActionGroups: true,
+    useSimpleQualifierValuesForGroups: ['Compass','AudioCodec','AnimatedFormat','ArtisticFilter','blendMode','Flag','FontStyle','FontAntialias','FontWeight','FontHinting','textAlignment','textDecoration', 'GradientDirection','ImproveMode','OutlineMode','Progressive','SimulateColorBlind','StreamingProfile'],
     mainTransformationString: {
       openSyntaxString: {
         image: 'new CloudinaryImage(\'#publicID\')',
@@ -61,7 +62,7 @@ module.exports = {
       }
     },
     unsupportedTxParams: ['fl_waveform', 'fl_animated', 'e_tint', 'u_', 'e_theme', 'l_fetch', 'l_text', 'u_text', 'af_'],
-    unsupportedCode: ['.stroke(', '.textFit(', 'Animated.edit', '.RoundCorners(', 'getVideoFrame', 'Source.image', '.transcode(']
+    unsupportedSyntaxList: ['.stroke(', '.textFit(', 'Animated.edit', '.RoundCorners(', 'getVideoFrame', 'Source.image', '.transcode(']
   },
   "overwrites": {
     qualifiers: {
