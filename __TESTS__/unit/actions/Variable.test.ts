@@ -5,7 +5,6 @@ import {Expression} from "../../../src/qualifiers/expression";
 const {set} = Variable;
 const {expression} = Expression;
 
-
 describe('Tests for Transformation Action -- Variable', () => {
   it('tests common variable values', () => {
     expect(set('a', 30).toString()).toBe('$a_30');
