@@ -30,7 +30,7 @@ import { FocusOn } from "qualifiers/focusOn";
 import { AutoFocus } from "qualifiers/autoFocus";
 import { VideoCodec } from "qualifiers/videoCodec";
 import { Adjust } from "actions/adjust";
-import { ImageTransformation } from "index";
+import { ImageTransformation } from "transformation/ImageTransformation";
 import { Effect } from "actions/effect";
 import { Conditional } from "actions/conditional";
 import { Underlay } from "actions/underlay";

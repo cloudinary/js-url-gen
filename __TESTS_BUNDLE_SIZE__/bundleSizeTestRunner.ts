@@ -28,6 +28,7 @@ async function bundleSizeTestRunner():Promise<void> {
     const OUTPUT_FILE = `bundle${i}`;
     const TEST_NAME = testCases[i].name;
     const EXPECTED_SIZE_IN_KB = testCases[i].sizeLimitInKB;
+    const ALLOWED_MIN_SIZE_IN_KB = testCases[i].minAllowedSize || 2;
 
     // Create the entry file for Webpack
     log.debug('Starting to build webpack loop');
@@ -42,10 +43,11 @@ async function bundleSizeTestRunner():Promise<void> {
     const bundleInfo = getBundleInfo(OUTPUT_FILE);
     const ACTUAL_SIZE_IN_KB = Math.round(bundleInfo.size / 1024);
 
-    if (ACTUAL_SIZE_IN_KB <= EXPECTED_SIZE_IN_KB) {
+
+    if (ACTUAL_SIZE_IN_KB <= EXPECTED_SIZE_IN_KB && ACTUAL_SIZE_IN_KB > ALLOWED_MIN_SIZE_IN_KB) {
       handleTestSuccess(testCases[i], ACTUAL_SIZE_IN_KB);
     } else {
-      handleTestError(TEST_NAME, EXPECTED_SIZE_IN_KB, ACTUAL_SIZE_IN_KB);
+      handleTestError(TEST_NAME, EXPECTED_SIZE_IN_KB, ACTUAL_SIZE_IN_KB, ALLOWED_MIN_SIZE_IN_KB);
       fail_count++;
     }
   }

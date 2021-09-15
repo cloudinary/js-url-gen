@@ -1,6 +1,6 @@
 import {createTestURL} from "./transformationLegacyTests/utils/createTestURL";
-import {createCloudinaryLegacyURL} from "../../src";
 import Transformation from "../../src/backwards/transformation";
+import {createCloudinaryLegacyURL} from "../../src/backwards/createCloudinaryLegacyURL";
 
 describe('Create legacy urls', () => {
   it('Should throw without cloudName', () => {

@@ -15,7 +15,7 @@ import importFromPackage from "./utils/stringGenerators/importFromPackage";
 const bundleSizeTestCases:ITestCase[] = [
   {
     name: 'Tests CloudinaryImage with Resize',
-    sizeLimitInKB: 20,
+    sizeLimitInKB: 17,
     importsArray: [
       importFromDist('assets/CloudinaryImage', 'CloudinaryImage'),
       importFromDist('instance/Cloudinary', 'Cloudinary'),
@@ -24,7 +24,7 @@ const bundleSizeTestCases:ITestCase[] = [
   },
   {
     name: 'Tests CloudinaryImage with Resize and Adjust',
-    sizeLimitInKB: 30,
+    sizeLimitInKB: 20,
     importsArray: [
       importFromDist('assets/CloudinaryImage', 'CloudinaryImage'),
       importFromDist('instance/Cloudinary', 'Cloudinary'),
@@ -34,7 +34,7 @@ const bundleSizeTestCases:ITestCase[] = [
   },
   {
     name: 'Tests CloudinaryImage with Resize, Adjust and Border',
-    sizeLimitInKB: 30,
+    sizeLimitInKB: 20,
     importsArray: [
       importFromDist('assets/CloudinaryImage', 'CloudinaryImage'),
       importFromDist('instance/Cloudinary', 'Cloudinary'),
@@ -45,7 +45,7 @@ const bundleSizeTestCases:ITestCase[] = [
   },
   {
     name: 'Tests CloudinaryImage image with Resize, adjust and delivery',
-    sizeLimitInKB: 32,
+    sizeLimitInKB: 21,
     importsArray: [
       importFromDist('assets/CloudinaryImage', 'CloudinaryImage'),
       importFromDist('instance/Cloudinary', 'Cloudinary'),
@@ -56,7 +56,7 @@ const bundleSizeTestCases:ITestCase[] = [
   },
   {
     name: 'Tests Overlay imports',
-    sizeLimitInKB: 50,
+    sizeLimitInKB: 20,
     importsArray: [
       importFromDist('assets/CloudinaryImage', 'CloudinaryImage'),
       importFromDist('actions/overlay', 'Overlay'),
@@ -67,7 +67,7 @@ const bundleSizeTestCases:ITestCase[] = [
   },
   {
     name: 'Import backwards compatibility function',
-    sizeLimitInKB: 57,
+    sizeLimitInKB: 45,
     importsArray: [
       importFromPackage('createCloudinaryLegacyURL')
     ]
@@ -76,7 +76,28 @@ const bundleSizeTestCases:ITestCase[] = [
     name: 'Import all of the SDK',
     sizeLimitInKB: 118,
     importsArray: [
-      importFromPackage('CloudinaryURLGEN')
+      importFromPackage('* as CloudinaryURLGEN')
+    ]
+  },
+  {
+    name: 'Import a Transformation Object',
+    sizeLimitInKB: 5,
+    importsArray: [
+      importFromPackage('Transformation')
+    ]
+  },
+  {
+    name: 'Import All Actions',
+    sizeLimitInKB: 30,
+    importsArray: [
+      importFromPackage('Actions')
+    ]
+  },
+  {
+    name: 'Import All Qualifiers',
+    sizeLimitInKB: 35,
+    importsArray: [
+      importFromPackage('Qualifiers')
     ]
   }
 ];
