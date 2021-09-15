@@ -2,7 +2,8 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "plugins": [
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "import"
   ],
   "extends": [
     "eslint:recommended",
@@ -35,6 +36,7 @@
     "comma-spacing" : "error",
     "no-multi-spaces" : "error",
     "prefer-template" : "error",
+    "import/extensions": [2, "ignorePackages"],
     "max-nested-callbacks" : ["error",{
       "max": 3
     }],
