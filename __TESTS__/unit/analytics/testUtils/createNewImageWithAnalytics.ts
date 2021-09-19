@@ -1,7 +1,7 @@
 import ICloudConfig from "../../../../src/config/interfaces/Config/ICloudConfig";
 import IURLConfig from "../../../../src/config/interfaces/Config/IURLConfig";
-import {CloudinaryImage} from "../../../../src";
 import {createNewImage} from "../../../TestUtils/createCloudinaryImage";
+import {CloudinaryImage} from "../../../../src/assets/CloudinaryImage";
 
 /**
  * Create a new CloudinaryImage with analytics turned on by default
