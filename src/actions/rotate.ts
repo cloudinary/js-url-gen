@@ -21,12 +21,34 @@
  * image.toURL();
  */
 
+import {RotationModeQualifierValue} from "../qualifiers/rotate/RotationModeQualifierValue";
+import {RotationModeType} from "../types/types";
+import RotateAction from "./rotate/RotateAction";
 
-import byAngle from "./rotate/byAngle.js";
-import mode from "./rotate/mode.js";
 
+/**
+ * @summary action
+ * @description Rotate an image by using a rotationMode
+ * @param {RotationModeType|string} rotationMode
+ * For a list of supported rotation modes see {@link Qualifiers.RotationMode| types of rotation modes} for
+ * possible values
+ * @memberOf Actions.Rotate
+ * @return {Actions.Rotate.RotateAction}
+ */
+function mode(rotationMode: RotationModeQualifierValue | RotationModeType | string) :RotateAction {
+  return new RotateAction().mode(rotationMode);
+}
 
-
+/**
+ * @summary action
+ * @description Rotate an image by the given degrees.
+ * @param {number} angle Given degrees. (Range: 0 to 360, Default: 0).
+ * @return {Actions.Rotate.RotateAction}
+ * @memberOf Actions.Rotate
+ */
+function byAngle(angle: number) :RotateAction {
+  return new RotateAction(angle);
+}
 
 
 const Rotate = {byAngle, mode};
