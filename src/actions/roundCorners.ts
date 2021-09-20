@@ -21,7 +21,7 @@
  */
 
 
-import RoundCornersAction from "./roundCorners/RoundCornersAction";
+import RoundCornersAction from "./roundCorners/RoundCornersAction.js";
 
 /**
  * @summary action
