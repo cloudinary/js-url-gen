@@ -1,6 +1,6 @@
 import ICloudConfig from "../../src/config/interfaces/Config/ICloudConfig";
 import IURLConfig from "../../src/config/interfaces/Config/IURLConfig";
-import {CloudinaryFile} from "../../src";
+import {CloudinaryFile} from "../../src/assets/CloudinaryFile";
 
 /**
  *

@@ -1,6 +1,6 @@
 import {Cloudinary} from 'cloudinary-core';
-import {createCloudinaryLegacyURL} from "../../../../src";
 import {LegacyITransforamtionOptions} from "../../../../src/types/types";
+import {createCloudinaryLegacyURL} from "../../../../src/backwards/createCloudinaryLegacyURL";
 
 const CLegacy = Cloudinary.new( { cloud_name: "demo"});
 
