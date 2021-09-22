@@ -21,9 +21,9 @@
  * image.toURL();
  */
 
-import {RotationModeQualifierValue} from "../qualifiers/rotate/RotationModeQualifierValue";
-import {RotationModeType} from "../types/types";
-import RotateAction from "./rotate/RotateAction";
+import {RotationModeQualifierValue} from "../qualifiers/rotate/RotationModeQualifierValue.js";
+import {RotationModeType} from "../types/types.js";
+import RotateAction from "./rotate/RotateAction.js";
 
 
 /**

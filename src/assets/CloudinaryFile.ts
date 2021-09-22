@@ -181,7 +181,7 @@ class CloudinaryFile {
    */
   validateAssetForURLCreation(): void {
     if (typeof this.cloudName === 'undefined') {
-      throw 'You must supply a cloudName in either toURL() or when initializing the asset';
+      throw 'You must supply a cloudName when initializing the asset';
     }
 
     const suffixContainsDot = this.suffix && this.suffix.indexOf('.') >= 0;
