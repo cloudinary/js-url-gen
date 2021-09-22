@@ -35,8 +35,8 @@ const cld = new Cloudinary({
 
 // Let's create a new image
 const myImage = cld.image('sample');
-
 import {Resize} from '@cloudinary/url-gen/actions/resize';
+
 myImage.resize(Resize.scale().width(100).height(100));
 
 // When we're done, we can apply all our changes and create a URL.
@@ -61,3 +61,31 @@ console.log(myURL);
 @cloudinary/url-gen is optimized around bundle size, as such we do not transpile our distributed modules, 
 we leave the decision of what browsers to support, and what transpilations to apply, to you, the user.
 
+### Testing with Jest
+
+As mentioned above, we're shipping @cloudinary/url-gen with ES6 code, as this provides great tree-shaking potential.
+it also requires a few adjustments when testing.
+
+In jest.config, you'll need to add these lines to allow babel to transpile our code.
+```json
+{
+  "transform": {
+    "node_modules/@cloudinary/url-gen": "babel-jest"
+  },
+  "transformIgnorePatterns": ["/node_modules/(?!@cloudinary/url-gen)"]
+}
+```
+Make sure to install babel-jest:
+`npm install babel-jest` 
+
+You'll also need to ensure you have a babel.config.js file (and not a .babelrc), and that
+it's configured properly to transpile code,
+   
+*As an example*:
+```js
+module.exports = {
+  "presets": [
+    "@babel/preset-env"
+  ]
+};
+```
