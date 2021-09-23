@@ -8,9 +8,9 @@ Using this SDK, you can apply advanced transformations to your images and videos
 This SDK can also be used with [popular frontend frameworks](https://cloudinary.com/documentation/sdks/js/frontend-frameworks/index.html).
 
 ## Help & Examples
-- {@tutorial gettingStarted} 
-- {@tutorial annotatedExamples}
-- {@tutorial configuration}
+- [Getting started](https://cloudinary.com/documentation/sdks/js/url-gen/tutorial-gettingStarted.html)
+- [Annotated Code Examples](https://cloudinary.com/documentation/sdks/js/url-gen/tutorial-annotatedExamples.html)
+- [Configuration](https://cloudinary.com/documentation/sdks/js/url-gen/tutorial-configuration_.html)
 
 ## Installation
 ```bash
@@ -36,6 +36,7 @@ const cld = new Cloudinary({
 // Let's create a new image
 const myImage = cld.image('sample');
 import {Resize} from '@cloudinary/url-gen/actions/resize';
+
 myImage.resize(Resize.scale().width(100).height(100));
 
 // When we're done, we can apply all our changes and create a URL.
