@@ -4,8 +4,7 @@ import {CloudinaryVideo} from "../assets/CloudinaryVideo.js";
 
 
 class Cloudinary {
-  CloudinaryImage: typeof CloudinaryImage;
-  cloudinaryConfig: ICloudinaryConfigurations;
+  private cloudinaryConfig: ICloudinaryConfigurations;
 
   constructor(cloudinaryConfig?: ICloudinaryConfigurations) {
     if (cloudinaryConfig) {
@@ -24,6 +23,10 @@ class Cloudinary {
   setConfig(cloudinaryConfig: ICloudinaryConfigurations):this {
     this.cloudinaryConfig = cloudinaryConfig;
     return this;
+  }
+
+  getConfig() {
+    return this.cloudinaryConfig;
   }
 
   extendConfig():void {
