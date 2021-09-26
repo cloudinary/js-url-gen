@@ -1,6 +1,6 @@
 {
   "name": "@cloudinary/url-gen",
-  "version": "1.0.0-beta.5",
+  "version": "1.0.0",
   "description": "",
   "scripts": {
     "test": "npm run test:types && npm run build && jest --coverage --reporters default &&  npm run test:size",
@@ -23,7 +23,7 @@
     "build:injectPackageVersion": "ts-node ./scripts/injectPackageVersionToDistFiles.ts",
     "build:updatePackageExports": "ts-node scripts/updatePackageJsonExports.ts",
     "lint": "npm run lint:src && npm run lint:test",
-    "lint:src" : "eslint src --color --ext .ts",
+    "lint:src": "eslint src --color --ext .ts",
     "lint:test": "eslint __TESTS__ __TESTS_BUNDLE_SIZE__ --rule 'import/extensions: [0, \"never\"]' --color --ext .ts",
     "start": "rollup -c rollup.dev.config.js -w",
     "bundlewatch": "bundlewatch --config ./bundlewatch.config.js",
