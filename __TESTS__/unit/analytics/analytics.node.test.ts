@@ -3,7 +3,8 @@
  */
 
 
-import pkg from '../../../src/package.json';
+import pkg from '../../../package.json';
+// eslint-disable-next-line import/extensions
 import {createNewImageWithAnalytics} from "./testUtils/createNewImageWithAnalytics";
 
 // Since packageVersion value is only set during build, we need to mock it during tests
