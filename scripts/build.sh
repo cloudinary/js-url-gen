@@ -3,7 +3,7 @@ set -e;
 rimraf ./dist
 npm run lint
 npm run build:ESM
-npm run build:UMD
+npm run build:rollup
 npm run build:entryPoints
 npm run build:docs
 npm run build:injectPackageVersion

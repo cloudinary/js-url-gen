@@ -2,7 +2,7 @@
   "preset": "ts-jest",
   "testEnvironment": "jsdom",
   "bail": true,
-  "resolver": "<rootDir>/src/internal/utils/jest-ts-resolver.js",
+  "resolver": "<rootDir>/src/internal/utils/jest-ts-resolver.cjs",
   "collectCoverageFrom": [
     "<rootDir>/src/**/*.ts",
     "<rootDir>/scripts/**/*.ts",
@@ -27,7 +27,7 @@
       "diagnostics": false
     }
   },
-  "reporters": [
+    "reporters": [
     "default",
     ["jest-html-reporters", {
       "publicPath" : "./public/progress/",

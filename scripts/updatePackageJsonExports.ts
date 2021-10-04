@@ -27,9 +27,17 @@ const distSubDirectoriesArray: string[] = readdirSync(resolve('./dist'), {withFi
   // Sort alphabetically
   .sort();
 
-// Convert directory string to object of {[directory/*]: directory/*.js}
-const distSubDirectoriesObj: Record<string, string> = distSubDirectoriesArray
-  .reduce((obj, dir) => ({...obj, ...{[`${dir}/*`]: `${dir}/*.js`}}), {}); //
+// Convert directory string to object of {[./directory/*]: { require: "directory/*.mjs", import: "directory/*.js" }}
+const distSubDirectoriesObj: Record<
+  string,
+  Record<string, string>
+> = distSubDirectoriesArray.reduce(
+  (obj, dir) => ({
+    ...obj,
+    ...{ [`${dir}/*`]: { require: `${dir}/*.cjs`, import: `${dir}/*.js` } },
+  }),
+  {}
+);
 
 // Generate updated package json object
 const resultPackageJson = JSON.stringify({
