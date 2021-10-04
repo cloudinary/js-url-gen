@@ -92,10 +92,6 @@
     "typescript": "^3.9.3",
     "webpack": "^4.44.1"
   },
-  "dependencies": {
-    "@types/lodash.clonedeep": "^4.5.6",
-    "lodash.clonedeep": "^4.5.0"
-  },
   "exports": {
     "./bundles/umd/package.json": "./bundles/umd/package.json",
     "./package.json": "./package.json",

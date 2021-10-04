@@ -1,7 +1,9 @@
-import cloneDeep from 'lodash/cloneDeep';
+// eslint-disable-next-line import/extensions
+import {cloneDeep} from '../../src/internal/utils/cloneDeep';
 import {
   createTestURL,
   createTestURLUsingRealLegacy
+// eslint-disable-next-line import/extensions
 } from "./transformationLegacyTests/utils/createTestURL";
 
 type CompatibilityTestCase = {

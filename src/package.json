@@ -5,10 +5,6 @@
 	"keywords": [],
 	"author": "",
 	"license": "MIT",
-	"dependencies": {
-		"@types/lodash.clonedeep": "^4.5.6",
-		"lodash.clonedeep": "^4.5.0"
-	},
 	"exports": {
 		"./bundles/umd/package.json": "./bundles/umd/package.json",
 		"./package.json": "./package.json",
