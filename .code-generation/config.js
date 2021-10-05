@@ -66,6 +66,7 @@ module.exports = {
   },
   "overwrites": {
     qualifiers: {
+      // colorOverride is a qualifier of Reshape.trim action.
       color_override: (payload) => {
         const {qualifierDTO} = payload;
         const colorName = qualifierDTO.qualifiers[0].name;
