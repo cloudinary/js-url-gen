@@ -82,10 +82,10 @@ class CloudinaryTransformable extends CloudinaryFile {
 
   /**
    * @desc An alias to Action Delivery.quality
-   * @param {string} quality
+   * @param {string|number} quality
    * @return {this}
    */
-  quality(quality: string): this {
+  quality(quality: string|number): this {
     this.addAction(new DeliveryFormat('q', quality));
     return this;
   }
