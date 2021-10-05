@@ -9,7 +9,7 @@ const {resolve} = require('path');
 
 const distFolder = resolve('./dist');
 const options = {
-  files: [`${distFolder}/**/*.js`, `${distFolder}/**/*.ts`],
+  files: [`${distFolder}/**/*.js`, `${distFolder}/**/*.cjs`, `${distFolder}/**/*.ts`],
   from: /PACKAGE_VERSION_INJECTED_DURING_BUILD/g,
   to: version
 };
