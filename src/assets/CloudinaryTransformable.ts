@@ -25,6 +25,7 @@ import {IAdjustAction} from "../actions/adjust.js";
 import {DeliveryQualityAction} from "../actions/delivery/DeliveryQuality.js";
 import {ITrackedPropertiesThroughAnalytics} from "../sdkAnalytics/interfaces/ITrackedPropertiesThroughAnalytics.js";
 import {AnimatedAction} from "../actions/animated.js";
+import {DeliveryFormat} from "../actions/delivery/DeliveryFormat.js";
 
 /**
  * @desc Cloudinary Transformable interface, extended by any class that needs a Transformation Interface
@@ -80,12 +81,22 @@ class CloudinaryTransformable extends CloudinaryFile {
   }
 
   /**
-   * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
-   * @param {Actions.Delivery} quality
+   * @desc An alias to Action Delivery.quality
+   * @param {string|number} quality
    * @return {this}
    */
-  quality(quality: DeliveryQualityAction): this {
-    this.transformation.quality(quality);
+  quality(quality: string|number): this {
+    this.addAction(new DeliveryFormat('q', quality));
+    return this;
+  }
+
+  /**
+   * @desc An alias to Action Delivery.format
+   * @param {string} format
+   * @return {this}
+   */
+  format(format: string): this {
+    this.addAction(new DeliveryFormat('f', format));
     return this;
   }
 

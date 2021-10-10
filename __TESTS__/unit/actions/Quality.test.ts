@@ -5,14 +5,6 @@ import {createNewImage} from "../../TestUtils/createCloudinaryImage";
 
 
 describe('Tests for Transformation Action -- Delivery.quality', () => {
-  it('Ensures auto is accepted as an action to ImageTransformation', () => {
-    const tImage = createNewImage();
-    // Ensures it compiles and doesn't throw
-    expect(
-      tImage.quality(Delivery.quality('80'))
-    ).toEqual(tImage);
-  });
-
   it('Creates a cloudinaryURL with quality', () => {
     const url = createNewImage('sample')
       .delivery(Delivery.quality(Quality.auto()))

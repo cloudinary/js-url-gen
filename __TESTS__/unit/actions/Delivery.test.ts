@@ -22,6 +22,20 @@ describe('Tests for Transformation Action -- Delivery', () => {
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/f_auto/sample');
   });
 
+  it('Creates a cloudinaryURL with quality alias', () => {
+    const url = createNewImage('sample')
+      .quality('auto')
+      .toURL();
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/q_auto/sample');
+  });
+
+  it('Creates a cloudinaryURL with format alias', () => {
+    const url = createNewImage('sample')
+      .format('gif')
+      .toURL();
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/f_gif/sample');
+  });
+
   it('Creates a cloudinaryURL with Format', () => {
     const url = createNewImage('sample')
       .delivery(format(Format.gif()))
