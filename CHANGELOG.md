@@ -1,3 +1,15 @@
+1.1.0 / 2021-10-11
+==================
+
+New functionality
+-----------------
+  * Distribute CommonJS for projects that cannot use ESM
+  * Add format and quality alias
+
+Other changes
+-----------------
+  * Remove lodash.clonedeep dependency (#446)
+
 1.0.0 / 2021-09-26
 ==================
 
