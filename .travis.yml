@@ -4,3 +4,8 @@ node_js:
 script:
   - npm run lint
   - npm run test
+
+notifications:
+  email:
+    recipients:
+      - sdk_developers@cloudinary.com
