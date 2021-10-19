@@ -14,7 +14,7 @@
     "prepare:import": "npm run copy:import && npm run pkg:prepare && npm run clean-install",
     "prepare:require": "npm run copy:require && npm run clean-install ",
     "test:import": "npm run prepare:import && node ./testImport.js",
-    "test:require": "npm run prepare:require && npm run clean-install && node ./testRequire.js",
+    "test:require": "npm run prepare:require && node ./testRequire.js",
     "test": "npm run test:import && npm run test:require && npm run copy:import"
   },
   "keywords": [],
