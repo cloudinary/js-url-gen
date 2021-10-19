@@ -3,14 +3,15 @@
   "version": "1.1.0",
   "description": "",
   "scripts": {
-    "test": "npm run test:types && npm run build && jest --coverage --reporters default &&  npm run test:size",
+    "test": "npm run test:types && npm run build && jest --coverage --reporters default &&  npm run test:size && npm run test:import:require",
     "test:size": "ts-node -O '{\"module\":\"CommonJS\"}' __TESTS_BUNDLE_SIZE__/bin/bin.ts",
     "test:comp": "node ./scripts/updateCompliationTests.js && jest __TESTS__/compilationsOutput.test.ts  --coverage",
     "test:comp:service": "ts-node devTools/sanity/index.ts && jest __TESTS__/compilation.test.ts",
     "test:unit": "jest --reporters default",
     "test:unit:watch": "jest --watch --reporters default",
-    "build": "bash ./scripts/build.sh",
     "test:types": "tsc --project tsconfig.test.json",
+    "test:import:require": "cd testApps/testImportAndRequire && npm run test",
+    "build": "bash ./scripts/build.sh",
     "build:ESM": "tsc --project tsconfig.json --outDir dist --declaration true",
     "build:rollup": "rollup -c",
     "build:docs": "node ./scripts/buildDocs.js",
@@ -131,9 +132,14 @@
       "require": "./types/*.cjs",
       "import": "./types/*.js"
     },
+    "./*": {
+      "require": "./*.cjs",
+      "import": "./*.js"
+    },
     ".": {
+      "require": "./index.cjs",
+      "import": "./index.js",
       "node": "./index.js",
-      "require": "./bundles/umd/base.js",
       "default": "./index.js"
     }
   }

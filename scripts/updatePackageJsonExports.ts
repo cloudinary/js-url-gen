@@ -46,9 +46,14 @@ const resultPackageJson = JSON.stringify({
     "./bundles/umd/package.json": "./bundles/umd/package.json",
     "./package.json": "./package.json",
     ...distSubDirectoriesObj,
+    "./*": {
+      "require": "./*.cjs",
+      "import": "./*.js"
+    },
     ".": {
+      "require": "./index.cjs",
+      "import": "./index.js",
       "node": "./index.js",
-      "require": "./bundles/umd/base.js",
       "default": "./index.js"
     }
   }

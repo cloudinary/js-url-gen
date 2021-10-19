@@ -1,0 +1,19 @@
+{
+  "name": "test-import-require",
+  "scripts": {
+    "pkg:build": "cd ../.. && npm run build",
+    "pkg:pack": "cd ../../dist && npm pack",
+    "pkg:move": "npm i -D move-file-cli && move-file ../../dist/cloudinary-url-gen-*.tgz ./cloudinary-url-gen.tgz",
+    "uninstall-deps": "npm uninstall @cloudinary/url-gen && rm -rf node_modules",
+    "clean-install": "npm run uninstall-deps && npm install cloudinary-url-gen.tgz && npm install",
+    "reset": "npm run uninstall-deps && rm cloudinary-url-gen.tgz",
+    "pretest": "npm run pkg:build && npm run pkg:pack && npm run pkg:move && npm run clean-install",
+    "test": "node ./testImport.mjs && node ./testRequire.js && npm run reset"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "move-file-cli": "^3.0.0"
+  }
+}
