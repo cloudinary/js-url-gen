@@ -3,14 +3,14 @@ import { Resize } from '@cloudinary/url-gen/actions/resize';
 
 const cld = new Cloudinary({
   cloud: {
-    cloudName: 'tamas-demo',
+    cloudName: 'test',
   },
   url: {
     secure: true,
   },
 });
 
-const myImage = cld.image('jam/darthvader');
+const myImage = cld.image('sample');
 myImage.resize(Resize.scale().width(100).height(100));
 
 const myURL = myImage.toURL();
