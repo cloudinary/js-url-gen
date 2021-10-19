@@ -5,9 +5,9 @@ npm run test
 ```
 
 ### What it does:
-1. Sets package.json "type"="module"  
-2. Builds, packs and copies over cloudinary-url-gen.tgz
-3. Installs the local cloudinary-url-gen.tgz package
-4. Runs testImport.js
-5. Removed package.json type property
-6. Runs testRequire.js
+1. Builds, packs and copies over cloudinary-url-gen.tgz
+2. Installs the local cloudinary-url-gen.tgz package
+3. Runs testImport.mjs *
+4. Runs testRequire.js
+
+* Notice that .mjs is the same as setting type="module" in package.json

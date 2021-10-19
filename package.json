@@ -2,7 +2,6 @@
   "name": "@cloudinary/url-gen",
   "version": "1.1.0",
   "description": "",
-  "main": "dist/index.js",
   "scripts": {
     "test": "npm run test:types && npm run build && jest --coverage --reporters default &&  npm run test:size && npm run test:import:require",
     "test:size": "ts-node -O '{\"module\":\"CommonJS\"}' __TESTS_BUNDLE_SIZE__/bin/bin.ts",

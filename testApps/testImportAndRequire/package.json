@@ -4,18 +4,16 @@
     "pkg:build": "cd ../.. && npm run build",
     "pkg:pack": "cd ../../dist && npm pack",
     "pkg:move": "npm i -D move-file-cli && move-file ../../dist/cloudinary-url-gen-*.tgz ./cloudinary-url-gen.tgz",
-    "pkg:prepare": "npm run pkg:build && npm run pkg:pack && npm run pkg:move",
-    "clean": "npm uninstall @cloudinary/url-gen && rm -rf node_modules",
-    "clean-install": "npm run clean && npm install cloudinary-url-gen.tgz && npm install",
-    "test:import": "sed -i '' 's/\"test-import-require\",/\"test-import-require\", \"type\": \"module\",/' package.json && npm run pkg:prepare && npm run clean-install && node ./testImport.js",
-    "test:require": "sed -i '' 's/\"type\": \"module\",//' package.json && node ./testRequire.js",
-    "test": "npm run test:import && npm run test:require && npm run clean && rm cloudinary-url-gen.tgz"
+    "uninstall-deps": "npm uninstall @cloudinary/url-gen && rm -rf node_modules",
+    "clean-install": "npm run uninstall-deps && npm install cloudinary-url-gen.tgz && npm install",
+    "reset": "npm run uninstall-deps && rm cloudinary-url-gen.tgz",
+    "pretest": "npm run pkg:build && npm run pkg:pack && npm run pkg:move && npm run clean-install",
+    "test": "node ./testImport.mjs && node ./testRequire.js && npm run reset"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cpy-cli": "^3.1.1",
     "move-file-cli": "^3.0.0"
   }
 }
