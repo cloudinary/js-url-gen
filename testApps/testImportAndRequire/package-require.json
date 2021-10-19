@@ -1,0 +1,25 @@
+{
+  "name": "test-import-require",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pkg:build": "cd ../.. && npm run build",
+    "pkg:pack": "cd ../../dist && npm pack",
+    "pkg:move": "move-file ../../dist/cloudinary-url-gen-*.tgz ./cloudinary-url-gen.tgz",
+    "pkg:prepare": "npm run pkg:build && npm run pkg:pack && npm run pkg:move",
+    "clean-install": "rm -rf node_modules && npm install cloudinary-url-gen.tgz && npm install",
+    "prepare:import": "npm i -D cpy-cli && cpy ./package-import.json . --rename=package.json && npm run pkg:prepare && npm run clean-install",
+    "prepare:require": "npm i -D cpy-cli && cpy ./package-require.json . --rename=package.json && npm run clean-install ",
+    "test:import": "npm run prepare:import && node ./testImport.js",
+    "test:require": "npm run prepare:require && npm run clean-install && node ./testRequire.js",
+    "test": "npm run test:import && npm run test:require"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cpy-cli": "^3.1.1",
+    "move-file-cli": "^3.0.0"
+  }
+}
