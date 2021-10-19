@@ -9,8 +9,8 @@
     "pkg:move": "move-file ../../dist/cloudinary-url-gen-*.tgz ./cloudinary-url-gen.tgz",
     "pkg:prepare": "npm run pkg:build && npm run pkg:pack && npm run pkg:move",
     "clean-install": "rm -rf node_modules && npm install cloudinary-url-gen.tgz && npm install",
-    "copy:import": "npm i -D cpy-cli && cpy ./package-import.json . --rename=package.json",
-    "copy:require": "npm i -D cpy-cli && cpy ./package-require.json . --rename=package.json",
+    "copy:import": "npm install && cpy ./package-import.json . --rename=package.json",
+    "copy:require": "npm install && cpy ./package-require.json . --rename=package.json",
     "prepare:import": "npm run copy:import && npm run pkg:prepare && npm run clean-install",
     "prepare:require": "npm run copy:require && npm run clean-install ",
     "test:import": "npm run prepare:import && node ./testImport.js",
@@ -19,5 +19,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "cpy-cli": "^3.1.1",
+    "move-file-cli": "^3.0.0"
+  }
 }
