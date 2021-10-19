@@ -5,12 +5,9 @@ npm run test
 ```
 
 ### What it does:
-* Test import:
-  * Copies package-import.json on top of package.json, to get a clean package.json
-  * Builds, packs and copies over cloudinary-url-gen.tgz
-  * Installs the local cloudinary-url-gen.tgz package
-  * Runs testImport.js
-* Test require:
-  * Copies package-require.json on top of package.json, to get a clean package.json
-  * Installs the local cloudinary-url-gen.tgz package
-  * Runs testRequire.js
+1. Sets package.json "type"="module"  
+2. Builds, packs and copies over cloudinary-url-gen.tgz
+3. Installs the local cloudinary-url-gen.tgz package
+4. Runs testImport.js
+5. Removed package.json type property
+6. Runs testRequire.js
