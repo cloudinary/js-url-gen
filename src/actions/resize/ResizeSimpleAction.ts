@@ -91,20 +91,12 @@ class ResizeSimpleAction extends Action {
     return this.addFlag(regionRelative());
   }
 
-  static fromJson(actionModel: IActionModel): ResizeSimpleAction{
-    const {actionType} = actionModel;
-    let result;
-
-    if (!actionType){
-      result = {error: unsupportedError(`unsupported action ${actionModel.actionType}`)};
-    } else {
-      const resizeModel = actionModel as IResizeSimpleActionModel;
-      const width = resizeModel.dimensions?.width;
-      const height = resizeModel.dimensions?.height;
-      result = new ResizeSimpleAction(actionType, width, height);
-      resizeModel.relative && result.relative();
-      resizeModel.regionRelative && result.regionRelative();
-    }
+  static fromJson(actionModel: IActionModel): ResizeSimpleAction {
+    const {actionType, dimensions, relative, regionRelative} = (actionModel as IResizeSimpleActionModel);
+    const {width, height} = dimensions;
+    const result = new ResizeSimpleAction(actionType, width, height);
+    relative && result.relative();
+    regionRelative && result.regionRelative();
 
     return result as ResizeSimpleAction;
   }
