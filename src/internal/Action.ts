@@ -102,7 +102,7 @@ class Action {
       return this._actionModel;
     }
 
-    return {error: unsupportedError(`unsupported action`)};
+    return {error: unsupportedError(`unsupported action ${this.constructor.name}`)};
   }
 
   protected addValueToQualifier(qualifierKey: string, qualifierValue: any): this{

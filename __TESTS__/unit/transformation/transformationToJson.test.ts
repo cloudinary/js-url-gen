@@ -1,7 +1,7 @@
 import {Transformation} from '../../../src';
 import {Resize} from "../../../src/actions";
-import {Action} from "../../../src/internal/Action";
 import {UnsupportedError} from "../../../src/internal/utils/unsupportedError";
+import {Action} from "../../../src/internal/Action";
 
 describe('Transformation.toJson()', ()=>{
   it('scale', ()=>{
@@ -17,9 +17,8 @@ describe('Transformation.toJson()', ()=>{
   });
 
   it('unsupported actions', ()=>{
-    const unsupported = {error: new UnsupportedError('unsupported action')};
-    const transformation = new Transformation();
-    transformation.addAction(new Action()).addAction(new Action());
+    const unsupported = {error: new UnsupportedError('unsupported action Action')};
+    const transformation = new Transformation().addAction(new Action()).addAction(new Action());
     expect(transformation.toJson()).toStrictEqual([unsupported, unsupported]);
   });
 });
