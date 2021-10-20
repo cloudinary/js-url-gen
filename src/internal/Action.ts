@@ -2,7 +2,9 @@ import {FlagQualifier} from "../qualifiers/flag/FlagQualifier.js";
 import {Qualifier} from "./qualifier/Qualifier.js";
 import {mapToSortedArray} from "./utils/dataStructureUtils.js";
 import {FlagTypes} from "../types/types.js";
-import {IActionModel} from "./IActionModel.js";
+import {IActionModel} from "./models/IActionModel.js";
+import {unsupportedError} from "./utils/unsupportedError.js";
+import {IAction} from "./models/IAction.js";
 
 /**
  * @summary SDK
@@ -97,13 +99,25 @@ class Action {
   }
 
   toJson(): IActionModel{
-    return this._actionModel;
+    if (this._actionModel.actionType){
+      return this._actionModel;
+    }
+
+    const error = unsupportedError(`unsupported action`);
+    return {error};
   }
 
   protected addValueToQualifier(qualifierKey: string, qualifierValue: any): this{
     this.qualifiers.get(qualifierKey).addValue(qualifierValue);
 
     return this;
+  }
+
+  // eslint-disable-next-line no-unused-vars
+  public static fromJson(actionModel: IActionModel): IAction{
+    const error = unsupportedError(`unsupported action`);
+    console.error(error);
+    return {error};
   }
 }
 

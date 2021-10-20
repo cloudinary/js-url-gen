@@ -1,6 +1,5 @@
 import ResizeSimpleAction from "./ResizeSimpleAction.js";
 import {GravityQualifier} from "../../qualifiers/gravity/GravityQualifier.js";
-import {IResizeSimpleActionModel} from "../../internal/IResizeSimpleActionModel.js";
 
 /**
  * @description Defines a scaling resize action.
@@ -18,13 +17,6 @@ class ScaleAction extends ResizeSimpleAction {
     return this.addQualifier(new GravityQualifier('liquid'));
   }
 
-  fromJson(actionModel: IResizeSimpleActionModel): ScaleAction {
-    const result = new ScaleAction(actionModel.actionType, actionModel.dimensions.width, actionModel.dimensions.height);
-    actionModel.relative && result.relative();
-    actionModel.regionRelative && result.regionRelative();
-
-    return result;
-  }
 }
 
 

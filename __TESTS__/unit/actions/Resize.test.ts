@@ -31,5 +31,20 @@ describe('Tests for Transformation Action -- Resize', () => {
         regionRelative: true
       });
     });
+
+    it('Resize.scale.fromJson()', () => {
+      const action = Resize.scale().fromJson({
+        actionType: 'scale',
+        dimensions: {
+          width: 100,
+          height: 200
+        },
+        relative: true,
+        regionRelative: true
+      });
+
+      const url = getImageWithResize(action, 'url');
+      expect(url).toContain('c_scale,fl_region_relative,fl_relative,h_200,w_100');
+    });
   });
 });

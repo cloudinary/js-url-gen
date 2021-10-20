@@ -25,6 +25,7 @@ import {IDeliveryAction} from "../actions/delivery.js";
 import {ITranscodeAction} from "../actions/transcode.js";
 import {AnimatedAction} from "../actions/animated.js";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction.js";
+import {IActionModel} from "../internal/models/IActionModel.js";
 
 /**
  * @summary SDK
@@ -295,6 +296,12 @@ class Transformation {
 
   videoEdit(action: videoEditType): this {
     return this.addAction(action);
+  }
+
+  toJson(): IActionModel[]{
+    if (this.actions && this.actions.length){
+      return this.actions.map((action)=>action.toJson());
+    }
   }
 }
 

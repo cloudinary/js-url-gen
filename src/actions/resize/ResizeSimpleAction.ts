@@ -6,7 +6,9 @@ import {regionRelative, relative} from "../../qualifiers/flag.js";
 import {FlagQualifier} from "../../qualifiers/flag/FlagQualifier.js";
 import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifier.js";
 import {AspectRatioType} from "../../types/types.js";
-import {IResizeSimpleActionModel} from "../../internal/IResizeSimpleActionModel.js";
+import {IResizeSimpleActionModel} from "../../internal/models/IResizeSimpleActionModel.js";
+import {IActionModel} from "../../internal/models/IActionModel.js";
+import {get} from "../../internal/utils/get.js";
 
 /**
  * @description Defines a resize using width and height.
@@ -89,12 +91,19 @@ class ResizeSimpleAction extends Action {
     return this.addFlag(regionRelative());
   }
 
-  fromJson(actionModel: IResizeSimpleActionModel): ResizeSimpleAction {
-    const result = new ResizeSimpleAction(actionModel.actionType, actionModel.dimensions.width, actionModel.dimensions.height);
-    actionModel.relative && result.relative();
-    actionModel.regionRelative && result.regionRelative();
+  static fromJson(actionModel: IActionModel): ResizeSimpleAction {
+    const {actionType} = actionModel;
 
-    //TODO: add aspectRatio when implementing fromJson of action which model includes aspectRatio
+    if (!actionType){
+      return Action.fromJson(actionModel) as ResizeSimpleAction;
+    }
+
+    const resizeModel = actionModel as IResizeSimpleActionModel;
+    const width = get(resizeModel, 'dimensions.width') as string;
+    const height = get(resizeModel, 'dimensions.height') as string;
+    const result = new ResizeSimpleAction(actionType, width, height);
+    resizeModel.relative && result.relative();
+    resizeModel.regionRelative && result.regionRelative();
 
     return result;
   }
