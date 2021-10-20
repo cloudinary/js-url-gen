@@ -300,7 +300,14 @@ class Transformation {
 
   toJson(): IActionModel[]{
     if (this.actions && this.actions.length){
-      return this.actions.map((action)=>action.toJson());
+      return this.actions.map((action) => {
+        if (action instanceof RawAction){
+          // RawAction does not include a .toJson()
+          return new Action().toJson();
+        }
+
+        return action.toJson();
+      });
     }
   }
 }

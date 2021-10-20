@@ -17,15 +17,6 @@ class RawAction {
   toString(): string {
     return this.raw;
   }
-
-  /**
-   * Returns an error
-   * This is because we do not support RawAction.fromJson
-   * @param actionModel
-   */
-  public static fromJson(actionModel: IActionModel): IAction {
-    return {error: unsupportedError(`unsupported action RawAction`)};
-  }
 }
 
 export {RawAction};
