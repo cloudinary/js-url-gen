@@ -3,9 +3,9 @@
  * Run all tests by running `npm run test:size`
  */
 
-import importFromDist from "./utils/stringGenerators/importFromDist";
-import {ITestCase} from "./interfaces/ITestCase";
-import importFromPackage from "./utils/stringGenerators/importFromPackage";
+import importFromDist from "./utils/stringGenerators/importFromDist.js";
+import {ITestCase} from "./interfaces/ITestCase.js";
+import importFromPackage from "./utils/stringGenerators/importFromPackage.js";
 
 /**
  * @description - Each test case is built using an array of imports  (importsArray)
@@ -34,7 +34,7 @@ const bundleSizeTestCases:ITestCase[] = [
   },
   {
     name: 'Tests CloudinaryImage with Resize, Adjust and Border',
-    sizeLimitInKB: 20,
+    sizeLimitInKB: 21,
     importsArray: [
       importFromDist('assets/CloudinaryImage', 'CloudinaryImage'),
       importFromDist('instance/Cloudinary', 'Cloudinary'),
