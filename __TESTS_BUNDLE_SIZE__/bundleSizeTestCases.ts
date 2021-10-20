@@ -3,9 +3,12 @@
  * Run all tests by running `npm run test:size`
  */
 
-import importFromDist from "./utils/stringGenerators/importFromDist.js";
-import {ITestCase} from "./interfaces/ITestCase.js";
-import importFromPackage from "./utils/stringGenerators/importFromPackage.js";
+// eslint-disable-next-line import/extensions
+import importFromDist from "./utils/stringGenerators/importFromDist";
+// eslint-disable-next-line import/extensions
+import {ITestCase} from "./interfaces/ITestCase";
+// eslint-disable-next-line import/extensions
+import importFromPackage from "./utils/stringGenerators/importFromPackage";
 
 /**
  * @description - Each test case is built using an array of imports  (importsArray)
