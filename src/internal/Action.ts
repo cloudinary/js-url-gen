@@ -112,7 +112,7 @@ class Action {
   }
 
   // eslint-disable-next-line no-unused-vars
-  public static fromJson(actionModel: IActionModel): Partial<Action>{
+  public static fromJson(actionModel: IActionModel): Action{
     return {error: unsupportedError(`unsupported action ${actionModel.actionType}`)} as unknown as Action;
   }
 }

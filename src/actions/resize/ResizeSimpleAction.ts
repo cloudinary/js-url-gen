@@ -91,21 +91,22 @@ class ResizeSimpleAction extends Action {
     return this.addFlag(regionRelative());
   }
 
-  static fromJson(actionModel: IActionModel): Partial<Action>{
+  static fromJson(actionModel: IActionModel): ResizeSimpleAction{
     const {actionType} = actionModel;
+    let result;
 
     if (!actionType){
-      return Action.fromJson(actionModel);
+      result = Action.fromJson(actionModel);
+    } else {
+      const resizeModel = actionModel as IResizeSimpleActionModel;
+      const width = get(resizeModel, 'dimensions.width') as string;
+      const height = get(resizeModel, 'dimensions.height') as string;
+      result = new ResizeSimpleAction(actionType, width, height);
+      resizeModel.relative && result.relative();
+      resizeModel.regionRelative && result.regionRelative();
     }
 
-    const resizeModel = actionModel as IResizeSimpleActionModel;
-    const width = get(resizeModel, 'dimensions.width') as string;
-    const height = get(resizeModel, 'dimensions.height') as string;
-    const result = new ResizeSimpleAction(actionType, width, height);
-    resizeModel.relative && result.relative();
-    resizeModel.regionRelative && result.regionRelative();
-
-    return result;
+    return result as ResizeSimpleAction;
   }
 }
 
