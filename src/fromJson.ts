@@ -20,15 +20,15 @@ function getActionByModel(actionModel: IActionModel): IFromJson{
  * Return the action instance represented by given actionModel
  * @param actionModel
  */
-function actionFromJson(actionModel: IActionModel): IAction {
-  return getActionByModel(actionModel).fromJson(actionModel);
+function actionFromJson(actionModel: IActionModel): IActionModel {
+  return getActionByModel(actionModel).fromJson(actionModel) as IActionModel;
 }
 
 /**
  * Return array of action instances represented by given action models.
  * @param actionModels
  */
-function fromJson(actionModels: IActionModel[]): IAction[]{
+function fromJson(actionModels: IActionModel[]): IActionModel[]{
   return actionModels.map(actionFromJson);
 }
 

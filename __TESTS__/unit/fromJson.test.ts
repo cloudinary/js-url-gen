@@ -1,15 +1,15 @@
 import {fromJson, Transformation} from "../../src/index.js";
 import {Action} from "../../src/internal/Action.js";
-import {IAction} from "../../src/internal/models/IAction.js";
+import {IActionModel} from "../../src/internal/models/IActionModel.js";
 import {UnsupportedError} from "../../src/internal/utils/unsupportedError.js";
 
 /**
  * Returns new Transformation filled with given actions
  * @param actions
  */
-function actionsToTransformation(actions: IAction[]){
+function actionsToTransformation(actions: IActionModel[]){
   const transformation = new Transformation();
-  actions.forEach((action)=>transformation.addAction(action as Action));
+  actions.forEach((action)=>transformation.addAction(action as unknown as Action));
 
   return transformation;
 }

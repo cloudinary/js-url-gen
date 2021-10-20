@@ -4,7 +4,6 @@ import {mapToSortedArray} from "./utils/dataStructureUtils.js";
 import {FlagTypes} from "../types/types.js";
 import {IActionModel} from "./models/IActionModel.js";
 import {unsupportedError} from "./utils/unsupportedError.js";
-import {IAction} from "./models/IAction.js";
 
 /**
  * @summary SDK
@@ -113,7 +112,7 @@ class Action {
   }
 
   // eslint-disable-next-line no-unused-vars
-  public static fromJson(actionModel: IActionModel): IAction{
+  public static fromJson(actionModel: IActionModel): IActionModel{
     return {error: unsupportedError(`unsupported action ${actionModel.actionType}`)};
   }
 }
