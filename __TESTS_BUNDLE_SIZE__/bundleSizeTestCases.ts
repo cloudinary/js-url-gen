@@ -3,11 +3,8 @@
  * Run all tests by running `npm run test:size`
  */
 
-// eslint-disable-next-line import/extensions
 import importFromDist from "./utils/stringGenerators/importFromDist";
-// eslint-disable-next-line import/extensions
 import {ITestCase} from "./interfaces/ITestCase";
-// eslint-disable-next-line import/extensions
 import importFromPackage from "./utils/stringGenerators/importFromPackage";
 
 /**
