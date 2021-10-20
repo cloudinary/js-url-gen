@@ -6,6 +6,7 @@ import {regionRelative, relative} from "../../qualifiers/flag.js";
 import {FlagQualifier} from "../../qualifiers/flag/FlagQualifier.js";
 import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifier.js";
 import {AspectRatioType} from "../../types/types.js";
+import {IResizeSimpleActionModel} from "../../internal/IResizeSimpleActionModel.js";
 
 /**
  * @description Defines a resize using width and height.
@@ -14,6 +15,8 @@ import {AspectRatioType} from "../../types/types.js";
  * @see Visit {@link Actions.Resize| Resize} for examples
  */
 class ResizeSimpleAction extends Action {
+  protected _actionModel: IResizeSimpleActionModel = {dimensions: {}};
+
   /**
    * @param {string} cropType
    * @param {number | string} cropWidth The required width of a transformed asset.
@@ -21,13 +24,11 @@ class ResizeSimpleAction extends Action {
    */
   constructor(cropType: string, cropWidth: number | string, cropHeight?: number | string) {
     super();
-    if (cropWidth) {
-      this.addQualifier(new Qualifier('w', cropWidth));
-    }
-    if (cropHeight) {
-      this.addQualifier(new Qualifier('h', cropHeight));
-    }
+
+    this._actionModel.actionType = cropType;
     this.addQualifier(new Qualifier('c', cropType));
+    cropWidth && this.width(cropWidth);
+    cropHeight && this.height(cropHeight);
   }
 
   /**
@@ -35,6 +36,7 @@ class ResizeSimpleAction extends Action {
    * @param {string | number} x The height in pixels (if an integer is specified) or as a percentage (if a float is specified).
    */
   height(x: number | string | ExpressionQualifier): this {
+    this._actionModel.dimensions.height = x as string;
     return this.addQualifier(new Qualifier('h', x));
   }
 
@@ -43,6 +45,7 @@ class ResizeSimpleAction extends Action {
    * @param {string | number} x The width in pixels (if an integer is specified) or as a percentage (if a float is specified).
    */
   width(x: number | string | ExpressionQualifier): this {
+    this._actionModel.dimensions.width = x as string;
     return this.addQualifier(new Qualifier('w', x));
   }
 
@@ -73,6 +76,7 @@ class ResizeSimpleAction extends Action {
    * @return {this}
    */
   relative(): this {
+    this._actionModel.relative = true;
     return this.addFlag(relative());
   }
 
@@ -81,9 +85,19 @@ class ResizeSimpleAction extends Action {
    * @return {this}
    */
   regionRelative(): this {
+    this._actionModel.regionRelative = true;
     return this.addFlag(regionRelative());
   }
-}
 
+  fromJson(actionModel: IResizeSimpleActionModel): ResizeSimpleAction {
+    const result = new ResizeSimpleAction(actionModel.actionType, actionModel.dimensions.width, actionModel.dimensions.height);
+    actionModel.relative && result.relative();
+    actionModel.regionRelative && result.regionRelative();
+
+    //TODO: add aspectRatio when implementing fromJson of action which model includes aspectRatio
+
+    return result;
+  }
+}
 
 export default ResizeSimpleAction;
