@@ -8,7 +8,6 @@ import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifi
 import {AspectRatioType} from "../../types/types.js";
 import {IResizeSimpleActionModel} from "../../internal/models/IResizeSimpleActionModel.js";
 import {IActionModel} from "../../internal/models/IActionModel.js";
-import {get} from "../../internal/utils/get.js";
 import {unsupportedError} from "../../internal/utils/unsupportedError.js";
 
 /**
@@ -100,8 +99,8 @@ class ResizeSimpleAction extends Action {
       result = {error: unsupportedError(`unsupported action ${actionModel.actionType}`)};
     } else {
       const resizeModel = actionModel as IResizeSimpleActionModel;
-      const width = get(resizeModel, 'dimensions.width') as string;
-      const height = get(resizeModel, 'dimensions.height') as string;
+      const width = resizeModel.dimensions?.width;
+      const height = resizeModel.dimensions?.height;
       result = new ResizeSimpleAction(actionType, width, height);
       resizeModel.relative && result.relative();
       resizeModel.regionRelative && result.regionRelative();
