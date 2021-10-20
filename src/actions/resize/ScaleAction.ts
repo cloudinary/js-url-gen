@@ -16,8 +16,6 @@ class ScaleAction extends ResizeSimpleAction {
   liquidRescaling(): this {
     return this.addQualifier(new GravityQualifier('liquid'));
   }
-
 }
-
 
 export {ScaleAction};
