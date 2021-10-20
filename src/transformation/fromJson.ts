@@ -5,7 +5,7 @@ import {IAction} from "../internal/models/IAction.js";
 import {IFromJson} from "../internal/models/IFromJson.js";
 
 /**
- * Returns action for given model
+ * Returns action class for given model
  * @param actionModel
  */
 function getActionByModel(actionModel: IActionModel): IFromJson{
@@ -16,7 +16,7 @@ function getActionByModel(actionModel: IActionModel): IFromJson{
 }
 
 /**
- * Return the
+ * Return the action instance represented by given actionModel
  * @param actionModel
  */
 function actionFromJson(actionModel: IActionModel): IAction {
@@ -24,7 +24,7 @@ function actionFromJson(actionModel: IActionModel): IAction {
 }
 
 /**
- *
+ * Return array of action instances represented by given action models.
  * @param actionModels
  */
 function fromJson(actionModels: IActionModel[]): IAction[]{
