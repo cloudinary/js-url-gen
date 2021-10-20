@@ -1,6 +1,6 @@
 import ResizeSimpleAction from "./ResizeSimpleAction.js";
 import {GravityQualifier} from "../../qualifiers/gravity/GravityQualifier.js";
-import {IResizeSimpleActionModel} from "../../internal/IResizeSimpleActionModel";
+import {IResizeSimpleActionModel} from "../../internal/IResizeSimpleActionModel.js";
 
 /**
  * @description Defines a scaling resize action.
