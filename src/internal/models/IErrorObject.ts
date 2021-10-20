@@ -1,5 +1,5 @@
 interface IErrorObject{
-  error?: Error;
+  error: Error;
 }
 
 export {IErrorObject};

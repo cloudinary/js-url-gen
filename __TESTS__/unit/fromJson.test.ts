@@ -1,36 +1,22 @@
-import {fromJson, Transformation} from "../../src";
-import {Action} from "../../src/internal/Action";
-import {IActionModel} from "../../src/internal/models/IActionModel";
-import {UnsupportedError} from "../../src/internal/utils/unsupportedError";
-
-/**
- * Returns new Transformation filled with given actions
- * @param actions
- */
-function actionsToTransformation(actions: Action[]){
-  const transformation = new Transformation();
-  actions.forEach((action)=>transformation.addAction(action as unknown as Action));
-
-  return transformation;
-}
+import {fromJson} from "../../src";
+import {unsupportedError} from "../../src/internal/utils/unsupportedError";
 
 describe('fromJson', ()=>{
   it('should generate a url with scale actions from array of models', function () {
-    const actions = fromJson([
+    const transformation = fromJson([
       {actionType: 'scale', dimensions: {width: 100}},
       {actionType: 'scale', dimensions: {height: 200}, relative: true}
     ]);
 
-    const transformation = actionsToTransformation(actions);
     expect(transformation.toString()).toStrictEqual('c_scale,w_100/c_scale,fl_relative,h_200');
   });
+
   it('should generate an error for unsupported actions', function () {
-    const actions = fromJson([
+    const transformation = fromJson([
       {actionType: 'unsupported', dimensions: {width: 100}},
       {actionType: 'scale', dimensions: {height: 200}, relative: true}
     ]);
-    expect(actions).toHaveLength(2);
-    expect(actions[0]).toMatchObject({error: new UnsupportedError('unsupported action unsupported')});
-    expect(actions[1].toString()).toStrictEqual('c_scale,fl_relative,h_200');
+
+    expect(transformation).toStrictEqual({error: unsupportedError('unsupported action unsupported')});
   });
 });
