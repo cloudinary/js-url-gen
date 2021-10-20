@@ -7,7 +7,7 @@ import {UnsupportedError} from "../../src/internal/utils/unsupportedError";
  * Returns new Transformation filled with given actions
  * @param actions
  */
-function actionsToTransformation(actions: IActionModel[]){
+function actionsToTransformation(actions: Action[]){
   const transformation = new Transformation();
   actions.forEach((action)=>transformation.addAction(action as unknown as Action));
 
