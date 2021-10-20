@@ -4,10 +4,12 @@
  * @description Defines an action that's a string literal, no validations or manipulations are performed
  */
 import {unsupportedError} from "./utils/unsupportedError.js";
-import {IToJson} from "./models/IToJson.js";
+import {IActionModel} from "./models/IActionModel.js";
+import {IAction} from "./models/IAction.js";
 
 class RawAction {
   readonly raw: string;
+
   constructor(raw: string) {
     this.raw = raw;
   }
@@ -16,10 +18,13 @@ class RawAction {
     return this.raw;
   }
 
-  toJson(): IToJson{
-    const error = unsupportedError(`unsupported action RawAction`);
-    console.error(error);
-    return {error};
+  /**
+   * Returns an error
+   * This is because we do not support RawAction.fromJson
+   * @param actionModel
+   */
+  public static fromJson(actionModel: IActionModel): IAction {
+    return {error: unsupportedError(`unsupported action RawAction`)};
   }
 }
 
