@@ -91,11 +91,11 @@ class ResizeSimpleAction extends Action {
     return this.addFlag(regionRelative());
   }
 
-  static fromJson(actionModel: IActionModel): ResizeSimpleAction {
+  static fromJson(actionModel: IActionModel): Partial<Action>{
     const {actionType} = actionModel;
 
     if (!actionType){
-      return Action.fromJson(actionModel) as ResizeSimpleAction;
+      return Action.fromJson(actionModel);
     }
 
     const resizeModel = actionModel as IResizeSimpleActionModel;
@@ -109,4 +109,4 @@ class ResizeSimpleAction extends Action {
   }
 }
 
-export default ResizeSimpleAction;
+export {ResizeSimpleAction};

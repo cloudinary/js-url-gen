@@ -3,7 +3,7 @@ import {LayerAction} from "../actions/layer/LayerAction.js";
 import {Action} from "../internal/Action.js";
 import VariableAction from "../actions/variable/VariableAction.js";
 import {ConditionalAction} from "../actions/conditional.js";
-import ResizeSimpleAction from "../actions/resize/ResizeSimpleAction.js";
+import {ResizeSimpleAction} from "../actions/resize/ResizeSimpleAction.js";
 import RotateAction from "../actions/rotate/RotateAction.js";
 import {BackgroundColor} from "../actions/background/actions/BackgroundColor.js";
 import {NamedTransformationAction} from "../actions/namedTransformation/NamedTransformationAction.js";

@@ -1,6 +1,6 @@
 import {BorderAction} from "../actions/border.js";
 import {IReshape} from "../actions/reshape.js";
-import ResizeSimpleAction from "../actions/resize/ResizeSimpleAction.js";
+import {ResizeSimpleAction} from "../actions/resize/ResizeSimpleAction.js";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction.js";
 import {LayerAction} from "../actions/layer/LayerAction.js";
 import VariableAction from "../actions/variable/VariableAction.js";

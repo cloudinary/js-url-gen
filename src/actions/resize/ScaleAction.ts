@@ -1,4 +1,4 @@
-import ResizeSimpleAction from "./ResizeSimpleAction.js";
+import {ResizeSimpleAction} from "./ResizeSimpleAction.js";
 import {GravityQualifier} from "../../qualifiers/gravity/GravityQualifier.js";
 
 /**

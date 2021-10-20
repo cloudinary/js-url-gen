@@ -52,7 +52,7 @@
  */
 
 import ResizePadAction from "./resize/ResizePadAction.js";
-import ResizeSimpleAction from "./resize/ResizeSimpleAction.js";
+import {ResizeSimpleAction} from "./resize/ResizeSimpleAction.js";
 import {ScaleAction} from "./resize/ScaleAction.js";
 import {ThumbResizeAction} from "./resize/ThumbnailAction.js";
 import {AutoGravity} from "../qualifiers/gravity/autoGravity/AutoGravity.js";

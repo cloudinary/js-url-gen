@@ -1,7 +1,7 @@
-import {fromJson, Transformation} from "../../src/index.js";
-import {Action} from "../../src/internal/Action.js";
-import {IActionModel} from "../../src/internal/models/IActionModel.js";
-import {UnsupportedError} from "../../src/internal/utils/unsupportedError.js";
+import {fromJson, Transformation} from "../../src";
+import {Action} from "../../src/internal/Action";
+import {IActionModel} from "../../src/internal/models/IActionModel";
+import {UnsupportedError} from "../../src/internal/utils/unsupportedError";
 
 /**
  * Returns new Transformation filled with given actions
