@@ -114,9 +114,7 @@ class Action {
 
   // eslint-disable-next-line no-unused-vars
   public static fromJson(actionModel: IActionModel): IAction{
-    const error = unsupportedError(`unsupported action`);
-    console.error(error);
-    return {error};
+    return {error: unsupportedError(`unsupported action ${actionModel.actionType}`)};
   }
 }
 
