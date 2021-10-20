@@ -1,8 +1,8 @@
-import {IActionModel} from "../internal/models/IActionModel.js";
-import {Action} from "../internal/Action.js";
-import {ScaleAction} from "../actions/resize/ScaleAction.js";
-import {IAction} from "../internal/models/IAction.js";
-import {IFromJson} from "../internal/models/IFromJson.js";
+import {IActionModel} from "./internal/models/IActionModel.js";
+import {Action} from "./internal/Action.js";
+import {ScaleAction} from "./actions/resize/ScaleAction.js";
+import {IAction} from "./internal/models/IAction.js";
+import {IFromJson} from "./internal/models/IFromJson.js";
 
 /**
  * Returns action class for given model
