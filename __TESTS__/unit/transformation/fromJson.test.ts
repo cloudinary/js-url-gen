@@ -1,5 +1,4 @@
-import {fromJson} from "../../../src/transformation/fromJson.js";
-import {Transformation} from "../../../src/index.js";
+import {fromJson, Transformation} from "../../../src/index.js";
 import {Action} from "../../../src/internal/Action.js";
 import {IAction} from "../../../src/internal/models/IAction.js";
 
