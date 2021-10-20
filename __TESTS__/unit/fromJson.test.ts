@@ -1,4 +1,4 @@
-import {fromJson} from "../../src";
+import {fromJson} from "../../src/internal/fromJson";
 import {unsupportedError} from "../../src/internal/utils/unsupportedError";
 
 describe('fromJson', ()=>{

@@ -1,10 +1,10 @@
-import {IActionModel} from "./internal/models/IActionModel.js";
-import {Action} from "./internal/Action.js";
-import {ScaleAction} from "./actions/resize/ScaleAction.js";
-import {Transformation} from "./transformation/Transformation.js";
-import {IErrorObject} from "./internal/models/IErrorObject.js";
-import {unsupportedError} from "./internal/utils/unsupportedError.js";
-import {IFromJson} from "./internal/models/IFromJson.js";
+import {ScaleAction} from "../actions/resize/ScaleAction.js";
+import {Transformation} from "../transformation/Transformation.js";
+import {IActionModel} from "./models/IActionModel.js";
+import {Action} from "./Action.js";
+import {IErrorObject} from "./models/IErrorObject.js";
+import {unsupportedError} from "./utils/unsupportedError.js";
+import {IFromJson} from "./models/IFromJson.js";
 
 const ActionModelMap: Record<string, IFromJson> = {
   scale: ScaleAction
