@@ -1,6 +1,7 @@
 import getImageWithResize from "./Resize/shared/getImageWithResize.js";
 import * as Resize from "../../../src/actions/resize.js";
 import {Expression} from "../../../src/qualifiers/expression.js";
+import {ScaleAction} from "../../../src/actions/resize/ScaleAction.js";
 
 describe('Tests for Transformation Action -- Resize', () => {
   it('Resize with a resize mode - relative', () => {
@@ -19,7 +20,7 @@ describe('Tests for Transformation Action -- Resize', () => {
   });
 
   describe('Tests for resize action model', () => {
-    it('Resize.scale.toJson()', () => {
+    it('ScaleAction to json', () => {
       const action = Resize.scale(100).height(200).regionRelative().relative();
       expect(action.toJson()).toStrictEqual({
         actionType: 'scale',
@@ -32,8 +33,8 @@ describe('Tests for Transformation Action -- Resize', () => {
       });
     });
 
-    it('Resize.scale.fromJson()', () => {
-      const action = Resize.scale().fromJson({
+    it('ScaleAction from json', () => {
+      const action = ScaleAction.fromJson({
         actionType: 'scale',
         dimensions: {
           width: 100,
