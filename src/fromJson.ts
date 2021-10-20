@@ -4,15 +4,16 @@ import {ScaleAction} from "./actions/resize/ScaleAction.js";
 import {IAction} from "./internal/models/IAction.js";
 import {IFromJson} from "./internal/models/IFromJson.js";
 
+const ActionModelMap: Record<string, IFromJson> = {
+  scale: ScaleAction
+};
+
 /**
  * Returns action class for given model
  * @param actionModel
  */
 function getActionByModel(actionModel: IActionModel): IFromJson{
-  switch (actionModel.actionType) {
-    case 'scale': return ScaleAction;
-    default: return Action;
-  }
+  return ActionModelMap[actionModel.actionType] || Action;
 }
 
 /**
