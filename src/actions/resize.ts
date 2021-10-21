@@ -53,7 +53,7 @@
 
 import ResizePadAction from "./resize/ResizePadAction.js";
 import {ResizeSimpleAction} from "./resize/ResizeSimpleAction.js";
-import {ScaleAction} from "./resize/ScaleAction.js";
+import {ResizeScaleAction} from "./resize/ResizeScaleAction.js";
 import {ThumbResizeAction} from "./resize/ThumbnailAction.js";
 import {AutoGravity} from "../qualifiers/gravity/autoGravity/AutoGravity.js";
 import {CompassGravity} from "../qualifiers/gravity/compassGravity/CompassGravity.js";
@@ -70,8 +70,8 @@ import {ResizeFillAction} from "./resize/ResizeFillAction.js";
  * @param {number|string} height The required height of a transformed asset.
  * @return {Actions.Resize.ScaleAction}
  */
-function scale(width?: number | string, height?: number | string): ScaleAction {
-  return new ScaleAction('scale', width, height);
+function scale(width?: number | string, height?: number | string): ResizeScaleAction {
+  return new ResizeScaleAction('scale', width, height);
 }
 
 
