@@ -8,7 +8,6 @@ import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifi
 import {AspectRatioType} from "../../types/types.js";
 import {IResizeSimpleActionModel} from "../../internal/models/IResizeSimpleActionModel.js";
 import {IActionModel} from "../../internal/models/IActionModel.js";
-import {unsupportedError} from "../../internal/utils/unsupportedError.js";
 
 /**
  * @description Defines a resize using width and height.
