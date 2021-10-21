@@ -1,5 +1,6 @@
 import {ResizeScaleAction} from "../actions/resize/ResizeScaleAction.js";
 import {ResizeFitAction} from "../actions/resize/ResizeFitAction.js";
+import {ResizeLimitFitAction} from "../actions/resize/ResizeLimitFitAction.js";
 import {Transformation} from "../transformation/Transformation.js";
 import {IActionModel} from "./models/IActionModel.js";
 import {Action} from "./Action.js";
@@ -9,7 +10,8 @@ import {IHasFromJson} from "./models/IHasFromJson.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
-  fit: ResizeFitAction
+  fit: ResizeFitAction,
+  limitFit: ResizeLimitFitAction
 };
 
 /**

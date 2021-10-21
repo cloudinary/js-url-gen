@@ -17,10 +17,11 @@ describe('Transformation.toJson()', () => {
     ]);
   });
 
-  it('scale.fit', () => {
+  it('scale.fit.limitFit', () => {
     const transformation = new Transformation()
       .addAction(Resize.scale(200))
-      .addAction(Resize.fit(100, 200));
+      .addAction(Resize.fit(100, 200))
+      .addAction(Resize.limitFit(100));
     expect(transformation.toJson()).toStrictEqual([
       {
         "actionType": "scale",
@@ -32,6 +33,12 @@ describe('Transformation.toJson()', () => {
         "actionType": "fit",
         "dimensions": {
           "height": 200,
+          "width": 100
+        }
+      },
+      {
+        "actionType": "limitFit",
+        "dimensions": {
           "width": 100
         }
       }
