@@ -13,6 +13,10 @@ const actionTypeToCropModeMap: Record<string, string> = {
   limitFit: 'limit'
 };
 
+const cropModeToActionTypeMap: Record<string, string> = {
+  limit: 'limitFit'
+};
+
 /**
  * @description Defines a resize using width and height.
  * @extends SDK.Action
@@ -30,7 +34,7 @@ class ResizeSimpleAction extends Action {
   constructor(cropType: string, cropWidth: number | string, cropHeight?: number | string) {
     super();
 
-    this._actionModel.actionType = this._actionType || cropType;
+    this._actionModel.actionType = cropModeToActionTypeMap[cropType] || cropType;
     this.addQualifier(new Qualifier('c', cropType));
     cropWidth && this.width(cropWidth);
     cropHeight && this.height(cropHeight);
