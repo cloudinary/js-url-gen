@@ -26,6 +26,7 @@ import {ITranscodeAction} from "../actions/transcode.js";
 import {AnimatedAction} from "../actions/animated.js";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction.js";
 import {IActionModel} from "../internal/models/IActionModel.js";
+import {IErrorObject, isErrorObject} from "../internal/models/IErrorObject.js";
 
 /**
  * @summary SDK
@@ -298,21 +299,20 @@ class Transformation {
     return this.addAction(action);
   }
 
-  toJson(): IActionModel[] {
-    if (!this.actions || !this.actions.length) {
-      return [];
+  toJson(): IActionModel[] | IErrorObject {
+    const result: IActionModel[] = [];
+
+    for (const action of this.actions) {
+      const json = action.toJson();
+      if (isErrorObject(json)) {
+        // Fail early and return an IErrorObject
+        return json;
+      }
+      result.push(json);
     }
 
-    return this.actions.map((action) => {
-      if (action instanceof RawAction) {
-        // RawAction does not include a .toJson()
-        return new Action().toJson();
-      }
-
-      return action.toJson();
-    });
+    return result;
   }
 }
 
 export {Transformation};
-

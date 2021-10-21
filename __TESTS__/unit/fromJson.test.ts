@@ -1,7 +1,7 @@
 import {fromJson} from "../../src/internal/fromJson";
-import {unsupportedError} from "../../src/internal/utils/unsupportedError";
+import {createUnsupportedError} from "../../src/internal/utils/unsupportedError";
 
-describe('fromJson', ()=>{
+describe('fromJson', () => {
   it('should generate a url with scale actions from array of models', function () {
     const transformation = fromJson([
       {actionType: 'scale', dimensions: {width: 100}},
@@ -17,6 +17,6 @@ describe('fromJson', ()=>{
       {actionType: 'scale', dimensions: {height: 200}, relative: true}
     ]);
 
-    expect(transformation).toStrictEqual({error: unsupportedError('unsupported action unsupported')});
+    expect(transformation).toStrictEqual({error: createUnsupportedError('unsupported action unsupported')});
   });
 });

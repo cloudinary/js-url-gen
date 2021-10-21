@@ -1,3 +1,7 @@
+import {IActionModel} from "./models/IActionModel.js";
+import {IErrorObject} from "./models/IErrorObject.js";
+import {createUnsupportedError} from "./utils/unsupportedError.js";
+
 /**
  * @summary SDK
  * @memberOf SDK
@@ -13,6 +17,10 @@ class RawAction {
 
   toString(): string {
     return this.raw;
+  }
+
+  toJson(): IActionModel | IErrorObject{
+    return {error: createUnsupportedError(`unsupported action ${this.constructor.name}`)};
   }
 }
 

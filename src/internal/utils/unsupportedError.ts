@@ -8,7 +8,7 @@ class UnsupportedError extends Error {
  * Creates a new UnsupportedError
  * @param message
  */
-function unsupportedError(message: string): UnsupportedError{
+function createUnsupportedError(message: string): UnsupportedError{
   return new UnsupportedError(message);
 }
-export { UnsupportedError, unsupportedError };
+export { UnsupportedError, createUnsupportedError };

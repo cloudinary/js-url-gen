@@ -3,10 +3,10 @@ import {Transformation} from "../transformation/Transformation.js";
 import {IActionModel} from "./models/IActionModel.js";
 import {Action} from "./Action.js";
 import {IErrorObject} from "./models/IErrorObject.js";
-import {unsupportedError} from "./utils/unsupportedError.js";
-import {IFromJson} from "./models/IFromJson.js";
+import {createUnsupportedError} from "./utils/unsupportedError.js";
+import {IHasFromJson} from "./models/IHasFromJson.js";
 
-const ActionModelMap: Record<string, IFromJson> = {
+const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ScaleAction
 };
 
@@ -19,7 +19,7 @@ function actions(actionModels: IActionModel[]): Action[] {
   return actionModels.map((actionModel) => {
     const actionClass = (ActionModelMap[actionModel.actionType]);
     if (!actionClass) {
-      throw unsupportedError(`unsupported action ${actionModel.actionType}`);
+      throw createUnsupportedError(`unsupported action ${actionModel.actionType}`);
     }
 
     return actionClass.fromJson(actionModel);
@@ -33,9 +33,9 @@ function actions(actionModels: IActionModel[]): Action[] {
 function fromJson(actionModels: IActionModel[]): Transformation | IErrorObject {
   try {
     // Create a new Transformation and add all actions to it
-    return actions(actionModels)
-      .reduce((transformation, action) =>
-        transformation.addAction(action), new Transformation());
+    const transformation = new Transformation();
+    actions(actionModels).forEach((action)=>transformation.addAction(action));
+    return transformation;
   } catch (error) {
     return {error};
   }

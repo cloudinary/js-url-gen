@@ -3,7 +3,8 @@ import {Qualifier} from "./qualifier/Qualifier.js";
 import {mapToSortedArray} from "./utils/dataStructureUtils.js";
 import {FlagTypes} from "../types/types.js";
 import {IActionModel} from "./models/IActionModel.js";
-import {unsupportedError} from "./utils/unsupportedError.js";
+import {IErrorObject} from "./models/IErrorObject.js";
+import {createUnsupportedError} from "./utils/unsupportedError.js";
 
 /**
  * @summary SDK
@@ -97,12 +98,12 @@ class Action {
     return this;
   }
 
-  toJson(): IActionModel{
+  toJson(): IActionModel | IErrorObject{
     if (this._actionModel.actionType){
       return this._actionModel;
     }
 
-    return {error: unsupportedError(`unsupported action ${this.constructor.name}`)};
+    return {error: createUnsupportedError(`unsupported action ${this.constructor.name}`)};
   }
 
   protected addValueToQualifier(qualifierKey: string, qualifierValue: any): this{

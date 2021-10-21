@@ -1,8 +1,8 @@
 import {IActionModel} from "./IActionModel.js";
 import {Action} from "../Action.js";
 
-interface IFromJson{
+interface IHasFromJson {
   fromJson: (actionModel: IActionModel) => Action;
 }
 
-export {IFromJson};
+export {IHasFromJson};
