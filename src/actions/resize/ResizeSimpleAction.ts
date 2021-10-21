@@ -9,6 +9,10 @@ import {AspectRatioType} from "../../types/types.js";
 import {IResizeSimpleActionModel} from "../../internal/models/IResizeSimpleActionModel.js";
 import {IActionModel} from "../../internal/models/IActionModel.js";
 
+const actionTypeToCropModeMap: Record<string, string> = {
+  limitFit: 'limit'
+};
+
 /**
  * @description Defines a resize using width and height.
  * @extends SDK.Action
@@ -93,7 +97,8 @@ class ResizeSimpleAction extends Action {
   static fromJson(actionModel: IActionModel): ResizeSimpleAction {
     const {actionType, dimensions, relative, regionRelative} = (actionModel as IResizeSimpleActionModel);
     const {width, height} = dimensions;
-    const result = new ResizeSimpleAction(actionType, width, height);
+    const cropMode = actionTypeToCropModeMap[actionType] || actionType;
+    const result = new ResizeSimpleAction(cropMode, width, height);
     relative && result.relative();
     regionRelative && result.regionRelative();
 
