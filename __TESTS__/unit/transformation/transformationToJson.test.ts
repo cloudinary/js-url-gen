@@ -17,8 +17,7 @@ describe('Transformation.toJson()', ()=>{
   });
 
   it('unsupported actions', ()=>{
-    const unsupported = {error: new UnsupportedError('unsupported action Action')};
     const transformation = new Transformation().addAction(new Action()).addAction(new Action());
-    expect(transformation.toJson()).toStrictEqual([unsupported, unsupported]);
+    expect(transformation.toJson()).toStrictEqual({error: new UnsupportedError('unsupported action Action')});
   });
 });
