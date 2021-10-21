@@ -2,6 +2,9 @@ import {FlagQualifier} from "../qualifiers/flag/FlagQualifier.js";
 import {Qualifier} from "./qualifier/Qualifier.js";
 import {mapToSortedArray} from "./utils/dataStructureUtils.js";
 import {FlagTypes} from "../types/types.js";
+import {IActionModel} from "./models/IActionModel.js";
+import {IErrorObject} from "./models/IErrorObject.js";
+import {createUnsupportedError} from "./utils/unsupportedError.js";
 
 /**
  * @summary SDK
@@ -9,6 +12,10 @@ import {FlagTypes} from "../types/types.js";
  * @description Defines the category of transformation to perform.
  */
 class Action {
+
+  // Action model representation
+  protected _actionModel: IActionModel = {};
+
   // We're using map, to overwrite existing keys. for example:
   // addParam(w_100).addQualifier(w_200) should result in w_200. and not w_100,w_200
   qualifiers: Map<string, Qualifier> = new Map();
@@ -89,6 +96,14 @@ class Action {
     }
 
     return this;
+  }
+
+  toJson(): IActionModel | IErrorObject{
+    if (this._actionModel.actionType){
+      return this._actionModel;
+    }
+
+    return {error: createUnsupportedError(`unsupported action ${this.constructor.name}`)};
   }
 
   protected addValueToQualifier(qualifierKey: string, qualifierValue: any): this{
