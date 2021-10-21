@@ -10,11 +10,13 @@ import {IResizeSimpleActionModel} from "../../internal/models/IResizeSimpleActio
 import {IActionModel} from "../../internal/models/IActionModel.js";
 
 const actionTypeToCropModeMap: Record<string, string> = {
-  limitFit: 'limit'
+  limitFit: 'limit',
+  minimumFit: 'mfit'
 };
 
 const cropModeToActionTypeMap: Record<string, string> = {
-  limit: 'limitFit'
+  limit: 'limitFit',
+  mfit: 'minimumFit'
 };
 
 /**
