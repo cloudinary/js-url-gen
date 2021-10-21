@@ -6,11 +6,10 @@
  * @example
  * <caption> <h4>Scaling an image</h4> </caption>
  * import {Cloudinary} from "@cloudinary/url-gen";
+ * import {scale, fit, pad, crop} from '@cloudinary/url-gen/actions/resize';
  *
  * const yourCldInstance = new Cloudinary({cloud:{cloudName:'demo'}});
  * const image = yourCldInstance.image('woman');
- *
- * const {scale, fit, pad, crop} from '@cloudinary/url-gen/actions/resize';
  *
  * image.resize( scale(100, 100) );
  * // All resize actions have a similar interface.
