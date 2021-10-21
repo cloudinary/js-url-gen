@@ -7,7 +7,7 @@ import {GravityQualifier} from "../../qualifiers/gravity/GravityQualifier.js";
  * @memberOf Actions.Resize
  * @see Visit {@link Actions.Resize| Resize} for examples
  */
-class ScaleAction extends ResizeSimpleAction {
+class ResizeScaleAction extends ResizeSimpleAction {
   /**
    * @description Changes the aspect ratio of an image while retaining all important content and avoiding unnatural
    * distortions.
@@ -18,4 +18,4 @@ class ScaleAction extends ResizeSimpleAction {
   }
 }
 
-export {ScaleAction};
+export {ResizeScaleAction};

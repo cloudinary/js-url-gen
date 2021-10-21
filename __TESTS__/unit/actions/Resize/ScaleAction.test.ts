@@ -1,7 +1,6 @@
 import getImageWithResize from "./shared/getImageWithResize";
 import {scale} from "../../../../src/actions/resize";
 
-
 describe('Tests for Transformation Action -- Resize.scale', () => {
   it('Ensures it generates the right URL', () => {
     const url = getImageWithResize(scale(250, 250), 'url');
