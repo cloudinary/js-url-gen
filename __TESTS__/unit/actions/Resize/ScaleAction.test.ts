@@ -1,8 +1,5 @@
 import getImageWithResize from "./shared/getImageWithResize";
 import {scale} from "../../../../src/actions/resize";
-import * as Resize from "../../../../src/actions/resize";
-import {ResizeScaleAction} from "../../../../src/actions/resize/ResizeScaleAction";
-
 
 describe('Tests for Transformation Action -- Resize.scale', () => {
   it('Ensures it generates the right URL', () => {
