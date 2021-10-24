@@ -17,12 +17,13 @@ describe('Transformation.toJson()', () => {
     ]);
   });
 
-  it('scale.fit.limitFit.minimumFit', () => {
+  it('scale.fit.limitFit.minimumFit.crop', () => {
     const transformation = new Transformation()
       .addAction(Resize.scale(200))
       .addAction(Resize.fit(100, 200))
       .addAction(Resize.limitFit(100))
-      .addAction(Resize.minimumFit(100));
+      .addAction(Resize.minimumFit(100))
+      .addAction(Resize.crop(100).x(3).y(4).gravity('north_east'));
     expect(transformation.toJson()).toStrictEqual([
       {
         "actionType": "scale",
@@ -48,6 +49,15 @@ describe('Transformation.toJson()', () => {
         "dimensions": {
           "width": 100
         }
+      },
+      {
+        "actionType": "crop",
+        "dimensions": {
+          "width": 100
+        },
+        x: 3,
+        y: 4,
+        gravity: 'north_east'
       }
     ]);
   });

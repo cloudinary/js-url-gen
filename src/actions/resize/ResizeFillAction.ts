@@ -1,6 +1,5 @@
 import {Qualifier} from "../../internal/qualifier/Qualifier.js";
-import ResizeAdvancedAction from "./ResizeAdvancedAction.js";
-
+import {ResizeAdvancedAction} from "./ResizeAdvancedAction.js";
 
 /**
  * @description Defines how to crop-fill an asset

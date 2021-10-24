@@ -29,8 +29,8 @@ class ResizeSimpleAction extends Action {
 
     this._actionModel.actionType = CROP_MODE_TO_ACTION_TYPE_MAP[cropType] || cropType;
     this.addQualifier(new Qualifier('c', cropType));
-    cropWidth && this.width(cropWidth);
-    cropHeight && this.height(cropHeight);
+    cropWidth && this.width(`${cropWidth}`);
+    cropHeight && this.height(`${cropHeight}`);
   }
 
   /**
@@ -95,11 +95,15 @@ class ResizeSimpleAction extends Action {
     const {actionType, dimensions, relative, regionRelative} = (actionModel as IResizeSimpleActionModel);
     const {width, height} = dimensions;
     const cropMode = ACTION_TYPE_TO_CROP_MODE_MAP[actionType] || actionType;
-    const result = new ResizeSimpleAction(cropMode, width, height);
+
+    // We are using this() to allow inheriting classes to use super.fromJson.apply(this, [actionModel])
+    // This allows the inheriting classes to determine the class to be created
+    const result = new this(cropMode, width, height);
+
     relative && result.relative();
     regionRelative && result.regionRelative();
 
-    return result as ResizeSimpleAction;
+    return result;
   }
 }
 

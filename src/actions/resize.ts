@@ -56,7 +56,7 @@ import {ResizeScaleAction} from "./resize/ResizeScaleAction.js";
 import {ThumbResizeAction} from "./resize/ThumbnailAction.js";
 import {AutoGravity} from "../qualifiers/gravity/autoGravity/AutoGravity.js";
 import {CompassGravity} from "../qualifiers/gravity/compassGravity/CompassGravity.js";
-import ResizeCropAction from "./resize/ResizeCropAction.js";
+import {ResizeCropAction} from "./resize/ResizeCropAction.js";
 import {ResizeFillAction} from "./resize/ResizeFillAction.js";
 import {ResizeLimitFitAction} from "./resize/ResizeLimitFitAction.js";
 
