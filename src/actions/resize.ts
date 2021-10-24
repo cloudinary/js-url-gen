@@ -59,6 +59,7 @@ import {CompassGravity} from "../qualifiers/gravity/compassGravity/CompassGravit
 import {ResizeCropAction} from "./resize/ResizeCropAction.js";
 import {ResizeFillAction} from "./resize/ResizeFillAction.js";
 import {ResizeLimitFitAction} from "./resize/ResizeLimitFitAction.js";
+import {ResizeLimitFillAction} from "./resize/ResizeLimitFillAction.js";
 
 /**
  * @summary action
@@ -178,10 +179,10 @@ function pad(width?: string|number, height?: string|number) :ResizePadAction<Com
  * @memberOf Actions.Resize
  * @param {number|string} width The required width of a transformed asset.
  * @param {number|string} height The required height of a transformed asset.
- * @return {Actions.Resize.ResizeFillAction}
+ * @return {Actions.Resize.ResizeLimitFillAction}
  */
-function limitFill(width?: string|number, height?: string|number) :ResizeFillAction {
-  return new ResizeFillAction('lfill', width, height);
+function limitFill(width?: string|number, height?: string|number) :ResizeLimitFillAction {
+  return new ResizeLimitFillAction('lfill', width, height);
 }
 
 
@@ -197,7 +198,7 @@ function limitFill(width?: string|number, height?: string|number) :ResizeFillAct
  * @param {number|string} height The required height of a transformed asset.
  * @return {Actions.Resize.ResizeSimpleAction}
  */
-function limitFit(width?: number|string, height?: number|string) :ResizeSimpleAction {
+function limitFit(width?: number|string, height?: number|string) :ResizeLimitFitAction {
   return new ResizeLimitFitAction('limit', width, height);
 }
 
