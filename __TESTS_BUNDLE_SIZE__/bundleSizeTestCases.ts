@@ -15,7 +15,7 @@ import importFromPackage from "./utils/stringGenerators/importFromPackage";
 const bundleSizeTestCases:ITestCase[] = [
   {
     name: 'Tests CloudinaryImage with Resize',
-    sizeLimitInKB: 17,
+    sizeLimitInKB: 18,
     importsArray: [
       importFromDist('assets/CloudinaryImage', 'CloudinaryImage'),
       importFromDist('instance/Cloudinary', 'Cloudinary'),
@@ -34,7 +34,7 @@ const bundleSizeTestCases:ITestCase[] = [
   },
   {
     name: 'Tests CloudinaryImage with Resize, Adjust and Border',
-    sizeLimitInKB: 21,
+    sizeLimitInKB: 22,
     importsArray: [
       importFromDist('assets/CloudinaryImage', 'CloudinaryImage'),
       importFromDist('instance/Cloudinary', 'Cloudinary'),
