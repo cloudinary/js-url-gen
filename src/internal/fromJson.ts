@@ -1,15 +1,19 @@
 import {ResizeScaleAction} from "../actions/resize/ResizeScaleAction.js";
 import {ResizeFitAction} from "../actions/resize/ResizeFitAction.js";
+import {ResizeLimitFitAction} from "../actions/resize/ResizeLimitFitAction.js";
 import {Transformation} from "../transformation/Transformation.js";
 import {IActionModel} from "./models/IActionModel.js";
 import {Action} from "./Action.js";
 import {IErrorObject} from "./models/IErrorObject.js";
 import {createUnsupportedError} from "./utils/unsupportedError.js";
 import {IHasFromJson} from "./models/IHasFromJson.js";
+import {ResizeMinimumFitAction} from "../actions/resize/ResizeMinimumFitAction.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
-  fit: ResizeFitAction
+  fit: ResizeFitAction,
+  limitFit: ResizeLimitFitAction,
+  minimumFit: ResizeMinimumFitAction
 };
 
 /**

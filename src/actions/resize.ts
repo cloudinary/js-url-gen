@@ -59,6 +59,7 @@ import {AutoGravity} from "../qualifiers/gravity/autoGravity/AutoGravity.js";
 import {CompassGravity} from "../qualifiers/gravity/compassGravity/CompassGravity.js";
 import ResizeCropAction from "./resize/ResizeCropAction.js";
 import {ResizeFillAction} from "./resize/ResizeFillAction.js";
+import {ResizeLimitFitAction} from "./resize/ResizeLimitFitAction.js";
 
 /**
  * @summary action
@@ -198,7 +199,7 @@ function limitFill(width?: string|number, height?: string|number) :ResizeFillAct
  * @return {Actions.Resize.ResizeSimpleAction}
  */
 function limitFit(width?: number|string, height?: number|string) :ResizeSimpleAction {
-  return new ResizeSimpleAction('limit', width, height);
+  return new ResizeLimitFitAction('limit', width, height);
 }
 
 

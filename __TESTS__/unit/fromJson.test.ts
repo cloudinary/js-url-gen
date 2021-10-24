@@ -5,10 +5,12 @@ describe('fromJson', () => {
   it('should generate a url with resize actions from array of models', function () {
     const transformation = fromJson([
       {actionType: 'scale', dimensions: {width: 100}},
-      {actionType: 'fit', dimensions: {height: 200}, relative: true}
+      {actionType: 'fit', dimensions: {height: 200}, relative: true},
+      {actionType: 'limitFit', dimensions: {height: 200}, relative: true},
+      {actionType: 'minimumFit', dimensions: {width: 100}, regionRelative: true}
     ]);
 
-    expect(transformation.toString()).toStrictEqual('c_scale,w_100/c_fit,fl_relative,h_200');
+    expect(transformation.toString()).toStrictEqual('c_scale,w_100/c_fit,fl_relative,h_200/c_limit,fl_relative,h_200/c_mfit,fl_region_relative,w_100');
   });
 
   it('should generate an error for array that includes an unsupported action', function () {

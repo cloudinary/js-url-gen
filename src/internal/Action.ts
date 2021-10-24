@@ -12,9 +12,7 @@ import {createUnsupportedError} from "./utils/unsupportedError.js";
  * @description Defines the category of transformation to perform.
  */
 class Action {
-
-  // Action model representation
-  protected _actionModel: IActionModel = {};
+  protected _actionModel: IActionModel = {}; // Action model representation
 
   // We're using map, to overwrite existing keys. for example:
   // addParam(w_100).addQualifier(w_200) should result in w_200. and not w_100,w_200

@@ -8,6 +8,7 @@ import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifi
 import {AspectRatioType} from "../../types/types.js";
 import {IResizeSimpleActionModel} from "../../internal/models/IResizeSimpleActionModel.js";
 import {IActionModel} from "../../internal/models/IActionModel.js";
+import {ACTION_TYPE_TO_CROP_MODE_MAP, CROP_MODE_TO_ACTION_TYPE_MAP} from "../../internal/internalConstants.js";
 
 /**
  * @description Defines a resize using width and height.
@@ -26,7 +27,7 @@ class ResizeSimpleAction extends Action {
   constructor(cropType: string, cropWidth: number | string, cropHeight?: number | string) {
     super();
 
-    this._actionModel.actionType = cropType;
+    this._actionModel.actionType = CROP_MODE_TO_ACTION_TYPE_MAP[cropType] || cropType;
     this.addQualifier(new Qualifier('c', cropType));
     cropWidth && this.width(cropWidth);
     cropHeight && this.height(cropHeight);
@@ -93,7 +94,8 @@ class ResizeSimpleAction extends Action {
   static fromJson(actionModel: IActionModel): ResizeSimpleAction {
     const {actionType, dimensions, relative, regionRelative} = (actionModel as IResizeSimpleActionModel);
     const {width, height} = dimensions;
-    const result = new ResizeSimpleAction(actionType, width, height);
+    const cropMode = ACTION_TYPE_TO_CROP_MODE_MAP[actionType] || actionType;
+    const result = new ResizeSimpleAction(cropMode, width, height);
     relative && result.relative();
     regionRelative && result.regionRelative();
 

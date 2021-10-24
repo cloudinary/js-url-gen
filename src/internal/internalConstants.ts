@@ -3,6 +3,8 @@
  * It is not intended for public use and is not part of the public API
  */
 
+import {objectFlip} from "./utils/objectFlip.js";
+
 /**
  * @private
  */
@@ -80,3 +82,10 @@ export const RESERVED_NAMES = {
   "initial_density": "idn",
   "page_names": "pgnames"
 };
+
+export const ACTION_TYPE_TO_CROP_MODE_MAP: Record<string, string> = {
+  limitFit: 'limit',
+  minimumFit: 'mfit'
+};
+
+export const CROP_MODE_TO_ACTION_TYPE_MAP = objectFlip(ACTION_TYPE_TO_CROP_MODE_MAP);
