@@ -85,6 +85,7 @@ export const RESERVED_NAMES = {
 
 export const ACTION_TYPE_TO_CROP_MODE_MAP: Record<string, string> = {
   limitFit: 'limit',
+  limitFill: 'lfill',
   minimumFit: 'mfit'
 };
 
