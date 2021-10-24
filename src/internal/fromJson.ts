@@ -9,13 +9,15 @@ import {createUnsupportedError} from "./utils/unsupportedError.js";
 import {IHasFromJson} from "./models/IHasFromJson.js";
 import {ResizeMinimumFitAction} from "../actions/resize/ResizeMinimumFitAction.js";
 import {ResizeCropAction} from "../actions/resize/ResizeCropAction.js";
+import {ResizeFillAction} from "../actions/resize/ResizeFillAction.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
   fit: ResizeFitAction,
   limitFit: ResizeLimitFitAction,
   minimumFit: ResizeMinimumFitAction,
-  crop: ResizeCropAction
+  crop: ResizeCropAction,
+  fill: ResizeFillAction
 };
 
 /**

@@ -17,13 +17,14 @@ describe('Transformation.toJson()', () => {
     ]);
   });
 
-  it('scale.fit.limitFit.minimumFit.crop', () => {
+  it('scale.fit.limitFit.minimumFit.crop.fill', () => {
     const transformation = new Transformation()
       .addAction(Resize.scale(200))
       .addAction(Resize.fit(100, 200))
       .addAction(Resize.limitFit(100))
       .addAction(Resize.minimumFit(100))
-      .addAction(Resize.crop(100).x(3).y(4).gravity('north_east').zoom(10));
+      .addAction(Resize.crop(100).x(3).y(4).gravity('north_east').zoom(10))
+      .addAction(Resize.fill(200).x(3).y(4).gravity('south'));
     expect(transformation.toJson()).toStrictEqual([
       {
         "actionType": "scale",
@@ -59,6 +60,15 @@ describe('Transformation.toJson()', () => {
         y: 4,
         gravity: 'north_east',
         zoom: 10
+      },
+      {
+        "actionType": "fill",
+        "dimensions": {
+          "width": 200
+        },
+        x: 3,
+        y: 4,
+        gravity: 'south'
       }
     ]);
   });
