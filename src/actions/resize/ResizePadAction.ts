@@ -1,8 +1,7 @@
 import {BackgroundQualifier} from "../../qualifiers/background/shared/base/BackgroundQualifier.js";
 import {IGravity} from "../../qualifiers/gravity/GravityQualifier.js";
 import {Qualifier} from "../../internal/qualifier/Qualifier.js";
-import ResizeAdvancedAction from "./ResizeAdvancedAction.js";
-
+import {ResizeAdvancedAction} from "./ResizeAdvancedAction.js";
 
 /**
  * @description Defines an advanced resize with padding.
