@@ -29,8 +29,8 @@ class ResizeSimpleAction extends Action {
 
     this._actionModel.actionType = CROP_MODE_TO_ACTION_TYPE_MAP[cropType] || cropType;
     this.addQualifier(new Qualifier('c', cropType));
-    cropWidth && this.width(`${cropWidth}`);
-    cropHeight && this.height(`${cropHeight}`);
+    cropWidth && this.width(cropWidth);
+    cropHeight && this.height(cropHeight);
   }
 
   /**
