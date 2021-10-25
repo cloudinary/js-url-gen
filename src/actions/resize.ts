@@ -50,7 +50,7 @@
  * image.toURL()
  */
 
-import ResizePadAction from "./resize/ResizePadAction.js";
+import {ResizePadAction} from "./resize/ResizePadAction.js";
 import {ResizeSimpleAction} from "./resize/ResizeSimpleAction.js";
 import {ResizeScaleAction} from "./resize/ResizeScaleAction.js";
 import {ThumbResizeAction} from "./resize/ThumbnailAction.js";
@@ -60,6 +60,8 @@ import {ResizeCropAction} from "./resize/ResizeCropAction.js";
 import {ResizeFillAction} from "./resize/ResizeFillAction.js";
 import {ResizeLimitFitAction} from "./resize/ResizeLimitFitAction.js";
 import {ResizeLimitFillAction} from "./resize/ResizeLimitFillAction.js";
+import {ResizeLimitPadAction} from "./resize/ResizeLimitPadAction.js";
+import {ResizeMinimumPadAction} from "./resize/ResizeMinimumPadAction.js";
 
 /**
  * @summary action
@@ -216,8 +218,8 @@ function limitFit(width?: number|string, height?: number|string) :ResizeLimitFit
  * @param {number|string} height The required height of a transformed asset.
  * @return {Actions.Resize.ResizePadAction}
  */
-function minimumPad(width?: string|number, height?: string|number) :ResizePadAction<CompassGravity> {
-  return new ResizePadAction('mpad', width, height);
+function minimumPad(width?: string|number, height?: string|number): ResizeMinimumPadAction<CompassGravity> {
+  return new ResizeMinimumPadAction('mpad', width, height);
 }
 
 
@@ -287,8 +289,8 @@ function thumbnail(width?: string|number, height?: string|number) :ThumbResizeAc
  * @param {number|string} height The required height of a transformed asset.
  * @return {Actions.Resize.ResizePadAction}
  */
-function limitPad(width?: string|number, height?: string|number) :ResizePadAction<CompassGravity> {
-  return new ResizePadAction('lpad', width, height);
+function limitPad(width?: string|number, height?: string|number) :ResizeLimitPadAction<CompassGravity> {
+  return new ResizeLimitPadAction('lpad', width, height);
 }
 
 

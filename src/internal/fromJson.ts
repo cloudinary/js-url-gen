@@ -11,6 +11,10 @@ import {ResizeMinimumFitAction} from "../actions/resize/ResizeMinimumFitAction.j
 import {ResizeCropAction} from "../actions/resize/ResizeCropAction.js";
 import {ResizeFillAction} from "../actions/resize/ResizeFillAction.js";
 import {ResizeLimitFillAction} from "../actions/resize/ResizeLimitFillAction.js";
+import {ThumbResizeAction} from "../actions/resize/ThumbnailAction.js";
+import {ResizePadAction} from "../actions/resize/ResizePadAction.js";
+import {ResizeLimitPadAction} from "../actions/resize/ResizeLimitPadAction.js";
+import {ResizeMinimumPadAction} from "../actions/resize/ResizeMinimumPadAction.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
@@ -20,6 +24,10 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   crop: ResizeCropAction,
   fill: ResizeFillAction,
   limitFill: ResizeLimitFillAction,
+  thumbnail: ThumbResizeAction,
+  pad: ResizePadAction,
+  limitPad: ResizeLimitPadAction,
+  minimumPad: ResizeMinimumPadAction
 };
 
 /**
