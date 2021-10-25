@@ -65,7 +65,7 @@ function format(format:FormatQualifier | ImageFormatType | VideoFormatType | str
  */
 function dpr(dpr: string|number):DeliveryAction {
   // toFloatAsString is used to ensure 1 turns into 1.0
-  return new DeliveryAction('dpr', toFloatAsString(dpr));
+  return new DeliveryAction('dpr', toFloatAsString(dpr), 'type');
 }
 
 
@@ -113,7 +113,7 @@ function quality(qualityType:QualityTypes | string | number) :DeliveryQualityAct
  * );
  */
 function density(value:number) :DeliveryAction {
-  return new DeliveryAction('dn', value);
+  return new DeliveryAction('dn', value, 'density');
 }
 
 
@@ -135,7 +135,7 @@ function density(value:number) :DeliveryAction {
  * );
  */
 function defaultImage(publicIdWithExtension:string) :DeliveryAction {
-  return new DeliveryAction('d', publicIdWithExtension);
+  return new DeliveryAction('d', publicIdWithExtension, 'defaultImage');
 }
 
 
@@ -157,7 +157,7 @@ function defaultImage(publicIdWithExtension:string) :DeliveryAction {
  * );
  */
 function colorSpace(mode:ColorSpaceType|string): DeliveryAction {
-  return new DeliveryAction('cs', mode);
+  return new DeliveryAction('cs', mode, 'colorSpaceType');
 }
 
 

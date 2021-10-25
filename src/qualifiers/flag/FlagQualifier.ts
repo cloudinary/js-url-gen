@@ -7,7 +7,7 @@ import {Qualifier} from "../../internal/qualifier/Qualifier.js";
  * @description the FlagQualifier class
  */
 class FlagQualifier extends Qualifier {
-  constructor(flagType?: QualifierValue | QualifierValue[] | number | number[] | string | string[], flagValue?: string) {
+  constructor(flagType?: QualifierValue | QualifierValue[] | number | number[] | string | string[], flagValue?: FlagQualifier | string) {
     let qualifierValue;
     if(flagValue) {
       qualifierValue = new QualifierValue([flagType, `${flagValue}`]).setDelimiter(':');
