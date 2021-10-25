@@ -8,12 +8,26 @@ import {IErrorObject} from "./models/IErrorObject.js";
 import {createUnsupportedError} from "./utils/unsupportedError.js";
 import {IHasFromJson} from "./models/IHasFromJson.js";
 import {ResizeMinimumFitAction} from "../actions/resize/ResizeMinimumFitAction.js";
+import {ResizeCropAction} from "../actions/resize/ResizeCropAction.js";
+import {ResizeFillAction} from "../actions/resize/ResizeFillAction.js";
+import {ResizeLimitFillAction} from "../actions/resize/ResizeLimitFillAction.js";
+import {ThumbResizeAction} from "../actions/resize/ThumbnailAction.js";
+import {ResizePadAction} from "../actions/resize/ResizePadAction.js";
+import {ResizeLimitPadAction} from "../actions/resize/ResizeLimitPadAction.js";
+import {ResizeMinimumPadAction} from "../actions/resize/ResizeMinimumPadAction.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
   fit: ResizeFitAction,
   limitFit: ResizeLimitFitAction,
-  minimumFit: ResizeMinimumFitAction
+  minimumFit: ResizeMinimumFitAction,
+  crop: ResizeCropAction,
+  fill: ResizeFillAction,
+  limitFill: ResizeLimitFillAction,
+  thumbnail: ThumbResizeAction,
+  pad: ResizePadAction,
+  limitPad: ResizeLimitPadAction,
+  minimumPad: ResizeMinimumPadAction
 };
 
 /**

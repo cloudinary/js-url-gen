@@ -1,6 +1,6 @@
 import {Qualifier} from "../../internal/qualifier/Qualifier.js";
-import ResizeAdvancedAction from "./ResizeAdvancedAction.js";
-
+import {ResizeAdvancedAction} from "./ResizeAdvancedAction.js";
+import {IActionModel} from "../../internal/models/IActionModel.js";
 
 /**
  * @description Defines how to crop an asset
@@ -14,6 +14,7 @@ class ResizeCropAction extends ResizeAdvancedAction {
    * @param {number} x The x position.
    */
   x(x: number | string): this {
+    this._actionModel.x = x;
     return this.addQualifier(new Qualifier('x', x));
   }
 
@@ -22,6 +23,7 @@ class ResizeCropAction extends ResizeAdvancedAction {
    * @param {number} y The y position.
    */
   y(y: number | string): this {
+    this._actionModel.y = y;
     return this.addQualifier(new Qualifier('y', y));
   }
 
@@ -30,9 +32,18 @@ class ResizeCropAction extends ResizeAdvancedAction {
    * @param {number | string} z The zoom factor. (Default: 1.0)
    */
   zoom(z: number | string): this {
+    this._actionModel.zoom = z;
     return this.addQualifier(new Qualifier('z', z));
+  }
+
+  static fromJson(actionModel: IActionModel): ResizeCropAction {
+    const result = super.fromJson.apply(this, [actionModel]);
+    actionModel.x && result.x(actionModel.x as string);
+    actionModel.y && result.y(actionModel.y as string);
+    actionModel.zoom && result.zoom(actionModel.zoom as string);
+
+    return result;
   }
 }
 
-
-export default ResizeCropAction;
+export {ResizeCropAction};

@@ -50,15 +50,18 @@
  * image.toURL()
  */
 
-import ResizePadAction from "./resize/ResizePadAction.js";
+import {ResizePadAction} from "./resize/ResizePadAction.js";
 import {ResizeSimpleAction} from "./resize/ResizeSimpleAction.js";
 import {ResizeScaleAction} from "./resize/ResizeScaleAction.js";
 import {ThumbResizeAction} from "./resize/ThumbnailAction.js";
 import {AutoGravity} from "../qualifiers/gravity/autoGravity/AutoGravity.js";
 import {CompassGravity} from "../qualifiers/gravity/compassGravity/CompassGravity.js";
-import ResizeCropAction from "./resize/ResizeCropAction.js";
+import {ResizeCropAction} from "./resize/ResizeCropAction.js";
 import {ResizeFillAction} from "./resize/ResizeFillAction.js";
 import {ResizeLimitFitAction} from "./resize/ResizeLimitFitAction.js";
+import {ResizeLimitFillAction} from "./resize/ResizeLimitFillAction.js";
+import {ResizeLimitPadAction} from "./resize/ResizeLimitPadAction.js";
+import {ResizeMinimumPadAction} from "./resize/ResizeMinimumPadAction.js";
 
 /**
  * @summary action
@@ -178,10 +181,10 @@ function pad(width?: string|number, height?: string|number) :ResizePadAction<Com
  * @memberOf Actions.Resize
  * @param {number|string} width The required width of a transformed asset.
  * @param {number|string} height The required height of a transformed asset.
- * @return {Actions.Resize.ResizeFillAction}
+ * @return {Actions.Resize.ResizeLimitFillAction}
  */
-function limitFill(width?: string|number, height?: string|number) :ResizeFillAction {
-  return new ResizeFillAction('lfill', width, height);
+function limitFill(width?: string|number, height?: string|number) :ResizeLimitFillAction {
+  return new ResizeLimitFillAction('lfill', width, height);
 }
 
 
@@ -197,7 +200,7 @@ function limitFill(width?: string|number, height?: string|number) :ResizeFillAct
  * @param {number|string} height The required height of a transformed asset.
  * @return {Actions.Resize.ResizeSimpleAction}
  */
-function limitFit(width?: number|string, height?: number|string) :ResizeSimpleAction {
+function limitFit(width?: number|string, height?: number|string) :ResizeLimitFitAction {
   return new ResizeLimitFitAction('limit', width, height);
 }
 
@@ -215,8 +218,8 @@ function limitFit(width?: number|string, height?: number|string) :ResizeSimpleAc
  * @param {number|string} height The required height of a transformed asset.
  * @return {Actions.Resize.ResizePadAction}
  */
-function minimumPad(width?: string|number, height?: string|number) :ResizePadAction<CompassGravity> {
-  return new ResizePadAction('mpad', width, height);
+function minimumPad(width?: string|number, height?: string|number): ResizeMinimumPadAction<CompassGravity> {
+  return new ResizeMinimumPadAction('mpad', width, height);
 }
 
 
@@ -286,8 +289,8 @@ function thumbnail(width?: string|number, height?: string|number) :ThumbResizeAc
  * @param {number|string} height The required height of a transformed asset.
  * @return {Actions.Resize.ResizePadAction}
  */
-function limitPad(width?: string|number, height?: string|number) :ResizePadAction<CompassGravity> {
-  return new ResizePadAction('lpad', width, height);
+function limitPad(width?: string|number, height?: string|number) :ResizeLimitPadAction<CompassGravity> {
+  return new ResizeLimitPadAction('lpad', width, height);
 }
 
 
