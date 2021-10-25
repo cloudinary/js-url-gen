@@ -24,7 +24,7 @@ class FlagQualifier extends Qualifier {
   }
 
   getFlagValue(): string{
-    return this.flagValue.toString();
+    return this.flagValue as string;
   }
 }
 
