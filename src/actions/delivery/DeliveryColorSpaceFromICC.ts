@@ -2,7 +2,6 @@ import {Action} from "../../internal/Action.js";
 import {QualifierValue} from "../../internal/qualifier/QualifierValue.js";
 import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 import {IColorSpaceFromICCModel} from "../../internal/models/IDeliveryActionModel.js";
-import {DELIVERY_MODE_TO_ACTION_TYPE_MAP} from "../../internal/internalConstants.js";
 
 
 /**
@@ -19,7 +18,7 @@ class DeliveryColorSpaceFromICC extends Action {
    */
   constructor(publicId: string) {
     super();
-    this._actionModel.actionType = DELIVERY_MODE_TO_ACTION_TYPE_MAP.icc;
+    this._actionModel.actionType = 'colorSpaceFromICC';
     this._actionModel.publicId = publicId;
     const qualifierValue = new QualifierValue(['icc', publicId]).setDelimiter(':');
     this.addQualifier(new Qualifier('cs', qualifierValue));

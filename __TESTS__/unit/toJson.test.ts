@@ -185,6 +185,18 @@ describe('Transformation.toJson()', () => {
     ]);
   });
 
+  it('jpg.progressive.semi()', () => {
+    const transformation = new Transformation()
+      .addAction(Delivery.format(Format.jpg()).progressive('semi'));
+    expect(transformation.toJson()).toStrictEqual([
+      {
+        progressive: { mode: 'semi' },
+        actionType: 'format',
+        formatType: 'jpg'
+      }
+    ]);
+  });
+
   it('gif.lossy()', () => {
     const transformation = new Transformation()
       .addAction(Delivery.format(Format.gif()).lossy());

@@ -4,6 +4,7 @@ import {ProgressiveQualifier} from "../../qualifiers/progressive.js";
 import {IDeliveryFormatModel} from "../../internal/models/IDeliveryActionModel.js";
 import {FormatQualifier} from "../../qualifiers/format/FormatQualifier.js";
 import {FlagQualifier} from "../../qualifiers/flag/FlagQualifier.js";
+import {ProgressiveType} from "../../types/types";
 
 /**
  * @memberOf Actions.Delivery
@@ -38,11 +39,12 @@ class DeliveryFormat extends DeliveryAction {
    * @description Uses progressive compression when delivering JPG file format.
    * @return {this}
    */
-  progressive(mode?: FlagQualifier | string): this {
+  progressive(mode?: ProgressiveType | ProgressiveQualifier): this {
     if (mode instanceof ProgressiveQualifier) {
       this._actionModel.progressive = {mode: mode.getMode()};
       this.addFlag(mode);
     } else {
+      this._actionModel.progressive = {mode: mode};
       this.addFlag(progressive(mode));
     }
     return this;
