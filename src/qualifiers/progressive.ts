@@ -18,14 +18,8 @@ import {FlagQualifier} from "./flag/FlagQualifier.js";
 
 
 class ProgressiveQualifier extends FlagQualifier {
-  mode: string;
   constructor(mode?: string) {
     super('progressive', mode);
-    this.mode = mode;
-  }
-
-  getMode(): string{
-    return this.mode;
   }
 }
 

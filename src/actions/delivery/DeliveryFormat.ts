@@ -3,8 +3,7 @@ import {DeliveryAction} from "./DeliveryAction.js";
 import {ProgressiveQualifier} from "../../qualifiers/progressive.js";
 import {IDeliveryFormatModel} from "../../internal/models/IDeliveryActionModel.js";
 import {FormatQualifier} from "../../qualifiers/format/FormatQualifier.js";
-import {FlagQualifier} from "../../qualifiers/flag/FlagQualifier.js";
-import {ProgressiveType} from "../../types/types";
+import {ProgressiveType} from "../../types/types.js";
 
 /**
  * @memberOf Actions.Delivery
@@ -41,7 +40,7 @@ class DeliveryFormat extends DeliveryAction {
    */
   progressive(mode?: ProgressiveType | ProgressiveQualifier): this {
     if (mode instanceof ProgressiveQualifier) {
-      this._actionModel.progressive = {mode: mode.getMode()};
+      this._actionModel.progressive = {mode: mode.getFlagValue()};
       this.addFlag(mode);
     } else {
       this._actionModel.progressive = {mode: mode};

@@ -7,6 +7,7 @@ import {Qualifier} from "../../internal/qualifier/Qualifier.js";
  * @description the FlagQualifier class
  */
 class FlagQualifier extends Qualifier {
+  flagValue : FlagQualifier | string;
   constructor(flagType?: QualifierValue | QualifierValue[] | number | number[] | string | string[], flagValue?: FlagQualifier | string) {
     let qualifierValue;
     if(flagValue) {
@@ -15,10 +16,15 @@ class FlagQualifier extends Qualifier {
       qualifierValue = flagType;
     }
     super('fl', qualifierValue);
+    this.flagValue = flagValue;
   }
 
   toString(): string {
     return super.toString().replace(/\./, '%2E');
+  }
+
+  getFlagValue(): string{
+    return this.flagValue.toString();
   }
 }
 
