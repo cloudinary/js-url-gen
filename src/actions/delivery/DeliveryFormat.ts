@@ -1,7 +1,6 @@
 import {lossy, preserveTransparency, progressive} from "../../qualifiers/flag.js";
 import {DeliveryAction} from "./DeliveryAction.js";
 import {ProgressiveQualifier} from "../../qualifiers/progressive.js";
-import {IDeliveryFormatModel} from "../../internal/models/IDeliveryActionModel.js";
 import {FormatQualifier} from "../../qualifiers/format/FormatQualifier.js";
 import {ProgressiveType} from "../../types/types.js";
 
@@ -11,18 +10,8 @@ import {ProgressiveType} from "../../types/types.js";
  * @see Visit {@link Actions.Delivery|Delivery} for an example
  */
 class DeliveryFormat extends DeliveryAction {
-  protected _actionModel: IDeliveryFormatModel = {};
-
   constructor(deliveryKey?: string, deliveryType?: FormatQualifier|string|number) {
-    super(deliveryKey, deliveryType);
-    this._actionModel.actionType = 'format';
-
-    if( deliveryType instanceof FormatQualifier){
-      this._actionModel.formatType = deliveryType.getValue();
-    }else {
-      this._actionModel.formatType = deliveryType;
-    }
-
+    super(deliveryKey, deliveryType, 'formatType');
   }
   /**
    * @description Uses lossy compression when delivering animated GIF files.

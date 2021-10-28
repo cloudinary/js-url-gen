@@ -12,17 +12,14 @@ import {ACTION_TYPE_TO_CHROMA_MAP} from "../../internal/internalConstants.js";
  * @see Visit {@link Actions.Delivery|Delivery} for an example
  */
 class DeliveryQualityAction extends DeliveryAction {
-  protected _actionModel: IDeliveryQualityModel = {};
   private qualityValue: string | number;
 
   /**
    * @param {Qualifiers.Quality} qualityValue a Quality value
    */
   constructor(qualityValue: string | number) {
-    super( 'q', qualityValue.toString());
+    super( 'q', qualityValue.toString(), 'level');
     this.qualityValue = qualityValue;
-    this._actionModel.actionType = 'quality';
-    this._actionModel.level = qualityValue;
   }
 
   /**

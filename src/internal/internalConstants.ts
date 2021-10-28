@@ -92,12 +92,13 @@ export const ACTION_TYPE_TO_CROP_MODE_MAP: Record<string, string> = {
   minimumPad: 'mpad'
 };
 
-export const ACTION_TYPE_TO_DELIIVERY_MODE_MAP: Record<string, string> = {
+export const ACTION_TYPE_TO_DELIVERY_MODE_MAP: Record<string, string> = {
   colorSpace: 'cs',
   dpr: 'dpr',
   density: 'dn',
   defaultImage: 'd',
-  colorSpaceFromICC: 'icc'
+  format: 'f',
+  quality: 'q'
 };
 
 export const ACTION_TYPE_TO_CHROMA_MAP: Record<number, string> = {
@@ -107,5 +108,5 @@ export const ACTION_TYPE_TO_CHROMA_MAP: Record<number, string> = {
 
 export const CROP_MODE_TO_ACTION_TYPE_MAP = objectFlip(ACTION_TYPE_TO_CROP_MODE_MAP);
 
-export const DELIVERY_MODE_TO_ACTION_TYPE_MAP = objectFlip(ACTION_TYPE_TO_DELIIVERY_MODE_MAP);
+export const DELIVERY_MODE_TO_ACTION_TYPE_MAP = objectFlip(ACTION_TYPE_TO_DELIVERY_MODE_MAP);
 
