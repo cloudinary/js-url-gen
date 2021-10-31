@@ -2,8 +2,6 @@ import {Transformation} from '../../src';
 import {Resize} from "../../src/actions";
 import {UnsupportedError} from "../../src/internal/utils/unsupportedError";
 import {Action} from "../../src/internal/Action";
-import {Gravity} from "../../src/qualifiers";
-import {CompassQualifier} from "../../src/qualifiers/gravity/qualifiers/compass/CompassQualifier";
 
 describe('Transformation.toJson()', () => {
   it('scale', () => {
@@ -29,9 +27,9 @@ describe('Transformation.toJson()', () => {
       .addAction(Resize.fill(200).x(3).y(4).gravity('south'))
       .addAction(Resize.limitFill(200).x(3).y(4).gravity('south'))
       .addAction(Resize.thumbnail(100).gravity('south').zoom(4))
-      .addAction(Resize.pad(100).gravity(Gravity.compass(new CompassQualifier('south'))).offsetX(3).offsetY(4))
-      .addAction(Resize.limitPad(100).gravity(Gravity.compass(new CompassQualifier('south'))).offsetX(3).offsetY(4))
-      .addAction(Resize.minimumPad(100).gravity(Gravity.compass(new CompassQualifier('south'))).offsetX(3).offsetY(4));
+      .addAction(Resize.pad(100).gravity('south').offsetX(3).offsetY(4))
+      .addAction(Resize.limitPad(100).gravity('south').offsetX(3).offsetY(4))
+      .addAction(Resize.minimumPad(100).gravity('south').offsetX(3).offsetY(4));
     expect(transformation.toJson()).toStrictEqual([
       {
         "actionType": "scale",
