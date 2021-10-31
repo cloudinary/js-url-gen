@@ -2,7 +2,7 @@ import {Transformation} from '../../src';
 import {Resize} from "../../src/actions";
 import {UnsupportedError} from "../../src/internal/utils/unsupportedError";
 import {Action} from "../../src/internal/Action";
-import {Gravity} from "../../src/qualifiers";
+import {AspectRatio, Gravity} from "../../src/qualifiers";
 import {CompassQualifier} from "../../src/qualifiers/gravity/qualifiers/compass/CompassQualifier";
 
 describe('Transformation.toJson()', () => {
@@ -21,10 +21,10 @@ describe('Transformation.toJson()', () => {
 
   it('scale.fit.limitFit.minimumFit.crop.fill.limitFill.thumbnail.pad.limitPad.minimumPad', () => {
     const transformation = new Transformation()
-      .addAction(Resize.scale(200))
-      .addAction(Resize.fit(100, 200))
-      .addAction(Resize.limitFit(100))
-      .addAction(Resize.minimumFit(100))
+      .addAction(Resize.scale(200).aspectRatio(7))
+      .addAction(Resize.fit(100, 200).aspectRatio('16:9'))
+      .addAction(Resize.limitFit(100).aspectRatio(AspectRatio.ar16X9()))
+      .addAction(Resize.minimumFit(100).aspectRatio(AspectRatio.ignoreInitialAspectRatio()))
       .addAction(Resize.crop(100).x(3).y(4).gravity('north_east').zoom(10))
       .addAction(Resize.fill(200).x(3).y(4).gravity('south'))
       .addAction(Resize.limitFill(200).x(3).y(4).gravity('south'))
@@ -36,12 +36,14 @@ describe('Transformation.toJson()', () => {
       {
         "actionType": "scale",
         "dimensions": {
+          "aspectRatio": "7.0",
           "width": 200
         }
       },
       {
         "actionType": "fit",
         "dimensions": {
+          "aspectRatio": "16:9",
           "height": 200,
           "width": 100
         }
@@ -49,12 +51,14 @@ describe('Transformation.toJson()', () => {
       {
         "actionType": "limitFit",
         "dimensions": {
+          "aspectRatio": "16:9",
           "width": 100
         }
       },
       {
         "actionType": "minimumFit",
         "dimensions": {
+          "aspectRatio": "ignore_aspect_ratio",
           "width": 100
         }
       },
