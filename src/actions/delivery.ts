@@ -46,8 +46,6 @@ function format(format:FormatQualifier | ImageFormatType | VideoFormatType | str
   return new DeliveryFormatAction('f', format);
 }
 
-
-
 /**
  * @summary action
  * @description Deliver the image in the specified device pixel ratio.
@@ -68,7 +66,6 @@ function dpr(dpr: string|number):DeliveryAction {
   // toFloatAsString is used to ensure 1 turns into 1.0
   return new DeliveryAction('dpr', toFloatAsString(dpr), 'type');
 }
-
 
 /**
  * @summary action
@@ -117,8 +114,6 @@ function density(value:number) :DeliveryAction {
   return new DeliveryAction('dn', value, 'density');
 }
 
-
-
 /**
  * @summary action
  * @description Default images can be used in the case that a requested image does not exist.
@@ -138,7 +133,6 @@ function density(value:number) :DeliveryAction {
 function defaultImage(publicIdWithExtension:string) :DeliveryAction {
   return new DeliveryAction('d', publicIdWithExtension, 'defaultImage');
 }
-
 
 /**
  * @summary action
@@ -161,7 +155,6 @@ function colorSpace(mode: ColorSpaceType): DeliveryColorSpaceAction {
   return new DeliveryColorSpaceAction(mode);
 }
 
-
 /**
  * @summary action
  * @description Specifies the ICC profile to use for the color space.
@@ -181,12 +174,9 @@ function colorSpace(mode: ColorSpaceType): DeliveryColorSpaceAction {
  *  colorSpaceFromICC('sample.icc'),
  * );
  */
-function colorSpaceFromICC(publicId: string) :DeliveryColorSpaceFromICCAction {
+function colorSpaceFromICC(publicId: string): DeliveryColorSpaceFromICCAction {
   return new DeliveryColorSpaceFromICCAction(publicId);
 }
-
-
-
 
 const Delivery = {
   format,

@@ -32,7 +32,7 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   limitPad: ResizeLimitPadAction,
   minimumPad: ResizeMinimumPadAction,
   colorSpace: DeliveryColorSpaceAction,
-  colorSpaceFromIcc: DeliveryColorSpaceFromICCAction,
+  colorSpaceFromICC: DeliveryColorSpaceFromICCAction,
   format: DeliveryFormatAction
 };
 

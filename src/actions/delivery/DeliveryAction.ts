@@ -2,8 +2,8 @@ import {Action} from "../../internal/Action.js";
 import {FormatQualifier} from "../../qualifiers/format/FormatQualifier.js";
 import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 import {
-  IDefaultImageModel, IDeliveryColorSpaceActionModel, IDeliveryFormatModel,
-  IDeliveryQualityModel, IDensityModel, IDprModel
+  IDefaultImageModel, IDeliveryColorSpaceActionModel, IDeliveryColorSpaceFromICCActionModel,
+  IDeliveryFormatModel, IDeliveryQualityModel, IDensityModel, IDprModel
 } from "../../internal/models/IDeliveryActionModel.js";
 import {DELIVERY_MODE_TO_ACTION_TYPE_MAP} from "../../internal/internalConstants.js";
 
@@ -13,7 +13,7 @@ import {DELIVERY_MODE_TO_ACTION_TYPE_MAP} from "../../internal/internalConstants
  * @extends SDK.Action
  */
 class DeliveryAction extends Action {
-  protected _actionModel: IDeliveryColorSpaceActionModel | IDprModel | IDensityModel | IDefaultImageModel | IDeliveryFormatModel | IDeliveryQualityModel = {};
+  protected _actionModel: IDeliveryColorSpaceActionModel | IDeliveryColorSpaceFromICCActionModel | IDprModel | IDensityModel | IDefaultImageModel | IDeliveryFormatModel | IDeliveryQualityModel = {};
 
   /**
    * @param {string} deliveryKey A generic Delivery Action Key (such as q, f, dn, etc.)
