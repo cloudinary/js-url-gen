@@ -2,6 +2,8 @@ import {Action} from "../../../internal/Action.js";
 import {QualifierValue} from "../../../internal/qualifier/QualifierValue.js";
 import {Qualifier} from "../../../internal/qualifier/Qualifier.js";
 import {ExpressionQualifier} from "../../../qualifiers/expression/ExpressionQualifier.js";
+import {EFFECT_MODE_TO_ACTION_TYPE_MAP} from "../../../internal/internalConstants.js";
+import {ISimpleEffectActionModel} from "../../../internal/models/ISimpleEffectActionModel.js";
 
 /**
  * @description A class that defines a simple effect of the type e_{effectName}
@@ -10,8 +12,10 @@ import {ExpressionQualifier} from "../../../qualifiers/expression/ExpressionQual
  * @see Visit {@link Actions.Effect|Effect} for an example
  */
 class SimpleEffectAction extends Action {
+  protected _actionModel: ISimpleEffectActionModel = {};
   constructor(effectType?: string, level?: number|string) {
     super();
+    this._actionModel.actionType = EFFECT_MODE_TO_ACTION_TYPE_MAP[effectType] || effectType;
     const qualifierEffect = this.createEffectQualifier(effectType, level);
     this.addQualifier(qualifierEffect);
   }
