@@ -32,7 +32,7 @@ describe('fromJson', () => {
     ].join('/'));
   });
 
-  it('should generate an error for array that includes an unsupported action', function () {
+  it('should generate a transformation string from colorSpace action', function () {
     const transformation = fromJson([
       {actionType: 'colorSpace', mode: 'srgbTrueColor'}
     ]);
