@@ -22,10 +22,9 @@ import IURLConfig from "../config/interfaces/Config/IURLConfig.js";
 import ICloudConfig from "../config/interfaces/Config/ICloudConfig.js";
 import {IDeliveryAction} from "../actions/delivery.js";
 import {IAdjustAction} from "../actions/adjust.js";
-import {DeliveryQualityAction} from "../actions/delivery/DeliveryQuality.js";
 import {ITrackedPropertiesThroughAnalytics} from "../sdkAnalytics/interfaces/ITrackedPropertiesThroughAnalytics.js";
 import {AnimatedAction} from "../actions/animated.js";
-import {DeliveryFormat} from "../actions/delivery/DeliveryFormat.js";
+import {DeliveryFormatAction} from "../actions/delivery/DeliveryFormatAction.js";
 
 /**
  * @desc Cloudinary Transformable interface, extended by any class that needs a Transformation Interface
@@ -86,7 +85,7 @@ class CloudinaryTransformable extends CloudinaryFile {
    * @return {this}
    */
   quality(quality: string|number): this {
-    this.addAction(new DeliveryFormat('q', quality));
+    this.addAction(new DeliveryFormatAction('q', quality));
     return this;
   }
 
@@ -96,7 +95,7 @@ class CloudinaryTransformable extends CloudinaryFile {
    * @return {this}
    */
   format(format: string): this {
-    this.addAction(new DeliveryFormat('f', format));
+    this.addAction(new DeliveryFormatAction('f', format));
     return this;
   }
 

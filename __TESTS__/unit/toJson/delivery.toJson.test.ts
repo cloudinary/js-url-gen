@@ -62,7 +62,7 @@ describe('Delivery.toJson()', () => {
     ]);
   });
 
-  it('jpg.progressive.semi()', () => {
+  it('jpg.progressive("semi")', () => {
     const transformation = new Transformation()
       .addAction(Delivery.format(Format.jpg()).progressive('semi'));
     expect(transformation.toJson()).toStrictEqual([

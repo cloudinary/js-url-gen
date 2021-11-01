@@ -3,13 +3,15 @@ import {DeliveryAction} from "./DeliveryAction.js";
 import {ProgressiveQualifier} from "../../qualifiers/progressive.js";
 import {FormatQualifier} from "../../qualifiers/format/FormatQualifier.js";
 import {ProgressiveType} from "../../types/types.js";
+import {IActionModel} from "../../internal/models/IActionModel";
+import {IDeliveryColorSpaceFromICCActionModel, IDeliveryFormatModel} from "../../internal/models/IDeliveryActionModel";
 
 /**
  * @memberOf Actions.Delivery
  * @extends {Actions.Delivery.DeliveryAction}
  * @see Visit {@link Actions.Delivery|Delivery} for an example
  */
-class DeliveryFormat extends DeliveryAction {
+class DeliveryFormatAction extends DeliveryAction {
   constructor(deliveryKey?: string, deliveryType?: FormatQualifier|string|number) {
     super(deliveryKey, deliveryType, 'formatType');
   }
@@ -46,6 +48,30 @@ class DeliveryFormat extends DeliveryAction {
     this.addFlag(preserveTransparency());
     return this;
   }
+
+  static fromJson(actionModel: IActionModel): DeliveryFormatAction {
+    const {formatType, lossy, progressive, preserveTransparency} = (actionModel as IDeliveryFormatModel);
+    let result: DeliveryFormatAction;
+
+    if (formatType) {
+      result = new this('f', formatType);
+    } else{
+      result = new this('f');
+    }
+
+    if (progressive){
+      if (progressive.mode){
+        result.progressive(progressive.mode as unknown as ProgressiveQualifier);
+      } else{
+        result.progressive();
+      }
+    }
+
+    lossy && result.lossy();
+    preserveTransparency && result.preserveTransparency();
+
+    return result;
+  }
 }
 
-export {DeliveryFormat};
+export {DeliveryFormatAction};

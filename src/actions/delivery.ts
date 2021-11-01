@@ -6,7 +6,7 @@
  * See the examples under every method
  */
 
-import {DeliveryFormat} from "./delivery/DeliveryFormat.js";
+import {DeliveryFormatAction} from "./delivery/DeliveryFormatAction.js";
 import {DeliveryQualityAction} from "./delivery/DeliveryQuality.js";
 import {FormatQualifier} from "../qualifiers/format/FormatQualifier.js";
 import {toFloatAsString} from "../internal/utils/toFloatAsString.js";
@@ -42,8 +42,8 @@ export type IDeliveryAction = DeliveryAction | DeliveryColorSpaceAction | Delive
  * );
  *
  */
-function format(format:FormatQualifier | ImageFormatType | VideoFormatType | string) :DeliveryFormat {
-  return new DeliveryFormat('f', format);
+function format(format:FormatQualifier | ImageFormatType | VideoFormatType | string) :DeliveryFormatAction {
+  return new DeliveryFormatAction('f', format);
 }
 
 
