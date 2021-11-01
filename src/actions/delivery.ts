@@ -17,7 +17,7 @@ import {QualityTypes} from "../types/types.js";
 import {ImageFormatType, VideoFormatType} from "../types/types.js";
 import {DeliveryColorSpaceAction} from "./delivery/DeliveryColorSpaceAction.js";
 
-export type IDeliveryAction = DeliveryAction | DeliveryColorSpaceFromICC;
+export type IDeliveryAction = DeliveryAction | DeliveryColorSpaceAction | DeliveryColorSpaceFromICC;
 
 /**
  * @summary action
