@@ -4,9 +4,9 @@ import {createUnsupportedError} from "../../src/internal/utils/unsupportedError"
 describe('fromJson', () => {
   it('should generate a url with resize actions from array of models', function () {
     const transformation = fromJson([
-      {actionType: 'scale', dimensions: {width: 100}},
-      {actionType: 'fit', dimensions: {height: 200}, relative: true},
-      {actionType: 'limitFit', dimensions: {height: 200}, relative: true},
+      {actionType: 'scale', dimensions: {width: 100, aspectRatio: 7}},
+      {actionType: 'fit', dimensions: {height: 200, aspectRatio: '16:9'}, relative: true},
+      {actionType: 'limitFit', dimensions: {height: 200, aspectRatio: 'ignore_aspect_ratio'}, relative: true},
       {actionType: 'minimumFit', dimensions: {width: 100}, regionRelative: true},
       {actionType: 'crop', dimensions: {width: 100}, regionRelative: true, gravity: 'north_east', y: 3, zoom: 7},
       {actionType: 'fill', dimensions: {width: 100}, relative: true, gravity: 'south', x: 4, y: 5},
