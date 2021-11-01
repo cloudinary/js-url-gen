@@ -1,5 +1,6 @@
 import {SimpleEffectAction} from "./SimpleEffectAction.js";
 import {ExpressionQualifier} from "../../../qualifiers/expression/ExpressionQualifier.js";
+import {IEffectActionWithLevelModel} from "../../../internal/models/IEffectActionWithLevelModel.js";
 
 /**
  * @description A base class for effects with a level, the extending class needs to implement a method that calls setLevel()
@@ -8,10 +9,12 @@ import {ExpressionQualifier} from "../../../qualifiers/expression/ExpressionQual
  * @see Visit {@link Actions.Effect|Effect} for an example
  */
 class LeveledEffectAction extends SimpleEffectAction {
+  protected _actionModel: IEffectActionWithLevelModel = {};
   protected effectType: string;
   constructor(effectType?: string, level?: number|string) {
     super(effectType, level);
     this.effectType = effectType;
+    this._actionModel.actionType = effectType;
   }
 
   /**
@@ -21,6 +24,7 @@ class LeveledEffectAction extends SimpleEffectAction {
    * @protected
    */
   protected setLevel(level: string | number | ExpressionQualifier): this {
+    this._actionModel.level = level as number;
     const qualifierEffect = this.createEffectQualifier(this.effectType, level);
     this.addQualifier(qualifierEffect);
     return this;

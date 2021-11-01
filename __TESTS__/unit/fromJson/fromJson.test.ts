@@ -1,5 +1,5 @@
-import {fromJson} from "../../src/internal/fromJson";
-import {createUnsupportedError} from "../../src/internal/utils/unsupportedError";
+import {fromJson} from "../../../src/internal/fromJson";
+import {createUnsupportedError} from "../../../src/internal/utils/unsupportedError";
 
 describe('fromJson', () => {
   it('should generate a url with resize actions from array of models', function () {

@@ -101,6 +101,11 @@ export const ACTION_TYPE_TO_DELIVERY_MODE_MAP: Record<string, string> = {
   quality: 'q'
 };
 
+export const ACTION_TYPE_TO_EFFECT_MODE_MAP: Record<string, string> = {
+  redEye: 'redeye',
+  advancedRedEye: 'adv_redeye'
+};
+
 export const ACTION_TYPE_TO_CHROMA_MAP: Record<number, string> = {
   444: "CHROMA_444",
   420: "CHROMA_420"
@@ -119,3 +124,4 @@ export const CROP_MODE_TO_ACTION_TYPE_MAP = objectFlip(ACTION_TYPE_TO_CROP_MODE_
 
 export const DELIVERY_MODE_TO_ACTION_TYPE_MAP = objectFlip(ACTION_TYPE_TO_DELIVERY_MODE_MAP);
 
+export const EFFECT_MODE_TO_ACTION_TYPE_MAP = objectFlip(ACTION_TYPE_TO_EFFECT_MODE_MAP);
