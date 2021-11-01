@@ -17,7 +17,6 @@ class ResizeAdvancedAction extends ResizeSimpleAction {
    * @param {Qualifiers.Gravity} gravity
    */
   gravity(gravity: IGravity | IShortenGravity): this {
-
     if(typeof gravity === "string") {
       this._actionModel.gravity = gravity;
       return this.addQualifier(new Qualifier('g', gravity));

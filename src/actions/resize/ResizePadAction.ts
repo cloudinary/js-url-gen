@@ -22,11 +22,6 @@ class ResizePadAction<GravityType extends IGravity> extends ResizeAdvancedAction
     return this.addQualifier(backgroundQualifier);
   }
 
-  gravity(direction: GravityType): this {
-    this._actionModel.gravity = `${direction.qualifierValue || direction}`;
-    return this.addQualifier(direction);
-  }
-
   /**
    * @description Horizontal position for custom-coordinates based padding.
    * @param {number} x The x position.

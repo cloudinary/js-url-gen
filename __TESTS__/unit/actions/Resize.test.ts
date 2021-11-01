@@ -17,4 +17,9 @@ describe('Tests for Transformation Action -- Resize', () => {
     const url = getImageWithResize(Resize.scale().width(Expression.expression('100 + 5')), 'url');
     expect(url).toContain('c_scale,w_100_add_5');
   });
+
+  it('Resize with gravity', () => {
+    const url = getImageWithResize(Resize.pad().width(100).gravity('west'), 'url');
+    expect(url).toContain('c_pad,g_west,w_100');
+  });
 });
