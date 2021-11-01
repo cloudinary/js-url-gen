@@ -3,8 +3,8 @@ import {DeliveryAction} from "./DeliveryAction.js";
 import {ProgressiveQualifier} from "../../qualifiers/progressive.js";
 import {FormatQualifier} from "../../qualifiers/format/FormatQualifier.js";
 import {ProgressiveType} from "../../types/types.js";
-import {IActionModel} from "../../internal/models/IActionModel";
-import {IDeliveryColorSpaceFromICCActionModel, IDeliveryFormatModel} from "../../internal/models/IDeliveryActionModel";
+import {IActionModel} from "../../internal/models/IActionModel.js";
+import {IDeliveryFormatModel} from "../../internal/models/IDeliveryActionModel.js";
 
 /**
  * @memberOf Actions.Delivery
