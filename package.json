@@ -11,6 +11,7 @@
     "test:unit:watch": "jest --watch --reporters default",
     "test:types": "tsc --project tsconfig.test.json",
     "test:import:require": "cd testApps/testImportAndRequire && npm run test",
+    "test:model": "jest json.test.ts",
     "build": "bash ./scripts/build.sh",
     "build:ESM": "tsc --project tsconfig.json --outDir dist --declaration true",
     "build:rollup": "rollup -c",

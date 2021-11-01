@@ -5,11 +5,13 @@
  * @see Visit {@link Actions.Delivery.colorSpace|Delivery Color Space} for an example
  */
 
+import {ColorSpaceType} from "../types/types.js";
+
 /**
  * @summary qualifier
  * @memberOf Qualifiers.ColorSpace
  */
-function srgb(): string {
+function srgb(): ColorSpaceType {
   return 'srgb';
 }
 
@@ -17,7 +19,7 @@ function srgb(): string {
  * @summary qualifier
  * @memberOf Qualifiers.ColorSpace
  */
-function trueColor(): string {
+function trueColor(): ColorSpaceType {
   return 'srgb:truecolor';
 }
 
@@ -26,7 +28,7 @@ function trueColor(): string {
  * @summary qualifier
  * @memberOf Qualifiers.ColorSpace
  */
-function tinySrgb(): string {
+function tinySrgb(): ColorSpaceType {
   return 'tinysrgb';
 }
 
@@ -35,7 +37,7 @@ function tinySrgb(): string {
  * @summary qualifier
  * @memberOf Qualifiers.ColorSpace
  */
-function cmyk(): string | number {
+function cmyk(): ColorSpaceType {
   return 'cmyk';
 }
 
@@ -44,7 +46,7 @@ function cmyk(): string | number {
  * @summary qualifier
  * @memberOf Qualifiers.ColorSpace
  */
-function noCmyk(): string {
+function noCmyk(): ColorSpaceType {
   return 'no_cmyk';
 }
 
@@ -53,11 +55,11 @@ function noCmyk(): string {
  * @summary qualifier
  * @memberOf Qualifiers.ColorSpace
  */
-function keepCmyk(): string {
+function keepCmyk(): ColorSpaceType {
   return 'keep_cmyk';
 }
 
-const ColorSpace = {
+const ColorSpace: Record<string, ()=>ColorSpaceType> = {
   cmyk,
   keepCmyk,
   noCmyk,

@@ -15,6 +15,7 @@ import {DeliveryAction} from "./delivery/DeliveryAction.js";
 import {ColorSpaceType} from "../types/types.js";
 import {QualityTypes} from "../types/types.js";
 import {ImageFormatType, VideoFormatType} from "../types/types.js";
+import {DeliveryColorSpaceAction} from "./delivery/DeliveryColorSpaceAction.js";
 
 export type IDeliveryAction = DeliveryAction | DeliveryColorSpaceFromICC;
 
@@ -156,8 +157,8 @@ function defaultImage(publicIdWithExtension:string) :DeliveryAction {
  *  colorSpace(trueColor()),
  * );
  */
-function colorSpace(mode:ColorSpaceType|string): DeliveryAction {
-  return new DeliveryAction('cs', mode, 'colorSpaceType');
+function colorSpace(mode: ColorSpaceType): DeliveryColorSpaceAction {
+  return new DeliveryColorSpaceAction(mode);
 }
 
 

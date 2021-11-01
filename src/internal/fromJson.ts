@@ -15,6 +15,7 @@ import {ThumbResizeAction} from "../actions/resize/ThumbnailAction.js";
 import {ResizePadAction} from "../actions/resize/ResizePadAction.js";
 import {ResizeLimitPadAction} from "../actions/resize/ResizeLimitPadAction.js";
 import {ResizeMinimumPadAction} from "../actions/resize/ResizeMinimumPadAction.js";
+import {DeliveryColorSpaceAction} from "../actions/delivery/DeliveryColorSpaceAction.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
@@ -27,7 +28,8 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   thumbnail: ThumbResizeAction,
   pad: ResizePadAction,
   limitPad: ResizeLimitPadAction,
-  minimumPad: ResizeMinimumPadAction
+  minimumPad: ResizeMinimumPadAction,
+  colorSpace: DeliveryColorSpaceAction
 };
 
 /**
