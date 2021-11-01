@@ -2,7 +2,7 @@ import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 import {Action} from "../../internal/Action.js";
 import {toFloatAsString} from "../../internal/utils/toFloatAsString.js";
 import {AspectRatioQualifierValue} from "../../qualifiers/aspectRatio/AspectRatioQualifierValue.js";
-import {regionRelative, relative} from "../../qualifiers/flag.js";
+import {ignoreInitialAspectRatio, regionRelative, relative} from "../../qualifiers/flag.js";
 import {FlagQualifier} from "../../qualifiers/flag/FlagQualifier.js";
 import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifier.js";
 import {AspectRatioType} from "../../types/types.js";
@@ -61,14 +61,17 @@ class ResizeSimpleAction extends Action {
   aspectRatio(ratio: AspectRatioType | AspectRatioQualifierValue | FlagQualifier | number | string): this {
     // toFloatAsString is used to ensure 1 turns into 1.0
     if (ratio instanceof AspectRatioQualifierValue) {
+      this._actionModel.dimensions.aspectRatio = `${ratio}`;
       return this.addQualifier(new Qualifier('ar', ratio));
     }
 
     if (typeof ratio === 'number' || typeof ratio === 'string') {
+      this._actionModel.dimensions.aspectRatio = toFloatAsString(ratio);
       return this.addQualifier(new Qualifier('ar', toFloatAsString(ratio)));
     }
 
     if (ratio instanceof FlagQualifier) {
+      this._actionModel.dimensions.aspectRatio = `${ratio.qualifierValue}`;
       return this.addFlag(ratio);
     }
   }
@@ -93,13 +96,14 @@ class ResizeSimpleAction extends Action {
 
   static fromJson(actionModel: IActionModel): ResizeSimpleAction {
     const {actionType, dimensions, relative, regionRelative} = (actionModel as IResizeSimpleActionModel);
-    const {width, height} = dimensions;
+    const {aspectRatio, width, height} = dimensions;
     const cropMode = ACTION_TYPE_TO_CROP_MODE_MAP[actionType] || actionType;
 
     // We are using this() to allow inheriting classes to use super.fromJson.apply(this, [actionModel])
     // This allows the inheriting classes to determine the class to be created
     const result = new this(cropMode, width, height);
 
+    aspectRatio && result.aspectRatio(aspectRatio === 'ignore_aspect_ratio' ? ignoreInitialAspectRatio() : aspectRatio);
     relative && result.relative();
     regionRelative && result.regionRelative();
 
