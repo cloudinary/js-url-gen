@@ -1,6 +1,9 @@
 import {QualifierValue} from "../../internal/qualifier/QualifierValue.js";
 import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 import {DeliveryAction} from "./DeliveryAction.js";
+import {IDeliveryQualityModel} from "../../internal/models/IDeliveryActionModel.js";
+import {ACTION_TYPE_TO_CHROMA_MAP} from "../../internal/internalConstants.js";
+
 
 /**
  * @description Controls the quality of the delivered image or video.
@@ -15,7 +18,7 @@ class DeliveryQualityAction extends DeliveryAction {
    * @param {Qualifiers.Quality} qualityValue a Quality value
    */
   constructor(qualityValue: string | number) {
-    super( 'q', qualityValue.toString());
+    super( 'q', qualityValue.toString(), 'level');
     this.qualityValue = qualityValue;
   }
 
@@ -25,9 +28,9 @@ class DeliveryQualityAction extends DeliveryAction {
    * @param {420 | 444 | number} type The chroma sub sampling type
    */
   chromaSubSampling(type: 420 | 444 | number): this {
+    this._actionModel.chromaSubSampling = ACTION_TYPE_TO_CHROMA_MAP[type];
     const qualityWithSubSampling = new QualifierValue([this.qualityValue, type]);
     qualityWithSubSampling.setDelimiter(':');
-
     // We either have chroma or quantization, but not both
     return this.addQualifier(new Qualifier('q', qualityWithSubSampling));
   }
@@ -37,6 +40,7 @@ class DeliveryQualityAction extends DeliveryAction {
    * @param {number} val
    */
   quantization(val:number): this {
+    this._actionModel.quantization = val;
     const qualityWithQuantization = new QualifierValue([this.qualityValue, `qmax_${val}`]);
     qualityWithQuantization.setDelimiter(':');
 
