@@ -1,13 +1,13 @@
-import {Transformation} from '../../src';
-import {Delivery, Resize} from "../../src/actions";
-import {UnsupportedError} from "../../src/internal/utils/unsupportedError";
-import {Action} from "../../src/internal/Action";
-import {Format} from "../../src/qualifiers/format";
-import {Progressive} from "../../src/qualifiers/progressive";
-import {Quality} from "../../src/qualifiers/quality";
-import {ChromaSubSampling} from "../../src/qualifiers";
-import {Gravity} from "../../src/qualifiers";
-import {CompassQualifier} from "../../src/qualifiers/gravity/qualifiers/compass/CompassQualifier";
+import {Transformation} from '../../../src';
+import {Delivery, Effect, Resize} from "../../../src/actions";
+import {UnsupportedError} from "../../../src/internal/utils/unsupportedError";
+import {Action} from "../../../src/internal/Action";
+import {Format} from "../../../src/qualifiers/format";
+import {Progressive} from "../../../src/qualifiers/progressive";
+import {Quality} from "../../../src/qualifiers/quality";
+import {ChromaSubSampling} from "../../../src/qualifiers";
+import {Gravity} from "../../../src/qualifiers";
+import {CompassQualifier} from "../../../src/qualifiers/gravity/qualifiers/compass/CompassQualifier";
 
 describe('Transformation.toJson()', () => {
   it('scale', () => {
