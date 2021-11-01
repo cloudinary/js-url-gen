@@ -1,12 +1,12 @@
-import {Transformation} from '../../src';
-import {Delivery, Resize, Effect} from "../../src/actions";
-import {UnsupportedError} from "../../src/internal/utils/unsupportedError";
-import {Action} from "../../src/internal/Action";
-import {AspectRatio} from "../../src/qualifiers";
-import {Format} from "../../src/qualifiers/format";
-import {Progressive} from "../../src/qualifiers/progressive";
-import {Quality} from "../../src/qualifiers/quality";
-import {ChromaSubSampling} from "../../src/qualifiers";
+import {Transformation} from '../../../src';
+import {Delivery, Resize} from "../../../src/actions";
+import {UnsupportedError} from "../../../src/internal/utils/unsupportedError";
+import {Action} from "../../../src/internal/Action";
+import {AspectRatio} from "../../../src/qualifiers";
+import {Format} from "../../../src/qualifiers/format";
+import {Progressive} from "../../../src/qualifiers/progressive";
+import {Quality} from "../../../src/qualifiers/quality";
+import {ChromaSubSampling} from "../../../src/qualifiers";
 
 describe('Transformation.toJson()', () => {
   it('scale', () => {
