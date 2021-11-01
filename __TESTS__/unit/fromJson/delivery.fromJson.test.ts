@@ -8,4 +8,11 @@ describe('delivery.fromJson', () => {
 
     expect(transformation.toString()).toStrictEqual('cs_srgb:truecolor');
   });
+  it('should generate a transformation string from colorSpaceFromIcc action', function () {
+    const transformation = fromJson([
+      {actionType: 'colorSpaceFromICC', publicId: 'sample'}
+    ]);
+
+    expect(transformation.toString()).toStrictEqual('cs_icc:sample');
+  });
 });
