@@ -7,7 +7,7 @@
  */
 
 import {DeliveryFormatAction} from "./delivery/DeliveryFormatAction.js";
-import {DeliveryQualityAction} from "./delivery/DeliveryQuality.js";
+import {DeliveryQualityAction} from "./delivery/DeliveryQualityAction.js";
 import {FormatQualifier} from "../qualifiers/format/FormatQualifier.js";
 import {toFloatAsString} from "../internal/utils/toFloatAsString.js";
 import {DeliveryColorSpaceFromICCAction} from "./delivery/DeliveryColorSpaceFromICCAction.js";

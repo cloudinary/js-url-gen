@@ -106,7 +106,7 @@ export const ACTION_TYPE_TO_EFFECT_MODE_MAP: Record<string, string> = {
   advancedRedEye: 'adv_redeye'
 };
 
-export const ACTION_TYPE_TO_CHROMA_MAP: Record<number, string> = {
+export const CHROMA_VALUE_TO_CHROMA_MODEL_ENUM: Record<number, string> = {
   444: "CHROMA_444",
   420: "CHROMA_420"
 };
@@ -117,6 +117,8 @@ export const COLOR_SPACE_MODEL_MODE_TO_COLOR_SPACE_MODE_MAP: Record<string, stri
   'tinySrgb': 'tinysrgb',
   'srgbTrueColor': 'srgb:truecolor'
 };
+
+export const CHROMA_MODEL_ENUM_TO_CHROMA_VALUE = objectFlip(CHROMA_VALUE_TO_CHROMA_MODEL_ENUM);
 
 export const COLOR_SPACE_MODE_TO_COLOR_SPACE_MODEL_MODE_MAP = objectFlip(COLOR_SPACE_MODEL_MODE_TO_COLOR_SPACE_MODE_MAP);
 
