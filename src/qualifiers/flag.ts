@@ -333,7 +333,7 @@ function preserveTransparency(): FlagQualifier {
  * This format allows the browser to quickly show a low-quality rendering of the image until the full-quality
  * image is loaded.
  *
- * @param {string} mode The mode to determine a specific progressive outcome as follows:
+ * @param {string} mode? The mode to determine a specific progressive outcome as follows:
  * * semi - A smart optimization of the decoding time, compression level and progressive rendering
  *          (less iterations). This is the default mode when using q_auto.
  * * steep - Delivers a preview very quickly, and in a single later phase improves the image to
@@ -342,7 +342,7 @@ function preserveTransparency(): FlagQualifier {
  *           a specific value for quality.
  * @return {Qualifiers.Flag.FlagQualifier}
  */
-function progressive(mode?: string): FlagQualifier {
+function progressive(mode?: FlagQualifier | string): FlagQualifier {
   return new FlagQualifier('progressive', mode);
 }
 
