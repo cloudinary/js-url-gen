@@ -2,11 +2,12 @@ import {Transformation} from '../../../src';
 import {Delivery, Resize} from "../../../src/actions";
 import {UnsupportedError} from "../../../src/internal/utils/unsupportedError";
 import {Action} from "../../../src/internal/Action";
-import {AspectRatio} from "../../../src/qualifiers";
+import {AspectRatio, ColorSpace} from "../../../src/qualifiers";
 import {Format} from "../../../src/qualifiers/format";
 import {Progressive} from "../../../src/qualifiers/progressive";
 import {Quality} from "../../../src/qualifiers/quality";
 import {ChromaSubSampling} from "../../../src/qualifiers";
+import {trueColor} from "../../../src/qualifiers/colorSpace";
 
 describe('Transformation.toJson()', () => {
   it('scale', () => {
@@ -133,11 +134,11 @@ describe('Transformation.toJson()', () => {
 
   it('delivery.colorSpace', () => {
     const transformation = new Transformation()
-      .addAction(Delivery.colorSpace('srgb'));
+      .addAction(Delivery.colorSpace(ColorSpace.trueColor()));
     expect(transformation.toJson()).toStrictEqual([
       {
         actionType: 'colorSpace',
-        colorSpaceType: 'srgb'
+        mode: 'srgbTrueColor'
       }
     ]
     );

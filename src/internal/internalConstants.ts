@@ -111,6 +111,15 @@ export const ACTION_TYPE_TO_CHROMA_MAP: Record<number, string> = {
   420: "CHROMA_420"
 };
 
+export const COLOR_SPACE_MODEL_MODE_TO_COLOR_SPACE_MODE_MAP: Record<string, string> = {
+  'noCmyk': 'no_cmyk',
+  'keepCmyk': 'keep_cmyk',
+  'tinySrgb': 'tinysrgb',
+  'srgbTrueColor': 'srgb:truecolor'
+};
+
+export const COLOR_SPACE_MODE_TO_COLOR_SPACE_MODEL_MODE_MAP = objectFlip(COLOR_SPACE_MODEL_MODE_TO_COLOR_SPACE_MODE_MAP);
+
 export const CROP_MODE_TO_ACTION_TYPE_MAP = objectFlip(ACTION_TYPE_TO_CROP_MODE_MAP);
 
 export const DELIVERY_MODE_TO_ACTION_TYPE_MAP = objectFlip(ACTION_TYPE_TO_DELIVERY_MODE_MAP);
