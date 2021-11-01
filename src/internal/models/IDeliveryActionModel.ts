@@ -1,7 +1,9 @@
 import {IActionModel} from "./IActionModel.js";
 
-interface IColorSpaceModel extends IActionModel {
-  colorSpaceType?: string
+type ColorSpaceModeType = "srgb" | "srgbTrueColor" | "tinySrgb" | "cmyk" | "noCmyk" | "keepCmyk";
+
+interface IDeliveryColorSpaceActionModel extends IActionModel{
+  mode?: ColorSpaceModeType
 }
 
 interface IDprModel extends IActionModel {
@@ -16,8 +18,8 @@ interface IDefaultImageModel extends IActionModel{
   "publicId": string;
 }
 
-interface IColorSpaceFromICCModel extends IActionModel{
-  "publicId"?: string;
+interface IDeliveryColorSpaceFromICCActionModel extends IActionModel{
+  publicId?: string;
 }
 
 interface IDeliveryFormatModel extends IActionModel {
@@ -35,4 +37,4 @@ interface IDeliveryQualityModel extends IActionModel{
   "quantization"?: number;
 }
 
-export {IColorSpaceModel, IDprModel, IDensityModel, IDefaultImageModel, IColorSpaceFromICCModel, IDeliveryFormatModel, IDeliveryQualityModel};
+export {ColorSpaceModeType, IDeliveryColorSpaceActionModel, IDprModel, IDensityModel, IDefaultImageModel, IDeliveryColorSpaceFromICCActionModel, IDeliveryFormatModel, IDeliveryQualityModel};

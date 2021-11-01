@@ -1,9 +1,5 @@
 import {Action} from "../../internal/Action.js";
 import {Qualifier} from "../../internal/qualifier/Qualifier.js";
-import {
-  ColorSpaceModeType,
-  IDeliveryColorSpaceActionModel
-} from "../../internal/models/IDeliveryColorSpaceActionModel.js";
 import {IActionModel} from "../../internal/models/IActionModel.js";
 import {ColorSpace} from "../../qualifiers/colorSpace.js";
 import {ColorSpaceType} from "../../types/types.js";
@@ -11,6 +7,7 @@ import {
   COLOR_SPACE_MODE_TO_COLOR_SPACE_MODEL_MODE_MAP,
   COLOR_SPACE_MODEL_MODE_TO_COLOR_SPACE_MODE_MAP
 } from "../../internal/internalConstants.js";
+import {IDeliveryColorSpaceActionModel, ColorSpaceModeType} from "../../internal/models/IDeliveryActionModel.js";
 
 /**
  * @description Specifies the color space to use.

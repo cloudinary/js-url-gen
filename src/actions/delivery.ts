@@ -10,14 +10,14 @@ import {DeliveryFormat} from "./delivery/DeliveryFormat.js";
 import {DeliveryQualityAction} from "./delivery/DeliveryQuality.js";
 import {FormatQualifier} from "../qualifiers/format/FormatQualifier.js";
 import {toFloatAsString} from "../internal/utils/toFloatAsString.js";
-import {DeliveryColorSpaceFromICC} from "./delivery/DeliveryColorSpaceFromICC.js";
+import {DeliveryColorSpaceFromICCAction} from "./delivery/DeliveryColorSpaceFromICCAction.js";
 import {DeliveryAction} from "./delivery/DeliveryAction.js";
 import {ColorSpaceType} from "../types/types.js";
 import {QualityTypes} from "../types/types.js";
 import {ImageFormatType, VideoFormatType} from "../types/types.js";
 import {DeliveryColorSpaceAction} from "./delivery/DeliveryColorSpaceAction.js";
 
-export type IDeliveryAction = DeliveryAction | DeliveryColorSpaceAction | DeliveryColorSpaceFromICC;
+export type IDeliveryAction = DeliveryAction | DeliveryColorSpaceAction | DeliveryColorSpaceFromICCAction;
 
 /**
  * @summary action
@@ -181,8 +181,8 @@ function colorSpace(mode: ColorSpaceType): DeliveryColorSpaceAction {
  *  colorSpaceFromICC('sample.icc'),
  * );
  */
-function colorSpaceFromICC(publicId:string) :DeliveryColorSpaceFromICC {
-  return new DeliveryColorSpaceFromICC(publicId);
+function colorSpaceFromICC(publicId: string) :DeliveryColorSpaceFromICCAction {
+  return new DeliveryColorSpaceFromICCAction(publicId);
 }
 
 
