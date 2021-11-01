@@ -45,7 +45,7 @@ const bundleSizeTestCases:ITestCase[] = [
   },
   {
     name: 'Tests CloudinaryImage image with Resize, adjust and delivery',
-    sizeLimitInKB: 23,
+    sizeLimitInKB: 24,
     importsArray: [
       importFromDist('assets/CloudinaryImage', 'CloudinaryImage'),
       importFromDist('instance/Cloudinary', 'Cloudinary'),
@@ -88,7 +88,7 @@ const bundleSizeTestCases:ITestCase[] = [
   },
   {
     name: 'Import All Actions',
-    sizeLimitInKB: 30,
+    sizeLimitInKB: 31,
     importsArray: [
       importFromPackage('Actions')
     ]
