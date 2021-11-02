@@ -1,4 +1,8 @@
 import {fromJson} from "../../../src/internal/fromJson";
+import {Transformation} from "../../../src";
+import {Delivery} from "../../../src/actions/delivery";
+import {Quality} from "../../../src/qualifiers/quality";
+import {ChromaSubSampling} from "../../../src/qualifiers/chromaSubSampling";
 
 describe('delivery.fromJson', () => {
   it('should generate a transformation string from colorSpace action', function () {
@@ -8,6 +12,7 @@ describe('delivery.fromJson', () => {
 
     expect(transformation.toString()).toStrictEqual('cs_srgb:truecolor');
   });
+
   it('should generate a transformation string from colorSpaceFromIcc action', function () {
     const transformation = fromJson([
       {actionType: 'colorSpaceFromICC', publicId: 'sample'}
@@ -38,5 +43,51 @@ describe('delivery.fromJson', () => {
     ]);
 
     expect(transformation.toString()).toStrictEqual('f_gif,fl_lossy');
+  });
+
+  it('quality:80', () => {
+    const transformation = fromJson([
+      {
+        actionType: 'quality',
+        level: '80'
+      }
+    ]);
+
+    expect(transformation.toString()).toStrictEqual('q_80');
+  });
+
+  it('quality:80.quantization', () => {
+    const transformation = fromJson([
+      {
+        actionType: 'quality',
+        level: '80',
+        quantization: 10
+      }
+    ]);
+
+    expect(transformation.toString()).toStrictEqual('q_80:qmax_10');
+  });
+
+  it('quality:auto', () => {
+    const transformation = fromJson([
+      {
+        actionType: 'quality',
+        level: 'auto'
+      }
+    ]);
+
+    expect(transformation.toString()).toStrictEqual('q_auto');
+  });
+
+  it('chromaSubSampling', () => {
+    const transformation = fromJson([
+      {
+        actionType: 'quality',
+        level: '75',
+        chromaSubSampling: 'CHROMA_420'
+      }
+    ]);
+
+    expect(transformation.toString()).toStrictEqual('q_75:420');
   });
 });
