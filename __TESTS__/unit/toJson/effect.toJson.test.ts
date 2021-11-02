@@ -114,4 +114,16 @@ describe('Effect toJson()', () => {
       }
     ]);
   });
+
+  it('effect.outline', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.outline().width(100).color("lightblue"));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'outline',
+        width: 100,
+        color: 'lightblue'
+      }
+    ]);
+  });
 });

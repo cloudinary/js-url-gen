@@ -25,4 +25,11 @@ interface ICartoonifyEffectModel extends IActionModel{
   blackAndWhite?: boolean;
   colorReductionLevel?: number;
 }
-export {IEffectActionWithLevelModel, ISimpleEffectActionModel, IShadowEffectActionModel, IColorizeModel, ICartoonifyEffectModel};
+
+interface IEffectOutlineModel extends IActionModel{
+  mode?: string;
+  color?: string;
+  width?: number;
+  blurLevel?: number;
+}
+export {IEffectActionWithLevelModel, ISimpleEffectActionModel, IShadowEffectActionModel, IColorizeModel, ICartoonifyEffectModel, IEffectOutlineModel};
