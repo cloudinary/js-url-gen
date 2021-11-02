@@ -24,7 +24,7 @@ describe('delivery.fromJson', () => {
   it('jpg.progressive.semi()', () => {
     const transformation = fromJson([
       {
-        progressive: {mode: 'semi'},
+        progressive: { mode: 'semi' },
         actionType: 'format',
         formatType: 'jpg'
       }
