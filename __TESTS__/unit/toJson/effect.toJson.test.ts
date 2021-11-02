@@ -183,4 +183,15 @@ describe('Effect toJson()', () => {
       }
     ]);
   });
+
+  it('effect.vignette', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.vignette().strength(5));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'vignette',
+        level: 50,
+      }
+    ]);
+  });
 });
