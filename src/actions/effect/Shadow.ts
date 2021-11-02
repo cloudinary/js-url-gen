@@ -4,7 +4,7 @@ import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 import {prepareColor} from "../../internal/utils/prepareColor.js";
 import {SystemColors} from "../../qualifiers/color.js";
 import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifier.js";
-import {IShadowEffectActionModel} from "../../internal/models/IEffectActionModel";
+import {IShadowEffectActionModel} from "../../internal/models/IEffectActionModel.js";
 
 /**
  * @description Applies a shadow filter to the asset.
