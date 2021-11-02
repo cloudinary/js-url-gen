@@ -19,4 +19,10 @@ interface IColorizeModel extends IActionModel{
   level?: number;
   color?: string;
 }
-export {IEffectActionWithLevelModel, ISimpleEffectActionModel, IShadowEffectActionModel, IColorizeModel};
+
+interface ICartoonifyEffectModel extends IActionModel{
+  lineStrength?: number;
+  blackAndWhite?: boolean;
+  colorReductionLevel?: number;
+}
+export {IEffectActionWithLevelModel, ISimpleEffectActionModel, IShadowEffectActionModel, IColorizeModel, ICartoonifyEffectModel};

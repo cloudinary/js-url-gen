@@ -102,4 +102,16 @@ describe('Effect toJson()', () => {
       }
     ]);
   });
+
+  it('effect.cartoonify', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.cartoonify().lineStrength(70).colorReductionLevel(80));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'cartoonify',
+        colorReductionLevel: 80,
+        lineStrength: 70
+      }
+    ]);
+  });
 });
