@@ -234,4 +234,16 @@ describe('Effect toJson()', () => {
       }
     ]);
   });
+
+  it('effect.assistColorBlind', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.assistColorBlind().stripesStrength(20));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'assistColorblind',
+        type: 'stripes',
+        stripesStrength: 20
+      }
+    ]);
+  });
 });

@@ -56,6 +56,10 @@ interface IGradientFadeEffecModel extends IActionModel{
   horizontalStartPoint?: string;
 }
 
+interface IAssistColorBlindEffectModel extends IActionModel{
+  type?: string;
+}
+
 export {
   IEffectActionWithLevelModel,
   ISimpleEffectActionModel,
@@ -66,5 +70,6 @@ export {
   IMakeTransparentEffectModel,
   IDitherModel,
   IVectorizeEffectModel,
-  IGradientFadeEffecModel
+  IGradientFadeEffecModel,
+  IAssistColorBlindEffectModel
 };
