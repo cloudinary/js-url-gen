@@ -79,4 +79,16 @@ describe('Effect toJson()', () => {
       }
     ]);
   });
+
+  it('effect.colorize', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.colorize(10).color('red'));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'colorize',
+        level: 10,
+        color: 'red'
+      }
+    ]);
+  });
 });

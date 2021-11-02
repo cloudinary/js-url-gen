@@ -14,4 +14,9 @@ interface IShadowEffectActionModel extends IActionModel{
   offsetY?: string|number;
   color?: string
 }
-export {IEffectActionWithLevelModel, ISimpleEffectActionModel, IShadowEffectActionModel};
+
+interface IColorizeModel extends IActionModel{
+  level?: number;
+  color?: string;
+}
+export {IEffectActionWithLevelModel, ISimpleEffectActionModel, IShadowEffectActionModel, IColorizeModel};
