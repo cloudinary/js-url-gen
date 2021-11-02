@@ -126,4 +126,15 @@ describe('Effect toJson()', () => {
       }
     ]);
   });
+
+  it('effect.blackwhite', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.blackwhite().threshold(40));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'blackwhite',
+        level: 40,
+      }
+    ]);
+  });
 });
