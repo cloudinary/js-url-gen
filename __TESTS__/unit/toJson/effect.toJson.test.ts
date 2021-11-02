@@ -191,7 +191,7 @@ describe('Effect toJson()', () => {
     expect(transformation.toJson()).toStrictEqual( [
       {
         actionType: 'vignette',
-        level: 50,
+        level: 5,
       }
     ]);
   });
