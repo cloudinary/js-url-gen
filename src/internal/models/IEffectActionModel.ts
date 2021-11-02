@@ -37,4 +37,16 @@ interface IMakeTransparentEffectModel extends IActionModel{
   tolerance?: number;
   color?: string;
 }
-export {IEffectActionWithLevelModel, ISimpleEffectActionModel, IShadowEffectActionModel, IColorizeModel, ICartoonifyEffectModel, IEffectOutlineModel, IMakeTransparentEffectModel};
+interface IDitherModel extends IActionModel {
+  type?: number;
+}
+export {
+  IEffectActionWithLevelModel,
+  ISimpleEffectActionModel,
+  IShadowEffectActionModel,
+  IColorizeModel,
+  ICartoonifyEffectModel,
+  IEffectOutlineModel,
+  IMakeTransparentEffectModel,
+  IDitherModel
+};

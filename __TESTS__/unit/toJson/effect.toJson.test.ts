@@ -1,5 +1,6 @@
 import {Transformation} from "../../../src";
 import {Effect} from "../../../src/actions/effect";
+import {halftone4x4Orthogonal} from "../../../src/qualifiers/dither";
 
 
 describe('Effect toJson()', () => {
@@ -191,6 +192,17 @@ describe('Effect toJson()', () => {
       {
         actionType: 'vignette',
         level: 50,
+      }
+    ]);
+  });
+
+  it('effect.dither', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.dither().type(halftone4x4Orthogonal()));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'Dither',
+        type: 9,
       }
     ]);
   });
