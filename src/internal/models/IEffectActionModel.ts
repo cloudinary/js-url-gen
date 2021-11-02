@@ -73,6 +73,11 @@ interface IPixelateModel extends IActionModel{
   region?: {RegionType?: string};
 }
 
+interface IBlurModel extends IActionModel{
+  strength?: number;
+  region?: {RegionType?: string};
+}
+
 export {
   IEffectActionWithLevelModel,
   ISimpleEffectActionModel,
@@ -87,5 +92,6 @@ export {
   IAssistColorBlindEffectModel,
   ISimulateColorBlindEffectModel,
   IDeshakeEffectModel,
-  IPixelateModel
+  IPixelateModel,
+  IBlurModel
 };

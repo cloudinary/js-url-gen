@@ -27,7 +27,7 @@ class Pixelate extends Action {
    */
   region(pixelateRegion: NamedRegion): this {
     this._region = pixelateRegion;
-    this._actionModel.region = {RegionType: this._region.regionType}
+    this._actionModel.region = {RegionType: this._region.regionType};
     return this;
   }
 

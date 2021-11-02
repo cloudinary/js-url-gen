@@ -270,7 +270,6 @@ describe('Effect toJson()', () => {
     ]);
   });
 
-
   it('effect.pixelate', () => {
     const transformation = new Transformation()
       .addAction(Effect.pixelate().squareSize(15).region(Region.faces()));
@@ -279,6 +278,17 @@ describe('Effect toJson()', () => {
         actionType: 'pixelate',
         squareSize: 15,
         region: { RegionType: 'faces' }
+      }
+    ]);
+  });
+
+  it('effect.blur', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.blur().strength(5));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'blur',
+        strength: 5,
       }
     ]);
   });
