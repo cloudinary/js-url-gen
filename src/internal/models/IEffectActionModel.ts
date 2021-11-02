@@ -64,6 +64,10 @@ interface ISimulateColorBlindEffectModel extends IActionModel{
   condition?: string;
 }
 
+interface IDeshakeEffectModel extends IActionModel{
+  pixels?: number;
+}
+
 export {
   IEffectActionWithLevelModel,
   ISimpleEffectActionModel,
@@ -76,5 +80,6 @@ export {
   IVectorizeEffectModel,
   IGradientFadeEffecModel,
   IAssistColorBlindEffectModel,
-  ISimulateColorBlindEffectModel
+  ISimulateColorBlindEffectModel,
+  IDeshakeEffectModel
 };

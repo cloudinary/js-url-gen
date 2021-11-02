@@ -257,4 +257,15 @@ describe('Effect toJson()', () => {
       }
     ]);
   });
+
+  it('effect.deshake', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.deshake().shakeStrength(16));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'deshake',
+        pixels: 16
+      }
+    ]);
+  });
 });
