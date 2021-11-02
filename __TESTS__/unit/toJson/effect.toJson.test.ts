@@ -137,4 +137,15 @@ describe('Effect toJson()', () => {
       }
     ]);
   });
+
+  it('effect.accelerate', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.accelerate().rate(5));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'accelerate',
+        level: 5,
+      }
+    ]);
+  });
 });
