@@ -103,7 +103,8 @@ export const ACTION_TYPE_TO_DELIVERY_MODE_MAP: Record<string, string> = {
 
 export const ACTION_TYPE_TO_EFFECT_MODE_MAP: Record<string, string> = {
   redEye: 'redeye',
-  advancedRedEye: 'adv_redeye'
+  advancedRedEye: 'adv_redeye',
+  oilPaint: 'oil_paint'
 };
 
 export const ACTION_TYPE_TO_CHROMA_MAP: Record<number, string> = {

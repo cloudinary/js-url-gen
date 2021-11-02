@@ -1,6 +1,7 @@
 import {SimpleEffectAction} from "./SimpleEffectAction.js";
 import {ExpressionQualifier} from "../../../qualifiers/expression/ExpressionQualifier.js";
 import {IColorizeModel, IEffectActionWithLevelModel} from "../../../internal/models/IEffectActionModel.js";
+import {EFFECT_MODE_TO_ACTION_TYPE_MAP} from "../../../internal/internalConstants.js";
 
 /**
  * @description A base class for effects with a level, the extending class needs to implement a method that calls setLevel()
@@ -14,7 +15,7 @@ class LeveledEffectAction extends SimpleEffectAction {
   constructor(effectType?: string, level?: number|string) {
     super(effectType, level);
     this.effectType = effectType;
-    this._actionModel.actionType = effectType;
+    this._actionModel.actionType = EFFECT_MODE_TO_ACTION_TYPE_MAP[effectType] || effectType;
 
     if(level){
       this._actionModel.level = level as number;

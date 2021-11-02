@@ -91,4 +91,15 @@ describe('Effect toJson()', () => {
       }
     ]);
   });
+
+  it('effect.oilPaint', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.oilPaint().strength(8));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'oilPaint',
+        level: 8,
+      }
+    ]);
+  });
 });
