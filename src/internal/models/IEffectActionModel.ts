@@ -1,4 +1,5 @@
 import {IActionModel} from "./IActionModel.js";
+import {VectorizeEffectAction} from "../../actions/effect/Vectorize";
 
 interface IEffectActionWithLevelModel extends IActionModel{
   level?: number;
@@ -40,6 +41,13 @@ interface IMakeTransparentEffectModel extends IActionModel{
 interface IDitherModel extends IActionModel {
   type?: number;
 }
+interface IVectorizeEffectModel extends IActionModel{
+  numOfColors?: number;
+  detailLevel?: number;
+  despeckleLevel?: number;
+  paths?: number;
+  cornersLevel?: number;
+}
 export {
   IEffectActionWithLevelModel,
   ISimpleEffectActionModel,
@@ -48,5 +56,6 @@ export {
   ICartoonifyEffectModel,
   IEffectOutlineModel,
   IMakeTransparentEffectModel,
-  IDitherModel
+  IDitherModel,
+  IVectorizeEffectModel
 };

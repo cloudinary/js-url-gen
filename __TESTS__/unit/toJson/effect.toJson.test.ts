@@ -206,4 +206,16 @@ describe('Effect toJson()', () => {
       }
     ]);
   });
+
+  it('effect.vectorize', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.vectorize().numOfColors(17).detailsLevel(100));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'vectorize',
+        numOfColors: 17,
+        detailLevel: 100
+      }
+    ]);
+  });
 });
