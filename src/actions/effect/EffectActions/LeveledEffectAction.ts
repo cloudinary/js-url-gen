@@ -1,6 +1,6 @@
 import {SimpleEffectAction} from "./SimpleEffectAction.js";
 import {ExpressionQualifier} from "../../../qualifiers/expression/ExpressionQualifier.js";
-import {IEffectActionWithLevelModel} from "../../../internal/models/IEffectActionWithLevelModel.js";
+import {IEffectActionWithLevelModel} from "../../../internal/models/IEffectActionModel.js";
 
 /**
  * @description A base class for effects with a level, the extending class needs to implement a method that calls setLevel()
