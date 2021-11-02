@@ -1,7 +1,16 @@
 import {Transformation} from "../../../src";
 import {Effect} from "../../../src/actions/effect";
 
-describe('SimpleEffect.toJson()', () => {
+
+describe('Effect toJson()', () => {
+  it('effect.sepia', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.sepia());
+    expect(transformation.toJson()).toStrictEqual( [
+      { actionType: 'sepia' }
+    ]);
+  });
+
   it('effect.boomerang', () => {
     const transformation = new Transformation()
       .addAction(Effect.boomerang());
@@ -55,6 +64,19 @@ describe('SimpleEffect.toJson()', () => {
       .addAction(Effect.transition());
     expect(transformation.toJson()).toStrictEqual( [
       { actionType: 'transition' }
+    ]);
+  });
+
+  it('effect.shadow', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.shadow(4).offsetX(5).offsetY(8).color('red'));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'shadow',
+        offsetX: 5,
+        offsetY: 8,
+        color: 'red'
+      }
     ]);
   });
 });
