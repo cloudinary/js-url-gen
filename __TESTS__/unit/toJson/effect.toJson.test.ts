@@ -2,6 +2,7 @@ import {Transformation} from "../../../src";
 import {Effect} from "../../../src/actions/effect";
 import {halftone4x4Orthogonal} from "../../../src/qualifiers/dither";
 import {rodMonochromacy} from "../../../src/qualifiers/simulateColorBlind";
+import {Region} from "../../../src/qualifiers";
 
 
 describe('Effect toJson()', () => {
@@ -265,6 +266,19 @@ describe('Effect toJson()', () => {
       {
         actionType: 'deshake',
         pixels: 16
+      }
+    ]);
+  });
+
+
+  it('effect.pixelate', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.pixelate().squareSize(15).region(Region.faces()));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'pixelate',
+        squareSize: 15,
+        region: { RegionType: 'faces' }
       }
     ]);
   });

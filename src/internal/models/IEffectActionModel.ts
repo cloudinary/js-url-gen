@@ -68,6 +68,11 @@ interface IDeshakeEffectModel extends IActionModel{
   pixels?: number;
 }
 
+interface IPixelateModel extends IActionModel{
+  squareSize?: number;
+  region?: {RegionType?: string};
+}
+
 export {
   IEffectActionWithLevelModel,
   ISimpleEffectActionModel,
@@ -81,5 +86,6 @@ export {
   IGradientFadeEffecModel,
   IAssistColorBlindEffectModel,
   ISimulateColorBlindEffectModel,
-  IDeshakeEffectModel
+  IDeshakeEffectModel,
+  IPixelateModel
 };
