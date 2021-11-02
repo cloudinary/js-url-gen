@@ -1,5 +1,4 @@
 import {IActionModel} from "./IActionModel.js";
-import {VectorizeEffectAction} from "../../actions/effect/Vectorize";
 
 interface IEffectActionWithLevelModel extends IActionModel{
   level?: number;
