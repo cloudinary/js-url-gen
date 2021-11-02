@@ -48,6 +48,14 @@ interface IVectorizeEffectModel extends IActionModel{
   paths?: number;
   cornersLevel?: number;
 }
+
+interface IGradientFadeEffecModel extends IActionModel{
+  strength?: number;
+  type?: string;
+  verticalStartPoint?: string;
+  horizontalStartPoint?: string;
+}
+
 export {
   IEffectActionWithLevelModel,
   ISimpleEffectActionModel,
@@ -57,5 +65,6 @@ export {
   IEffectOutlineModel,
   IMakeTransparentEffectModel,
   IDitherModel,
-  IVectorizeEffectModel
+  IVectorizeEffectModel,
+  IGradientFadeEffecModel
 };

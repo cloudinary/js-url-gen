@@ -218,4 +218,20 @@ describe('Effect toJson()', () => {
       }
     ]);
   });
+
+  it('effect.gradientFade', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.gradientFade()
+        .strength(5)
+        .horizontalStartPoint(10)
+        .verticalStartPoint(20));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'GradientFade',
+        strength: 5,
+        horizontalStartPoint: 10,
+        verticalStartPoint: 20
+      }
+    ]);
+  });
 });
