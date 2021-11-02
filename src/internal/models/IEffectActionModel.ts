@@ -32,4 +32,9 @@ interface IEffectOutlineModel extends IActionModel{
   width?: number;
   blurLevel?: number;
 }
-export {IEffectActionWithLevelModel, ISimpleEffectActionModel, IShadowEffectActionModel, IColorizeModel, ICartoonifyEffectModel, IEffectOutlineModel};
+
+interface IMakeTransparentEffectModel extends IActionModel{
+  tolerance?: number;
+  color?: string;
+}
+export {IEffectActionWithLevelModel, ISimpleEffectActionModel, IShadowEffectActionModel, IColorizeModel, ICartoonifyEffectModel, IEffectOutlineModel, IMakeTransparentEffectModel};

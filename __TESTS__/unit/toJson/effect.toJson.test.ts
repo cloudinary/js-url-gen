@@ -159,4 +159,17 @@ describe('Effect toJson()', () => {
       }
     ]);
   });
+
+  it('effect.make_transparent', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.makeTransparent().tolerance(5).colorToReplace('red'));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'makeTransparent',
+        tolerance: 5,
+        level: 5,
+        color: 'red'
+      }
+    ]);
+  });
 });
