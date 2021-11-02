@@ -15,4 +15,28 @@ describe('delivery.fromJson', () => {
 
     expect(transformation.toString()).toStrictEqual('cs_icc:sample');
   });
+
+  it('jpg.progressive.semi()', () => {
+    const transformation = fromJson([
+      {
+        progressive: { mode: 'semi' },
+        actionType: 'format',
+        formatType: 'jpg'
+      }
+    ]);
+
+    expect(transformation.toString()).toStrictEqual('f_jpg,fl_progressive:semi');
+  });
+
+  it('gif.lossy()', () => {
+    const transformation = fromJson([
+      {
+        actionType: 'format',
+        formatType: 'gif',
+        lossy: true
+      }
+    ]);
+
+    expect(transformation.toString()).toStrictEqual('f_gif,fl_lossy');
+  });
 });
