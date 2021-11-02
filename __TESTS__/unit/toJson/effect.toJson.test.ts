@@ -1,6 +1,7 @@
 import {Transformation} from "../../../src";
 import {Effect} from "../../../src/actions/effect";
 import {halftone4x4Orthogonal} from "../../../src/qualifiers/dither";
+import {rodMonochromacy} from "../../../src/qualifiers/simulateColorBlind";
 
 
 describe('Effect toJson()', () => {
@@ -243,6 +244,16 @@ describe('Effect toJson()', () => {
         actionType: 'assistColorblind',
         type: 'stripes',
         stripesStrength: 20
+      }
+    ]);
+  });
+
+  it('effect.simulateColorBlind', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.simulateColorBlind().condition(rodMonochromacy()));
+    expect(transformation.toJson()).toStrictEqual( [
+      { actionType: 'simulateColorblind',
+        condition: 'rod_monochromacy'
       }
     ]);
   });

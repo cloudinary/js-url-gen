@@ -60,6 +60,10 @@ interface IAssistColorBlindEffectModel extends IActionModel{
   type?: string;
 }
 
+interface ISimulateColorBlindEffectModel extends IActionModel{
+  condition?: string;
+}
+
 export {
   IEffectActionWithLevelModel,
   ISimpleEffectActionModel,
@@ -71,5 +75,6 @@ export {
   IDitherModel,
   IVectorizeEffectModel,
   IGradientFadeEffecModel,
-  IAssistColorBlindEffectModel
+  IAssistColorBlindEffectModel,
+  ISimulateColorBlindEffectModel
 };

@@ -1,6 +1,7 @@
 import {Action} from "../../internal/Action.js";
 import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 import {SimulateColorBlindType} from "../../types/types.js";
+import {ISimulateColorBlindEffectModel} from "../../internal/models/IEffectActionModel.js";
 
 /**
  * @description Simulates the way an image would appear to someone with the specified color blind condition
@@ -9,8 +10,10 @@ import {SimulateColorBlindType} from "../../types/types.js";
  * @see Visit {@link Actions.Effect|Effect} for an example
  */
 class SimulateColorBlindEffectAction extends Action {
+  protected _actionModel: ISimulateColorBlindEffectModel = {};
   constructor() {
     super();
+    this._actionModel.actionType = 'simulateColorblind';
     this.addQualifier(new Qualifier('e', `simulate_colorblind`));
   }
 
@@ -28,6 +31,7 @@ class SimulateColorBlindEffectAction extends Action {
    * @return {this}
    */
   condition(cond: SimulateColorBlindType | string): this {
+    this._actionModel.condition = cond;
     return this.setQualifier(cond);
   }
 }
