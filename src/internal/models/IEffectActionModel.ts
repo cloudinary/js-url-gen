@@ -14,4 +14,39 @@ interface IShadowEffectActionModel extends IActionModel{
   offsetY?: string|number;
   color?: string
 }
-export {IEffectActionWithLevelModel, ISimpleEffectActionModel, IShadowEffectActionModel};
+
+interface IColorizeModel extends IActionModel{
+  level?: number;
+  color?: string;
+}
+
+interface ICartoonifyEffectModel extends IActionModel{
+  lineStrength?: number;
+  blackAndWhite?: boolean;
+  colorReductionLevel?: number;
+}
+
+interface IEffectOutlineModel extends IActionModel{
+  mode?: string;
+  color?: string;
+  width?: number;
+  blurLevel?: number;
+}
+
+interface IMakeTransparentEffectModel extends IActionModel{
+  tolerance?: number;
+  color?: string;
+}
+interface IDitherModel extends IActionModel {
+  type?: number;
+}
+export {
+  IEffectActionWithLevelModel,
+  ISimpleEffectActionModel,
+  IShadowEffectActionModel,
+  IColorizeModel,
+  ICartoonifyEffectModel,
+  IEffectOutlineModel,
+  IMakeTransparentEffectModel,
+  IDitherModel
+};

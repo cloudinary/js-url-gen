@@ -4,6 +4,7 @@ import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 import {prepareColor} from "../../internal/utils/prepareColor.js";
 import {SystemColors} from "../../qualifiers/color.js";
 import {OutlineModeType} from "../../types/types.js";
+import {IEffectOutlineModel} from "../../internal/models/IEffectActionModel.js";
 
 /**
  * @description Adds an outline to a transparent image. For examples, see the Image Transformations guide.
@@ -14,10 +15,12 @@ import {OutlineModeType} from "../../types/types.js";
 class EffectOutline extends Action {
   private _mode: string;
   private _width: number | string;
-  private _blurLevel : number | string
+  private _blurLevel : number | string;
+  protected _actionModel: IEffectOutlineModel = {};
 
   constructor() {
     super();
+    this._actionModel.actionType = 'outline';
   }
 
   /**
@@ -28,6 +31,7 @@ class EffectOutline extends Action {
    * @return {this}
    */
   mode(mode?: OutlineModeType|string): this{
+    this._actionModel.mode = mode;
     this._mode = mode;
     return this;
   }
@@ -38,6 +42,7 @@ class EffectOutline extends Action {
    * @return {this}
    */
   width(width?:number | string): this {
+    this._actionModel.width = width as number;
     this._width = width;
     return this;
   }
@@ -50,6 +55,7 @@ class EffectOutline extends Action {
    * @return {this}
    */
   blurLevel(lvl?: number | string): this {
+    this._actionModel.blurLevel = lvl as number;
     this._blurLevel = lvl;
     return this;
   }
@@ -59,6 +65,7 @@ class EffectOutline extends Action {
    * @return {this}
    */
   color(color:SystemColors): this {
+    this._actionModel.color = color;
     return this.addQualifier(new Qualifier('co', prepareColor(color)));
   }
 

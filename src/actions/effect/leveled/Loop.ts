@@ -8,7 +8,10 @@ import {LeveledEffectAction} from "../EffectActions/LeveledEffectAction.js";
  */
 class LoopEffectAction extends LeveledEffectAction {
   additionalIterations(value: number | string): this {
-    return this.setLevel(value);
+    this._actionModel.iterations = value;
+    const qualifierEffect = this.createEffectQualifier(this.effectType, value);
+    this.addQualifier(qualifierEffect);
+    return this;
   }
 }
 

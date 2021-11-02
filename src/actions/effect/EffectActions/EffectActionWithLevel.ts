@@ -8,6 +8,7 @@ import {LeveledEffectAction} from "./LeveledEffectAction.js";
  */
 class EffectActionWithLevel extends LeveledEffectAction {
   level(value: number | string): this {
+    this._actionModel.level = value as number;
     return this.setLevel(value);
   }
 }

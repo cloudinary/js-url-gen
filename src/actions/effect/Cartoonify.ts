@@ -1,6 +1,7 @@
 import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 import {QualifierValue} from "../../internal/qualifier/QualifierValue.js";
 import {Action} from "../../internal/Action.js";
+import {ICartoonifyEffectModel} from "../../internal/models/IEffectActionModel.js";
 
 /**
  * @description Applies a cartoon effect to an image.
@@ -9,6 +10,7 @@ import {Action} from "../../internal/Action.js";
  * @see Visit {@link Actions.Effect|Effect} for an example
  */
 class CartoonifyEffect extends Action {
+  protected _actionModel: ICartoonifyEffectModel = {};
   private colorReduction: number | string;
   private cartoonifyStrength: number;
   private effectName: string;
@@ -17,6 +19,7 @@ class CartoonifyEffect extends Action {
     super();
     this.cartoonifyStrength = strength;
     this.effectName = effectName;
+    this._actionModel.actionType = effectName;
   }
 
   /**
@@ -26,6 +29,7 @@ class CartoonifyEffect extends Action {
    */
   lineStrength(lineStrength: number): this {
     this.cartoonifyStrength = lineStrength;
+    this._actionModel.lineStrength = lineStrength;
     return this;
   }
 
@@ -34,6 +38,7 @@ class CartoonifyEffect extends Action {
    * @return {this}
    */
   blackwhite(): this {
+    this._actionModel.blackAndWhite = true;
     this.colorReduction = 'bw';
     return this;
   }
@@ -46,6 +51,7 @@ class CartoonifyEffect extends Action {
    * @return {this}
    */
   colorReductionLevel(level: number): this {
+    this._actionModel.colorReductionLevel = level;
     this.colorReduction = level;
     return this;
   }

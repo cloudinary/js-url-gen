@@ -1,5 +1,6 @@
 import {Transformation} from "../../../src";
 import {Effect} from "../../../src/actions/effect";
+import {halftone4x4Orthogonal} from "../../../src/qualifiers/dither";
 
 
 describe('Effect toJson()', () => {
@@ -76,6 +77,132 @@ describe('Effect toJson()', () => {
         offsetX: 5,
         offsetY: 8,
         color: 'red'
+      }
+    ]);
+  });
+
+  it('effect.colorize', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.colorize(10).color('red'));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'colorize',
+        level: 10,
+        color: 'red'
+      }
+    ]);
+  });
+
+  it('effect.oilPaint', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.oilPaint().strength(8));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'oilPaint',
+        level: 8,
+      }
+    ]);
+  });
+
+  it('effect.cartoonify', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.cartoonify().lineStrength(70).colorReductionLevel(80));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'cartoonify',
+        colorReductionLevel: 80,
+        lineStrength: 70
+      }
+    ]);
+  });
+
+  it('effect.outline', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.outline().width(100).color("lightblue"));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'outline',
+        width: 100,
+        color: 'lightblue'
+      }
+    ]);
+  });
+
+  it('effect.blackwhite', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.blackwhite().threshold(40));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'blackwhite',
+        level: 40,
+      }
+    ]);
+  });
+
+  it('effect.accelerate', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.accelerate().rate(5));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'accelerate',
+        level: 5,
+      }
+    ]);
+  });
+
+  it('effect.loop', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.loop().additionalIterations(5));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'loop',
+        iterations: 5,
+      }
+    ]);
+  });
+
+  it('effect.make_transparent', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.makeTransparent().tolerance(5).colorToReplace('red'));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'makeTransparent',
+        tolerance: 5,
+        level: 5,
+        color: 'red'
+      }
+    ]);
+  });
+
+  it('effect.noise', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.noise().level(50));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'noise',
+        level: 50,
+      }
+    ]);
+  });
+
+  it('effect.vignette', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.vignette().strength(5));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'vignette',
+        level: 5,
+      }
+    ]);
+  });
+
+  it('effect.dither', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.dither().type(halftone4x4Orthogonal()));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'Dither',
+        type: 9,
       }
     ]);
   });

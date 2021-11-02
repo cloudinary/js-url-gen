@@ -17,6 +17,7 @@ class ColorizeEffectAction extends EffectActionWithLevel {
    * @return {this}
    */
   color(color: SystemColors): this {
+    this._actionModel.color = color;
     return this.addQualifier(new Qualifier('co', new QualifierValue(prepareColor(color))));
   }
 }
