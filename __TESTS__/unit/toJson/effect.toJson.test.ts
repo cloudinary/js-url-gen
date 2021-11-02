@@ -148,4 +148,15 @@ describe('Effect toJson()', () => {
       }
     ]);
   });
+
+  it('effect.loop', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.loop().additionalIterations(5));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'loop',
+        iterations: 5,
+      }
+    ]);
+  });
 });
