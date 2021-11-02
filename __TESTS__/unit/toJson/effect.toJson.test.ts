@@ -172,4 +172,15 @@ describe('Effect toJson()', () => {
       }
     ]);
   });
+
+  it('effect.noise', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.noise().level(50));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'noise',
+        level: 50,
+      }
+    ]);
+  });
 });
