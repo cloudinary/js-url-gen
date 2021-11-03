@@ -19,9 +19,10 @@ import {DeliveryColorSpaceAction} from "../actions/delivery/DeliveryColorSpaceAc
 import {DeliveryColorSpaceFromICCAction} from "../actions/delivery/DeliveryColorSpaceFromICCAction.js";
 import {DeliveryFormatAction} from "../actions/delivery/DeliveryFormatAction.js";
 import {DeliveryQualityAction} from "../actions/delivery/DeliveryQualityAction.js";
-import {EffectActionWithLevel} from "../actions/effect/EffectActions/EffectActionWithLevel";
-import {SimpleEffectAction} from "../actions/effect/EffectActions/SimpleEffectAction";
-import {ShadowEffectAction} from "../actions/effect/Shadow";
+import {EffectActionWithLevel} from "../actions/effect/EffectActions/EffectActionWithLevel.js";
+import {SimpleEffectAction} from "../actions/effect/EffectActions/SimpleEffectAction.js";
+import {ShadowEffectAction} from "../actions/effect/Shadow.js";
+import {ColorizeEffectAction} from "../actions/effect/Colorize.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
@@ -47,7 +48,8 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   redEye: SimpleEffectAction,
   reverse: SimpleEffectAction,
   transition: SimpleEffectAction,
-  shadow: ShadowEffectAction
+  shadow: ShadowEffectAction,
+  colorize: ColorizeEffectAction
 };
 
 /**
