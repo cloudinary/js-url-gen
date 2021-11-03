@@ -12,7 +12,8 @@ describe('effect.fromJson', () => {
       { actionType: 'reverse' },
       { actionType: 'transition' },
       { actionType: 'shadow', offsetX: 5, color: 'red'},
-      { actionType: 'colorize', level: 10, color: 'red' }
+      { actionType: 'colorize', level: 10, color: 'red' },
+      { actionType: 'oilPaint', level: 8 }
     ]);
 
     expect(transformation.toString()).toStrictEqual([
@@ -25,7 +26,8 @@ describe('effect.fromJson', () => {
       'e_reverse',
       'e_transition',
       'co_red,e_shadow,x_5',
-      'co_red,e_colorize:10'
+      'co_red,e_colorize:10',
+      'e_oil_paint:8'
     ].join('/'));
   });
 });

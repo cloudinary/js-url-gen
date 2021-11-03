@@ -23,6 +23,7 @@ import {EffectActionWithLevel} from "../actions/effect/EffectActions/EffectActio
 import {SimpleEffectAction} from "../actions/effect/EffectActions/SimpleEffectAction.js";
 import {ShadowEffectAction} from "../actions/effect/Shadow.js";
 import {ColorizeEffectAction} from "../actions/effect/Colorize.js";
+import {EffectActionWithStrength} from "../actions/effect/EffectActions/EffectActionWithStrength.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
@@ -49,7 +50,8 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   reverse: SimpleEffectAction,
   transition: SimpleEffectAction,
   shadow: ShadowEffectAction,
-  colorize: ColorizeEffectAction
+  colorize: ColorizeEffectAction,
+  oilPaint: EffectActionWithStrength
 };
 
 /**
