@@ -1,5 +1,6 @@
 import {Action} from "../../internal/Action.js";
 import {Qualifier} from "../../internal/qualifier/Qualifier.js";
+import {IGradientFadeEffecModel} from "../../internal/models/IEffectActionModel.js";
 
 /**
  * @description Applies a gradient fade effect from one edge of the image.
@@ -10,12 +11,14 @@ import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 class GradientFadeEffectAction extends Action {
   private _strength: number;
   private _type: string;
+  protected _actionModel: IGradientFadeEffecModel = {actionType: 'GradientFade'};
 
   /**
    * @description Sets the strength of the fade effect.
    * @param {number} strength The strength of the fade effect. (Range: 0 to 100, Server default: 20)
    */
   strength(strength:number): this {
+    this._actionModel.strength = strength;
     this._strength = strength;
     return this;
   }
@@ -25,6 +28,7 @@ class GradientFadeEffectAction extends Action {
    * @param {string | Qualifiers.GradientFade} type The mode of gradient fade.
    */
   type(type:string): this {
+    this._actionModel.type = type;
     this._type = type;
     return this;
   }
@@ -34,6 +38,7 @@ class GradientFadeEffectAction extends Action {
    * @param {number | string} x The x dimension of the start point.
    */
   horizontalStartPoint(x:number | string): this {
+    this._actionModel.horizontalStartPoint = x as string;
     return this.addQualifier(new Qualifier('x', x));
   }
 
@@ -42,6 +47,7 @@ class GradientFadeEffectAction extends Action {
    * @param {number | string} y The y dimension of the start point.
    */
   verticalStartPoint(y:number | string): this {
+    this._actionModel.verticalStartPoint = y as string;
     return this.addQualifier(new Qualifier('y', y));
   }
 

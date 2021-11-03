@@ -1,6 +1,7 @@
 import {Action} from "../../internal/Action.js";
 import {QualifierValue} from "../../internal/qualifier/QualifierValue.js";
 import {Qualifier} from "../../internal/qualifier/Qualifier.js";
+import {IAssistColorBlindEffectModel} from "../../internal/models/IEffectActionModel.js";
 
 /**
  * @description Applies stripes to the image to help people with common color-blind conditions to differentiate between colors that are similar for them.
@@ -10,8 +11,10 @@ import {Qualifier} from "../../internal/qualifier/Qualifier.js";
  * @see Visit {@link Actions.Effect|Effect} for an example
  */
 class AssistColorBlindEffectAction extends Action {
+  protected _actionModel: IAssistColorBlindEffectModel = {};
   constructor() {
     super();
+    this._actionModel.actionType = 'assistColorblind';
     this.addQualifier(new Qualifier('e', new QualifierValue('assist_colorblind')));
   }
 
@@ -20,6 +23,7 @@ class AssistColorBlindEffectAction extends Action {
    * @return {this}
    */
   xray(): this{
+    this._actionModel.type = 'xray';
     return this.addQualifier(new Qualifier('e', new QualifierValue(['assist_colorblind', 'xray']).setDelimiter(':')));
   }
 
@@ -29,6 +33,8 @@ class AssistColorBlindEffectAction extends Action {
    * @return {this}
    */
   stripesStrength(strength:number | string): this {
+    this._actionModel.type = 'stripes';
+    this._actionModel.stripesStrength = strength;
     return this.addQualifier(new Qualifier('e', new QualifierValue(['assist_colorblind', strength]).setDelimiter(':')));
   }
 }
