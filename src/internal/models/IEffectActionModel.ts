@@ -40,6 +40,43 @@ interface IMakeTransparentEffectModel extends IActionModel{
 interface IDitherModel extends IActionModel {
   type?: number;
 }
+interface IVectorizeEffectModel extends IActionModel{
+  numOfColors?: number;
+  detailLevel?: number;
+  despeckleLevel?: number;
+  paths?: number;
+  cornersLevel?: number;
+}
+
+interface IGradientFadeEffecModel extends IActionModel{
+  strength?: number;
+  type?: string;
+  verticalStartPoint?: string;
+  horizontalStartPoint?: string;
+}
+
+interface IAssistColorBlindEffectModel extends IActionModel{
+  type?: string;
+}
+
+interface ISimulateColorBlindEffectModel extends IActionModel{
+  condition?: string;
+}
+
+interface IDeshakeEffectModel extends IActionModel{
+  pixels?: number;
+}
+
+interface IPixelateModel extends IActionModel{
+  squareSize?: number;
+  region?: {RegionType?: string};
+}
+
+interface IBlurModel extends IActionModel{
+  strength?: number;
+  region?: {RegionType?: string};
+}
+
 export {
   IEffectActionWithLevelModel,
   ISimpleEffectActionModel,
@@ -48,5 +85,12 @@ export {
   ICartoonifyEffectModel,
   IEffectOutlineModel,
   IMakeTransparentEffectModel,
-  IDitherModel
+  IDitherModel,
+  IVectorizeEffectModel,
+  IGradientFadeEffecModel,
+  IAssistColorBlindEffectModel,
+  ISimulateColorBlindEffectModel,
+  IDeshakeEffectModel,
+  IPixelateModel,
+  IBlurModel
 };

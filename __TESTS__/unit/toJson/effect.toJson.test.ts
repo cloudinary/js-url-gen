@@ -1,6 +1,8 @@
 import {Transformation} from "../../../src";
 import {Effect} from "../../../src/actions/effect";
 import {halftone4x4Orthogonal} from "../../../src/qualifiers/dither";
+import {rodMonochromacy} from "../../../src/qualifiers/simulateColorBlind";
+import {Region} from "../../../src/qualifiers";
 
 
 describe('Effect toJson()', () => {
@@ -203,6 +205,90 @@ describe('Effect toJson()', () => {
       {
         actionType: 'Dither',
         type: 9,
+      }
+    ]);
+  });
+
+  it('effect.vectorize', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.vectorize().numOfColors(17).detailsLevel(100));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'vectorize',
+        numOfColors: 17,
+        detailLevel: 100
+      }
+    ]);
+  });
+
+  it('effect.gradientFade', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.gradientFade()
+        .strength(5)
+        .horizontalStartPoint(10)
+        .verticalStartPoint(20));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'GradientFade',
+        strength: 5,
+        horizontalStartPoint: 10,
+        verticalStartPoint: 20
+      }
+    ]);
+  });
+
+  it('effect.assistColorBlind', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.assistColorBlind().stripesStrength(20));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'assistColorblind',
+        type: 'stripes',
+        stripesStrength: 20
+      }
+    ]);
+  });
+
+  it('effect.simulateColorBlind', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.simulateColorBlind().condition(rodMonochromacy()));
+    expect(transformation.toJson()).toStrictEqual( [
+      { actionType: 'simulateColorblind',
+        condition: 'rod_monochromacy'
+      }
+    ]);
+  });
+
+  it('effect.deshake', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.deshake().shakeStrength(16));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'deshake',
+        pixels: 16
+      }
+    ]);
+  });
+
+  it('effect.pixelate', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.pixelate().squareSize(15).region(Region.faces()));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'pixelate',
+        squareSize: 15,
+        region: { RegionType: 'faces' }
+      }
+    ]);
+  });
+
+  it('effect.blur', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.blur().strength(5));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'blur',
+        strength: 5,
       }
     ]);
   });

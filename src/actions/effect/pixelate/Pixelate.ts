@@ -1,6 +1,7 @@
 import {NamedRegion} from "../../../qualifiers/region/NamedRegion.js";
 import {Qualifier} from "../../../internal/qualifier/Qualifier.js";
 import {Action} from "../../../internal/Action.js";
+import {IPixelateModel} from "../../../internal/models/IEffectActionModel.js";
 
 /**
  * @description The Action class of the pixelate Builder
@@ -11,10 +12,13 @@ import {Action} from "../../../internal/Action.js";
 class Pixelate extends Action {
   private _region?: NamedRegion;
   private _squareSize: number | string;
+  protected _actionModel: IPixelateModel = {};
 
   constructor(squareSize: number | string) {
     super();
     this._squareSize = squareSize;
+    this._actionModel.actionType = 'pixelate';
+    this._actionModel.squareSize = squareSize as number;
   }
 
   /**
@@ -23,6 +27,7 @@ class Pixelate extends Action {
    */
   region(pixelateRegion: NamedRegion): this {
     this._region = pixelateRegion;
+    this._actionModel.region = {RegionType: this._region.regionType};
     return this;
   }
 
@@ -32,6 +37,7 @@ class Pixelate extends Action {
    */
   squareSize(squareSize: number | string): this {
     this._squareSize = squareSize;
+    this._actionModel.squareSize = squareSize as number;
     return this;
   }
 
