@@ -61,4 +61,8 @@ export function createGravityModel(gravity: IGravity): IGravityModel {
   if (isIOcrGravity(gravityString)) {
     return createOcrGravityModel();
   }
+
+  if (isIAutoGravity(gravityString)) {
+    return createAutoGravityModel();
+  }
 }
