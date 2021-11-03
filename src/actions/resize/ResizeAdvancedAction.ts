@@ -3,6 +3,8 @@ import {IGravity} from "../../qualifiers/gravity/GravityQualifier.js";
 import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 import {IActionModel} from "../../internal/models/IActionModel.js";
 import {createGravityModel} from "../../internal/models/createGravityModel.js";
+import {createGravityFromModel} from "../../internal/models/createGravityFromModel.js";
+import {IResizeAdvancedActionModel} from "../../internal/models/IResizeAdvancedActionModel.js";
 
 /**
  * @description Defines an advanced resize.
@@ -10,7 +12,9 @@ import {createGravityModel} from "../../internal/models/createGravityModel.js";
  * @memberOf Actions.Resize
  * @see Visit {@link Actions.Resize| Resize} for examples
  */
-class ResizeAdvancedAction extends ResizeSimpleAction {
+class ResizeAdvancedAction extends ResizeSimpleAction{
+  protected _actionModel: IResizeAdvancedActionModel;
+
   /**
    * @description Which part of the original image to include.
    * @param {Qualifiers.Gravity} gravity
@@ -24,7 +28,10 @@ class ResizeAdvancedAction extends ResizeSimpleAction {
 
   static fromJson(actionModel: IActionModel): ResizeAdvancedAction {
     const result = super.fromJson.apply(this, [actionModel]);
-    actionModel.gravity && result.gravity(actionModel.gravity);
+
+    if (actionModel.gravity) {
+      result.gravity(createGravityFromModel(actionModel.gravity));
+    }
 
     return result;
   }
