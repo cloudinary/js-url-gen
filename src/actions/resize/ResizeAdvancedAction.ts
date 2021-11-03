@@ -1,5 +1,5 @@
 import {ResizeSimpleAction} from "./ResizeSimpleAction.js";
-import {IGravity, IShortenGravity} from "../../qualifiers/gravity/GravityQualifier.js";
+import {IGravity} from "../../qualifiers/gravity/GravityQualifier.js";
 import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 import {IActionModel} from "../../internal/models/IActionModel.js";
 import {createGravityModel} from "../../internal/models/createGravityModel.js";
@@ -15,7 +15,7 @@ class ResizeAdvancedAction extends ResizeSimpleAction {
    * @description Which part of the original image to include.
    * @param {Qualifiers.Gravity} gravity
    */
-  gravity(gravity: IGravity | IShortenGravity): this {
+  gravity(gravity: IGravity): this {
     this._actionModel.gravity = createGravityModel(gravity);
     const gravityQualifier = typeof gravity === "string" ? new Qualifier('g', gravity) : gravity;
 

@@ -8,9 +8,9 @@ import {AutoFocus} from "../autoFocus.js";
 import {CompassQualifier} from "./qualifiers/compass/CompassQualifier.js";
 import {XYCenterGravity} from "./xyCenterGravity/XYCenterGravity.js";
 
-export type IGravity = CompassGravity | AutoGravity | FocusOnGravity | XYCenterGravity;
+export type IGravityString = 'auto' | ICompassGravity;
+export type IGravity = CompassGravity | AutoGravity | FocusOnGravity | XYCenterGravity | IGravityString;
 export type IGravityValue = CompassQualifier | FocusOnValue | AutoFocus;
-export type IShortenGravity = 'auto' | ICompassGravity;
 
 /**
  * @memberOf Gravity.GravityQualifier

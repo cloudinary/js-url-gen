@@ -1,4 +1,4 @@
-import {IGravity, IShortenGravity} from "../../qualifiers/gravity/GravityQualifier.js";
+import {IGravity} from "../../qualifiers/gravity/GravityQualifier.js";
 import {ICompassGravity, isICompassGravity} from "../../qualifiers/gravity/compassGravity/CompassGravity.js";
 
 export interface IGravityModel{
@@ -24,7 +24,7 @@ function createCompassGravityModel(compass: ICompassGravity): ICompassGravityMod
  * Create a model of given gravity
  * @param gravity
  */
-export function createGravityModel(gravity: IGravity | IShortenGravity): ICompassGravityModel | string {
+export function createGravityModel(gravity: IGravity): ICompassGravityModel | string {
   const gravityString = (typeof gravity === "string" ? gravity : (gravity).qualifierValue) as string;
 
   if (isICompassGravity(gravityString)) {
