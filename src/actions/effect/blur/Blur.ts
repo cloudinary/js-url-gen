@@ -26,7 +26,7 @@ class BlurAction extends Action {
    * @param {NamedRegion} blurRegion
    */
   region(blurRegion: NamedRegion): this {
-    this._actionModel.region = {RegionType: this._region.regionType};
+    this._actionModel.region = {RegionType: blurRegion.regionType};
     this._region = blurRegion;
     return this;
   }
