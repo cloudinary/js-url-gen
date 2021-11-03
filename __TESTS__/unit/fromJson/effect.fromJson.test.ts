@@ -18,7 +18,8 @@ describe('effect.fromJson', () => {
       { actionType: 'outline', width: 100, color: 'lightblue' },
       { actionType: 'blackwhite', level: 40 },
       { actionType: 'accelerate' },
-      { actionType: 'loop', iterations: 5 }
+      { actionType: 'loop', iterations: 5 },
+      { actionType: 'makeTransparent', tolerance: 5, color: 'red' }
 
     ]);
 
@@ -38,7 +39,8 @@ describe('effect.fromJson', () => {
       'co_lightblue,e_outline:100',
       'e_blackwhite:40',
       'e_accelerate',
-      'e_loop:5'
+      'e_loop:5',
+      'co_red,e_makeTransparent:5'
     ].join('/'));
   });
 });

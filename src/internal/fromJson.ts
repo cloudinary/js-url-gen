@@ -29,6 +29,7 @@ import {EffectOutline} from "../actions/effect/Outline.js";
 import {BlackwhiteEffectAction} from "../actions/effect/leveled/Blackwhite.js";
 import {AccelerationEffectAction} from "../actions/effect/leveled/Accelerate.js";
 import {LoopEffectAction} from "../actions/effect/leveled/Loop.js";
+import {MakeTransparentEffectAction} from "../actions/effect/leveled/MakeTransparent.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
@@ -61,7 +62,8 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   outline: EffectOutline,
   blackwhite: BlackwhiteEffectAction,
   accelerate: AccelerationEffectAction,
-  loop: LoopEffectAction
+  loop: LoopEffectAction,
+  makeTransparent: MakeTransparentEffectAction
 };
 
 /**

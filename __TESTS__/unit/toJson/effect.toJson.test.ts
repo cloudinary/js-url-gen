@@ -170,7 +170,6 @@ describe('Effect toJson()', () => {
       {
         actionType: 'makeTransparent',
         tolerance: 5,
-        level: 5,
         color: 'red'
       }
     ]);
