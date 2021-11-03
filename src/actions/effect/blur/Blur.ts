@@ -1,6 +1,7 @@
 import {NamedRegion} from "../../../qualifiers/region/NamedRegion.js";
 import {Qualifier} from "../../../internal/qualifier/Qualifier.js";
 import {Action} from "../../../internal/Action.js";
+import {IBlurModel} from "../../../internal/models/IEffectActionModel.js";
 
 /**
  * @description The Action class of the blur Builder.
@@ -11,10 +12,13 @@ import {Action} from "../../../internal/Action.js";
 class BlurAction extends Action {
   private _region?: NamedRegion;
   private _strength: number | string;
+  protected _actionModel: IBlurModel = {};
 
   constructor(strength: number | string) {
     super();
     this._strength = strength;
+    this._actionModel.actionType = 'blur';
+    this._actionModel.strength = strength as number;
   }
 
   /**
@@ -22,6 +26,7 @@ class BlurAction extends Action {
    * @param {NamedRegion} blurRegion
    */
   region(blurRegion: NamedRegion): this {
+    this._actionModel.region = {RegionType: blurRegion.regionType};
     this._region = blurRegion;
     return this;
   }
@@ -32,6 +37,7 @@ class BlurAction extends Action {
    */
   strength(strength: number | string): this {
     this._strength = strength;
+    this._actionModel.strength = strength as number;
     return this;
   }
 
