@@ -25,6 +25,7 @@ import {ShadowEffectAction} from "../actions/effect/Shadow.js";
 import {ColorizeEffectAction} from "../actions/effect/Colorize.js";
 import {EffectActionWithStrength} from "../actions/effect/EffectActions/EffectActionWithStrength.js";
 import {CartoonifyEffect} from "../actions/effect/Cartoonify.js";
+import {EffectOutline} from "../actions/effect/Outline.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
@@ -53,7 +54,8 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   shadow: ShadowEffectAction,
   colorize: ColorizeEffectAction,
   oilPaint: EffectActionWithStrength,
-  cartoonify: CartoonifyEffect
+  cartoonify: CartoonifyEffect,
+  outline: EffectOutline
 };
 
 /**

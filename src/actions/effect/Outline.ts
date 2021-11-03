@@ -5,6 +5,7 @@ import {prepareColor} from "../../internal/utils/prepareColor.js";
 import {SystemColors} from "../../qualifiers/color.js";
 import {OutlineModeType} from "../../types/types.js";
 import {IEffectOutlineModel} from "../../internal/models/IEffectActionModel.js";
+import {IActionModel} from "../../internal/models/IActionModel.js";
 
 /**
  * @description Adds an outline to a transparent image. For examples, see the Image Transformations guide.
@@ -74,6 +75,20 @@ class EffectOutline extends Action {
       'e',
       new QualifierValue(['outline', this._mode, this._width, this._blurLevel]).setDelimiter(':'))
     );
+  }
+
+  static fromJson(actionModel: IActionModel): EffectOutline {
+    const {actionType, mode, color, blurLevel, width} = (actionModel as IEffectOutlineModel);
+
+    // We are using this() to allow inheriting classes to use super.fromJson.apply(this, [actionModel])
+    // This allows the inheriting classes to determine the class to be created
+    const result = new this();
+    mode && result.mode(mode);
+    color && result.color(color);
+    blurLevel && result.blurLevel(blurLevel);
+    width && result.width(width);
+
+    return result;
   }
 }
 

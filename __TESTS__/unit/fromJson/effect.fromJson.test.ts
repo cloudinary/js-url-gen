@@ -14,7 +14,8 @@ describe('effect.fromJson', () => {
       { actionType: 'shadow', offsetX: 5, color: 'red'},
       { actionType: 'colorize', level: 10, color: 'red' },
       { actionType: 'oilPaint', level: 8 },
-      { actionType: 'cartoonify', colorReductionLevel: 80, lineStrength: 70 }
+      { actionType: 'cartoonify', colorReductionLevel: 80, lineStrength: 70 },
+      { actionType: 'outline', width: 100, color: 'lightblue' }
     ]);
 
     expect(transformation.toString()).toStrictEqual([
@@ -29,7 +30,8 @@ describe('effect.fromJson', () => {
       'co_red,e_shadow,x_5',
       'co_red,e_colorize:10',
       'e_oil_paint:8',
-      'e_cartoonify:70:80'
+      'e_cartoonify:70:80',
+      'co_lightblue,e_outline:100'
     ].join('/'));
   });
 });
