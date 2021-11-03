@@ -5,6 +5,7 @@ import {prepareColor} from "../../internal/utils/prepareColor.js";
 import {SystemColors} from "../../qualifiers/color.js";
 import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifier.js";
 import {IShadowEffectActionModel} from "../../internal/models/IEffectActionModel.js";
+import {IActionModel} from "../../internal/models/IActionModel.js";
 
 /**
  * @description Applies a shadow filter to the asset.
@@ -61,6 +62,19 @@ class ShadowEffectAction extends Action {
   color(color:SystemColors): this {
     this._actionModel.color = color;
     return this.addQualifier(new Qualifier('co', new QualifierValue(prepareColor(color))));
+  }
+
+  static fromJson(actionModel: IActionModel): ShadowEffectAction {
+    const {actionType, strength, offsetX, offsetY, color} = (actionModel as IShadowEffectActionModel);
+
+    // We are using this() to allow inheriting classes to use super.fromJson.apply(this, [actionModel])
+    // This allows the inheriting classes to determine the class to be created
+    const result = new this(actionType, strength);
+    offsetX && result.offsetX(offsetX);
+    offsetY && result.offsetY(offsetY);
+    color && result.color(color);
+
+    return result;
   }
 }
 

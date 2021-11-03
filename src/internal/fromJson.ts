@@ -21,6 +21,7 @@ import {DeliveryFormatAction} from "../actions/delivery/DeliveryFormatAction.js"
 import {DeliveryQualityAction} from "../actions/delivery/DeliveryQualityAction.js";
 import {EffectActionWithLevel} from "../actions/effect/EffectActions/EffectActionWithLevel";
 import {SimpleEffectAction} from "../actions/effect/EffectActions/SimpleEffectAction";
+import {ShadowEffectAction} from "../actions/effect/Shadow";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
@@ -45,7 +46,8 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   negate: SimpleEffectAction,
   redEye: SimpleEffectAction,
   reverse: SimpleEffectAction,
-  transition: SimpleEffectAction
+  transition: SimpleEffectAction,
+  shadow: ShadowEffectAction
 };
 
 /**
