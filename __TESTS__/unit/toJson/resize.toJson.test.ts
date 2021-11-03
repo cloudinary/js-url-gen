@@ -66,7 +66,10 @@ describe('resize.toJson()', () => {
         },
         x: 3,
         y: 4,
-        gravity: 'north_east',
+        gravity: {
+          compass: "north_east",
+          gravityType: "direction"
+        },
         zoom: 10
       },
       {
@@ -76,7 +79,10 @@ describe('resize.toJson()', () => {
         },
         x: 3,
         y: 4,
-        gravity: 'south'
+        gravity: {
+          compass: "south",
+          gravityType: "direction"
+        }
       },
       {
         "actionType": "limitFill",
@@ -85,14 +91,20 @@ describe('resize.toJson()', () => {
         },
         x: 3,
         y: 4,
-        gravity: 'south'
+        gravity: {
+          compass: "south",
+          gravityType: "direction"
+        }
       },
       {
         "actionType": "thumbnail",
         "dimensions": {
           "width": 100
         },
-        gravity: 'south',
+        gravity: {
+          compass: "south",
+          gravityType: "direction"
+        },
         zoom: 4
       },
       {
@@ -100,7 +112,10 @@ describe('resize.toJson()', () => {
         "dimensions": {
           "width": 100
         },
-        gravity: 'south',
+        gravity: {
+          compass: "south",
+          gravityType: "direction"
+        },
         x: 3,
         y: 4
       },
@@ -109,7 +124,10 @@ describe('resize.toJson()', () => {
         "dimensions": {
           "width": 100
         },
-        gravity: 'south',
+        gravity: {
+          compass: "south",
+          gravityType: "direction"
+        },
         x: 3,
         y: 4
       },
@@ -118,7 +136,10 @@ describe('resize.toJson()', () => {
         "dimensions": {
           "width": 100
         },
-        gravity: 'south',
+        gravity: {
+          compass: "south",
+          gravityType: "direction"
+        },
         x: 3,
         y: 4
       }

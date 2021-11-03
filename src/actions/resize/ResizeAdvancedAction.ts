@@ -1,9 +1,8 @@
 import {ResizeSimpleAction} from "./ResizeSimpleAction.js";
-import {IGravity} from "../../qualifiers/gravity/GravityQualifier.js";
+import {IGravity, IShortenGravity} from "../../qualifiers/gravity/GravityQualifier.js";
 import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 import {IActionModel} from "../../internal/models/IActionModel.js";
-
-export type IShortenGravity = 'auto' | 'north' | 'center' | 'east' | 'west' | 'south' | 'north_west' | 'south_east' | 'south_west' | 'north_east';
+import {createGravityModel} from "../../internal/models/createGravityModel.js";
 
 /**
  * @description Defines an advanced resize.
@@ -17,14 +16,10 @@ class ResizeAdvancedAction extends ResizeSimpleAction {
    * @param {Qualifiers.Gravity} gravity
    */
   gravity(gravity: IGravity | IShortenGravity): this {
-    if(typeof gravity === "string") {
-      this._actionModel.gravity = gravity;
-      return this.addQualifier(new Qualifier('g', gravity));
-    }
+    this._actionModel.gravity = createGravityModel(gravity);
+    const gravityQualifier = typeof gravity === "string" ? new Qualifier('g', gravity) : gravity;
 
-    this._actionModel.gravity = gravity.qualifierValue;
-
-    return this.addQualifier(gravity);
+    return this.addQualifier(gravityQualifier);
   }
 
   static fromJson(actionModel: IActionModel): ResizeAdvancedAction {
