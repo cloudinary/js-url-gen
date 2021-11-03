@@ -17,7 +17,8 @@ describe('effect.fromJson', () => {
       { actionType: 'cartoonify', colorReductionLevel: 80, lineStrength: 70 },
       { actionType: 'outline', width: 100, color: 'lightblue' },
       { actionType: 'blackwhite', level: 40 },
-      { actionType: 'accelerate'}
+      { actionType: 'accelerate' },
+      { actionType: 'loop', iterations: 5 }
 
     ]);
 
@@ -36,7 +37,8 @@ describe('effect.fromJson', () => {
       'e_cartoonify:70:80',
       'co_lightblue,e_outline:100',
       'e_blackwhite:40',
-      'e_accelerate'
+      'e_accelerate',
+      'e_loop:5'
     ].join('/'));
   });
 });

@@ -28,6 +28,7 @@ import {CartoonifyEffect} from "../actions/effect/Cartoonify.js";
 import {EffectOutline} from "../actions/effect/Outline.js";
 import {BlackwhiteEffectAction} from "../actions/effect/leveled/Blackwhite.js";
 import {AccelerationEffectAction} from "../actions/effect/leveled/Accelerate.js";
+import {LoopEffectAction} from "../actions/effect/leveled/Loop.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
@@ -59,7 +60,8 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   cartoonify: CartoonifyEffect,
   outline: EffectOutline,
   blackwhite: BlackwhiteEffectAction,
-  accelerate: AccelerationEffectAction
+  accelerate: AccelerationEffectAction,
+  loop: LoopEffectAction
 };
 
 /**
