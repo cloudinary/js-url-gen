@@ -21,7 +21,8 @@ describe('effect.fromJson', () => {
       { actionType: 'loop', iterations: 5 },
       { actionType: 'makeTransparent', tolerance: 5, color: 'red' },
       { actionType: 'noise', level: 50 },
-      { actionType: 'vignette', level: 5 }
+      { actionType: 'vignette', level: 5 },
+      { actionType: 'dither', type: 9 }
 
     ]);
 
@@ -44,7 +45,8 @@ describe('effect.fromJson', () => {
       'e_loop:5',
       'co_red,e_makeTransparent:5',
       'e_noise:50',
-      'e_vignette:5'
+      'e_vignette:5',
+      'e_dither:9'
     ].join('/'));
   });
 });

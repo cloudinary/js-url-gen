@@ -30,6 +30,7 @@ import {BlackwhiteEffectAction} from "../actions/effect/leveled/Blackwhite.js";
 import {AccelerationEffectAction} from "../actions/effect/leveled/Accelerate.js";
 import {LoopEffectAction} from "../actions/effect/leveled/Loop.js";
 import {MakeTransparentEffectAction} from "../actions/effect/leveled/MakeTransparent.js";
+import {DitherEffectAction} from "../actions/effect/Dither.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
@@ -65,7 +66,9 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   loop: LoopEffectAction,
   makeTransparent: MakeTransparentEffectAction,
   noise: EffectActionWithLevel,
-  vignette: EffectActionWithStrength
+  vignette: EffectActionWithStrength,
+  dither: DitherEffectAction
+
 };
 
 /**

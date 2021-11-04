@@ -202,7 +202,7 @@ describe('Effect toJson()', () => {
       .addAction(Effect.dither().type(halftone4x4Orthogonal()));
     expect(transformation.toJson()).toStrictEqual( [
       {
-        actionType: 'Dither',
+        actionType: 'dither',
         type: 9,
       }
     ]);
