@@ -33,6 +33,7 @@ import {MakeTransparentEffectAction} from "../actions/effect/leveled/MakeTranspa
 import {DitherEffectAction} from "../actions/effect/Dither.js";
 import {VectorizeEffectAction} from "../actions/effect/Vectorize.js";
 import {GradientFadeEffectAction} from "../actions/effect/GradientFade.js";
+import {AssistColorBlindEffectAction} from "../actions/effect/AssistColorBlind.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
@@ -71,8 +72,8 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   vignette: EffectActionWithStrength,
   dither: DitherEffectAction,
   vectorize: VectorizeEffectAction,
-  gradientFade: GradientFadeEffectAction
-
+  gradientFade: GradientFadeEffectAction,
+  assistColorblind: AssistColorBlindEffectAction
 };
 
 /**

@@ -24,8 +24,9 @@ describe('effect.fromJson', () => {
       { actionType: 'vignette', level: 5 },
       { actionType: 'dither', type: 9 },
       { actionType: 'vectorize', numOfColors: 17, detailLevel: 100 },
-      { actionType: 'gradientFade', strength: 5, horizontalStartPoint: 10, verticalStartPoint: 20 }
-
+      { actionType: 'gradientFade', strength: 5, horizontalStartPoint: 10, verticalStartPoint: 20 },
+      { actionType: 'assistColorblind', type: 'stripes', stripesStrength: 20 },
+      { actionType: 'assistColorblind', type: 'xray' }
     ]);
 
     expect(transformation.toString()).toStrictEqual([
@@ -50,7 +51,9 @@ describe('effect.fromJson', () => {
       'e_vignette:5',
       'e_dither:9',
       'e_vectorize:colors:17:detail:100',
-      'e_gradient_fade:5,x_10,y_20'
+      'e_gradient_fade:5,x_10,y_20',
+      'e_assist_colorblind:20',
+      'e_assist_colorblind:xray'
     ].join('/'));
   });
 });
