@@ -1,4 +1,7 @@
 import {fromJson} from "../../../src/internal/fromJson";
+import {scale} from "../../../src/actions/resize";
+import {Transformation} from '../../../src';
+import {IActionModel} from "../../../src/internal/models/IActionModel";
 
 describe('resize.fromJson', () => {
   it('should generate a url with resize actions from array of models', function () {
@@ -14,6 +17,17 @@ describe('resize.fromJson', () => {
       {actionType: 'pad', dimensions: {width: 100}, relative: true, gravity: {gravityType: 'direction', compass: 'south'}, x: 3, y:4, background: 'white'},
       {actionType: 'limitPad', dimensions: {width: 100}, relative: true, gravity: {gravityType: 'direction', compass: 'south'}, x: 3, y:4, background: 'white'},
       {actionType: 'minimumPad', dimensions: {width: 100}, relative: true, gravity: {gravityType: 'direction', compass: 'south'}, x: 3, y:4, background: 'white'},
+      {
+        actionType: 'crop',
+        dimensions: {width: 200},
+        gravity: {
+          gravityType: 'auto',
+          autoFocus: [
+            {object: 'person', weight: 100},
+            {object: 'cat', avoid: true}
+          ]
+        }
+      }
     ]);
 
     expect(transformation.toString()).toStrictEqual([
@@ -28,6 +42,16 @@ describe('resize.fromJson', () => {
       'b_white,c_pad,fl_relative,g_south,w_100,x_3,y_4',
       'b_white,c_lpad,fl_relative,g_south,w_100,x_3,y_4',
       'b_white,c_mpad,fl_relative,g_south,w_100,x_3,y_4',
+      'c_crop,g_auto:person_100:cat_avoid,w_200',
     ].join('/'));
+  });
+
+  it('Should get original action when doing .toJson().fromJson()', ()=>{
+    const transformation = new Transformation().addAction(scale('1.0'));
+    const json = transformation.toJson() as IActionModel[];
+
+    expect(transformation.toString()).toEqual('c_scale,w_1.0');
+    expect(transformation).toMatchObject(fromJson(json));
+    expect(transformation.toString()).toEqual(fromJson(json).toString());
   });
 });
