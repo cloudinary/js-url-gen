@@ -1,6 +1,8 @@
 import {Transformation} from '../../../src';
 import {Resize} from "../../../src/actions";
 import {AspectRatio} from "../../../src/qualifiers";
+import {Gravity} from "../../../src/qualifiers";
+import {FocusOn} from "../../../src/qualifiers/focusOn";
 
 describe('resize.toJson()', () => {
   it('scale', () => {
@@ -28,7 +30,8 @@ describe('resize.toJson()', () => {
       .addAction(Resize.thumbnail(100).gravity('south').zoom(4))
       .addAction(Resize.pad(100).gravity('south').offsetX(3).offsetY(4))
       .addAction(Resize.limitPad(100).gravity('south').offsetX(3).offsetY(4))
-      .addAction(Resize.minimumPad(100).gravity('south').offsetX(3).offsetY(4));
+      .addAction(Resize.minimumPad(100).gravity('south').offsetX(3).offsetY(4))
+      .addAction(Resize.fill(100, 200).gravity(Gravity.focusOn(FocusOn.ocr())));
     expect(transformation.toJson()).toStrictEqual([
       {
         "actionType": "scale",
@@ -66,7 +69,10 @@ describe('resize.toJson()', () => {
         },
         x: 3,
         y: 4,
-        gravity: 'north_east',
+        gravity: {
+          compass: "north_east",
+          gravityType: "direction"
+        },
         zoom: 10
       },
       {
@@ -76,7 +82,10 @@ describe('resize.toJson()', () => {
         },
         x: 3,
         y: 4,
-        gravity: 'south'
+        gravity: {
+          compass: "south",
+          gravityType: "direction"
+        }
       },
       {
         "actionType": "limitFill",
@@ -85,14 +94,20 @@ describe('resize.toJson()', () => {
         },
         x: 3,
         y: 4,
-        gravity: 'south'
+        gravity: {
+          compass: "south",
+          gravityType: "direction"
+        }
       },
       {
         "actionType": "thumbnail",
         "dimensions": {
           "width": 100
         },
-        gravity: 'south',
+        gravity: {
+          compass: "south",
+          gravityType: "direction"
+        },
         zoom: 4
       },
       {
@@ -100,7 +115,10 @@ describe('resize.toJson()', () => {
         "dimensions": {
           "width": 100
         },
-        gravity: 'south',
+        gravity: {
+          compass: "south",
+          gravityType: "direction"
+        },
         x: 3,
         y: 4
       },
@@ -109,7 +127,10 @@ describe('resize.toJson()', () => {
         "dimensions": {
           "width": 100
         },
-        gravity: 'south',
+        gravity: {
+          compass: "south",
+          gravityType: "direction"
+        },
         x: 3,
         y: 4
       },
@@ -118,9 +139,22 @@ describe('resize.toJson()', () => {
         "dimensions": {
           "width": 100
         },
-        gravity: 'south',
+        gravity: {
+          compass: "south",
+          gravityType: "direction"
+        },
         x: 3,
         y: 4
+      },
+      {
+        actionType: "fill",
+        dimensions: {
+          height: 200,
+          width: 100,
+        },
+        gravity: {
+          gravityType: "ocr",
+        },
       }
     ]);
   });

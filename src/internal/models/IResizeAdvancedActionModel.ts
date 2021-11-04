@@ -1,7 +1,8 @@
 import {IResizeSimpleActionModel} from "./IResizeSimpleActionModel.js";
+import {IGravityModel} from "./createGravityModel.js";
 
 interface IResizeAdvancedActionModel extends IResizeSimpleActionModel{
-  gravity: string;
+  gravity: IGravityModel;
 }
 
 export {IResizeAdvancedActionModel};
