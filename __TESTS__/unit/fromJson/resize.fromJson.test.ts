@@ -2,6 +2,7 @@ import {fromJson} from "../../../src/internal/fromJson";
 import {scale} from "../../../src/actions/resize";
 import {Transformation} from '../../../src';
 import {IActionModel} from "../../../src/internal/models/IActionModel";
+import {IResizeAdvancedActionModel} from "../../../src/internal/models/IResizeAdvancedActionModel";
 
 describe('resize.fromJson', () => {
   it('should generate a url with resize actions from array of models', function () {
@@ -50,8 +51,9 @@ describe('resize.fromJson', () => {
     const transformation = new Transformation().addAction(scale('1.0'));
     const json = transformation.toJson() as IActionModel[];
 
-    expect(transformation.toString()).toEqual('c_scale,w_1.0');
+    expect((json[0] as IResizeAdvancedActionModel).dimensions.width).toStrictEqual('1.0');
+    expect(transformation.toString()).toStrictEqual('c_scale,w_1.0');
     expect(transformation).toMatchObject(fromJson(json));
-    expect(transformation.toString()).toEqual(fromJson(json).toString());
+    expect(transformation.toString()).toStrictEqual(fromJson(json).toString());
   });
 });
