@@ -31,6 +31,7 @@ import {AccelerationEffectAction} from "../actions/effect/leveled/Accelerate.js"
 import {LoopEffectAction} from "../actions/effect/leveled/Loop.js";
 import {MakeTransparentEffectAction} from "../actions/effect/leveled/MakeTransparent.js";
 import {DitherEffectAction} from "../actions/effect/Dither.js";
+import {VectorizeEffectAction} from "../actions/effect/Vectorize.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
@@ -67,7 +68,8 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   makeTransparent: MakeTransparentEffectAction,
   noise: EffectActionWithLevel,
   vignette: EffectActionWithStrength,
-  dither: DitherEffectAction
+  dither: DitherEffectAction,
+  vectorize: VectorizeEffectAction
 
 };
 
