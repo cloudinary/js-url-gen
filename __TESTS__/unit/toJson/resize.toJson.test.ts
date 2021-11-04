@@ -3,6 +3,7 @@ import {Resize} from "../../../src/actions";
 import {AspectRatio} from "../../../src/qualifiers";
 import {Gravity} from "../../../src/qualifiers";
 import {FocusOn} from "../../../src/qualifiers/focusOn";
+import {AutoFocus} from "../../../src/qualifiers/autoFocus";
 
 describe('resize.toJson()', () => {
   it('scale', () => {
@@ -155,6 +156,29 @@ describe('resize.toJson()', () => {
         gravity: {
           gravityType: "ocr",
         },
+      }
+    ]);
+  });
+
+  it('should generate auto gravity model', ()=>{
+    const gravity = Gravity.autoGravity().autoFocus(
+      AutoFocus.focusOn(FocusOn.person()).weight(100),
+      AutoFocus.focusOn(FocusOn.cat()).weight(50).avoid()
+    );
+
+    const transformation = new Transformation()
+      .addAction(Resize.crop(200).gravity(gravity));
+
+    const model = transformation.toJson();
+
+    expect(model).toStrictEqual([
+      {
+        "actionType": "crop", "dimensions": {"width": 200}, "gravity": {
+          "autoFocus": [
+            {"object": "person", "weight": 100},
+            {"object": "cat", "avoid": true}
+          ]
+        }
       }
     ]);
   });
