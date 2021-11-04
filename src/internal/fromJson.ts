@@ -32,6 +32,7 @@ import {LoopEffectAction} from "../actions/effect/leveled/Loop.js";
 import {MakeTransparentEffectAction} from "../actions/effect/leveled/MakeTransparent.js";
 import {DitherEffectAction} from "../actions/effect/Dither.js";
 import {VectorizeEffectAction} from "../actions/effect/Vectorize.js";
+import {GradientFadeEffectAction} from "../actions/effect/GradientFade.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
@@ -69,7 +70,8 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   noise: EffectActionWithLevel,
   vignette: EffectActionWithStrength,
   dither: DitherEffectAction,
-  vectorize: VectorizeEffectAction
+  vectorize: VectorizeEffectAction,
+  gradientFade: GradientFadeEffectAction
 
 };
 

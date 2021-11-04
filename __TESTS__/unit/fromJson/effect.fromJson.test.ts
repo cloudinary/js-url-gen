@@ -23,7 +23,8 @@ describe('effect.fromJson', () => {
       { actionType: 'noise', level: 50 },
       { actionType: 'vignette', level: 5 },
       { actionType: 'dither', type: 9 },
-      { actionType: 'vectorize', numOfColors: 17, detailLevel: 100 }
+      { actionType: 'vectorize', numOfColors: 17, detailLevel: 100 },
+      { actionType: 'gradientFade', strength: 5, horizontalStartPoint: 10, verticalStartPoint: 20 }
 
     ]);
 
@@ -48,7 +49,8 @@ describe('effect.fromJson', () => {
       'e_noise:50',
       'e_vignette:5',
       'e_dither:9',
-      'e_vectorize:colors:17:detail:100'
+      'e_vectorize:colors:17:detail:100',
+      'e_gradient_fade:5,x_10,y_20'
     ].join('/'));
   });
 });

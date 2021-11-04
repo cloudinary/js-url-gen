@@ -228,7 +228,7 @@ describe('Effect toJson()', () => {
         .verticalStartPoint(20));
     expect(transformation.toJson()).toStrictEqual( [
       {
-        actionType: 'GradientFade',
+        actionType: 'gradientFade',
         strength: 5,
         horizontalStartPoint: 10,
         verticalStartPoint: 20
