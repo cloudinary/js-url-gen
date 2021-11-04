@@ -36,6 +36,7 @@ import {GradientFadeEffectAction} from "../actions/effect/GradientFade.js";
 import {AssistColorBlindEffectAction} from "../actions/effect/AssistColorBlind.js";
 import {SimulateColorBlindEffectAction} from "../actions/effect/SimulateColorBlind.js";
 import {DeshakeEffectAction} from "../actions/effect/leveled/Deshake.js";
+import {Pixelate} from "../actions/effect/pixelate/Pixelate.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
@@ -77,7 +78,8 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   gradientFade: GradientFadeEffectAction,
   assistColorblind: AssistColorBlindEffectAction,
   simulateColorblind: SimulateColorBlindEffectAction,
-  deshake: DeshakeEffectAction
+  deshake: DeshakeEffectAction,
+  pixelate: Pixelate
 };
 
 /**
