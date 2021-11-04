@@ -29,7 +29,8 @@ describe('effect.fromJson', () => {
       { actionType: 'assistColorblind', type: 'xray' },
       { actionType: 'simulateColorblind', condition: 'rod_monochromacy' },
       { actionType: 'deshake', pixels: 16 },
-      { actionType: 'pixelate', squareSize: 15, region: { RegionType: 'faces' }}
+      { actionType: 'pixelate', squareSize: 15, region: { RegionType: 'faces' }},
+      { actionType: 'blur', strength: 5 }
     ]);
 
     expect(transformation.toString()).toStrictEqual([
@@ -59,7 +60,8 @@ describe('effect.fromJson', () => {
       'e_assist_colorblind:xray',
       'e_simulate_colorblind:rod_monochromacy',
       'e_deshake:16',
-      'e_pixelate_faces:15'
+      'e_pixelate_faces:15',
+      'e_blur:5'
     ].join('/'));
   });
 });

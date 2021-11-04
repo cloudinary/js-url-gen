@@ -1,5 +1,4 @@
 import {IActionModel} from "./IActionModel.js";
-import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifier.js";
 
 interface IEffectActionWithLevelModel extends IActionModel{
   level?: number;

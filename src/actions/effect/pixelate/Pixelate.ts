@@ -94,11 +94,11 @@ class Pixelate extends Action {
     const result = new this(squareSize);
     squareSize && result.squareSize(squareSize);
 
-    if(region.RegionType === 'faces'){
+    if(region && region.RegionType === 'faces'){
       result.region(faces());
     }
 
-    if(region.RegionType === 'custom'){
+    if(region && region.RegionType === 'custom'){
       result.region(custom());
     }
 

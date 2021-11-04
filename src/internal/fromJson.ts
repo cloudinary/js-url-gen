@@ -37,6 +37,7 @@ import {AssistColorBlindEffectAction} from "../actions/effect/AssistColorBlind.j
 import {SimulateColorBlindEffectAction} from "../actions/effect/SimulateColorBlind.js";
 import {DeshakeEffectAction} from "../actions/effect/leveled/Deshake.js";
 import {Pixelate} from "../actions/effect/pixelate/Pixelate.js";
+import {BlurAction} from "../actions/effect/blur/Blur.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
@@ -79,7 +80,8 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   assistColorblind: AssistColorBlindEffectAction,
   simulateColorblind: SimulateColorBlindEffectAction,
   deshake: DeshakeEffectAction,
-  pixelate: Pixelate
+  pixelate: Pixelate,
+  blur: BlurAction
 };
 
 /**
