@@ -88,7 +88,7 @@ const bundleSizeTestCases:ITestCase[] = [
   },
   {
     name: 'Import All Actions',
-    sizeLimitInKB: 34,
+    sizeLimitInKB: 36,
     importsArray: [
       importFromPackage('Actions')
     ]
