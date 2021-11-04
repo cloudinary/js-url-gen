@@ -26,7 +26,8 @@ describe('effect.fromJson', () => {
       { actionType: 'vectorize', numOfColors: 17, detailLevel: 100 },
       { actionType: 'gradientFade', strength: 5, horizontalStartPoint: 10, verticalStartPoint: 20 },
       { actionType: 'assistColorblind', type: 'stripes', stripesStrength: 20 },
-      { actionType: 'assistColorblind', type: 'xray' }
+      { actionType: 'assistColorblind', type: 'xray' },
+      { actionType: 'simulateColorblind', condition: 'rod_monochromacy' }
     ]);
 
     expect(transformation.toString()).toStrictEqual([
@@ -53,7 +54,8 @@ describe('effect.fromJson', () => {
       'e_vectorize:colors:17:detail:100',
       'e_gradient_fade:5,x_10,y_20',
       'e_assist_colorblind:20',
-      'e_assist_colorblind:xray'
+      'e_assist_colorblind:xray',
+      'e_simulate_colorblind:rod_monochromacy'
     ].join('/'));
   });
 });

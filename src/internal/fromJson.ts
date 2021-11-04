@@ -34,6 +34,7 @@ import {DitherEffectAction} from "../actions/effect/Dither.js";
 import {VectorizeEffectAction} from "../actions/effect/Vectorize.js";
 import {GradientFadeEffectAction} from "../actions/effect/GradientFade.js";
 import {AssistColorBlindEffectAction} from "../actions/effect/AssistColorBlind.js";
+import {SimulateColorBlindEffectAction} from "../actions/effect/SimulateColorBlind.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
@@ -73,7 +74,8 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   dither: DitherEffectAction,
   vectorize: VectorizeEffectAction,
   gradientFade: GradientFadeEffectAction,
-  assistColorblind: AssistColorBlindEffectAction
+  assistColorblind: AssistColorBlindEffectAction,
+  simulateColorblind: SimulateColorBlindEffectAction
 };
 
 /**
