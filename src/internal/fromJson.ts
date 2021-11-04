@@ -35,6 +35,7 @@ import {VectorizeEffectAction} from "../actions/effect/Vectorize.js";
 import {GradientFadeEffectAction} from "../actions/effect/GradientFade.js";
 import {AssistColorBlindEffectAction} from "../actions/effect/AssistColorBlind.js";
 import {SimulateColorBlindEffectAction} from "../actions/effect/SimulateColorBlind.js";
+import {DeshakeEffectAction} from "../actions/effect/leveled/Deshake.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
@@ -75,7 +76,8 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   vectorize: VectorizeEffectAction,
   gradientFade: GradientFadeEffectAction,
   assistColorblind: AssistColorBlindEffectAction,
-  simulateColorblind: SimulateColorBlindEffectAction
+  simulateColorblind: SimulateColorBlindEffectAction,
+  deshake: DeshakeEffectAction
 };
 
 /**

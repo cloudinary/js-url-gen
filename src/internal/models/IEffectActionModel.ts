@@ -1,4 +1,5 @@
 import {IActionModel} from "./IActionModel.js";
+import {ExpressionQualifier} from "../../qualifiers/expression/ExpressionQualifier.js";
 
 interface IEffectActionWithLevelModel extends IActionModel{
   level?: number;
@@ -65,7 +66,7 @@ interface ISimulateColorBlindEffectModel extends IActionModel{
 }
 
 interface IDeshakeEffectModel extends IActionModel{
-  pixels?: number;
+  pixels?: 16 | 32 | 48 | 64;
 }
 
 interface IPixelateModel extends IActionModel{
