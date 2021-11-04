@@ -20,7 +20,8 @@ describe('effect.fromJson', () => {
       { actionType: 'accelerate' },
       { actionType: 'loop', iterations: 5 },
       { actionType: 'makeTransparent', tolerance: 5, color: 'red' },
-      { actionType: 'noise', level: 50 }
+      { actionType: 'noise', level: 50 },
+      { actionType: 'vignette', level: 5 }
 
     ]);
 
@@ -42,7 +43,8 @@ describe('effect.fromJson', () => {
       'e_accelerate',
       'e_loop:5',
       'co_red,e_makeTransparent:5',
-      'e_noise:50'
+      'e_noise:50',
+      'e_vignette:5'
     ].join('/'));
   });
 });
