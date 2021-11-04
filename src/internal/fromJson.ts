@@ -63,7 +63,8 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   blackwhite: BlackwhiteEffectAction,
   accelerate: AccelerationEffectAction,
   loop: LoopEffectAction,
-  makeTransparent: MakeTransparentEffectAction
+  makeTransparent: MakeTransparentEffectAction,
+  noise: EffectActionWithLevel
 };
 
 /**

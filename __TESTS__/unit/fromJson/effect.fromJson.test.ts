@@ -19,7 +19,8 @@ describe('effect.fromJson', () => {
       { actionType: 'blackwhite', level: 40 },
       { actionType: 'accelerate' },
       { actionType: 'loop', iterations: 5 },
-      { actionType: 'makeTransparent', tolerance: 5, color: 'red' }
+      { actionType: 'makeTransparent', tolerance: 5, color: 'red' },
+      { actionType: 'noise', level: 50 }
 
     ]);
 
@@ -40,7 +41,8 @@ describe('effect.fromJson', () => {
       'e_blackwhite:40',
       'e_accelerate',
       'e_loop:5',
-      'co_red,e_makeTransparent:5'
+      'co_red,e_makeTransparent:5',
+      'e_noise:50'
     ].join('/'));
   });
 });
