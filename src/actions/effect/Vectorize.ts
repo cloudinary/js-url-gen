@@ -2,6 +2,7 @@ import {Action} from "../../internal/Action.js";
 import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 import {QualifierValue} from "../../internal/qualifier/QualifierValue.js";
 import {IVectorizeEffectModel} from "../../internal/models/IEffectActionModel.js";
+import {IActionModel} from "../../internal/models/IActionModel.js";
 
 /**
  * @description Vectorizes the image.
@@ -100,6 +101,22 @@ class VectorizeEffectAction extends Action {
 
     this.addQualifier(new Qualifier('e', str));
   }
+
+  static fromJson(actionModel: IActionModel): VectorizeEffectAction {
+    const {actionType, paths, cornersLevel, despeckleLevel, detailLevel, numOfColors} = (actionModel as IVectorizeEffectModel);
+
+    // We are using this() to allow inheriting classes to use super.fromJson.apply(this, [actionModel])
+    // This allows the inheriting classes to determine the class to be created
+    const result = new this();
+    paths && result.paths(paths);
+    cornersLevel && result.cornersLevel(cornersLevel);
+    despeckleLevel && result.despeckleLevel(despeckleLevel);
+    detailLevel && result.detailsLevel(detailLevel);
+    numOfColors && result.numOfColors(numOfColors);
+
+    return result;
+  }
+
 }
 
 

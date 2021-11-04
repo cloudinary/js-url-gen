@@ -170,7 +170,6 @@ describe('Effect toJson()', () => {
       {
         actionType: 'makeTransparent',
         tolerance: 5,
-        level: 5,
         color: 'red'
       }
     ]);
@@ -203,7 +202,7 @@ describe('Effect toJson()', () => {
       .addAction(Effect.dither().type(halftone4x4Orthogonal()));
     expect(transformation.toJson()).toStrictEqual( [
       {
-        actionType: 'Dither',
+        actionType: 'dither',
         type: 9,
       }
     ]);
@@ -229,7 +228,7 @@ describe('Effect toJson()', () => {
         .verticalStartPoint(20));
     expect(transformation.toJson()).toStrictEqual( [
       {
-        actionType: 'GradientFade',
+        actionType: 'gradientFade',
         strength: 5,
         horizontalStartPoint: 10,
         verticalStartPoint: 20

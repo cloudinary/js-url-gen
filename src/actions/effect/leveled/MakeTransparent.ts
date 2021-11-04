@@ -4,6 +4,7 @@ import {QualifierValue} from "../../../internal/qualifier/QualifierValue.js";
 import {prepareColor} from "../../../internal/utils/prepareColor.js";
 import {SystemColors} from "../../../qualifiers/color.js";
 import {IMakeTransparentEffectModel} from "../../../internal/models/IEffectActionModel.js";
+import {IActionModel} from "../../../internal/models/IActionModel.js";
 
 /**
  * @description Makes the background of the image transparent (or solid white for formats that do not support transparency).
@@ -19,7 +20,9 @@ class MakeTransparentEffectAction extends LeveledEffectAction {
    */
   tolerance(value: number | string): this {
     this._actionModel.tolerance = value as number;
-    return this.setLevel(value);
+    const qualifierEffect = this.createEffectQualifier(this.effectType, value);
+    this.addQualifier(qualifierEffect);
+    return this;
   }
 
   /**
@@ -30,6 +33,18 @@ class MakeTransparentEffectAction extends LeveledEffectAction {
   colorToReplace(color: SystemColors): this {
     this._actionModel.color = color;
     return this.addQualifier(new Qualifier('co', new QualifierValue(prepareColor(color))));
+  }
+
+  static fromJson(actionModel: IActionModel): MakeTransparentEffectAction {
+    const {actionType, tolerance, color } = (actionModel as IMakeTransparentEffectModel);
+
+    // We are using this() to allow inheriting classes to use super.fromJson.apply(this, [actionModel])
+    // This allows the inheriting classes to determine the class to be created
+    const result = new this(actionType, tolerance);
+    tolerance && result.tolerance(tolerance);
+    color && result.colorToReplace(color);
+
+    return result;
   }
 }
 

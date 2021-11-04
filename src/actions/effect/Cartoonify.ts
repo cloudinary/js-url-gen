@@ -2,6 +2,7 @@ import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 import {QualifierValue} from "../../internal/qualifier/QualifierValue.js";
 import {Action} from "../../internal/Action.js";
 import {ICartoonifyEffectModel} from "../../internal/models/IEffectActionModel.js";
+import {IActionModel} from "../../internal/models/IActionModel.js";
 
 /**
  * @description Applies a cartoon effect to an image.
@@ -59,6 +60,19 @@ class CartoonifyEffect extends Action {
   protected prepareQualifiers(): void {
     this.addQualifier(new Qualifier('e', new QualifierValue([this.effectName, this.cartoonifyStrength, this.colorReduction])));
     return;
+  }
+
+  static fromJson(actionModel: IActionModel): CartoonifyEffect {
+    const {actionType, lineStrength, blackAndWhite, colorReductionLevel} = (actionModel as ICartoonifyEffectModel);
+
+    // We are using this() to allow inheriting classes to use super.fromJson.apply(this, [actionModel])
+    // This allows the inheriting classes to determine the class to be created
+    const result = new this(actionType, lineStrength);
+    blackAndWhite && result.blackwhite();
+    colorReductionLevel && result.colorReductionLevel(colorReductionLevel);
+    lineStrength && result.lineStrength(lineStrength);
+
+    return result;
   }
 }
 

@@ -19,6 +19,25 @@ import {DeliveryColorSpaceAction} from "../actions/delivery/DeliveryColorSpaceAc
 import {DeliveryColorSpaceFromICCAction} from "../actions/delivery/DeliveryColorSpaceFromICCAction.js";
 import {DeliveryFormatAction} from "../actions/delivery/DeliveryFormatAction.js";
 import {DeliveryQualityAction} from "../actions/delivery/DeliveryQualityAction.js";
+import {EffectActionWithLevel} from "../actions/effect/EffectActions/EffectActionWithLevel.js";
+import {SimpleEffectAction} from "../actions/effect/EffectActions/SimpleEffectAction.js";
+import {ShadowEffectAction} from "../actions/effect/Shadow.js";
+import {ColorizeEffectAction} from "../actions/effect/Colorize.js";
+import {EffectActionWithStrength} from "../actions/effect/EffectActions/EffectActionWithStrength.js";
+import {CartoonifyEffect} from "../actions/effect/Cartoonify.js";
+import {EffectOutline} from "../actions/effect/Outline.js";
+import {BlackwhiteEffectAction} from "../actions/effect/leveled/Blackwhite.js";
+import {AccelerationEffectAction} from "../actions/effect/leveled/Accelerate.js";
+import {LoopEffectAction} from "../actions/effect/leveled/Loop.js";
+import {MakeTransparentEffectAction} from "../actions/effect/leveled/MakeTransparent.js";
+import {DitherEffectAction} from "../actions/effect/Dither.js";
+import {VectorizeEffectAction} from "../actions/effect/Vectorize.js";
+import {GradientFadeEffectAction} from "../actions/effect/GradientFade.js";
+import {AssistColorBlindEffectAction} from "../actions/effect/AssistColorBlind.js";
+import {SimulateColorBlindEffectAction} from "../actions/effect/SimulateColorBlind.js";
+import {DeshakeEffectAction} from "../actions/effect/leveled/Deshake.js";
+import {Pixelate} from "../actions/effect/pixelate/Pixelate.js";
+import {BlurAction} from "../actions/effect/blur/Blur.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
@@ -35,7 +54,34 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   colorSpace: DeliveryColorSpaceAction,
   colorSpaceFromICC: DeliveryColorSpaceFromICCAction,
   format: DeliveryFormatAction,
-  quality: DeliveryQualityAction
+  quality: DeliveryQualityAction,
+  sepia: EffectActionWithLevel,
+  boomerang: SimpleEffectAction,
+  grayscale: SimpleEffectAction,
+  advancedRedEye: SimpleEffectAction,
+  negate: SimpleEffectAction,
+  redEye: SimpleEffectAction,
+  reverse: SimpleEffectAction,
+  transition: SimpleEffectAction,
+  shadow: ShadowEffectAction,
+  colorize: ColorizeEffectAction,
+  oilPaint: EffectActionWithStrength,
+  cartoonify: CartoonifyEffect,
+  outline: EffectOutline,
+  blackwhite: BlackwhiteEffectAction,
+  accelerate: AccelerationEffectAction,
+  loop: LoopEffectAction,
+  makeTransparent: MakeTransparentEffectAction,
+  noise: EffectActionWithLevel,
+  vignette: EffectActionWithStrength,
+  dither: DitherEffectAction,
+  vectorize: VectorizeEffectAction,
+  gradientFade: GradientFadeEffectAction,
+  assistColorblind: AssistColorBlindEffectAction,
+  simulateColorblind: SimulateColorBlindEffectAction,
+  deshake: DeshakeEffectAction,
+  pixelate: Pixelate,
+  blur: BlurAction
 };
 
 /**

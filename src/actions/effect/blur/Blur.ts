@@ -2,6 +2,8 @@ import {NamedRegion} from "../../../qualifiers/region/NamedRegion.js";
 import {Qualifier} from "../../../internal/qualifier/Qualifier.js";
 import {Action} from "../../../internal/Action.js";
 import {IBlurModel} from "../../../internal/models/IEffectActionModel.js";
+import {IActionModel} from "../../../internal/models/IActionModel.js";
+import {custom, faces} from "../../../qualifiers/region.js";
 
 /**
  * @description The Action class of the blur Builder.
@@ -82,6 +84,24 @@ class BlurAction extends Action {
     } else {
       this.addQualifier(new Qualifier('e', `blur${str}`));
     }
+  }
+  static fromJson(actionModel: IActionModel): BlurAction {
+    const {actionType, strength, region} = (actionModel as IBlurModel);
+
+    // We are using this() to allow inheriting classes to use super.fromJson.apply(this, [actionModel])
+    // This allows the inheriting classes to determine the class to be created
+    const result = new this(strength);
+    strength && result.strength(strength);
+
+    if(region && region.RegionType === 'faces'){
+      result.region(faces());
+    }
+
+    if(region && region.RegionType === 'custom'){
+      result.region(custom());
+    }
+
+    return result;
   }
 }
 

@@ -57,6 +57,7 @@ interface IGradientFadeEffecModel extends IActionModel{
 
 interface IAssistColorBlindEffectModel extends IActionModel{
   type?: string;
+  stripesStrength?: number;
 }
 
 interface ISimulateColorBlindEffectModel extends IActionModel{
@@ -64,7 +65,7 @@ interface ISimulateColorBlindEffectModel extends IActionModel{
 }
 
 interface IDeshakeEffectModel extends IActionModel{
-  pixels?: number;
+  pixels?: 16 | 32 | 48 | 64;
 }
 
 interface IPixelateModel extends IActionModel{

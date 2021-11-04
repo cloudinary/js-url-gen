@@ -1,6 +1,7 @@
 import {Action} from "../../internal/Action.js";
 import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 import {IGradientFadeEffecModel} from "../../internal/models/IEffectActionModel.js";
+import {IActionModel} from "../../internal/models/IActionModel.js";
 
 /**
  * @description Applies a gradient fade effect from one edge of the image.
@@ -11,7 +12,7 @@ import {IGradientFadeEffecModel} from "../../internal/models/IEffectActionModel.
 class GradientFadeEffectAction extends Action {
   private _strength: number;
   private _type: string;
-  protected _actionModel: IGradientFadeEffecModel = {actionType: 'GradientFade'};
+  protected _actionModel: IGradientFadeEffecModel = {actionType: 'gradientFade'};
 
   /**
    * @description Sets the strength of the fade effect.
@@ -62,6 +63,20 @@ class GradientFadeEffectAction extends Action {
     }
 
     this.addQualifier(new Qualifier('e', str));
+  }
+
+  static fromJson(actionModel: IActionModel): GradientFadeEffectAction {
+    const {actionType, verticalStartPoint, horizontalStartPoint, type, strength} = (actionModel as IGradientFadeEffecModel);
+
+    // We are using this() to allow inheriting classes to use super.fromJson.apply(this, [actionModel])
+    // This allows the inheriting classes to determine the class to be created
+    const result = new this();
+    verticalStartPoint && result.verticalStartPoint(verticalStartPoint);
+    horizontalStartPoint && result.horizontalStartPoint(horizontalStartPoint);
+    type && result.type(type);
+    strength && result.strength(strength);
+
+    return result;
   }
 }
 
