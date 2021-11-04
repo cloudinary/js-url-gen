@@ -70,8 +70,8 @@ class ShadowEffectAction extends Action {
     // We are using this() to allow inheriting classes to use super.fromJson.apply(this, [actionModel])
     // This allows the inheriting classes to determine the class to be created
     const result = new this(actionType, strength);
-    offsetX && result.offsetX(offsetX);
-    offsetY && result.offsetY(offsetY);
+    offsetX && result.offsetX(offsetX as number);
+    offsetY && result.offsetY(offsetY as number);
     color && result.color(color);
 
     return result;
