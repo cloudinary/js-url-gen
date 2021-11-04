@@ -2,9 +2,11 @@ import {IGravity} from "../../qualifiers/gravity/GravityQualifier.js";
 import {CompassGravity, ICompassGravity} from "../../qualifiers/gravity/compassGravity/CompassGravity.js";
 import {AutoGravity} from "../../qualifiers/gravity/autoGravity/AutoGravity.js";
 import {AutoFocus} from "../../qualifiers/autoFocus.js";
+import {FocusOnGravity} from "../../qualifiers/gravity/focusOnGravity/FocusOnGravity.js";
+import {autoGravity} from "../../qualifiers/gravity.js";
 
 export interface IGravityModel {
-  gravityType?: string;
+  gravityType: string;
 }
 
 export interface ICompassGravityModel extends IGravityModel {
@@ -26,7 +28,7 @@ export interface IAutoGravityModel extends IGravityModel {
 
 export interface IFocusOnGravityModel extends IGravityModel {
   focusOnObjects: string[], // 'cat' | 'dog' etc
-  fallbackGravity: IAutoGravityModel
+  fallbackGravity?: IAutoGravityModel
 }
 
 /**
@@ -109,13 +111,39 @@ function createIAutoFocusObject(gravity: AutoFocus): IAutoGravityObjectModel {
  * Creates an auto gravity model from given AutoGravity
  * @param gravity
  */
-function createAutoGravityModel(gravity: AutoGravity): IAutoGravityModel {
-  const values = gravity.qualifierValue.values.filter((v) => v !== 'auto');
+function createAutoGravityModel(gravity: 'auto' | AutoGravity): IAutoGravityModel {
+  const gravityQualifier = gravity === 'auto' ? new AutoGravity() : gravity;
+  const values = gravityQualifier.qualifierValue.values.filter((v) => v !== 'auto');
   const autoFocus = values.map(createIAutoFocusObject);
 
   return {
+    gravityType: 'auto',
     autoFocus
   };
+}
+
+/**
+ * Create IFocusOnGravityModel from FocusOnGravity
+ * @param gravity
+ */
+function createFocusOnGravityModel(gravity: FocusOnGravity): IFocusOnGravityModel {
+  const hasAutoGravity = `${gravity}`.split(':').includes('auto');
+  const values = gravity.qualifierValue.values;
+  const focusOnValues = hasAutoGravity ? values.slice(0, values.length - 1) : values;
+
+  const result: IFocusOnGravityModel = {
+    gravityType: 'object',
+    focusOnObjects: focusOnValues.map((v) => `${v}`)
+  };
+
+  if (hasAutoGravity) {
+    // Remove the first 'auto' value by slicing it, because it's added by autoGravity()
+    const autoFocusObjects = values[values.length -1].values.slice(1);
+    const autoGravityInstance = autoGravity().autoFocus(...autoFocusObjects);
+    result.fallbackGravity = createAutoGravityModel(autoGravityInstance);
+  }
+
+  return result;
 }
 
 /**
@@ -131,7 +159,9 @@ export function createGravityModel(gravity: IGravity): IGravityModel {
     return createOcrGravityModel();
   }
 
-  if (isAutoGravity(gravity)) {
+  if (gravity === 'auto' || isAutoGravity(gravity)){
     return createAutoGravityModel(gravity);
   }
+
+  return createFocusOnGravityModel(gravity as FocusOnGravity);
 }

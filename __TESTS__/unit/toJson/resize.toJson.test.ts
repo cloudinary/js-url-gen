@@ -160,24 +160,56 @@ describe('resize.toJson()', () => {
     ]);
   });
 
-  it('should generate auto gravity model', ()=>{
-    const gravity = Gravity.autoGravity().autoFocus(
-      AutoFocus.focusOn(FocusOn.person()).weight(100),
-      AutoFocus.focusOn(FocusOn.cat()).weight(50).avoid()
-    );
-
+  it('should generate auto gravity model', () => {
     const transformation = new Transformation()
-      .addAction(Resize.crop(200).gravity(gravity));
+      .addAction(Resize.crop(200).gravity(Gravity.autoGravity().autoFocus(
+        AutoFocus.focusOn(FocusOn.person()).weight(100),
+        AutoFocus.focusOn(FocusOn.cat()).weight(50).avoid()
+      )));
 
     const model = transformation.toJson();
 
     expect(model).toStrictEqual([
       {
-        "actionType": "crop", "dimensions": {"width": 200}, "gravity": {
-          "autoFocus": [
-            {"object": "person", "weight": 100},
-            {"object": "cat", "avoid": true}
+        actionType: "crop",
+        dimensions: {width: 200},
+        gravity: {
+          gravityType: 'auto',
+          autoFocus: [
+            {object: "person", weight: 100},
+            {object: "cat", avoid: true}
           ]
+        }
+      }
+    ]);
+  });
+
+  it('should generate focusOnGravity model', () => {
+    const transformation = new Transformation()
+      .addAction(Resize.crop(200).gravity(
+        Gravity.focusOn(FocusOn.cat(), FocusOn.dog()).fallbackGravity(
+          Gravity.autoGravity().autoFocus(
+            AutoFocus.focusOn(FocusOn.microwave()).weight(30),
+            AutoFocus.focusOn(FocusOn.bicycle()).avoid()
+          )
+        )));
+
+    const model = transformation.toJson();
+
+    expect(model).toStrictEqual([
+      {
+        actionType: 'crop',
+        dimensions: {width: 200},
+        gravity: {
+          gravityType: 'object',
+          focusOnObjects: ['cat', 'dog'],
+          fallbackGravity: {
+            gravityType: 'auto',
+            autoFocus: [
+              {object: 'microwave', weight: 30},
+              {object: 'bicycle', avoid: true}
+            ]
+          }
         }
       }
     ]);
