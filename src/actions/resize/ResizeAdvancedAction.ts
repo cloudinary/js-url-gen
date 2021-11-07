@@ -2,7 +2,7 @@ import {ResizeSimpleAction} from "./ResizeSimpleAction.js";
 import {IGravity} from "../../qualifiers/gravity/GravityQualifier.js";
 import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 import {IActionModel} from "../../internal/models/IActionModel.js";
-import {createGravityModel} from "../../internal/models/createGravityModel.js";
+import {createGravityModel, IGravityModel} from "../../internal/models/createGravityModel.js";
 import {createGravityFromModel} from "../../internal/models/createGravityFromModel.js";
 import {IResizeAdvancedActionModel} from "../../internal/models/IResizeAdvancedActionModel.js";
 
@@ -30,7 +30,7 @@ class ResizeAdvancedAction extends ResizeSimpleAction{
     const result = super.fromJson.apply(this, [actionModel]);
 
     if (actionModel.gravity) {
-      result.gravity(createGravityFromModel(actionModel.gravity));
+      result.gravity(createGravityFromModel(actionModel.gravity as IGravityModel));
     }
 
     return result;

@@ -28,6 +28,21 @@ describe('resize.fromJson', () => {
             {object: 'cat', avoid: true}
           ]
         }
+      },
+      {
+        actionType: 'crop',
+        dimensions: {width: 200},
+        gravity: {
+          gravityType: 'object',
+          focusOnObjects: ['dog'],
+          fallbackGravity: {
+            gravityType: 'auto',
+            autoFocus: [
+              {object: 'bird', weight: 30},
+              {object: 'cat', avoid: true}
+            ]
+          }
+        }
       }
     ]);
 
@@ -44,6 +59,7 @@ describe('resize.fromJson', () => {
       'b_white,c_lpad,fl_relative,g_south,w_100,x_3,y_4',
       'b_white,c_mpad,fl_relative,g_south,w_100,x_3,y_4',
       'c_crop,g_auto:person_100:cat_avoid,w_200',
+      'c_crop,g_dog:auto:bird_30:cat_avoid,w_200',
     ].join('/'));
   });
 
