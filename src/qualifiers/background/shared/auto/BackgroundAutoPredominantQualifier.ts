@@ -15,7 +15,7 @@ class BackgroundAutoPredominantQualifier extends BaseCommonBackground {
   toString(): string {
     return `
     b_auto:predominant
-    ${this._constrast ? '_contrast' : ''}
+    ${this._contrast ? '_contrast' : ''}
     ${this._palette.length ? `:palette_${this._palette.join('_')}` : ''}
     `.replace(/\s+/g, '');
   }

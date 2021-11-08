@@ -15,7 +15,7 @@ class BackgroundAutoBorderQualifier extends BaseCommonBackground {
   toString(): string {
     return `
     b_auto:border
-    ${this._constrast ? '_contrast' : ''}
+    ${this._contrast ? '_contrast' : ''}
     ${this._palette.length ? `:palette_${this._palette.join('_')}` : ''}
     `.replace(/\s+/g, '');
   }

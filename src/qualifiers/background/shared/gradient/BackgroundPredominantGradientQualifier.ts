@@ -15,7 +15,7 @@ class BackgroundPredominantGradientQualifier extends BaseGradientBackground {
   toString(): string {
     return `
     b_auto:predominant_gradient
-    ${this._constrast ? '_contrast' : ''}
+    ${this._contrast ? '_contrast' : ''}
     ${this._gradientColors ? `:${this._gradientColors}` : ''}
     ${this._gradientDirection ? `:${this._gradientDirection}` : ''}
     ${this._palette.length ? `:palette_${this._palette.join('_')}` : ''}

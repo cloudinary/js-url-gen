@@ -1,6 +1,6 @@
 import {Transformation} from '../../../src';
 import {Resize} from "../../../src/actions";
-import {AspectRatio} from "../../../src/qualifiers";
+import {AspectRatio, Background, GradientDirection} from "../../../src/qualifiers";
 import {Gravity} from "../../../src/qualifiers";
 import {FocusOn} from "../../../src/qualifiers/focusOn";
 import {AutoFocus} from "../../../src/qualifiers/autoFocus";
@@ -214,4 +214,153 @@ describe('resize.toJson()', () => {
       }
     ]);
   });
+
+  it('should generate an AutoBackgroundModel', () => {
+    const transformation = new Transformation()
+      .addAction(Resize.pad(200).background(Background.auto()));
+
+    const model = transformation.toJson();
+
+    expect(model).toStrictEqual([
+      {
+        actionType: 'pad',
+        dimensions: {
+          width: 200
+        },
+        background: {
+          backgroundType: 'auto'
+        }
+      }
+    ]);
+  });
+
+  it('should generate a BlurredBackgroundModel', () => {
+    const transformation = new Transformation()
+      .addAction(Resize.pad(200).background(Background.blurred().intensity(10).brightness(20)));
+
+    const model = transformation.toJson();
+
+    expect(model).toStrictEqual([
+      {
+        actionType: 'pad',
+        dimensions: {
+          width: 200
+        },
+        background: {
+          backgroundType: 'blurred',
+          brightness: 20,
+          intensity: 10
+        }
+      }
+    ]);
+  });
+
+  it('should generate a BorderBackgroundModel', () => {
+    const transformation = new Transformation()
+      .addAction(Resize.pad(200).background(Background.border().contrast().palette('RED', 'GREEN', 'BLUE')));
+
+    const model = transformation.toJson();
+
+    expect(model).toStrictEqual([
+      {
+        actionType: 'pad',
+        dimensions: {
+          width: 200
+        },
+        background: {
+          backgroundType: 'border',
+          palette: ['RED', 'GREEN', 'BLUE'],
+          contrast: true
+        }
+      }
+    ]);
+  });
+
+  it('should generate a BorderGradientBackgroundModel', () => {
+    const transformation = new Transformation()
+      .addAction(Resize.pad(200).background(Background.borderGradient().contrast().palette('RED', 'GREEN', 'BLUE').gradientColors(2).gradientDirection(GradientDirection.diagonalAsc())));
+
+    const model = transformation.toJson();
+
+    expect(model).toStrictEqual([
+      {
+        actionType: 'pad',
+        dimensions: {
+          width: 200
+        },
+        background: {
+          backgroundType: 'borderGradient',
+          palette: ['RED', 'GREEN', 'BLUE'],
+          contrast: true,
+          gradientColors: 2,
+          gradientDirection: 'diagonal_asc'
+        }
+      }
+    ]);
+  });
+
+  it('should generate a PredominantBackgroundModel', () => {
+    const transformation = new Transformation()
+      .addAction(Resize.pad(200).background(Background.predominant().contrast().palette('RED', 'GREEN', 'BLUE')));
+
+    const model = transformation.toJson();
+
+    expect(model).toStrictEqual([
+      {
+        actionType: 'pad',
+        dimensions: {
+          width: 200
+        },
+        background: {
+          backgroundType: 'predominant',
+          palette: ['RED', 'GREEN', 'BLUE'],
+          contrast: true
+        }
+      }
+    ]);
+  });
+
+  it('should generate a PredominantGradientBackgroundModel', () => {
+    const transformation = new Transformation()
+      .addAction(Resize.pad(200).background(Background.predominantGradient().contrast().palette('RED', 'GREEN', 'BLUE').gradientColors(2).gradientDirection(GradientDirection.diagonalAsc())));
+
+    const model = transformation.toJson();
+
+    expect(model).toStrictEqual([
+      {
+        actionType: 'pad',
+        dimensions: {
+          width: 200
+        },
+        background: {
+          backgroundType: 'predominantGradient',
+          palette: ['RED', 'GREEN', 'BLUE'],
+          contrast: true,
+          gradientColors: 2,
+          gradientDirection: 'diagonal_asc'
+        }
+      }
+    ]);
+  });
+
+  it('should generate a ColorBackgroundModel', () => {
+    const transformation = new Transformation()
+      .addAction(Resize.pad(200).background(Background.color('red')));
+
+    const model = transformation.toJson();
+
+    expect(model).toStrictEqual([
+      {
+        actionType: 'pad',
+        dimensions: {
+          width: 200
+        },
+        background: {
+          backgroundType: 'color',
+          color: 'red'
+        }
+      }
+    ]);
+  });
+
 });
