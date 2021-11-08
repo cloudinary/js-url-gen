@@ -15,9 +15,9 @@ describe('resize.fromJson', () => {
       {actionType: 'fill', dimensions: {width: 100}, relative: true, gravity: {gravityType: 'ocr'}, x: 4, y: 5},
       {actionType: 'limitFill', dimensions: {width: 100}, relative: true, gravity: {gravityType: 'direction', compass: 'south'}, x: 4, y: 5},
       {actionType: 'thumbnail', dimensions: {width: 100}, relative: true, gravity: {gravityType: 'direction', compass: 'south'}, zoom: 4},
-      {actionType: 'pad', dimensions: {width: 100}, relative: true, gravity: {gravityType: 'direction', compass: 'south'}, x: 3, y:4, background: 'white'},
-      {actionType: 'limitPad', dimensions: {width: 100}, relative: true, gravity: {gravityType: 'direction', compass: 'south'}, x: 3, y:4, background: 'white'},
-      {actionType: 'minimumPad', dimensions: {width: 100}, relative: true, gravity: {gravityType: 'direction', compass: 'south'}, x: 3, y:4, background: 'white'},
+      {actionType: 'pad', dimensions: {width: 100}, relative: true, gravity: {gravityType: 'direction', compass: 'south'}, x: 3, y:4},
+      {actionType: 'limitPad', dimensions: {width: 100}, relative: true, gravity: {gravityType: 'direction', compass: 'south'}, x: 3, y:4},
+      {actionType: 'minimumPad', dimensions: {width: 100}, relative: true, gravity: {gravityType: 'direction', compass: 'south'}, x: 3, y:4, background: {backgroundType: 'color', color: 'white'}},
       {
         actionType: 'crop',
         dimensions: {width: 200},
@@ -55,8 +55,8 @@ describe('resize.fromJson', () => {
       'c_fill,fl_relative,g_ocr_text,w_100,x_4,y_5',
       'c_lfill,fl_relative,g_south,w_100,x_4,y_5',
       'c_thumb,fl_relative,g_south,w_100,z_4',
-      'b_white,c_pad,fl_relative,g_south,w_100,x_3,y_4',
-      'b_white,c_lpad,fl_relative,g_south,w_100,x_3,y_4',
+      'c_pad,fl_relative,g_south,w_100,x_3,y_4',
+      'c_lpad,fl_relative,g_south,w_100,x_3,y_4',
       'b_white,c_mpad,fl_relative,g_south,w_100,x_3,y_4',
       'c_crop,g_auto:person_100:cat_avoid,w_200',
       'c_crop,g_dog:auto:bird_30:cat_avoid,w_200',
@@ -71,5 +71,53 @@ describe('resize.fromJson', () => {
     expect(transformation.toString()).toStrictEqual('c_scale,w_1.0');
     expect(transformation).toMatchObject(fromJson(json));
     expect(transformation.toString()).toStrictEqual(fromJson(json).toString());
+  });
+
+  it('Should generate AutoBackground from model', ()=>{
+    const transformation = fromJson([
+      {actionType: 'pad', dimensions: {width: 100}, background: {backgroundType: 'auto'}},
+    ]);
+
+    expect(transformation.toString()).toStrictEqual('b_auto,c_pad,w_100');
+  });
+
+  it('Should generate ColorBackground from model', ()=>{
+    const transformation = fromJson([
+      {actionType: 'pad', dimensions: {width: 100}, background: {backgroundType: 'color', color: 'red'}},
+    ]);
+
+    expect(transformation.toString()).toStrictEqual('b_red,c_pad,w_100');
+  });
+
+  it('Should generate BorderBackground from model', ()=>{
+    const transformation = fromJson([
+      {actionType: 'pad', dimensions: {width: 100}, background: {backgroundType: 'border', contrast: true, palette: ['red', 'blue']}},
+    ]);
+
+    expect(transformation.toString()).toStrictEqual('b_auto:border_contrast:palette_red_blue,c_pad,w_100');
+  });
+
+  it('Should generate BorderGradientBackground from model', ()=>{
+    const transformation = fromJson([
+      {actionType: 'pad', dimensions: {width: 100}, background: {backgroundType: 'borderGradient', contrast: true, palette: ['red', 'blue'], gradientColors: 4, gradientDirection: 'diagonal_desc'}},
+    ]);
+
+    expect(transformation.toString()).toStrictEqual('b_auto:border_gradient_contrast:4:diagonal_desc:palette_red_blue,c_pad,w_100');
+  });
+
+  it('Should generate PredominantBackground from model', ()=>{
+    const transformation = fromJson([
+      {actionType: 'pad', dimensions: {width: 100}, background: {backgroundType: 'predominant', contrast: true, palette: ['red', 'blue']}},
+    ]);
+
+    expect(transformation.toString()).toStrictEqual('b_auto:predominant_contrast:palette_red_blue,c_pad,w_100');
+  });
+
+  it('Should generate PredominantGradientBackground from model', ()=>{
+    const transformation = fromJson([
+      {actionType: 'pad', dimensions: {width: 100}, background: {backgroundType: 'predominantGradient', contrast: true, palette: ['red', 'blue'], gradientColors: 4, gradientDirection: 'diagonal_desc'}},
+    ]);
+
+    expect(transformation.toString()).toStrictEqual('b_auto:predominant_gradient_contrast:4:diagonal_desc:palette_red_blue,c_pad,w_100');
   });
 });

@@ -4,6 +4,8 @@ import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 import {ResizeAdvancedAction} from "./ResizeAdvancedAction.js";
 import {IActionModel} from "../../internal/models/IActionModel.js";
 import {CompassGravity} from "../../qualifiers/gravity/compassGravity/CompassGravity.js";
+import {createBackgroundModel, IBackgroundModel} from "../../internal/models/createBackgroundModel.js";
+import {createBackgroundFromModel} from "../../internal/models/createBackgroundFromModel.js";
 
 /**
  * @description Defines an advanced resize with padding.
@@ -18,7 +20,7 @@ class ResizePadAction<GravityType extends IGravity> extends ResizeAdvancedAction
    * transparent background areas or when resizing with padding.
    */
   background(backgroundQualifier: BackgroundQualifier): this {
-    this._actionModel.background = backgroundQualifier.qualifierValue;
+    this._actionModel.background = createBackgroundModel(backgroundQualifier);
     return this.addQualifier(backgroundQualifier);
   }
 
@@ -42,7 +44,7 @@ class ResizePadAction<GravityType extends IGravity> extends ResizeAdvancedAction
 
   static fromJson(actionModel: IActionModel): ResizePadAction<CompassGravity> {
     const result = super.fromJson.apply(this, [actionModel]);
-    actionModel.background && result.background(new BackgroundQualifier(actionModel.background as string));
+    actionModel.background && result.background(createBackgroundFromModel(actionModel.background as IBackgroundModel));
     actionModel.x && result.offsetX(actionModel.x);
     actionModel.y && result.offsetY(actionModel.y);
     actionModel.zoom && result.zoom(actionModel.zoom as string);

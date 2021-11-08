@@ -9,7 +9,7 @@ import {SystemColors} from "../../../color.js";
  */
 class BaseCommonBackground extends BackgroundQualifier {
   protected _palette: string[];
-  protected _constrast: boolean;
+  protected _contrast: boolean;
 
   constructor() {
     super();
@@ -21,7 +21,7 @@ class BaseCommonBackground extends BackgroundQualifier {
    * @return {this}
    */
   contrast(): this {
-    this._constrast = true;
+    this._contrast = true;
     return this;
   }
 
