@@ -84,17 +84,6 @@ function isBlurredBackground(background: unknown): background is BlurredBackgrou
  */
 function isBorderBackground(background: unknown): background is BackgroundAutoBorderQualifier {
   return background instanceof BackgroundAutoBorderQualifier;
-  /*
-    return true;
-  }
-
-  const values =  getBackgroundValue(background).split(':');
-  if (!(values[0] === 'auto')){
-    return false;
-  }
-
-  return values[1] === 'border' || values[1].startsWith('auto_contrast');
-   */
 }
 
 /**
@@ -106,7 +95,7 @@ function isBorderGradientBackground(background: unknown): background is Backgrou
 }
 
 /**
- *
+ * Validates that background is BackgroundAutoPredominantQualifier
  * @param background
  */
 function isPredominantBackground(background: unknown): background is BackgroundAutoPredominantQualifier {
@@ -121,7 +110,7 @@ function createAutoBackgroundModel(): IAutoBackgroundModel {
 }
 
 /**
- *
+ * Create an IBlurredBackgroundModel from given background
  * @param background
  */
 function createBlurredBackgroundModel(background: BlurredBackgroundAction): IBlurredBackgroundModel {
@@ -146,7 +135,7 @@ function createBlurredBackgroundModel(background: BlurredBackgroundAction): IBlu
 }
 
 /**
- *
+ * Create an IContrastPaletteBackgroundModel from given background
  * @param background
  */
 function createContrastPaletteBackgroundModel(background: BackgroundAutoBorderQualifier): IContrastPaletteBackgroundModel {
@@ -169,7 +158,7 @@ function createContrastPaletteBackgroundModel(background: BackgroundAutoBorderQu
 }
 
 /**
- *
+ * Create an IBorderBackgroundModel from given background
  * @param background
  */
 function createBorderBackgroundModel(background: BackgroundAutoBorderQualifier): IBorderBackgroundModel {
@@ -180,7 +169,7 @@ function createBorderBackgroundModel(background: BackgroundAutoBorderQualifier):
 }
 
 /**
- *
+ * Create an IBaseGradientBackgroundModel from given background
  * @param background
  */
 function createBaseGradientBackgroundModel(background: BackgroundBorderGradientQualifier): IBaseGradientBackgroundModel {
@@ -200,7 +189,7 @@ function createBaseGradientBackgroundModel(background: BackgroundBorderGradientQ
 }
 
 /**
- *
+ * Create an IBorderGradientBackgroundModel from given background
  * @param background
  */
 function createBorderGradientBackgroundModel(background: BackgroundBorderGradientQualifier): IBorderGradientBackgroundModel {
@@ -211,7 +200,7 @@ function createBorderGradientBackgroundModel(background: BackgroundBorderGradien
 }
 
 /**
- *
+ * Create an IColorBackgroundModel from given background
  * @param background
  */
 function createColorBackgroundModel(background: BackgroundColor): IColorBackgroundModel {
@@ -222,7 +211,7 @@ function createColorBackgroundModel(background: BackgroundColor): IColorBackgrou
 }
 
 /**
- *
+ * Create an IPredominantBackgroundModel from given background
  * @param background
  */
 function createPredominantBackgroundModel(background: BackgroundAutoPredominantQualifier): IPredominantBackgroundModel {
@@ -233,7 +222,7 @@ function createPredominantBackgroundModel(background: BackgroundAutoPredominantQ
 }
 
 /**
- *
+ * Validates that background is BackgroundPredominantGradientQualifier
  * @param background
  */
 function isPredominantGradientBackground(background: unknown): background is BackgroundPredominantGradientQualifier {
@@ -241,7 +230,7 @@ function isPredominantGradientBackground(background: unknown): background is Bac
 }
 
 /**
- *
+ * Create an IPredominantGradientBackgroundModel from given background
  * @param background
  */
 function createPredominantGradientBackgroundModel(background: BackgroundPredominantGradientQualifier): IPredominantGradientBackgroundModel {
@@ -252,7 +241,7 @@ function createPredominantGradientBackgroundModel(background: BackgroundPredomin
 }
 
 /**
- *
+ * Create an IBackgroundModel from given background
  * @param background
  */
 function createBackgroundModel(background: unknown): IBackgroundModel {
