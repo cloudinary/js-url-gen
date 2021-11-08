@@ -9,6 +9,9 @@ import {
   IPredominantGradientBackgroundModel
 } from "./createBackgroundModel.js";
 import {Background} from "../../qualifiers.js";
+import {BackgroundBorderGradientQualifier} from "../../qualifiers/background/shared/gradient/BackgroundBorderGradientQualifier.js";
+import {auto, border, borderGradient, color, predominant, predominantGradient} from "../../qualifiers/background.js";
+import {BackgroundAutoPredominantQualifier} from "../../qualifiers/background/shared/auto/BackgroundAutoPredominantQualifier.js";
 
 /**
  * Create BackgroundQualifier from IBlurredBackgroundModel
@@ -18,11 +21,11 @@ function createBlurredBackground(backgroundModel: IBlurredBackgroundModel): Back
   const {brightness, intensity} = backgroundModel;
   const result = Background.blurred();
 
-  if (brightness || brightness == 0){
+  if (brightness || brightness == 0) {
     result.brightness(brightness);
   }
 
-  if (intensity || intensity == 0){
+  if (intensity || intensity == 0) {
     result.intensity(intensity);
   }
 
@@ -30,103 +33,49 @@ function createBlurredBackground(backgroundModel: IBlurredBackgroundModel): Back
 }
 
 /**
- * Create BackgroundQualifier from IBorderBackgroundModel
+ * Create a gradientBackground from given model
+ * @param background
  * @param backgroundModel
  */
-function createBorderBackground(backgroundModel: IBorderBackgroundModel): BackgroundQualifier {
-  const {contrast, palette} = backgroundModel;
-  const result = Background.border();
-
-  if (contrast){
-    result.contrast();
-  }
-
-  if(palette){
-    result.palette(...palette);
-  }
-
-  return result;
-}
-
-/**
- * Create BackgroundQualifier from IBorderGradientBackgroundModel
- * @param backgroundModel
- */
-function createBorderGradientBackground(backgroundModel: IBorderGradientBackgroundModel): BackgroundQualifier {
+function createGradientBackground(background: BackgroundBorderGradientQualifier, backgroundModel: IBorderGradientBackgroundModel | IPredominantGradientBackgroundModel) {
   const {gradientColors, gradientDirection, contrast, palette} = backgroundModel;
-  const result = Background.borderGradient();
 
-  if (contrast){
-    result.contrast();
+  if (contrast) {
+    background.contrast();
   }
 
-  if(palette){
-    result.palette(...palette);
+  if (palette) {
+    background.palette(...palette);
   }
 
-  if (gradientColors){
-    result.gradientColors(+gradientColors);
+  if (gradientColors) {
+    background.gradientColors(+gradientColors);
   }
 
-  if (gradientDirection){
-    result.gradientDirection(gradientDirection);
+  if (gradientDirection) {
+    background.gradientDirection(gradientDirection);
   }
 
-  return result;
+  return background;
 }
 
 /**
- * Create BackgroundQualifier from IPredominantBackgroundModel
+ * Crete a background with contrast and palette from given model
+ * @param background
  * @param backgroundModel
  */
-function createPredominantBackground(backgroundModel: IPredominantBackgroundModel): BackgroundQualifier {
+function createContrastPaletteBackground(background: BackgroundAutoPredominantQualifier, backgroundModel: IPredominantBackgroundModel | IBorderBackgroundModel) {
   const {contrast, palette} = backgroundModel;
-  const result = Background.predominant();
 
-  if (contrast){
-    result.contrast();
+  if (contrast) {
+    background.contrast();
   }
 
-  if(palette){
-    result.palette(...palette);
+  if (palette) {
+    background.palette(...palette);
   }
 
-  return result;
-}
-
-/**
- * Create BackgroundQualifier from IPredominantGradientBackgroundModel
- * @param backgroundModel
- */
-function createPredominantGradientBackground(backgroundModel: IPredominantGradientBackgroundModel): BackgroundQualifier {
-  const {gradientColors, gradientDirection, contrast, palette} = backgroundModel;
-  const result = Background.predominantGradient();
-
-  if (contrast){
-    result.contrast();
-  }
-
-  if(palette){
-    result.palette(...palette);
-  }
-
-  if (gradientColors){
-    result.gradientColors(+gradientColors);
-  }
-
-  if (gradientDirection){
-    result.gradientDirection(gradientDirection);
-  }
-
-  return result;
-}
-
-/**
- * Create BackgroundQualifier from IColorBackgroundModel
- * @param backgroundModel
- */
-function createColorBackground(backgroundModel: IColorBackgroundModel): BackgroundQualifier {
-  return Background.color(backgroundModel.color);
+  return background;
 }
 
 /**
@@ -136,21 +85,21 @@ function createColorBackground(backgroundModel: IColorBackgroundModel): Backgrou
 function createBackgroundFromModel(backgroundModel: IBackgroundModel): BackgroundQualifier {
   const {backgroundType} = backgroundModel;
 
-  switch (backgroundType){
+  switch (backgroundType) {
     case 'auto':
-      return Background.auto();
+      return auto();
     case 'blurred':
       return createBlurredBackground(backgroundModel as IBlurredBackgroundModel);
     case 'border':
-      return createBorderBackground(backgroundModel as IBorderBackgroundModel);
+      return createContrastPaletteBackground(border(), backgroundModel as IBorderBackgroundModel);
     case 'borderGradient':
-      return createBorderGradientBackground(backgroundModel as IBorderGradientBackgroundModel);
+      return createGradientBackground(borderGradient(), backgroundModel as IBorderGradientBackgroundModel);
     case 'predominant':
-      return createPredominantBackground(backgroundModel as IPredominantBackgroundModel);
+      return createContrastPaletteBackground(predominant(), backgroundModel as IPredominantBackgroundModel);
     case 'predominantGradient':
-      return createPredominantGradientBackground(backgroundModel as IPredominantGradientBackgroundModel);
+      return createGradientBackground(predominantGradient(), backgroundModel as IPredominantGradientBackgroundModel);
     default:
-      return createColorBackground(backgroundModel as IColorBackgroundModel);
+      return color((backgroundModel as IColorBackgroundModel).color);
   }
 }
 
