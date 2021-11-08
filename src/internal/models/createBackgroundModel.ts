@@ -63,46 +63,6 @@ function getBackgroundValue(background: unknown): string {
 }
 
 /**
- * Validates that given background is an auto background
- * @param background
- */
-function isAutoBackground(background: unknown): boolean {
-  return getBackgroundValue(background) === 'auto';
-}
-
-/**
- * Validates that given background is a BlurredBackgroundAction
- * @param background
- */
-function isBlurredBackground(background: unknown): background is BlurredBackgroundAction {
-  return getBackgroundValue(background).split(':')[0] === 'blurred';
-}
-
-/**
- * Validates that given background is a BorderBackground
- * @param background
- */
-function isBorderBackground(background: unknown): background is BackgroundAutoBorderQualifier {
-  return background instanceof BackgroundAutoBorderQualifier;
-}
-
-/**
- * Validates that background is BackgroundBorderGradientQualifier
- * @param background
- */
-function isBorderGradientBackground(background: unknown): background is BackgroundBorderGradientQualifier {
-  return background instanceof BackgroundBorderGradientQualifier;
-}
-
-/**
- * Validates that background is BackgroundAutoPredominantQualifier
- * @param background
- */
-function isPredominantBackground(background: unknown): background is BackgroundAutoPredominantQualifier {
-  return background instanceof BackgroundAutoPredominantQualifier;
-}
-
-/**
  * Create an IAutoBackgroundModel from given background
  */
 function createAutoBackgroundModel(): IAutoBackgroundModel {
@@ -222,14 +182,6 @@ function createPredominantBackgroundModel(background: BackgroundAutoPredominantQ
 }
 
 /**
- * Validates that background is BackgroundPredominantGradientQualifier
- * @param background
- */
-function isPredominantGradientBackground(background: unknown): background is BackgroundPredominantGradientQualifier {
-  return background instanceof BackgroundPredominantGradientQualifier;
-}
-
-/**
  * Create an IPredominantGradientBackgroundModel from given background
  * @param background
  */
@@ -245,27 +197,27 @@ function createPredominantGradientBackgroundModel(background: BackgroundPredomin
  * @param background
  */
 function createBackgroundModel(background: unknown): IBackgroundModel {
-  if (isAutoBackground(background)) {
+  if (getBackgroundValue(background) === 'auto') {
     return createAutoBackgroundModel();
   }
 
-  if (isBlurredBackground(background)) {
+  if (background instanceof BlurredBackgroundAction) {
     return createBlurredBackgroundModel(background);
   }
 
-  if (isBorderBackground(background)) {
+  if (background instanceof BackgroundAutoBorderQualifier) {
     return createBorderBackgroundModel(background);
   }
 
-  if (isBorderGradientBackground(background)) {
+  if (background instanceof BackgroundBorderGradientQualifier) {
     return createBorderGradientBackgroundModel(background);
   }
 
-  if (isPredominantBackground(background)) {
+  if (background instanceof BackgroundAutoPredominantQualifier) {
     return createPredominantBackgroundModel(background);
   }
 
-  if (isPredominantGradientBackground(background)) {
+  if (background instanceof BackgroundPredominantGradientQualifier) {
     return createPredominantGradientBackgroundModel(background);
   }
 
