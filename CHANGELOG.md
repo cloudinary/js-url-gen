@@ -1,3 +1,10 @@
+1.2.0 / 2021-11-09
+==================
+
+New functionality
+-----------------
+* Add from/to JSON to effect, delivery, resize
+
 1.1.0 / 2021-10-11
 ==================
 
