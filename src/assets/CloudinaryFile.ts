@@ -283,7 +283,8 @@ class CloudinaryFile {
         .replace(/\?/g, '%3F')
         .replace(/=/g, '%3D');
 
-      // True by default, has to be explicitly set to false to overwrite
+      // urlConfig.analytics is true by default, has to be explicitly set to false to overwrite
+      // Don't add analytics when publicId includes a '?' to not risk changing existing query params
       if (this.urlConfig.analytics !== false && !(publicID.includes('?'))) {
         return `${safeURL}?_a=${getSDKAnalyticsSignature(trackedAnalytics)}`;
       } else {
