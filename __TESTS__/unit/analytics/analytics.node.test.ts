@@ -137,4 +137,36 @@ describe('Add analytics to a regular URL', () => {
       }
     });
   });
+
+  it('Should not include analytics key when publicId ends with a question mark', () => {
+    const cldImage = createNewImageWithAnalytics('sample?');
+    // AZ -> Algo A, SDK Code is Z
+    // Alh -> 1.24.0 from package.json
+    // AM -> 12.0.0 Underlying tech
+    // A -> responsive
+    expect(cldImage.toURL({
+      trackedAnalytics: {
+        sdkCode: 'Z',
+        sdkSemver: '1.24.0',
+        techVersion: '12.0.0',
+        responsive: true
+      }
+    })).toBe("https://res.cloudinary.com/demo/image/upload/sample%3F");
+  });
+
+  it('Should not include analytics key when publicId includes a question mark', () => {
+    const cldImage = createNewImageWithAnalytics('sample?param=test');
+    // AZ -> Algo A, SDK Code is Z
+    // Alh -> 1.24.0 from package.json
+    // AM -> 12.0.0 Underlying tech
+    // A -> responsive
+    expect(cldImage.toURL({
+      trackedAnalytics: {
+        sdkCode: 'Z',
+        sdkSemver: '1.24.0',
+        techVersion: '12.0.0',
+        responsive: true
+      }
+    })).toBe("https://res.cloudinary.com/demo/image/upload/sample%3Fparam%3Dtest");
+  });
 });

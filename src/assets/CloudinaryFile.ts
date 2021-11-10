@@ -284,7 +284,7 @@ class CloudinaryFile {
         .replace(/=/g, '%3D');
 
       // True by default, has to be explicitly set to false to overwrite
-      if (this.urlConfig.analytics !== false) {
+      if (this.urlConfig.analytics !== false && !(publicID.includes('?'))) {
         return `${safeURL}?_a=${getSDKAnalyticsSignature(trackedAnalytics)}`;
       } else {
         return safeURL;
