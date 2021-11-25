@@ -24,4 +24,15 @@ describe('Adjust toJson()', () => {
       }
     ]);
   });
+
+  it('adjust.saturation', () => {
+    const transformation = new Transformation()
+      .addAction(Adjust.saturation().level(50));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'saturation',
+        level: 50
+      }
+    ]);
+  });
 });
