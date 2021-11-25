@@ -14,7 +14,7 @@ describe('Adjust toJson()', () => {
     ]);
   });
 
-  it('unsharpMask.improve', () => {
+  it('adjust.unsharpMask', () => {
     const transformation = new Transformation()
       .addAction(Adjust.unsharpMask().strength(10));
     expect(transformation.toJson()).toStrictEqual( [
