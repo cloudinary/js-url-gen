@@ -13,4 +13,15 @@ describe('Adjust toJson()', () => {
       }
     ]);
   });
+
+  it('unsharpMask.improve', () => {
+    const transformation = new Transformation()
+      .addAction(Adjust.unsharpMask().strength(10));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'unsharpMask',
+        level: 10
+      }
+    ]);
+  });
 });
