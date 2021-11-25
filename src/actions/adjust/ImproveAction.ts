@@ -2,6 +2,7 @@ import {Action} from "../../internal/Action.js";
 import {QualifierValue} from "../../internal/qualifier/QualifierValue.js";
 import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 import {stringOrNumber} from "../../types/types.js";
+import {ImproveActionModel} from "../../internal/models/IAdjustActionModel";
 
 /**
  * @description Defines how to improve an image by automatically adjusting image colors, contrast and brightness.</br>
@@ -11,6 +12,7 @@ import {stringOrNumber} from "../../types/types.js";
 class ImproveAction extends Action {
   private modeValue:stringOrNumber;
   private blendValue:number;
+  protected _actionModel: ImproveActionModel = {actionType: 'improve'};
   constructor() {
     super();
   }
@@ -22,6 +24,7 @@ class ImproveAction extends Action {
    */
   mode(value: 'outdoor' | 'indoor' | string): this {
     this.modeValue = value;
+    this._actionModel.mode = value;
     return this;
   }
 
@@ -31,6 +34,7 @@ class ImproveAction extends Action {
    */
   blend(value:number): this {
     this.blendValue = value;
+    this._actionModel.blend = value;
     return this;
   }
 
