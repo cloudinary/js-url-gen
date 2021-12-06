@@ -1,3 +1,17 @@
+1.3.0 / 2021-12-06
+==================
+
+New functionality
+-----------------
+* Add saturation to from/toJson
+* Add unsharp mask to from/toJson
+* Add improve to from/toJson
+ 
+Other
+-----------------
+* Disable analytics for publicId with question mark (#483)
+
+
 1.2.0 / 2021-11-09
 ==================
 
