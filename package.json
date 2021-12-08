@@ -109,10 +109,6 @@
       "require": "./bundles/*.cjs",
       "import": "./bundles/*.js"
     },
-    "./bundles/umd": {
-      "require": "./bundles/umd/base.js",
-      "import": "./bundles/umd/base.js"
-    },
     "./config/*": {
       "require": "./config/*.cjs",
       "import": "./config/*.js"
