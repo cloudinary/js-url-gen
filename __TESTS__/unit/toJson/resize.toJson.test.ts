@@ -387,4 +387,36 @@ describe('resize.toJson()', () => {
     ]);
   });
 
+  it('should generate gravity model for string', () => {
+    const transformation = new Transformation()
+      .addAction(Resize.fill(200).gravity('face'))
+      .addAction(Resize.fill(200).gravity('auto:face'));
+
+    const model = transformation.toJson();
+
+    expect(model).toStrictEqual([
+      {
+        actionType: "fill",
+        dimensions: {
+          width: 200
+        },
+        gravity: {
+          focusOnObjects: ["face"],
+          gravityType: "object"
+        }
+      },
+      {
+        actionType: "fill",
+        dimensions: {
+          width: 200,
+        },
+        gravity: {
+          gravityType: 'auto',
+          autoFocus: [
+            {object: "face"}
+          ]
+        }
+      }
+    ]);
+  });
 });

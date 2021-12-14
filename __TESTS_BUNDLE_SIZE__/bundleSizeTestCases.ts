@@ -56,7 +56,7 @@ const bundleSizeTestCases:ITestCase[] = [
   },
   {
     name: 'Tests Overlay imports',
-    sizeLimitInKB: 22,
+    sizeLimitInKB: 23,
     importsArray: [
       importFromDist('assets/CloudinaryImage', 'CloudinaryImage'),
       importFromDist('actions/overlay', 'Overlay'),
