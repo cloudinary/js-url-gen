@@ -68,10 +68,13 @@ class CloudinaryFile {
   private suffix: string;
   private deliveryType: string; // type upload/private
 
+  analytics: boolean;
+
   constructor(publicID: string, cloudConfig: ICloudConfig = {}, urlConfig?: IURLConfig) {
     this.setPublicID(publicID);
     this.setCloudConfig(cloudConfig);
     this.setURLConfig(urlConfig);
+    this.analytics = urlConfig.analytics;
   }
 
   /**
