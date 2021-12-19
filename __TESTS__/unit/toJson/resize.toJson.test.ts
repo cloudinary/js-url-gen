@@ -2,8 +2,9 @@ import {Transformation} from '../../../src';
 import {Resize} from "../../../src/actions";
 import {AspectRatio, Background, GradientDirection} from "../../../src/qualifiers";
 import {Gravity} from "../../../src/qualifiers";
-import {FocusOn} from "../../../src/qualifiers/focusOn";
+import {face, FocusOn} from "../../../src/qualifiers/focusOn";
 import {AutoFocus} from "../../../src/qualifiers/autoFocus";
+import {autoGravity} from "../../../src/qualifiers/gravity";
 
 describe('resize.toJson()', () => {
   it('scale', () => {
@@ -162,9 +163,31 @@ describe('resize.toJson()', () => {
 
   it('should generate auto gravity model', () => {
     const transformation = new Transformation()
+      .addAction(Resize.fill().width(100).height(100).gravity(autoGravity().autoFocus(AutoFocus.focusOn(face())))
+      );
+
+    const model = transformation.toJson();
+
+    expect(model).toStrictEqual([
+      {
+        actionType: "fill",
+        dimensions: {width: 100, height: 100},
+        gravity: {
+          gravityType: 'auto',
+          autoFocus: [
+            {object: "face"}
+          ]
+        }
+      }
+    ]);
+  });
+
+  it('should generate auto gravity model', () => {
+    const transformation = new Transformation()
       .addAction(Resize.crop(200).gravity(Gravity.autoGravity().autoFocus(
         AutoFocus.focusOn(FocusOn.person()).weight(100),
-        AutoFocus.focusOn(FocusOn.cat()).weight(50).avoid()
+        AutoFocus.focusOn(FocusOn.cat()).weight(50).avoid(),
+        AutoFocus.focusOn(FocusOn.face()).weight(50).avoid()
       )));
 
     const model = transformation.toJson();
@@ -177,7 +200,8 @@ describe('resize.toJson()', () => {
           gravityType: 'auto',
           autoFocus: [
             {object: "person", weight: 100},
-            {object: "cat", avoid: true}
+            {object: "cat", avoid: true},
+            {object: "face", avoid: true}
           ]
         }
       }
@@ -363,4 +387,36 @@ describe('resize.toJson()', () => {
     ]);
   });
 
+  it('should generate gravity model for string', () => {
+    const transformation = new Transformation()
+      .addAction(Resize.fill(200).gravity('face'))
+      .addAction(Resize.fill(200).gravity('auto:face'));
+
+    const model = transformation.toJson();
+
+    expect(model).toStrictEqual([
+      {
+        actionType: "fill",
+        dimensions: {
+          width: 200
+        },
+        gravity: {
+          focusOnObjects: ["face"],
+          gravityType: "object"
+        }
+      },
+      {
+        actionType: "fill",
+        dimensions: {
+          width: 200,
+        },
+        gravity: {
+          gravityType: 'auto',
+          autoFocus: [
+            {object: "face"}
+          ]
+        }
+      }
+    ]);
+  });
 });
