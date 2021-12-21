@@ -24,7 +24,7 @@ class DeliveryQualityAction extends DeliveryAction {
 
   /**
    * Selet the Chroma sub sampling</br>
-   * <b>Learn more</b>: {@link https://cloudinary.com/documentation/image_transformations#toggling_chroma_subsampling | Toggling chroma subsampling}
+   * <b>Learn more</b>: {@link https://cloudinary.com/documentation/image_transformations#toggling_chroma_subsampling|Toggling chroma subsampling}
    * @param {420 | 444 | number} type The chroma sub sampling type
    */
   chromaSubSampling(type: 420 | 444 | number): this {

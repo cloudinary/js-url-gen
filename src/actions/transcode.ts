@@ -24,7 +24,7 @@ export type ITranscodeAction = BitRateAction
 /**
  * @description Defines how to transcode a video to another format
  *
- * <b>Learn more:</b> {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#transcoding_video_to_other_formats | Transcoding video to other formats}
+ * <b>Learn more:</b> {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#transcoding_video_to_other_formats|Transcoding video to other formats}
  * @memberOf Actions
  * @namespace Transcode
  * @example
@@ -36,7 +36,7 @@ export type ITranscodeAction = BitRateAction
  * @memberOf Actions.Transcode
  * @description Sets the audio sample frequency.
  *
- * <b>Learn more</b>: {@link https://cloudinary.com/documentation/audio_transformations#audio_frequency_control | Audio frequency control}
+ * <b>Learn more</b>: {@link https://cloudinary.com/documentation/audio_transformations#audio_frequency_control|Audio frequency control}
  * @param {AudioFrequencyType|string|number} freq The audio frequency.
  * @example
  * import {Cloudinary} from "@cloudinary/url-gen/instance/Cloudinary";
@@ -79,7 +79,7 @@ function audioCodec(codec: AudioCodecType | string): AudioCodecAction{
  * Supported codecs: h264, h265 (MPEG-4); vp8, vp9 (WebM).
  *
  * <b>Learn more:</b>
- * {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#bitrate_control | Bitrate control}
+ * {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#bitrate_control|Bitrate control}
  *
  * @param {string|number}  bitRate The number of bits used to represent the video data per second. By default the video
  *                             uses a variable bitrate (VBR), with this value indicating the maximum bitrate.

@@ -5,7 +5,7 @@ import {ExpressionQualifier} from "./expression/ExpressionQualifier.js";
 /**
  * @description
  * Used for variable or conditional expressions
- * <b>Learn more:</b> {@link https://cloudinary.com/documentation/user_defined_variables#arithmetic_expressions | Arithmetic expressions }
+ * <b>Learn more:</b> {@link https://cloudinary.com/documentation/user_defined_variables#arithmetic_expressions|Arithmetic expressions }
  * @namespace Expression
  * @memberOf Qualifiers
  */

@@ -27,7 +27,7 @@ class PositionQualifier extends Action {
 
   /**
    * @description Tiles the overlay across your image.
-   * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#tiling_overlays | Tiling overlay}
+   * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#tiling_overlays|Tiling overlay}
    */
   tiled(): this {
     this.addFlag(tiled());
@@ -37,7 +37,7 @@ class PositionQualifier extends Action {
   /**
    * TODO - This should accept a boolean value
    * @description Prevents an image or text overlay from extending a delivered image canvas beyond the dimensions of the base image
-   * <b>Learn more:</b> {@link https://cloudinary.com/documentation/transformation_reference#fl_no_overflow | Overflow in overlays}
+   * <b>Learn more:</b> {@link https://cloudinary.com/documentation/transformation_reference#fl_no_overflow|Overflow in overlays}
    */
   allowOverflow(bool = true): this {
     if (bool === false) {

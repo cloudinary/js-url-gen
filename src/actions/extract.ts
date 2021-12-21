@@ -76,7 +76,7 @@ class ExtractAction extends Action {
 /**
  * @summary action
  * @description Extracts an image containing only specified layers of a Photoshop image.
- * <b>Learn more:</b> {@link https://cloudinary.com/documentation/paged_and_layered_media#deliver_selected_layers_of_a_psd_image | Deliver selected layers of a PSD image}
+ * <b>Learn more:</b> {@link https://cloudinary.com/documentation/paged_and_layered_media#deliver_selected_layers_of_a_psd_image|Deliver selected layers of a PSD image}
  * @memberOf Actions.Extract
  * @return {Actions.Extract.ExtractAction}
  */

@@ -261,7 +261,7 @@ function mono(): FlagQualifier {
  * @memberOf Qualifiers.Flag
  * @description Used internally by Position within an Overlay, this flag will tile the overlay across your image.
  *
- * <b>Learn more:</b> {@link https://cloudinary.com/documentation/transformation_reference#fl_no_overflow | Overflow in overlays}
+ * <b>Learn more:</b> {@link https://cloudinary.com/documentation/transformation_reference#fl_no_overflow|Overflow in overlays}
  * @return {Qualifiers.Flag.FlagQualifier}
  */
 function noOverflow(): FlagQualifier {
@@ -454,7 +454,7 @@ function tiff8Lzw(): FlagQualifier {
  * @memberOf Qualifiers.Flag
  * @description Used internally by Position within an Overlay, this flag will tile the overlay across your image.
  *
- * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#tiling_overlays | Tiling overlay}
+ * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#tiling_overlays|Tiling overlay}
  * @return {Qualifiers.Flag.FlagQualifier}
  */
 function tiled(): FlagQualifier {

@@ -136,7 +136,7 @@ function outline(): EffectOutline {
 /**
  * @summary action
  * @description Applies a complex deep learning neural network algorithm that extracts artistic styles from a source image and applies them to the content of a target photograph.<br/>
- * <b>Learn more:</b> {@link https://cloudinary.com/documentation/neural_artwork_style_transfer_addon | Neural Artwork Style Transfer}
+ * <b>Learn more:</b> {@link https://cloudinary.com/documentation/neural_artwork_style_transfer_addon|Neural Artwork Style Transfer}
  * @memberOf Actions.Effect
  * @param {ImageSource} imageSource `import {image} from '@cloudinary/url-gen/qualifiers/sources`
  * @return {Actions.Effect.StyleTransfer}
@@ -429,7 +429,7 @@ function pixelate(squareSize?: number): Pixelate {
  * @summary action
  * @description Makes the background of an image transparent (or solid white for JPGs).</br>
  *              Use when the background is a uniform color.
- *              {@link https://cloudinary.com/documentation/transformation_reference#e_bgremoval | Background Removal}
+ *              {@link https://cloudinary.com/documentation/transformation_reference#e_bgremoval|Background Removal}
  *
  * @memberOf Actions.Effect
  * @return {Actions.Effect.RemoveBackgroundAction}

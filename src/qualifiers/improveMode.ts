@@ -3,7 +3,7 @@
  * @description Defines the available modes to use with the improve effect.
  * @namespace ImproveMode
  * @memberOf Qualifiers
- * @see To be used with an {@link Actions.Adjust.improve|Adjust Improve}
+ * @see To be used with an {@link Actions.Adjust.ImproveAction|Adjust Improve}
  * @example
  * import {Cloudinary} from "@cloudinary/url-gen/instance/Cloudinary";
  * import {outdoor} from "@cloudinary/url-gen/qualifiers/improveMode";

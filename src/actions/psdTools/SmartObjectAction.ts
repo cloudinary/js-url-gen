@@ -4,7 +4,7 @@ import {QualifierValue} from "../../internal/qualifier/QualifierValue.js";
 
 /**
  * @description Represents an embedded smart object in a Photoshop document.
- * </br><b>Learn more:</b> {@link https://cloudinary.com/documentation/paged_and_layered_media#extract_the_original_content_of_an_embedded_object | Extract the original content of an embedded Photoshop object}
+ * </br><b>Learn more:</b> {@link https://cloudinary.com/documentation/paged_and_layered_media#extract_the_original_content_of_an_embedded_object|Extract the original content of an embedded Photoshop object}
  * @extends SDK.Action
  * @memberOf Actions.PSDTools
  * @see Visit {@link Actions.PSDTools| PSDTools} for an example
