@@ -304,7 +304,7 @@ function tvmonitor(): FocusOnValue {
 /**
  * @summary qualifier
  * @memberOf Qualifiers.FocusOn
- * @description Detect all text elements in an image using the {@link https://cloudinary.com/documentation/image_transformations#control_gravity | OCR Text Detection and Extraction add-on} and use the detected bounding box coordinates as the basis of the transformation.
+ * @description Detect all text elements in an image using the {@link https://cloudinary.com/documentation/image_transformations#control_gravity|OCR Text Detection and Extraction add-on} and use the detected bounding box coordinates as the basis of the transformation.
  * @return {Qualifiers.FocusOn.FocusOnValue} FocusOnValue
  */
 function ocr(): FocusOnValue {

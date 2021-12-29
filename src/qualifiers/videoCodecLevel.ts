@@ -1,6 +1,6 @@
 /**
  * @description Contains functions to select the video codec level.
- * <b>Learn more</b>: {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#video_codec_settings | Video codec settings}
+ * <b>Learn more</b>: {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#video_codec_settings|Video codec settings}
  * @memberOf Qualifiers
  * @namespace VideoCodecLevel
  * @see Visit {@link Actions.Transcode|Transcode} for an example

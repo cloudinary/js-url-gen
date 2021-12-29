@@ -9,7 +9,7 @@ import {QualifierValue} from "../../internal/qualifier/QualifierValue.js";
  * is delivered with
  * an expected FPS level (helps with sync to audio).
  *
- * <b>Learn more</b>: {@link https://cloudinary.com/documentation/video_transformation_reference#video_settings | Video settings}
+ * <b>Learn more</b>: {@link https://cloudinary.com/documentation/video_transformation_reference#video_settings|Video settings}
  * @see Visit {@link Actions.Transcode|Transcode} for an example
  */
 class FPSRangeAction extends Action {

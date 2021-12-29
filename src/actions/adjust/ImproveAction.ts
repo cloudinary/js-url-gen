@@ -7,7 +7,7 @@ import {IActionModel} from "../../internal/models/IActionModel.js";
 
 /**
  * @description Defines how to improve an image by automatically adjusting image colors, contrast and brightness.</br>
- * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#image_improvement_effects | Image improvement effects}
+ * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#image_improvement_effects|Image improvement effects}
  * @memberOf Actions.Adjust
  */
 class ImproveAction extends Action {

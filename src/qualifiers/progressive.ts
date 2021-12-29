@@ -1,6 +1,6 @@
 /**
  * @description Contains functions to select the mode when using a progressive format.
- * <b>Learn more</b>: {@link https://cloudinary.com/documentation/transformation_reference#fl_progressive | Progressive modes}
+ * <b>Learn more</b>: {@link https://cloudinary.com/documentation/transformation_reference#fl_progressive|Progressive modes}
  * @memberOf Qualifiers
  * @namespace Progressive
  * @example

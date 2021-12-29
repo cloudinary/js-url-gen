@@ -1,8 +1,8 @@
 
 /**
  * @description Contains functions to select the rotation mode.
- * </br><b>Learn more</b>: {@link https://cloudinary.com/documentation/image_transformations#rotating_images | Rotating images}
- * </br><b>Learn more</b>: {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#rotating_videos | Rotating videos}
+ * </br><b>Learn more</b>: {@link https://cloudinary.com/documentation/image_transformations#rotating_images|Rotating images}
+ * </br><b>Learn more</b>: {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#rotating_videos|Rotating videos}
  * @memberOf Qualifiers
  * @namespace RotationMode
  * @see Visit {@link Actions.Rotate|Rotate Action} for an example

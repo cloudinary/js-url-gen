@@ -53,7 +53,7 @@ class ResizeSimpleAction extends Action {
 
   /**
    * @description Sets the aspect ratio of the asset.
-   * For a list of supported types see {@link Qualifiers.AspectRatio |
+   * For a list of supported types see {@link Qualifiers.AspectRatio|
     * AspectRatio values}
    * @param {AspectRatioType|number|string} ratio The new aspect ratio, specified as a percentage or ratio.
    * @return {this}

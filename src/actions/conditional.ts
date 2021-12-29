@@ -77,7 +77,7 @@ class ConditionalAction extends Action{
  * @summary action
  * @memberOf Actions.Conditional
  * @description Sets up a conditional transformation with expression.
- * Learn more: {@link https://cloudinary.com/documentation/conditional_transformations | Conditional transformations}
+ * Learn more: {@link https://cloudinary.com/documentation/conditional_transformations|Conditional transformations}
  *
  * @param {string} expression The condition to meet in order to apply the transformation.
  * @param {SDK.Transformation} tx The transformation to conditionally apply

@@ -30,9 +30,9 @@ function ocr(): NamedRegion {
 
 /**
  * @description Contains functions to select the type of region, used with Effect.blur() and Effect.pixelate().
- * <b>See also</b>: {@link Actions.Effect.BlurAction | Blur Action}
- * <b>See also</b>: {@link Actions.Effect.Pixelate | Blur Action}
- * <b>See also</b>: {@link Actions.Effect | Possible effects}
+ * <b>See also</b>: {@link Actions.Effect.BlurAction|Blur Action}
+ * <b>See also</b>: {@link Actions.Effect.Pixelate|Blur Action}
+ * <b>See also</b>: {@link Actions.Effect|Possible effects}
  * @namespace Region
  * @memberOf Qualifiers
  */

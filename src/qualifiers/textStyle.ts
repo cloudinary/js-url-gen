@@ -7,8 +7,8 @@ import {FontAntialiasType, FontWeightType, TextAlignmentType, TextDecorationType
 /**
  * @summary qualifier
  * @description Specifies how to style your layered text, controls the font, font size, line spacing and more.
- * </br><b>Learn more</b>: {@link https://cloudinary.com/documentation/image_transformations#adding_text_overlays | Adding text overlays to images}
- * </br><b>Learn more</b>: {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#adding_text_captions | Adding text overlays to videos}
+ * </br><b>Learn more</b>: {@link https://cloudinary.com/documentation/image_transformations#adding_text_overlays|Adding text overlays to images}
+ * </br><b>Learn more</b>: {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#adding_text_captions|Adding text overlays to videos}
  * @see {@link Actions.Overlay| The overlay action}
  * @see {@link Actions.Underlay| The underlay action}
  * @memberOf Qualifiers

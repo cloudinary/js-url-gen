@@ -53,8 +53,8 @@ function cutByImage(imageSource: ImageSource | TextSource | FetchSource): CutByI
  * @summary action
  * @description Distorts the image to an arc shape.
  *
- * <b>Learn more:</b> {@link https://cloudinary.com/documentation/transformation_reference#e_distort | Distorting images}</br>
- * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#image_shape_changes_and_distortion_effects | Distortion effects}
+ * <b>Learn more:</b> {@link https://cloudinary.com/documentation/transformation_reference#e_distort|Distorting images}</br>
+ * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#image_shape_changes_and_distortion_effects|Distortion effects}
  *
  * @param {number} degrees The degrees to arc the image
  * @memberOf Actions.Reshape
@@ -83,7 +83,7 @@ function distortArc(degrees: number | string): DistortArcAction {
  * Specify four corner coordinates, representing the new coordinates for each of the image's four corners,
  * in clockwise order from the top-left corner.
  *
- * <b>Learn more:</b> {@link https://cloudinary.com/documentation/transformation_reference#e_distort | Distorting images}
+ * <b>Learn more:</b> {@link https://cloudinary.com/documentation/transformation_reference#e_distort|Distorting images}
  *
  * @param {number[]} coordinates - Four x/y pairs representing the new image corners
  * @memberOf Actions.Reshape

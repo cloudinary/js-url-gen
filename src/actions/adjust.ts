@@ -37,7 +37,7 @@ export type IAdjustAction = FillLightAction
  * @memberOf Actions.Adjust
  * @description Blends an image with one or more tint colors at a specified intensity. </br>
  *              You can optionally equalize colors before tinting and specify gradient blend positioning per color.</br>
- *              <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#tint_effects | Deliver selected layers of a PSD image}
+ *              <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#tint_effects|Deliver selected layers of a PSD image}
  * @param {string} value The full tint effect value, provided as a string.
  * @return {Actions.Effect.SimpleEffectAction}
  */
@@ -63,7 +63,7 @@ function brightness(level?:number): EffectActionWithLevel {
  * @memberOf Actions.Adjust
  * @description
  * Enhances an image to its best visual quality with the Viesus Automatic Image Enhancement add-on.</br>
- * <b>Learn more:</b> {@link https://cloudinary.com/documentation/viesus_automatic_image_enhancement_addon | Viesus Automatic Image Enhancement.}
+ * <b>Learn more:</b> {@link https://cloudinary.com/documentation/viesus_automatic_image_enhancement_addon|Viesus Automatic Image Enhancement.}
  * @return {Actions.Adjust.ViesusCorrectAdjustAction}
  */
 function viesusCorrect(): ViesusCorrectAdjustAction {
@@ -286,7 +286,7 @@ function improve(): ImproveAction {
  * @description
  * Maps an input color and those similar to the input color to corresponding shades of a specified output color, taking luminosity and chroma into account, in order to recolor an object in a natural way.</br>
  * More highly saturated input colors usually give the best results. It is recommended to avoid input colors approaching white, black, or gray.
- * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#replace_color_effect | Replace colors example}
+ * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#replace_color_effect|Replace colors example}
  * @param {string} toColor
  * @return {Actions.Adjust.ReplaceColorAction}
  */

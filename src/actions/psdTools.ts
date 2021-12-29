@@ -5,7 +5,7 @@ import {SmartObjectAction} from "./psdTools/SmartObjectAction.js";
 /**
  * @namespace PSDTools
  * @description Represents a layer in a Photoshop document.
- * </br><b>Learn more:</b> {@link https://cloudinary.com/documentation/paged_and_layered_media#deliver_selected_layers_of_a_psd_image | Deliver selected layers of a PSD image}
+ * </br><b>Learn more:</b> {@link https://cloudinary.com/documentation/paged_and_layered_media#deliver_selected_layers_of_a_psd_image|Deliver selected layers of a PSD image}
  * @memberOf Actions
  * @example
  * // See examples under each method
@@ -39,7 +39,7 @@ function clip(): ClipAction {
  * @summary action
  * @description Delivers an image containing only specified layers of a Photoshop image.
  *
- * <b>Learn more:</b> {@link https://cloudinary.com/documentation/paged_and_layered_media#deliver_selected_layers_of_a_psd_image | Deliver selected layers of a PSD image}
+ * <b>Learn more:</b> {@link https://cloudinary.com/documentation/paged_and_layered_media#deliver_selected_layers_of_a_psd_image|Deliver selected layers of a PSD image}
  * @memberOf Actions.PSDTools
  * @return {Actions.PSDTools.GetLayerAction}
  * @example

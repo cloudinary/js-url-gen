@@ -9,8 +9,8 @@ const QUALIFIER_KEY = 'a';
 /**
  * @description Rotates or flips an image or video.
  *
- * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#rotating_image | Rotating images}
- * {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#rotating_videos | Rotating videos}
+ * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#rotating_image|Rotating images}
+ * {@link https://cloudinary.com/documentation/video_manipulation_and_delivery#rotating_videos|Rotating videos}
  * @extends SDK.Action
  * @memberOf Actions.Rotate
  * @see Visit {@link Actions.Rotate|Rotate} for an example

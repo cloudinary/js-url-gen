@@ -3,7 +3,7 @@ import {Qualifier} from "../../../internal/qualifier/Qualifier.js";
 
 /**
  * Enhances an image to its best visual quality with the Viesus Automatic Image Enhancement add-on.</br>
- * <b>Learn more:</b> {@link https://cloudinary.com/documentation/viesus_automatic_image_enhancement_addon | Viesus Automatic Image Enhancement.}
+ * <b>Learn more:</b> {@link https://cloudinary.com/documentation/viesus_automatic_image_enhancement_addon|Viesus Automatic Image Enhancement.}
  * @memberOf Actions.Adjust
  */
 class ViesusCorrectAdjustAction extends Action {
