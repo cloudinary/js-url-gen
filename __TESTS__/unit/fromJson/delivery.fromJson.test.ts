@@ -79,6 +79,17 @@ describe('delivery.fromJson', () => {
     expect(transformation.toString()).toStrictEqual('q_auto');
   });
 
+  it('quality:auto:best', () => {
+    const transformation = fromJson([
+      {
+        actionType: 'quality',
+        level: 'autoBest'
+      }
+    ]);
+
+    expect(transformation.toString()).toStrictEqual('q_auto:best');
+  });
+
   it('chromaSubSampling', () => {
     const transformation = fromJson([
       {
