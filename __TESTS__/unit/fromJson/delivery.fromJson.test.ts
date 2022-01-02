@@ -90,6 +90,72 @@ describe('delivery.fromJson', () => {
     expect(transformation.toString()).toStrictEqual('q_auto:best');
   });
 
+  it('quality:auto:eco', () => {
+    const transformation = fromJson([
+      {
+        actionType: 'quality',
+        level: 'autoEco'
+      }
+    ]);
+
+    expect(transformation.toString()).toStrictEqual('q_auto:eco');
+  });
+
+  it('quality:auto:good', () => {
+    const transformation = fromJson([
+      {
+        actionType: 'quality',
+        level: 'autoGood'
+      }
+    ]);
+
+    expect(transformation.toString()).toStrictEqual('q_auto:good');
+  });
+
+  it('quality:auto:low', () => {
+    const transformation = fromJson([
+      {
+        actionType: 'quality',
+        level: 'autoLow'
+      }
+    ]);
+
+    expect(transformation.toString()).toStrictEqual('q_auto:low');
+  });
+
+  it('quality:jpegminiHigh', () => {
+    const transformation = fromJson([
+      {
+        actionType: 'quality',
+        level: 'jpegminiHigh'
+      }
+    ]);
+
+    expect(transformation.toString()).toStrictEqual('q_jpegmini:1');
+  });
+
+  it('quality:jpegminiMedium', () => {
+    const transformation = fromJson([
+      {
+        actionType: 'quality',
+        level: 'jpegminiMedium'
+      }
+    ]);
+
+    expect(transformation.toString()).toStrictEqual('q_jpegmini:2');
+  });
+
+  it('quality:jpegminiBest', () => {
+    const transformation = fromJson([
+      {
+        actionType: 'quality',
+        level: 'jpegminiBest'
+      }
+    ]);
+
+    expect(transformation.toString()).toStrictEqual('q_jpegmini:0');
+  });
+
   it('chromaSubSampling', () => {
     const transformation = fromJson([
       {
