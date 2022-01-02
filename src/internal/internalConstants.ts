@@ -110,6 +110,12 @@ export const ACTION_TYPE_TO_EFFECT_MODE_MAP: Record<string, string> = {
 
 export const ACTION_TYPE_TO_QUALITY_MODE_MAP: Record<string, string> = {
   autoBest: 'auto:best',
+  autoEco: 'auto:eco',
+  autoGood: 'auto:good',
+  autoLow: 'auto:low',
+  jpegminiHigh: 'jpegmini:1',
+  jpegminiMedium: 'jpegmini:2',
+  jpegminiBest: 'jpegmini:0'
 };
 
 export const CHROMA_VALUE_TO_CHROMA_MODEL_ENUM: Record<number, string> = {
