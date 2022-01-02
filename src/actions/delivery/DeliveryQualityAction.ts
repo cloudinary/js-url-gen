@@ -2,7 +2,11 @@ import {QualifierValue} from "../../internal/qualifier/QualifierValue.js";
 import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 import {DeliveryAction} from "./DeliveryAction.js";
 import {IDeliveryQualityModel} from "../../internal/models/IDeliveryActionModel.js";
-import {CHROMA_VALUE_TO_CHROMA_MODEL_ENUM, CHROMA_MODEL_ENUM_TO_CHROMA_VALUE} from "../../internal/internalConstants.js";
+import {
+  CHROMA_VALUE_TO_CHROMA_MODEL_ENUM,
+  CHROMA_MODEL_ENUM_TO_CHROMA_VALUE,
+  ACTION_TYPE_TO_QUALITY_MODE_MAP
+} from "../../internal/internalConstants.js";
 import {IActionModel} from "../../internal/models/IActionModel.js";
 
 
@@ -49,7 +53,8 @@ class DeliveryQualityAction extends DeliveryAction {
 
   static fromJson(actionModel: IActionModel): DeliveryQualityAction {
     const {level, chromaSubSampling, quantization} = (actionModel as IDeliveryQualityModel);
-    const result = new this(level);
+    const levelType = ACTION_TYPE_TO_QUALITY_MODE_MAP[level] || level;
+    const result = new this(levelType);
 
     if (chromaSubSampling){
       //Turn strings like 'CHROMA_420' to 420
