@@ -1,3 +1,17 @@
+1.4.0 / 2022-01-02
+==================
+
+New functionality
+-----------------
+  * Add Support string gravity (#487)
+
+Other changes
+-----------------
+  * Fix fromJson q_auto:best
+  * Fix broken documentation links. (#489)
+  * Add test for video query params (#490)
+  * Fix broken UMD export
+
 1.3.0 / 2021-12-06
 ==================
 
