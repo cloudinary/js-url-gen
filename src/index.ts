@@ -1,3 +1,6 @@
+export {URLConfig} from "./config/URLConfig.js";
+export {CloudConfig} from "./config/CloudConfig.js";
+export {CloudinaryConfig} from "./config/CloudinaryConfig.js";
 export {Transformation} from "./transformation/Transformation.js";
 export {ImageTransformation} from "./transformation/ImageTransformation.js";
 export {VideoTransformation} from "./transformation/VideoTransformation.js";

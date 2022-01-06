@@ -39,5 +39,5 @@ class CloudinaryConfig {
   }
 }
 
-
+export {CloudinaryConfig};
 export default CloudinaryConfig;
