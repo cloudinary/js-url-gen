@@ -85,7 +85,10 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   blur: BlurAction,
   improve: ImproveAction,
   unsharpMask: EffectActionWithStrength,
-  saturation: EffectActionWithLevel
+  saturation: EffectActionWithLevel,
+  contrast: EffectActionWithLevel,
+  brightness: EffectActionWithLevel,
+  gamma: EffectActionWithLevel
 };
 
 /**
