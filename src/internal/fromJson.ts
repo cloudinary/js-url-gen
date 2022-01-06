@@ -39,6 +39,7 @@ import {DeshakeEffectAction} from "../actions/effect/leveled/Deshake.js";
 import {Pixelate} from "../actions/effect/pixelate/Pixelate.js";
 import {BlurAction} from "../actions/effect/blur/Blur.js";
 import {ImproveAction} from "../actions/adjust/ImproveAction.js";
+import {DeliveryDPRAction} from "../actions/delivery/DeliveryDPRAction.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
@@ -85,7 +86,8 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   blur: BlurAction,
   improve: ImproveAction,
   unsharpMask: EffectActionWithStrength,
-  saturation: EffectActionWithLevel
+  saturation: EffectActionWithLevel,
+  dpr: DeliveryDPRAction
 };
 
 /**

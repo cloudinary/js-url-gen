@@ -17,13 +17,24 @@ describe('Delivery.toJson()', () => {
     );
   });
 
-  it('delivery.dpr', () => {
+  it('delivery.dpr auto', () => {
     const transformation = new Transformation()
       .addAction(Delivery.dpr('auto'));
     expect(transformation.toJson()).toStrictEqual([
       {
         actionType: 'dpr',
-        type: 'auto'
+        dpr: 'auto'
+      }
+    ]);
+  });
+
+  it('delivery.dpr number', () => {
+    const transformation = new Transformation()
+      .addAction(Delivery.dpr(2));
+    expect(transformation.toJson()).toStrictEqual([
+      {
+        actionType: 'dpr',
+        dpr: '2.0'
       }
     ]);
   });
