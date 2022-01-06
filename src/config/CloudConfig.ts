@@ -51,5 +51,4 @@ class CloudConfig extends Config implements ICloudConfig {
   }
 }
 
-export {CloudConfig};
 export default CloudConfig;
