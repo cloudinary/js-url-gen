@@ -7,7 +7,7 @@ interface IDeliveryColorSpaceActionModel extends IActionModel{
 }
 
 interface IDprModel extends IActionModel {
-  "type": number | string;
+  "dpr"?: number | string;
 }
 
 interface IDensityModel extends IActionModel {
