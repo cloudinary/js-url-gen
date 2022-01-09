@@ -3,9 +3,11 @@ import {FormatQualifier} from "../../qualifiers/format/FormatQualifier.js";
 import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 import {
   IDefaultImageModel, IDeliveryColorSpaceActionModel, IDeliveryColorSpaceFromICCActionModel,
-  IDeliveryFormatModel, IDeliveryQualityModel, IDensityModel, IDprModel
+  IDeliveryFormatModel, IDeliveryQualityModel, IDensityModel
 } from "../../internal/models/IDeliveryActionModel.js";
-import {DELIVERY_MODE_TO_ACTION_TYPE_MAP} from "../../internal/internalConstants.js";
+import {
+  DELIVERY_MODE_TO_ACTION_TYPE_MAP
+} from "../../internal/internalConstants.js";
 
 /**
  * @description Qualifies the delivery of an asset.
@@ -13,7 +15,7 @@ import {DELIVERY_MODE_TO_ACTION_TYPE_MAP} from "../../internal/internalConstants
  * @extends SDK.Action
  */
 class DeliveryAction extends Action {
-  protected _actionModel: IDeliveryColorSpaceActionModel | IDeliveryColorSpaceFromICCActionModel | IDprModel | IDensityModel | IDefaultImageModel | IDeliveryFormatModel | IDeliveryQualityModel = {};
+  protected _actionModel: IDeliveryColorSpaceActionModel | IDeliveryColorSpaceFromICCActionModel | IDensityModel | IDefaultImageModel | IDeliveryFormatModel | IDeliveryQualityModel = {};
 
   /**
    * @param {string} deliveryKey A generic Delivery Action Key (such as q, f, dn, etc.)
@@ -21,7 +23,7 @@ class DeliveryAction extends Action {
    * @param {string} modelProperty internal model property of the action, for example quality uses `level` while dpr uses `density`
    * @see Visit {@link Actions.Delivery|Delivery} for an example
    */
-  constructor(deliveryKey?: string, deliveryType?: FormatQualifier | string|number, modelProperty?: 'level' | 'density' | 'defaultImage' | 'colorSpaceType' | 'formatType' | 'type') {
+  constructor(deliveryKey?: string, deliveryType?: FormatQualifier | string|number, modelProperty?: 'level' | 'density' | 'defaultImage' | 'colorSpaceType' | 'formatType') {
     super();
 
     let deliveryTypeValue;

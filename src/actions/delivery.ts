@@ -9,15 +9,15 @@
 import {DeliveryFormatAction} from "./delivery/DeliveryFormatAction.js";
 import {DeliveryQualityAction} from "./delivery/DeliveryQualityAction.js";
 import {FormatQualifier} from "../qualifiers/format/FormatQualifier.js";
-import {toFloatAsString} from "../internal/utils/toFloatAsString.js";
 import {DeliveryColorSpaceFromICCAction} from "./delivery/DeliveryColorSpaceFromICCAction.js";
 import {DeliveryAction} from "./delivery/DeliveryAction.js";
 import {ColorSpaceType} from "../types/types.js";
 import {QualityTypes} from "../types/types.js";
 import {ImageFormatType, VideoFormatType} from "../types/types.js";
 import {DeliveryColorSpaceAction} from "./delivery/DeliveryColorSpaceAction.js";
+import {DeliveryDPRAction} from "./delivery/DeliveryDPRAction.js";
 
-export type IDeliveryAction = DeliveryAction | DeliveryColorSpaceAction | DeliveryColorSpaceFromICCAction;
+export type IDeliveryAction = DeliveryAction | DeliveryColorSpaceAction | DeliveryColorSpaceFromICCAction | DeliveryDPRAction;
 
 /**
  * @summary action
@@ -62,9 +62,8 @@ function format(format:FormatQualifier | ImageFormatType | VideoFormatType | str
  *  dpr('2.0'),
  * );
  */
-function dpr(dpr: string|number):DeliveryAction {
-  // toFloatAsString is used to ensure 1 turns into 1.0
-  return new DeliveryAction('dpr', toFloatAsString(dpr), 'type');
+function dpr(dpr: string|number):DeliveryDPRAction {
+  return new DeliveryDPRAction(dpr);
 }
 
 /**

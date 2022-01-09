@@ -1,8 +1,4 @@
 import {fromJson} from "../../../src/internal/fromJson";
-import {Transformation} from "../../../src";
-import {Delivery} from "../../../src/actions/delivery";
-import {Quality} from "../../../src/qualifiers/quality";
-import {ChromaSubSampling} from "../../../src/qualifiers/chromaSubSampling";
 
 describe('delivery.fromJson', () => {
   it('should generate a transformation string from colorSpace action', function () {
@@ -166,5 +162,13 @@ describe('delivery.fromJson', () => {
     ]);
 
     expect(transformation.toString()).toStrictEqual('q_75:420');
+  });
+
+  it('dpr', () => {
+    const transformation = fromJson([
+      { actionType: 'dpr', dpr: 'auto'},
+      { actionType: 'dpr', dpr: 2},
+    ]);
+    expect(transformation.toString()).toStrictEqual('dpr_auto/dpr_2.0');
   });
 });
