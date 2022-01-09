@@ -35,4 +35,37 @@ describe('Adjust toJson()', () => {
       }
     ]);
   });
+
+  it('adjust.contrast', () => {
+    const transformation = new Transformation()
+      .addAction(Adjust.contrast().level(50));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'contrast',
+        level: 50
+      }
+    ]);
+  });
+
+  it('adjust.brightness', () => {
+    const transformation = new Transformation()
+      .addAction(Adjust.brightness().level(40));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'brightness',
+        level: 40
+      }
+    ]);
+  });
+
+  it('adjust.gamma', () => {
+    const transformation = new Transformation()
+      .addAction(Adjust.gamma().level(40));
+    expect(transformation.toJson()).toStrictEqual( [
+      {
+        actionType: 'gamma',
+        level: 40
+      }
+    ]);
+  });
 });
