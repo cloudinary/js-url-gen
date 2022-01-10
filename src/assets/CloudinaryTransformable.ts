@@ -1,30 +1,30 @@
-import {BorderAction} from "../actions/border.js";
-import {IReshape} from "../actions/reshape.js";
-import {ResizeSimpleAction} from "../actions/resize/ResizeSimpleAction.js";
+import { BorderAction } from "../actions/border.js";
+import { IReshape } from "../actions/reshape.js";
+import { ResizeSimpleAction } from "../actions/resize/ResizeSimpleAction.js";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction.js";
-import {LayerAction} from "../actions/layer/LayerAction.js";
+import { LayerAction } from "../actions/layer/LayerAction.js";
 import VariableAction from "../actions/variable/VariableAction.js";
-import {ConditionalAction} from "../actions/conditional.js";
-import {Action} from "../internal/Action.js";
+import { ConditionalAction } from "../actions/conditional.js";
+import { Action } from "../internal/Action.js";
 import RotateAction from "../actions/rotate/RotateAction.js";
-import {NamedTransformationAction} from "../actions/namedTransformation/NamedTransformationAction.js";
-import {SystemColors} from "../qualifiers/color.js";
-import {ExtractAction} from "../actions/extract.js";
-import {SmartObjectAction} from "../actions/psdTools/SmartObjectAction.js";
-import {ClipAction} from "../actions/psdTools/ClipAction.js";
-import {GetLayerAction} from "../actions/psdTools/GetLayerAction.js";
-import {FlagQualifier} from "../qualifiers/flag/FlagQualifier.js";
+import { NamedTransformationAction } from "../actions/namedTransformation/NamedTransformationAction.js";
+import { SystemColors } from "../qualifiers/color.js";
+import { ExtractAction } from "../actions/extract.js";
+import { SmartObjectAction } from "../actions/psdTools/SmartObjectAction.js";
+import { ClipAction } from "../actions/psdTools/ClipAction.js";
+import { GetLayerAction } from "../actions/psdTools/GetLayerAction.js";
+import { FlagQualifier } from "../qualifiers/flag/FlagQualifier.js";
 import CustomFunctionAction from "../actions/customFunction/CustomFunctionAction.js";
-import {EffectActions} from "../actions/effect.js";
-import {CloudinaryFile} from "./CloudinaryFile.js";
-import {Transformation} from "../transformation/Transformation.js";
+import { EffectActions } from "../actions/effect.js";
+import { CloudinaryFile } from "./CloudinaryFile.js";
+import { Transformation } from "../transformation/Transformation.js";
 import IURLConfig from "../config/interfaces/Config/IURLConfig.js";
 import ICloudConfig from "../config/interfaces/Config/ICloudConfig.js";
-import {IDeliveryAction} from "../actions/delivery.js";
-import {IAdjustAction} from "../actions/adjust.js";
-import {ITrackedPropertiesThroughAnalytics} from "../sdkAnalytics/interfaces/ITrackedPropertiesThroughAnalytics.js";
-import {AnimatedAction} from "../actions/animated.js";
-import {DeliveryFormatAction} from "../actions/delivery/DeliveryFormatAction.js";
+import { IDeliveryAction } from "../actions/delivery.js";
+import { IAdjustAction } from "../actions/adjust.js";
+import { ITrackedPropertiesThroughAnalytics } from "../sdkAnalytics/interfaces/ITrackedPropertiesThroughAnalytics.js";
+import { AnimatedAction } from "../actions/animated.js";
+import { DeliveryFormatAction } from "../actions/delivery/DeliveryFormatAction.js";
 
 /**
  * @desc Cloudinary Transformable interface, extended by any class that needs a Transformation Interface
@@ -33,7 +33,7 @@ import {DeliveryFormatAction} from "../actions/delivery/DeliveryFormatAction.js"
  */
 class CloudinaryTransformable extends CloudinaryFile {
   public transformation: Transformation;
-  constructor(publicID:string, cloudConfig?: ICloudConfig, urlConfig?: IURLConfig, transformation?: Transformation) {
+  constructor(publicID: string, cloudConfig?: ICloudConfig, urlConfig?: IURLConfig, transformation?: Transformation) {
     /* istanbul ignore next */
     super(publicID, cloudConfig, urlConfig);
     this.transformation = transformation;
@@ -44,7 +44,7 @@ class CloudinaryTransformable extends CloudinaryFile {
    * @param {Actions.Animated} animated
    * @return {this}
    */
-  animated(animated: AnimatedAction): this{
+  animated(animated: AnimatedAction): this {
     this.transformation.animated(animated);
     return this;
   }
@@ -84,7 +84,7 @@ class CloudinaryTransformable extends CloudinaryFile {
    * @param {string|number} quality
    * @return {this}
    */
-  quality(quality: string|number): this {
+  quality(quality: string | number): this {
     this.addAction(new DeliveryFormatAction('q', quality));
     return this;
   }
@@ -140,7 +140,7 @@ class CloudinaryTransformable extends CloudinaryFile {
 
   /**
    * @desc A proxy to {@link SDK.Transformation| Transformation} - Calls the same method contained in this.transformation
-   * @param {Actions.effect} effect
+   * @param {Actions.Effect} effect
    * @return {this}
    */
   effect(effect: EffectActions): this {
@@ -274,9 +274,9 @@ class CloudinaryTransformable extends CloudinaryFile {
     return this;
   }
 
-  toURL(overwriteOptions: {trackedAnalytics?: Partial<ITrackedPropertiesThroughAnalytics>} = {}): string {
+  toURL(overwriteOptions: { trackedAnalytics?: Partial<ITrackedPropertiesThroughAnalytics> } = {}): string {
     return this.createCloudinaryURL(this.transformation, overwriteOptions?.trackedAnalytics);
   }
 }
 
-export {CloudinaryTransformable};
+export { CloudinaryTransformable };

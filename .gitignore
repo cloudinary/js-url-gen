@@ -13,3 +13,4 @@ pcakage-lock.json
 .SIZE_TESTS
 __DOCS__/JSDocTemplate/examples
 devTools/sanity/results.json
+.DS_Store
