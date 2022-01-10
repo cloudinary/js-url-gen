@@ -103,5 +103,4 @@ class URLConfig extends Config implements IURLConfig {
   }
 }
 
-
 export default URLConfig;

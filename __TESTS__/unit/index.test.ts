@@ -1,10 +1,13 @@
 import {
+  CloudConfig,
   CloudinaryImage,
   CloudinaryVideo,
   Transformation,
   Cloudinary,
   Qualifiers,
-  Actions
+  Actions,
+  CloudinaryConfig,
+  URLConfig
 } from '../../src/index';
 
 describe('Ensures index exports correctly', () => {
@@ -15,6 +18,8 @@ describe('Ensures index exports correctly', () => {
     expect(Cloudinary).toBeDefined();
     expect(Qualifiers).toBeDefined();
     expect(Actions).toBeDefined();
+    expect(CloudConfig).toBeDefined();
+    expect(URLConfig).toBeDefined();
+    expect(CloudinaryConfig).toBeDefined();
   });
 });
-
