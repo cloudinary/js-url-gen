@@ -20,7 +20,7 @@ describe('Adjust toJson()', () => {
     expect(transformation.toJson()).toStrictEqual( [
       {
         actionType: 'unsharpMask',
-        level: 10
+        strength: 10
       }
     ]);
   });

@@ -101,7 +101,7 @@ describe('Effect toJson()', () => {
     expect(transformation.toJson()).toStrictEqual( [
       {
         actionType: 'oilPaint',
-        level: 8,
+        strength: 8,
       }
     ]);
   });
@@ -192,7 +192,7 @@ describe('Effect toJson()', () => {
     expect(transformation.toJson()).toStrictEqual( [
       {
         actionType: 'vignette',
-        level: 5,
+        strength: 5,
       }
     ]);
   });

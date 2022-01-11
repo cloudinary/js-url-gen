@@ -7,6 +7,8 @@ import {LeveledEffectAction} from "./LeveledEffectAction.js";
  * @see Visit {@link Actions.Effect|Effect} for an example
  */
 class EffectActionWithStrength extends LeveledEffectAction {
+  LEVEL_NAME = 'strength';
+
   strength(value: number | string): this {
     return this.setLevel(value);
   }
