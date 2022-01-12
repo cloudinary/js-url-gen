@@ -1,15 +1,14 @@
 import {Transformation} from '../../../src';
 import {Concatenate} from "../../../src/qualifiers/concatenate";
-import ConcatenateAction from "../../../src/actions/videoEdit/ConcatenateAction";
+import {VideoEdit} from "../../../src/actions";
 
 describe('concatenate.toJson()', () => {
   it('Concatenate + prepend + duration + transition', () => {
     const transformation = new Transformation()
-      .videoEdit(
-        new ConcatenateAction(Concatenate.videoSource('dog'))
-          .prepend()
-          .duration(1)
-          .transition(Concatenate.videoSource('cat'))
+      .videoEdit(VideoEdit.concatenate(Concatenate.videoSource('dog'))
+        .prepend()
+        .duration(1)
+        .transition(Concatenate.videoSource('cat'))
       );
     expect(transformation.toJson()).toStrictEqual([
       {
