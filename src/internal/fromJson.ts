@@ -6,7 +6,7 @@ import {IActionModel} from "./models/IActionModel.js";
 import {Action} from "./Action.js";
 import {IErrorObject} from "./models/IErrorObject.js";
 import {createUnsupportedError} from "./utils/unsupportedError.js";
-import {IHasFromJson} from "./models/IHasFromJson.js";
+import {IHasFromJson, ITransformationFromJson} from "./models/IHasFromJson.js";
 import {ResizeMinimumFitAction} from "../actions/resize/ResizeMinimumFitAction.js";
 import {ResizeCropAction} from "../actions/resize/ResizeCropAction.js";
 import {ResizeFillAction} from "../actions/resize/ResizeFillAction.js";
@@ -40,6 +40,7 @@ import {Pixelate} from "../actions/effect/pixelate/Pixelate.js";
 import {BlurAction} from "../actions/effect/blur/Blur.js";
 import {ImproveAction} from "../actions/adjust/ImproveAction.js";
 import {DeliveryDPRAction} from "../actions/delivery/DeliveryDPRAction.js";
+import ConcatenateAction from "../actions/videoEdit/ConcatenateAction.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
@@ -90,7 +91,8 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   dpr: DeliveryDPRAction,
   contrast: EffectActionWithLevel,
   brightness: EffectActionWithLevel,
-  gamma: EffectActionWithLevel
+  gamma: EffectActionWithLevel,
+  concatenate: ConcatenateAction
 };
 
 /**
@@ -105,7 +107,7 @@ function actions(actionModels: IActionModel[]): Action[] {
       throw createUnsupportedError(`unsupported action ${actionModel.actionType}`);
     }
 
-    return actionClass.fromJson(actionModel);
+    return actionClass.fromJson(actionModel, fromJson as ITransformationFromJson);
   });
 }
 
