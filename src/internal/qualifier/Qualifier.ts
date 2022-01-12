@@ -1,5 +1,5 @@
 import {QualifierValue} from './QualifierValue.js';
-import {QualifierModel} from './QualifierModel.js';
+import {QualifierModel} from '../models/QualifierModel.js';
 
 /**
  * @summary SDK

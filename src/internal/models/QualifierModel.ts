@@ -6,8 +6,6 @@ export class QualifierModel{
   toJson = qualifierToJson;
 
   constructor() {
-    this._qualifierModel = {
-      qualifierType: this.constructor.name
-    };
+    this._qualifierModel = {};
   }
 }

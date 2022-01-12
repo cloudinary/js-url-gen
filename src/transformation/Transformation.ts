@@ -294,7 +294,6 @@ class Transformation {
    * @param {videoEditType} action
    * @return {this}
    */
-
   videoEdit(action: videoEditType): this {
     return this.addAction(action);
   }

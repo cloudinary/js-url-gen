@@ -1,8 +1,6 @@
 import {Transformation} from "../../transformation/Transformation.js";
 import {ImageTransformation} from "../../transformation/ImageTransformation.js";
-import {qualifierToJson} from "../../internal/models/qualifierToJson.js";
-import {ISourceModel} from "../../internal/models/ISourceModel.js";
-import {QualifierModel} from "../../internal/qualifier/QualifierModel.js";
+import {QualifierModel} from "../../internal/models/QualifierModel.js";
 
 
 /**
