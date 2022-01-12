@@ -2,18 +2,14 @@ import {FlagQualifier} from "../qualifiers/flag/FlagQualifier.js";
 import {Qualifier} from "./qualifier/Qualifier.js";
 import {mapToSortedArray} from "./utils/dataStructureUtils.js";
 import {FlagTypes} from "../types/types.js";
-import {IActionModel} from "./models/IActionModel.js";
-import {IErrorObject} from "./models/IErrorObject.js";
-import {createUnsupportedError} from "./utils/unsupportedError.js";
+import {ActionModel} from "./models/ActionModel.js";
 
 /**
  * @summary SDK
  * @memberOf SDK
  * @description Defines the category of transformation to perform.
  */
-class Action {
-  protected _actionModel: IActionModel = {}; // Action model representation
-
+class Action extends ActionModel {
   // We're using map, to overwrite existing keys. for example:
   // addParam(w_100).addQualifier(w_200) should result in w_200. and not w_100,w_200
   qualifiers: Map<string, Qualifier> = new Map();
@@ -23,7 +19,8 @@ class Action {
   // So flags are stored separately until the very end because of that reason
   flags: FlagQualifier[] = [];
   private delimiter = ','; // {qualifier}{delimiter}{qualifier} for example: `${'w_100'}${','}${'c_fill'}`
-  protected prepareQualifiers():void {}
+  protected prepareQualifiers(): void {}
+
   private actionTag = ''; // A custom name tag to identify this action in the future
 
   /**
@@ -38,7 +35,7 @@ class Action {
    * @description Sets the custom name tag for this action
    * @return {this}
    */
-  setActionTag(tag:string): this {
+  setActionTag(tag: string): this {
     this.actionTag = tag;
     return this;
   }
@@ -96,15 +93,7 @@ class Action {
     return this;
   }
 
-  toJson(): IActionModel | IErrorObject{
-    if (this._actionModel.actionType){
-      return this._actionModel;
-    }
-
-    return {error: createUnsupportedError(`unsupported action ${this.constructor.name}`)};
-  }
-
-  protected addValueToQualifier(qualifierKey: string, qualifierValue: any): this{
+  protected addValueToQualifier(qualifierKey: string, qualifierValue: any): this {
     this.qualifiers.get(qualifierKey).addValue(qualifierValue);
 
     return this;

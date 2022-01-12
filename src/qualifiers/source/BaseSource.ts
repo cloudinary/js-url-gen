@@ -1,12 +1,13 @@
 import {Transformation} from "../../transformation/Transformation.js";
 import {ImageTransformation} from "../../transformation/ImageTransformation.js";
+import {QualifierModel} from "../../internal/models/QualifierModel.js";
 
 
 /**
  * @memberOf Qualifiers.Source
  * @description An abstract class extended by all Source objects
  */
-abstract class BaseSource {
+abstract class BaseSource extends QualifierModel{
   protected _transformation:Transformation;
 
   /**
@@ -25,6 +26,7 @@ abstract class BaseSource {
    * @returns {this}
    */
   transformation(t: ImageTransformation): this {
+    this._qualifierModel.transformation = t.toJson();
     this._transformation = t;
     return this;
   }
