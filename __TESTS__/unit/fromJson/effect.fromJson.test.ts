@@ -2,7 +2,7 @@ import {fromJson} from "../../../src/internal/fromJson";
 
 describe('effect.fromJson', () => {
   it('should generate a url with resize actions from array of models', function () {
-    const transformation = fromJson([
+    const transformation = fromJson({actions:[
       { actionType: 'sepia' },
       { actionType: 'boomerang' },
       { actionType: 'grayscale' },
@@ -31,7 +31,7 @@ describe('effect.fromJson', () => {
       { actionType: 'deshake', pixels: 16 },
       { actionType: 'pixelate', squareSize: 15, region: { RegionType: 'faces' }},
       { actionType: 'blur', strength: 5 }
-    ]);
+    ]});
 
     expect(transformation.toString()).toStrictEqual([
       'e_sepia',

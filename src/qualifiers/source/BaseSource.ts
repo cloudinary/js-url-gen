@@ -5,6 +5,7 @@ import {QualifierModel} from "../../internal/models/QualifierModel.js";
 
 /**
  * @memberOf Qualifiers.Source
+ * @extends {QualifierModel}
  * @description An abstract class extended by all Source objects
  */
 abstract class BaseSource extends QualifierModel{

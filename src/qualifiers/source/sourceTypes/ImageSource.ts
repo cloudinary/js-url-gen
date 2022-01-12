@@ -1,5 +1,7 @@
 import {BaseSource} from "../BaseSource.js";
 import {FormatQualifier} from "../../format/FormatQualifier.js";
+import {IImageSourceModel} from "../../../internal/models/IImageSourceModel.js";
+import {IQualifierToJson} from "../../../internal/models/qualifierToJson.js";
 
 /**
  * @memberOf Qualifiers.Source
@@ -11,7 +13,7 @@ import {FormatQualifier} from "../../format/FormatQualifier.js";
  *     This class is used as a Qualifier for the asset.overlay() and asset.underlay() methods.</br>
  *     You can find regular images and videos transformations below:
  *   </div>
-  *   <ul>
+ *   <ul>
  *     <li>{@link SDK.ImageTransformation| Image Transformations}</li>
  *     <li>{@link SDK.VideoTransformation| Video Transformations}
  *   </ul>
@@ -24,6 +26,11 @@ class ImageSource extends BaseSource {
   constructor(publicID: string) {
     super();
     this._publicID = publicID;
+    this._qualifierModel = {
+      qualifierType: 'ImageSource',
+      publicId: publicID,
+      sourceType: 'image'
+    };
   }
 
   /**
@@ -51,6 +58,15 @@ class ImageSource extends BaseSource {
   format(format: FormatQualifier): this {
     this._format = format;
     return this;
+  }
+
+  toJson(): IQualifierToJson{
+    const result = super.toJson() as unknown as IImageSourceModel;
+    if (result.publicId && this._format){
+      result.publicId = `${result.publicId}.${this._format.toString()}`;
+    }
+
+    return result as unknown as IQualifierToJson;
   }
 }
 

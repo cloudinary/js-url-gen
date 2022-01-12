@@ -3,10 +3,10 @@ import {createUnsupportedError} from "../../../src/internal/utils/unsupportedErr
 
 describe('fromJson', () => {
   it('should generate an error for array that includes an unsupported action', function () {
-    const transformation = fromJson([
+    const transformation = fromJson({actions:[
       {actionType: 'unsupported', dimensions: {width: 100}},
       {actionType: 'scale', dimensions: {height: 200}, relative: true}
-    ]);
+    ]});
 
     expect(transformation).toStrictEqual({error: createUnsupportedError('unsupported action unsupported')});
   });

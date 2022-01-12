@@ -14,7 +14,7 @@ describe('concatenate.fromJson', () => {
       duration: 1
     };
 
-    const transformation = fromJson([concatenateModel]);
+    const transformation = fromJson({actions:[concatenateModel]});
 
     expect(transformation.toString()).toStrictEqual('du_1,fl_splice,l_video:dog/fl_layer_apply,so_0');
   });
@@ -36,7 +36,7 @@ describe('concatenate.fromJson', () => {
       }
     };
 
-    const transformation = fromJson([concatenateModel]);
+    const transformation = fromJson({actions:[concatenateModel]});
 
     expect(transformation.toString()).toStrictEqual('du_1,l_video:dog/e_transition,l_video:cat/fl_layer_apply/fl_layer_apply,so_0');
   });
