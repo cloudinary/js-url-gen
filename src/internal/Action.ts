@@ -3,8 +3,7 @@ import {Qualifier} from "./qualifier/Qualifier.js";
 import {mapToSortedArray} from "./utils/dataStructureUtils.js";
 import {FlagTypes} from "../types/types.js";
 import {IActionModel} from "./models/IActionModel.js";
-import {IErrorObject} from "./models/IErrorObject.js";
-import {createUnsupportedError} from "./utils/unsupportedError.js";
+import {actionToJson} from "./models/actionToJson.js";
 
 /**
  * @summary SDK
@@ -25,6 +24,11 @@ class Action {
   private delimiter = ','; // {qualifier}{delimiter}{qualifier} for example: `${'w_100'}${','}${'c_fill'}`
   protected prepareQualifiers():void {}
   private actionTag = ''; // A custom name tag to identify this action in the future
+
+  /**
+   * Returns this action's model
+   */
+  toJson = actionToJson;
 
   /**
    * @description Returns the custom name tag that was given to this action
@@ -94,14 +98,6 @@ class Action {
     }
 
     return this;
-  }
-
-  toJson(): IActionModel | IErrorObject{
-    if (this._actionModel.actionType){
-      return this._actionModel;
-    }
-
-    return {error: createUnsupportedError(`unsupported action ${this.constructor.name}`)};
   }
 
   protected addValueToQualifier(qualifierKey: string, qualifierValue: any): this{

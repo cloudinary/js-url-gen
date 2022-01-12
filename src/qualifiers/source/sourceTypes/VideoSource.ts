@@ -24,6 +24,8 @@ class VideoSource extends BaseSource {
   constructor(publicID: string) {
     super();
     this._publicID = publicID;
+    this._qualifierModel.publicId = publicID;
+    this._qualifierModel.sourceType = 'video';
   }
 
   /**

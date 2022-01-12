@@ -6,6 +6,7 @@ import {FetchSource} from "../../qualifiers/source/sourceTypes/FetchSource.js";
 import {IActionModel} from "../../internal/models/IActionModel.js";
 import {IConcatenateActionModel} from "../../internal/models/IConcatenateActionModel.js";
 import {ITransformationFromJson} from "../../internal/models/IHasFromJson.js";
+import {IVideoSourceModel} from "../../internal/models/IVideoSourceModel.js";
 
 /**
  * @description Class for Concatenating another video.
@@ -31,7 +32,7 @@ class ConcatenateAction extends Action {
     super();
     this._actionModel = {
       actionType: 'concatenate',
-      source: { sourceType: 'video' }
+      source: source.toJson() as IVideoSourceModel
     };
 
     this.concatSource = source;
@@ -43,6 +44,7 @@ class ConcatenateAction extends Action {
    * @return {this}
    */
   transition(source: VideoSource): this {
+    this._actionModel.transition = source.toJson() as IVideoSourceModel;
     this._transition = source;
     return this;
   }
@@ -52,6 +54,7 @@ class ConcatenateAction extends Action {
    * @return {this}
    */
   prepend(): this {
+    this._actionModel.prepend = true;
     this._prepend = true;
     return this;
   }
@@ -62,6 +65,7 @@ class ConcatenateAction extends Action {
    * @return {this}
    */
   duration(sec: number): this {
+    this._actionModel.duration = sec;
     this._duration = sec;
     return this;
   }
