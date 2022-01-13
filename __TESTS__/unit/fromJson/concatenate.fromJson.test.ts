@@ -25,7 +25,12 @@ describe('concatenate.fromJson', () => {
       source: {
         qualifierType: 'VideoSource',
         sourceType: 'video',
-        publicId: 'dog'
+        publicId: 'dog',
+        transformation: {
+          actions: [
+            {actionType: 'scale', dimensions: {width: 100, aspectRatio: 7}}
+          ]
+        }
       },
       prepend: true,
       duration: 1,
@@ -37,8 +42,7 @@ describe('concatenate.fromJson', () => {
     };
 
     const transformation = fromJson({actions: [concatenateModel]});
-
-    expect(transformation.toString()).toStrictEqual('du_1,l_video:dog/e_transition,l_video:cat/fl_layer_apply/fl_layer_apply,so_0');
+    expect(transformation.toString()).toStrictEqual('du_1,l_video:dog/ar_7.0,c_scale,w_100/e_transition,l_video:cat/fl_layer_apply/fl_layer_apply,so_0');
   });
 
   it('Should generate ConcatenateAction with ImageSource and transition from model', () => {
@@ -47,7 +51,12 @@ describe('concatenate.fromJson', () => {
       source: {
         qualifierType: 'ImageSource',
         sourceType: 'image',
-        publicId: 'dog'
+        publicId: 'dog',
+        transformation: {
+          actions: [
+            {actionType: 'scale', dimensions: {width: 100, aspectRatio: 7}}
+          ]
+        }
       },
       prepend: true,
       duration: 1,
@@ -60,7 +69,7 @@ describe('concatenate.fromJson', () => {
 
     const transformation = fromJson({actions: [concatenateModel]});
 
-    expect(transformation.toString()).toStrictEqual('du_1,l_dog/e_transition,l_video:cat/fl_layer_apply/fl_layer_apply,so_0');
+    expect(transformation.toString()).toStrictEqual('du_1,l_dog/ar_7.0,c_scale,w_100/e_transition,l_video:cat/fl_layer_apply/fl_layer_apply,so_0');
   });
 
   it('Should generate ConcatenateAction with FetchSource and transition from model', () => {
