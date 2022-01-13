@@ -1,5 +1,4 @@
 export interface IQualifierModel {
-  qualifierType?: string;
   [x: string]: unknown;
 }
 
@@ -9,5 +8,5 @@ export interface IQualifierModel {
  */
 export function isIQualifierModel(obj: unknown): obj is IQualifierModel{
   const qualifierModel = obj as IQualifierModel;
-  return ('qualifierType' in qualifierModel);
+  return ('' in qualifierModel);
 }

@@ -6,7 +6,6 @@ describe('concatenate.fromJson', () => {
     const concatenateModel: IConcatenateActionModel = {
       actionType: 'concatenate',
       source: {
-        qualifierType: 'VideoSource',
         sourceType: 'video',
         publicId: 'dog'
       },
@@ -23,7 +22,6 @@ describe('concatenate.fromJson', () => {
     const concatenateModel: IConcatenateActionModel = {
       actionType: 'concatenate',
       source: {
-        qualifierType: 'VideoSource',
         sourceType: 'video',
         publicId: 'dog',
         transformation: {
@@ -35,7 +33,7 @@ describe('concatenate.fromJson', () => {
       prepend: true,
       duration: 1,
       transition: {
-        qualifierType: 'VideoSource',
+
         sourceType: 'video',
         publicId: 'cat'
       }
@@ -49,7 +47,6 @@ describe('concatenate.fromJson', () => {
     const concatenateModel: IConcatenateActionModel = {
       actionType: 'concatenate',
       source: {
-        qualifierType: 'ImageSource',
         sourceType: 'image',
         publicId: 'dog',
         transformation: {
@@ -61,7 +58,7 @@ describe('concatenate.fromJson', () => {
       prepend: true,
       duration: 1,
       transition: {
-        qualifierType: 'VideoSource',
+
         sourceType: 'video',
         publicId: 'cat'
       }
@@ -76,15 +73,14 @@ describe('concatenate.fromJson', () => {
     const concatenateModel: IConcatenateActionModel = {
       actionType: 'concatenate',
       source: {
-        qualifierType: 'FetchSource',
-        sourceType: 'text',
+        sourceType: 'fetch',
         url: 'https://example.com',
         format: 'jpg'
       },
       prepend: true,
       duration: 1,
       transition: {
-        qualifierType: 'VideoSource',
+
         sourceType: 'video',
         publicId: 'cat'
       }

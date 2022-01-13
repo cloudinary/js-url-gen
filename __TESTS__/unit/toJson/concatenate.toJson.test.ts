@@ -15,14 +15,13 @@ describe('concatenate.toJson()', () => {
       {
         actionType: 'concatenate',
         source: {
-          qualifierType: 'VideoSource',
           sourceType: 'video',
           publicId: 'dog'
         },
         prepend: true,
         duration: 1,
         transition: {
-          qualifierType: 'VideoSource',
+
           sourceType: 'video',
           publicId: 'cat'
         }
@@ -41,14 +40,12 @@ describe('concatenate.toJson()', () => {
       {
         actionType: 'concatenate',
         source: {
-          qualifierType: 'ImageSource',
           sourceType: 'image',
           publicId: 'dog.jpg'
         },
         prepend: true,
         duration: 1,
         transition: {
-          qualifierType: 'VideoSource',
           sourceType: 'video',
           publicId: 'cat'
         }

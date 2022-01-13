@@ -25,7 +25,6 @@ class VideoSource extends BaseSource {
     super();
     this._publicID = publicID;
     this._qualifierModel = {
-      qualifierType: 'VideoSource',
       publicId: publicID,
       sourceType: 'video'
     };

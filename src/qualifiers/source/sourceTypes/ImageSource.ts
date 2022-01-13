@@ -28,7 +28,6 @@ class ImageSource extends BaseSource {
     super();
     this._publicID = publicID;
     this._qualifierModel = {
-      qualifierType: 'ImageSource',
       publicId: publicID,
       sourceType: 'image'
     };
