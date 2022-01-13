@@ -2,7 +2,7 @@ import {fromJson} from "../../../src/internal/fromJson";
 import {scale} from "../../../src/actions/resize";
 import {Transformation} from '../../../src';
 import {IResizeAdvancedActionModel} from "../../../src/internal/models/IResizeAdvancedActionModel";
-import {ITransformationModel} from "../../../dist/internal/models/ITransformationModel";
+import {ITransformationModel} from "../../../src/internal/models/ITransformationModel";
 
 describe('resize.fromJson', () => {
   it('should generate a url with resize actions from array of models', function () {
