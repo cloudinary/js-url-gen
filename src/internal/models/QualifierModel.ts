@@ -1,11 +1,14 @@
-import {IQualifierModel} from "../models/IQualifierModel.js";
-import {qualifierToJson} from "../models/qualifierToJson.js";
+import {IQualifierModel} from "./IQualifierModel.js";
+import {IQualifierToJson, qualifierToJson} from "./qualifierToJson.js";
 
-export class QualifierModel{
-  _qualifierModel: IQualifierModel;
-  toJson = qualifierToJson;
+export class QualifierModel {
+  protected _qualifierModel: IQualifierModel;
 
   constructor() {
     this._qualifierModel = {};
+  }
+
+  toJson(): IQualifierToJson {
+    return qualifierToJson.apply(this);
   }
 }

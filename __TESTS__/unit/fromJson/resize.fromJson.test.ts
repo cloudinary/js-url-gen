@@ -1,12 +1,12 @@
 import {fromJson} from "../../../src/internal/fromJson";
 import {scale} from "../../../src/actions/resize";
 import {Transformation} from '../../../src';
-import {IActionModel} from "../../../src/internal/models/IActionModel";
 import {IResizeAdvancedActionModel} from "../../../src/internal/models/IResizeAdvancedActionModel";
+import {ITransformationModel} from "../../../src/internal/models/ITransformationModel";
 
 describe('resize.fromJson', () => {
   it('should generate a url with resize actions from array of models', function () {
-    const transformation = fromJson([
+    const transformation = fromJson({actions:[
       {actionType: 'scale', dimensions: {width: 100, aspectRatio: 7}},
       {actionType: 'fit', dimensions: {height: 200, aspectRatio: '16:9'}, relative: true},
       {actionType: 'limitFit', dimensions: {height: 200, aspectRatio: 'ignore_aspect_ratio'}, relative: true},
@@ -44,7 +44,7 @@ describe('resize.fromJson', () => {
           }
         }
       }
-    ]);
+    ]});
 
     expect(transformation.toString()).toStrictEqual([
       'ar_7.0,c_scale,w_100',
@@ -65,58 +65,58 @@ describe('resize.fromJson', () => {
 
   it('Should get original action when doing .toJson().fromJson()', ()=>{
     const transformation = new Transformation().addAction(scale('1.0'));
-    const json = transformation.toJson() as IActionModel[];
+    const json = transformation.toJson() as unknown as ITransformationModel;
 
-    expect((json[0] as IResizeAdvancedActionModel).dimensions.width).toStrictEqual('1.0');
+    expect((json.actions[0] as IResizeAdvancedActionModel).dimensions.width).toStrictEqual('1.0');
     expect(transformation.toString()).toStrictEqual('c_scale,w_1.0');
     expect(transformation).toMatchObject(fromJson(json));
     expect(transformation.toString()).toStrictEqual(fromJson(json).toString());
   });
 
   it('Should generate AutoBackground from model', ()=>{
-    const transformation = fromJson([
+    const transformation = fromJson({actions: [
       {actionType: 'pad', dimensions: {width: 100}, background: {backgroundType: 'auto'}},
-    ]);
+    ]});
 
     expect(transformation.toString()).toStrictEqual('b_auto,c_pad,w_100');
   });
 
   it('Should generate ColorBackground from model', ()=>{
-    const transformation = fromJson([
+    const transformation = fromJson({actions:[
       {actionType: 'pad', dimensions: {width: 100}, background: {backgroundType: 'color', color: 'red'}},
-    ]);
+    ]});
 
     expect(transformation.toString()).toStrictEqual('b_red,c_pad,w_100');
   });
 
   it('Should generate BorderBackground from model', ()=>{
-    const transformation = fromJson([
+    const transformation = fromJson({actions:[
       {actionType: 'pad', dimensions: {width: 100}, background: {backgroundType: 'border', contrast: true, palette: ['red', 'blue']}},
-    ]);
+    ]});
 
     expect(transformation.toString()).toStrictEqual('b_auto:border_contrast:palette_red_blue,c_pad,w_100');
   });
 
   it('Should generate BorderGradientBackground from model', ()=>{
-    const transformation = fromJson([
+    const transformation = fromJson({actions:[
       {actionType: 'pad', dimensions: {width: 100}, background: {backgroundType: 'borderGradient', contrast: true, palette: ['red', 'blue'], gradientColors: 4, gradientDirection: 'diagonal_desc'}},
-    ]);
+    ]});
 
     expect(transformation.toString()).toStrictEqual('b_auto:border_gradient_contrast:4:diagonal_desc:palette_red_blue,c_pad,w_100');
   });
 
   it('Should generate PredominantBackground from model', ()=>{
-    const transformation = fromJson([
+    const transformation = fromJson({actions: [
       {actionType: 'pad', dimensions: {width: 100}, background: {backgroundType: 'predominant', contrast: true, palette: ['red', 'blue']}},
-    ]);
+    ]});
 
     expect(transformation.toString()).toStrictEqual('b_auto:predominant_contrast:palette_red_blue,c_pad,w_100');
   });
 
   it('Should generate PredominantGradientBackground from model', ()=>{
-    const transformation = fromJson([
+    const transformation = fromJson({actions: [
       {actionType: 'pad', dimensions: {width: 100}, background: {backgroundType: 'predominantGradient', contrast: true, palette: ['red', 'blue'], gradientColors: 4, gradientDirection: 'diagonal_desc'}},
-    ]);
+    ]});
 
     expect(transformation.toString()).toStrictEqual('b_auto:predominant_gradient_contrast:4:diagonal_desc:palette_red_blue,c_pad,w_100');
   });

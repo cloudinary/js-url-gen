@@ -10,14 +10,16 @@ describe('resize.toJson()', () => {
   it('scale', () => {
     const transformation = new Transformation()
       .addAction(Resize.scale(200));
-    expect(transformation.toJson()).toStrictEqual([
-      {
-        "actionType": "scale",
-        "dimensions": {
-          "width": 200
+    expect(transformation.toJson()).toStrictEqual({
+      actions: [
+        {
+          "actionType": "scale",
+          "dimensions": {
+            "width": 200
+          }
         }
-      }
-    ]);
+      ]
+    });
   });
 
   it('scale.fit.limitFit.minimumFit.crop.fill.limitFill.thumbnail.pad.limitPad.minimumPad', () => {
@@ -34,131 +36,133 @@ describe('resize.toJson()', () => {
       .addAction(Resize.limitPad(100).gravity('south').offsetX(3).offsetY(4))
       .addAction(Resize.minimumPad(100).gravity('south').offsetX(3).offsetY(4))
       .addAction(Resize.fill(100, 200).gravity(Gravity.focusOn(FocusOn.ocr())));
-    expect(transformation.toJson()).toStrictEqual([
-      {
-        "actionType": "scale",
-        "dimensions": {
-          "aspectRatio": "7.0",
-          "width": 200
+    expect(transformation.toJson()).toStrictEqual({
+      actions: [
+        {
+          "actionType": "scale",
+          "dimensions": {
+            "aspectRatio": "7.0",
+            "width": 200
+          }
+        },
+        {
+          "actionType": "fit",
+          "dimensions": {
+            "aspectRatio": "16:9",
+            "height": 200,
+            "width": 100
+          }
+        },
+        {
+          "actionType": "limitFit",
+          "dimensions": {
+            "aspectRatio": "16:9",
+            "width": 100
+          }
+        },
+        {
+          "actionType": "minimumFit",
+          "dimensions": {
+            "aspectRatio": "ignore_aspect_ratio",
+            "width": 100
+          }
+        },
+        {
+          "actionType": "crop",
+          "dimensions": {
+            "width": 100
+          },
+          x: 3,
+          y: 4,
+          gravity: {
+            compass: "north_east",
+            gravityType: "direction"
+          },
+          zoom: 10
+        },
+        {
+          "actionType": "fill",
+          "dimensions": {
+            "width": 200
+          },
+          x: 3,
+          y: 4,
+          gravity: {
+            compass: "south",
+            gravityType: "direction"
+          }
+        },
+        {
+          "actionType": "limitFill",
+          "dimensions": {
+            "width": 200
+          },
+          x: 3,
+          y: 4,
+          gravity: {
+            compass: "south",
+            gravityType: "direction"
+          }
+        },
+        {
+          "actionType": "thumbnail",
+          "dimensions": {
+            "width": 100
+          },
+          gravity: {
+            compass: "south",
+            gravityType: "direction"
+          },
+          zoom: 4
+        },
+        {
+          "actionType": "pad",
+          "dimensions": {
+            "width": 100
+          },
+          gravity: {
+            compass: "south",
+            gravityType: "direction"
+          },
+          x: 3,
+          y: 4
+        },
+        {
+          "actionType": "limitPad",
+          "dimensions": {
+            "width": 100
+          },
+          gravity: {
+            compass: "south",
+            gravityType: "direction"
+          },
+          x: 3,
+          y: 4
+        },
+        {
+          "actionType": "minimumPad",
+          "dimensions": {
+            "width": 100
+          },
+          gravity: {
+            compass: "south",
+            gravityType: "direction"
+          },
+          x: 3,
+          y: 4
+        },
+        {
+          actionType: "fill",
+          dimensions: {
+            height: 200,
+            width: 100,
+          },
+          gravity: {
+            gravityType: "ocr",
+          },
         }
-      },
-      {
-        "actionType": "fit",
-        "dimensions": {
-          "aspectRatio": "16:9",
-          "height": 200,
-          "width": 100
-        }
-      },
-      {
-        "actionType": "limitFit",
-        "dimensions": {
-          "aspectRatio": "16:9",
-          "width": 100
-        }
-      },
-      {
-        "actionType": "minimumFit",
-        "dimensions": {
-          "aspectRatio": "ignore_aspect_ratio",
-          "width": 100
-        }
-      },
-      {
-        "actionType": "crop",
-        "dimensions": {
-          "width": 100
-        },
-        x: 3,
-        y: 4,
-        gravity: {
-          compass: "north_east",
-          gravityType: "direction"
-        },
-        zoom: 10
-      },
-      {
-        "actionType": "fill",
-        "dimensions": {
-          "width": 200
-        },
-        x: 3,
-        y: 4,
-        gravity: {
-          compass: "south",
-          gravityType: "direction"
-        }
-      },
-      {
-        "actionType": "limitFill",
-        "dimensions": {
-          "width": 200
-        },
-        x: 3,
-        y: 4,
-        gravity: {
-          compass: "south",
-          gravityType: "direction"
-        }
-      },
-      {
-        "actionType": "thumbnail",
-        "dimensions": {
-          "width": 100
-        },
-        gravity: {
-          compass: "south",
-          gravityType: "direction"
-        },
-        zoom: 4
-      },
-      {
-        "actionType": "pad",
-        "dimensions": {
-          "width": 100
-        },
-        gravity: {
-          compass: "south",
-          gravityType: "direction"
-        },
-        x: 3,
-        y: 4
-      },
-      {
-        "actionType": "limitPad",
-        "dimensions": {
-          "width": 100
-        },
-        gravity: {
-          compass: "south",
-          gravityType: "direction"
-        },
-        x: 3,
-        y: 4
-      },
-      {
-        "actionType": "minimumPad",
-        "dimensions": {
-          "width": 100
-        },
-        gravity: {
-          compass: "south",
-          gravityType: "direction"
-        },
-        x: 3,
-        y: 4
-      },
-      {
-        actionType: "fill",
-        dimensions: {
-          height: 200,
-          width: 100,
-        },
-        gravity: {
-          gravityType: "ocr",
-        },
-      }
-    ]);
+      ]
+    });
   });
 
   it('should generate auto gravity model', () => {
@@ -168,18 +172,20 @@ describe('resize.toJson()', () => {
 
     const model = transformation.toJson();
 
-    expect(model).toStrictEqual([
-      {
-        actionType: "fill",
-        dimensions: {width: 100, height: 100},
-        gravity: {
-          gravityType: 'auto',
-          autoFocus: [
-            {object: "face"}
-          ]
+    expect(model).toStrictEqual({
+      actions: [
+        {
+          actionType: "fill",
+          dimensions: {width: 100, height: 100},
+          gravity: {
+            gravityType: 'auto',
+            autoFocus: [
+              {object: "face"}
+            ]
+          }
         }
-      }
-    ]);
+      ]
+    });
   });
 
   it('should generate auto gravity model', () => {
@@ -192,20 +198,22 @@ describe('resize.toJson()', () => {
 
     const model = transformation.toJson();
 
-    expect(model).toStrictEqual([
-      {
-        actionType: "crop",
-        dimensions: {width: 200},
-        gravity: {
-          gravityType: 'auto',
-          autoFocus: [
-            {object: "person", weight: 100},
-            {object: "cat", avoid: true},
-            {object: "face", avoid: true}
-          ]
+    expect(model).toStrictEqual({
+      actions: [
+        {
+          actionType: "crop",
+          dimensions: {width: 200},
+          gravity: {
+            gravityType: 'auto',
+            autoFocus: [
+              {object: "person", weight: 100},
+              {object: "cat", avoid: true},
+              {object: "face", avoid: true}
+            ]
+          }
         }
-      }
-    ]);
+      ]
+    });
   });
 
   it('should generate focusOnGravity model', () => {
@@ -220,23 +228,25 @@ describe('resize.toJson()', () => {
 
     const model = transformation.toJson();
 
-    expect(model).toStrictEqual([
-      {
-        actionType: 'crop',
-        dimensions: {width: 200},
-        gravity: {
-          gravityType: 'object',
-          focusOnObjects: ['cat', 'dog'],
-          fallbackGravity: {
-            gravityType: 'auto',
-            autoFocus: [
-              {object: 'microwave', weight: 30},
-              {object: 'bicycle', avoid: true}
-            ]
+    expect(model).toStrictEqual({
+      actions: [
+        {
+          actionType: 'crop',
+          dimensions: {width: 200},
+          gravity: {
+            gravityType: 'object',
+            focusOnObjects: ['cat', 'dog'],
+            fallbackGravity: {
+              gravityType: 'auto',
+              autoFocus: [
+                {object: 'microwave', weight: 30},
+                {object: 'bicycle', avoid: true}
+              ]
+            }
           }
         }
-      }
-    ]);
+      ]
+    });
   });
 
   it('should generate an AutoBackgroundModel', () => {
@@ -245,17 +255,19 @@ describe('resize.toJson()', () => {
 
     const model = transformation.toJson();
 
-    expect(model).toStrictEqual([
-      {
-        actionType: 'pad',
-        dimensions: {
-          width: 200
-        },
-        background: {
-          backgroundType: 'auto'
+    expect(model).toStrictEqual({
+      actions: [
+        {
+          actionType: 'pad',
+          dimensions: {
+            width: 200
+          },
+          background: {
+            backgroundType: 'auto'
+          }
         }
-      }
-    ]);
+      ]
+    });
   });
 
   it('should generate a BlurredBackgroundModel', () => {
@@ -264,19 +276,21 @@ describe('resize.toJson()', () => {
 
     const model = transformation.toJson();
 
-    expect(model).toStrictEqual([
-      {
-        actionType: 'pad',
-        dimensions: {
-          width: 200
-        },
-        background: {
-          backgroundType: 'blurred',
-          brightness: 20,
-          intensity: 10
+    expect(model).toStrictEqual({
+      actions: [
+        {
+          actionType: 'pad',
+          dimensions: {
+            width: 200
+          },
+          background: {
+            backgroundType: 'blurred',
+            brightness: 20,
+            intensity: 10
+          }
         }
-      }
-    ]);
+      ]
+    });
   });
 
   it('should generate a BorderBackgroundModel', () => {
@@ -285,19 +299,21 @@ describe('resize.toJson()', () => {
 
     const model = transformation.toJson();
 
-    expect(model).toStrictEqual([
-      {
-        actionType: 'pad',
-        dimensions: {
-          width: 200
-        },
-        background: {
-          backgroundType: 'border',
-          palette: ['RED', 'GREEN', 'BLUE'],
-          contrast: true
+    expect(model).toStrictEqual({
+      actions: [
+        {
+          actionType: 'pad',
+          dimensions: {
+            width: 200
+          },
+          background: {
+            backgroundType: 'border',
+            palette: ['RED', 'GREEN', 'BLUE'],
+            contrast: true
+          }
         }
-      }
-    ]);
+      ]
+    });
   });
 
   it('should generate a BorderGradientBackgroundModel', () => {
@@ -306,21 +322,23 @@ describe('resize.toJson()', () => {
 
     const model = transformation.toJson();
 
-    expect(model).toStrictEqual([
-      {
-        actionType: 'pad',
-        dimensions: {
-          width: 200
-        },
-        background: {
-          backgroundType: 'borderGradient',
-          palette: ['RED', 'GREEN', 'BLUE'],
-          contrast: true,
-          gradientColors: 2,
-          gradientDirection: 'diagonal_asc'
+    expect(model).toStrictEqual({
+      actions: [
+        {
+          actionType: 'pad',
+          dimensions: {
+            width: 200
+          },
+          background: {
+            backgroundType: 'borderGradient',
+            palette: ['RED', 'GREEN', 'BLUE'],
+            contrast: true,
+            gradientColors: 2,
+            gradientDirection: 'diagonal_asc'
+          }
         }
-      }
-    ]);
+      ]
+    });
   });
 
   it('should generate a PredominantBackgroundModel', () => {
@@ -329,19 +347,21 @@ describe('resize.toJson()', () => {
 
     const model = transformation.toJson();
 
-    expect(model).toStrictEqual([
-      {
-        actionType: 'pad',
-        dimensions: {
-          width: 200
-        },
-        background: {
-          backgroundType: 'predominant',
-          palette: ['RED', 'GREEN', 'BLUE'],
-          contrast: true
+    expect(model).toStrictEqual({
+      actions: [
+        {
+          actionType: 'pad',
+          dimensions: {
+            width: 200
+          },
+          background: {
+            backgroundType: 'predominant',
+            palette: ['RED', 'GREEN', 'BLUE'],
+            contrast: true
+          }
         }
-      }
-    ]);
+      ]
+    });
   });
 
   it('should generate a PredominantGradientBackgroundModel', () => {
@@ -350,21 +370,23 @@ describe('resize.toJson()', () => {
 
     const model = transformation.toJson();
 
-    expect(model).toStrictEqual([
-      {
-        actionType: 'pad',
-        dimensions: {
-          width: 200
-        },
-        background: {
-          backgroundType: 'predominantGradient',
-          palette: ['RED', 'GREEN', 'BLUE'],
-          contrast: true,
-          gradientColors: 2,
-          gradientDirection: 'diagonal_asc'
+    expect(model).toStrictEqual({
+      actions: [
+        {
+          actionType: 'pad',
+          dimensions: {
+            width: 200
+          },
+          background: {
+            backgroundType: 'predominantGradient',
+            palette: ['RED', 'GREEN', 'BLUE'],
+            contrast: true,
+            gradientColors: 2,
+            gradientDirection: 'diagonal_asc'
+          }
         }
-      }
-    ]);
+      ]
+    });
   });
 
   it('should generate a ColorBackgroundModel', () => {
@@ -373,18 +395,20 @@ describe('resize.toJson()', () => {
 
     const model = transformation.toJson();
 
-    expect(model).toStrictEqual([
-      {
-        actionType: 'pad',
-        dimensions: {
-          width: 200
-        },
-        background: {
-          backgroundType: 'color',
-          color: 'red'
+    expect(model).toStrictEqual({
+      actions: [
+        {
+          actionType: 'pad',
+          dimensions: {
+            width: 200
+          },
+          background: {
+            backgroundType: 'color',
+            color: 'red'
+          }
         }
-      }
-    ]);
+      ]
+    });
   });
 
   it('should generate gravity model for string', () => {
@@ -394,29 +418,31 @@ describe('resize.toJson()', () => {
 
     const model = transformation.toJson();
 
-    expect(model).toStrictEqual([
-      {
-        actionType: "fill",
-        dimensions: {
-          width: 200
+    expect(model).toStrictEqual({
+      actions: [
+        {
+          actionType: "fill",
+          dimensions: {
+            width: 200
+          },
+          gravity: {
+            focusOnObjects: ["face"],
+            gravityType: "object"
+          }
         },
-        gravity: {
-          focusOnObjects: ["face"],
-          gravityType: "object"
+        {
+          actionType: "fill",
+          dimensions: {
+            width: 200,
+          },
+          gravity: {
+            gravityType: 'auto',
+            autoFocus: [
+              {object: "face"}
+            ]
+          }
         }
-      },
-      {
-        actionType: "fill",
-        dimensions: {
-          width: 200,
-        },
-        gravity: {
-          gravityType: 'auto',
-          autoFocus: [
-            {object: "face"}
-          ]
-        }
-      }
-    ]);
+      ]
+    });
   });
 });

@@ -2,10 +2,11 @@ import {IActionModel} from "./IActionModel.js";
 import {IErrorObject} from "./IErrorObject.js";
 import {createUnsupportedError} from "../utils/unsupportedError.js";
 
+export type IActionToJson = IActionModel | IErrorObject;
 /**
  * Returns the action's model
  */
-export function actionToJson(): IActionModel | IErrorObject {
+export function actionToJson(): IActionToJson {
   if (this._actionModel && this._actionModel.actionType) {
     return this._actionModel;
   }

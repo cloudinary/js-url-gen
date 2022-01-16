@@ -1,9 +1,8 @@
 import {ISourceModel} from "./ISourceModel.js";
-import {IVideoTransformationModel} from "./IVideoTransformationModel.js";
+import {ITransformationModel} from "./ITransformationModel.js";
 
 export interface IVideoSourceModel extends ISourceModel {
-  qualifierType: "VideoSource";
   sourceType: "video";
   publicId: string;
-  transformation?: IVideoTransformationModel;
+  transformation?: ITransformationModel;
 }

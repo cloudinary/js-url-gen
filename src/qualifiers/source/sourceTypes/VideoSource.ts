@@ -25,7 +25,6 @@ class VideoSource extends BaseSource {
     super();
     this._publicID = publicID;
     this._qualifierModel = {
-      qualifierType: 'VideoSource',
       publicId: publicID,
       sourceType: 'video'
     };
@@ -44,15 +43,14 @@ class VideoSource extends BaseSource {
   }
 
   static fromJson(qualifierModel: IVideoSourceModel, transformationFromJson: ITransformationFromJson): VideoSource {
-    const videoSourceModel = qualifierModel as IVideoSourceModel;
-    const {publicId, transformation} = videoSourceModel;
+    const {publicId, transformation} = qualifierModel;
 
     // We are using this() to allow inheriting classes to use super.fromJson.apply(this, [qualifierModel])
     // This allows the inheriting classes to determine the class to be created
     // @ts-ignore
     const result = new this(publicId);
     if (transformation) {
-      result.transformation(transformationFromJson(transformation.actions));
+      result.transformation(transformationFromJson(transformation));
     }
 
     return result;

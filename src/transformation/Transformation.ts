@@ -27,6 +27,7 @@ import {AnimatedAction} from "../actions/animated.js";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction.js";
 import {IActionModel} from "../internal/models/IActionModel.js";
 import {IErrorObject, isErrorObject} from "../internal/models/IErrorObject.js";
+import {ITransformationModel} from "../internal/models/ITransformationModel.js";
 
 /**
  * @summary SDK
@@ -298,8 +299,8 @@ class Transformation {
     return this.addAction(action);
   }
 
-  toJson(): IActionModel[] | IErrorObject {
-    const result: IActionModel[] = [];
+  toJson(): ITransformationModel | IErrorObject {
+    const actions: IActionModel[] = [];
 
     for (const action of this.actions) {
       const json = action.toJson();
@@ -307,10 +308,10 @@ class Transformation {
         // Fail early and return an IErrorObject
         return json;
       }
-      result.push(json);
+      actions.push(json as IActionModel);
     }
 
-    return result;
+    return {actions};
   }
 }
 

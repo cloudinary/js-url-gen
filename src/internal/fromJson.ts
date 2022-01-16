@@ -41,6 +41,7 @@ import {BlurAction} from "../actions/effect/blur/Blur.js";
 import {ImproveAction} from "../actions/adjust/ImproveAction.js";
 import {DeliveryDPRAction} from "../actions/delivery/DeliveryDPRAction.js";
 import ConcatenateAction from "../actions/videoEdit/ConcatenateAction.js";
+import {ITransformationModel} from "./models/ITransformationModel.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
@@ -107,19 +108,19 @@ function actions(actionModels: IActionModel[]): Action[] {
       throw createUnsupportedError(`unsupported action ${actionModel.actionType}`);
     }
 
-    return actionClass.fromJson(actionModel, fromJson as ITransformationFromJson);
+    return actionClass.fromJson(actionModel, fromJson as unknown as ITransformationFromJson);
   });
 }
 
 /**
  * Return array of action instances represented by given action models.
- * @param actionModels
+ * @param transformationModel
  */
-function fromJson(actionModels: IActionModel[]): Transformation | IErrorObject {
+function fromJson(transformationModel: ITransformationModel ): Transformation | IErrorObject {
   try {
     // Create a new Transformation and add all actions to it
     const transformation = new Transformation();
-    actions(actionModels).forEach((action)=>transformation.addAction(action));
+    actions(transformationModel.actions).forEach((action)=>transformation.addAction(action));
     return transformation;
   } catch (error) {
     return {error};
