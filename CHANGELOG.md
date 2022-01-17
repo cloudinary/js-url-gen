@@ -1,3 +1,21 @@
+1.5.0 / 2022-01-17
+==================
+
+New functionality and features
+------------------------------
+* Add to/fromJson to return object instead of array
+* Add Concatenate to/fromJson() 
+* Add Contrast to/fromJson()
+* Add Brightness to/fromJson()
+* Add Gamma to/fromJson()
+* Add Saturation to/fromJson()
+* Add DPR to/fromJson()
+
+Other Changes
+-------------
+* Fix strength listed as level for toJson of unsharpMask, vignette, oilPaint
+ * Add CloudConfig exports to root level
+
 1.4.2 / 2022-01-06
 ==================
 
