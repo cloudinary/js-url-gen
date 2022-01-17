@@ -42,6 +42,7 @@ import {ImproveAction} from "../actions/adjust/ImproveAction.js";
 import {DeliveryDPRAction} from "../actions/delivery/DeliveryDPRAction.js";
 import ConcatenateAction from "../actions/videoEdit/ConcatenateAction.js";
 import {ITransformationModel} from "./models/ITransformationModel.js";
+import {PreviewAction} from "../actions/videoEdit/PreviewAction.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
@@ -93,7 +94,8 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   contrast: EffectActionWithLevel,
   brightness: EffectActionWithLevel,
   gamma: EffectActionWithLevel,
-  concatenate: ConcatenateAction
+  concatenate: ConcatenateAction,
+  preview: PreviewAction
 };
 
 /**

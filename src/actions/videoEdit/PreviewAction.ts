@@ -1,5 +1,7 @@
 import {Action} from "../../internal/Action.js";
 import {toFloatAsString} from "../../internal/utils/toFloatAsString.js";
+import {IPreviewActionModel} from "../../internal/models/IPreviewActionModel.js";
+import {IActionModel} from "../../internal/models/IActionModel.js";
 
 /**
  * @description Class for creating a preview of a video
@@ -8,12 +10,16 @@ import {toFloatAsString} from "../../internal/utils/toFloatAsString.js";
  * @see Visit {@link Actions.VideoEdit|VideoEdit} for an example
  */
 class PreviewAction extends Action {
+  protected _actionModel: IPreviewActionModel;
   private _minSeg: string | number;
   private _maxSeg: string | number;
   private _duration: string | number;
 
   constructor() {
     super();
+    this._actionModel = {
+      actionType: 'preview'
+    };
   }
 
   /**
@@ -22,6 +28,7 @@ class PreviewAction extends Action {
    * @return {this}
    */
   minimumSegmentDuration(minSegDuration: string | number): this {
+    this._actionModel.minimumSegmentDuration = +minSegDuration;
     this._minSeg = minSegDuration;
     return this;
   }
@@ -32,6 +39,7 @@ class PreviewAction extends Action {
    * @return {this}
    */
   maximumSegments(maxSeg: string | number): this {
+    this._actionModel.maximumSegments = +maxSeg;
     this._maxSeg = maxSeg;
     return this;
   }
@@ -42,6 +50,7 @@ class PreviewAction extends Action {
    * @return {this}
    */
   duration(duration: string | number): this {
+    this._actionModel.duration = +duration;
     this._duration = duration;
     return this;
   }
@@ -53,6 +62,26 @@ class PreviewAction extends Action {
       this._maxSeg && `max_seg_${this._maxSeg}`,
       this._minSeg && `min_seg_dur_${toFloatAsString(this._minSeg)}`
     ].filter((a) => a).join(':');
+  }
+
+  static fromJson(actionModel: IActionModel): PreviewAction {
+    const {duration, maximumSegments, minimumSegmentDuration} = (actionModel as IPreviewActionModel);
+    // We are using this() to allow inheriting classes to use super.fromJson.apply(this, [actionModel])
+    // This allows the inheriting classes to determine the class to be created
+    const result = new this();
+    if (duration != null){
+      result.duration(duration);
+    }
+
+    if (maximumSegments != null){
+      result.maximumSegments(maximumSegments);
+    }
+
+    if (minimumSegmentDuration != null){
+      result.minimumSegmentDuration(minimumSegmentDuration);
+    }
+
+    return result;
   }
 }
 
