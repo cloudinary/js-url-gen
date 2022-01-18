@@ -2,7 +2,11 @@ import {Action} from "../../internal/Action.js";
 import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 import {QualifierValue} from "../../internal/qualifier/QualifierValue.js";
 import {IActionModel} from "../../internal/models/IActionModel.js";
-import {IVolumeActionModel} from "../../internal/models/IVolumeActionModel.js";
+import {
+  IVolumeActionModel,
+  IVolumeByPercentModel,
+  IVolumeValueModel
+} from "../../internal/models/IVolumeActionModel.js";
 
 /**
  * @description Class to Controls the volume of an audio or video file.
@@ -15,16 +19,18 @@ class VolumeAction extends Action {
 
   constructor(volumeValue: string | number) {
     super();
+    let volumeValueModel: unknown = {mode: 'mute'};
+    if (volumeValue !== 'mute') {
+      volumeValueModel = {
+        mode: (`${volumeValue}`.endsWith('db') ? 'decibels' : 'percent'),
+        value: +(`${volumeValue}`.replace('db', ''))
+      };
+    }
 
-    const mode = volumeValue === 'mute' ? 'mute' : (`${volumeValue}`.endsWith('db') ? 'decibels' : 'percent');
     this._actionModel = {
       actionType: 'volume',
-      volumeValue: { mode }
+      volumeValue: volumeValueModel as IVolumeValueModel
     };
-
-    if (mode !== 'mute'){
-      this._actionModel.volumeValue.value = +(`${volumeValue}`.replace('db', ''));
-    }
 
     const qualifierValue = new QualifierValue(['volume', volumeValue]).setDelimiter(':');
     this.addQualifier(new Qualifier('e', qualifierValue));
@@ -33,7 +39,7 @@ class VolumeAction extends Action {
   static fromJson(actionModel: IActionModel): VolumeAction {
     const {volumeValue} = (actionModel as IVolumeActionModel);
     const {mode} = volumeValue;
-    const value = mode === 'mute' ? mode : volumeValue.value;
+    const value = mode === 'mute' ? mode : (volumeValue as IVolumeByPercentModel).value;
     const suffix = (mode === 'mute' || mode === "percent") ? '' : 'db';
 
 
