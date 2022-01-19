@@ -1,3 +1,8 @@
+1.5.1 / 2022-01-19
+==================
+
+* Add to/from json for videoEdit actions: preview, trim & volume
+
 1.5.0 / 2022-01-17
 ==================
 
