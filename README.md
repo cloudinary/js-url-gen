@@ -128,7 +128,7 @@ module.exports = {
 ## Contributions
 - Clone this repository
 - Create a fork
-- Create your changes 
+- Make your changes 
 - Run tests locally `npm run test` 
 - Build project locally `npm run build`
 - Push your changes
