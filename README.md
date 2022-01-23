@@ -46,6 +46,8 @@ This SDK is cross-platform, but only the node versions are worth mentioning
 ### Install using your favorite package manager (yarn, npm)
 ```bash
 npm install @cloudinary/url-gen
+```
+```bash
 yarn add @cloudinary/url-gen 
 ```
 
