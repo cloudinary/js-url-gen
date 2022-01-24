@@ -36,9 +36,9 @@ For the complete documentation, see the [URL-Gen SDK Guide](https://cloudinary.c
 ### Note!
 This SDK is cross-platform, but only the node versions are worth mentioning
 
-| SDK Version   | Node 10    | Node 12  | Node 12  |Node 14   | Node 16  |
-|---------------|------------|----------|----------|----------|----------|
-| 1.0.0 - 1.5.1 | V          | V        | V        | V        | V        |
+| SDK Version   | Node 10    | Node 12  |Node 14   | Node 16  |
+|---------------|------------|----------|----------|----------|
+|  1.x          | V          | V        | V        | V        |
 
 
 
@@ -88,8 +88,8 @@ console.log(myURL);
 ```
 
 ### Generate Image and Video URLs
-    - Use cld.image() to generate image URLs and Transformations
-    - Use cld.video() to generate video URLs and Transformations
+    - Use cld.image() to generate image URLs and transformations
+    - Use cld.video() to generate video URLs and transformations
 
 ### File upload
 This SDK does not provide file upload functionality, however there are [several methods of uploading from the client side](https://cloudinary.com/documentation/javascript_image_and_video_upload).
