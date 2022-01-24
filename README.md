@@ -1,15 +1,15 @@
-Cloudinary URL-GEN SDK
+Cloudinary URL-Gen SDK
 =========================
 [![Build Status](https://api.travis-ci.com/cloudinary/js-url-gen.svg?branch=master)](https://app.travis-ci.com/github/cloudinary/js-url-gen)
 ## About
-The Cloudinary URL-GEN SDK allows you to quickly and easily integrate your application with Cloudinary.
+The Cloudinary URL-Gen SDK allows you to quickly and easily integrate your application with Cloudinary.
 Effortlessly optimize and transform your cloud's assets.
 
 This SDK can also be used with [popular frontend frameworks](https://cloudinary.com/documentation/sdks/js/frontend-frameworks/index.html).
 
 ### Additional documentation
 This Readme provides basic installation and usage information.
-For the complete documentation, see the [URL-Gen SDK Guide](https://cloudinary.com/documentation/javascript_integration) and the [URL-GEN Reference](https://cloudinary.com/documentation/sdks/js/url-gen/index.html).
+For the complete documentation, see the [URL-Gen SDK Guide](https://cloudinary.com/documentation/javascript_integration) and the [URL-Gen Reference](https://cloudinary.com/documentation/sdks/js/url-gen/index.html).
 
 
 ## Table of Contents
