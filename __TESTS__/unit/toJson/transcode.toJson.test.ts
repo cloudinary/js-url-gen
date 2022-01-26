@@ -1,5 +1,6 @@
 import {Transformation} from "../../../src";
 import {Transcode} from "../../../src/actions/transcode";
+import {AudioCodec} from "../../../src/qualifiers/audioCodec";
 
 describe('Transcode toJson()', () => {
   it('transcode.keyframeInterval number', () => {
@@ -76,6 +77,19 @@ describe('Transcode toJson()', () => {
           actionType: 'bitRate',
           bitRate: '500k',
           constant: true
+        }
+      ]
+    });
+  });
+
+  it('transcode.audioCodec', () => {
+    const transformation = new Transformation()
+      .addAction(Transcode.audioCodec(AudioCodec.aac()));
+    expect(transformation.toJson()).toStrictEqual({
+      actions: [
+        {
+          actionType: 'audioCodec',
+          audioCodec: 'aac',
         }
       ]
     });

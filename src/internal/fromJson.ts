@@ -48,6 +48,7 @@ import VolumeAction from "../actions/videoEdit/VolumeAction.js";
 import KeyframeIntervalsAction from "../actions/transcode/KeyframeIntervalsAction.js";
 import FPSAction from "../actions/transcode/FPSAction.js";
 import BitRateAction from "../actions/transcode/BitRateAction.js";
+import AudioCodecAction from "../actions/transcode/AudioCodecAction.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
@@ -105,7 +106,8 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   volume: VolumeAction,
   keyframeInterval: KeyframeIntervalsAction,
   fps: FPSAction,
-  bitRate: BitRateAction
+  bitRate: BitRateAction,
+  audioCodec: AudioCodecAction
 };
 
 /**

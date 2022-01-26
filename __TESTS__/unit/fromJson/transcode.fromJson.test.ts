@@ -8,7 +8,8 @@ describe('transcode.fromJson', () => {
       { actionType: 'fps', fps: {from: 6, to: 8} },
       { actionType: 'fps', fps: {from: 6} },
       {actionType: 'bitRate', bitRate: 6},
-      {actionType: 'bitRate', bitRate: '500k', constant: true}
+      {actionType: 'bitRate', bitRate: '500k', constant: true},
+      {actionType: 'audioCodec', audioCodec: 'aac'}
     ]});
 
     expect(transformation.toString()).toStrictEqual([
@@ -17,7 +18,8 @@ describe('transcode.fromJson', () => {
       'fps_6-8',
       'fps_6-',
       'br_6',
-      'br_500k:constant'
+      'br_500k:constant',
+      'ac_aac'
     ].join('/'));
   });
 });

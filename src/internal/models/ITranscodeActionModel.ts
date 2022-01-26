@@ -17,4 +17,8 @@ interface IBitRateActionModel extends IActionModel {
   constant?: boolean;
 }
 
-export {IKeyframeIntervalsActionModel, IFPSActionModel, IFPSRangeActionModel, IBitRateActionModel};
+interface IAudioCodecAction extends IActionModel{
+  audioCodec?: string;
+}
+
+export {IKeyframeIntervalsActionModel, IFPSActionModel, IFPSRangeActionModel, IBitRateActionModel, IAudioCodecAction};
