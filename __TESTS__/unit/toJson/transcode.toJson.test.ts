@@ -54,4 +54,31 @@ describe('Transcode toJson()', () => {
     });
   });
 
+  it('transcode.bitRate', () => {
+    const transformation = new Transformation()
+      .addAction(Transcode.bitRate('500k'));
+    expect(transformation.toJson()).toStrictEqual({
+      actions: [
+        {
+          actionType: 'bitRate',
+          bitRate: '500k'
+        }
+      ]
+    });
+  });
+
+  it('transcode.bitRate.constant', () => {
+    const transformation = new Transformation()
+      .addAction(Transcode.bitRate('500k').constant());
+    expect(transformation.toJson()).toStrictEqual({
+      actions: [
+        {
+          actionType: 'bitRate',
+          bitRate: '500k',
+          constant: true
+        }
+      ]
+    });
+  });
+
 });

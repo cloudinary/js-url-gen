@@ -47,7 +47,7 @@ import TrimAction from "../actions/videoEdit/TrimAction.js";
 import VolumeAction from "../actions/videoEdit/VolumeAction.js";
 import KeyframeIntervalsAction from "../actions/transcode/KeyframeIntervalsAction.js";
 import FPSAction from "../actions/transcode/FPSAction.js";
-import FPSRangeAction from "../actions/transcode/FPSRangeAction.js";
+import BitRateAction from "../actions/transcode/BitRateAction.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
@@ -104,7 +104,8 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   trimVideo: TrimAction,
   volume: VolumeAction,
   keyframeInterval: KeyframeIntervalsAction,
-  fps: FPSAction || FPSRangeAction
+  fps: FPSAction,
+  bitRate: BitRateAction
 };
 
 /**

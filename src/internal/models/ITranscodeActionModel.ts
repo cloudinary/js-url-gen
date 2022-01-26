@@ -12,4 +12,9 @@ interface IFPSRangeActionModel extends IActionModel{
   fps?: {from: number; to?: number}
 }
 
-export {IKeyframeIntervalsActionModel, IFPSActionModel, IFPSRangeActionModel};
+interface IBitRateActionModel extends IActionModel {
+  bitRate?: number | string;
+  constant?: boolean;
+}
+
+export {IKeyframeIntervalsActionModel, IFPSActionModel, IFPSRangeActionModel, IBitRateActionModel};
