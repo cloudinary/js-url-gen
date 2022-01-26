@@ -15,4 +15,43 @@ describe('Transcode toJson()', () => {
     });
   });
 
+  it('transcode.fps', () => {
+    const transformation = new Transformation()
+      .addAction(Transcode.fps(4));
+    expect(transformation.toJson()).toStrictEqual({
+      actions: [
+        {
+          actionType: 'fps',
+          fps: 4
+        }
+      ]
+    });
+  });
+
+  it('transcode.fpsRange', () => {
+    const transformation = new Transformation()
+      .addAction(Transcode.fpsRange(4, 7));
+    expect(transformation.toJson()).toStrictEqual({
+      actions: [
+        {
+          actionType: 'fps',
+          fps: {from: 4, to: 7}
+        }
+      ]
+    });
+  });
+
+  it('transcode.fpsRange from', () => {
+    const transformation = new Transformation()
+      .addAction(Transcode.fpsRange(4));
+    expect(transformation.toJson()).toStrictEqual({
+      actions: [
+        {
+          actionType: 'fps',
+          fps: {from: 4}
+        }
+      ]
+    });
+  });
+
 });

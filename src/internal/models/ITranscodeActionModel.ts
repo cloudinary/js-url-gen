@@ -4,4 +4,12 @@ interface IKeyframeIntervalsActionModel extends IActionModel{
   interval?: number | string;
 }
 
-export {IKeyframeIntervalsActionModel};
+interface IFPSActionModel extends IActionModel{
+  fps?: number;
+}
+
+interface IFPSRangeActionModel extends IActionModel{
+  fps?: {from: number; to?: number}
+}
+
+export {IKeyframeIntervalsActionModel, IFPSActionModel, IFPSRangeActionModel};
