@@ -90,7 +90,7 @@ Other changes
   * Add package.exports (#433)
   * add js extension to imports (#436)
   * Inject package version during build instead of importing it from package(#434)
-  * Rename JSDOC Reference website to URL-GEN instead of Base (#432)
+  * Rename JSDOC Reference website to URL-Gen instead of Base (#432)
   * Remove dependency on  lodash.clonedeep (#429)
 
 1.0.0-beta.5 / 2021-09-01

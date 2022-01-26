@@ -30,7 +30,7 @@
     "search": true,
     "monospaceLinks": true,
     "systemColor": "#3448C5",
-    "systemName": "Cloudinary URL-GEN (JS)",
+    "systemName": "Cloudinary URL-Gen (JS)",
     "systemLogo": "./__DOCS__/resources/navLogo.png",
     "systemSummary": "@cloudinary/url-gen",
     "favicon": "./__DOCS__/resources/favico.png",
