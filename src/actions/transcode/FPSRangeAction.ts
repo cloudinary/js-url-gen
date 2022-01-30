@@ -1,6 +1,8 @@
 import {Action} from "../../internal/Action.js";
 import {Qualifier} from "../../internal/qualifier/Qualifier.js";
 import {QualifierValue} from "../../internal/qualifier/QualifierValue.js";
+import {IFPSRangeActionModel} from "../../internal/models/ITranscodeActionModel.js";
+import {IActionModel} from "../../internal/models/IActionModel.js";
 
 /**
  * @extends SDK.Action
@@ -15,11 +17,19 @@ import {QualifierValue} from "../../internal/qualifier/QualifierValue.js";
 class FPSRangeAction extends Action {
   private from: number;
   private to: number;
+  protected _actionModel : IFPSRangeActionModel = {};
 
   constructor(from: number, to?: number) {
     super();
     this.from = from;
-    this.to = to;
+    this._actionModel = {
+      actionType: 'fps',
+      fps: {from}
+    };
+    if (to != null) {
+      this.to = to;
+      this._actionModel.fps.to = to;
+    }
   }
 
 

@@ -118,6 +118,14 @@ export const ACTION_TYPE_TO_QUALITY_MODE_MAP: Record<string, string> = {
   jpegminiBest: 'jpegmini:0'
 };
 
+export const ACTION_TYPE_TO_STREAMING_PROFILE_MODE_MAP: Record<string, string> = {
+  fullHd: 'full_hd',
+  fullHdWifi: 'full_hd_wifi',
+  fullHdLean: 'full_hd_lean',
+  hdLean: 'hd_lean'
+
+};
+
 export const CHROMA_VALUE_TO_CHROMA_MODEL_ENUM: Record<number, string> = {
   444: "CHROMA_444",
   420: "CHROMA_420"
@@ -141,3 +149,6 @@ export const DELIVERY_MODE_TO_ACTION_TYPE_MAP = objectFlip(ACTION_TYPE_TO_DELIVE
 export const EFFECT_MODE_TO_ACTION_TYPE_MAP = objectFlip(ACTION_TYPE_TO_EFFECT_MODE_MAP);
 
 export const QUALITY_MODE_TO_ACTION_TYPE_MAP = objectFlip(ACTION_TYPE_TO_QUALITY_MODE_MAP);
+
+export const STREAMING_PROFILE_TO_ACTION_TYPE_MAP = objectFlip(ACTION_TYPE_TO_STREAMING_PROFILE_MODE_MAP);
+

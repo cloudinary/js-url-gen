@@ -45,6 +45,13 @@ import {ITransformationModel} from "./models/ITransformationModel.js";
 import {PreviewAction} from "../actions/videoEdit/PreviewAction.js";
 import TrimAction from "../actions/videoEdit/TrimAction.js";
 import VolumeAction from "../actions/videoEdit/VolumeAction.js";
+import KeyframeIntervalsAction from "../actions/transcode/KeyframeIntervalsAction.js";
+import FPSAction from "../actions/transcode/FPSAction.js";
+import BitRateAction from "../actions/transcode/BitRateAction.js";
+import AudioCodecAction from "../actions/transcode/AudioCodecAction.js";
+import AudioFrequencyAction from "../actions/transcode/AudioFrequencyAction.js";
+import StreamingProfileAction from "../actions/transcode/StreamingProfile.js";
+import ToAnimatedAction from "../actions/transcode/ToAnimatedAction.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
@@ -99,7 +106,14 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   concatenate: ConcatenateAction,
   preview: PreviewAction,
   trimVideo: TrimAction,
-  volume: VolumeAction
+  volume: VolumeAction,
+  keyframeInterval: KeyframeIntervalsAction,
+  fps: FPSAction,
+  bitRate: BitRateAction,
+  audioCodec: AudioCodecAction,
+  audioFrequency: AudioFrequencyAction,
+  streamingProfile: StreamingProfileAction,
+  toAnimated: ToAnimatedAction
 };
 
 /**
