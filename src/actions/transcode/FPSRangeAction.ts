@@ -22,16 +22,14 @@ class FPSRangeAction extends Action {
   constructor(from: number, to?: number) {
     super();
     this.from = from;
-    this.to = to;
-
-    this._actionModel.actionType = 'fps';
-
-    if (to === undefined) {
-      this._actionModel.fps = {from: from};
-    } else {
-      this._actionModel.fps = {from: from, to: to};
-    }
-  }
+   this._actionModel = {
+     actionType: 'fps',
+     fps: {from}
+   };
+   if (to != null) {
+     this.to = to;
+     this._actionModel.fps.to = to;
+   }
 
 
   protected prepareQualifiers(): this {
