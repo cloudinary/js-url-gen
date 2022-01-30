@@ -10,7 +10,8 @@ describe('transcode.fromJson', () => {
       {actionType: 'bitRate', bitRate: 6},
       {actionType: 'bitRate', bitRate: '500k', constant: true},
       {actionType: 'audioCodec', audioCodec: 'aac'},
-      {actionType: 'audioFrequency', audioFrequencyType: 'freq8000'}
+      {actionType: 'audioFrequency', audioFrequencyType: 'freq8000'},
+      {actionType: 'streamingProfile', profile: 'fullHd'}
     ]});
 
     expect(transformation.toString()).toStrictEqual([
@@ -21,7 +22,8 @@ describe('transcode.fromJson', () => {
       'br_6',
       'br_500k:constant',
       'ac_aac',
-      'af_8000'
+      'af_8000',
+      'sp_full_hd'
     ].join('/'));
   });
 });

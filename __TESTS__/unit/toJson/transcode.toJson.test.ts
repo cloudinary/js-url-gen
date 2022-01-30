@@ -110,4 +110,17 @@ describe('Transcode toJson()', () => {
     });
   });
 
+  it('transcode.streamingProfile', () => {
+    const transformation = new Transformation()
+      .addAction(Transcode
+        .streamingProfile("full_hd"));
+    expect(transformation.toJson()).toStrictEqual({
+      actions: [
+        {
+          actionType: 'streamingProfile',
+          profile: 'fullHd',
+        }
+      ]
+    });
+  });
 });

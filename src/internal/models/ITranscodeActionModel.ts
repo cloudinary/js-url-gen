@@ -25,4 +25,16 @@ interface IAudioFrequencyActionModel extends IActionModel{
   audioFrequencyType?: string;
 }
 
-export {IKeyframeIntervalsActionModel, IFPSActionModel, IFPSRangeActionModel, IBitRateActionModel, IAudioCodecActionModel, IAudioFrequencyActionModel};
+interface IStreamingProfileActionModel extends IActionModel{
+  profile?: string;
+}
+
+export {
+  IKeyframeIntervalsActionModel,
+  IFPSActionModel,
+  IFPSRangeActionModel,
+  IBitRateActionModel,
+  IAudioCodecActionModel,
+  IAudioFrequencyActionModel,
+  IStreamingProfileActionModel
+};
