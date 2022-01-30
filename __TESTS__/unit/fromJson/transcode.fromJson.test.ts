@@ -11,7 +11,8 @@ describe('transcode.fromJson', () => {
       {actionType: 'bitRate', bitRate: '500k', constant: true},
       {actionType: 'audioCodec', audioCodec: 'aac'},
       {actionType: 'audioFrequency', audioFrequencyType: 'freq8000'},
-      {actionType: 'streamingProfile', profile: 'fullHd'}
+      {actionType: 'streamingProfile', profile: 'fullHd'},
+      {actionType: 'toAnimated', animatedFormat: 'gif', delay: 20, sampling: '4s'}
     ]});
 
     expect(transformation.toString()).toStrictEqual([
@@ -23,7 +24,8 @@ describe('transcode.fromJson', () => {
       'br_500k:constant',
       'ac_aac',
       'af_8000',
-      'sp_full_hd'
+      'sp_full_hd',
+      'dl_20,f_gif,fl_animated,vs_4s'
     ].join('/'));
   });
 });

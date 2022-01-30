@@ -29,6 +29,12 @@ interface IStreamingProfileActionModel extends IActionModel{
   profile?: string;
 }
 
+interface IToAnimatedActionModel extends IActionModel{
+  animatedFormat?: string;
+  sampling?: string | number;
+  delay?: number;
+}
+
 export {
   IKeyframeIntervalsActionModel,
   IFPSActionModel,
@@ -36,5 +42,6 @@ export {
   IBitRateActionModel,
   IAudioCodecActionModel,
   IAudioFrequencyActionModel,
-  IStreamingProfileActionModel
+  IStreamingProfileActionModel,
+  IToAnimatedActionModel
 };

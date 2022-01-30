@@ -2,6 +2,7 @@ import {Transformation} from "../../../src";
 import {Transcode} from "../../../src/actions/transcode";
 import {AudioCodec} from "../../../src/qualifiers/audioCodec";
 import {AudioFrequency} from "../../../src/qualifiers/audioFrequency";
+import {AnimatedFormat} from "../../../src/qualifiers/animatedFormat";
 
 describe('Transcode toJson()', () => {
   it('transcode.keyframeInterval number', () => {
@@ -119,6 +120,22 @@ describe('Transcode toJson()', () => {
         {
           actionType: 'streamingProfile',
           profile: 'fullHd',
+        }
+      ]
+    });
+  });
+
+  it('transcode.animatedFormat', () => {
+    const transformation = new Transformation()
+      .addAction(Transcode
+        .toAnimated('gif').delay(20).sampling('4s'));
+    expect(transformation.toJson()).toStrictEqual({
+      actions: [
+        {
+          actionType: 'toAnimated',
+          animatedFormat: 'gif',
+          delay: 20,
+          sampling: '4s'
         }
       ]
     });
