@@ -7,6 +7,11 @@ import {Position} from "../../qualifiers/position.js";
 import {BaseSource} from "../../qualifiers/source/BaseSource.js";
 import {BlendModeType} from "../../types/types.js";
 import {Qualifier} from "../../internal/qualifier/Qualifier.js";
+import {IActionModel} from "../../internal/models/IActionModel.js";
+import {IOverlayActionModel} from "../../internal/models/IOverlayActionModel.js";
+import {createSourceFromModel} from "../../internal/models/createSourceFromModel.js";
+import {ImageSource} from "../../qualifiers/source/sourceTypes/ImageSource.js";
+import {ITransformationFromJson} from "../../internal/models/IHasFromJson.js";
 
 
 /**
@@ -126,6 +131,19 @@ class LayerAction extends Action {
       this.source.getTransformation() && this.source.getTransformation().toString(),
       this.closeLayer()
     ].filter((a) => a).join('/');
+  }
+
+  static fromJson(actionModel: IActionModel, transformationFromJson: ITransformationFromJson): LayerAction {
+    const {source, actionType} = (actionModel as IOverlayActionModel);
+    const sourceInstance = createSourceFromModel(source, transformationFromJson) as ImageSource;
+
+    // We are using this() to allow inheriting classes to use super.fromJson.apply(this, [actionModel])
+    // This allows the inheriting classes to determine the class to be created
+    const result = new this(sourceInstance);
+    const layerType = actionType === 'overlay' ? 'l' : 'u';
+    result.setLayerType(layerType);
+
+    return result;
   }
 }
 

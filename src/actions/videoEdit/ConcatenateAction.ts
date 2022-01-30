@@ -7,8 +7,7 @@ import {IActionModel} from "../../internal/models/IActionModel.js";
 import {IConcatenateActionModel} from "../../internal/models/IConcatenateActionModel.js";
 import {ITransformationFromJson} from "../../internal/models/IHasFromJson.js";
 import {IVideoSourceModel} from "../../internal/models/IVideoSourceModel.js";
-import {isIImageSourceModel} from "../../internal/models/IImageSourceModel.js";
-import {isIFetchSourceModel} from "../../internal/models/IFetchSourceModel.js";
+import {createSourceFromModel} from "../../internal/models/createSourceFromModel.js";
 
 /**
  * @description Class for Concatenating another video.
@@ -142,19 +141,10 @@ class ConcatenateAction extends Action {
 
   static fromJson(actionModel: IActionModel, transformationFromJson: ITransformationFromJson): ConcatenateAction {
     const {source, transition, prepend, duration} = (actionModel as IConcatenateActionModel);
+    const sourceInstance = createSourceFromModel(source, transformationFromJson) as ImageSource;
+
     // We are using this() to allow inheriting classes to use super.fromJson.apply(this, [actionModel])
     // This allows the inheriting classes to determine the class to be created
-    // @ts-ignore
-
-    let sourceInstance;
-    if (isIImageSourceModel(source)){
-      sourceInstance = ImageSource.fromJson(source, transformationFromJson);
-    } else if (isIFetchSourceModel(source)){
-      sourceInstance = FetchSource.fromJson(source, transformationFromJson);
-    } else {
-      sourceInstance = VideoSource.fromJson(source as IVideoSourceModel, transformationFromJson);
-    }
-
     const result = new this(sourceInstance);
     if (transition){
       result.transition(VideoSource.fromJson(transition, transformationFromJson));
