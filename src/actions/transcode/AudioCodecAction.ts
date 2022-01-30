@@ -1,6 +1,6 @@
 import {Action} from "../../internal/Action.js";
 import {Qualifier} from "../../internal/qualifier/Qualifier.js";
-import {IAudioCodecAction} from "../../internal/models/ITranscodeActionModel.js";
+import {IAudioCodecActionModel} from "../../internal/models/ITranscodeActionModel.js";
 import {IActionModel} from "../../internal/models/IActionModel.js";
 
 /**
@@ -12,7 +12,7 @@ import {IActionModel} from "../../internal/models/IActionModel.js";
  * @see Visit {@link Actions.Transcode|Transcode} for an example
  */
 class AudioCodecAction extends Action {
-  protected _actionModel : IAudioCodecAction = {actionType: 'audioCodec'};
+  protected _actionModel : IAudioCodecActionModel = {actionType: 'audioCodec'};
   constructor(codec: string) {
     super();
     this.addQualifier(new Qualifier('ac', codec));
@@ -20,7 +20,7 @@ class AudioCodecAction extends Action {
   }
 
   static fromJson(actionModel: IActionModel): AudioCodecAction {
-    const {audioCodec} = (actionModel as IAudioCodecAction);
+    const {audioCodec} = (actionModel as IAudioCodecActionModel);
 
     // We are using this() to allow inheriting classes to use super.fromJson.apply(this, [actionModel])
     // This allows the inheriting classes to determine the class to be created

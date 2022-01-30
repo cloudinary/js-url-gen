@@ -1,6 +1,7 @@
 import {Transformation} from "../../../src";
 import {Transcode} from "../../../src/actions/transcode";
 import {AudioCodec} from "../../../src/qualifiers/audioCodec";
+import {AudioFrequency} from "../../../src/qualifiers/audioFrequency";
 
 describe('Transcode toJson()', () => {
   it('transcode.keyframeInterval number', () => {
@@ -90,6 +91,20 @@ describe('Transcode toJson()', () => {
         {
           actionType: 'audioCodec',
           audioCodec: 'aac',
+        }
+      ]
+    });
+  });
+
+  it('transcode.audioFrequency', () => {
+    const transformation = new Transformation()
+      .addAction(Transcode
+        .audioFrequency('freq8000'));
+    expect(transformation.toJson()).toStrictEqual({
+      actions: [
+        {
+          actionType: 'audioFrequency',
+          audioFrequencyType: 'freq8000',
         }
       ]
     });
