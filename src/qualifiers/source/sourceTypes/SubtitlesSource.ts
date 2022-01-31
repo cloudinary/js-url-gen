@@ -1,5 +1,6 @@
 import {BaseTextSource} from "./BaseTextSource.js";
 import {TextStyle} from "../../textStyle.js";
+import {ISubtitlesSourceModel} from "../../../internal/models/ISubtitlesSourceModel.js";
 
 /**
  * @memberOf Qualifiers.Source
@@ -8,9 +9,14 @@ import {TextStyle} from "../../textStyle.js";
  */
 class SubtitlesSource extends BaseTextSource {
   protected type = 'subtitles'; // used within TextSource for l/u_subtitles:
+  protected _qualifierModel: ISubtitlesSourceModel;
 
   constructor(fileName: string) {
     super(fileName);
+    this._qualifierModel = {
+      sourceType: 'subtitles',
+      publicId: fileName
+    };
   }
 
 
@@ -20,6 +26,8 @@ class SubtitlesSource extends BaseTextSource {
    */
   textStyle(textStyle: TextStyle): this {
     this._textStyle = textStyle;
+    this._qualifierModel.textStyle = textStyle.toJson();
+
     return this;
   }
 

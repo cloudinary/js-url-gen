@@ -7,7 +7,7 @@ export type IActionToJson = IActionModel | IErrorObject;
  * Returns the action's model
  */
 export function actionToJson(): IActionToJson {
-  if (this._actionModel && this._actionModel.actionType) {
+  if (this._actionModel) {
     return this._actionModel;
   }
 

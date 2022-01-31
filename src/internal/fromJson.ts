@@ -102,6 +102,7 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   trimVideo: TrimAction,
   volume: VolumeAction,
   overlay: LayerAction,
+  underlay: LayerAction,
 };
 
 /**
