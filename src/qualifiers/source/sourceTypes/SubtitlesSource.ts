@@ -1,6 +1,7 @@
 import {BaseTextSource} from "./BaseTextSource.js";
 import {TextStyle} from "../../textStyle.js";
 import {ISubtitlesSourceModel} from "../../../internal/models/ISubtitlesSourceModel.js";
+import {ITextStyleModel} from "../../../internal/models/ITextStyleModel.js";
 
 /**
  * @memberOf Qualifiers.Source
@@ -26,7 +27,7 @@ class SubtitlesSource extends BaseTextSource {
    */
   textStyle(textStyle: TextStyle): this {
     this._textStyle = textStyle;
-    this._qualifierModel.textStyle = textStyle.toJson();
+    this._qualifierModel.textStyle = textStyle.toJson() as ITextStyleModel;
 
     return this;
   }
