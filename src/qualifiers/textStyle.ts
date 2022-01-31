@@ -6,6 +6,7 @@ import {FontAntialiasType, FontWeightType, TextAlignmentType, TextDecorationType
 import {ITextStyleModel} from "../internal/models/ITextStyleModel.js";
 import {QualifierModel} from "../internal/models/QualifierModel.js";
 import {solid} from "./textStroke.js";
+import {isISolidStrokeModel} from "../internal/models/IStrokeModel.js";
 
 /**
  * @summary qualifier
@@ -16,7 +17,7 @@ import {solid} from "./textStroke.js";
  * @see {@link Actions.Underlay| The underlay action}
  * @memberOf Qualifiers
  */
-class TextStyle extends QualifierModel{
+class TextStyle extends QualifierModel {
   protected _qualifierModel: ITextStyleModel;
 
   /**
@@ -72,7 +73,7 @@ class TextStyle extends QualifierModel{
    * @param {number} fontSize The font size
    */
   fontSize(fontSize: number | string): this {
-    this._qualifierModel.fontSize = fontSize ;
+    this._qualifierModel.fontSize = fontSize;
     return this;
   }
 
@@ -137,18 +138,25 @@ class TextStyle extends QualifierModel{
   }
 
   toString(): string {
+    const {stroke} = this._qualifierModel;
+
+    let strokeStr = '';
+    if (stroke) {
+      strokeStr = isISolidStrokeModel(stroke) ? `stroke_${solid(stroke.width, stroke.color)}` : 'stroke';
+    }
+
     return [
       `${serializeCloudinaryCharacters(this._qualifierModel.fontFamily)}_${this._qualifierModel.fontSize}`,
       this._qualifierModel.fontWeight !== normalFontWeight() && this._qualifierModel.fontWeight,
       this._qualifierModel.fontStyle !== normalFontStyle() && this._qualifierModel.fontStyle,
       this._qualifierModel.textDecoration !== normalTextDecoration() && this._qualifierModel.textDecoration,
       this._qualifierModel.textAlignment,
-      typeof this._qualifierModel.stroke === 'boolean' ? 'stroke' : `stroke_${solid(this._qualifierModel.stroke.width, this._qualifierModel.stroke.color)}`,
+      strokeStr,
       this._qualifierModel.letterSpacing && `letter_spacing_${this._qualifierModel.letterSpacing}`,
       this._qualifierModel.lineSpacing && `line_spacing_${this._qualifierModel.lineSpacing}`,
       this._qualifierModel.fontAntialias && `antialias_${this._qualifierModel.fontAntialias}`,
       this._qualifierModel.fontHinting && `hinting_${this._qualifierModel.fontHinting}`
-    ].filter( (a) => a).join('_');
+    ].filter((a) => a).join('_');
   }
 }
 
