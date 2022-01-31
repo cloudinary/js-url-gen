@@ -7,7 +7,9 @@ export type IActionToJson = IActionModel | IErrorObject;
  * Returns the action's model
  */
 export function actionToJson(): IActionToJson {
-  if (this._actionModel) {
+  const actionModelIsNotEmpty = this._actionModel && Object.keys(this._actionModel).length;
+
+  if (actionModelIsNotEmpty) {
     return this._actionModel;
   }
 
