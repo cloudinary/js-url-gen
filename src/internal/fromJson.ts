@@ -45,6 +45,7 @@ import {ITransformationModel} from "./models/ITransformationModel.js";
 import {PreviewAction} from "../actions/videoEdit/PreviewAction.js";
 import TrimAction from "../actions/videoEdit/TrimAction.js";
 import VolumeAction from "../actions/videoEdit/VolumeAction.js";
+import {LayerAction} from "../actions/layer/LayerAction.js";
 import KeyframeIntervalsAction from "../actions/transcode/KeyframeIntervalsAction.js";
 import FPSAction from "../actions/transcode/FPSAction.js";
 import BitRateAction from "../actions/transcode/BitRateAction.js";
@@ -107,6 +108,8 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   preview: PreviewAction,
   trimVideo: TrimAction,
   volume: VolumeAction,
+  overlay: LayerAction,
+  underlay: LayerAction,
   keyframeInterval: KeyframeIntervalsAction,
   fps: FPSAction,
   bitRate: BitRateAction,

@@ -3,6 +3,10 @@ import {normal as normalFontStyle} from "./fontStyle.js";
 import {normal as normalTextDecoration} from "./textDecoration.js";
 import {serializeCloudinaryCharacters} from "../internal/utils/serializeCloudinaryCharacters.js";
 import {FontAntialiasType, FontWeightType, TextAlignmentType, TextDecorationType} from "../types/types.js";
+import {ITextStyleModel} from "../internal/models/ITextStyleModel.js";
+import {QualifierModel} from "../internal/models/QualifierModel.js";
+import {solid} from "./textStroke.js";
+import {isISolidStrokeModel} from "../internal/models/IStrokeModel.js";
 
 /**
  * @summary qualifier
@@ -13,37 +17,27 @@ import {FontAntialiasType, FontWeightType, TextAlignmentType, TextDecorationType
  * @see {@link Actions.Underlay| The underlay action}
  * @memberOf Qualifiers
  */
-class TextStyle {
-  private _lineSpacing: number;
-  private _letterSpacing: number;
-  private _fontAntialias: string;
-  private _fontFamily: string;
-  private _fontSize: number | string;
-  private _fontWeight: string;
-  private _fontStyle: string;
-  private _textDecoration: string;
-  private _textAlignment: string;
-  private _stroke: boolean;
-  private _strokeStyle: string;
-  private _fontHinting: string;
+class TextStyle extends QualifierModel {
+  protected _qualifierModel: ITextStyleModel;
 
   /**
    * @param {string} fontFamily The font family
    * @param {number | string} fontSize The font size
    */
   constructor(fontFamily: string, fontSize: string | number) {
+    super();
     if (!fontFamily || !fontSize) {
       throw `You must provide a fontFamily and fontSize to a TextStyle`;
     }
-    this._fontFamily = fontFamily;
-    this._fontSize = fontSize;
+    this._qualifierModel.fontFamily = fontFamily;
+    this._qualifierModel.fontSize = fontSize;
   }
 
   /**
    * @param {number} spacing The spacing between multiple lines in pixels.
    */
   lineSpacing(spacing: number): this {
-    this._lineSpacing = spacing;
+    this._qualifierModel.lineSpacing = spacing;
     return this;
   }
 
@@ -52,7 +46,7 @@ class TextStyle {
    * @param spacing The spacing between the letters, in pixels.
    */
   letterSpacing(spacing: number): this {
-    this._letterSpacing = spacing;
+    this._qualifierModel.letterSpacing = spacing;
     return this;
   }
 
@@ -61,7 +55,7 @@ class TextStyle {
    * @param {FontAntialiasType|string} antiAlias
    */
   fontAntialias(antiAlias: FontAntialiasType | string): this {
-    this._fontAntialias = antiAlias;
+    this._qualifierModel.fontAntialias = antiAlias;
     return this;
   }
 
@@ -71,7 +65,7 @@ class TextStyle {
    * @param {string} fontFamilyName
    */
   fontFamily(fontFamilyName: string): this {
-    this._fontFamily = fontFamilyName;
+    this._qualifierModel.fontFamily = fontFamilyName;
     return this;
   }
 
@@ -79,7 +73,7 @@ class TextStyle {
    * @param {number} fontSize The font size
    */
   fontSize(fontSize: number | string): this {
-    this._fontSize = fontSize ;
+    this._qualifierModel.fontSize = fontSize;
     return this;
   }
 
@@ -87,7 +81,7 @@ class TextStyle {
    * @param {FontWeightType|string} fontWeight The font weight
    */
   fontWeight(fontWeight: FontWeightType | string): this {
-    this._fontWeight = fontWeight;
+    this._qualifierModel.fontWeight = fontWeight;
     return this;
   }
 
@@ -96,7 +90,7 @@ class TextStyle {
    * @param {string} fontStyle The font style.
    */
   fontStyle(fontStyle: 'normal' | 'italic' | string): this {
-    this._fontStyle = fontStyle;
+    this._qualifierModel.fontStyle = fontStyle;
     return this;
   }
 
@@ -104,7 +98,7 @@ class TextStyle {
    * @param {string} fontHinting The outline hinting style to apply to the text. When this parameter is not specified, the default hint style for the font and target device are applied.
    */
   fontHinting(fontHinting: string): this {
-    this._fontHinting = fontHinting;
+    this._qualifierModel.fontHinting = fontHinting;
     return this;
   }
 
@@ -113,7 +107,7 @@ class TextStyle {
    * @param {TextDecorationType|string} textDecoration The font decoration type.
    */
   textDecoration(textDecoration: TextDecorationType | string): this {
-    this._textDecoration = textDecoration;
+    this._qualifierModel.textDecoration = textDecoration;
     return this;
   }
 
@@ -122,7 +116,7 @@ class TextStyle {
    * @param {TextAlignmentType|string} textAlignment The text alignment
    */
   textAlignment(textAlignment: TextAlignmentType | string): this {
-    this._textAlignment = textAlignment;
+    this._qualifierModel.textAlignment = textAlignment;
     return this;
   }
 
@@ -130,27 +124,39 @@ class TextStyle {
    * @description Whether to include an outline stroke. Set the color and weight of the stroke
    */
   stroke(textStroke?: string): this {
-    if(textStroke) {
-      this._strokeStyle = textStroke;
+    if (textStroke) {
+      const strokeStyle = textStroke.split('_');
+      this._qualifierModel.stroke = {
+        width: +(strokeStyle[1].replace('px', '')),
+        color: strokeStyle[strokeStyle.length - 1]
+      };
+    } else {
+      this._qualifierModel.stroke = true;
     }
-    this._stroke = true;
+
     return this;
   }
 
   toString(): string {
+    const {stroke} = this._qualifierModel;
+
+    let strokeStr = '';
+    if (stroke) {
+      strokeStr = isISolidStrokeModel(stroke) ? `stroke_${solid(stroke.width, stroke.color)}` : 'stroke';
+    }
+
     return [
-      `${serializeCloudinaryCharacters(this._fontFamily)}_${this._fontSize}`,
-      this._fontWeight !== normalFontWeight() && this._fontWeight,
-      this._fontStyle !== normalFontStyle() && this._fontStyle,
-      this._textDecoration !== normalTextDecoration() && this._textDecoration,
-      this._textAlignment,
-      this._stroke && 'stroke',
-      this._strokeStyle,
-      this._letterSpacing && `letter_spacing_${this._letterSpacing}`,
-      this._lineSpacing && `line_spacing_${this._lineSpacing}`,
-      this._fontAntialias && `antialias_${this._fontAntialias}`,
-      this._fontHinting && `hinting_${this._fontHinting}`
-    ].filter( (a) => a).join('_');
+      `${serializeCloudinaryCharacters(this._qualifierModel.fontFamily)}_${this._qualifierModel.fontSize}`,
+      this._qualifierModel.fontWeight !== normalFontWeight() && this._qualifierModel.fontWeight,
+      this._qualifierModel.fontStyle !== normalFontStyle() && this._qualifierModel.fontStyle,
+      this._qualifierModel.textDecoration !== normalTextDecoration() && this._qualifierModel.textDecoration,
+      this._qualifierModel.textAlignment,
+      strokeStr,
+      this._qualifierModel.letterSpacing && `letter_spacing_${this._qualifierModel.letterSpacing}`,
+      this._qualifierModel.lineSpacing && `line_spacing_${this._qualifierModel.lineSpacing}`,
+      this._qualifierModel.fontAntialias && `antialias_${this._qualifierModel.fontAntialias}`,
+      this._qualifierModel.fontHinting && `hinting_${this._qualifierModel.fontHinting}`
+    ].filter((a) => a).join('_');
   }
 }
 

@@ -10,6 +10,7 @@ type IAutoGravityString = 'auto' | 'auto:';
 
 export interface IGravityModel {
   gravityType: string;
+  [x: string]: unknown;
 }
 
 export interface ICompassGravityModel extends IGravityModel {

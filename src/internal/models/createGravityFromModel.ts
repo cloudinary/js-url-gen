@@ -11,6 +11,8 @@ import {FocusOnValue, ocr} from "../../qualifiers/focusOn.js";
 import {AutoGravity} from "../../qualifiers/gravity/autoGravity/AutoGravity.js";
 import {AutoFocus} from "../../qualifiers/autoFocus.js";
 import {FocusOnGravity} from "../../qualifiers/gravity/focusOnGravity/FocusOnGravity.js";
+import {CompassGravity} from "../../qualifiers/gravity/compassGravity/CompassGravity.js";
+import {CompassQualifier} from "../../qualifiers/gravity/qualifiers/compass/CompassQualifier.js";
 
 /**
  * Validates that gravityModel is an ICompassGravityModel
@@ -82,7 +84,7 @@ function createFocusOnGravityFromModel(gravityModel: IFocusOnGravityModel): Focu
  */
 function createGravityFromModel(gravityModel: IGravityModel): IGravity {
   if (isCompassGravityModel(gravityModel)) {
-    return gravityModel.compass;
+    return new CompassGravity(new CompassQualifier(gravityModel.compass));
   }
 
   if (isOcrGravityModel(gravityModel)) {

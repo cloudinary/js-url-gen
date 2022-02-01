@@ -28,7 +28,11 @@ class FetchSource extends BaseSource {
 
   constructor(remoteURL: string) {
     super();
-    this._qualifierModel.url = remoteURL;
+    this._qualifierModel = {
+      sourceType: 'fetch',
+      url: remoteURL
+    };
+
     this._remoteURL = remoteURL;
   }
 
@@ -63,7 +67,6 @@ class FetchSource extends BaseSource {
 
     // We are using this() to allow inheriting classes to use super.fromJson.apply(this, [qualifierModel])
     // This allows the inheriting classes to determine the class to be created
-    // @ts-ignore
     const result = new this(url);
     if (transformation) {
       result.transformation(transformationFromJson(transformation));
