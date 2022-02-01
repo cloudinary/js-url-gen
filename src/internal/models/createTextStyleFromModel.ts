@@ -1,6 +1,6 @@
 import {ITextStyleModel} from "./ITextStyleModel.js";
 import {TextStyle} from "../../qualifiers/textStyle.js";
-import {Stroke} from "../../qualifiers.js";
+import {solid} from "../../qualifiers/textStroke.js";
 
 /**
  * Create TextStyle from ITextStyleModel
@@ -49,7 +49,7 @@ export function createTextStyleFromModel(textStyleModel: ITextStyleModel): TextS
   if (stroke) {
     result.stroke();
     if(typeof stroke !== "boolean" ) {
-      result.stroke(Stroke.solid(stroke.width, stroke.color));
+      result.stroke(solid(stroke.width, stroke.color));
     }
   }
 
