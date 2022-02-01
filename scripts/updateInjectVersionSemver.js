@@ -1,4 +1,8 @@
 /* eslint-disable */
+/**
+ * This script updates the file __DOCS__/resources/injectVersionSemver.js.
+ * It needs to run on every docs generation so that we have an updated pacakge version in docs.
+ */
 const fs = require('fs');
 const pkg = require('../package.json');
 
