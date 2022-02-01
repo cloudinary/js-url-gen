@@ -1,5 +1,4 @@
 /* eslint-disable */
-const { execSync } = require('child_process');
 const fs = require('fs');
 const pkg = require('../package.json');
 
@@ -12,10 +11,3 @@ $('.branding-logo').html(content + ' - ${pkg.version}');
 $('.copyright').html('Copyright © ' + new Date().getFullYear()  + ' Cloudinary.com');
 `;
 fs.writeFileSync('__DOCS__/resources/injectVersionSemver.js', data);
-
-execSync(`
-  (cd ./__DOCS__/JSDocTemplate && grunt) && 
-  jsdoc -u ./__DOCS__/examples --configure jsdoc.config.json --verbose --destination public/docs/ && 
-  cp __DOCS__/resources/customStyles.css public/docs/ && 
-  cp __DOCS__/resources/injectVersionSemver.js public/docs/
-`, {stdio: 'inherit'});

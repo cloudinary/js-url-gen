@@ -15,7 +15,7 @@
     "build": "bash ./scripts/build.sh",
     "build:ESM": "tsc --project tsconfig.json --outDir dist --declaration true",
     "build:rollup": "rollup -c",
-    "build:docs": "node ./scripts/buildDocs.js",
+    "build:docs": "bash ./scripts/buildDocs.sh",
     "build:entryPoints": "ts-node ./scripts/createEntrypoints.ts",
     "build:injectPackageVersion": "ts-node ./scripts/injectPackageVersionToDistFiles.ts",
     "build:updatePackageExports": "ts-node scripts/updatePackageJsonExports.ts",
