@@ -10,7 +10,7 @@ import {SimulateColorBlindEffectAction} from "./effect/SimulateColorBlind.js";
 import {EffectActionWithLevel}from "./effect/EffectActions/EffectActionWithLevel.js";
 import {AssistColorBlindEffectAction} from "./effect/AssistColorBlind.js";
 import {GradientFadeEffectAction} from "./effect/GradientFade.js";
-import {FadeoutEffectAction} from "./effect/leveled/FadeOut.js";
+import {FadeOutEffectAction} from "./effect/leveled/FadeOut.js";
 import {ColorizeEffectAction} from "./effect/Colorize.js";
 import {ShadowEffectAction} from "./effect/Shadow.js";
 import {StyleTransfer} from "./effect/StyleTransfer.js";
@@ -253,8 +253,8 @@ function fadeIn(fadeLength?: number):FadeInEffectAction {
  * @param {number} fadeLength The time in ms for the fade to occur. (Server default: 2000)
  * @return {Actions.Effect.FadeoutEffectAction}
  */
-function fadeOut(fadeLength?: number):FadeoutEffectAction {
-  return new FadeoutEffectAction(fadeLength);
+function fadeOut(fadeLength?: number):FadeOutEffectAction {
+  return new FadeOutEffectAction(fadeLength);
 }
 
 
@@ -553,7 +553,7 @@ export declare type EffectActions =
   | Pixelate
   | RemoveBackgroundAction
   | FadeInEffectAction
-  | FadeoutEffectAction
+  | FadeOutEffectAction
 
 
 export {

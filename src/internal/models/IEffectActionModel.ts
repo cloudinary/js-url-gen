@@ -82,7 +82,7 @@ interface IFadeInEffectActionModel extends IActionModel{
   length?: number;
 }
 
-interface IFadeoutEffectActionModel extends IActionModel{
+interface IFadeOutEffectActionModel extends IActionModel{
   length?: number;
 }
 
@@ -103,5 +103,5 @@ export {
   IPixelateModel,
   IBlurModel,
   IFadeInEffectActionModel,
-  IFadeoutEffectActionModel
+  IFadeOutEffectActionModel
 };

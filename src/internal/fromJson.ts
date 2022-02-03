@@ -54,7 +54,7 @@ import AudioFrequencyAction from "../actions/transcode/AudioFrequencyAction.js";
 import StreamingProfileAction from "../actions/transcode/StreamingProfile.js";
 import ToAnimatedAction from "../actions/transcode/ToAnimatedAction.js";
 import {FadeInEffectAction} from "../actions/effect/leveled/FadeIn.js";
-import {FadeoutEffectAction} from "../actions/effect/leveled/FadeOut.js";
+import {FadeOutEffectAction} from "../actions/effect/leveled/FadeOut.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
@@ -120,7 +120,7 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   streamingProfile: StreamingProfileAction,
   toAnimated: ToAnimatedAction,
   fadeIn: FadeInEffectAction,
-  fadeOut: FadeoutEffectAction
+  fadeOut: FadeOutEffectAction
 };
 
 /**
