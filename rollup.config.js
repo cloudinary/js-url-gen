@@ -13,7 +13,7 @@ export default [
       {
         file: 'dist/bundles/umd/base.js',
         format: 'umd',
-        name: 'CloudinaryBaseSDK',
+        name: 'CLD_URL_GEN',
       },
     ],
     plugins: [
