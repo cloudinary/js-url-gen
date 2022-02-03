@@ -1,5 +1,5 @@
 import { cloneDeep } from '../internal/utils/cloneDeep.js';
-import {isObject} from "./utils/isObject.js";
+import { isObject } from "../internal/typeGuards/isObject.js";
 /**
  * Class for defining account configuration options.
  * Depends on 'utils'
@@ -11,8 +11,7 @@ import {isObject} from "./utils/isObject.js";
  * Once a value is set it does not change
  * @function Util.defaults
  * @param {Object} destination - the object to assign defaults to
- * @param sources
- * @param {...Object} source - the source object(s) to assign defaults from
+ * @param {...Object} sources - the source object(s) to assign defaults from
  * @return {Object} destination after it was modified
  */
 const useDefaultValues = (destination:{}, ...sources: object[])=>{

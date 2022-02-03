@@ -5,8 +5,9 @@ import {AutoFocus} from "../../qualifiers/autoFocus.js";
 import {FocusOnGravity} from "../../qualifiers/gravity/focusOnGravity/FocusOnGravity.js";
 import {autoGravity} from "../../qualifiers/gravity.js";
 import {FocusOnValue} from "../../qualifiers/focusOn.js";
+import {isCompassGravity, isAutoGravity, isIAutoGravityString, isOcrGravity} from "../typeGuards/gravityGuards.js";
 
-type IAutoGravityString = 'auto' | 'auto:';
+export type IAutoGravityString = 'auto' | 'auto:';
 
 export interface IGravityModel {
   gravityType: string;
@@ -36,28 +37,10 @@ export interface IFocusOnGravityModel extends IGravityModel {
 }
 
 /**
- * true if gravity starts with 'auto' or 'auto:'
- * @param gravity
- */
-function isIAutoGravityString(gravity: unknown): gravity is IAutoGravityString {
-  return gravity && `${gravity}`.split(':')[0] === 'auto';
-}
-
-/**
- * Validate that given val is an ICompassGravity
- * @param gravity
- */
-function isCompassGravity(gravity: unknown): gravity is CompassGravity {
-  //const gravityString = `${(typeof gravity === "string" ? gravity : gravity.qualifierValue)}`;
-  const gravityValue = getGravityValue(gravity);
-  return ['north', 'center', 'east', 'west', 'south', 'north_west', 'south_east', 'south_west', 'north_east'].includes(gravityValue);
-}
-
-/**
  * Get the value of given gravity
  * @param gravity
  */
-function getGravityValue(gravity: unknown): string {
+export function getGravityValue(gravity: unknown): string {
   return `${gravity}`.replace('g_', '');
 }
 
@@ -73,28 +56,12 @@ function createCompassGravityModel(gravity: CompassGravity): ICompassGravityMode
 }
 
 /**
- * Validate that given gravity is an instance of ocr gravity
- * @param gravity
- */
-function isOcrGravity(gravity: unknown): boolean {
-  return getGravityValue(gravity) === 'ocr_text';
-}
-
-/**
  * Creates an ocr gravity model
  */
 function createOcrGravityModel(): IOcrGravityModel {
   return {
     gravityType: 'ocr'
   };
-}
-
-/**
- * Validate that given gravity is an instance of AutoGravity
- * @param gravity
- */
-function isAutoGravity(gravity: unknown): gravity is AutoGravity {
-  return `${(gravity as AutoGravity).qualifierValue}`.split(':')[0] === 'auto';
 }
 
 /**

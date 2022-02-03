@@ -1,5 +1,5 @@
 import {base64Encode} from "../../internal/utils/base64Encode.js";
-import {isObject} from "../utils/isObject.js";
+import {isObject} from "../../internal/typeGuards/isObject.js";
 
 /**
  * Parse custom_function options

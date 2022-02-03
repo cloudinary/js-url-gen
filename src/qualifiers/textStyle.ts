@@ -6,7 +6,7 @@ import {FontAntialiasType, FontWeightType, TextAlignmentType, TextDecorationType
 import {ITextStyleModel} from "../internal/models/ITextStyleModel.js";
 import {QualifierModel} from "../internal/models/QualifierModel.js";
 import {solid} from "./textStroke.js";
-import {isISolidStrokeModel} from "../internal/models/IStrokeModel.js";
+import {isISolidStrokeModel} from "../internal/typeGuards/isISolidStrokeModel.js";
 
 /**
  * @summary qualifier

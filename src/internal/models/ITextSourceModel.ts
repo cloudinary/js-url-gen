@@ -15,10 +15,3 @@ export interface ITextSourceModel extends IBaseTextSourceModel{
   text: string;
 }
 
-/**
- * Validates that given obj is an IImageSourceModel
- * @param obj
- */
-export function isITextSourceModel(obj: unknown): obj is ITextSourceModel {
-  return obj && (obj as ITextSourceModel).sourceType === 'text';
-}

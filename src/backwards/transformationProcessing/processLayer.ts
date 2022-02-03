@@ -4,7 +4,7 @@
  * @param {object|*} layer The layer to parse.
  * @return {string} layer transformation string
  */
-import {isObject} from "../utils/isObject.js";
+import {isObject} from "../../internal/typeGuards/isObject.js";
 import {base64Encode} from "../../internal/utils/base64Encode.js";
 import {LAYER_KEYWORD_PARAMS} from "../consts.js";
 import {smartEscape} from "../utils/smartEscape.js";

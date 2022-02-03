@@ -1,14 +1,12 @@
 import {ITransformationFromJson} from "./IHasFromJson.js";
-import {isIImageSourceModel} from "./IImageSourceModel.js";
 import {ImageSource} from "../../qualifiers/source/sourceTypes/ImageSource.js";
-import {isIFetchSourceModel} from "./IFetchSourceModel.js";
 import {FetchSource} from "../../qualifiers/source/sourceTypes/FetchSource.js";
 import {VideoSource} from "../../qualifiers/source/sourceTypes/VideoSource.js";
 import {IVideoSourceModel} from "./IVideoSourceModel.js";
 import {ISourceModel} from "./ISourceModel.js";
 import {BaseSource} from "../../qualifiers/source/BaseSource.js";
-import {isITextSourceModel} from "./ITextSourceModel.js";
 import {TextSource} from "../../qualifiers/source/sourceTypes/TextSource.js";
+import {isITextSourceModel, isIFetchSourceModel, isIImageSourceModel} from "../typeGuards/sourceGuards.js";
 
 /**
  * Create Source from given model json

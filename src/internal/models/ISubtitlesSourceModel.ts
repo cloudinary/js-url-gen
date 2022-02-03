@@ -6,11 +6,3 @@ export interface ISubtitlesSourceModel extends IBaseTextSourceModel {
   sourceType: 'subtitles';
   publicId: string;
 }
-
-/**
- * Validates that given obj is an IImageSourceModel
- * @param obj
- */
-export function isISubtitlesSourceModel(obj: unknown): obj is ISubtitlesSourceModel {
-  return obj && (obj as ISubtitlesSourceModel).sourceType === 'subtitles';
-}

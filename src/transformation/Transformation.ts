@@ -26,8 +26,9 @@ import {ITranscodeAction} from "../actions/transcode.js";
 import {AnimatedAction} from "../actions/animated.js";
 import RoundCornersAction from "../actions/roundCorners/RoundCornersAction.js";
 import {IActionModel} from "../internal/models/IActionModel.js";
-import {IErrorObject, isErrorObject} from "../internal/models/IErrorObject.js";
+import {IErrorObject} from "../internal/models/IErrorObject.js";
 import {ITransformationModel} from "../internal/models/ITransformationModel.js";
+import {isErrorObject} from "../internal/typeGuards/isErrorObject.js";
 
 /**
  * @summary SDK

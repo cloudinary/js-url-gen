@@ -5,7 +5,8 @@
   },
   "source": {
     "include": ["src"],
-    "includePattern": ".+\\.ts(doc|x)?$"
+    "includePattern": ".+\\.ts(doc|x)?$",
+    "exclude": ["src/internal/typeGuards"]
   },
   "plugins": [
     "plugins/markdown",

@@ -8,7 +8,7 @@ import Layer from './legacyLayer/layer.js';
 import TextLayer from './legacyLayer/textlayer.js';
 import SubtitlesLayer from './legacyLayer/subtitleslayer.js';
 import FetchLayer from './legacyLayer/fetchlayer.js';
-import {isObject} from "./utils/isObject.js";
+import {isObject} from "../internal/typeGuards/isObject.js";
 import {isString} from "../internal/utils/dataStructureUtils.js";
 import {isEmpty} from "./utils/isEmpty.js";
 import {isFunction} from "./utils/isFunction.js";

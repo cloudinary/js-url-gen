@@ -4,7 +4,7 @@ import {processLayer} from "./transformationProcessing/processLayer.js";
 import {process_if} from "./transformationProcessing/processIf.js";
 import {toArray} from "./utils/toArray.js";
 import {processRadius} from "./transformationProcessing/processRadius.js";
-import {isObject} from "./utils/isObject.js";
+import {isObject} from "../internal/typeGuards/isObject.js";
 import {processCustomFunction} from "./transformationProcessing/processCustomFunction.js";
 import {processCustomPreFunction} from "./transformationProcessing/processCustomPreFunction.js";
 import {splitRange} from "./utils/splitRange.js";
@@ -196,21 +196,15 @@ export function generateTransformationString(transformationOptions: LegacyITrans
 
 
   // Clean up!
-  const urlImageTransfomrations = Object.entries(urlParams)
-    .filter(([key, value]) => {
-      if (typeof value === 'undefined' || value === null) {
-        return false;
-      }
-      if (typeof value === 'string' && value.length === 0) {
-        return false;
-      }
-
-      if (Array.isArray(value) && value.length === 0) {
-        return false
-      }
-
-      return true;
-    })
+  const urlImageTransformations = Object.entries(urlParams)
+    .filter(([key, value]) => (
+      !(
+        typeof value === 'undefined' ||
+        value === null ||
+        (typeof value === 'string' && value.length === 0) ||
+        (Array.isArray(value) && value.length === 0)
+      )
+    ))
     .map(([key, value]) => `${key}_${value}`)
     .sort()
     .join(',');
@@ -218,7 +212,7 @@ export function generateTransformationString(transformationOptions: LegacyITrans
   const finalTransformationString = [
     ifValue,
     variables,
-    urlImageTransfomrations,
+    urlImageTransformations,
     transformationOptions.raw_transformation
   ].filter((a) => a).join(",");
 

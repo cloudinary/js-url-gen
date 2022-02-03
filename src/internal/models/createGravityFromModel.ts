@@ -1,9 +1,8 @@
 import {
   IAutoGravityModel,
   IAutoGravityObjectModel,
-  ICompassGravityModel, IFocusOnGravityModel,
-  IGravityModel,
-  IOcrGravityModel
+  IFocusOnGravityModel,
+  IGravityModel
 } from "./createGravityModel.js";
 import {IGravity} from "../../qualifiers/gravity/GravityQualifier.js";
 import {autoGravity, focusOn} from "../../qualifiers/gravity.js";
@@ -13,30 +12,8 @@ import {AutoFocus} from "../../qualifiers/autoFocus.js";
 import {FocusOnGravity} from "../../qualifiers/gravity/focusOnGravity/FocusOnGravity.js";
 import {CompassGravity} from "../../qualifiers/gravity/compassGravity/CompassGravity.js";
 import {CompassQualifier} from "../../qualifiers/gravity/qualifiers/compass/CompassQualifier.js";
+import {isCompassGravityModel, isOcrGravityModel, isAutoGravityModel} from "../typeGuards/gravityGuards.js";
 
-/**
- * Validates that gravityModel is an ICompassGravityModel
- * @param gravityModel
- */
-function isCompassGravityModel(gravityModel: IGravityModel): gravityModel is ICompassGravityModel {
-  return gravityModel.gravityType === 'direction';
-}
-
-/**
- * Validates that gravityModel is an IOcrGravityModel
- * @param gravityModel
- */
-function isOcrGravityModel(gravityModel: IGravityModel): gravityModel is IOcrGravityModel {
-  return gravityModel.gravityType === 'ocr';
-}
-
-/**
- * Validates that gravityModel is an IAutoGravityModel
- * @param gravityModel
- */
-function isAutoGravityModel(gravityModel: IGravityModel): gravityModel is IAutoGravityModel {
-  return gravityModel.gravityType === 'auto';
-}
 
 /**
  * Create AutoFocus from IAutoGravityObjectModel

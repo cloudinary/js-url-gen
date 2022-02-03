@@ -7,11 +7,3 @@ export interface IFetchSourceModel extends ISourceModel {
   format?: string;
   transformation?: ITransformationModel;
 }
-
-/**
- * Validates that given obj is an IFetchSourceModel
- * @param obj
- */
-export function isIFetchSourceModel(obj: unknown): obj is IFetchSourceModel {
-  return obj && (obj as IFetchSourceModel).sourceType === 'fetch';
-}
