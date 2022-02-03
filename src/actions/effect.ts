@@ -240,7 +240,7 @@ function accelerate(speedIncreasePercent?: number): AccelerationEffectAction {
  * @return {Actions.Effect.FadeInEffectAction}
  */
 function fadeIn(fadeLength?: number):FadeInEffectAction {
-  return new FadeInEffectAction('fade', fadeLength);
+  return new FadeInEffectAction(fadeLength);
 }
 
 
@@ -254,7 +254,7 @@ function fadeIn(fadeLength?: number):FadeInEffectAction {
  * @return {Actions.Effect.FadeoutEffectAction}
  */
 function fadeOut(fadeLength?: number):FadeoutEffectAction {
-  return new FadeoutEffectAction('fade', -fadeLength);
+  return new FadeoutEffectAction(fadeLength);
 }
 
 
@@ -552,6 +552,8 @@ export declare type EffectActions =
   | BlurAction
   | Pixelate
   | RemoveBackgroundAction
+  | FadeInEffectAction
+  | FadeoutEffectAction
 
 
 export {

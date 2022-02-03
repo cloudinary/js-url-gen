@@ -30,7 +30,9 @@ describe('effect.fromJson', () => {
       { actionType: 'simulateColorblind', condition: 'rod_monochromacy' },
       { actionType: 'deshake', pixels: 16 },
       { actionType: 'pixelate', squareSize: 15, region: { RegionType: 'faces' }},
-      { actionType: 'blur', strength: 5 }
+      { actionType: 'blur', strength: 5 },
+      { actionType: 'fadeIn', length: 13 },
+      { actionType: 'fadeOut', length: 13 }
     ]});
 
     expect(transformation.toString()).toStrictEqual([
@@ -61,7 +63,9 @@ describe('effect.fromJson', () => {
       'e_simulate_colorblind:rod_monochromacy',
       'e_deshake:16',
       'e_pixelate_faces:15',
-      'e_blur:5'
+      'e_blur:5',
+      'e_fade:13',
+      'e_fade:-13'
     ].join('/'));
   });
 });
