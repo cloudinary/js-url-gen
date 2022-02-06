@@ -346,4 +346,30 @@ describe('Effect toJson()', () => {
       ]
     });
   });
+
+  it('effect.FadeIn', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.fadeIn(50));
+    expect(transformation.toJson()).toStrictEqual({
+      actions: [
+        {
+          actionType: 'fadeIn',
+          length: 50,
+        }
+      ]
+    });
+  });
+
+  it('effect.FadeOut', () => {
+    const transformation = new Transformation()
+      .addAction(Effect.fadeOut(50));
+    expect(transformation.toJson()).toStrictEqual({
+      actions: [
+        {
+          actionType: 'fadeOut',
+          length: 50,
+        }
+      ]
+    });
+  });
 });

@@ -78,6 +78,14 @@ interface IBlurModel extends IActionModel{
   region?: {RegionType?: string};
 }
 
+interface IFadeInEffectActionModel extends IActionModel{
+  length?: number;
+}
+
+interface IFadeOutEffectActionModel extends IActionModel{
+  length?: number;
+}
+
 export {
   IEffectActionWithLevelModel,
   ISimpleEffectActionModel,
@@ -93,5 +101,7 @@ export {
   ISimulateColorBlindEffectModel,
   IDeshakeEffectModel,
   IPixelateModel,
-  IBlurModel
+  IBlurModel,
+  IFadeInEffectActionModel,
+  IFadeOutEffectActionModel
 };

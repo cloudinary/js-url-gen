@@ -10,7 +10,7 @@ import {SimulateColorBlindEffectAction} from "./effect/SimulateColorBlind.js";
 import {EffectActionWithLevel}from "./effect/EffectActions/EffectActionWithLevel.js";
 import {AssistColorBlindEffectAction} from "./effect/AssistColorBlind.js";
 import {GradientFadeEffectAction} from "./effect/GradientFade.js";
-import {FadeoutEffectAction} from "./effect/leveled/FadeOut.js";
+import {FadeOutEffectAction} from "./effect/leveled/FadeOut.js";
 import {ColorizeEffectAction} from "./effect/Colorize.js";
 import {ShadowEffectAction} from "./effect/Shadow.js";
 import {StyleTransfer} from "./effect/StyleTransfer.js";
@@ -240,7 +240,7 @@ function accelerate(speedIncreasePercent?: number): AccelerationEffectAction {
  * @return {Actions.Effect.FadeInEffectAction}
  */
 function fadeIn(fadeLength?: number):FadeInEffectAction {
-  return new FadeInEffectAction('fade', fadeLength);
+  return new FadeInEffectAction(fadeLength);
 }
 
 
@@ -253,8 +253,8 @@ function fadeIn(fadeLength?: number):FadeInEffectAction {
  * @param {number} fadeLength The time in ms for the fade to occur. (Server default: 2000)
  * @return {Actions.Effect.FadeoutEffectAction}
  */
-function fadeOut(fadeLength?: number):FadeoutEffectAction {
-  return new FadeoutEffectAction('fade', -fadeLength);
+function fadeOut(fadeLength?: number):FadeOutEffectAction {
+  return new FadeOutEffectAction(fadeLength);
 }
 
 
@@ -552,6 +552,8 @@ export declare type EffectActions =
   | BlurAction
   | Pixelate
   | RemoveBackgroundAction
+  | FadeInEffectAction
+  | FadeOutEffectAction
 
 
 export {
