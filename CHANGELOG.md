@@ -1,3 +1,19 @@
+1.6.0 / 2022-02-13
+==================
+
+New Functionality
+-----------------
+* Change library name for mud bundles CldUrlGen
+* Add FadeIn/Out to from/toJson
+* Add Overlay from/toJson Json
+* Add Transcode from/toJson
+
+Other Changes
+---------------
+* Fix textStroke import
+* Fix docs updateInjectVersionSemver.js
+* Fix build:docs script to use bash script
+
 1.5.1 / 2022-01-19
 ==================
 

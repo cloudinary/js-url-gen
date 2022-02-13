@@ -1,6 +1,6 @@
 {
   "name": "@cloudinary/url-gen",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "description": "",
   "scripts": {
     "test": "npm run test:types && npm run build && jest --coverage --reporters default &&  npm run test:size",
@@ -47,7 +47,7 @@
     "@types/webpack": "^4.41.21",
     "@typescript-eslint/eslint-plugin": "^3.0.2",
     "@typescript-eslint/parser": "^3.0.2",
-    "better-docs": "^2.3.0",
+    "better-docs": "2.3.2",
     "bootstrap": "^3.3.7",
     "bundlewatch": "^0.2.6",
     "cheerio": "^0.22.0",
