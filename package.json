@@ -63,7 +63,7 @@
     "grunt-contrib-cssmin": "^2.2.1",
     "grunt-contrib-handlebars": "^1.0.0",
     "grunt-contrib-uglify": "^3.3.0",
-    "grunt-jsdoc": "2.2.0",
+    "grunt-jsdoc": "2.4.1",
     "handlebars": "^4.0.11",
     "handlebars-layouts": "^3.1.4",
     "jest": "^26.0.1",
