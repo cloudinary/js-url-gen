@@ -10,7 +10,7 @@ import {XYCenterGravity} from "./gravity/xyCenterGravity/XYCenterGravity.js";
  * @description Defines the gravity based on directional values from a compass.
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#control_gravity|Control gravity for images}
  * <b>Learn more:</b> {@link https://cloudinary.com/documentation/image_transformations#control_gravity|Control gravity for videos}
- * @param {Qualifiers.Compass} direction A compass Values
+ * @param {Qualifiers.Compass | string} direction A compass Values
  * @memberOf Qualifiers.Gravity
  * @example
  * import {Cloudinary} from "@cloudinary/url-gen";
@@ -23,7 +23,7 @@ import {XYCenterGravity} from "./gravity/xyCenterGravity/XYCenterGravity.js";
  * image.resize(crop().width(300).gravity(compass(north())))
  * @return {CompassGravity}
  */
-function compass(direction: CompassQualifier): CompassGravity {
+function compass(direction: CompassQualifier | string): CompassGravity {
   return new CompassGravity(direction);
 }
 
