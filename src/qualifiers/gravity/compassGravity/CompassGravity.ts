@@ -10,7 +10,7 @@ type ICompassGravity = 'north' | 'center' | 'east' | 'west' | 'south' | 'north_w
  */
 class CompassGravity extends GravityQualifier {
   private type:'gravity';
-  constructor(dir: CompassQualifier) {
+  constructor(dir: CompassQualifier | string) {
     // Required due to https://github.com/microsoft/TypeScript/issues/13029
     /* istanbul ignore next */
     super(dir);

@@ -15,4 +15,8 @@ describe('Tests for Compass Gravity', () => {
     expect(Gravity.compass(Compass.southEast()).toString()).toBe('g_south_east');
     expect(Gravity.compass(Compass.northEast()).toString()).toBe('g_north_east');
   });
+
+  it('Should accept string as input', () => {
+    expect(Gravity.compass('north_west').toString()).toBe('g_north_west');
+  });
 });
