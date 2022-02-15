@@ -34,9 +34,9 @@ For the complete documentation, see the [URL-Gen SDK Guide](https://cloudinary.c
 ## Version Support
 
 ### Note!
-This SDK is cross-platform, but only the node versions are worth mentioning
+This SDK is cross-platform, but only the Node.js versions are worth mentioning
 
-| SDK Version   | Node 10    | Node 12  |Node 14   | Node 16  |
+| SDK Version   | Node.js 10    | Node.js 12  | Node.js 14   | Node.js 16  |
 |---------------|------------|----------|----------|----------|
 |  1.x          | V          | V        | V        | V        |
 
@@ -72,35 +72,43 @@ const cld = new Cloudinary({
 ### Transform and Optimize Assets
 - [See full documentation](https://cloudinary.com/documentation/javascript_image_transformations)
 ```javascript
-// Create a new instance if you haven't
+// Create a new instance if you haven't (see above for the details)
 const cld = new Cloudinary({/*...*/})
 
 // Let's create a new image
 const myImage = cld.image('sample');
+
+// Import the resize transformation and apply it to myImage
 import {Resize} from '@cloudinary/url-gen/actions/resize';
 
+// Resize the image to 100x100
 myImage.resize(Resize.scale().width(100).height(100));
 
 // When we're done, we can apply all our changes and create a URL.
 const myURL = myImage.toURL();
-console.log(myURL);
+
 // https://res.cloudinary.com/demo/image/upload/c_scale,w_100,h_100/sample
+console.log(myURL);
 ```
 
 ### Generate Image and Video URLs
-    - Use cld.image() to generate image URLs and transformations
-    - Use cld.video() to generate video URLs and transformations
+The library supports transformations on both images and videos. Please use the appropriate method, as per below:
+
+    - Use `cld.image()` to generate image URLs and transformations
+    - Use `cld.video()` to generate video URLs and transformations
+
+Both the `image()` and `video()` methods allow you to use `toURL()` to generate the final, transformed asset URL.
 
 ### File upload
 This SDK does not provide file upload functionality, however there are [several methods of uploading from the client side](https://cloudinary.com/documentation/javascript_image_and_video_upload).
 
 ### Transpilation
-@cloudinary/url-gen is shipped as untranspiled ES6 code.
-@cloudinary/url-gen is optimized around bundle size, as such we do not transpile our distributed modules,
+`@cloudinary/url-gen` is shipped as untranspiled ES6 code.
+`@cloudinary/url-gen` is optimized around bundle size, as such we do not transpile our distributed modules,
 we leave the decision of what browsers to support, and what transpilations to apply, to you, the user.
 
 ### Testing with Jest
-As mentioned above, we're shipping @cloudinary/url-gen with ES6 code, as this provides great tree-shaking potential.
+As mentioned above, we're shipping `@cloudinary/url-gen` with ES6 code, as this provides great tree-shaking potential.
 it also requires a few adjustments when testing.
 
 In jest.config, you'll need to add these lines to allow babel to transpile our code.
@@ -115,7 +123,7 @@ In jest.config, you'll need to add these lines to allow babel to transpile our c
 Make sure to install babel-jest:
 `npm install babel-jest`
 
-You'll also need to ensure you have a babel.config.js file (and not a .babelrc), and that
+You'll also need to ensure you have a `babel.config.js` file (and not a `.babelrc`), and that
 it's configured properly to transpile code,
 
 *As an example*:
