@@ -52,7 +52,7 @@ describe('effect.fromJson', () => {
       'e_blackwhite:40',
       'e_accelerate',
       'e_loop:5',
-      'co_red,e_makeTransparent:5',
+      'co_red,e_make_transparent:5',
       'e_noise:50',
       'e_vignette:5',
       'e_dither:9',

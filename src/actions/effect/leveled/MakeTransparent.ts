@@ -5,6 +5,7 @@ import {prepareColor} from "../../../internal/utils/prepareColor.js";
 import {SystemColors} from "../../../qualifiers/color.js";
 import {IMakeTransparentEffectModel} from "../../../internal/models/IEffectActionModel.js";
 import {IActionModel} from "../../../internal/models/IActionModel.js";
+import {ACTION_TYPE_TO_EFFECT_MODE_MAP} from "../../../internal/internalConstants.js";
 
 /**
  * @description Makes the background of the image transparent (or solid white for formats that do not support transparency).
@@ -40,7 +41,7 @@ class MakeTransparentEffectAction extends LeveledEffectAction {
 
     // We are using this() to allow inheriting classes to use super.fromJson.apply(this, [actionModel])
     // This allows the inheriting classes to determine the class to be created
-    const result = new this(actionType, tolerance);
+    const result = new this(ACTION_TYPE_TO_EFFECT_MODE_MAP[actionType], tolerance);
     tolerance && result.tolerance(tolerance);
     color && result.colorToReplace(color);
 
