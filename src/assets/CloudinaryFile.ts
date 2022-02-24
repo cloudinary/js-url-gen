@@ -58,13 +58,15 @@ class CloudinaryFile {
   protected cloudName: string; // populated from the cloud config
   protected apiKey: string; // populated from  the cloud config
   protected apiSecret: string; // populated from the cloud config
-  protected authToken: IAuthTokenConfig; // populated from the cloud config
+  protected authToken: IAuthTokenConfig; // The configuration describing the authToken, used in a node environment to calculate the token
   protected urlConfig: IURLConfig;
 
   private version: number | string;
   private publicID: string;
   private extension: string;
   private signature: string;
+  private signURL: boolean = null; // An internal flag indicating if sign() was called,
+  private explicitAuthToken: string; // A pre-calculated authToken provided externally (is not calculated by the SDK)
   private suffix: string;
   private deliveryType: string; // type upload/private
 
@@ -86,7 +88,7 @@ class CloudinaryFile {
 
   /**
    * @description Sets the Cloud Config for this asset
-   * @param urlConfig
+   * @param cloudConfig
    * @return {this}
    */
   setCloudConfig(cloudConfig: ICloudConfig): this {
@@ -139,6 +141,14 @@ class CloudinaryFile {
   }
 
   /**
+   * Sets the __cld_token__ value for the authToken signature
+   * @param token
+   */
+  setExplicitAuthToken(token: string) {
+    this.explicitAuthToken = token;
+  }
+
+  /**
    * @description Sets the version of the asset.
    * @param {string} newVersion The version of the asset.
    * @return {this}
@@ -162,7 +172,8 @@ class CloudinaryFile {
     return this;
   }
 
-  sign(): this {
+  sign(val = true): this {
+    this.signURL = val;
     return this;
   }
 
@@ -189,6 +200,13 @@ class CloudinaryFile {
 
     if (suffixContainsDot || suffixContainsSlash) {
       throw '`suffix`` should not include . or /';
+    }
+
+    // If the user requested to sign the URL, but the signature is empty, we throw
+    if (this.signURL) {
+      if (!this?.authToken && !this.signature && !this.explicitAuthToken) {
+        throw 'Validation error - sign() was called but no signature or authToken were provided';
+      }
     }
   }
 
@@ -237,11 +255,70 @@ class CloudinaryFile {
   }
 
 
+  /**
+   * Gets the signature of the URL
+   * This function returns the signature only when sign() was called and there's no authToken set.
+   */
   getSignature(): string {
-    if (this.signature) {
+    if (!this.signURL) { return; } // was sign() called? if not, skip this function
+    if (this?.authToken?.acl) { return; } // Do we have an auth token config set with acl? if so, skip this function
+    if (this.explicitAuthToken) { return; } // Do we have an explicit authToken set? if so, skip this function
+
+    if (this.signURL && this.signature) {
       return `s--${this.signature}--`;
     } else {
       return '';
+    }
+  }
+
+  /**
+   * Gets the full query param for the authToken signature
+   * - For client-side, this function uses the explicitAuthToken
+   * - For server-side, this function calculates the authToken given the authToken config
+   */
+  getAuthTokenQuery(): string {
+    if (!this.signURL) { return; }
+
+    // Do we have an explicit authToken? if so, use it.
+    if (this.explicitAuthToken) {
+      return `__cld_token__=${this.explicitAuthToken}`;
+    }
+
+    // Do we have an authToken config? if so, use it.
+    if (this.authToken) {
+      // To be implemented, server-side calculation of the authToken.
+    }
+  }
+
+
+  /**
+   * Appends various query params to the URL encoded safe URL
+   * @param safeURL
+   * @param trackedAnalytics
+   */
+  appendQueryParamsToURL(safeURL: string, trackedAnalytics: Partial<ITrackedPropertiesThroughAnalytics>): string {
+    const tokenAppendSymbol = this.publicID.includes('?') ? '&' : '?';
+
+
+    let urlWithQuery = safeURL;
+
+    // Try to append the authTokenQuery with a token symbol.
+    // Note that the authToken might be empty and no query will be attached
+    if (this.getAuthTokenQuery()) {
+      urlWithQuery = [safeURL, this.getAuthTokenQuery()].join(tokenAppendSymbol);
+    }
+
+    // Check if the url already includes a query param.
+    // TODO - note that we're checking the URL and publicID separately.
+    //      - This is intended to replicate the existing behaviour, however it seems odd we are encoding the publicID
+    const urlAlreadyIncludesQuery = urlWithQuery.includes('?') || this.publicID.includes('?');
+
+    // urlConfig.analytics is true by default, has to be explicitly set to false to overwrite
+    // Don't add analytics if the url already includes a '?'
+    if (this.urlConfig.analytics !== false && !urlAlreadyIncludesQuery) {
+      return `${urlWithQuery}?_a=${getSDKAnalyticsSignature(trackedAnalytics)}`;
+    } else {
+      return urlWithQuery;
     }
   }
 
@@ -282,14 +359,7 @@ class CloudinaryFile {
       const safeURL = encodeURI(url)
         .replace(/\?/g, '%3F')
         .replace(/=/g, '%3D');
-
-      // urlConfig.analytics is true by default, has to be explicitly set to false to overwrite
-      // Don't add analytics when publicId includes a '?' to not risk changing existing query params
-      if (this.urlConfig.analytics !== false && !(publicID.includes('?'))) {
-        return `${safeURL}?_a=${getSDKAnalyticsSignature(trackedAnalytics)}`;
-      } else {
-        return safeURL;
-      }
+      return this.appendQueryParamsToURL(safeURL, trackedAnalytics);
     }
   }
 }

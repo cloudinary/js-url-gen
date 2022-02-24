@@ -169,4 +169,40 @@ describe('Add analytics to a regular URL', () => {
       }
     })).toBe("https://res.cloudinary.com/demo/image/upload/sample%3Fparam%3Dtest");
   });
+
+  it('Should not include analytics when authToken is provided', () => {
+    const cldImage = createNewImageWithAnalytics('sample');
+    cldImage.sign();
+    cldImage.setExplicitAuthToken('someToken');
+    // AZ -> Algo A, SDK Code is Z
+    // Alh -> 1.24.0 from package.json
+    // AM -> 12.0.0 Underlying tech
+    // A -> responsive
+    expect(cldImage.toURL({
+      trackedAnalytics: {
+        sdkCode: 'Z',
+        sdkSemver: '1.24.0',
+        techVersion: '12.0.0',
+        responsive: true
+      }
+    })).toBe("https://res.cloudinary.com/demo/image/upload/sample?__cld_token__=someToken");
+  });
+
+  it('Should include analytics when signature is provided', () => {
+    const cldImage = createNewImageWithAnalytics('sample');
+    cldImage.sign();
+    cldImage.setSignature('someSignature');
+    // AZ -> Algo A, SDK Code is Z
+    // Alh -> 1.24.0 from package.json
+    // AM -> 12.0.0 Underlying tech
+    // A -> responsive
+    expect(cldImage.toURL({
+      trackedAnalytics: {
+        sdkCode: 'Z',
+        sdkSemver: '1.24.0',
+        techVersion: '12.0.0',
+        responsive: true
+      }
+    })).toBe(`https://res.cloudinary.com/demo/image/upload/s--someSignature--/sample?_a=AZAlhAMA`);
+  });
 });

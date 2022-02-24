@@ -88,10 +88,25 @@ describe('Tests for URL configuration', () => {
     const signature = "some-signature";
 
     image.setSignature(signature);
+    image.sign();
+
     //image.signature(signature)
     image.resize(Resize.crop().width(100));
     const url = image.toURL();
 
     expect(url).toEqual(`https://res.cloudinary.com/demo/image/upload/s--${signature}--/c_crop,w_100/sample`);
+  });
+
+  it('Should support an explicit auth token', () => {
+    const image = createNewImage('sample');
+    const authToken = "some-auth-token";
+
+    image.setExplicitAuthToken(authToken);
+    image.sign();
+
+    image.resize(Resize.crop().width(100));
+    const url = image.toURL();
+
+    expect(url).toEqual(`https://res.cloudinary.com/demo/image/upload/c_crop,w_100/sample?__cld_token__=${authToken}`);
   });
 });
