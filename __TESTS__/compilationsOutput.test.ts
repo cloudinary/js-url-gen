@@ -66,12 +66,14 @@ import { PSDTools } from "actions/psdTools";
 import { Volume } from "../src/qualifiers/volume";
 import { FontAntialias } from "../src/qualifiers/FontAntialias";
 import { Animated } from "../src/actions/animated";
-const CloudinaryImage = CloudinaryMedia;
+import {createNewMedia} from "./TestUtils/createCloudinaryMedia";
+
+
 describe("Testing", () => {
   it("so_3,eo_5,e_boomerang/e_loop", () => {
     const parts = "so_3,eo_5,e_boomerang/e_loop".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().startOffset("3.0").endOffset("5.0"))
       .effect(Effect.boomerang())
       .animated(Animated.edit().loop());
@@ -83,7 +85,7 @@ describe("Testing", () => {
   it("vs_10,dl_100,w_250,f_gif", () => {
     const parts = "vs_10,dl_100,w_250,f_gif".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(250))
       .transcode(Transcode.toAnimated(AnimatedFormat.gif()).sampling(10))
       .animated(Animated.edit().delay(100));
@@ -97,7 +99,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(250))
       .transcode(Transcode.toAnimated(AnimatedFormat.webp()).sampling(10))
       .animated(Animated.edit().delay(100));
@@ -109,7 +111,7 @@ describe("Testing", () => {
   it("dl_100", () => {
     const parts = "dl_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").animated(
+    const tAsset = createNewMedia("sample").animated(
       Animated.edit().delay(100)
     );
     parts.forEach((part) => {
@@ -120,7 +122,7 @@ describe("Testing", () => {
   it("dl_200", () => {
     const parts = "dl_200".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").animated(
+    const tAsset = createNewMedia("sample").animated(
       Animated.edit().delay(200)
     );
     parts.forEach((part) => {
@@ -131,7 +133,7 @@ describe("Testing", () => {
   it("e_loop", () => {
     const parts = "e_loop".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").animated(
+    const tAsset = createNewMedia("sample").animated(
       Animated.edit().loop()
     );
     parts.forEach((part) => {
@@ -144,7 +146,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.preview().duration("8.0"))
       .resize(Resize.crop().width(1600).height(800))
       .animated(Animated.edit().loop());
@@ -158,7 +160,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(200))
       .transcode(Transcode.toAnimated().sampling("1.1s"))
       .animated(Animated.edit().delay(200).loop(2));
@@ -170,7 +172,7 @@ describe("Testing", () => {
   it("vs_40,dl_200,h_200,e_loop", () => {
     const parts = "vs_40,dl_200,h_200,e_loop".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().height(200))
       .transcode(Transcode.toAnimated().sampling(40))
       .animated(Animated.edit().delay(200).loop());
@@ -184,7 +186,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().startOffset("3.0").endOffset("5.0"))
       .resize(Resize.scale().width(480))
       .effect(Effect.boomerang())
@@ -197,7 +199,7 @@ describe("Testing", () => {
   it("c_scale,dl_1000,e_trim,w_700", () => {
     const parts = "c_scale,dl_1000,e_trim,w_700".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .reshape(Reshape.trim())
       .resize(Resize.scale().width(700))
       .animated(Animated.edit().delay(1000));
@@ -211,7 +213,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .transcode(Transcode.toAnimated(AnimatedFormat.auto()).sampling(10))
       .animated(Animated.edit().delay(5));
     parts.forEach((part) => {
@@ -224,7 +226,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop()
         .width(150)
         .height(150)
@@ -239,7 +241,7 @@ describe("Testing", () => {
   it("c_crop,g_sink,z_0.8", () => {
     const parts = "c_crop,g_sink,z_0.8".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().zoom(0.8).gravity(Gravity.focusOn(FocusOn.sink()))
     );
     parts.forEach((part) => {
@@ -250,7 +252,7 @@ describe("Testing", () => {
   it("g_face,c_crop,z_1.3", () => {
     const parts = "g_face,c_crop,z_1.3".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().zoom(1.3).gravity(Gravity.focusOn(FocusOn.face()))
     );
     parts.forEach((part) => {
@@ -261,7 +263,7 @@ describe("Testing", () => {
   it("$award_!First!", () => {
     const parts = "$award_!First!".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").addVariable(
+    const tAsset = createNewMedia("sample").addVariable(
       Variable.set("award", "First")
     );
     parts.forEach((part) => {
@@ -275,7 +277,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .addVariable(Variable.set("bcolor", "rgb:0000ff"))
       .conditional(
         Conditional.ifCondition(
@@ -293,7 +295,7 @@ describe("Testing", () => {
   it("$bestpic_ref:!file.png!", () => {
     const parts = "$bestpic_ref:!file.png!".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").addVariable(
+    const tAsset = createNewMedia("sample").addVariable(
       Variable.setAssetReference("bestpic", "file.png")
     );
     parts.forEach((part) => {
@@ -306,7 +308,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .addVariable(Variable.set("colors", 5))
       .customFunction(CustomFunction.wasm("quantize.wasm"));
     parts.forEach((part) => {
@@ -317,7 +319,7 @@ describe("Testing", () => {
   it("$foo_!iw!", () => {
     const parts = "$foo_!iw!".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").addVariable(
+    const tAsset = createNewMedia("sample").addVariable(
       Variable.set("foo", "iw")
     );
     parts.forEach((part) => {
@@ -328,7 +330,7 @@ describe("Testing", () => {
   it("$foo_1_to_f", () => {
     const parts = "$foo_1_to_f".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").addVariable(
+    const tAsset = createNewMedia("sample").addVariable(
       Variable.set("foo", 1).asFloat()
     );
     parts.forEach((part) => {
@@ -339,7 +341,7 @@ describe("Testing", () => {
   it("$foo_bar", () => {
     const parts = "$foo_bar".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").addVariable(
+    const tAsset = createNewMedia("sample").addVariable(
       Variable.set("foo", Expression.expression("bar"))
     );
     parts.forEach((part) => {
@@ -350,7 +352,7 @@ describe("Testing", () => {
   it("$foo_bar_to_i", () => {
     const parts = "$foo_bar_to_i".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").addVariable(
+    const tAsset = createNewMedia("sample").addVariable(
       Variable.set("foo", Expression.expression("bar")).asInteger()
     );
     parts.forEach((part) => {
@@ -361,7 +363,7 @@ describe("Testing", () => {
   it("$foo_iw_add_100_div_3", () => {
     const parts = "$foo_iw_add_100_div_3".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").addVariable(
+    const tAsset = createNewMedia("sample").addVariable(
       Variable.set("foo", Expression.expression("initial_width + 100 / 3"))
     );
     parts.forEach((part) => {
@@ -372,7 +374,7 @@ describe("Testing", () => {
   it("$foo_md:!bar!_to_f", () => {
     const parts = "$foo_md:!bar!_to_f".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").addVariable(
+    const tAsset = createNewMedia("sample").addVariable(
       Variable.setFromMetadata("foo", "bar").asFloat()
     );
     parts.forEach((part) => {
@@ -386,7 +388,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .addVariable(Variable.set("img", Expression.expression("current")))
       .addVariable(
         Variable.set("height", Expression.expression("initial_height"))
@@ -417,7 +419,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .addVariable(Variable.set("img", Expression.expression("current")))
       .effect(Effect.grayscale())
       .overlay(
@@ -444,7 +446,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .addVariable(Variable.set("mainvideowidth", 500))
       .addVariable(
         Variable.set(
@@ -472,7 +474,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .addVariable(
         Variable.set(
           "newwidth",
@@ -491,7 +493,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .addVariable(Variable.setAssetReference("overlay", "docs:sale"))
       .customFunction(CustomFunction.wasm("docs:pnglayer.wasm"))
       .border(Border.solid(1, "black"));
@@ -505,7 +507,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").addVariable(
+    const tAsset = createNewMedia("sample").addVariable(
       Variable.set("overlaywidth", Expression.expression("$mainvideowidth / 3"))
     );
     parts.forEach((part) => {
@@ -518,7 +520,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .addVariable(Variable.set("qualtag", "Pro"))
       .conditional(
         Conditional.ifCondition(
@@ -537,7 +539,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .addVariable(Variable.set("qualtag", "Pro"))
       .conditional(
         Conditional.ifCondition(
@@ -556,7 +558,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .addVariable(Variable.set("qualtag", "important"))
       .addVariable(Variable.set("delwidth", 450))
       .namedTransformation(NamedTransformation.name("highqual-if-tagged"));
@@ -570,7 +572,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .addVariable(Variable.set("rating", "thumbs-down"))
       .namedTransformation(NamedTransformation.name("image_ratings"));
     parts.forEach((part) => {
@@ -583,7 +585,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .addVariable(Variable.set("rating", "thumbs-down"))
       .namedTransformation(NamedTransformation.name("image_ratings"))
       .resize(Resize.scale().width(200));
@@ -597,7 +599,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .addVariable(Variable.set("rating", "thumbs-up"))
       .namedTransformation(NamedTransformation.name("image_ratings"));
     parts.forEach((part) => {
@@ -610,7 +612,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .addVariable(Variable.set("rating", "thumbs-up"))
       .namedTransformation(NamedTransformation.name("image_ratings"))
       .resize(Resize.scale().width(200));
@@ -625,7 +627,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .addVariable(Variable.set("small", 150))
       .addVariable(Variable.set("big", Expression.expression("2 / $small")))
       .resize(
@@ -643,7 +645,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .addVariable(Variable.set("small", 150))
       .addVariable(Variable.set("big", Expression.expression("2 / $small")))
       .resize(
@@ -661,7 +663,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .addVariable(Variable.set("small", 150))
       .addVariable(Variable.set("big", Expression.expression("2 * $small")))
       .resize(
@@ -678,7 +680,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .addVariable(Variable.set("small", 150))
       .addVariable(Variable.set("big", Expression.expression("2 * $small")))
       .resize(
@@ -696,7 +698,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .addVariable(Variable.set("small", 150))
       .addVariable(Variable.set("big", Expression.expression("2 * $small + 4")))
       .resize(
@@ -712,7 +714,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .addVariable(Variable.set("small", 150))
       .resize(
         Resize.fill().width("$big").height(Expression.expression("$small + 20"))
@@ -727,7 +729,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .addVariable(Variable.set("w", 200))
       .addVariable(Variable.set("ar", 0.8))
       .resize(
@@ -744,7 +746,7 @@ describe("Testing", () => {
   it("$width_115/t_passport_photo", () => {
     const parts = "$width_115/t_passport_photo".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .addVariable(Variable.set("width", 115))
       .namedTransformation(NamedTransformation.name("passport_photo"));
     parts.forEach((part) => {
@@ -755,7 +757,7 @@ describe("Testing", () => {
   it("$width_140/t_passport_photo", () => {
     const parts = "$width_140/t_passport_photo".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .addVariable(Variable.set("width", 140))
       .namedTransformation(NamedTransformation.name("passport_photo"));
     parts.forEach((part) => {
@@ -766,7 +768,7 @@ describe("Testing", () => {
   it("$width_165/t_passport_photo", () => {
     const parts = "$width_165/t_passport_photo".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .addVariable(Variable.set("width", 165))
       .namedTransformation(NamedTransformation.name("passport_photo"));
     parts.forEach((part) => {
@@ -777,7 +779,7 @@ describe("Testing", () => {
   it("$width_60/t_passport_photo", () => {
     const parts = "$width_60/t_passport_photo".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .addVariable(Variable.set("width", 60))
       .namedTransformation(NamedTransformation.name("passport_photo"));
     parts.forEach((part) => {
@@ -788,7 +790,7 @@ describe("Testing", () => {
   it("$width_iw_mul_3/w_$width", () => {
     const parts = "$width_iw_mul_3/w_$width".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .addVariable(
         Variable.set("width", Expression.expression("initial_width * 3"))
       )
@@ -803,7 +805,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .addVariable(Variable.set("widthval", 200))
       .addVariable(Variable.set("arval", 0.8))
       .resize(
@@ -820,7 +822,7 @@ describe("Testing", () => {
   it("a_-20", () => {
     const parts = "a_-20".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").rotate(Rotate.byAngle(-20));
+    const tAsset = createNewMedia("sample").rotate(Rotate.byAngle(-20));
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -829,7 +831,7 @@ describe("Testing", () => {
   it("a_180", () => {
     const parts = "a_180".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").rotate(Rotate.byAngle(180));
+    const tAsset = createNewMedia("sample").rotate(Rotate.byAngle(180));
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -841,7 +843,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .rotate(Rotate.byAngle(180))
       .resize(Resize.fill().width(300).height(200))
       .videoEdit(
@@ -863,7 +865,7 @@ describe("Testing", () => {
   it("a_20", () => {
     const parts = "a_20".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").rotate(Rotate.byAngle(20));
+    const tAsset = createNewMedia("sample").rotate(Rotate.byAngle(20));
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -872,7 +874,7 @@ describe("Testing", () => {
   it("a_90", () => {
     const parts = "a_90".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").rotate(Rotate.byAngle(90));
+    const tAsset = createNewMedia("sample").rotate(Rotate.byAngle(90));
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -881,7 +883,7 @@ describe("Testing", () => {
   it("a_auto_left", () => {
     const parts = "a_auto_left".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").rotate(
+    const tAsset = createNewMedia("sample").rotate(
       Rotate.mode(RotationMode.autoLeft())
     );
     parts.forEach((part) => {
@@ -892,7 +894,7 @@ describe("Testing", () => {
   it("a_auto_right", () => {
     const parts = "a_auto_right".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").rotate(
+    const tAsset = createNewMedia("sample").rotate(
       Rotate.mode(RotationMode.autoRight())
     );
     parts.forEach((part) => {
@@ -903,7 +905,7 @@ describe("Testing", () => {
   it("a_hflip", () => {
     const parts = "a_hflip".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").rotate(
+    const tAsset = createNewMedia("sample").rotate(
       Rotate.mode(RotationMode.horizontalFlip())
     );
     parts.forEach((part) => {
@@ -914,7 +916,7 @@ describe("Testing", () => {
   it("a_ignore", () => {
     const parts = "a_ignore".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").rotate(
+    const tAsset = createNewMedia("sample").rotate(
       Rotate.mode(RotationMode.ignore())
     );
     parts.forEach((part) => {
@@ -925,7 +927,7 @@ describe("Testing", () => {
   it("a_vflip", () => {
     const parts = "a_vflip".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").rotate(
+    const tAsset = createNewMedia("sample").rotate(
       Rotate.mode(RotationMode.verticalFlip())
     );
     parts.forEach((part) => {
@@ -936,7 +938,7 @@ describe("Testing", () => {
   it("a_vflip/a_20", () => {
     const parts = "a_vflip/a_20".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .rotate(Rotate.mode(RotationMode.verticalFlip()))
       .rotate(Rotate.byAngle(20));
     parts.forEach((part) => {
@@ -947,7 +949,7 @@ describe("Testing", () => {
   it("ac_none", () => {
     const parts = "ac_none".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(
+    const tAsset = createNewMedia("sample").transcode(
       Transcode.audioCodec(AudioCodec.none())
     );
     parts.forEach((part) => {
@@ -960,7 +962,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .transcode(Transcode.audioCodec(AudioCodec.none()))
       .overlay(
         Overlay.source(
@@ -977,7 +979,7 @@ describe("Testing", () => {
   it("af_22050", () => {
     const parts = "af_22050".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(
+    const tAsset = createNewMedia("sample").transcode(
       Transcode.audioFrequency(22050)
     );
     parts.forEach((part) => {
@@ -988,7 +990,7 @@ describe("Testing", () => {
   it("af_96000", () => {
     const parts = "af_96000".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(
+    const tAsset = createNewMedia("sample").transcode(
       Transcode.audioFrequency(96000)
     );
     parts.forEach((part) => {
@@ -999,7 +1001,7 @@ describe("Testing", () => {
   it("ar_1,c_fill,r_max", () => {
     const parts = "ar_1,c_fill,r_max".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().aspectRatio("1.0"))
       .roundCorners(RoundCorners.max());
     parts.forEach((part) => {
@@ -1012,7 +1014,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width("1.0").aspectRatio("1.0").liquidRescaling())
       .resize(Resize.scale().width(500).height(500));
     parts.forEach((part) => {
@@ -1023,7 +1025,7 @@ describe("Testing", () => {
   it("ar_1.5,c_crop", () => {
     const parts = "ar_1.5,c_crop".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().aspectRatio(1.5)
     );
     parts.forEach((part) => {
@@ -1034,7 +1036,7 @@ describe("Testing", () => {
   it("ar_16:9,c_fill", () => {
     const parts = "ar_16:9,c_fill".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().aspectRatio(AspectRatio.ar16X9())
     );
     parts.forEach((part) => {
@@ -1047,7 +1049,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().aspectRatio(AspectRatio.ar16X9()))
       .resize(Resize.scale().width("auto"))
       .resize(Resize.limitFit().width(1000));
@@ -1061,7 +1063,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().aspectRatio(AspectRatio.ar16X9()))
       .resize(Resize.scale().width("auto:breakpoints"));
     parts.forEach((part) => {
@@ -1074,7 +1076,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().aspectRatio(AspectRatio.ar16X9()))
       .resize(Resize.scale().width("auto:breakpoints:json"));
     parts.forEach((part) => {
@@ -1087,7 +1089,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().aspectRatio(AspectRatio.ar16X9()))
       .resize(Resize.scale().width("auto:breakpoints_200_1920_30_15"));
     parts.forEach((part) => {
@@ -1098,7 +1100,7 @@ describe("Testing", () => {
   it("ar_1:1,c_fill", () => {
     const parts = "ar_1:1,c_fill".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().aspectRatio(AspectRatio.ar1X1())
     );
     parts.forEach((part) => {
@@ -1109,7 +1111,7 @@ describe("Testing", () => {
   it("ar_1:1,c_fill,g_auto,w_400", () => {
     const parts = "ar_1:1,c_fill,g_auto,w_400".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill()
         .width(400)
         .aspectRatio(AspectRatio.ar1X1())
@@ -1123,7 +1125,7 @@ describe("Testing", () => {
   it("ar_2.5,c_crop", () => {
     const parts = "ar_2.5,c_crop".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().aspectRatio(2.5)
     );
     parts.forEach((part) => {
@@ -1136,7 +1138,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().aspectRatio(AspectRatio.ar4X3()))
       .resize(Resize.scale().width("auto"))
       .delivery(Delivery.dpr(Dpr.auto()));
@@ -1148,7 +1150,7 @@ describe("Testing", () => {
   it("b_blue,c_pad,h_400,w_660", () => {
     const parts = "b_blue,c_pad,h_400,w_660".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().width(660).height(400).background(Background.color("blue"))
     );
     parts.forEach((part) => {
@@ -1159,7 +1161,7 @@ describe("Testing", () => {
   it("b_blue,o_0", () => {
     const parts = "b_blue,o_0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .adjust(Adjust.opacity(0))
       .backgroundColor("blue");
     parts.forEach((part) => {
@@ -1170,7 +1172,7 @@ describe("Testing", () => {
   it("b_green", () => {
     const parts = "b_green".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").backgroundColor("green");
+    const tAsset = createNewMedia("sample").backgroundColor("green");
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -1179,7 +1181,7 @@ describe("Testing", () => {
   it("b_lightblue", () => {
     const parts = "b_lightblue".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").backgroundColor("lightblue");
+    const tAsset = createNewMedia("sample").backgroundColor("lightblue");
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -1188,7 +1190,7 @@ describe("Testing", () => {
   it("b_rgb:d5d2ca,h_300", () => {
     const parts = "b_rgb:d5d2ca,h_300".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().height(300))
       .backgroundColor("#d5d2ca");
     parts.forEach((part) => {
@@ -1199,7 +1201,7 @@ describe("Testing", () => {
   it("b_rgb:fff", () => {
     const parts = "b_rgb:fff".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").backgroundColor("#fff");
+    const tAsset = createNewMedia("sample").backgroundColor("#fff");
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -1210,7 +1212,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.subtitles("my_subs_file.srt")
           .textStyle(new TextStyle("arial", 17))
@@ -1228,7 +1230,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "black"))
       .rotate(Rotate.byAngle(0))
       .delivery(Delivery.dpr(Dpr.auto()))
@@ -1244,7 +1246,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "black"))
       .rotate(Rotate.byAngle(0))
       .resize(Resize.scale().height(300))
@@ -1261,7 +1263,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "black"))
       .resize(Resize.scale().width(400))
       .delivery(Delivery.dpr("2.0"))
@@ -1277,7 +1279,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "black"))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -1290,7 +1292,7 @@ describe("Testing", () => {
   it("bo_1px_solid_gray", () => {
     const parts = "bo_1px_solid_gray".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").border(
+    const tAsset = createNewMedia("sample").border(
       Border.solid(1, "gray")
     );
     parts.forEach((part) => {
@@ -1301,7 +1303,7 @@ describe("Testing", () => {
   it("bo_1px_solid_gray,dpr_auto", () => {
     const parts = "bo_1px_solid_gray,dpr_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .delivery(Delivery.dpr(Dpr.auto()));
     parts.forEach((part) => {
@@ -1312,7 +1314,7 @@ describe("Testing", () => {
   it("bo_1px_solid_gray/dpr_auto", () => {
     const parts = "bo_1px_solid_gray/dpr_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .delivery(Delivery.dpr(Dpr.auto()));
     parts.forEach((part) => {
@@ -1325,7 +1327,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -1341,7 +1343,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .delivery(Delivery.dpr(Dpr.auto()))
       .delivery(Delivery.format(Format.auto()))
@@ -1356,7 +1358,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .delivery(Delivery.dpr(Dpr.auto()))
       .delivery(Delivery.format(Format.auto()))
@@ -1371,7 +1373,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(350))
       .delivery(Delivery.dpr("2.0"))
@@ -1387,7 +1389,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(600))
       .delivery(Delivery.dpr("2.0"))
@@ -1403,7 +1405,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(700))
       .delivery(Delivery.dpr("2.0"))
@@ -1419,7 +1421,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(250))
       .delivery(Delivery.dpr("2.0"))
@@ -1435,7 +1437,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(300))
       .delivery(Delivery.dpr("2.0"))
@@ -1451,7 +1453,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(350))
       .delivery(Delivery.dpr("2.0"))
@@ -1467,7 +1469,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(500))
       .delivery(Delivery.dpr("2.0"))
@@ -1483,7 +1485,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(600))
       .delivery(Delivery.dpr("2.0"))
@@ -1499,7 +1501,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(650))
       .delivery(Delivery.dpr("2.0"))
@@ -1515,7 +1517,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(700))
       .delivery(Delivery.dpr("2.0"))
@@ -1531,7 +1533,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .delivery(Delivery.format(Format.auto()))
       .delivery(Delivery.quality(Quality.auto()));
@@ -1545,7 +1547,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().height(450))
       .delivery(Delivery.dpr("2.0"))
@@ -1561,7 +1563,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(400))
       .delivery(Delivery.dpr("2.0"))
@@ -1577,7 +1579,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(300))
       .delivery(Delivery.dpr("2.0"))
@@ -1593,7 +1595,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(400))
       .delivery(Delivery.dpr("2.0"))
@@ -1609,7 +1611,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(400))
       .delivery(Delivery.dpr("2.0"))
@@ -1625,7 +1627,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(400))
       .delivery(Delivery.dpr("2.0"))
@@ -1641,7 +1643,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(450))
       .delivery(Delivery.dpr("2.0"))
@@ -1657,7 +1659,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(500))
       .delivery(Delivery.dpr("2.0"))
@@ -1673,7 +1675,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(550))
       .delivery(Delivery.dpr("2.0"))
@@ -1689,7 +1691,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(550))
       .delivery(Delivery.dpr("2.0"))
@@ -1705,7 +1707,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(600))
       .delivery(Delivery.dpr("2.0"))
@@ -1721,7 +1723,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "#ccc"))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()));
@@ -1733,7 +1735,7 @@ describe("Testing", () => {
   it("bo_2px_solid_black", () => {
     const parts = "bo_2px_solid_black".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").border(
+    const tAsset = createNewMedia("sample").border(
       Border.solid(2, "black")
     );
     parts.forEach((part) => {
@@ -1746,7 +1748,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(2, "black"))
       .delivery(Delivery.format(Format.auto()))
       .delivery(Delivery.quality(Quality.auto()));
@@ -1758,7 +1760,7 @@ describe("Testing", () => {
   it("bo_2px_solid_black,so_100", () => {
     const parts = "bo_2px_solid_black,so_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().startOffset("100.0"))
       .border(Border.solid(2, "black"));
     parts.forEach((part) => {
@@ -1769,7 +1771,7 @@ describe("Testing", () => {
   it("bo_2px_solid_black,so_101", () => {
     const parts = "bo_2px_solid_black,so_101".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().startOffset("101.0"))
       .border(Border.solid(2, "black"));
     parts.forEach((part) => {
@@ -1780,7 +1782,7 @@ describe("Testing", () => {
   it("bo_2px_solid_black,so_133", () => {
     const parts = "bo_2px_solid_black,so_133".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().startOffset("133.0"))
       .border(Border.solid(2, "black"));
     parts.forEach((part) => {
@@ -1791,7 +1793,7 @@ describe("Testing", () => {
   it("bo_2px_solid_black,so_14", () => {
     const parts = "bo_2px_solid_black,so_14".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().startOffset("14.0"))
       .border(Border.solid(2, "black"));
     parts.forEach((part) => {
@@ -1802,7 +1804,7 @@ describe("Testing", () => {
   it("bo_2px_solid_black,so_256", () => {
     const parts = "bo_2px_solid_black,so_256".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().startOffset("256.0"))
       .border(Border.solid(2, "black"));
     parts.forEach((part) => {
@@ -1813,7 +1815,7 @@ describe("Testing", () => {
   it("bo_2px_solid_black,so_36", () => {
     const parts = "bo_2px_solid_black,so_36".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().startOffset("36.0"))
       .border(Border.solid(2, "black"));
     parts.forEach((part) => {
@@ -1824,7 +1826,7 @@ describe("Testing", () => {
   it("bo_2px_solid_black,so_371", () => {
     const parts = "bo_2px_solid_black,so_371".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().startOffset("371.0"))
       .border(Border.solid(2, "black"));
     parts.forEach((part) => {
@@ -1837,7 +1839,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().startOffset("386.0"))
       .border(Border.solid(2, "black"))
       .resize(Resize.fill().width(230).height(129));
@@ -1849,7 +1851,7 @@ describe("Testing", () => {
   it("bo_2px_solid_black,so_48.5", () => {
     const parts = "bo_2px_solid_black,so_48.5".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().startOffset(48.5))
       .border(Border.solid(2, "black"));
     parts.forEach((part) => {
@@ -1862,7 +1864,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().startOffset("63.0"))
       .border(Border.solid(2, "black"))
       .resize(Resize.fill().width(230).height(129));
@@ -1874,7 +1876,7 @@ describe("Testing", () => {
   it("bo_2px_solid_black,so_68", () => {
     const parts = "bo_2px_solid_black,so_68".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().startOffset("68.0"))
       .border(Border.solid(2, "black"));
     parts.forEach((part) => {
@@ -1885,7 +1887,7 @@ describe("Testing", () => {
   it("bo_2px_solid_black,so_98", () => {
     const parts = "bo_2px_solid_black,so_98".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().startOffset("98.0"))
       .border(Border.solid(2, "black"));
     parts.forEach((part) => {
@@ -1898,7 +1900,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(2, "black"))
       .resize(Resize.fill().width(230).height(129));
     parts.forEach((part) => {
@@ -1909,7 +1911,7 @@ describe("Testing", () => {
   it("bo_40px_solid_brown", () => {
     const parts = "bo_40px_solid_brown".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").border(
+    const tAsset = createNewMedia("sample").border(
       Border.solid(40, "brown")
     );
     parts.forEach((part) => {
@@ -1920,7 +1922,7 @@ describe("Testing", () => {
   it("bo_5.5px_solid_hotpink,r_100", () => {
     const parts = "bo_5.5px_solid_hotpink,r_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").border(
+    const tAsset = createNewMedia("sample").border(
       Border.solid(5.5, "hotpink").roundCorners(RoundCorners.byRadius(100))
     );
     parts.forEach((part) => {
@@ -1931,7 +1933,7 @@ describe("Testing", () => {
   it("bo_5.5px_solid_hotpink,r_max", () => {
     const parts = "bo_5.5px_solid_hotpink,r_max".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").border(
+    const tAsset = createNewMedia("sample").border(
       Border.solid(5.5, "hotpink").roundCorners(RoundCorners.max())
     );
     parts.forEach((part) => {
@@ -1944,7 +1946,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").border(
+    const tAsset = createNewMedia("sample").border(
       Border.solid(5.5, "#aabbcc").roundCorners(RoundCorners.max())
     );
     parts.forEach((part) => {
@@ -1955,7 +1957,7 @@ describe("Testing", () => {
   it("bo_5.5px_solid_rgb:fff", () => {
     const parts = "bo_5.5px_solid_rgb:fff".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").border(
+    const tAsset = createNewMedia("sample").border(
       Border.solid(5.5, "#fff")
     );
     parts.forEach((part) => {
@@ -1966,7 +1968,7 @@ describe("Testing", () => {
   it("bo_5px_solid_black", () => {
     const parts = "bo_5px_solid_black".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").border(
+    const tAsset = createNewMedia("sample").border(
       Border.solid(5, "black")
     );
     parts.forEach((part) => {
@@ -1979,7 +1981,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(5, "black"))
       .delivery(Delivery.format(Format.auto()))
       .delivery(Delivery.quality(Quality.auto()))
@@ -1992,7 +1994,7 @@ describe("Testing", () => {
   it("bo_5px_solid_hotpink", () => {
     const parts = "bo_5px_solid_hotpink".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").border(
+    const tAsset = createNewMedia("sample").border(
       Border.solid(5, "hotpink")
     );
     parts.forEach((part) => {
@@ -2003,7 +2005,7 @@ describe("Testing", () => {
   it("bo_5px_solid_red", () => {
     const parts = "bo_5px_solid_red".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").border(Border.solid(5, "red"));
+    const tAsset = createNewMedia("sample").border(Border.solid(5, "red"));
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -2014,7 +2016,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").border(
+    const tAsset = createNewMedia("sample").border(
       Border.solid(5, "#aabbcc").roundCorners(RoundCorners.max())
     );
     parts.forEach((part) => {
@@ -2025,7 +2027,7 @@ describe("Testing", () => {
   it("bo_60px_solid_rgb:00390b60", () => {
     const parts = "bo_60px_solid_rgb:00390b60".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").border(
+    const tAsset = createNewMedia("sample").border(
       Border.solid(60, "#00390b60")
     );
     parts.forEach((part) => {
@@ -2036,7 +2038,7 @@ describe("Testing", () => {
   it("br_100", () => {
     const parts = "br_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(
+    const tAsset = createNewMedia("sample").transcode(
       Transcode.bitRate(100)
     );
     parts.forEach((part) => {
@@ -2047,7 +2049,7 @@ describe("Testing", () => {
   it("br_100:constant", () => {
     const parts = "br_100:constant".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(
+    const tAsset = createNewMedia("sample").transcode(
       Transcode.bitRate(100).constant()
     );
     parts.forEach((part) => {
@@ -2058,7 +2060,7 @@ describe("Testing", () => {
   it("br_250k", () => {
     const parts = "br_250k".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(
+    const tAsset = createNewMedia("sample").transcode(
       Transcode.bitRate("250k")
     );
     parts.forEach((part) => {
@@ -2069,7 +2071,7 @@ describe("Testing", () => {
   it("br_500000", () => {
     const parts = "br_500000".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(
+    const tAsset = createNewMedia("sample").transcode(
       Transcode.bitRate(500000)
     );
     parts.forEach((part) => {
@@ -2080,7 +2082,7 @@ describe("Testing", () => {
   it("br_500k:constant", () => {
     const parts = "br_500k:constant".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(
+    const tAsset = createNewMedia("sample").transcode(
       Transcode.bitRate("500k").constant()
     );
     parts.forEach((part) => {
@@ -2093,7 +2095,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().startOffset("813.0"))
       .resize(
         Resize.crop()
@@ -2110,7 +2112,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().startOffset("813.0"))
       .resize(
         Resize.crop()
@@ -2128,7 +2130,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop()
         .width(1000)
         .aspectRatio(AspectRatio.ar1X1())
@@ -2146,7 +2148,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.crop().width(150).height(150))
       .roundCorners(RoundCorners.byRadius(20))
       .effect(Effect.sepia());
@@ -2160,7 +2162,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.crop().width(150).height(150))
       .roundCorners(RoundCorners.byRadius(20))
       .effect(Effect.sepia())
@@ -2180,7 +2182,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.crop().width(1000).gravity(Gravity.compass(Compass.south()))
       )
@@ -2209,7 +2211,7 @@ describe("Testing", () => {
   it("c_crop,fl_region_relative", () => {
     const parts = "c_crop,fl_region_relative".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().regionRelative()
     );
     parts.forEach((part) => {
@@ -2220,7 +2222,7 @@ describe("Testing", () => {
   it("c_crop,fl_relative", () => {
     const parts = "c_crop,fl_relative".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().relative()
     );
     parts.forEach((part) => {
@@ -2231,7 +2233,7 @@ describe("Testing", () => {
   it("c_crop,g_auto", () => {
     const parts = "c_crop,g_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().gravity(Gravity.autoGravity())
     );
     parts.forEach((part) => {
@@ -2244,7 +2246,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop()
         .width(300)
         .gravity(
@@ -2262,7 +2264,7 @@ describe("Testing", () => {
   it("c_crop,g_auto:ocr_text", () => {
     const parts = "c_crop,g_auto:ocr_text".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().gravity(
         Gravity.autoGravity().autoFocus(AutoFocus.focusOn(FocusOn.ocr()))
       )
@@ -2275,7 +2277,7 @@ describe("Testing", () => {
   it("c_crop,g_auto:ocr_text_30", () => {
     const parts = "c_crop,g_auto:ocr_text_30".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().gravity(
         Gravity.autoGravity().autoFocus(
           AutoFocus.focusOn(FocusOn.ocr()).weight(30)
@@ -2290,7 +2292,7 @@ describe("Testing", () => {
   it("c_crop,g_auto:ocr_text_avoid", () => {
     const parts = "c_crop,g_auto:ocr_text_avoid".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().gravity(
         Gravity.autoGravity().autoFocus(
           AutoFocus.focusOn(FocusOn.ocr()).avoid()
@@ -2305,7 +2307,7 @@ describe("Testing", () => {
   it("c_crop,g_cat:dog", () => {
     const parts = "c_crop,g_cat:dog".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().gravity(Gravity.focusOn(FocusOn.cat(), FocusOn.dog()))
     );
     parts.forEach((part) => {
@@ -2318,7 +2320,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.crop().gravity(Gravity.focusOn(FocusOn.cat(), FocusOn.dog()))
       )
@@ -2333,7 +2335,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().gravity(
         Gravity.focusOn(FocusOn.cat(), FocusOn.dog()).fallbackGravity(
           Gravity.autoGravity().autoFocus(
@@ -2353,7 +2355,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop()
         .width(600)
         .height(800)
@@ -2373,7 +2375,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.crop()
           .width(600)
@@ -2395,7 +2397,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop()
         .width(600)
         .height(800)
@@ -2411,7 +2413,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.crop()
           .width(600)
@@ -2427,7 +2429,7 @@ describe("Testing", () => {
   it("c_crop,g_dog:cat", () => {
     const parts = "c_crop,g_dog:cat".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().gravity(Gravity.focusOn(FocusOn.dog(), FocusOn.cat()))
     );
     parts.forEach((part) => {
@@ -2440,7 +2442,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.crop().gravity(Gravity.focusOn(FocusOn.dog(), FocusOn.cat()))
       )
@@ -2453,7 +2455,7 @@ describe("Testing", () => {
   it("c_crop,g_face", () => {
     const parts = "c_crop,g_face".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().gravity(Gravity.focusOn(FocusOn.face()))
     );
     parts.forEach((part) => {
@@ -2464,7 +2466,7 @@ describe("Testing", () => {
   it("c_crop,g_face,h_150,w_150", () => {
     const parts = "c_crop,g_face,h_150,w_150".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop()
         .width(150)
         .height(150)
@@ -2478,7 +2480,7 @@ describe("Testing", () => {
   it("c_crop,g_face,h_400,w_400", () => {
     const parts = "c_crop,g_face,h_400,w_400".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop()
         .width(400)
         .height(400)
@@ -2495,7 +2497,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(10, "grey").roundCorners(RoundCorners.byRadius(75)))
       .resize(Resize.crop().gravity(Gravity.focusOn(FocusOn.face())))
       .overlay(
@@ -2520,7 +2522,7 @@ describe("Testing", () => {
   it("c_crop,g_microwave", () => {
     const parts = "c_crop,g_microwave".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().gravity(Gravity.focusOn(FocusOn.microwave()))
     );
     parts.forEach((part) => {
@@ -2531,7 +2533,7 @@ describe("Testing", () => {
   it("c_crop,g_microwave,ar_1", () => {
     const parts = "c_crop,g_microwave,ar_1".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop()
         .aspectRatio("1.0")
         .gravity(Gravity.focusOn(FocusOn.microwave()))
@@ -2546,7 +2548,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.crop()
           .aspectRatio("1.0")
@@ -2563,7 +2565,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.crop().gravity(Gravity.focusOn(FocusOn.microwave())))
       .resize(Resize.scale().width(0.3));
     parts.forEach((part) => {
@@ -2574,7 +2576,7 @@ describe("Testing", () => {
   it("c_crop,g_north,h_200,w_260", () => {
     const parts = "c_crop,g_north,h_200,w_260".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop()
         .width(260)
         .height(200)
@@ -2588,7 +2590,7 @@ describe("Testing", () => {
   it("c_crop,g_north,w_300", () => {
     const parts = "c_crop,g_north,w_300".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().width(300).gravity(Gravity.compass(Compass.north()))
     );
     parts.forEach((part) => {
@@ -2599,7 +2601,7 @@ describe("Testing", () => {
   it("c_crop,g_north,w_300,x_100", () => {
     const parts = "c_crop,g_north,w_300,x_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().width(300).gravity(Gravity.compass(Compass.north())).x(100)
     );
     parts.forEach((part) => {
@@ -2612,7 +2614,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop()
         .width(150)
         .height(150)
@@ -2626,7 +2628,7 @@ describe("Testing", () => {
   it("c_crop,g_ocr_text", () => {
     const parts = "c_crop,g_ocr_text".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().gravity(Gravity.focusOn(FocusOn.ocr()))
     );
     parts.forEach((part) => {
@@ -2637,7 +2639,7 @@ describe("Testing", () => {
   it("c_crop,g_refrigerator", () => {
     const parts = "c_crop,g_refrigerator".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().gravity(Gravity.focusOn(FocusOn.refrigerator()))
     );
     parts.forEach((part) => {
@@ -2648,7 +2650,7 @@ describe("Testing", () => {
   it("c_crop,g_refrigerator,ar_1", () => {
     const parts = "c_crop,g_refrigerator,ar_1".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop()
         .aspectRatio("1.0")
         .gravity(Gravity.focusOn(FocusOn.refrigerator()))
@@ -2663,7 +2665,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.crop()
           .aspectRatio("1.0")
@@ -2680,7 +2682,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.crop().gravity(Gravity.focusOn(FocusOn.refrigerator())))
       .resize(Resize.scale().width(0.3));
     parts.forEach((part) => {
@@ -2691,7 +2693,7 @@ describe("Testing", () => {
   it("c_crop,g_sink", () => {
     const parts = "c_crop,g_sink".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().gravity(Gravity.focusOn(FocusOn.sink()))
     );
     parts.forEach((part) => {
@@ -2702,7 +2704,7 @@ describe("Testing", () => {
   it("c_crop,g_sink,ar_1", () => {
     const parts = "c_crop,g_sink,ar_1".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().aspectRatio("1.0").gravity(Gravity.focusOn(FocusOn.sink()))
     );
     parts.forEach((part) => {
@@ -2715,7 +2717,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.crop()
           .aspectRatio("1.0")
@@ -2730,7 +2732,7 @@ describe("Testing", () => {
   it("c_crop,g_sink/w_0.3,c_scale", () => {
     const parts = "c_crop,g_sink/w_0.3,c_scale".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.crop().gravity(Gravity.focusOn(FocusOn.sink())))
       .resize(Resize.scale().width(0.3));
     parts.forEach((part) => {
@@ -2741,7 +2743,7 @@ describe("Testing", () => {
   it("c_crop,h_100", () => {
     const parts = "c_crop,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().height(100)
     );
     parts.forEach((part) => {
@@ -2755,7 +2757,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.crop().width(150).height(100).x(380).y(250))
       .resize(Resize.fill().width(130).height(100))
       .rotate(Rotate.byAngle(20))
@@ -2768,7 +2770,7 @@ describe("Testing", () => {
   it("c_crop,h_160,w_100", () => {
     const parts = "c_crop,h_160,w_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().width(100).height(160)
     );
     parts.forEach((part) => {
@@ -2779,7 +2781,7 @@ describe("Testing", () => {
   it("c_crop,h_200", () => {
     const parts = "c_crop,h_200".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().height(200)
     );
     parts.forEach((part) => {
@@ -2790,7 +2792,7 @@ describe("Testing", () => {
   it("c_crop,h_200,w_100", () => {
     const parts = "c_crop,h_200,w_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().width(100).height(200)
     );
     parts.forEach((part) => {
@@ -2801,7 +2803,7 @@ describe("Testing", () => {
   it("c_crop,h_200,w_200", () => {
     const parts = "c_crop,h_200,w_200".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().width(200).height(200)
     );
     parts.forEach((part) => {
@@ -2812,7 +2814,7 @@ describe("Testing", () => {
   it("c_crop,w_100", () => {
     const parts = "c_crop,w_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().width(100)
     );
     parts.forEach((part) => {
@@ -2823,7 +2825,7 @@ describe("Testing", () => {
   it("c_crop,w_100,ar_2.0", () => {
     const parts = "c_crop,w_100,ar_2.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().width(100).aspectRatio("2.0")
     );
     parts.forEach((part) => {
@@ -2834,7 +2836,7 @@ describe("Testing", () => {
   it("c_crop,w_100,h_100", () => {
     const parts = "c_crop,w_100,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().width(100).height(100)
     );
     parts.forEach((part) => {
@@ -2847,7 +2849,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.crop().width(100).height(200))
       .effect(Effect.sepia().level(17));
     parts.forEach((part) => {
@@ -2860,7 +2862,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop()
         .width(200)
         .height(200)
@@ -2878,7 +2880,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.crop().width(300).height(300))
       .resize(Resize.scale().width(150))
       .roundCorners(RoundCorners.max());
@@ -2890,7 +2892,7 @@ describe("Testing", () => {
   it("c_crop,x_1", () => {
     const parts = "c_crop,x_1".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(Resize.crop().x(1));
+    const tAsset = createNewMedia("sample").resize(Resize.crop().x(1));
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -2899,7 +2901,7 @@ describe("Testing", () => {
   it("c_crop,x_1,y_2", () => {
     const parts = "c_crop,x_1,y_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().x(1).y(2)
     );
     parts.forEach((part) => {
@@ -2910,7 +2912,7 @@ describe("Testing", () => {
   it("c_crop,x_80,y_30,h_150,w_150", () => {
     const parts = "c_crop,x_80,y_30,h_150,w_150".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().width(150).height(150).x(80).y(30)
     );
     parts.forEach((part) => {
@@ -2921,7 +2923,7 @@ describe("Testing", () => {
   it("c_fill,ar_0.7,w_200", () => {
     const parts = "c_fill,ar_0.7,w_200".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(200).aspectRatio(0.7)
     );
     parts.forEach((part) => {
@@ -2932,7 +2934,7 @@ describe("Testing", () => {
   it("c_fill,ar_0.7,w_750", () => {
     const parts = "c_fill,ar_0.7,w_750".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(750).aspectRatio(0.7)
     );
     parts.forEach((part) => {
@@ -2943,7 +2945,7 @@ describe("Testing", () => {
   it("c_fill,ar_4:3", () => {
     const parts = "c_fill,ar_4:3".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().aspectRatio(AspectRatio.ar4X3())
     );
     parts.forEach((part) => {
@@ -2956,7 +2958,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().width(150).height(150))
       .roundCorners(RoundCorners.byRadius(20))
       .effect(Effect.sepia())
@@ -2976,7 +2978,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().width(150).height(150))
       .roundCorners(RoundCorners.byRadius(20))
       .effect(Effect.sepia())
@@ -2995,7 +2997,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.styleTransfer(
         Source.image("lighthouse").transformation(
           new ImageTransformation().resize(Resize.fill().width(700).height(700))
@@ -3013,7 +3015,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .effect(
         Effect.styleTransfer(
           Source.image("lighthouse").transformation(
@@ -3032,7 +3034,7 @@ describe("Testing", () => {
   it("c_fill,fl_region_relative", () => {
     const parts = "c_fill,fl_region_relative".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().regionRelative()
     );
     parts.forEach((part) => {
@@ -3043,7 +3045,7 @@ describe("Testing", () => {
   it("c_fill,fl_relative", () => {
     const parts = "c_fill,fl_relative".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().relative()
     );
     parts.forEach((part) => {
@@ -3054,7 +3056,7 @@ describe("Testing", () => {
   it("c_fill,g_auto,h_250,w_250", () => {
     const parts = "c_fill,g_auto,h_250,w_250".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(250).height(250).gravity(Gravity.autoGravity())
     );
     parts.forEach((part) => {
@@ -3065,7 +3067,7 @@ describe("Testing", () => {
   it("c_fill,g_auto,h_400,ar_0.8", () => {
     const parts = "c_fill,g_auto,h_400,ar_0.8".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().height(400).aspectRatio(0.8).gravity(Gravity.autoGravity())
     );
     parts.forEach((part) => {
@@ -3078,7 +3080,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.fill()
           .height(400)
@@ -3094,7 +3096,7 @@ describe("Testing", () => {
   it("c_fill,g_auto,h_500,w_500", () => {
     const parts = "c_fill,g_auto,h_500,w_500".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(500).height(500).gravity(Gravity.autoGravity())
     );
     parts.forEach((part) => {
@@ -3107,7 +3109,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill()
         .height(400)
         .aspectRatio(0.8)
@@ -3127,7 +3129,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.fill()
           .height(400)
@@ -3147,7 +3149,7 @@ describe("Testing", () => {
   it("c_fill,g_face,h_10,w_10", () => {
     const parts = "c_fill,g_face,h_10,w_10".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill()
         .width(10)
         .height(10)
@@ -3161,7 +3163,7 @@ describe("Testing", () => {
   it("c_fill,g_north,h_200,w_150", () => {
     const parts = "c_fill,g_north,h_200,w_150".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill()
         .width(150)
         .height(200)
@@ -3175,7 +3177,7 @@ describe("Testing", () => {
   it("c_fill,g_north,h_200,w_150/", () => {
     const parts = "c_fill,g_north,h_200,w_150/".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("/sample").resize(
+    const tAsset = createNewMedia("/sample").resize(
       Resize.fill()
         .width(150)
         .height(200)
@@ -3191,7 +3193,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill()
         .width(250)
         .height(250)
@@ -3207,7 +3209,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill()
         .width(500)
         .height(500)
@@ -3224,7 +3226,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.fill()
           .width(400)
@@ -3286,7 +3288,7 @@ describe("Testing", () => {
   it("c_fill,g_xy_center,x_1,y_2", () => {
     const parts = "c_fill,g_xy_center,x_1,y_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().gravity(Gravity.xyCenter()).x(1).y(2)
     );
     parts.forEach((part) => {
@@ -3297,7 +3299,7 @@ describe("Testing", () => {
   it("c_fill,h_100", () => {
     const parts = "c_fill,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().height(100)
     );
     parts.forEach((part) => {
@@ -3308,7 +3310,7 @@ describe("Testing", () => {
   it("c_fill,h_100,w_150", () => {
     const parts = "c_fill,h_100,w_150".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(150).height(100)
     );
     parts.forEach((part) => {
@@ -3321,7 +3323,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().width(200).height(150))
       .delivery(Delivery.quality(Quality.jpegmini()));
     parts.forEach((part) => {
@@ -3332,7 +3334,7 @@ describe("Testing", () => {
   it("c_fill,h_150,w_100", () => {
     const parts = "c_fill,h_150,w_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(100).height(150)
     );
     parts.forEach((part) => {
@@ -3346,7 +3348,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().height(150))
       .videoEdit(
         VideoEdit.concatenate(
@@ -3363,7 +3365,7 @@ describe("Testing", () => {
   it("c_fill,h_200,w_200", () => {
     const parts = "c_fill,h_200,w_200".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(200).height(200)
     );
     parts.forEach((part) => {
@@ -3376,7 +3378,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().width(200).height(200))
       .underlay(
         Underlay.source(
@@ -3395,7 +3397,7 @@ describe("Testing", () => {
   it("c_fill,h_200,w_300,r_20", () => {
     const parts = "c_fill,h_200,w_300,r_20".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().width(300).height(200))
       .roundCorners(RoundCorners.byRadius(20));
     parts.forEach((part) => {
@@ -3406,7 +3408,7 @@ describe("Testing", () => {
   it("c_fill,h_250,w_250", () => {
     const parts = "c_fill,h_250,w_250".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(250).height(250)
     );
     parts.forEach((part) => {
@@ -3417,7 +3419,7 @@ describe("Testing", () => {
   it("c_fill,h_300,w_200", () => {
     const parts = "c_fill,h_300,w_200".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(200).height(300)
     );
     parts.forEach((part) => {
@@ -3428,7 +3430,7 @@ describe("Testing", () => {
   it("c_fill,h_300,w_300", () => {
     const parts = "c_fill,h_300,w_300".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(300).height(300)
     );
     parts.forEach((part) => {
@@ -3439,7 +3441,7 @@ describe("Testing", () => {
   it("c_fill,h_500,w_500", () => {
     const parts = "c_fill,h_500,w_500".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(500).height(500)
     );
     parts.forEach((part) => {
@@ -3452,7 +3454,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().width(700).height(700))
       .effect(Effect.styleTransfer(Source.image("lighthouse")).strength(60));
     parts.forEach((part) => {
@@ -3466,7 +3468,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().width(700).height(700))
       .effect(Effect.styleTransfer(Source.image("lighthouse")).preserveColor());
     parts.forEach((part) => {
@@ -3480,7 +3482,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().width(700).height(700))
       .effect(
         Effect.styleTransfer(Source.image("lighthouse"))
@@ -3498,7 +3500,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().width(700).height(700))
       .effect(
         Effect.styleTransfer(Source.image("lighthouse"))
@@ -3517,7 +3519,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(2, "#999").roundCorners(RoundCorners.byRadius(50)))
       .resize(
         Resize.fill()
@@ -3547,7 +3549,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("/sample")
+    const tAsset = createNewMedia("/sample")
       .border(Border.solid(2, "#999").roundCorners(RoundCorners.byRadius(50)))
       .resize(
         Resize.fill()
@@ -3574,7 +3576,7 @@ describe("Testing", () => {
   it("c_fill,w_100", () => {
     const parts = "c_fill,w_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(100)
     );
     parts.forEach((part) => {
@@ -3585,7 +3587,7 @@ describe("Testing", () => {
   it("c_fill,w_100,ar_2.0", () => {
     const parts = "c_fill,w_100,ar_2.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(100).aspectRatio("2.0")
     );
     parts.forEach((part) => {
@@ -3596,7 +3598,7 @@ describe("Testing", () => {
   it("c_fill,w_100,h_100", () => {
     const parts = "c_fill,w_100,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(100).height(100)
     );
     parts.forEach((part) => {
@@ -3607,7 +3609,7 @@ describe("Testing", () => {
   it("c_fill,w_100_mul_2", () => {
     const parts = "c_fill,w_100_mul_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(Expression.expression("100 * 2"))
     );
     parts.forEach((part) => {
@@ -3620,7 +3622,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(500).gravity(Gravity.xyCenter()).x(100)
     );
     parts.forEach((part) => {
@@ -3633,7 +3635,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fillPad().gravity(Gravity.autoGravity()).regionRelative()
     );
     parts.forEach((part) => {
@@ -3646,7 +3648,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fillPad().gravity(Gravity.autoGravity()).relative()
     );
     parts.forEach((part) => {
@@ -3657,7 +3659,7 @@ describe("Testing", () => {
   it("c_fill_pad,g_auto,h_100", () => {
     const parts = "c_fill_pad,g_auto,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fillPad().height(100).gravity(Gravity.autoGravity())
     );
     parts.forEach((part) => {
@@ -3668,7 +3670,7 @@ describe("Testing", () => {
   it("c_fill_pad,g_auto,w_100", () => {
     const parts = "c_fill_pad,g_auto,w_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fillPad().width(100).gravity(Gravity.autoGravity())
     );
     parts.forEach((part) => {
@@ -3681,7 +3683,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fillPad()
         .width(100)
         .aspectRatio("2.0")
@@ -3697,7 +3699,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fillPad().width(100).height(100).gravity(Gravity.autoGravity())
     );
     parts.forEach((part) => {
@@ -3708,7 +3710,7 @@ describe("Testing", () => {
   it("c_fill_pad,g_auto,x_1", () => {
     const parts = "c_fill_pad,g_auto,x_1".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fillPad().gravity(Gravity.autoGravity()).offsetX(1)
     );
     parts.forEach((part) => {
@@ -3719,7 +3721,7 @@ describe("Testing", () => {
   it("c_fill_pad,g_auto,x_1,y_2", () => {
     const parts = "c_fill_pad,g_auto,x_1,y_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fillPad().gravity(Gravity.autoGravity()).offsetX(1).offsetY(2)
     );
     parts.forEach((part) => {
@@ -3730,7 +3732,7 @@ describe("Testing", () => {
   it("c_fit,fl_region_relative", () => {
     const parts = "c_fit,fl_region_relative".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fit().regionRelative()
     );
     parts.forEach((part) => {
@@ -3741,7 +3743,7 @@ describe("Testing", () => {
   it("c_fit,fl_relative", () => {
     const parts = "c_fit,fl_relative".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fit().relative()
     );
     parts.forEach((part) => {
@@ -3752,7 +3754,7 @@ describe("Testing", () => {
   it("c_fit,h_100", () => {
     const parts = "c_fit,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fit().height(100)
     );
     parts.forEach((part) => {
@@ -3763,7 +3765,7 @@ describe("Testing", () => {
   it("c_fit,h_150,w_150", () => {
     const parts = "c_fit,h_150,w_150".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fit().width(150).height(150)
     );
     parts.forEach((part) => {
@@ -3774,7 +3776,7 @@ describe("Testing", () => {
   it("c_fit,h_16,w_16/e_sepia", () => {
     const parts = "c_fit,h_16,w_16/e_sepia".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fit().width(16).height(16))
       .effect(Effect.sepia());
     parts.forEach((part) => {
@@ -3785,7 +3787,7 @@ describe("Testing", () => {
   it("c_fit,w_10/a_15", () => {
     const parts = "c_fit,w_10/a_15".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fit().width(10))
       .rotate(Rotate.byAngle(15));
     parts.forEach((part) => {
@@ -3796,7 +3798,7 @@ describe("Testing", () => {
   it("c_fit,w_100", () => {
     const parts = "c_fit,w_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fit().width(100)
     );
     parts.forEach((part) => {
@@ -3807,7 +3809,7 @@ describe("Testing", () => {
   it("c_fit,w_100,ar_2.0", () => {
     const parts = "c_fit,w_100,ar_2.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fit().width(100).aspectRatio("2.0")
     );
     parts.forEach((part) => {
@@ -3818,7 +3820,7 @@ describe("Testing", () => {
   it("c_fit,w_100,h_100", () => {
     const parts = "c_fit,w_100,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fit().width(100).height(100)
     );
     parts.forEach((part) => {
@@ -3829,7 +3831,7 @@ describe("Testing", () => {
   it("c_imagga_crop", () => {
     const parts = "c_imagga_crop".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(Resize.imaggaCrop());
+    const tAsset = createNewMedia("sample").resize(Resize.imaggaCrop());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -3841,7 +3843,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.imaggaCrop().width(450).height(300))
       .roundCorners(RoundCorners.byRadius(20))
       .adjust(Adjust.saturation().level(50))
@@ -3869,7 +3871,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.imaggaCrop().regionRelative()
     );
     parts.forEach((part) => {
@@ -3880,7 +3882,7 @@ describe("Testing", () => {
   it("c_imagga_crop,fl_relative", () => {
     const parts = "c_imagga_crop,fl_relative".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.imaggaCrop().relative()
     );
     parts.forEach((part) => {
@@ -3891,7 +3893,7 @@ describe("Testing", () => {
   it("c_imagga_crop,h_100", () => {
     const parts = "c_imagga_crop,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.imaggaCrop().height(100)
     );
     parts.forEach((part) => {
@@ -3902,7 +3904,7 @@ describe("Testing", () => {
   it("c_imagga_crop,h_380,w_380", () => {
     const parts = "c_imagga_crop,h_380,w_380".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.imaggaCrop().width(380).height(380)
     );
     parts.forEach((part) => {
@@ -3913,7 +3915,7 @@ describe("Testing", () => {
   it("c_imagga_crop,w_100", () => {
     const parts = "c_imagga_crop,w_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.imaggaCrop().width(100)
     );
     parts.forEach((part) => {
@@ -3924,7 +3926,7 @@ describe("Testing", () => {
   it("c_imagga_crop,w_100,ar_2.0", () => {
     const parts = "c_imagga_crop,w_100,ar_2.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.imaggaCrop().width(100).aspectRatio("2.0")
     );
     parts.forEach((part) => {
@@ -3935,7 +3937,7 @@ describe("Testing", () => {
   it("c_imagga_crop,w_100,h_100", () => {
     const parts = "c_imagga_crop,w_100,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.imaggaCrop().width(100).height(100)
     );
     parts.forEach((part) => {
@@ -3948,7 +3950,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.imaggaScale().regionRelative()
     );
     parts.forEach((part) => {
@@ -3959,7 +3961,7 @@ describe("Testing", () => {
   it("c_imagga_scale,fl_relative", () => {
     const parts = "c_imagga_scale,fl_relative".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.imaggaScale().relative()
     );
     parts.forEach((part) => {
@@ -3970,7 +3972,7 @@ describe("Testing", () => {
   it("c_imagga_scale,h_100", () => {
     const parts = "c_imagga_scale,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.imaggaScale().height(100)
     );
     parts.forEach((part) => {
@@ -3981,7 +3983,7 @@ describe("Testing", () => {
   it("c_imagga_scale,h_150,w_150", () => {
     const parts = "c_imagga_scale,h_150,w_150".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.imaggaScale().width(150).height(150)
     );
     parts.forEach((part) => {
@@ -3992,7 +3994,7 @@ describe("Testing", () => {
   it("c_imagga_scale,h_200,w_150", () => {
     const parts = "c_imagga_scale,h_200,w_150".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.imaggaScale().width(150).height(200)
     );
     parts.forEach((part) => {
@@ -4003,7 +4005,7 @@ describe("Testing", () => {
   it("c_imagga_scale,h_240,w_260", () => {
     const parts = "c_imagga_scale,h_240,w_260".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.imaggaScale().width(260).height(240)
     );
     parts.forEach((part) => {
@@ -4014,7 +4016,7 @@ describe("Testing", () => {
   it("c_imagga_scale,w_100", () => {
     const parts = "c_imagga_scale,w_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.imaggaScale().width(100)
     );
     parts.forEach((part) => {
@@ -4025,7 +4027,7 @@ describe("Testing", () => {
   it("c_imagga_scale,w_100,ar_2.0", () => {
     const parts = "c_imagga_scale,w_100,ar_2.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.imaggaScale().width(100).aspectRatio("2.0")
     );
     parts.forEach((part) => {
@@ -4036,7 +4038,7 @@ describe("Testing", () => {
   it("c_imagga_scale,w_100,h_100", () => {
     const parts = "c_imagga_scale,w_100,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.imaggaScale().width(100).height(100)
     );
     parts.forEach((part) => {
@@ -4047,7 +4049,7 @@ describe("Testing", () => {
   it("c_imagga_scale,w_150,h_200", () => {
     const parts = "c_imagga_scale,w_150,h_200".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.imaggaScale().width(150).height(200)
     );
     parts.forEach((part) => {
@@ -4058,7 +4060,7 @@ describe("Testing", () => {
   it("c_lfill,fl_region_relative", () => {
     const parts = "c_lfill,fl_region_relative".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitFill().regionRelative()
     );
     parts.forEach((part) => {
@@ -4069,7 +4071,7 @@ describe("Testing", () => {
   it("c_lfill,fl_relative", () => {
     const parts = "c_lfill,fl_relative".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitFill().relative()
     );
     parts.forEach((part) => {
@@ -4080,7 +4082,7 @@ describe("Testing", () => {
   it("c_lfill,g_xy_center,x_1,y_2", () => {
     const parts = "c_lfill,g_xy_center,x_1,y_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitFill().gravity(Gravity.xyCenter()).x(1).y(2)
     );
     parts.forEach((part) => {
@@ -4091,7 +4093,7 @@ describe("Testing", () => {
   it("c_lfill,h_100", () => {
     const parts = "c_lfill,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitFill().height(100)
     );
     parts.forEach((part) => {
@@ -4102,7 +4104,7 @@ describe("Testing", () => {
   it("c_lfill,w_100", () => {
     const parts = "c_lfill,w_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitFill().width(100)
     );
     parts.forEach((part) => {
@@ -4113,7 +4115,7 @@ describe("Testing", () => {
   it("c_lfill,w_100,ar_2.0", () => {
     const parts = "c_lfill,w_100,ar_2.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitFill().width(100).aspectRatio("2.0")
     );
     parts.forEach((part) => {
@@ -4124,7 +4126,7 @@ describe("Testing", () => {
   it("c_lfill,w_100,h_100", () => {
     const parts = "c_lfill,w_100,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitFill().width(100).height(100)
     );
     parts.forEach((part) => {
@@ -4135,7 +4137,7 @@ describe("Testing", () => {
   it("c_limit,fl_region_relative", () => {
     const parts = "c_limit,fl_region_relative".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitFit().regionRelative()
     );
     parts.forEach((part) => {
@@ -4146,7 +4148,7 @@ describe("Testing", () => {
   it("c_limit,fl_relative", () => {
     const parts = "c_limit,fl_relative".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitFit().relative()
     );
     parts.forEach((part) => {
@@ -4157,7 +4159,7 @@ describe("Testing", () => {
   it("c_limit,h_100", () => {
     const parts = "c_limit,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitFit().height(100)
     );
     parts.forEach((part) => {
@@ -4168,7 +4170,7 @@ describe("Testing", () => {
   it("c_limit,w_100", () => {
     const parts = "c_limit,w_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitFit().width(100)
     );
     parts.forEach((part) => {
@@ -4179,7 +4181,7 @@ describe("Testing", () => {
   it("c_limit,w_100,ar_2.0", () => {
     const parts = "c_limit,w_100,ar_2.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitFit().width(100).aspectRatio("2.0")
     );
     parts.forEach((part) => {
@@ -4190,7 +4192,7 @@ describe("Testing", () => {
   it("c_limit,w_100,h_100", () => {
     const parts = "c_limit,w_100,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitFit().width(100).height(100)
     );
     parts.forEach((part) => {
@@ -4201,7 +4203,7 @@ describe("Testing", () => {
   it("c_lpad,fl_region_relative", () => {
     const parts = "c_lpad,fl_region_relative".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitPad().regionRelative()
     );
     parts.forEach((part) => {
@@ -4212,7 +4214,7 @@ describe("Testing", () => {
   it("c_lpad,fl_relative", () => {
     const parts = "c_lpad,fl_relative".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitPad().relative()
     );
     parts.forEach((part) => {
@@ -4223,7 +4225,7 @@ describe("Testing", () => {
   it("c_lpad,h_100", () => {
     const parts = "c_lpad,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitPad().height(100)
     );
     parts.forEach((part) => {
@@ -4234,7 +4236,7 @@ describe("Testing", () => {
   it("c_lpad,w_100", () => {
     const parts = "c_lpad,w_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitPad().width(100)
     );
     parts.forEach((part) => {
@@ -4245,7 +4247,7 @@ describe("Testing", () => {
   it("c_lpad,w_100,ar_2.0", () => {
     const parts = "c_lpad,w_100,ar_2.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitPad().width(100).aspectRatio("2.0")
     );
     parts.forEach((part) => {
@@ -4256,7 +4258,7 @@ describe("Testing", () => {
   it("c_lpad,w_100,h_100", () => {
     const parts = "c_lpad,w_100,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitPad().width(100).height(100)
     );
     parts.forEach((part) => {
@@ -4269,7 +4271,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .transcode(
         Transcode.videoCodec(
           VideoCodec.h264()
@@ -4291,7 +4293,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .transcode(
         Transcode.videoCodec(
           VideoCodec.h264()
@@ -4311,7 +4313,7 @@ describe("Testing", () => {
   it("c_lpad,x_1", () => {
     const parts = "c_lpad,x_1".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitPad().offsetX(1)
     );
     parts.forEach((part) => {
@@ -4322,7 +4324,7 @@ describe("Testing", () => {
   it("c_lpad,x_1,y_2", () => {
     const parts = "c_lpad,x_1,y_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitPad().offsetX(1).offsetY(2)
     );
     parts.forEach((part) => {
@@ -4333,7 +4335,7 @@ describe("Testing", () => {
   it("c_mfit,fl_region_relative", () => {
     const parts = "c_mfit,fl_region_relative".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.minimumFit().regionRelative()
     );
     parts.forEach((part) => {
@@ -4344,7 +4346,7 @@ describe("Testing", () => {
   it("c_mfit,fl_relative", () => {
     const parts = "c_mfit,fl_relative".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.minimumFit().relative()
     );
     parts.forEach((part) => {
@@ -4355,7 +4357,7 @@ describe("Testing", () => {
   it("c_mfit,h_100", () => {
     const parts = "c_mfit,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.minimumFit().height(100)
     );
     parts.forEach((part) => {
@@ -4366,7 +4368,7 @@ describe("Testing", () => {
   it("c_mfit,w_100", () => {
     const parts = "c_mfit,w_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.minimumFit().width(100)
     );
     parts.forEach((part) => {
@@ -4377,7 +4379,7 @@ describe("Testing", () => {
   it("c_mfit,w_100,ar_16:9", () => {
     const parts = "c_mfit,w_100,ar_16:9".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.minimumFit().width(100).aspectRatio(AspectRatio.ar16X9())
     );
     parts.forEach((part) => {
@@ -4388,7 +4390,7 @@ describe("Testing", () => {
   it("c_mfit,w_100,ar_2.0", () => {
     const parts = "c_mfit,w_100,ar_2.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.minimumFit().width(100).aspectRatio("2.0")
     );
     parts.forEach((part) => {
@@ -4401,7 +4403,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.minimumFit()
         .width(100)
         .aspectRatio(AspectRatio.ignoreInitialAspectRatio())
@@ -4414,7 +4416,7 @@ describe("Testing", () => {
   it("c_mfit,w_100,h_100", () => {
     const parts = "c_mfit,w_100,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.minimumFit().width(100).height(100)
     );
     parts.forEach((part) => {
@@ -4425,7 +4427,7 @@ describe("Testing", () => {
   it("c_mpad,fl_region_relative", () => {
     const parts = "c_mpad,fl_region_relative".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.minimumPad().regionRelative()
     );
     parts.forEach((part) => {
@@ -4436,7 +4438,7 @@ describe("Testing", () => {
   it("c_mpad,fl_relative", () => {
     const parts = "c_mpad,fl_relative".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.minimumPad().relative()
     );
     parts.forEach((part) => {
@@ -4447,7 +4449,7 @@ describe("Testing", () => {
   it("c_mpad,h_100", () => {
     const parts = "c_mpad,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.minimumPad().height(100)
     );
     parts.forEach((part) => {
@@ -4458,7 +4460,7 @@ describe("Testing", () => {
   it("c_mpad,w_100", () => {
     const parts = "c_mpad,w_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.minimumPad().width(100)
     );
     parts.forEach((part) => {
@@ -4469,7 +4471,7 @@ describe("Testing", () => {
   it("c_mpad,w_100,ar_2.0", () => {
     const parts = "c_mpad,w_100,ar_2.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.minimumPad().width(100).aspectRatio("2.0")
     );
     parts.forEach((part) => {
@@ -4480,7 +4482,7 @@ describe("Testing", () => {
   it("c_mpad,w_100,h_100", () => {
     const parts = "c_mpad,w_100,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.minimumPad().width(100).height(100)
     );
     parts.forEach((part) => {
@@ -4491,7 +4493,7 @@ describe("Testing", () => {
   it("c_mpad,x_1", () => {
     const parts = "c_mpad,x_1".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.minimumPad().offsetX(1)
     );
     parts.forEach((part) => {
@@ -4502,7 +4504,7 @@ describe("Testing", () => {
   it("c_mpad,x_1,y_2", () => {
     const parts = "c_mpad,x_1,y_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.minimumPad().offsetX(1).offsetY(2)
     );
     parts.forEach((part) => {
@@ -4513,7 +4515,7 @@ describe("Testing", () => {
   it("c_pad,b_auto", () => {
     const parts = "c_pad,b_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(Background.auto())
     );
     parts.forEach((part) => {
@@ -4524,7 +4526,7 @@ describe("Testing", () => {
   it("c_pad,b_auto:border", () => {
     const parts = "c_pad,b_auto:border".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(Background.border())
     );
     parts.forEach((part) => {
@@ -4537,7 +4539,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(Background.border().palette("red", "green"))
     );
     parts.forEach((part) => {
@@ -4548,7 +4550,7 @@ describe("Testing", () => {
   it("c_pad,b_auto:border_contrast", () => {
     const parts = "c_pad,b_auto:border_contrast".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(Background.border().contrast())
     );
     parts.forEach((part) => {
@@ -4561,7 +4563,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(
         Background.border().contrast().palette("red", "green")
       )
@@ -4574,7 +4576,7 @@ describe("Testing", () => {
   it("c_pad,b_auto:border_gradient", () => {
     const parts = "c_pad,b_auto:border_gradient".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(Background.borderGradient())
     );
     parts.forEach((part) => {
@@ -4587,7 +4589,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(Background.borderGradient().gradientColors(2))
     );
     parts.forEach((part) => {
@@ -4600,7 +4602,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(
         Background.borderGradient()
           .gradientDirection(GradientDirection.horizontal())
@@ -4617,7 +4619,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(
         Background.borderGradient().gradientDirection(
           GradientDirection.horizontal()
@@ -4634,7 +4636,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(
         Background.borderGradient().palette("red", "green")
       )
@@ -4649,7 +4651,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(Background.borderGradient().contrast())
     );
     parts.forEach((part) => {
@@ -4662,7 +4664,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(
         Background.borderGradient().contrast().gradientColors(2)
       )
@@ -4677,7 +4679,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(
         Background.borderGradient().contrast().palette("red", "green")
       )
@@ -4690,7 +4692,7 @@ describe("Testing", () => {
   it("c_pad,b_auto:predominant", () => {
     const parts = "c_pad,b_auto:predominant".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(Background.predominant())
     );
     parts.forEach((part) => {
@@ -4703,7 +4705,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(Background.predominant().palette("red", "green"))
     );
     parts.forEach((part) => {
@@ -4716,7 +4718,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(Background.predominant().contrast())
     );
     parts.forEach((part) => {
@@ -4729,7 +4731,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(
         Background.predominant().contrast().palette("red", "green")
       )
@@ -4744,7 +4746,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(Background.predominantGradient())
     );
     parts.forEach((part) => {
@@ -4757,7 +4759,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(
         Background.predominantGradient().gradientColors(2)
       )
@@ -4772,7 +4774,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(
         Background.predominantGradient()
           .gradientDirection(GradientDirection.horizontal())
@@ -4789,7 +4791,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(
         Background.predominantGradient().gradientDirection(
           GradientDirection.horizontal()
@@ -4806,7 +4808,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(
         Background.predominantGradient().palette("red", "green")
       )
@@ -4821,7 +4823,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(Background.predominantGradient().contrast())
     );
     parts.forEach((part) => {
@@ -4834,7 +4836,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(
         Background.predominantGradient().contrast().gradientColors(2)
       )
@@ -4849,7 +4851,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(
         Background.predominantGradient().contrast().palette("red", "green")
       )
@@ -4862,7 +4864,7 @@ describe("Testing", () => {
   it("c_pad,b_blurred", () => {
     const parts = "c_pad,b_blurred".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(Background.blurred())
     );
     parts.forEach((part) => {
@@ -4873,7 +4875,7 @@ describe("Testing", () => {
   it("c_pad,b_blurred:100:500", () => {
     const parts = "c_pad,b_blurred:100:500".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(
         Background.blurred().intensity(100).brightness(500)
       )
@@ -4886,7 +4888,7 @@ describe("Testing", () => {
   it("c_pad,b_green", () => {
     const parts = "c_pad,b_green".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(Background.color("green"))
     );
     parts.forEach((part) => {
@@ -4897,7 +4899,7 @@ describe("Testing", () => {
   it("c_pad,b_rgb:fff", () => {
     const parts = "c_pad,b_rgb:fff".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().background(Background.color("#fff"))
     );
     parts.forEach((part) => {
@@ -4908,7 +4910,7 @@ describe("Testing", () => {
   it("c_pad,du_10,h_360,q_70,w_480", () => {
     const parts = "c_pad,du_10,h_360,q_70,w_480".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().duration("10.0"))
       .resize(Resize.pad().width(480).height(360))
       .delivery(Delivery.quality(70));
@@ -4920,7 +4922,7 @@ describe("Testing", () => {
   it("c_pad,fl_region_relative", () => {
     const parts = "c_pad,fl_region_relative".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().regionRelative()
     );
     parts.forEach((part) => {
@@ -4931,7 +4933,7 @@ describe("Testing", () => {
   it("c_pad,fl_relative", () => {
     const parts = "c_pad,fl_relative".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().relative()
     );
     parts.forEach((part) => {
@@ -4942,7 +4944,7 @@ describe("Testing", () => {
   it("c_pad,h_100", () => {
     const parts = "c_pad,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().height(100)
     );
     parts.forEach((part) => {
@@ -4953,7 +4955,7 @@ describe("Testing", () => {
   it("c_pad,h_200,w_200,b_black", () => {
     const parts = "c_pad,h_200,w_200,b_black".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().width(200).height(200).background(Background.color("black"))
     );
     parts.forEach((part) => {
@@ -4964,7 +4966,7 @@ describe("Testing", () => {
   it("c_pad,h_300,w_400", () => {
     const parts = "c_pad,h_300,w_400".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().width(400).height(300)
     );
     parts.forEach((part) => {
@@ -4977,7 +4979,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad()
         .width(480)
         .height(320)
@@ -4991,7 +4993,7 @@ describe("Testing", () => {
   it("c_pad,h_360,w_480,q_70,du_10", () => {
     const parts = "c_pad,h_360,w_480,q_70,du_10".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().duration("10.0"))
       .resize(Resize.pad().width(480).height(360))
       .delivery(Delivery.quality(70));
@@ -5003,7 +5005,7 @@ describe("Testing", () => {
   it("c_pad,h_360,w_480/du_10/q_70", () => {
     const parts = "c_pad,h_360,w_480/du_10/q_70".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.pad().width(480).height(360))
       .videoEdit(VideoEdit.trim().duration("10.0"))
       .delivery(Delivery.quality(70));
@@ -5017,7 +5019,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.pad().width(480).height(360))
       .videoEdit(VideoEdit.trim().duration("10.0"))
       .delivery(Delivery.quality(70))
@@ -5032,7 +5034,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.pad().width(480).height(360))
       .videoEdit(VideoEdit.trim().duration("10.0"))
       .delivery(Delivery.quality(70))
@@ -5047,7 +5049,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.pad().width(480).height(360))
       .videoEdit(VideoEdit.trim().duration("10.0"))
       .delivery(Delivery.quality(70))
@@ -5060,7 +5062,7 @@ describe("Testing", () => {
   it("c_pad,w_100", () => {
     const parts = "c_pad,w_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().width(100)
     );
     parts.forEach((part) => {
@@ -5071,7 +5073,7 @@ describe("Testing", () => {
   it("c_pad,w_100,ar_2.0", () => {
     const parts = "c_pad,w_100,ar_2.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().width(100).aspectRatio("2.0")
     );
     parts.forEach((part) => {
@@ -5082,7 +5084,7 @@ describe("Testing", () => {
   it("c_pad,w_100,h_100", () => {
     const parts = "c_pad,w_100,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().width(100).height(100)
     );
     parts.forEach((part) => {
@@ -5096,7 +5098,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.pad().width(200).height(200))
       .adjust(Adjust.saturation().level(50))
       .effect(Effect.shadow())
@@ -5109,7 +5111,7 @@ describe("Testing", () => {
   it("c_pad,w_400", () => {
     const parts = "c_pad,w_400".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().width(400)
     );
     parts.forEach((part) => {
@@ -5120,7 +5122,7 @@ describe("Testing", () => {
   it("c_pad,x_1", () => {
     const parts = "c_pad,x_1".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().offsetX(1)
     );
     parts.forEach((part) => {
@@ -5131,7 +5133,7 @@ describe("Testing", () => {
   it("c_pad,x_1,y_2", () => {
     const parts = "c_pad,x_1,y_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().offsetX(1).offsetY(2)
     );
     parts.forEach((part) => {
@@ -5144,7 +5146,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(100))
       .effect(Effect.grayscale())
       .delivery(Delivery.format(Format.auto()))
@@ -5160,7 +5162,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(400))
       .roundCorners(RoundCorners.byRadius(20))
       .adjust(Adjust.saturation().level(50))
@@ -5189,7 +5191,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(400))
       .adjust(Adjust.viesusCorrect());
     parts.forEach((part) => {
@@ -5202,7 +5204,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .adjust(Adjust.viesusCorrect());
     parts.forEach((part) => {
@@ -5213,7 +5215,7 @@ describe("Testing", () => {
   it("c_scale,fl_region_relative", () => {
     const parts = "c_scale,fl_region_relative".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().regionRelative()
     );
     parts.forEach((part) => {
@@ -5224,7 +5226,7 @@ describe("Testing", () => {
   it("c_scale,fl_relative", () => {
     const parts = "c_scale,fl_relative".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().relative()
     );
     parts.forEach((part) => {
@@ -5235,7 +5237,7 @@ describe("Testing", () => {
   it("c_scale,g_liquid", () => {
     const parts = "c_scale,g_liquid".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().liquidRescaling()
     );
     parts.forEach((part) => {
@@ -5246,7 +5248,7 @@ describe("Testing", () => {
   it("c_scale,h_0.3", () => {
     const parts = "c_scale,h_0.3".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().height(0.3)
     );
     parts.forEach((part) => {
@@ -5257,7 +5259,7 @@ describe("Testing", () => {
   it("c_scale,h_100", () => {
     const parts = "c_scale,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().height(100)
     );
     parts.forEach((part) => {
@@ -5268,7 +5270,7 @@ describe("Testing", () => {
   it("c_scale,h_150", () => {
     const parts = "c_scale,h_150".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().height(150)
     );
     parts.forEach((part) => {
@@ -5279,7 +5281,7 @@ describe("Testing", () => {
   it("c_scale,h_200,w_200", () => {
     const parts = "c_scale,h_200,w_200".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(200).height(200)
     );
     parts.forEach((part) => {
@@ -5290,7 +5292,7 @@ describe("Testing", () => {
   it("c_scale,h_200,w_200/e_sepia", () => {
     const parts = "c_scale,h_200,w_200/e_sepia".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(200).height(200))
       .effect(Effect.sepia());
     parts.forEach((part) => {
@@ -5301,7 +5303,7 @@ describe("Testing", () => {
   it("c_scale,q_jpegmini,w_400", () => {
     const parts = "c_scale,q_jpegmini,w_400".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(400))
       .delivery(Delivery.quality(Quality.jpegmini()));
     parts.forEach((part) => {
@@ -5312,7 +5314,7 @@ describe("Testing", () => {
   it("c_scale,q_jpegmini:1,w_400", () => {
     const parts = "c_scale,q_jpegmini:1,w_400".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(400))
       .delivery(Delivery.quality(Quality.jpegminiHigh()));
     parts.forEach((part) => {
@@ -5326,7 +5328,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width("1.0"))
       .namedTransformation(NamedTransformation.name("sample_named_transform"))
       .namedTransformation(NamedTransformation.name("sample_named_transform2"));
@@ -5338,7 +5340,7 @@ describe("Testing", () => {
   it("c_scale,w_0.1/e_sepia:30", () => {
     const parts = "c_scale,w_0.1/e_sepia:30".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(0.1))
       .effect(Effect.sepia().level(30));
     parts.forEach((part) => {
@@ -5349,7 +5351,7 @@ describe("Testing", () => {
   it("c_scale,w_0.5", () => {
     const parts = "c_scale,w_0.5".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(0.5)
     );
     parts.forEach((part) => {
@@ -5360,7 +5362,7 @@ describe("Testing", () => {
   it("c_scale,w_100", () => {
     const parts = "c_scale,w_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(100)
     );
     parts.forEach((part) => {
@@ -5371,7 +5373,7 @@ describe("Testing", () => {
   it("c_scale,w_100,ar_2.0", () => {
     const parts = "c_scale,w_100,ar_2.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(100).aspectRatio("2.0")
     );
     parts.forEach((part) => {
@@ -5382,7 +5384,7 @@ describe("Testing", () => {
   it("c_scale,w_100,h_100", () => {
     const parts = "c_scale,w_100,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(100).height(100)
     );
     parts.forEach((part) => {
@@ -5393,7 +5395,7 @@ describe("Testing", () => {
   it("c_scale,w_200/r_max", () => {
     const parts = "c_scale,w_200/r_max".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(200))
       .roundCorners(RoundCorners.max());
     parts.forEach((part) => {
@@ -5404,7 +5406,7 @@ describe("Testing", () => {
   it("c_scale,w_400", () => {
     const parts = "c_scale,w_400".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(400)
     );
     parts.forEach((part) => {
@@ -5418,7 +5420,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(400))
       .overlay(
         Overlay.source(
@@ -5441,7 +5443,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(400))
       .overlay(
         Overlay.source(Source.image("cloudinary_icon_blue")).position(
@@ -5459,7 +5461,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(400))
       .overlay(
         Overlay.source(
@@ -5476,7 +5478,7 @@ describe("Testing", () => {
   it("c_thumb,fl_region_relative", () => {
     const parts = "c_thumb,fl_region_relative".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.thumbnail().regionRelative()
     );
     parts.forEach((part) => {
@@ -5487,7 +5489,7 @@ describe("Testing", () => {
   it("c_thumb,fl_relative", () => {
     const parts = "c_thumb,fl_relative".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.thumbnail().relative()
     );
     parts.forEach((part) => {
@@ -5498,7 +5500,7 @@ describe("Testing", () => {
   it("c_thumb,g_adv_eyes", () => {
     const parts = "c_thumb,g_adv_eyes".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.thumbnail().gravity(Gravity.focusOn(FocusOn.advancedEyes()))
     );
     parts.forEach((part) => {
@@ -5511,7 +5513,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.thumbnail()
         .width(100)
         .height(100)
@@ -5527,7 +5529,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.thumbnail()
         .width(100)
         .height(100)
@@ -5543,7 +5545,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.thumbnail()
         .width(150)
         .height(150)
@@ -5557,7 +5559,7 @@ describe("Testing", () => {
   it("c_thumb,g_center,w_300", () => {
     const parts = "c_thumb,g_center,w_300".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.thumbnail().width(300).gravity(Gravity.compass(Compass.center()))
     );
     parts.forEach((part) => {
@@ -5571,7 +5573,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.thumbnail()
           .width(130)
@@ -5601,7 +5603,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.thumbnail()
           .width(150)
@@ -5631,7 +5633,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.thumbnail()
           .width(150)
@@ -5667,7 +5669,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.thumbnail()
           .width(150)
@@ -5702,7 +5704,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.thumbnail()
         .width(150)
         .height(150)
@@ -5717,7 +5719,7 @@ describe("Testing", () => {
   it("c_thumb,h_100", () => {
     const parts = "c_thumb,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.thumbnail().height(100)
     );
     parts.forEach((part) => {
@@ -5728,7 +5730,7 @@ describe("Testing", () => {
   it("c_thumb,w_100", () => {
     const parts = "c_thumb,w_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.thumbnail().width(100)
     );
     parts.forEach((part) => {
@@ -5739,7 +5741,7 @@ describe("Testing", () => {
   it("c_thumb,w_100,ar_2.0", () => {
     const parts = "c_thumb,w_100,ar_2.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.thumbnail().width(100).aspectRatio("2.0")
     );
     parts.forEach((part) => {
@@ -5750,7 +5752,7 @@ describe("Testing", () => {
   it("c_thumb,w_100,h_100", () => {
     const parts = "c_thumb,w_100,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.thumbnail().width(100).height(100)
     );
     parts.forEach((part) => {
@@ -5764,7 +5766,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.thumbnail()
           .width(100)
@@ -5794,7 +5796,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.thumbnail()
           .width(100)
@@ -5824,7 +5826,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.thumbnail()
           .width(100)
@@ -5854,7 +5856,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.thumbnail()
           .width(100)
@@ -5884,7 +5886,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.thumbnail()
           .width(100)
@@ -5914,7 +5916,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.thumbnail()
           .width(100)
@@ -5944,7 +5946,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.thumbnail()
           .width(100)
@@ -5974,7 +5976,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.thumbnail()
           .width(100)
@@ -6003,7 +6005,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.outline().mode(OutlineMode.outer()).width(100).color("lightblue")
     );
     parts.forEach((part) => {
@@ -6016,7 +6018,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.outline()
         .mode(OutlineMode.outer())
         .width(15)
@@ -6033,7 +6035,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.shadow().strength(50).color("#009900").offsetX(10).offsetY(10)
     );
     parts.forEach((part) => {
@@ -6046,7 +6048,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.shadow().strength(50).color("#1a8502").offsetX(-15).offsetY(15)
     );
     parts.forEach((part) => {
@@ -6057,7 +6059,7 @@ describe("Testing", () => {
   it("co_rgb:20a020,e_colorize:50", () => {
     const parts = "co_rgb:20a020,e_colorize:50".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.colorize().level(50).color("#20a020")
     );
     parts.forEach((part) => {
@@ -6068,7 +6070,7 @@ describe("Testing", () => {
   it("co_rgb:ec9800,e_colorize:17", () => {
     const parts = "co_rgb:ec9800,e_colorize:17".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.colorize().level(17).color("#ec9800")
     );
     parts.forEach((part) => {
@@ -6079,7 +6081,7 @@ describe("Testing", () => {
   it("cs_icc:icc_file_public_id", () => {
     const parts = "cs_icc:icc_file_public_id".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.colorSpaceFromICC("icc_file_public_id")
     );
     parts.forEach((part) => {
@@ -6090,7 +6092,7 @@ describe("Testing", () => {
   it("cs_keep_cmyk", () => {
     const parts = "cs_keep_cmyk".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.colorSpace(ColorSpace.keepCmyk())
     );
     parts.forEach((part) => {
@@ -6101,7 +6103,7 @@ describe("Testing", () => {
   it("cs_no_cmyk", () => {
     const parts = "cs_no_cmyk".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.colorSpace(ColorSpace.noCmyk())
     );
     parts.forEach((part) => {
@@ -6112,7 +6114,7 @@ describe("Testing", () => {
   it("cs_srgb", () => {
     const parts = "cs_srgb".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.colorSpace(ColorSpace.srgb())
     );
     parts.forEach((part) => {
@@ -6123,7 +6125,7 @@ describe("Testing", () => {
   it("d_avatar.png", () => {
     const parts = "d_avatar.png".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.defaultImage("avatar.png")
     );
     parts.forEach((part) => {
@@ -6134,7 +6136,7 @@ describe("Testing", () => {
   it("d_public_id", () => {
     const parts = "d_public_id".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.defaultImage("public_id")
     );
     parts.forEach((part) => {
@@ -6145,7 +6147,7 @@ describe("Testing", () => {
   it("d_publicid", () => {
     const parts = "d_publicid".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.defaultImage("publicid")
     );
     parts.forEach((part) => {
@@ -6156,7 +6158,7 @@ describe("Testing", () => {
   it("dn_150", () => {
     const parts = "dn_150".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.density(150)
     );
     parts.forEach((part) => {
@@ -6167,7 +6169,7 @@ describe("Testing", () => {
   it("dn_20", () => {
     const parts = "dn_20".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(Delivery.density(20));
+    const tAsset = createNewMedia("sample").delivery(Delivery.density(20));
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -6176,7 +6178,7 @@ describe("Testing", () => {
   it("dpr_1.0", () => {
     const parts = "dpr_1.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(Delivery.dpr("1.0"));
+    const tAsset = createNewMedia("sample").delivery(Delivery.dpr("1.0"));
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -6185,7 +6187,7 @@ describe("Testing", () => {
   it("dpr_2", () => {
     const parts = "dpr_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(Delivery.dpr("2.0"));
+    const tAsset = createNewMedia("sample").delivery(Delivery.dpr("2.0"));
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -6196,7 +6198,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "black"))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -6209,7 +6211,7 @@ describe("Testing", () => {
   it("dpr_2,f_auto,q_auto,w_800", () => {
     const parts = "dpr_2,f_auto,q_auto,w_800".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(800))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -6224,7 +6226,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
       .delivery(Delivery.quality(Quality.auto()))
@@ -6237,7 +6239,7 @@ describe("Testing", () => {
   it("dpr_2,q_auto,f_auto", () => {
     const parts = "dpr_2,q_auto,f_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
       .delivery(Delivery.quality(Quality.auto()));
@@ -6251,7 +6253,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "black"))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -6266,7 +6268,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(500))
       .delivery(Delivery.dpr("2.0"))
@@ -6280,7 +6282,7 @@ describe("Testing", () => {
   it("dpr_2,q_auto,f_auto,w_600", () => {
     const parts = "dpr_2,q_auto,f_auto,w_600".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(600))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -6295,7 +6297,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(600))
       .delivery(Delivery.dpr("2.0"))
@@ -6311,7 +6313,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
       .delivery(Delivery.quality(Quality.auto()))
@@ -6324,7 +6326,7 @@ describe("Testing", () => {
   it("dpr_auto", () => {
     const parts = "dpr_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.dpr(Dpr.auto())
     );
     parts.forEach((part) => {
@@ -6337,7 +6339,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(400))
       .delivery(Delivery.dpr(Dpr.auto()))
       .border(Border.solid(1, "gray"));
@@ -6351,7 +6353,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(600))
       .delivery(Delivery.dpr(Dpr.auto()))
       .border(Border.solid(1, "gray"));
@@ -6363,7 +6365,7 @@ describe("Testing", () => {
   it("dpr_auto/bo_1px_solid_gray", () => {
     const parts = "dpr_auto/bo_1px_solid_gray".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .delivery(Delivery.dpr(Dpr.auto()))
       .border(Border.solid(1, "gray"));
     parts.forEach((part) => {
@@ -6376,7 +6378,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .delivery(Delivery.dpr(Dpr.auto()))
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().height(300));
@@ -6390,7 +6392,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .delivery(Delivery.dpr(Dpr.auto()))
       .resize(Resize.scale().height(300))
       .border(Border.solid(1, "gray"));
@@ -6402,7 +6404,7 @@ describe("Testing", () => {
   it("du_2/e_volume:30", () => {
     const parts = "du_2/e_volume:30".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().duration("2.0"))
       .videoEdit(VideoEdit.volume(30));
     parts.forEach((part) => {
@@ -6413,7 +6415,7 @@ describe("Testing", () => {
   it("du_2/e_volume:45", () => {
     const parts = "du_2/e_volume:45".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().duration("2.0"))
       .videoEdit(VideoEdit.volume(45));
     parts.forEach((part) => {
@@ -6424,7 +6426,7 @@ describe("Testing", () => {
   it("du_3", () => {
     const parts = "du_3".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.trim().duration("3.0")
     );
     parts.forEach((part) => {
@@ -6435,7 +6437,7 @@ describe("Testing", () => {
   it("du_30,q_70:qmax_20", () => {
     const parts = "du_30,q_70:qmax_20".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().duration("30.0"))
       .delivery(Delivery.quality(70).quantization(20));
     parts.forEach((part) => {
@@ -6449,7 +6451,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.concatenate(Concatenate.imageSource("sample"))
         .transition(Transition.videoSource("transition1"))
         .duration(5)
@@ -6465,7 +6467,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().duration("5.0"))
       .resize(Resize.scale().width(300).height(200))
       .videoEdit(
@@ -6491,7 +6493,7 @@ describe("Testing", () => {
   it("du_50p,so_2", () => {
     const parts = "du_50p,so_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.trim().startOffset("2.0").duration("50%")
     );
     parts.forEach((part) => {
@@ -6502,7 +6504,7 @@ describe("Testing", () => {
   it("e_accelerate:100", () => {
     const parts = "e_accelerate:100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.accelerate().rate(100)
     );
     parts.forEach((part) => {
@@ -6513,7 +6515,7 @@ describe("Testing", () => {
   it("e_accelerate:6", () => {
     const parts = "e_accelerate:6".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.accelerate().rate(6)
     );
     parts.forEach((part) => {
@@ -6524,7 +6526,7 @@ describe("Testing", () => {
   it("e_adv_redeye", () => {
     const parts = "e_adv_redeye".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.advancedRedEye()
     );
     parts.forEach((part) => {
@@ -6537,7 +6539,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .effect(Effect.advancedRedEye())
       .resize(
         Resize.thumbnail()
@@ -6555,7 +6557,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.image("cloudinary_icon"))
         .position(new Position().gravity(Gravity.compass(Compass.northWest())))
         .blendMode(BlendMode.antiRemoval(95))
@@ -6568,7 +6570,7 @@ describe("Testing", () => {
   it("e_art:al_dente", () => {
     const parts = "e_art:al_dente".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.artisticFilter(ArtisticFilter.alDente())
     );
     parts.forEach((part) => {
@@ -6579,7 +6581,7 @@ describe("Testing", () => {
   it("e_art:athena", () => {
     const parts = "e_art:athena".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.artisticFilter(ArtisticFilter.athena())
     );
     parts.forEach((part) => {
@@ -6590,7 +6592,7 @@ describe("Testing", () => {
   it("e_art:audrey", () => {
     const parts = "e_art:audrey".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.artisticFilter(ArtisticFilter.audrey())
     );
     parts.forEach((part) => {
@@ -6601,7 +6603,7 @@ describe("Testing", () => {
   it("e_art:aurora", () => {
     const parts = "e_art:aurora".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.artisticFilter(ArtisticFilter.aurora())
     );
     parts.forEach((part) => {
@@ -6612,7 +6614,7 @@ describe("Testing", () => {
   it("e_art:daguerre", () => {
     const parts = "e_art:daguerre".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.artisticFilter(ArtisticFilter.daguerre())
     );
     parts.forEach((part) => {
@@ -6623,7 +6625,7 @@ describe("Testing", () => {
   it("e_art:eucalyptus", () => {
     const parts = "e_art:eucalyptus".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.artisticFilter(ArtisticFilter.eucalyptus())
     );
     parts.forEach((part) => {
@@ -6634,7 +6636,7 @@ describe("Testing", () => {
   it("e_art:fes", () => {
     const parts = "e_art:fes".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.artisticFilter(ArtisticFilter.fes())
     );
     parts.forEach((part) => {
@@ -6645,7 +6647,7 @@ describe("Testing", () => {
   it("e_art:frost", () => {
     const parts = "e_art:frost".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.artisticFilter(ArtisticFilter.frost())
     );
     parts.forEach((part) => {
@@ -6656,7 +6658,7 @@ describe("Testing", () => {
   it("e_art:hairspray", () => {
     const parts = "e_art:hairspray".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.artisticFilter(ArtisticFilter.hairspray())
     );
     parts.forEach((part) => {
@@ -6667,7 +6669,7 @@ describe("Testing", () => {
   it("e_art:hokusai", () => {
     const parts = "e_art:hokusai".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.artisticFilter(ArtisticFilter.hokusai())
     );
     parts.forEach((part) => {
@@ -6678,7 +6680,7 @@ describe("Testing", () => {
   it("e_art:incognito", () => {
     const parts = "e_art:incognito".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.artisticFilter(ArtisticFilter.incognito())
     );
     parts.forEach((part) => {
@@ -6689,7 +6691,7 @@ describe("Testing", () => {
   it("e_art:linen", () => {
     const parts = "e_art:linen".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.artisticFilter(ArtisticFilter.linen())
     );
     parts.forEach((part) => {
@@ -6700,7 +6702,7 @@ describe("Testing", () => {
   it("e_art:peacock", () => {
     const parts = "e_art:peacock".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.artisticFilter(ArtisticFilter.peacock())
     );
     parts.forEach((part) => {
@@ -6711,7 +6713,7 @@ describe("Testing", () => {
   it("e_art:primavera", () => {
     const parts = "e_art:primavera".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.artisticFilter(ArtisticFilter.primavera())
     );
     parts.forEach((part) => {
@@ -6722,7 +6724,7 @@ describe("Testing", () => {
   it("e_art:quartz", () => {
     const parts = "e_art:quartz".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.artisticFilter(ArtisticFilter.quartz())
     );
     parts.forEach((part) => {
@@ -6733,7 +6735,7 @@ describe("Testing", () => {
   it("e_art:red_rock", () => {
     const parts = "e_art:red_rock".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.artisticFilter(ArtisticFilter.redRock())
     );
     parts.forEach((part) => {
@@ -6744,7 +6746,7 @@ describe("Testing", () => {
   it("e_art:refresh", () => {
     const parts = "e_art:refresh".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.artisticFilter(ArtisticFilter.refresh())
     );
     parts.forEach((part) => {
@@ -6755,7 +6757,7 @@ describe("Testing", () => {
   it("e_art:sizzle", () => {
     const parts = "e_art:sizzle".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.artisticFilter(ArtisticFilter.sizzle())
     );
     parts.forEach((part) => {
@@ -6766,7 +6768,7 @@ describe("Testing", () => {
   it("e_art:sonnet", () => {
     const parts = "e_art:sonnet".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.artisticFilter(ArtisticFilter.sonnet())
     );
     parts.forEach((part) => {
@@ -6777,7 +6779,7 @@ describe("Testing", () => {
   it("e_art:ukulele", () => {
     const parts = "e_art:ukulele".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.artisticFilter(ArtisticFilter.ukulele())
     );
     parts.forEach((part) => {
@@ -6788,7 +6790,7 @@ describe("Testing", () => {
   it("e_art:zorro", () => {
     const parts = "e_art:zorro".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.artisticFilter(ArtisticFilter.zorro())
     );
     parts.forEach((part) => {
@@ -6799,7 +6801,7 @@ describe("Testing", () => {
   it("e_assist_colorblind", () => {
     const parts = "e_assist_colorblind".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.assistColorBlind()
     );
     parts.forEach((part) => {
@@ -6810,7 +6812,7 @@ describe("Testing", () => {
   it("e_assist_colorblind:20", () => {
     const parts = "e_assist_colorblind:20".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.assistColorBlind().stripesStrength(20)
     );
     parts.forEach((part) => {
@@ -6821,7 +6823,7 @@ describe("Testing", () => {
   it("e_assist_colorblind:8", () => {
     const parts = "e_assist_colorblind:8".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.assistColorBlind().stripesStrength(8)
     );
     parts.forEach((part) => {
@@ -6834,7 +6836,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .effect(Effect.assistColorBlind().stripesStrength(8))
       .effect(Effect.simulateColorBlind());
     parts.forEach((part) => {
@@ -6845,7 +6847,7 @@ describe("Testing", () => {
   it("e_assist_colorblind:xray", () => {
     const parts = "e_assist_colorblind:xray".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.assistColorBlind().xray()
     );
     parts.forEach((part) => {
@@ -6856,7 +6858,7 @@ describe("Testing", () => {
   it("e_auto_brightness", () => {
     const parts = "e_auto_brightness".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.autoBrightness()
     );
     parts.forEach((part) => {
@@ -6867,7 +6869,7 @@ describe("Testing", () => {
   it("e_auto_brightness:10", () => {
     const parts = "e_auto_brightness:10".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.autoBrightness().blend(10)
     );
     parts.forEach((part) => {
@@ -6878,7 +6880,7 @@ describe("Testing", () => {
   it("e_auto_brightness:17", () => {
     const parts = "e_auto_brightness:17".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.autoBrightness().blend(17)
     );
     parts.forEach((part) => {
@@ -6889,7 +6891,7 @@ describe("Testing", () => {
   it("e_auto_brightness:80", () => {
     const parts = "e_auto_brightness:80".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.autoBrightness().blend(80)
     );
     parts.forEach((part) => {
@@ -6900,7 +6902,7 @@ describe("Testing", () => {
   it("e_auto_color", () => {
     const parts = "e_auto_color".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(Adjust.autoColor());
+    const tAsset = createNewMedia("sample").adjust(Adjust.autoColor());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -6909,7 +6911,7 @@ describe("Testing", () => {
   it("e_auto_color:10", () => {
     const parts = "e_auto_color:10".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.autoColor().blend(10)
     );
     parts.forEach((part) => {
@@ -6920,7 +6922,7 @@ describe("Testing", () => {
   it("e_auto_color:17", () => {
     const parts = "e_auto_color:17".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.autoColor().blend(17)
     );
     parts.forEach((part) => {
@@ -6931,7 +6933,7 @@ describe("Testing", () => {
   it("e_auto_color:80", () => {
     const parts = "e_auto_color:80".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.autoColor().blend(80)
     );
     parts.forEach((part) => {
@@ -6942,7 +6944,7 @@ describe("Testing", () => {
   it("e_auto_contrast", () => {
     const parts = "e_auto_contrast".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(Adjust.autoContrast());
+    const tAsset = createNewMedia("sample").adjust(Adjust.autoContrast());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -6951,7 +6953,7 @@ describe("Testing", () => {
   it("e_auto_contrast:10", () => {
     const parts = "e_auto_contrast:10".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.autoContrast().blend(10)
     );
     parts.forEach((part) => {
@@ -6962,7 +6964,7 @@ describe("Testing", () => {
   it("e_auto_contrast:17", () => {
     const parts = "e_auto_contrast:17".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.autoContrast().blend(17)
     );
     parts.forEach((part) => {
@@ -6973,7 +6975,7 @@ describe("Testing", () => {
   it("e_auto_contrast:80", () => {
     const parts = "e_auto_contrast:80".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.autoContrast().blend(80)
     );
     parts.forEach((part) => {
@@ -6984,7 +6986,7 @@ describe("Testing", () => {
   it("e_bgremoval", () => {
     const parts = "e_bgremoval".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.removeBackground()
     );
     parts.forEach((part) => {
@@ -6995,7 +6997,7 @@ describe("Testing", () => {
   it("e_bgremoval:ffff00", () => {
     const parts = "e_bgremoval:ffff00".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.removeBackground().colorToRemove("#ffff00")
     );
     parts.forEach((part) => {
@@ -7006,7 +7008,7 @@ describe("Testing", () => {
   it("e_bgremoval:screen", () => {
     const parts = "e_bgremoval:screen".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.removeBackground().screen()
     );
     parts.forEach((part) => {
@@ -7017,7 +7019,7 @@ describe("Testing", () => {
   it("e_blackwhite", () => {
     const parts = "e_blackwhite".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(Effect.blackwhite());
+    const tAsset = createNewMedia("sample").effect(Effect.blackwhite());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -7026,7 +7028,7 @@ describe("Testing", () => {
   it("e_blackwhite:40", () => {
     const parts = "e_blackwhite:40".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.blackwhite().threshold(40)
     );
     parts.forEach((part) => {
@@ -7037,7 +7039,7 @@ describe("Testing", () => {
   it("e_blackwhite:5", () => {
     const parts = "e_blackwhite:5".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.blackwhite().threshold(5)
     );
     parts.forEach((part) => {
@@ -7048,7 +7050,7 @@ describe("Testing", () => {
   it("e_blue", () => {
     const parts = "e_blue".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(Adjust.blue());
+    const tAsset = createNewMedia("sample").adjust(Adjust.blue());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -7057,7 +7059,7 @@ describe("Testing", () => {
   it("e_blue:10", () => {
     const parts = "e_blue:10".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.blue().level(10)
     );
     parts.forEach((part) => {
@@ -7068,7 +7070,7 @@ describe("Testing", () => {
   it("e_blue:17", () => {
     const parts = "e_blue:17".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.blue().level(17)
     );
     parts.forEach((part) => {
@@ -7079,7 +7081,7 @@ describe("Testing", () => {
   it("e_blue:90", () => {
     const parts = "e_blue:90".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.blue().level(90)
     );
     parts.forEach((part) => {
@@ -7090,7 +7092,7 @@ describe("Testing", () => {
   it("e_blur", () => {
     const parts = "e_blur".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(Effect.blur());
+    const tAsset = createNewMedia("sample").effect(Effect.blur());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -7099,7 +7101,7 @@ describe("Testing", () => {
   it("e_blur:100", () => {
     const parts = "e_blur:100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.blur().strength(100)
     );
     parts.forEach((part) => {
@@ -7110,7 +7112,7 @@ describe("Testing", () => {
   it("e_blur:300", () => {
     const parts = "e_blur:300".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.blur().strength(300)
     );
     parts.forEach((part) => {
@@ -7121,7 +7123,7 @@ describe("Testing", () => {
   it("e_blur:5", () => {
     const parts = "e_blur:5".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.blur().strength(5)
     );
     parts.forEach((part) => {
@@ -7134,7 +7136,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .effect(Effect.blur().strength(500))
       .overlay(
         Overlay.source(
@@ -7152,7 +7154,7 @@ describe("Testing", () => {
   it("e_blur:800", () => {
     const parts = "e_blur:800".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.blur().strength(800)
     );
     parts.forEach((part) => {
@@ -7163,7 +7165,7 @@ describe("Testing", () => {
   it("e_blur_faces:5", () => {
     const parts = "e_blur_faces:5".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.blur().strength(5).region(Region.faces())
     );
     parts.forEach((part) => {
@@ -7174,7 +7176,7 @@ describe("Testing", () => {
   it("e_blur_faces:800", () => {
     const parts = "e_blur_faces:800".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.blur().strength(800).region(Region.faces())
     );
     parts.forEach((part) => {
@@ -7187,7 +7189,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.blur().region(Region.custom().width(100).height(100).x(50).y(120))
     );
     parts.forEach((part) => {
@@ -7200,7 +7202,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.blur()
         .strength(1000)
         .region(Region.custom().width(550).height(425).x(600).y(400))
@@ -7213,7 +7215,7 @@ describe("Testing", () => {
   it("e_blur_region:1500,y_0.75", () => {
     const parts = "e_blur_region:1500,y_0.75".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.blur().strength(1500).region(Region.custom().y(0.75))
     );
     parts.forEach((part) => {
@@ -7224,7 +7226,7 @@ describe("Testing", () => {
   it("e_blur_region:5,g_ocr_text", () => {
     const parts = "e_blur_region:5,g_ocr_text".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.blur().strength(5).region(Region.ocr())
     );
     parts.forEach((part) => {
@@ -7235,7 +7237,7 @@ describe("Testing", () => {
   it("e_blur_region:800,g_ocr_text", () => {
     const parts = "e_blur_region:800,g_ocr_text".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.blur().strength(800).region(Region.ocr())
     );
     parts.forEach((part) => {
@@ -7248,7 +7250,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .effect(Effect.blur().strength(800).region(Region.ocr()))
       .resize(Resize.scale().height(300));
     parts.forEach((part) => {
@@ -7259,7 +7261,7 @@ describe("Testing", () => {
   it("e_brightness:17", () => {
     const parts = "e_brightness:17".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.brightness().level(17)
     );
     parts.forEach((part) => {
@@ -7270,7 +7272,7 @@ describe("Testing", () => {
   it("e_brightness:60", () => {
     const parts = "e_brightness:60".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.brightness().level(60)
     );
     parts.forEach((part) => {
@@ -7281,7 +7283,7 @@ describe("Testing", () => {
   it("e_brightness_hsb", () => {
     const parts = "e_brightness_hsb".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(Adjust.brightnessHSB());
+    const tAsset = createNewMedia("sample").adjust(Adjust.brightnessHSB());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -7290,7 +7292,7 @@ describe("Testing", () => {
   it("e_brightness_hsb:-50", () => {
     const parts = "e_brightness_hsb:-50".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.brightnessHSB().level(-50)
     );
     parts.forEach((part) => {
@@ -7301,7 +7303,7 @@ describe("Testing", () => {
   it("e_brightness_hsb:10", () => {
     const parts = "e_brightness_hsb:10".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.brightnessHSB().level(10)
     );
     parts.forEach((part) => {
@@ -7312,7 +7314,7 @@ describe("Testing", () => {
   it("e_cartoonify", () => {
     const parts = "e_cartoonify".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(Effect.cartoonify());
+    const tAsset = createNewMedia("sample").effect(Effect.cartoonify());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -7324,7 +7326,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .effect(Effect.cartoonify())
       .roundCorners(RoundCorners.max())
       .effect(Effect.outline().width(100).color("lightblue"))
@@ -7342,7 +7344,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .effect(Effect.cartoonify())
       .roundCorners(RoundCorners.max())
       .effect(Effect.outline().width(100).color("lightblue"))
@@ -7356,7 +7358,7 @@ describe("Testing", () => {
   it("e_cartoonify:20:bw", () => {
     const parts = "e_cartoonify:20:bw".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.cartoonify().lineStrength(20).blackwhite()
     );
     parts.forEach((part) => {
@@ -7367,7 +7369,7 @@ describe("Testing", () => {
   it("e_cartoonify:70:80", () => {
     const parts = "e_cartoonify:70:80".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.cartoonify().lineStrength(70).colorReductionLevel(80)
     );
     parts.forEach((part) => {
@@ -7378,7 +7380,7 @@ describe("Testing", () => {
   it("e_cartoonify:80", () => {
     const parts = "e_cartoonify:80".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.cartoonify().lineStrength(80)
     );
     parts.forEach((part) => {
@@ -7389,7 +7391,7 @@ describe("Testing", () => {
   it("e_cartoonify:80:100", () => {
     const parts = "e_cartoonify:80:100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.cartoonify().lineStrength(80).colorReductionLevel(100)
     );
     parts.forEach((part) => {
@@ -7400,7 +7402,7 @@ describe("Testing", () => {
   it("e_cartoonify:80:bw", () => {
     const parts = "e_cartoonify:80:bw".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.cartoonify().lineStrength(80).blackwhite()
     );
     parts.forEach((part) => {
@@ -7411,7 +7413,7 @@ describe("Testing", () => {
   it("e_colorize:35,co_darkviolet", () => {
     const parts = "e_colorize:35,co_darkviolet".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.colorize().level(35).color("darkviolet")
     );
     parts.forEach((part) => {
@@ -7422,7 +7424,7 @@ describe("Testing", () => {
   it("e_colorize:80", () => {
     const parts = "e_colorize:80".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.colorize().level(80)
     );
     parts.forEach((part) => {
@@ -7433,7 +7435,7 @@ describe("Testing", () => {
   it("e_contrast", () => {
     const parts = "e_contrast".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(Adjust.contrast());
+    const tAsset = createNewMedia("sample").adjust(Adjust.contrast());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -7442,7 +7444,7 @@ describe("Testing", () => {
   it("e_contrast:-70", () => {
     const parts = "e_contrast:-70".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.contrast().level(-70)
     );
     parts.forEach((part) => {
@@ -7453,7 +7455,7 @@ describe("Testing", () => {
   it("e_contrast:17", () => {
     const parts = "e_contrast:17".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.contrast().level(17)
     );
     parts.forEach((part) => {
@@ -7464,7 +7466,7 @@ describe("Testing", () => {
   it("e_contrast:50", () => {
     const parts = "e_contrast:50".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.contrast().level(50)
     );
     parts.forEach((part) => {
@@ -7475,7 +7477,7 @@ describe("Testing", () => {
   it("e_deshake", () => {
     const parts = "e_deshake".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(Effect.deshake());
+    const tAsset = createNewMedia("sample").effect(Effect.deshake());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -7484,7 +7486,7 @@ describe("Testing", () => {
   it("e_deshake:32", () => {
     const parts = "e_deshake:32".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.deshake().shakeStrength(ShakeStrength.pixels32())
     );
     parts.forEach((part) => {
@@ -7497,7 +7499,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").reshape(
+    const tAsset = createNewMedia("sample").reshape(
       Reshape.distort([5, 34, 70, 10, 70, 75, 5, 55])
     );
     parts.forEach((part) => {
@@ -7508,7 +7510,7 @@ describe("Testing", () => {
   it("e_distort:arc:180", () => {
     const parts = "e_distort:arc:180".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").reshape(
+    const tAsset = createNewMedia("sample").reshape(
       Reshape.distortArc("180.0")
     );
     parts.forEach((part) => {
@@ -7519,7 +7521,7 @@ describe("Testing", () => {
   it("e_distort:arc:5", () => {
     const parts = "e_distort:arc:5".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").reshape(
+    const tAsset = createNewMedia("sample").reshape(
       Reshape.distortArc("5.0")
     );
     parts.forEach((part) => {
@@ -7530,7 +7532,7 @@ describe("Testing", () => {
   it("e_fade:-6", () => {
     const parts = "e_fade:-6".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.fadeOut().duration(6)
     );
     parts.forEach((part) => {
@@ -7541,7 +7543,7 @@ describe("Testing", () => {
   it("e_fade:2000", () => {
     const parts = "e_fade:2000".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.fadeIn().duration(2000)
     );
     parts.forEach((part) => {
@@ -7552,7 +7554,7 @@ describe("Testing", () => {
   it("e_fade:2000/e_fade:-4000", () => {
     const parts = "e_fade:2000/e_fade:-4000".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .effect(Effect.fadeIn().duration(2000))
       .effect(Effect.fadeOut().duration(4000));
     parts.forEach((part) => {
@@ -7563,7 +7565,7 @@ describe("Testing", () => {
   it("e_fade:6", () => {
     const parts = "e_fade:6".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.fadeIn().duration(6)
     );
     parts.forEach((part) => {
@@ -7574,7 +7576,7 @@ describe("Testing", () => {
   it("e_fill_light", () => {
     const parts = "e_fill_light".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(Adjust.fillLight());
+    const tAsset = createNewMedia("sample").adjust(Adjust.fillLight());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -7583,7 +7585,7 @@ describe("Testing", () => {
   it("e_fill_light:10:20", () => {
     const parts = "e_fill_light:10:20".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.fillLight().blend(10).bias(20)
     );
     parts.forEach((part) => {
@@ -7594,7 +7596,7 @@ describe("Testing", () => {
   it("e_fill_light:17", () => {
     const parts = "e_fill_light:17".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.fillLight().blend(17)
     );
     parts.forEach((part) => {
@@ -7605,7 +7607,7 @@ describe("Testing", () => {
   it("e_fill_light:17:-100", () => {
     const parts = "e_fill_light:17:-100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.fillLight().blend(17).bias(-100)
     );
     parts.forEach((part) => {
@@ -7616,7 +7618,7 @@ describe("Testing", () => {
   it("e_fill_light:70:20", () => {
     const parts = "e_fill_light:70:20".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.fillLight().blend(70).bias(20)
     );
     parts.forEach((part) => {
@@ -7627,7 +7629,7 @@ describe("Testing", () => {
   it("e_gamma:17", () => {
     const parts = "e_gamma:17".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.gamma().level(17)
     );
     parts.forEach((part) => {
@@ -7638,7 +7640,7 @@ describe("Testing", () => {
   it("e_gamma:50", () => {
     const parts = "e_gamma:50".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.gamma().level(50)
     );
     parts.forEach((part) => {
@@ -7651,7 +7653,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.gradientFade()
         .strength(10)
         .type(GradientFade.symmetric())
@@ -7668,7 +7670,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.gradientFade()
         .strength(50)
         .type(GradientFade.symmetricPad())
@@ -7682,7 +7684,7 @@ describe("Testing", () => {
   it("e_grayscale", () => {
     const parts = "e_grayscale".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(Effect.grayscale());
+    const tAsset = createNewMedia("sample").effect(Effect.grayscale());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -7691,7 +7693,7 @@ describe("Testing", () => {
   it("e_green", () => {
     const parts = "e_green".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(Adjust.green());
+    const tAsset = createNewMedia("sample").adjust(Adjust.green());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -7700,7 +7702,7 @@ describe("Testing", () => {
   it("e_green:-30", () => {
     const parts = "e_green:-30".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.green().level(-30)
     );
     parts.forEach((part) => {
@@ -7711,7 +7713,7 @@ describe("Testing", () => {
   it("e_green:10", () => {
     const parts = "e_green:10".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.green().level(10)
     );
     parts.forEach((part) => {
@@ -7722,7 +7724,7 @@ describe("Testing", () => {
   it("e_green:17", () => {
     const parts = "e_green:17".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.green().level(17)
     );
     parts.forEach((part) => {
@@ -7733,7 +7735,7 @@ describe("Testing", () => {
   it("e_hue", () => {
     const parts = "e_hue".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(Adjust.hue());
+    const tAsset = createNewMedia("sample").adjust(Adjust.hue());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -7742,7 +7744,7 @@ describe("Testing", () => {
   it("e_hue:10", () => {
     const parts = "e_hue:10".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(Adjust.hue().level(10));
+    const tAsset = createNewMedia("sample").adjust(Adjust.hue().level(10));
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -7751,7 +7753,7 @@ describe("Testing", () => {
   it("e_hue:17", () => {
     const parts = "e_hue:17".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(Adjust.hue().level(17));
+    const tAsset = createNewMedia("sample").adjust(Adjust.hue().level(17));
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -7760,7 +7762,7 @@ describe("Testing", () => {
   it("e_hue:40", () => {
     const parts = "e_hue:40".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(Adjust.hue().level(40));
+    const tAsset = createNewMedia("sample").adjust(Adjust.hue().level(40));
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -7769,7 +7771,7 @@ describe("Testing", () => {
   it("e_improve", () => {
     const parts = "e_improve".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(Adjust.improve());
+    const tAsset = createNewMedia("sample").adjust(Adjust.improve());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -7778,7 +7780,7 @@ describe("Testing", () => {
   it("e_improve:50", () => {
     const parts = "e_improve:50".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.improve().mode('50')
     );
     parts.forEach((part) => {
@@ -7789,7 +7791,7 @@ describe("Testing", () => {
   it("e_improve:indoor", () => {
     const parts = "e_improve:indoor".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.improve().mode(ImproveMode.indoor())
     );
     parts.forEach((part) => {
@@ -7800,7 +7802,7 @@ describe("Testing", () => {
   it("e_improve:outdoor", () => {
     const parts = "e_improve:outdoor".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.improve().mode(ImproveMode.outdoor())
     );
     parts.forEach((part) => {
@@ -7811,7 +7813,7 @@ describe("Testing", () => {
   it("e_improve:outdoor:10", () => {
     const parts = "e_improve:outdoor:10".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.improve().mode(ImproveMode.outdoor()).blend(10)
     );
     parts.forEach((part) => {
@@ -7822,7 +7824,7 @@ describe("Testing", () => {
   it("e_improve:outdoor:50", () => {
     const parts = "e_improve:outdoor:50".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.improve().mode(ImproveMode.outdoor()).blend(50)
     );
     parts.forEach((part) => {
@@ -7833,7 +7835,7 @@ describe("Testing", () => {
   it("e_make_transparent:5", () => {
     const parts = "e_make_transparent:5".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.makeTransparent().tolerance("5.0")
     );
     parts.forEach((part) => {
@@ -7844,7 +7846,7 @@ describe("Testing", () => {
   it("e_make_transparent:50,co_red", () => {
     const parts = "e_make_transparent:50,co_red".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.makeTransparent().tolerance("50.0").colorToReplace("red")
     );
     parts.forEach((part) => {
@@ -7857,7 +7859,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.image("cloudinary_icon_blue")).blendMode(
         BlendMode.multiply()
       )
@@ -7870,7 +7872,7 @@ describe("Testing", () => {
   it("e_negate", () => {
     const parts = "e_negate".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(Effect.negate());
+    const tAsset = createNewMedia("sample").effect(Effect.negate());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -7879,7 +7881,7 @@ describe("Testing", () => {
   it("e_noise:100", () => {
     const parts = "e_noise:100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.noise().level(100)
     );
     parts.forEach((part) => {
@@ -7890,7 +7892,7 @@ describe("Testing", () => {
   it("e_oil_paint", () => {
     const parts = "e_oil_paint".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(Effect.oilPaint());
+    const tAsset = createNewMedia("sample").effect(Effect.oilPaint());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -7899,7 +7901,7 @@ describe("Testing", () => {
   it("e_oil_paint:40", () => {
     const parts = "e_oil_paint:40".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.oilPaint().strength(40)
     );
     parts.forEach((part) => {
@@ -7910,7 +7912,7 @@ describe("Testing", () => {
   it("e_oil_paint:5", () => {
     const parts = "e_oil_paint:5".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.oilPaint().strength(5)
     );
     parts.forEach((part) => {
@@ -7921,7 +7923,7 @@ describe("Testing", () => {
   it("e_oil_paint:70", () => {
     const parts = "e_oil_paint:70".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.oilPaint().strength(70)
     );
     parts.forEach((part) => {
@@ -7932,7 +7934,7 @@ describe("Testing", () => {
   it("e_opacity_threshold", () => {
     const parts = "e_opacity_threshold".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.opacityThreshold()
     );
     parts.forEach((part) => {
@@ -7943,7 +7945,7 @@ describe("Testing", () => {
   it("e_opacity_threshold:1/b_blue", () => {
     const parts = "e_opacity_threshold:1/b_blue".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .adjust(Adjust.opacityThreshold().level(1))
       .backgroundColor("blue");
     parts.forEach((part) => {
@@ -7954,7 +7956,7 @@ describe("Testing", () => {
   it("e_opacity_threshold:10", () => {
     const parts = "e_opacity_threshold:10".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.opacityThreshold().level(10)
     );
     parts.forEach((part) => {
@@ -7965,7 +7967,7 @@ describe("Testing", () => {
   it("e_opacity_threshold:17", () => {
     const parts = "e_opacity_threshold:17".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.opacityThreshold().level(17)
     );
     parts.forEach((part) => {
@@ -7976,7 +7978,7 @@ describe("Testing", () => {
   it("e_ordered_dither", () => {
     const parts = "e_ordered_dither".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(Effect.dither());
+    const tAsset = createNewMedia("sample").effect(Effect.dither());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -7985,7 +7987,7 @@ describe("Testing", () => {
   it("e_ordered_dither:12", () => {
     const parts = "e_ordered_dither:12".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.dither().type(Dither.halftone16x16Orthogonal())
     );
     parts.forEach((part) => {
@@ -7996,7 +7998,7 @@ describe("Testing", () => {
   it("e_ordered_dither:13", () => {
     const parts = "e_ordered_dither:13".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.dither().type(Dither.circles5x5Black())
     );
     parts.forEach((part) => {
@@ -8007,7 +8009,7 @@ describe("Testing", () => {
   it("e_ordered_dither:3", () => {
     const parts = "e_ordered_dither:3".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.dither().type(Dither.ordered3x3Dispersed())
     );
     parts.forEach((part) => {
@@ -8018,7 +8020,7 @@ describe("Testing", () => {
   it("e_ordered_dither:6", () => {
     const parts = "e_ordered_dither:6".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.dither().type(Dither.halftone4x4Angled())
     );
     parts.forEach((part) => {
@@ -8029,7 +8031,7 @@ describe("Testing", () => {
   it("e_outline,co_orange", () => {
     const parts = "e_outline,co_orange".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.outline().color("orange")
     );
     parts.forEach((part) => {
@@ -8040,7 +8042,7 @@ describe("Testing", () => {
   it("e_outline:$foo:100:5,co_red", () => {
     const parts = "e_outline:$foo:100:5,co_red".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.outline().mode("$foo").width(100).blurLevel(5).color("red")
     );
     parts.forEach((part) => {
@@ -8051,7 +8053,7 @@ describe("Testing", () => {
   it("e_outline:fill,co_orange", () => {
     const parts = "e_outline:fill,co_orange".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.outline().mode(OutlineMode.fill()).color("orange")
     );
     parts.forEach((part) => {
@@ -8062,7 +8064,7 @@ describe("Testing", () => {
   it("e_outline:inner,co_orange", () => {
     const parts = "e_outline:inner,co_orange".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.outline().mode(OutlineMode.inner()).color("orange")
     );
     parts.forEach((part) => {
@@ -8075,7 +8077,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.outline()
         .mode(OutlineMode.inner())
         .width(100)
@@ -8092,7 +8094,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.outline().mode(OutlineMode.innerFill()).color("orange")
     );
     parts.forEach((part) => {
@@ -8103,7 +8105,7 @@ describe("Testing", () => {
   it("e_outline:outer,co_orange", () => {
     const parts = "e_outline:outer,co_orange".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.outline().mode(OutlineMode.outer()).color("orange")
     );
     parts.forEach((part) => {
@@ -8114,7 +8116,7 @@ describe("Testing", () => {
   it("e_outline:outer:20:200", () => {
     const parts = "e_outline:outer:20:200".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.outline().mode(OutlineMode.outer()).width(20).blurLevel(200)
     );
     parts.forEach((part) => {
@@ -8127,7 +8129,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .effect(
         Effect.outline().mode(OutlineMode.outer()).width(20).blurLevel(200)
       )
@@ -8146,7 +8148,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .effect(
         Effect.outline().mode(OutlineMode.outer()).width(20).blurLevel(200)
       )
@@ -8166,7 +8168,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .effect(
         Effect.outline().mode(OutlineMode.outer()).width(20).blurLevel(200)
       )
@@ -8185,7 +8187,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.image("cloudinary_icon_blue")).blendMode(
         BlendMode.overlay()
       )
@@ -8198,7 +8200,7 @@ describe("Testing", () => {
   it("e_pixelate", () => {
     const parts = "e_pixelate".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(Effect.pixelate());
+    const tAsset = createNewMedia("sample").effect(Effect.pixelate());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -8207,7 +8209,7 @@ describe("Testing", () => {
   it("e_pixelate:17", () => {
     const parts = "e_pixelate:17".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.pixelate().squareSize(17)
     );
     parts.forEach((part) => {
@@ -8218,7 +8220,7 @@ describe("Testing", () => {
   it("e_pixelate:20", () => {
     const parts = "e_pixelate:20".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.pixelate().squareSize(20)
     );
     parts.forEach((part) => {
@@ -8229,7 +8231,7 @@ describe("Testing", () => {
   it("e_pixelate_faces:15", () => {
     const parts = "e_pixelate_faces:15".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.pixelate().squareSize(15).region(Region.faces())
     );
     parts.forEach((part) => {
@@ -8240,7 +8242,7 @@ describe("Testing", () => {
   it("e_pixelate_faces:5", () => {
     const parts = "e_pixelate_faces:5".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.pixelate().squareSize(5).region(Region.faces())
     );
     parts.forEach((part) => {
@@ -8251,7 +8253,7 @@ describe("Testing", () => {
   it("e_pixelate_faces:9", () => {
     const parts = "e_pixelate_faces:9".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.pixelate().squareSize(9).region(Region.faces())
     );
     parts.forEach((part) => {
@@ -8262,7 +8264,7 @@ describe("Testing", () => {
   it("e_pixelate_region,w_100", () => {
     const parts = "e_pixelate_region,w_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.pixelate().region(Region.custom().width(100))
     );
     parts.forEach((part) => {
@@ -8275,7 +8277,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.pixelate()
         .squareSize(2)
         .region(Region.custom().width(200).height(100).x(1).y(3))
@@ -8288,7 +8290,7 @@ describe("Testing", () => {
   it("e_pixelate_region:25,y_0.75", () => {
     const parts = "e_pixelate_region:25,y_0.75".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.pixelate().squareSize(25).region(Region.custom().y(0.75))
     );
     parts.forEach((part) => {
@@ -8301,7 +8303,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.pixelate()
         .squareSize(35)
         .region(Region.custom().width(550).height(425).x(600).y(400))
@@ -8316,7 +8318,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.pixelate().squareSize(5).region(Region.ocr())
     );
     parts.forEach((part) => {
@@ -8327,7 +8329,7 @@ describe("Testing", () => {
   it("e_preview,fl_getinfo", () => {
     const parts = "e_preview,fl_getinfo".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.preview())
       .addFlag(Flag.getInfo());
     parts.forEach((part) => {
@@ -8340,7 +8342,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.preview()
         .duration("12.0")
         .maximumSegments(3)
@@ -8354,7 +8356,7 @@ describe("Testing", () => {
   it("e_preview:duration_5", () => {
     const parts = "e_preview:duration_5".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.preview().duration("5.0")
     );
     parts.forEach((part) => {
@@ -8365,7 +8367,7 @@ describe("Testing", () => {
   it("e_preview:duration_5.0", () => {
     const parts = "e_preview:duration_5.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.preview().duration("5.0")
     );
     parts.forEach((part) => {
@@ -8378,7 +8380,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.preview()
         .duration("5.0")
         .maximumSegments(10)
@@ -8394,7 +8396,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.recolor([
         [0.3, 0.7, 0.1, 0.2],
         [0.3, 0.6, 0.1, 0.2],
@@ -8411,7 +8413,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.recolor([
         [0.3, 0.7, 0.1],
         [0.3, 0.6, 0.1],
@@ -8426,7 +8428,7 @@ describe("Testing", () => {
   it("e_red", () => {
     const parts = "e_red".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(Adjust.red());
+    const tAsset = createNewMedia("sample").adjust(Adjust.red());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -8435,7 +8437,7 @@ describe("Testing", () => {
   it("e_red:10", () => {
     const parts = "e_red:10".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(Adjust.red().level(10));
+    const tAsset = createNewMedia("sample").adjust(Adjust.red().level(10));
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -8444,7 +8446,7 @@ describe("Testing", () => {
   it("e_red:17", () => {
     const parts = "e_red:17".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(Adjust.red().level(17));
+    const tAsset = createNewMedia("sample").adjust(Adjust.red().level(17));
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -8453,7 +8455,7 @@ describe("Testing", () => {
   it("e_red:50", () => {
     const parts = "e_red:50".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(Adjust.red().level(50));
+    const tAsset = createNewMedia("sample").adjust(Adjust.red().level(50));
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -8462,7 +8464,7 @@ describe("Testing", () => {
   it("e_redeye", () => {
     const parts = "e_redeye".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(Effect.redEye());
+    const tAsset = createNewMedia("sample").effect(Effect.redEye());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -8471,7 +8473,7 @@ describe("Testing", () => {
   it("e_replace_color:2F4F4F:20", () => {
     const parts = "e_replace_color:2F4F4F:20".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.replaceColor("#2F4F4F").tolerance(20)
     );
     parts.forEach((part) => {
@@ -8484,7 +8486,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.replaceColor("maroon").fromColor("#2b38aa").tolerance(80)
     );
     parts.forEach((part) => {
@@ -8497,7 +8499,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .adjust(Adjust.replaceColor("maroon").fromColor("#2b38aa").tolerance(80))
       .resize(Resize.scale().width(250));
     parts.forEach((part) => {
@@ -8508,7 +8510,7 @@ describe("Testing", () => {
   it("e_replace_color:red:5:blue", () => {
     const parts = "e_replace_color:red:5:blue".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.replaceColor("red").fromColor("blue").tolerance(5)
     );
     parts.forEach((part) => {
@@ -8519,7 +8521,7 @@ describe("Testing", () => {
   it("e_replace_color:saddlebrown", () => {
     const parts = "e_replace_color:saddlebrown".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.replaceColor("saddlebrown")
     );
     parts.forEach((part) => {
@@ -8532,7 +8534,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.replaceColor("silver").fromColor("#89b8ed").tolerance(55)
     );
     parts.forEach((part) => {
@@ -8543,7 +8545,7 @@ describe("Testing", () => {
   it("e_reverse", () => {
     const parts = "e_reverse".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(Effect.reverse());
+    const tAsset = createNewMedia("sample").effect(Effect.reverse());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -8555,7 +8557,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(
         VideoEdit.concatenate(
           Concatenate.videoSource("ski_jump").transformation(
@@ -8580,7 +8582,7 @@ describe("Testing", () => {
   it("e_saturation:17", () => {
     const parts = "e_saturation:17".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.saturation().level(17)
     );
     parts.forEach((part) => {
@@ -8591,7 +8593,7 @@ describe("Testing", () => {
   it("e_saturation:50", () => {
     const parts = "e_saturation:50".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.saturation().level(50)
     );
     parts.forEach((part) => {
@@ -8602,7 +8604,7 @@ describe("Testing", () => {
   it("e_saturation:70", () => {
     const parts = "e_saturation:70".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.saturation().level(70)
     );
     parts.forEach((part) => {
@@ -8613,7 +8615,7 @@ describe("Testing", () => {
   it("e_screen,l_cloudinary_icon", () => {
     const parts = "e_screen,l_cloudinary_icon".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.image("cloudinary_icon")).blendMode(
         BlendMode.screen()
       )
@@ -8628,7 +8630,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.image("cloudinary_icon_blue")).blendMode(
         BlendMode.screen()
       )
@@ -8641,7 +8643,7 @@ describe("Testing", () => {
   it("e_sepia", () => {
     const parts = "e_sepia".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(Effect.sepia());
+    const tAsset = createNewMedia("sample").effect(Effect.sepia());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -8650,7 +8652,7 @@ describe("Testing", () => {
   it("e_sepia:17", () => {
     const parts = "e_sepia:17".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.sepia().level(17)
     );
     parts.forEach((part) => {
@@ -8663,7 +8665,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .effect(Effect.sepia().level(17))
       .resize(Resize.crop().width(100).height(200));
     parts.forEach((part) => {
@@ -8674,7 +8676,7 @@ describe("Testing", () => {
   it("e_sepia:50", () => {
     const parts = "e_sepia:50".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.sepia().level(50)
     );
     parts.forEach((part) => {
@@ -8685,7 +8687,7 @@ describe("Testing", () => {
   it("e_shadow:50,x_10,y_10", () => {
     const parts = "e_shadow:50,x_10,y_10".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.shadow().strength(50).offsetX(10).offsetY(10)
     );
     parts.forEach((part) => {
@@ -8696,7 +8698,7 @@ describe("Testing", () => {
   it("e_sharpen", () => {
     const parts = "e_sharpen".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(Adjust.sharpen());
+    const tAsset = createNewMedia("sample").adjust(Adjust.sharpen());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -8705,7 +8707,7 @@ describe("Testing", () => {
   it("e_sharpen:10", () => {
     const parts = "e_sharpen:10".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.sharpen().strength(10)
     );
     parts.forEach((part) => {
@@ -8716,7 +8718,7 @@ describe("Testing", () => {
   it("e_sharpen:17", () => {
     const parts = "e_sharpen:17".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.sharpen().strength(17)
     );
     parts.forEach((part) => {
@@ -8727,7 +8729,7 @@ describe("Testing", () => {
   it("e_sharpen:400", () => {
     const parts = "e_sharpen:400".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.sharpen().strength(400)
     );
     parts.forEach((part) => {
@@ -8738,7 +8740,7 @@ describe("Testing", () => {
   it("e_shear:20.0:0.0", () => {
     const parts = "e_shear:20.0:0.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").reshape(
+    const tAsset = createNewMedia("sample").reshape(
       Reshape.shear("20.0", "0.0")
     );
     parts.forEach((part) => {
@@ -8749,7 +8751,7 @@ describe("Testing", () => {
   it("e_shear:23.0:50.0", () => {
     const parts = "e_shear:23.0:50.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").reshape(
+    const tAsset = createNewMedia("sample").reshape(
       Reshape.shear("23.0", "50.0")
     );
     parts.forEach((part) => {
@@ -8760,7 +8762,7 @@ describe("Testing", () => {
   it("e_simulate_colorblind", () => {
     const parts = "e_simulate_colorblind".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.simulateColorBlind()
     );
     parts.forEach((part) => {
@@ -8771,7 +8773,7 @@ describe("Testing", () => {
   it("e_simulate_colorblind/h_200", () => {
     const parts = "e_simulate_colorblind/h_200".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .effect(Effect.simulateColorBlind())
       .resize(Resize.scale().height(200));
     parts.forEach((part) => {
@@ -8784,7 +8786,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.simulateColorBlind().condition(SimulateColorBlind.deuteranopia())
     );
     parts.forEach((part) => {
@@ -8797,7 +8799,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.simulateColorBlind().condition(SimulateColorBlind.protanopia())
     );
     parts.forEach((part) => {
@@ -8810,7 +8812,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.styleTransfer(Source.image("davinci_mona_lisa"))
     );
     parts.forEach((part) => {
@@ -8823,7 +8825,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.styleTransfer(Source.image("lighthouse"))
     );
     parts.forEach((part) => {
@@ -8836,7 +8838,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.styleTransfer(Source.image("lighthouse"))
         .preserveColor()
         .strength(40)
@@ -8852,7 +8854,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.styleTransfer(
         Source.image("lighthouse").transformation(
           new ImageTransformation().effect(Effect.sepia())
@@ -8869,7 +8871,7 @@ describe("Testing", () => {
   it("e_tint", () => {
     const parts = "e_tint".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(Adjust.tint());
+    const tAsset = createNewMedia("sample").adjust(Adjust.tint());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -8878,7 +8880,7 @@ describe("Testing", () => {
   it("e_tint:100:red:blue:yellow", () => {
     const parts = "e_tint:100:red:blue:yellow".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.tint("100:red:blue:yellow")
     );
     parts.forEach((part) => {
@@ -8889,7 +8891,7 @@ describe("Testing", () => {
   it("e_tint:20", () => {
     const parts = "e_tint:20".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(Adjust.tint(20));
+    const tAsset = createNewMedia("sample").adjust(Adjust.tint(20));
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -8898,7 +8900,7 @@ describe("Testing", () => {
   it("e_tint:50:red:blue", () => {
     const parts = "e_tint:50:red:blue".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.tint("50:red:blue")
     );
     parts.forEach((part) => {
@@ -8911,7 +8913,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.tint("equalize:80:red:50p:blue:60p:yellow:40p")
     );
     parts.forEach((part) => {
@@ -8924,7 +8926,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.tint("equalize:80:red:blue:yellow")
     );
     parts.forEach((part) => {
@@ -8935,7 +8937,7 @@ describe("Testing", () => {
   it("e_trim", () => {
     const parts = "e_trim".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").reshape(Reshape.trim());
+    const tAsset = createNewMedia("sample").reshape(Reshape.trim());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -8944,7 +8946,7 @@ describe("Testing", () => {
   it("e_trim:50", () => {
     const parts = "e_trim:50".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").reshape(
+    const tAsset = createNewMedia("sample").reshape(
       Reshape.trim().colorSimilarity(50)
     );
     parts.forEach((part) => {
@@ -8955,7 +8957,7 @@ describe("Testing", () => {
   it("e_trim:50:yellow", () => {
     const parts = "e_trim:50:yellow".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").reshape(
+    const tAsset = createNewMedia("sample").reshape(
       Reshape.trim().colorSimilarity(50).colorOverride("yellow")
     );
     parts.forEach((part) => {
@@ -8966,7 +8968,7 @@ describe("Testing", () => {
   it("e_unsharp_mask", () => {
     const parts = "e_unsharp_mask".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(Adjust.unsharpMask());
+    const tAsset = createNewMedia("sample").adjust(Adjust.unsharpMask());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -8975,7 +8977,7 @@ describe("Testing", () => {
   it("e_unsharp_mask:10", () => {
     const parts = "e_unsharp_mask:10".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.unsharpMask().strength(10)
     );
     parts.forEach((part) => {
@@ -8986,7 +8988,7 @@ describe("Testing", () => {
   it("e_unsharp_mask:17", () => {
     const parts = "e_unsharp_mask:17".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.unsharpMask().strength(17)
     );
     parts.forEach((part) => {
@@ -8997,7 +8999,7 @@ describe("Testing", () => {
   it("e_unsharp_mask:500", () => {
     const parts = "e_unsharp_mask:500".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.unsharpMask().strength(500)
     );
     parts.forEach((part) => {
@@ -9011,7 +9013,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.vectorize()
         .numOfColors(15)
         .detailsLevel(200)
@@ -9027,7 +9029,7 @@ describe("Testing", () => {
   it("e_vectorize:colors:17", () => {
     const parts = "e_vectorize:colors:17".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.vectorize().numOfColors(17)
     );
     parts.forEach((part) => {
@@ -9040,7 +9042,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.vectorize().numOfColors(17).detailsLevel(100)
     );
     parts.forEach((part) => {
@@ -9053,7 +9055,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.vectorize().numOfColors(3).detailsLevel(0.5)
     );
     parts.forEach((part) => {
@@ -9064,7 +9066,7 @@ describe("Testing", () => {
   it("e_vectorize:detail:200", () => {
     const parts = "e_vectorize:detail:200".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.vectorize().detailsLevel(200)
     );
     parts.forEach((part) => {
@@ -9075,7 +9077,7 @@ describe("Testing", () => {
   it("e_vibrance", () => {
     const parts = "e_vibrance".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(Adjust.vibrance());
+    const tAsset = createNewMedia("sample").adjust(Adjust.vibrance());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -9084,7 +9086,7 @@ describe("Testing", () => {
   it("e_vibrance:10", () => {
     const parts = "e_vibrance:10".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.vibrance().strength(10)
     );
     parts.forEach((part) => {
@@ -9095,7 +9097,7 @@ describe("Testing", () => {
   it("e_vibrance:17", () => {
     const parts = "e_vibrance:17".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.vibrance().strength(17)
     );
     parts.forEach((part) => {
@@ -9106,7 +9108,7 @@ describe("Testing", () => {
   it("e_vibrance:70", () => {
     const parts = "e_vibrance:70".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.vibrance().strength(70)
     );
     parts.forEach((part) => {
@@ -9117,7 +9119,7 @@ describe("Testing", () => {
   it("e_viesus_correct", () => {
     const parts = "e_viesus_correct".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(Adjust.viesusCorrect());
+    const tAsset = createNewMedia("sample").adjust(Adjust.viesusCorrect());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -9126,7 +9128,7 @@ describe("Testing", () => {
   it("e_viesus_correct:no_redeye", () => {
     const parts = "e_viesus_correct:no_redeye".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.viesusCorrect().noRedEye()
     );
     parts.forEach((part) => {
@@ -9139,7 +9141,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.viesusCorrect().noRedEye().skinSaturation(5)
     );
     parts.forEach((part) => {
@@ -9152,7 +9154,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.viesusCorrect().skinSaturation()
     );
     parts.forEach((part) => {
@@ -9165,7 +9167,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.viesusCorrect().skinSaturation(20)
     );
     parts.forEach((part) => {
@@ -9176,7 +9178,7 @@ describe("Testing", () => {
   it("e_vignette", () => {
     const parts = "e_vignette".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(Effect.vignette());
+    const tAsset = createNewMedia("sample").effect(Effect.vignette());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -9185,7 +9187,7 @@ describe("Testing", () => {
   it("e_vignette:17", () => {
     const parts = "e_vignette:17".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.vignette().strength(17)
     );
     parts.forEach((part) => {
@@ -9196,7 +9198,7 @@ describe("Testing", () => {
   it("e_vignette:30", () => {
     const parts = "e_vignette:30".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").effect(
+    const tAsset = createNewMedia("sample").effect(
       Effect.vignette().strength(30)
     );
     parts.forEach((part) => {
@@ -9207,7 +9209,7 @@ describe("Testing", () => {
   it("e_volume:10", () => {
     const parts = "e_volume:10".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.volume(10)
     );
     parts.forEach((part) => {
@@ -9218,7 +9220,7 @@ describe("Testing", () => {
   it("e_volume:50", () => {
     const parts = "e_volume:50".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.volume(50)
     );
     parts.forEach((part) => {
@@ -9229,7 +9231,7 @@ describe("Testing", () => {
   it("e_volume:5db", () => {
     const parts = "e_volume:5db".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.volume("5db")
     );
     parts.forEach((part) => {
@@ -9240,7 +9242,7 @@ describe("Testing", () => {
   it("e_volume:mute", () => {
     const parts = "e_volume:mute".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.volume(Volume.mute())
     );
     parts.forEach((part) => {
@@ -9251,7 +9253,7 @@ describe("Testing", () => {
   it("eo_10", () => {
     const parts = "eo_10".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.trim().endOffset("10.0")
     );
     parts.forEach((part) => {
@@ -9262,7 +9264,7 @@ describe("Testing", () => {
   it("eo_3", () => {
     const parts = "eo_3".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.trim().endOffset("3.0")
     );
     parts.forEach((part) => {
@@ -9273,7 +9275,7 @@ describe("Testing", () => {
   it("f_auto", () => {
     const parts = "f_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.format(Format.auto())
     );
     parts.forEach((part) => {
@@ -9286,7 +9288,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().height(150))
       .delivery(Delivery.dpr("2.0"))
@@ -9302,7 +9304,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().height(200))
       .delivery(Delivery.dpr("2.0"))
@@ -9316,7 +9318,7 @@ describe("Testing", () => {
   it("f_auto,dpr_auto", () => {
     const parts = "f_auto,dpr_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .delivery(Delivery.dpr(Dpr.auto()))
       .delivery(Delivery.format(Format.auto()));
     parts.forEach((part) => {
@@ -9329,7 +9331,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.format(Format.auto()).preserveTransparency()
     );
     parts.forEach((part) => {
@@ -9340,7 +9342,7 @@ describe("Testing", () => {
   it("f_auto,q_auto", () => {
     const parts = "f_auto,q_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .delivery(Delivery.format(Format.auto()))
       .delivery(Delivery.quality(Quality.auto()));
     parts.forEach((part) => {
@@ -9351,7 +9353,7 @@ describe("Testing", () => {
   it("f_auto,q_auto,dpr_2", () => {
     const parts = "f_auto,q_auto,dpr_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
       .delivery(Delivery.quality(Quality.auto()));
@@ -9365,7 +9367,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().height(150))
       .delivery(Delivery.dpr("2.0"))
@@ -9381,7 +9383,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().height(200))
       .delivery(Delivery.dpr("2.0"))
@@ -9397,7 +9399,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
       .delivery(Delivery.quality(Quality.auto()))
@@ -9411,7 +9413,7 @@ describe("Testing", () => {
   it("f_auto,q_auto,dpr_auto,w_300", () => {
     const parts = "f_auto,q_auto,dpr_auto,w_300".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(300))
       .delivery(Delivery.dpr(Dpr.auto()))
       .delivery(Delivery.format(Format.auto()))
@@ -9426,7 +9428,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().height(150))
       .delivery(Delivery.dpr("2.0"))
@@ -9442,7 +9444,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(500))
       .delivery(Delivery.dpr("2.0"))
@@ -9456,7 +9458,7 @@ describe("Testing", () => {
   it("f_auto,q_auto/", () => {
     const parts = "f_auto,q_auto/".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("/sample")
+    const tAsset = createNewMedia("/sample")
       .delivery(Delivery.format(Format.auto()))
       .delivery(Delivery.quality(Quality.auto()));
     parts.forEach((part) => {
@@ -9467,7 +9469,7 @@ describe("Testing", () => {
   it("f_auto,w_150,dpr_2,q_auto", () => {
     const parts = "f_auto,w_150,dpr_2,q_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(150))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -9480,7 +9482,7 @@ describe("Testing", () => {
   it("f_auto/dpr_auto", () => {
     const parts = "f_auto/dpr_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .delivery(Delivery.format(Format.auto()))
       .delivery(Delivery.dpr(Dpr.auto()));
     parts.forEach((part) => {
@@ -9491,7 +9493,7 @@ describe("Testing", () => {
   it("f_gif,fl_lossy", () => {
     const parts = "f_gif,fl_lossy".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.format(Format.gif()).lossy()
     );
     parts.forEach((part) => {
@@ -9504,7 +9506,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .delivery(Delivery.format(Format.gif()))
       .resize(Resize.fill().height(200).aspectRatio("1.0"))
       .backgroundColor("#a17ec5")
@@ -9517,7 +9519,7 @@ describe("Testing", () => {
   it("f_glb", () => {
     const parts = "f_glb".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.format(Format.glb())
     );
     parts.forEach((part) => {
@@ -9528,7 +9530,7 @@ describe("Testing", () => {
   it("f_jpg", () => {
     const parts = "f_jpg".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.format(Format.jpg())
     );
     parts.forEach((part) => {
@@ -9539,7 +9541,7 @@ describe("Testing", () => {
   it("f_jpg,fl_progressive", () => {
     const parts = "f_jpg,fl_progressive".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.format(Format.jpg()).progressive(Progressive.progressive())
     );
     parts.forEach((part) => {
@@ -9550,7 +9552,7 @@ describe("Testing", () => {
   it("f_jpg,fl_progressive:semi", () => {
     const parts = "f_jpg,fl_progressive:semi".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.format(Format.jpg()).progressive(Progressive.semi())
     );
     parts.forEach((part) => {
@@ -9561,7 +9563,7 @@ describe("Testing", () => {
   it("f_jpg,u_some", () => {
     const parts = "f_jpg,u_some".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").underlay(
+    const tAsset = createNewMedia("sample").underlay(
       Underlay.source(
         Source.image("some").transformation(
           new ImageTransformation().delivery(Delivery.format(Format.jpg()))
@@ -9576,7 +9578,7 @@ describe("Testing", () => {
   it("f_jpg/u_some", () => {
     const parts = "f_jpg/u_some".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .delivery(Delivery.format(Format.jpg()))
       .underlay(Underlay.source(Source.image("some")));
     parts.forEach((part) => {
@@ -9587,7 +9589,7 @@ describe("Testing", () => {
   it("f_mp3", () => {
     const parts = "f_mp3".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.format(Format.audioMp3())
     );
     parts.forEach((part) => {
@@ -9598,7 +9600,7 @@ describe("Testing", () => {
   it("f_mp4", () => {
     const parts = "f_mp4".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.format(Format.videoMp4())
     );
     parts.forEach((part) => {
@@ -9609,7 +9611,7 @@ describe("Testing", () => {
   it("f_mp4,w_300", () => {
     const parts = "f_mp4,w_300".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(300))
       .delivery(Delivery.format(Format.videoMp4()));
     parts.forEach((part) => {
@@ -9622,7 +9624,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .delivery(Delivery.format(Format.videoMp4()))
       .resize(Resize.scale().height(300))
       .backgroundColor("#d5d2ca")
@@ -9635,7 +9637,7 @@ describe("Testing", () => {
   it("f_png", () => {
     const parts = "f_png".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.format(Format.png())
     );
     parts.forEach((part) => {
@@ -9648,7 +9650,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .delivery(Delivery.format(Format.png()))
       .rotate(Rotate.byAngle(90))
       .resize(
@@ -9668,7 +9670,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .delivery(Delivery.format(Format.png()))
       .resize(Resize.scale().width(800))
       .reshape(
@@ -9687,7 +9689,7 @@ describe("Testing", () => {
   it("f_webm", () => {
     const parts = "f_webm".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.format(Format.videoWebm())
     );
     parts.forEach((part) => {
@@ -9700,7 +9702,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(
+    const tAsset = createNewMedia("sample").transcode(
       Transcode.toAnimated(AnimatedFormat.webp()).sampling(10)
     );
     parts.forEach((part) => {
@@ -9711,7 +9713,7 @@ describe("Testing", () => {
   it("fl_animated,f_auto", () => {
     const parts = "fl_animated,f_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(
+    const tAsset = createNewMedia("sample").transcode(
       Transcode.toAnimated(AnimatedFormat.auto())
     );
     parts.forEach((part) => {
@@ -9722,7 +9724,7 @@ describe("Testing", () => {
   it("fl_animated,f_gif", () => {
     const parts = "fl_animated,f_gif".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(
+    const tAsset = createNewMedia("sample").transcode(
       Transcode.toAnimated(AnimatedFormat.gif())
     );
     parts.forEach((part) => {
@@ -9733,7 +9735,7 @@ describe("Testing", () => {
   it("fl_apng", () => {
     const parts = "fl_apng".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").addFlag("apng");
+    const tAsset = createNewMedia("sample").addFlag("apng");
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -9742,7 +9744,7 @@ describe("Testing", () => {
   it("fl_attachment", () => {
     const parts = "fl_attachment".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").addFlag(Flag.attachment());
+    const tAsset = createNewMedia("sample").addFlag(Flag.attachment());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -9751,7 +9753,7 @@ describe("Testing", () => {
   it("fl_attachment:pretty_flower", () => {
     const parts = "fl_attachment:pretty_flower".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").addFlag(
+    const tAsset = createNewMedia("sample").addFlag(
       Flag.attachment("pretty_flower")
     );
     parts.forEach((part) => {
@@ -9764,7 +9766,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .delivery(Delivery.format(Format.auto()))
       .addFlag(Flag.attachment("pretty_flower"));
     parts.forEach((part) => {
@@ -9775,7 +9777,7 @@ describe("Testing", () => {
   it("fl_clip,pg_2", () => {
     const parts = "fl_clip,pg_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").psdTools(
+    const tAsset = createNewMedia("sample").psdTools(
       PSDTools.clip().byIndex(2)
     );
     parts.forEach((part) => {
@@ -9786,7 +9788,7 @@ describe("Testing", () => {
   it("fl_clip,pg_name:path", () => {
     const parts = "fl_clip,pg_name:path".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").psdTools(
+    const tAsset = createNewMedia("sample").psdTools(
       PSDTools.clip().byName("path")
     );
     parts.forEach((part) => {
@@ -9797,7 +9799,7 @@ describe("Testing", () => {
   it("fl_clip,pg_name:stones", () => {
     const parts = "fl_clip,pg_name:stones".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").psdTools(
+    const tAsset = createNewMedia("sample").psdTools(
       PSDTools.clip().byName("stones")
     );
     parts.forEach((part) => {
@@ -9808,7 +9810,7 @@ describe("Testing", () => {
   it("fl_clip_evenodd", () => {
     const parts = "fl_clip_evenodd".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").psdTools(
+    const tAsset = createNewMedia("sample").psdTools(
       PSDTools.clip().evenOdd()
     );
     parts.forEach((part) => {
@@ -9819,7 +9821,7 @@ describe("Testing", () => {
   it("fl_clip_evenodd,pg_2", () => {
     const parts = "fl_clip_evenodd,pg_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").psdTools(
+    const tAsset = createNewMedia("sample").psdTools(
       PSDTools.clip().byIndex(2).evenOdd()
     );
     parts.forEach((part) => {
@@ -9830,7 +9832,7 @@ describe("Testing", () => {
   it("fl_draco", () => {
     const parts = "fl_draco".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").addFlag("draco");
+    const tAsset = createNewMedia("sample").addFlag("draco");
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -9839,7 +9841,7 @@ describe("Testing", () => {
   it("fl_keep_iptc", () => {
     const parts = "fl_keep_iptc".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").addFlag(Flag.keepIptc());
+    const tAsset = createNewMedia("sample").addFlag(Flag.keepIptc());
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -9848,7 +9850,7 @@ describe("Testing", () => {
   it("fl_lossy", () => {
     const parts = "fl_lossy".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.format(Format.gif()).lossy()
     );
     parts.forEach((part) => {
@@ -9859,7 +9861,7 @@ describe("Testing", () => {
   it("fl_lossy,q_50", () => {
     const parts = "fl_lossy,q_50".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .delivery(Delivery.format(Format.gif()).lossy())
       .delivery(Delivery.quality(50));
     parts.forEach((part) => {
@@ -9870,7 +9872,7 @@ describe("Testing", () => {
   it("fl_progressive,r_10", () => {
     const parts = "fl_progressive,r_10".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .roundCorners(RoundCorners.byRadius(10))
       .addFlag(Flag.progressive());
     parts.forEach((part) => {
@@ -9883,7 +9885,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.image("glasses").transformation(
           new ImageTransformation().resize(
@@ -9904,7 +9906,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.image("glasses").transformation(
           new ImageTransformation().resize(
@@ -9925,7 +9927,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.image("silver_face_mask").transformation(
           new ImageTransformation().resize(
@@ -9946,7 +9948,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.concatenate(Concatenate.imageSource("sample"))
     );
     parts.forEach((part) => {
@@ -9959,7 +9961,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.concatenate(Concatenate.videoSource("dog"))
     );
     parts.forEach((part) => {
@@ -9972,7 +9974,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.concatenate(Concatenate.videoSource("dog")).prepend()
     );
     parts.forEach((part) => {
@@ -9983,7 +9985,7 @@ describe("Testing", () => {
   it("fl_whatever", () => {
     const parts = "fl_whatever".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").addFlag("whatever");
+    const tAsset = createNewMedia("sample").addFlag("whatever");
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -9995,7 +9997,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample").customFunction(
+    const tAsset = createNewMedia("sample").customFunction(
       CustomFunction.remote(
         "https://my.preprocess.custom/function"
       ).preprocess()
@@ -10010,7 +10012,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").customFunction(
+    const tAsset = createNewMedia("sample").customFunction(
       CustomFunction.remote("https://my.example.custom/function")
     );
     parts.forEach((part) => {
@@ -10021,7 +10023,7 @@ describe("Testing", () => {
   it("fn_wasm:my_example.wasm", () => {
     const parts = "fn_wasm:my_example.wasm".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").customFunction(
+    const tAsset = createNewMedia("sample").customFunction(
       CustomFunction.wasm("my_example.wasm")
     );
     parts.forEach((part) => {
@@ -10032,7 +10034,7 @@ describe("Testing", () => {
   it("fps_1-5", () => {
     const parts = "fps_1-5".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(
+    const tAsset = createNewMedia("sample").transcode(
       Transcode.fpsRange(1, 5)
     );
     parts.forEach((part) => {
@@ -10043,7 +10045,7 @@ describe("Testing", () => {
   it("fps_10", () => {
     const parts = "fps_10".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(Transcode.fps(10));
+    const tAsset = createNewMedia("sample").transcode(Transcode.fps(10));
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -10052,7 +10054,7 @@ describe("Testing", () => {
   it("fps_10-", () => {
     const parts = "fps_10-".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(
+    const tAsset = createNewMedia("sample").transcode(
       Transcode.fpsRange(10)
     );
     parts.forEach((part) => {
@@ -10063,7 +10065,7 @@ describe("Testing", () => {
   it("fps_10-20", () => {
     const parts = "fps_10-20".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(
+    const tAsset = createNewMedia("sample").transcode(
       Transcode.fpsRange(10, 20)
     );
     parts.forEach((part) => {
@@ -10074,7 +10076,7 @@ describe("Testing", () => {
   it("g_face,c_crop", () => {
     const parts = "g_face,c_crop".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().gravity(Gravity.focusOn(FocusOn.face()))
     );
     parts.forEach((part) => {
@@ -10085,7 +10087,7 @@ describe("Testing", () => {
   it("g_face,c_thumb,w_150,h_150", () => {
     const parts = "g_face,c_thumb,w_150,h_150".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.thumbnail()
         .width(150)
         .height(150)
@@ -10101,7 +10103,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.thumbnail()
         .width(150)
         .height(150)
@@ -10118,7 +10120,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.thumbnail().width(500).gravity(Gravity.focusOn(FocusOn.face()))
       )
@@ -10133,7 +10135,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.text("watchme", new TextStyle("arial", 60))
       ).position(
@@ -10150,7 +10152,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.text("Flower", new TextStyle("Arial", 200))
       ).position(new Position().gravity(Gravity.compass(Compass.south())))
@@ -10163,7 +10165,7 @@ describe("Testing", () => {
   it("h_100,w_190", () => {
     const parts = "h_100,w_190".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(190).height(100)
     );
     parts.forEach((part) => {
@@ -10174,7 +10176,7 @@ describe("Testing", () => {
   it("h_105/e_shadow:50,x_10,y_10", () => {
     const parts = "h_105/e_shadow:50,x_10,y_10".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().height(105))
       .effect(Effect.shadow().strength(50).offsetX(10).offsetY(10));
     parts.forEach((part) => {
@@ -10185,7 +10187,7 @@ describe("Testing", () => {
   it("h_120", () => {
     const parts = "h_120".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().height(120)
     );
     parts.forEach((part) => {
@@ -10196,7 +10198,7 @@ describe("Testing", () => {
   it("h_150", () => {
     const parts = "h_150".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().height(150)
     );
     parts.forEach((part) => {
@@ -10209,7 +10211,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale()
         .height(150)
         .aspectRatio(AspectRatio.ignoreInitialAspectRatio())
@@ -10222,7 +10224,7 @@ describe("Testing", () => {
   it("h_150,dpr_2.0", () => {
     const parts = "h_150,dpr_2.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().height(150))
       .delivery(Delivery.dpr("2.0"));
     parts.forEach((part) => {
@@ -10233,7 +10235,7 @@ describe("Testing", () => {
   it("h_150,dpr_auto", () => {
     const parts = "h_150,dpr_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().height(150))
       .delivery(Delivery.dpr(Dpr.auto()));
     parts.forEach((part) => {
@@ -10244,7 +10246,7 @@ describe("Testing", () => {
   it("h_150,fl_ignore_aspect_ratio", () => {
     const parts = "h_150,fl_ignore_aspect_ratio".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale()
         .height(150)
         .aspectRatio(AspectRatio.ignoreInitialAspectRatio())
@@ -10259,7 +10261,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().width(150).height(150).background(Background.predominant())
     );
     parts.forEach((part) => {
@@ -10273,7 +10275,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad()
         .width(150)
         .height(150)
@@ -10291,7 +10293,7 @@ describe("Testing", () => {
   it("h_150/l_play_icon2,w_0.1", () => {
     const parts = "h_150/l_play_icon2,w_0.1".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().height(150))
       .overlay(
         Overlay.source(
@@ -10310,7 +10312,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().height(150))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -10324,7 +10326,7 @@ describe("Testing", () => {
   it("h_200", () => {
     const parts = "h_200".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().height(200)
     );
     parts.forEach((part) => {
@@ -10337,7 +10339,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().height(200))
       .effect(Effect.outline().width(15).blurLevel(200).color("orange"));
     parts.forEach((part) => {
@@ -10350,7 +10352,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().width(200).height(200).background(Background.border())
     );
     parts.forEach((part) => {
@@ -10363,7 +10365,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad()
         .width(200)
         .height(200)
@@ -10379,7 +10381,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().width(200).height(200).background(Background.predominant())
     );
     parts.forEach((part) => {
@@ -10392,7 +10394,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad()
         .width(200)
         .height(200)
@@ -10408,7 +10410,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().height(200))
       .underlay(
         Underlay.source(
@@ -10430,7 +10432,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().height(200))
       .underlay(
         Underlay.source(
@@ -10451,7 +10453,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().height(225))
       .border(Border.solid(1, "black"))
       .delivery(Delivery.format(Format.auto()))
@@ -10464,7 +10466,7 @@ describe("Testing", () => {
   it("h_250", () => {
     const parts = "h_250".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().height(250)
     );
     parts.forEach((part) => {
@@ -10477,7 +10479,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.fill().width(150).height(250).gravity(Gravity.autoGravity())
       )
@@ -10491,7 +10493,7 @@ describe("Testing", () => {
   it("h_300", () => {
     const parts = "h_300".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().height(300)
     );
     parts.forEach((part) => {
@@ -10504,7 +10506,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill()
         .height(300)
         .aspectRatio("3:4")
@@ -10522,7 +10524,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill()
         .height(300)
         .aspectRatio("3:4")
@@ -10538,7 +10540,7 @@ describe("Testing", () => {
   it("h_300,dpr_2.0", () => {
     const parts = "h_300,dpr_2.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().height(300))
       .delivery(Delivery.dpr("2.0"));
     parts.forEach((part) => {
@@ -10549,7 +10551,7 @@ describe("Testing", () => {
   it("h_300,q_auto,f_auto,dpr_2", () => {
     const parts = "h_300,q_auto,f_auto,dpr_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().height(300))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -10562,7 +10564,7 @@ describe("Testing", () => {
   it("h_300,w_300", () => {
     const parts = "h_300,w_300".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(300).height(300)
     );
     parts.forEach((part) => {
@@ -10575,7 +10577,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().width(300).height(300).background(Background.predominant())
     );
     parts.forEach((part) => {
@@ -10589,7 +10591,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.pad().width(300).height(300).background(Background.predominant())
       )
@@ -10609,7 +10611,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad()
         .width(300)
         .height(300)
@@ -10630,7 +10632,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad()
         .width(300)
         .height(300)
@@ -10650,7 +10652,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad()
         .width(300)
         .height(300)
@@ -10666,7 +10668,7 @@ describe("Testing", () => {
   it("h_310", () => {
     const parts = "h_310".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().height(310)
     );
     parts.forEach((part) => {
@@ -10680,7 +10682,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().height(320))
       .resize(
         Resize.pad()
@@ -10698,7 +10700,7 @@ describe("Testing", () => {
   it("h_320,w_480", () => {
     const parts = "h_320,w_480".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(480).height(320)
     );
     parts.forEach((part) => {
@@ -10709,7 +10711,7 @@ describe("Testing", () => {
   it("h_320,w_480/h_150", () => {
     const parts = "h_320,w_480/h_150".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(480).height(320))
       .resize(Resize.scale().height(150));
     parts.forEach((part) => {
@@ -10720,7 +10722,7 @@ describe("Testing", () => {
   it("h_350/q_auto,dpr_auto", () => {
     const parts = "h_350/q_auto,dpr_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().height(350))
       .delivery(Delivery.dpr(Dpr.auto()))
       .delivery(Delivery.quality(Quality.auto()));
@@ -10734,7 +10736,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().height(375))
       .underlay(
         Underlay.source(
@@ -10753,7 +10755,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().height(375))
       .underlay(
         Underlay.source(
@@ -10773,7 +10775,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().height(375))
       .underlay(
         Underlay.source(
@@ -10792,7 +10794,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().height(375))
       .underlay(
         Underlay.source(
@@ -10812,7 +10814,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill()
         .height(400)
         .aspectRatio("3:4")
@@ -10830,7 +10832,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.fillPad()
           .height(400)
@@ -10846,7 +10848,7 @@ describe("Testing", () => {
   it("h_400,w_244,c_fill", () => {
     const parts = "h_400,w_244,c_fill".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(244).height(400)
     );
     parts.forEach((part) => {
@@ -10857,7 +10859,7 @@ describe("Testing", () => {
   it("h_400,w_244,c_fill,so_1", () => {
     const parts = "h_400,w_244,c_fill,so_1".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().startOffset("1.0"))
       .resize(Resize.fill().width(244).height(400));
     parts.forEach((part) => {
@@ -10868,7 +10870,7 @@ describe("Testing", () => {
   it("h_400,w_244,g_auto,c_fill", () => {
     const parts = "h_400,w_244,g_auto,c_fill".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(244).height(400).gravity(Gravity.autoGravity())
     );
     parts.forEach((part) => {
@@ -10879,7 +10881,7 @@ describe("Testing", () => {
   it("h_500,w_500,c_fill", () => {
     const parts = "h_500,w_500,c_fill".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(500).height(500)
     );
     parts.forEach((part) => {
@@ -10893,7 +10895,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample").conditional(
+    const tAsset = createNewMedia("sample").conditional(
       Conditional.ifCondition(
         "!sale:in_stock! in tags",
         new ImageTransformation().overlay(
@@ -10921,7 +10923,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .conditional(
         Conditional.ifCondition(
           "!sale:in_stock! in tags",
@@ -10950,7 +10952,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").conditional(
+    const tAsset = createNewMedia("sample").conditional(
       Conditional.ifCondition(
         "aspect_ratio > 0.65 && width > 1000",
         new ImageTransformation().resize(
@@ -10969,7 +10971,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample").conditional(
+    const tAsset = createNewMedia("sample").conditional(
       Conditional.ifCondition(
         "aspect_ratio > 1.2",
         new ImageTransformation().resize(
@@ -10998,7 +11000,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample").conditional(
+    const tAsset = createNewMedia("sample").conditional(
       Conditional.ifCondition(
         "aspect_ratio > 1.2",
         new ImageTransformation().resize(
@@ -11026,7 +11028,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").conditional(
+    const tAsset = createNewMedia("sample").conditional(
       Conditional.ifCondition(
         "aspect_ratio > 3:4 && width > 300 && height > 200",
         new ImageTransformation().resize(Resize.crop().width(300).height(200))
@@ -11042,7 +11044,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .conditional(
         Conditional.ifCondition(
           "aspect_ratio < 1.0",
@@ -11062,7 +11064,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").conditional(
+    const tAsset = createNewMedia("sample").conditional(
       Conditional.ifCondition(
         "ctx:!productType! = !shoes!",
         new ImageTransformation().resize(
@@ -11081,7 +11083,7 @@ describe("Testing", () => {
   it("if_expression,a_20", () => {
     const parts = "if_expression,a_20".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").conditional(
+    const tAsset = createNewMedia("sample").conditional(
       Conditional.ifCondition(
         "expression",
         new ImageTransformation().rotate(Rotate.byAngle(20))
@@ -11097,7 +11099,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").conditional(
+    const tAsset = createNewMedia("sample").conditional(
       Conditional.ifCondition(
         "expression",
         new ImageTransformation().rotate(Rotate.byAngle(20))
@@ -11111,7 +11113,7 @@ describe("Testing", () => {
   it("if_expression/a_20/if_end", () => {
     const parts = "if_expression/a_20/if_end".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").conditional(
+    const tAsset = createNewMedia("sample").conditional(
       Conditional.ifCondition(
         "expression",
         new ImageTransformation().rotate(Rotate.byAngle(20))
@@ -11127,7 +11129,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").conditional(
+    const tAsset = createNewMedia("sample").conditional(
       Conditional.ifCondition(
         "ils > 0.5",
         new ImageTransformation().resize(Resize.pad().width(120).height(150))
@@ -11145,7 +11147,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").conditional(
+    const tAsset = createNewMedia("sample").conditional(
       Conditional.ifCondition(
         "iw_lte_200",
         new ImageTransformation().resize(Resize.fill().width(80).height(120))
@@ -11161,7 +11163,7 @@ describe("Testing", () => {
   it("if_w_gt_300,e_oil_paint", () => {
     const parts = "if_w_gt_300,e_oil_paint".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").conditional(
+    const tAsset = createNewMedia("sample").conditional(
       Conditional.ifCondition(
         "width > 300",
         new ImageTransformation().effect(Effect.oilPaint())
@@ -11178,7 +11180,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .conditional(
         Conditional.ifCondition(
           "width > 400",
@@ -11207,7 +11209,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").conditional(
+    const tAsset = createNewMedia("sample").conditional(
       Conditional.ifCondition(
         "w_lte_200",
         new ImageTransformation().resize(Resize.fill().width(80).height(120))
@@ -11226,7 +11228,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample").conditional(
+    const tAsset = createNewMedia("sample").conditional(
       Conditional.ifCondition(
         "w_lte_400",
         new ImageTransformation()
@@ -11246,7 +11248,7 @@ describe("Testing", () => {
   it("ki_0.15", () => {
     const parts = "ki_0.15".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(
+    const tAsset = createNewMedia("sample").transcode(
       Transcode.keyframeInterval(0.15)
     );
     parts.forEach((part) => {
@@ -11257,7 +11259,7 @@ describe("Testing", () => {
   it("ki_0.4", () => {
     const parts = "ki_0.4".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(
+    const tAsset = createNewMedia("sample").transcode(
       Transcode.keyframeInterval(0.4)
     );
     parts.forEach((part) => {
@@ -11268,7 +11270,7 @@ describe("Testing", () => {
   it("l_badge,o_60,w_500", () => {
     const parts = "l_badge,o_60,w_500".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.image("badge").transformation(
           new ImageTransformation()
@@ -11287,7 +11289,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.image("call_text").transformation(
           new ImageTransformation().resize(
@@ -11306,7 +11308,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .overlay(
         Overlay.source(
           Source.image("call_text").transformation(
@@ -11325,7 +11327,7 @@ describe("Testing", () => {
   it("l_cloudinary_icon", () => {
     const parts = "l_cloudinary_icon".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.image("cloudinary_icon"))
     );
     parts.forEach((part) => {
@@ -11338,7 +11340,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.image("cloudinary_icon")).position(
         new Position().gravity(Gravity.compass(Compass.northWest())).offsetY(20)
       )
@@ -11353,7 +11355,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.image("cloudinary_icon").transformation(
           new ImageTransformation()
@@ -11372,7 +11374,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.image("cloudinary_icon").transformation(
           new ImageTransformation().resize(Resize.scale().width(0.2).relative())
@@ -11389,7 +11391,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.image("cloudinary_icon").transformation(
           new ImageTransformation().resize(Resize.scale().width(0.8).relative())
@@ -11407,7 +11409,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.image("cloudinary_icon").transformation(
           new ImageTransformation()
@@ -11427,7 +11429,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.image("cloudinary_icon").transformation(
           new ImageTransformation()
@@ -11444,7 +11446,7 @@ describe("Testing", () => {
   it("l_cloudinary_icon_blue", () => {
     const parts = "l_cloudinary_icon_blue".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.image("cloudinary_icon_blue"))
     );
     parts.forEach((part) => {
@@ -11457,7 +11459,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.image("cloudinary_icon_blue")).position(
         new Position()
           .gravity(Gravity.compass(Compass.northWest()))
@@ -11475,7 +11477,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.image("cloudinary_icon_blue").transformation(
           new ImageTransformation().resize(Resize.scale().width(0.3).relative())
@@ -11493,7 +11495,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.image("cloudinary_icon_blue").transformation(
           new ImageTransformation()
@@ -11513,7 +11515,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.image("cloudinary_icon_blue").transformation(
           new ImageTransformation().resize(Resize.scale().width(0.8).relative())
@@ -11530,7 +11532,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.image("cloudinary_icon_white").transformation(
           new ImageTransformation()
@@ -11549,7 +11551,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.image("cloudinary_icon_white").transformation(
           new ImageTransformation()
@@ -11568,7 +11570,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.image("cloudinary_icon_white").transformation(
           new ImageTransformation()
@@ -11588,7 +11590,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.image("face_left").transformation(
           new ImageTransformation()
@@ -11613,7 +11615,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.fetch("http://cloudinary.com/images/logo.png")
       ).position(
@@ -11634,7 +11636,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.fetch("http://cloudinary.com/images/logo.png"))
         .position(
           new Position()
@@ -11655,7 +11657,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.fetch("http://cloudinary.com/images/old_logo.png"))
     );
     parts.forEach((part) => {
@@ -11669,7 +11671,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.fetch(
           "https://res.cloudinary.com/demo/image/upload/logos/cloudinary_full_logo_white_small.png"
@@ -11686,7 +11688,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.image("golden_star").transformation(
           new ImageTransformation().resize(
@@ -11705,7 +11707,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.image("golden_star").transformation(
           new ImageTransformation().resize(
@@ -11724,7 +11726,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .overlay(
         Overlay.source(
           Source.image("golden_star").transformation(
@@ -11748,7 +11750,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.image("happy_smiley").transformation(
           new ImageTransformation().resize(
@@ -11765,7 +11767,7 @@ describe("Testing", () => {
   it("l_lut:iwltbap_aspen.3dl", () => {
     const parts = "l_lut:iwltbap_aspen.3dl".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.by3dLut("iwltbap_aspen.3dl")
     );
     parts.forEach((part) => {
@@ -11778,7 +11780,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .adjust(Adjust.by3dLut("iwltbap_aspen.3dl"))
       .resize(Resize.scale().width(200));
     parts.forEach((part) => {
@@ -11789,7 +11791,7 @@ describe("Testing", () => {
   it("l_lut:iwltbap_sedona.3dl", () => {
     const parts = "l_lut:iwltbap_sedona.3dl".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(
+    const tAsset = createNewMedia("sample").adjust(
       Adjust.by3dLut("iwltbap_sedona.3dl")
     );
     parts.forEach((part) => {
@@ -11802,7 +11804,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .adjust(Adjust.by3dLut("iwltbap_sedona.3dl"))
       .resize(Resize.scale().width(200));
     parts.forEach((part) => {
@@ -11813,7 +11815,7 @@ describe("Testing", () => {
   it("l_sample", () => {
     const parts = "l_sample".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.image("sample"))
     );
     parts.forEach((part) => {
@@ -11824,7 +11826,7 @@ describe("Testing", () => {
   it("l_sample,fl_cutter", () => {
     const parts = "l_sample,fl_cutter".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").reshape(
+    const tAsset = createNewMedia("sample").reshape(
       Reshape.cutByImage(Source.image("sample"))
     );
     parts.forEach((part) => {
@@ -11837,7 +11839,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.image("sample").transformation(
           new ImageTransformation()
@@ -11854,7 +11856,7 @@ describe("Testing", () => {
   it("l_sample,so_6.5,eo_10", () => {
     const parts = "l_sample,so_6.5,eo_10".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.image("sample")).timeline(
         Timeline.position().startOffset(6.5).endOffset("10.0")
       )
@@ -11867,7 +11869,7 @@ describe("Testing", () => {
   it("l_sample.jpg", () => {
     const parts = "l_sample.jpg".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.image("sample").format(Format.jpg()))
     );
     parts.forEach((part) => {
@@ -11880,7 +11882,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.image("sample")).blendMode(BlendMode.antiRemoval())
     );
     parts.forEach((part) => {
@@ -11893,7 +11895,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.image("sample")).blendMode(BlendMode.mask())
     );
     parts.forEach((part) => {
@@ -11906,7 +11908,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.image("sample")).blendMode(BlendMode.multiply())
     );
     parts.forEach((part) => {
@@ -11919,7 +11921,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.image("sample")).blendMode(BlendMode.overlay())
     );
     parts.forEach((part) => {
@@ -11932,7 +11934,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.image("sample")).blendMode(BlendMode.screen())
     );
     parts.forEach((part) => {
@@ -11945,7 +11947,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.image("sample").transformation(
           new ImageTransformation().effect(Effect.sepia())
@@ -11962,7 +11964,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").reshape(
+    const tAsset = createNewMedia("sample").reshape(
       Reshape.cutByImage(Source.image("sample")).position(
         new Position().gravity(Gravity.compass(Compass.south()))
       )
@@ -11977,7 +11979,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.image("sample").transformation(
           new ImageTransformation().addFlag("first_flag").addFlag("second_flag")
@@ -11994,7 +11996,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.image("sample")).position(
         new Position().allowOverflow(false)
       )
@@ -12009,7 +12011,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.image("sample")).position(new Position().tiled())
     );
     parts.forEach((part) => {
@@ -12022,7 +12024,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.image("sample")).position(
         new Position().gravity(Gravity.focusOn(FocusOn.face()))
       )
@@ -12035,7 +12037,7 @@ describe("Testing", () => {
   it("l_sample/x_10,fl_layer_apply", () => {
     const parts = "l_sample/x_10,fl_layer_apply".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.image("sample")).position(
         new Position().offsetX(10)
       )
@@ -12050,7 +12052,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.subtitles("sample_sub_en.srt").textStyle(
           new TextStyle("arial", 17)
@@ -12067,7 +12069,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.subtitles("sample_sub_en.srt").textStyle(
           new TextStyle("arial", 20)
@@ -12084,7 +12086,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.subtitles("sample_sub_en.srt")
           .textStyle(new TextStyle("arial", 40))
@@ -12102,7 +12104,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.subtitles("sample_sub_en.srt")
           .textStyle(new TextStyle("arial", 70))
@@ -12121,7 +12123,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.subtitles("folder-permissions-tutorial.en-us.azure.transcript")
       )
@@ -12136,7 +12138,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.subtitles("lincoln.transcript")
           .textStyle(new TextStyle("impact", 15))
@@ -12154,7 +12156,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.subtitles("lincoln.transcript")
           .textStyle(new TextStyle("impact", 15))
@@ -12172,7 +12174,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.subtitles("lincoln.transcript"))
     );
     parts.forEach((part) => {
@@ -12185,7 +12187,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.subtitles("sample_sub_en.srt"))
     );
     parts.forEach((part) => {
@@ -12199,7 +12201,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.subtitles("folder-permissions-tutorial.en-us.azure.transcript")
           .textStyle(new TextStyle("times", 20))
@@ -12214,7 +12216,7 @@ describe("Testing", () => {
   it("l_text:Arial_45_bold:John", () => {
     const parts = "l_text:Arial_45_bold:John".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.text(
           "John",
@@ -12230,7 +12232,7 @@ describe("Testing", () => {
   it("l_text:arial_15:hello", () => {
     const parts = "l_text:arial_15:hello".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.text("hello", new TextStyle("arial", 15)))
     );
     parts.forEach((part) => {
@@ -12241,7 +12243,7 @@ describe("Testing", () => {
   it("l_text:arial_15_bold:hello", () => {
     const parts = "l_text:arial_15_bold:hello".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.text(
           "hello",
@@ -12260,7 +12262,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.text(
           "Hello",
@@ -12284,7 +12286,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.concatenate(Concatenate.videoSource("dog"))
         .prepend()
         .duration(5)
@@ -12299,7 +12301,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.concatenate(
         Concatenate.videoSource("dog").transformation(
           new ImageTransformation().resize(Resize.fill().width(300))
@@ -12316,7 +12318,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.video("dog").transformation(
           new ImageTransformation()
@@ -12335,7 +12337,7 @@ describe("Testing", () => {
   it("l_video:dog,w_0.5", () => {
     const parts = "l_video:dog,w_0.5".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.video("dog").transformation(
           new ImageTransformation().resize(Resize.scale().width(0.5))
@@ -12353,7 +12355,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.concatenate(
         Concatenate.videoSource("dog").transformation(
           new ImageTransformation().videoEdit(VideoEdit.trim().duration("5.0"))
@@ -12371,7 +12373,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.concatenate(Concatenate.videoSource("dog")).transition(
         Transition.videoSource("transition1")
       )
@@ -12387,7 +12389,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.concatenate(Concatenate.videoSource("dog")).transition(
         Transition.videoSource("transition1").transformation(
           new ImageTransformation().rotate(Rotate.byAngle(180))
@@ -12402,7 +12404,7 @@ describe("Testing", () => {
   it("l_video:electronic", () => {
     const parts = "l_video:electronic".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.video("electronic"))
     );
     parts.forEach((part) => {
@@ -12415,7 +12417,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.video("kitten_fighting").transformation(
           new ImageTransformation()
@@ -12432,7 +12434,7 @@ describe("Testing", () => {
   it("l_video:sample", () => {
     const parts = "l_video:sample".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(Source.video("sample"))
     );
     parts.forEach((part) => {
@@ -12445,7 +12447,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.video("sample").transformation(
           new ImageTransformation().effect(Effect.sepia())
@@ -12462,7 +12464,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.video("ski_jump").transformation(
           new ImageTransformation().resize(Resize.scale().width(250))
@@ -12482,7 +12484,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(
         VideoEdit.concatenate(
           Concatenate.videoSource("ski_jump").transformation(
@@ -12510,7 +12512,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(
         VideoEdit.concatenate(
           Concatenate.videoSource("ski_jump").transformation(
@@ -12538,7 +12540,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.video("ski_jump").transformation(
           new ImageTransformation().resize(Resize.scale().width(250))
@@ -12555,7 +12557,7 @@ describe("Testing", () => {
   it("o_17", () => {
     const parts = "o_17".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(Adjust.opacity(17));
+    const tAsset = createNewMedia("sample").adjust(Adjust.opacity(17));
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -12564,7 +12566,7 @@ describe("Testing", () => {
   it("o_30", () => {
     const parts = "o_30".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").adjust(Adjust.opacity(30));
+    const tAsset = createNewMedia("sample").adjust(Adjust.opacity(30));
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -12573,7 +12575,7 @@ describe("Testing", () => {
   it("pg_2", () => {
     const parts = "pg_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").extract(
+    const tAsset = createNewMedia("sample").extract(
       Extract.getPage().byNumber(2)
     );
     parts.forEach((part) => {
@@ -12584,7 +12586,7 @@ describe("Testing", () => {
   it("pg_2-4;6;8", () => {
     const parts = "pg_2-4;6;8".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").extract(
+    const tAsset = createNewMedia("sample").extract(
       Extract.getPage().byRange(2, 4).byNumber(6).byNumber(8)
     );
     parts.forEach((part) => {
@@ -12595,7 +12597,7 @@ describe("Testing", () => {
   it("pg_2-4;6;8/w_300", () => {
     const parts = "pg_2-4;6;8/w_300".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .extract(Extract.getPage().byRange(2, 4).byNumber(6).byNumber(8))
       .resize(Resize.scale().width(300));
     parts.forEach((part) => {
@@ -12606,7 +12608,7 @@ describe("Testing", () => {
   it("pg_3", () => {
     const parts = "pg_3".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").extract(
+    const tAsset = createNewMedia("sample").extract(
       Extract.getPage().byNumber(3)
     );
     parts.forEach((part) => {
@@ -12617,7 +12619,7 @@ describe("Testing", () => {
   it("pg_4-7;9", () => {
     const parts = "pg_4-7;9".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").extract(
+    const tAsset = createNewMedia("sample").extract(
       Extract.getPage().byRange(4, 7).byNumber(9)
     );
     parts.forEach((part) => {
@@ -12628,7 +12630,7 @@ describe("Testing", () => {
   it("pg_embedded:3", () => {
     const parts = "pg_embedded:3".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").psdTools(
+    const tAsset = createNewMedia("sample").psdTools(
       PSDTools.smartObject().byIndex(3)
     );
     parts.forEach((part) => {
@@ -12639,7 +12641,7 @@ describe("Testing", () => {
   it("pg_embedded:3/w_300", () => {
     const parts = "pg_embedded:3/w_300".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .psdTools(PSDTools.smartObject().byIndex(3))
       .resize(Resize.scale().width(300));
     parts.forEach((part) => {
@@ -12650,7 +12652,7 @@ describe("Testing", () => {
   it("pg_embedded:3;5", () => {
     const parts = "pg_embedded:3;5".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").psdTools(
+    const tAsset = createNewMedia("sample").psdTools(
       PSDTools.smartObject().byIndex(3).byIndex(5)
     );
     parts.forEach((part) => {
@@ -12661,7 +12663,7 @@ describe("Testing", () => {
   it("pg_embedded:7", () => {
     const parts = "pg_embedded:7".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").psdTools(
+    const tAsset = createNewMedia("sample").psdTools(
       PSDTools.smartObject().byIndex(7)
     );
     parts.forEach((part) => {
@@ -12674,7 +12676,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").psdTools(
+    const tAsset = createNewMedia("sample").psdTools(
       PSDTools.smartObject().byLayerName("skyline-3242040_1920")
     );
     parts.forEach((part) => {
@@ -12687,7 +12689,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").psdTools(
+    const tAsset = createNewMedia("sample").psdTools(
       PSDTools.smartObject().byLayerName("skyline-3242040_1920.jpg")
     );
     parts.forEach((part) => {
@@ -12698,7 +12700,7 @@ describe("Testing", () => {
   it("pg_embedded:name:skyline.jpg", () => {
     const parts = "pg_embedded:name:skyline.jpg".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").psdTools(
+    const tAsset = createNewMedia("sample").psdTools(
       PSDTools.smartObject().byLayerName("skyline.jpg")
     );
     parts.forEach((part) => {
@@ -12711,7 +12713,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").psdTools(
+    const tAsset = createNewMedia("sample").psdTools(
       PSDTools.smartObject().byLayerName("skyline.jpg").byLayerName("bg.jpg")
     );
     parts.forEach((part) => {
@@ -12722,7 +12724,7 @@ describe("Testing", () => {
   it("pg_name:lala;fofo", () => {
     const parts = "pg_name:lala;fofo".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").psdTools(
+    const tAsset = createNewMedia("sample").psdTools(
       PSDTools.getLayer().byName("lala").byName("fofo")
     );
     parts.forEach((part) => {
@@ -12733,7 +12735,7 @@ describe("Testing", () => {
   it("pg_name:record_cover;Shadow", () => {
     const parts = "pg_name:record_cover;Shadow".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").psdTools(
+    const tAsset = createNewMedia("sample").psdTools(
       PSDTools.getLayer().byName("record_cover").byName("Shadow")
     );
     parts.forEach((part) => {
@@ -12746,7 +12748,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .psdTools(PSDTools.getLayer().byName("record_cover").byName("Shadow"))
       .resize(Resize.scale().width(300));
     parts.forEach((part) => {
@@ -12757,7 +12759,7 @@ describe("Testing", () => {
   it("pg_name:skyline", () => {
     const parts = "pg_name:skyline".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").psdTools(
+    const tAsset = createNewMedia("sample").psdTools(
       PSDTools.getLayer().byName("skyline")
     );
     parts.forEach((part) => {
@@ -12768,7 +12770,7 @@ describe("Testing", () => {
   it("q_100", () => {
     const parts = "q_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.quality(100)
     );
     parts.forEach((part) => {
@@ -12779,7 +12781,7 @@ describe("Testing", () => {
   it("q_20", () => {
     const parts = "q_20".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(Delivery.quality(20));
+    const tAsset = createNewMedia("sample").delivery(Delivery.quality(20));
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -12788,7 +12790,7 @@ describe("Testing", () => {
   it("q_50", () => {
     const parts = "q_50".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(Delivery.quality(50));
+    const tAsset = createNewMedia("sample").delivery(Delivery.quality(50));
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -12797,7 +12799,7 @@ describe("Testing", () => {
   it("q_60", () => {
     const parts = "q_60".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(Delivery.quality(60));
+    const tAsset = createNewMedia("sample").delivery(Delivery.quality(60));
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -12806,7 +12808,7 @@ describe("Testing", () => {
   it("q_60:420", () => {
     const parts = "q_60:420".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.quality(60).chromaSubSampling(ChromaSubSampling.chroma420())
     );
     parts.forEach((part) => {
@@ -12817,7 +12819,7 @@ describe("Testing", () => {
   it("q_70:qmax_20", () => {
     const parts = "q_70:qmax_20".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.quality(70).quantization(20)
     );
     parts.forEach((part) => {
@@ -12828,7 +12830,7 @@ describe("Testing", () => {
   it("q_80", () => {
     const parts = "q_80".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(Delivery.quality(80));
+    const tAsset = createNewMedia("sample").delivery(Delivery.quality(80));
     parts.forEach((part) => {
       expect(tAsset.toString()).toContain(part);
     });
@@ -12837,7 +12839,7 @@ describe("Testing", () => {
   it("q_auto", () => {
     const parts = "q_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.quality(Quality.auto())
     );
     parts.forEach((part) => {
@@ -12850,7 +12852,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "black"))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -12863,7 +12865,7 @@ describe("Testing", () => {
   it("q_auto,dpr_2,f_auto", () => {
     const parts = "q_auto,dpr_2,f_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
       .delivery(Delivery.quality(Quality.auto()));
@@ -12877,7 +12879,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "black"))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -12892,7 +12894,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -12905,7 +12907,7 @@ describe("Testing", () => {
   it("q_auto,dpr_2,f_auto,h_300", () => {
     const parts = "q_auto,dpr_2,f_auto,h_300".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().height(300))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -12920,7 +12922,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "black"))
       .resize(Resize.scale().height(300))
       .delivery(Delivery.dpr("2.0"))
@@ -12934,7 +12936,7 @@ describe("Testing", () => {
   it("q_auto,dpr_2,w_150,f_auto", () => {
     const parts = "q_auto,dpr_2,w_150,f_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(150))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -12947,7 +12949,7 @@ describe("Testing", () => {
   it("q_auto,dpr_auto", () => {
     const parts = "q_auto,dpr_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .delivery(Delivery.dpr(Dpr.auto()))
       .delivery(Delivery.quality(Quality.auto()));
     parts.forEach((part) => {
@@ -12958,7 +12960,7 @@ describe("Testing", () => {
   it("q_auto,f_auto", () => {
     const parts = "q_auto,f_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .delivery(Delivery.format(Format.auto()))
       .delivery(Delivery.quality(Quality.auto()));
     parts.forEach((part) => {
@@ -12971,7 +12973,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "black"))
       .delivery(Delivery.format(Format.auto()))
       .delivery(Delivery.quality(Quality.auto()));
@@ -12985,7 +12987,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().height(450))
       .delivery(Delivery.dpr("2.0"))
@@ -13001,7 +13003,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(250))
       .delivery(Delivery.dpr("2.0"))
@@ -13017,7 +13019,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(650))
       .delivery(Delivery.dpr("2.0"))
@@ -13033,7 +13035,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(660))
       .delivery(Delivery.dpr("2.0"))
@@ -13047,7 +13049,7 @@ describe("Testing", () => {
   it("q_auto,f_auto,dpr_2", () => {
     const parts = "q_auto,f_auto,dpr_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
       .delivery(Delivery.quality(Quality.auto()));
@@ -13061,7 +13063,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -13076,7 +13078,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.crop().width(100).height(80))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -13090,7 +13092,7 @@ describe("Testing", () => {
   it("q_auto,f_auto,dpr_2,h_300", () => {
     const parts = "q_auto,f_auto,dpr_2,h_300".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().height(300))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -13105,7 +13107,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(350))
       .roundCorners(RoundCorners.byRadius(20))
       .delivery(Delivery.dpr("2.0"))
@@ -13120,7 +13122,7 @@ describe("Testing", () => {
   it("q_auto,f_auto,dpr_2,w_400", () => {
     const parts = "q_auto,f_auto,dpr_2,w_400".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(400))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -13135,7 +13137,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
       .delivery(Delivery.quality(Quality.auto()))
@@ -13148,7 +13150,7 @@ describe("Testing", () => {
   it("q_auto,f_auto,dpr_2/w_20", () => {
     const parts = "q_auto,f_auto,dpr_2/w_20".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
       .delivery(Delivery.quality(Quality.auto()))
@@ -13161,7 +13163,7 @@ describe("Testing", () => {
   it("q_auto,f_auto,dpr_auto", () => {
     const parts = "q_auto,f_auto,dpr_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .delivery(Delivery.dpr(Dpr.auto()))
       .delivery(Delivery.format(Format.auto()))
       .delivery(Delivery.quality(Quality.auto()));
@@ -13173,7 +13175,7 @@ describe("Testing", () => {
   it("q_auto,f_auto,w_500", () => {
     const parts = "q_auto,f_auto,w_500".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .delivery(Delivery.format(Format.auto()))
       .delivery(Delivery.quality(Quality.auto()));
@@ -13185,7 +13187,7 @@ describe("Testing", () => {
   it("q_auto,w_600,f_auto,dpr_2", () => {
     const parts = "q_auto,w_600,f_auto,dpr_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(600))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -13198,7 +13200,7 @@ describe("Testing", () => {
   it("q_auto,w_800,f_auto", () => {
     const parts = "q_auto,w_800,f_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(800))
       .delivery(Delivery.format(Format.auto()))
       .delivery(Delivery.quality(Quality.auto()));
@@ -13210,7 +13212,7 @@ describe("Testing", () => {
   it("q_auto:best", () => {
     const parts = "q_auto:best".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.quality(Quality.autoBest())
     );
     parts.forEach((part) => {
@@ -13221,7 +13223,7 @@ describe("Testing", () => {
   it("q_auto:eco", () => {
     const parts = "q_auto:eco".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.quality(Quality.autoEco())
     );
     parts.forEach((part) => {
@@ -13232,7 +13234,7 @@ describe("Testing", () => {
   it("q_auto:good", () => {
     const parts = "q_auto:good".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.quality(Quality.autoGood())
     );
     parts.forEach((part) => {
@@ -13243,7 +13245,7 @@ describe("Testing", () => {
   it("q_auto:low", () => {
     const parts = "q_auto:low".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.quality(Quality.autoLow())
     );
     parts.forEach((part) => {
@@ -13254,7 +13256,7 @@ describe("Testing", () => {
   it("q_auto:low:444", () => {
     const parts = "q_auto:low:444".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.quality(Quality.autoLow()).chromaSubSampling(
         ChromaSubSampling.chroma444()
       )
@@ -13267,7 +13269,7 @@ describe("Testing", () => {
   it("q_jpegmini", () => {
     const parts = "q_jpegmini".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.quality(Quality.jpegmini())
     );
     parts.forEach((part) => {
@@ -13278,7 +13280,7 @@ describe("Testing", () => {
   it("q_jpegmini:0", () => {
     const parts = "q_jpegmini:0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.quality(Quality.jpegminiBest())
     );
     parts.forEach((part) => {
@@ -13289,7 +13291,7 @@ describe("Testing", () => {
   it("q_jpegmini:1", () => {
     const parts = "q_jpegmini:1".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.quality(Quality.jpegminiHigh())
     );
     parts.forEach((part) => {
@@ -13300,7 +13302,7 @@ describe("Testing", () => {
   it("q_jpegmini:2", () => {
     const parts = "q_jpegmini:2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").delivery(
+    const tAsset = createNewMedia("sample").delivery(
       Delivery.quality(Quality.jpegminiMedium())
     );
     parts.forEach((part) => {
@@ -13311,7 +13313,7 @@ describe("Testing", () => {
   it("r_10", () => {
     const parts = "r_10".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").roundCorners(
+    const tAsset = createNewMedia("sample").roundCorners(
       RoundCorners.byRadius(10)
     );
     parts.forEach((part) => {
@@ -13322,7 +13324,7 @@ describe("Testing", () => {
   it("r_10:20", () => {
     const parts = "r_10:20".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").roundCorners(
+    const tAsset = createNewMedia("sample").roundCorners(
       RoundCorners.byRadius(10, 20)
     );
     parts.forEach((part) => {
@@ -13333,7 +13335,7 @@ describe("Testing", () => {
   it("r_10:20:30", () => {
     const parts = "r_10:20:30".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").roundCorners(
+    const tAsset = createNewMedia("sample").roundCorners(
       RoundCorners.byRadius(10, 20, 30)
     );
     parts.forEach((part) => {
@@ -13344,7 +13346,7 @@ describe("Testing", () => {
   it("r_10:20:30:40", () => {
     const parts = "r_10:20:30:40".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").roundCorners(
+    const tAsset = createNewMedia("sample").roundCorners(
       RoundCorners.byRadius(10, 20, 30, 40)
     );
     parts.forEach((part) => {
@@ -13355,7 +13357,7 @@ describe("Testing", () => {
   it("r_20", () => {
     const parts = "r_20".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").roundCorners(
+    const tAsset = createNewMedia("sample").roundCorners(
       RoundCorners.byRadius(20)
     );
     parts.forEach((part) => {
@@ -13366,7 +13368,7 @@ describe("Testing", () => {
   it("r_20:0:40:60", () => {
     const parts = "r_20:0:40:60".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").roundCorners(
+    const tAsset = createNewMedia("sample").roundCorners(
       RoundCorners.byRadius(20, 0, 40, 60)
     );
     parts.forEach((part) => {
@@ -13377,7 +13379,7 @@ describe("Testing", () => {
   it("r_20:80", () => {
     const parts = "r_20:80".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").roundCorners(
+    const tAsset = createNewMedia("sample").roundCorners(
       RoundCorners.byRadius(20, 80)
     );
     parts.forEach((part) => {
@@ -13388,7 +13390,7 @@ describe("Testing", () => {
   it("r_max", () => {
     const parts = "r_max".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").roundCorners(
+    const tAsset = createNewMedia("sample").roundCorners(
       RoundCorners.max()
     );
     parts.forEach((part) => {
@@ -13399,7 +13401,7 @@ describe("Testing", () => {
   it("so_0,du_3", () => {
     const parts = "so_0,du_3".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.trim().startOffset("0.0").duration("3.0")
     );
     parts.forEach((part) => {
@@ -13410,7 +13412,7 @@ describe("Testing", () => {
   it("so_1", () => {
     const parts = "so_1".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.trim().startOffset("1.0")
     );
     parts.forEach((part) => {
@@ -13421,7 +13423,7 @@ describe("Testing", () => {
   it("so_10", () => {
     const parts = "so_10".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.trim().startOffset("10.0")
     );
     parts.forEach((part) => {
@@ -13432,7 +13434,7 @@ describe("Testing", () => {
   it("so_10p,du_30p", () => {
     const parts = "so_10p,du_30p".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.trim().startOffset("10%").duration("30%")
     );
     parts.forEach((part) => {
@@ -13443,7 +13445,7 @@ describe("Testing", () => {
   it("so_120", () => {
     const parts = "so_120".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.trim().startOffset("120.0")
     );
     parts.forEach((part) => {
@@ -13454,7 +13456,7 @@ describe("Testing", () => {
   it("so_21/bo_2px_solid_black", () => {
     const parts = "so_21/bo_2px_solid_black".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().startOffset("21.0"))
       .border(Border.solid(2, "black"));
     parts.forEach((part) => {
@@ -13465,7 +13467,7 @@ describe("Testing", () => {
   it("so_3", () => {
     const parts = "so_3".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.trim().startOffset("3.0")
     );
     parts.forEach((part) => {
@@ -13476,7 +13478,7 @@ describe("Testing", () => {
   it("so_3,du_5", () => {
     const parts = "so_3,du_5".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.trim().startOffset("3.0").duration("5.0")
     );
     parts.forEach((part) => {
@@ -13487,7 +13489,7 @@ describe("Testing", () => {
   it("so_3,eo_5", () => {
     const parts = "so_3,eo_5".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.trim().startOffset("3.0").endOffset("5.0")
     );
     parts.forEach((part) => {
@@ -13498,7 +13500,7 @@ describe("Testing", () => {
   it("so_30/bo_2px_solid_black", () => {
     const parts = "so_30/bo_2px_solid_black".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().startOffset("30.0"))
       .border(Border.solid(2, "black"));
     parts.forEach((part) => {
@@ -13509,7 +13511,7 @@ describe("Testing", () => {
   it("so_3p,du_5p", () => {
     const parts = "so_3p,du_5p".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.trim().startOffset("3%").duration("5%")
     );
     parts.forEach((part) => {
@@ -13522,7 +13524,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().startOffset("4.0"))
       .border(Border.solid(5, "black").roundCorners(RoundCorners.byRadius(20)))
       .resize(Resize.crop().width(350).height(350))
@@ -13535,7 +13537,7 @@ describe("Testing", () => {
   it("so_43,du_10/fl_mono", () => {
     const parts = "so_43,du_10/fl_mono".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().startOffset("43.0").duration("10.0"))
       .addFlag(Flag.mono());
     parts.forEach((part) => {
@@ -13546,7 +13548,7 @@ describe("Testing", () => {
   it("so_5", () => {
     const parts = "so_5".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.trim().startOffset("5.0")
     );
     parts.forEach((part) => {
@@ -13557,7 +13559,7 @@ describe("Testing", () => {
   it("so_6.5,eo_10", () => {
     const parts = "so_6.5,eo_10".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.trim().startOffset(6.5).endOffset("10.0")
     );
     parts.forEach((part) => {
@@ -13568,7 +13570,7 @@ describe("Testing", () => {
   it("so_62", () => {
     const parts = "so_62".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.trim().startOffset("62.0")
     );
     parts.forEach((part) => {
@@ -13581,7 +13583,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().startOffset("7.0"))
       .resize(
         Resize.fill()
@@ -13599,7 +13601,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().startOffset("7.0"))
       .resize(
         Resize.fillPad()
@@ -13615,7 +13617,7 @@ describe("Testing", () => {
   it("so_8", () => {
     const parts = "so_8".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.trim().startOffset("8.0")
     );
     parts.forEach((part) => {
@@ -13626,7 +13628,7 @@ describe("Testing", () => {
   it("so_8.5", () => {
     const parts = "so_8.5".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").videoEdit(
+    const tAsset = createNewMedia("sample").videoEdit(
       VideoEdit.trim().startOffset(8.5)
     );
     parts.forEach((part) => {
@@ -13637,7 +13639,7 @@ describe("Testing", () => {
   it("sp_custom_square", () => {
     const parts = "sp_custom_square".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(
+    const tAsset = createNewMedia("sample").transcode(
       Transcode.streamingProfile("custom_square")
     );
     parts.forEach((part) => {
@@ -13648,7 +13650,7 @@ describe("Testing", () => {
   it("sp_full_hd", () => {
     const parts = "sp_full_hd".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(
+    const tAsset = createNewMedia("sample").transcode(
       Transcode.streamingProfile(StreamingProfile.fullHd())
     );
     parts.forEach((part) => {
@@ -13659,7 +13661,7 @@ describe("Testing", () => {
   it("sp_full_hd_lean", () => {
     const parts = "sp_full_hd_lean".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(
+    const tAsset = createNewMedia("sample").transcode(
       Transcode.streamingProfile(StreamingProfile.fullHdLean())
     );
     parts.forEach((part) => {
@@ -13670,7 +13672,7 @@ describe("Testing", () => {
   it("sp_full_hd_wifi", () => {
     const parts = "sp_full_hd_wifi".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(
+    const tAsset = createNewMedia("sample").transcode(
       Transcode.streamingProfile(StreamingProfile.fullHdWifi())
     );
     parts.forEach((part) => {
@@ -13681,7 +13683,7 @@ describe("Testing", () => {
   it("sp_hd", () => {
     const parts = "sp_hd".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(
+    const tAsset = createNewMedia("sample").transcode(
       Transcode.streamingProfile(StreamingProfile.hd())
     );
     parts.forEach((part) => {
@@ -13692,7 +13694,7 @@ describe("Testing", () => {
   it("sp_hd_lean", () => {
     const parts = "sp_hd_lean".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(
+    const tAsset = createNewMedia("sample").transcode(
       Transcode.streamingProfile(StreamingProfile.hdLean())
     );
     parts.forEach((part) => {
@@ -13703,7 +13705,7 @@ describe("Testing", () => {
   it("sp_my_custom_sp", () => {
     const parts = "sp_my_custom_sp".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(
+    const tAsset = createNewMedia("sample").transcode(
       Transcode.streamingProfile("my_custom_sp")
     );
     parts.forEach((part) => {
@@ -13714,7 +13716,7 @@ describe("Testing", () => {
   it("sp_sd", () => {
     const parts = "sp_sd".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(
+    const tAsset = createNewMedia("sample").transcode(
       Transcode.streamingProfile(StreamingProfile.sd())
     );
     parts.forEach((part) => {
@@ -13725,7 +13727,7 @@ describe("Testing", () => {
   it("t_demo_combined", () => {
     const parts = "t_demo_combined".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").namedTransformation(
+    const tAsset = createNewMedia("sample").namedTransformation(
       NamedTransformation.name("demo_combined")
     );
     parts.forEach((part) => {
@@ -13736,7 +13738,7 @@ describe("Testing", () => {
   it("t_fit_100x150", () => {
     const parts = "t_fit_100x150".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").namedTransformation(
+    const tAsset = createNewMedia("sample").namedTransformation(
       NamedTransformation.name("fit_100x150")
     );
     parts.forEach((part) => {
@@ -13749,7 +13751,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fit().width(100).height(50))
       .namedTransformation(NamedTransformation.name("jpg_with_quality_30"));
     parts.forEach((part) => {
@@ -13762,7 +13764,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .namedTransformation(NamedTransformation.name("jpg_with_quality_30"))
       .namedTransformation(NamedTransformation.name("crop_400x400"))
       .namedTransformation(NamedTransformation.name("fit_100x150"));
@@ -13774,7 +13776,7 @@ describe("Testing", () => {
   it("t_my_named_transformation", () => {
     const parts = "t_my_named_transformation".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").namedTransformation(
+    const tAsset = createNewMedia("sample").namedTransformation(
       NamedTransformation.name("my_named_transformation")
     );
     parts.forEach((part) => {
@@ -13785,7 +13787,7 @@ describe("Testing", () => {
   it("t_sample_named_transform", () => {
     const parts = "t_sample_named_transform".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").namedTransformation(
+    const tAsset = createNewMedia("sample").namedTransformation(
       NamedTransformation.name("sample_named_transform")
     );
     parts.forEach((part) => {
@@ -13798,7 +13800,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").namedTransformation(
+    const tAsset = createNewMedia("sample").namedTransformation(
       NamedTransformation.name("sample_named_transform.sample_named_transform2")
     );
     parts.forEach((part) => {
@@ -13809,7 +13811,7 @@ describe("Testing", () => {
   it("t_vignette_angle", () => {
     const parts = "t_vignette_angle".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").namedTransformation(
+    const tAsset = createNewMedia("sample").namedTransformation(
       NamedTransformation.name("vignette_angle")
     );
     parts.forEach((part) => {
@@ -13822,7 +13824,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").underlay(
+    const tAsset = createNewMedia("sample").underlay(
       Underlay.source(
         Source.image("docs/iphone_template").transformation(
           new ImageTransformation()
@@ -13841,7 +13843,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").underlay(
+    const tAsset = createNewMedia("sample").underlay(
       Underlay.source(Source.image("sample")).position(
         new Position().gravity(Gravity.focusOn(FocusOn.face()))
       )
@@ -13856,7 +13858,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").underlay(
+    const tAsset = createNewMedia("sample").underlay(
       Underlay.source(
         Source.image("site_bg").transformation(
           new ImageTransformation().resize(
@@ -13873,7 +13875,7 @@ describe("Testing", () => {
   it("vc_auto", () => {
     const parts = "vc_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(
+    const tAsset = createNewMedia("sample").transcode(
       Transcode.videoCodec(VideoCodec.auto())
     );
     parts.forEach((part) => {
@@ -13884,7 +13886,7 @@ describe("Testing", () => {
   it("vc_h264:baseline:3.1", () => {
     const parts = "vc_h264:baseline:3.1".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(
+    const tAsset = createNewMedia("sample").transcode(
       Transcode.videoCodec(
         VideoCodec.h264()
           .profile(VideoCodecProfile.baseline())
@@ -13899,7 +13901,7 @@ describe("Testing", () => {
   it("vs_40", () => {
     const parts = "vs_40".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").transcode(
+    const tAsset = createNewMedia("sample").transcode(
       Transcode.toAnimated().sampling(40)
     );
     parts.forEach((part) => {
@@ -13910,7 +13912,7 @@ describe("Testing", () => {
   it("w_0.25,c_scale", () => {
     const parts = "w_0.25,c_scale".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(0.25)
     );
     parts.forEach((part) => {
@@ -13924,7 +13926,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .rotate(Rotate.byAngle(20))
       .resize(Resize.scale().width(0.4))
       .overlay(
@@ -13952,7 +13954,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .rotate(Rotate.byAngle(20))
       .resize(Resize.scale().width(0.4))
       .overlay(
@@ -13977,7 +13979,7 @@ describe("Testing", () => {
   it("w_0.5", () => {
     const parts = "w_0.5".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(0.5)
     );
     parts.forEach((part) => {
@@ -13988,7 +13990,7 @@ describe("Testing", () => {
   it("w_10/a_10", () => {
     const parts = "w_10/a_10".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(10))
       .rotate(Rotate.byAngle(10));
     parts.forEach((part) => {
@@ -13999,7 +14001,7 @@ describe("Testing", () => {
   it("w_100", () => {
     const parts = "w_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(100)
     );
     parts.forEach((part) => {
@@ -14010,7 +14012,7 @@ describe("Testing", () => {
   it("w_100,c_fill", () => {
     const parts = "w_100,c_fill".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(100)
     );
     parts.forEach((part) => {
@@ -14021,7 +14023,7 @@ describe("Testing", () => {
   it("w_100,h_100,c_fill", () => {
     const parts = "w_100,h_100,c_fill".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(100).height(100)
     );
     parts.forEach((part) => {
@@ -14032,7 +14034,7 @@ describe("Testing", () => {
   it("w_100,h_100,c_fill,dpr_2.0", () => {
     const parts = "w_100,h_100,c_fill,dpr_2.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().width(100).height(100))
       .delivery(Delivery.dpr("2.0"));
     parts.forEach((part) => {
@@ -14045,7 +14047,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.fill()
           .width(100)
@@ -14061,7 +14063,7 @@ describe("Testing", () => {
   it("w_100,h_100,c_pad,dpr_2.0", () => {
     const parts = "w_100,h_100,c_pad,dpr_2.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.pad().width(100).height(100))
       .delivery(Delivery.dpr("2.0"));
     parts.forEach((part) => {
@@ -14072,7 +14074,7 @@ describe("Testing", () => {
   it("w_100,h_150,c_fill", () => {
     const parts = "w_100,h_150,c_fill".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(100).height(150)
     );
     parts.forEach((part) => {
@@ -14083,7 +14085,7 @@ describe("Testing", () => {
   it("w_100,h_150,c_fill,g_faces", () => {
     const parts = "w_100,h_150,c_fill,g_faces".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill()
         .width(100)
         .height(150)
@@ -14099,7 +14101,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.thumbnail()
         .width(100)
         .height(40)
@@ -14113,7 +14115,7 @@ describe("Testing", () => {
   it("w_100/a_-20", () => {
     const parts = "w_100/a_-20".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(100))
       .rotate(Rotate.byAngle(-20));
     parts.forEach((part) => {
@@ -14124,7 +14126,7 @@ describe("Testing", () => {
   it("w_100/a_90", () => {
     const parts = "w_100/a_90".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(100))
       .rotate(Rotate.byAngle(90));
     parts.forEach((part) => {
@@ -14135,7 +14137,7 @@ describe("Testing", () => {
   it("w_100/a_vflip/a_45", () => {
     const parts = "w_100/a_vflip/a_45".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(100))
       .rotate(Rotate.mode(RotationMode.verticalFlip()))
       .rotate(Rotate.byAngle(45));
@@ -14147,7 +14149,7 @@ describe("Testing", () => {
   it("w_100/dpr_1.0", () => {
     const parts = "w_100/dpr_1.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(100))
       .delivery(Delivery.dpr("1.0"));
     parts.forEach((part) => {
@@ -14158,7 +14160,7 @@ describe("Testing", () => {
   it("w_100/dpr_2.0", () => {
     const parts = "w_100/dpr_2.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(100))
       .delivery(Delivery.dpr("2.0"));
     parts.forEach((part) => {
@@ -14169,7 +14171,7 @@ describe("Testing", () => {
   it("w_100/dpr_3.0", () => {
     const parts = "w_100/dpr_3.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(100))
       .delivery(Delivery.dpr("3.0"));
     parts.forEach((part) => {
@@ -14180,7 +14182,7 @@ describe("Testing", () => {
   it("w_1000", () => {
     const parts = "w_1000".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(1000)
     );
     parts.forEach((part) => {
@@ -14191,7 +14193,7 @@ describe("Testing", () => {
   it("w_1000,dpr_2", () => {
     const parts = "w_1000,dpr_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(1000))
       .delivery(Delivery.dpr("2.0"));
     parts.forEach((part) => {
@@ -14202,7 +14204,7 @@ describe("Testing", () => {
   it("w_1000,f_auto,q_auto:best", () => {
     const parts = "w_1000,f_auto,q_auto:best".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(1000))
       .delivery(Delivery.format(Format.auto()))
       .delivery(Delivery.quality(Quality.autoBest()));
@@ -14214,7 +14216,7 @@ describe("Testing", () => {
   it("w_115,h_135,c_thumb,g_faces", () => {
     const parts = "w_115,h_135,c_thumb,g_faces".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.thumbnail()
         .width(115)
         .height(135)
@@ -14228,7 +14230,7 @@ describe("Testing", () => {
   it("w_120", () => {
     const parts = "w_120".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(120)
     );
     parts.forEach((part) => {
@@ -14239,7 +14241,7 @@ describe("Testing", () => {
   it("w_123/a_45", () => {
     const parts = "w_123/a_45".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(123))
       .rotate(Rotate.byAngle(45));
     parts.forEach((part) => {
@@ -14250,7 +14252,7 @@ describe("Testing", () => {
   it("w_150,c_scale", () => {
     const parts = "w_150,c_scale".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(150)
     );
     parts.forEach((part) => {
@@ -14261,7 +14263,7 @@ describe("Testing", () => {
   it("w_150,e_art:al_dente", () => {
     const parts = "w_150,e_art:al_dente".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(150))
       .effect(Effect.artisticFilter(ArtisticFilter.alDente()));
     parts.forEach((part) => {
@@ -14272,7 +14274,7 @@ describe("Testing", () => {
   it("w_150,e_art:athena", () => {
     const parts = "w_150,e_art:athena".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(150))
       .effect(Effect.artisticFilter(ArtisticFilter.athena()));
     parts.forEach((part) => {
@@ -14283,7 +14285,7 @@ describe("Testing", () => {
   it("w_150,e_art:audrey", () => {
     const parts = "w_150,e_art:audrey".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(150))
       .effect(Effect.artisticFilter(ArtisticFilter.audrey()));
     parts.forEach((part) => {
@@ -14294,7 +14296,7 @@ describe("Testing", () => {
   it("w_150,e_art:aurora", () => {
     const parts = "w_150,e_art:aurora".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(150))
       .effect(Effect.artisticFilter(ArtisticFilter.aurora()));
     parts.forEach((part) => {
@@ -14305,7 +14307,7 @@ describe("Testing", () => {
   it("w_150,e_art:daguerre", () => {
     const parts = "w_150,e_art:daguerre".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(150))
       .effect(Effect.artisticFilter(ArtisticFilter.daguerre()));
     parts.forEach((part) => {
@@ -14316,7 +14318,7 @@ describe("Testing", () => {
   it("w_150,e_art:eucalyptus", () => {
     const parts = "w_150,e_art:eucalyptus".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(150))
       .effect(Effect.artisticFilter(ArtisticFilter.eucalyptus()));
     parts.forEach((part) => {
@@ -14327,7 +14329,7 @@ describe("Testing", () => {
   it("w_150,e_art:fes", () => {
     const parts = "w_150,e_art:fes".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(150))
       .effect(Effect.artisticFilter(ArtisticFilter.fes()));
     parts.forEach((part) => {
@@ -14338,7 +14340,7 @@ describe("Testing", () => {
   it("w_150,e_art:frost", () => {
     const parts = "w_150,e_art:frost".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(150))
       .effect(Effect.artisticFilter(ArtisticFilter.frost()));
     parts.forEach((part) => {
@@ -14349,7 +14351,7 @@ describe("Testing", () => {
   it("w_150,e_art:hairspray", () => {
     const parts = "w_150,e_art:hairspray".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(150))
       .effect(Effect.artisticFilter(ArtisticFilter.hairspray()));
     parts.forEach((part) => {
@@ -14360,7 +14362,7 @@ describe("Testing", () => {
   it("w_150,e_art:hokusai", () => {
     const parts = "w_150,e_art:hokusai".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(150))
       .effect(Effect.artisticFilter(ArtisticFilter.hokusai()));
     parts.forEach((part) => {
@@ -14371,7 +14373,7 @@ describe("Testing", () => {
   it("w_150,e_art:incognito", () => {
     const parts = "w_150,e_art:incognito".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(150))
       .effect(Effect.artisticFilter(ArtisticFilter.incognito()));
     parts.forEach((part) => {
@@ -14382,7 +14384,7 @@ describe("Testing", () => {
   it("w_150,e_art:linen", () => {
     const parts = "w_150,e_art:linen".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(150))
       .effect(Effect.artisticFilter(ArtisticFilter.linen()));
     parts.forEach((part) => {
@@ -14393,7 +14395,7 @@ describe("Testing", () => {
   it("w_150,e_art:peacock", () => {
     const parts = "w_150,e_art:peacock".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(150))
       .effect(Effect.artisticFilter(ArtisticFilter.peacock()));
     parts.forEach((part) => {
@@ -14404,7 +14406,7 @@ describe("Testing", () => {
   it("w_150,e_art:primavera", () => {
     const parts = "w_150,e_art:primavera".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(150))
       .effect(Effect.artisticFilter(ArtisticFilter.primavera()));
     parts.forEach((part) => {
@@ -14415,7 +14417,7 @@ describe("Testing", () => {
   it("w_150,e_art:quartz", () => {
     const parts = "w_150,e_art:quartz".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(150))
       .effect(Effect.artisticFilter(ArtisticFilter.quartz()));
     parts.forEach((part) => {
@@ -14426,7 +14428,7 @@ describe("Testing", () => {
   it("w_150,e_art:red_rock", () => {
     const parts = "w_150,e_art:red_rock".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(150))
       .effect(Effect.artisticFilter(ArtisticFilter.redRock()));
     parts.forEach((part) => {
@@ -14437,7 +14439,7 @@ describe("Testing", () => {
   it("w_150,e_art:refresh", () => {
     const parts = "w_150,e_art:refresh".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(150))
       .effect(Effect.artisticFilter(ArtisticFilter.refresh()));
     parts.forEach((part) => {
@@ -14448,7 +14450,7 @@ describe("Testing", () => {
   it("w_150,e_art:sizzle", () => {
     const parts = "w_150,e_art:sizzle".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(150))
       .effect(Effect.artisticFilter(ArtisticFilter.sizzle()));
     parts.forEach((part) => {
@@ -14459,7 +14461,7 @@ describe("Testing", () => {
   it("w_150,e_art:sonnet", () => {
     const parts = "w_150,e_art:sonnet".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(150))
       .effect(Effect.artisticFilter(ArtisticFilter.sonnet()));
     parts.forEach((part) => {
@@ -14470,7 +14472,7 @@ describe("Testing", () => {
   it("w_150,e_art:ukulele", () => {
     const parts = "w_150,e_art:ukulele".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(150))
       .effect(Effect.artisticFilter(ArtisticFilter.ukulele()));
     parts.forEach((part) => {
@@ -14481,7 +14483,7 @@ describe("Testing", () => {
   it("w_150,e_art:zorro", () => {
     const parts = "w_150,e_art:zorro".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(150))
       .effect(Effect.artisticFilter(ArtisticFilter.zorro()));
     parts.forEach((part) => {
@@ -14492,7 +14494,7 @@ describe("Testing", () => {
   it("w_150,f_auto,q_auto,dpr_2", () => {
     const parts = "w_150,f_auto,q_auto,dpr_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(150))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -14505,7 +14507,7 @@ describe("Testing", () => {
   it("w_150,h_100", () => {
     const parts = "w_150,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(150).height(100)
     );
     parts.forEach((part) => {
@@ -14516,7 +14518,7 @@ describe("Testing", () => {
   it("w_150,h_100,c_fill", () => {
     const parts = "w_150,h_100,c_fill".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(150).height(100)
     );
     parts.forEach((part) => {
@@ -14529,7 +14531,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().width(150).height(100))
       .roundCorners(RoundCorners.byRadius(10, 40, 25));
     parts.forEach((part) => {
@@ -14540,7 +14542,7 @@ describe("Testing", () => {
   it("w_150,h_100,c_fill,r_25", () => {
     const parts = "w_150,h_100,c_fill,r_25".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().width(150).height(100))
       .roundCorners(RoundCorners.byRadius(25));
     parts.forEach((part) => {
@@ -14551,7 +14553,7 @@ describe("Testing", () => {
   it("w_150,h_100,c_fill,r_25:0", () => {
     const parts = "w_150,h_100,c_fill,r_25:0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().width(150).height(100))
       .roundCorners(RoundCorners.byRadius(25, 0));
     parts.forEach((part) => {
@@ -14564,7 +14566,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().width(150).height(100))
       .roundCorners(RoundCorners.byRadius(30, 0, 30, 30));
     parts.forEach((part) => {
@@ -14575,7 +14577,7 @@ describe("Testing", () => {
   it("w_150,h_100,c_scale", () => {
     const parts = "w_150,h_100,c_scale".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(150).height(100)
     );
     parts.forEach((part) => {
@@ -14586,7 +14588,7 @@ describe("Testing", () => {
   it("w_150,h_150,c_fill", () => {
     const parts = "w_150,h_150,c_fill".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(150).height(150)
     );
     parts.forEach((part) => {
@@ -14597,7 +14599,7 @@ describe("Testing", () => {
   it("w_150,h_150,c_fill,g_east", () => {
     const parts = "w_150,h_150,c_fill,g_east".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill()
         .width(150)
         .height(150)
@@ -14611,7 +14613,7 @@ describe("Testing", () => {
   it("w_150,h_150,c_lfill", () => {
     const parts = "w_150,h_150,c_lfill".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitFill().width(150).height(150)
     );
     parts.forEach((part) => {
@@ -14622,7 +14624,7 @@ describe("Testing", () => {
   it("w_150,h_150,c_limit", () => {
     const parts = "w_150,h_150,c_limit".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitFit().width(150).height(150)
     );
     parts.forEach((part) => {
@@ -14633,7 +14635,7 @@ describe("Testing", () => {
   it("w_150,h_150,c_lpad,b_green", () => {
     const parts = "w_150,h_150,c_lpad,b_green".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitPad()
         .width(150)
         .height(150)
@@ -14647,7 +14649,7 @@ describe("Testing", () => {
   it("w_150,h_150,c_pad,b_black", () => {
     const parts = "w_150,h_150,c_pad,b_black".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().width(150).height(150).background(Background.color("black"))
     );
     parts.forEach((part) => {
@@ -14658,7 +14660,7 @@ describe("Testing", () => {
   it("w_150,h_150,c_pad,b_pink", () => {
     const parts = "w_150,h_150,c_pad,b_pink".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().width(150).height(150).background(Background.color("pink"))
     );
     parts.forEach((part) => {
@@ -14669,7 +14671,7 @@ describe("Testing", () => {
   it("w_150,h_150,c_scale", () => {
     const parts = "w_150,h_150,c_scale".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(150).height(150)
     );
     parts.forEach((part) => {
@@ -14680,7 +14682,7 @@ describe("Testing", () => {
   it("w_150,h_150,c_thumb,g_auto", () => {
     const parts = "w_150,h_150,c_thumb,g_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.thumbnail().width(150).height(150).gravity(Gravity.autoGravity())
     );
     parts.forEach((part) => {
@@ -14691,7 +14693,7 @@ describe("Testing", () => {
   it("w_150,h_150,c_thumb,g_center", () => {
     const parts = "w_150,h_150,c_thumb,g_center".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.thumbnail()
         .width(150)
         .height(150)
@@ -14705,7 +14707,7 @@ describe("Testing", () => {
   it("w_150,h_150,c_thumb,g_face", () => {
     const parts = "w_150,h_150,c_thumb,g_face".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.thumbnail()
         .width(150)
         .height(150)
@@ -14722,7 +14724,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.thumbnail()
           .width(150)
@@ -14758,7 +14760,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.thumbnail()
           .width(150)
@@ -14791,7 +14793,7 @@ describe("Testing", () => {
   it("w_150,h_200,c_lfill", () => {
     const parts = "w_150,h_200,c_lfill".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitFill().width(150).height(200)
     );
     parts.forEach((part) => {
@@ -14802,7 +14804,7 @@ describe("Testing", () => {
   it("w_150,h_60,c_fit", () => {
     const parts = "w_150,h_60,c_fit".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fit().width(150).height(60)
     );
     parts.forEach((part) => {
@@ -14815,7 +14817,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop()
         .width(1520)
         .height(1440)
@@ -14833,7 +14835,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.crop()
           .width(1520)
@@ -14852,7 +14854,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.crop()
           .width(1520)
@@ -14869,7 +14871,7 @@ describe("Testing", () => {
   it("w_20,h_20,c_mfit", () => {
     const parts = "w_20,h_20,c_mfit".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.minimumFit().width(20).height(20)
     );
     parts.forEach((part) => {
@@ -14880,7 +14882,7 @@ describe("Testing", () => {
   it("w_20,h_20,c_mpad", () => {
     const parts = "w_20,h_20,c_mpad".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.minimumPad().width(20).height(20)
     );
     parts.forEach((part) => {
@@ -14891,7 +14893,7 @@ describe("Testing", () => {
   it("w_20,q_auto", () => {
     const parts = "w_20,q_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(20))
       .delivery(Delivery.quality(Quality.auto()));
     parts.forEach((part) => {
@@ -14902,7 +14904,7 @@ describe("Testing", () => {
   it("w_200", () => {
     const parts = "w_200".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(200)
     );
     parts.forEach((part) => {
@@ -14913,7 +14915,7 @@ describe("Testing", () => {
   it("w_200,a_45", () => {
     const parts = "w_200,a_45".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .rotate(Rotate.byAngle(45))
       .resize(Resize.scale().width(200));
     parts.forEach((part) => {
@@ -14924,7 +14926,7 @@ describe("Testing", () => {
   it("w_200,a_45/d_avatar.png", () => {
     const parts = "w_200,a_45/d_avatar.png".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .rotate(Rotate.byAngle(45))
       .resize(Resize.scale().width(200))
       .delivery(Delivery.defaultImage("avatar.png"));
@@ -14939,7 +14941,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(200))
       .effect(Effect.outline().width(20).blurLevel(200).color("red"))
       .effect(Effect.outline().width(15).blurLevel(200).color("orange"))
@@ -14952,7 +14954,7 @@ describe("Testing", () => {
   it("w_200,dpr_2.0", () => {
     const parts = "w_200,dpr_2.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(200))
       .delivery(Delivery.dpr("2.0"));
     parts.forEach((part) => {
@@ -14963,7 +14965,7 @@ describe("Testing", () => {
   it("w_200,f_auto,q_auto,dpr_2", () => {
     const parts = "w_200,f_auto,q_auto,dpr_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(200))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -14976,7 +14978,7 @@ describe("Testing", () => {
   it("w_200,h_100", () => {
     const parts = "w_200,h_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(200).height(100)
     );
     parts.forEach((part) => {
@@ -14987,7 +14989,7 @@ describe("Testing", () => {
   it("w_200,h_150,c_crop", () => {
     const parts = "w_200,h_150,c_crop".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().width(200).height(150)
     );
     parts.forEach((part) => {
@@ -15000,7 +15002,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop()
         .width(200)
         .height(150)
@@ -15014,7 +15016,7 @@ describe("Testing", () => {
   it("w_200,h_200,c_crop,g_auto", () => {
     const parts = "w_200,h_200,c_crop,g_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().width(200).height(200).gravity(Gravity.autoGravity())
     );
     parts.forEach((part) => {
@@ -15025,7 +15027,7 @@ describe("Testing", () => {
   it("w_200,h_200,c_crop,g_center", () => {
     const parts = "w_200,h_200,c_crop,g_center".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop()
         .width(200)
         .height(200)
@@ -15039,7 +15041,7 @@ describe("Testing", () => {
   it("w_200,h_200,c_crop,r_max", () => {
     const parts = "w_200,h_200,c_crop,r_max".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.crop().width(200).height(200))
       .roundCorners(RoundCorners.max());
     parts.forEach((part) => {
@@ -15050,7 +15052,7 @@ describe("Testing", () => {
   it("w_200,h_200,c_fill", () => {
     const parts = "w_200,h_200,c_fill".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(200).height(200)
     );
     parts.forEach((part) => {
@@ -15061,7 +15063,7 @@ describe("Testing", () => {
   it("w_200,h_200,c_fill,g_auto", () => {
     const parts = "w_200,h_200,c_fill,g_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(200).height(200).gravity(Gravity.autoGravity())
     );
     parts.forEach((part) => {
@@ -15072,7 +15074,7 @@ describe("Testing", () => {
   it("w_200,h_200,c_fill,g_center", () => {
     const parts = "w_200,h_200,c_fill,g_center".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill()
         .width(200)
         .height(200)
@@ -15086,7 +15088,7 @@ describe("Testing", () => {
   it("w_200,h_200,c_fill,g_face", () => {
     const parts = "w_200,h_200,c_fill,g_face".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill()
         .width(200)
         .height(200)
@@ -15100,7 +15102,7 @@ describe("Testing", () => {
   it("w_200,h_200,c_fill,g_faces", () => {
     const parts = "w_200,h_200,c_fill,g_faces".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill()
         .width(200)
         .height(200)
@@ -15116,7 +15118,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.fill()
           .width(200)
@@ -15142,7 +15144,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().width(200).height(200))
       .roundCorners(RoundCorners.max())
       .rotate(Rotate.byAngle(30))
@@ -15157,7 +15159,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().width(200).height(200))
       .effect(Effect.styleTransfer(Source.image("sailing_angel")));
     parts.forEach((part) => {
@@ -15171,7 +15173,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .rotate(Rotate.mode(RotationMode.horizontalFlip()))
       .resize(Resize.fit().width(200).height(200))
       .overlay(
@@ -15201,7 +15203,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .rotate(Rotate.mode(RotationMode.horizontalFlip()))
       .resize(Resize.fit().width(200).height(200))
       .overlay(
@@ -15228,7 +15230,7 @@ describe("Testing", () => {
   it("w_200,h_200,c_thumb,g_face", () => {
     const parts = "w_200,h_200,c_thumb,g_face".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.thumbnail()
         .width(200)
         .height(200)
@@ -15244,7 +15246,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.thumbnail()
           .width(200)
@@ -15262,7 +15264,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.thumbnail()
           .width(200)
@@ -15282,7 +15284,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample").overlay(
+    const tAsset = createNewMedia("sample").overlay(
       Overlay.source(
         Source.image("face_left").transformation(
           new ImageTransformation()
@@ -15307,7 +15309,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.thumbnail()
           .width(200)
@@ -15340,7 +15342,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.thumbnail()
           .width(200)
@@ -15373,7 +15375,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.thumbnail()
           .width(200)
@@ -15389,7 +15391,7 @@ describe("Testing", () => {
   it("w_200,h_300,c_fill,g_auto", () => {
     const parts = "w_200,h_300,c_fill,g_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(200).height(300).gravity(Gravity.autoGravity())
     );
     parts.forEach((part) => {
@@ -15400,7 +15402,7 @@ describe("Testing", () => {
   it("w_200,h_300,c_fill,g_center", () => {
     const parts = "w_200,h_300,c_fill,g_center".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill()
         .width(200)
         .height(300)
@@ -15414,7 +15416,7 @@ describe("Testing", () => {
   it("w_200/dpr_1.0", () => {
     const parts = "w_200/dpr_1.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(200))
       .delivery(Delivery.dpr("1.0"));
     parts.forEach((part) => {
@@ -15425,7 +15427,7 @@ describe("Testing", () => {
   it("w_200/dpr_2.0", () => {
     const parts = "w_200/dpr_2.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(200))
       .delivery(Delivery.dpr("2.0"));
     parts.forEach((part) => {
@@ -15436,7 +15438,7 @@ describe("Testing", () => {
   it("w_200/dpr_3.0", () => {
     const parts = "w_200/dpr_3.0".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(200))
       .delivery(Delivery.dpr("3.0"));
     parts.forEach((part) => {
@@ -15447,7 +15449,7 @@ describe("Testing", () => {
   it("w_230,h_168,c_fit", () => {
     const parts = "w_230,h_168,c_fit".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fit().width(230).height(168)
     );
     parts.forEach((part) => {
@@ -15458,7 +15460,7 @@ describe("Testing", () => {
   it("w_25,h_150,c_fill,g_auto", () => {
     const parts = "w_25,h_150,c_fill,g_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(25).height(150).gravity(Gravity.autoGravity())
     );
     parts.forEach((part) => {
@@ -15471,7 +15473,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fillPad()
         .width(25)
         .height(150)
@@ -15486,7 +15488,7 @@ describe("Testing", () => {
   it("w_250", () => {
     const parts = "w_250".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(250)
     );
     parts.forEach((part) => {
@@ -15497,7 +15499,7 @@ describe("Testing", () => {
   it("w_250,bo_1px_solid_gray", () => {
     const parts = "w_250,bo_1px_solid_gray".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(250));
     parts.forEach((part) => {
@@ -15508,7 +15510,7 @@ describe("Testing", () => {
   it("w_250,f_auto,q_auto,dpr_2", () => {
     const parts = "w_250,f_auto,q_auto,dpr_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(250))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -15521,7 +15523,7 @@ describe("Testing", () => {
   it("w_250,fl_animated,f_auto", () => {
     const parts = "w_250,fl_animated,f_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(250))
       .transcode(Transcode.toAnimated(AnimatedFormat.auto()));
     parts.forEach((part) => {
@@ -15532,7 +15534,7 @@ describe("Testing", () => {
   it("w_250,h_150,c_fill,r_max", () => {
     const parts = "w_250,h_150,c_fill,r_max".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().width(250).height(150))
       .roundCorners(RoundCorners.max());
     parts.forEach((part) => {
@@ -15543,7 +15545,7 @@ describe("Testing", () => {
   it("w_250,h_250,c_fill", () => {
     const parts = "w_250,h_250,c_fill".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(250).height(250)
     );
     parts.forEach((part) => {
@@ -15554,7 +15556,7 @@ describe("Testing", () => {
   it("w_250,h_250,c_fill,g_east", () => {
     const parts = "w_250,h_250,c_fill,g_east".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill()
         .width(250)
         .height(250)
@@ -15568,7 +15570,7 @@ describe("Testing", () => {
   it("w_250,h_250,c_fill,g_faces", () => {
     const parts = "w_250,h_250,c_fill,g_faces".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill()
         .width(250)
         .height(250)
@@ -15582,7 +15584,7 @@ describe("Testing", () => {
   it("w_250,h_250,c_fill,g_north", () => {
     const parts = "w_250,h_250,c_fill,g_north".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill()
         .width(250)
         .height(250)
@@ -15598,7 +15600,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill()
         .width(250)
         .height(250)
@@ -15612,7 +15614,7 @@ describe("Testing", () => {
   it("w_250,h_250,c_fit", () => {
     const parts = "w_250,h_250,c_fit".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fit().width(250).height(250)
     );
     parts.forEach((part) => {
@@ -15623,7 +15625,7 @@ describe("Testing", () => {
   it("w_250,h_250,c_limit", () => {
     const parts = "w_250,h_250,c_limit".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitFit().width(250).height(250)
     );
     parts.forEach((part) => {
@@ -15634,7 +15636,7 @@ describe("Testing", () => {
   it("w_250,h_250,c_lpad,b_black", () => {
     const parts = "w_250,h_250,c_lpad,b_black".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitPad()
         .width(250)
         .height(250)
@@ -15648,7 +15650,7 @@ describe("Testing", () => {
   it("w_250,h_250,c_mfit", () => {
     const parts = "w_250,h_250,c_mfit".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.minimumFit().width(250).height(250)
     );
     parts.forEach((part) => {
@@ -15659,7 +15661,7 @@ describe("Testing", () => {
   it("w_250,h_250,c_mpad", () => {
     const parts = "w_250,h_250,c_mpad".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.minimumPad().width(250).height(250)
     );
     parts.forEach((part) => {
@@ -15670,7 +15672,7 @@ describe("Testing", () => {
   it("w_250,h_250,c_pad,b_black", () => {
     const parts = "w_250,h_250,c_pad,b_black".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().width(250).height(250).background(Background.color("black"))
     );
     parts.forEach((part) => {
@@ -15681,7 +15683,7 @@ describe("Testing", () => {
   it("w_250,q_80", () => {
     const parts = "w_250,q_80".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(250))
       .delivery(Delivery.quality(80));
     parts.forEach((part) => {
@@ -15692,7 +15694,7 @@ describe("Testing", () => {
   it("w_250,q_auto:best", () => {
     const parts = "w_250,q_auto:best".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(250))
       .delivery(Delivery.quality(Quality.autoBest()));
     parts.forEach((part) => {
@@ -15703,7 +15705,7 @@ describe("Testing", () => {
   it("w_250,q_auto:eco", () => {
     const parts = "w_250,q_auto:eco".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(250))
       .delivery(Delivery.quality(Quality.autoEco()));
     parts.forEach((part) => {
@@ -15714,7 +15716,7 @@ describe("Testing", () => {
   it("w_250,q_auto:good", () => {
     const parts = "w_250,q_auto:good".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(250))
       .delivery(Delivery.quality(Quality.autoGood()));
     parts.forEach((part) => {
@@ -15725,7 +15727,7 @@ describe("Testing", () => {
   it("w_250,q_auto:low", () => {
     const parts = "w_250,q_auto:low".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(250))
       .delivery(Delivery.quality(Quality.autoLow()));
     parts.forEach((part) => {
@@ -15736,7 +15738,7 @@ describe("Testing", () => {
   it("w_250,x_780,y_350,c_crop", () => {
     const parts = "w_250,x_780,y_350,c_crop".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().width(250).x(780).y(350)
     );
     parts.forEach((part) => {
@@ -15750,7 +15752,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.crop().width(250).x(780).y(350))
       .underlay(
         Underlay.source(
@@ -15771,7 +15773,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.crop().width(250).x(780).y(350))
       .resize(Resize.scale().width(1100));
     parts.forEach((part) => {
@@ -15785,7 +15787,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(250))
       .underlay(
         Underlay.source(
@@ -15806,7 +15808,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(250))
       .underlay(
         Underlay.source(
@@ -15825,7 +15827,7 @@ describe("Testing", () => {
   it("w_260,h_200,c_crop,g_north", () => {
     const parts = "w_260,h_200,c_crop,g_north".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop()
         .width(260)
         .height(200)
@@ -15839,7 +15841,7 @@ describe("Testing", () => {
   it("w_28,q_auto", () => {
     const parts = "w_28,q_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(28))
       .delivery(Delivery.quality(Quality.auto()));
     parts.forEach((part) => {
@@ -15850,7 +15852,7 @@ describe("Testing", () => {
   it("w_28,q_auto,f_auto", () => {
     const parts = "w_28,q_auto,f_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(28))
       .delivery(Delivery.format(Format.auto()))
       .delivery(Delivery.quality(Quality.auto()));
@@ -15862,7 +15864,7 @@ describe("Testing", () => {
   it("w_28,q_auto,f_auto,dpr_2", () => {
     const parts = "w_28,q_auto,f_auto,dpr_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(28))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -15875,7 +15877,7 @@ describe("Testing", () => {
   it("w_300", () => {
     const parts = "w_300".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(300)
     );
     parts.forEach((part) => {
@@ -15886,7 +15888,7 @@ describe("Testing", () => {
   it("w_300,c_fill,g_auto,ar_1:1", () => {
     const parts = "w_300,c_fill,g_auto,ar_1:1".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill()
         .width(300)
         .aspectRatio(AspectRatio.ar1X1())
@@ -15900,7 +15902,7 @@ describe("Testing", () => {
   it("w_300,c_scale,pg_2", () => {
     const parts = "w_300,c_scale,pg_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(300))
       .extract(Extract.getPage().byNumber(2));
     parts.forEach((part) => {
@@ -15914,7 +15916,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(2, "#999").roundCorners(RoundCorners.byRadius(50)))
       .resize(Resize.scale().width(300))
       .effect(Effect.sepia())
@@ -15938,7 +15940,7 @@ describe("Testing", () => {
   it("w_300,e_accelerate:100", () => {
     const parts = "w_300,e_accelerate:100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(300))
       .effect(Effect.accelerate().rate(100));
     parts.forEach((part) => {
@@ -15949,7 +15951,7 @@ describe("Testing", () => {
   it("w_300,e_grayscale", () => {
     const parts = "w_300,e_grayscale".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(300))
       .effect(Effect.grayscale());
     parts.forEach((part) => {
@@ -15960,7 +15962,7 @@ describe("Testing", () => {
   it("w_300,e_noise:50", () => {
     const parts = "w_300,e_noise:50".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(300))
       .effect(Effect.noise().level(50));
     parts.forEach((part) => {
@@ -15971,7 +15973,7 @@ describe("Testing", () => {
   it("w_300,f_auto,q_auto,dpr_2", () => {
     const parts = "w_300,f_auto,q_auto,dpr_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(300))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -15986,7 +15988,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(1, "gray"))
       .resize(Resize.scale().width(300))
       .delivery(Delivery.dpr("2.0"))
@@ -16000,7 +16002,7 @@ describe("Testing", () => {
   it("w_300,fl_keep_iptc", () => {
     const parts = "w_300,fl_keep_iptc".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(300))
       .addFlag(Flag.keepIptc());
     parts.forEach((part) => {
@@ -16011,7 +16013,7 @@ describe("Testing", () => {
   it("w_300,fl_png8", () => {
     const parts = "w_300,fl_png8".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(300))
       .addFlag(Flag.png8());
     parts.forEach((part) => {
@@ -16022,7 +16024,7 @@ describe("Testing", () => {
   it("w_300,h_100,c_scale", () => {
     const parts = "w_300,h_100,c_scale".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(300).height(100)
     );
     parts.forEach((part) => {
@@ -16033,7 +16035,7 @@ describe("Testing", () => {
   it("w_300,h_200,c_crop", () => {
     const parts = "w_300,h_200,c_crop".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().width(300).height(200)
     );
     parts.forEach((part) => {
@@ -16044,7 +16046,7 @@ describe("Testing", () => {
   it("w_300,h_200,c_fill,dpr_auto", () => {
     const parts = "w_300,h_200,c_fill,dpr_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().width(300).height(200))
       .delivery(Delivery.dpr(Dpr.auto()));
     parts.forEach((part) => {
@@ -16057,7 +16059,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().width(300).height(200))
       .videoEdit(
         VideoEdit.concatenate(
@@ -16079,7 +16081,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().width(300).height(200))
       .videoEdit(
         VideoEdit.concatenate(
@@ -16101,7 +16103,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().duration("5.0"))
       .resize(Resize.scale().width(300).height(200))
       .videoEdit(
@@ -16124,7 +16126,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().duration("5.0"))
       .resize(Resize.scale().width(300).height(200))
       .videoEdit(
@@ -16165,7 +16167,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(300).height(200))
       .videoEdit(
         VideoEdit.concatenate(
@@ -16186,7 +16188,7 @@ describe("Testing", () => {
   it("w_300,h_250,e_grayscale", () => {
     const parts = "w_300,h_250,e_grayscale".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(300).height(250))
       .effect(Effect.grayscale());
     parts.forEach((part) => {
@@ -16199,7 +16201,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().width(300).height(300))
       .roundCorners(RoundCorners.max())
       .backgroundColor("blue");
@@ -16213,7 +16215,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.fill()
           .width(300)
@@ -16233,7 +16235,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().startOffset("30%"))
       .resize(Resize.fill().width(300).height(300))
       .roundCorners(RoundCorners.max())
@@ -16258,7 +16260,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().startOffset("30%"))
       .resize(Resize.fill().width(300).height(300))
       .roundCorners(RoundCorners.max())
@@ -16283,7 +16285,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().width(300).height(300))
       .overlay(
         Overlay.source(
@@ -16306,7 +16308,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().width(300).height(300))
       .overlay(
         Overlay.source(
@@ -16326,7 +16328,7 @@ describe("Testing", () => {
   it("w_300,h_300,c_pad,b_blue", () => {
     const parts = "w_300,h_300,c_pad,b_blue".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().width(300).height(300).background(Background.color("blue"))
     );
     parts.forEach((part) => {
@@ -16337,7 +16339,7 @@ describe("Testing", () => {
   it("w_300,h_300,c_pad,b_green", () => {
     const parts = "w_300,h_300,c_pad,b_green".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().width(300).height(300).background(Background.color("green"))
     );
     parts.forEach((part) => {
@@ -16348,7 +16350,7 @@ describe("Testing", () => {
   it("w_300,h_350,c_fill,g_north", () => {
     const parts = "w_300,h_350,c_fill,g_north".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill()
         .width(300)
         .height(350)
@@ -16362,7 +16364,7 @@ describe("Testing", () => {
   it("w_300,h_350,c_fill,g_north/", () => {
     const parts = "w_300,h_350,c_fill,g_north/".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("/sample").resize(
+    const tAsset = createNewMedia("/sample").resize(
       Resize.fill()
         .width(300)
         .height(350)
@@ -16378,7 +16380,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.thumbnail()
         .width(300)
         .height(80)
@@ -16392,7 +16394,7 @@ describe("Testing", () => {
   it("w_300,pg_2", () => {
     const parts = "w_300,pg_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(300))
       .extract(Extract.getPage().byNumber(2));
     parts.forEach((part) => {
@@ -16403,7 +16405,7 @@ describe("Testing", () => {
   it("w_300,r_30", () => {
     const parts = "w_300,r_30".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(300))
       .roundCorners(RoundCorners.byRadius(30));
     parts.forEach((part) => {
@@ -16414,7 +16416,7 @@ describe("Testing", () => {
   it("w_300,r_max", () => {
     const parts = "w_300,r_max".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(300))
       .roundCorners(RoundCorners.max());
     parts.forEach((part) => {
@@ -16427,7 +16429,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(300))
       .effect(
         Effect.shadow()
@@ -16445,7 +16447,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(300))
       .overlay(
         Overlay.source(
@@ -16464,7 +16466,7 @@ describe("Testing", () => {
   it("w_350", () => {
     const parts = "w_350".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(350)
     );
     parts.forEach((part) => {
@@ -16477,7 +16479,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(5, "black"))
       .resize(Resize.scale().width(350))
       .delivery(Delivery.dpr(Dpr.auto()))
@@ -16492,7 +16494,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(350))
       .adjust(Adjust.tint("100:red:blue:yellow"));
     parts.forEach((part) => {
@@ -16503,7 +16505,7 @@ describe("Testing", () => {
   it("w_350,e_tint:20", () => {
     const parts = "w_350,e_tint:20".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(350))
       .adjust(Adjust.tint(20));
     parts.forEach((part) => {
@@ -16516,7 +16518,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(350))
       .adjust(Adjust.tint("equalize:80:red:50p:blue:60p:yellow:40p"));
     parts.forEach((part) => {
@@ -16527,7 +16529,7 @@ describe("Testing", () => {
   it("w_350,f_auto", () => {
     const parts = "w_350,f_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(350))
       .delivery(Delivery.format(Format.auto()));
     parts.forEach((part) => {
@@ -16538,7 +16540,7 @@ describe("Testing", () => {
   it("w_350,f_gif", () => {
     const parts = "w_350,f_gif".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(350))
       .delivery(Delivery.format(Format.gif()));
     parts.forEach((part) => {
@@ -16551,7 +16553,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().width(350).height(200).x(230).y(20)
     );
     parts.forEach((part) => {
@@ -16562,7 +16564,7 @@ describe("Testing", () => {
   it("w_350,q_100", () => {
     const parts = "w_350,q_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(350))
       .delivery(Delivery.quality(100));
     parts.forEach((part) => {
@@ -16573,7 +16575,7 @@ describe("Testing", () => {
   it("w_350,q_80", () => {
     const parts = "w_350,q_80".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(350))
       .delivery(Delivery.quality(80));
     parts.forEach((part) => {
@@ -16584,7 +16586,7 @@ describe("Testing", () => {
   it("w_350,q_auto:best", () => {
     const parts = "w_350,q_auto:best".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(350))
       .delivery(Delivery.quality(Quality.autoBest()));
     parts.forEach((part) => {
@@ -16595,7 +16597,7 @@ describe("Testing", () => {
   it("w_350,q_auto:eco", () => {
     const parts = "w_350,q_auto:eco".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(350))
       .delivery(Delivery.quality(Quality.autoEco()));
     parts.forEach((part) => {
@@ -16606,7 +16608,7 @@ describe("Testing", () => {
   it("w_350,q_auto:good", () => {
     const parts = "w_350,q_auto:good".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(350))
       .delivery(Delivery.quality(Quality.autoGood()));
     parts.forEach((part) => {
@@ -16617,7 +16619,7 @@ describe("Testing", () => {
   it("w_350,q_auto:low", () => {
     const parts = "w_350,q_auto:low".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(350))
       .delivery(Delivery.quality(Quality.autoLow()));
     parts.forEach((part) => {
@@ -16628,7 +16630,7 @@ describe("Testing", () => {
   it("w_350/q_auto,dpr_auto", () => {
     const parts = "w_350/q_auto,dpr_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(350))
       .delivery(Delivery.dpr(Dpr.auto()))
       .delivery(Delivery.quality(Quality.auto()));
@@ -16640,7 +16642,7 @@ describe("Testing", () => {
   it("w_400", () => {
     const parts = "w_400".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(400)
     );
     parts.forEach((part) => {
@@ -16653,7 +16655,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.thumbnail()
         .width(400)
         .aspectRatio("1.0")
@@ -16671,7 +16673,7 @@ describe("Testing", () => {
   it("w_400,ar_1,g_auto,c_fill_pad", () => {
     const parts = "w_400,ar_1,g_auto,c_fill_pad".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fillPad()
         .width(400)
         .aspectRatio("1.0")
@@ -16687,7 +16689,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.trim().startOffset("1.0"))
       .resize(
         Resize.fillPad()
@@ -16703,7 +16705,7 @@ describe("Testing", () => {
   it("w_400,c_fill,ar_4:3", () => {
     const parts = "w_400,c_fill,ar_4:3".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(400).aspectRatio(AspectRatio.ar4X3())
     );
     parts.forEach((part) => {
@@ -16714,7 +16716,7 @@ describe("Testing", () => {
   it("w_400,f_png", () => {
     const parts = "w_400,f_png".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(400))
       .delivery(Delivery.format(Format.png()));
     parts.forEach((part) => {
@@ -16725,7 +16727,7 @@ describe("Testing", () => {
   it("w_400,fl_keep_iptc", () => {
     const parts = "w_400,fl_keep_iptc".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(400))
       .addFlag(Flag.keepIptc());
     parts.forEach((part) => {
@@ -16736,7 +16738,7 @@ describe("Testing", () => {
   it("w_400,h_150,c_lpad,b_green", () => {
     const parts = "w_400,h_150,c_lpad,b_green".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.limitPad()
         .width(400)
         .height(150)
@@ -16753,7 +16755,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.fill()
           .width(400)
@@ -16817,7 +16819,7 @@ describe("Testing", () => {
   it("w_400,h_300,c_pad", () => {
     const parts = "w_400,h_300,c_pad".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.pad().width(400).height(300)
     );
     parts.forEach((part) => {
@@ -16830,7 +16832,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.crop()
           .width(400)
@@ -16847,7 +16849,7 @@ describe("Testing", () => {
   it("w_400,q_auto:best,vc_vp9", () => {
     const parts = "w_400,q_auto:best,vc_vp9".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .transcode(Transcode.videoCodec(VideoCodec.vp9()))
       .resize(Resize.scale().width(400))
       .delivery(Delivery.quality(Quality.autoBest()));
@@ -16861,7 +16863,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(5, "black"))
       .resize(Resize.scale().width(450))
       .delivery(Delivery.dpr(Dpr.auto()))
@@ -16874,7 +16876,7 @@ describe("Testing", () => {
   it("w_500", () => {
     const parts = "w_500".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(500)
     );
     parts.forEach((part) => {
@@ -16887,7 +16889,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop()
         .width(500)
         .aspectRatio("1.0")
@@ -16905,7 +16907,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.crop()
           .width(500)
@@ -16923,7 +16925,7 @@ describe("Testing", () => {
   it("w_500,ar_1,c_crop,g_bottle", () => {
     const parts = "w_500,ar_1,c_crop,g_bottle".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop()
         .width(500)
         .aspectRatio("1.0")
@@ -16939,7 +16941,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.crop()
           .width(500)
@@ -16957,7 +16959,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill()
         .width(500)
         .aspectRatio("1.0")
@@ -16975,7 +16977,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.fill()
           .width(500)
@@ -16993,7 +16995,7 @@ describe("Testing", () => {
   it("w_500,ar_1,c_fill,g_bottle", () => {
     const parts = "w_500,ar_1,c_fill,g_bottle".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill()
         .width(500)
         .aspectRatio("1.0")
@@ -17009,7 +17011,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.fill()
           .width(500)
@@ -17027,7 +17029,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.thumbnail()
         .width(500)
         .aspectRatio("1.0")
@@ -17045,7 +17047,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.thumbnail()
           .width(500)
@@ -17063,7 +17065,7 @@ describe("Testing", () => {
   it("w_500,ar_1,c_thumb,g_bottle", () => {
     const parts = "w_500,ar_1,c_thumb,g_bottle".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.thumbnail()
         .width(500)
         .aspectRatio("1.0")
@@ -17079,7 +17081,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.thumbnail()
           .width(500)
@@ -17095,7 +17097,7 @@ describe("Testing", () => {
   it("w_500,ar_1.0,c_fill,g_auto", () => {
     const parts = "w_500,ar_1.0,c_fill,g_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(500).aspectRatio("1.0").gravity(Gravity.autoGravity())
     );
     parts.forEach((part) => {
@@ -17108,7 +17110,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.fill()
           .width(500)
@@ -17126,7 +17128,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill()
         .width(500)
         .aspectRatio("1.0")
@@ -17146,7 +17148,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.fill()
           .width(500)
@@ -17166,7 +17168,7 @@ describe("Testing", () => {
   it("w_500,ar_4:3", () => {
     const parts = "w_500,ar_4:3".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(500).aspectRatio(AspectRatio.ar4X3())
     );
     parts.forEach((part) => {
@@ -17177,7 +17179,7 @@ describe("Testing", () => {
   it("w_500,bo_5px_solid_black", () => {
     const parts = "w_500,bo_5px_solid_black".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .border(Border.solid(5, "black"))
       .resize(Resize.scale().width(500));
     parts.forEach((part) => {
@@ -17188,7 +17190,7 @@ describe("Testing", () => {
   it("w_500,e_brightness:30", () => {
     const parts = "w_500,e_brightness:30".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .adjust(Adjust.brightness().level(30));
     parts.forEach((part) => {
@@ -17199,7 +17201,7 @@ describe("Testing", () => {
   it("w_500,e_contrast:50", () => {
     const parts = "w_500,e_contrast:50".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .adjust(Adjust.contrast().level(50));
     parts.forEach((part) => {
@@ -17210,7 +17212,7 @@ describe("Testing", () => {
   it("w_500,e_gamma:-20", () => {
     const parts = "w_500,e_gamma:-20".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .adjust(Adjust.gamma().level(-20));
     parts.forEach((part) => {
@@ -17221,7 +17223,7 @@ describe("Testing", () => {
   it("w_500,e_reverse", () => {
     const parts = "w_500,e_reverse".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .effect(Effect.reverse());
     parts.forEach((part) => {
@@ -17232,7 +17234,7 @@ describe("Testing", () => {
   it("w_500,e_saturation:-50", () => {
     const parts = "w_500,e_saturation:-50".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .adjust(Adjust.saturation().level(-50));
     parts.forEach((part) => {
@@ -17243,7 +17245,7 @@ describe("Testing", () => {
   it("w_500,e_vignette:50", () => {
     const parts = "w_500,e_vignette:50".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .effect(Effect.vignette().strength(50));
     parts.forEach((part) => {
@@ -17254,7 +17256,7 @@ describe("Testing", () => {
   it("w_500,e_volume:50", () => {
     const parts = "w_500,e_volume:50".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .videoEdit(VideoEdit.volume(50))
       .resize(Resize.scale().width(500));
     parts.forEach((part) => {
@@ -17265,7 +17267,7 @@ describe("Testing", () => {
   it("w_500,f_auto", () => {
     const parts = "w_500,f_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .delivery(Delivery.format(Format.auto()));
     parts.forEach((part) => {
@@ -17278,7 +17280,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -17294,7 +17296,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .delivery(Delivery.format(Format.auto()))
       .addFlag(Flag.streamingAttachment("mydog"));
@@ -17306,7 +17308,7 @@ describe("Testing", () => {
   it("w_500,q_auto,f_auto", () => {
     const parts = "w_500,q_auto,f_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .delivery(Delivery.format(Format.auto()))
       .delivery(Delivery.quality(Quality.auto()));
@@ -17318,7 +17320,7 @@ describe("Testing", () => {
   it("w_500,q_auto,f_auto,dpr_2", () => {
     const parts = "w_500,q_auto,f_auto,dpr_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -17334,7 +17336,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .adjust(Adjust.brightness().level(70))
       .overlay(
@@ -17359,7 +17361,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .adjust(Adjust.brightness().level(70))
       .overlay(
@@ -17384,7 +17386,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .overlay(
         Overlay.source(
@@ -17409,7 +17411,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .overlay(
         Overlay.source(
@@ -17432,7 +17434,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .overlay(
         Overlay.source(
@@ -17454,7 +17456,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .overlay(
         Overlay.source(
@@ -17483,7 +17485,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .overlay(
         Overlay.source(
@@ -17509,7 +17511,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .overlay(
         Overlay.source(
@@ -17531,7 +17533,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .overlay(
         Overlay.source(
@@ -17560,7 +17562,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .overlay(
         Overlay.source(
@@ -17580,7 +17582,7 @@ describe("Testing", () => {
   it("w_500/l_my_bg", () => {
     const parts = "w_500/l_my_bg".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .overlay(Overlay.source(Source.image("my_bg")));
     parts.forEach((part) => {
@@ -17591,7 +17593,7 @@ describe("Testing", () => {
   it("w_500/l_my_icon", () => {
     const parts = "w_500/l_my_icon".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .overlay(Overlay.source(Source.image("my_icon")));
     parts.forEach((part) => {
@@ -17604,7 +17606,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .overlay(
         Overlay.source(
@@ -17623,7 +17625,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .overlay(Overlay.source(Source.subtitles("sample_sub_he.srt")));
     parts.forEach((part) => {
@@ -17636,7 +17638,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .overlay(
         Overlay.source(Source.text("Flowers", new TextStyle("Arial", 80)))
@@ -17651,7 +17653,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .overlay(
         Overlay.source(
@@ -17672,7 +17674,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .overlay(
         Overlay.source(
@@ -17696,7 +17698,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .overlay(
         Overlay.source(
@@ -17721,7 +17723,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .overlay(
         Overlay.source(
@@ -17744,7 +17746,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .overlay(
         Overlay.source(
@@ -17765,7 +17767,7 @@ describe("Testing", () => {
   it("w_500/l_text:verdana_1:words", () => {
     const parts = "w_500/l_text:verdana_1:words".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .overlay(
         Overlay.source(Source.text("words", new TextStyle("verdana", 1)))
@@ -17781,7 +17783,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .overlay(
         Overlay.source(
@@ -17808,7 +17810,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .overlay(
         Overlay.source(
@@ -17832,7 +17834,7 @@ describe("Testing", () => {
   it("w_500/u_fetch:aW1hZ2UudXJs", () => {
     const parts = "w_500/u_fetch:aW1hZ2UudXJs".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .underlay(Underlay.source(Source.fetch("image.url")));
     parts.forEach((part) => {
@@ -17843,7 +17845,7 @@ describe("Testing", () => {
   it("w_500/u_my_bg", () => {
     const parts = "w_500/u_my_bg".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(500))
       .underlay(Underlay.source(Source.image("my_bg")));
     parts.forEach((part) => {
@@ -17856,7 +17858,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fit().width(550).height(300))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -17871,7 +17873,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.crop()
           .width(550)
@@ -17888,7 +17890,7 @@ describe("Testing", () => {
   it("w_600", () => {
     const parts = "w_600".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(600)
     );
     parts.forEach((part) => {
@@ -17901,7 +17903,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.thumbnail()
         .width(600)
         .aspectRatio("1.0")
@@ -17921,7 +17923,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.thumbnail()
           .width(600)
@@ -17943,7 +17945,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.thumbnail()
         .width(600)
         .aspectRatio("1.0")
@@ -17963,7 +17965,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.thumbnail()
           .width(600)
@@ -17985,7 +17987,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.thumbnail()
         .width(600)
         .aspectRatio("1.0")
@@ -18003,7 +18005,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.thumbnail()
           .width(600)
@@ -18021,7 +18023,7 @@ describe("Testing", () => {
   it("w_600,f_auto,q_auto,dpr_2", () => {
     const parts = "w_600,f_auto,q_auto,dpr_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(600))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -18034,7 +18036,7 @@ describe("Testing", () => {
   it("w_600/q_100", () => {
     const parts = "w_600/q_100".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(600))
       .delivery(Delivery.quality(100));
     parts.forEach((part) => {
@@ -18047,7 +18049,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(600))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -18061,7 +18063,7 @@ describe("Testing", () => {
   it("w_600/q_auto:low", () => {
     const parts = "w_600/q_auto:low".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(600))
       .delivery(Delivery.quality(Quality.autoLow()));
     parts.forEach((part) => {
@@ -18074,7 +18076,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(600))
       .resize(
         Resize.crop()
@@ -18091,7 +18093,7 @@ describe("Testing", () => {
   it("w_700,dpr_2/f_auto,q_auto", () => {
     const parts = "w_700,dpr_2/f_auto,q_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(700))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -18106,7 +18108,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(700))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -18120,7 +18122,7 @@ describe("Testing", () => {
   it("w_700,h_700,c_fill", () => {
     const parts = "w_700,h_700,c_fill".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(700).height(700)
     );
     parts.forEach((part) => {
@@ -18133,7 +18135,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().width(700).height(700))
       .effect(Effect.styleTransfer(Source.image("sailing_angel")));
     parts.forEach((part) => {
@@ -18146,7 +18148,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().width(700).height(700))
       .effect(Effect.styleTransfer(Source.image("lighthouse")).strength(60))
       .resize(Resize.scale().width(250));
@@ -18161,7 +18163,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().width(700).height(700))
       .effect(Effect.styleTransfer(Source.image("lighthouse")).preserveColor())
       .resize(Resize.scale().width(250));
@@ -18173,7 +18175,7 @@ describe("Testing", () => {
   it("w_700,h_700,c_fill/w_250", () => {
     const parts = "w_700,h_700,c_fill/w_250".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.fill().width(700).height(700))
       .resize(Resize.scale().width(250));
     parts.forEach((part) => {
@@ -18184,7 +18186,7 @@ describe("Testing", () => {
   it("w_700,q_auto,f_auto,dpr_2", () => {
     const parts = "w_700,q_auto,f_auto,dpr_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(700))
       .delivery(Delivery.dpr("2.0"))
       .delivery(Delivery.format(Format.auto()))
@@ -18200,7 +18202,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(700))
       .roundCorners(RoundCorners.max())
       .overlay(
@@ -18224,7 +18226,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(700))
       .delivery(Delivery.dpr(Dpr.auto()))
       .border(Border.solid(1, "gray"));
@@ -18236,7 +18238,7 @@ describe("Testing", () => {
   it("w_750,h_750,c_fill,g_faces", () => {
     const parts = "w_750,h_750,c_fill,g_faces".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill()
         .width(750)
         .height(750)
@@ -18252,7 +18254,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(
         Resize.fill()
           .width(750)
@@ -18276,7 +18278,7 @@ describe("Testing", () => {
   it("w_80,h_120,c_fill,g_face", () => {
     const parts = "w_80,h_120,c_fill,g_face".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill()
         .width(80)
         .height(120)
@@ -18290,7 +18292,7 @@ describe("Testing", () => {
   it("w_80,h_400,c_fill,g_auto", () => {
     const parts = "w_80,h_400,c_fill,g_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width(80).height(400).gravity(Gravity.autoGravity())
     );
     parts.forEach((part) => {
@@ -18303,7 +18305,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fillPad()
         .width(80)
         .height(400)
@@ -18318,7 +18320,7 @@ describe("Testing", () => {
   it("w_800", () => {
     const parts = "w_800".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(800)
     );
     parts.forEach((part) => {
@@ -18329,7 +18331,7 @@ describe("Testing", () => {
   it("w_800,r_150", () => {
     const parts = "w_800,r_150".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(800))
       .roundCorners(RoundCorners.byRadius(150));
     parts.forEach((part) => {
@@ -18340,7 +18342,7 @@ describe("Testing", () => {
   it("w_800/bo_1px_solid_gray", () => {
     const parts = "w_800/bo_1px_solid_gray".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(800))
       .border(Border.solid(1, "gray"));
     parts.forEach((part) => {
@@ -18351,7 +18353,7 @@ describe("Testing", () => {
   it("w_850,dpr_2", () => {
     const parts = "w_850,dpr_2".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width(850))
       .delivery(Delivery.dpr("2.0"));
     parts.forEach((part) => {
@@ -18362,7 +18364,7 @@ describe("Testing", () => {
   it("w_abc", () => {
     const parts = "w_abc".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width("abc")
     );
     parts.forEach((part) => {
@@ -18373,7 +18375,7 @@ describe("Testing", () => {
   it("w_auto", () => {
     const parts = "w_auto".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width("auto")
     );
     parts.forEach((part) => {
@@ -18384,7 +18386,7 @@ describe("Testing", () => {
   it("w_auto,c_scale", () => {
     const parts = "w_auto,c_scale".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width("auto")
     );
     parts.forEach((part) => {
@@ -18398,7 +18400,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.limitFit().width("auto"))
       .delivery(Delivery.dpr(Dpr.auto()))
       .overlay(
@@ -18425,7 +18427,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.limitFit().width("auto"))
       .delivery(Delivery.dpr(Dpr.auto()))
       .overlay(
@@ -18453,7 +18455,7 @@ describe("Testing", () => {
   it("w_auto,dpr_auto,c_scale", () => {
     const parts = "w_auto,dpr_auto,c_scale".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width("auto"))
       .delivery(Delivery.dpr(Dpr.auto()));
     parts.forEach((part) => {
@@ -18464,7 +18466,7 @@ describe("Testing", () => {
   it("w_auto,f_auto,c_scale", () => {
     const parts = "w_auto,f_auto,c_scale".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width("auto"))
       .delivery(Delivery.format(Format.auto()));
     parts.forEach((part) => {
@@ -18475,7 +18477,7 @@ describe("Testing", () => {
   it("w_auto,g_auto,c_fill", () => {
     const parts = "w_auto,g_auto,c_fill".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.fill().width("auto").gravity(Gravity.autoGravity())
     );
     parts.forEach((part) => {
@@ -18486,7 +18488,7 @@ describe("Testing", () => {
   it("w_auto,q_auto,c_scale", () => {
     const parts = "w_auto,q_auto,c_scale".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.scale().width("auto"))
       .delivery(Delivery.quality(Quality.auto()));
     parts.forEach((part) => {
@@ -18497,7 +18499,7 @@ describe("Testing", () => {
   it("w_iw_add_100_div_3", () => {
     const parts = "w_iw_add_100_div_3".replace(/\//g, ",").split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.scale().width(Expression.expression("initial_width + 100 / 3"))
     );
     parts.forEach((part) => {
@@ -18510,7 +18512,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample").resize(
+    const tAsset = createNewMedia("sample").resize(
       Resize.crop().width(300).height(200).x(355).y(410)
     );
     parts.forEach((part) => {
@@ -18523,7 +18525,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.crop().width(300).height(200).x(355).y(410))
       .resize(Resize.fill().width(130).height(100));
     parts.forEach((part) => {
@@ -18537,7 +18539,7 @@ describe("Testing", () => {
         .replace(/\//g, ",")
         .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.crop().width(300).height(200).x(355).y(410))
       .resize(Resize.fill().width(130).height(100))
       .rotate(Rotate.byAngle(20))
@@ -18552,7 +18554,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.crop().width(300).height(200).x(355).y(410))
       .resize(Resize.fill().width(130).height(100))
       .rotate(Rotate.byAngle(20))
@@ -18567,7 +18569,7 @@ describe("Testing", () => {
       .replace(/\//g, ",")
       .split(",");
 
-    const tAsset = new CloudinaryImage("sample")
+    const tAsset = createNewMedia("sample")
       .resize(Resize.crop().width(300).height(200).x(355).y(410))
       .resize(Resize.scale().width(150).height(100));
     parts.forEach((part) => {
