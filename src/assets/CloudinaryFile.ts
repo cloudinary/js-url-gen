@@ -261,6 +261,12 @@ class CloudinaryFile {
     return regularSEOType;
   }
 
+  /**
+   * @description Appends needed query params to the URL (Such as SDK Analytics and AuthToken)
+   * @param {string} safeURL A URL that was previously url-encoded (and as such its url-safe)
+   * @param {string} publicID The publicID of the request
+   * @param trackedAnalytics
+   */
   appendQueryParamsToURL(safeURL: string, publicID: string, trackedAnalytics: Partial<ITrackedPropertiesThroughAnalytics>): string {
     const urlInstance = new URL(safeURL);
 
@@ -269,11 +275,6 @@ class CloudinaryFile {
     if (this.authURL.getAuthToken()) {
       urlInstance.searchParams.append(this.authURL.getAuthTokenKey(), this.authURL.getAuthToken());
     }
-
-    // Check if the url already includes a query param.
-    // TODO - note that we're checking the URL and publicID separately.
-    //      - This is intended to replicate the existing behaviour, however it seems odd we are encoding the publicID
-    // const urlAlreadyIncludesQuery = urlInstance.search || publicID.includes('?');
 
     // urlConfig.analytics is true by default, has to be explicitly set to false to overwrite
     // Don't add analytics if the url already includes a query param
