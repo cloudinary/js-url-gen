@@ -7,9 +7,9 @@ import IURLConfig from "../config/interfaces/Config/IURLConfig.js";
 export class AuthUrl {
   private cloudConfig:ICloudConfig;
   private urlConfig: IURLConfig;
-  private authTokenValue: string;
+  private authToken: string;
   private signature: string;
-  private signURL: boolean;
+  private _signURL: boolean;
 
   constructor(cloudConfig: ICloudConfig, urlConfig: IURLConfig) {
     this.cloudConfig = cloudConfig;
@@ -17,20 +17,20 @@ export class AuthUrl {
   }
 
   /**
-   * Sets a flag for situations where the user explicitly wants to sign the URL
+   * Sets a flag for situations where the user explicitly wants to sign the URL (Ignoring the URL Config)
    * @param {boolean} val
    */
-  sign(val: boolean): void {
-    this.signURL = val;
+  signURL(val: boolean): void {
+    this._signURL = val;
   }
 
   /**
    * A boolean check against the internal signURL flag and the URLConfig.signURL property.
    */
-  private shouldSign(): boolean {
+  shouldSign(): boolean {
     // Did we explicitly request to sign this URL?
     if (this.signURL) {
-      return this.signURL;
+      return this._signURL;
     } else {
       // If we didn't explcitly ask to sign this URL,
       // Did we provide a config?
@@ -42,20 +42,29 @@ export class AuthUrl {
     }
   }
 
+  validate(): void {
+    // If the user requested to sign the URL, but the signature is empty, we throw
+    if (this.shouldSign()) {
+      if (!this?.cloudConfig?.authTokenConfig && !this.getSignature() && !this.getAuthToken()) {
+        throw 'Validation error - signURL() was called but no signature or authToken were provided';
+      }
+    }
+  }
+
   /**
    * Externally sets the signature instead of calculating it internally with the API Key and Secret
    * @param {string} sig
    */
-  setExplicitSignature(sig:string): void {
+  setSignature(sig:string): void {
     this.signature = sig;
   }
 
   /**
-   * Externally sets the authTokenValue instead of calculating it internally with the API Key and Secret
+   * Externally sets the authToken instead of calculating it internally with the API Key and Secret
    * @param {string} authTokenValue
    */
-  setExplicitAuthToken(authTokenValue:string): void {
-    this.authTokenValue = authTokenValue;
+  setAuthToken(authTokenValue:string): void {
+    this.authToken = authTokenValue;
   }
 
   /**
@@ -64,8 +73,8 @@ export class AuthUrl {
    */
   getSignature(): string {
     if (!this.shouldSign()) { return; } // was sign() called? if not, skip this function
-    if (this.cloudConfig?.authToken?.acl) { return; } // Do we have an auth token config set with acl? if so, skip this function
-    if (this.authTokenValue) { return; } // Do we have an explicit authToken set? if so, skip this function
+    if (this.cloudConfig?.authTokenConfig?.acl) { return; } // Do we have an auth token config set with acl? if so, skip this function
+    if (this.authToken) { return; } // Do we have an explicit authToken set? if so, skip this function
 
     if (this.shouldSign() && this.signature) {
       return `s--${this.signature}--`;
@@ -75,11 +84,11 @@ export class AuthUrl {
   }
 
   /**
-   * Gets the authTokenValue, or calculates the token using API Key and Secret.
+   * Gets the authToken, or calculates the token using API Key and Secret.
    * TODO: Token calculation with Key/Secret is not yet implemented
    */
   getAuthToken(): string {
-    return this.authTokenValue;
+    return this.authToken;
   }
 
   /**

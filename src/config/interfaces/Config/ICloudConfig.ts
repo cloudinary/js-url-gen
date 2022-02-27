@@ -26,7 +26,7 @@ interface ICloudConfig {
   cloudName?: string;
   apiKey?: string;
   apiSecret?: string;
-  authToken?: IAuthTokenConfig;
+  authTokenConfig?: IAuthTokenConfig;
 }
 
 export default ICloudConfig;

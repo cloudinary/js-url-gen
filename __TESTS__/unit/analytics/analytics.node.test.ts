@@ -172,8 +172,8 @@ describe('Add analytics to a regular URL', () => {
 
   it('Should not include analytics when authToken is provided', () => {
     const cldImage = createNewImageWithAnalytics('sample');
-    cldImage.sign();
-    cldImage.setExplicitAuthToken('someToken');
+    cldImage.signURL();
+    cldImage.setAuthToken('someToken');
     // AZ -> Algo A, SDK Code is Z
     // Alh -> 1.24.0 from package.json
     // AM -> 12.0.0 Underlying tech
@@ -190,7 +190,7 @@ describe('Add analytics to a regular URL', () => {
 
   it('Should include analytics when signature is provided', () => {
     const cldImage = createNewImageWithAnalytics('sample');
-    cldImage.sign();
+    cldImage.signURL();
     cldImage.setSignature('someSignature');
     // AZ -> Algo A, SDK Code is Z
     // Alh -> 1.24.0 from package.json

@@ -88,7 +88,7 @@ describe('Tests for URL configuration', () => {
     const signature = "some-signature";
 
     image.setSignature(signature);
-    image.sign();
+    image.signURL();
 
     //image.signature(signature)
     image.resize(Resize.crop().width(100));
@@ -101,8 +101,8 @@ describe('Tests for URL configuration', () => {
     const image = createNewImage('sample');
     const authToken = "some-auth-token";
 
-    image.setExplicitAuthToken(authToken);
-    image.sign();
+    image.setAuthToken(authToken);
+    image.signURL();
 
     image.resize(Resize.crop().width(100));
     const url = image.toURL();

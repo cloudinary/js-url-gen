@@ -15,7 +15,7 @@ describe('Tests for CloudinaryFile', () => {
   });
 
   it('Sign should be chainable', () => {
-    expect(cloudinaryFile.sign()).toBe(cloudinaryFile);
+    expect(cloudinaryFile.signURL()).toBe(cloudinaryFile);
   });
 
   it('Can be turned to a URL', () => {

@@ -60,14 +60,13 @@ class CloudinaryFile {
   protected cloudName: string; // populated from the cloud config
   protected apiKey: string; // populated from  the cloud config
   protected apiSecret: string; // populated from the cloud config
-  protected authToken: IAuthTokenConfig; // The configuration describing the authToken, used in a node environment to calculate the token
+  protected authTokenConfig: IAuthTokenConfig; // The configuration describing the authToken, used in a node environment to calculate the token
   protected urlConfig: IURLConfig;
   protected cloudConfig: ICloudConfig;
 
   private version: number | string;
   private publicID: string;
   private extension: string;
-  private signURL: boolean = null; // An internal flag indicating if sign() was called,
   private suffix: string;
   private deliveryType: string; // type upload/private
   private authURL: AuthUrl;
@@ -100,7 +99,7 @@ class CloudinaryFile {
     this.cloudName = cloudConfig.cloudName;
     this.apiKey = cloudConfig.apiKey;
     this.apiSecret = cloudConfig.apiSecret;
-    this.authToken = cloudConfig.authToken;
+    this.authTokenConfig = cloudConfig.authTokenConfig;
     return this;
   }
 
@@ -141,7 +140,7 @@ class CloudinaryFile {
    * @return {this}
    */
   setSignature(signature: string): this {
-    this.authURL.setExplicitSignature(signature);
+    this.authURL.setSignature(signature);
     return this;
   }
 
@@ -150,8 +149,8 @@ class CloudinaryFile {
    * @param token
    * @return {this}
    */
-  setExplicitAuthToken(token: string): this {
-    this.authURL.setExplicitAuthToken(token);
+  setAuthToken(token: string): this {
+    this.authURL.setAuthToken(token);
     return this;
   }
 
@@ -179,8 +178,8 @@ class CloudinaryFile {
     return this;
   }
 
-  sign(val = true): this {
-    this.authURL.sign(val);
+  signURL(val = true): this {
+    this.authURL.signURL(val);
     return this;
   }
 
@@ -209,15 +208,10 @@ class CloudinaryFile {
       throw '`suffix`` should not include . or /';
     }
 
-    // If the user requested to sign the URL, but the signature is empty, we throw
-    if (this.signURL) {
-      if (!this?.authToken && !this.authURL.getSignature() && !this.authURL.getAuthToken()) {
-        throw 'Validation error - sign() was called but no signature or authToken were provided';
-      }
-    }
+    // Validate authentication arguments
+    // Throws in case invalid combinations were provided
+    this.authURL.validate();
   }
-
-
 
   /**
    * @description return an SEO friendly name for a combination of asset/delivery, some examples:
