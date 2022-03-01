@@ -4,6 +4,10 @@ interface IEffectActionWithLevelModel extends IActionModel{
   level?: number;
 }
 
+interface IAccelerateActionModel extends IActionModel{
+  rate?: number | string;
+}
+
 interface ISimpleEffectActionModel extends IActionModel{
 
 }
@@ -103,5 +107,6 @@ export {
   IPixelateModel,
   IBlurModel,
   IFadeInEffectActionModel,
-  IFadeOutEffectActionModel
+  IFadeOutEffectActionModel,
+  IAccelerateActionModel
 };
