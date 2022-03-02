@@ -176,7 +176,7 @@ describe('Effect toJson()', () => {
       actions: [
         {
           actionType: 'accelerate',
-          level: 5,
+          rate: 5,
         }
       ]
     });

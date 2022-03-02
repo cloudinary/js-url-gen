@@ -227,7 +227,7 @@ function reverse():SimpleEffectAction {
  * @return {Actions.Effect.AccelerationEffectAction}
  */
 function accelerate(speedIncreasePercent?: number): AccelerationEffectAction {
-  return new AccelerationEffectAction('accelerate', speedIncreasePercent);
+  return new AccelerationEffectAction(speedIncreasePercent);
 }
 
 /**
@@ -554,6 +554,7 @@ export declare type EffectActions =
   | RemoveBackgroundAction
   | FadeInEffectAction
   | FadeOutEffectAction
+  | AccelerationEffectAction
 
 
 export {
