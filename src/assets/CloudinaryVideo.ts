@@ -1,9 +1,9 @@
 import IURLConfig from "../config/interfaces/Config/IURLConfig.js";
-import {Action} from "../internal/Action.js";
 import {CloudinaryTransformable} from "./CloudinaryTransformable.js";
 import ICloudConfig from "../config/interfaces/Config/ICloudConfig.js";
 import {videoEditType} from "../actions/videoEdit.js";
 import {VideoTransformation} from "../transformation/VideoTransformation.js";
+import {ITranscodeAction} from "../actions/transcode.js";
 
 
 /**
@@ -23,7 +23,7 @@ class CloudinaryVideo extends CloudinaryTransformable {
    * @param {Actions.Transcode} action
    * @return {this}
    */
-  transcode(action: Action): this {
+  transcode(action: ITranscodeAction): this {
     this.transformation.transcode(action);
     return this;
   }

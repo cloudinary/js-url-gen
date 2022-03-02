@@ -1,11 +1,11 @@
 import {CloudinaryTransformable} from "./CloudinaryTransformable.js";
-import {Action} from "../internal/Action.js";
 import {videoEditType} from "../actions/videoEdit.js";
 import {LayerAction} from "../actions/layer/LayerAction.js";
 import {Transformation} from "../transformation/Transformation.js";
 import ICloudConfig from "../config/interfaces/Config/ICloudConfig.js";
 import IURLConfig from "../config/interfaces/Config/IURLConfig.js";
 import { cloneDeep } from '../internal/utils/cloneDeep.js';
+import {ITranscodeAction} from "../actions/transcode.js";
 
 
 /**
@@ -24,7 +24,7 @@ class CloudinaryMedia extends CloudinaryTransformable {
    * @param {Actions.Transcode} action
    * @return {this}
    */
-  transcode(action: Action): this {
+  transcode(action: ITranscodeAction): this {
     this.transformation.transcode(action);
     return this;
   }

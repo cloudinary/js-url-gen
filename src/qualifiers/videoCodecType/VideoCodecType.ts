@@ -6,9 +6,15 @@ import {Qualifier} from "../../internal/qualifier/Qualifier.js";
  * @memberOf Qualifiers.VideoCodec
  */
 class VideoCodecType extends Qualifier {
+  private _type: string;
   constructor(type: string) {
     super('vc');
+    this._type = type;
     this.addValue(type);
+  }
+
+  getType(): string {
+    return this._type;
   }
 }
 
@@ -26,6 +32,10 @@ class AdvVideoCodecType extends Qualifier{
     this._type = type;
   }
 
+  getType(): string{
+    return this._type;
+  }
+
   /**
    * @description Specifies the profile to use with the h264 codec.
    * @param {Qualifiers.VideoCodecProfile | string} profile Sets the profile of the video codec
@@ -37,6 +47,10 @@ class AdvVideoCodecType extends Qualifier{
     return this;
   }
 
+  getProfile(): string {
+    return this._prof;
+  }
+
   /**
    * @description Specifies the level to use with the h264 codec and specified profile.
    * @param {Qualifiers.VideoCodecLevel | number | string} lvl
@@ -46,6 +60,10 @@ class AdvVideoCodecType extends Qualifier{
   level(lvl: number | string): this {
     this._lvl = lvl;
     return this;
+  }
+
+  getLevel(): number | string {
+    return this._lvl;
   }
 
   /**

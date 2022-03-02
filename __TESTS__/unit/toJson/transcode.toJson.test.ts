@@ -3,6 +3,9 @@ import {Transcode} from "../../../src/actions/transcode";
 import {AudioCodec} from "../../../src/qualifiers/audioCodec";
 import {AudioFrequency} from "../../../src/qualifiers/audioFrequency";
 import {AnimatedFormat} from "../../../src/qualifiers/animatedFormat";
+import {VideoCodec} from "../../../src/qualifiers/videoCodec";
+import {VideoCodecProfile} from "../../../src/qualifiers/videoCodecProfile";
+import {VideoCodecLevel} from "../../../src/qualifiers/videoCodecLevel";
 
 describe('Transcode toJson()', () => {
   it('transcode.keyframeInterval number', () => {
@@ -136,6 +139,46 @@ describe('Transcode toJson()', () => {
           animatedFormat: 'gif',
           delay: 20,
           sampling: '4s'
+        }
+      ]
+    });
+  });
+
+  it('transcode.videoCodec', () => {
+    const transformation = new Transformation()
+      .addAction(Transcode.videoCodec(
+        VideoCodec.h264()
+      ));
+
+    expect(transformation.toJson()).toStrictEqual({
+      actions: [
+        {
+          actionType: 'videoCodec',
+          videoCodec: {
+            videoCodecName: 'h264'
+          }
+        }
+      ]
+    });
+  });
+
+  it('transcode.videoCodec advanced', () => {
+    const transformation = new Transformation()
+      .addAction(Transcode.videoCodec(
+        VideoCodec.h264()
+          .profile(VideoCodecProfile.baseline())
+          .level(VideoCodecLevel.vcl31())
+      ));
+
+    expect(transformation.toJson()).toStrictEqual({
+      actions: [
+        {
+          actionType: 'videoCodec',
+          videoCodec: {
+            videoCodecName: 'h264',
+            profile: 'baseline',
+            level:  3.1
+          }
         }
       ]
     });

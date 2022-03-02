@@ -77,5 +77,15 @@ function vp9():VideoCodecType {
   return new VideoCodecType('vp9');
 }
 
+export const VIDEO_CODEC_TO_TRANSFORMATION: Record<string, VideoCodecType | AdvVideoCodecType> = {
+  'auto': auto(),
+  'h264': h264(),
+  'h265': h265(),
+  'prores': proRes(),
+  'theora': theora(),
+  'vp8': vp8(),
+  'vp9': vp9()
+};
+
 const VideoCodec = { auto, h264, h265, proRes, theora, vp8, vp9};
 export {VideoCodec, auto, h264, h265, proRes, theora, vp8, vp9};
