@@ -15,7 +15,7 @@ class AccelerationEffectAction extends Action {
   private _rate: string | number;
   protected _actionModel: IAccelerateActionModel = {actionType: 'accelerate'};
 
-  constructor(rate: string | number) {
+  constructor(rate?: string | number) {
     super();
 
     rate && this.rate(rate);
