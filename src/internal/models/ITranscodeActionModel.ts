@@ -35,6 +35,10 @@ interface IToAnimatedActionModel extends IActionModel{
   delay?: number;
 }
 
+interface IVideoCodecActionModel extends IActionModel{
+  videoCodec?: {videoCodecName?: string; profile?: string; level?: string | number}
+}
+
 export {
   IKeyframeIntervalsActionModel,
   IFPSActionModel,
@@ -43,5 +47,6 @@ export {
   IAudioCodecActionModel,
   IAudioFrequencyActionModel,
   IStreamingProfileActionModel,
-  IToAnimatedActionModel
+  IToAnimatedActionModel,
+  IVideoCodecActionModel
 };
