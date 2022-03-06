@@ -57,12 +57,12 @@ module.exports = {
         close: '',
       },
       media: {
-        open: "new MediaTransformation()",
+        open: "new Transformation()",
         close: '',
       }
     },
-    unsupportedTxParams: ['fl_waveform', 'fl_animated', 'e_tint', 'u_', 'e_theme', 'l_fetch', 'l_text', 'u_text', 'af_'],
-    unsupportedSyntaxList: ['.stroke(', '.textFit(', 'Animated.edit', '.RoundCorners(', 'getVideoFrame', 'Source.image', '.transcode(']
+    unsupportedTxParams: ['fl_waveform', 'fl_animated', 'e_tint', 'e_theme', 'af_'],
+    unsupportedSyntaxList: ['.stroke(', '.textFit(', 'Animated.edit', '.RoundCorners(', 'getVideoFrame', '.transcode(']
   },
   "overwrites": {
     qualifiers: {
