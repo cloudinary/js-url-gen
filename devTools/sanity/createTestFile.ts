@@ -150,7 +150,7 @@ import { FontStyle } from "qualifiers/fontStyle";
 import {Volume} from "../src/qualifiers/volume";
 import {FontAntialias} from "../src/qualifiers/FontAntialias";
 import {Animated} from "../src/actions/animated";
-import {CloudinaryImage, CloudinaryVideo, CloudinaryMedia} from "../src"
+import {CloudinaryImage, CloudinaryVideo, Transformation} from "../src"
       `;
 
   file += `describe("Testing", () => {\n`;
