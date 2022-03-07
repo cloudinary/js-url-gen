@@ -11,6 +11,7 @@ import {Underlay} from "../../../src/actions/underlay";
 import {Timeline} from "../../../src/qualifiers/timeline";
 import {base64Encode} from "../../../src/internal/utils/base64Encode";
 import {TextStyle} from "../../../src/qualifiers/textStyle";
+import {TextFit} from "../../../src/qualifiers/textFit";
 
 describe('Tests for overlay actions', () => {
   it('Tests Image on Image with publicID encoding', () => {
@@ -237,6 +238,30 @@ describe('Tests for overlay actions', () => {
     asset.overlay(Overlay.source(textSource));
 
     expect(asset.toURL()).toContain("l_text:arial_15:!/fl_layer_apply");
+  });
+
+  it("textFit with alias", () => {
+    const asset = createNewImage('sample');
+    const text = 'hello hello hello hello';
+    const textSource = Source.text(text, 'arial_15').textFit(TextFit.size(400, 500));
+    asset.overlay(Overlay.source(textSource));
+    expect(asset.toURL()).toContain("c_fit,w_400,h_500");
+  });
+
+  it("textFit with size", () => {
+    const asset = createNewImage('sample');
+    const text = 'hello hello hello hello';
+    const textSource = Source.text(text, 'arial_15').textFit(TextFit.size(400));
+    asset.overlay(Overlay.source(textSource));
+    expect(asset.toURL()).toContain("c_fit,w_400");
+  });
+
+  it("textFit with size and height", () => {
+    const asset = createNewImage('sample');
+    const text = 'hello hello hello hello';
+    const textSource = Source.text(text, 'arial_15').textFit(TextFit.size(400).height(600));
+    asset.overlay(Overlay.source(textSource));
+    expect(asset.toURL()).toContain("c_fit,w_400,h_600");
   });
 
   it("should serialize a fetch source", () => {

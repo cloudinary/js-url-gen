@@ -6,6 +6,7 @@ import {Action} from "../../../internal/Action.js";
 import {Qualifier} from "../../../internal/qualifier/Qualifier.js";
 import {prepareColor} from "../../../internal/utils/prepareColor.js";
 import {IBaseTextSourceModel} from "../../../internal/models/ITextSourceModel.js";
+import {TextFitQualifier} from "../../textFit.js";
 
 /**
  * @memberOf Qualifiers.Source
@@ -19,6 +20,7 @@ class BaseTextSource extends BaseSource {
   protected _backgroundColor: SystemColors
   protected type = 'text';
   protected _qualifierModel: Partial<IBaseTextSourceModel>;
+  protected _textFit: TextFitQualifier;
 
   constructor(text: string, textStyle?: TextStyle | string) {
     super();
@@ -50,6 +52,11 @@ class BaseTextSource extends BaseSource {
     return this;
   }
 
+  textFit(textFit:TextFitQualifier){
+    this._textFit = textFit;
+    return this;
+  }
+
   /**
    * @description
    * Returns the opening string of the layer,
@@ -69,6 +76,7 @@ class BaseTextSource extends BaseSource {
     tmpAction.addQualifier(new Qualifier(layerType, layerParam));
     this._textColor && tmpAction.addQualifier(new Qualifier('co', prepareColor(this._textColor)));
     this._backgroundColor && tmpAction.addQualifier(new Qualifier('b', prepareColor(this._backgroundColor)));
+    this._textFit && tmpAction.addQualifier(this._textFit);
 
     return tmpAction.toString();
   }
