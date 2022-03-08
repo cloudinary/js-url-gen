@@ -245,7 +245,7 @@ describe('Tests for overlay actions', () => {
     const text = 'hello hello hello hello';
     const textSource = Source.text(text, 'arial_15').textFit(TextFit.size(400, 500));
     asset.overlay(Overlay.source(textSource));
-    expect(asset.toURL()).toContain("c_fit,w_400,h_500");
+    expect(asset.toURL()).toContain("c_fit,w_400,h_500,l_text:arial_15:hello%20hello%20hello%20hello");
   });
 
   it("textFit with size", () => {
@@ -253,7 +253,7 @@ describe('Tests for overlay actions', () => {
     const text = 'hello hello hello hello';
     const textSource = Source.text(text, 'arial_15').textFit(TextFit.size(400));
     asset.overlay(Overlay.source(textSource));
-    expect(asset.toURL()).toContain("c_fit,w_400");
+    expect(asset.toURL()).toContain("c_fit,w_400,l_text:arial_15:hello%20hello%20hello%20hello");
   });
 
   it("textFit with size and height", () => {
@@ -261,7 +261,7 @@ describe('Tests for overlay actions', () => {
     const text = 'hello hello hello hello';
     const textSource = Source.text(text, 'arial_15').textFit(TextFit.size(400).height(600));
     asset.overlay(Overlay.source(textSource));
-    expect(asset.toURL()).toContain("c_fit,w_400,h_600");
+    expect(asset.toURL()).toContain("c_fit,w_400,h_600,l_text:arial_15:hello%20hello%20hello%20hello");
   });
 
   it("should serialize a fetch source", () => {

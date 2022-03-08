@@ -10,7 +10,7 @@ import {Qualifier} from "../internal/qualifier/Qualifier.js";
 class TextFitQualifier extends Qualifier {
   protected _height: number;
   protected _width: number;
-  constructor(width?: number, height?: number) {
+  constructor(width: number, height?: number) {
     //@ts-ignore
     super();
     this._width = width;
