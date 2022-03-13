@@ -1,3 +1,18 @@
+1.7.0 / 2022-03-13
+==================
+
+New Functionality
+-----------------
+* Add textFit (#523)
+* Enable overlay and underlay for snippets (#522)
+* Add videoCodec to/fromJson (#521)
+* Add string type to compass gravity (#516)
+
+Other Changes
+---------------
+* Update travis.yml to run tests on node 12 & node 14 (#514)
+* Fix makeTransparent (#518)
+
 1.6.0 / 2022-02-13
 ==================
 
