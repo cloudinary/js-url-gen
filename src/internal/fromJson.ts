@@ -56,6 +56,7 @@ import ToAnimatedAction from "../actions/transcode/ToAnimatedAction.js";
 import {FadeInEffectAction} from "../actions/effect/leveled/FadeIn.js";
 import {FadeOutEffectAction} from "../actions/effect/leveled/FadeOut.js";
 import {VideoCodecAction} from "../actions/transcode/VideoCodecAction.js";
+import {ConditionalAction} from "../actions/conditional.js";
 
 const ActionModelMap: Record<string, IHasFromJson> = {
   scale: ResizeScaleAction,
@@ -122,7 +123,8 @@ const ActionModelMap: Record<string, IHasFromJson> = {
   toAnimated: ToAnimatedAction,
   fadeIn: FadeInEffectAction,
   fadeOut: FadeOutEffectAction,
-  videoCodec: VideoCodecAction
+  videoCodec: VideoCodecAction,
+  ifCondition: ConditionalAction
 };
 
 /**
