@@ -31,7 +31,7 @@ describe('Overlay & Underlay fromJson', () => {
       actionType: 'overlay',
       source,
       position,
-      blendMode: 'multiply'
+      blendMode: {blendModeType: 'multiply'}
     };
 
     const overlayTransformation = fromJson({actions: [overlayModel]});
@@ -62,14 +62,14 @@ describe('Overlay & Underlay fromJson', () => {
       source,
       position,
       timelinePosition,
-      blendMode: 'multiply'
+      blendMode: {blendModeType: 'antiRemoval', level: '96'}
     };
 
     const overlayTransformation = fromJson({actions: [overlayModel]});
     const underlayTransformation = fromJson({actions: [{...overlayModel, actionType: 'underlay'}]});
 
-    expect(overlayTransformation.toString()).toStrictEqual('l_video:dog.mp4/ar_7.0,c_scale,w_100/du_2,e_multiply,fl_layer_apply,fl_tiled,g_north_east,so_1,x_1,y_2');
-    expect(underlayTransformation.toString()).toStrictEqual('u_video:dog.mp4/ar_7.0,c_scale,w_100/du_2,e_multiply,fl_layer_apply,fl_tiled,g_north_east,so_1,x_1,y_2');
+    expect(overlayTransformation.toString()).toStrictEqual('l_video:dog.mp4/ar_7.0,c_scale,w_100/du_2,e_anti_removal:96,fl_layer_apply,fl_tiled,g_north_east,so_1,x_1,y_2');
+    expect(underlayTransformation.toString()).toStrictEqual('u_video:dog.mp4/ar_7.0,c_scale,w_100/du_2,e_anti_removal:96,fl_layer_apply,fl_tiled,g_north_east,so_1,x_1,y_2');
   });
 
   it('Should generate Overlay for fetch source', () => {
@@ -88,14 +88,14 @@ describe('Overlay & Underlay fromJson', () => {
       actionType: 'overlay',
       source,
       position,
-      blendMode: 'multiply'
+      blendMode: {blendModeType: 'antiRemoval'}
     };
 
     const overlayTransformation = fromJson({actions: [overlayModel]});
     const underlayTransformation = fromJson({actions: [{...overlayModel, actionType: 'underlay'}]});
 
-    expect(overlayTransformation.toString()).toStrictEqual('l_fetch:aHR0cHM6Ly9zb21lL2ltYWdlLmpwZw==/ar_7.0,c_scale,w_100/e_multiply,fl_layer_apply,fl_tiled,g_north_east,x_1,y_2');
-    expect(underlayTransformation.toString()).toStrictEqual('u_fetch:aHR0cHM6Ly9zb21lL2ltYWdlLmpwZw==/ar_7.0,c_scale,w_100/e_multiply,fl_layer_apply,fl_tiled,g_north_east,x_1,y_2');
+    expect(overlayTransformation.toString()).toStrictEqual('l_fetch:aHR0cHM6Ly9zb21lL2ltYWdlLmpwZw==/ar_7.0,c_scale,w_100/e_anti_removal,fl_layer_apply,fl_tiled,g_north_east,x_1,y_2');
+    expect(underlayTransformation.toString()).toStrictEqual('u_fetch:aHR0cHM6Ly9zb21lL2ltYWdlLmpwZw==/ar_7.0,c_scale,w_100/e_anti_removal,fl_layer_apply,fl_tiled,g_north_east,x_1,y_2');
   });
 
   it('Should generate Overlay for text source', () => {

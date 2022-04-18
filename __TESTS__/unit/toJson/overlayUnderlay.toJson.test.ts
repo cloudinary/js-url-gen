@@ -48,7 +48,7 @@ describe('Overlay & Underlay toJson', () => {
             allowOverflow: true,
             gravity: {gravityType: 'direction', compass: 'north_east'}
           },
-          blendMode: 'multiply'
+          blendMode: { blendModeType:'multiply' }
         }
       ]
     });
@@ -119,7 +119,7 @@ describe('Overlay & Underlay toJson', () => {
             allowOverflow: true,
             gravity: {gravityType: 'direction', compass: 'north_east'}
           },
-          blendMode: 'multiply'
+          blendMode: {blendModeType: 'multiply'}
         }
       ]
     });
@@ -224,6 +224,40 @@ describe('Overlay & Underlay toJson', () => {
               ]
             }
           }
+        }
+      ]
+    });
+  });
+
+  it('Should generate Overlay model for source with Blendmode.antiRemoval', () => {
+    const transformation = new Transformation();
+    transformation.addAction(
+      Overlay.source(Source.fetch('https://some/image.jpg').transformation(new Transformation().resize(scale(100).aspectRatio(7))))
+        .position(new Position().offsetX(1).offsetY(2).tiled().allowOverflow().gravity(Gravity.compass(Compass.northEast())))
+        .blendMode(BlendMode.antiRemoval(95))
+    );
+
+    expect(transformation.toJson()).toStrictEqual({
+      actions: [
+        {
+          actionType: 'overlay',
+          source: {
+            sourceType: 'fetch',
+            url: 'https://some/image.jpg',
+            transformation: {
+              actions: [
+                {actionType: 'scale', dimensions: {width: 100, aspectRatio: '7.0'}}
+              ]
+            }
+          },
+          position: {
+            offsetX: 1,
+            offsetY: 2,
+            tiled: true,
+            allowOverflow: true,
+            gravity: {gravityType: 'direction', compass: 'north_east'}
+          },
+          blendMode: {blendModeType: 'antiRemoval', level: '95'}
         }
       ]
     });
