@@ -1,6 +1,8 @@
 import {Action} from "../internal/Action.js";
 import {expression} from "../qualifiers/expression.js";
 import {Transformation} from "../transformation/Transformation.js";
+import {IConditionalActionModel} from "../internal/models/IConditionalActionModel.js";
+import {IActionModel} from "../internal/models/IActionModel.js";
 
 /**
  * Sets up a conditional transformation.
@@ -35,6 +37,7 @@ import {Transformation} from "../transformation/Transformation.js";
  * // Transformation will contain `if_ar_gte_1.0/w_100/if_end`
  */
 class ConditionalAction extends Action{
+  protected _actionModel: IConditionalActionModel = {actionType: "ifCondition"};
   private ifTx: Transformation;
   private elseTx: Transformation;
   private exp: string;
@@ -48,6 +51,8 @@ class ConditionalAction extends Action{
     super();
     this.exp = exp;
     this.ifTx = ifTx;
+    this._actionModel.expression = exp;
+    this._actionModel.transformation = ifTx;
   }
 
   /**
@@ -57,6 +62,7 @@ class ConditionalAction extends Action{
    */
   otherwise(elseTx: Transformation): this {
     this.elseTx = elseTx;
+    this._actionModel.otherwise = elseTx;
     return this;
   }
 
@@ -67,6 +73,17 @@ class ConditionalAction extends Action{
       this.elseTx && `if_else/${this.elseTx}`,
       `if_end`
     ].filter((a) => a).join('/');
+  }
+
+  static fromJson(actionModel: IActionModel): ConditionalAction {
+    const {expression, transformation, otherwise} = (actionModel as IConditionalActionModel);
+
+    // We are using this() to allow inheriting classes to use super.fromJson.apply(this, [actionModel])
+    // This allows the inheriting classes to determine the class to be created
+    const result = new this(expression, transformation);
+    otherwise && result.otherwise(otherwise);
+
+    return result;
   }
 }
 
