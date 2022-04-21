@@ -17,6 +17,7 @@ import {createTimelinePositionFromModel} from "../../internal/models/createTimel
 import {ISourceModel} from "../../internal/models/ISourceModel.js";
 import {ITimelinePositionModel} from "../../internal/models/ITimelinePositionModel.js";
 import {IPositionModel} from "../../internal/models/IPositionModel.js";
+import {ACTION_TYPE_TO_BLEND_MODE_MAP} from "../../internal/internalConstants.js";
 
 
 /**
@@ -91,8 +92,13 @@ class LayerAction extends Action {
    */
   blendMode(blendMode: BlendModeType|BlendModeQualifier): this {
     this._blendMode = blendMode;
-    this._actionModel.blendMode = `${blendMode}`.replace('e_', '');
 
+    const [mode, level] = `${blendMode}`.replace('e_', '').split(":");
+    if (mode === 'anti_removal') {
+      this._actionModel.blendMode = level ? {blendModeType: 'antiRemoval', level: level} : {blendModeType: 'antiRemoval'};
+    }else {
+      this._actionModel.blendMode = {blendModeType: mode};
+    }
     return this;
   }
 
@@ -171,7 +177,12 @@ class LayerAction extends Action {
     }
 
     if (blendMode) {
-      result.blendMode(blendMode as unknown as BlendModeQualifier);
+      const blendModeType = ACTION_TYPE_TO_BLEND_MODE_MAP[blendMode.blendModeType] || blendMode.blendModeType;
+      if(blendMode?.level) {
+        result.blendMode(new BlendModeQualifier(blendModeType, blendMode.level as number));
+      }else{
+        result.blendMode(new BlendModeQualifier(blendModeType));
+      }
     }
 
     return result;

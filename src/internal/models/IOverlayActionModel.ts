@@ -8,5 +8,5 @@ export interface IOverlayActionModel extends IActionModel {
   source: ISourceModel;
   position?: IPositionModel;
   timelinePosition?: ITimelinePositionModel;
-  blendMode?: string;
+  blendMode?: {blendModeType?: string, level?: number|string};
 }

@@ -139,6 +139,10 @@ export const COLOR_SPACE_MODEL_MODE_TO_COLOR_SPACE_MODE_MAP: Record<string, stri
   'srgbTrueColor': 'srgb:truecolor'
 };
 
+export const ACTION_TYPE_TO_BLEND_MODE_MAP: Record<string, string> = {
+  'antiRemoval': 'anti_removal'
+};
+
 export const CHROMA_MODEL_ENUM_TO_CHROMA_VALUE = objectFlip(CHROMA_VALUE_TO_CHROMA_MODEL_ENUM);
 
 export const COLOR_SPACE_MODE_TO_COLOR_SPACE_MODEL_MODE_MAP = objectFlip(COLOR_SPACE_MODEL_MODE_TO_COLOR_SPACE_MODE_MAP);
