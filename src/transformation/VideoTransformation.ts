@@ -1,11 +1,3 @@
-import {Transformation} from "./Transformation.js";
-
-/**
- * @summary SDK
- * @extends {SDK.Transformation}
- * @memberOf SDK
- */
-class VideoTransformation extends Transformation {
-}
+import {VideoTransformation} from "@cloudinary/transformation-builder";
 
 export {VideoTransformation};

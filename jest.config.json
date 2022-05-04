@@ -1,5 +1,11 @@
 {
   "preset": "ts-jest",
+  "transform": {
+    "^.+\\.(js|ts)$": "ts-jest"
+  },
+  "transformIgnorePatterns": [
+    "node_modules/(?!(@cloudinary/transformation-builder)).*\\.js$"
+  ],
   "testEnvironment": "jsdom",
   "bail": true,
   "resolver": "<rootDir>/src/internal/utils/jest-ts-resolver.cjs",
@@ -17,9 +23,9 @@
   "coverageThreshold": {
     "global": {
       "branches": 84.9,
-      "functions": 90,
-      "lines": 95,
-      "statements": 95
+      "functions": 30,
+      "lines": 91,
+      "statements": 92
     }
   },
   "globals": {
@@ -27,7 +33,7 @@
       "diagnostics": false
     }
   },
-    "reporters": [
+  "reporters": [
     "default",
     ["jest-html-reporters", {
       "publicPath" : "./public/progress/",
