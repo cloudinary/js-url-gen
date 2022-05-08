@@ -1,3 +1,16 @@
+1.8.0 / 2022-05-08
+==================
+
+New functionality
+-----------------
+  * Add conditional Action from/to Json (#524)
+
+Other changes
+-----------------
+  * Enable the e_tint syntax (#526)
+  * fix antiremoval from to json (#525)
+
+
 1.7.0 / 2022-03-13
 ==================
 
