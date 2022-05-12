@@ -159,24 +159,24 @@ describe('Tests for Transformation Action -- Transcode', () => {
     expect(url).toBe('https://res.cloudinary.com/demo/video/upload/f_webp,fl_animated,fl_awebp/sample');
   });
 
-  it('Creates a cloudinaryURL with toAnimated and delay', () => {
+  it('Creates a cloudinaryURL with toAnimated', () => {
     const url = createNewVideo('sample')
       .transcode(Transcode
-        .toAnimated('gif').delay(20))
+        .toAnimated('gif'))
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/dl_20,f_gif,fl_animated/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/f_gif,fl_animated/sample');
   });
 
-  it('Creates a cloudinaryURL with toAnimated, delay, sampling', () => {
+  it('Creates a cloudinaryURL with toAnimated, sampling', () => {
     const url = createNewVideo('sample')
       .transcode(Transcode
-        .toAnimated(AnimatedFormat.gif()).delay(20).sampling('4s'))
+        .toAnimated(AnimatedFormat.gif()).sampling('4s'))
       .setPublicID('sample')
       .toURL();
 
-    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/dl_20,f_gif,fl_animated,vs_4s/sample');
+    expect(url).toBe('https://res.cloudinary.com/demo/video/upload/f_gif,fl_animated,vs_4s/sample');
   });
 
   it('Tests for simple videoCodec', () => {
