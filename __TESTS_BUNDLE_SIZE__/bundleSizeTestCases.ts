@@ -81,7 +81,7 @@ const bundleSizeTestCases:ITestCase[] = [
   },
   {
     name: 'Import a Transformation Object',
-    sizeLimitInKB: 5,
+    sizeLimitInKB: 7,
     importsArray: [
       importFromPackage('Transformation')
     ]
