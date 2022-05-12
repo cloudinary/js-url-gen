@@ -149,6 +149,6 @@
     }
   },
   "dependencies": {
-    "@cloudinary/transformation-builder-sdk-sdk": "^1.0.0"
+    "@cloudinary/transformation-builder-sdk": "^1.0.0"
   }
 }
