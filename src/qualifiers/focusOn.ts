@@ -32,7 +32,7 @@ import {
   tvmonitor,
   motorbike,
   ocr
-} from "@cloudinary/transformation-builder/qualifiers/focusOn";
+} from "@cloudinary/transformation-builder-sdk/qualifiers/focusOn";
 
 
 export {

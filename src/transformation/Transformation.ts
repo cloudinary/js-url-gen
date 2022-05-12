@@ -1,2 +1,2 @@
-import {Transformation} from "@cloudinary/transformation-builder";
+import {Transformation} from "@cloudinary/transformation-builder-sdk";
 export {Transformation};

@@ -9,7 +9,7 @@ import {
   southEast,
   southWest,
   northEast
-} from "@cloudinary/transformation-builder/qualifiers/compass.js";
+} from "@cloudinary/transformation-builder-sdk/qualifiers/compass.js";
 
 export {
   Compass,

@@ -1,3 +1,3 @@
-import { QualifierValue } from "@cloudinary/transformation-builder/internal/qualifier/QualifierValue";
+import { QualifierValue } from "@cloudinary/transformation-builder-sdk/internal/qualifier/QualifierValue";
 
 export {QualifierValue};

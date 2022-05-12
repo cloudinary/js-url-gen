@@ -6,7 +6,7 @@ import {
   fullHdLean,
   fullHdWifi,
   StreamingProfile
-} from "@cloudinary/transformation-builder/qualifiers/streamingProfile";
+} from "@cloudinary/transformation-builder-sdk/qualifiers/streamingProfile";
 
 export {
   hd,

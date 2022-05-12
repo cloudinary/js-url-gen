@@ -4,7 +4,7 @@
     "^.+\\.(js|ts)$": "ts-jest"
   },
   "transformIgnorePatterns": [
-    "node_modules/(?!(@cloudinary/transformation-builder)).*\\.js$"
+    "node_modules/(?!(@cloudinary/transformation-builder-sdk)).*\\.js$"
   ],
   "testEnvironment": "jsdom",
   "bail": true,

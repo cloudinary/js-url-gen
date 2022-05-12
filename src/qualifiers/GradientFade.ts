@@ -2,7 +2,7 @@ import {
   GradientFade,
   symmetricPad,
   symmetric
-} from "@cloudinary/transformation-builder/qualifiers/GradientFade";
+} from "@cloudinary/transformation-builder-sdk/qualifiers/GradientFade";
 
 export {
   GradientFade,

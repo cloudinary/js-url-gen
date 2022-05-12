@@ -7,7 +7,7 @@ import {
   setFromContext,
   setFromMetadata,
   Variable
-} from "@cloudinary/transformation-builder/actions/variable.js";
+} from "@cloudinary/transformation-builder-sdk/actions/variable.js";
 
 export {
   set,

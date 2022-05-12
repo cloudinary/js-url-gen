@@ -4,7 +4,7 @@ import {
   inner,
   innerFill,
   fill
-} from "@cloudinary/transformation-builder/qualifiers/outlineMode";
+} from "@cloudinary/transformation-builder-sdk/qualifiers/outlineMode";
 
 export {
   OutlineMode,

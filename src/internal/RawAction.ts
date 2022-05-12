@@ -1,3 +1,3 @@
-import { RawAction } from "@cloudinary/transformation-builder/internal/RawAction";
+import { RawAction } from "@cloudinary/transformation-builder-sdk/internal/RawAction";
 
 export {RawAction};

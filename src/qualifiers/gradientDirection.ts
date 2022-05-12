@@ -4,7 +4,7 @@ import {
   diagonalDesc,
   diagonalAsc,
   GradientDirection
-} from "@cloudinary/transformation-builder/qualifiers/gradientDirection";
+} from "@cloudinary/transformation-builder-sdk/qualifiers/gradientDirection";
 
 export {
   horizontal,

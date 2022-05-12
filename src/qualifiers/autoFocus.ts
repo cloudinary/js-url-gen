@@ -1,3 +1,3 @@
-import { AutoFocus } from "@cloudinary/transformation-builder/qualifiers/autoFocus.js";
+import { AutoFocus } from "@cloudinary/transformation-builder-sdk/qualifiers/autoFocus.js";
 
 export {AutoFocus};

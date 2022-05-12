@@ -1,3 +1,3 @@
-import {NamedTransformation, name} from "@cloudinary/transformation-builder/actions/namedTransformation.js";
+import {NamedTransformation, name} from "@cloudinary/transformation-builder-sdk/actions/namedTransformation.js";
 
 export {NamedTransformation, name};

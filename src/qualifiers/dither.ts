@@ -19,7 +19,7 @@ import {
   ordered4x4Dispersed,
   ordered8x8Dispersed,
   threshold1x1Nondither
-} from "@cloudinary/transformation-builder/qualifiers/dither";
+} from "@cloudinary/transformation-builder-sdk/qualifiers/dither";
 
 export {
   Dither,

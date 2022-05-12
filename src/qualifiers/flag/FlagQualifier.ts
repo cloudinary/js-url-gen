@@ -1,3 +1,3 @@
-import { FlagQualifier } from "@cloudinary/transformation-builder/qualifiers/flag/FlagQualifier";
+import { FlagQualifier } from "@cloudinary/transformation-builder-sdk/qualifiers/flag/FlagQualifier";
 
 export {FlagQualifier};

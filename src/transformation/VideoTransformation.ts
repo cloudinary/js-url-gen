@@ -1,3 +1,3 @@
-import {VideoTransformation} from "@cloudinary/transformation-builder";
+import {VideoTransformation} from "@cloudinary/transformation-builder-sdk";
 
 export {VideoTransformation};

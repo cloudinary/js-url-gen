@@ -6,7 +6,7 @@ import {
   srgb,
   tinySrgb,
   trueColor
-} from "@cloudinary/transformation-builder/qualifiers/colorSpace";
+} from "@cloudinary/transformation-builder-sdk/qualifiers/colorSpace";
 
 
 export {

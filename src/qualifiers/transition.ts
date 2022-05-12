@@ -1,3 +1,3 @@
-import { Transition, videoSource } from "@cloudinary/transformation-builder/qualifiers/transition";
+import { Transition, videoSource } from "@cloudinary/transformation-builder-sdk/qualifiers/transition";
 
 export {Transition, videoSource};

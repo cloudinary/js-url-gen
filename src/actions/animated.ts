@@ -1,5 +1,5 @@
-import {Animated} from "@cloudinary/transformation-builder/actions.js";
-import {AnimatedAction, edit} from "@cloudinary/transformation-builder/actions/animated.js";
+import {Animated} from "@cloudinary/transformation-builder-sdk/actions.js";
+import {AnimatedAction, edit} from "@cloudinary/transformation-builder-sdk/actions/animated.js";
 
 /**
  * @description Adjusts the visual appearance of an image or video.

@@ -3,7 +3,7 @@ import {
   normal,
   underline,
   strikethrough
-} from "@cloudinary/transformation-builder/qualifiers/textDecoration";
+} from "@cloudinary/transformation-builder-sdk/qualifiers/textDecoration";
 
 export {
   TextDecoration,

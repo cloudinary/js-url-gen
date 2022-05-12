@@ -1,4 +1,4 @@
-import {Resize} from "@cloudinary/transformation-builder/actions";
+import {Resize} from "@cloudinary/transformation-builder-sdk/actions";
 import {
   pad,
   imaggaScale,
@@ -14,7 +14,7 @@ import {
   minimumFit,
   limitPad,
   fillPad
-} from "@cloudinary/transformation-builder/actions/resize";
+} from "@cloudinary/transformation-builder-sdk/actions/resize";
 
 export {
   Resize,

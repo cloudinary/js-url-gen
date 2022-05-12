@@ -15,7 +15,7 @@ import {
   FREQ176400,
   FREQ192000,
   ORIGINAL
-} from "@cloudinary/transformation-builder/qualifiers/audioFrequency.js";
+} from "@cloudinary/transformation-builder-sdk/qualifiers/audioFrequency.js";
 
 export {
   AudioFrequency,

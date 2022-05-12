@@ -1,3 +1,3 @@
-import { RotationModeQualifierValue } from "@cloudinary/transformation-builder/qualifiers/rotate/RotationModeQualifierValue.js";
+import { RotationModeQualifierValue } from "@cloudinary/transformation-builder-sdk/qualifiers/rotate/RotationModeQualifierValue.js";
 
 export {RotationModeQualifierValue};

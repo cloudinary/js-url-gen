@@ -4,7 +4,7 @@ import {
   light,
   normal,
   thin
-} from "@cloudinary/transformation-builder/qualifiers/fontWeight";
+} from "@cloudinary/transformation-builder-sdk/qualifiers/fontWeight";
 
 export {
   FontWeight,

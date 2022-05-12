@@ -5,7 +5,7 @@ import {
   horizontalFlip,
   ignore,
   verticalFlip
-} from "@cloudinary/transformation-builder/qualifiers/rotationMode";
+} from "@cloudinary/transformation-builder-sdk/qualifiers/rotationMode";
 
 export {
   RotationMode,

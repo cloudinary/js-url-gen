@@ -1,3 +1,3 @@
-import { TextFit, size, TextFitQualifier } from "@cloudinary/transformation-builder/qualifiers/textFit";
+import { TextFit, size, TextFitQualifier } from "@cloudinary/transformation-builder-sdk/qualifiers/textFit";
 
 export {TextFit, size, TextFitQualifier};

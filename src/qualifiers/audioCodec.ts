@@ -5,7 +5,7 @@ import {
   opus,
   none,
   vorbis
-} from "@cloudinary/transformation-builder/qualifiers/audioCodec.js";
+} from "@cloudinary/transformation-builder-sdk/qualifiers/audioCodec.js";
 
 
 export {

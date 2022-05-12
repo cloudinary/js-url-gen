@@ -5,7 +5,7 @@ import {
   keepAttribution, keepIptc, custom, streamingAttachment, hlsv3, keepDar, noStream, mono,
   layerApply, relative, regionRelative, splice, truncateTS, waveform, ignoreInitialAspectRatio, clip,
   tiled, noOverflow, ignoreMaskChannels
-} from "@cloudinary/transformation-builder/qualifiers/flag";
+} from "@cloudinary/transformation-builder-sdk/qualifiers/flag";
 
 export {
   Flag, animated, anyFormat, animatedPng, animatedWebP,

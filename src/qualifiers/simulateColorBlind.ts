@@ -7,7 +7,7 @@ import {
   rodMonochromacy,
   tritanomaly,
   tritanopia
-} from "@cloudinary/transformation-builder/qualifiers/simulateColorBlind";
+} from "@cloudinary/transformation-builder-sdk/qualifiers/simulateColorBlind";
 
 
 export {

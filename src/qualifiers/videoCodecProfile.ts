@@ -3,7 +3,7 @@ import {
   baseline,
   main,
   high
-} from "@cloudinary/transformation-builder/qualifiers/videoCodecProfile";
+} from "@cloudinary/transformation-builder-sdk/qualifiers/videoCodecProfile";
 
 export {
   VideoCodecProfile,

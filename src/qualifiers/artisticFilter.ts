@@ -21,7 +21,7 @@ import {
   ukulele,
   frost,
   zorro
-} from "@cloudinary/transformation-builder/qualifiers/artisticFilter.js";
+} from "@cloudinary/transformation-builder-sdk/qualifiers/artisticFilter.js";
 
 export {
   ArtisticFilter,

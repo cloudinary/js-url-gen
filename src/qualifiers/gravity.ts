@@ -4,7 +4,7 @@ import {
   autoGravity,
   focusOn,
   xyCenter
-} from "@cloudinary/transformation-builder/qualifiers/gravity";
+} from "@cloudinary/transformation-builder-sdk/qualifiers/gravity";
 
 export {
   Gravity,

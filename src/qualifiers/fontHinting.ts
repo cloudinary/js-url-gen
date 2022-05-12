@@ -4,7 +4,7 @@ import {
   none,
   medium,
   slight
-} from "@cloudinary/transformation-builder/qualifiers/fontHinting";
+} from "@cloudinary/transformation-builder-sdk/qualifiers/fontHinting";
 
 export {
   FontHinting,

@@ -9,7 +9,7 @@ import {
   jpegminiBest,
   jpegminiHigh,
   jpegminiMedium
-} from "@cloudinary/transformation-builder/qualifiers/quality";
+} from "@cloudinary/transformation-builder-sdk/qualifiers/quality";
 
 export {
   Quality,

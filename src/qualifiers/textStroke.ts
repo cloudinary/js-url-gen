@@ -1,3 +1,3 @@
-import { Stroke, solid } from "@cloudinary/transformation-builder/qualifiers/textStroke";
+import { Stroke, solid } from "@cloudinary/transformation-builder-sdk/qualifiers/textStroke";
 
 export {Stroke, solid};

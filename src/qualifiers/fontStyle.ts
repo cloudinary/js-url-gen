@@ -2,7 +2,7 @@ import {
   FontStyle,
   italic,
   normal
-} from "@cloudinary/transformation-builder/qualifiers/fontStyle";
+} from "@cloudinary/transformation-builder-sdk/qualifiers/fontStyle";
 
 export {
   FontStyle,

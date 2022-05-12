@@ -1,3 +1,3 @@
-import {Timeline, position} from "@cloudinary/transformation-builder/qualifiers/timeline.js";
+import {Timeline, position} from "@cloudinary/transformation-builder-sdk/qualifiers/timeline.js";
 export {Timeline, position};
 

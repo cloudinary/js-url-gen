@@ -6,7 +6,7 @@ import {
   end,
   justify,
   start
-} from "@cloudinary/transformation-builder/qualifiers/textAlignment";
+} from "@cloudinary/transformation-builder-sdk/qualifiers/textAlignment";
 
 export {
   TextAlignment,

@@ -1,3 +1,3 @@
-import { TextStyle } from "@cloudinary/transformation-builder/qualifiers/textStyle";
+import { TextStyle } from "@cloudinary/transformation-builder-sdk/qualifiers/textStyle";
 
 export {TextStyle};

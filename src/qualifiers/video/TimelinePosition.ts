@@ -1,4 +1,4 @@
-import { TimelinePosition } from "@cloudinary/transformation-builder/qualifiers/video/TimelinePosition";
+import { TimelinePosition } from "@cloudinary/transformation-builder-sdk/qualifiers/video/TimelinePosition";
 
 export {
   TimelinePosition

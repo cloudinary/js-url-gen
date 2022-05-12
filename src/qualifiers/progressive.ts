@@ -5,7 +5,7 @@ import {
   steep,
   progressive,
   ProgressiveQualifier
-} from "@cloudinary/transformation-builder/qualifiers/progressive";
+} from "@cloudinary/transformation-builder-sdk/qualifiers/progressive";
 
 export {
   Progressive,

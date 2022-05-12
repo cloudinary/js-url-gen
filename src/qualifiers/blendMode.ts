@@ -5,7 +5,7 @@ import {
   overlay,
   mask,
   antiRemoval
-} from "@cloudinary/transformation-builder/qualifiers/blendMode.js";
+} from "@cloudinary/transformation-builder-sdk/qualifiers/blendMode.js";
 
 export {
   BlendMode,
