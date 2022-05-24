@@ -147,5 +147,8 @@
       "node": "./index.js",
       "default": "./index.js"
     }
+  },
+  "dependencies": {
+    "@cloudinary/transformation-builder-sdk": "^1.0.0"
   }
 }

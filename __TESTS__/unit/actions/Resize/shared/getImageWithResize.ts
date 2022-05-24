@@ -1,4 +1,4 @@
-import {ResizeSimpleAction} from "../../../../../src/actions/resize/ResizeSimpleAction";
+import {ResizeSimpleAction} from "@cloudinary/transformation-builder-sdk/actions/resize/ResizeSimpleAction";
 import {CloudinaryImage} from "../../../../../src/assets/CloudinaryImage";
 
 
