@@ -180,5 +180,42 @@ describe('it works?', () => {
     const t = generateTransformationString(options);
     expect(t).toEqual("r_max");
   });
+  it("should support start_offset", function () {
+    const t = generateTransformationString({
+      start_offset: "1"
+    });
 
+    expect(t).toBe('so_1');
+  });
+  it("should support end_offset", function () {
+    const t = generateTransformationString({
+      end_offset: "0"
+    });
+
+    expect(t).toBe('eo_0');
+  });
+  it("should support start_offset & end_offset", function () {
+    const t = generateTransformationString({
+      start_offset: "0",
+      end_offset: 1
+    });
+
+    expect(t).toBe('eo_1,so_0');
+  });
+  it("should support offset", function () {
+    const t = generateTransformationString({
+      offset: '0..1'
+    });
+
+    expect(t).toBe('eo_1,so_0');
+  });
+  it("should prefer start_offset & end_offset over offset", function () {
+    const t = generateTransformationString({
+      offset: '0..1',
+      start_offset: 2,
+      end_offset: 3
+    });
+
+    expect(t).toBe('eo_3,so_2');
+  });
 });
