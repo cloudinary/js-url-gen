@@ -22,7 +22,8 @@ export default {
     }),
     resolve(),
     replace({
-      'PACKAGE_VERSION_INJECTED_DURING_BUILD': version
+      'PACKAGE_VERSION_INJECTED_DURING_BUILD': version,
+      preventAssignment: true
     }),
     babel({
       exclude: 'node_modules/**' // only transpile our source code
