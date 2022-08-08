@@ -28,7 +28,7 @@ async function bundleSizeTestRunner():Promise<void> {
     const OUTPUT_FILE = `bundle${i}`;
     const TEST_NAME = testCases[i].name;
     const EXPECTED_SIZE_IN_KB = testCases[i].sizeLimitInKB;
-    const ALLOWED_MIN_SIZE_IN_KB = testCases[i].minAllowedSize || 1;
+    const ALLOWED_MIN_SIZE_IN_KB = testCases[i].minAllowedSize || 2;
 
     // Create the entry file for Webpack
     log.debug('Starting to build webpack loop');
