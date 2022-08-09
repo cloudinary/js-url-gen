@@ -13,6 +13,7 @@ import {normRangeValues} from "./utils/norm_range_values.js";
 import {processVideoParams} from "./transformationProcessing/processVideoParams.js";
 import Transformation from "./transformation.js";
 import {processDpr} from "./transformationProcessing/processDpr.js";
+import {isNumberLike} from "./utils/isNumberLike";
 
 
 
@@ -171,12 +172,12 @@ export function generateTransformationString(transformationOptions: LegacyITrans
     dl: transformationOptions.delay,
     dn: transformationOptions.density,
     du: normRangeValues(transformationOptions.duration),
-    eo: normRangeValues(splitRange(transformationOptions.offset)[1]),
+    eo: normRangeValues(transformationOptions.end_offset || isNumberLike(transformationOptions.end_offset) ? transformationOptions.end_offset : splitRange(transformationOptions.offset)[1]),
     f: transformationOptions.fetch_format,
     g: transformationOptions.gravity,
     pg: transformationOptions.page,
     p: transformationOptions.prefix,
-    so: normRangeValues(splitRange(transformationOptions.offset)[0]),
+    so: normRangeValues(transformationOptions.start_offset || isNumberLike(transformationOptions.start_offset) ? transformationOptions.start_offset : splitRange(transformationOptions.offset)[0]),
     sp: transformationOptions.streaming_profile,
     vc: processVideoParams(transformationOptions.video_codec),
     vs: transformationOptions.video_sampling
