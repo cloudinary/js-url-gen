@@ -1,4 +1,4 @@
-const TEST_FILE_STRUCTURE = {
+export const TEST_FILE_STRUCTURE = {
   'package.json': '{"fieldA":"foobar"}',
   dist: {
     bundles: {
@@ -8,5 +8,3 @@ const TEST_FILE_STRUCTURE = {
     }
   }
 };
-
-export default TEST_FILE_STRUCTURE;

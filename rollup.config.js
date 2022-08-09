@@ -21,6 +21,7 @@ export default [
       resolve(),
       replace({
         'PACKAGE_VERSION_INJECTED_DURING_BUILD': version,
+        preventAssignment: true
       }),
       typescript({ target: 'es5' }),
       commonjs(),
@@ -41,6 +42,7 @@ export default [
       resolve(),
       replace({
         'PACKAGE_VERSION_INJECTED_DURING_BUILD': version,
+        preventAssignment: true
       }),
       typescript({ target: "es5" }),
       commonjs()

@@ -1,16 +1,15 @@
 /* eslint @typescript-eslint/no-var-requires: 0 */
 
-import TEST_FILE_STRUCTURE from "../../TestUtils/createEntryMockedFS";
+const { TEST_FILE_STRUCTURE } = require('../../TestUtils/createEntryMockedFS');
 
 const createEntryPoints = require('../../../scripts/lib/entryPointsLib');
-const mock = require('mock-fs');
+const mockFs = require('mock-fs');
 const fs = require('fs');
-
 
 describe('Tests for createEntryPoints', () => {
   beforeEach(() => {
-    mock.restore();
-    mock(TEST_FILE_STRUCTURE);
+    mockFs.restore();
+    mockFs(TEST_FILE_STRUCTURE);
   });
 
   it ('Creates the main entrypoint to the project', () => {
@@ -38,7 +37,7 @@ describe('Tests for createEntryPoints', () => {
   });
 
   afterAll(() => {
-    mock.restore();
+    mockFs.restore();
   });
 });
 
