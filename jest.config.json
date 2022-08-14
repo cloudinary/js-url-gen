@@ -20,6 +20,9 @@
   "modulePaths": [
     "<rootDir>/src"
   ],
+  "modulePathIgnorePatterns": [
+    "<rootDir>/dist/"
+  ],
   "coverageThreshold": {
     "global": {
       "branches": 84.9,
