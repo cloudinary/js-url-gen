@@ -1,3 +1,11 @@
+1.8.1 / 2022-08-14
+==================
+
+Align transcode.toAnimated with the spec - remove .delay() (#528)
+Fix end_offset, start_offset params for legacy url generation (#532)
+Fix build on node 12 (#531)
+Refactor transformations to use transformation-builder package (#527)
+
 1.8.0 / 2022-05-08
 ==================
 
