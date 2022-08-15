@@ -10,6 +10,8 @@ import {
   URLConfig
 } from '../../dist/index';
 
+import { Border } from '../../dist/actions/border';
+
 describe('Ensures index exports correctly', () => {
   it('Exports correctly', () => {
     expect(CloudinaryImage).toBeDefined();
@@ -21,5 +23,6 @@ describe('Ensures index exports correctly', () => {
     expect(CloudConfig).toBeDefined();
     expect(URLConfig).toBeDefined();
     expect(CloudinaryConfig).toBeDefined();
+    expect(Border).toBeDefined();
   });
 });
