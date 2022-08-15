@@ -13,10 +13,7 @@ import {normRangeValues} from "./utils/norm_range_values.js";
 import {processVideoParams} from "./transformationProcessing/processVideoParams.js";
 import Transformation from "./transformation.js";
 import {processDpr} from "./transformationProcessing/processDpr.js";
-import {isNumberLike} from "./utils/isNumberLike";
-
-
-
+import {isNumberLike} from "./utils/isNumberLike.js";
 
 /**
  * Things dropped
