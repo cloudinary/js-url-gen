@@ -1,3 +1,8 @@
+1.8.4 / 2022-08-15
+==================
+
+* Fix imports of conditional, customFunction, effect and others
+
 1.8.3 / 2022-08-15
 ==================
 
