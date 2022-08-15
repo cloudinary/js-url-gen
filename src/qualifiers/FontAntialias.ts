@@ -6,7 +6,7 @@ import {
   fast,
   none,
   good
-} from "@cloudinary/transformation-builder-sdk/qualifiers/FontAntialias.js";
+} from "@cloudinary/transformation-builder-sdk/qualifiers/FontAntialias";
 
 export {
   FontAntialias,

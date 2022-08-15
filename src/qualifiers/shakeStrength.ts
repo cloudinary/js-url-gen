@@ -4,7 +4,7 @@ import {
   pixels48,
   pixels64,
   ShakeStrength
-} from "@cloudinary/transformation-builder-sdk/qualifiers/shakeStrength.js";
+} from "@cloudinary/transformation-builder-sdk/qualifiers/shakeStrength";
 
 export {
   pixels16,

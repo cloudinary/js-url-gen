@@ -7,7 +7,7 @@ import {
   color,
   blurred,
   Background
-} from "@cloudinary/transformation-builder-sdk/qualifiers/background.js";
+} from "@cloudinary/transformation-builder-sdk/qualifiers/background";
 
 export {
   auto,
