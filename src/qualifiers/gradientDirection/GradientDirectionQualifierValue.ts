@@ -1,4 +1,4 @@
 import { GradientDirectionQualifierValue }
-  from "@cloudinary/transformation-builder-sdk/qualifiers/gradientDirection/GradientDirectionQualifierValue.js";
+  from "@cloudinary/transformation-builder-sdk/qualifiers/gradientDirection/GradientDirectionQualifierValue";
 
 export {GradientDirectionQualifierValue};
