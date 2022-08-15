@@ -1,3 +1,8 @@
+1.8.3 / 2022-08-15
+==================
+
+* Fix imports of animated & border from transformation-builder-sdk
+
 1.8.2 / 2022-08-15
 ==================
 
