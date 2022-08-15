@@ -34,7 +34,7 @@ import {
   dither,
   removeBackground,
   theme
-} from "@cloudinary/transformation-builder-sdk/actions/effect.js";
+} from "@cloudinary/transformation-builder-sdk/actions/effect";
 
 export {
   EffectActions,
