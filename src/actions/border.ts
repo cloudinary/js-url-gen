@@ -1,4 +1,4 @@
-import {Border} from "@cloudinary/transformation-builder-sdk/actions.js";
-import {BorderAction, solid} from "@cloudinary/transformation-builder-sdk/actions/border.js";
+import {Border} from "@cloudinary/transformation-builder-sdk/actions";
+import {BorderAction, solid} from "@cloudinary/transformation-builder-sdk/actions/border";
 
 export {BorderAction, Border, solid};
