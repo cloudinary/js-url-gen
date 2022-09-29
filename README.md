@@ -11,17 +11,15 @@ This SDK can also be used with [popular frontend frameworks](https://cloudinary.
 This Readme provides basic installation and usage information.
 For the complete documentation, see the [URL-Gen SDK Guide](https://cloudinary.com/documentation/javascript_integration) and the [URL-Gen Reference](https://cloudinary.com/documentation/sdks/js/url-gen/index.html).
 
-You can find all available transformations in the [Transformation Builder reference](https://cloudinary.com/documentation/sdks/js/transformation-builder/index.html).
-
-**NOTE**: Currently, for backwards compatibility all transformations can be imported from `@cloudinary/url-gen`. 
-That being said, when using the url-gen library, an additional `transformation-builder-sdk` library is 
-installed as a dependency. This library handles the transformation generation part of the URL and as such, 
-all transformation actions are imported from this library. 
-Note that transformations can be directly imported from the `transformation-builder-sdk` library as well.
-Here's an example import statement: 
+NOTE: When using the url-gen library, an additional transformation-builder-sdk library is installed as a dependency. 
+This library handles the transformation generation part of the URL and as such, all transformation actions are imported from this library. 
+Therefore, you can import all transformations either from @cloudinary/url-gen (as demonstrated in the documentation), or directly from the transformation-builder-sdk library, for example:
 ```javascript
 import {scale} from '@cloudinary/transformation-builder-sdk/actions/resize';
 ``` 
+
+You can find all available transformations in the [Transformation Builder reference](https://cloudinary.com/documentation/sdks/js/transformation-builder/index.html).
+
 
 ## Table of Contents
 - [Key Features](#key-features)
