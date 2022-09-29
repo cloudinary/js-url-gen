@@ -17,7 +17,6 @@
   "templates": {
     "cleverLinks": true,
     "navMembers" : [
-      {"kind": "namespace", "title": "Actions & Qualifiers", "summary": "All documented namespaces."},
       {"kind": "interface", "title": "Interfaces", "summary": "All documented interfaces."},
       {"kind": "tutorial", "title": "Help & Examples", "summary": "All available tutorials."}
     ],
