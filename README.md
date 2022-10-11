@@ -124,9 +124,10 @@ In jest.config, you'll need to add these lines to allow babel to transpile our c
 ```json
 {
   "transform": {
-    "node_modules/@cloudinary/url-gen": "babel-jest"
+    "node_modules/@cloudinary/url-gen": "babel-jest",
+    "node_modules/@cloudinary/transformation-builder-sdk": "babel-jest"
   },
-  "transformIgnorePatterns": ["/node_modules/(?!@cloudinary/url-gen)"]
+  "transformIgnorePatterns": ["/node_modules/(?!(@cloudinary/url-gen|@cloudinary/transformation-builder-sdk))"]
 }
 ```
 Make sure to install babel-jest:
