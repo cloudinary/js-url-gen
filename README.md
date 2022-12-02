@@ -45,9 +45,9 @@ You can find all available transformations in the [Transformation Builder refere
 ### Note!
 This SDK is cross-platform, but only the Node.js versions are worth mentioning
 
-| SDK Version   | Node.js 10    | Node.js 12  | Node.js 14   | Node.js 16  |
-|---------------|------------|----------|----------|----------|
-|  1.x          | V          | V        | V        | V        |
+| SDK Version | Node.js 14 | Node.js 16 |
+|-------------|------------|------------|
+|  1.x        | V          | V          |
 
 
 
