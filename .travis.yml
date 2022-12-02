@@ -1,7 +1,9 @@
+dist: focal
 language: node_js
 node_js:
-  - "12"
   - "14"
+  - "16"
+#  - "18" # Not supported yet (ref. error:0308010C:digital envelope routines::unsupported)
 script:
   - npm run lint
   - npm run test
