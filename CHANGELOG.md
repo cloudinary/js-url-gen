@@ -1,3 +1,9 @@
+1.8.7 / 2022-12-05
+==================
+
+* Added import statements template to configuration file
+* Updated readme info about supported Node.js versions
+
 1.8.6 / 2022-08-19
 ==================
 
