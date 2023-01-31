@@ -1,3 +1,9 @@
+1.9.0 / 2023-01-31
+==================
+
+- Add support for Drop Shadow action
+- Add support for Background Removal action
+
 1.8.7 / 2022-12-05
 ==================
 
