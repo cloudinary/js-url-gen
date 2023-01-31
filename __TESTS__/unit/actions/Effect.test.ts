@@ -50,7 +50,8 @@ describe('Tests for Transformation Action -- Effect', () => {
       .effect(Effect.deshake())
       .effect(Effect.deshake(10))
       .effect(Effect.deshake().shakeStrength(ShakeStrength.pixels16()))
-
+      .effect(Effect.backgroundRemoval())
+      .effect(Effect.dropShadow())
       .toURL();
 
     const expectedToContain = [
@@ -88,7 +89,9 @@ describe('Tests for Transformation Action -- Effect', () => {
       'e_vignette:5',
       'e_deshake',
       'e_deshake:10',
-      'e_deshake:16'
+      'e_deshake:16',
+      'e_background_removal',
+      'e_dropshadow',
     ].join('/');
 
     expect(url).toBe(`https://res.cloudinary.com/demo/image/upload/${expectedToContain}/sample`);

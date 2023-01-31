@@ -33,6 +33,8 @@ import {
   transition,
   dither,
   removeBackground,
+  backgroundRemoval,
+  dropShadow,
   theme
 } from "@cloudinary/transformation-builder-sdk/actions/effect";
 
@@ -71,5 +73,7 @@ export {
   transition,
   dither,
   removeBackground,
+  backgroundRemoval,
+  dropShadow,
   theme
 };
