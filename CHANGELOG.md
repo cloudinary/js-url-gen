@@ -1,3 +1,8 @@
+1.9.1 / 2023-02-21
+==================
+
+- Remove roundCorners from unsupported list in config
+
 1.9.0 / 2023-01-31
 ==================
 
