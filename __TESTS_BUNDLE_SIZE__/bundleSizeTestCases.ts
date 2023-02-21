@@ -34,7 +34,7 @@ const bundleSizeTestCases:ITestCase[] = [
   },
   {
     name: 'Tests CloudinaryImage with Resize, Adjust and Border',
-    sizeLimitInKB: 30,
+    sizeLimitInKB: 32,
     importsArray: [
       importFromDist('assets/CloudinaryImage', 'CloudinaryImage'),
       importFromDist('instance/Cloudinary', 'Cloudinary'),
@@ -74,7 +74,7 @@ const bundleSizeTestCases:ITestCase[] = [
   },
   {
     name: 'Import all of the SDK',
-    sizeLimitInKB: 130,
+    sizeLimitInKB: 132,
     importsArray: [
       importFromPackage('* as CloudinaryURLGEN')
     ]
@@ -88,7 +88,7 @@ const bundleSizeTestCases:ITestCase[] = [
   },
   {
     name: 'Import All Actions',
-    sizeLimitInKB: 56,
+    sizeLimitInKB: 64,
     importsArray: [
       importFromPackage('Actions')
     ]

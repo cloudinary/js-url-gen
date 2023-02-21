@@ -950,10 +950,10 @@
   dependencies:
     "@cloudinary/url-gen" "^1.7.0"
 
-"@cloudinary/transformation-builder-sdk@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@cloudinary/transformation-builder-sdk/-/transformation-builder-sdk-1.2.0.tgz#1016865a180d061a72b4048c55cfd448478e7c19"
-  integrity sha512-QhCZf8Lad90za9cEXMDZtF4G9Bdan6X0RlrtZBx3sAmuAYQz0yIwgcV8Ov63lef4tGwIdpGGXPjeopondw9P4A==
+"@cloudinary/transformation-builder-sdk@^1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@cloudinary/transformation-builder-sdk/-/transformation-builder-sdk-1.2.4.tgz#85994d739a778b3c61cb759bbe3ae7272897e09c"
+  integrity sha512-mwjEBT+JQshbXFoR3p7UvZC7yR+C3GpGTtvRYhiqjGZCKXCfvq3k5zCddFsuOsxsU7K9pvNwLDtLNcWWwslrbQ==
   dependencies:
     "@cloudinary/url-gen" "^1.7.0"
 
