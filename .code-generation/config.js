@@ -62,7 +62,7 @@ module.exports = {
       }
     },
     unsupportedTxParams: ['fl_waveform', 'e_theme', 'af_'],
-    unsupportedSyntaxList: ['.stroke(', '.textFit(', 'Animated.edit', '.RoundCorners(', 'getVideoFrame'],
+    unsupportedSyntaxList: ['.stroke(', '.textFit(', 'Animated.edit', 'getVideoFrame'],
     importStatementsTemplate: {
       action: `import { <NAME> } from "@cloudinary/url-gen/actions/<GROUP>";`,
       qualifier: `import { <NAME> } from "@cloudinary/url-gen/qualifiers/<GROUP>";`,
