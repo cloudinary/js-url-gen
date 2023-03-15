@@ -12,23 +12,28 @@ export function getAnalyticsOptions(options: ITrackedPropertiesThroughAnalytics)
     sdkSemver: options.sdkSemver,
     techVersion: options.techVersion,
     sdkCode: options.sdkCode,
-    feature: '0'
+    features: '0'
   };
 
+  let features = '';
   if (options.accessibility) {
-    analyticsOptions.feature = 'D';
+    features += 'D';
   }
 
   if (options.lazyload) {
-    analyticsOptions.feature = 'C';
+    features += 'C';
   }
 
   if (options.responsive) {
-    analyticsOptions.feature = 'A';
+    features += 'A';
   }
 
   if (options.placeholder) {
-    analyticsOptions.feature = 'B';
+    features += 'B';
+  }
+
+  if (features) {
+    analyticsOptions.features = features;
   }
 
   return analyticsOptions;
