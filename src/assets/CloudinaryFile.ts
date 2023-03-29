@@ -28,24 +28,24 @@ export const SEO_TYPES: Record<string, string> = {
  * Supported delivery type options.
  */
 type DELIVERY_TYPE =
-  'key'|
-  'upload'|
-  'private_delivery'|
-  'public_delivery'|
-  'authenticated'|
-  'fetch'|
-  'sprite'|
-  'text'|
-  'multi'|
-  'facebook'|
-  'twitter'|
-  'twitter_name'|
-  'gravatar'|
-  'youtube'|
-  'hulu'|
-  'vimeo'|
-  'animoto'|
-  'worldstarhiphop'|
+  'key' |
+  'upload' |
+  'private_delivery' |
+  'public_delivery' |
+  'authenticated' |
+  'fetch' |
+  'sprite' |
+  'text' |
+  'multi' |
+  'facebook' |
+  'twitter' |
+  'twitter_name' |
+  'gravatar' |
+  'youtube' |
+  'hulu' |
+  'vimeo' |
+  'animoto' |
+  'worldstarhiphop' |
   'dailymotion';
 
 /**
@@ -113,7 +113,7 @@ class CloudinaryFile {
    * @param {DELIVERY_TYPE | string} newType The type of the asset.
    * @return {this}
    */
-  setDeliveryType(newType: DELIVERY_TYPE|string): this {
+  setDeliveryType(newType: DELIVERY_TYPE | string): this {
     this.deliveryType = newType;
     return this;
   }
@@ -155,7 +155,7 @@ class CloudinaryFile {
    * @param {string} newType The type of the asset.
    * @return {this}
    */
-  setAssetType(newType: 'key'|'image'|'video'|'raw'|'auto'|'all'|string): this {
+  setAssetType(newType: 'key' | 'image' | 'video' | 'raw' | 'auto' | 'all' | string): this {
     if (newType) {
       this.assetType = newType;
     }
@@ -170,7 +170,7 @@ class CloudinaryFile {
    * @description Serializes to URL string
    * @param overwriteOptions
    */
-  toURL(overwriteOptions: {trackedAnalytics?: Partial<ITrackedPropertiesThroughAnalytics>} = {}): string {
+  toURL(overwriteOptions: { trackedAnalytics?: Partial<ITrackedPropertiesThroughAnalytics> } = {}): string {
     return this.createCloudinaryURL(null, overwriteOptions.trackedAnalytics);
   }
 
@@ -191,7 +191,6 @@ class CloudinaryFile {
       throw '`suffix`` should not include . or /';
     }
   }
-
 
 
   /**
@@ -283,10 +282,17 @@ class CloudinaryFile {
         .replace(/\?/g, '%3F')
         .replace(/=/g, '%3D');
 
+      const queryParams: Record<string, string | number> = this.urlConfig.queryParams || {};
+
       // urlConfig.analytics is true by default, has to be explicitly set to false to overwrite
       // Don't add analytics when publicId includes a '?' to not risk changing existing query params
       if (this.urlConfig.analytics !== false && !(publicID.includes('?'))) {
-        return `${safeURL}?_a=${getSDKAnalyticsSignature(trackedAnalytics)}`;
+        queryParams._a = getSDKAnalyticsSignature(trackedAnalytics);
+      }
+
+      const queryParamsStr = `${Object.entries(queryParams).map(([key, value]) => `${key}=${value}`).join('&')}`;
+      if (queryParamsStr) {
+        return `${safeURL}?${queryParamsStr}`;
       } else {
         return safeURL;
       }

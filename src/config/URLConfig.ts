@@ -13,6 +13,7 @@ class URLConfig extends Config implements IURLConfig {
   useRootPath?: boolean;
   secure?: boolean;
   forceVersion?: boolean;
+  queryParams?: Record<string, string | number>
 
   /**
    * @param {IURLConfig} userURLConfig
@@ -99,6 +100,14 @@ class URLConfig extends Config implements IURLConfig {
    */
   setForceVersion(value: boolean): this {
     this.forceVersion = value;
+    return this;
+  }
+
+  /**
+   * @param params Sets additional query params
+   */
+  setQueryParams(params: Record<string, string | number>):this {
+    this.queryParams = params;
     return this;
   }
 }
