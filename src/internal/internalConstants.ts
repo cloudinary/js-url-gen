@@ -16,7 +16,8 @@ export const ALLOWED_URL_CONFIG = [
   'useRootPath',
   'secure',
   'forceVersion',
-  'analytics'
+  'analytics',
+  'queryParams'
 ];
 
 /**

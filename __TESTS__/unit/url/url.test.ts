@@ -94,4 +94,16 @@ describe('Tests for URL configuration', () => {
 
     expect(url).toEqual(`https://res.cloudinary.com/demo/image/upload/s--${signature}--/c_crop,w_100/sample`);
   });
+
+  it('Should include query params', function () {
+    const image = createNewImage('sample', {cloudName: 'demo'}, {queryParams: {"_i": "abcde", "_z": 1234}});
+    const url = image.toURL();
+    expect(url).toEqual(`https://res.cloudinary.com/demo/image/upload/sample?_i=abcde&_z=1234`);
+  });
+
+  it('Should include query params with analytics', function () {
+    const image = createNewImage('sample', {cloudName: 'demo'}, {analytics: true, queryParams: {"_i": "abcde"}});
+    const url = image.toURL();
+    expect(url).toEqual(`https://res.cloudinary.com/demo/image/upload/sample?_i=abcde&_a=E`);
+  });
 });
