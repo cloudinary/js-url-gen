@@ -283,17 +283,17 @@ class CloudinaryFile {
         .replace(/\?/g, '%3F')
         .replace(/=/g, '%3D');
 
-      const queryParams: Record<string, string | number> = this.urlConfig.queryParams || {};
+      const urlSearchParams = new URLSearchParams(this.urlConfig.urlSearchParams as Record<string, string>);
 
       // urlConfig.analytics is true by default, has to be explicitly set to false to overwrite
       // Don't add analytics when publicId includes a '?' to not risk changing existing query params
       if (this.urlConfig.analytics !== false && !(publicID.includes('?'))) {
-        queryParams._a = getSDKAnalyticsSignature(trackedAnalytics);
+        urlSearchParams.set("_a", getSDKAnalyticsSignature(trackedAnalytics));
       }
 
-      const queryParamsStr = `${Object.entries(queryParams).map(([key, value]) => `${key}=${value}`).join('&')}`;
-      if (queryParamsStr) {
-        return `${safeURL}?${queryParamsStr}`;
+      const searchParams = urlSearchParams.toString();
+      if (searchParams) {
+        return `${safeURL}?${searchParams}`;
       } else {
         return safeURL;
       }

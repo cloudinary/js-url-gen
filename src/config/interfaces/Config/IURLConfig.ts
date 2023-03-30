@@ -13,7 +13,7 @@
  * @prop {boolean} [secure]
  * @prop {boolean} [forceVersion]
  * @prop {boolean} [analytics]
- * @prop {object} [additionalQueryParams]
+ * @prop {object} [urlSearchParams]
  * @example
  * import Cloudinary from '@cloudinary/url-gen';
  * // The Cloudinary Instance accepts a URLConfig under the `url` key
@@ -96,9 +96,9 @@ interface IURLConfig {
   forceVersion?: boolean;
 
   /**
-   * Additional query params to be added to the URL
+   * Additional params to be added to the URL
    */
-  queryParams?: Record<string, string | number>
+  urlSearchParams?: Record<string, string | number | boolean>
 }
 
 export default IURLConfig;

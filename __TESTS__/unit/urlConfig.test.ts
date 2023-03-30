@@ -158,7 +158,7 @@ describe('It tests a combination of Cloudinary URL and Configuration', () => {
       .setShorten(true)
       .setSignUrl(true)
       .setUseRootPath(true)
-      .setQueryParams({foo: 'bar'});
+      .setUrlSearchParams({foo: 'bar', baz: 111, dummy: true});
 
     expect(conf.cname).toBe('foo');
     expect(conf.forceVersion).toBe(true);
@@ -168,6 +168,6 @@ describe('It tests a combination of Cloudinary URL and Configuration', () => {
     expect(conf.shorten).toBe(true);
     expect(conf.signUrl).toBe(true);
     expect(conf.useRootPath).toBe(true);
-    expect(conf.queryParams).toEqual({foo: 'bar'});
+    expect(conf.setUrlSearchParams).toEqual({foo: 'bar', baz: 111, dummy: true});
   });
 });
