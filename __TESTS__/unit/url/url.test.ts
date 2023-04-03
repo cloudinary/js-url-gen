@@ -96,13 +96,13 @@ describe('Tests for URL configuration', () => {
   });
 
   it('Should include query params', function () {
-    const image = createNewImage('sample', {cloudName: 'demo'}, {urlSearchParams: {"_i": "abcde", "_z": 1234, "_t": false}});
+    const image = createNewImage('sample', {cloudName: 'demo'}, {queryParams: {"_i": "abcde", "_z": 1234, "_t": false}});
     const url = image.toURL();
     expect(url).toEqual(`https://res.cloudinary.com/demo/image/upload/sample?_i=abcde&_z=1234&_t=false`);
   });
 
   it('Should include query params with analytics', function () {
-    const image = createNewImage('sample', {cloudName: 'demo'}, {analytics: true, urlSearchParams: {"_i": "abcde"}});
+    const image = createNewImage('sample', {cloudName: 'demo'}, {analytics: true, queryParams: {"_i": "abcde"}});
     const url = image.toURL();
     expect(url).toEqual(`https://res.cloudinary.com/demo/image/upload/sample?_i=abcde&_a=E`);
   });

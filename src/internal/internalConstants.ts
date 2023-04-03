@@ -17,7 +17,7 @@ export const ALLOWED_URL_CONFIG = [
   'secure',
   'forceVersion',
   'analytics',
-  'urlSearchParams'
+  'queryParams'
 ];
 
 /**
