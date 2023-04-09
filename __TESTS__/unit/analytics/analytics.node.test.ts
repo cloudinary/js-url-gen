@@ -94,6 +94,24 @@ describe('Add analytics to a regular URL', () => {
     })).toContain('?_a=AZAlhAMB');
   });
 
+  it('Test lazyload, responsive & placeholder combined feature value', () => {
+    const cldImage = createNewImageWithAnalytics('sample');
+    // AZ -> Algo A, SDK Code is Z
+    // Alh -> 1.24.0 from package.json
+    // AM -> 12.0.0 Underlying tech
+    // CAB -> lazyload, responsive & placeholder
+    expect(cldImage.toURL({
+      trackedAnalytics: {
+        sdkCode: 'Z',
+        sdkSemver: '1.24.0',
+        techVersion: '12.0.0',
+        placeholder: true,
+        lazyload: true,
+        responsive: true,
+      }
+    })).toContain('?_a=AZAlhAMCAB');
+  });
+
   it('Can be turned off', () => {
     const cldImage = createNewImageWithAnalytics('sample', {}, {
       analytics: false

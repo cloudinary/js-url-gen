@@ -69,12 +69,12 @@ export function getSDKAnalyticsSignature(_trackedAnalytics?: Partial<ITrackedPro
     const encodedSDKVersion = encodeVersion(analyticsOptions.sdkSemver);
     const encodedTechVersion = encodeVersion(twoPartVersion);
 
-    const featureCode = analyticsOptions.feature;
+    const featuresCode = analyticsOptions.features;
     const SDKCode = analyticsOptions.sdkCode;
     const algoVersion = 'A'; // The algo version is determined here, it should not be an argument
 
 
-    return `${algoVersion}${SDKCode}${encodedSDKVersion}${encodedTechVersion}${featureCode}`;
+    return `${algoVersion}${SDKCode}${encodedSDKVersion}${encodedTechVersion}${featuresCode}`;
   } catch (e) {
     // Either SDK or Node versions were unparsable
     return 'E';
