@@ -103,7 +103,12 @@ describe('Tests for URL configuration', () => {
 
   it('Should include query params with analytics', function () {
     const image = createNewImage('sample', {cloudName: 'demo'}, {analytics: true, queryParams: {"_i": "abcde"}});
-    const url = image.toURL();
-    expect(url).toEqual(`https://res.cloudinary.com/demo/image/upload/sample?_i=abcde&_a=E`);
+    const analyticsOptions = {
+      techVersion: '16.0.0',
+      sdkCode: 'T',
+      sdkSemver: '1.0.0'
+    };
+    const url = image.toURL({trackedAnalytics: analyticsOptions});
+    expect(url).toEqual(`https://res.cloudinary.com/demo/image/upload/sample?_i=abcde&_a=ATAABAQ0`);
   });
 });
