@@ -12,7 +12,8 @@ export function getAnalyticsOptions(options: ITrackedPropertiesThroughAnalytics)
     sdkSemver: options.sdkSemver,
     techVersion: options.techVersion,
     sdkCode: options.sdkCode,
-    feature: '0'
+    product: options.product,
+    feature: '0',
   };
 
   if (options.accessibility) {

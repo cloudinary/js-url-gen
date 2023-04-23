@@ -8,6 +8,7 @@ export interface ITrackedPropertiesThroughAnalytics {
   sdkSemver: string; // Base Semver
   techVersion: string; // Node Version or 1.0.0 by default
   sdkCode: string; // Constant for Base?
+  product?: string; // Product code, 'A' for classic, 'B' for integrations
   accessibility?: boolean; // Was accessibility used
   lazyload?: boolean; // Was lazy-load used
   responsive?: boolean; // Was responsive used
