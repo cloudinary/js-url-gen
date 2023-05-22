@@ -30,6 +30,7 @@ function ensureShapeOfTrackedProperties(trackedAnalytics?: Partial<ITrackedPrope
     techVersion: getNodeVersion(),
     sdkCode: 'T', // Base code
     sdkSemver : packageVersion.split('-')[0], // remove -beta, -alpha or other tagged versions from the version string
+    product: 'A',
     responsive: false,
     placeholder: false,
     lazyload: false,
@@ -71,10 +72,11 @@ export function getSDKAnalyticsSignature(_trackedAnalytics?: Partial<ITrackedPro
 
     const featureCode = analyticsOptions.feature;
     const SDKCode = analyticsOptions.sdkCode;
-    const algoVersion = 'A'; // The algo version is determined here, it should not be an argument
+    const product = analyticsOptions.product;
+    const algoVersion = 'B'; // The algo version is determined here, it should not be an argument
 
 
-    return `${algoVersion}${SDKCode}${encodedSDKVersion}${encodedTechVersion}${featureCode}`;
+    return `${algoVersion}${product}${SDKCode}${encodedSDKVersion}${encodedTechVersion}${featureCode}`;
   } catch (e) {
     // Either SDK or Node versions were unparsable
     return 'E';

@@ -43,7 +43,7 @@ describe('Add analytics to a regular URL', () => {
         techVersion: '12.0.0',
         accessibility: true
       }
-    })).toContain('?_a=AZAlhAMD');
+    })).toContain('?_a=BAZAlhAMD');
   });
 
   it('Test lazyload feature value', () => {
@@ -59,7 +59,7 @@ describe('Add analytics to a regular URL', () => {
         techVersion: '12.0.0',
         lazyload: true
       }
-    })).toContain('?_a=AZAlhAMC');
+    })).toContain('?_a=BAZAlhAMC');
   });
 
   it('Test responsive feature value', () => {
@@ -75,7 +75,7 @@ describe('Add analytics to a regular URL', () => {
         techVersion: '12.0.0',
         responsive: true
       }
-    })).toContain('?_a=AZAlhAMA');
+    })).toContain('?_a=BAZAlhAMA');
   });
 
   it('Test placeholder feature value', () => {
@@ -91,7 +91,19 @@ describe('Add analytics to a regular URL', () => {
         techVersion: '12.0.0',
         placeholder: true
       }
-    })).toContain('?_a=AZAlhAMB');
+    })).toContain('?_a=BAZAlhAMB');
+  });
+
+  it('Test product letter', () => {
+    const cldImage = createNewImageWithAnalytics('sample');
+    expect(cldImage.toURL({
+      trackedAnalytics: {
+        sdkCode: 'Z',
+        sdkSemver: '1.24.0',
+        techVersion: '12.0.0',
+        product: 'B'
+      }
+    })).toContain('?_a=BBZAlhAM0');
   });
 
   it('Can be turned off', () => {
