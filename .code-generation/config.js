@@ -44,6 +44,8 @@ module.exports = {
       'deliveryType': 'set_delivery_type',
       'assetType': 'set_asset_type',
       'signature': 'setSignature',
+      'url_suffix': 'setSuffix',
+      'version': 'setVersion',
     },
     canGenerateSignature:false,
     classNameMap: {},
