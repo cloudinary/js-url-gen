@@ -35,6 +35,8 @@ import {
   removeBackground,
   backgroundRemoval,
   dropShadow,
+  generativeRemove,
+  generativeReplace,
   theme
 } from "@cloudinary/transformation-builder-sdk/actions/effect";
 
@@ -75,5 +77,7 @@ export {
   removeBackground,
   backgroundRemoval,
   dropShadow,
+  generativeRemove,
+  generativeReplace,
   theme
 };
