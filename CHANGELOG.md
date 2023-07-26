@@ -1,3 +1,9 @@
+1.11.0 / 2023-07-26
+==================
+
+- Add Generative Remove action
+- Add Generative Replace action
+
 1.10.2 / 2023-07-13
 ==================
 
