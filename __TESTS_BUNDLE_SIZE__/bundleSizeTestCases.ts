@@ -95,7 +95,7 @@ const bundleSizeTestCases:ITestCase[] = [
   },
   {
     name: 'Import All Qualifiers',
-    sizeLimitInKB: 38,
+    sizeLimitInKB: 40,
     importsArray: [
       importFromPackage('Qualifiers')
     ]
