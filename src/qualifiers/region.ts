@@ -1,3 +1,3 @@
-import { Region, ocr, faces, custom } from "@cloudinary/transformation-builder-sdk/qualifiers/region";
+import { Region, ocr, faces, custom, rectangle } from "@cloudinary/transformation-builder-sdk/qualifiers/region";
 
-export {Region, ocr, faces, custom};
+export {Region, ocr, faces, custom, rectangle};
