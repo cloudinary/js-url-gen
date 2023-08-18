@@ -1,3 +1,8 @@
+1.11.2 / 2023-08-18
+==================
+
+* Add missing export for background generativeFill qualifier.
+
 1.11.1 / 2023-08-01
 ==================
 
