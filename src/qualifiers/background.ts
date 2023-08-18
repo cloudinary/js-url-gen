@@ -6,6 +6,7 @@ import {
   predominant,
   color,
   blurred,
+  generativeFill,
   Background
 } from "@cloudinary/transformation-builder-sdk/qualifiers/background";
 
@@ -17,6 +18,7 @@ export {
   predominant,
   color,
   blurred,
+  generativeFill,
   Background
 };
 
