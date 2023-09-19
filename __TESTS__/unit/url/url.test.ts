@@ -101,6 +101,13 @@ describe('Tests for URL configuration', () => {
     expect(url).toEqual(`https://res.cloudinary.com/demo/image/upload/sample?_i=abcde&_z=1234&_t=false`);
   });
 
+    //just added for playground
+  it('Should include query params', function () {
+    const image = createNewImage('sample', {cloudName: 'demo'}, {queryParams: '_i=abcde&_t=false'}});
+    const url = image.toURL();
+    expect(url).toEqual(`https://res.cloudinary.com/demo/image/upload/sample?_i=abcde&_z=1234&_t=false`);
+  });
+
   it('Should include query params with analytics', function () {
     const image = createNewImage('sample', {cloudName: 'demo'}, {analytics: true, queryParams: {"_i": "abcde"}});
     const analyticsOptions = {
