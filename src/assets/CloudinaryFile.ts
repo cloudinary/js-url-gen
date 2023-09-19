@@ -319,8 +319,7 @@ class CloudinaryFile {
         queryParamsString = this.urlConfig.queryParams || '';
         
         if (shouldAddAnalytics) {
-          //  queryParams.set("_a", getSDKAnalyticsSignature(trackedAnalytics));
-          queryParamsString += (queryParamsString.length > 0 ? "&" :"") + "_a=" + getSDKAnalyticsSignature(trackedAnalytics);
+          queryParamsString += `${(queryParamsString.length > 0 ? "&" :"")}_a=${getSDKAnalyticsSignature(trackedAnalytics)}`;
         }
         
 
