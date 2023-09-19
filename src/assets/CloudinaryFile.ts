@@ -321,15 +321,13 @@ class CloudinaryFile {
         if (shouldAddAnalytics) {
           queryParamsString += `${(queryParamsString.length > 0 ? "&" :"")}_a=${getSDKAnalyticsSignature(trackedAnalytics)}`;
         }
-        
-
-        if (queryParamsString) {
-          return `${safeURL}?${queryParamsString}`;
-        } else {
-          return safeURL;
-        }
       }
 
+      if (queryParamsString) {
+        return `${safeURL}?${queryParamsString}`;
+      } else {
+        return safeURL;
+      }
     }
   }
 }
