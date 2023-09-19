@@ -14,7 +14,7 @@ class URLConfig extends Config implements IURLConfig {
   secure?: boolean;
   forceVersion?: boolean;
   // TODO: We need to change the type here to accept string
-  queryParams?: Record<string, string | number | boolean>;
+  queryParams?: Record<string, string | number | boolean> | string;
 
   /**
    * @param {IURLConfig} userURLConfig
@@ -108,7 +108,7 @@ class URLConfig extends Config implements IURLConfig {
    * @param params Sets additional params
    */
   // TODO: We need to change the type here to accept string
-  setQueryParams(params: Record<string, string | number | boolean>):this {
+  setQueryParams(params: Record<string, string | number | boolean> | string):this {
     this.queryParams = params;
     return this;
   }

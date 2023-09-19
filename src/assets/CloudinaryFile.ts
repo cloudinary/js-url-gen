@@ -288,15 +288,41 @@ class CloudinaryFile {
       // 2. If we got an object we have to check if URLSearchParams is available, and only then use it
       //    Beause we want to throw a meaningful Error in case it's not - we can wrap the below code in a try catch clause 
       // 3. If it already was a string then we can skip the parsing but still we need to assign it to `queryParamsString`
-      const queryParams = new URLSearchParams(this.urlConfig.queryParams as Record<string, string>);
+        //
 
-      // urlConfig.analytics is true by default, has to be explicitly set to false to overwrite
-      // Don't add analytics when publicId includes a '?' to not risk changing existing query params
-      if (this.urlConfig.analytics !== false && !(publicID.includes('?'))) {
-        queryParams.set("_a", getSDKAnalyticsSignature(trackedAnalytics));
-      }
+    const shouldAddAnalytics = this.urlConfig.analytics !== false && !(publicID.includes('?'));    
 
-      const queryParamsString = queryParams.toString();
+    if (typeof(this.urlConfig.queryParams) === 'object'){ //#1
+
+        try { //#2
+          const queryParams = new URLSearchParams(this.urlConfig.queryParams as Record<string, string>);
+          // urlConfig.analytics is true by default, has to be explicitly set to false to overwrite
+          // Don't add analytics when publicId includes a '?' to not risk changing existing query params
+          
+          if (shouldAddAnalytics) {
+            queryParams.set("_a", getSDKAnalyticsSignature(trackedAnalytics));
+          }
+         
+          const queryParamsString = queryParams.toString();
+
+        } catch(){
+            //TODO: improve error message, consult with docs team.
+            throw "Error: URLSearchParams is not available."; //#2
+        }
+    } 
+    
+    //if (typeof(this.urlConfig.queryParams)  === 'string'){ //#3
+    else{ //#3
+       //assign to queryParamsString  
+        let queryParamsString = this.urlConfig.queryParams || '';
+        
+        if (shouldAddAnalytics) {
+            queryParams.set("_a", getSDKAnalyticsSignature(trackedAnalytics));
+            queryParamsString += (queryParamsString.length > 0 ? "&" :"") + "_a=" + getSDKAnalyticsSignature(trackedAnalytics);
+        }
+        
+    }
+
       if (queryParamsString) {
         return `${safeURL}?${queryParamsString}`;
       } else {
