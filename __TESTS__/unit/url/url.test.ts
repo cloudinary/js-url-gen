@@ -117,5 +117,4 @@ describe('Tests for URL configuration', () => {
     const url = image.toURL({trackedAnalytics: analyticsOptions});
     expect(url).toEqual(`https://res.cloudinary.com/demo/image/upload/sample?_i=abcde&_a=BATAABAQ0`);
   });
-
 });
