@@ -118,5 +118,4 @@ describe('Tests for URL configuration', () => {
     expect(url).toEqual(`https://res.cloudinary.com/demo/image/upload/sample?_i=abcde&_a=BATAABAQ0`);
   });
 
-  // TODO: Write test(s): Should include query params as a string
 });

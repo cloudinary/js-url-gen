@@ -283,22 +283,15 @@ class CloudinaryFile {
         .replace(/\?/g, '%3F')
         .replace(/=/g, '%3D');
 
-      // TODO
-      // 1. First we have to check if `this.urlConfig.queryParams` is an object and therefore needs parsing
-      // 2. If we got an object we have to check if URLSearchParams is available, and only then use it
-      //    Beause we want to throw a meaningful Error in case it's not - we can wrap the below code in a try catch clause 
-      // 3. If it already was a string then we can skip the parsing but still we need to assign it to `queryParamsString`
 
       const shouldAddAnalytics = this.urlConfig.analytics !== false && !(publicID.includes('?'));    
 
       let queryParamsString = '';
 
-      if (typeof(this.urlConfig.queryParams) === 'object'){ //#1
+      if (typeof(this.urlConfig.queryParams) === 'object'){ 
 
         try { 
           const queryParams = new URLSearchParams(this.urlConfig.queryParams as Record<string, string>);
-          // urlConfig.analytics is true by default, has to be explicitly set to false to overwrite
-          // Don't add analytics when publicId includes a '?' to not risk changing existing query params
           
           if (shouldAddAnalytics) {
             queryParams.set("_a", getSDKAnalyticsSignature(trackedAnalytics));
@@ -307,15 +300,10 @@ class CloudinaryFile {
           queryParamsString = queryParams.toString();
 
         } catch(err) {
-          //TODO: improve error message, consult with docs team.
           console.error("Error: URLSearchParams is not available");
-          //throw "Error: URLSearchParams is not available."; //#2
         }
       } 
-    
-      //if (typeof(this.urlConfig.queryParams)  === 'string'){ //#3
-      else{ //#3
-        //assign to queryParamsString  
+      else{ 
         queryParamsString = this.urlConfig.queryParams || '';
         
         if (shouldAddAnalytics) {

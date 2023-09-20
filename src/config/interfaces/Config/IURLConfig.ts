@@ -13,7 +13,6 @@
  * @prop {boolean} [secure]
  * @prop {boolean} [forceVersion]
  * @prop {boolean} [analytics]
- *   // TODO: This is just for generating docs - we need to change the type here to accept string
  * @prop {object|string} [queryParams]  
  * @example
  * import Cloudinary from '@cloudinary/url-gen';
@@ -99,7 +98,6 @@ interface IURLConfig {
   /**
    * Additional params to be added to the URL
    */
-  // TODO: We need to change the type here to accept string
   queryParams?: Record<string, string | number | boolean> | string
 }
 
