@@ -109,6 +109,6 @@ describe('Tests for URL configuration', () => {
       sdkSemver: '1.0.0'
     };
     const url = image.toURL({trackedAnalytics: analyticsOptions});
-    expect(url).toEqual(`https://res.cloudinary.com/demo/image/upload/sample?_i=abcde&_a=BATAABAQ0`);
+    expect(url).toEqual(`https://res.cloudinary.com/demo/image/upload/sample?_i=abcde&_a=CATAABAQZAA0`);
   });
 });
