@@ -7,4 +7,6 @@ export interface IAnalyticsOptions {
   sdkCode: string,
   feature: string,
   product: string,
+  osType: string,
+  osVersion: string,
 }

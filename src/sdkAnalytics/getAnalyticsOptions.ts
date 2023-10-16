@@ -14,6 +14,8 @@ export function getAnalyticsOptions(options: ITrackedPropertiesThroughAnalytics)
     sdkCode: options.sdkCode,
     product: options.product,
     feature: '0',
+    osType: options.osType,
+    osVersion: options.osVersion,
   };
 
   if (options.accessibility) {
