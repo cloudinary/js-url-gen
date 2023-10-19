@@ -1,3 +1,9 @@
+1.12.0 / 2023-10-19
+==================
+
+- Added Generative Recolor action
+- Added Generative Restore action
+
 1.11.2 / 2023-08-18
 ==================
 
