@@ -281,7 +281,9 @@ class CloudinaryFile {
     } else {
       const safeURL = encodeURI(url)
         .replace(/\?/g, '%3F')
-        .replace(/=/g, '%3D');
+        .replace(/=/g, '%3D')
+        // Replace double-encoded comma with single-encoded comma to prevent issues with publicIDs containing commas
+        .replace(/%252C/g, '%2C');
 
       const queryParams = new URLSearchParams(this.urlConfig.queryParams as Record<string, string>);
 
