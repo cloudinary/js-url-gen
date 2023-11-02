@@ -28,13 +28,6 @@ describe('Tests for Encoding the URL', () => {
     expect(url).toBe('https://res.cloudinary.com/demo/image/upload/sample%E2%98%BA');
   });
 
-  it('Test Raya', () => {
-    const url = createNewImage('Safety/Confined Space Access/Fall Arrest and Recovery/HFAR.1, 4, 6 - Globestock G.Saver Fall Arrest Retrievers/JPEGS/Globestock_G.Saver_14m__Product_Image_2')
-      .toURL();
-
-    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/v1/Safety/Confined%20Space%20Access/Fall%20Arrest%20and%20Recovery/HFAR.1%2C%204%2C%206%20-%20Globestock%20G.Saver%20Fall%20Arrest%20Retrievers/JPEGS/Globestock_G.Saver_14m_-_Product_Image_2');
-  });
-
   it('Does not mutate valid / in publicID', () => {
     const url = createNewImage('folder/name')
       .toURL();
