@@ -19,7 +19,13 @@ describe('Tests for Encoding the URL', () => {
   it('Should encode cloudinary characters (",") in a publicID', () => {
     const url = createNewImage('sam,ple')
       .toURL();
-    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/sam%252Cple');
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/sam%2Cple');
+  });
+
+  it('Should encode cloudinary characters ("☺") in a publicID', () => {
+    const url = createNewImage('sample☺')
+      .toURL();
+    expect(url).toBe('https://res.cloudinary.com/demo/image/upload/sample%E2%98%BA');
   });
 
   it('Does not mutate valid / in publicID', () => {
