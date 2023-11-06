@@ -104,7 +104,6 @@ class CloudinaryTransformable extends CloudinaryFile {
    * @param {Actions.RoundCorners} roundCorners
    * @return {this}
    */
-
   roundCorners(roundCorners: RoundCornersAction): this {
     this.transformation.roundCorners(roundCorners);
     return this;
