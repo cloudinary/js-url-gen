@@ -101,7 +101,7 @@ describe('Tests for URL configuration', () => {
     expect(url).toEqual(`https://res.cloudinary.com/demo/image/upload/sample?_i=abcde&_z=1234&_t=false`);
   });
 
-  it('Should include query params passed as a string', function () {
+  it('Should include query params when passed as a string', function () {
     const image = createNewImage('sample', {cloudName: 'demo'}, {queryParams: '_i=abcde&_z=1234&_t=false'});
     const url = image.toURL();
     expect(url).toEqual(`https://res.cloudinary.com/demo/image/upload/sample?_i=abcde&_z=1234&_t=false`);
@@ -117,4 +117,16 @@ describe('Tests for URL configuration', () => {
     const url = image.toURL({trackedAnalytics: analyticsOptions});
     expect(url).toEqual(`https://res.cloudinary.com/demo/image/upload/sample?_i=abcde&_a=BATAABAQ0`);
   });
+
+  it('Should include query params with analytics when passed as a string', function () {
+    const image = createNewImage('sample', {cloudName: 'demo'}, {analytics: true, queryParams: '_i=abcde&_z=1234&_t=false'});
+    const analyticsOptions = {
+      techVersion: '16.0.0',
+      sdkCode: 'T',
+      sdkSemver: '1.0.0'
+    };
+    const url = image.toURL({trackedAnalytics: analyticsOptions});
+    expect(url).toEqual(`https://res.cloudinary.com/demo/image/upload/sample?_i=abcde&_z=1234&_t=false&_a=BATAABAQ0`);
+  });
+
 });
