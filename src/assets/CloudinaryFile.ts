@@ -300,7 +300,7 @@ class CloudinaryFile {
           queryParamsString = queryParams.toString();
 
         } catch(err) {
-          console.error("Error: URLSearchParams is not available");
+          console.error('Error: URLSearchParams is not available so the queryParams object cannot be parsed, please try passing as an already parsed string');
         }
       } 
       else{ 
