@@ -288,7 +288,7 @@ class CloudinaryFile {
 
       let queryParamsString = '';
 
-      if (typeof(this.urlConfig.queryParams) === 'object'){ 
+      if (typeof(this.urlConfig.queryParams) === 'object') { 
 
         try { 
           const queryParams = new URLSearchParams(this.urlConfig.queryParams as Record<string, string>);
@@ -302,12 +302,11 @@ class CloudinaryFile {
         } catch(err) {
           console.error('Error: URLSearchParams is not available so the queryParams object cannot be parsed, please try passing as an already parsed string');
         }
-      } 
-      else{ 
+      } else { 
         queryParamsString = this.urlConfig.queryParams || '';
         
         if (shouldAddAnalytics) {
-          queryParamsString += `${(queryParamsString.length > 0 ? "&" :"")}_a=${getSDKAnalyticsSignature(trackedAnalytics)}`;
+          queryParamsString += `${(queryParamsString.length > 0 ? '&' : '')}_a=${getSDKAnalyticsSignature(trackedAnalytics)}`;
         }
       }
 
