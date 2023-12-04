@@ -150,6 +150,6 @@
     }
   },
   "dependencies": {
-    "@cloudinary/transformation-builder-sdk": "^1.8.1"
+    "@cloudinary/transformation-builder-sdk": "^1.9.0"
   }
 }
