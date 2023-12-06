@@ -53,6 +53,7 @@ describe('Tests for Transformation Action -- Effect', () => {
       .effect(Effect.backgroundRemoval())
       .effect(Effect.dropShadow())
       .effect(Effect.generativeRestore())
+      .effect(Effect.upscale())
       .toURL();
 
     const expectedToContain = [
@@ -93,7 +94,8 @@ describe('Tests for Transformation Action -- Effect', () => {
       'e_deshake:16',
       'e_background_removal',
       'e_dropshadow',
-      'e_gen_restore'
+      'e_gen_restore',
+      'e_upscale'
     ].join('/');
 
     expect(url).toBe(`https://res.cloudinary.com/demo/image/upload/${expectedToContain}/sample`);
