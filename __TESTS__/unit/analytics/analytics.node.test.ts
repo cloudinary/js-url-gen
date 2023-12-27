@@ -43,7 +43,7 @@ describe('Add analytics to a regular URL', () => {
         techVersion: '12.0.0',
         accessibility: true
       }
-    })).toContain('?_a=CAZAlhAMZAAD');
+    })).toContain('?_a=DAZAlhAMZAAD');
   });
 
   it('Test lazyload feature value', () => {
@@ -59,7 +59,7 @@ describe('Add analytics to a regular URL', () => {
         techVersion: '12.0.0',
         lazyload: true
       }
-    })).toContain('?_a=CAZAlhAMZAAC');
+    })).toContain('?_a=DAZAlhAMZAAC');
   });
 
   it('Test responsive feature value', () => {
@@ -75,7 +75,7 @@ describe('Add analytics to a regular URL', () => {
         techVersion: '12.0.0',
         responsive: true
       }
-    })).toContain('?_a=CAZAlhAMZAAA');
+    })).toContain('?_a=DAZAlhAMZAAA');
   });
 
   it('Test placeholder feature value', () => {
@@ -91,7 +91,7 @@ describe('Add analytics to a regular URL', () => {
         techVersion: '12.0.0',
         placeholder: true
       }
-    })).toContain('?_a=CAZAlhAMZAAB');
+    })).toContain('?_a=DAZAlhAMZAAB');
   });
 
   it('Test product letter', () => {
@@ -103,7 +103,7 @@ describe('Add analytics to a regular URL', () => {
         techVersion: '12.0.0',
         product: 'B'
       }
-    })).toContain('?_a=CBZAlhAMZAA0');
+    })).toContain('?_a=DBZAlhAMZAA0');
   });
 
   it('Test OS type letter', () => {
@@ -116,7 +116,7 @@ describe('Add analytics to a regular URL', () => {
         product: 'B',
         osType: 'A'
       }
-    })).toContain('?_a=CBZAlhAMAAA0');
+    })).toContain('?_a=DBZAlhAMAAA0');
   });
 
   it('Test OS version letters', () => {
@@ -129,7 +129,7 @@ describe('Add analytics to a regular URL', () => {
         product: 'B',
         osVersion: '16.3'
       }
-    })).toContain('?_a=CBZAlhAMZE80');
+    })).toContain('?_a=DBZAlhAMZQD0');
   });
 
   it('Can be turned off', () => {

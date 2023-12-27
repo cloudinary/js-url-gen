@@ -2,6 +2,7 @@ import {encodeVersion} from "./encodeVersion.js";
 import {getAnalyticsOptions} from "./getAnalyticsOptions.js";
 import {ITrackedPropertiesThroughAnalytics} from "./interfaces/ITrackedPropertiesThroughAnalytics.js";
 import {packageVersion} from "../internal/utils/packageVersion.js";
+import {encodeOSVersion} from "./encodeOSVersion.js";
 
 /**
  * @private
@@ -71,12 +72,12 @@ export function getSDKAnalyticsSignature(_trackedAnalytics?: Partial<ITrackedPro
     const twoPartVersion = removePatchFromSemver(analyticsOptions.techVersion);
     const encodedSDKVersion = encodeVersion(analyticsOptions.sdkSemver);
     const encodedTechVersion = encodeVersion(twoPartVersion);
-    const encodedOSVersion = encodeVersion(analyticsOptions.osVersion);
+    const encodedOSVersion = encodeOSVersion(analyticsOptions.osVersion);
 
     const featureCode = analyticsOptions.feature;
     const SDKCode = analyticsOptions.sdkCode;
     const {product, osType } = analyticsOptions;
-    const algoVersion = 'C'; // The algo version is determined here, it should not be an argument
+    const algoVersion = 'D'; // The algo version is determined here, it should not be an argument
 
 
     return `${algoVersion}${product}${SDKCode}${encodedSDKVersion}${encodedTechVersion}${osType}${encodedOSVersion}${featureCode}`;
