@@ -1,3 +1,24 @@
+1.14.0 / 2023-12-06
+==================
+
+- Add Upscale action
+
+1.13.0 / 2023-11-10
+==================
+
+- Added query params as string
+
+1.12.1 / 2023-11-06
+==================
+
+ * Fix encoding of publicId
+
+1.12.0 / 2023-10-19
+==================
+
+- Added Generative Recolor action
+- Added Generative Restore action
+
 1.11.2 / 2023-08-18
 ==================
 

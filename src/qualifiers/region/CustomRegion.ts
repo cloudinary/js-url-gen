@@ -6,7 +6,7 @@ import {Qualifier} from "../../internal/qualifier/Qualifier.js";
  */
 class CustomRegion extends NamedRegion {
   constructor() {
-    super('named');
+    super('custom');
   }
 
   /**

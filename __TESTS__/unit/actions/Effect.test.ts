@@ -52,6 +52,8 @@ describe('Tests for Transformation Action -- Effect', () => {
       .effect(Effect.deshake().shakeStrength(ShakeStrength.pixels16()))
       .effect(Effect.backgroundRemoval())
       .effect(Effect.dropShadow())
+      .effect(Effect.generativeRestore())
+      .effect(Effect.upscale())
       .toURL();
 
     const expectedToContain = [
@@ -92,6 +94,8 @@ describe('Tests for Transformation Action -- Effect', () => {
       'e_deshake:16',
       'e_background_removal',
       'e_dropshadow',
+      'e_gen_restore',
+      'e_upscale'
     ].join('/');
 
     expect(url).toBe(`https://res.cloudinary.com/demo/image/upload/${expectedToContain}/sample`);
@@ -344,4 +348,11 @@ describe('Tests for Transformation Action -- Effect', () => {
     expect(Effect.theme('fff').toString()).toBe('e_theme:color_fff');
     expect(Effect.theme('red').photosensitivity(50).toString()).toBe('e_theme:color_red:photosensitivity_50');
   });
+
+  it('Test generativeRecolor', () => {
+    expect(Effect.generativeRecolor("sweater", "#ffffff")
+      .toString()
+    ).toBe('e_gen_recolor:prompt_sweater;to-color_ffffff');
+  });
+
 });

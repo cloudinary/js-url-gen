@@ -37,6 +37,9 @@ import {
   dropShadow,
   generativeRemove,
   generativeReplace,
+  generativeRecolor,
+  generativeRestore,
+  upscale,
   theme
 } from "@cloudinary/transformation-builder-sdk/actions/effect";
 
@@ -79,5 +82,8 @@ export {
   dropShadow,
   generativeRemove,
   generativeReplace,
+  generativeRecolor,
+  generativeRestore,
+  upscale,
   theme
 };

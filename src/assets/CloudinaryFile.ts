@@ -264,34 +264,60 @@ class CloudinaryFile {
     const prefix = getUrlPrefix(this.cloudName, this.urlConfig);
     const transformationString = transformation ? transformation.toString() : '';
     const version = getUrlVersion(this.publicID, this.version, this.urlConfig.forceVersion);
-
-    const publicID = this.publicID
-      // Serialize the publicID, but leave slashes alone.
-      // we can't use serializeCloudinaryCharacters because that does both things (, and /)
-      .replace(/,/g, '%2C');
-
-    // Resource type is a mixture of assetType, deliveryType and various URL Configurations
-    // Note how `suffix` changes both image/upload (resourceType) and also is appended at the end
-    const url = [prefix, this.getResourceType(), this.getSignature(), transformationString, version, publicID, this.suffix]
-      .filter((a) => a)
-      .join('/');
+    const publicID = this.publicID;
 
     if (typeof transformation === 'string') {
+
+      const url = [prefix, this.getResourceType(), this.getSignature(), transformationString, version, publicID.replace(/,/g, '%2C'), this.suffix]
+        .filter((a) => a)
+        .join('/');
+
       return url;
     } else {
-      const safeURL = encodeURI(url)
-        .replace(/\?/g, '%3F')
-        .replace(/=/g, '%3D');
+      // Avoid applying encodeURI on entire string in case where we have transformations with comma (i.e. f_auto,q_auto)
+      // Since encodeURI does not encode commas we replace commas *only* on the publicID
+      const safeURL =
+        [
+          encodeURI(prefix),
+          this.getResourceType(),
+          this.getSignature(),
+          encodeURI(transformationString),
+          version,
+          encodeURI(publicID).replace(/,/g, '%2C'),
+          this.suffix && encodeURI(this.suffix)
+        ]
+          .filter((a) => a)
+          .join('/')
+          .replace(/\?/g, '%3F')
+          .replace(/=/g, '%3D');
 
-      const queryParams = new URLSearchParams(this.urlConfig.queryParams as Record<string, string>);
 
-      // urlConfig.analytics is true by default, has to be explicitly set to false to overwrite
-      // Don't add analytics when publicId includes a '?' to not risk changing existing query params
-      if (this.urlConfig.analytics !== false && !(publicID.includes('?'))) {
-        queryParams.set("_a", getSDKAnalyticsSignature(trackedAnalytics));
+      const shouldAddAnalytics = this.urlConfig.analytics !== false && !(publicID.includes('?'));    
+
+      let queryParamsString = '';
+
+      if (typeof(this.urlConfig.queryParams) === 'object') { 
+
+        try { 
+          const queryParams = new URLSearchParams(this.urlConfig.queryParams as Record<string, string>);
+          
+          if (shouldAddAnalytics) {
+            queryParams.set("_a", getSDKAnalyticsSignature(trackedAnalytics));
+          }
+         
+          queryParamsString = queryParams.toString();
+
+        } catch(err) {
+          console.error('Error: URLSearchParams is not available so the queryParams object cannot be parsed, please try passing as an already parsed string');
+        }
+      } else { 
+        queryParamsString = this.urlConfig.queryParams || '';
+        
+        if (shouldAddAnalytics) {
+          queryParamsString += `${(queryParamsString.length > 0 ? '&' : '')}_a=${getSDKAnalyticsSignature(trackedAnalytics)}`;
+        }
       }
 
-      const queryParamsString = queryParams.toString();
       if (queryParamsString) {
         return `${safeURL}?${queryParamsString}`;
       } else {
