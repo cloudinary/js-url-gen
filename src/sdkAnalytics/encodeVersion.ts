@@ -17,7 +17,7 @@ export function encodeVersion(semVer: string):string {
   const paddedStringLength = parts * 6; // we pad to either 12 or 18 characters
   // reverse (but don't mirror) the version. 1.5.15 -> 15.5.1
   const reversedSemver = reverseVersion(semVer);
-  // Pad to two spaces, 15.5.1 -> 15.05.01x
+  // Pad to two spaces, 15.5.1 -> 15.05.01
   const paddedSemver = padVersion(reversedSemver);
   // turn 15.05.01 to a string '150501' then to a number 150501
   const num = parseInt(paddedSemver.split('.').join(''));
