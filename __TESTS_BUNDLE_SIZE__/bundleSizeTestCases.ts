@@ -15,7 +15,7 @@ import importFromPackage from "./utils/stringGenerators/importFromPackage";
 const bundleSizeTestCases:ITestCase[] = [
   {
     name: 'Tests CloudinaryImage with Resize',
-    sizeLimitInKB: 27,
+    sizeLimitInKB: 28,
     importsArray: [
       importFromDist('assets/CloudinaryImage', 'CloudinaryImage'),
       importFromDist('instance/Cloudinary', 'Cloudinary'),
@@ -24,7 +24,7 @@ const bundleSizeTestCases:ITestCase[] = [
   },
   {
     name: 'Tests CloudinaryImage with Resize and Adjust',
-    sizeLimitInKB: 31,
+    sizeLimitInKB: 32,
     importsArray: [
       importFromDist('assets/CloudinaryImage', 'CloudinaryImage'),
       importFromDist('instance/Cloudinary', 'Cloudinary'),
@@ -34,7 +34,7 @@ const bundleSizeTestCases:ITestCase[] = [
   },
   {
     name: 'Tests CloudinaryImage with Resize, Adjust and Border',
-    sizeLimitInKB: 33,
+    sizeLimitInKB: 34,
     importsArray: [
       importFromDist('assets/CloudinaryImage', 'CloudinaryImage'),
       importFromDist('instance/Cloudinary', 'Cloudinary'),
@@ -45,7 +45,7 @@ const bundleSizeTestCases:ITestCase[] = [
   },
   {
     name: 'Tests CloudinaryImage image with Resize, adjust and delivery',
-    sizeLimitInKB: 33,
+    sizeLimitInKB: 34,
     importsArray: [
       importFromDist('assets/CloudinaryImage', 'CloudinaryImage'),
       importFromDist('instance/Cloudinary', 'Cloudinary'),
@@ -56,7 +56,7 @@ const bundleSizeTestCases:ITestCase[] = [
   },
   {
     name: 'Tests Overlay imports',
-    sizeLimitInKB: 30,
+    sizeLimitInKB: 31,
     importsArray: [
       importFromDist('assets/CloudinaryImage', 'CloudinaryImage'),
       importFromDist('actions/overlay', 'Overlay'),

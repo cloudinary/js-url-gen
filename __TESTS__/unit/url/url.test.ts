@@ -115,7 +115,7 @@ describe('Tests for URL configuration', () => {
       sdkSemver: '1.0.0'
     };
     const url = image.toURL({trackedAnalytics: analyticsOptions});
-    expect(url).toEqual(`https://res.cloudinary.com/demo/image/upload/sample?_i=abcde&_a=BATAABAQ0`);
+    expect(url).toEqual(`https://res.cloudinary.com/demo/image/upload/sample?_i=abcde&_a=DATAABAQZAA0`);
   });
 
   it('Should include query params with analytics when passed as a string', function () {
@@ -126,7 +126,7 @@ describe('Tests for URL configuration', () => {
       sdkSemver: '1.0.0'
     };
     const url = image.toURL({trackedAnalytics: analyticsOptions});
-    expect(url).toEqual(`https://res.cloudinary.com/demo/image/upload/sample?_i=abcde&_z=1234&_t=false&_a=BATAABAQ0`);
+    expect(url).toEqual(`https://res.cloudinary.com/demo/image/upload/sample?_i=abcde&_z=1234&_t=false&_a=DATAABAQZAA0`);
   });
 
 });
