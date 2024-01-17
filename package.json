@@ -1,6 +1,6 @@
 {
   "name": "@cloudinary/url-gen",
-  "version": "1.15.0",
+  "version": "1.16.0",
   "description": "",
   "scripts": {
     "test": "npm run build && npm run test:types && npm run build && jest --coverage --reporters default &&  npm run test:size",
