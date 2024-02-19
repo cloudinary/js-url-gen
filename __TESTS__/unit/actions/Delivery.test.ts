@@ -5,6 +5,7 @@ import {Dpr} from "../../../src/qualifiers/dpr";
 import {Delivery} from "../../../src/actions/delivery";
 import {createNewImage} from "../../TestUtils/createCloudinaryImage";
 import {Progressive} from "../../../src/qualifiers/progressive";
+import {CloudinaryImage} from "../../../src";
 
 
 const {format} = Delivery;
@@ -347,5 +348,31 @@ describe('Tests for Transformation Action -- Delivery', () => {
     const url = createNewImage('sample').delivery(format('jpg')).toString();
 
     expect(url).toContain('f_jpg');
+  });
+
+  it('Test addPOCTransformation', () => {
+    // f_jpg,fl_progressive
+    const url = new CloudinaryImage('sample', {cloudName: 'demo'}).addPOCTransformation({
+
+      transformation: [
+        {
+          if: "w_lt_200",
+          crop: "fill",
+          height: 120,
+          width: 80
+        },
+        {
+          if: "w_gt_400",
+          crop: "fit",
+          width: 150,
+          height: 150
+        },
+        {
+          effect: "sepia"
+        }
+      ]
+    }).toURL();
+
+    console.log(url);
   });
 });
