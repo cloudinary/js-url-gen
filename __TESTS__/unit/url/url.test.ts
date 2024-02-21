@@ -2,6 +2,13 @@ import {createNewImage} from "../../TestUtils/createCloudinaryImage";
 import {Resize} from "../../../src/actions/resize";
 import {Rotate} from "../../../src/actions/rotate";
 import {SEO_TYPES} from "../../../src/assets/CloudinaryFile";
+import {
+  generateTransformationString
+} from "@cloudinary/transformation-builder-sdk/backwards/generateTransformationString";
+import {Effect} from "@cloudinary/transformation-builder-sdk/actions/effect";
+import {Border} from "@cloudinary/transformation-builder-sdk/actions";
+import {RoundCorners} from "../../../src/actions/roundCorners";
+import {transformationStringFromObject} from "../../../src";
 
 
 describe('Tests for URL configuration', () => {
@@ -129,4 +136,31 @@ describe('Tests for URL configuration', () => {
     expect(url).toEqual(`https://res.cloudinary.com/demo/image/upload/sample?_i=abcde&_z=1234&_t=false&_a=DATAABAQZAA0`);
   });
 
+  it('Should include transformation string', function () {
+    const image = createNewImage('sample', {cloudName: 'demo'}, {analytics: false});
+    const transformation = transformationStringFromObject({width: 100});
+    const url = image.addTransformation(transformation).toURL();
+    expect(url).toEqual("https://res.cloudinary.com/demo/image/upload/w_100/sample");
+  });
+
+  it('Should include transformation string created from an array', function () {
+    const image = createNewImage('sample', {cloudName: 'demo'}, {analytics: false});
+    const transformation = transformationStringFromObject({transformation: [{width: 100}, {height: 100}]});
+    const url = image.addTransformation(transformation).toURL();
+    expect(url).toEqual("https://res.cloudinary.com/demo/image/upload/w_100/h_100/sample");
+  });
+
+  it('Should include transformation string created from an array', function () {
+    const image = createNewImage('sample', {cloudName: 'demo'}, {analytics: false});
+    const transformation = transformationStringFromObject([{width: 100}, {height: 100}]);
+    const url = image.addTransformation(transformation).toURL();
+    expect(url).toEqual("https://res.cloudinary.com/demo/image/upload/w_100/h_100/sample");
+  });
+
+  it('Should include both transformation string and transformation action', function () {
+    const image = createNewImage('sample', {cloudName: 'demo'}, {analytics: false});
+    const transformation = transformationStringFromObject({transformation: [{width: 100}, {height: 100}]});
+    const url = image.effect(Effect.sepia(10)).addTransformation(transformation).border(Border.roundCorners(RoundCorners.byRadius(50))).toURL();
+    expect(url).toEqual("https://res.cloudinary.com/demo/image/upload/e_sepia:10/w_100/h_100/bo_0px_solid_transparent,r_50/sample");
+  });
 });
