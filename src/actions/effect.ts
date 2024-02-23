@@ -40,7 +40,8 @@ import {
   generativeRecolor,
   generativeRestore,
   upscale,
-  theme
+  theme,
+  enhance
 } from "@cloudinary/transformation-builder-sdk/actions/effect";
 
 export {
@@ -85,5 +86,6 @@ export {
   generativeRecolor,
   generativeRestore,
   upscale,
-  theme
+  theme,
+  enhance
 };
