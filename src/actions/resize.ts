@@ -14,7 +14,8 @@ import {
   minimumFit,
   limitPad,
   fillPad,
-  auto
+  auto,
+  autoPad
 } from "@cloudinary/transformation-builder-sdk/actions/resize";
 
 export {
@@ -33,5 +34,6 @@ export {
   minimumFit,
   limitPad,
   fillPad,
-  auto
+  auto,
+  autoPad
 };
