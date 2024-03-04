@@ -1,5 +1,5 @@
 // eslint-disable @typescript-eslint/ban-ts-comment
-import {LegacyITransforamtionOptions} from "../types/types.js";
+import {LegacyITransforamtionOptions, LegacyTransformation as TransformationObject} from "../types/types.js";
 import {processLayer} from "./transformationProcessing/processLayer.js";
 import {process_if} from "./transformationProcessing/processIf.js";
 import {toArray} from "./utils/toArray.js";
@@ -227,4 +227,4 @@ export function generateTransformationString(transformationOptions: LegacyITrans
   // console.log(childTransformations);
   return childTransformations.join("/");
 }
-
+export const transformationStringFromObject: (transformationObject: TransformationObject) => string = generateTransformationString;

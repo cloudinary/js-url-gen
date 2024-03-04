@@ -401,6 +401,33 @@ export type SimulateColorBlindType =
   "tritanomaly"|
   "tritanopia";
 
+type ExcludedFromTransformation =
+  'cloud_name'
+  | 'api_key'
+  | 'api_secret'
+  | 'auth_token'
+  | 'cname'
+  | 'secure_distribution'
+  | 'private_cdn'
+  | 'secure'
+  | 'sign_url'
+  | 'long_url_signature'
+  | 'shorten'
+  | 'use_root_path'
+  | 'force_version'
+  | 'ssl_detected'
+  | 'cdn_subdomain'
+  | 'secure_cdn_subdomain'
+  | 'account_id'
+  | 'provisioning_api_key'
+  | 'provisioning_api_secret'
+  | 'version'
+  | 'url_suffix'
+  | 'transformation';
+export type LegacyTransformation = ({
+  transformation?: LegacyTransformation | Array<LegacyTransformation> | string | Transformation;
+} & Omit<LegacyITransforamtionOptions, ExcludedFromTransformation>) | Array<LegacyTransformation>
+
 export interface LegacyITransforamtionOptions {
   transformation?: LegacyITransforamtionOptions | string | Transformation;
   raw_transformation?: string;
