@@ -25,6 +25,8 @@ import { IAdjustAction } from "../actions/adjust.js";
 import { ITrackedPropertiesThroughAnalytics } from "../sdkAnalytics/interfaces/ITrackedPropertiesThroughAnalytics.js";
 import { AnimatedAction } from "../actions/animated.js";
 import { DeliveryFormatAction } from "@cloudinary/transformation-builder-sdk/actions/delivery/DeliveryFormatAction";
+import {generateTransformationString} from "../backwards/generateTransformationString.js";
+import {cloneDeep} from "../internal/utils/cloneDeep.js";
 
 /**
  * @desc Cloudinary Transformable interface, extended by any class that needs a Transformation Interface
@@ -271,6 +273,12 @@ class CloudinaryTransformable extends CloudinaryFile {
    */
   underlay(underlayAction: LayerAction): this {
     this.transformation.underlay(underlayAction);
+    return this;
+  }
+
+  addPOCTransformation(transformationOptions: any) {
+    const transformation = generateTransformationString(cloneDeep(transformationOptions)).replace(/([^:])\/\//g, '$1/');
+    this.transformation.addTransformation(transformation);
     return this;
   }
 
