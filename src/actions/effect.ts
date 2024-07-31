@@ -39,6 +39,7 @@ import {
   generativeReplace,
   generativeRecolor,
   generativeRestore,
+  generativeBackgroundReplace,
   upscale,
   theme,
   enhance
@@ -85,6 +86,7 @@ export {
   generativeReplace,
   generativeRecolor,
   generativeRestore,
+  generativeBackgroundReplace,
   upscale,
   theme,
   enhance
