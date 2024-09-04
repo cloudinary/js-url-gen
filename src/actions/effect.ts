@@ -42,7 +42,8 @@ import {
   generativeBackgroundReplace,
   upscale,
   theme,
-  enhance
+  enhance,
+  extract
 } from "@cloudinary/transformation-builder-sdk/actions/effect";
 
 export {
@@ -89,5 +90,6 @@ export {
   generativeBackgroundReplace,
   upscale,
   theme,
-  enhance
+  enhance,
+  extract
 };
