@@ -1,3 +1,9 @@
+You are invited to influence our new SDK  
+[Click here to view github discussion](https://github.com/cloudinary/js-url-gen/discussions/602)
+=========================
+
+
+  
 Cloudinary URL-Gen SDK
 =========================
 [![Build Status](https://api.travis-ci.com/cloudinary/js-url-gen.svg?branch=master)](https://app.travis-ci.com/github/cloudinary/js-url-gen)
