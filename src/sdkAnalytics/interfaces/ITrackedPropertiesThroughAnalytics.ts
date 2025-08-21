@@ -15,5 +15,6 @@ export interface ITrackedPropertiesThroughAnalytics {
   lazyload?: boolean; // Was lazy-load used
   responsive?: boolean; // Was responsive used
   placeholder?: boolean; // Was placeholder used
+  feature?: string;
 }
 
