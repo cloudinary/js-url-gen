@@ -34,5 +34,9 @@ export function getAnalyticsOptions(options: ITrackedPropertiesThroughAnalytics)
     analyticsOptions.feature = 'B';
   }
 
+  if (options.feature) {
+    analyticsOptions.feature = options.feature;
+  }
+
   return analyticsOptions;
 }
