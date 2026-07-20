@@ -1,195 +1,109 @@
-You are invited to influence our new SDK  
-[Click here to view github discussion](https://github.com/cloudinary/js-url-gen/discussions/602)
-=========================
+# Cloudinary URL-Gen SDK
 
+[![npm version](https://img.shields.io/npm/v/@cloudinary/url-gen.svg)](https://www.npmjs.com/package/@cloudinary/url-gen)
+[![license](https://img.shields.io/npm/l/@cloudinary/url-gen.svg)](https://www.npmjs.com/package/@cloudinary/url-gen)
 
-  
-Cloudinary URL-Gen SDK
-=========================
-[![Build Status](https://api.travis-ci.com/cloudinary/js-url-gen.svg?branch=master)](https://app.travis-ci.com/github/cloudinary/js-url-gen)
-## About
-The Cloudinary URL-Gen SDK allows you to quickly and easily integrate your application with Cloudinary.
-Effortlessly optimize and transform your cloud's assets.
-
-This SDK can also be used with [popular frontend frameworks](https://cloudinary.com/documentation/sdks/js/frontend-frameworks/index.html).
-
-### Additional documentation
-This Readme provides basic installation and usage information.
-For the complete documentation, see the [URL-Gen SDK Guide](https://cloudinary.com/documentation/javascript_integration) and the [URL-Gen Reference](https://cloudinary.com/documentation/sdks/js/url-gen/index.html).
-
-NOTE: When using the url-gen library, an additional transformation-builder-sdk library is installed as a dependency. 
-This library handles the transformation generation part of the URL and as such, all transformation actions are imported from this library. 
-Therefore, you can import all transformations either from @cloudinary/url-gen (as demonstrated in the documentation), or directly from the transformation-builder-sdk library, for example:
-```javascript
-import {scale} from '@cloudinary/transformation-builder-sdk/actions/resize';
-``` 
-
-You can find all available transformations in the [Transformation Builder reference](https://cloudinary.com/documentation/sdks/js/transformation-builder/index.html).
-
-
-## Table of Contents
-- [Key Features](#key-features)
-- [Version Support](#Version-Support)
-- [Installation](#installation)
-- [Usage](#usage)
-    - [Setup](#Setup)
-    - [Transform and Optimize Assets](#Transform-and-Optimize-Assets)
-    - [Generate Image and Video URLs](#Generate-Image-and-Video-URLs)
-    - [Transpilation](#Transpilation)
-    - [Testing with Jest](#Testing-with-jest)
-- [Contributions](#Contributions)
-- [Get Help](#Get-Help)
-- [Additional Resources](#Additional-Resources)
-
-## Key Features
-- [Transform image](https://cloudinary.com/documentation/javascript_image_transformations) assets (links to docs).
-- [Transform video](https://cloudinary.com/documentation/javascript_video_transformations) assets (links to docs).
-
-
-## Version Support
-
-### Note!
-This SDK is cross-platform, but only the Node.js versions are worth mentioning
-
-| SDK Version | Node.js 14 | Node.js 16 |
-|-------------|------------|------------|
-|  1.x        | V          | V          |
-
-
+The `@cloudinary/url-gen` package is the browser-safe Cloudinary SDK for JavaScript and TypeScript that builds image and video delivery URLs. It turns a public ID like `sample` into an optimized, transformed URL string and holds no API secret, so it runs in any frontend. The package is browser-targeted and ships untranspiled ES modules; it has no Node engine floor, and its CI builds against Node 14 and 16.
 
 ## Installation
-### Install using your favorite package manager (yarn, npm)
+
 ```bash
 npm install @cloudinary/url-gen
 ```
-```bash
-yarn add @cloudinary/url-gen 
-```
 
-## Usage
-### Setup
+## Configuration
+
+This SDK never holds an API secret. It only composes public delivery URLs, so the only value it needs is your public cloud name. Create one `Cloudinary` instance and reuse it:
+
 ```javascript
-// Import the Cloudinary class
 import {Cloudinary} from '@cloudinary/url-gen';
 
-// Create your instance
 const cld = new Cloudinary({
   cloud: {
-    cloudName: 'demo'
+    cloudName: 'my_cloud_name',   // public cloud name, safe in the browser
   },
   url: {
-    secure: true // force https, set to false to force http
-  }
+    secure: true,                 // force https (the default)
+  },
 });
 ```
 
+There's no `CLOUDINARY_URL`, `api_key`, or `api_secret` to set here. Keep the API secret out of client-side code and version control — anything that needs it (uploads, Admin API, signed URLs) runs on a server with [`cloudinary`](https://github.com/cloudinary/cloudinary_npm).
 
-### Transform and Optimize Assets
-- [See full documentation](https://cloudinary.com/documentation/javascript_image_transformations)
+## Quick examples
+
+### Build a transformed delivery URL
+
+Create an image asset with `cld.image('<PUBLIC_ID>')`, chain a resize action, then call `.toURL()`. `.toURL()` is synchronous and makes no network call. Import each action from its deep path so bundlers can tree-shake it:
+
 ```javascript
-// Create a new instance if you haven't (see above for the details)
-const cld = new Cloudinary({/*...*/})
+import {Cloudinary} from '@cloudinary/url-gen';
+import {fill} from '@cloudinary/url-gen/actions/resize';
 
-// Let's create a new image
-const myImage = cld.image('sample');
+const cld = new Cloudinary({cloud: {cloudName: 'demo'}});
 
-// Import the resize transformation and apply it to myImage
-import {Resize} from '@cloudinary/url-gen/actions/resize';
-
-// Resize the image to 100x100
-myImage.resize(Resize.scale().width(100).height(100));
-
-// When we're done, we can apply all our changes and create a URL.
-const myURL = myImage.toURL();
-
-// https://res.cloudinary.com/demo/image/upload/c_scale,w_100,h_100/sample
-console.log(myURL);
+const url = cld.image('sample')
+  .resize(fill().width(100).height(150))
+  .toURL();
+// https://res.cloudinary.com/demo/image/upload/c_fill,w_100,h_150/sample
 ```
 
-### Generate Image and Video URLs
-The library supports transformations on both images and videos. Please use the appropriate method, as per below:
+### Deliver an auto-optimized image
 
-    - Use `cld.image()` to generate image URLs and transformations
-    - Use `cld.video()` to generate video URLs and transformations
+`format('auto')` (`f_auto`) lets Cloudinary serve AVIF or WebP to browsers that support it, and `quality('auto')` (`q_auto`) picks the smallest quality that still looks right. Both come from the `delivery` action path:
 
-Both the `image()` and `video()` methods allow you to use `toURL()` to generate the final, transformed asset URL.
+```javascript
+import {Cloudinary} from '@cloudinary/url-gen';
+import {format, quality} from '@cloudinary/url-gen/actions/delivery';
 
-### File upload
-This SDK does not provide file upload functionality, however there are [several methods of uploading from the client side](https://cloudinary.com/documentation/javascript_image_and_video_upload).
+const cld = new Cloudinary({cloud: {cloudName: 'demo'}});
 
-### Transpilation
-`@cloudinary/url-gen` is shipped as untranspiled ES6 code.
-`@cloudinary/url-gen` is optimized around bundle size, as such we do not transpile our distributed modules,
-we leave the decision of what browsers to support, and what transpilations to apply, to you, the user.
-
-### Testing with Jest
-As mentioned above, we're shipping `@cloudinary/url-gen` with ES6 code, as this provides great tree-shaking potential.
-it also requires a few adjustments when testing.
-
-In jest.config, you'll need to add these lines to allow babel to transpile our code.
-```json
-{
-  "transform": {
-    "node_modules/@cloudinary/url-gen": "babel-jest",
-    "node_modules/@cloudinary/transformation-builder-sdk": "babel-jest"
-  },
-  "transformIgnorePatterns": ["/node_modules/(?!(@cloudinary/url-gen|@cloudinary/transformation-builder-sdk))"]
-}
-```
-Make sure to install babel-jest:
-`npm install babel-jest`
-
-You'll also need to ensure you have a `babel.config.js` file (and not a `.babelrc`), and that
-it's configured properly to transpile code,
-
-*As an example*:
-```js
-module.exports = {
-  "presets": [
-    "@babel/preset-env"
-  ]
-};
+const url = cld.image('sample')
+  .delivery(format('auto'))
+  .delivery(quality('auto'))
+  .toURL();
+// https://res.cloudinary.com/demo/image/upload/f_auto/q_auto/sample
 ```
 
-## Contributions
-- Clone this repository
-- Create a fork
-- Make your changes 
-- Run tests locally `npm run test` 
-- Build project locally `npm run build`
-- Push your changes
-- Await a review from the maintainers 
+### Build an optimized video URL
 
+The same delivery actions work on video. Use `cld.video('<PUBLIC_ID>')` to target the video resource type:
 
-## Get Help
-If you run into an issue or have a question, you can either:
-- [Open a Github issue](https://github.com/cloudinary/js-url-gen/issues) (for issues related to the SDK)
-- [Open a support ticket](https://cloudinary.com/contact) (for issues related to your account)
+```javascript
+import {Cloudinary} from '@cloudinary/url-gen';
+import {format, quality} from '@cloudinary/url-gen/actions/delivery';
 
-Additional resources can be found here:
-- [Getting started](https://cloudinary.com/documentation/sdks/js/url-gen/tutorial-gettingStarted.html)
-- [Annotated Code Examples](https://cloudinary.com/documentation/sdks/js/url-gen/tutorial-annotatedExamples.html)
-- [Setup & Configuration](https://cloudinary.com/documentation/sdks/js/url-gen/tutorial-configuration_.html)
+const cld = new Cloudinary({cloud: {cloudName: 'demo'}});
 
+const url = cld.video('dog')
+  .delivery(format('auto'))
+  .delivery(quality('auto'))
+  .toURL();
+// https://res.cloudinary.com/demo/video/upload/f_auto/q_auto/dog
+```
 
-## About Cloudinary
-Cloudinary is a powerful media API for websites and mobile apps alike, Cloudinary enables developers to efficiently manage, transform, optimize, and deliver images and videos through multiple CDNs. Ultimately, viewers enjoy responsive and personalized visual-media experiences—irrespective of the viewing device.
+## For AI agents
 
+`@cloudinary/url-gen` is the browser-safe, framework-agnostic builder for Cloudinary image and video delivery URLs; it returns strings and has no upload, admin, or secret surface. Import each action from its deep path (`@cloudinary/url-gen/actions/resize`), not from the package root — a bare `import {fill} from '@cloudinary/url-gen'` throws. For tasks this package doesn't cover, use a sibling package:
 
-## Additional Resources
-- [React SDK](https://www.npmjs.com/package/@cloudinary/react)
-- [Angular SDK](https://www.npmjs.com/package/@cloudinary/angular)
-- [Use with a Frontend Framework](https://cloudinary.com/documentation/sdks/js/frontend-frameworks/index.html)
-- [Cloudinary Transformation and REST API References](https://cloudinary.com/documentation/cloudinary_references): Comprehensive references, including syntax and examples for all SDKs.
-- [MediaJams.dev](https://mediajams.dev/): Bite-size use-case tutorials written by and for Cloudinary Developers
-- [DevJams](https://www.youtube.com/playlist?list=PL8dVGjLA2oMr09amgERARsZyrOz_sPvqw): Cloudinary developer podcasts on YouTube.
-- [Cloudinary Academy](https://training.cloudinary.com/): Free self-paced courses, instructor-led virtual courses, and on-site courses.
-- [Code Explorers and Feature Demos](https://cloudinary.com/documentation/code_explorers_demos_index): A one-stop shop for all code explorers, Postman collections, and feature demos found in the docs.
-- [Cloudinary Roadmap](https://cloudinary.com/roadmap): Your chance to follow, vote, or suggest what Cloudinary should develop next.
-- [Cloudinary Facebook Community](https://www.facebook.com/groups/CloudinaryCommunity): Learn from and offer help to other Cloudinary developers.
-- [Cloudinary Account Registration](https://cloudinary.com/users/register/free): Free Cloudinary account registration.
-- [Cloudinary Website](https://cloudinary.com)
+| Task | Package |
+|---|---|
+| Upload, Admin API, or signed URLs on a server | [`cloudinary`](https://github.com/cloudinary/cloudinary_npm) |
+| Render React, Angular, or Vue components | [`@cloudinary/react` / `@cloudinary/ng` / `@cloudinary/vue`](https://github.com/cloudinary/frontend-frameworks) |
+| Drop-in Next.js components | [`next-cloudinary`](https://github.com/cloudinary-community/next-cloudinary) |
+| The transformation-action engine this package re-exports | [`@cloudinary/transformation-builder-sdk`](https://github.com/cloudinary/js-transformation-builder-sdk) |
+| Run Cloudinary operations as agent tools | [Cloudinary MCP servers](https://github.com/cloudinary/mcp-servers) |
 
+The Angular package is `@cloudinary/ng`. `@cloudinary/angular` on npm is an abandoned Beta — don't use it.
 
-## Licence
+## Links
+
+- [JavaScript SDK guide](https://cloudinary.com/documentation/javascript_integration)
+- [URL-Gen SDK reference](https://cloudinary.com/documentation/sdks/js/url-gen/index.html)
+- [Image transformations](https://cloudinary.com/documentation/javascript_image_transformations)
+- [Video transformations](https://cloudinary.com/documentation/javascript_video_transformations)
+- [Transformation and API references](https://cloudinary.com/documentation/cloudinary_references)
+- [Documentation llms.txt index](https://cloudinary.com/documentation/llms.txt)
+- [Package on npm](https://www.npmjs.com/package/@cloudinary/url-gen)
+
 Released under the MIT license.
