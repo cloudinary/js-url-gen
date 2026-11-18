@@ -84,6 +84,80 @@ describe('Tests for Encoding the URL', () => {
       .toBe('https://res.cloudinary.com/demo/image/youtube/https://www.youtube.com/watch%3Fv%3Dd9NF2edxy-M');
   });
 
+  describe('Encoding # (issue #608)', () => {
+    it('Should encode # in the text of a textLayer', () => {
+      const cldImage = createNewImage('sample')
+        .overlay(Overlay.source(text('Item #1', sampleEmptyTextStyle())));
+
+      // toString() serializes only, so # is left as-is
+      expect(cldImage.toString()).toBe('l_text:arial_50:Item #1/fl_layer_apply');
+
+      expect(cldImage.toURL())
+        .toBe('https://res.cloudinary.com/demo/image/upload/l_text:arial_50:Item%20%231/fl_layer_apply/sample');
+    });
+
+    it('Should encode # alongside cloudinary characters (",/") in the text of a textLayer', () => {
+      const cldImage = createNewImage('sample')
+        .overlay(Overlay.source(text('#a,/b#', sampleEmptyTextStyle())));
+
+      expect(cldImage.toURL())
+        .toBe('https://res.cloudinary.com/demo/image/upload/l_text:arial_50:%23a%252C%252Fb%23/fl_layer_apply/sample');
+    });
+
+    it('Should encode # in a nested text layer', () => {
+      const cldImage = createNewImage('woman')
+        .overlay(Overlay.source(
+          image('sample')
+            .transformation(
+              new Transformation().overlay(
+                Overlay.source(text('#1', sampleEmptyTextStyle()))
+              )
+            )
+        ));
+
+      expect(cldImage.toURL())
+        .toBe('https://res.cloudinary.com/demo/image/upload/l_sample/l_text:arial_50:%231/fl_layer_apply/fl_layer_apply/woman');
+    });
+
+    it('Should encode # in a publicID', () => {
+      expect(createNewImage('a#b').toURL())
+        .toBe('https://res.cloudinary.com/demo/image/upload/a%23b');
+    });
+
+    it('Should not produce a fragment that swallows query params', () => {
+      const url = createNewImage('sample', {}, {queryParams: {foo: 'bar'}})
+        .overlay(Overlay.source(text('Item #1', sampleEmptyTextStyle())))
+        .toURL();
+
+      expect(url)
+        .toBe('https://res.cloudinary.com/demo/image/upload/l_text:arial_50:Item%20%231/fl_layer_apply/sample?foo=bar');
+      expect(new URL(url).hash).toBe('');
+    });
+
+    it('Should keep the signature intact when encoding #', () => {
+      const cldImage = createNewImage('sample')
+        .overlay(Overlay.source(text('Item #1', sampleEmptyTextStyle())));
+      cldImage.setSignature('abcdefgh');
+
+      expect(cldImage.toURL())
+        .toBe('https://res.cloudinary.com/demo/image/upload/s--abcdefgh--/l_text:arial_50:Item%20%231/fl_layer_apply/sample');
+    });
+
+    it('Fetch: should encode # in a remote URL', () => {
+      const img = createNewImage('https://example.com/sample.jpg?a=b#c');
+      img.setDeliveryType('fetch');
+
+      expect(img.toURL())
+        .toBe('https://res.cloudinary.com/demo/image/fetch/https://example.com/sample.jpg%3Fa%3Db%23c');
+    });
+
+    it('Should treat a literal "%23" in a publicID as text, not as #', () => {
+      // encodeURI turns % into %25, so a literal "%23" in the input stays a literal "%23"
+      expect(createNewImage('a%23b').toURL())
+        .toBe('https://res.cloudinary.com/demo/image/upload/a%2523b');
+    });
+  });
+
   it('Should encode a space in publicID', () => {
     const url = createNewImage('sa mple')
       .toURL();
