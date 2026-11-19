@@ -276,6 +276,8 @@ class CloudinaryFile {
     } else {
       // Avoid applying encodeURI on entire string in case where we have transformations with comma (i.e. f_auto,q_auto)
       // Since encodeURI does not encode commas we replace commas *only* on the publicID
+      // encodeURI also leaves URL delimiters (?, =, #) untouched, so we encode them on the joined URL.
+      // An unencoded # would start a URL fragment and truncate the request path.
       const safeURL =
         [
           encodeURI(prefix),
@@ -289,7 +291,8 @@ class CloudinaryFile {
           .filter((a) => a)
           .join('/')
           .replace(/\?/g, '%3F')
-          .replace(/=/g, '%3D');
+          .replace(/=/g, '%3D')
+          .replace(/#/g, '%23');
 
 
       const shouldAddAnalytics = this.urlConfig.analytics !== false && !(publicID.includes('?'));    
